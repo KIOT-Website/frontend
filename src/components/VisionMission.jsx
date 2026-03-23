@@ -4,14 +4,12 @@ import { Eye, Target, Award, ShieldCheck, CheckCircle, Zap } from 'lucide-react'
 
 const VisionMission = () => {
   return (
-    <div className="relative bg-[#FCFDFD] pt-32 pb-32 min-h-screen overflow-hidden">
-
-
+    <div className="relative bg-[#FCFDFD] pt-16 pb-32 min-h-screen overflow-hidden">
       <section id="vision-mission" className="relative px-5 sm:px-10 lg:px-28 z-10 w-full max-w-[1600px] mx-auto">
         <div className="max-w-7xl mx-auto">
           
           {/* Header */}
-          <div className="text-center mb-24">
+          <div className="text-center mb-16">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -25,11 +23,7 @@ const VisionMission = () => {
                  <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Philosophy & Identity</span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.05]">
-                Institution <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block relative">Philosophy
-                  <svg className="absolute w-full h-4 -bottom-1.5 left-0 text-[#ffc107]/30 scale-110" viewBox="0 0 100 20" preserveAspectRatio="none">
-                    <path d="M0,15 Q50,0 100,15" stroke="currentColor" strokeWidth="6" strokeLinecap="round" fill="none" />
-                  </svg>
-                </span>
+                Institution <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block">Philosophy</span>
               </h1>
               <p className="text-[#64779F] text-xl lg:text-2xl max-w-3xl mx-auto font-medium leading-relaxed">
                 The guiding principles that shape our vision, drive our mission, and define the core of KIOT's pursuit of excellence.

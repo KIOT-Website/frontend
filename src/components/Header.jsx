@@ -14,8 +14,9 @@ import {
   Twitter,
   X,
   Youtube,
-  Book,
-  BookOpen
+  Building2,
+  Target,
+  Users
 } from 'lucide-react'
 import logo from '../assets/logo.png'
 import naacLogo from '../assets/NAAC-Logo.png'
@@ -29,9 +30,9 @@ const navLinks = [
     href: 'about',
     hasDropdown: true,
     subLinks: [
-      { name: 'About Us', href: 'about-us' },
-      { name: 'Vision & Mission', href: 'vision-mission' },
-      { name: 'Leadership', href: 'leadership' }
+      { name: 'About Us', href: 'about-us', icon: Building2 },
+      { name: 'Vision & Mission', href: 'vision-mission', icon: Target },
+      { name: 'Leadership', href: 'leadership', icon: Users }
     ]
   },
   { name: 'Academics', href: '#academics', hasDropdown: true },
@@ -294,13 +295,14 @@ const Header = () => {
                             >
                               <span className="text-[13px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
                               
-                              {/* Book Open Animation Effect */}
+                              {/* Dynamic Icon Rendering */}
                               <div className="absolute right-5 flex items-center justify-center w-5 h-5">
-                                 {/* Closed Book State (Default) */}
-                                 <Book size={14} className="absolute text-[#A9B1C3] opacity-100 group-hover/sub:opacity-0 transition-opacity duration-300" />
-                                 
-                                 {/* Open Book State (Hover) */}
-                                 <BookOpen size={16} className="absolute text-[#ffc107] opacity-0 group-hover/sub:opacity-100 transition-opacity duration-300 transform group-hover/sub:scale-110" />
+                                 {sub.icon && (
+                                   <sub.icon 
+                                     size={16} 
+                                     className="text-[#A9B1C3] group-hover/sub:text-[#ffc107] transition-all duration-300 transform group-hover/sub:scale-110" 
+                                   />
+                                 )}
                               </div>
                             </a>
                           ))}
@@ -438,8 +440,9 @@ const Header = () => {
                                      key={sub.name} 
                                      href={sub.href} 
                                      onClick={(e) => handleNavClick(e, sub.name, sub.href)} 
-                                     className="block px-6 py-3.5 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] hover:bg-[#18357a]/5 transition-colors border-b border-[#D5E2F4]/40 last:border-0"
+                                     className="flex items-center gap-3 px-6 py-3.5 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] hover:bg-[#18357a]/5 transition-colors border-b border-[#D5E2F4]/40 last:border-0"
                                    >
+                                     {sub.icon && <sub.icon size={14} className="text-[#ffc107]" />}
                                      {sub.name}
                                    </a>
                                  ))}
