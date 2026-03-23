@@ -156,20 +156,20 @@ const Leadership = () => {
       {/* Modal / Expanded Message */}
       <AnimatePresence>
         {selectedLeader && (
-          <div className="fixed inset-0 z-[100] flex items-start justify-center p-6 sm:p-10 overflow-y-auto">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-10 overflow-hidden">
             <motion.div 
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                exit={{ opacity: 0 }}
                onClick={() => setSelectedLeader(null)}
-               className="absolute inset-0 bg-[#18357a]/40 backdrop-blur-md"
+               className="absolute inset-0 bg-[#18357a]/50 backdrop-blur-xl"
             />
             <motion.div
               layoutId={selectedLeader.id}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-4xl bg-white rounded-[48px] shadow-2xl overflow-hidden flex flex-col md:flex-row h-auto my-auto"
+              className="relative w-full max-w-5xl bg-white rounded-[40px] shadow-[0_50px_100px_rgba(24,53,122,0.25)] overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
             >
                <button 
                  onClick={() => setSelectedLeader(null)}
@@ -179,8 +179,8 @@ const Leadership = () => {
                </button>
 
                {/* Left Sidebar in Modal */}
-               <div className="w-full md:w-[320px] bg-[#18357a] p-10 flex flex-col items-center text-center">
-                  <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-white/20 mb-6 shadow-2xl bg-white">
+               <div className="w-full md:w-[350px] bg-[#18357a] p-10 py-16 flex flex-col items-center justify-center text-center shrink-0">
+                  <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-8 border-white/10 mb-8 shadow-2xl bg-white">
                     <img 
                       src={selectedLeader.image} 
                       alt={selectedLeader.name} 
@@ -197,7 +197,7 @@ const Leadership = () => {
                </div>
 
                {/* Message Body */}
-               <div className="flex-1 p-10 lg:p-16">
+               <div className="flex-1 p-10 lg:p-16 overflow-y-auto custom-scrollbar">
                   <Quote size={48} className="text-[#ffc107]/20 mb-6" />
                   <h2 className="text-2xl lg:text-3xl font-black text-[#18357a] font-display mb-8">Management Message</h2>
                   <div className="space-y-6">
