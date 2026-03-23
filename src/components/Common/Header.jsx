@@ -19,8 +19,7 @@ import {
   Users,
   GraduationCap,
   Calendar,
-  FileText,
-  Home
+  FileText
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.webp'
@@ -48,7 +47,7 @@ const navLinks = [
     href: 'resources', 
     hasDropdown: true,
     subLinks: [
-      { name: 'Campus Life', href: 'campus-life', icon: Home },
+      { name: 'Campus Life', href: 'campus-life', icon: Building2 },
       { name: 'Student Life', href: 'student-life', icon: Users },
       { name: 'Alumni', href: 'alumni', icon: GraduationCap },
       { name: 'News & Events', href: 'news-events', icon: Calendar },
