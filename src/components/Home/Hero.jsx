@@ -136,8 +136,9 @@ const Hero = () => {
           >
             <img 
               src={slides[current].image} 
-              alt="Campus" 
+              alt={slides[current].title + " - " + slides[current].highlight} 
               className="w-full h-full object-fill"
+              loading="eager" // Keep hero eager for LCP
             />
           </motion.div>
         </AnimatePresence>

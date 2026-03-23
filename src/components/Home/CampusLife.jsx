@@ -101,8 +101,9 @@ const CampusLife = () => {
                 <div className="absolute inset-0 z-0">
                    <img 
                      src={fac.image} 
-                     alt={fac.title} 
+                     alt={fac.title + " - campus facility at KIOT"} 
                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                     loading="lazy"
                    />
                    <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/90 via-[#18357a]/20 to-transparent" />
                 </div>

@@ -140,7 +140,7 @@ const Placements = () => {
                            {/* Enlarged Logo Slot */}
                            <div className="h-16 w-16 lg:h-20 lg:w-20 rounded-2xl bg-white p-2.5 flex items-center justify-center shrink-0 shadow-sm border border-white/10 group-hover:scale-105 transition-transform duration-500">
                               {rec.logo ? (
-                                <img src={rec.logo} alt={rec.name} className="max-h-full max-w-full object-contain" />
+                                <img src={rec.logo} alt={rec.name + " corporate hiring partner logo"} className="max-h-full max-w-full object-contain" loading="lazy" />
                               ) : (
                                 <div className="text-[#18357a]/20 font-black text-[9px] text-center leading-none uppercase pr-1 italic">Logo Req.</div>
                               )}
