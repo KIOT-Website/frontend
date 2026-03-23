@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Trophy, ArrowLeft, ArrowRight, Quote, Medal, Sparkles } from 'lucide-react'
 
 // Placeholder images from generated assets
-import arunImg from '../assets/achiever_arun_balaji.png'
-import nandhiniImg from '../assets/achiever_nandhini_s.png'
-import sathishImg from '../assets/achiever_sathish_kumar.png'
+import arunImg from '../../assets/achiever_arun_balaji.png'
+import nandhiniImg from '../../assets/achiever_nandhini_s.png'
+import sathishImg from '../../assets/achiever_sathish_kumar.png'
 
 const achievements = [
   {

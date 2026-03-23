@@ -18,11 +18,11 @@ import {
   Target,
   Users
 } from 'lucide-react'
-import logo from '../assets/logo.png'
-import naacLogo from '../assets/NAAC-Logo.png'
-import nirfLogo from '../assets/nirf.png'
-import nbaLogo from '../assets/NBA1 (1).png'
-import codeLogo from '../assets/code.png'
+import logo from '../../assets/logo.png'
+import naacLogo from '../../assets/NAAC-Logo.png'
+import nirfLogo from '../../assets/nirf.png'
+import nbaLogo from '../../assets/NBA1 (1).png'
+import codeLogo from '../../assets/code.png'
 
 const navLinks = [
   {
@@ -135,15 +135,9 @@ const Header = () => {
 
           <div className="min-w-0 flex-1 ml-0 md:-ml-20 xl:-ml-24">
             <div className="flex h-[32px] items-center bg-[#18357a] lg:hidden overflow-hidden">
-              <motion.div
-                initial={{ x: '0%' }}
-                animate={{ x: '-50%' }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                className="flex items-center gap-10 whitespace-nowrap px-4 text-[11px] font-bold text-white"
+              <div
+                className="flex items-center gap-10 whitespace-nowrap px-4 text-[12px] font-bold text-white animate-marquee hover:[animation-play-state:paused]"
+                style={{ animationDuration: '10s' }}
               >
                 <div className="flex items-center gap-1.5">
                   <span className="text-[#ffc107]">CONTACT:</span>
@@ -166,22 +160,15 @@ const Header = () => {
                   <span className="text-[#ffc107]">ADMISSION:</span>
                   <span>98947 01234</span>
                 </div>
-              </motion.div>
+              </div>
             </div>
             <div className="hidden h-[32px] items-stretch bg-[#ffc107] lg:flex overflow-hidden">
               <div 
                 className="flex flex-1 items-stretch overflow-hidden bg-[#18357a] pl-32 pr-10"
                 style={{ clipPath: 'polygon(0 0, 96% 0, 100% 100%, 0 100%)' }}
               >
-                <motion.div
-                  initial={{ x: '0%' }}
-                  animate={{ x: '-50%' }}
-                  transition={{
-                    duration: 18,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  className="flex items-center gap-16 whitespace-nowrap text-[11px] font-medium text-white/95 xl:text-[12px]"
+                <div
+                  className="flex items-center gap-16 whitespace-nowrap text-[12px] font-medium text-white/95 xl:text-[13px] animate-marquee hover:[animation-play-state:paused]"
                 >
                   {/* First Set */}
                   <div className="flex items-center gap-16">
@@ -221,21 +208,21 @@ const Header = () => {
                        <a href="mailto:info@kiot.ac.in" className="hover:text-[#ffc107] transition-colors">info@kiot.ac.in</a>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
 
               <div className="flex shrink-0 items-center justify-end pr-10 overflow-hidden">
-                <div className="flex items-center gap-4 lg:gap-6 ml-10">
+                <div className="flex items-center gap-2.5 ml-8 translate-y-[-0.5px]">
                    {socialLinks.map((social) => (
                      <a 
                        key={social.name} 
                        href={social.href}
                        target="_blank"
                        rel="noopener noreferrer"
-                       className="text-[#18357a] hover:text-[#18357a]/70 transition-all hover:scale-110"
+                       className="group flex h-[26px] w-[26px] items-center justify-center rounded-full border border-[#18357a]/20 bg-[#18357a]/5 hover:bg-[#18357a] hover:border-[#18357a] hover:shadow-[0_0_10px_rgba(24,53,122,0.3)] transition-all duration-300 hover:-translate-y-[1px]"
                        title={social.name}
                      >
-                       <social.icon size={15} strokeWidth={2.5} />
+                       <social.icon size={14} strokeWidth={2.5} className="text-[#18357a] group-hover:text-white transition-colors" />
                      </a>
                    ))}
                 </div>
@@ -267,7 +254,7 @@ const Header = () => {
                           if (link.subLinks) e.preventDefault();
                           else handleNavClick(e, link.name, link.href);
                         }}
-                        className={`inline-flex items-center gap-1 text-[12.5px] font-bold transition-colors whitespace-nowrap py-5 ${
+                        className={`inline-flex items-center gap-1 text-[14.5px] font-bold transition-colors whitespace-nowrap py-5 ${
                             isActive
                               ? 'text-[#18357a]'
                               : 'text-[#64779F] hover:text-[#18357a]'
@@ -293,7 +280,7 @@ const Header = () => {
                               onClick={(e) => handleNavClick(e, sub.name, sub.href)}
                               className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
                             >
-                              <span className="text-[13px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
+                              <span className="text-[15px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
                               
                               {/* Dynamic Icon Rendering */}
                               <div className="absolute right-5 flex items-center justify-center w-5 h-5">
@@ -318,13 +305,13 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[54px] w-auto md:h-[78px] md:w-18 lg:h-[90px] lg:w-[84px] translate-y-[4px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[85px] w-auto md:h-[88px] md:w-20 lg:h-[105px] lg:w-[98px] translate-y-[5px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={nirfLogo}
                   alt="NIRF Logo"
-                  className="h-[38px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
+                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
                 />
                 <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
@@ -336,16 +323,20 @@ const Header = () => {
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="h-[42px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
+                  className="h-[73px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
                 />
                 
                 <button
                   type="button"
                   onClick={() => setIsOpen((open) => !open)}
-                  className="ml-1 sm:ml-2 relative grid h-10 w-10 place-items-center rounded-xl bg-[#224292] text-white lg:hidden"
+                  className="ml-1 sm:ml-2 relative flex h-11 w-11 items-center justify-center rounded-full text-[#18357a] hover:bg-[#18357a]/5 transition-all active:scale-95 lg:hidden"
                   aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 >
-                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                   <div className="relative flex h-6 w-6 flex-col items-center justify-center">
+                     <span className={`absolute h-[2px] w-6 bg-[#18357a] transition-all duration-300 ${isOpen ? 'rotate-45' : '-translate-y-2'}`} />
+                     <span className={`absolute h-[2px] w-4 translate-x-1 bg-[#18357a] transition-all duration-300 ${isOpen ? 'opacity-0 translate-x-10' : ''}`} />
+                     <span className={`absolute h-[2px] w-6 bg-[#18357a] transition-all duration-300 ${isOpen ? '-rotate-45' : 'translate-y-2'}`} />
+                   </div>
                 </button>
               </div>
             </nav>
@@ -412,7 +403,7 @@ const Header = () => {
                                  handleNavClick(e, link.name, link.href);
                                }
                             }}
-                            className={`flex items-center justify-between px-4 py-4 text-sm font-bold transition-all ${
+                            className={`flex items-center justify-between px-4 py-4 text-[15px] font-bold transition-all ${
                               isActive 
                                 ? 'text-[#18357a]' 
                                 : 'text-[#64779F] hover:text-[#18357a]'
@@ -426,26 +417,27 @@ const Header = () => {
                             )}
                           </a>
                           
-                          {/* Mobile Accodion for Submenus */}
                           <AnimatePresence>
                             {link.subLinks && activeDropdown === link.name && (
                               <motion.div 
                                 initial={{ height: 0, opacity: 0 }} 
                                 animate={{ height: 'auto', opacity: 1 }} 
                                 exit={{ height: 0, opacity: 0 }} 
-                                className="overflow-hidden bg-[#18357a]/5 rounded-b-xl border-l-[3px] border-[#ffc107] mb-2 mx-4"
+                                className="overflow-hidden mx-6 mb-3 bg-[#18357a]/5 rounded-2xl border border-[#18357a]/5"
                               >
-                                 {link.subLinks.map(sub => (
-                                   <a 
-                                     key={sub.name} 
-                                     href={sub.href} 
-                                     onClick={(e) => handleNavClick(e, sub.name, sub.href)} 
-                                     className="flex items-center gap-3 px-6 py-3.5 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] hover:bg-[#18357a]/5 transition-colors border-b border-[#D5E2F4]/40 last:border-0"
-                                   >
-                                     {sub.icon && <sub.icon size={14} className="text-[#ffc107]" />}
-                                     {sub.name}
-                                   </a>
-                                 ))}
+                                 <div className="py-2">
+                                   {link.subLinks.map(sub => (
+                                     <a 
+                                       key={sub.name} 
+                                       href={sub.href} 
+                                       onClick={(e) => handleNavClick(e, sub.name, sub.href)} 
+                                       className="flex items-center gap-4 px-6 py-3.5 text-[13px] font-bold text-[#64779F] hover:text-[#18357a] hover:bg-white/50 transition-all group/subitem"
+                                     >
+                                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover/subitem:scale-125 transition-transform" />
+                                       <span>{sub.name}</span>
+                                     </a>
+                                   ))}
+                                 </div>
                               </motion.div>
                             )}
                           </AnimatePresence>
@@ -456,11 +448,17 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Drawer Footer - Only Icons */}
-              <div className="p-6 pb-10 flex justify-center gap-6 border-t border-[#D5E2F4]/50">
+              <div className="p-6 pb-10 flex justify-center gap-4 border-t border-[#D5E2F4]/50">
                 {socialLinks.map((social) => (
-                  <a key={social.name} href={social.href} target="_blank" className="text-[#224292] hover:text-[#ffc107] transition-colors">
-                    <social.icon size={20} />
+                  <a 
+                    key={social.name} 
+                    href={social.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"
+                    title={social.name}
+                  >
+                    <social.icon size={20} strokeWidth={2.5} />
                   </a>
                 ))}
               </div>

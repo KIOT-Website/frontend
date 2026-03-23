@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, ChevronLeft, ChevronRight, Award, Trophy, Users, Star } from 'lucide-react'
 
 // Slide images
-import slide1 from '../assets/slide1.jpg'
-import slide2 from '../assets/slide2.jpg'
-import slide3 from '../assets/slide3.jpg'
-import slide4 from '../assets/slide4.jpg'
-import slide5 from '../assets/slide5.jpg'
-import slide6 from '../assets/slide6.jpg'
+import slide1 from '../../assets/slide1.jpg'
+import slide2 from '../../assets/slide2.jpg'
+import slide3 from '../../assets/slide3.jpg'
+import slide4 from '../../assets/slide4.jpg'
+import slide5 from '../../assets/slide5.jpg'
+import slide6 from '../../assets/slide6.jpg'
 
 const slides = [
   {
@@ -80,7 +80,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       move(1)
-    }, 6000)
+    }, 4000)
     return () => clearInterval(timer)
   }, [current])
 
@@ -120,7 +120,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative w-full h-[230px] sm:h-[450px] lg:h-[550px] overflow-hidden bg-white pt-0 pb-0">
+    <section className="relative w-full h-[230px] sm:h-[450px] lg:h-[620px] overflow-hidden bg-white pt-0 pb-0">
       
       {/* BACKGROUND SLIDER */}
       <div className="absolute inset-0 z-0 bg-white">
@@ -141,6 +141,24 @@ const Hero = () => {
             />
           </motion.div>
         </AnimatePresence>
+      </div>
+
+      {/* NAVIGATION ARROWS */}
+      <div className="absolute inset-0 z-10 hidden items-center justify-between px-4 sm:flex pointer-events-none">
+        <button
+          onClick={() => move(-1)}
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#18357a] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={28} strokeWidth={2.5} className="group-hover/btn:-translate-x-0.5 transition-transform" />
+        </button>
+        <button
+          onClick={() => move(1)}
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#18357a] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
+          aria-label="Next slide"
+        >
+          <ChevronRight size={28} strokeWidth={2.5} className="group-hover/btn:translate-x-0.5 transition-transform" />
+        </button>
       </div>
 
     </section>

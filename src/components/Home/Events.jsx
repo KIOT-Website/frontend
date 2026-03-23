@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Calendar, Mic2, Brain, Megaphone, ArrowRight, UserCheck, Timer } from 'lucide-react'
 
 // Assets
-import symposiumImg from '../assets/kiot_symposium.png'
-import labImg from '../assets/kiot_lab.png'
-import campusImg from '../assets/kiot-campus.png'
+import symposiumImg from '../../assets/kiot_symposium.png'
+import labImg from '../../assets/kiot_lab.png'
+import campusImg from '../../assets/kiot-campus.png'
 
 const events = [
   {

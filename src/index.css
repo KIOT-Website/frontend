@@ -15,15 +15,22 @@
 
   --animate-spin-slow: spin 4s linear infinite;
 
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-150%) skewX(-12deg);
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-150%) skewX(-12deg);
+      }
+      100% {
+        transform: translateX(150%) skewX(-12deg);
+      }
     }
-    100% {
-      transform: translateX(150%) skewX(-12deg);
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
+  
+    --animate-marquee: marquee 18s linear infinite;
   }
-}
 
 :root {
   color-scheme: light;

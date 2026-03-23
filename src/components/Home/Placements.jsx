@@ -2,16 +2,16 @@ import { motion } from 'framer-motion'
 import { TrendingUp, GraduationCap, Building2, UserCheck, Briefcase } from 'lucide-react'
 
 // Recruiter Logos
-import techMahindraLogo from '../assets/tech mahendra.png'
-import expleoLogo from '../assets/ecpleo.png'
-import codingmartLogo from '../assets/codingmart.png'
-import haritaLogo from '../assets/harita.png'
-import hexawareLogo from '../assets/hexaware.png'
-import itcLogo from '../assets/itc.png'
-import neyesLogo from '../assets/neyes.png'
-import raplLogo from '../assets/rapl.png'
-import tefologicLogo from '../assets/tefologic.png'
-import tessolveLogo from '../assets/tessolve.png'
+import techMahindraLogo from '../../assets/tech mahendra.png'
+import expleoLogo from '../../assets/ecpleo.png'
+import codingmartLogo from '../../assets/codingmart.png'
+import haritaLogo from '../../assets/harita.png'
+import hexawareLogo from '../../assets/hexaware.png'
+import itcLogo from '../../assets/itc.png'
+import neyesLogo from '../../assets/neyes.png'
+import raplLogo from '../../assets/rapl.png'
+import tefologicLogo from '../../assets/tefologic.png'
+import tessolveLogo from '../../assets/tessolve.png'
 
 const stats = [
   {
@@ -124,7 +124,7 @@ const Placements = () => {
           {/* RIGHT SIDE: Recruiter Slide (Infinite Loop) */}
           <div className="relative">
              <div className="mb-10 text-center lg:text-left">
-                <h3 className="text-2xl lg:text-3xl font-black font-display mb-1 text-white uppercase tracking-tight">Our Top Hiring Partners</h3>
+                <h3 className="text-2xl lg:text-3xl font-black font-display mb-1 text-white uppercase tracking-[0.1em]">Our Top Hiring Partners</h3>
                 <div className="h-1 w-12 bg-[#ffc107] mb-4 mx-auto lg:mx-0 rounded-full" />
              </div>
 
