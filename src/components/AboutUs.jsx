@@ -5,7 +5,7 @@ import campusImg from '../assets/about campus.png'
 
 const AboutUs = () => {
   return (
-    <div className="relative bg-[#FCFDFD] pt-16 pb-20 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-32 pb-20 min-h-screen overflow-hidden">
       
       {/* Decorative Brand Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
@@ -15,30 +15,39 @@ const AboutUs = () => {
       <section className="relative px-5 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
         
         {/* Page Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 lg:mb-24">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-[#D5E2F4]/60 shadow-sm mb-6"
           >
-            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
-               <span className="relative flex h-3.5 w-3.5">
-                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
-                 <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
-               </span>
-               <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Our Heritage</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.05]">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block">KIOT</span>
-            </h1>
-            <p className="text-[#64779F] text-xl lg:text-2xl max-w-3xl mx-auto font-medium leading-relaxed">
-              A premier institution committed to nurturing the next generation of engineers, innovators, and leaders through world-class academic standards.
-            </p>
+             <div className="w-1.5 h-1.5 bg-[#ffc107] rounded-full animate-pulse" />
+             <span className="text-xs font-black text-[#18357a] uppercase tracking-[0.2em]">Our Heritage</span>
           </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#18357a] mb-6 tracking-tight font-display"
+          >
+            About <span className="text-[#ffc107] relative whitespace-nowrap">KIOT
+              <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#18357a]/10" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <path d="M0,15 Q50,0 100,15" stroke="currentColor" strokeWidth="6" strokeLinecap="round" fill="none" />
+              </svg>
+            </span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-[#64779F] text-lg lg:text-[22px] max-w-3xl mx-auto font-medium leading-relaxed"
+          >
+            A premier institution committed to nurturing the next generation of engineers, innovators, and leaders through world-class academic standards.
+          </motion.p>
         </div>
 
         {/* Story Section */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
            {/* Left Image Side */}
            <motion.div 
              initial={{ opacity: 0, x: -40 }}
