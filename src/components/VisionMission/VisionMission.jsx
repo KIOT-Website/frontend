@@ -22,8 +22,8 @@ const VisionMission = () => {
                  </span>
                  <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Philosophy & Identity</span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.05]">
-                Institution <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block">Philosophy</span>
+              <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.15] py-2">
+                Institution <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block px-4 pb-4">Philosophy</span>
               </h1>
               <p className="text-[#64779F] text-xl lg:text-2xl max-w-3xl mx-auto font-medium leading-relaxed">
                 The guiding principles that shape our vision, drive our mission, and define the core of KIOT's pursuit of excellence.

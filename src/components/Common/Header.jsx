@@ -16,7 +16,11 @@ import {
   Youtube,
   Building2,
   Target,
-  Users
+  Users,
+  GraduationCap,
+  Calendar,
+  FileText,
+  Home
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.webp'
@@ -39,7 +43,18 @@ const navLinks = [
   { name: 'Admissions', href: 'admissions', hasDropdown: true },
   { name: 'Placements', href: '#placements' },
   { name: 'Research & Innovations', href: 'research' },
-  { name: 'Resources', href: 'resources', hasDropdown: true },
+  { 
+    name: 'Resources', 
+    href: 'resources', 
+    hasDropdown: true,
+    subLinks: [
+      { name: 'Campus Life', href: 'campus-life', icon: Home },
+      { name: 'Student Life', href: 'student-life', icon: Users },
+      { name: 'Alumni', href: 'alumni', icon: GraduationCap },
+      { name: 'News & Events', href: 'news-events', icon: Calendar },
+      { name: 'Blogs', href: 'blogs', icon: FileText }
+    ]
+  },
   { name: 'Contact', href: 'contact' },
 ]
 
@@ -305,7 +320,7 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[100px] w-auto md:h-[88px] md:w-20 lg:h-[105px] lg:w-[98px] translate-y-2 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[115px] w-auto md:h-[88px] md:w-20 lg:h-[105px] lg:w-[98px] translate-y-2 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
