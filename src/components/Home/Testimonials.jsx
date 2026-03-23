@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Quote, Sparkles, Star, ChevronRight, UserCircle2, GraduationCap, Building2 } from 'lucide-react'
 
 // Assets
-import studentImg from '../../assets/testi_student.png'
-import alumniImg from '../../assets/testi_alumni.png'
-import recruiterImg from '../../assets/testi_recruiter.png'
-import techMahindraLogo from '../../assets/tech mahendra.png'
-import itcLogo from '../../assets/itc.png'
-import tessolveLogo from '../../assets/tessolve.png'
+import studentImg from '../../assets/testi_student.webp'
+import alumniImg from '../../assets/testi_alumni.webp'
+import recruiterImg from '../../assets/testi_recruiter.webp'
+import techMahindraLogo from '../../assets/tech mahendra.webp'
+import itcLogo from '../../assets/itc.webp'
+import tessolveLogo from '../../assets/tessolve.webp'
 
 const categories = ["Students", "Alumni", "Recruiters"]
 

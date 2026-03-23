@@ -18,11 +18,11 @@ import {
   Target,
   Users
 } from 'lucide-react'
-import logo from '../../assets/logo.png'
-import naacLogo from '../../assets/NAAC-Logo.png'
-import nirfLogo from '../../assets/nirf.png'
-import nbaLogo from '../../assets/NBA1 (1).png'
-import codeLogo from '../../assets/code.png'
+import logo from '../../assets/logo.webp'
+import naacLogo from '../../assets/NAAC-Logo.webp'
+import nirfLogo from '../../assets/nirf.webp'
+import nbaLogo from '../../assets/NBA1 (1).webp'
+import codeLogo from '../../assets/code.webp'
 
 const navLinks = [
   {

@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Calendar, ArrowLeft, Mic2, Brain, Megaphone, CheckCircle2, Trophy, MonitorPlay } from 'lucide-react'
 
-import symposiumImg from '../../assets/kiot_symposium.png'
-import labImg from '../../assets/kiot_lab.png'
-import campusImg from '../../assets/kiot-campus.png'
+import symposiumImg from '../../assets/kiot_symposium.webp'
+import labImg from '../../assets/kiot_lab.webp'
+import campusImg from '../../assets/kiot-campus.webp'
 
 const eventDatabase = {
   "College Symposium": [

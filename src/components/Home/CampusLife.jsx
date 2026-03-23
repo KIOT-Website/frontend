@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import { BookOpen, FlaskConical, Home, Trophy, Utensils, Bus, ArrowUpRight, Quote } from 'lucide-react'
 
 // Asset imports
-import libraryImg from '../../assets/kiot_library.png'
-import labImg from '../../assets/kiot_lab.png'
-import hostelImg from '../../assets/kiot_hostel.png'
-import sportsImg from '../../assets/kiot_sports.png'
-import cafeteriaImg from '../../assets/kiot_cafeteria.png'
-import transportImg from '../../assets/kiot_transport.png'
+import libraryImg from '../../assets/kiot_library.webp'
+import labImg from '../../assets/kiot_lab.webp'
+import hostelImg from '../../assets/kiot_hostel.webp'
+import sportsImg from '../../assets/kiot_sports.webp'
+import cafeteriaImg from '../../assets/kiot_cafeteria.webp'
+import transportImg from '../../assets/kiot_transport.webp'
 
 const facilities = [
   {

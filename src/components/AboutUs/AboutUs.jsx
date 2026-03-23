@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { BookOpen, Users, Trophy, Target, CheckCircle2, ArrowRight } from 'lucide-react'
-import campusImg from '../../assets/about campus.png'
+import campusImg from '../../assets/about campus.webp'
 
 const AboutUs = () => {
   return (

@@ -2,16 +2,16 @@ import { motion } from 'framer-motion'
 import { TrendingUp, GraduationCap, Building2, UserCheck, Briefcase } from 'lucide-react'
 
 // Recruiter Logos
-import techMahindraLogo from '../../assets/tech mahendra.png'
-import expleoLogo from '../../assets/ecpleo.png'
-import codingmartLogo from '../../assets/codingmart.png'
-import haritaLogo from '../../assets/harita.png'
-import hexawareLogo from '../../assets/hexaware.png'
-import itcLogo from '../../assets/itc.png'
-import neyesLogo from '../../assets/neyes.png'
-import raplLogo from '../../assets/rapl.png'
-import tefologicLogo from '../../assets/tefologic.png'
-import tessolveLogo from '../../assets/tessolve.png'
+import techMahindraLogo from '../../assets/tech mahendra.webp'
+import expleoLogo from '../../assets/ecpleo.webp'
+import codingmartLogo from '../../assets/codingmart.webp'
+import haritaLogo from '../../assets/harita.webp'
+import hexawareLogo from '../../assets/hexaware.webp'
+import itcLogo from '../../assets/itc.webp'
+import neyesLogo from '../../assets/neyes.webp'
+import raplLogo from '../../assets/rapl.webp'
+import tefologicLogo from '../../assets/tefologic.webp'
+import tessolveLogo from '../../assets/tessolve.webp'
 
 const stats = [
   {
