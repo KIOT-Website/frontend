@@ -305,7 +305,7 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[85px] w-auto md:h-[88px] md:w-20 lg:h-[105px] lg:w-[98px] translate-y-[5px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[100px] w-auto md:h-[88px] md:w-20 lg:h-[105px] lg:w-[98px] translate-y-2 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
@@ -323,7 +323,7 @@ const Header = () => {
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="h-[73px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="h-[60px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
                 />
                 
                 <button

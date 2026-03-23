@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle2, Quote, X, GraduationCap, Briefcase, Microscope, Heart } from 'lucide-react'
 
@@ -58,6 +58,16 @@ const visionGoals = [
 
 const Leadership = () => {
   const [selectedLeader, setSelectedLeader] = useState(null)
+ 
+  // Disable body scroll when modal is open
+  useEffect(() => {
+    if (selectedLeader) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [selectedLeader])
 
   return (
     <div className="relative bg-[#FCFDFD] pt-16 pb-20 min-h-screen overflow-hidden">
@@ -199,7 +209,7 @@ const Leadership = () => {
                {/* Message Body */}
                <div className="flex-1 p-10 lg:p-16 overflow-y-auto custom-scrollbar">
                   <Quote size={48} className="text-[#ffc107]/20 mb-6" />
-                  <h2 className="text-2xl lg:text-3xl font-black text-[#18357a] font-display mb-8">Management Message</h2>
+                  <h2 className="text-2xl lg:text-3xl font-black text-[#18357a] font-display mb-8">{selectedLeader.role} Message</h2>
                   <div className="space-y-6">
                     {selectedLeader.fullMessage.map((p, i) => (
                       <p key={i} className="text-[#64779F] text-sm lg:text-base font-medium leading-relaxed">

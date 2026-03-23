@@ -73,7 +73,7 @@ function App() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#18357a] to-[#ffc107] origin-left z-[9999]"
+            className="fixed top-0 left-0 right-0 h-1 bg-[#ffc107] origin-left z-[9999]"
             style={{ scaleX }}
           />
           
