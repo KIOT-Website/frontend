@@ -1,17 +1,17 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import GoverningCouncil from '../components/Contact/GoverningCouncil/GoverningCouncil'
+import TrainingOverview from '../components/Placements/TrainingOverview'
 
-const GoverningCouncilPage = () => {
+const TrainingOverviewPage = () => {
   return (
     <motion.div
        initial={{ opacity: 0 }}
        animate={{ opacity: 1 }}
        exit={{ opacity: 0 }}
     >
-       <GoverningCouncil />
+       <TrainingOverview />
     </motion.div>
   )
 }
 
-export default GoverningCouncilPage
+export default TrainingOverviewPage

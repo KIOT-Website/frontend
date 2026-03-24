@@ -20,7 +20,8 @@ import {
   GraduationCap,
   Calendar,
   FileText,
-  ShieldCheck
+  ShieldCheck,
+  Trophy
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.webp'
@@ -38,12 +39,23 @@ const navLinks = [
       { name: 'Vision & Mission', href: 'vision-mission', icon: Target },
       { name: 'Leadership', href: 'leadership', icon: Users },
       { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
-      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText }
+      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText },
+      { name: 'Achievements', href: 'awards-recognition', icon: Trophy }
     ]
   },
   { name: 'Academics', href: '#academics', hasDropdown: true },
   { name: 'Admissions', href: 'admissions', hasDropdown: true },
-  { name: 'Placements', href: '#placements' },
+  { 
+    name: 'Training & Placement', 
+    href: 'placements',
+    hasDropdown: true,
+    subLinks: [
+      { name: 'Overview', href: 'placement-overview', icon: Building2 },
+      { name: 'Training', href: 'training', icon: GraduationCap },
+      { name: 'Recruitment', href: 'recruitment', icon: Users },
+      { name: 'Outcomes', href: 'outcomes', icon: FileText }
+    ]
+  },
   { name: 'Research & Innovations', href: 'research' },
   { 
     name: 'Resources', 
@@ -93,6 +105,9 @@ const Header = () => {
       navigate('/')
       window.scrollTo(0, 0)
       setIsOpen(false)
+    } else if (['About', 'Academics', 'Resources', 'Admissions', 'Training & Placement'].includes(linkName)) {
+      // Prevent top-level dropdown items from navigating - they only toggle the menu
+      e.preventDefault()
     } else {
       e.preventDefault()
       if (href && href.startsWith('#')) {
@@ -289,26 +304,32 @@ const Header = () => {
                       
                       {/* Desktop Dropdown Submenu Container */}
                       {link.subLinks && (
-                        <div className="absolute top-[100%] left-0 w-56 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] before:content-[''] before:absolute before:top-[-15px] before:left-0 before:w-full before:h-[15px]">
+                        <div className="absolute top-[100%] left-0 w-64 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] before:content-[''] before:absolute before:top-[-15px] before:left-0 before:w-full before:h-[15px]">
                           {link.subLinks.map(sub => (
-                            <a
-                              key={sub.name}
-                              href={sub.href}
-                              onClick={(e) => handleNavClick(e, sub.name, sub.href)}
-                              className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
-                            >
-                              <span className="text-[15px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
-                              
-                              {/* Dynamic Icon Rendering */}
-                              <div className="absolute right-5 flex items-center justify-center w-5 h-5">
-                                 {sub.icon && (
-                                   <sub.icon 
-                                     size={16} 
-                                     className="text-[#A9B1C3] group-hover/sub:text-[#ffc107] transition-all duration-300 transform group-hover/sub:scale-110" 
-                                   />
-                                 )}
+                            sub.isHeader ? (
+                              <div key={sub.name} className="px-5 py-2.5 mt-2 first:mt-0 text-[11px] font-black text-[#18357a]/40 uppercase tracking-[0.2em] border-b border-[#D5E2F4]/30">
+                                 {sub.name}
                               </div>
-                            </a>
+                            ) : (
+                              <a
+                                key={sub.name}
+                                href={sub.href}
+                                onClick={(e) => handleNavClick(e, sub.name, sub.href)}
+                                className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
+                              >
+                                <span className="text-[15px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
+                                
+                                {/* Dynamic Icon Rendering */}
+                                <div className="absolute right-5 flex items-center justify-center w-5 h-5">
+                                   {sub.icon && (
+                                     <sub.icon 
+                                       size={16} 
+                                       className="text-[#A9B1C3] group-hover/sub:text-[#ffc107] transition-all duration-300 transform group-hover/sub:scale-110" 
+                                     />
+                                   )}
+                                </div>
+                              </a>
+                            )
                           ))}
                         </div>
                       )}
@@ -444,15 +465,21 @@ const Header = () => {
                               >
                                  <div className="py-2">
                                    {link.subLinks.map(sub => (
-                                     <a 
-                                       key={sub.name} 
-                                       href={sub.href} 
-                                       onClick={(e) => handleNavClick(e, sub.name, sub.href)} 
-                                       className="flex items-center gap-4 px-6 py-3.5 text-[13px] font-bold text-[#64779F] hover:text-[#18357a] hover:bg-white/50 transition-all group/subitem"
-                                     >
-                                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover/subitem:scale-125 transition-transform" />
-                                       <span>{sub.name}</span>
-                                     </a>
+                                     sub.isHeader ? (
+                                       <div key={sub.name} className="px-6 py-3 text-[10px] font-black text-[#18357a]/50 uppercase tracking-[0.2em] bg-[#18357a]/5 mb-1 mt-2 first:mt-0">
+                                          {sub.name}
+                                       </div>
+                                     ) : (
+                                       <a 
+                                         key={sub.name} 
+                                         href={sub.href} 
+                                         onClick={(e) => handleNavClick(e, sub.name, sub.href)} 
+                                         className="flex items-center gap-4 px-6 py-3.5 text-[13px] font-bold text-[#64779F] hover:text-[#18357a] hover:bg-white/50 transition-all group/subitem"
+                                       >
+                                         <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover/subitem:scale-125 transition-transform" />
+                                         <span>{sub.name}</span>
+                                       </a>
+                                     )
                                    ))}
                                  </div>
                               </motion.div>
