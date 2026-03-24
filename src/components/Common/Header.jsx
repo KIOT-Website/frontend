@@ -252,7 +252,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="Knowledge Institute of Technology"
-                  className="h-[52px] w-auto max-w-[210px] object-contain"
+                  className="h-[62px] w-auto max-w-[210px] object-contain"
                 />
               </a>
 
