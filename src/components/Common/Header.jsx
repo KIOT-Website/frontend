@@ -315,11 +315,11 @@ const Header = () => {
               </ul>
 
               <div className="flex items-center gap-2.5 sm:gap-4 lg:gap-6 pr-4 lg:pr-0 translate-y-[1.5px]">
-                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[130px] w-auto md:h-[88px] md:w-20 lg:h-[105px] lg:w-[98px] translate-y-2.5 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[88px] w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-2.5 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
@@ -337,7 +337,7 @@ const Header = () => {
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="h-[60px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="hidden md:block h-[60px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
                 />
                 
                 <button
