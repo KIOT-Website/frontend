@@ -26,7 +26,7 @@ import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.png'
 import nirfLogo from '../../assets/nirf.webp'
 import nbaLogo from '../../assets/NBA1 (1).webp'
-import codeLogo from '../../assets/code.webp'
+import codeLogo from '../../assets/counciling code.png'
 
 const navLinks = [
   {
@@ -179,10 +179,10 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden h-[24px] items-stretch bg-[#ffc107] lg:flex overflow-hidden">
+            <div className="hidden h-[28px] items-stretch bg-[#ffc107] lg:flex overflow-hidden">
               <div 
                 className="flex flex-1 items-stretch overflow-hidden bg-[#18357a] pl-32 pr-10"
-                style={{ clipPath: 'polygon(0 0, 96% 0, 100% 100%, 0 100%)' }}
+                style={{ clipPath: 'polygon(0 0, 92% 0, 100% 100%, 0 100%)' }}
               >
                 <div
                   className="flex items-center gap-16 whitespace-nowrap text-[12px] font-medium text-white/95 xl:text-[13px] animate-marquee hover:[animation-play-state:paused]"
@@ -229,24 +229,24 @@ const Header = () => {
               </div>
 
               <div className="flex shrink-0 items-center justify-end pr-10 overflow-hidden">
-                <div className="flex items-center gap-2.5 ml-8 translate-y-[-0.5px]">
+                <div className="flex items-center gap-2 ml-8 translate-y-[-0.5px]">
                    {socialLinks.map((social) => (
                      <a 
                        key={social.name} 
                        href={social.href}
                        target="_blank"
                        rel="noopener noreferrer"
-                       className="group flex h-[26px] w-[26px] items-center justify-center rounded-full border border-[#18357a]/20 bg-[#18357a]/5 hover:bg-[#18357a] hover:border-[#18357a] hover:shadow-[0_0_10px_rgba(24,53,122,0.3)] transition-all duration-300 hover:-translate-y-[1px]"
+                       className="group flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#18357a]/10 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm hover:shadow-md"
                        title={social.name}
                      >
-                       <social.icon size={14} strokeWidth={2.5} className="text-[#18357a] group-hover:text-white transition-colors" />
+                       <social.icon size={11} strokeWidth={2.5} />
                      </a>
                    ))}
                 </div>
               </div>
             </div>
 
-            <nav className="relative flex min-h-[72px] py-1 items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
+            <nav className="relative flex h-[76px] py-0.5 items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
               <a
                 href="#top"
                 onClick={(e) => handleNavClick(e, 'Home')}
@@ -259,7 +259,7 @@ const Header = () => {
                 />
               </a>
 
-              <ul className="hidden lg:flex lg:items-center lg:gap-3.5 xl:gap-5">
+              <ul className="hidden lg:flex lg:items-center lg:gap-3 xl:gap-6">
                 {navLinks.map((link) => {
                   const isActive = (link.name === 'Home' && location.pathname === '/') || (link.name === 'Contact' && location.pathname === '/contact')
 
@@ -322,25 +322,25 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[74px] lg:w-[78px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[94px] lg:w-[100px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={nirfLogo}
                   alt="NIRF Logo"
-                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[50px] lg:w-[50px] object-contain"
+                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain"
                 />
                 <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
                     src={nbaLogo}
                     alt="NBA Logo"
-                    className="h-14 w-14 md:h-16 md:w-16 lg:h-[50px] lg:w-[50px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="hidden md:block h-[110px] w-auto md:h-[72px] md:w-[72px] lg:h-[60px] lg:w-[60px] object-contain"
+                  className="hidden md:block h-[110px] w-auto md:h-[72px] md:w-[72px] lg:h-[76px] lg:w-[76px] object-contain"
                 />
                 
                 <button
