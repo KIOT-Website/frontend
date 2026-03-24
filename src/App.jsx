@@ -1,24 +1,32 @@
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Stats from './components/Stats'
-import Programs from './components/Programs'
-import Placements from './components/Placements'
-import CampusLife from './components/CampusLife'
-import Achievers from './components/Achievers'
-import Testimonials from './components/Testimonials'
-import Events from './components/Events'
-import Contact from './components/Contact'
-import EventsPage from './components/EventsPage'
-import AboutUs from './components/AboutUs'
-import VisionMission from './components/VisionMission'
-import Leadership from './components/Leadership'
-import ScrollToTop from './components/ScrollToTop'
-import Preloader from './components/Preloader'
-import Footer from './components/Footer'
-import UnderConstruction from './components/UnderConstruction'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+
+// Common Components (Loaded immediately as they are part of initial layout)
+import Header from './components/Common/Header'
+import ScrollToTop from './components/Common/ScrollToTop'
+import Preloader from './components/Common/Preloader'
+import Footer from './components/Common/Footer'
+
+// Page Components (Lazy Loaded for Performance)
+const Home = lazy(() => import('./pages/Home'))
+const AboutUsPage = lazy(() => import('./pages/AboutUsPage'))
+const VisionMissionPage = lazy(() => import('./pages/VisionMissionPage'))
+const LeadershipPage = lazy(() => import('./pages/LeadershipPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
+const EventsPage = lazy(() => import('./pages/EventsPage'))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
+
+// Simple Loading Fallback for Suspense (shown between route changes if slow)
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-[60vh] text-[#18357a]">
+    <motion.div
+      animate={{ rotate: 360 }}
+      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+      className="w-12 h-12 border-4 border-[#ffc107] border-t-transparent rounded-full"
+    />
+  </div>
+)
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -31,7 +39,7 @@ function App() {
     restDelta: 0.001
   })
 
-  // Block scroll while loading
+  // Prevent scroll while initial preloading
   useEffect(() => {
     if (loading) {
       document.body.style.overflow = 'hidden'
@@ -41,15 +49,15 @@ function App() {
     return () => { document.body.style.overflow = '' }
   }, [loading])
 
-  // Scroll to top on route change
+  // Reset scroll on route change
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
 
   return (
-    <div className="min-h-screen bg-[#FCFDFD] text-[#224292] overflow-x-hidden">
+    <div className="min-h-screen bg-[#FCFDFD] text-[#224292] font-sans selection:bg-[#ffc107]/20">
       
-      {/* Institutional Preloader */}
+      {/* 1. INITIAL PRELOADER */}
       <AnimatePresence mode="wait">
         {loading && <Preloader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
@@ -59,7 +67,9 @@ function App() {
            initial={{ opacity: 0 }}
            animate={{ opacity: 1 }}
            transition={{ duration: 0.5 }}
+           className="relative"
         >
+          {/* 2. PROGRESS BAR */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -67,110 +77,26 @@ function App() {
             style={{ scaleX }}
           />
           
-          {/* Header without old manual navigation mapping */}
+          {/* 3. CORE LAYOUT */}
           <Header />
 
-          <main className="pt-[114px]" id="top">
+          <main className="pt-[82px] md:pt-[82px] lg:pt-[114px] min-h-screen" id="top">
             <AnimatePresence mode="wait">
-              <Routes location={location} key={location.pathname}>
-                <Route path="/" element={
-                  <motion.div
-                    key="home"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <Hero />
-                    <Stats />
-                    <Programs />
-                    <Placements />
-                    <CampusLife />
-                    <Achievers />
-                    <Events />
-                    <Testimonials />
-                  </motion.div>
-                } />
-                
-                <Route path="/contact" element={
-                  <motion.div
-                    key="contact"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <Contact />
-                  </motion.div>
-                } />
-
-                <Route path="/about-us" element={
-                  <motion.div
-                    key="aboutUs"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <AboutUs />
-                  </motion.div>
-                } />
-
-                <Route path="/vision-mission" element={
-                  <motion.div
-                    key="visionMission"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <VisionMission />
-                  </motion.div>
-                } />
-
-                <Route path="/leadership" element={
-                  <motion.div
-                    key="leadership"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <Leadership />
-                  </motion.div>
-                } />
-                
-                <Route path="/events" element={
-                  <motion.div
-                    key="events"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <EventsPage />
-                  </motion.div>
-                } />
-                
-                {/* 404 / Under Construction Route */}
-                <Route path="*" element={
-                  <motion.div
-                    key="construction"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                  >
-                    <UnderConstruction />
-                  </motion.div>
-                } />
-              </Routes>
+              <Suspense fallback={<PageLoader />}>
+                <Routes location={location} key={location.pathname}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/about-us" element={<AboutUsPage />} />
+                  <Route path="/vision-mission" element={<VisionMissionPage />} />
+                  <Route path="/leadership" element={<LeadershipPage />} />
+                  <Route path="/events" element={<EventsPage />} />
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </Suspense>
             </AnimatePresence>
           </main>
 
-          {/* Site Footer */}
           <Footer />
-
-          {/* Global Scroll to Top Button */}
           <ScrollToTop />
         </motion.div>
       )}
