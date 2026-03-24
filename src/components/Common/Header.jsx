@@ -325,9 +325,9 @@ const Header = () => {
                 <img
                   src={nirfLogo}
                   alt="NIRF Logo"
-                  className="hidden lg:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
+                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
                 />
-                <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden lg:block">
+                <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
                     src={nbaLogo}
                     alt="NBA Logo"
@@ -337,7 +337,7 @@ const Header = () => {
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="block md:hidden lg:block h-[56px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="h-[56px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
                 />
                 
                 <button
