@@ -466,11 +466,11 @@ const Header = () => {
               </div>
 
               {/* Compliance/Accreditation Logos at the Bottom */}
-              <div className="p-6 pb-14 flex items-center justify-center gap-6 border-t border-[#D5E2F4]/50 bg-[#F8FAFC]/30">
-                <img src={naacLogo} alt="NAAC" className="h-[74px] w-auto object-contain shrink-0 drop-shadow-sm" />
-                <img src={nirfLogo} alt="NIRF" className="h-[52px] w-auto object-contain shrink-0 drop-shadow-sm" />
-                <img src={nbaLogo} alt="NBA" className="h-[52px] w-auto object-contain shrink-0 drop-shadow-sm" />
-                <img src={codeLogo} alt="Code" className="h-[60px] w-auto object-contain shrink-0 drop-shadow-sm" />
+              <div className="p-6 pt-14 pb-10 flex items-center justify-center gap-4 border-t border-[#D5E2F4]/50 bg-[#F8FAFC]/30 mt-auto">
+                <img src={naacLogo} alt="NAAC" className="h-[64px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={nirfLogo} alt="NIRF" className="h-[46px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={nbaLogo} alt="NBA" className="h-[46px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={codeLogo} alt="Code" className="h-[52px] w-auto object-contain shrink-0 drop-shadow-sm" />
               </div>
             </motion.div>
           </>
