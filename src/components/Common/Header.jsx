@@ -246,7 +246,7 @@ const Header = () => {
               </div>
             </div>
 
-            <nav className="relative flex h-[82px] items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
+            <nav className="relative flex min-h-[82px] py-1 items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
               <a
                 href="#top"
                 onClick={(e) => handleNavClick(e, 'Home')}
@@ -322,7 +322,7 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[74px] max-h-none w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
@@ -340,7 +340,7 @@ const Header = () => {
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="h-[74px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="h-[80px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
                 />
                 
                 <button
