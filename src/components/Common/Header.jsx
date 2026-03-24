@@ -22,7 +22,7 @@ import {
   FileText
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
-import naacLogo from '../../assets/NAAC-Logo.webp'
+import naacLogo from '../../assets/NAAC-Logo.png'
 import nirfLogo from '../../assets/nirf.webp'
 import nbaLogo from '../../assets/NBA1 (1).webp'
 import codeLogo from '../../assets/code.webp'
@@ -124,7 +124,7 @@ const Header = () => {
       <div className="border-b border-[#A9B1C3]/20 bg-white/92 shadow-[0_20px_60px_rgba(34,66,146,0.14)] backdrop-blur">
         <div className="flex items-stretch">
           <div
-            className="z-10 relative hidden shrink-0 overflow-hidden md:flex md:w-[250px] xl:w-[280px]"
+            className="z-10 relative hidden shrink-0 overflow-hidden lg:flex lg:w-[280px]"
             style={{ clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0 100%)' }}
           >
             <div className="absolute inset-0 bg-white" />
@@ -147,8 +147,8 @@ const Header = () => {
             </a>
           </div>
 
-          <div className="min-w-0 flex-1 ml-0 md:-ml-20 xl:-ml-24">
-            <div className="flex h-[32px] items-center bg-[#18357a] lg:hidden overflow-hidden">
+          <div className="min-w-0 flex-1 ml-0 lg:-ml-24">
+            <div className="flex h-[32px] items-center bg-[#18357a] md:hidden overflow-hidden">
               <div
                 className="flex items-center gap-10 whitespace-nowrap px-4 text-[12px] font-bold text-white animate-marquee hover:[animation-play-state:paused]"
                 style={{ animationDuration: '10s' }}
@@ -247,12 +247,12 @@ const Header = () => {
               <a
                 href="#top"
                 onClick={(e) => handleNavClick(e, 'Home')}
-                className="flex items-center md:hidden"
+                className="flex items-center lg:hidden"
               >
                 <img
                   src={logo}
                   alt="Knowledge Institute of Technology"
-                  className="h-[62px] w-auto max-w-[210px] object-contain"
+                  className="h-[54px] w-auto max-w-[210px] object-contain"
                 />
               </a>
 
@@ -315,19 +315,19 @@ const Header = () => {
               </ul>
 
               <div className="flex items-center gap-2.5 sm:gap-4 lg:gap-6 pr-4 lg:pr-0 translate-y-[1.5px]">
-                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
+                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer">
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[88px] w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-2.5 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[142px] w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={nirfLogo}
                   alt="NIRF Logo"
-                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
+                  className="hidden lg:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
                 />
-                <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
+                <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden lg:block">
                   <img
                     src={nbaLogo}
                     alt="NBA Logo"
@@ -337,7 +337,7 @@ const Header = () => {
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="hidden md:block h-[60px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="block md:hidden lg:block h-[56px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
                 />
                 
                 <button
