@@ -83,7 +83,7 @@ function App() {
           {/* 3. CORE LAYOUT */}
           <Header />
 
-          <main className="pt-[114px] md:pt-[114px] lg:pt-[104px] min-h-screen" id="top">
+          <main className="pt-[108px] md:pt-[108px] lg:pt-[104px] min-h-screen" id="top">
             <AnimatePresence mode="wait">
               <Suspense fallback={<PageLoader />}>
                 <Routes location={location} key={location.pathname}>
