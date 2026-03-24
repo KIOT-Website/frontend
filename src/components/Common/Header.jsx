@@ -340,7 +340,7 @@ const Header = () => {
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="h-[56px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="hidden md:block h-[56px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
                 />
                 
                 <button
