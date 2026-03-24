@@ -319,7 +319,7 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[142px] w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[160px] max-h-none w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
