@@ -1,156 +1,209 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { 
   GraduationCap, Layers, 
   Settings, Radio, Zap, Monitor, Building2, Globe, Briefcase, Brain, Cpu,
   ShieldCheck, CircuitBoard, CarFront, Code, TrendingUp, AppWindow, Rocket, FileCode2,
-  ArrowRight
+  ArrowRight, Search, Beaker, Landmark, Atom
 } from 'lucide-react'
 
-const programsData = [
-  {
-    id: 'UG',
+const programsData = {
+  UG: {
     title: 'Undergraduate',
     subtitle: 'B.E. / B.Tech Programmes',
+    icon: GraduationCap,
     description: 'Foundation for technical brilliance and engineering innovation.',
+    accent: '#ffc107',
     courses: [
-      { name: "B.E. Mechanical Engineering", icon: Settings },
-      { name: "B.E. Electronics and Communication", icon: Radio },
-      { name: "B.E. Electrical and Electronics", icon: Zap },
-      { name: "B.E. Computer Science and Engineering", icon: Monitor },
-      { name: "B.E. Civil Engineering", icon: Building2 },
-      { name: "B.Tech Information Technology", icon: Globe },
-      { name: "B.Tech Computer Science & Business", icon: Briefcase },
-      { name: "B.Tech AI and Data Science", icon: Brain },
-      { name: "B.E. Electronics and Computer Eng.", icon: Cpu }
-    ],
-    theme: 'bg-white',
-    accent: '#ffc107'
+      { name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
+      { name: "Electronics & Communication", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
+      { name: "Electrical & Electronics", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
+      { name: "Computer Science & Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
+      { name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
+      { name: "Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
+      { name: "Computer Science & Business", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
+      { name: "AI and Data Science", icon: Brain, code: "AIDS", duration: "4 Years", phd: true },
+      { name: "Electronics & Computer Eng.", icon: Cpu, code: "ECC", duration: "4 Years", phd: true }
+    ]
   },
-  {
-    id: 'PG',
+  PG: {
     title: 'Postgraduate',
     subtitle: 'M.E. / MBA / MCA Programmes',
+    icon: Layers,
     description: 'Advanced specialization and leadership in technology & management.',
+    accent: '#18357a',
     courses: [
-      { name: "M.E. Industrial Safety Engineering", icon: ShieldCheck },
-      { name: "M.E. VLSI Design", icon: CircuitBoard },
-      { name: "M.E. Automotive Electronics", icon: CarFront },
-      { name: "M.E. Embedded System Tech.", icon: Cpu },
-      { name: "M.E. Computer Science and Eng.", icon: Code },
-      { name: "Master of Business (MBA)", icon: TrendingUp },
-      { name: "MCA - Computer Applications", icon: AppWindow },
-      { name: "MBA in Innovation & Entrepreneurship", icon: Rocket },
-      { name: "M.E. Software Engineering", icon: FileCode2 }
-    ],
-    theme: 'bg-[#18357a]',
-    accent: '#ffc107'
+      { name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
+      { name: "VLSI Design", icon: CircuitBoard, code: "VLSI", duration: "2 Years", phd: true },
+      { name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
+      { name: "Embedded System Tech.", icon: Cpu, code: "EST", duration: "2 Years", phd: true },
+      { name: "Computer Science & Eng.", icon: Code, code: "MCSE", duration: "2 Years", phd: true },
+      { name: "Master of Business (MBA)", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
+      { name: "Computer Applications (MCA)", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
+      { name: "Innovation & Entrepreneurship", icon: Rocket, code: "MIE", duration: "2 Years", phd: true },
+      { name: "Software Engineering", icon: FileCode2, code: "MSE", duration: "2 Years", phd: true }
+    ]
+  },
+  PHD: {
+    title: 'Ph.D.',
+    subtitle: 'Doctoral / Research Depts',
+    icon: Search,
+    description: 'Recognized Research Centers for advanced doctoral studies and innovation across all disciplines.',
+    accent: '#ffc107',
+    courses: [
+      { name: "Engineering & Technology", icon: Settings, code: "PhD-ENG", duration: "Full Time / Part Time", phd: true },
+      { name: "Management Studies", icon: Landmark, code: "PhD-MS", duration: "Full Time / Part Time", phd: true },
+      { name: "Science & Humanities", icon: Beaker, code: "PhD-SNH", duration: "Full Time / Part Time", phd: true },
+      { name: "Mathematics", icon: TrendingUp, code: "PhD-MA", duration: "Full Time / Part Time", phd: true }
+    ]
   }
-]
+}
 
 const Programs = () => {
+  const [activeTab, setActiveTab] = useState('UG')
+
   return (
-    <section id="academics" className="relative py-12 lg:py-20 bg-[#F8FAFC]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+    <section id="academics" className="relative py-24 lg:py-32 bg-[#FCFDFD] overflow-hidden">
+      
+      {/* Dynamic Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-[#18357a]/5 to-transparent -z-10" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#ffc107]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-white to-transparent -z-10" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
-        {/* Header Content */}
-        <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-6 mb-12 lg:mb-16">
-          <div className="max-w-2xl text-center md:text-left">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 mb-4 bg-[#18357a]/5 px-3 py-1 rounded-full border border-[#18357a]/10"
-            >
-              <div className="h-1 w-4 bg-[#ffc107] rounded-full" />
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#18357a]">Academic Excellence</span>
-            </motion.div>
-            <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-display leading-[1.1]">
-              Diverse <span className="text-[#ffc107]">Programmes</span> <br />
-              Tailored for Success
-            </h2>
-          </div>
-          <p className="text-[#64779F] max-w-sm text-sm lg:text-base font-medium opacity-80 leading-relaxed text-center md:text-right">
-            Choose from our industry-aligned undergraduate and postgraduate courses designed to bridge the gap between academia and career.
-          </p>
+        {/* Modern Header Section */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-20 lg:mb-28">
+           <div className="max-w-3xl">
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 mb-6 bg-[#18357a]/5 px-4 py-1.5 rounded-full border border-[#18357a]/10"
+              >
+                <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107] animate-pulse" />
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Academic Excellence</span>
+              </motion.div>
+              
+              <h2 className="text-4xl lg:text-6xl font-black text-[#18357a] font-display mb-8 leading-[1.05]">
+                Shape Your <span className="text-[#ffc107]">Future</span> <br />
+                With Expert Learning
+              </h2>
+              
+              <p className="text-base lg:text-lg font-medium text-[#64779F] leading-relaxed max-w-xl">
+                 Discover a spectrum of industry-leading programmes designed to cultivate next-gen engineers and leaders.
+              </p>
+           </div>
+
+           {/* Tab Controls */}
+           <div className="flex p-1.5 bg-[#18357a]/5 rounded-[24px] border border-[#18357a]/10 self-start lg:self-end">
+              {Object.entries(programsData).map(([key, data]) => (
+                 <button
+                   key={key}
+                   onClick={() => setActiveTab(key)}
+                   className={`relative px-8 py-3.5 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${
+                     activeTab === key 
+                     ? 'text-white' 
+                     : 'text-[#18357a] hover:text-[#18357a] hover:bg-white/50'
+                   }`}
+                 >
+                    {activeTab === key && (
+                       <motion.div 
+                         layoutId="tab-bg"
+                         className="absolute inset-0 bg-[#18357a] rounded-2xl shadow-lg shadow-[#18357a]/20"
+                       />
+                    )}
+                    <span className="relative z-10">{data.title}</span>
+                 </button>
+              ))}
+           </div>
         </div>
 
-        {/* New Grid Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
-          {programsData.map((prog, idx) => (
-            <motion.div
-              key={prog.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.2 }}
-              className={`relative rounded-[40px] p-8 lg:p-12 overflow-hidden shadow-2xl border ${
-                prog.id === 'UG' 
-                ? 'bg-white border-white' 
-                : 'bg-[#18357a] border-[#1e3a8a] text-white'
-              }`}
-            >
-              {/* Background abstract element */}
-              <div className={`absolute top-0 right-0 w-64 h-64 rounded-full blur-[100px] pointer-events-none ${
-                prog.id === 'UG' ? 'bg-[#ffc107]/10' : 'bg-white/5'
-              }`} />
-
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg ${
-                    prog.id === 'UG' ? 'bg-[#18357a] text-[#ffc107]' : 'bg-[#ffc107] text-[#18357a]'
-                  }`}>
-                    {prog.id === 'UG' ? <GraduationCap size={28} /> : <Layers size={28} />}
-                  </div>
-                  <div>
-                    <h3 className={`text-2xl lg:text-3xl font-black font-display leading-none mb-2 ${
-                      prog.id === 'UG' ? 'text-[#18357a]' : 'text-white'
-                    }`}>
-                      {prog.title}
-                    </h3>
-                    <p className={`text-[10px] font-black uppercase tracking-[0.2em] ${
-                      prog.id === 'UG' ? 'text-[#ffc107]' : 'text-[#ffc107]'
-                    }`}>
-                      {prog.subtitle}
-                    </p>
-                  </div>
-                </div>
-
-                <p className={`text-sm lg:text-base font-medium mb-10 opacity-70 leading-relaxed ${
-                  prog.id === 'UG' ? 'text-[#64779F]' : 'text-white/70'
-                }`}>
-                  {prog.description}
-                </p>
-
-                {/* Course List */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mb-10">
-                  {prog.courses.map((course) => (
-                    <div key={course.name} className="flex items-start gap-3 group cursor-pointer">
-                      <div className={`mt-1 h-1.5 w-1.5 rounded-full shrink-0 group-hover:scale-150 transition-transform ${
-                        prog.id === 'UG' ? 'bg-[#18357a]/20 group-hover:bg-[#ffc107]' : 'bg-white/20 group-hover:bg-[#ffc107]'
-                      }`} />
-                      <span className={`text-[13px] lg:text-[14px] font-bold leading-tight transition-colors ${
-                        prog.id === 'UG' 
-                        ? 'text-[#64779F] group-hover:text-[#18357a]' 
-                        : 'text-white/60 group-hover:text-[#ffc107]'
-                      }`}>
-                        {course.name}
-                      </span>
+        {/* Category Features */}
+        <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-12 lg:gap-20 items-start">
+           
+           {/* Left Info Column */}
+           <motion.div
+             key={`info-${activeTab}`}
+             initial={{ opacity: 0, x: -20 }}
+             animate={{ opacity: 1, x: 0 }}
+             className="lg:sticky lg:top-32"
+           >
+              <div className="space-y-8">
+                 <div className="w-20 h-20 rounded-3xl bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-xl shadow-[#18357a]/20">
+                    <div className="scale-125">
+                       {activeTab === 'UG' ? <GraduationCap size={40} /> : activeTab === 'PG' ? <Layers size={40} /> : <Search size={40} />}
                     </div>
-                  ))}
-                </div>
+                 </div>
+                 
+                 <div>
+                    <h3 className="text-3xl lg:text-4xl font-black text-[#18357a] mb-4">{programsData[activeTab].subtitle}</h3>
+                    <p className="text-[#64779F] font-medium leading-relaxed">
+                       {programsData[activeTab].description}
+                    </p>
+                 </div>
 
-                {/* View Details CTA */}
-                <div className="mt-auto">
-                    <button className={`inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] group transition-all ${
-                      prog.id === 'UG' ? 'text-[#18357a]' : 'text-[#ffc107]'
-                    }`}>
-                      View Programme Details
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
-                </div>
+                 <div className="flex flex-col gap-4 text-sm font-bold text-[#18357a]">
+                    <div className="flex items-center gap-3">
+                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                       <span>Recognized Research Centers</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                       <span>Industry-Linked Curriculum</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                       <span>Advanced Lab Facilities</span>
+                    </div>
+                 </div>
+
+                 <button className="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-[#18357a] group mt-8">
+                    View full prospectus
+                    <ArrowRight size={16} className="text-[#ffc107] group-hover:translate-x-1 transition-transform" />
+                 </button>
               </div>
-            </motion.div>
-          ))}
+           </motion.div>
+
+           {/* Right Course Grid */}
+           <div className="grid sm:grid-cols-2 gap-5">
+              <AnimatePresence mode="popLayout">
+                 {programsData[activeTab].courses.map((course, idx) => (
+                    <motion.div
+                      key={course.name}
+                      layout
+                      initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.9, y: -10 }}
+                      transition={{ 
+                        duration: 0.3, 
+                        delay: idx * 0.05,
+                        layout: { duration: 0.3 }
+                      }}
+                      whileHover={{ y: -5 }}
+                      className="group bg-white p-7 rounded-[32px] border border-[#D5E2F4]/60 shadow-[0_15px_35px_rgba(24,53,122,0.03)] hover:shadow-[0_25px_50px_rgba(24,53,122,0.08)] transition-all cursor-pointer relative overflow-hidden"
+                    >
+                       {/* Abstract Accent */}
+                       <div className="absolute top-0 right-0 w-24 h-24 bg-[#18357a]/[0.02] rounded-full translate-x-1/2 -translate-y-1/2 transition-colors group-hover:bg-[#ffc107]/10" />
+                       
+                       <div className="flex items-start justify-between mb-6">
+                          <div className="w-12 h-12 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#ffc107] transition-all group-hover:bg-[#18357a]">
+                             <course.icon size={22} />
+                          </div>
+                          <span className="text-[9px] font-black text-[#64779F]/40 tracking-widest uppercase">{course.code}</span>
+                       </div>
+
+                       <h4 className="text-[17px] font-black text-[#18357a] mb-2 leading-tight group-hover:text-[#18357a] transition-colors pr-8">
+                          {course.name}
+                       </h4>
+                       <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold text-[#64779F] opacity-70 group-hover:opacity-100 transition-opacity">
+                          <span>{course.duration}</span>
+                       </div>
+                    </motion.div>
+                 ))}
+              </AnimatePresence>
+           </div>
+
         </div>
 
       </div>

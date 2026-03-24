@@ -10,9 +10,12 @@ import Footer from './components/Common/Footer'
 
 // Page Components (Lazy Loaded for Performance)
 const Home = lazy(() => import('./pages/Home'))
-const AboutUsPage = lazy(() => import('./pages/AboutUsPage'))
-const VisionMissionPage = lazy(() => import('./pages/VisionMissionPage'))
-const LeadershipPage = lazy(() => import('./pages/LeadershipPage'))
+import AboutUsPage from './pages/AboutUsPage'
+import VisionMissionPage from './pages/VisionMissionPage'
+import LeadershipPage from './pages/LeadershipPage'
+import AccreditationPage from './pages/AccreditationPage'
+import GoverningCouncilPage from './pages/GoverningCouncilPage'
+
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const EventsPage = lazy(() => import('./pages/EventsPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
@@ -89,6 +92,8 @@ function App() {
                   <Route path="/about-us" element={<AboutUsPage />} />
                   <Route path="/vision-mission" element={<VisionMissionPage />} />
                   <Route path="/leadership" element={<LeadershipPage />} />
+                  <Route path="/accreditation-ranking" element={<AccreditationPage />} />
+                  <Route path="/governing-council" element={<GoverningCouncilPage />} />
                   <Route path="/events" element={<EventsPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>

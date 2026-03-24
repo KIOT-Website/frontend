@@ -19,7 +19,8 @@ import {
   Users,
   GraduationCap,
   Calendar,
-  FileText
+  FileText,
+  ShieldCheck
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.webp'
@@ -35,7 +36,9 @@ const navLinks = [
     subLinks: [
       { name: 'About Us', href: 'about-us', icon: Building2 },
       { name: 'Vision & Mission', href: 'vision-mission', icon: Target },
-      { name: 'Leadership', href: 'leadership', icon: Users }
+      { name: 'Leadership', href: 'leadership', icon: Users },
+      { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
+      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText }
     ]
   },
   { name: 'Academics', href: '#academics', hasDropdown: true },

@@ -92,8 +92,8 @@ const Leadership = () => {
                </span>
                <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">The Minds Behind KIOT</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-[5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.15] py-2">
-              Leadership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block px-4 pb-4">Voices</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.1] py-2">
+              Leadership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block px-4 pb-4 uppercase">Voices</span>
             </h1>
             <p className="text-[#64779F] text-xl lg:text-2xl max-w-3xl mx-auto font-medium leading-relaxed">
               Meet the visionaries who are steering KIOT towards a future of global excellence and technical leadership.
