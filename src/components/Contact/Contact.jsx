@@ -19,6 +19,7 @@ const priorityContacts = [
     phone: "0427 2433917",
     email: "pat@kiot.ac.in",
     isPriority: true,
+    whatsapp: "https://wa.me/914272433917",
     icon: TrendingUp,
     desc: "Career opportunities and industry collaborations."
   },
@@ -28,6 +29,7 @@ const priorityContacts = [
     phone: "95009 41414",
     email: "principal@kiot.ac.in",
     isPriority: true,
+    whatsapp: "https://wa.me/919500941414",
     icon: User,
     desc: "Institutional administration and academic leadership."
   }
