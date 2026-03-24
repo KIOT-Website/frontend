@@ -386,7 +386,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="KIOT"
-                  className="h-9 w-auto object-contain"
+                  className="h-11 w-auto object-contain"
                 />
                 <button
                   onClick={() => setIsOpen(false)}
@@ -396,14 +396,6 @@ const Header = () => {
                 </button>
               </div>
               
-              {/* Compliance/Accreditation Logos in Mobile Menu */}
-              <div className="px-6 py-5 flex items-center justify-start gap-5 border-b border-[#D5E2F4]/40 bg-[#F8FAFC]/50 overflow-x-auto no-scrollbar">
-                <img src={naacLogo} alt="NAAC" className="h-[64px] w-auto object-contain shrink-0" />
-                <img src={nirfLogo} alt="NIRF" className="h-[48px] w-auto object-contain shrink-0" />
-                <img src={nbaLogo} alt="NBA" className="h-[48px] w-auto object-contain shrink-0" />
-                <img src={codeLogo} alt="Code" className="h-[56px] w-auto object-contain shrink-0" />
-              </div>
-
               {/* Navigation Links */}
               <div className="flex-1 overflow-y-auto px-6 py-6">
                 <div className="space-y-2">
@@ -473,19 +465,12 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="p-6 pb-10 flex justify-center gap-4 border-t border-[#D5E2F4]/50">
-                {socialLinks.map((social) => (
-                  <a 
-                    key={social.name} 
-                    href={social.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"
-                    title={social.name}
-                  >
-                    <social.icon size={20} strokeWidth={2.5} />
-                  </a>
-                ))}
+              {/* Compliance/Accreditation Logos at the Bottom */}
+              <div className="p-6 pb-14 flex items-center justify-center gap-6 border-t border-[#D5E2F4]/50 bg-[#F8FAFC]/30">
+                <img src={naacLogo} alt="NAAC" className="h-[74px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={nirfLogo} alt="NIRF" className="h-[52px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={nbaLogo} alt="NBA" className="h-[52px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={codeLogo} alt="Code" className="h-[60px] w-auto object-contain shrink-0 drop-shadow-sm" />
               </div>
             </motion.div>
           </>
