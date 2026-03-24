@@ -236,7 +236,7 @@ const Header = () => {
                        href={social.href}
                        target="_blank"
                        rel="noopener noreferrer"
-                       className="group flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#18357a]/10 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm hover:shadow-md"
+                       className="group flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#18357a]/10 text-[#18357a] transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm hover:shadow-md"
                        title={social.name}
                      >
                        <social.icon size={11} strokeWidth={2.5} />
@@ -297,7 +297,7 @@ const Header = () => {
                               onClick={(e) => handleNavClick(e, sub.name, sub.href)}
                               className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
                             >
-                              <span className="text-[15px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
+                              <span className="text-[14.5px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
                               
                               {/* Dynamic Icon Rendering */}
                               <div className="absolute right-5 flex items-center justify-center w-5 h-5">
