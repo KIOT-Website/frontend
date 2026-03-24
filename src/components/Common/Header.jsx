@@ -179,7 +179,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden h-[32px] items-stretch bg-[#ffc107] lg:flex overflow-hidden">
+            <div className="hidden h-[24px] items-stretch bg-[#ffc107] lg:flex overflow-hidden">
               <div 
                 className="flex flex-1 items-stretch overflow-hidden bg-[#18357a] pl-32 pr-10"
                 style={{ clipPath: 'polygon(0 0, 96% 0, 100% 100%, 0 100%)' }}
@@ -246,7 +246,7 @@ const Header = () => {
               </div>
             </div>
 
-            <nav className="relative flex min-h-[82px] py-1 items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
+            <nav className="relative flex min-h-[72px] py-1 items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
               <a
                 href="#top"
                 onClick={(e) => handleNavClick(e, 'Home')}
@@ -322,25 +322,25 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[74px] lg:w-[78px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={nirfLogo}
                   alt="NIRF Logo"
-                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
+                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[50px] lg:w-[50px] object-contain"
                 />
                 <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
                     src={nbaLogo}
                     alt="NBA Logo"
-                    className="h-14 w-14 md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-14 w-14 md:h-16 md:w-16 lg:h-[50px] lg:w-[50px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="hidden md:block h-[110px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="hidden md:block h-[110px] w-auto md:h-[72px] md:w-[72px] lg:h-[60px] lg:w-[60px] object-contain"
                 />
                 
                 <button
@@ -466,7 +466,7 @@ const Header = () => {
               </div>
 
               {/* Compliance/Accreditation Logos at the Bottom */}
-              <div className="p-6 pt-14 pb-10 flex items-center justify-center gap-4 border-t border-[#D5E2F4]/50 bg-[#F8FAFC]/30 mt-auto">
+              <div className="p-3 pt-6 pb-4 flex items-center justify-center gap-3 border-t border-[#D5E2F4]/50 bg-[#F8FAFC]/30 mt-auto">
                 <img src={naacLogo} alt="NAAC" className="h-[64px] w-auto object-contain shrink-0 drop-shadow-sm" />
                 <img src={nirfLogo} alt="NIRF" className="h-[46px] w-auto object-contain shrink-0 drop-shadow-sm" />
                 <img src={nbaLogo} alt="NBA" className="h-[46px] w-auto object-contain shrink-0 drop-shadow-sm" />
