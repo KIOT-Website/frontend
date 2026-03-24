@@ -318,7 +318,7 @@ const Header = () => {
               </ul>
 
               <div className="flex items-center gap-2.5 sm:gap-4 lg:gap-6 pr-4 lg:pr-0 translate-y-[1.5px]">
-                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
@@ -340,7 +340,7 @@ const Header = () => {
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="h-[80px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="hidden md:block h-[110px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
                 />
                 
                 <button
@@ -379,10 +379,10 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed left-0 top-0 bottom-0 z-[101] w-[85%] max-w-[320px] bg-white shadow-2xl flex flex-col lg:hidden"
+              className="fixed left-0 top-0 bottom-0 z-[101] w-[85%] max-w-[360px] bg-white shadow-2xl flex flex-col lg:hidden"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between p-6 border-b border-[#D5E2F4]">
+              <div className="flex items-center justify-between p-6">
                 <img
                   src={logo}
                   alt="KIOT"
@@ -394,6 +394,14 @@ const Header = () => {
                 >
                   <X size={18} />
                 </button>
+              </div>
+              
+              {/* Compliance/Accreditation Logos in Mobile Menu */}
+              <div className="px-6 py-5 flex items-center justify-start gap-5 border-b border-[#D5E2F4]/40 bg-[#F8FAFC]/50 overflow-x-auto no-scrollbar">
+                <img src={naacLogo} alt="NAAC" className="h-[64px] w-auto object-contain shrink-0" />
+                <img src={nirfLogo} alt="NIRF" className="h-[48px] w-auto object-contain shrink-0" />
+                <img src={nbaLogo} alt="NBA" className="h-[48px] w-auto object-contain shrink-0" />
+                <img src={codeLogo} alt="Code" className="h-[56px] w-auto object-contain shrink-0" />
               </div>
 
               {/* Navigation Links */}
