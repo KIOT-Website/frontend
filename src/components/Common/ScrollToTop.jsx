@@ -40,11 +40,11 @@ const ScrollToTop = () => {
           initial={{ opacity: 0, scale: 0.5, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
-          className="fixed bottom-8 right-8 z-[9999]"
+          className="fixed bottom-6 right-6 z-[9999]"
         >
           <button
             onClick={scrollToTop}
-            className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_15px_40px_rgba(34,66,146,0.15)] transition-all hover:bg-[#18357a] hover:shadow-[0_20px_50px_rgba(34,66,146,0.25)]"
+            className="group relative flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-[0_15px_40px_rgba(34,66,146,0.15)] transition-all hover:bg-[#18357a] hover:shadow-[0_20px_50px_rgba(34,66,146,0.25)]"
           >
             {/* SVG Progress Circle */}
             <svg className="absolute h-full w-full -rotate-90 p-1">
@@ -72,7 +72,7 @@ const ScrollToTop = () => {
 
             {/* Icon */}
             <ChevronUp 
-              className="relative z-10 h-6 w-6 text-[#18357a] transition-all group-hover:scale-125 group-hover:text-white" 
+              className="relative z-10 h-5 w-5 text-[#18357a] transition-all group-hover:scale-125 group-hover:text-white" 
             />
           </button>
         </motion.div>

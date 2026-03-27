@@ -21,7 +21,8 @@ export default {
         }
       },
       fontFamily: {
-        ans: ['Inter', 'sans-serif'],
+        sans: ["Plus Jakarta Sans", "sans-serif"],
+        display: ["Outfit", "sans-serif"],
       }
     },
   },
