@@ -10,9 +10,17 @@ import Footer from './components/Common/Footer'
 
 // Page Components (Lazy Loaded for Performance)
 const Home = lazy(() => import('./pages/Home'))
-const AboutUsPage = lazy(() => import('./pages/AboutUsPage'))
-const VisionMissionPage = lazy(() => import('./pages/VisionMissionPage'))
-const LeadershipPage = lazy(() => import('./pages/LeadershipPage'))
+import AboutUsPage from './pages/AboutUsPage'
+import VisionMissionPage from './pages/VisionMissionPage'
+import LeadershipPage from './pages/LeadershipPage'
+import AccreditationPage from './pages/AccreditationPage'
+import GoverningCouncilPage from './pages/GoverningCouncilPage'
+import AwardsRecognitionPage from './pages/AwardsRecognitionPage'
+import PlacementOverviewPage from './pages/PlacementOverviewPage'
+import TrainingOverviewPage from './pages/TrainingOverviewPage'
+import RecruitmentProcessPage from './pages/RecruitmentProcessPage'
+import OutcomesOverviewPage from './pages/OutcomesOverviewPage'
+
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const EventsPage = lazy(() => import('./pages/EventsPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
@@ -80,7 +88,7 @@ function App() {
           {/* 3. CORE LAYOUT */}
           <Header />
 
-          <main className="pt-[82px] md:pt-[82px] lg:pt-[114px] min-h-screen" id="top">
+          <main className="pt-[108px] md:pt-[108px] lg:pt-[104px] min-h-screen" id="top">
             <AnimatePresence mode="wait">
               <Suspense fallback={<PageLoader />}>
                 <Routes location={location} key={location.pathname}>
@@ -89,6 +97,16 @@ function App() {
                   <Route path="/about-us" element={<AboutUsPage />} />
                   <Route path="/vision-mission" element={<VisionMissionPage />} />
                   <Route path="/leadership" element={<LeadershipPage />} />
+                  <Route path="/accreditation-ranking" element={<AccreditationPage />} />
+                  <Route path="/governing-council" element={<GoverningCouncilPage />} />
+                  <Route path="/awards-recognition" element={<AwardsRecognitionPage />} />
+                  
+                  {/* Training & Placement Category Pages */}
+                  <Route path="/placement-overview" element={<PlacementOverviewPage />} />
+                  <Route path="/training" element={<TrainingOverviewPage />} />
+                  <Route path="/recruitment" element={<RecruitmentProcessPage />} />
+                  <Route path="/outcomes" element={<OutcomesOverviewPage />} />
+
                   <Route path="/events" element={<EventsPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>

@@ -19,13 +19,14 @@ import {
   Users,
   GraduationCap,
   Calendar,
-  FileText
+  FileText,
+  ShieldCheck
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.png'
 import nirfLogo from '../../assets/nirf.webp'
 import nbaLogo from '../../assets/NBA1 (1).webp'
-import codeLogo from '../../assets/code.webp'
+import codeLogo from '../../assets/counciling code.png'
 
 const navLinks = [
   {
@@ -35,7 +36,9 @@ const navLinks = [
     subLinks: [
       { name: 'About Us', href: 'about-us', icon: Building2 },
       { name: 'Vision & Mission', href: 'vision-mission', icon: Target },
-      { name: 'Leadership', href: 'leadership', icon: Users }
+      { name: 'Leadership', href: 'leadership', icon: Users },
+      { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
+      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText }
     ]
   },
   { name: 'Academics', href: '#academics', hasDropdown: true },
@@ -176,10 +179,10 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden h-[32px] items-stretch bg-[#ffc107] lg:flex overflow-hidden">
+            <div className="hidden h-[28px] items-stretch bg-[#ffc107] lg:flex overflow-hidden">
               <div 
                 className="flex flex-1 items-stretch overflow-hidden bg-[#18357a] pl-32 pr-10"
-                style={{ clipPath: 'polygon(0 0, 96% 0, 100% 100%, 0 100%)' }}
+                style={{ clipPath: 'polygon(0 0, 92% 0, 100% 100%, 0 100%)' }}
               >
                 <div
                   className="flex items-center gap-16 whitespace-nowrap text-[12px] font-medium text-white/95 xl:text-[13px] animate-marquee hover:[animation-play-state:paused]"
@@ -226,24 +229,24 @@ const Header = () => {
               </div>
 
               <div className="flex shrink-0 items-center justify-end pr-10 overflow-hidden">
-                <div className="flex items-center gap-2.5 ml-8 translate-y-[-0.5px]">
+                <div className="flex items-center gap-2 ml-8 translate-y-[-0.5px]">
                    {socialLinks.map((social) => (
                      <a 
                        key={social.name} 
                        href={social.href}
                        target="_blank"
                        rel="noopener noreferrer"
-                       className="group flex h-[26px] w-[26px] items-center justify-center rounded-full border border-[#18357a]/20 bg-[#18357a]/5 hover:bg-[#18357a] hover:border-[#18357a] hover:shadow-[0_0_10px_rgba(24,53,122,0.3)] transition-all duration-300 hover:-translate-y-[1px]"
+                       className="group flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#18357a]/10 text-[#18357a] transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm hover:shadow-md"
                        title={social.name}
                      >
-                       <social.icon size={14} strokeWidth={2.5} className="text-[#18357a] group-hover:text-white transition-colors" />
+                       <social.icon size={11} strokeWidth={2.5} />
                      </a>
                    ))}
                 </div>
               </div>
             </div>
 
-            <nav className="relative flex h-[82px] items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
+            <nav className="relative flex h-[76px] py-0.5 items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
               <a
                 href="#top"
                 onClick={(e) => handleNavClick(e, 'Home')}
@@ -256,7 +259,7 @@ const Header = () => {
                 />
               </a>
 
-              <ul className="hidden lg:flex lg:items-center lg:gap-3.5 xl:gap-5">
+              <ul className="hidden lg:flex lg:items-center lg:gap-3 xl:gap-6">
                 {navLinks.map((link) => {
                   const isActive = (link.name === 'Home' && location.pathname === '/') || (link.name === 'Contact' && location.pathname === '/contact')
 
@@ -294,7 +297,7 @@ const Header = () => {
                               onClick={(e) => handleNavClick(e, sub.name, sub.href)}
                               className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
                             >
-                              <span className="text-[15px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
+                              <span className="text-[14.5px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
                               
                               {/* Dynamic Icon Rendering */}
                               <div className="absolute right-5 flex items-center justify-center w-5 h-5">
@@ -315,29 +318,29 @@ const Header = () => {
               </ul>
 
               <div className="flex items-center gap-2.5 sm:gap-4 lg:gap-6 pr-4 lg:pr-0 translate-y-[1.5px]">
-                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[160px] max-h-none w-auto md:w-20 lg:h-[105px] lg:w-[98px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[94px] lg:w-[100px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={nirfLogo}
                   alt="NIRF Logo"
-                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain"
+                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain"
                 />
                 <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
                     src={nbaLogo}
                     alt="NBA Logo"
-                    className="h-14 w-14 md:h-16 md:w-16 lg:h-[74px] lg:w-[74px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="h-[56px] w-auto md:h-[72px] md:w-[72px] lg:h-[84px] lg:w-[84px] object-contain"
+                  className="hidden md:block h-[110px] w-auto md:h-[72px] md:w-[72px] lg:h-[76px] lg:w-[76px] object-contain"
                 />
                 
                 <button
@@ -376,14 +379,14 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed left-0 top-0 bottom-0 z-[101] w-[85%] max-w-[320px] bg-white shadow-2xl flex flex-col lg:hidden"
+              className="fixed left-0 top-0 bottom-0 z-[101] w-[85%] max-w-[360px] bg-white shadow-2xl flex flex-col lg:hidden"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between p-6 border-b border-[#D5E2F4]">
+              <div className="flex items-center justify-between p-6">
                 <img
                   src={logo}
                   alt="KIOT"
-                  className="h-9 w-auto object-contain"
+                  className="h-11 w-auto object-contain"
                 />
                 <button
                   onClick={() => setIsOpen(false)}
@@ -392,7 +395,7 @@ const Header = () => {
                   <X size={18} />
                 </button>
               </div>
-
+              
               {/* Navigation Links */}
               <div className="flex-1 overflow-y-auto px-6 py-6">
                 <div className="space-y-2">
@@ -462,19 +465,12 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="p-6 pb-10 flex justify-center gap-4 border-t border-[#D5E2F4]/50">
-                {socialLinks.map((social) => (
-                  <a 
-                    key={social.name} 
-                    href={social.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-1"
-                    title={social.name}
-                  >
-                    <social.icon size={20} strokeWidth={2.5} />
-                  </a>
-                ))}
+              {/* Compliance/Accreditation Logos at the Bottom */}
+              <div className="p-3 pt-6 pb-4 flex items-center justify-center gap-3 border-t border-[#D5E2F4]/50 bg-[#F8FAFC]/30 mt-auto">
+                <img src={naacLogo} alt="NAAC" className="h-[64px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={nirfLogo} alt="NIRF" className="h-[46px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={nbaLogo} alt="NBA" className="h-[46px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={codeLogo} alt="Code" className="h-[52px] w-auto object-contain shrink-0 drop-shadow-sm" />
               </div>
             </motion.div>
           </>
