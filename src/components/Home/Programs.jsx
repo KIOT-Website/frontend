@@ -65,9 +65,6 @@ const Programs = () => {
   return (
     <section id="academics" className="relative py-24 lg:py-32 bg-[#FCFDFD] overflow-hidden">
       
-      {/* Dynamic Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-[#18357a]/5 to-transparent -z-10" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#ffc107]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-white to-transparent -z-10" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
@@ -110,7 +107,7 @@ const Programs = () => {
                     {activeTab === key && (
                        <motion.div 
                          layoutId="tab-bg"
-                         className="absolute inset-0 bg-[#18357a] rounded-2xl shadow-lg shadow-[#18357a]/20"
+                         className="absolute inset-0 bg-[#18357a] rounded-2xl shadow-lg"
                        />
                     )}
                     <span className="relative z-10">{data.title}</span>
@@ -181,7 +178,7 @@ const Programs = () => {
                         layout: { duration: 0.3 }
                       }}
                       whileHover={{ y: -5 }}
-                      className="group bg-white p-7 rounded-[32px] border border-[#D5E2F4]/60 shadow-[0_15px_35px_rgba(24,53,122,0.03)] hover:shadow-[0_25px_50px_rgba(24,53,122,0.08)] transition-all cursor-pointer relative overflow-hidden"
+                      className="group bg-white p-7 rounded-[32px] border border-[#D5E2F4]/60 shadow-[0_15px_35px_rgba(24,53,122,0.03)] transition-all cursor-pointer relative overflow-hidden"
                     >
                        {/* Abstract Accent */}
                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#18357a]/[0.02] rounded-full translate-x-1/2 -translate-y-1/2 transition-colors group-hover:bg-[#ffc107]/10" />

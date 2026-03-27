@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BookOpen, Users, Trophy, Target, CheckCircle2, ArrowRight, ArrowDown } from 'lucide-react'
 import campusImg from '../../assets/about campus.webp'
-import kiotCampus from '../../assets/kiot-campus.webp'
-import kiotLibrary from '../../assets/kiot_library.webp'
-import kiotLab from '../../assets/kiot_lab.webp'
 
 const AboutUs = () => {
   const [showAcademicStats, setShowAcademicStats] = useState(false);
@@ -14,7 +11,6 @@ const AboutUs = () => {
       
       {/* Decorative Brand Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none" />
       <div className="absolute -top-10 -left-10 w-40 h-40 bg-[radial-gradient(#18357a_2px,transparent_2px)] [background-size:16px_16px] opacity-10" />
 
       <section className="relative px-5 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
@@ -147,22 +143,28 @@ const AboutUs = () => {
            </motion.div>
         </div>
 
-        {/* Mini Gallery Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-           {[kiotCampus, kiotLibrary, kiotLab].map((img, idx) => (
-             <motion.div
-               key={idx}
-               initial={{ opacity: 0, y: 30 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: idx * 0.1, duration: 0.5 }}
-               className="relative group h-48 sm:h-64 rounded-3xl overflow-hidden shadow-xl"
-             >
-                <img src={img} alt={`KIOT View ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-             </motion.div>
-           ))}
-        </div>
+        {/* YouTube Video Section */}
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.8 }}
+           className="mt-16 lg:mt-24 max-w-4xl mx-auto px-4"
+        >
+           <div className="relative w-full aspect-video rounded-[2.5rem] overflow-hidden border-4 border-white">
+              <iframe
+                 className="absolute inset-0 w-full h-full"
+                 src="https://www.youtube.com/embed/EaYFykcBtEs"
+                 title="KIOT Institutional Video"
+                 frameBorder="0"
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                 allowFullScreen
+              ></iframe>
+           </div>
+           <div className="text-center mt-8">
+              <p className="text-sm font-black text-[#64779F] uppercase tracking-[0.2em]">Experience our campus life</p>
+           </div>
+        </motion.div>
 
       </section>
     </div>

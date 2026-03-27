@@ -87,44 +87,62 @@ const CampusLife = () => {
            </p>
         </div>
 
-        {/* FACILITY GRID (Option 1 BEST: Image + Floating Info) */}
+        {/* FACILITY GRID — Premium Image-Top Card Design */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
            {facilities.map((fac, idx) => (
              <motion.div
                key={fac.id}
-               initial={{ opacity: 0, y: 20 }}
+               initial={{ opacity: 0, y: 30 }}
                whileInView={{ opacity: 1, y: 0 }}
-               transition={{ delay: idx * 0.1 }}
-               className="group relative h-[320px] lg:h-[400px] rounded-[32px] overflow-hidden cursor-pointer shadow-[0_20px_50px_rgba(34,66,146,0.06)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.12)] transition-all duration-700"
+               viewport={{ once: true }}
+               transition={{ delay: idx * 0.1, duration: 0.5 }}
+               className="group flex flex-col rounded-[28px] cursor-pointer bg-white border border-[#e8eef7] shadow-[0_8px_32px_rgba(24,53,122,0.07)] hover:shadow-[0_24px_64px_rgba(24,53,122,0.16)] hover:-translate-y-2 transition-all duration-500"
              >
-                {/* Image Background with Hover Zoom */}
-                <div className="absolute inset-0 z-0">
-                   <img 
-                     src={fac.image} 
-                     alt={fac.title + " - campus facility at KIOT"} 
-                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                {/* Image Area */}
+                 <div className="relative h-52 lg:h-60 overflow-hidden rounded-t-[28px]">
+                   <img
+                     src={fac.image}
+                     alt={fac.title + " - campus facility at KIOT"}
+                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                     style={{ transformOrigin: 'center center' }}
                      loading="lazy"
                    />
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/90 via-[#18357a]/20 to-transparent" />
-                </div>
+                   {/* Gradient overlay */}
+                   <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 via-transparent to-transparent" />
 
-                {/* Floating Tag (Top Right) */}
-                <div className="absolute top-6 right-6 z-20">
-                   <div className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 text-white text-[10px] font-black uppercase tracking-widest translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                      {fac.tag}
+                   {/* Tag pill (top-left) */}
+                   <div className="absolute top-4 left-4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white text-[10px] font-bold uppercase tracking-widest">
+                        {fac.tag}
+                      </span>
                    </div>
                 </div>
 
-                {/* Info Card (Bottom) */}
-                <div className="absolute inset-x-0 bottom-0 p-8 z-10">
-                   <div className="bg-white/95 backdrop-blur-md p-6 lg:p-8 rounded-[24px] shadow-2xl border border-white/50 group-hover:-translate-y-2 transition-transform duration-500">
-                      <div className="flex items-start justify-between mb-4">
-                         <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-xl bg-[#18357a] text-white flex items-center justify-center shadow-lg group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-colors">
-                            <fac.icon size={20} className="lg:w-6 lg:h-6" />
-                         </div>
+                {/* Icon badge — outside overflow-hidden, overlapping image/content boundary */}
+                <div className="relative">
+                   <div className="absolute -top-6 right-6 z-10">
+                      <div className="h-12 w-12 rounded-2xl bg-[#18357a] text-white flex items-center justify-center shadow-[0_8px_24px_rgba(24,53,122,0.35)] group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-colors duration-500 border-2 border-white">
+                         <fac.icon size={20} />
                       </div>
-                      <h3 className="text-xl lg:text-2xl font-black text-[#18357a] font-display mb-2">{fac.title}</h3>
-                      <p className="text-xs lg:text-sm font-medium text-[#64779F] leading-relaxed pr-4">{fac.desc}</p>
+                   </div>
+                </div>
+
+                {/* Content Area */}
+                <div className="flex flex-col flex-1 px-6 pt-8 pb-6">
+                   {/* Accent line */}
+                   <div className="w-8 h-1 rounded-full bg-[#ffc107] mb-4 group-hover:w-14 transition-all duration-400" />
+
+                   <h3 className="text-xl font-black text-[#18357a] font-display mb-2 leading-tight">
+                     {fac.title}
+                   </h3>
+                   <p className="text-sm font-medium text-[#64779F] leading-relaxed flex-1">
+                     {fac.desc}
+                   </p>
+
+                   {/* Explore link */}
+                   <div className="mt-5 flex items-center gap-2 text-[#18357a] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-400">
+                      <span>Explore</span>
+                      <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                    </div>
                 </div>
              </motion.div>

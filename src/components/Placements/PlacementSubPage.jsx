@@ -41,7 +41,6 @@ const PlacementSubPage = () => {
       
       {/* Background Graphic elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none" />
 
       <section className="relative px-6 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
         
@@ -60,13 +59,15 @@ const PlacementSubPage = () => {
                <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.2em]">Training & Placement</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-[#18357a] mb-8 tracking-tighter leading-tight uppercase">
-              {currentCategory.title.split(' ')[0]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107]">{currentCategory.title.split(' ').slice(1).join(' ')}</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.1]">
+              {currentCategory.title.split(' ')[0]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] uppercase">{currentCategory.title.split(' ').slice(1).join(' ')}</span>
             </h1>
             
-            <p className="text-[#64779F] text-xl md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed border-l-4 border-[#ffc107] pl-8 py-4 bg-[#18357a]/5 rounded-r-2xl text-left hidden md:block italic">
-              {currentCategory.subtitle}
-            </p>
+            <div className="max-w-3xl mx-auto p-8 rounded-[2.5rem] bg-white border-2 border-transparent border-l-4 border-l-[#ffc107] shadow-xl relative mt-4 hidden md:block hover:border-[#ffc107] transition-all duration-500 group">
+              <p className="text-[#64779F] font-bold text-sm md:text-base leading-relaxed text-left italic">
+                {currentCategory.subtitle}
+              </p>
+            </div>
           </motion.div>
         </div>
 
@@ -82,7 +83,7 @@ const PlacementSubPage = () => {
                  className="group relative bg-white rounded-[2rem] p-8 md:p-10 border border-[#D5E2F4]/50 shadow-[0_20px_50px_rgba(24,53,122,0.03)] hover:shadow-[0_30px_70px_rgba(24,53,122,0.08)] transition-all duration-500 overflow-hidden"
               >
                   {/* Subtle Background Accent */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/[0.02] rounded-bl-[4rem] group-hover:bg-[#ffc107]/5 transition-colors" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/[0.02] rounded-bl-[4rem] transition-colors" />
                   
                   <div className="relative z-10">
                     <div className="w-14 h-14 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] mb-6 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">

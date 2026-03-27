@@ -67,17 +67,17 @@ const TrainingOverview = () => {
                <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.2em]">Institutional Excellence</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-[#18357a] mb-6 tracking-tighter leading-tight uppercase">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.1]">
               Career Development <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107]">& Training</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] uppercase inline-block mt-2">& Training</span>
             </h1>
             
             <h2 className="text-xl md:text-2xl font-black text-[#64779F] mb-10 uppercase tracking-widest">
               Centre for Career Development and Training (CDT)
             </h2>
             
-            <div className="max-w-4xl mx-auto">
-              <p className="text-[#64779F] text-lg md:text-xl font-medium leading-relaxed italic border-l-4 border-[#ffc107] pl-8 py-6 bg-[#18357a]/5 rounded-r-2xl text-left">
+            <div className="max-w-4xl mx-auto p-8 rounded-[2.5rem] bg-white border-2 border-transparent border-l-4 border-l-[#ffc107] shadow-xl relative mt-4 hover:border-[#ffc107] transition-all duration-500 group">
+              <p className="text-[#64779F] font-bold text-sm md:text-base leading-relaxed text-left italic">
                 At Knowledge Institute of Technology (KIOT), Salem, the Centre for Career Development and Training focuses on building capable professionals through a structured and progressive learning journey. The program integrates employability skills and life skills, ensuring students are prepared not only for placements, but for long-term success.
               </p>
             </div>
@@ -393,38 +393,44 @@ const TrainingOverview = () => {
            {/* Mobile view: Cards */}
            <div className="md:hidden space-y-6">
               {trainingTeam.map((member, idx) => (
-                <motion.div 
-                   key={idx}
-                   initial={{ opacity: 0, scale: 0.95 }}
-                   whileInView={{ opacity: 1, scale: 1 }}
-                   viewport={{ once: true }}
-                   className="bg-white rounded-3xl p-6 shadow-[0_15px_40px_rgba(24,53,122,0.04)] border border-[#D5E2F4]/50 space-y-4"
-                >
-                   <div className="flex items-start gap-4">
-                      <div className="h-20 w-20 shrink-0 overflow-hidden rounded-3xl border-2 border-[#18357a]/10 bg-white flex items-center justify-center text-[#18357a]/20">
-                         {member.image ? (
-                           <img src={member.image} alt={member.name} className="h-full w-full object-contain" />
-                         ) : (
-                           <UsersIcon size={24} />
-                         )}
-                      </div>
-                      <div>
-                         <div className="text-lg font-black text-[#18357a] leading-tight">{member.name}</div>
-                         <div className="text-[#64779F] text-[11px] font-bold mt-1 uppercase tracking-wide">{member.desig}</div>
-                         <div className="mt-3">
-                            <span className="text-[10px] font-black uppercase tracking-widest text-[#ffc107] px-3 py-1 bg-[#18357a] rounded-lg">
-                              {member.resp}
-                            </span>
-                         </div>
-                      </div>
-                   </div>
-                   <div className="pt-4 border-t border-[#D5E2F4]/50">
-                      <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-[#18357a] text-xs font-black">
-                         <MessageCircle size={16} className="text-[#ffc107]" />
-                         {member.email}
-                      </a>
-                   </div>
-                </motion.div>
+                 <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(24,53,122,0.04)] border border-[#D5E2F4]/50 flex flex-col items-center text-center space-y-6"
+                 >
+                    {/* Header: Image + Basic Info Stacked Centered */}
+                    <div className="flex flex-col items-center space-y-4">
+                       <div className="h-28 w-28 shrink-0 overflow-hidden rounded-3xl border-2 border-[#18357a]/10 bg-white flex items-center justify-center text-[#18357a]/20 shadow-sm">
+                          {member.image ? (
+                            <img src={member.image} alt={member.name} className="h-full w-full object-contain" />
+                          ) : (
+                            <UsersIcon size={32} />
+                          )}
+                       </div>
+                       
+                       <div className="space-y-2">
+                          <div className="text-xl font-black text-[#18357a] leading-tight px-2">{member.name}</div>
+                          <div className="text-[#64779F] text-[11px] font-bold uppercase tracking-wider">{member.desig}</div>
+                          <div className="pt-2">
+                             <span className="text-[10px] font-black uppercase tracking-widest text-[#ffc107] px-4 py-1.5 bg-[#18357a] rounded-lg shadow-md inline-block">
+                               {member.resp}
+                             </span>
+                          </div>
+                       </div>
+                    </div>
+
+                    {/* Contact Info: Directly below position */}
+                    <div className="w-full pt-6 border-t border-[#D5E2F4]/50 flex flex-col items-center gap-4">
+                       {member.email && (
+                         <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-[#18357a] text-[13px] font-black hover:text-[#ffc107] transition-colors">
+                            <MessageCircle size={16} className="text-[#ffc107]" />
+                            {member.email}
+                         </a>
+                       )}
+                    </div>
+                 </motion.div>
               ))}
            </div>
         </div>
@@ -432,7 +438,6 @@ const TrainingOverview = () => {
       </section>
       
       {/* Background decoration bottom */}
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none" />
     </div>
   )
 }
