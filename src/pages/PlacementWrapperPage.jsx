@@ -1,17 +1,17 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import GoverningCouncil from '../components/Contact/GoverningCouncil/GoverningCouncil'
+import PlacementSubPage from '../components/Placements/PlacementSubPage'
 
-const GoverningCouncilPage = () => {
+const PlacementWrapperPage = () => {
   return (
     <motion.div
        initial={{ opacity: 0 }}
        animate={{ opacity: 1 }}
        exit={{ opacity: 0 }}
     >
-       <GoverningCouncil />
+       <PlacementSubPage />
     </motion.div>
   )
 }
 
-export default GoverningCouncilPage
+export default PlacementWrapperPage

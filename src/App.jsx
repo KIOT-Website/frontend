@@ -15,6 +15,11 @@ import VisionMissionPage from './pages/VisionMissionPage'
 import LeadershipPage from './pages/LeadershipPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
+import AwardsRecognitionPage from './pages/AwardsRecognitionPage'
+import PlacementOverviewPage from './pages/PlacementOverviewPage'
+import TrainingOverviewPage from './pages/TrainingOverviewPage'
+import RecruitmentProcessPage from './pages/RecruitmentProcessPage'
+import OutcomesOverviewPage from './pages/OutcomesOverviewPage'
 
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const EventsPage = lazy(() => import('./pages/EventsPage'))
@@ -94,6 +99,14 @@ function App() {
                   <Route path="/leadership" element={<LeadershipPage />} />
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/governing-council" element={<GoverningCouncilPage />} />
+                  <Route path="/awards-recognition" element={<AwardsRecognitionPage />} />
+                  
+                  {/* Training & Placement Category Pages */}
+                  <Route path="/placement-overview" element={<PlacementOverviewPage />} />
+                  <Route path="/training" element={<TrainingOverviewPage />} />
+                  <Route path="/recruitment" element={<RecruitmentProcessPage />} />
+                  <Route path="/outcomes" element={<OutcomesOverviewPage />} />
+
                   <Route path="/events" element={<EventsPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
