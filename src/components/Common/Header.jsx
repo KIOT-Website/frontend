@@ -20,7 +20,8 @@ import {
   GraduationCap,
   Calendar,
   FileText,
-  ShieldCheck
+  ShieldCheck,
+  Briefcase
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.png'
@@ -43,7 +44,17 @@ const navLinks = [
   },
   { name: 'Academics', href: '#academics', hasDropdown: true },
   { name: 'Admissions', href: 'admissions', hasDropdown: true },
-  { name: 'Placements', href: '#placements' },
+  { 
+    name: 'Placements', 
+    href: 'placements',
+    hasDropdown: true,
+    subLinks: [
+      { name: 'Overview', href: 'placement-overview', icon: Building2 },
+      { name: 'Training', href: 'training', icon: GraduationCap },
+      { name: 'Placement', href: 'recruitment', icon: Briefcase },
+      { name: 'Outcomes', href: 'outcomes', icon: Target },
+    ]
+  },
   { name: 'Research & Innovations', href: 'research' },
   { 
     name: 'Resources', 
