@@ -70,7 +70,7 @@ const Programs = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Modern Header Section */}
-        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10 lg:gap-12 mb-16 lg:mb-28">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-12 mb-16 lg:mb-28">
            <div className="max-w-3xl">
               <motion.div
                 initial={{ opacity: 0, x: -10 }}
@@ -92,45 +92,17 @@ const Programs = () => {
               </p>
            </div>
 
-           {/* Tab Controls - Step by Step on Mobile */}
+           {/* Tab Controls - Step-by-Step Mobile View */}
            <div className="w-full lg:w-auto">
-             {/* Mobile View: Vertical Steps */}
-             <div className="flex lg:hidden flex-col gap-3">
-                {Object.entries(programsData).map(([key, data], idx) => (
-                   <button
-                     key={key}
-                     onClick={() => setActiveTab(key)}
-                     className={`flex items-center group relative p-4 rounded-2xl transition-all duration-300 border ${
-                       activeTab === key 
-                       ? 'bg-[#18357a] border-[#18357a] text-white shadow-xl shadow-[#18357a]/20' 
-                       : 'bg-white border-[#D5E2F4]/60 text-[#18357a] hover:border-[#18357a]/30'
-                     }`}
-                   >
-                     <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-black mr-4 ${
-                       activeTab === key ? 'bg-[#ffc107] text-[#18357a]' : 'bg-[#18357a]/5 text-[#18357a]'
-                     }`}>
-                        0{idx + 1}
-                     </div>
-                     <span className="text-[11px] font-black uppercase tracking-[0.15em]">{data.title}</span>
-                     {activeTab === key && (
-                        <div className="absolute right-4">
-                           <div className="w-2 h-2 rounded-full bg-[#ffc107] animate-ping" />
-                        </div>
-                     )}
-                   </button>
-                ))}
-             </div>
-
-             {/* Desktop View: Horizontal Tabs */}
-             <div className="hidden lg:flex p-1.5 bg-[#18357a]/5 rounded-[24px] border border-[#18357a]/10">
+             <div className="flex flex-col sm:flex-row p-1 bg-[#18357a]/5 rounded-[24px] lg:rounded-[24px] border border-[#18357a]/10">
                 {Object.entries(programsData).map(([key, data]) => (
                    <button
                      key={key}
                      onClick={() => setActiveTab(key)}
-                     className={`relative px-8 py-3.5 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${
+                     className={`relative flex-1 lg:flex-none px-8 py-4 lg:py-3.5 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${
                        activeTab === key 
                        ? 'text-white' 
-                       : 'text-[#18357a] hover:text-[#18357a] hover:bg-white/50'
+                       : 'text-[#18357a] hover:bg-white/50'
                      }`}
                    >
                       {activeTab === key && (

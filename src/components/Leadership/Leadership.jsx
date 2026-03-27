@@ -2,56 +2,49 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle2, Quote, X, GraduationCap, Briefcase, Microscope, Heart } from 'lucide-react'
 
-<<<<<<< HEAD:src/components/Leadership.jsx
-// Asset imports (Assuming these will be copied correctly)
-import chairmanImg from '../assets/leader_chairman.png'
-import directorImg from '../assets/leader_director.png'
-import principalImg from '../assets/leader_principal.png'
-=======
 // Asset imports
 import chairmanImg from '../../assets/Executive-Chairman.webp'
 import principalImg from '../../assets/KIOT-Principal-Message-Web-2025.webp'
 import secretaryImg from '../../assets/Secretarys-Message-KIOTT.webp'
->>>>>>> main:src/components/Leadership/Leadership.jsx
 
 const leaders = [
   {
     id: 1,
     name: "Dr. PSS. Srinivasan",
     role: "Chairman",
-    designation: "Chairman, KIOT Group of Institutions",
+    designation: "Founder & Executive Chairman (B.E., M.Tech. (IIT-B), Ph.D., MISTE., ISHMT., FMFPI.)",
     image: chairmanImg,
-    preview: "Education is not just learning, but a journey of transformation...",
     fullMessage: [
-      "Education is not just learning, but a journey of transformation that prepares young minds for a life of purpose and excellence. At KIOT, we don't just teach engineering; we cultivate the spirit of innovation and the foundation of character.",
-      "Since our inception, our mission has been to bridge the gap between rural potential and global opportunities. We believe every student has a unique spark that, when nurtured with the right environment and mentorship, can illuminate the world.",
-      "Our focus on discipline, practical exposure, and ethical values ensures that our graduates are not just successful professionals, but responsible citizens of tomorrow."
-    ]
-  },
-  {
-    id: 2,
-    name: "Dr. K. Visagavel",
-    role: "Director",
-    designation: "Director, Academic Excellence",
-    image: directorImg,
-    preview: "We believe in shaping disciplined professionals who lead with integrity...",
-    fullMessage: [
-      "We believe in shaping disciplined professionals who lead with integrity. Our academic frameworks are designed to challenge the status quo and push the boundaries of traditional learning.",
-      "By integrating industry需求 directly into our curriculum, we ensure that every student at KIOT is career-ready from day one. Our partnerships with top-tier global corporations provide a launchpad for our students' dreams.",
-      "Education here is a collaborative effort between dedicated faculty and motivated students, fueled by our state-of-the-art infrastructure."
+      "Welcome to the Trend Setters’ Paradise,",
+      "God has created the earth, you and me create a heaven on it. Every individual has innate talents. It is only our attitude that decides outcome.",
+      "Yes, we at KIOT have got rich experience on Engineering Education in India and abroad. We know the art of identifying individual talents, nurture them as talented engineers and professionals and make them world class professionals. If you are prepared to be a path breaking professionals poised to make miracles on the earth, the right destination is KIOT. Learn from the masters who know nothing less than excellence. Come on; let us all make a happy heaven on the earth.",
+      "With love and affection,"
     ]
   },
   {
     id: 3,
-    name: "Dr. P. Rajendran",
+    name: "Dr. K. Visagavel",
     role: "Principal",
-    designation: "Principal, KIOT",
+    designation: "Principal, KIOT (B.E., M.E., Ph.D., FIE.)",
     image: principalImg,
-    preview: "Fostering a culture of innovation, research, and holistic growth...",
     fullMessage: [
-      "Fostering a culture of innovation, research, and holistic growth is at the core of our institutional DNA. As Principal, it is my pride to see our campus buzzing with energy, creativity, and the pursuit of knowledge.",
-      "We emphasize 'Learning by Doing'. Our advanced laboratories and research centers are where theory meets practice, and where problems find sustainable solutions.",
-      "Join us in this journey of making KIOT a beacon of technical education and a home for future-ready innovators."
+      "Dear Students, Welcome to the Knowledge Institute of Technology, Salem!",
+      "At KIOT, we aim to provide a transformative education that blends academic rigor with practical skills to shape the leaders of tomorrow.",
+      "We at KIOT are committed to fostering a holistic learning environment, enriched by state-of-the-art infrastructure, industry collaborations, and extracurricular opportunities. I encourage you to actively participate in academic and co-curricular activities, network with peers and mentors, and embrace the culture of continuous learning.",
+      "Remember, your journey at KIOT is not just about earning a degree; it is about transforming your potential into purpose. Together, let us strive to make a positive difference in our communities and the world.",
+      "Wishing you a fulfilling and successful academic journey ahead!"
+    ]
+  },
+  {
+    id: 5,
+    name: "Dr. J. Kumar",
+    role: "Secretary",
+    designation: "Secretary, KIOTT (B.E., M.Tech. (IIT-M), Ph.D., FIE.)",
+    image: secretaryImg,
+    fullMessage: [
+      "Greetings!",
+      "We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.",
+      "The latest curriculum, paired with modern insights into engineering, technology, and research, along with innovative facilities, ensures that each student gains a substantial edge in advanced technical expertise and competencies. I extend a warm welcome to you at KIOT and all the opportunities it presents. Join us and immerse yourself in the KIOT experience!"
     ]
   }
 ]
@@ -77,7 +70,7 @@ const Leadership = () => {
   }, [selectedLeader])
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-32 pb-20 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-16 pb-20 min-h-screen overflow-hidden">
       
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
@@ -86,15 +79,12 @@ const Leadership = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-16">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-<<<<<<< HEAD:src/components/Leadership.jsx
-             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">The Minds Behind KIOT</span>
-=======
             <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
                <span className="relative flex h-3.5 w-3.5">
                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
@@ -108,22 +98,11 @@ const Leadership = () => {
             <p className="text-[#64779F] text-xl lg:text-2xl max-w-3xl mx-auto font-medium leading-relaxed">
               Meet the visionaries who are steering KIOT towards a future of global excellence and technical leadership.
             </p>
->>>>>>> main:src/components/Leadership/Leadership.jsx
           </motion.div>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl lg:text-6xl font-black text-[#18357a] font-display mb-6 tracking-tight"
-          >
-            Leadership <span className="text-[#ffc107]">Voices</span>
-          </motion.h1>
-          <p className="text-[#64779F] text-lg lg:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
-            Meet the visionaries who are steering KIOT towards a future of global excellence and technical leadership.
-          </p>
         </div>
 
         {/* Leadership Grid - Option 1: Profile Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-20 lg:mb-32">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
           {leaders.map((leader, idx) => (
             <motion.div
               key={leader.id}
@@ -136,24 +115,23 @@ const Leadership = () => {
               {/* Photo */}
               <div className="relative w-48 h-48 lg:w-56 lg:h-56 mb-8">
                  <div className="absolute inset-0 bg-[#ffc107] rounded-full rotate-6 scale-105 opacity-20 group-hover:rotate-12 transition-transform duration-500" />
-                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                    <img src={leader.image} alt={leader.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl bg-white">
+                    <img 
+                      src={leader.image} 
+                      alt={leader.name} 
+                      className={`w-full h-full object-cover ${leader.role !== 'Chairman' ? 'scale-[1.1]' : ''}`} 
+                      style={leader.role !== 'Chairman' ? { objectPosition: 'center 15%' } : {}}
+                    />
                  </div>
               </div>
 
               {/* Info */}
               <h3 className="text-2xl lg:text-3xl font-black text-[#18357a] font-display mb-1">{leader.name}</h3>
-              <p className="text-[#ffc107] text-[11px] font-black uppercase tracking-[0.2em] mb-6">{leader.role}</p>
-              
-              <div className="bg-[#F8FAFC] p-6 rounded-[32px] mb-8 w-full group-hover:bg-[#18357a]/5 transition-colors">
-                 <p className="text-[#64779F] text-sm italic font-medium leading-relaxed">
-                   "{leader.preview}"
-                 </p>
-              </div>
+              <p className="text-[#ffc107] text-[11px] font-black uppercase tracking-[0.2em] mb-8">{leader.role}</p>
 
               <button 
                 onClick={() => setSelectedLeader(leader)}
-                className="mt-auto px-8 py-3.5 bg-white border-2 border-[#18357a]/10 rounded-full text-[#18357a] text-[11px] font-black uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:-translate-y-1"
+                className="mt-4 px-8 py-3.5 bg-white border-2 border-[#18357a]/10 rounded-full text-[#18357a] text-[11px] font-black uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:-translate-y-1"
               >
                 Read Message →
               </button>
@@ -188,11 +166,7 @@ const Leadership = () => {
       {/* Modal / Expanded Message */}
       <AnimatePresence>
         {selectedLeader && (
-<<<<<<< HEAD:src/components/Leadership.jsx
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-10">
-=======
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-10 overflow-hidden">
->>>>>>> main:src/components/Leadership/Leadership.jsx
             <motion.div 
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
@@ -205,11 +179,7 @@ const Leadership = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-<<<<<<< HEAD:src/components/Leadership.jsx
-              className="relative w-full max-w-4xl bg-white rounded-[48px] shadow-2xl overflow-hidden flex flex-col md:flex-row h-full max-h-[85vh] md:h-auto"
-=======
               className="relative w-full max-w-5xl bg-white rounded-[40px] shadow-[0_50px_100px_rgba(24,53,122,0.25)] overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
->>>>>>> main:src/components/Leadership/Leadership.jsx
             >
                <button 
                  onClick={() => setSelectedLeader(null)}
@@ -219,11 +189,6 @@ const Leadership = () => {
                </button>
 
                {/* Left Sidebar in Modal */}
-<<<<<<< HEAD:src/components/Leadership.jsx
-               <div className="w-full md:w-[320px] bg-[#18357a] p-10 flex flex-col items-center text-center overflow-y-auto">
-                  <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-white/20 mb-6 shadow-2xl">
-                    <img src={selectedLeader.image} alt={selectedLeader.name} className="w-full h-full object-cover" />
-=======
                <div className="w-full md:w-[350px] bg-[#18357a] p-10 py-16 flex flex-col items-center justify-center text-center shrink-0">
                   <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-8 border-white/10 mb-8 shadow-2xl bg-white">
                     <img 
@@ -232,36 +197,22 @@ const Leadership = () => {
                       className={`w-full h-full object-cover ${selectedLeader.role !== 'Chairman' ? 'scale-[1.1]' : ''}`} 
                       style={selectedLeader.role !== 'Chairman' ? { objectPosition: 'center 15%' } : {}}
                     />
->>>>>>> main:src/components/Leadership/Leadership.jsx
                   </div>
                   <h3 className="text-xl lg:text-2xl font-black text-white font-display mb-2">{selectedLeader.name}</h3>
                   <p className="text-[#ffc107] text-[10px] font-black uppercase tracking-[0.2em] mb-8 leading-relaxed">
                     {selectedLeader.designation}
                   </p>
                   
-                  <div className="space-y-4 w-full">
-                     <div className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10 text-white/70">
-                        <CheckCircle2 size={16} className="text-[#ffc107]" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-left">Academic Quality</span>
-                     </div>
-                     <div className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10 text-white/70">
-                        <CheckCircle2 size={16} className="text-[#ffc107]" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-left">Research Focus</span>
-                     </div>
-                  </div>
+                  {/* Qualifications/Badges Removed as requested */}
                </div>
 
                {/* Message Body */}
-<<<<<<< HEAD:src/components/Leadership.jsx
-               <div className="flex-1 p-10 lg:p-16 overflow-y-auto">
-=======
                <div className="flex-1 p-10 lg:p-16 overflow-y-auto custom-scrollbar">
->>>>>>> main:src/components/Leadership/Leadership.jsx
                   <Quote size={48} className="text-[#ffc107]/20 mb-6" />
                   <h2 className="text-2xl lg:text-3xl font-black text-[#18357a] font-display mb-8">{selectedLeader.role} Message</h2>
                   <div className="space-y-6">
                     {selectedLeader.fullMessage.map((p, i) => (
-                      <p key={i} className="text-[#64779F] text-base lg:text-lg font-medium leading-relaxed">
+                      <p key={i} className="text-[#64779F] text-sm lg:text-base font-medium leading-relaxed">
                         {p}
                       </p>
                     ))}
