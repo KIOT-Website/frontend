@@ -156,8 +156,10 @@ const Footer = () => {
       {/* Micro Footer Bottom Bar */}
       <div className="border-t border-white/5 bg-[#09132e] py-6 relative z-30">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-center text-center">
-            <p className="text-[12px] md:text-[13px] text-[#A9B1C3] font-medium tracking-wide">
-               &copy; {new Date().getFullYear()} <span className="text-white font-bold">Knowledge Institute of Technology</span>. All rights reserved.
+            <p className="text-[12px] md:text-[13px] text-[#A9B1C3] font-medium tracking-wide flex flex-col md:flex-row items-center gap-1 md:gap-2">
+               <span>&copy; {new Date().getFullYear()} <span className="text-white font-bold">Knowledge Institute of Technology</span>. All rights reserved.</span>
+               <span className="hidden md:inline text-white/20">|</span>
+               <span>Powered by <a href="https://www.kanavu.org/" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-[#ffc107] transition-colors underline decoration-[#ffc107]/30 underline-offset-4">Kanavu Technologies</a></span>
             </p>
         </div>
       </div>
