@@ -336,7 +336,7 @@ const OutcomesOverview = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1] uppercase">
-               Placement <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] to-[#ffc107]">Outcomes</span>
+               Placement <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] to-[#ffc107]">Records</span>
             </h1>
             
             <div className="max-w-3xl mx-auto p-1 bg-gradient-to-r from-[#18357a]/10 via-[#ffc107]/10 to-[#18357a]/10 rounded-[3rem] mb-12">

@@ -80,7 +80,7 @@ const navLinks = [
       { name: 'Overview', href: 'placement-overview', icon: Building2 },
       { name: 'Training', href: 'training', icon: GraduationCap },
       { name: 'Placement', href: 'recruitment', icon: Briefcase },
-      { name: 'Placements records', href: 'outcomes', icon: Target },
+      { name: 'Records', href: 'outcomes', icon: Target },
     ]
   },
   { name: 'Research & Innovations', href: 'research' },

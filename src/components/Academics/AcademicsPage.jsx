@@ -5,42 +5,17 @@ import {
   GraduationCap, FlaskConical, Cpu, Wrench, Globe, BarChart3,
   ChevronRight, BookOpen, Users, Award, Microscope, Layers,
   ArrowRight, Scale, CheckCircle, Download, TrendingUp,
-  Briefcase, MessageSquare, Star, LayoutGrid, Building2
+  Briefcase, MessageSquare, Star, LayoutGrid, Building2,
+  Zap, ShieldCheck, Car
 } from 'lucide-react'
 
 const ugPrograms = [
-  {
-    id: 'be-mechanical',
-    name: 'B.E Mechanical Engineering',
-    short: 'Mechanical',
-    duration: '4 Years',
-    intake: 60,
-    category: 'Engineering',
-    icon: Wrench,
-    color: '#18357a',
-    accent: '#ffc107',
-    placement: '92%',
-    description: 'Design, analysis, and manufacturing of mechanical systems and machines.'
-  },
-  {
-    id: 'be-civil',
-    name: 'B.E Civil Engineering',
-    short: 'Civil',
-    duration: '4 Years',
-    intake: 60,
-    category: 'Engineering',
-    icon: Layers,
-    color: '#18357a',
-    accent: '#ffc107',
-    placement: '88%',
-    description: 'Infrastructure planning, structural design, and sustainable construction.'
-  },
   {
     id: 'be-cse',
     name: 'B.E Computer Science & Engineering',
     short: 'CSE',
     duration: '4 Years',
-    intake: 120,
+    intake: 240,
     category: 'Engineering',
     icon: Cpu,
     color: '#18357a',
@@ -50,10 +25,10 @@ const ugPrograms = [
   },
   {
     id: 'be-ece',
-    name: 'B.E Electronics & Communication',
+    name: 'B.E Electronics & Communication Engineering',
     short: 'ECE',
     duration: '4 Years',
-    intake: 60,
+    intake: 180,
     category: 'Engineering',
     icon: Globe,
     color: '#18357a',
@@ -62,11 +37,24 @@ const ugPrograms = [
     description: 'Electronics, embedded systems, VLSI, and communication technologies.'
   },
   {
+    id: 'be-mechanical',
+    name: 'B.E Mechanical Engineering',
+    short: 'Mechanical',
+    duration: '4 Years',
+    intake: 120,
+    category: 'Engineering',
+    icon: Wrench,
+    color: '#18357a',
+    accent: '#ffc107',
+    placement: '92%',
+    description: 'Design, analysis, and manufacturing of mechanical systems and machines.'
+  },
+  {
     id: 'btech-it',
     name: 'B.Tech Information Technology',
     short: 'IT',
     duration: '4 Years',
-    intake: 60,
+    intake: 120,
     category: 'Technology',
     icon: BookOpen,
     color: '#18357a',
@@ -79,13 +67,26 @@ const ugPrograms = [
     name: 'B.Tech AI & Data Science',
     short: 'AI & DS',
     duration: '4 Years',
-    intake: 60,
+    intake: 120,
     category: 'Technology',
     icon: FlaskConical,
     color: '#18357a',
     accent: '#ffc107',
     placement: '95%',
     description: 'Machine learning, data analytics, and intelligent systems engineering.'
+  },
+  {
+    id: 'be-eee',
+    name: 'B.E Electrical & Electronics Engineering',
+    short: 'EEE',
+    duration: '4 Years',
+    intake: 60,
+    category: 'Engineering',
+    icon: Zap,
+    color: '#18357a',
+    accent: '#ffc107',
+    placement: '89%',
+    description: 'Power systems, electrical machines, control systems and power electronics.'
   },
   {
     id: 'btech-csbs',
@@ -100,34 +101,60 @@ const ugPrograms = [
     placement: '93%',
     description: 'Bridging computer science with business analytics and systems thinking.'
   },
+  {
+    id: 'be-ecm',
+    name: 'B.E Electronics & Computer Engineering',
+    short: 'ECM',
+    duration: '4 Years',
+    intake: 60,
+    category: 'Engineering',
+    icon: Cpu,
+    color: '#18357a',
+    accent: '#ffc107',
+    placement: '90%',
+    description: 'Integration of electronics engineering with computer science fundamentals.'
+  },
+  {
+    id: 'be-civil',
+    name: 'B.E Civil Engineering',
+    short: 'Civil',
+    duration: '4 Years',
+    intake: 30,
+    category: 'Engineering',
+    icon: Layers,
+    color: '#18357a',
+    accent: '#ffc107',
+    placement: '88%',
+    description: 'Infrastructure planning, structural design, and sustainable construction.'
+  },
 ]
 
 const pgPrograms = [
   {
-    id: 'me-cse',
-    name: 'M.E Computer Science & Engineering',
-    short: 'M.E CSE',
-    duration: '2 Years',
-    intake: 18,
-    category: 'M.E Engineering',
-    icon: Cpu,
-    color: '#224292',
-    accent: '#ffc107',
-    placement: '91%',
-    description: 'Advanced computing, research methodologies and algorithm design.'
-  },
-  {
-    id: 'mba',
-    name: 'Master of Business Administration',
+    id: 'mba-general',
+    name: 'MBA - General',
     short: 'MBA',
     duration: '2 Years',
-    intake: 60,
+    intake: 120,
     category: 'Management',
     icon: Award,
     color: '#224292',
     accent: '#ffc107',
     placement: '89%',
-    description: 'Strategic management, finance, marketing, and leadership excellence.'
+    description: 'Finance, Marketing, HR, Business Analytics, and Operations specialsations.'
+  },
+  {
+    id: 'mba-iev',
+    name: 'MBA (IEV)',
+    short: 'MBA IEV',
+    duration: '2 Years',
+    intake: 60,
+    category: 'Management',
+    icon: TrendingUp,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '90%',
+    description: 'Innovation, Entrepreneurship and Venture Development program.'
   },
   {
     id: 'mca',
@@ -141,6 +168,71 @@ const pgPrograms = [
     accent: '#ffc107',
     placement: '90%',
     description: 'Advanced software development, databases, and enterprise application design.'
+  },
+  {
+    id: 'me-ise',
+    name: 'M.E Industrial Safety Engineering',
+    short: 'M.E ISE',
+    duration: '2 Years',
+    intake: 24,
+    category: 'M.E Engineering',
+    icon: ShieldCheck,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '95%',
+    description: 'Specialised program in industrial safety, risk assessment, and management.'
+  },
+  {
+    id: 'me-ae',
+    name: 'M.E Automotive Electronics',
+    short: 'M.E AE',
+    duration: '2 Years',
+    intake: 18,
+    category: 'M.E Engineering',
+    icon: Car,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '92%',
+    description: 'Design and development of electronic systems for the automotive industry.'
+  },
+  {
+    id: 'me-ped',
+    name: 'M.E Power Electronics and Drives',
+    short: 'M.E PED',
+    duration: '2 Years',
+    intake: 18,
+    category: 'M.E Engineering',
+    icon: Zap,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '91%',
+    description: 'Advanced study of power conversion, motor drives, and control systems.'
+  },
+  {
+    id: 'me-se',
+    name: 'M.E Software Engineering',
+    short: 'M.E SE',
+    duration: '2 Years',
+    intake: 18,
+    category: 'M.E Engineering',
+    icon: Cpu,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '93%',
+    description: 'Systematic approach to software development, quality, and management.'
+  },
+  {
+    id: 'phd',
+    name: 'Ph.D. ALL Departments',
+    short: 'Ph.D.',
+    duration: 'Part-Time / Full Time',
+    intake: 'As per Norms',
+    category: 'Research',
+    icon: Microscope,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: 'N/A',
+    description: 'Doctoral research opportunities across all engineering and management departments.'
   },
 ]
 
@@ -270,11 +362,16 @@ export default function AcademicsPage() {
                         <CheckCircle size={11} /> {prog.placement} Placed
                       </span>
                     </div>
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="w-12 h-12 rounded-xl bg-[#18357a]/8 flex items-center justify-center shrink-0 group-hover:bg-[#18357a] transition-colors">
-                        <prog.icon size={22} className="text-[#18357a] group-hover:text-white transition-colors" />
+                    <div 
+                      className="flex items-center gap-4 mb-3 cursor-pointer group/title"
+                      onClick={() => navigate(`/academics/course/${prog.id}`)}
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-[#18357a]/8 flex items-center justify-center shrink-0 group-hover/title:bg-[#18357a] transition-colors">
+                        <prog.icon size={22} className="text-[#18357a] group-hover/title:text-white transition-colors" />
                       </div>
-                      <h3 className="text-[16px] font-extrabold text-[#18357a] leading-tight">{prog.name}</h3>
+                      <h3 className="text-[16px] font-extrabold text-[#18357a] leading-tight group-hover/title:text-[#ffc107] transition-colors">
+                        {prog.name}
+                      </h3>
                     </div>
                     <p className="text-sm text-[#64779F] leading-relaxed">{prog.description}</p>
                   </div>
