@@ -17,6 +17,12 @@ import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
 import AwardsRecognitionPage from './pages/AwardsRecognitionPage'
 import UnderConstruction from './components/UnderConstruction/UnderConstruction'
+import PlacementOverviewPage from './pages/PlacementOverviewPage'
+import TrainingOverviewPage from './pages/TrainingOverviewPage'
+import RecruitmentProcessPage from './pages/RecruitmentProcessPage'
+import OutcomesOverviewPage from './pages/OutcomesOverviewPage'
+import AcademicsPageWrapper from './pages/AcademicsPage'
+import CourseDetailPageWrapper from './pages/CourseDetailPageWrapper'
 
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const EventsPage = lazy(() => import('./pages/EventsPage'))
@@ -99,15 +105,16 @@ function App() {
                   <Route path="/awards-recognition" element={<AwardsRecognitionPage />} />
                   <Route path="/achievements" element={<UnderConstruction />} />
                   
-                  {/* Placement Pages — Under Construction */}
+                  {/* Placement Pages */}
                   <Route path="/placements" element={<UnderConstruction />} />
-                  <Route path="/placement-overview" element={<UnderConstruction />} />
-                  <Route path="/training" element={<UnderConstruction />} />
-                  <Route path="/recruitment" element={<UnderConstruction />} />
-                  <Route path="/outcomes" element={<UnderConstruction />} />
+                  <Route path="/placement-overview" element={<PlacementOverviewPage />} />
+                  <Route path="/training" element={<TrainingOverviewPage />} />
+                  <Route path="/recruitment" element={<RecruitmentProcessPage />} />
+                  <Route path="/outcomes" element={<OutcomesOverviewPage />} />
 
-                  {/* Academics — Under Construction */}
-                  <Route path="/academics" element={<UnderConstruction />} />
+                  {/* Academics Pages */}
+                  <Route path="/academics" element={<AcademicsPageWrapper />} />
+                  <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper />} />
 
                   {/* Admissions — Under Construction */}
                   <Route path="/admissions" element={<UnderConstruction />} />

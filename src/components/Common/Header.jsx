@@ -21,7 +21,17 @@ import {
   Calendar,
   FileText,
   ShieldCheck,
-  Briefcase
+  Briefcase,
+  LayoutGrid,
+  FlaskConical,
+  Cpu,
+  Wrench,
+  Layers,
+  Globe,
+  BookOpen,
+  Download,
+  Microscope,
+  Award
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.png'
@@ -48,10 +58,8 @@ const navLinks = [
     href: 'academics',
     hasDropdown: true,
     subLinks: [
-      { name: 'Programs Offered', href: 'academics', icon: GraduationCap },
-      { name: 'Departments', href: 'academics', icon: Building2 },
-      { name: 'Curriculum', href: 'academics', icon: FileText },
-      { name: 'Faculty', href: 'academics', icon: Users },
+      { name: 'Undergraduate (UG)', href: 'academics?tab=Programs&program=UG', icon: GraduationCap },
+      { name: 'Postgraduate (PG)', href: 'academics?tab=Programs&program=PG', icon: GraduationCap },
     ]
   },
   {
@@ -59,11 +67,10 @@ const navLinks = [
     href: 'admissions',
     hasDropdown: true,
     subLinks: [
-      { name: 'How to Apply', href: 'admissions', icon: FileText },
       { name: 'Eligibility', href: 'admissions', icon: ShieldCheck },
-      { name: 'Fee Structure', href: 'admissions', icon: Briefcase },
-      { name: 'Scholarships', href: 'admissions', icon: Target },
-    ]
+      { name: 'How to Apply', href: 'admissions', icon: FileText },
+      { name: 'Fees & Scholarships', href: 'admissions', icon: Target },
+    ],
   },
   { 
     name: 'Placements', 
@@ -73,7 +80,7 @@ const navLinks = [
       { name: 'Overview', href: 'placement-overview', icon: Building2 },
       { name: 'Training', href: 'training', icon: GraduationCap },
       { name: 'Placement', href: 'recruitment', icon: Briefcase },
-      { name: 'Outcomes', href: 'outcomes', icon: Target },
+      { name: 'Placements records', href: 'outcomes', icon: Target },
     ]
   },
   { name: 'Research & Innovations', href: 'research' },
@@ -319,7 +326,7 @@ const Header = () => {
                         }`}
                       />
                       
-                      {/* Desktop Dropdown Submenu Container */}
+                      {/* Desktop Dropdown: Regular subLinks */}
                       {link.subLinks && (
                         <div className="absolute top-[100%] left-0 w-56 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] before:content-[''] before:absolute before:top-[-15px] before:left-0 before:w-full before:h-[15px]">
                           {link.subLinks.map(sub => (
@@ -330,8 +337,6 @@ const Header = () => {
                               className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
                             >
                               <span className="text-[14.5px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
-                              
-                              {/* Dynamic Icon Rendering */}
                               <div className="absolute right-5 flex items-center justify-center w-5 h-5">
                                  {sub.icon && (
                                    <sub.icon 
@@ -466,7 +471,7 @@ const Header = () => {
                             )}
                           </a>
                           
-                          <AnimatePresence>
+                           <AnimatePresence>
                             {link.subLinks && activeDropdown === link.name && (
                               <motion.div 
                                 initial={{ height: 0, opacity: 0 }} 
@@ -482,7 +487,12 @@ const Header = () => {
                                        onClick={(e) => handleNavClick(e, sub.name, sub.href)} 
                                        className="flex items-center gap-4 px-6 py-3.5 text-[13px] font-bold text-[#64779F] hover:text-[#18357a] hover:bg-white/50 transition-all group/subitem"
                                      >
-                                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover/subitem:scale-125 transition-transform" />
+                                       {sub.icon && (
+                                         <div className="w-8 h-8 rounded-lg bg-white/80 shadow-sm flex items-center justify-center shrink-0 border border-[#18357a]/5">
+                                           <sub.icon size={14} className="text-[#18357a]" />
+                                         </div>
+                                       )}
+                                       {!sub.icon && <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover/subitem:scale-125 transition-transform" />}
                                        <span>{sub.name}</span>
                                      </a>
                                    ))}
