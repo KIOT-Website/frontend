@@ -16,10 +16,7 @@ import LeadershipPage from './pages/LeadershipPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
 import AwardsRecognitionPage from './pages/AwardsRecognitionPage'
-import PlacementOverviewPage from './pages/PlacementOverviewPage'
-import TrainingOverviewPage from './pages/TrainingOverviewPage'
-import RecruitmentProcessPage from './pages/RecruitmentProcessPage'
-import OutcomesOverviewPage from './pages/OutcomesOverviewPage'
+import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const EventsPage = lazy(() => import('./pages/EventsPage'))
@@ -100,12 +97,31 @@ function App() {
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/governing-council" element={<GoverningCouncilPage />} />
                   <Route path="/awards-recognition" element={<AwardsRecognitionPage />} />
+                  <Route path="/achievements" element={<UnderConstruction />} />
                   
-                  {/* Training & Placement Category Pages */}
-                  <Route path="/placement-overview" element={<PlacementOverviewPage />} />
-                  <Route path="/training" element={<TrainingOverviewPage />} />
-                  <Route path="/recruitment" element={<RecruitmentProcessPage />} />
-                  <Route path="/outcomes" element={<OutcomesOverviewPage />} />
+                  {/* Placement Pages — Under Construction */}
+                  <Route path="/placements" element={<UnderConstruction />} />
+                  <Route path="/placement-overview" element={<UnderConstruction />} />
+                  <Route path="/training" element={<UnderConstruction />} />
+                  <Route path="/recruitment" element={<UnderConstruction />} />
+                  <Route path="/outcomes" element={<UnderConstruction />} />
+
+                  {/* Academics — Under Construction */}
+                  <Route path="/academics" element={<UnderConstruction />} />
+
+                  {/* Admissions — Under Construction */}
+                  <Route path="/admissions" element={<UnderConstruction />} />
+
+                  {/* Research & Innovations — Under Construction */}
+                  <Route path="/research" element={<UnderConstruction />} />
+
+                  {/* Resources — Under Construction */}
+                  <Route path="/resources" element={<UnderConstruction />} />
+                  <Route path="/campus-life" element={<UnderConstruction />} />
+                  <Route path="/student-life" element={<UnderConstruction />} />
+                  <Route path="/alumni" element={<UnderConstruction />} />
+                  <Route path="/news-events" element={<UnderConstruction />} />
+                  <Route path="/blogs" element={<UnderConstruction />} />
 
                   <Route path="/events" element={<EventsPage />} />
                   <Route path="*" element={<NotFoundPage />} />

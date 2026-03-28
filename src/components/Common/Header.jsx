@@ -39,11 +39,32 @@ const navLinks = [
       { name: 'Vision & Mission', href: 'vision-mission', icon: Target },
       { name: 'Leadership', href: 'leadership', icon: Users },
       { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
-      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText }
+      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText },
+      { name: 'Achievements', href: 'achievements', icon: GraduationCap }
     ]
   },
-  { name: 'Academics', href: '#academics', hasDropdown: true },
-  { name: 'Admissions', href: 'admissions', hasDropdown: true },
+  {
+    name: 'Academics',
+    href: 'academics',
+    hasDropdown: true,
+    subLinks: [
+      { name: 'Programs Offered', href: 'academics', icon: GraduationCap },
+      { name: 'Departments', href: 'academics', icon: Building2 },
+      { name: 'Curriculum', href: 'academics', icon: FileText },
+      { name: 'Faculty', href: 'academics', icon: Users },
+    ]
+  },
+  {
+    name: 'Admissions',
+    href: 'admissions',
+    hasDropdown: true,
+    subLinks: [
+      { name: 'How to Apply', href: 'admissions', icon: FileText },
+      { name: 'Eligibility', href: 'admissions', icon: ShieldCheck },
+      { name: 'Fee Structure', href: 'admissions', icon: Briefcase },
+      { name: 'Scholarships', href: 'admissions', icon: Target },
+    ]
+  },
   { 
     name: 'Placements', 
     href: 'placements',
