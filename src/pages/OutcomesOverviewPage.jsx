@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import OutcomesOverview from '../components/Placements/OutcomesOverview'
+import OutcomesOverview from '../components/Placements/Records'
 
 const OutcomesOverviewPage = () => {
   return (

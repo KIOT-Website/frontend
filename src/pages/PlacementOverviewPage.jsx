@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import PlacementOverview from '../components/Placements/PlacementOverview'
+import PlacementOverview from '../components/Placements/Overview'
 
 const PlacementOverviewPage = () => {
   return (

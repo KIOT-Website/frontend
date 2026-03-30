@@ -110,7 +110,7 @@ function App() {
                   <Route path="/placement-overview" element={<PlacementOverviewPage />} />
                   <Route path="/training" element={<TrainingOverviewPage />} />
                   <Route path="/recruitment" element={<RecruitmentProcessPage />} />
-                  <Route path="/outcomes" element={<OutcomesOverviewPage />} />
+                  <Route path="/records" element={<OutcomesOverviewPage />} />
 
                   {/* Academics Pages */}
                   <Route path="/academics" element={<AcademicsPageWrapper />} />

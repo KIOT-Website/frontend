@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import RecruitmentProcess from '../components/Placements/RecruitmentProcess'
+import RecruitmentProcess from '../components/Placements/Recruitment'
 
 const RecruitmentProcessPage = () => {
   return (

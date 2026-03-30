@@ -78,9 +78,9 @@ const navLinks = [
     hasDropdown: true,
     subLinks: [
       { name: 'Overview', href: 'placement-overview', icon: Building2 },
-      { name: 'Training', href: 'training', icon: GraduationCap },
-      { name: 'Placement', href: 'recruitment', icon: Briefcase },
-      { name: 'Records', href: 'outcomes', icon: Target },
+      { name: 'Training', href: 'training', icon: BookOpen },
+      { name: 'Recruitment', href: 'recruitment', icon: Users },
+      { name: 'Records', href: 'records', icon: Target },
     ]
   },
   { name: 'Research & Innovations', href: 'research' },

@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import TrainingOverview from '../components/Placements/TrainingOverview'
+import TrainingOverview from '../components/Placements/Training'
 
 const TrainingOverviewPage = () => {
   return (
