@@ -26,6 +26,8 @@ import CourseDetailPageWrapper from './pages/CourseDetailPageWrapper'
 
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const EventsPage = lazy(() => import('./pages/EventsPage'))
+const DepartmentPage = lazy(() => import('./pages/DepartmentPage'))
+const StudentsAdmittedDepartmentPage = lazy(() => import('./pages/StudentsAdmittedDepartmentPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 // Simple Loading Fallback for Suspense (shown between route changes if slow)
@@ -115,6 +117,8 @@ function App() {
                   {/* Academics Pages */}
                   <Route path="/academics" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper />} />
+                  <Route path="/department/:deptName" element={<DepartmentPage />} />
+                  <Route path="/students-admitted-department/:deptName" element={<StudentsAdmittedDepartmentPage />} />
 
                   {/* Admissions — Under Construction */}
                   <Route path="/admissions" element={<UnderConstruction />} />

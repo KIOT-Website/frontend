@@ -5,6 +5,8 @@ import AnalyticsCharts from './AnalyticsCharts'
 import ImpactDistribution from './ImpactDistribution'
 import HiringGateways from './HiringGateways'
 import PlacementRecordsSection from '../PlacementRecordsSection'
+import PlacementRecordsStudentsAdmittedSection from '../PlacementRecordsStudentsAdmittedSection'
+import PlacementDetailsYearSection from '../PlacementDetailsYearSection'
 
 const statsData = [
   { year: "2013-14", lpa: 1.85 }, { year: "2014-15", lpa: 2.01 }, { year: "2015-16", lpa: 2.16 },
@@ -28,6 +30,8 @@ const OutcomesOverview = () => {
       <section className="relative px-6 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
         <HeaderSection />
         <PlacementRecordsSection />
+        <PlacementRecordsStudentsAdmittedSection />
+        <PlacementDetailsYearSection />
         <GlobalStats />
         <AnalyticsCharts statsData={statsData} efficiencyData={efficiencyData} />
         <ImpactDistribution />

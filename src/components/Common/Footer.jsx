@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
           
           <div className="relative z-10 w-full md:w-auto flex-shrink-0 flex justify-center md:justify-end">
-            <Link to="/admissions" className="flex items-center justify-center gap-3 w-full md:w-auto bg-[#18357a] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-xs lg:text-sm hover:bg-white hover:text-[#18357a] hover:shadow-[0_10px_25px_rgba(24,53,122,0.15)] transition-all duration-300 transform hover:-translate-y-1">
+            <Link to="/admissions" className="flex items-center justify-center gap-3 w-full md:w-auto bg-[#18357a] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-xs lg:text-sm hover:bg-[#0d1c43] hover:text-[#ffc107] hover:shadow-[0_10px_25px_rgba(13,28,67,0.3)] transition-all duration-300 transform hover:-translate-y-1">
               Apply Now <ArrowRight size={16} />
             </Link>
           </div>
