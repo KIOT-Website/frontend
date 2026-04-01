@@ -2,20 +2,20 @@ import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
-// Common Components (Loaded immediately as they are part of initial layout)
+// Common Components
 import Header from './components/Common/Header'
 import ScrollToTop from './components/Common/ScrollToTop'
 import Preloader from './components/Common/Preloader'
 import Footer from './components/Common/Footer'
 
-// Page Components (Lazy Loaded for Performance)
+// Page Components
 const Home = lazy(() => import('./pages/Home'))
 import AboutUsPage from './pages/AboutUsPage'
 import VisionMissionPage from './pages/VisionMissionPage'
 import LeadershipPage from './pages/LeadershipPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
-import AwardsRecognitionPage from './pages/AwardsRecognitionPage'
+import AchievementsPage from './pages/AchievementsPage'
 import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 import PlacementOverviewPage from './pages/PlacementOverviewPage'
 import TrainingOverviewPage from './pages/TrainingOverviewPage'
@@ -27,10 +27,11 @@ import CourseDetailPageWrapper from './pages/CourseDetailPageWrapper'
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const EventsPage = lazy(() => import('./pages/EventsPage'))
 const DepartmentPage = lazy(() => import('./pages/DepartmentPage'))
+const LabDetailPage = lazy(() => import('./pages/LabDetailPage'))
 const StudentsAdmittedDepartmentPage = lazy(() => import('./pages/StudentsAdmittedDepartmentPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
-// Simple Loading Fallback for Suspense (shown between route changes if slow)
+// Simple Loading Fallback
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-[60vh] text-[#18357a]">
     <motion.div
@@ -52,7 +53,6 @@ function App() {
     restDelta: 0.001
   })
 
-  // Prevent scroll while initial preloading
   useEffect(() => {
     if (loading) {
       document.body.style.overflow = 'hidden'
@@ -62,7 +62,6 @@ function App() {
     return () => { document.body.style.overflow = '' }
   }, [loading])
 
-  // Reset scroll on route change
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
@@ -70,7 +69,6 @@ function App() {
   return (
     <div className="min-h-screen bg-[#FCFDFD] text-[#224292] font-sans selection:bg-[#ffc107]/20">
       
-      {/* 1. INITIAL PRELOADER */}
       <AnimatePresence mode="wait">
         {loading && <Preloader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
@@ -82,7 +80,6 @@ function App() {
            transition={{ duration: 0.5 }}
            className="relative"
         >
-          {/* 2. PROGRESS BAR */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -90,7 +87,6 @@ function App() {
             style={{ scaleX }}
           />
           
-          {/* 3. CORE LAYOUT */}
           <Header />
 
           <main className="pt-[108px] md:pt-[108px] lg:pt-[104px] min-h-screen" id="top">
@@ -104,8 +100,8 @@ function App() {
                   <Route path="/leadership" element={<LeadershipPage />} />
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/governing-council" element={<GoverningCouncilPage />} />
-                  <Route path="/awards-recognition" element={<AwardsRecognitionPage />} />
-                  <Route path="/achievements" element={<UnderConstruction />} />
+                  <Route path="/awards-recognition" element={<AchievementsPage />} />
+                  <Route path="/achievements" element={<AchievementsPage />} />
                   
                   {/* Placement Pages */}
                   <Route path="/placements" element={<UnderConstruction />} />
@@ -117,16 +113,12 @@ function App() {
                   {/* Academics Pages */}
                   <Route path="/academics" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper />} />
+                  <Route path="/academics/course/:courseId/lab/:labIndex" element={<LabDetailPage />} />
                   <Route path="/department/:deptName" element={<DepartmentPage />} />
                   <Route path="/students-admitted-department/:deptName" element={<StudentsAdmittedDepartmentPage />} />
 
-                  {/* Admissions — Under Construction */}
                   <Route path="/admissions" element={<UnderConstruction />} />
-
-                  {/* Research & Innovations — Under Construction */}
                   <Route path="/research" element={<UnderConstruction />} />
-
-                  {/* Resources — Under Construction */}
                   <Route path="/resources" element={<UnderConstruction />} />
                   <Route path="/campus-life" element={<UnderConstruction />} />
                   <Route path="/student-life" element={<UnderConstruction />} />

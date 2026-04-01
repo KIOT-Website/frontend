@@ -41,32 +41,29 @@ const Footer = () => {
   return (
     <footer className="relative bg-[#0d1c43] text-white mt-16 md:mt-24 lg:mt-32">
       
-      {/* Floatin Call-To-Action Card (Unique Design Element) */}
-      <div className="absolute left-0 right-0 top-0 -translate-y-1/2 px-5 sm:px-10 z-30 flex justify-center">
-        <div className="w-full max-w-4xl bg-gradient-to-r from-[#ffc107] via-[#f7cd44] to-[#ffc107] rounded-3xl p-8 md:p-10 shadow-[0_25px_60px_rgba(255,193,7,0.25)] border-[5px] border-[#FCFDFD] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 group relative overflow-hidden">
-          
-          {/* Subtle animated background shapes inside CTA */}
-          <div className="absolute top-0 right-0 w-48 h-48 bg-white/20 rounded-full blur-2xl transform group-hover:scale-150 transition-transform duration-1000 -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      {/* Inner Footer Call-To-Action Card - Reduced Size & Repositioned */}
+      <div className="relative px-5 sm:px-10 z-30 flex justify-center -translate-y-1/2">
+        <div className="w-full max-w-5xl bg-[#ffc107] rounded-2xl p-6 md:p-8 shadow-[0_20px_40px_rgba(255,193,7,0.2)] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 group relative overflow-hidden border-4 border-[#FCFDFD]">
           
           <div className="relative z-10 text-center md:text-left w-full">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#18357a] font-display mb-2 tracking-tight">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-[#18357a] font-display mb-1 tracking-tight">
               Ready to Shape Your Future?
             </h2>
-            <p className="font-bold text-[#18357a]/75 text-base md:text-lg">
+            <p className="font-bold text-[#18357a]/70 text-sm md:text-base">
               Join KIOT and start your journey today.
             </p>
           </div>
           
           <div className="relative z-10 w-full md:w-auto flex-shrink-0 flex justify-center md:justify-end">
-            <Link to="/admissions" className="flex items-center justify-center gap-3 w-full md:w-auto bg-[#18357a] text-white px-8 py-4 rounded-xl font-black tracking-widest uppercase text-xs lg:text-sm hover:bg-[#0d1c43] hover:text-[#ffc107] hover:shadow-[0_10px_25px_rgba(13,28,67,0.3)] transition-all duration-300 transform hover:-translate-y-1">
-              Apply Now <ArrowRight size={16} />
+            <Link to="/admissions" className="flex items-center justify-center gap-2 w-full md:w-auto bg-[#18357a] text-white px-8 py-3.5 rounded-xl font-black tracking-widest uppercase text-xs hover:bg-[#0d1c43] hover:text-[#ffc107] transition-all duration-300 shadow-lg">
+              Apply Now <ArrowRight size={14} />
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Spacing to handle the floating CTA card (-translate-y-1/2) */}
-      <div className="pt-40 md:pt-48 lg:pt-56 pb-16 lg:pb-24 px-5 sm:px-10 lg:px-20 relative overflow-hidden z-20">
+      {/* Main Footer Content */}
+      <div className="pt-0 pb-16 lg:pb-24 px-5 sm:px-10 lg:px-20 relative overflow-hidden z-20">
         
         {/* Giant Watermark Typography Background */}
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-[25vw] font-black font-display text-white/[0.02] pointer-events-none whitespace-nowrap tracking-tighter w-full text-center mix-blend-overlay select-none">

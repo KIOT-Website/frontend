@@ -84,3 +84,11 @@ h6 {
   background: var(--color-primary-dark);
   color: var(--color-bg-white);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

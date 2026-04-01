@@ -5,192 +5,37 @@ import {
   GraduationCap, Clock, Users, ChevronDown, ChevronRight,
   Download, ArrowLeft, Briefcase, FlaskConical, BookOpen,
   Award, Building2, CheckCircle, ArrowRight, ExternalLink,
-  Microscope, Star, MapPin, Layers, Cpu, Globe, Wrench,
-  BarChart3, FileText
+  Microscope, Star, MapPin, Layers, Cpu, Globe, Wrench, ShieldCheck,
+  BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
+  Calendar
 } from 'lucide-react'
+import { courseData } from '../../data/courseData'
 
-// ─── Course Data ────────────────────────────────────────────────────────────
-const courseData = {
-  'be-mechanical': {
-    name: 'B.E Mechanical Engineering',
-    short: 'Mechanical Engineering',
-    duration: '4 Years (8 Semesters)',
-    intake: 120,
-    affiliation: 'Anna University',
-    accreditation: 'NBA Accredited',
-    placement: '92%',
-    avgPackage: '4.2 LPA',
-    topPackage: '12 LPA',
-    icon: Wrench,
-    color: '#18357a',
-    tagline: 'Design, Build, Innovate',
-    overview: 'B.E Mechanical Engineering at KIOT provides a comprehensive foundation in thermodynamics, fluid mechanics, machine design, manufacturing processes and modern CAD/CAM technologies. Our graduates are sought after by leading automotive, aerospace and energy companies.',
-    whyChoose: [
-      'NBA Accredited Program',
-      'State-of-the-art CAD/CAM & CNC labs',
-      '100% placement assistance',
-      'Industry-experienced faculty',
-      'Live project collaborations with companies',
-      'MSME Innovation Hub partnership',
-    ],
-    curriculum: [
-      {
-        year: 'Year 1 – Foundation',
-        semesters: ['Engineering Mathematics I & II', 'Engineering Physics & Chemistry', 'Engineering Graphics', 'Programming in C', 'Workshop Practice', 'Environmental Science'],
-      },
-      {
-        year: 'Year 2 – Core Concepts',
-        semesters: ['Engineering Thermodynamics', 'Fluid Mechanics', 'Manufacturing Technology', 'Strength of Materials', 'Electrical & Electronics Engineering', 'Metrology & Measurements'],
-      },
-      {
-        year: 'Year 3 – Specialisation',
-        semesters: ['Heat & Mass Transfer', 'Design of Machine Elements', 'Dynamics of Machinery', 'CAD/CAM', 'Industrial Engineering', 'Robotics & Automation (Elective)'],
-      },
-      {
-        year: 'Year 4 – Industry Ready',
-        semesters: ['Finite Element Analysis', 'Project Management', 'Elective: EV Technology', 'Elective: Additive Manufacturing', 'Internship Project', 'Final Year Project'],
-      },
-    ],
-    faculty: [
-      { name: 'Dr. S. Ramesh Kumar', designation: 'HoD & Professor', experience: '22 Years', specialization: 'Thermal Engineering', rating: 4.9 },
-      { name: 'Dr. A. Sathish', designation: 'Associate Professor', experience: '14 Years', specialization: 'CAD/CAM & Robotics', rating: 4.7 },
-      { name: 'Mrs. K. Priya', designation: 'Assistant Professor', experience: '8 Years', specialization: 'Manufacturing Processes', rating: 4.8 },
-      { name: 'Mr. T. Vignesh', designation: 'Assistant Professor', experience: '6 Years', specialization: 'Fluid Mechanics', rating: 4.6 },
-    ],
-    labs: [
-      { name: 'CAD/CAM Lab', equipment: 'CATIA, SolidWorks, UG NX — 40 workstations', icon: Cpu },
-      { name: 'Dynamics Lab', equipment: 'Vibration test rigs, balancing machines, governor set-ups', icon: FlaskConical },
-      { name: 'Thermal Engineering Lab', equipment: 'IC Engines, heat exchangers, refrigeration set-up', icon: Microscope },
-      { name: 'Manufacturing Lab', equipment: 'Lathe, milling, CNC turning & machining centres', icon: Wrench },
-    ],
-    companies: ['TATA Motors', 'L&T', 'Ashok Leyland', 'TVS Motor', 'Ford India', 'Caterpillar', 'BHEL', 'Hyundai'],
-    placementStats: { placed: '92%', avg: '4.2 LPA', top: '12 LPA', companies: '60+' },
-    projects: [
-      'Design of Hybrid Electric Vehicle Chassis',
-      'IoT-Based Predictive Maintenance System',
-      'Biodiesel Extraction from Algae',
-      'Automated Pick-and-Place Robot',
-    ],
-    eligibility: [
-      '10+2 with Physics, Chemistry, Math (PCM)',
-      'Minimum 50% aggregate in PCM',
-      'TNEA rank / Valid TANCET score',
-      'No upper age limit',
-    ],
-  },
-  'be-cse': {
-    name: 'B.E Computer Science & Engineering',
-    short: 'Computer Science & Engineering',
-    duration: '4 Years (8 Semesters)',
-    intake: 240,
-    affiliation: 'Anna University',
-    accreditation: 'NBA Accredited',
-    placement: '96%',
-    avgPackage: '5.8 LPA',
-    topPackage: '24 LPA',
-    icon: Cpu,
-    color: '#18357a',
-    tagline: 'Code. Create. Conquer.',
-    overview: 'B.E Computer Science & Engineering is the flagship program at KIOT. With a curriculum updated annually with industry inputs, students gain hands-on experience in full-stack development, cloud computing, AI/ML, and cybersecurity. Our graduates work at the world\'s leading tech companies.',
-    whyChoose: [
-      'NBA Accredited flagship program',
-      'Industry 4.0 aligned curriculum',
-      'Dedicated Placement Cell with 200+ recruiters',
-      'Google, Microsoft and AWS certified labs',
-      'Hackathons, coding competitions & startup incubation',
-      'Average package of 5.8 LPA',
-    ],
-    curriculum: [
-      {
-        year: 'Year 1 – Foundation',
-        semesters: ['Engineering Mathematics I & II', 'Problem Solving Using Python', 'Engineering Physics & Chemistry', 'English for Engineers', 'Digital Logic Circuits', 'Web Technologies'],
-      },
-      {
-        year: 'Year 2 – Core Computing',
-        semesters: ['Data Structures', 'Computer Organisation', 'DBMS', 'Object Oriented Programming (Java)', 'Operating Systems', 'Computer Networks'],
-      },
-      {
-        year: 'Year 3 – Advanced Domains',
-        semesters: ['Design & Analysis of Algorithms', 'Software Engineering', 'Machine Learning', 'Cloud Computing', 'Information Security', 'Open Elective I'],
-      },
-      {
-        year: 'Year 4 – Industry Ready',
-        semesters: ['Big Data Analytics', 'DevOps & Containerisation', 'Elective: Generative AI', 'Elective: Blockchain', 'Internship Project', 'Final Year Project'],
-      },
-    ],
-    faculty: [
-      { name: 'Dr. K. Vijayalakshmi', designation: 'HoD & Professor', experience: '20 Years', specialization: 'Machine Learning & AI', rating: 4.9 },
-      { name: 'Dr. R. Arun', designation: 'Associate Professor', experience: '12 Years', specialization: 'Cloud Computing', rating: 4.8 },
-      { name: 'Mrs. S. Janani', designation: 'Assistant Professor', experience: '7 Years', specialization: 'Full Stack Development', rating: 4.7 },
-      { name: 'Mr. P. Karthik', designation: 'Assistant Professor', experience: '5 Years', specialization: 'Cybersecurity', rating: 4.6 },
-    ],
-    labs: [
-      { name: 'Cloud Computing Lab', equipment: 'AWS, Azure, GCP — 60 workstations', icon: Globe },
-      { name: 'AI/ML Research Lab', equipment: 'NVIDIA GPUs, TensorFlow, PyTorch environment', icon: FlaskConical },
-      { name: 'Networking Lab', equipment: 'Cisco routers, switches, firewall equipment', icon: Layers },
-      { name: 'Software Development Lab', equipment: 'IDE stations, Git servers, CI/CD pipelines', icon: Cpu },
-    ],
-    companies: ['TCS', 'Infosys', 'Wipro', 'HCLTech', 'Cognizant', 'Zoho', 'Capgemini', 'Accenture', 'IBM', 'Amazon'],
-    placementStats: { placed: '96%', avg: '5.8 LPA', top: '24 LPA', companies: '100+' },
-    projects: [
-      'Real-time Traffic Management using AI',
-      'Smart Campus IoT Monitoring System',
-      'NLP-powered Chatbot for Student Services',
-      'Blockchain-based Certificate Verification',
-    ],
-    eligibility: [
-      '10+2 with Math, Physics, Chemistry / Biology / CS',
-      'Minimum 50% aggregate',
-      'TNEA rank / Valid TANCET score',
-      'No upper age limit',
-    ],
-  },
-  'be-ece': {
-    name: 'B.E Electronics & Communication Engineering',
-    short: 'Electronics & Communication',
-    duration: '4 Years (8 Semesters)',
-    intake: 180,
-    affiliation: 'Anna University',
-    accreditation: 'NBA Accredited',
-    placement: '90%',
-    avgPackage: '4.8 LPA',
-    topPackage: '18 LPA',
-    icon: Globe,
-    color: '#18357a',
-    tagline: 'Connect the World.',
-    overview: 'The ECE department focuses on cellular communications, embedded systems, and VLSI design, preparing students for the rapidly evolving telecommunications industry.',
-    whyChoose: ['High-tech VLSI labs', 'Communication focus', 'Expert faculty'],
-    curriculum: [{ year: 'Year 1', semesters: ['Maths', 'Physics', 'Circuits'] }],
-    faculty: [{ name: 'Dr. R. Sundaram', designation: 'HoD', experience: '20 Years', specialization: 'VLSI', rating: 4.8 }],
-    labs: [{ name: 'VLSI Lab', equipment: 'Cadence Tools', icon: Cpu }],
-    companies: ['Intel', 'Qualcomm', 'Samsung'],
-    placementStats: { placed: '90%', avg: '4.8 LPA', top: '18 LPA', companies: '50+' },
-    projects: ['IoT Based Smart Home'],
-    eligibility: ['10+2 with PCM'],
-  },
-  'btech-it': {
-    name: 'B.Tech Information Technology',
-    short: 'Information Technology',
-    duration: '4 Years (8 Semesters)',
-    intake: 120,
-    affiliation: 'Anna University',
-    accreditation: 'NBA Accredited',
-    placement: '94%',
-    avgPackage: '5.2 LPA',
-    topPackage: '20 LPA',
-    icon: BookOpen,
-    color: '#18357a',
-    tagline: 'Manage Information. Drive Innovation.',
-    overview: 'IT focuses on application development, networking, and data management, ensuring students are industry-ready for software and services sectors.',
-    whyChoose: ['Strong coding culture', 'Software focused', 'Industry tie-ups'],
-    curriculum: [{ year: 'Year 1', semesters: ['Python', 'Discrete Maths', 'Digital Logic'] }],
-    faculty: [{ name: 'Dr. M. Senthil', designation: 'HoD', experience: '18 Years', specialization: 'Networks', rating: 4.7 }],
-    labs: [{ name: 'Networks Lab', equipment: 'Configurable Routers', icon: Layers }],
-    companies: ['Zoho', 'Freshworks', 'Amazon'],
-    placementStats: { placed: '94%', avg: '5.2 LPA', top: '20 LPA', companies: '80+' },
-    projects: ['Cloud-based ERP'],
-    eligibility: ['10+2 with PCM'],
-  },
+const API_BASE = 'http://127.0.0.1:8000'
+
+const ACHIEVEMENT_DEPARTMENT_OVERRIDES = {
+  'be-mechanical': 'B.E. MECHANICAL ENGINEERING',
+  'be-cse': 'B.E. COMPUTER SCIENCE AND ENGINEERING',
+  'be-ece': 'B.E. ELECTRONICS AND COMMUNICATION ENGINEERING',
+  'btech-it': 'B.TECH INFORMATION TECHNOLOGY',
+  'btech-aids': 'B.TECH ARTIFICIAL INTELLIGENCE AND DATA SCIENCE',
+  'be-eee': 'B.E. ELECTRICAL AND ELECTRONICS ENGINEERING',
+  'btech-csbs': 'B.TECH COMPUTER SCIENCE AND BUSINESS SYSTEMS',
+  'be-civil': 'B.E. CIVIL ENGINEERING',
+}
+
+const getAchievementDepartmentName = (courseId, courseName) => {
+  if (ACHIEVEMENT_DEPARTMENT_OVERRIDES[courseId]) {
+    return ACHIEVEMENT_DEPARTMENT_OVERRIDES[courseId]
+  }
+
+  return courseName
+    .toUpperCase()
+    .replace(/^B\.?\s*E\.?\s+/, 'B.E. ')
+    .replace(/^B\.?\s*TECH\.?\s+/, 'B.TECH ')
+    .replace(/\s*&\s*/g, ' AND ')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 // Fallback for courses without full data
@@ -229,7 +74,7 @@ const defaultCourse = (id) => ({
   eligibility: ['10+2 with PCM / relevant subjects', 'Minimum 50% aggregate', 'TNEA rank required'],
 })
 
-const TABS = ['Overview', 'Curriculum', 'Faculty', 'Labs', 'Placements', 'Admissions']
+const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Placements', 'Achievements', 'Admissions']
 
 // ─── Accordion Item ──────────────────────────────────────────────────────────
 function AccordionItem({ title, children, defaultOpen = false }) {
@@ -267,27 +112,68 @@ export default function CourseDetailPage() {
   const { courseId } = useParams()
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('Overview')
+  const [outcomeTab, setOutcomeTab] = useState(null)
+  const [selectedFaculty, setSelectedFaculty] = useState(null)
+  const [openLabIndices, setOpenLabIndices] = useState([0])
   const tabsRef = useRef(null)
+  const labsDetailRef = useRef(null)
 
   const course = courseData[courseId] || defaultCourse(courseId)
   const Icon = course.icon
 
-  const scrollToTab = () => {
+  const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
+
+  const objectiveData = [
+    { id: 'PEO', icon: Target, title: 'Program Educational Objectives', content: course.peo, color: 'text-[#18357a]', bg: 'bg-[#18357a]/5', activeBg: 'bg-[#18357a]', iconColor: 'text-[#ffc107]' },
+    { id: 'PO', icon: Layers, title: 'Program Outcomes', content: course.po, color: 'text-[#ffc107]', bg: 'bg-[#ffc107]/5', activeBg: 'bg-[#ffc107]', iconColor: 'text-[#18357a]' },
+    { id: 'PSO', icon: Star, title: 'Program Specific Outcomes', content: course.pso, color: 'text-emerald-500', bg: 'bg-emerald-500/5', activeBg: 'bg-emerald-500', iconColor: 'text-white' }
+  ]
+
+  const activeObj = objectiveData.find(o => o.id === activeObjectiveTab)
+
+  // Ensure tab content always scrolls to top when switching
+  useEffect(() => {
     if (tabsRef.current) {
-      tabsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const headerOffset = 160; // Accurate offset for main navigation + tab bar
+      const elementPosition = tabsRef.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
-  }
+    
+    // Optional: Reset internal section state if needed
+    if (activeTab === 'Labs') {
+      setOpenLabIndices([0]); // Reset to first lab when clicking tab
+    }
+  }, [activeTab, outcomeTab]);
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]" style={{ fontFamily: "'Inter', 'Outfit', sans-serif" }}>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#18357a] pt-8 pb-10 md:pt-12 md:pb-14">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle at 70% 80%, #ffc107 1.5px, transparent 1.5px)',
-          backgroundSize: '48px 48px'
-        }} />
-        <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-[#ffc107]/6 pointer-events-none" />
+      <section className="relative overflow-hidden bg-[#18357a] pt-10 pb-12 md:pt-16 md:pb-20">
+        {/* Background Image / Pattern Layer */}
+        {course.bannerImage ? (
+           <div className="absolute inset-0 z-0">
+              <img 
+                src={course.bannerImage} 
+                alt={course.name} 
+                className="w-full h-full object-cover opacity-30 mix-blend-overlay scale-110 blur-[1px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#18357a] via-[#18357a]/95 to-transparent" />
+           </div>
+        ) : (
+           <>
+              <div className="absolute inset-0 opacity-10" style={{
+                backgroundImage: 'radial-gradient(circle at 70% 80%, #ffc107 1.5px, transparent 1.5px)',
+                backgroundSize: '48px 48px'
+              }} />
+              <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-[#ffc107]/6 pointer-events-none" />
+           </>
+        )}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Back button */}
@@ -368,7 +254,7 @@ export default function CourseDetailPage() {
             {TABS.map(tab => (
               <button
                 key={tab}
-                onClick={() => { setActiveTab(tab); scrollToTab() }}
+                onClick={() => setActiveTab(tab)}
                 className={`whitespace-nowrap px-5 py-3.5 text-[14px] font-bold transition-all rounded-t-lg ${
                   activeTab === tab
                     ? 'text-[#18357a] border-b-2 border-[#ffc107] bg-[#18357a]/4'
@@ -395,81 +281,229 @@ export default function CourseDetailPage() {
             {/* ── OVERVIEW ── */}
             {activeTab === 'Overview' && (
               <div className="grid lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2 space-y-6">
-                  <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6 md:p-8">
-                    <h2 className="text-xl font-extrabold text-[#18357a] mb-4">About the Program</h2>
-                    <p className="text-[#64779F] leading-relaxed text-[15px]">{course.overview}</p>
-                  </div>
-                  <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6 md:p-8">
-                    <h2 className="text-xl font-extrabold text-[#18357a] mb-5">Why Choose This Program?</h2>
-                    <div className="grid sm:grid-cols-2 gap-3">
-                      {course.whyChoose.map(item => (
-                        <div key={item} className="flex items-start gap-3 p-3 rounded-xl bg-[#F8FAFC] border border-[#E5EDF8]">
-                          <CheckCircle size={16} className="text-[#ffc107] mt-0.5 shrink-0" />
-                          <span className="text-[14px] font-semibold text-[#18357a]">{item}</span>
+                <div className="lg:col-span-2 space-y-8">
+                  <div className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-8 md:p-12 shadow-2xl shadow-blue-900/5 transition-all relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-slate-50 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-blue-50 transition-colors duration-700" />
+                    
+                    <h2 className="text-3xl font-black text-[#18357a] mb-8 flex items-center gap-3">
+                      About the Program
+                      <span className="h-1 w-12 bg-[#ffc107] rounded-full hidden sm:block" />
+                    </h2>
+
+                    <div className="relative z-10">
+                      {Array.isArray(course.overview) ? (
+                        <div className="space-y-6">
+                          {course.overview.map((para, idx) => (
+                            <p key={idx} className="text-[#64779F] leading-relaxed text-[16px] font-medium opacity-90">
+                              {para}
+                            </p>
+                          ))}
                         </div>
+                      ) : (
+                        <p className="text-[#64779F] leading-relaxed text-[16px] font-medium opacity-90">
+                          {course.overview}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Program Highlight Bar */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-slate-100">
+                       <div className="space-y-1">
+                          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">Recognition</p>
+                          <p className="text-[#18357a] font-bold text-sm flex items-center gap-2">
+                             <CheckCircle size={14} className="text-emerald-500" />
+                             {course.accreditation}
+                          </p>
+                       </div>
+                       <div className="space-y-1">
+                          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">Research Focus</p>
+                          <p className="text-[#18357a] font-bold text-sm flex items-center gap-2">
+                             <Microscope size={14} className="text-blue-500" />
+                             Modern Lab Infra
+                          </p>
+                       </div>
+                       <div className="space-y-1">
+                          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">Career Path</p>
+                          <p className="text-[#18357a] font-bold text-sm flex items-center gap-2">
+                             <Briefcase size={14} className="text-amber-500" />
+                             Globally Networked
+                          </p>
+                       </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <h2 className="text-xl font-black text-[#18357a] px-4 uppercase tracking-widest flex items-center gap-3">
+                       <Star size={18} className="text-[#ffc107]" />
+                       Core Program Pillars
+                    </h2>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {course.whyChoose.map((item, idx) => (
+                        <motion.div 
+                          key={item}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="flex items-center gap-4 p-5 rounded-3xl bg-white border border-[#DEE7F4] hover:border-[#18357a]/20 hover:shadow-xl hover:shadow-blue-900/5 transition-all group"
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#18357a] transition-colors shrink-0">
+                            <CheckCircle size={18} className="text-[#ffc107] group-hover:text-white transition-colors" />
+                          </div>
+                          <span className="text-[14px] font-bold text-[#18357a]">{item}</span>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="bg-[#18357a] rounded-2xl p-6 text-white">
-                    <h3 className="font-extrabold mb-4 text-lg">Quick Info</h3>
-                    {[
-                      { label: 'Duration', value: course.duration },
-                      { label: 'Total Intake', value: `${course.intake} Students` },
-                      { label: 'Affiliation', value: course.affiliation },
-                      { label: 'Accreditation', value: course.accreditation },
-                    ].map(item => (
-                      <div key={item.label} className="flex justify-between py-2.5 border-b border-white/10 last:border-0">
-                        <span className="text-white/60 text-[13px]">{item.label}</span>
-                        <span className="text-white font-bold text-[13px]">{item.value}</span>
-                      </div>
-                    ))}
+
+                <div className="space-y-6 flex flex-col">
+                  {/* Modern Quick Info Card */}
+                  <div className="bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2.5rem] p-8 text-white shadow-2xl shadow-[#18357a]/30 relative overflow-hidden">
+                    <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/5 rounded-full -mb-16 -mr-16 blur-2xl" />
+                    <h3 className="font-black mb-8 text-[11px] uppercase tracking-[0.4em] text-[#ffc107]">Quick Insight</h3>
+                    
+                    <div className="space-y-6">
+                      {[
+                        { label: 'Timeframe', value: course.duration, icon: Clock },
+                        { label: 'Capacity', value: `${course.intake} Students`, icon: Users },
+                        { label: 'Network', value: course.affiliation, icon: Building2 },
+                        { label: 'Standard', value: course.accreditation, icon: Award },
+                      ].map(item => (
+                        <div key={item.label} className="group cursor-default">
+                          <p className="text-white/40 text-[10px] font-black uppercase tracking-widest mb-1 group-hover:text-[#ffc107] transition-colors">{item.label}</p>
+                          <div className="flex items-center gap-3">
+                             <item.icon size={16} className="text-white/20" />
+                             <span className="text-white font-black text-sm tracking-tight">{item.value}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <button className="w-full flex items-center justify-center gap-2 p-4 rounded-2xl bg-[#ffc107] text-[#18357a] font-bold text-[15px] hover:bg-[#ffca2c] transition-all">
-                    <Download size={16} /> Download Brochure
-                  </button>
-                  <button
-                    onClick={() => navigate('/admissions')}
-                    className="w-full flex items-center justify-center gap-2 p-4 rounded-2xl bg-[#18357a] text-white font-bold text-[15px] hover:bg-[#1e42a0] transition-all"
-                  >
-                    Apply Now <ArrowRight size={16} />
-                  </button>
+
+                  <div className="space-y-3 mt-auto">
+                    <button className="w-full flex items-center justify-center gap-3 p-5 rounded-[2rem] bg-[#ffc107] text-[#18357a] font-black text-[13px] uppercase tracking-widest hover:bg-[#ffca2c] hover:shadow-xl hover:shadow-[#ffc107]/20 transition-all border-none">
+                      <Download size={18} /> Brochure PDF
+                    </button>
+                    <button
+                      onClick={() => navigate('/admissions')}
+                      className="w-full flex items-center justify-center gap-3 p-5 rounded-[2rem] bg-white border-2 border-[#18357a] text-[#18357a] font-black text-[13px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all"
+                    >
+                      Enroll Now <ArrowRight size={18} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ── VISION & MISSION ── */}
+            {activeTab === 'Vision & Mission' && (
+              <div className="max-w-6xl mx-auto space-y-16">
+                <div className="bg-white rounded-[3rem] border border-[#DEE7F4] p-10 md:p-16 shadow-2xl shadow-blue-900/5 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -mr-24 -mt-24 blur-3xl opacity-50" />
+                  
+                  <div className="relative z-10 text-center mb-16">
+                    <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                       <Target size={14} className="text-[#ffc107]" />
+                       Core Foundation
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#18357a] uppercase tracking-tight leading-tight">
+                      Institutional <span className="text-[#ffc107]">Vision & Mission</span>
+                    </h2>
+                  </div>
+                  
+                  <div className="grid lg:grid-cols-2 gap-10">
+                    {/* Vision Card */}
+                    <div className="p-10 bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2.5rem] text-white shadow-2xl shadow-[#18357a]/30 relative overflow-hidden group/card hover:translate-y-[-5px] transition-transform duration-500">
+                      <div className="absolute top-0 right-0 p-8 opacity-10 scale-150 group-hover/card:rotate-12 transition-transform duration-700">
+                         <Globe size={180} />
+                      </div>
+                      <h3 className="text-[11px] font-black tracking-[0.4em] text-[#ffc107] mb-8 uppercase flex items-center gap-3">
+                         <span className="w-8 h-[2px] bg-[#ffc107]" />
+                         OUR VISION
+                      </h3>
+                      <p className="text-white/90 font-bold leading-relaxed text-[18px] md:text-[20px] italic relative z-10">
+                        "{course.vision || 'Vision statement will be updated soon.'}"
+                      </p>
+                    </div>
+
+                    {/* Mission Card */}
+                    <div className="p-10 bg-slate-50 border-2 border-dashed border-[#DEE7F4] rounded-[2.5rem] hover:bg-white hover:border-[#ffc107]/40 transition-all duration-500 group/card hover:translate-y-[-5px]">
+                      <h3 className="text-[11px] font-black tracking-[0.4em] text-[#18357a] mb-8 uppercase flex items-center gap-3">
+                         <span className="w-8 h-[2px] bg-[#18357a]" />
+                         OUR MISSION
+                      </h3>
+                      <p className="text-[#64779F] font-bold leading-relaxed text-[16px] md:text-[17px] whitespace-pre-wrap relative z-10">
+                        {course.mission || 'Mission statement will be updated soon.'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-[3rem] border border-[#DEE7F4] p-10 md:p-16 shadow-2xl shadow-blue-900/5 overflow-hidden">
+                  <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-16 px-4">
+                     <div>
+                        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                           <Award size={14} className="text-[#18357a]" />
+                           Quality Framework
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tight">Academic Objectives</h2>
+                     </div>
+                     
+                     {/* Horizontal Selector Buttons */}
+                     <div className="flex flex-wrap items-center gap-3 bg-slate-50/50 p-2 rounded-[2rem] border border-slate-100">
+                        {objectiveData.map((obj) => (
+                          <button
+                            key={obj.id}
+                            onClick={() => setActiveObjectiveTab(obj.id)}
+                            className={`px-8 py-4 rounded-[1.5rem] flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 shadow-sm ${
+                              activeObjectiveTab === obj.id
+                                ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
+                                : 'bg-white text-[#64779F] hover:bg-white/80'
+                            }`}
+                          >
+                             <obj.icon size={16} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#A9B1C3]'} />
+                             {obj.id}
+                          </button>
+                        ))}
+                     </div>
+                  </div>
+
+                  {/* Active Content Display Area */}
+                  <div className="relative min-h-[300px]">
+                    <AnimatePresence mode="wait">
+                       <motion.div
+                         key={activeObjectiveTab}
+                         initial={{ opacity: 0, x: 20 }}
+                         animate={{ opacity: 1, x: 0 }}
+                         exit={{ opacity: 0, x: -20 }}
+                         transition={{ duration: 0.4 }}
+                         className="p-10 sm:p-14 rounded-[3rem] bg-slate-50/50 border border-[#DEE7F4]/50 group hover:border-[#18357a]/10 transition-all duration-700"
+                       >
+                          <div className="flex items-center gap-5 mb-10 pb-10 border-b border-slate-200/50">
+                             <div className={`w-16 h-16 rounded-2xl ${activeObj.bg} flex items-center justify-center ${activeObj.color} group-hover:scale-110 transition-transform duration-500`}>
+                                <activeObj.icon size={32} />
+                             </div>
+                             <div>
+                                <h3 className="text-[13px] font-black tracking-[0.3em] text-[#18357a] uppercase">
+                                   {activeObj.title}
+                                </h3>
+                                <p className="text-[#A9B1C3] text-[9px] font-black uppercase tracking-[0.2em] mt-1">Institutional Standard Index</p>
+                             </div>
+                          </div>
+
+                          <p className="text-[#64779F] font-bold leading-[2.2] text-[16px] sm:text-[18px] whitespace-pre-wrap opacity-90 relative z-10 selection:bg-[#ffc107]/20">
+                            {activeObj.content || 'Data current being optimized for digital view.'}
+                          </p>
+                       </motion.div>
+                    </AnimatePresence>
+                  </div>
                 </div>
               </div>
             )}
 
             {/* ── CURRICULUM ── */}
             {activeTab === 'Curriculum' && (
-              <div className="space-y-4 max-w-3xl mx-auto">
-                <div className="mb-6">
-                  <h2 className="text-2xl font-extrabold text-[#18357a] mb-1">Year-wise Curriculum</h2>
-                  <p className="text-[#64779F]">Expand each year to see the subjects covered each semester</p>
-                </div>
-                {course.curriculum.map((year, i) => (
-                  <AccordionItem key={year.year} title={year.year} defaultOpen={i === 0}>
-                    <ul className="grid sm:grid-cols-2 gap-2">
-                      {year.semesters.map(subj => (
-                        <li key={subj} className="flex items-start gap-2.5 text-[13px] text-[#64779F]">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                          {subj}
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionItem>
-                ))}
-                <div className="mt-6 p-5 rounded-2xl bg-[#18357a] text-white flex items-center gap-4">
-                  <FileText size={22} className="text-[#ffc107] shrink-0" />
-                  <div className="flex-1">
-                    <p className="font-bold">Download Full Syllabus</p>
-                    <p className="text-white/60 text-[13px]">Anna University Regulation 2021</p>
-                  </div>
-                  <button className="bg-[#ffc107] text-[#18357a] px-4 py-2 rounded-xl font-bold text-[13px] whitespace-nowrap flex items-center gap-1.5">
-                    <Download size={13} /> PDF
-                  </button>
-                </div>
-              </div>
+              <CurriculumSection courseId={courseId} courseName={course.name} />
             )}
 
             {/* ── FACULTY ── */}
@@ -486,19 +520,22 @@ export default function CourseDetailPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 }}
-                      className="bg-white rounded-2xl border border-[#E5EDF8] p-6 text-center hover:border-[#18357a]/30 hover:shadow-lg transition-all"
+                      className="bg-white rounded-2xl border border-[#E5EDF8] p-6 text-center hover:border-[#18357a]/30 hover:shadow-lg transition-all flex flex-col"
                     >
                       <div className="w-16 h-16 rounded-2xl bg-[#18357a]/8 flex items-center justify-center mx-auto mb-4">
                         <GraduationCap size={28} className="text-[#18357a]" />
                       </div>
-                      <h3 className="font-extrabold text-[#18357a] text-[14px] mb-1">{f.name}</h3>
+                      <h3 className="font-extrabold text-[#18357a] text-[15px] mb-1 leading-tight">{f.name}</h3>
                       <p className="text-[#ffc107] text-[12px] font-bold mb-1">{f.designation}</p>
-                      <p className="text-[#64779F] text-[12px] mb-3">{f.specialization}</p>
-                      <div className="flex items-center justify-center gap-4 text-[11px] text-[#A9B1C3] font-semibold">
-                        <span>{f.experience}</span>
-                        <span className="flex items-center gap-0.5">
-                          <Star size={10} className="text-[#ffc107] fill-[#ffc107]" /> {f.rating}
-                        </span>
+                      <p className="text-[#64779F] text-[11px] mb-3 line-clamp-2">{f.specialization}</p>
+                      
+                      <div className="mt-auto pt-4">
+                        <button 
+                          onClick={() => setSelectedFaculty(f)}
+                          className="w-full py-2 bg-[#18357a]/5 text-[#18357a] text-[11px] font-black tracking-widest uppercase rounded-lg hover:bg-[#18357a] hover:text-white transition-all"
+                        >
+                          View Profile
+                        </button>
                       </div>
                     </motion.div>
                   ))}
@@ -508,29 +545,201 @@ export default function CourseDetailPage() {
 
             {/* ── LABS ── */}
             {activeTab === 'Labs' && (
-              <div>
-                <div className="mb-6">
-                  <h2 className="text-2xl font-extrabold text-[#18357a] mb-1">Labs & Facilities</h2>
-                  <p className="text-[#64779F]">World-class infrastructure for hands-on learning</p>
+              <div className="max-w-7xl mx-auto">
+                {/* DESKTOP VIEW: Sidebar + Detail Panel (Visible only on lg and above) */}
+                <div className="hidden lg:flex flex-row gap-8">
+                  {/* Left Sidebar: Lab List */}
+                  <div className="lg:w-1/3 xl:w-1/4 space-y-3 max-h-[750px] overflow-y-auto px-4 py-2 scrollbar-hide">
+                    <div className="mb-6 px-1">
+                       <h2 className="text-xl font-black text-[#18357a] uppercase tracking-tight mb-1">Labs & Facilities</h2>
+                       <p className="text-[#64779F] text-xs font-bold leading-relaxed">Select a facility to view full technical specifications.</p>
+                    </div>
+                    {course.labs.map((lab, i) => {
+                      const LabIcon = lab.icon;
+                      const isDesktopSelected = openLabIndices[0] === i;
+                      return (
+                        <button
+                          key={lab.name}
+                          onClick={() => setOpenLabIndices([i])}
+                          className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left group ${
+                            isDesktopSelected 
+                              ? 'bg-[#18357a] border-[#18357a] text-white shadow-xl shadow-[#18357a]/20' 
+                              : 'bg-white border-[#E5EDF8] text-[#18357a] hover:border-[#18357a]/30'
+                          }`}
+                        >
+                           <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
+                              isDesktopSelected ? 'bg-[#ffc107] text-[#18357a]' : 'bg-[#18357a]/5 text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white'
+                           }`}>
+                             {LabIcon && <LabIcon size={20} />}
+                           </div>
+                           <span className="text-[13px] font-black uppercase tracking-tight leading-tight flex-1">{lab.name}</span>
+                           <ChevronRight size={14} className={isDesktopSelected ? 'text-[#ffc107]' : 'text-[#64779F] opacity-40'} />
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Right Panel: Lab Details (Desktop only shows the first active index) */}
+                  <div ref={labsDetailRef} className="flex-1 min-h-[600px]">
+                    <AnimatePresence mode="wait">
+                      {openLabIndices[0] !== null && course.labs[openLabIndices[0]] && (() => {
+                        const activeLab = course.labs[openLabIndices[0]];
+                        return (
+                        <motion.div
+                          key={openLabIndices[0]}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          className="bg-white rounded-[2.5rem] border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 h-full overflow-hidden flex flex-col"
+                        >
+                           {/* Lab Header */}
+                           <div className="bg-[#18357a] p-4 md:p-5 relative overflow-hidden shrink-0">
+                              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl" />
+                              <div className="relative z-10 flex flex-col md:flex-row items-center gap-5">
+                                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
+                                    {activeLab.icon && (
+                                       (() => {
+                                          const LargeIcon = activeLab.icon;
+                                          return <LargeIcon size={24} className="text-[#ffc107]" />;
+                                       })()
+                                    )}
+                                 </div>
+                                 <div className="text-center md:text-left">
+                                    <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tight mb-0.5">{activeLab.name}</h3>
+                                    <div className="flex items-center gap-2 justify-center md:justify-start">
+                                       <Building2 size={12} className="text-[#ffc107]" />
+                                       <p className="text-white/60 text-[9px] font-black uppercase tracking-widest leading-none">{course.name}</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           {/* Lab Content Scrollable Area */}
+                           <div className="p-8 md:p-12 space-y-10 flex-1 overflow-y-auto custom-scrollbar">
+                              {/* Inventory / Equipment */}
+                              <div>
+                                 <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
+                                    <h4 className="text-[12px] font-black text-[#18357a] uppercase tracking-[0.2em]">Technical Inventory & Tools</h4>
+                                 </div>
+                                 <div className="grid sm:grid-cols-2 gap-3">
+                                    {activeLab.equipments?.map((item, idx) => (
+                                      <div key={idx} className="flex gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 items-start group hover:bg-white hover:border-[#ffc107]/20 transition-all">
+                                         <div className="w-2 h-2 rounded-full bg-[#ffc107] mt-1.5 shrink-0 group-hover:scale-125 transition-all" />
+                                         <span className="text-[14px] font-bold text-[#18357a] leading-tight">{item}</span>
+                                      </div>
+                                    )) || (
+                                      <p className="text-[#64779F] italic text-sm">Main specialized equipment list is being updated.</p>
+                                    )}
+                                 </div>
+                              </div>
+
+                              {/* Personnel / Staff */}
+                              <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
+                                 <div className="bg-[#18357a]/5 p-6 rounded-2xl border border-[#18357a]/10">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
+                                    <p className="text-[#18357a] font-black text-[16px]">{activeLab.incharge || 'Department HOD'}</p>
+                                 </div>
+                                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-[#64779F] mb-3">Technical Staff</p>
+                                    <p className="text-[#18357a] font-black text-[16px]">{activeLab.technician || 'Engineering Technician'}</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </motion.div>
+                        );
+                      })()}
+                    </AnimatePresence>
+                  </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  {course.labs.map((lab, i) => (
-                    <motion.div
-                      key={lab.name}
-                      initial={{ opacity: 0, scale: 0.97 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="bg-white rounded-2xl border border-[#E5EDF8] p-6 hover:border-[#18357a]/30 hover:shadow-lg transition-all flex gap-4"
-                    >
-                      <div className="w-12 h-12 rounded-xl bg-[#18357a]/8 flex items-center justify-center shrink-0">
-                        <lab.icon size={22} className="text-[#18357a]" />
-                      </div>
-                      <div>
-                        <h3 className="font-extrabold text-[#18357a] text-[15px] mb-1.5">{lab.name}</h3>
-                        <p className="text-[#64779F] text-[13px] leading-relaxed">{lab.equipment}</p>
-                      </div>
-                    </motion.div>
-                  ))}
+
+                {/* MOBILE VIEW: Multi-Expandable Accordion List (Visible only below lg) */}
+                <div className="lg:hidden space-y-4 px-2 pb-10">
+                   <div className="mb-6 px-1">
+                      <h2 className="text-xl font-black text-[#18357a] uppercase tracking-tight mb-1">Labs & Facilities</h2>
+                      <p className="text-[#64779F] text-xs font-bold leading-relaxed">Expand Multiple facilities to compare inventory.</p>
+                   </div>
+                   {course.labs.map((lab, i) => {
+                      const LabIcon = lab.icon;
+                      const isOpen = openLabIndices.includes(i);
+                      return (
+                        <div key={lab.name} className="flex flex-col">
+                           <button
+                             onClick={(e) => {
+                               if (isOpen) {
+                                  // Close it
+                                  setOpenLabIndices(prev => prev.filter(idx => idx !== i));
+                               } else {
+                                  // Open it (Add to set, so others don't close)
+                                  setOpenLabIndices(prev => [...prev, i].sort());
+                                  // Also scroll it into view after a tiny moment
+                                  setTimeout(() => {
+                                     e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                  }, 100);
+                               }
+                             }}
+                             className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left ${
+                               isOpen 
+                                 ? 'bg-[#18357a] border-[#18357a] text-white shadow-xl shadow-[#18357a]/20 rounded-b-none' 
+                                 : 'bg-white border-[#E5EDF8] text-[#18357a] hover:border-[#18357a]/30'
+                             }`}
+                           >
+                              <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
+                                 isOpen ? 'bg-[#ffc107] text-[#18357a]' : 'bg-[#18357a]/5 text-[#18357a]'
+                              }`}>
+                                {LabIcon && <LabIcon size={20} />}
+                              </div>
+                              <span className="text-[13px] font-black uppercase tracking-tight leading-tight flex-1">{lab.name}</span>
+                              <ChevronDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#ffc107]' : 'text-[#64779F] opacity-40'}`} />
+                           </button>
+
+                           <AnimatePresence>
+                              {isOpen && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  className="bg-white border-2 border-t-0 border-[#18357a] rounded-b-2xl overflow-hidden"
+                                >
+                                   <div className="p-6 space-y-8">
+                                      {/* Mobile Content Display */}
+                                      <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
+                                         <Building2 size={14} className="text-[#ffc107]" />
+                                         <p className="text-[#64779F] text-[10px] font-black uppercase tracking-widest">{course.name}</p>
+                                      </div>
+
+                                      <div>
+                                         <div className="flex items-center gap-2 mb-4">
+                                            <div className="w-1 h-4 bg-[#ffc107] rounded-full" />
+                                            <h4 className="text-[11px] font-black text-[#18357a] uppercase tracking-wider">Inventory & Tools</h4>
+                                         </div>
+                                         <div className="grid gap-2">
+                                            {lab.equipments?.map((item, idx) => (
+                                              <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
+                                                 <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
+                                                 <span className="text-[13px] font-bold text-[#18357a] leading-tight">{item}</span>
+                                              </div>
+                                            ))}
+                                         </div>
+                                      </div>
+
+                                      <div className="grid gap-3 pt-4 border-t border-slate-100">
+                                         <div className="bg-[#18357a]/5 p-4 rounded-xl border border-[#18357a]/10">
+                                            <p className="text-[9px] font-black uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
+                                            <p className="text-[#18357a] font-black text-[14px]">{lab.incharge}</p>
+                                         </div>
+                                         <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                            <p className="text-[9px] font-black uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
+                                            <p className="text-[#18357a] font-black text-[14px]">{lab.technician}</p>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </motion.div>
+                              )}
+                           </AnimatePresence>
+                        </div>
+                      );
+                   })}
                 </div>
               </div>
             )}
@@ -582,6 +791,10 @@ export default function CourseDetailPage() {
               </div>
             )}
 
+            {activeTab === 'Achievements' && (
+              <AchievementSection courseId={courseId} courseName={course.name} />
+            )}
+
             {/* ── ADMISSIONS ── */}
             {activeTab === 'Admissions' && (
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -622,6 +835,471 @@ export default function CourseDetailPage() {
           </motion.div>
         </AnimatePresence>
       </div>
+
+      {/* Faculty Profile Modal */}
+      <AnimatePresence>
+        {selectedFaculty && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[300] bg-black/60 backdrop-blur-md flex items-center justify-center p-4"
+            onClick={() => setSelectedFaculty(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              onClick={e => e.stopPropagation()}
+              className="bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+            >
+              <div className="overflow-y-auto custom-scrollbar flex-1 pb-10">
+                <div className="bg-[#18357a] p-8 md:p-12 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-20 -mt-20 blur-3xl" />
+                  
+                  {/* Top Right Close Button */}
+                  <button 
+                    onClick={() => setSelectedFaculty(null)}
+                    className="absolute top-6 right-6 z-20 w-10 h-10 flex items-center justify-center rounded-xl bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-all backdrop-blur-sm border border-white/10"
+                  >
+                    <X size={20} />
+                  </button>
+
+                  <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
+                      <GraduationCap size={52} className="text-[#ffc107]" />
+                    </div>
+                    <div className="text-center md:text-left">
+                      <h2 className="text-2xl md:text-3xl font-black text-white mb-2 leading-tight uppercase tracking-tight">
+                        {selectedFaculty.name}
+                      </h2>
+                      <p className="text-[#ffc107] font-bold text-lg md:text-xl">{selectedFaculty.designation}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-8 md:p-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                    <div className="space-y-6">
+                      {selectedFaculty.qualification && (
+                        <div>
+                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Academic Credentials</p>
+                          <p className="text-[#18357a] font-bold text-[15px]">{selectedFaculty.qualification}</p>
+                        </div>
+                      )}
+                      {selectedFaculty.specialization && selectedFaculty.specialization !== 'N/A' && (
+                        <div>
+                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Area of Specialization</p>
+                          <p className="text-[#18357a] font-bold text-[15px]">{selectedFaculty.specialization}</p>
+                        </div>
+                      )}
+                      {selectedFaculty.experience && (
+                        <div>
+                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Work Experience</p>
+                          <div className="flex items-center gap-2 text-[#18357a]">
+                            <Clock size={16} className="text-[#ffc107]" />
+                            <span className="font-bold text-[15px]">{selectedFaculty.experience}</span>
+                          </div>
+                        </div>
+                      )}
+                      {selectedFaculty.joiningDate && (
+                        <div>
+                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Date of Joining</p>
+                          <p className="text-[#18357a] font-bold text-[15px]">{selectedFaculty.joiningDate}</p>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="space-y-6">
+                      {selectedFaculty.email && selectedFaculty.email !== 'N/A' && (
+                        <div>
+                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">E-Mail Address</p>
+                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-[#18357a] font-bold text-[15px] hover:text-[#ffc107] transition-colors">
+                            <Mail size={16} className="text-[#ffc107]" />
+                            {selectedFaculty.email}
+                          </a>
+                        </div>
+                      )}
+                      {selectedFaculty.association && (
+                        <div>
+                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Nature of Association</p>
+                          <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-black uppercase tracking-widest">
+                            {selectedFaculty.association}
+                          </span>
+                        </div>
+                      )}
+                      <div className="p-6 bg-[#F8FAFC] border border-[#E5EDF8] rounded-2xl">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Award size={18} className="text-[#ffc107]" />
+                          <p className="text-[11px] font-black tracking-widest text-[#18357a] uppercase">Member Recognition</p>
+                        </div>
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(5)].map((_, idx) => (
+                            <Star key={idx} size={14} className={idx < Math.floor(selectedFaculty.rating) ? "text-[#ffc107] fill-[#ffc107]" : "text-[#E5EDF8] fill-[#E5EDF8]"} />
+                          ))}
+                          <span className="ml-2 font-black text-[#18357a] text-sm">{selectedFaculty.rating}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {selectedFaculty.publications && (
+                    <div className="mt-8 pt-8 border-t border-[#E5EDF8]">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-4">Research & Publications</p>
+                      <div className="p-5 bg-[#18357a]/5 border border-[#18357a]/10 rounded-2xl">
+                        <p className="text-[#18357a] font-bold text-[14px] leading-relaxed italic">
+                          {selectedFaculty.publications}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+// ─── Achievement Section Component ──────────────────────────────────────────
+function AchievementSection({ courseId, courseName }) {
+  const [activeSubTab, setActiveSubTab] = useState('AWARD')
+  const [activeAudience, setActiveAudience] = useState('STUDENT')
+  const [selectedYear, setSelectedYear] = useState(null)
+  const [years, setYears] = useState([])
+  const [records, setRecords] = useState({ STUDENT: [], FACULTY: [] })
+  const [loading, setLoading] = useState(false)
+
+  const audienceTabs = [
+    { id: 'STUDENT', label: 'Student' },
+    { id: 'FACULTY', label: 'Faculty' },
+  ]
+
+  const visibleData = records[activeAudience] || []
+
+  const fetchYears = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/placement-achievements/years?category=${activeSubTab}`)
+      const json = await res.json()
+      setYears(json.years || [])
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  useEffect(() => {
+    fetchYears()
+    setSelectedYear(null)
+  }, [activeSubTab])
+
+  useEffect(() => {
+    if (!selectedYear) return
+    const fetchAchievementsData = async () => {
+      try {
+        setLoading(true)
+        const finalDept = getAchievementDepartmentName(courseId, courseName)
+        const [studentRes, facultyRes] = await Promise.all([
+          fetch(`${API_BASE}/placement-achievements/?category=${activeSubTab}&sub_category=STUDENT&department=${encodeURIComponent(finalDept)}&year=${selectedYear}`),
+          fetch(`${API_BASE}/placement-achievements/?category=${activeSubTab}&sub_category=FACULTY&department=${encodeURIComponent(finalDept)}&year=${selectedYear}`)
+        ])
+        const studentData = studentRes.ok ? await studentRes.json() : []
+        const facultyData = facultyRes.ok ? await facultyRes.json() : []
+        setRecords({
+          STUDENT: studentData.sort((a, b) => (a.serial_number || 999) - (b.serial_number || 999)),
+          FACULTY: facultyData.sort((a, b) => (a.serial_number || 999) - (b.serial_number || 999)),
+        })
+      } catch (err) {
+        console.error('FETCH ERROR:', err)
+        setRecords({ STUDENT: [], FACULTY: [] })
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchAchievementsData()
+  }, [activeSubTab, selectedYear, courseId, courseName])
+
+  return (
+    <div className="space-y-12">
+      <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 pb-8 border-b border-[#D5E2F4]/50">
+        <div>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#18357a] to-[#0A1A3F] flex items-center justify-center shadow-xl shadow-[#18357a]/20">
+              <Trophy size={28} className="text-[#ffc107]" />
+            </div>
+            <div>
+              <h3 className="text-4xl font-black text-[#18357a] uppercase tracking-tight leading-none mb-1">Department Honors</h3>
+              <p className="text-[#64779F] font-bold text-sm tracking-wide">Celebrating academic and professional milestones</p>
+            </div>
+          </div>
+          <p className="text-[#A9B1C3] text-[11px] font-black uppercase tracking-[0.2em]">Department of {courseName.split('Engineering')[0]}</p>
+        </div>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
+            {['AWARD', 'ACHIEVEMENT'].map(tab => (
+              <button key={tab} onClick={() => setActiveSubTab(tab)} className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${activeSubTab === tab ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
+                {tab === 'AWARD' ? 'Awards' : 'Achievements'}
+              </button>
+            ))}
+          </div>
+          {selectedYear && (
+            <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
+              {audienceTabs.map(tab => (
+                <button key={tab.id} onClick={() => setActiveAudience(tab.id)} className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
+                  {tab.id === 'STUDENT' ? 'Student' : 'Faculty'}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {!selectedYear ? (
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pt-6">
+          {years.length === 0 ? (
+            <div className="col-span-full py-12 text-center text-[#64779F]">No academic folders found for this category.</div>
+          ) : (
+            years.map(yr => (
+              <button key={yr} onClick={() => setSelectedYear(yr)} className="bg-white p-8 rounded-[2rem] border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#18357a]/20 transition-all flex flex-col items-center group">
+                <div className="h-12 w-12 bg-slate-50 flex items-center justify-center rounded-xl mb-3 group-hover:scale-110 transition-transform">
+                  <Star size={24} className="text-[#ffc107]" />
+                </div>
+                <span className="text-xl font-black text-[#18357a]">{yr}</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.1em] text-[#A9B1C3] mt-1 opacity-60">View Folders</span>
+              </button>
+            ))
+          )}
+        </div>
+      ) : (
+        <>
+          <div className="flex items-center gap-4 -mt-4">
+            <button onClick={() => setSelectedYear(null)} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[10px] font-black uppercase tracking-widest text-[#18357a] border-2 border-[#E2E8F0] hover:bg-slate-50 hover:translate-x-[-4px] transition-all">
+              <ArrowLeft size={14} /> Back to Years
+            </button>
+            <span className="px-4 py-2 bg-[#ffc107] text-[#18357a] text-[10px] font-black uppercase rounded-xl tracking-widest">Selected: {selectedYear}</span>
+          </div>
+
+          {loading ? (
+            <div className="py-24 flex flex-col items-center justify-center gap-5">
+              <div className="w-16 h-16 rounded-full border-4 border-[#18357a]/10 border-t-[#ffc107] animate-spin" />
+              <p className="text-[11px] font-black uppercase tracking-[0.3em] text-[#18357a]/40">Fetching Records...</p>
+            </div>
+          ) : visibleData.length === 0 ? (
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-24 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center group">
+              <div className="w-24 h-24 rounded-3xl bg-[#F8FAFC] border border-[#E5EDF8] flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <div className="relative">
+                  <Users size={48} className="text-[#A9B1C3]/40" />
+                  <Star size={20} className="absolute -top-1 -right-1 text-[#ffc107] animate-bounce" />
+                </div>
+              </div>
+              <h4 className="text-xl font-black text-[#18357a] uppercase mb-3">No records found</h4>
+              <p className="text-[#64779F] font-bold text-sm">Nothing recorded for this folder yet.</p>
+            </motion.div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <AnimatePresence mode="popLayout">
+                {visibleData.map((item, idx) => {
+                  const isAward = activeSubTab === 'AWARD';
+                  const isStudent = activeAudience === 'STUDENT';
+                  const isRank = !isAward && isStudent && item.type === 'RANK';
+                  const isContest = !isAward && isStudent && item.type === 'CONTEST';
+                  const fileUrl = item.pdf_url || item.image_url;
+
+                  return (
+                    <motion.div key={`${activeAudience}-${item.id}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }} className="bg-white rounded-[2rem] p-7 border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#18357a]/20 transition-all group">
+                      <div className="flex items-start justify-between mb-6 gap-4">
+                        <div className="h-12 w-12 rounded-xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-[#ffc107] transition-all shrink-0">
+                          {isAward ? <Award size={22} /> : (activeAudience === 'FACULTY' ? <Users size={22} /> : <Trophy size={22} />)}
+                        </div>
+                        <span className="text-[10px] font-black text-[#64779F] uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg">
+                          {item.year || item.academic_year || item.batch || 'Record'}
+                        </span>
+                      </div>
+
+                      <h4 className="text-lg font-black text-[#18357a] mb-2 leading-tight uppercase">{isAward ? item.award_name : item.description}</h4>
+                      <p className="text-[#64779F] text-sm font-semibold italic mb-6 opacity-80">{isStudent ? (isAward ? item.student_name : item.name) : item.faculty_name}</p>
+
+                      {isRank && (
+                        <div className="grid grid-cols-2 gap-3 mb-6">
+                          <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                             <p className="text-[9px] font-black text-[#A9B1C3] uppercase mb-1">Rank</p>
+                             <p className="text-sm font-black text-[#18357a]">{item.university_rank}</p>
+                          </div>
+                          <div className="bg-teal-50 p-3 rounded-xl border border-teal-100">
+                             <p className="text-[9px] font-black text-[#A9B1C3] uppercase mb-1">CGPA</p>
+                             <p className="text-sm font-black text-teal-600">{item.cgpa}</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {fileUrl && (
+                        <a href={fileUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-3 bg-[#F8FAFC] border border-[#E5EDF8] rounded-xl text-[10px] font-black uppercase tracking-widest text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all">
+                          View PDF <ExternalLink size={12} />
+                        </a>
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+// ─── Curriculum Section Component ──────────────────────────────────────────
+function CurriculumSection({ courseId, courseName }) {
+  const [curriculumTab, setCurriculumTab] = useState('Regulations')
+  const [records, setRecords] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const fetchCurriculumData = async () => {
+      try {
+        setLoading(true)
+        const finalDept = getAchievementDepartmentName(courseId, courseName)
+        const res = await fetch(`${API_BASE}/curriculum-records/?category=${curriculumTab}&department=${encodeURIComponent(finalDept)}`)
+        if (res.ok) {
+          const data = await res.json()
+          setRecords(data)
+        } else {
+          setRecords([])
+        }
+      } catch (err) {
+        console.error('FETCH ERROR:', err)
+        setRecords([])
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchCurriculumData()
+  }, [curriculumTab, courseId, courseName])
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 md:px-0">
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-8 pb-8 border-b border-[#D5E2F4]/50">
+        <div>
+           <div className="flex items-center gap-4 mb-2">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#18357a] to-[#0A1A3F] flex items-center justify-center shadow-lg shadow-[#18357a]/20">
+                 <BookOpen size={24} className="text-[#ffc107]" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
+           </div>
+           <p className="text-[#64779F] font-bold text-sm tracking-wide ml-16">Department of {courseName.split('Engineering')[0]}</p>
+        </div>
+
+        <div className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200 self-start md:self-center">
+          {['Regulations', 'Syllabus'].map((t) => (
+            <button
+              key={t}
+              onClick={() => setCurriculumTab(t)}
+              className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${
+                curriculumTab === t
+                  ? 'bg-white text-[#18357a] shadow-xl shadow-blue-900/10 scale-[1.02] translate-y-[-1px]'
+                  : 'text-[#64779F] hover:text-[#18357a]'
+              }`}
+            >
+              {t}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {loading ? (
+        <div className="py-24 flex flex-col items-center justify-center gap-5">
+           <div className="w-16 h-16 rounded-full border-4 border-[#18357a]/10 border-t-[#ffc107] animate-spin" />
+           <p className="text-[11px] font-black uppercase tracking-[0.3em] text-[#18357a]/40">Indexing Academic Files...</p>
+        </div>
+      ) : records.length === 0 ? (
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-20 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center">
+           <div className="w-20 h-20 rounded-[2rem] bg-[#F8FAFC] flex items-center justify-center mb-8">
+              <FileText size={40} className="text-[#A9B1C3]/30" />
+           </div>
+           <h4 className="text-xl font-black text-[#18357a] uppercase mb-2">No {curriculumTab} Found</h4>
+           <p className="text-[#64779F] font-bold text-sm">Official documentation for this department is being updated.</p>
+        </motion.div>
+      ) : (
+        <div className="bg-white border border-[#D5E2F4]/80 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/5">
+           <table className="w-full text-left border-collapse">
+              <thead>
+                 <tr className="bg-[#18357a] border-b border-[#18357a]">
+                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-white">Document Info</th>
+                    <th className="px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
+                    {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-white">Semester</th>}
+                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-white text-right">Actions</th>
+                 </tr>
+              </thead>
+              <tbody className="divide-y divide-[#D5E2F4]/40">
+                {records.map((item, i) => (
+                  <motion.tr 
+                    key={item.id}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    className="hover:bg-[#ffc107]/5 transition-colors group"
+                  >
+                    <td className="px-8 py-5">
+                       <div className="flex items-center gap-4">
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
+                             curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#18357a]' : 'bg-[#ffc107]/10 text-[#18357a]'
+                          }`}>
+                            {curriculumTab === 'Regulations' ? <ShieldCheck size={20} /> : <BookOpen size={20} />}
+                          </div>
+                          <span className="text-sm font-black text-[#18357a] group-hover:text-[#18357a] transition-colors uppercase">{item.title}</span>
+                       </div>
+                    </td>
+                    <td className="px-6 py-5">
+                       <div className="flex items-center gap-2">
+                          <Calendar size={13} className="text-[#ffc107]" />
+                          <span className="text-[11px] font-black uppercase tracking-widest text-[#64779F]">{item.year_or_version}</span>
+                       </div>
+                    </td>
+                    {curriculumTab === 'Syllabus' && (
+                       <td className="px-6 py-5">
+                          <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-black text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                             SEM - {item.semester}
+                          </span>
+                       </td>
+                    )}
+                    <td className="px-8 py-5 text-right">
+                       <div className="flex items-center justify-end gap-3">
+                          {/* View Link - Yellow Hover */}
+                          <a 
+                            href={item.pdf_url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="p-2.5 rounded-xl bg-blue-50 text-[#18357a] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95"
+                            title="View Document"
+                          >
+                             <ExternalLink size={16} />
+                          </a>
+
+                          {/* Download Button - Force Attachment */}
+                          <button 
+                            onClick={() => {
+                               // Cloudinary trick: inject fl_attachment to force download
+                               const downloadUrl = item.pdf_url.includes('/upload/') 
+                                 ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/')
+                                 : item.pdf_url;
+                                 
+                               window.open(downloadUrl, '_blank');
+                            }}
+                            className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#18357a] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
+                            title="Download Document"
+                          >
+                             <Download size={16} />
+                          </button>
+                       </div>
+                    </td>
+                  </motion.tr>
+                ))}
+              </tbody>
+           </table>
+        </div>
+      )}
     </div>
   )
 }

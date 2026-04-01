@@ -269,151 +269,178 @@ export default function AcademicsPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC]" style={{ fontFamily: "'Inter', 'Outfit', sans-serif" }}>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#18357a] py-20 md:py-28">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle at 20% 50%, #ffc107 1px, transparent 1px), radial-gradient(circle at 80% 20%, #ffc107 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
+      <section className="relative overflow-hidden bg-[#0A1A3F] py-24 md:py-36">
+        {/* Dynamic Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full bg-[#18357a] blur-[120px] opacity-30 animate-pulse" />
+          <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[60%] rounded-full bg-[#ffc107]/10 blur-[150px] animate-pulse" style={{ animationDelay: '3s' }} />
+        </div>
+
+        {/* Geometric Patterns */}
+        <div className="absolute inset-0 opacity-[0.08]" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, #ffc107 1px, transparent 0)',
+          backgroundSize: '48px 48px'
         }} />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#ffc107]/5 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+        
+        {/* Abstract Floating Circle */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#ffc107]/20 to-transparent -translate-y-1/2 translate-x-1/2 blur-2xl pointer-events-none" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ffc107]/15 border border-[#ffc107]/30 text-[#ffc107] text-sm font-semibold mb-6">
-              <GraduationCap size={15} /> Academics at KIOT
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[#ffc107] text-[13px] font-bold tracking-widest uppercase mb-8"
+            >
+              <GraduationCap size={16} className="animate-bounce" /> Academic Excellence
+            </motion.span>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight">
               Shape Your Future with<br />
-              <span className="text-[#ffc107]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff1cc] to-[#ffc107] animate-gradient">
                 {searchParams.get('program') || searchParams.get('type') 
-                  ? (programTab === 'UG Programs' ? 'UG Engineering Programs' : 'PG Specialization Programs') 
+                  ? (programTab === 'UG Programs' ? 'UG Engineering' : 'PG Specializations') 
                   : 'World-Class Education'}
               </span>
             </h1>
-            <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-              Explore our diverse range of undergraduate and postgraduate programs designed to ignite innovation and career excellence.
+
+            <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
+              Explore our diverse range of undergraduate and postgraduate programs meticulously designed to ignite innovation and career excellence in the global tech landscape.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <button
+
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => navigate('/admissions')}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#18357a] font-bold text-[15px] hover:bg-[#ffca2c] transition-all hover:scale-105 shadow-lg shadow-[#ffc107]/20"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#ffc107] text-[#18357a] font-black text-sm uppercase tracking-widest hover:bg-[#ffca2c] transition-all shadow-[0_10px_40px_-10px_rgba(255,193,7,0.4)]"
               >
-                Apply Now <ArrowRight size={16} />
-              </button>
-              <button
-                onClick={() => document.getElementById('programs-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 text-white font-semibold text-[15px] hover:bg-white/10 transition-all"
+                Apply Now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05, bg: "rgba(255,255,255,0.1)" }}
+                onClick={() => document.getElementById('academics-content')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 rounded-2xl border border-white/20 text-white font-bold text-sm uppercase tracking-widest backdrop-blur-sm transition-all"
               >
                 Explore Programs
-              </button>
+              </motion.button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="academics-content">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" id="academics-content">
         <motion.div
            key="programs"
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.4 }}
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ duration: 0.5 }}
         >
-          {/* Program Type Tabs - Only show if not specifically requested via URL */}
+          {/* Modern Tab Selector */}
           {(!searchParams.get('program') && !searchParams.get('type')) && (
-            <div className="flex gap-3 mb-8 flex-wrap">
-              {['UG Programs', 'PG Programs'].map(t => (
-                <button
-                  key={t}
-                  onClick={() => setProgramTab(t)}
-                  className={`px-5 py-2.5 rounded-xl text-[14px] font-bold transition-all ${
-                    programTab === t
-                      ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20'
-                      : 'bg-white text-[#64779F] border border-[#E5EDF8] hover:border-[#18357a]/30 hover:text-[#18357a]'
-                  }`}
-                >
-                  {t}
-                </button>
-              ))}
+            <div className="flex justify-center mb-16">
+              <div className="bg-white p-2 rounded-[2rem] flex gap-2 border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5">
+                {['UG Programs', 'PG Programs'].map(t => (
+                  <button
+                    key={t}
+                    onClick={() => setProgramTab(t)}
+                    className={`px-10 py-4 rounded-[1.5rem] text-sm font-black uppercase tracking-widest transition-all duration-300 ${
+                      programTab === t
+                        ? 'bg-[#18357a] text-white shadow-xl shadow-[#18357a]/20 scale-105'
+                        : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'
+                    }`}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
 
-          {/* Program Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {currentPrograms.map((prog, i) => {
-              const inCompare = compareList.find(p => p.id === prog.id)
-              return (
-                <motion.div
-                  key={prog.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.07 }}
-                  className="group bg-white rounded-2xl border border-[#E5EDF8] hover:border-[#18357a]/30 hover:shadow-xl hover:shadow-[#18357a]/8 transition-all duration-300 overflow-hidden flex flex-col"
-                >
-                  {/* Card Top */}
-                  <div className="relative p-6 pb-4">
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="inline-block px-3 py-1 rounded-lg bg-[#18357a]/8 text-[#18357a] text-xs font-bold">
-                        {prog.category}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg">
-                        <CheckCircle size={11} /> {prog.placement} Placed
-                      </span>
-                    </div>
-                    <div 
-                      className="flex items-center gap-4 mb-3 cursor-pointer group/title"
-                      onClick={() => navigate(`/academics/course/${prog.id}`)}
-                    >
-                      <div className="w-12 h-12 rounded-xl bg-[#18357a]/8 flex items-center justify-center shrink-0 group-hover/title:bg-[#18357a] transition-colors">
-                        <prog.icon size={22} className="text-[#18357a] group-hover/title:text-white transition-colors" />
-                      </div>
-                      <h3 className="text-[16px] font-extrabold text-[#18357a] leading-tight group-hover/title:text-[#ffc107] transition-colors">
-                        {prog.name}
-                      </h3>
-                    </div>
-                    <p className="text-sm text-[#64779F] leading-relaxed">{prog.description}</p>
-                  </div>
+          {/* Modern Row and Column Based (Table) Layout */}
+          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-[#18357a]/5 border-b border-[#D5E2F4]/30">
+                    <th className="px-8 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em]">Program</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em] hidden md:table-cell">Category</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em] text-center">Intake</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em] text-right"></th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-50">
+                  {currentPrograms.map((prog, i) => {
+                    const inCompare = compareList.find(p => p.id === prog.id)
+                    return (
+                      <motion.tr
+                        key={prog.id}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.03 }}
+                        className="group hover:bg-[#18357a]/[0.02] transition-all cursor-pointer"
+                        onClick={() => navigate(`/academics/course/${prog.id}`)}
+                      >
+                        {/* Column 1: Program (Icon + Name) */}
+                        <td className="px-8 py-4">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-[#18357a]/5 flex items-center justify-center group-hover:bg-[#18357a] transition-all duration-300 overflow-hidden">
+                              <prog.icon size={18} className="text-[#18357a] group-hover:text-white transition-colors" />
+                            </div>
+                            <div>
+                               <h3 className="text-[14px] font-black text-[#18357a] leading-tight uppercase group-hover:text-[#18357a] transition-colors mb-0.5">
+                                 {prog.name}
+                               </h3>
+                               <p className="text-[10px] font-bold text-[#A9B1C3] uppercase tracking-wider">{prog.short}</p>
+                            </div>
+                          </div>
+                        </td>
 
-                  {/* Divider */}
-                  <div className="h-px bg-[#E5EDF8] mx-6" />
+                        {/* Column 2: Category (Hidden on Mobile) */}
+                        <td className="px-8 py-4 hidden md:table-cell">
+                          <span className="px-3 py-1 rounded-full bg-[#18357a]/5 text-[#18357a] text-[9px] font-black uppercase tracking-widest">
+                            {prog.category}
+                          </span>
+                        </td>
 
-                  {/* Meta Details */}
-                  <div className="px-6 py-4 flex gap-6">
-                    <div>
-                      <p className="text-[11px] text-[#A9B1C3] font-semibold uppercase tracking-wide">Duration</p>
-                      <p className="text-[14px] font-bold text-[#18357a]">{prog.duration}</p>
-                    </div>
-                    <div>
-                      <p className="text-[11px] text-[#A9B1C3] font-semibold uppercase tracking-wide">Intake</p>
-                      <p className="text-[14px] font-bold text-[#18357a]">{prog.intake} Seats</p>
-                    </div>
-                  </div>
+                        {/* Column 3: Intake */}
+                        <td className="px-8 py-4 text-center">
+                          <span className="text-[#18357a] font-black text-[13px]">{prog.intake}</span>
+                          <span className="ml-1 text-[9px] font-bold text-[#A9B1C3] uppercase tracking-widest hidden sm:inline">Seats</span>
+                        </td>
 
-                  {/* Actions */}
-                  <div className="px-6 pb-6 mt-auto flex gap-2">
-                    <button
-                      onClick={() => navigate(`/academics/course/${prog.id}`)}
-                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#18357a] text-white text-[13px] font-bold hover:bg-[#1e42a0] transition-all"
-                    >
-                      View Details & Faculty <ChevronRight size={14} />
-                    </button>
-                    <button
-                      onClick={() => toggleCompare(prog)}
-                      className={`w-11 h-11 flex items-center justify-center rounded-xl border transition-all ${
-                        inCompare
-                          ? 'bg-[#ffc107]/10 border-[#ffc107] text-[#18357a]'
-                          : 'bg-white border-[#E5EDF8] text-[#A9B1C3] hover:border-[#18357a]/30 hover:text-[#18357a]'
-                      }`}
-                      title={inCompare ? 'Remove from Compare' : 'Add to Compare'}
-                    >
-                      <BarChart3 size={18} />
-                    </button>
-                  </div>
-                </motion.div>
-              )
-            })}
+                        {/* Column 4: Actions */}
+                        <td className="px-8 py-4">
+                          <div className="flex items-center justify-end gap-3">
+                             <button
+                               onClick={(e) => { e.stopPropagation(); toggleCompare(prog); }}
+                               className={`w-9 h-9 flex items-center justify-center rounded-lg border transition-all ${
+                                 inCompare
+                                   ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-md shadow-[#ffc107]/20'
+                                   : 'bg-white border-[#E5EDF8] text-[#A9B1C3] hover:border-[#18357a]/30 hover:text-[#18357a]'
+                               }`}
+                               title={inCompare ? 'Remove' : 'Compare'}
+                             >
+                               <BarChart3 size={14} />
+                             </button>
+                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#18357a] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#0A1A3F] transition-all transform active:scale-95 shadow-md shadow-[#18357a]/10">
+                                View <ArrowRight size={12} className="hidden sm:block" />
+                             </div>
+                          </div>
+                        </td>
+                      </motion.tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           {/* Floating Compare Button */}
