@@ -63,30 +63,30 @@ const PlacementRecordsStudentsAdmittedSection = () => {
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <div className="min-w-[800px]">
+            <div className="min-w-[800px] bg-white border border-[#D5E2F4]/50 rounded-2xl overflow-hidden shadow-sm">
               {/* Table Header */}
-              <div className="grid grid-cols-5 bg-[#18357a] text-white px-8 py-5 rounded-t-[2rem] text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
+              <div className="grid grid-cols-5 bg-[#18357a] text-white px-8 py-4 text-[10px] font-black uppercase tracking-widest">
                 <span className="text-left">Academic Year</span>
-                <span className="text-center">Total No.of Students Opted</span>
-                <span className="text-center">Total No.of Students Placed</span>
-                <span className="text-center">Total No.of Companies</span>
+                <span className="text-center">Students Opted</span>
+                <span className="text-center">Students Placed</span>
+                <span className="text-center">Companies</span>
                 <span className="text-center">Percentage</span>
               </div>
 
               {/* Data List */}
-              <div className="bg-white rounded-b-[2rem] border-x border-b border-[#D5E2F4]/50 shadow-2xl shadow-[#18357a]/5">
+              <div>
                 {data.map((item) => (
-                  <div key={item.id} className="grid grid-cols-5 items-center px-8 py-6 border-b border-[#D5E2F4]/30 last:border-0 hover:bg-[#F8FAFC] transition-colors group">
-                    <span className="font-extrabold text-[#18357a] text-base md:text-lg tracking-tight">
+                  <div key={item.id} className="grid grid-cols-5 items-center px-8 py-5 border-b border-[#F1F5FB] last:border-0 hover:bg-[#F8FAFC] transition-colors group">
+                    <span className="font-black text-[#18357a] text-base tracking-tight group-hover:text-[#ffc107] transition-colors">
                       {item.academic_year}
                     </span>
-                    <span className="text-center text-[#64779F] font-bold text-base md:text-lg">
+                    <span className="text-center text-[#64779F] font-bold text-base">
                       {item.students_opted}
                     </span>
-                    <span className="text-center text-[#64779F] font-bold text-base md:text-lg">
+                    <span className="text-center text-[#64779F] font-bold text-base">
                       {item.students_placed}
                     </span>
-                    <span className="text-center text-[#64779F] font-bold text-base md:text-lg">
+                    <span className="text-center text-[#64779F] font-bold text-base">
                       {item.companies_count}
                     </span>
                     <span className="text-center flex justify-center">

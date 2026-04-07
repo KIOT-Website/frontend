@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -7,9 +7,10 @@ import {
   Award, Building2, CheckCircle, ArrowRight, ExternalLink,
   Microscope, Star, MapPin, Layers, Cpu, Globe, Wrench, ShieldCheck,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
-  Calendar
+  Calendar, Zap
 } from 'lucide-react'
 import { courseData } from '../../data/courseData'
+import cseImage from '../../assets/CSE .png'
 
 const API_BASE = 'http://127.0.0.1:8000'
 
@@ -129,26 +130,50 @@ export default function CourseDetailPage() {
     { id: 'PSO', icon: Star, title: 'Program Specific Outcomes', content: course.pso, color: 'text-emerald-500', bg: 'bg-emerald-500/5', activeBg: 'bg-emerald-500', iconColor: 'text-white' }
   ]
 
+  // Force window to scroll to absolute top on initial page load and course change
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    setActiveTab('Overview'); // Reset to first tab for new departments
+    
+    // Safety delay to override any browser-native scroll restoration
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 5);
+    return () => clearTimeout(timer);
+  }, [courseId]);
+
   const activeObj = objectiveData.find(o => o.id === activeObjectiveTab)
 
   // Ensure tab content always scrolls to top when switching
+  const isFirstMount = useRef(true);
+
+  // Handle scroll to tabs ONLY when the user clicks a tab manually
   useEffect(() => {
+    // If it's the first time the department loads, OR we are just on 'Overview', don't scroll down
+    if (isFirstMount.current || activeTab === 'Overview') {
+      isFirstMount.current = false;
+      return;
+    }
+
     if (tabsRef.current) {
-      const headerOffset = 160; // Accurate offset for main navigation + tab bar
-      const elementPosition = tabsRef.current.getBoundingClientRect().top;
+      const headerOffset = 150; 
+      const element = tabsRef.current;
+      const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
+      
+      setTimeout(() => {
+        const currentTop = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        if (Math.abs(window.pageYOffset - currentTop) > 10) {
+            window.scrollTo({ top: currentTop, behavior: 'instant' });
+        }
+      }, 300);
     }
-    
-    // Optional: Reset internal section state if needed
-    if (activeTab === 'Labs') {
-      setOpenLabIndices([0]); // Reset to first lab when clicking tab
-    }
-  }, [activeTab, outcomeTab]);
+  }, [activeTab]);
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]" style={{ fontFamily: "'Inter', 'Outfit', sans-serif" }}>
@@ -156,24 +181,14 @@ export default function CourseDetailPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#18357a] pt-10 pb-12 md:pt-16 md:pb-20">
         {/* Background Image / Pattern Layer */}
-        {course.bannerImage ? (
-           <div className="absolute inset-0 z-0">
-              <img 
-                src={course.bannerImage} 
-                alt={course.name} 
-                className="w-full h-full object-cover opacity-30 mix-blend-overlay scale-110 blur-[1px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#18357a] via-[#18357a]/95 to-transparent" />
-           </div>
-        ) : (
-           <>
-              <div className="absolute inset-0 opacity-10" style={{
-                backgroundImage: 'radial-gradient(circle at 70% 80%, #ffc107 1.5px, transparent 1.5px)',
-                backgroundSize: '48px 48px'
-              }} />
-              <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-[#ffc107]/6 pointer-events-none" />
-           </>
-        )}
+        {/* Background Visuals - Clean Institutional Theme */}
+        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+          <div className="absolute inset-0" style={{ 
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '32px 32px'
+          }} />
+        </div>
+        <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-[#ffc107]/5 blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Back button */}
@@ -199,46 +214,43 @@ export default function CourseDetailPage() {
               </h1>
               <p className="text-[#ffc107] font-semibold text-lg mb-6">{course.tagline}</p>
 
-              <div className="flex flex-wrap gap-6 mb-8">
-                <div className="flex items-center gap-2 text-white/80">
-                  <Clock size={16} className="text-[#ffc107]" />
-                  <span className="text-sm font-medium">{course.duration}</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/80">
-                  <Users size={16} className="text-[#ffc107]" />
-                  <span className="text-sm font-medium">{course.intake} Seats</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/80">
-                  <Award size={16} className="text-[#ffc107]" />
-                  <span className="text-sm font-medium">{course.placement} Placement</span>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
+              {/* Course CTA Buttons */}
+              <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => navigate('/admissions')}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ffc107] text-[#18357a] font-bold text-[14px] hover:bg-[#ffca2c] transition-all shadow-lg shadow-[#ffc107]/20"
                 >
                   Quick Apply <ArrowRight size={15} />
                 </button>
-                <button className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/20 text-white font-semibold text-[14px] hover:bg-white/10 transition-all">
-                  <Download size={15} /> Download Brochure
-                </button>
               </div>
             </div>
 
-            {/* Stats card */}
-            <div className="lg:w-72 shrink-0">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 grid grid-cols-2 gap-4">
+            {/* Right Column: Expansive Leaf Visual + Stats */}
+            <div className="lg:w-[500px] flex flex-col gap-6 shrink-0 relative">
+              {/* Massive Leaf-Shaped Branding Visual */}
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-[#ffc107]/10 rounded-[10rem_3rem_10rem_3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-duration-1000" />
+                <div className="relative h-[400px] w-full rounded-[10rem_3.5rem_10rem_3.5rem] overflow-hidden border-4 border-white/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
+                  <img 
+                    src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"} 
+                    alt={course.name} 
+                    className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/50 via-transparent to-transparent" />
+                </div>
+              </div>
+
+              {/* Stats card */}
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem_1rem_3rem_1rem] p-8 grid grid-cols-2 gap-8 shadow-2xl">
                 {[
                   { label: 'Duration', value: course.duration.split(' ')[0] + ' Yrs' },
                   { label: 'Seats', value: course.intake },
                   { label: 'Avg Package', value: course.avgPackage },
                   { label: 'Top Package', value: course.topPackage },
                 ].map(s => (
-                  <div key={s.label} className="text-center">
-                    <p className="text-2xl font-extrabold text-[#ffc107]">{s.value}</p>
-                    <p className="text-white/60 text-[12px] font-medium mt-0.5">{s.label}</p>
+                  <div key={s.label} className="text-center group/stat">
+                    <p className="text-3xl font-black text-[#ffc107] group-hover/stat:scale-110 transition-transform tracking-tight">{s.value}</p>
+                    <p className="text-white/40 text-[10px] font-black uppercase tracking-[3px] mt-2">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -332,31 +344,20 @@ export default function CourseDetailPage() {
                     </div>
                   </div>
                   
-                  <div className="space-y-6">
-                    <h2 className="text-xl font-black text-[#18357a] px-4 uppercase tracking-widest flex items-center gap-3">
-                       <Star size={18} className="text-[#ffc107]" />
-                       Core Program Pillars
-                    </h2>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {course.whyChoose.map((item, idx) => (
-                        <motion.div 
-                          key={item}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.1 }}
-                          className="flex items-center gap-4 p-5 rounded-3xl bg-white border border-[#DEE7F4] hover:border-[#18357a]/20 hover:shadow-xl hover:shadow-blue-900/5 transition-all group"
-                        >
-                          <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-[#18357a] transition-colors shrink-0">
-                            <CheckCircle size={18} className="text-[#ffc107] group-hover:text-white transition-colors" />
-                          </div>
-                          <span className="text-[14px] font-bold text-[#18357a]">{item}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
                 </div>
 
                 <div className="space-y-6 flex flex-col">
+                  {/* Department Visual Header */}
+                  {course.bannerImage && (
+                     <div className="w-full h-48 rounded-[2.5rem] overflow-hidden border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 transition-transform duration-700 hover:scale-[1.02]">
+                        <img 
+                          src={course.bannerImage} 
+                          alt="Department Facility" 
+                          className="w-full h-full object-cover"
+                        />
+                     </div>
+                  )}
+
                   {/* Modern Quick Info Card */}
                   <div className="bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2.5rem] p-8 text-white shadow-2xl shadow-[#18357a]/30 relative overflow-hidden">
                     <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/5 rounded-full -mb-16 -mr-16 blur-2xl" />
@@ -380,16 +381,26 @@ export default function CourseDetailPage() {
                     </div>
                   </div>
 
-                  <div className="space-y-3 mt-auto">
-                    <button className="w-full flex items-center justify-center gap-3 p-5 rounded-[2rem] bg-[#ffc107] text-[#18357a] font-black text-[13px] uppercase tracking-widest hover:bg-[#ffca2c] hover:shadow-xl hover:shadow-[#ffc107]/20 transition-all border-none">
-                      <Download size={18} /> Brochure PDF
-                    </button>
+                  {/* Sidebar Actions */}
+                  <div className="space-y-4">
                     <button
                       onClick={() => navigate('/admissions')}
-                      className="w-full flex items-center justify-center gap-3 p-5 rounded-[2rem] bg-white border-2 border-[#18357a] text-[#18357a] font-black text-[13px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all"
+                      className="w-full flex items-center justify-center gap-3 p-5 rounded-2xl bg-white border-2 border-[#18357a] text-[#18357a] font-black text-[13px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all shadow-sm"
                     >
                       Enroll Now <ArrowRight size={18} />
                     </button>
+
+                    {/* Clean Department Visual Highlight */}
+                    <div className="mt-10 pt-4">
+                       <div className="relative group w-full h-[320px] md:h-[400px] rounded-[2.5rem] overflow-hidden border border-[#DEE7F4] shadow-2xl shadow-blue-900/10 transition-transform duration-700 hover:scale-[1.02]">
+                          <img 
+                            src={cseImage} 
+                            alt="Campus Life" 
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 via-transparent to-transparent" />
+                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -397,109 +408,133 @@ export default function CourseDetailPage() {
 
             {/* ── VISION & MISSION ── */}
             {activeTab === 'Vision & Mission' && (
-              <div className="max-w-6xl mx-auto space-y-16">
-                <div className="bg-white rounded-[3rem] border border-[#DEE7F4] p-10 md:p-16 shadow-2xl shadow-blue-900/5 relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -mr-24 -mt-24 blur-3xl opacity-50" />
-                  
-                  <div className="relative z-10 text-center mb-16">
-                    <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[10px] font-black uppercase tracking-[0.3em] mb-6">
-                       <Target size={14} className="text-[#ffc107]" />
-                       Core Foundation
-                    </div>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#18357a] uppercase tracking-tight leading-tight">
-                      Institutional <span className="text-[#ffc107]">Vision & Mission</span>
-                    </h2>
-                  </div>
-                  
-                  <div className="grid lg:grid-cols-2 gap-10">
-                    {/* Vision Card */}
-                    <div className="p-10 bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2.5rem] text-white shadow-2xl shadow-[#18357a]/30 relative overflow-hidden group/card hover:translate-y-[-5px] transition-transform duration-500">
-                      <div className="absolute top-0 right-0 p-8 opacity-10 scale-150 group-hover/card:rotate-12 transition-transform duration-700">
-                         <Globe size={180} />
-                      </div>
-                      <h3 className="text-[11px] font-black tracking-[0.4em] text-[#ffc107] mb-8 uppercase flex items-center gap-3">
-                         <span className="w-8 h-[2px] bg-[#ffc107]" />
-                         OUR VISION
-                      </h3>
-                      <p className="text-white/90 font-bold leading-relaxed text-[18px] md:text-[20px] italic relative z-10">
-                        "{course.vision || 'Vision statement will be updated soon.'}"
-                      </p>
+                <>
+                  <div className="max-w-5xl mx-auto space-y-12">
+                    <div className="text-center space-y-4 mb-12">
+                       <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[10px] font-black uppercase tracking-[0.4em]">
+                          <Target size={14} className="text-[#ffc107]" />
+                          Strategic Direction
+                       </div>
+                       <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tighter leading-tight flex flex-col items-center">
+                         <span className="opacity-60 text-sm tracking-[0.2em] mb-1">Our Core</span>
+                         <span className="text-[#ffc107]">Institutional Values</span>
+                       </h2>
                     </div>
 
-                    {/* Mission Card */}
-                    <div className="p-10 bg-slate-50 border-2 border-dashed border-[#DEE7F4] rounded-[2.5rem] hover:bg-white hover:border-[#ffc107]/40 transition-all duration-500 group/card hover:translate-y-[-5px]">
-                      <h3 className="text-[11px] font-black tracking-[0.4em] text-[#18357a] mb-8 uppercase flex items-center gap-3">
-                         <span className="w-8 h-[2px] bg-[#18357a]" />
-                         OUR MISSION
-                      </h3>
-                      <p className="text-[#64779F] font-bold leading-relaxed text-[16px] md:text-[17px] whitespace-pre-wrap relative z-10">
-                        {course.mission || 'Mission statement will be updated soon.'}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-[3rem] border border-[#DEE7F4] p-10 md:p-16 shadow-2xl shadow-blue-900/5 overflow-hidden">
-                  <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-16 px-4">
-                     <div>
-                        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[10px] font-black uppercase tracking-[0.3em] mb-6">
-                           <Award size={14} className="text-[#18357a]" />
-                           Quality Framework
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tight">Academic Objectives</h2>
-                     </div>
-                     
-                     {/* Horizontal Selector Buttons */}
-                     <div className="flex flex-wrap items-center gap-3 bg-slate-50/50 p-2 rounded-[2rem] border border-slate-100">
-                        {objectiveData.map((obj) => (
-                          <button
-                            key={obj.id}
-                            onClick={() => setActiveObjectiveTab(obj.id)}
-                            className={`px-8 py-4 rounded-[1.5rem] flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 shadow-sm ${
-                              activeObjectiveTab === obj.id
-                                ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
-                                : 'bg-white text-[#64779F] hover:bg-white/80'
-                            }`}
-                          >
-                             <obj.icon size={16} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#A9B1C3]'} />
-                             {obj.id}
-                          </button>
-                        ))}
-                     </div>
-                  </div>
-
-                  {/* Active Content Display Area */}
-                  <div className="relative min-h-[300px]">
-                    <AnimatePresence mode="wait">
-                       <motion.div
-                         key={activeObjectiveTab}
-                         initial={{ opacity: 0, x: 20 }}
-                         animate={{ opacity: 1, x: 0 }}
-                         exit={{ opacity: 0, x: -20 }}
-                         transition={{ duration: 0.4 }}
-                         className="p-10 sm:p-14 rounded-[3rem] bg-slate-50/50 border border-[#DEE7F4]/50 group hover:border-[#18357a]/10 transition-all duration-700"
-                       >
-                          <div className="flex items-center gap-5 mb-10 pb-10 border-b border-slate-200/50">
-                             <div className={`w-16 h-16 rounded-2xl ${activeObj.bg} flex items-center justify-center ${activeObj.color} group-hover:scale-110 transition-transform duration-500`}>
-                                <activeObj.icon size={32} />
-                             </div>
-                             <div>
-                                <h3 className="text-[13px] font-black tracking-[0.3em] text-[#18357a] uppercase">
-                                   {activeObj.title}
-                                </h3>
-                                <p className="text-[#A9B1C3] text-[9px] font-black uppercase tracking-[0.2em] mt-1">Institutional Standard Index</p>
-                             </div>
+                    <div className="grid lg:grid-cols-2 gap-6">
+                      {/* Compact Unified Vision Card - Modern Institutional Style */}
+                      <motion.div 
+                        whileHover={{ scale: 1.02 }}
+                        className="group relative flex flex-col p-7 md:p-9 bg-gradient-to-br from-[#18357a] via-[#1a3a8a] to-[#0A1A3F] rounded-[2.5rem] text-white shadow-2xl shadow-blue-900/20 overflow-hidden transition-all duration-700"
+                      >
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-24 -mt-24 blur-3xl opacity-30 group-hover:bg-[#ffc107]/10 transition-all duration-1000" />
+                        
+                        <div className="relative z-10 flex-1">
+                          <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all duration-700 shadow-xl">
+                             <Globe size={22} className="text-[#ffc107]" />
                           </div>
-
-                          <p className="text-[#64779F] font-bold leading-[2.2] text-[16px] sm:text-[18px] whitespace-pre-wrap opacity-90 relative z-10 selection:bg-[#ffc107]/20">
-                            {activeObj.content || 'Data current being optimized for digital view.'}
+                          <h3 className="text-[10px] font-black tracking-[0.4em] text-[#ffc107] mb-6 uppercase flex items-center gap-3">
+                             <span className="w-6 h-[1.5px] bg-[#ffc107]/40" />
+                             OUR VISION
+                          </h3>
+                          <p className="text-[15px] md:text-[16px] font-bold leading-relaxed opacity-95 group-hover:text-white transition-colors duration-500">
+                            "{course.vision || 'Vision statement will be updated soon.'}"
                           </p>
-                       </motion.div>
-                    </AnimatePresence>
+                        </div>
+
+                        <div className="relative z-10 mt-8 pt-5 border-t border-white/10 opacity-30">
+                           <p className="text-[8px] font-black uppercase tracking-[0.2em]">Era: 2030 & Beyond</p>
+                        </div>
+                      </motion.div>
+
+                      {/* Compact Unified Mission Card - Modern Institutional Style */}
+                      <motion.div 
+                        whileHover={{ scale: 1.02 }}
+                        className="group relative flex flex-col p-7 md:p-9 bg-gradient-to-br from-[#18357a] via-[#1a3a8a] to-[#0A1A3F] rounded-[2.5rem] text-white shadow-2xl shadow-blue-900/20 overflow-hidden transition-all duration-700"
+                      >
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-24 -mt-24 blur-3xl opacity-30 group-hover:bg-[#ffc107]/10 transition-all duration-1000" />
+                        
+                        <div className="relative z-10 flex-1">
+                          <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all duration-700 shadow-xl">
+                             <Target size={22} className="text-[#ffc107]" />
+                          </div>
+                          <h3 className="text-[10px] font-black tracking-[0.4em] text-[#ffc107] mb-6 uppercase flex items-center gap-3">
+                             <span className="w-6 h-[1.5px] bg-[#ffc107]/40" />
+                             OUR MISSION
+                          </h3>
+                          <div className="space-y-4">
+                            <p className="text-[15px] md:text-[16px] font-bold leading-relaxed opacity-95 group-hover:text-white transition-colors duration-500 whitespace-pre-wrap">
+                              {course.mission || 'Mission statement will be updated soon.'}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="relative z-10 mt-8 pt-5 border-t border-white/10 opacity-30">
+                           <p className="text-[8px] font-black uppercase tracking-[0.2em]">Institutional Protocol</p>
+                        </div>
+                      </motion.div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            )}
+
+                  <div className="bg-white rounded-[3rem] border border-[#DEE7F4] p-10 md:p-16 shadow-2xl shadow-blue-900/5 overflow-hidden mt-16">
+                    <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-16 px-4">
+                       <div>
+                          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                             <Award size={14} className="text-[#18357a]" />
+                             Quality Framework
+                          </div>
+                          <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tight">Academic Objectives</h2>
+                       </div>
+                       
+                       <div className="flex flex-wrap items-center gap-3 bg-slate-50/50 p-2 rounded-[2rem] border border-slate-100">
+                          {objectiveData.map((obj) => (
+                            <button
+                              key={obj.id}
+                              onClick={() => setActiveObjectiveTab(obj.id)}
+                              className={`px-8 py-4 rounded-[1.5rem] flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 shadow-sm ${
+                                activeObjectiveTab === obj.id
+                                  ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
+                                  : 'bg-white text-[#64779F] hover:bg-white/80'
+                              }`}
+                            >
+                               <obj.icon size={16} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#A9B1C3]'} />
+                               {obj.id}
+                            </button>
+                          ))}
+                       </div>
+                    </div>
+
+                    <div className="relative min-h-[300px]">
+                      <AnimatePresence mode="wait">
+                         <motion.div
+                           key={activeObjectiveTab}
+                           initial={{ opacity: 0, x: 20 }}
+                           animate={{ opacity: 1, x: 0 }}
+                           exit={{ opacity: 0, x: -20 }}
+                           transition={{ duration: 0.4 }}
+                           className="p-10 sm:p-14 rounded-[3rem] bg-slate-50/50 border border-[#DEE7F4]/50 group hover:border-[#18357a]/10 transition-all duration-700"
+                         >
+                            <div className="flex items-center gap-5 mb-10 pb-10 border-b border-slate-200/50">
+                               <div className={`w-16 h-16 rounded-2xl ${activeObj.bg} flex items-center justify-center ${activeObj.color} group-hover:scale-110 transition-transform duration-500`}>
+                                  <activeObj.icon size={32} />
+                               </div>
+                               <div>
+                                  <h3 className="text-[13px] font-black tracking-[0.3em] text-[#18357a] uppercase">
+                                     {activeObj.title}
+                                  </h3>
+                                  <p className="text-[#A9B1C3] text-[9px] font-black uppercase tracking-[0.2em] mt-1">Institutional Standard Index</p>
+                               </div>
+                            </div>
+
+                            <p className="text-[#64779F] font-bold leading-[2.2] text-[16px] sm:text-[18px] whitespace-pre-wrap opacity-90 relative z-10 selection:bg-[#ffc107]/20">
+                              {activeObj.content || 'Data current being optimized for digital view.'}
+                            </p>
+                         </motion.div>
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                </>
+              )}
 
             {/* ── CURRICULUM ── */}
             {activeTab === 'Curriculum' && (
@@ -853,7 +888,7 @@ export default function CourseDetailPage() {
               onClick={e => e.stopPropagation()}
               className="bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
-              <div className="overflow-y-auto custom-scrollbar flex-1 pb-10">
+              <div className="overflow-y-auto scrollbar-hide flex-1 pb-10">
                 <div className="bg-[#18357a] p-8 md:p-12 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-20 -mt-20 blur-3xl" />
                   

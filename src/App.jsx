@@ -18,6 +18,8 @@ import GoverningCouncilPage from './pages/GoverningCouncilPage'
 import AchievementsPage from './pages/AchievementsPage'
 import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 import PlacementOverviewPage from './pages/PlacementOverviewPage'
+import { GraduationCap, X } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import TrainingOverviewPage from './pages/TrainingOverviewPage'
 import RecruitmentProcessPage from './pages/RecruitmentProcessPage'
 import OutcomesOverviewPage from './pages/OutcomesOverviewPage'
@@ -30,6 +32,15 @@ const DepartmentPage = lazy(() => import('./pages/DepartmentPage'))
 const LabDetailPage = lazy(() => import('./pages/LabDetailPage'))
 const StudentsAdmittedDepartmentPage = lazy(() => import('./pages/StudentsAdmittedDepartmentPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
+const AdmissionsPageWrapper = lazy(() => import('./pages/AdmissionsPage'))
+const UGRegistrationPage = lazy(() => import('./pages/UGRegistrationPage'))
+const PGRegistrationPage = lazy(() => import('./pages/PGRegistrationPage'))
+const CampusLifePage = lazy(() => import('./pages/CampusLifePage'))
+const BusRoutesPage = lazy(() => import('./pages/BusRoutesPage'))
+const LibraryAccessPage = lazy(() => import('./pages/LibraryAccessPage'))
+const LibraryBooksPage = lazy(() => import('./pages/LibraryBooksPage'))
+const LibraryJournalsPage = lazy(() => import('./pages/LibraryJournalsPage'))
+const LibraryMagazinesPage = lazy(() => import('./pages/LibraryMagazinesPage'))
 
 // Simple Loading Fallback
 const PageLoader = () => (
@@ -53,6 +64,22 @@ function App() {
     restDelta: 0.001
   })
 
+  // Global Admissions Popup
+  const [showGlobalPopup, setShowGlobalPopup] = useState(false)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Show after 1 second on every load (removed sessionStorage for easier verification)
+    const timer = setTimeout(() => {
+      setShowGlobalPopup(true)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleClosePopup = () => {
+    setShowGlobalPopup(false)
+  }
+
   useEffect(() => {
     if (loading) {
       document.body.style.overflow = 'hidden'
@@ -64,7 +91,7 @@ function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [location.pathname])
+  }, [location])
 
   return (
     <div className="min-h-screen bg-[#FCFDFD] text-[#224292] font-sans selection:bg-[#ffc107]/20">
@@ -112,15 +139,22 @@ function App() {
 
                   {/* Academics Pages */}
                   <Route path="/academics" element={<AcademicsPageWrapper />} />
-                  <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper />} />
+                  <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
                   <Route path="/academics/course/:courseId/lab/:labIndex" element={<LabDetailPage />} />
                   <Route path="/department/:deptName" element={<DepartmentPage />} />
                   <Route path="/students-admitted-department/:deptName" element={<StudentsAdmittedDepartmentPage />} />
 
-                  <Route path="/admissions" element={<UnderConstruction />} />
+                  <Route path="/admissions" element={<AdmissionsPageWrapper />} />
+                  <Route path="/admissions/ug-registration" element={<UGRegistrationPage />} />
+                  <Route path="/admissions/pg-registration" element={<PGRegistrationPage />} />
                   <Route path="/research" element={<UnderConstruction />} />
                   <Route path="/resources" element={<UnderConstruction />} />
-                  <Route path="/campus-life" element={<UnderConstruction />} />
+                  <Route path="/campus-life" element={<CampusLifePage />} />
+                  <Route path="/campus-life/library/access" element={<LibraryAccessPage />} />
+                  <Route path="/campus-life/library/collections" element={<LibraryBooksPage />} />
+                  <Route path="/campus-life/library/journals" element={<LibraryJournalsPage />} />
+                  <Route path="/campus-life/library/achievements" element={<LibraryMagazinesPage />} />
+                  <Route path="/bus-routes" element={<BusRoutesPage />} />
                   <Route path="/student-life" element={<UnderConstruction />} />
                   <Route path="/alumni" element={<UnderConstruction />} />
                   <Route path="/news-events" element={<UnderConstruction />} />
@@ -135,6 +169,56 @@ function App() {
 
           <Footer />
           <ScrollToTop />
+
+          {/* ─── GLOBAL ADMISSIONS POPUP ─── */}
+          <AnimatePresence>
+            {showGlobalPopup && (
+              <motion.div 
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 100, opacity: 0 }}
+                className="fixed bottom-6 left-6 right-6 md:right-auto md:bottom-10 md:left-10 z-[3000] md:w-[340px] bg-white rounded-3xl shadow-[0_25px_60px_rgba(10,26,63,0.4)] overflow-hidden p-6 md:p-8 border border-slate-100"
+              >
+                <button 
+                  onClick={handleClosePopup}
+                  className="absolute top-6 right-6 w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all shadow-sm"
+                >
+                  <X size={16} />
+                </button>
+
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-[#ffc107] rounded-2xl flex items-center justify-center shadow-lg shadow-[#ffc107]/30 shrink-0">
+                    <GraduationCap size={28} className="text-[#18357a]" />
+                  </div>
+                  <div>
+                    <span className="text-[#ffc107] font-black text-[9px] uppercase tracking-[2px] block mb-0.5">KIOT Admission</span>
+                    <h2 className="text-xl font-black text-[#18357a] uppercase tracking-tight leading-none">
+                      Open 2026-27
+                    </h2>
+                  </div>
+                </div>
+
+                <p className="text-[#64779F] font-bold text-xs leading-relaxed mb-6">
+                  Join a community of innovators. Applications are now live for all engineering programs.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <button 
+                    onClick={() => { handleClosePopup(); navigate('/admissions'); }}
+                    className="py-3 bg-[#18357a] text-white rounded-xl font-black text-[10px] uppercase tracking-[1px] hover:bg-[#1d3a82] transition-all active:scale-95"
+                  >
+                    Apply Now
+                  </button>
+                  <button 
+                    onClick={handleClosePopup}
+                    className="py-3 bg-slate-50 text-[#64779F] rounded-xl font-black text-[10px] uppercase tracking-[1px] hover:bg-slate-100 transition-all"
+                  >
+                    Later
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       )}
     </div>

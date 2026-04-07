@@ -28,6 +28,7 @@ const DepartmentPage = () => {
   const deptInfo = courseData[courseId]
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     const fetchRecords = async () => {
       try {
         setLoading(true)
@@ -45,87 +46,159 @@ const DepartmentPage = () => {
   }, [departmentName])
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] pb-24">
-      {/* Hero Header */}
-      <div className="bg-[#18357a] text-white pt-32 pb-20 px-6 sm:px-10 lg:px-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#ffc107]/5 rounded-full blur-3xl -mr-64 -mt-64" />
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <Link to="/records" className="inline-flex items-center gap-2 text-white/70 hover:text-[#ffc107] font-bold text-sm mb-8 transition-colors group">
-            <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" /> Back to Outcomes
-          </Link>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-14 w-14 rounded-2xl bg-[#ffc107] flex items-center justify-center shadow-lg shadow-[#ffc107]/20">
-              <Building2 size={24} className="text-[#18357a]" />
+    <div className="min-h-screen bg-[#F8FAFC] pb-24 font-['Inter']">
+      {/* Dynamic Hero Header */}
+      <div className="relative overflow-hidden group">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={deptInfo?.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1920&auto=format&fit=crop"} 
+            className="w-full h-full object-cover transform scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out"
+            alt={departmentName}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#18357a]/95 via-[#18357a]/80 to-transparent" />
+          <div className="absolute inset-0 bg-[#18357a]/40" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-24 px-6 sm:px-10 lg:px-20">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+          >
+            <Link to="/records" className="inline-flex items-center gap-2 text-white/70 hover:text-[#ffc107] font-bold text-sm mb-8 transition-colors group/back">
+              <ArrowLeft size={18} className="transition-transform group-hover/back:-translate-x-1" /> Back to Outcomes
+            </Link>
+            <div className="flex items-center gap-6 mb-6">
+              <div className="h-16 w-16 rounded-2xl bg-[#ffc107] flex items-center justify-center shadow-2xl shadow-[#ffc107]/20 rotate-3 group-hover:rotate-0 transition-all">
+                {deptInfo?.icon ? React.createElement(deptInfo.icon, { size: 32, className: "text-[#18357a]" }) : <Building2 size={32} className="text-[#18357a]" />}
+              </div>
+              <div>
+                <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-tight">
+                  {departmentName}
+                </h1>
+                <p className="text-[#ffc107] font-black uppercase tracking-[0.3em] text-sm mt-3 flex items-center gap-2">
+                  <span className="w-8 h-[2px] bg-[#ffc107]/30" /> Department of Engineering
+                </p>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
-              {departmentName}
-            </h1>
-          </div>
-          <p className="max-w-2xl text-white/60 text-lg font-medium leading-relaxed uppercase tracking-wider">
-             Department of Engineering & Technology
-          </p>
+          </motion.div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 mt-12 space-y-16 relative z-20">
+      {/* QUICK INSIGHTS SECTION */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 -mt-12 relative z-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+           {[
+             { label: 'Annual Intake', value: deptInfo?.intake || '120', icon: '👥' },
+             { label: 'Course Duration', value: deptInfo?.duration?.split(' ')[0] || '4', sub: 'Years', icon: '⏳' },
+             { label: 'Placement Performance', value: deptInfo?.placement || '90%', sub: 'Last Batch', icon: '📈' },
+             { label: 'Avg Package', value: deptInfo?.avgPackage || '4.5 LPA', icon: '💰' }
+           ].map((stat, i) => (
+             <motion.div 
+               key={i}
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ delay: i * 0.1 }}
+               className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-xl shadow-blue-900/5 group/card hover:border-[#ffc107]/50 transition-all"
+             >
+                <div className="text-3xl mb-4 group-hover/card:scale-110 transition-transform block w-fit">{stat.icon}</div>
+                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{stat.label}</h4>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-3xl font-black text-[#18357a]">{stat.value}</span>
+                  {stat.sub && <span className="text-xs font-bold text-slate-400 uppercase">{stat.sub}</span>}
+                </div>
+             </motion.div>
+           ))}
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 mt-20 space-y-20 relative z-10">
         {/* ─── RECORDS SECTION ─── */}
         <div>
-          <h2 className="text-2xl font-black text-[#18357a] mb-8 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#ffc107] flex items-center justify-center shadow-sm">
-                <FileText size={18} className="text-[#18357a]" />
-              </div>
-              PLACEMENT RECORDS ARCHIVE
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <h2 className="text-3xl font-black text-[#18357a] flex items-center gap-3 uppercase tracking-tighter">
+                  <div className="w-10 h-10 rounded-xl bg-[#ffc107] flex items-center justify-center shadow-lg shadow-[#ffc107]/20">
+                    <FileText size={20} className="text-[#18357a]" />
+                  </div>
+                  Placement Archive
+              </h2>
+              <p className="text-slate-400 font-bold text-sm mt-3 uppercase tracking-widest ml-13">Verified Batch-wise Performance Reports</p>
+            </div>
+          </div>
 
           {loading ? (
-            <div className="bg-white rounded-[2rem] p-24 flex items-center justify-center shadow-2xl">
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-12 h-12 border-4 border-[#18357a] border-t-[#ffc107] rounded-full" />
+            <div className="bg-white rounded-[3rem] p-40 flex flex-col items-center justify-center shadow-2xl border border-slate-100">
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-16 h-16 border-4 border-slate-100 border-t-[#18357a] rounded-full mb-6" />
+              <p className="font-black text-[#18357a] text-xs uppercase tracking-widest animate-pulse">Synchronizing Database...</p>
             </div>
           ) : error ? (
-            <div className="bg-red-50 border border-red-200 rounded-[2rem] p-20 text-center shadow-lg">
-              <AlertCircle size={48} className="mx-auto text-red-400 mb-4" />
-              <p className="text-red-600 font-black text-xl">{error}</p>
+            <div className="bg-red-50 border-2 border-red-100 rounded-[3rem] p-24 text-center shadow-xl">
+              <div className="w-20 h-20 bg-red-100 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                <AlertCircle size={40} className="text-red-500" />
+              </div>
+              <h3 className="text-2xl font-black text-red-600 uppercase mb-2">Sync Error</h3>
+              <p className="text-red-400 font-bold">{error}</p>
             </div>
           ) : records.filter(r => r.batch_year !== 'DEPT_INTERNAL' && r.pdf_url).length === 0 ? (
-            <div className="bg-slate-50 border border-[#D5E2F4] rounded-[2rem] p-20 text-center shadow-inner">
-              <FileText size={52} className="mx-auto text-[#64779F]/30 mb-4" />
-              <h3 className="text-2xl font-black text-[#18357a]">No reports found</h3>
-              <p className="text-[#64779F] font-bold mt-2">Departmental reports for {departmentName.toUpperCase()} are currently being updated.</p>
+            <div className="bg-white border-2 border-dashed border-slate-200 rounded-[3rem] p-32 text-center">
+              <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-8 text-slate-200">
+                <FileText size={48} strokeWidth={1} />
+              </div>
+              <h3 className="text-2xl font-black text-[#18357a] uppercase mb-3">No Reports Indexed</h3>
+              <p className="text-slate-400 font-bold max-w-md mx-auto">Electronic reports for {departmentName} are currently being processed by the administrative department.</p>
             </div>
           ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {records
+            <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-lg">
+              {/* List Header */}
+              <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-4 bg-[#18357a]">
+                <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Batch Year</span>
+                <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Report</span>
+              </div>
+
+              {records
                 .filter(r => r.batch_year !== 'DEPT_INTERNAL' && r.pdf_url)
-                .sort((a,b) => (a.serial_number || 0) - (b.serial_number || 0))
-                .map((record) => {
-                  return (
-                    <motion.div 
-                      key={record.id}
-                      initial={{ opacity: 0, y: 15 }}
-                      whileHover={{ y: -5 }}
-                      onClick={() => window.open(record.pdf_url, '_blank')}
-                      className="group relative bg-white border border-[#D5E2F4]/50 rounded-[2rem] p-8 hover:shadow-2xl hover:border-[#18357a]/20 transition-all cursor-pointer"
-                    >
-                      <div className="flex items-center gap-5 mb-6">
-                          <div className="h-14 w-14 rounded-2xl bg-[#18357a]/5 text-[#18357a] flex items-center justify-center shrink-0 group-hover:bg-[#ffc107] transition-all duration-300">
-                            <FileText size={28} />
-                          </div>
-                          <div className="text-left">
-                              <h3 className="text-xl font-black text-[#18357a] group-hover:text-[#18357a] transition-colors leading-tight uppercase">BATCH {record.batch_year}</h3>
-                              <p className="text-[#A9B1C3] font-black uppercase text-[10px] tracking-[0.2em] leading-none mt-2">PDF ARCHIVE</p>
-                          </div>
-                      </div>
-                      
-                      <a 
+                .sort((a, b) => (a.serial_number || 0) - (b.serial_number || 0))
+                .map((record, idx) => (
+                  <motion.div
+                    key={record.id}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-5 border-b border-slate-50 last:border-b-0 hover:bg-[#F8FAFC] transition-colors group"
+                  >
+                    {/* Info */}
+                    <div>
+                      <p className="text-base font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-colors">
+                        Batch {record.batch_year}
+                      </p>
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Placement Report</p>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex items-center gap-2">
+                      <a
                         href={record.pdf_url}
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center justify-center gap-2 py-4 bg-[#F8FAFC] border border-[#D5E2F4] rounded-2xl text-[11px] font-black text-[#64779F] hover:bg-[#18357a] hover:!text-white hover:border-[#18357a] transition-all transform active:scale-95 shadow-sm"
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{ backgroundColor: '#ffc107', color: '#18357a' }}
+                        onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#18357a'; e.currentTarget.style.color = '#ffc107' }}
+                        onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#ffc107'; e.currentTarget.style.color = '#18357a' }}
+                        className="flex items-center gap-2 px-5 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all active:scale-95 shadow-sm"
                       >
-                        <FileText size={16} /> VIEW REPORT
+                        View <ArrowRight size={13} />
                       </a>
-                    </motion.div>
-                  );
-                })}
+                      <a
+                        href={record.pdf_url.replace('/upload/', '/upload/fl_attachment/')}
+                        className="p-2.5 bg-slate-50 border border-slate-100 text-slate-400 hover:text-[#18357a] hover:border-[#18357a]/20 rounded-xl transition-all"
+                        title="Download"
+                      >
+                        <Download size={15} />
+                      </a>
+                    </div>
+                  </motion.div>
+                ))}
             </div>
           )}
         </div>

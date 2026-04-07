@@ -31,7 +31,9 @@ import {
   BookOpen,
   Download,
   Microscope,
-  Award
+  Award,
+  Trophy,
+  ArrowRight
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import naacLogo from '../../assets/NAAC-Logo.png'
@@ -65,12 +67,7 @@ const navLinks = [
   {
     name: 'Admissions',
     href: 'admissions',
-    hasDropdown: true,
-    subLinks: [
-      { name: 'Eligibility', href: 'admissions', icon: ShieldCheck },
-      { name: 'How to Apply', href: 'admissions', icon: FileText },
-      { name: 'Fees & Scholarships', href: 'admissions', icon: Target },
-    ],
+    hasDropdown: false,
   },
   { 
     name: 'Placements', 
@@ -146,13 +143,31 @@ const Header = () => {
           if (el) el.scrollIntoView({ behavior: 'smooth' })
         }
       } else if (href && href.includes('#')) {
-        // e.g., 'about-us#vision-mission'
         const [path, hash] = href.split('#');
-        navigate('/' + path);
-        setTimeout(() => {
-          const el = document.querySelector('#' + hash)
-          if (el) el.scrollIntoView({ behavior: 'smooth' })
-        }, 150)
+        const targetPath = '/' + (path || '');
+        const currentPath = location.pathname;
+
+        if (targetPath === currentPath) {
+          // Internal page scroll - Update Hash and Scroll
+          window.location.hash = hash;
+          const el = document.getElementById(hash);
+          if (el) {
+            const offset = 120;
+            const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+          }
+        } else {
+          // Cross-page navigation with Hash - Include hash in URL
+          navigate(targetPath + '#' + hash);
+          setTimeout(() => {
+            const el = document.getElementById(hash);
+            if (el) {
+              const offset = 120;
+              const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+              window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+            }
+          }, 200);
+        }
       } else {
         navigate('/' + (href || ''))
         window.scrollTo(0, 0)
@@ -269,18 +284,18 @@ const Header = () => {
 
               <div className="flex shrink-0 items-center justify-end pr-10 overflow-hidden">
                 <div className="flex items-center gap-2 ml-8 translate-y-[-0.5px]">
-                   {socialLinks.map((social) => (
-                     <a 
-                       key={social.name} 
-                       href={social.href}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="group flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#18357a]/10 text-[#18357a] transition-all duration-300 hover:scale-110 active:scale-95 shadow-sm hover:shadow-md"
-                       title={social.name}
-                     >
-                       <social.icon size={11} strokeWidth={2.5} />
-                     </a>
-                   ))}
+                    {socialLinks.map((social) => (
+                      <a 
+                        key={social.name} 
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#18357a]/10 text-[#18357a] transition-all duration-300 hover:bg-white hover:scale-110 active:scale-95 shadow-sm hover:shadow-md"
+                        title={social.name}
+                      >
+                        <social.icon size={11} strokeWidth={2.5} />
+                      </a>
+                    ))}
                 </div>
               </div>
             </div>
@@ -328,7 +343,7 @@ const Header = () => {
                       
                       {/* Desktop Dropdown: Regular subLinks */}
                       {link.subLinks && (
-                        <div className="absolute top-[100%] left-0 w-56 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] before:content-[''] before:absolute before:top-[-15px] before:left-0 before:w-full before:h-[15px]">
+                        <div className="absolute top-[100%] left-0 w-64 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] before:content-[''] before:absolute before:top-[-15px] before:left-0 before:w-full before:h-[15px]">
                           {link.subLinks.map(sub => (
                             <a
                               key={sub.name}
@@ -336,7 +351,7 @@ const Header = () => {
                               onClick={(e) => handleNavClick(e, sub.name, sub.href)}
                               className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
                             >
-                              <span className="text-[14.5px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors">{sub.name}</span>
+                              <span className="text-[14.5px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors pr-12">{sub.name}</span>
                               <div className="absolute right-5 flex items-center justify-center w-5 h-5">
                                  {sub.icon && (
                                    <sub.icon 

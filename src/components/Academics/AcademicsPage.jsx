@@ -8,6 +8,7 @@ import {
   Briefcase, MessageSquare, Star, LayoutGrid, Building2,
   Zap, ShieldCheck, Car
 } from 'lucide-react'
+import ugBanner from '../../assets/ug banner .png'
 
 const ugPrograms = [
   {
@@ -269,9 +270,17 @@ export default function AcademicsPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC]" style={{ fontFamily: "'Inter', 'Outfit', sans-serif" }}>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#0A1A3F] py-24 md:py-36">
-        {/* Dynamic Background Effects */}
+      <section className="relative overflow-hidden bg-[#0A1A3F] py-12 md:py-20">
+        {/* Background Image with Overlay */}
         <div className="absolute inset-0">
+          <motion.img 
+            animate={{ scale: [1, 1.1] }}
+            transition={{ duration: 8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
+            src={ugBanner} 
+            alt="KIOT Academics" 
+            className="w-full h-full object-cover opacity-75 mix-blend-overlay"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A3F]/95 via-[#0A1A3F]/10 to-[#0A1A3F]" />
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full bg-[#18357a] blur-[120px] opacity-30 animate-pulse" />
           <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[60%] rounded-full bg-[#ffc107]/10 blur-[150px] animate-pulse" style={{ animationDelay: '3s' }} />
         </div>
@@ -310,11 +319,7 @@ export default function AcademicsPage() {
               </span>
             </h1>
 
-            <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
-              Explore our diverse range of undergraduate and postgraduate programs meticulously designed to ignite innovation and career excellence in the global tech landscape.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-6 mt-12">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -369,11 +374,11 @@ export default function AcademicsPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-[#18357a]/5 border-b border-[#D5E2F4]/30">
-                    <th className="px-8 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em]">Program</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em] hidden md:table-cell">Category</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em] text-center">Intake</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em] text-right"></th>
+                  <tr className="bg-[#18357a] border-b border-[#18357a]/10">
+                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em]">Program</th>
+                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] hidden md:table-cell">Category</th>
+                    <th className="px-8 py-6 text-[10px] font-black text-[#ffc107] uppercase tracking-[0.2em] text-center">Intake</th>
+                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] text-right"></th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
@@ -430,7 +435,7 @@ export default function AcademicsPage() {
                              >
                                <BarChart3 size={14} />
                              </button>
-                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#18357a] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#0A1A3F] transition-all transform active:scale-95 shadow-md shadow-[#18357a]/10">
+                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#18357a] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all transform active:scale-95 shadow-md shadow-blue-900/10 active:shadow-inner group-hover/btn:shadow-[#ffc107]/20">
                                 View <ArrowRight size={12} className="hidden sm:block" />
                              </div>
                           </div>

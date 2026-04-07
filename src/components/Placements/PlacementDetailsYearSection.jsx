@@ -58,44 +58,52 @@ const PlacementDetailsYearSection = () => {
             <p>Annual placement reports are currently being updated.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 px-3 md:px-0">
-            {data.map((record) => (
-              <div
+          <div className="bg-white border border-[#D5E2F4]/50 rounded-2xl overflow-hidden shadow-sm">
+            {/* Header */}
+            <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-4 bg-[#18357a]">
+              <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Batch Year</span>
+              <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Report</span>
+            </div>
+
+            {data.map((record, idx) => (
+              <motion.div
                 key={record.id}
-                className="flex flex-col items-center justify-center p-5 bg-white border border-[#D5E2F4]/60 rounded-[2.5rem] hover:border-[#ffc107] hover:shadow-xl transition-all group relative overflow-hidden"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-5 border-b border-[#F1F5FB] last:border-b-0 hover:bg-[#F8FAFC] transition-colors group"
               >
-                <div className="absolute top-0 right-0 w-16 h-16 bg-[#ffc107]/5 rounded-bl-full group-hover:bg-[#ffc107]/10 transition-colors" />
-                
-                <div className="h-10 w-10 mb-3 rounded-xl bg-[#18357a]/5 text-[#18357a] flex items-center justify-center group-hover:bg-[#ffc107] transition-all duration-500 shadow-sm shadow-blue-900/5">
-                  <Calendar size={18} />
+                {/* Info */}
+                <div>
+                  <p className="text-base font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-colors">
+                    {record.batch_year}
+                  </p>
+                  <p className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest mt-0.5">Placement Report</p>
                 </div>
-                
-                <p className="text-base font-black text-[#18357a] mb-1">{record.batch_year}</p>
-                <p className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest text-center mb-4">Placement Report</p>
-                
+
+                {/* Actions */}
                 <div className="flex items-center gap-2">
-                   {/* View Link */}
-                   <a 
-                     href={record.pdf_url} 
-                     target="_blank" 
-                     rel="noopener noreferrer" 
-                     title="View Document"
-                     className="p-2.5 rounded-xl bg-blue-50 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all transform active:scale-95 shadow-sm"
-                   >
-                     <FileText size={16} />
-                   </a>
-                   
-                   {/* Download Button */}
-                   <a 
-                     download 
-                     href={record.pdf_url} 
-                     title="Download Document"
-                     className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#18357a] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
-                   >
-                     <Download size={16} />
-                   </a>
+                  <a
+                    href={record.pdf_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ backgroundColor: '#ffc107', color: '#18357a' }}
+                    onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#18357a'; e.currentTarget.style.color = '#ffc107' }}
+                    onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#ffc107'; e.currentTarget.style.color = '#18357a' }}
+                    className="flex items-center gap-2 px-5 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all active:scale-95 shadow-sm"
+                  >
+                    View
+                  </a>
+                  <a
+                    href={record.pdf_url?.replace('/upload/', '/upload/fl_attachment/')}
+                    className="p-2.5 bg-slate-50 border border-slate-100 text-slate-400 hover:text-[#18357a] hover:border-[#18357a]/20 rounded-xl transition-all"
+                    title="Download"
+                  >
+                    <Download size={15} />
+                  </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         )}

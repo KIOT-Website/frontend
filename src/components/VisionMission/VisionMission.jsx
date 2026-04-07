@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Eye, Target, Zap, CheckCircle2 } from 'lucide-react'
+import { Eye, Target, CheckCircle2, Globe, Zap } from 'lucide-react'
 
 const VisionMission = () => {
   const missionPoints = [
@@ -16,132 +16,143 @@ const VisionMission = () => {
   ];
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-16 pb-32 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-12 pb-24 min-h-screen font-['Inter']">
       
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none" />
+      {/* Background Graphic Decoration */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />
+      <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none opacity-50" />
 
-      <section id="vision-mission" className="relative px-5 sm:px-10 lg:px-28 z-10 w-full max-w-[1600px] mx-auto">
-        <div className="max-w-7xl mx-auto">
-          
-          {/* Header */}
-          <div className="text-center mb-16">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
-                 <span className="relative flex h-3.5 w-3.5">
-                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
-                   <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
-                 </span>
-                 <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Philosophy & Identity</span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.1] py-2">
-                Institution <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block px-4 pb-4 uppercase">Philosophy</span>
-              </h1>
-              <p className="text-[#64779F] text-xl lg:text-2xl max-w-3xl mx-auto font-medium leading-relaxed">
-                The guiding principles that shape our vision and drive our mission towards excellence.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Split Cards: Vision & Mission */}
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-stretch">
-            
-            {/* Vision Card */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ y: -5 }}
-              className="group relative bg-white rounded-[2.5rem] p-10 lg:p-14 border border-[#D5E2F4]/60 shadow-[0_20px_60px_rgba(34,66,146,0.06)] overflow-hidden transition-all duration-500 flex flex-col h-full"
-            >
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-[#ffc107]/5 to-transparent rounded-bl-full -z-10 transition-transform duration-700 pointer-events-none"></div>
-              
-              <div className="mb-10 flex items-center gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-[#ffc107]/10 flex items-center justify-center text-[#e0a800] group-hover:bg-[#ffc107] group-hover:text-white transition-all duration-300">
-                  <Eye className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-black text-[#18357a] uppercase tracking-tight">Our Vision</h3>
-              </div>
-              
-              <div className="space-y-6">
-                {visionPoints.map((point, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                    <p className="text-[#64779F] text-lg leading-relaxed font-semibold">
-                      {point}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Mission Card */}
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group relative bg-[#18357a] rounded-[2.5rem] p-10 lg:p-14 shadow-[0_30px_70px_rgba(24,53,122,0.2)] overflow-hidden transition-all duration-500 flex flex-col h-full text-white"
-            >
-              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white/5 rounded-bl-full -z-10 pointer-events-none"></div>
-              
-              <div className="mb-10 flex items-center gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-[#ffc107] group-hover:bg-white group-hover:text-[#18357a] transition-all duration-300">
-                  <Target className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl lg:text-3xl font-black uppercase tracking-tight">Our Mission</h3>
-              </div>
-              
-              <div className="space-y-6">
-                {missionPoints.map((point, idx) => (
-                  <div key={idx} className="flex gap-4 group/item">
-                    <div className="mt-2 shrink-0">
-                      <CheckCircle2 className="w-5 h-5 text-[#ffc107]" />
-                    </div>
-                    <p className="text-white/90 text-[16px] lg:text-lg leading-relaxed font-medium">
-                      {point}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-          </div>
-
-          {/* Promise Highlight Strip */}
+      <section className="relative px-6 sm:px-10 lg:px-20 z-10 w-full max-w-5xl mx-auto">
+        
+        {/* Header Section */}
+        <div className="text-center mb-16">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.98, y: 30 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mt-20 mx-auto max-w-4xl bg-gradient-to-r from-[#18357a] via-[#1a3a82] to-[#18357a] rounded-[2.5rem] p-6 md:p-10 flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-10 shadow-[0_30px_70px_rgba(34,66,146,0.3)] border border-white/10 relative overflow-hidden group"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <div className="flex flex-col md:flex-row items-center gap-6 lg:gap-8 z-10 w-full justify-center text-center">
-               <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-[#ffc107] to-[#e0a800] flex items-center justify-center shrink-0 shadow-[0_0_50px_rgba(255,193,7,0.4)] group-hover:scale-110 transition-transform duration-500 relative">
-                 <Zap className="w-8 h-8 lg:w-10 lg:h-10 text-[#18357a] fill-[#18357a]" />
-               </div>
-               
-               <div className="space-y-1.5">
-                 <h2 className="text-[1.4rem] md:text-2xl lg:text-3xl leading-tight font-black text-white tracking-tight drop-shadow-lg">
-                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#FFF1B8] to-[#ffc107] uppercase">100% Placement</span>
-                 </h2>
-                 <p className="text-white/80 font-bold text-sm lg:text-base tracking-widest uppercase">Ethics & Value Based Education</p>
-               </div>
+            <div className="inline-flex items-center gap-2 px-6 py-2 bg-white border border-slate-100 shadow-sm mb-6 rounded-full">
+               <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+               <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">Since 2009</span>
             </div>
+            <h1 className="text-4xl md:text-5xl font-black text-[#18357a] mb-6 tracking-tight uppercase leading-[0.9]">
+              Vision & <span className="text-[#ffc107]">Mission</span>
+            </h1>
+          </motion.div>
+        </div>
+
+        {/* MODERN GRID LAYOUT (Side by Side) */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
+          
+          {/* VISION CARD - Elegant White */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="group bg-white rounded-[2.5rem] p-8 lg:p-10 border border-slate-100 shadow-[0_20px_50px_rgba(34,66,146,0.04)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.08)] transition-all duration-500 relative overflow-hidden flex flex-col h-full"
+          >
+             {/* Decorative Background Icon */}
+             <div className="absolute -top-10 -right-10 text-slate-50 opacity-50 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12 pointer-events-none">
+                <Eye size={200} strokeWidth={1} />
+             </div>
+             
+             <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-10">
+                   <div className="w-14 h-14 rounded-2xl bg-[#18357a] text-[#ffc107] flex items-center justify-center shadow-xl shadow-[#18357a]/20 border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                      <Eye size={28} />
+                   </div>
+                   <div>
+                      <h2 className="text-2xl font-black text-[#18357a] tracking-tight uppercase leading-none">Vision</h2>
+                      <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px] mt-1.5 opacity-80">Institutional Future</p>
+                   </div>
+                </div>
+
+                <div className="space-y-6 flex-1">
+                   {visionPoints.map((point, idx) => (
+                     <div key={idx} className="flex gap-4 items-start group/item">
+                        <div className="mt-1 w-6 h-6 rounded-lg bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 group-hover/item:bg-[#ffc107] transition-colors duration-300">
+                           <CheckCircle2 size={12} className="text-[#18357a]" />
+                        </div>
+                        <p className="text-[#18357a] text-[14px] leading-relaxed opacity-80 group-hover/item:opacity-100 transition-opacity">{point}</p>
+                     </div>
+                   ))}
+                </div>
+                
+                <div className="mt-10 pt-8 border-t border-slate-50">
+                    <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] animate-pulse" />
+                        <span className="text-[10px] font-black text-[#64779F] uppercase tracking-widest">Global Academic Standard</span>
+                    </div>
+                </div>
+             </div>
+          </motion.div>
+
+          {/* MISSION CARD - Professional Navy */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="group bg-[#18357a] rounded-[2.5rem] p-8 lg:p-10 shadow-[0_40px_100px_rgba(24,53,122,0.2)] text-white relative overflow-hidden flex flex-col h-full"
+          >
+             {/* Decorative Background Icon */}
+             <div className="absolute -top-10 -right-10 text-white/[0.03] transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-12 pointer-events-none">
+                <Target size={240} strokeWidth={1} />
+             </div>
+             
+             <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-10">
+                   <div className="w-14 h-14 rounded-2xl bg-[#ffc107] text-[#18357a] flex items-center justify-center shadow-xl shadow-[#ffc107]/20 border border-white/20 group-hover:scale-110 transition-transform duration-500">
+                      <Target size={28} />
+                   </div>
+                   <div>
+                      <h2 className="text-2xl font-black text-white tracking-tight uppercase leading-none">Mission</h2>
+                      <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px] mt-1.5 opacity-80">Execution Pathway</p>
+                   </div>
+                </div>
+
+                <div className="space-y-5 flex-1">
+                   {missionPoints.map((point, idx) => (
+                     <div key={idx} className="flex gap-4 items-start group/item">
+                        <div className="mt-1 w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center shrink-0 border border-white/5 group-hover/item:bg-[#ffc107] transition-colors duration-300">
+                           <CheckCircle2 size={12} className="text-white group-hover/item:text-[#18357a]" />
+                        </div>
+                        <p className="text-white/80 font-medium text-[13px] leading-relaxed group-hover/item:text-white transition-colors">{point}</p>
+                     </div>
+                   ))}
+                </div>
+
+                <div className="mt-10 pt-8 border-t border-white/5">
+                    <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] animate-pulse" />
+                        <span className="text-[10px] font-black text-white/40 uppercase tracking-widest">Innovation Powered Education</span>
+                    </div>
+                </div>
+             </div>
           </motion.div>
 
         </div>
+
+        {/* STATIC HIGHLIGHTS (Centered) */}
+        <div className="mt-24 pt-20 border-t border-slate-100 flex flex-col items-center">
+           <div className="grid md:grid-cols-3 gap-12 w-full">
+              {[
+                { title: 'Global Standards', desc: 'Implementing international benchmarks in pedagogy.', icon: <Globe size={28}/> },
+                { title: 'Innovation Culture', desc: 'Fostering creativity and technical expertise.', icon: <Zap size={28}/> },
+                { title: 'Ethical Integrity', desc: 'Building strong moral and social values.', icon: <CheckCircle2 size={28}/> }
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center text-center gap-6">
+                   <div className="w-16 h-16 bg-slate-50 text-[#18357a] flex items-center justify-center rounded-2xl border border-slate-100 shadow-sm">{item.icon}</div>
+                   <h4 className="text-lg font-black text-[#18357a] uppercase tracking-tighter">{item.title}</h4>
+                   <p className="text-[#64779F] font-bold text-sm leading-relaxed max-w-[240px]">{item.desc}</p>
+                </div>
+              ))}
+           </div>
+        </div>
+
       </section>
     </div>
   )
 }
 
 export default VisionMission
-

@@ -57,23 +57,26 @@ const PlacementRecordsSection = () => {
             <p>Records are currently being updated.</p>
           </div>
         ) : (
-          <>
-            <div className="bg-[#18357a] text-white px-8 py-5 rounded-t-[2rem] text-xs font-black uppercase tracking-[0.2em] text-center">
-              <span>Department Records Archive</span>
+          <div className="bg-white border border-[#D5E2F4]/50 rounded-2xl overflow-hidden shadow-sm">
+            {/* Header */}
+            <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-4 bg-[#18357a]">
+              <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Department</span>
+              <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Records</span>
             </div>
-            <div className="bg-white rounded-b-[2rem] md:rounded-t-none md:border-x md:border-b border-[#D5E2F4]/50 shadow-2xl shadow-[#18357a]/5 overflow-hidden">
-              {departments.map((dept) => (
-                <div key={dept.name} className="border-b border-[#D5E2F4]/30 last:border-0 hover:bg-[#F8FAFC] transition-colors group">
-                  <Link to={`/department/${encodeURIComponent(dept.name.toLowerCase())}`} className="w-full flex items-center px-8 py-6 text-left">
-                    <span className="font-extrabold text-[#18357a] group-hover:text-[#ffc107] transition-colors text-base md:text-lg tracking-wide">
+            {departments.map((dept) => (
+              <div key={dept.name} className="border-b border-[#F1F5FB] last:border-b-0 hover:bg-[#F8FAFC] transition-colors group">
+                <Link to={`/department/${encodeURIComponent(dept.name.toLowerCase())}`} className="w-full flex items-center px-8 py-5">
+                  <div>
+                    <span className="font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors text-base tracking-tight block">
                       {dept.name}
                     </span>
-                    <ChevronRight size={20} className="ml-auto text-[#D5E2F4] group-hover:text-[#ffc107] transition-all group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </>
+                    <span className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest mt-0.5 block">View Reports</span>
+                  </div>
+                  <ChevronRight size={20} className="ml-auto text-[#D5E2F4] group-hover:text-[#ffc107] transition-all group-hover:translate-x-1" />
+                </Link>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>
