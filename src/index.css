@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lato:wght@400;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 @import "tailwindcss";
 
@@ -12,6 +12,7 @@
 
   --font-sans: "Plus Jakarta Sans", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --font-lato: "Lato", sans-serif;
   --font-display: "Outfit", sans-serif;
 
   --animate-spin-slow: spin 4s linear infinite;
@@ -87,7 +88,7 @@ h6 {
 }
 
 p {
-  font-family: var(--font-sans);
+  font-family: var(--font-lato);
   font-weight: 400;
   line-height: 1.6;
 }

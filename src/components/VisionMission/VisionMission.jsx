@@ -40,7 +40,7 @@ const ValueCard = ({ title, content, icon: Icon, idx }) => (
       {/* Metallic Gold Divider */}
       <div className="h-[2px] w-12 bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-transparent mb-6 rounded-full group-hover:w-24 transition-all duration-1000 shadow-[0_0_8px_rgba(212,175,55,0.3)]" />
       
-      <p className="text-[#444444] font-medium text-[14px] lg:text-[15px] leading-[24px] lg:leading-[28px] font-inter text-justify lg:text-left">
+      <p className="text-[#444444] font-medium text-[14px] lg:text-[15px] leading-[24px] lg:leading-[28px] text-justify lg:text-left">
         {content}
       </p>
     </div>
@@ -90,16 +90,16 @@ const VisionMission = () => {
   ]
 
   return (
-    <div className="relative bg-[#FAFBFF] pt-16 pb-24 min-h-screen">
+    <div className="relative bg-[#FAFBFF] pt-16 pb-24 min-h-screen overflow-x-hidden">
       
       {/* Background Graphic Decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none opacity-50" />
 
-      <section className="relative px-6 lg:px-20 z-10 w-full max-w-7xl mx-auto">
+      <section className="relative px-4 lg:px-20 z-10 w-full max-w-7xl mx-auto overflow-x-hidden">
         
         {/* Header Section - Refined to match About Us style */}
-        <div className="text-center mb-10 lg:mb-12 px-4">
+        <div className="text-center mb-10 lg:mb-12 px-4 overflow-hidden">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ const VisionMission = () => {
                </span>
                <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Institutional Philosophy</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap">
+            <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tight leading-[1.1] break-words">
               Our Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block uppercase">Values</span>
             </h1>
           </motion.div>
@@ -120,18 +120,18 @@ const VisionMission = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter max-w-3xl mx-auto"
+            className="text-[#333333] text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28.8px] font-normal max-w-3xl mx-auto"
           >
             The core principles and aspirations that drive our commitment to academic excellence, innovative research, and student success.
           </motion.p>
         </div>
 
         {/* ─── NEW DIAMOND ZIG-ZAG INFOGRAPHIC ─── */}
-        <div className="relative max-w-7xl mx-auto px-4 py-12">
+        <div className="relative max-w-7xl mx-auto px-2 py-12 overflow-x-hidden">
           {/* Connecting Dashed Lines Background */}
           <div className="absolute top-1/2 left-0 right-0 h-[2px] border-t-2 border-dashed border-slate-200 -translate-y-1/2 z-0 hidden lg:block mx-20" />
           
-          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-12 lg:gap-4 relative z-10">
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-20 lg:gap-4 relative z-10">
             {valuesData.map((val, i) => {
               const isEven = i % 2 !== 0; // 0, 2, 4 are top | 1, 3 are bottom
               return (
@@ -141,32 +141,32 @@ const VisionMission = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.8 }}
-                  className={`relative flex-shrink-0 w-64 ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
+                  className={`relative flex-shrink-0 w-full lg:w-64 max-w-[260px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
                 >
                   {/* The Diamond Container */}
-                  <div className="relative bg-white aspect-square rounded-[2rem] border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.06)] transform rotate-45 flex items-center justify-center group hover:shadow-[0_25px_60px_rgba(24,53,122,0.12)] transition-all duration-500 overflow-hidden">
+                  <div className="relative bg-white aspect-square w-52 sm:w-64 rounded-[2rem] border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.06)] transform rotate-45 flex items-center justify-center group hover:shadow-[0_25px_60px_rgba(24,53,122,0.12)] transition-all duration-500 overflow-hidden mx-auto">
                     {/* Background Shine */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white via-[#18357a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     
                     {/* Inner content (Counter-rotated back to normal) */}
                     <div className="transform -rotate-45 p-6 text-center flex flex-col items-center">
                        {/* Floating Number Circle */}
-                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[85%] w-12 h-12 rounded-full shadow-lg flex items-center justify-center font-black text-white text-sm z-20"
+                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[85%] w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg flex items-center justify-center font-black text-white text-[10px] sm:text-sm z-20"
                             style={{ backgroundColor: i % 2 === 0 ? '#18357a' : '#ffc107' }}>
                          {String(i + 1).padStart(2, '0')}
                        </div>
 
-                       <h3 className="text-[#18357a] font-black text-[14px] uppercase tracking-wide mb-3 leading-tight px-2">
+                       <h3 className="text-[#18357a] font-black text-[12px] sm:text-[14px] uppercase tracking-wide mb-3 leading-tight px-2">
                          {val.title}
                        </h3>
                        
-                       <p className="text-[#64779F] text-[11px] font-medium leading-relaxed mb-4 hidden sm:block">
+                       <p className="text-[#64779F] text-[10px] sm:text-[11px] font-medium leading-relaxed mb-4">
                          {val.content.length > 80 ? val.content.substring(0, 80) + "..." : val.content}
                        </p>
 
                        {/* Icon at Bottom */}
                        <div className="mt-auto pt-2">
-                         <val.icon size={22} className={i % 2 === 0 ? 'text-[#ffc107]' : 'text-[#18357a]'} />
+                         <val.icon size={20} className={i % 2 === 0 ? 'text-[#ffc107]' : 'text-[#18357a]'} />
                        </div>
                     </div>
                   </div>
