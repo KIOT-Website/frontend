@@ -48,14 +48,14 @@ const GuidelinesPage = () => {
   }
 
   return (
-    <div className="bg-[#FCFDFD] min-h-screen font-inter selection:bg-[#ffc107]/20">
+    <div className="bg-[#FCFDFD] min-h-screen font-inter selection:bg-[#ffc107]/20 overflow-x-hidden">
       
       {/* 🔷 1. TOP SECTION (IMAGE + INTRO) */}
-      <section className="relative pt-24 lg:pt-32 pb-10 border-b border-slate-100">
-        <div className="w-full px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative pt-16 lg:pt-24 pb-6 border-b border-slate-100">
+        <div className="w-full px-4 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
+               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               className="space-y-6"
             >
@@ -96,11 +96,11 @@ const GuidelinesPage = () => {
       </section>
 
       {/* 🔷 2. MAIN SECTION (STICKY LEFT + SCROLL RIGHT) */}
-      <section className="w-full px-4 lg:px-12 pt-4 pb-20 flex flex-col lg:flex-row gap-12">
+      <section className="w-full px-4 lg:px-12 pt-2 pb-10 flex flex-col lg:flex-row gap-8 lg:gap-12">
         
         {/* 🔹 LEFT SIDE (Sticky Menu) */}
         <aside className="hidden lg:block lg:w-1/5">
-          <div className="lg:sticky lg:top-32 space-y-12">
+          <div className="lg:sticky lg:top-24 space-y-8">
             <div className="space-y-4">
               <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-8">Directories</p>
               <nav className="flex flex-col gap-6">
@@ -120,7 +120,7 @@ const GuidelinesPage = () => {
         </aside>
 
         {/* 🔹 RIGHT SIDE (Content Flow) */}
-        <main className="lg:w-4/5 space-y-20 pb-32">
+        <main className="lg:w-4/5 space-y-12 pb-16">
           
           {/* Section: Administrators */}
           <section id="administrators" className="scroll-mt-32">
@@ -314,7 +314,7 @@ const GuidelinesPage = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(24,53,122,0.08)] border border-slate-100 bg-white"
+              className="relative rounded-xl sm:rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(24,53,122,0.08)] border border-slate-100 bg-white"
             >
                <img 
                  src={structureImg} 
@@ -323,7 +323,7 @@ const GuidelinesPage = () => {
                />
             </motion.div>
             
-            <div className="pt-20 text-center text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] pb-10">
+            <div className="pt-10 text-center text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] pb-6">
                Direct Academic & Administrative Lineal Dependency
             </div>
           </section>
@@ -332,7 +332,7 @@ const GuidelinesPage = () => {
       </section>
 
       {/* 🔷 3. DIVIDER STYLE (Simple Footer Marker) */}
-      <footer className="bg-slate-50 py-20 border-t border-slate-100 italic text-center">
+      <footer className="bg-slate-50 py-12 border-t border-slate-100 italic text-center">
          <p className="text-slate-400 font-medium tracking-widest text-[10px] uppercase">KIOT Institutional Policy Framework • 2026-27 Edition</p>
       </footer>
 

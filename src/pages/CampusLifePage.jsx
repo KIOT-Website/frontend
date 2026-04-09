@@ -53,24 +53,24 @@ const LibrarySectionContent = () => {
               <p className="text-[#64779F] text-lg leading-relaxed">
                 The Library plays a vital role in enhancing subject knowledge, research orientation, life skills, and awareness of social and political developments.
               </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="p-6 bg-white rounded-[1.5rem] border border-slate-100 shadow-xl shadow-[#18357a]/5 hover:shadow-[#18357a]/10 transition-all duration-500 group/v">
-                    <div className="flex items-center gap-3 mb-3 text-[#18357a]">
-                        <div className="w-8 h-8 rounded-lg bg-[#18357a]/5 flex items-center justify-center group-hover/v:bg-[#18357a] group-hover/v:text-white transition-all">
-                            <Eye size={18} />
+              <div className="grid grid-cols-2 gap-3 sm:gap-6">
+                <div className="p-3 sm:p-6 bg-white rounded-[1.2rem] sm:rounded-[1.5rem] border border-slate-100 shadow-xl shadow-[#18357a]/5 hover:shadow-[#18357a]/10 transition-all duration-500 group/v">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 text-[#18357a]">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-[#18357a]/5 flex items-center justify-center group-hover/v:bg-[#18357a] group-hover/v:text-white transition-all">
+                            <Eye size={14} className="sm:w-[18px] sm:h-[18px]" />
                         </div>
-                        <span className="text-[11px] font-black uppercase tracking-[2px]">Vision</span>
+                        <span className="text-[9px] sm:text-[11px] font-black uppercase tracking-[1px] sm:tracking-[2px]">Vision</span>
                     </div>
-                    <p className="text-[13px] text-slate-500 leading-relaxed">To nurture research scholars and promote continuous knowledge enrichment aligned with international standards.</p>
+                    <p className="text-[10px] sm:text-[13px] text-slate-500 leading-relaxed font-medium">To nurture research scholars and promote knowledge enrichment.</p>
                 </div>
-                <div className="p-6 bg-white rounded-[1.5rem] border border-slate-100 shadow-xl shadow-[#18357a]/5 hover:shadow-[#18357a]/10 transition-all duration-500 group/m">
-                    <div className="flex items-center gap-3 mb-3 text-[#18357a]">
-                        <div className="w-8 h-8 rounded-lg bg-[#18357a]/5 flex items-center justify-center group-hover/m:bg-[#18357a] group-hover/m:text-white transition-all">
-                            <Target size={18} />
+                <div className="p-3 sm:p-6 bg-white rounded-[1.2rem] sm:rounded-[1.5rem] border border-slate-100 shadow-xl shadow-[#18357a]/5 hover:shadow-[#18357a]/10 transition-all duration-500 group/m">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 text-[#18357a]">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-[#18357a]/5 flex items-center justify-center group-hover/m:bg-[#18357a] group-hover/m:text-white transition-all">
+                            <Target size={14} className="sm:w-[18px] sm:h-[18px]" />
                         </div>
-                        <span className="text-[11px] font-black uppercase tracking-[2px]">Mission</span>
+                        <span className="text-[9px] sm:text-[11px] font-black uppercase tracking-[1px] sm:tracking-[2px]">Mission</span>
                     </div>
-                    <p className="text-[13px] text-slate-500 leading-relaxed">To provide world-class knowledge across academic and non-academic domains for holistic excellence.</p>
+                    <p className="text-[10px] sm:text-[13px] text-slate-500 leading-relaxed font-medium">To provide world-class knowledge for holistic excellence.</p>
                 </div>
               </div>
             </div>
@@ -127,18 +127,16 @@ const LibrarySectionContent = () => {
                         }}
                         className="p-10 rounded-3xl bg-white border-2 border-white/20 flex flex-col items-center justify-center text-center group transition-all duration-700 cursor-pointer overflow-hidden relative translate-y-0 hover:-translate-y-2 shadow-[0_15px_50px_rgba(24,53,122,0.12)] hover:shadow-2xl hover:shadow-[#18357a]/20 w-full max-w-xs mx-auto lg:max-w-none"
                     >
-                        {/* Status / Indicator Arrow */}
-                        <div className="absolute top-8 right-8 w-10 h-10 rounded-xl bg-white/50 flex items-center justify-center text-[#18357a] group-hover:bg-[#ffc107] group-hover:text-[#18357a] group-hover:rotate-45 transition-all duration-500 shadow-sm border border-white">
-                            <ArrowUpRight size={18} strokeWidth={3} />
-                        </div>
-                        
-                        <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-500 bg-white shadow-inner group-hover:bg-[#18357a] text-[#18357a] group-hover:text-white border border-slate-50">
+                        <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500 bg-white shadow-inner group-hover:bg-[#18357a] text-[#18357a] group-hover:text-white border border-slate-50">
                             <cat.icon size={32} strokeWidth={2.5} />
                         </div>
                         
-                        <h3 className="text-[15px] font-black uppercase tracking-tight leading-none mb-3 duration-500 text-[#18357a]">{cat.title}</h3>
+                        <h3 className="text-[15px] font-black uppercase tracking-tight leading-none mb-6 duration-500 text-[#18357a]">{cat.title}</h3>
                         
-                        <p className="text-[10px] font-bold uppercase tracking-[3px] leading-tight duration-500 text-slate-400 group-hover:text-[#18357a]/60">{cat.sub}</p>
+                        <div className="flex items-center gap-2 px-4 py-2 bg-slate-50 rounded-xl group-hover:bg-[#ffc107] transition-all duration-300">
+                             <Eye size={14} className="text-[#18357a]" />
+                             <span className="text-[10px] font-black uppercase tracking-widest text-[#18357a]">View</span>
+                        </div>
                     </div>
                 ))}
             </div>

@@ -134,15 +134,15 @@ const ResearchResourcesPage = () => {
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-white rounded-[2.5rem] shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden"
+                    className="bg-white rounded-xl shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden"
                 >
-                    <div className="overflow-x-auto">
+                    <div className="">
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr>
-                                    <th className="bg-black px-8 py-5 text-left text-[11px] font-black text-white uppercase tracking-[2px] w-24">S.No.</th>
-                                    <th className="bg-black px-8 py-5 text-left text-[11px] font-black text-white uppercase tracking-[2px]">Details</th>
-                                    <th className="bg-black px-8 py-5 text-left text-[11px] font-black text-[#ffc107] uppercase tracking-[2px] text-right">Link / Access</th>
+                                    <th className="bg-black px-4 sm:px-8 py-5 text-left text-[11px] font-black text-white uppercase tracking-[2px] w-12 sm:w-24 hidden sm:table-cell">S.No.</th>
+                                    <th className="bg-black px-4 sm:px-8 py-5 text-left text-[11px] font-black text-white uppercase tracking-[2px]">Details</th>
+                                    <th className="bg-black px-4 sm:px-8 py-5 text-left text-[11px] font-black text-[#ffc107] uppercase tracking-[2px] text-right">Access</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-[#eef3fa]">
@@ -151,20 +151,20 @@ const ResearchResourcesPage = () => {
                                         key={item.id}
                                         className="group hover:bg-[#fafcff] transition-all duration-300"
                                     >
-                                        <td className="px-8 py-5">
+                                        <td className="px-4 sm:px-8 py-5 hidden sm:table-cell">
                                             <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
                                                 {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                             </div>
                                         </td>
-                                        <td className="px-8 py-2">
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-[#0f172a] transition-colors">
-                                                    <item.icon size={16} />
+                                        <td className="px-4 sm:px-8 py-3">
+                                            <div className="flex items-center gap-3 sm:gap-4">
+                                                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-[#0f172a] transition-colors shrink-0">
+                                                    <item.icon size={14} className="sm:w-[16px] sm:h-[16px]" />
                                                 </div>
-                                                <span className="text-[14px] font-bold text-[#0f172a] uppercase tracking-tight group-hover:translate-x-1 transition-transform">{item.title}</span>
+                                                <span className="text-[11px] sm:text-[14px] font-bold text-[#0f172a] uppercase tracking-tight group-hover:translate-x-1 transition-transform leading-tight">{item.title}</span>
                                             </div>
                                         </td>
-                                        <td className="px-8 py-2 text-right">
+                                        <td className="px-4 sm:px-8 py-3 text-right">
                                             <button 
                                                 onClick={() => {
                                                     const lowerDept = deptName?.toLowerCase()
@@ -205,9 +205,9 @@ const ResearchResourcesPage = () => {
                                                         if (item.id === 13) navigate(`/research/${deptName}/sponsored-projects`)
                                                     }
                                                 }}
-                                                className="inline-flex items-center gap-2 px-6 py-2.5 bg-white border border-slate-200 rounded-lg text-[#0f172a] text-[10px] font-bold uppercase tracking-wider hover:bg-[#ffc107] hover:border-[#ffc107] transition-all shadow-sm active:scale-95 group/btn"
+                                                className="inline-flex items-center gap-2 px-3 sm:px-6 py-2 sm:py-2.5 bg-white border border-slate-200 rounded-lg text-[#0f172a] text-[10px] font-bold uppercase tracking-wider hover:bg-[#ffc107] hover:border-[#ffc107] transition-all shadow-sm active:scale-95 group/btn"
                                             >
-                                                Click Here <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                                                <span className="hidden sm:inline">Click Here</span> <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                                             </button>
                                         </td>
                                     </tr>

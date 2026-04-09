@@ -316,38 +316,52 @@ const AdmissionsPage = () => {
                            </div>
                         </div>
                         
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                           {[
-                              { name: 'B.E. Computer Science and Engineering', id: 'be-cse' },
-                              { name: 'B.E. Mechanical Engineering', id: 'be-mechanical' },
-                              { name: 'B.E. Electrical and Electronics Engineering', id: 'be-eee' },
-                              { name: 'B.E. Electronics and Communication Engineering', id: 'be-ece' },
-                              { name: 'B.E. Civil Engineering', id: 'be-civil' },
-                              { name: 'B.E. Biomedical Engineering', id: '' },
-                              { name: 'B.Tech. Information Technology', id: 'btech-it' },
-                              { name: 'B.Tech. Artificial Intelligence and Data Science', id: 'btech-aids' },
-                              { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs' }
-                           ].map((item, i) => (
-                              <motion.div 
-                                key={i} 
-                                whileHover={{ scale: 1.02, y: -5 }}
-                                whileTap={{ scale: 0.98 }}
-                                onClick={() => {
-                                  window.scrollTo(0, 0);
-                                  navigate(item.id ? `/academics/course/${item.id}` : '/academics');
-                                }}
-                                className="p-6 rounded-3xl bg-slate-50 border border-slate-100 group hover:bg-[#18357a] hover:border-[#18357a] transition-all duration-300 cursor-pointer"
-                              >
-                                 <div className="flex gap-4 items-start">
-                                    <div className="p-2 rounded-xl bg-white shadow-sm text-[#18357a] group-hover:bg-white/10 group-hover:text-white transition-colors">
-                                       <CheckCircle2 size={16} />
-                                    </div>
-                                    <p className="text-[14px] font-black leading-tight text-[#0f172a] group-hover:text-white uppercase tracking-tight transition-colors">{item.name}</p>
-                                 </div>
-                              </motion.div>
-                           ))}
-                        </div>
-                     </motion.div>
+                         <div className="overflow-hidden rounded-xl border border-slate-200 shadow-xl shadow-blue-900/5 bg-white">
+                            <table className="w-full text-left border-collapse">
+                               <thead>
+                                  <tr className="bg-[#18357a] text-white">
+                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider w-20 text-center">S.No</th>
+                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider">Name of the Programme</th>
+                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider text-center">Duration</th>
+                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider text-center">Year of Starting</th>
+                                  </tr>
+                               </thead>
+                               <tbody className="divide-y divide-slate-100">
+                                  {[
+                                     { name: 'B.E. Computer Science and Engineering', id: 'be-cse', start: '2009' },
+                                     { name: 'B.E. Mechanical Engineering', id: 'be-mechanical', start: '2009' },
+                                     { name: 'B.E. Electrical and Electronics Engineering', id: 'be-eee', start: '2009' },
+                                     { name: 'B.E. Electronics and Communication Engineering', id: 'be-ece', start: '2009' },
+                                     { name: 'B.E. Civil Engineering', id: 'be-civil', start: '2012' },
+                                     { name: 'B.E. Biomedical Engineering', id: '', start: '2023' },
+                                     { name: 'B.Tech. Information Technology', id: 'btech-it', start: '2010' },
+                                     { name: 'B.Tech. Artificial Intelligence and Data Science', id: 'btech-aids', start: '2020' },
+                                     { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs', start: '2021' }
+                                  ].map((item, i) => (
+                                     <tr 
+                                       key={i} 
+                                       className="group hover:bg-[#18357a]/[0.02] transition-colors odd:bg-white even:bg-[#18357a]/[0.04]"
+                                     >
+                                        <td className="px-6 py-5 text-center text-xs font-black text-slate-400 group-hover:text-[#18357a] transition-colors">{i + 1}</td>
+                                        <td className="px-6 py-5">
+                                           <button 
+                                             onClick={() => {
+                                               window.scrollTo(0, 0);
+                                               navigate(item.id ? `/academics/course/${item.id}` : '#');
+                                             }}
+                                             className="text-[#18357a] font-black text-sm uppercase tracking-tight hover:text-[#ffc107] text-left transition-colors"
+                                           >
+                                              {item.name}
+                                           </button>
+                                        </td>
+                                        <td className="px-6 py-5 text-center text-xs font-black text-[#555555]">4 Years</td>
+                                        <td className="px-6 py-5 text-center text-xs font-black text-[#555555]">{item.start}</td>
+                                     </tr>
+                                  ))}
+                               </tbody>
+                            </table>
+                         </div>
+                      </motion.div>
                   ) : (
                      /* Postgraduate Programmes */
                      <motion.div 
@@ -368,36 +382,50 @@ const AdmissionsPage = () => {
                            </div>
                         </div>
                         
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                           {[
-                              { name: 'MBA - GENERAL', id: 'mba-general' },
-                              { name: 'MBA (IEV)', id: 'mba-iev' },
-                              { name: 'MASTER OF COMPUTER APPLICATIONS (MCA)', id: 'mca' },
-                              { name: 'M.E. INDUSTRIAL SAFETY ENGINEERING (M.E. ISE)', id: 'me-ise' },
-                              { name: 'M.E. AUTOMOTIVE ELECTRONICS (M.E. AE)', id: 'me-ae' },
-                              { name: 'M.E. POWER ELECTRONICS AND DRIVES (M.E. PED)', id: 'me-ped' },
-                              { name: 'M.E. SOFTWARE ENGINEERING (M.E. SE)', id: 'me-se' }
-                           ].map((item, i) => (
-                              <motion.div 
-                                key={i} 
-                                whileHover={{ scale: 1.02, y: -5 }}
-                                whileTap={{ scale: 0.98 }}
-                                onClick={() => {
-                                  window.scrollTo(0, 0);
-                                  navigate(`/academics/course/${item.id}`);
-                                }}
-                                className="p-6 rounded-3xl bg-slate-50 border border-slate-100 group hover:bg-[#ffc107] hover:border-[#ffc107] transition-all duration-300 cursor-pointer"
-                              >
-                                 <div className="flex gap-4 items-start">
-                                    <div className="p-2 rounded-xl bg-white shadow-sm text-[#ffc107] group-hover:bg-[#18357a] group-hover:text-white transition-colors">
-                                       <CheckCircle2 size={16} />
-                                    </div>
-                                    <p className="text-[14px] font-black leading-tight text-[#0f172a] group-hover:text-black uppercase tracking-tight transition-colors">{item.name}</p>
-                                 </div>
-                              </motion.div>
-                           ))}
-                        </div>
-                     </motion.div>
+                         <div className="overflow-hidden rounded-xl border border-slate-200 shadow-xl shadow-blue-900/5 bg-white">
+                            <table className="w-full text-left border-collapse">
+                               <thead>
+                                  <tr className="bg-[#18357a] text-white">
+                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider w-20 text-center">S.No</th>
+                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider">Name of the Programme</th>
+                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider text-center">Duration</th>
+                                     <th className="hidden sm:table-cell px-6 py-5 text-[11px] font-black uppercase tracking-wider text-center">Year of Starting</th>
+                                  </tr>
+                               </thead>
+                               <tbody className="divide-y divide-slate-100">
+                                  {[
+                                     { name: 'MBA - GENERAL', id: 'mba-general', start: '2009' },
+                                     { name: 'MBA (IEV)', id: 'mba-iev', start: '2019' },
+                                     { name: 'MASTER OF COMPUTER APPLICATIONS (MCA)', id: 'mca', start: '2010' },
+                                     { name: 'M.E. INDUSTRIAL SAFETY ENGINEERING', id: 'me-ise', start: '2012' },
+                                     { name: 'M.E. AUTOMOTIVE ELECTRONICS', id: 'me-ae', start: '2014' },
+                                     { name: 'M.E. POWER ELECTRONICS AND DRIVES', id: 'me-ped', start: '2011' },
+                                     { name: 'M.E. SOFTWARE ENGINEERING', id: 'me-se', start: '2011' }
+                                  ].map((item, i) => (
+                                     <tr 
+                                       key={i} 
+                                       className="group hover:bg-[#18357a]/[0.05] transition-colors odd:bg-white even:bg-[#18357a]/[0.03]"
+                                     >
+                                        <td className="px-6 py-5 text-center text-xs font-black text-slate-400 group-hover:text-[#18357a] transition-colors">{i + 1}</td>
+                                        <td className="px-6 py-5">
+                                           <button 
+                                             onClick={() => {
+                                               window.scrollTo(0, 0);
+                                               navigate(`/academics/course/${item.id}`);
+                                             }}
+                                             className="text-[#18357a] font-black text-sm uppercase tracking-tight hover:text-[#ffc107] text-left transition-colors"
+                                           >
+                                              {item.name}
+                                           </button>
+                                        </td>
+                                        <td className="px-6 py-5 text-center text-xs font-black text-[#555555]">2 Years</td>
+                                        <td className="hidden sm:table-cell px-6 py-5 text-center text-xs font-black text-[#555555]">{item.start}</td>
+                                     </tr>
+                                  ))}
+                               </tbody>
+                            </table>
+                         </div>
+                      </motion.div>
                   )}
                </AnimatePresence>
             </div>

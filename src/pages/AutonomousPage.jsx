@@ -113,7 +113,7 @@ const AutonomousPage = () => {
                             <div className="absolute top-6 left-6 w-10 h-10 bg-white rounded-xl shadow-lg flex items-center justify-center text-[#ffc107]">
                                 <Award size={20} />
                             </div>
-                            <p className="font-inter text-[16px] leading-[1.8] text-[#333333] font-normal italic pl-4 border-l-4 border-[#ffc107] pt-10">
+                            <p className="font-inter text-[16px] leading-[1.8] text-[#333333] font-normal pl-4 border-l-4 border-[#ffc107] pt-10">
                                 Knowledge Institute of Technology (KIOT) is a self-financing engineering institution established in 2009. KIOT is approved by AICTE, New Delhi and affiliated to Anna University, Chennai. The college is accredited with NAAC with ‘A’ Grade and B.E. MECH, ECE, EEE and CSE programs are accredited by NBA.
                             </p>
                         </div>
@@ -198,13 +198,13 @@ const AutonomousPage = () => {
                          </div>
                     </div>
 
-                    <div className="overflow-hidden rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/10 bg-white">
+                    <div className="overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/10 bg-white mx-0">
                         <table className="w-full text-center border-collapse">
                             <thead>
                                 <tr className="bg-[#18357a]">
-                                    <th className="px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Academic Year</th>
-                                    <th className="px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Semester</th>
-                                    <th className="px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Schedule</th>
+                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Academic Year</th>
+                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Semester</th>
+                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Schedule</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-50">
@@ -224,17 +224,17 @@ const AutonomousPage = () => {
                                             onClick={() => window.open(row.pdf_url, '_blank')}
                                             className={`group transition-all duration-300 cursor-pointer hover:bg-[#18357a]/5 ${i % 2 === 1 ? 'bg-[#18357a]/[0.06]' : 'bg-white'}`}
                                         >
-                                            <td className="px-8 py-4 text-center">
+                                            <td className="px-4 sm:px-8 py-4 text-center">
                                                 <span className="text-[13px] font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-all">
                                                     {row.year_or_version}
                                                 </span>
                                             </td>
-                                            <td className="px-8 py-4 text-center">
+                                            <td className="px-4 sm:px-8 py-4 text-center">
                                                 <span className="text-[11px] font-black text-[#18357a]/50 uppercase tracking-widest group-hover:text-[#ffc107] transition-all">
                                                     {row.semester}
                                                 </span>
                                             </td>
-                                            <td className="px-8 py-4 text-center flex items-center justify-center">
+                                            <td className="px-4 sm:px-8 py-4 text-center flex items-center justify-center">
                                                 <button 
                                                     onClick={(e) => handleDownload(e, row.pdf_url, `Academic_Schedule_${row.year_or_version}_${row.semester}`)}
                                                     className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#18357a]/40 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all shadow-inner relative z-10"
@@ -271,12 +271,12 @@ const AutonomousPage = () => {
                          </div>
                     </div>
 
-                    <div className="overflow-hidden rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/10 bg-white">
+                    <div className="overflow-hidden rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/10 bg-white mx-0">
                         <table className="w-full text-center border-collapse">
                             <thead>
                                 <tr className="bg-[#18357a]">
-                                    <th className="px-8 py-5 text-[10px] font-black text-white uppercase tracking-[2px] w-24 text-center">S.No</th>
-                                    <th className="px-8 py-5 text-[10px] font-black text-white uppercase tracking-[2px] text-center">Board of Studies (BoS)</th>
+                                    <th className="px-4 sm:px-8 py-5 text-[10px] font-black text-white uppercase tracking-[2px] w-16 sm:w-24 text-center">S.No</th>
+                                    <th className="px-4 sm:px-8 py-5 text-[10px] font-black text-white uppercase tracking-[2px] text-center">Board of Studies (BoS)</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-50">

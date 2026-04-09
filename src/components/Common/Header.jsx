@@ -58,7 +58,7 @@ const navLinks = [
   },
   {
     name: 'Academics',
-    href: 'academics',
+    href: '#',
     hasDropdown: true,
     subLinks: [
       { name: 'Undergraduate (UG)', href: 'academics/undergraduate', icon: GraduationCap },

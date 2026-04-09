@@ -85,7 +85,7 @@ const PhdSupervisorsPage = () => {
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6 italic">
+                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
                                 List of Ph.D <span className="text-[#ffc107]">Supervisors</span>
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -129,7 +129,7 @@ const PhdSupervisorsPage = () => {
                                             <GraduationCap size={32} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black text-[#0f172a] uppercase tracking-tight italic group-hover:text-[#18357a] transition-colors">
+                                            <h3 className="text-xl font-black text-[#0f172a] uppercase tracking-tight group-hover:text-[#18357a] transition-colors">
                                                 {supervisor.name}
                                             </h3>
                                             <div className="flex items-center gap-2 mt-1 px-3 py-1 bg-slate-50 rounded-full border border-slate-100 group-hover:bg-[#ffc107]/10 transition-colors w-fit">
@@ -144,19 +144,19 @@ const PhdSupervisorsPage = () => {
                                     <div className="p-5 bg-slate-50 rounded-[1.5rem] border border-slate-100 group-hover:bg-white transition-colors duration-300">
                                         <div className="flex items-center gap-2 mb-3">
                                             <BookOpen size={16} className="text-[#ffc107]" />
-                                            <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-widest italic">Research Areas</span>
+                                            <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-widest">Research Areas</span>
                                         </div>
                                         <p className="text-xs font-bold text-[#18357a] leading-relaxed uppercase">
                                             {supervisor.researchArea}
                                         </p>
                                     </div>
 
-                                    <div className="p-5 bg-[#0f172a] rounded-[1.5rem] text-white">
+                                    <div className="p-5 bg-slate-50 rounded-[1.5rem] border border-slate-100 group-hover:bg-white transition-colors duration-300">
                                         <div className="flex items-center gap-2 mb-3">
                                             <Mail size={16} className="text-[#ffc107]" />
-                                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Scientific Liaison</span>
+                                            <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-widest leading-none">Scientific Liaison</span>
                                         </div>
-                                        <p className="text-sm font-black text-white italic tracking-tight">{supervisor.email}</p>
+                                        <p className="text-sm font-black text-[#18357a] tracking-tight">{supervisor.email}</p>
                                     </div>
                                 </div>
 

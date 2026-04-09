@@ -93,47 +93,46 @@ const COEPage = () => {
 
                     {/* ─── RIGHT CONTENT: OFFICE BEARERS ─── */}
                     <div className="lg:w-1/2 w-full">
+                        <div className="mb-10 text-center sm:text-left px-6 sm:px-0">
+                            <h3 className="text-3xl font-black text-[#18357a] uppercase tracking-tighter leading-tight mb-2">List of <span className="text-[#ffc107]">Office Bearers</span></h3>
+                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[4px]">Statutory Committees & Members</p>
+                        </div>
+
                         <motion.div 
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2 }}
-                            className="bg-white rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-slate-200/40 overflow-hidden"
+                            className="bg-white rounded-[2rem] sm:rounded-3xl border border-slate-100 shadow-2xl shadow-slate-200/40 overflow-hidden mx-0"
                         >
-                            <div className="bg-[#18357a] p-5 text-center border-b-4 border-[#ffc107]">
-                                <Users size={24} className="text-[#ffc107] mx-auto mb-2" />
-                                <h3 className="text-lg font-black text-white uppercase tracking-tight">List of Office Bearers</h3>
-                                <p className="text-[9px] font-bold text-white/50 uppercase tracking-[2px] mt-0.5">COE Administration Team</p>
-                            </div>
-
-                            <div className="p-4 sm:p-8">
-                                <div className="overflow-hidden rounded-2xl border border-slate-50">
-                                    <table className="w-full text-center border-collapse">
+                            <div className="p-0">
+                                <div className="overflow-hidden border-0">
+                                    <table className="w-full text-left border-collapse">
                                         <thead>
-                                            <tr className="bg-slate-50">
-                                                <th className="px-6 py-4 text-[10px] font-black text-[#18357a] uppercase tracking-[2px] w-20 text-center">S.No</th>
-                                                <th className="px-6 py-4 text-[10px] font-black text-[#18357a] uppercase tracking-[2px] text-center">Name of the Staff</th>
-                                                <th className="px-6 py-4 text-[10px] font-black text-[#18357a] uppercase tracking-[2px] text-center">Designation</th>
+                                            <tr className="bg-[#18357a]">
+                                                <th className="px-3 sm:px-6 py-4 text-[10px] font-black text-white uppercase tracking-[1px] sm:tracking-[2px] w-12 sm:w-20 text-center border-r border-white/10">S.No</th>
+                                                <th className="px-4 sm:px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1px] sm:tracking-[2px] border-r border-white/10">Name of the Staff</th>
+                                                <th className="px-3 py-4 text-[10px] font-black text-white uppercase tracking-[1px] sm:tracking-[2px] text-center">Designation</th>
                                             </tr>
                                         </thead>
-                                        <tbody className="divide-y divide-slate-50">
+                                        <tbody className="divide-y divide-slate-100">
                                             {officeBearers.map((staff, idx) => (
                                                 <tr 
                                                     key={idx} 
                                                     className={`hover:bg-[#18357a]/5 transition-all duration-300 group ${idx % 2 === 1 ? 'bg-[#18357a]/[0.06]' : 'bg-white'}`}
                                                 >
-                                                    <td className="px-6 py-3.5 text-center">
-                                                        <span className="text-[13px] font-black text-[#18357a] group-hover:text-[#ffc107] transition-all">
+                                                    <td className="px-3 sm:px-6 py-4 text-center border-r border-slate-50">
+                                                        <span className="text-[12px] sm:text-[13px] font-black text-[#64779F] group-hover:text-[#18357a] transition-all">
                                                             {idx + 1}
                                                         </span>
                                                     </td>
-                                                    <td className="px-6 py-3.5 text-center">
-                                                        <span className="text-[13px] font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-all">
+                                                    <td className="px-4 sm:px-8 py-4 border-r border-slate-50">
+                                                        <span className="text-[11px] sm:text-[13px] font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-all cursor-default">
                                                             {staff.name}
                                                         </span>
                                                     </td>
-                                                    <td className="px-6 py-3.5 text-center">
-                                                        <div className="inline-flex px-3 py-1 rounded-lg bg-slate-50 group-hover:bg-[#18357a] group-hover:text-white transition-all">
-                                                            <span className="text-[9px] font-black uppercase tracking-[1px]">
+                                                    <td className="px-3 py-4 text-center">
+                                                        <div className="inline-flex px-2 sm:px-3 py-1 rounded-lg bg-slate-50 group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                                                            <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-[1px]">
                                                                 {staff.designation}
                                                             </span>
                                                         </div>

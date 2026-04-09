@@ -69,9 +69,6 @@ const GoverningCouncil = () => {
               Governing <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107] uppercase">Council</span>
             </h1>
             
-            <p className="text-[#64779F] text-xl lg:text-2xl max-w-4xl mx-auto font-medium leading-relaxed italic border-l-4 border-[#ffc107] pl-8 py-4 bg-[#18357a]/5 rounded-r-2xl">
-              The Governing Council is the highest administrative body of the institute and it meets twice in a year to monitor academic excellence and institutional growth.
-            </p>
           </motion.div>
         </div>
 

@@ -159,7 +159,6 @@ function App() {
                   <Route path="/records" element={<OutcomesOverviewPage />} />
 
                   {/* Academics Pages */}
-                  <Route path="/academics" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/undergraduate" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/postgraduate" element={<AcademicsPageWrapper />} />
                   <Route path="/ug-programs" element={<AcademicsPageWrapper />} />

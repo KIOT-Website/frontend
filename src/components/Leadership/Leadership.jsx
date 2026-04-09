@@ -179,10 +179,12 @@ const Leadership = () => {
                  </motion.div>
               </div>
 
-              {/* Trust Members List - Two Columns */}
-              <div className="bg-[#18357a] rounded-[3.5rem] p-10 lg:p-16 relative overflow-hidden">
+              {/* Trust Members List - Two Columns - Full width on mobile */}
+              <div className="bg-[#18357a] rounded-none sm:rounded-[3.5rem] p-8 sm:p-12 lg:p-16 relative overflow-hidden -mx-4 sm:mx-0">
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -mr-48 -mb-48" />
-                <h3 className="text-[#ffc107] font-black text-[10px] uppercase tracking-[0.4em] mb-12 text-center">Directory of KIOT Trust Members</h3>
+                <h3 className="text-[#ffc107] font-black text-[15px] sm:text-[18px] lg:text-[20px] uppercase tracking-[0.4em] mb-12 text-center px-4 leading-relaxed">
+                   Directory of KIOT Trust Members
+                </h3>
                 
                 <div className="grid md:grid-cols-2 gap-x-12 gap-y-0.5">
                    <div className="space-y-0.5">
@@ -322,9 +324,9 @@ const Leadership = () => {
                  <X size={24} />
                </button>
 
-               {/* Left Sidebar in Modal */}
-               <div className="w-full md:w-[350px] bg-[#18357a] p-10 py-16 flex flex-col items-center justify-center text-center shrink-0">
-                  <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-8 border-white/10 mb-8 shadow-2xl bg-white">
+               {/* Top/Left Sidebar in Modal - Reduced vertical footprint on mobile */}
+               <div className="w-full md:w-[320px] bg-[#18357a] p-8 md:py-16 flex flex-col items-center justify-center text-center shrink-0">
+                  <div className="w-32 h-32 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 md:border-8 border-white/10 mb-4 md:mb-8 shadow-2xl bg-white">
                     <img 
                       src={selectedLeader.image} 
                       alt={selectedLeader.name} 
@@ -332,18 +334,16 @@ const Leadership = () => {
                       style={selectedLeader.role !== 'Chairman' ? { objectPosition: 'center 15%' } : {}}
                     />
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-black text-white font-display mb-2">{selectedLeader.name}</h3>
-                  <p className="text-[#ffc107] text-[10px] font-black uppercase tracking-[0.2em] mb-8 leading-relaxed">
+                  <h3 className="text-lg lg:text-2xl font-black text-white font-display mb-1">{selectedLeader.name}</h3>
+                  <p className="text-[#ffc107] text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] mb-2 md:mb-8 leading-relaxed px-4">
                     {selectedLeader.designation}
                   </p>
-                  
-                  {/* Qualifications/Badges Removed as requested */}
                </div>
 
-               {/* Message Body */}
-               <div className="flex-1 p-10 lg:p-16 overflow-y-auto custom-scrollbar">
-                  <Quote size={48} className="text-[#ffc107]/20 mb-6" />
-                  <h2 className="text-2xl lg:text-3xl font-black text-[#18357a] font-display mb-8">{selectedLeader.role} Message</h2>
+                {/* Message Body - Expanded space */}
+                <div className="flex-1 p-8 sm:p-10 lg:p-16 overflow-y-auto custom-scrollbar">
+                   <Quote size={40} className="text-[#ffc107]/20 mb-4" />
+                   <h2 className="text-xl lg:text-3xl font-black text-[#18357a] font-display mb-6">{selectedLeader.role} Message</h2>
                   <div className="space-y-6">
                     {selectedLeader.fullMessage.map((p, i) => (
                       <p key={i} className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter text-justify">

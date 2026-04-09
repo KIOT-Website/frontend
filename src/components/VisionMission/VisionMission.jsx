@@ -96,7 +96,7 @@ const VisionMission = () => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none opacity-50" />
 
-      <section className="relative px-4 lg:px-20 z-10 w-full max-w-7xl mx-auto overflow-x-hidden">
+      <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto overflow-x-hidden">
         
         {/* Header Section - Refined to match About Us style */}
         <div className="text-center mb-10 lg:mb-12 px-4 overflow-hidden">
@@ -127,11 +127,11 @@ const VisionMission = () => {
         </div>
 
         {/* ─── NEW DIAMOND ZIG-ZAG INFOGRAPHIC ─── */}
-        <div className="relative max-w-7xl mx-auto px-2 py-12 overflow-x-hidden">
+        <div className="relative w-full mx-auto px-4 py-8 lg:py-16">
           {/* Connecting Dashed Lines Background */}
           <div className="absolute top-1/2 left-0 right-0 h-[2px] border-t-2 border-dashed border-slate-200 -translate-y-1/2 z-0 hidden lg:block mx-20" />
           
-          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-20 lg:gap-4 relative z-10">
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-16 lg:gap-4 relative z-10 px-4">
             {valuesData.map((val, i) => {
               const isEven = i % 2 !== 0; // 0, 2, 4 are top | 1, 3 are bottom
               return (
@@ -141,10 +141,10 @@ const VisionMission = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.8 }}
-                  className={`relative flex-shrink-0 w-full lg:w-64 max-w-[260px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
+                  className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[240px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
                 >
                   {/* The Diamond Container */}
-                  <div className="relative bg-white aspect-square w-52 sm:w-64 rounded-[2rem] border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.06)] transform rotate-45 flex items-center justify-center group hover:shadow-[0_25px_60px_rgba(24,53,122,0.12)] transition-all duration-500 overflow-hidden mx-auto">
+                  <div className="relative bg-white aspect-square w-48 sm:w-52 lg:w-48 xl:w-56 rounded-[2rem] border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.06)] transform rotate-45 flex items-center justify-center group hover:shadow-[0_25px_60px_rgba(24,53,122,0.12)] transition-all duration-500 mx-auto">
                     {/* Background Shine */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white via-[#18357a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     
