@@ -45,6 +45,16 @@ const LibraryMagazinesPage = lazy(() => import('./pages/LibraryMagazinesPage'))
 const AutonomousPage = lazy(() => import('./pages/AutonomousPage'))
 const COEPage = lazy(() => import('./pages/COEPage'))
 const ExamSchedulesPage = lazy(() => import('./pages/ExamSchedulesPage'))
+const ResearchPage = lazy(() => import('./pages/ResearchPage'))
+const ResearchResourcesPage = lazy(() => import('./pages/ResearchResourcesPage'))
+const PhdSupervisorsPage = lazy(() => import('./pages/PhdSupervisorsPage'))
+const ResearchAreasPage = lazy(() => import('./pages/ResearchAreasPage'))
+const PhdHoldersPage = lazy(() => import('./pages/PhdHoldersPage'))
+const FacultyPursuingPhdPage = lazy(() => import('./pages/FacultyPursuingPhdPage'))
+const PhdGuidedPage = lazy(() => import('./pages/PhdGuidedPage'))
+const ResearchFacilitiesPage = lazy(() => import('./pages/ResearchFacilitiesPage'))
+const SponsoredProjectsPage = lazy(() => import('./pages/SponsoredProjectsPage'))
+const InternationalPublicationsPage = lazy(() => import('./pages/InternationalPublicationsPage'))
 
 
 // Simple Loading Fallback
@@ -159,8 +169,17 @@ function App() {
                   <Route path="/admissions" element={<AdmissionsPageWrapper />} />
                   <Route path="/admissions/ug-registration" element={<UGRegistrationPage />} />
                   <Route path="/admissions/pg-registration" element={<PGRegistrationPage />} />
-                  <Route path="/research" element={<UnderConstruction />} />
-                  <Route path="/resources" element={<UnderConstruction />} />
+                   <Route path="/research" element={<ResearchPage />} />
+                   <Route path="/research/:deptName" element={<ResearchResourcesPage />} />
+                   <Route path="/research/:deptName/phd-supervisors" element={<PhdSupervisorsPage />} />
+                   <Route path="/research/:deptName/research-areas" element={<ResearchAreasPage />} />
+                   <Route path="/research/:deptName/phd-holders" element={<PhdHoldersPage />} />
+                   <Route path="/research/:deptName/pursuing-phd" element={<FacultyPursuingPhdPage />} />
+                   <Route path="/research/:deptName/guided-scholars" element={<PhdGuidedPage />} />
+                   <Route path="/research/:deptName/facilities" element={<ResearchFacilitiesPage />} />
+                   <Route path="/research/:deptName/sponsored-projects" element={<SponsoredProjectsPage />} />
+                   <Route path="/research/:deptName/international-publications" element={<InternationalPublicationsPage />} />
+                   <Route path="/resources" element={<UnderConstruction />} />
                   <Route path="/autonomous" element={<AutonomousPage />} />
                   <Route path="/coe" element={<COEPage />} />
                   <Route path="/coe/exam-schedules" element={<ExamSchedulesPage />} />

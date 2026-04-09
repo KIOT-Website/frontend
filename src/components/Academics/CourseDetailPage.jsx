@@ -412,8 +412,8 @@ export default function CourseDetailPage() {
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 via-transparent to-transparent" />
-                       </div>
-                    </div>
+                        </div>
+                     </div>
                   </div>
                 </div>
               </div>
@@ -422,93 +422,63 @@ export default function CourseDetailPage() {
             {/* ── VISION & MISSION ── */}
             {activeTab === 'Vision & Mission' && (
                 <>
-                  <div className="w-full px-4 lg:px-12 space-y-12 relative overflow-hidden py-16">
-                    <div className="text-center mb-16">
+                  <div className="space-y-16 py-12">
+                    <div className="text-center mb-12">
                        <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight">
                          <span className="text-[#18357a]">Strategic</span> <span className="text-[#ffc107]">Outlook</span>
                        </h2>
                        <p className="text-[#64779F] text-xs font-bold uppercase tracking-[0.2em] mt-3">Our Core Educational Philosophy</p>
                     </div>
 
-                    <div className="relative flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-stretch max-w-7xl mx-auto">
-                      {/* Vision Blob Card - Enhanced with Floating Elements */}
-                      <motion.div 
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        whileHover={{ scale: 1.02 }}
-                        viewport={{ once: true }}
-                        className="relative w-full lg:flex-1 group"
-                      >
-                        {/* Decorative Offset Outline (Image 2 style) */}
-                        <div className="absolute inset-[-15px] border-2 border-[#18357a]/10 rounded-[30%_70%_70%_30%_/_50%_60%_40%_50%] pointer-events-none group-hover:scale-110 transition-transform duration-700" />
-                        
-                        {/* Floating Decorative Blobs */}
-                        <div className="absolute -top-4 -left-4 w-6 h-6 rounded-full bg-[#18357a]/20 animate-bounce" />
-                        <div className="absolute -bottom-8 right-12 w-10 h-10 rounded-full bg-[#ffc107]/10" />
+                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        {/* Vision Card - Simplified Square Design */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-10 md:p-14 shadow-2xl shadow-blue-900/5 relative overflow-hidden group hover:border-[#18357a]/20 transition-all duration-500"
+                        >
+                            <div className="absolute top-0 left-0 w-2 h-full bg-[#18357a]" />
+                            <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-8">
+                                <div className="w-20 h-20 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
+                                    <Globe size={32} />
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter">
+                                        Our <span className="text-[#ffc107]">Vision</span>
+                                    </h3>
+                                    <p className="text-[#333333] leading-relaxed text-[16px] font-medium text-justify italic border-l-4 border-[#ffc107]/30 pl-6">
+                                        "{course.vision || 'To provide a world-class academic environment for creating global leaders.'}"
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
 
-                        <div className="relative bg-gradient-to-br from-[#18357a] to-[#224292] p-10 md:p-12 lg:p-14 rounded-[30%_70%_70%_30%_/_50%_60%_40%_50%] shadow-[0_30px_70px_rgba(24,53,122,0.2)] flex flex-col sm:flex-row items-center gap-10 overflow-hidden min-h-[350px] z-10 transition-all duration-500">
-                           {/* White Circle Icon Area */}
-                           <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-white flex flex-col items-center justify-center shrink-0 border-[8px] border-white/20 shadow-2xl transition-all duration-700 group-hover:rotate-12">
-                              <Globe size={48} className="text-[#18357a] mb-2" />
-                              <span className="text-[10px] font-black text-[#18357a] tracking-widest leading-none">VISION</span>
-                           </div>
-
-                           {/* Content Area */}
-                           <div className="flex-1 text-center sm:text-left relative z-10">
-                              <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-4">
-                                 Our <span className="text-[#ffc107]">Vision</span>
-                              </h3>
-                              <div className="w-16 h-1 bg-[#ffc107] rounded-full mb-6 mx-auto sm:mx-0 shadow-[0_0_10px_rgba(255,193,7,0.5)]" />
-                              <p className="text-white/90 text-[15px] md:text-[16px] leading-[1.8] font-medium font-inter text-justify sm:text-left italic">
-                                "{course.vision || 'To provide a world-class academic environment for creating global leaders.'}"
-                              </p>
-                           </div>
-                           
-                           {/* Background Decoration */}
-                           <div className="absolute top-[-20%] right-[-10%] w-40 h-40 rounded-full bg-white/5 blur-3xl" />
-                        </div>
-                      </motion.div>
-
-                      {/* Mission Blob Card - Enhanced with Floating Elements */}
-                      <motion.div 
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="relative w-full lg:flex-1 group"
-                      >
-                        {/* Decorative Offset Outline (Image 2 style) */}
-                        <div className="absolute inset-[-15px] border-2 border-[#ffc107]/20 rounded-[70%_30%_30%_70%_/_40%_50%_50%_60%] pointer-events-none group-hover:scale-110 transition-transform duration-700" />
-                        
-                        {/* Floating Decorative Blobs */}
-                        <div className="absolute -top-8 right-4 w-8 h-8 rounded-full bg-[#ffc107]/20" />
-                        <div className="absolute -bottom-6 -left-2 w-12 h-12 rounded-full bg-[#18357a]/5 animate-pulse" />
-
-                        <div className="relative bg-gradient-to-br from-[#ffc107] to-[#ffb300] p-10 md:p-12 lg:p-14 rounded-[70%_30%_30%_70%_/_40%_50%_50%_60%] shadow-[0_30px_70px_rgba(255,193,7,0.15)] flex flex-col sm:flex-row items-center gap-10 overflow-hidden min-h-[350px] z-10 transition-all duration-500">
-                           {/* White Circle Icon Area */}
-                           <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-white flex flex-col items-center justify-center shrink-0 border-[8px] border-black/5 shadow-2xl transition-all duration-700 group-hover:-rotate-12">
-                              <Target size={48} className="text-[#ff9800] mb-2" />
-                              <span className="text-[10px] font-black text-[#ff9800] tracking-widest leading-none">MISSION</span>
-                           </div>
-
-                           {/* Content Area */}
-                           <div className="flex-1 text-center sm:text-left relative z-10">
-                              <h3 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tight mb-4">
-                                 Our <span className="text-white">Mission</span>
-                              </h3>
-                              <div className="w-16 h-1 bg-[#18357a] rounded-full mb-6 mx-auto sm:mx-0" />
-                              <p className="text-[#18357a] text-[15px] md:text-[16px] leading-[1.8] font-bold font-inter text-justify sm:text-left">
-                                {course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.'}
-                              </p>
-                           </div>
-
-                           {/* Background Decoration */}
-                           <div className="absolute bottom-[-20%] left-[-10%] w-40 h-40 rounded-full bg-black/5 blur-3xl" />
-                        </div>
-                      </motion.div>
+                        {/* Mission Card - Simplified Square Design */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-10 md:p-14 shadow-2xl shadow-blue-900/5 relative overflow-hidden group hover:border-[#ffc107]/20 transition-all duration-500"
+                        >
+                            <div className="absolute top-0 left-0 w-2 h-full bg-[#ffc107]" />
+                            <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-8">
+                                <div className="w-20 h-20 rounded-2xl bg-[#ffc107]/5 flex items-center justify-center text-[#ffc107] group-hover:bg-[#ffc107] group-hover:text-white transition-all duration-500">
+                                    <Target size={32} />
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter">
+                                        Our <span className="text-[#ffc107]">Mission</span>
+                                    </h3>
+                                    <p className="text-[#333333] leading-relaxed text-[16px] font-medium text-justify border-l-4 border-[#18357a]/10 pl-6">
+                                        {course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.'}
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
-                  </div>
+                </div>
 
                   <div className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-10 md:p-14 overflow-hidden mt-16">
                     <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
@@ -560,12 +530,12 @@ export default function CourseDetailPage() {
                                </div>
                             </div>
 
-                            <p className="text-[#333333] font-bold leading-[2.0] text-[15px] sm:text-[16px] REPLACE_TOKEN">
+                            <p className="text-[#333333] font-bold leading-[2.0] text-[15px] sm:text-[16px]">
                               {activeObj.content || 'Data current being optimized for digital view.'}
                             </p>
                          </motion.div>
                       </AnimatePresence>
-                    </div>
+                     </div>
                   </div>
                 </>
               )}

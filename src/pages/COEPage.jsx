@@ -72,12 +72,13 @@ const COEPage = () => {
                                         <div 
                                             key={i} 
                                             onClick={() => feature.path && navigate(feature.path)}
-                                            className="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-[#ffc107] transition-all cursor-pointer hover:shadow-md active:scale-95"
+                                            className="flex items-center gap-5 p-6 bg-white rounded-[1.5rem] border-2 border-slate-100 group hover:border-[#18357a] transition-all duration-500 cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] active:scale-95 relative overflow-hidden"
                                         >
-                                            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-[#18357a] shadow-sm group-hover:bg-[#18357a] group-hover:text-white transition-all">
-                                                <feature.icon size={18} />
+                                            <div className="absolute top-0 right-0 w-24 h-24 bg-black/[0.02] -mr-12 -mt-12 rounded-full group-hover:bg-[#18357a]/5 transition-colors" />
+                                            <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-[#18357a] shadow-sm group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500 shrink-0 border border-slate-100">
+                                                <feature.icon size={24} />
                                             </div>
-                                            <span className="text-xs font-black text-[#18357a] uppercase tracking-wider">{feature.text}</span>
+                                            <span className="text-[13px] font-black text-[#18357a] uppercase tracking-tight leading-tight group-hover:translate-x-1 transition-transform">{feature.text}</span>
                                         </div>
                                     ))}
 
