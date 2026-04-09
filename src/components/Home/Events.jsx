@@ -49,20 +49,19 @@ const Events = ({ onEventsClick }) => {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-12 lg:mb-16">
+        <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
            {/* Section Header */}
-            <div className="max-w-2xl">
+            <div className="max-w-2xl flex flex-col items-center">
               <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 className="inline-flex items-center gap-2 mb-4 bg-[#18357a]/5 px-3 py-1 rounded-full border border-[#18357a]/10"
               >
                 <Timer size={14} className="text-[#ffc107]" />
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#18357a]">Campus Buzz</span>
               </motion.div>
               <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-display leading-[1.1]">
-                Upcoming <br />
-                <span className="text-[#ffc107]">Events</span>
+                Upcoming <span className="text-[#ffc107]">Events</span>
               </h2>
            </div>
         </div>
@@ -77,10 +76,10 @@ const Events = ({ onEventsClick }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="group relative bg-white rounded-3xl p-6 lg:p-8 border border-[#D5E2F4]/60 shadow-[0_20px_50px_rgba(34,66,146,0.04)] hover:shadow-[0_40px_100px_rgba(34,66,146,0.1)] transition-all duration-500 overflow-hidden flex flex-col h-full"
+                  className="group relative bg-white rounded-3xl p-5 lg:p-7 border border-[#D5E2F4]/60 shadow-[0_20px_50px_rgba(34,66,146,0.04)] hover:shadow-[0_40px_100px_rgba(34,66,146,0.1)] transition-all duration-500 overflow-hidden flex flex-col h-full"
                 >
                    {/* Image Area */}
-                   <div className="w-full h-[200px] lg:h-[220px] relative rounded-2xl overflow-hidden mb-6">
+                   <div className="w-full h-[180px] lg:h-[200px] relative rounded-2xl overflow-hidden mb-6">
                       <img 
                         src={event.image} 
                         alt={event.title} 
@@ -126,18 +125,7 @@ const Events = ({ onEventsClick }) => {
            </AnimatePresence>
         </div>
 
-        {/* VIEW ALL CTA */}
-        <div className="mt-16 lg:mt-24 text-center">
-           <button 
-             onClick={onEventsClick}
-             className="group relative px-10 lg:px-12 py-4 lg:py-5 bg-[#18357a] text-white rounded-full font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-[#ffc107] hover:text-[#18357a] transition-all duration-300"
-           >
-              <span className="relative z-10 flex items-center gap-3 justify-center">
-                 View All Events
-                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </span>
-           </button>
-        </div>
+
 
       </div>
 

@@ -1,154 +1,185 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Eye, Target, CheckCircle2, Globe, Zap } from 'lucide-react'
+import { Eye, Target, Sparkles, Heart, ShieldCheck } from 'lucide-react'
+
+const ValueCard = ({ title, content, icon: Icon, idx }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: idx * 0.1, duration: 0.6 }}
+    className="relative group bg-white pt-8 pb-10 px-10 flex flex-col items-center text-center lg:items-start lg:text-left transition-all duration-500 rounded-xl h-full border border-slate-100 shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.15)] overflow-hidden"
+  >
+    {/* Top Right Folded Corner Effect */}
+    <div className="absolute top-0 right-0 w-0 h-0 border-t-[30px] border-t-[#ffc107]/20 border-l-[30px] border-l-transparent group-hover:border-t-[#ffc107] transition-all duration-500" />
+    
+    {/* New Geometric Accent - Golden "Status" Notch instead of Blue Line */}
+    <div className="absolute top-10 left-0 w-1.5 h-12 bg-gradient-to-b from-[#D4AF37] to-[#FFD700] rounded-r-full shadow-[0_0_10px_rgba(212,175,55,0.4)] group-hover:h-20 transition-all duration-500" />
+    
+    {/* Side "Wings" - Enhanced presence */}
+    <div className="absolute top-[30%] bottom-[30%] left-0 w-6 bg-[#ffc107] opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-500 pointer-events-none" 
+         style={{ clipPath: 'polygon(0 0, 100% 50%, 0 100%)' }} />
+    <div className="absolute top-[30%] bottom-[30%] right-0 w-6 bg-[#ffc107] opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-500 pointer-events-none" 
+         style={{ clipPath: 'polygon(100% 0, 0 50%, 100% 100%)' }} />
+
+    {/* Background Decorative Lines */}
+    <div className="absolute inset-0 opacity-[0.015] pointer-events-none" 
+         style={{ backgroundImage: 'repeating-linear-gradient(90deg, #18357a 0, #18357a 1px, transparent 0, transparent 40px)' }} />
+
+    {/* Content */}
+    <div className="relative z-10 w-full flex flex-col">
+      {/* Icon Box - Reduced Spacing to decrease height */}
+      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#18357a] to-[#224292] text-[#ffc107] flex items-center justify-center mb-6 shadow-lg shadow-[#18357a]/20 border-4 border-white group-hover:border-[#ffc107]/50 transition-all duration-500 mx-auto lg:mx-0">
+         <Icon size={26} />
+      </div>
+      
+      <h3 className="text-xl lg:text-2xl font-black text-[#18357a] uppercase tracking-normal mb-3">
+        {title}
+      </h3>
+      
+      {/* Metallic Gold Divider */}
+      <div className="h-[2px] w-12 bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-transparent mb-6 rounded-full group-hover:w-24 transition-all duration-1000 shadow-[0_0_8px_rgba(212,175,55,0.3)]" />
+      
+      <p className="text-[#444444] font-medium text-[14px] lg:text-[15px] leading-[24px] lg:leading-[28px] font-inter text-justify lg:text-left">
+        {content}
+      </p>
+    </div>
+
+    {/* Metallic Shine Animation */}
+    <div className="absolute -inset-[100%] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transform rotate-[35deg] pointer-events-none animate-[shine_2s_infinite]" />
+    
+    <style dangerouslySetInnerHTML={{ __html: `
+      @keyframes shine {
+        0% { transform: translate(-100%, -100%) rotate(35deg); }
+        100% { transform: translate(100%, 100%) rotate(35deg); }
+      }
+    `}} />
+  </motion.div>
+)
+
+
+
 
 const VisionMission = () => {
-  const missionPoints = [
-    "To promote academic growth by offering state-of-the-art undergraduate, postgraduate and doctoral programmes and to generate new knowledge by engaging in cutting-edge research",
-    "To nurture talent, entrepreneurship, all-round personality and value system among the students and to foster global competitiveness among students",
-    "To pursue global standards of excellence in all our endeavours namely teaching, research, consultancy, continuing education and support functions",
-    "To undertake collaborative projects which offer opportunities for long-term interaction with academia and industry"
-  ];
-
-  const visionPoints = [
-    "To be a world class institution to impart value and need based professional education to the aspiring youth",
-    "Carving them into disciplined world class professionals who have quest for excellence, achievement orientation and social responsibilities"
-  ];
+  const valuesData = [
+    {
+      title: "Our Vision",
+      icon: Eye,
+      content: "To be a world class institution to impart value and need based professional education to the aspiring youth and carving them into disciplined world class professionals who have quest for excellence, achievement orientation and social responsibilities."
+    },
+    {
+      title: "Our Mission",
+      icon: Target,
+      content: "To promote academic growth by offering state-of-the-art undergraduate, postgraduate and doctoral programs and to generate new knowledge by engaging in cutting-edge research."
+    },
+    {
+      title: "Our Promise",
+      icon: Sparkles,
+      content: "100% Placement | Ethics & Value Based Education"
+    },
+    {
+      title: "Our Values",
+      icon: Heart,
+      content: "To pursue global standards of excellence in all our endeavors namely teaching, research, consultancy, continuing education and support functions."
+    },
+    {
+      title: "Our Commitment",
+      icon: ShieldCheck,
+      content: "World Class Education | Culture of Innovation & Creativity | Degree On Time 100% Placement | 360′ Personality Development | Ethics & Values Based Education"
+    }
+  ]
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-12 pb-24 min-h-screen font-['Inter']">
+    <div className="relative bg-[#FAFBFF] pt-16 pb-24 min-h-screen">
       
       {/* Background Graphic Decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />
-      <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none opacity-50" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none opacity-50" />
 
-      <section className="relative px-6 sm:px-10 lg:px-20 z-10 w-full max-w-5xl mx-auto">
+      <section className="relative px-6 lg:px-20 z-10 w-full max-w-7xl mx-auto">
         
-        {/* Header Section */}
-        <div className="text-center mb-16">
+        {/* Header Section - Refined to match About Us style */}
+        <div className="text-center mb-10 lg:mb-12 px-4">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-2 bg-white border border-slate-100 shadow-sm mb-6 rounded-full">
-               <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
-               <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">Since 2009</span>
+            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
+               <span className="relative flex h-3.5 w-3.5">
+                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
+                 <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
+               </span>
+               <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Institutional Philosophy</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-black text-[#18357a] mb-6 tracking-tight uppercase leading-[0.9]">
-              Vision & <span className="text-[#ffc107]">Mission</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap">
+              Our Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block uppercase">Values</span>
             </h1>
           </motion.div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter max-w-3xl mx-auto"
+          >
+            The core principles and aspirations that drive our commitment to academic excellence, innovative research, and student success.
+          </motion.p>
         </div>
 
-        {/* MODERN GRID LAYOUT (Side by Side) */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
+        {/* ─── NEW DIAMOND ZIG-ZAG INFOGRAPHIC ─── */}
+        <div className="relative max-w-7xl mx-auto px-4 py-12">
+          {/* Connecting Dashed Lines Background */}
+          <div className="absolute top-1/2 left-0 right-0 h-[2px] border-t-2 border-dashed border-slate-200 -translate-y-1/2 z-0 hidden lg:block mx-20" />
           
-          {/* VISION CARD - Elegant White */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="group bg-white rounded-[2.5rem] p-8 lg:p-10 border border-slate-100 shadow-[0_20px_50px_rgba(34,66,146,0.04)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.08)] transition-all duration-500 relative overflow-hidden flex flex-col h-full"
-          >
-             {/* Decorative Background Icon */}
-             <div className="absolute -top-10 -right-10 text-slate-50 opacity-50 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12 pointer-events-none">
-                <Eye size={200} strokeWidth={1} />
-             </div>
-             
-             <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-center gap-4 mb-10">
-                   <div className="w-14 h-14 rounded-2xl bg-[#18357a] text-[#ffc107] flex items-center justify-center shadow-xl shadow-[#18357a]/20 border border-white/10 group-hover:scale-110 transition-transform duration-500">
-                      <Eye size={28} />
-                   </div>
-                   <div>
-                      <h2 className="text-2xl font-black text-[#18357a] tracking-tight uppercase leading-none">Vision</h2>
-                      <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px] mt-1.5 opacity-80">Institutional Future</p>
-                   </div>
-                </div>
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-12 lg:gap-4 relative z-10">
+            {valuesData.map((val, i) => {
+              const isEven = i % 2 !== 0; // 0, 2, 4 are top | 1, 3 are bottom
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: isEven ? 50 : -50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.8 }}
+                  className={`relative flex-shrink-0 w-64 ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
+                >
+                  {/* The Diamond Container */}
+                  <div className="relative bg-white aspect-square rounded-[2rem] border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.06)] transform rotate-45 flex items-center justify-center group hover:shadow-[0_25px_60px_rgba(24,53,122,0.12)] transition-all duration-500 overflow-hidden">
+                    {/* Background Shine */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white via-[#18357a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    
+                    {/* Inner content (Counter-rotated back to normal) */}
+                    <div className="transform -rotate-45 p-6 text-center flex flex-col items-center">
+                       {/* Floating Number Circle */}
+                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[85%] w-12 h-12 rounded-full shadow-lg flex items-center justify-center font-black text-white text-sm z-20"
+                            style={{ backgroundColor: i % 2 === 0 ? '#18357a' : '#ffc107' }}>
+                         {String(i + 1).padStart(2, '0')}
+                       </div>
 
-                <div className="space-y-6 flex-1">
-                   {visionPoints.map((point, idx) => (
-                     <div key={idx} className="flex gap-4 items-start group/item">
-                        <div className="mt-1 w-6 h-6 rounded-lg bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100 group-hover/item:bg-[#ffc107] transition-colors duration-300">
-                           <CheckCircle2 size={12} className="text-[#18357a]" />
-                        </div>
-                        <p className="text-[#18357a] text-[14px] leading-relaxed opacity-80 group-hover/item:opacity-100 transition-opacity">{point}</p>
-                     </div>
-                   ))}
-                </div>
-                
-                <div className="mt-10 pt-8 border-t border-slate-50">
-                    <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] animate-pulse" />
-                        <span className="text-[10px] font-black text-[#64779F] uppercase tracking-widest">Global Academic Standard</span>
+                       <h3 className="text-[#18357a] font-black text-[14px] uppercase tracking-wide mb-3 leading-tight px-2">
+                         {val.title}
+                       </h3>
+                       
+                       <p className="text-[#64779F] text-[11px] font-medium leading-relaxed mb-4 hidden sm:block">
+                         {val.content.length > 80 ? val.content.substring(0, 80) + "..." : val.content}
+                       </p>
+
+                       {/* Icon at Bottom */}
+                       <div className="mt-auto pt-2">
+                         <val.icon size={22} className={i % 2 === 0 ? 'text-[#ffc107]' : 'text-[#18357a]'} />
+                       </div>
                     </div>
-                </div>
-             </div>
-          </motion.div>
+                  </div>
 
-          {/* MISSION CARD - Professional Navy */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="group bg-[#18357a] rounded-[2.5rem] p-8 lg:p-10 shadow-[0_40px_100px_rgba(24,53,122,0.2)] text-white relative overflow-hidden flex flex-col h-full"
-          >
-             {/* Decorative Background Icon */}
-             <div className="absolute -top-10 -right-10 text-white/[0.03] transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-12 pointer-events-none">
-                <Target size={240} strokeWidth={1} />
-             </div>
-             
-             <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-center gap-4 mb-10">
-                   <div className="w-14 h-14 rounded-2xl bg-[#ffc107] text-[#18357a] flex items-center justify-center shadow-xl shadow-[#ffc107]/20 border border-white/20 group-hover:scale-110 transition-transform duration-500">
-                      <Target size={28} />
-                   </div>
-                   <div>
-                      <h2 className="text-2xl font-black text-white tracking-tight uppercase leading-none">Mission</h2>
-                      <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px] mt-1.5 opacity-80">Execution Pathway</p>
-                   </div>
-                </div>
-
-                <div className="space-y-5 flex-1">
-                   {missionPoints.map((point, idx) => (
-                     <div key={idx} className="flex gap-4 items-start group/item">
-                        <div className="mt-1 w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center shrink-0 border border-white/5 group-hover/item:bg-[#ffc107] transition-colors duration-300">
-                           <CheckCircle2 size={12} className="text-white group-hover/item:text-[#18357a]" />
-                        </div>
-                        <p className="text-white/80 font-medium text-[13px] leading-relaxed group-hover/item:text-white transition-colors">{point}</p>
-                     </div>
-                   ))}
-                </div>
-
-                <div className="mt-10 pt-8 border-t border-white/5">
-                    <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] animate-pulse" />
-                        <span className="text-[10px] font-black text-white/40 uppercase tracking-widest">Innovation Powered Education</span>
-                    </div>
-                </div>
-             </div>
-          </motion.div>
-
+                  {/* Connecting Dots for Mobile/Tablet */}
+                  <div className="lg:hidden w-1 h-12 bg-dashed border-l border-dashed border-slate-300 mx-auto my-4" />
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
-
-        {/* STATIC HIGHLIGHTS (Centered) */}
-        <div className="mt-24 pt-20 border-t border-slate-100 flex flex-col items-center">
-           <div className="grid md:grid-cols-3 gap-12 w-full">
-              {[
-                { title: 'Global Standards', desc: 'Implementing international benchmarks in pedagogy.', icon: <Globe size={28}/> },
-                { title: 'Innovation Culture', desc: 'Fostering creativity and technical expertise.', icon: <Zap size={28}/> },
-                { title: 'Ethical Integrity', desc: 'Building strong moral and social values.', icon: <CheckCircle2 size={28}/> }
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center text-center gap-6">
-                   <div className="w-16 h-16 bg-slate-50 text-[#18357a] flex items-center justify-center rounded-2xl border border-slate-100 shadow-sm">{item.icon}</div>
-                   <h4 className="text-lg font-black text-[#18357a] uppercase tracking-tighter">{item.title}</h4>
-                   <p className="text-[#64779F] font-bold text-sm leading-relaxed max-w-[240px]">{item.desc}</p>
-                </div>
-              ))}
-           </div>
-        </div>
+        
+        {/* Centering the last two cards on desktop if needed, or just let them wrap */}
 
       </section>
     </div>

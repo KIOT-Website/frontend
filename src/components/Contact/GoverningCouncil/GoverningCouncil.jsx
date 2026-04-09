@@ -48,7 +48,7 @@ const GoverningCouncil = () => {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none" />
 
-      <section className="relative px-6 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
+      <section className="relative px-6 sm:px-10 lg:px-20 z-10 w-full">
         
         {/* Standardized Header */}
         <div className="text-center mb-20">
@@ -65,8 +65,8 @@ const GoverningCouncil = () => {
                <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.2em]">Institutional Governance</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-tight uppercase">
-              Governing <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107]">Council</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tight leading-tight">
+              Governing <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107] uppercase">Council</span>
             </h1>
             
             <p className="text-[#64779F] text-xl lg:text-2xl max-w-4xl mx-auto font-medium leading-relaxed italic border-l-4 border-[#ffc107] pl-8 py-4 bg-[#18357a]/5 rounded-r-2xl">
@@ -76,7 +76,7 @@ const GoverningCouncil = () => {
         </div>
 
         {/* Functions Section */}
-        <div className="max-w-5xl mx-auto mb-28">
+        <div className="w-full mb-28">
            <h3 className="text-2xl font-black text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 uppercase tracking-tight">
               <ShieldCheck className="text-[#ffc107]" />
               Functions of the Council

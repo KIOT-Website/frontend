@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { TrendingUp, GraduationCap, Building2, UserCheck, Briefcase } from 'lucide-react'
 
 // Recruiter Logos
@@ -48,6 +49,7 @@ const recruiterData = [
 ]
 
 const Placements = () => {
+  const navigate = useNavigate()
   return (
     <section className="relative py-10 lg:py-16 bg-[#18357a] overflow-hidden text-white" id="placements">
       
@@ -114,7 +116,10 @@ const Placements = () => {
                 <p className="text-[10px] font-black text-white/70 uppercase tracking-widest leading-none">1000+ Placements <br/> in last 3 years</p>
               </div>
 
-              <button className="group relative px-10 py-5 bg-[#ffc107] text-[#18357a] rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center gap-3">
+              <button 
+                onClick={() => navigate('/placement-overview')}
+                className="group relative px-10 py-5 bg-[#ffc107] text-[#18357a] rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center gap-3"
+              >
                  Explore Placements
                  <TrendingUp size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>

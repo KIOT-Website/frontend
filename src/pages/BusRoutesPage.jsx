@@ -516,7 +516,7 @@ const BusRoutesPage = () => {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="w-full px-6 lg:px-12 relative z-10">
           <button 
             onClick={() => navigate(-1)}
             className="flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8 group"
@@ -554,7 +554,7 @@ const BusRoutesPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20">
+      <div className="w-full px-6 lg:px-12 -mt-20 relative z-20">
         
         {/* Quick Stats & Search */}
         <div className="bg-white rounded-[2rem] p-3 shadow-xl border-none mb-8 max-w-2xl mx-auto">

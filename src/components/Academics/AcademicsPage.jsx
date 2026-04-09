@@ -245,13 +245,16 @@ export default function AcademicsPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const program = searchParams.get('program') || searchParams.get('type')
+    const path = window.location.pathname
+    const program = searchParams.get('program') || searchParams.get('type') || 
+                    (path.includes('undergraduate') || path.includes('ug-programs') ? 'ug' : 
+                     path.includes('postgraduate') || path.includes('pg-programs') ? 'pg' : null)
     
     if (program?.toLowerCase() === 'ug') setProgramTab('UG Programs')
     if (program?.toLowerCase() === 'pg') setProgramTab('PG Programs')
 
-    if (program) {
-      document.getElementById('academics-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (program || path.includes('programs') || path.includes('undergraduate') || path.includes('postgraduate')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [searchParams])
 
@@ -294,7 +297,7 @@ export default function AcademicsPage() {
         {/* Abstract Floating Circle */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#ffc107]/20 to-transparent -translate-y-1/2 translate-x-1/2 blur-2xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-6 lg:px-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -341,7 +344,7 @@ export default function AcademicsPage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20" id="academics-content">
+      <div className="w-full px-6 lg:px-12 py-20" id="academics-content">
         <motion.div
            key="programs"
            initial={{ opacity: 0 }}
@@ -349,7 +352,7 @@ export default function AcademicsPage() {
            transition={{ duration: 0.5 }}
         >
           {/* Modern Tab Selector */}
-          {(!searchParams.get('program') && !searchParams.get('type')) && (
+          {(!searchParams.get('program') && !searchParams.get('type') && !window.location.pathname.includes('undergraduate') && !window.location.pathname.includes('postgraduate')) && (
             <div className="flex justify-center mb-16">
               <div className="bg-white p-2 rounded-[2rem] flex gap-2 border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5">
                 {['UG Programs', 'PG Programs'].map(t => (
@@ -370,7 +373,13 @@ export default function AcademicsPage() {
           )}
 
           {/* Modern Row and Column Based (Table) Layout */}
-          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 overflow-hidden">
+          <div className="max-w-5xl mx-auto bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 overflow-hidden">
+            <div className="px-8 pt-10 pb-6 border-b border-slate-50">
+                <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter mb-1">
+                   {programTab === 'UG Programs' ? 'Undergraduate' : 'Postgraduate'} <span className="text-[#ffc107]">Programmes</span>
+                </h2>
+                <p className="text-[#64779F] text-[11px] font-bold uppercase tracking-widest opacity-60">Full-Time Academic Portfolio</p>
+            </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
@@ -391,7 +400,10 @@ export default function AcademicsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.03 }}
                         className="group hover:bg-[#18357a]/[0.02] transition-all cursor-pointer"
-                        onClick={() => navigate(`/academics/course/${prog.id}`)}
+                        onClick={() => {
+                          const base = programTab === 'UG Programs' ? 'undergraduate' : 'postgraduate'
+                          navigate(`/academics/${base}/${prog.id}`)
+                        }}
                       >
                         {/* Column 1: Program (Icon + Name) */}
                         <td className="px-8 py-4">

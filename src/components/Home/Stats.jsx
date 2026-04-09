@@ -22,34 +22,52 @@ const StatCard = ({ number, label, suffix = "", icon: Icon, delay = 0 }) => {
     }
   }, [isInView, springValue, number])
 
+  // Alternate colors for the cards
+  const colorSchemes = [
+    { base: 'bg-[#18357a]', text: 'text-[#18357a]', iconBg: 'bg-[#ffc107]', numColor: 'text-[#18357a]' },
+    { base: 'bg-[#ffc107]', text: 'text-[#18357a]', iconBg: 'bg-[#18357a]', numColor: 'text-[#ffc107]' },
+    { base: 'bg-[#18357a]', text: 'text-[#18357a]', iconBg: 'bg-[#ffc107]', numColor: 'text-[#18357a]' },
+    { base: 'bg-[#ffc107]', text: 'text-[#18357a]', iconBg: 'bg-[#18357a]', numColor: 'text-[#ffc107]' },
+  ]
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, delay }}
-      whileHover={{ y: -8, scale: 1.01 }}
-      className="relative group bg-white p-5 lg:p-8 rounded-[24px] lg:rounded-[32px] border border-[#D5E2F4]/40 shadow-[0_15px_40px_rgba(34,66,146,0.04)] hover:shadow-[0_30px_60px_rgba(34,66,146,0.08)] transition-all duration-500 overflow-hidden flex flex-col items-center text-center w-full"
-    >
-      <div className="absolute top-0 right-0 p-3 opacity-[0.02] group-hover:opacity-[0.06] transition-opacity">
-        <Icon size={80} />
-      </div>
+    <div className="relative group pt-10 px-4 pb-8">
+      {/* ─── U-WRAP BACKGROUND PLATE (DOWN ARROW SHAPE) ─── */}
+      <div className="absolute bottom-0 left-0 right-0 h-[65%] bg-[#18357a] rounded-t-[1rem] transition-transform duration-500 group-hover:scale-y-105 origin-bottom shadow-lg" 
+           style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%)' }} />
+      
+      {/* ─── MAIN WHITE CARD ─── */}
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.8, delay }}
+        whileHover={{ y: -8 }}
+        className="relative z-10 bg-white rounded-[2rem] lg:rounded-[2.5rem] p-8 lg:p-10 shadow-2xl shadow-black/20 flex flex-col items-center text-center transition-all duration-500 h-full border border-[#18357a]/5"
+      >
+        {/* Top Centered Icon Circle */}
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-[#ffc107] rounded-full flex items-center justify-center shadow-lg border-4 border-white z-20">
+          <Icon className="text-[#18357a]" size={32} />
+        </div>
 
-      <div className="mb-4 p-2.5 bg-[#18357a]/5 rounded-xl text-[#18357a] group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-colors duration-300">
-        <Icon size={20} />
-      </div>
+        {/* Content Area */}
+        <div className="mt-8">
+          <h4 className="text-[10px] lg:text-[11px] font-black uppercase tracking-[2px] mb-4 text-[#18357a] opacity-50">
+             Institutional Focus
+          </h4>
+          
+          <div className="flex items-baseline justify-center gap-1 mb-2">
+            <motion.span className="text-3xl lg:text-4xl font-black text-[#18357a] tracking-tight">
+              {displayValue}
+            </motion.span>
+            <span className="text-xl lg:text-2xl font-black text-[#ffc107]">{suffix}</span>
+          </div>
 
-      <div className="flex items-baseline gap-0.5 mb-1.5 font-display">
-        <motion.span className="text-3xl lg:text-5xl font-black text-[#18357a] tracking-tight">
-          {displayValue}
-        </motion.span>
-        <span className="text-xl lg:text-3xl font-black text-[#ffc107]">{suffix}</span>
-      </div>
-
-      <p className="text-[#64779F] font-bold text-[10px] lg:text-xs uppercase tracking-[0.15em] leading-snug font-sans">
-        {label}
-      </p>
-    </motion.div>
+          <p className="text-[#333333] text-[11px] lg:text-[12px] leading-relaxed font-inter font-medium opacity-80">
+            {label}
+          </p>
+        </div>
+      </motion.div>
+    </div>
   )
 }
 

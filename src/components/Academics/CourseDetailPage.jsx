@@ -75,7 +75,7 @@ const defaultCourse = (id) => ({
   eligibility: ['10+2 with PCM / relevant subjects', 'Minimum 50% aggregate', 'TNEA rank required'],
 })
 
-const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Placements', 'Achievements', 'Admissions']
+const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Placements', 'Achievements', 'Admissions']
 
 // ─── Accordion Item ──────────────────────────────────────────────────────────
 function AccordionItem({ title, children, defaultOpen = false }) {
@@ -127,7 +127,7 @@ export default function CourseDetailPage() {
   const objectiveData = [
     { id: 'PEO', icon: Target, title: 'Program Educational Objectives', content: course.peo, color: 'text-[#18357a]', bg: 'bg-[#18357a]/5', activeBg: 'bg-[#18357a]', iconColor: 'text-[#ffc107]' },
     { id: 'PO', icon: Layers, title: 'Program Outcomes', content: course.po, color: 'text-[#ffc107]', bg: 'bg-[#ffc107]/5', activeBg: 'bg-[#ffc107]', iconColor: 'text-[#18357a]' },
-    { id: 'PSO', icon: Star, title: 'Program Specific Outcomes', content: course.pso, color: 'text-emerald-500', bg: 'bg-emerald-500/5', activeBg: 'bg-emerald-500', iconColor: 'text-white' }
+    { id: 'PSO', icon: Star, title: 'Program Specific Outcomes', content: course.pso, color: 'text-[#18357a]', bg: 'bg-[#18357a]/5', activeBg: 'bg-[#18357a]', iconColor: 'text-[#ffc107]' }
   ]
 
   // Force window to scroll to absolute top on initial page load and course change
@@ -261,7 +261,7 @@ export default function CourseDetailPage() {
 
       {/* Tab Navigation */}
       <div ref={tabsRef} className="sticky top-[104px] z-30 bg-white border-b border-[#E5EDF8] shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-6 lg:px-12">
           <div className="flex gap-1 overflow-x-auto scrollbar-hide py-1">
             {TABS.map(tab => (
               <button
@@ -281,7 +281,7 @@ export default function CourseDetailPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="w-full px-6 lg:px-12 py-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -294,25 +294,38 @@ export default function CourseDetailPage() {
             {activeTab === 'Overview' && (
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-8">
-                  <div className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-8 md:p-12 shadow-2xl shadow-blue-900/5 transition-all relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-slate-50 rounded-full -mr-20 -mt-20 blur-3xl group-hover:bg-blue-50 transition-colors duration-700" />
-                    
-                    <h2 className="text-3xl font-black text-[#18357a] mb-8 flex items-center gap-3">
-                      About the Program
-                      <span className="h-1 w-12 bg-[#ffc107] rounded-full hidden sm:block" />
-                    </h2>
+                    <div className="text-center mb-12">
+                       <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight">
+                         <span className="text-[#18357a]">Academic</span> <span className="text-[#ffc107]">Overview</span>
+                       </h2>
+                       <p className="text-[#64779F] text-xs font-bold uppercase tracking-[0.2em] mt-3">Course Fundamentals & Core Expertise</p>
+                    </div>
+
+                    <div className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-8 md:p-14 shadow-2xl shadow-blue-900/5 transition-all relative overflow-hidden group">
+                      {/* Decorative Background Pattern */}
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-blue-50 transition-colors duration-700" />
+                      <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -ml-16 -mb-16 blur-2xl" />
+
+                      <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[9px] font-black uppercase tracking-[0.3em] mb-8">
+                         <BookOpen size={14} className="text-[#18357a]" />
+                         Program Roadmap
+                      </div>
+
+                      <h2 className="text-2xl md:text-3xl font-black text-[#18357a] mb-8 flex items-center gap-3 uppercase tracking-tighter">
+                        About the Program
+                      </h2>
 
                     <div className="relative z-10">
                       {Array.isArray(course.overview) ? (
                         <div className="space-y-6">
                           {course.overview.map((para, idx) => (
-                            <p key={idx} className="text-[#64779F] leading-relaxed text-[16px] font-medium opacity-90">
+                            <p key={idx} className="text-[#333333] leading-relaxed text-[16px] font-medium text-justify">
                               {para}
                             </p>
                           ))}
                         </div>
                       ) : (
-                        <p className="text-[#64779F] leading-relaxed text-[16px] font-medium opacity-90">
+                        <p className="text-[#333333] leading-relaxed text-[16px] font-medium text-justify">
                           {course.overview}
                         </p>
                       )}
@@ -409,81 +422,102 @@ export default function CourseDetailPage() {
             {/* ── VISION & MISSION ── */}
             {activeTab === 'Vision & Mission' && (
                 <>
-                  <div className="max-w-5xl mx-auto space-y-12">
-                    <div className="text-center space-y-4 mb-12">
-                       <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[10px] font-black uppercase tracking-[0.4em]">
-                          <Target size={14} className="text-[#ffc107]" />
-                          Strategic Direction
-                       </div>
-                       <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tighter leading-tight flex flex-col items-center">
-                         <span className="opacity-60 text-sm tracking-[0.2em] mb-1">Our Core</span>
-                         <span className="text-[#ffc107]">Institutional Values</span>
+                  <div className="w-full px-4 lg:px-12 space-y-12 relative overflow-hidden py-16">
+                    <div className="text-center mb-16">
+                       <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight">
+                         <span className="text-[#18357a]">Strategic</span> <span className="text-[#ffc107]">Outlook</span>
                        </h2>
+                       <p className="text-[#64779F] text-xs font-bold uppercase tracking-[0.2em] mt-3">Our Core Educational Philosophy</p>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-6">
-                      {/* Compact Unified Vision Card - Modern Institutional Style */}
+                    <div className="relative flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-stretch max-w-7xl mx-auto">
+                      {/* Vision Blob Card - Enhanced with Floating Elements */}
                       <motion.div 
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         whileHover={{ scale: 1.02 }}
-                        className="group relative flex flex-col p-7 md:p-9 bg-gradient-to-br from-[#18357a] via-[#1a3a8a] to-[#0A1A3F] rounded-[2.5rem] text-white shadow-2xl shadow-blue-900/20 overflow-hidden transition-all duration-700"
+                        viewport={{ once: true }}
+                        className="relative w-full lg:flex-1 group"
                       >
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-24 -mt-24 blur-3xl opacity-30 group-hover:bg-[#ffc107]/10 transition-all duration-1000" />
+                        {/* Decorative Offset Outline (Image 2 style) */}
+                        <div className="absolute inset-[-15px] border-2 border-[#18357a]/10 rounded-[30%_70%_70%_30%_/_50%_60%_40%_50%] pointer-events-none group-hover:scale-110 transition-transform duration-700" />
                         
-                        <div className="relative z-10 flex-1">
-                          <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all duration-700 shadow-xl">
-                             <Globe size={22} className="text-[#ffc107]" />
-                          </div>
-                          <h3 className="text-[10px] font-black tracking-[0.4em] text-[#ffc107] mb-6 uppercase flex items-center gap-3">
-                             <span className="w-6 h-[1.5px] bg-[#ffc107]/40" />
-                             OUR VISION
-                          </h3>
-                          <p className="text-[15px] md:text-[16px] font-bold leading-relaxed opacity-95 group-hover:text-white transition-colors duration-500">
-                            "{course.vision || 'Vision statement will be updated soon.'}"
-                          </p>
-                        </div>
+                        {/* Floating Decorative Blobs */}
+                        <div className="absolute -top-4 -left-4 w-6 h-6 rounded-full bg-[#18357a]/20 animate-bounce" />
+                        <div className="absolute -bottom-8 right-12 w-10 h-10 rounded-full bg-[#ffc107]/10" />
 
-                        <div className="relative z-10 mt-8 pt-5 border-t border-white/10 opacity-30">
-                           <p className="text-[8px] font-black uppercase tracking-[0.2em]">Era: 2030 & Beyond</p>
+                        <div className="relative bg-gradient-to-br from-[#18357a] to-[#224292] p-10 md:p-12 lg:p-14 rounded-[30%_70%_70%_30%_/_50%_60%_40%_50%] shadow-[0_30px_70px_rgba(24,53,122,0.2)] flex flex-col sm:flex-row items-center gap-10 overflow-hidden min-h-[350px] z-10 transition-all duration-500">
+                           {/* White Circle Icon Area */}
+                           <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-white flex flex-col items-center justify-center shrink-0 border-[8px] border-white/20 shadow-2xl transition-all duration-700 group-hover:rotate-12">
+                              <Globe size={48} className="text-[#18357a] mb-2" />
+                              <span className="text-[10px] font-black text-[#18357a] tracking-widest leading-none">VISION</span>
+                           </div>
+
+                           {/* Content Area */}
+                           <div className="flex-1 text-center sm:text-left relative z-10">
+                              <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-4">
+                                 Our <span className="text-[#ffc107]">Vision</span>
+                              </h3>
+                              <div className="w-16 h-1 bg-[#ffc107] rounded-full mb-6 mx-auto sm:mx-0 shadow-[0_0_10px_rgba(255,193,7,0.5)]" />
+                              <p className="text-white/90 text-[15px] md:text-[16px] leading-[1.8] font-medium font-inter text-justify sm:text-left italic">
+                                "{course.vision || 'To provide a world-class academic environment for creating global leaders.'}"
+                              </p>
+                           </div>
+                           
+                           {/* Background Decoration */}
+                           <div className="absolute top-[-20%] right-[-10%] w-40 h-40 rounded-full bg-white/5 blur-3xl" />
                         </div>
                       </motion.div>
 
-                      {/* Compact Unified Mission Card - Modern Institutional Style */}
+                      {/* Mission Blob Card - Enhanced with Floating Elements */}
                       <motion.div 
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         whileHover={{ scale: 1.02 }}
-                        className="group relative flex flex-col p-7 md:p-9 bg-gradient-to-br from-[#18357a] via-[#1a3a8a] to-[#0A1A3F] rounded-[2.5rem] text-white shadow-2xl shadow-blue-900/20 overflow-hidden transition-all duration-700"
+                        transition={{ delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="relative w-full lg:flex-1 group"
                       >
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-24 -mt-24 blur-3xl opacity-30 group-hover:bg-[#ffc107]/10 transition-all duration-1000" />
+                        {/* Decorative Offset Outline (Image 2 style) */}
+                        <div className="absolute inset-[-15px] border-2 border-[#ffc107]/20 rounded-[70%_30%_30%_70%_/_40%_50%_50%_60%] pointer-events-none group-hover:scale-110 transition-transform duration-700" />
                         
-                        <div className="relative z-10 flex-1">
-                          <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all duration-700 shadow-xl">
-                             <Target size={22} className="text-[#ffc107]" />
-                          </div>
-                          <h3 className="text-[10px] font-black tracking-[0.4em] text-[#ffc107] mb-6 uppercase flex items-center gap-3">
-                             <span className="w-6 h-[1.5px] bg-[#ffc107]/40" />
-                             OUR MISSION
-                          </h3>
-                          <div className="space-y-4">
-                            <p className="text-[15px] md:text-[16px] font-bold leading-relaxed opacity-95 group-hover:text-white transition-colors duration-500 whitespace-pre-wrap">
-                              {course.mission || 'Mission statement will be updated soon.'}
-                            </p>
-                          </div>
-                        </div>
+                        {/* Floating Decorative Blobs */}
+                        <div className="absolute -top-8 right-4 w-8 h-8 rounded-full bg-[#ffc107]/20" />
+                        <div className="absolute -bottom-6 -left-2 w-12 h-12 rounded-full bg-[#18357a]/5 animate-pulse" />
 
-                        <div className="relative z-10 mt-8 pt-5 border-t border-white/10 opacity-30">
-                           <p className="text-[8px] font-black uppercase tracking-[0.2em]">Institutional Protocol</p>
+                        <div className="relative bg-gradient-to-br from-[#ffc107] to-[#ffb300] p-10 md:p-12 lg:p-14 rounded-[70%_30%_30%_70%_/_40%_50%_50%_60%] shadow-[0_30px_70px_rgba(255,193,7,0.15)] flex flex-col sm:flex-row items-center gap-10 overflow-hidden min-h-[350px] z-10 transition-all duration-500">
+                           {/* White Circle Icon Area */}
+                           <div className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-white flex flex-col items-center justify-center shrink-0 border-[8px] border-black/5 shadow-2xl transition-all duration-700 group-hover:-rotate-12">
+                              <Target size={48} className="text-[#ff9800] mb-2" />
+                              <span className="text-[10px] font-black text-[#ff9800] tracking-widest leading-none">MISSION</span>
+                           </div>
+
+                           {/* Content Area */}
+                           <div className="flex-1 text-center sm:text-left relative z-10">
+                              <h3 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tight mb-4">
+                                 Our <span className="text-white">Mission</span>
+                              </h3>
+                              <div className="w-16 h-1 bg-[#18357a] rounded-full mb-6 mx-auto sm:mx-0" />
+                              <p className="text-[#18357a] text-[15px] md:text-[16px] leading-[1.8] font-bold font-inter text-justify sm:text-left">
+                                {course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.'}
+                              </p>
+                           </div>
+
+                           {/* Background Decoration */}
+                           <div className="absolute bottom-[-20%] left-[-10%] w-40 h-40 rounded-full bg-black/5 blur-3xl" />
                         </div>
                       </motion.div>
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-[3rem] border border-[#DEE7F4] p-10 md:p-16 shadow-2xl shadow-blue-900/5 overflow-hidden mt-16">
-                    <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-16 px-4">
+                  <div className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-10 md:p-14 overflow-hidden mt-16">
+                    <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
                        <div>
-                          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[9px] font-black uppercase tracking-[0.3em] mb-4">
                              <Award size={14} className="text-[#18357a]" />
                              Quality Framework
                           </div>
-                          <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tight">Academic Objectives</h2>
+                          <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter">Academic Objectives</h2>
                        </div>
                        
                        <div className="flex flex-wrap items-center gap-3 bg-slate-50/50 p-2 rounded-[2rem] border border-slate-100">
@@ -512,7 +546,7 @@ export default function CourseDetailPage() {
                            animate={{ opacity: 1, x: 0 }}
                            exit={{ opacity: 0, x: -20 }}
                            transition={{ duration: 0.4 }}
-                           className="p-10 sm:p-14 rounded-[3rem] bg-slate-50/50 border border-[#DEE7F4]/50 group hover:border-[#18357a]/10 transition-all duration-700"
+                           className="p-8 sm:p-10 rounded-[2.5rem] bg-slate-50/50 border border-[#DEE7F4]/50 group"
                          >
                             <div className="flex items-center gap-5 mb-10 pb-10 border-b border-slate-200/50">
                                <div className={`w-16 h-16 rounded-2xl ${activeObj.bg} flex items-center justify-center ${activeObj.color} group-hover:scale-110 transition-transform duration-500`}>
@@ -526,7 +560,7 @@ export default function CourseDetailPage() {
                                </div>
                             </div>
 
-                            <p className="text-[#64779F] font-bold leading-[2.2] text-[16px] sm:text-[18px] whitespace-pre-wrap opacity-90 relative z-10 selection:bg-[#ffc107]/20">
+                            <p className="text-[#333333] font-bold leading-[2.0] text-[15px] sm:text-[16px] REPLACE_TOKEN">
                               {activeObj.content || 'Data current being optimized for digital view.'}
                             </p>
                          </motion.div>
@@ -580,7 +614,7 @@ export default function CourseDetailPage() {
 
             {/* ── LABS ── */}
             {activeTab === 'Labs' && (
-              <div className="max-w-7xl mx-auto">
+              <div className="w-full">
                 {/* DESKTOP VIEW: Sidebar + Detail Panel (Visible only on lg and above) */}
                 <div className="hidden lg:flex flex-row gap-8">
                   {/* Left Sidebar: Lab List */}
@@ -779,6 +813,69 @@ export default function CourseDetailPage() {
               </div>
             )}
 
+            {/* ── PATENTS ── */}
+            {activeTab === 'Patents' && (
+              <div className="space-y-10">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
+                  <div>
+                    <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tight mb-2">
+                       Intellectual <span className="text-[#ffc107]">Property</span>
+                    </h2>
+                    <p className="text-[#64779F] font-bold text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#18357a]/5 rounded-xl border border-[#18357a]/10 text-[#18357a] text-[10px] font-black uppercase tracking-widest">
+                     <ShieldCheck size={14} /> Registered Assets
+                  </div>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8">
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -10, scale: 1.01 }}
+                      viewport={{ once: true }}
+                      className="group relative bg-white p-7 rounded-[2rem] border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center transition-all duration-500"
+                    >
+                       <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#18357a]/20 rounded-tl-[2rem]" />
+                       <div className="w-16 h-16 rounded-2xl bg-[#18357a]/5 border border-[#18357a]/10 flex items-center justify-center mb-6 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
+                          <FileText size={32} className="text-[#18357a] group-hover:text-white transition-colors" />
+                       </div>
+                       <h3 className="text-lg font-black text-[#18357a] uppercase mb-3">Official Patents</h3>
+                       <p className="text-[#64779F] text-sm font-medium leading-relaxed">
+                          Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
+                       </p>
+                       <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-black text-[#A9B1C3] uppercase tracking-[0.2em]">
+                          Academic Year 2024-25
+                       </div>
+                    </motion.div>
+
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -10, scale: 1.01 }}
+                      transition={{ delay: 0.1 }}
+                      viewport={{ once: true }}
+                      className="group bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2rem] p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
+                    >
+                       <div className="absolute -bottom-1 -right-1 w-12 h-12 border-b-4 border-r-4 border-dashed border-[#ffc107]/30 rounded-br-[2rem]" />
+                       <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
+                       <div className="relative z-10">
+                         <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
+                            <Award size={28} className="text-[#ffc107]" />
+                         </div>
+                         <h3 className="text-lg font-black uppercase mb-3 tracking-tight">Research Excellence</h3>
+                         <p className="text-white/70 text-sm font-medium leading-relaxed mb-6">
+                            We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
+                         </p>
+                         <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all">
+                            Contact R&D <ArrowRight size={14} />
+                         </button>
+                       </div>
+                    </motion.div>
+                </div>
+              </div>
+            )}
+
             {/* ── PLACEMENTS ── */}
             {activeTab === 'Placements' && (
               <div>
@@ -832,20 +929,28 @@ export default function CourseDetailPage() {
 
             {/* ── ADMISSIONS ── */}
             {activeTab === 'Admissions' && (
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6">
-                  <h2 className="text-xl font-extrabold text-[#18357a] mb-5 flex items-center gap-2">
-                    <CheckCircle size={18} className="text-[#ffc107]" /> Eligibility Criteria
-                  </h2>
-                  <ul className="space-y-3">
-                    {course.eligibility.map(item => (
-                      <li key={item} className="flex items-start gap-3 p-3 rounded-xl bg-[#F8FAFC]">
-                        <ChevronRight size={15} className="text-[#ffc107] mt-0.5 shrink-0" />
-                        <span className="text-[14px] font-semibold text-[#18357a]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="relative group"
+                >
+                  <div className="absolute inset-0 border-2 border-[#18357a]/10 rotate-[4deg] rounded-[2rem] pointer-events-none" />
+                  <div className="relative bg-white rounded-2xl border border-[#E5EDF8] p-8 shadow-xl shadow-blue-900/5 z-10">
+                    <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/2 px-6 py-2 bg-[#18357a] text-white rounded-full text-[9px] font-black uppercase tracking-widest shadow-lg">
+                       Eligibility
+                    </div>
+                    <ul className="space-y-4 mt-4">
+                      {course.eligibility.map(item => (
+                        <li key={item} className="flex items-start gap-4 p-4 rounded-xl bg-slate-50/50 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-slate-100">
+                          <CheckCircle size={18} className="text-[#ffc107] mt-0.5 shrink-0" />
+                          <span className="text-[14px] font-bold text-[#18357a] leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
                 <div className="space-y-4">
                   <div className="bg-[#18357a] rounded-2xl p-6 text-white">
                     <h3 className="font-extrabold text-lg mb-3">Ready to Apply?</h3>
@@ -1257,7 +1362,7 @@ function CurriculumSection({ courseId, courseName }) {
            <p className="text-[#64779F] font-bold text-sm">Official documentation for this department is being updated.</p>
         </motion.div>
       ) : (
-        <div className="bg-white border border-[#D5E2F4]/80 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/5">
+        <div className="bg-white border border-[#D5E2F4]/80 rounded-[2rem] overflow-hidden">
            <table className="w-full text-left border-collapse">
               <thead>
                  <tr className="bg-[#18357a] border-b border-[#18357a]">
@@ -1276,30 +1381,30 @@ function CurriculumSection({ courseId, courseName }) {
                     transition={{ delay: i * 0.05 }}
                     className="hover:bg-[#ffc107]/5 transition-colors group"
                   >
-                    <td className="px-8 py-5">
-                       <div className="flex items-center gap-4">
-                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
+                    <td className="px-5 py-3.5">
+                       <div className="flex items-center gap-3">
+                          <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
                              curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#18357a]' : 'bg-[#ffc107]/10 text-[#18357a]'
                           }`}>
-                            {curriculumTab === 'Regulations' ? <ShieldCheck size={20} /> : <BookOpen size={20} />}
+                            {curriculumTab === 'Regulations' ? <ShieldCheck size={18} /> : <BookOpen size={18} />}
                           </div>
-                          <span className="text-sm font-black text-[#18357a] group-hover:text-[#18357a] transition-colors uppercase">{item.title}</span>
+                          <span className="text-sm font-bold text-[#18357a] group-hover:text-[#18357a] transition-colors uppercase">{item.title}</span>
                        </div>
                     </td>
-                    <td className="px-6 py-5">
+                    <td className="px-3 py-3.5">
                        <div className="flex items-center gap-2">
-                          <Calendar size={13} className="text-[#ffc107]" />
-                          <span className="text-[11px] font-black uppercase tracking-widest text-[#64779F]">{item.year_or_version}</span>
+                          <Calendar size={12} className="text-[#ffc107]" />
+                          <span className="text-[10px] font-black uppercase tracking-widest text-[#64779F]">{item.year_or_version}</span>
                        </div>
                     </td>
                     {curriculumTab === 'Syllabus' && (
-                       <td className="px-6 py-5">
-                          <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-black text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                       <td className="px-3 py-3.5">
+                          <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-black text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all">
                              SEM - {item.semester}
                           </span>
                        </td>
                     )}
-                    <td className="px-8 py-5 text-right">
+                    <td className="px-5 py-3.5 text-right">
                        <div className="flex items-center justify-end gap-3">
                           {/* View Link - Yellow Hover */}
                           <a 

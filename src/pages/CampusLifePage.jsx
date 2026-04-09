@@ -125,10 +125,10 @@ const LibrarySectionContent = () => {
                                 navigate('/campus-life/library/achievements');
                             }
                         }}
-                        className="p-10 rounded-3xl bg-white border-2 border-white/20 flex flex-col items-center justify-center text-center group transition-all duration-700 cursor-pointer overflow-hidden relative translate-y-0 hover:-translate-y-2 shadow-[0_15px_50px_rgba(24,53,122,0.12)] hover:shadow-2xl hover:shadow-[#18357a]/20"
+                        className="p-10 rounded-3xl bg-white border-2 border-white/20 flex flex-col items-center justify-center text-center group transition-all duration-700 cursor-pointer overflow-hidden relative translate-y-0 hover:-translate-y-2 shadow-[0_15px_50px_rgba(24,53,122,0.12)] hover:shadow-2xl hover:shadow-[#18357a]/20 w-full max-w-xs mx-auto lg:max-w-none"
                     >
                         {/* Status / Indicator Arrow */}
-                        <div className="absolute top-8 right-8 w-10 h-10 rounded-xl bg-white/50 flex items-center justify-center text-slate-300 group-hover:bg-[#ffc107] group-hover:text-[#18357a] group-hover:rotate-45 transition-all duration-500 shadow-sm border border-white">
+                        <div className="absolute top-8 right-8 w-10 h-10 rounded-xl bg-white/50 flex items-center justify-center text-[#18357a] group-hover:bg-[#ffc107] group-hover:text-[#18357a] group-hover:rotate-45 transition-all duration-500 shadow-sm border border-white">
                             <ArrowUpRight size={18} strokeWidth={3} />
                         </div>
                         
@@ -562,7 +562,7 @@ const CampusLifePage = () => {
     return (
         <div className="min-h-screen bg-white font-sans pb-24">
             {/* Dynamic Hero Header */}
-            <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+            <div className="relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
                 <AnimatePresence mode="wait">
                     <motion.div 
                         key={activeSection}
@@ -587,7 +587,7 @@ const CampusLifePage = () => {
                         animate={{ y: 0, opacity: 1 }}
                     >
                         <span className="text-[#ffc107] font-black text-[10px] uppercase tracking-[6px] mb-4 block">Institutional Facilities</span>
-                        <h1 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-4 font-display">
+                        <h1 className="text-4xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-4 font-display">
                             CAMPUS <span className="text-[#ffc107]">LIFE</span>
                         </h1>
                     </motion.div>
@@ -596,12 +596,12 @@ const CampusLifePage = () => {
 
             <div className="max-w-7xl mx-auto px-6 -mt-32 relative z-20">
                 {/* Section Navigation Horizontal */}
-                <div className="flex overflow-x-auto gap-4 p-4 no-scrollbar mb-12 justify-center">
+                <div className="grid grid-cols-2 md:flex md:flex-row md:overflow-x-auto gap-4 p-4 no-scrollbar mb-12 md:justify-center">
                     {CAMPUS_SECTIONS.map((section) => (
                         <button
                             key={section.id}
                             onClick={() => setActiveSection(section.id)}
-                            className={`flex-1 min-w-[160px] max-w-[220px] p-5 rounded-[1.5rem] border transition-all relative overflow-hidden group ${
+                            className={`p-5 rounded-[1.5rem] border transition-all relative overflow-hidden group ${
                                 activeSection === section.id 
                                     ? 'bg-[#18357a] border-[#18357a] text-white shadow-xl shadow-[#18357a]/20' 
                                     : 'bg-white border-slate-100 text-[#64779F] hover:bg-slate-50'

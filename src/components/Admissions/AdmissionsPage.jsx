@@ -21,6 +21,7 @@ import {
 } from 'lucide-react'
 import logo from '../../assets/logo.webp'
 import placement1 from '../../assets/placement 1.png'
+import campusImage from '../../assets/indian_college_students_campus.png'
 
 // ─── Data Construction ────────────────────────────────────────────────────────
 
@@ -93,20 +94,20 @@ const AdmissionsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#FDFEFE] font-['Inter'] pb-20">
+    <div className="min-h-screen bg-[#FDFEFE] font-inter text-[16px] text-[#333333] leading-[1.8] pb-20">
       
       {/* ─── HERO SECTION ─── */}
       <section className="relative h-[65vh] flex items-center overflow-hidden bg-[#0A1A3F]">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=1920&auto=format&fit=crop" 
-            className="w-full h-full object-cover opacity-30 mix-blend-overlay" 
+            src={campusImage} 
+            className="w-full h-full object-cover opacity-90 transition-opacity duration-1000" 
             alt="KIOT Admissions" 
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A3F] via-[#0A1A3F]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A3F] via-[#0A1A3F]/40 to-transparent" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:pl-12 lg:pr-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -164,7 +165,7 @@ const AdmissionsPage = () => {
                  <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#18357a] uppercase leading-tight tracking-tighter mb-10 pl-8 border-l-8 border-[#ffc107]">
                     TRANSFORMING <span className="text-[#ffc107] italic">POTENTIAL</span>
                  </h2>
-                 <p className="text-[#64779F] font-bold text-lg mb-12 leading-relaxed max-w-xl">
+                 <p className="text-[#333333] font-bold text-[16px] mb-12 leading-[1.8] max-w-xl">
                    At KIOT, we don't just teach engineering; we cultivate innovators. Our admission process is designed to find students who are ready to lead the future.
                  </p>
                  
@@ -183,7 +184,7 @@ const AdmissionsPage = () => {
                   whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative lg:-mt-48 mt-12"
+                  className="relative lg:-mt-12 mt-12"
                >
                   {/* Modern Frame for Image */}
                   <div className="relative z-10 rounded-[4rem] bg-white p-4 shadow-[0_50px_100px_-20px_rgba(24,53,122,0.15)] border border-slate-100 overflow-hidden">
@@ -196,48 +197,96 @@ const AdmissionsPage = () => {
                   </div>
 
                   {/* Decorative Elements */}
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#ffc107] rounded-full blur-[80px] opacity-20" />
                   <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-blue-600 rounded-full blur-[100px] opacity-10" />
                </motion.div>
             </div>
          </div>
       </section>
 
-      {/* ─── PROCESS SECTION: MODERN TIMELINE ─── */}
-      <section id="Process" className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center">
+      {/* ─── PROCESS SECTION: MODERN PREMIUM INFOGRAPHIC ─── */}
+      <section id="Process" className="py-24 bg-white relative overflow-hidden">
+        {/* Background Mesh Gradient (Subtle) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-10 pointer-events-none">
+           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#18357a] rounded-full blur-[120px]" />
+           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#ffc107] rounded-full blur-[120px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="mb-24"
           >
-            <span className="inline-block px-5 py-2 rounded-full bg-blue-100 text-[#18357a] font-black text-[10px] uppercase tracking-widest mb-6">Workflow</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#18357a] uppercase leading-tight tracking-tighter mb-20">Admission <br/>Path</h2>
+            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border border-slate-100 shadow-sm mb-6">
+               <span className="w-2 h-2 rounded-full bg-[#18357a] animate-pulse" />
+               <span className="text-[10px] font-black text-[#18357a] uppercase tracking-[3px]">Admission Workflow</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#18357a] uppercase leading-tight tracking-tighter">
+              Pathway to <span className="text-[#ffc107]">Your Future</span>
+            </h2>
           </motion.div>
           
-          <div className="grid lg:grid-cols-5 gap-4 relative">
-            {/* Connection Line (Desktop) */}
-            <div className="hidden lg:block absolute top-[40px] left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-slate-200 to-transparent -z-10" />
-            
-            {ADMISSION_STEPS.map((step, i) => (
-              <motion.div 
-                key={step.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="relative group"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="w-20 h-20 rounded-3xl bg-white shadow-2xl shadow-blue-900/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500 mb-8 border border-slate-100 relative overflow-hidden">
-                    <div className="absolute -bottom-2 -right-2 text-[40px] font-black opacity-[0.03] group-hover:opacity-[0.1] transition-opacity">{i+1}</div>
-                    <step.icon size={28} className="relative z-10 group-hover:scale-110 transition-transform" />
+          <div className="relative">
+            {/* Connection Line (Gradient SVG) */}
+            <div className="absolute top-[80px] left-0 w-full h-[140px] -z-10 hidden lg:block px-20">
+              <svg viewBox="0 0 1000 100" preserveAspectRatio="none" className="w-full h-full fill-none stroke-[3]">
+                <defs>
+                   <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#18357a" stopOpacity="0.05" />
+                      <stop offset="50%" stopColor="#ffc107" stopOpacity="0.3" />
+                      <stop offset="100%" stopColor="#18357a" stopOpacity="0.05" />
+                   </linearGradient>
+                </defs>
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
+                  d="M0,50 C100,50 150,10 250,10 C350,10 400,90 500,90 C600,90 650,10 750,10 C850,10 900,50 1000,50" 
+                  stroke="url(#waveGradient)"
+                  strokeDasharray="12 12"
+                />
+              </svg>
+            </div>
+
+            <div className="grid lg:grid-cols-5 gap-16 lg:gap-4 relative px-4">
+              {ADMISSION_STEPS.map((step, i) => (
+                <motion.div 
+                  key={step.id}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }}
+                  className="flex flex-col items-center group"
+                >
+                  {/* Unique Geometric Node */}
+                  <div className="relative mb-12">
+                     <motion.div 
+                        animate={{ rotate: [45, 55, 45] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        className="w-32 h-32 border-2 border-[#D5E2F4] rounded-3xl flex items-center justify-center bg-white relative group-hover:border-[#ffc107] transition-all duration-500 shadow-xl shadow-blue-900/5 group-hover:shadow-[#ffc107]/20"
+                     >
+                        <div className="w-24 h-24 rotate-[-45deg] flex flex-col items-center justify-center text-[#18357a]">
+                           <span className="text-[10px] font-black opacity-30 group-hover:opacity-100 transition-opacity mb-1 block">0{i+1}</span>
+                           <step.icon size={28} className="group-hover:scale-110 group-hover:text-[#ffc107] transition-all duration-500" />
+                        </div>
+                        <div className="absolute -top-1.5 -left-1.5 w-3 h-3 rounded-full bg-[#18357a] group-hover:bg-[#ffc107] transition-colors shadow-lg" />
+                        <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 rounded-full bg-[#ffc107] group-hover:bg-[#18357a] transition-colors shadow-lg" />
+                     </motion.div>
                   </div>
-                  <h4 className="text-[13px] font-black text-[#18357a] uppercase mb-3 tracking-wider group-hover:text-[#ffc107] transition-colors">{step.title}</h4>
-                  <p className="text-[#64779F] font-bold text-[11px] leading-relaxed max-w-[170px] line-clamp-3 transition-colors">{step.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+
+                  <div className="text-center px-4">
+                    <h4 className="text-[15px] font-black text-[#18357a] uppercase mb-3 tracking-tighter leading-none group-hover:tracking-normal transition-all duration-500 pr-2">
+                       {step.title}
+                    </h4>
+                    <p className="text-[#333333] text-[12px] leading-[1.6] font-normal font-inter max-w-[170px] opacity-60 group-hover:opacity-90 transition-opacity duration-500">
+                      {step.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -252,7 +301,7 @@ const AdmissionsPage = () => {
                   viewport={{ once: true }}
                >
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#18357a] uppercase leading-tight tracking-tighter mb-8">Programmes Offered</h2>
-                  <p className="text-[#64779F] font-bold text-lg max-w-2xl mx-auto mb-10">Discover our diverse range of engineering and management disciplines designed to empower your professional journey.</p>
+                  <p className="text-[#333333] font-bold text-[16px] max-w-2xl mx-auto mb-10 leading-[1.8]">Discover our diverse range of engineering and management disciplines designed to empower your professional journey.</p>
                   
                   {/* Category Selection Tabs */}
                   <div className="flex flex-wrap items-center justify-center gap-4">
@@ -449,7 +498,7 @@ const AdmissionsPage = () => {
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#18357a] uppercase leading-tight tracking-tighter mb-8">
                   Merit <br/><span className="text-[#ffc107]">Awards</span>
                 </h2>
-                <p className="text-[#64779F] font-bold text-lg">We believe talent should never be limited by boundaries. Explore our wide array of funding opportunities.</p>
+                <p className="text-[#333333] font-bold text-[16px] leading-[1.8]">We believe talent should never be limited by boundaries. Explore our wide array of funding opportunities.</p>
               </motion.div>
            </div>
 
@@ -514,7 +563,7 @@ const AdmissionsPage = () => {
                 <div className="relative z-10 max-w-2xl mx-auto">
                     <span className="text-[#ffc107] font-black uppercase text-[11px] tracking-[4px] mb-8 block">Documents</span>
                     <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-tight tracking-tighter mb-8">Secure Your <br/>Prospectus</h3>
-                    <p className="text-white/50 font-bold text-lg mb-12">Download the comprehensive roadmap for 2026-27 including detailed intake and faculty information.</p>
+                    <p className="text-white/70 font-bold text-[16px] mb-12 leading-[1.8]">Download the comprehensive roadmap for 2026-27 including detailed intake and faculty information.</p>
                     
                     <div className="flex flex-wrap items-center justify-center gap-6">
                         <button className="flex items-center gap-4 px-10 py-5 bg-[#ffc107] text-[#18357a] rounded-3xl font-black text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-2xl shadow-[#ffc107]/20">

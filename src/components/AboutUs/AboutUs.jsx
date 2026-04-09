@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BookOpen, Users, Trophy, Target, CheckCircle2, ArrowRight, ArrowDown } from 'lucide-react'
-import campusImg from '../../assets/about campus.webp'
+import campusImg from '../../assets/kiot-campus.webp'
 
 const AboutUs = () => {
   const [showAcademicStats, setShowAcademicStats] = useState(false);
@@ -37,7 +37,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[#64779F] text-lg lg:text-[22px] max-w-3xl mx-auto font-medium leading-relaxed"
+            className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter max-w-3xl mx-auto"
           >
             A premier institution committed to nurturing the next generation of engineers, innovators, and leaders through world-class academic standards.
           </motion.p>
@@ -83,7 +83,7 @@ const AboutUs = () => {
               <h2 className="text-3xl lg:text-4xl font-black text-[#18357a] mb-8 leading-tight uppercase tracking-normal">
                 Our Foundation & <span className="text-[#ffc107]">Leadership</span>
               </h2>
-              <div className="space-y-6 text-[#64779F] text-[17px] leading-relaxed font-medium">
+              <div className="space-y-6 text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter text-justify">
                 <p>
                   Knowledge Institute of Technology (KIOT) was established by Knowledge Institute of Technology Trust (KIOT Trust) in 2009. Dr. PSS. Srinivasan is the Founder of the Trust. The KIOT Trust is a 41-member team: 20 of them are professors in engineering education and 21 of them are budding entrepreneurs.
                 </p>
@@ -114,7 +114,7 @@ const AboutUs = () => {
                     <div className="pt-10 space-y-8">
                        <div className="p-8 rounded-[2rem] bg-[#f0f9f6] border border-[#d1e7dd]">
                           <h3 className="text-[#198754] text-xl font-black mb-4 uppercase tracking-wider">Academic Excellence</h3>
-                          <div className="space-y-4 text-[#64779F] font-medium leading-relaxed">
+                          <div className="space-y-4 text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter text-justify">
                             <p>
                               Knowledge Institute of Technology (KIOT) is an Autonomous Institution, Affiliated to Anna University, Chennai and Approved by AICTE, New Delhi and UGC, New Delhi. The college offers nine B.E. / B.Tech. programs, four M.E. / M.Tech. programs in Engineering and Technology, MBA - Regular, MBA - IEV, MCA programs and Ph.D. programs in all the departments.
                             </p>

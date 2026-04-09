@@ -48,9 +48,10 @@ const navLinks = [
     hasDropdown: true,
     subLinks: [
       { name: 'About Us', href: 'about-us', icon: Building2 },
-      { name: 'Vision & Mission', href: 'vision-mission', icon: Target },
+      { name: 'Our Values', href: 'our-values', icon: Target },
       { name: 'Leadership', href: 'leadership', icon: Users },
       { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
+      { name: 'Guidelines', href: 'guidelines', icon: FileText },
       { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText },
       { name: 'Achievements', href: 'achievements', icon: GraduationCap }
     ]
@@ -60,8 +61,8 @@ const navLinks = [
     href: 'academics',
     hasDropdown: true,
     subLinks: [
-      { name: 'Undergraduate (UG)', href: 'academics?tab=Programs&program=UG', icon: GraduationCap },
-      { name: 'Postgraduate (PG)', href: 'academics?tab=Programs&program=PG', icon: GraduationCap },
+      { name: 'Undergraduate (UG)', href: 'academics/undergraduate', icon: GraduationCap },
+      { name: 'Postgraduate (PG)', href: 'academics/postgraduate', icon: GraduationCap },
     ]
   },
   {
@@ -86,6 +87,8 @@ const navLinks = [
     href: 'resources', 
     hasDropdown: true,
     subLinks: [
+      { name: 'Autonomous', href: 'autonomous', icon: ShieldCheck },
+      { name: 'COE', href: 'coe', icon: FileText },
       { name: 'Campus Life', href: 'campus-life', icon: Building2 },
       { name: 'Student Life', href: 'student-life', icon: Users },
       { name: 'Alumni', href: 'alumni', icon: GraduationCap },

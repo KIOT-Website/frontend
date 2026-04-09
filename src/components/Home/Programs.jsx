@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { 
   GraduationCap, Layers, 
   Settings, Radio, Zap, Monitor, Building2, Globe, Briefcase, Brain, Cpu,
   ShieldCheck, CircuitBoard, CarFront, Code, TrendingUp, AppWindow, Rocket, FileCode2,
-  ArrowRight, Search, Beaker, Landmark, Atom
+  ArrowRight, Search, Beaker, Landmark, Atom, Microscope
 } from 'lucide-react'
 
 const programsData = {
@@ -15,15 +16,15 @@ const programsData = {
     description: 'Foundation for technical brilliance and engineering innovation.',
     accent: '#ffc107',
     courses: [
-      { name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
-      { name: "Electronics & Communication", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
-      { name: "Electrical & Electronics", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
-      { name: "Computer Science & Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
-      { name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
-      { name: "Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
-      { name: "Computer Science & Business", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
-      { name: "AI and Data Science", icon: Brain, code: "AIDS", duration: "4 Years", phd: true },
-      { name: "Electronics & Computer Eng.", icon: Cpu, code: "ECC", duration: "4 Years", phd: true }
+      { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
+      { id: 'be-ece', name: "Electronics & Communication", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
+      { id: 'be-eee', name: "Electrical & Electronics", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
+      { id: 'be-cse', name: "Computer Science & Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
+      { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
+      { id: 'btech-it', name: "Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
+      { id: 'btech-csbs', name: "Computer Science & Business", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
+      { id: 'btech-aids', name: "AI and Data Science", icon: Brain, code: "AIDS", duration: "4 Years", phd: true },
+      { id: 'be-ecm', name: "Electronics & Computer Eng.", icon: Cpu, code: "ECC", duration: "4 Years", phd: true }
     ]
   },
   PG: {
@@ -33,15 +34,14 @@ const programsData = {
     description: 'Advanced specialization and leadership in technology & management.',
     accent: '#18357a',
     courses: [
-      { name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
-      { name: "VLSI Design", icon: CircuitBoard, code: "VLSI", duration: "2 Years", phd: true },
-      { name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
-      { name: "Embedded System Tech.", icon: Cpu, code: "EST", duration: "2 Years", phd: true },
-      { name: "Computer Science & Eng.", icon: Code, code: "MCSE", duration: "2 Years", phd: true },
-      { name: "Master of Business (MBA)", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
-      { name: "Computer Applications (MCA)", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
-      { name: "Innovation & Entrepreneurship", icon: Rocket, code: "MIE", duration: "2 Years", phd: true },
-      { name: "Software Engineering", icon: FileCode2, code: "MSE", duration: "2 Years", phd: true }
+      { id: 'me-ise', name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
+      { id: 'me-ped', name: "Power Electronics & Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
+      { id: 'me-ae', name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
+      { id: 'me-se', name: "M.E Software Engineering", icon: FileCode2, code: "MSE", duration: "2 Years", phd: true },
+      { id: 'mba-general', name: "Master of Business (MBA)", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
+      { id: 'mca', name: "Computer Applications (MCA)", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
+      { id: 'mba-iev', name: "Innovation & Entrepreneurship", icon: Rocket, code: "MIE", duration: "2 Years", phd: true },
+      { id: 'phd', name: "Ph.D. ALL Departments", icon: Microscope, code: "PhD", duration: "Part-Time / Full Time", phd: true }
     ]
   },
   PHD: {
@@ -51,16 +51,18 @@ const programsData = {
     description: 'Recognized Research Centers for advanced doctoral studies and innovation across all disciplines.',
     accent: '#ffc107',
     courses: [
-      { name: "Engineering & Technology", icon: Settings, code: "PhD-ENG", duration: "Full Time / Part Time", phd: true },
-      { name: "Management Studies", icon: Landmark, code: "PhD-MS", duration: "Full Time / Part Time", phd: true },
-      { name: "Science & Humanities", icon: Beaker, code: "PhD-SNH", duration: "Full Time / Part Time", phd: true },
-      { name: "Mathematics", icon: TrendingUp, code: "PhD-MA", duration: "Full Time / Part Time", phd: true }
+      { id: 'phd', name: "Engineering & Technology", icon: Settings, code: "PhD-ENG", duration: "Full Time / Part Time", phd: true },
+      { id: 'phd', name: "Management Studies", icon: Landmark, code: "PhD-MS", duration: "Full Time / Part Time", phd: true },
+      { id: 'phd', name: "Science & Humanities", icon: Beaker, code: "PhD-SNH", duration: "Full Time / Part Time", phd: true },
+      { id: 'phd', name: "Mathematics", icon: TrendingUp, code: "PhD-MA", duration: "Full Time / Part Time", phd: true }
     ]
   }
 }
 
 const Programs = () => {
   const [activeTab, setActiveTab] = useState('UG')
+  const navigate = useNavigate()
+
 
   return (
     <section id="academics" className="relative py-16 lg:py-32 bg-[#FCFDFD] overflow-hidden">
@@ -108,6 +110,7 @@ const Programs = () => {
                       {activeTab === key && (
                          <motion.div 
                            layoutId="tab-bg"
+                           transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
                            className="absolute inset-0 bg-[#18357a] rounded-2xl shadow-lg"
                          />
                       )}
@@ -124,8 +127,9 @@ const Programs = () => {
            {/* Left Info Column */}
            <motion.div
              key={`info-${activeTab}`}
-             initial={{ opacity: 0, x: -20 }}
-             animate={{ opacity: 1, x: 0 }}
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, ease: "easeOut" }}
              className="lg:sticky lg:top-32"
            >
               <div className="space-y-8">
@@ -163,7 +167,10 @@ const Programs = () => {
                     </div>
                  </div>
 
-                 <button className="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-[#18357a] group mt-8">
+                 <button 
+                    onClick={() => navigate('/academics')}
+                    className="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-[#18357a] group mt-8"
+                  >
                     View full prospectus
                     <ArrowRight size={16} className="text-[#ffc107] group-hover:translate-x-1 transition-transform" />
                  </button>
@@ -177,32 +184,43 @@ const Programs = () => {
                     <motion.div
                       key={course.name}
                       layout
-                      initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                      initial={{ opacity: 0, scale: 0.9, y: 30 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9, y: -10 }}
+                      exit={{ opacity: 0, scale: 0.9, y: -30 }}
                       transition={{ 
-                        duration: 0.3, 
+                        duration: 0.4, 
                         delay: idx * 0.05,
                         layout: { duration: 0.3 }
                       }}
                       whileHover={{ y: -5 }}
-                      className="group bg-white p-7 rounded-[32px] border border-[#D5E2F4]/60 shadow-[0_15px_35px_rgba(24,53,122,0.03)] transition-all cursor-pointer relative overflow-hidden"
+                      onClick={() => {
+                        const base = activeTab === 'UG' ? 'undergraduate' : 'postgraduate'
+                        navigate(`/academics/${base}/${course.id}`)
+                      }}
+                      className="group bg-white p-7 rounded-[32px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(24,53,122,0.1)] transition-all cursor-pointer relative overflow-hidden"
                     >
-                       {/* Abstract Accent */}
-                       <div className="absolute top-0 right-0 w-24 h-24 bg-[#18357a]/[0.02] rounded-full translate-x-1/2 -translate-y-1/2 transition-colors group-hover:bg-[#ffc107]/10" />
+                       {/* Background Polish */}
+                       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                       <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/[0.02] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#ffc107]/5 transition-colors duration-500" />
                        
-                       <div className="flex items-start justify-between mb-6">
-                          <div className="w-12 h-12 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#ffc107] transition-all group-hover:bg-[#18357a]">
-                             <course.icon size={22} />
+                       <div className="relative z-10">
+                          <div className="flex items-center justify-between mb-6">
+                             <div className="w-14 h-14 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-300 transform group-hover:rotate-6">
+                                <course.icon size={26} />
+                             </div>
+                             <div className="px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#ffc107]/20 transition-colors">
+                                <span className="text-[8px] font-black text-[#64779F] group-hover:text-[#18357a] tracking-[0.2em] uppercase">Course Details</span>
+                             </div>
                           </div>
-                          <span className="text-[9px] font-black text-[#64779F]/40 tracking-widest uppercase">{course.code}</span>
-                       </div>
 
-                       <h4 className="text-[17px] font-black text-[#18357a] mb-2 leading-tight group-hover:text-[#18357a] transition-colors pr-8">
-                          {course.name}
-                       </h4>
-                       <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold text-[#64779F] opacity-70 group-hover:opacity-100 transition-opacity">
-                          <span>{course.duration}</span>
+                          <h4 className="text-[18px] font-black text-[#18357a] mb-2 leading-tight group-hover:translate-x-1 transition-transform duration-300">
+                             {course.name}
+                          </h4>
+                          
+                          <div className="flex items-center gap-2 mt-4">
+                             <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107]" />
+                             <span className="text-[10px] font-black text-[#64779F] uppercase tracking-widest">{course.duration} Program</span>
+                          </div>
                        </div>
                     </motion.div>
                  ))}

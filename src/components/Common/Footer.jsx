@@ -17,10 +17,11 @@ const Footer = () => {
   const menuSections = {
     'Explore': [
       { name: 'About Us', href: '/about-us' },
-      { name: 'Vision & Mission', href: '/vision-mission' },
+      { name: 'Our Values', href: '/our-values' },
       { name: 'Leadership & Council', href: '/leadership' },
       { name: 'Accreditation', href: '/accreditation-ranking' },
       { name: 'Governing Council', href: '/governing-council' },
+      { name: 'Guidelines', href: '/guidelines' },
       { name: 'Programs Offered', href: '/academics' },
       { name: 'Contact Institution', href: '/contact' },
     ],

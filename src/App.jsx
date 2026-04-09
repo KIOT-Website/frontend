@@ -15,6 +15,7 @@ import VisionMissionPage from './pages/VisionMissionPage'
 import LeadershipPage from './pages/LeadershipPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
+import GuidelinesPage from './pages/GuidelinesPage'
 import AchievementsPage from './pages/AchievementsPage'
 import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 import PlacementOverviewPage from './pages/PlacementOverviewPage'
@@ -41,6 +42,10 @@ const LibraryAccessPage = lazy(() => import('./pages/LibraryAccessPage'))
 const LibraryBooksPage = lazy(() => import('./pages/LibraryBooksPage'))
 const LibraryJournalsPage = lazy(() => import('./pages/LibraryJournalsPage'))
 const LibraryMagazinesPage = lazy(() => import('./pages/LibraryMagazinesPage'))
+const AutonomousPage = lazy(() => import('./pages/AutonomousPage'))
+const COEPage = lazy(() => import('./pages/COEPage'))
+const ExamSchedulesPage = lazy(() => import('./pages/ExamSchedulesPage'))
+
 
 // Simple Loading Fallback
 const PageLoader = () => (
@@ -123,8 +128,9 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about-us" element={<AboutUsPage />} />
-                  <Route path="/vision-mission" element={<VisionMissionPage />} />
+                  <Route path="/our-values" element={<VisionMissionPage />} />
                   <Route path="/leadership" element={<LeadershipPage />} />
+                  <Route path="/guidelines" element={<GuidelinesPage />} />
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/governing-council" element={<GoverningCouncilPage />} />
                   <Route path="/awards-recognition" element={<AchievementsPage />} />
@@ -139,7 +145,13 @@ function App() {
 
                   {/* Academics Pages */}
                   <Route path="/academics" element={<AcademicsPageWrapper />} />
+                  <Route path="/academics/undergraduate" element={<AcademicsPageWrapper />} />
+                  <Route path="/academics/postgraduate" element={<AcademicsPageWrapper />} />
+                  <Route path="/ug-programs" element={<AcademicsPageWrapper />} />
+                  <Route path="/pg-programs" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
+                  <Route path="/academics/undergraduate/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
+                  <Route path="/academics/postgraduate/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
                   <Route path="/academics/course/:courseId/lab/:labIndex" element={<LabDetailPage />} />
                   <Route path="/department/:deptName" element={<DepartmentPage />} />
                   <Route path="/students-admitted-department/:deptName" element={<StudentsAdmittedDepartmentPage />} />
@@ -149,6 +161,9 @@ function App() {
                   <Route path="/admissions/pg-registration" element={<PGRegistrationPage />} />
                   <Route path="/research" element={<UnderConstruction />} />
                   <Route path="/resources" element={<UnderConstruction />} />
+                  <Route path="/autonomous" element={<AutonomousPage />} />
+                  <Route path="/coe" element={<COEPage />} />
+                  <Route path="/coe/exam-schedules" element={<ExamSchedulesPage />} />
                   <Route path="/campus-life" element={<CampusLifePage />} />
                   <Route path="/campus-life/library/access" element={<LibraryAccessPage />} />
                   <Route path="/campus-life/library/collections" element={<LibraryBooksPage />} />
@@ -177,41 +192,41 @@ function App() {
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 100, opacity: 0 }}
-                className="fixed bottom-6 left-6 right-6 md:right-auto md:bottom-10 md:left-10 z-[3000] md:w-[340px] bg-white rounded-3xl shadow-[0_25px_60px_rgba(10,26,63,0.4)] overflow-hidden p-6 md:p-8 border border-slate-100"
+                className="fixed bottom-6 left-6 right-6 md:right-auto md:bottom-10 md:left-10 z-[3000] md:w-[310px] bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(10,26,63,0.3)] overflow-hidden p-6 border-2 border-[#18357a]/10"
               >
                 <button 
                   onClick={handleClosePopup}
-                  className="absolute top-6 right-6 w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all shadow-sm"
+                  className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-slate-50 flex items-center justify-center text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all shadow-sm"
                 >
-                  <X size={16} />
+                  <X size={14} />
                 </button>
 
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 bg-[#ffc107] rounded-2xl flex items-center justify-center shadow-lg shadow-[#ffc107]/30 shrink-0">
-                    <GraduationCap size={28} className="text-[#18357a]" />
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-12 h-12 bg-[#ffc107] rounded-2xl flex items-center justify-center shadow-lg shadow-[#ffc107]/30 shrink-0">
+                    <GraduationCap size={24} className="text-[#18357a]" />
                   </div>
                   <div>
-                    <span className="text-[#ffc107] font-black text-[9px] uppercase tracking-[2px] block mb-0.5">KIOT Admission</span>
-                    <h2 className="text-xl font-black text-[#18357a] uppercase tracking-tight leading-none">
+                    <span className="text-[#ffc107] font-black text-[8px] uppercase tracking-[2px] block mb-0.5">KIOT Admission</span>
+                    <h2 className="text-lg font-black text-[#18357a] uppercase tracking-tight leading-none">
                       Open 2026-27
                     </h2>
                   </div>
                 </div>
 
-                <p className="text-[#64779F] font-bold text-xs leading-relaxed mb-6">
+                <p className="text-[#64779F] font-bold text-[11px] leading-relaxed mb-6">
                   Join a community of innovators. Applications are now live for all engineering programs.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3">
                   <button 
                     onClick={() => { handleClosePopup(); navigate('/admissions'); }}
-                    className="py-3 bg-[#18357a] text-white rounded-xl font-black text-[10px] uppercase tracking-[1px] hover:bg-[#1d3a82] transition-all active:scale-95"
+                    className="py-2.5 bg-[#18357a] text-white rounded-xl font-black text-[9px] uppercase tracking-[1px] hover:bg-[#1d3a82] transition-all active:scale-95"
                   >
                     Apply Now
                   </button>
                   <button 
                     onClick={handleClosePopup}
-                    className="py-3 bg-slate-50 text-[#64779F] rounded-xl font-black text-[10px] uppercase tracking-[1px] hover:bg-slate-100 transition-all"
+                    className="py-2.5 bg-slate-50 text-[#64779F] rounded-xl font-black text-[9px] uppercase tracking-[1px] hover:bg-slate-100 transition-all font-bold"
                   >
                     Later
                   </button>
