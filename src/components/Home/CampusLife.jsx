@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { BookOpen, FlaskConical, Home, Trophy, Utensils, Bus, ArrowUpRight, Quote } from 'lucide-react'
 
 // Asset imports
-import libraryImg from '../../assets/kiot_library.webp'
-import labImg from '../../assets/kiot_lab.webp'
-import hostelImg from '../../assets/kiot_hostel.webp'
-import sportsImg from '../../assets/kiot_sports.webp'
-import cafeteriaImg from '../../assets/kiot_cafeteria.webp'
-import transportImg from '../../assets/kiot_transport.webp'
+import libraryImg from '../../assets/main/kiot_library.webp'
+import labImg from '../../assets/main/kiot_lab.webp'
+import hostelImg from '../../assets/main/kiot_hostel.webp'
+import sportsImg from '../../assets/main/kiot_sports.webp'
+import cafeteriaImg from '../../assets/main/kiot_cafeteria.webp'
+import transportImg from '../../assets/main/kiot_transport.webp'
 
 const facilities = [
   {

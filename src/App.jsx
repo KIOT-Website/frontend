@@ -55,6 +55,11 @@ const PhdGuidedPage = lazy(() => import('./pages/PhdGuidedPage'))
 const ResearchFacilitiesPage = lazy(() => import('./pages/ResearchFacilitiesPage'))
 const SponsoredProjectsPage = lazy(() => import('./pages/SponsoredProjectsPage'))
 const InternationalPublicationsPage = lazy(() => import('./pages/InternationalPublicationsPage'))
+const MedicalImagingPage = lazy(() => import('./pages/MedicalImagingPage'))
+const NonIndexedPublicationsPage = lazy(() => import('./pages/NonIndexedPublicationsPage'))
+const ConferencesPage = lazy(() => import('./pages/ConferencesPage'))
+const ResearchProposalsPage = lazy(() => import('./pages/ResearchProposalsPage'))
+const ConsultancyPage = lazy(() => import('./pages/ConsultancyPage'))
 
 
 // Simple Loading Fallback
@@ -179,6 +184,11 @@ function App() {
                    <Route path="/research/:deptName/facilities" element={<ResearchFacilitiesPage />} />
                    <Route path="/research/:deptName/sponsored-projects" element={<SponsoredProjectsPage />} />
                    <Route path="/research/:deptName/international-publications" element={<InternationalPublicationsPage />} />
+                   <Route path="/research/:deptName/medical-imaging" element={<MedicalImagingPage />} />
+                   <Route path="/research/:deptName/publications-non-indexed" element={<NonIndexedPublicationsPage />} />
+                   <Route path="/research/:deptName/conferences" element={<ConferencesPage />} />
+                   <Route path="/research/:deptName/research-proposals" element={<ResearchProposalsPage />} />
+                   <Route path="/research/:deptName/consultancy" element={<ConsultancyPage />} />
                    <Route path="/resources" element={<UnderConstruction />} />
                   <Route path="/autonomous" element={<AutonomousPage />} />
                   <Route path="/coe" element={<COEPage />} />

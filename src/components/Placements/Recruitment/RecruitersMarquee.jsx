@@ -2,13 +2,13 @@ import React from 'react'
 import { Building2 } from 'lucide-react'
 
 // Company Logos
-import codingmartLogo from '../../../assets/codingmart.webp'
-import ecpleoLogo from '../../../assets/ecpleo.webp'
-import haritaLogo from '../../../assets/harita.webp'
-import hexawareLogo from '../../../assets/hexaware.webp'
-import raplLogo from '../../../assets/rapl.webp'
-import techMahindraLogo from '../../../assets/tech mahendra.webp'
-import tessolveLogo from '../../../assets/tessolve.webp'
+import codingmartLogo from '../../../assets/main/codingmart.webp'
+import ecpleoLogo from '../../../assets/main/ecpleo.webp'
+import haritaLogo from '../../../assets/main/harita.webp'
+import hexawareLogo from '../../../assets/main/hexaware.webp'
+import raplLogo from '../../../assets/main/rapl.webp'
+import techMahindraLogo from '../../../assets/main/tech mahendra.webp'
+import tessolveLogo from '../../../assets/main/tessolve.webp'
 
 // New Section Logos
 import tcsLogo from '../../../assets/company logo/tcs.png'

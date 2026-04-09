@@ -20,101 +20,221 @@ const PhdHoldersPage = () => {
         return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     }
 
-    const phdHolders = [
-        {
-            id: 1,
-            name: "Dr.PSS.Srinivasan",
-            topic: "Thermal Engineering, Heattransfer & CFD",
-            year: "2002",
-            university: "Bharathiyar University",
-            publications: { ij: 60, ic: 65, nj: 52, nc: 134 },
-            guided: 16,
-            beingGuided: 1
-        },
-        {
-            id: 2,
-            name: "Dr.K.Visagavel",
-            topic: "Thermal Engineering, Heat Transfer, CFD and Solar Energy",
-            year: "2010",
-            university: "Anna University, Chennai",
-            publications: { ij: 47, ic: 2, nj: 11, nc: 80 },
-            guided: 5,
-            beingGuided: 7
-        },
-        {
-            id: 3,
-            name: "Dr.P.Navaneethakrishnan",
-            topic: "Design, CAD/CAM, Finite Element Analysis, Computational Fluid Dynamics",
-            year: "2009",
-            university: "Bharathiyar University",
-            publications: { ij: 41, ic: 10, nj: 15, nc: 50 },
-            guided: 9,
-            beingGuided: 5
-        },
-        {
-            id: 4,
-            name: "Dr.M.Ilangkumaran",
-            topic: "Maintenance Engineering, Multi Criteria Decision Making Application",
-            year: "2010",
-            university: "Anna University, Chennai",
-            publications: { ij: 55, ic: 15, nj: 5, nc: 3 },
-            guided: 6,
-            beingGuided: 5
-        },
-        {
-            id: 5,
-            name: "Dr.N.Panneerselvam",
-            topic: "IC Engine, Composite Materials",
-            year: "2018",
-            university: "Anna University, Chennai",
-            publications: { ij: 7, ic: "-", nj: "-", nc: 5 },
-            guided: "-",
-            beingGuided: "-"
-        },
-        {
-            id: 6,
-            name: "Dr. K.S.Prabhakaran",
-            topic: "Evaporative cooling ; Ergonomics",
-            year: "2021",
-            university: "Anna University, Chennai",
-            publications: { ij: 2, ic: 1, nj: 3, nc: 6 },
-            guided: "-",
-            beingGuided: "-"
-        },
-        {
-            id: 7,
-            name: "Dr.V. Sivakumar",
-            topic: "Energy & CFD",
-            year: "2020",
-            university: "Anna University, Chennai",
-            publications: { ij: 5, ic: 4, nj: 2, nc: 20 },
-            guided: "-",
-            beingGuided: "-"
-        },
-        {
-            id: 8,
-            name: "Dr.S.Sureshbalaji",
-            topic: "Design, Optimization Techniques",
-            year: "2023",
-            university: "Anna University, Chennai",
-            publications: { ij: 19, ic: 1, nj: "-", nc: 5 },
-            guided: "-",
-            beingGuided: "-"
-        },
-        {
-            id: 9,
-            name: "Dr. M.Sathyanathan",
-            topic: "Composite Materials",
-            year: "2025",
-            university: "Anna University, Chennai",
-            publications: { ij: 10, ic: 3, nj: "-", nc: 4 },
-            guided: "-",
-            beingGuided: "-"
-        }
-    ]
+    const allPhdHolders = {
+        'mechanical-engineering': [
+            {
+                id: 1,
+                name: "Dr.PSS.Srinivasan",
+                topic: "Thermal Engineering, Heattransfer & CFD",
+                year: "2002",
+                university: "Bharathiyar University",
+                publications: { ij: 60, ic: 65, nj: 52, nc: 134 },
+                guided: 16,
+                beingGuided: 1
+            },
+            {
+                id: 2,
+                name: "Dr.K.Visagavel",
+                topic: "Thermal Engineering, Heat Transfer, CFD and Solar Energy",
+                year: "2010",
+                university: "Anna University, Chennai",
+                publications: { ij: 47, ic: 2, nj: 11, nc: 80 },
+                guided: 5,
+                beingGuided: 7
+            },
+            {
+                id: 3,
+                name: "Dr.P.Navaneethakrishnan",
+                topic: "Design, CAD/CAM, Finite Element Analysis, Computational Fluid Dynamics",
+                year: "2009",
+                university: "Bharathiyar University",
+                publications: { ij: 41, ic: 10, nj: 15, nc: 50 },
+                guided: 9,
+                beingGuided: 5
+            },
+            {
+                id: 4,
+                name: "Dr.M.Ilangkumaran",
+                topic: "Maintenance Engineering, Multi Criteria Decision Making Application",
+                year: "2010",
+                university: "Anna University, Chennai",
+                publications: { ij: 55, ic: 15, nj: 5, nc: 3 },
+                guided: 6,
+                beingGuided: 5
+            },
+            {
+                id: 5,
+                name: "Dr.N.Panneerselvam",
+                topic: "IC Engine, Composite Materials",
+                year: "2018",
+                university: "Anna University, Chennai",
+                publications: { ij: 7, ic: "-", nj: "-", nc: 5 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 6,
+                name: "Dr. K.S.Prabhakaran",
+                topic: "Evaporative cooling ; Ergonomics",
+                year: "2021",
+                university: "Anna University, Chennai",
+                publications: { ij: 2, ic: 1, nj: 3, nc: 6 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 7,
+                name: "Dr.V. Sivakumar",
+                topic: "Energy & CFD",
+                year: "2020",
+                university: "Anna University, Chennai",
+                publications: { ij: 5, ic: 4, nj: 2, nc: 20 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 8,
+                name: "Dr.S.Sureshbalaji",
+                topic: "Design, Optimization Techniques",
+                year: "2023",
+                university: "Anna University, Chennai",
+                publications: { ij: 19, ic: 1, nj: "-", nc: 5 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 9,
+                name: "Dr. M.Sathyanathan",
+                topic: "Composite Materials",
+                year: "2025",
+                university: "Anna University, Chennai",
+                publications: { ij: 10, ic: 3, nj: "-", nc: 4 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
+        'electronics-&-communication-engineering': [
+            {
+                id: 1,
+                name: "Dr.N.Santhiyakumari",
+                topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Artery Images using Intima media thickness measurement",
+                year: "2008",
+                university: "Anna University, Chennai",
+                publications: { ij: 48, ic: 52, nj: "-", nc: 49 },
+                guided: "6",
+                beingGuided: "6"
+            },
+            {
+                id: 2,
+                name: "Dr.M.Thangavel",
+                topic: "Investigation on Carotid Wall Motion and Texture Classification of Plaques Using Multi-resolution Features",
+                year: "2016",
+                university: "Anna University, Chennai",
+                publications: { ij: 8, ic: 3, nj: "-", nc: 15 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 3,
+                name: "Dr. R. Vijayaraghavan",
+                topic: "Temporal Analysis of Remote Sensing Data for Identification of Some Tree and Shrub Species in Semiarid Region",
+                year: "2008",
+                university: "Jai Narain Vyas University Jodhpur",
+                publications: { ij: 1, ic: "-", nj: "-", nc: 6 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 4,
+                name: "Dr. S. Kumarganesh",
+                topic: "Certain Investigations on Segmentation and Compression of Brain Tumor Image",
+                year: "2018",
+                university: "Anna University, Chennai",
+                publications: { ij: 41, ic: 19, nj: "-", nc: 5 },
+                guided: "-",
+                beingGuided: "6"
+            },
+            {
+                id: 5,
+                name: "Dr.P. Shanmugasundaram",
+                topic: "Certain Investigations on Computer Aided Colon Cancer Detection in Wireless Capsule Endoscopy Images",
+                year: "2021",
+                university: "Anna University, Chennai",
+                publications: { ij: 9, ic: 8, nj: 1, nc: 19 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 6,
+                name: "Dr.V.Saravanan",
+                topic: "Certain investigations on active noise control systems for domestic applications by developing the step size of the FxLMS algorithm",
+                year: "2022",
+                university: "Anna University, Chennai",
+                publications: { ij: 8, ic: 6, nj: "-", nc: 11 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 7,
+                name: "Dr.G.Rajamanickam",
+                topic: "Wireless Communication",
+                year: "2024",
+                university: "Anna University, Chennai",
+                publications: { ij: 4, ic: 2, nj: 1, nc: 2 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 8,
+                name: "Dr.S.Maragatharaj",
+                topic: "Low Power VLSI",
+                year: "2024",
+                university: "Anna University, Chennai",
+                publications: { ij: 11, ic: "-", nj: "-", nc: 9 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 9,
+                name: "Dr. T. K. Santhi",
+                topic: "Womanism in the Select Works of Alice Walker",
+                year: "2014",
+                university: "Mother Teresa Women's University, Kodaikanal",
+                publications: { ij: 2, ic: 4, nj: "-", nc: 6 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 10,
+                name: "Dr. K. Priya Mol",
+                topic: "The Brutality of Civilization and the Struggle for Survival: A Study of Jack London’s Select Novels.",
+                year: "2022",
+                university: "Manonmaniam Sundaranar University",
+                publications: { ij: 2, ic: 3, nj: 1, nc: 2 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
+        'electrical-&-electronics-engineering': [
+            { id: 1, name: "Dr.C.Muniraj", topic: "AC Drives and High Voltage Engineering", year: "2012", university: "Anna University", publications: { ij: 28, ic: 30, nj: 0, nc: 11 } },
+            { id: 2, name: "Dr.V.Kamatchi Kannan", topic: "Power Quality Improvement using DSTATCOM", year: "2013", university: "Anna University", publications: { ij: 50, ic: 24, nj: 1, nc: 8 } },
+            { id: 3, name: "Dr.P.A.Gowri Sankar", topic: "Control and Instrumentation, Nano Materials and Sensors", year: "2015", university: "Anna University", publications: { ij: 15, ic: 5, nj: 1, nc: 2 } },
+            { id: 4, name: "Dr.S.Kalpana Devi", topic: "Renewable Energy Sources and Converter", year: "2024", university: "Anna University", publications: { ij: 4, ic: 4, nj: 35, nc: 5 } }
+        ],
+        'computer-science-&-engineering': [
+            { id: 1, name: "Dr.V.Kumar", topic: "Design Of An Efficient MAC Protocol For Wireless Networks", year: "2011", university: "Anna University, Coimbatore", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 2, name: "Dr.P.Rajendran", topic: "Decision Support System For Brain Tumor using Image Mining", year: "2011", university: "Anna University, Coimbatore", publications: { ij: 48, ic: 52, nj: 0, nc: 49 }, guided: 8, beingGuided: 8 },
+            { id: 3, name: "Dr.R.Kumar", topic: "Concept Map Based Formative Knowledge Assessment", year: "2014", university: "Anna University, Chennai", publications: { ij: 4, ic: 4, nj: 0, nc: 0 }, guided: 0, beingGuided: 3 },
+            { id: 4, name: "Dr.M.Sakthivel", topic: "Agile Principles for Risk Reduction in Software Development", year: "2018", university: "Anna University, Chennai", publications: { ij: 5, ic: 5, nj: 0, nc: 0 } },
+            { id: 5, name: "Dr.P.Vijayalakshmi", topic: "Topologically Adaptive Authorized Routing in WSN", year: "2018", university: "Anna University, Chennai", publications: { ij: 34, ic: 28, nj: 8, nc: 18 }, guided: 0, beingGuided: 4 },
+            { id: 6, name: "Dr.S.Sakthivel", topic: "Diagnosis of Adenomyosis using Automated MRI Diagnosis Model", year: "2020", university: "Anna University, Chennai", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 7, name: "Dr.I.Rajesh", topic: "Poultry Meat Quality Assessment using Image Mining", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 8, name: "Dr.P.Malarvizhi", topic: "Energy Efficient Routing for Lifetime Maximization in WSN", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 9, name: "Dr.M.Lakshaga jyothi", topic: "Performance Evaluation on Enabling Intelligence using Deep Learning in IoT", year: "2025", university: "Vinayaka Mission's Research Foundation", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } }
+        ]
+    }
 
-    const isMechanical = deptName?.toLowerCase() === 'mechanical-engineering'
-    const displayHolders = isMechanical ? phdHolders : []
+    const displayHolders = allPhdHolders[deptName?.toLowerCase()] || []
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

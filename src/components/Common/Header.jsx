@@ -35,11 +35,11 @@ import {
   Trophy,
   ArrowRight
 } from 'lucide-react'
-import logo from '../../assets/logo.webp'
-import naacLogo from '../../assets/NAAC-Logo.png'
-import nirfLogo from '../../assets/nirf.webp'
-import nbaLogo from '../../assets/NBA1 (1).webp'
-import codeLogo from '../../assets/counciling code.png'
+import logo from '../../assets/main/logo.webp'
+import naacLogo from '../../assets/main/NAAC-Logo.png'
+import nirfLogo from '../../assets/main/nirf.webp'
+import nbaLogo from '../../assets/main/NBA1 (1).webp'
+import codeLogo from '../../assets/main/counciling code.png'
 
 const navLinks = [
   {

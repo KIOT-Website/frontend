@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, ChevronLeft, ChevronRight, Award, Trophy, Users, Star } from 'lucide-react'
 
 // Slide images
-import slide1 from '../../assets/slide1.webp'
-import slide2 from '../../assets/slide2.webp'
-import slide3 from '../../assets/slide3.webp'
-import slide4 from '../../assets/slide4.webp'
-import slide5 from '../../assets/slide5.webp'
-import slide6 from '../../assets/slide6.webp'
+import slide1 from '../../assets/main/slide1.webp'
+import slide2 from '../../assets/main/slide2.webp'
+import slide3 from '../../assets/main/slide3.webp'
+import slide4 from '../../assets/main/slide4.webp'
+import slide5 from '../../assets/main/slide5.webp'
+import slide6 from '../../assets/main/slide6.webp'
 
 const slides = [
   {
@@ -161,9 +161,6 @@ const Hero = () => {
           <ChevronRight size={28} strokeWidth={2.5} className="group-hover/btn:translate-x-0.5 transition-transform" />
         </button>
       </div>
-
-      {/* FLOATING TRUST BADGES (Overlay design) REMOVED AS REQUESTED */}
-
 
     </section>
   )

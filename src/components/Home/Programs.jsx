@@ -8,6 +8,8 @@ import {
   ArrowRight, Search, Beaker, Landmark, Atom, Microscope
 } from 'lucide-react'
 
+import courseBg from '../../assets/main/home course.png'
+
 const programsData = {
   UG: {
     title: 'Undergraduate',
@@ -124,58 +126,71 @@ const Programs = () => {
         {/* Category Features */}
         <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-12 lg:gap-20 items-start">
            
-           {/* Left Info Column */}
-           <motion.div
-             key={`info-${activeTab}`}
-             initial={{ opacity: 0, y: 30 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.6, ease: "easeOut" }}
-             className="lg:sticky lg:top-32"
-           >
-              <div className="space-y-8">
-                 <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl lg:rounded-3xl bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-xl shadow-[#18357a]/20">
-                    <div className="scale-110 lg:scale-125">
-                       {activeTab === 'UG' ? (
-                          <GraduationCap className="w-8 h-8 lg:w-10 lg:h-10" />
-                       ) : activeTab === 'PG' ? (
-                          <Layers className="w-8 h-8 lg:w-10 lg:h-10" />
-                       ) : (
-                          <Search className="w-8 h-8 lg:w-10 lg:h-10" />
-                       )}
-                    </div>
-                 </div>
-                 
+           {/* Left Info Column - Wrapped to keep CTA below card in first column */}
+           <div className="lg:sticky lg:top-32 relative">
+              <motion.div
+                key={`info-${activeTab}`}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="relative rounded-[3rem] overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.25)] group min-h-[500px] flex flex-col justify-end"
+              >
+              {/* The "Full" Background Image */}
+              <div className="absolute inset-0 z-0 rounded-[3rem] overflow-hidden">
+                 <img src={courseBg} alt="" className="w-full h-full object-cover rounded-[3rem] transition-transform duration-700 group-hover:scale-105" />
+                 {/* Dark Gradient Overlay for Readability */}
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/95 via-[#18357a]/50 to-transparent rounded-[3rem]" />
+              </div>
+
+              <div className="space-y-8 relative z-10 p-10 lg:p-12">
                  <div>
-                    <h3 className="text-2xl lg:text-4xl font-black text-[#18357a] mb-4">{programsData[activeTab].subtitle}</h3>
-                    <p className="text-[#64779F] font-medium leading-relaxed">
+                    <h3 className="text-3xl lg:text-4xl font-black text-white mb-4 leading-tight">{programsData[activeTab].subtitle}</h3>
+                    <p className="text-white/90 font-medium leading-relaxed max-w-sm">
                        {programsData[activeTab].description}
                     </p>
                  </div>
-
-                 <div className="flex flex-col gap-4 text-sm font-bold text-[#18357a]">
-                    <div className="flex items-center gap-3">
-                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                       <span>Recognized Research Centers</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                       <span>Industry-Linked Curriculum</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                       <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                       <span>Advanced Lab Facilities</span>
-                    </div>
-                 </div>
-
-                 <button 
-                    onClick={() => navigate('/academics')}
-                    className="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-[#18357a] group mt-8"
-                  >
-                    View full prospectus
-                    <ArrowRight size={16} className="text-[#ffc107] group-hover:translate-x-1 transition-transform" />
-                 </button>
               </div>
            </motion.div>
+
+           {/* Hanging Admission Sign - Refined Creative Design */}
+           <motion.div 
+             initial={{ opacity: 0, y: -20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+             className="relative -mt-6 flex flex-col items-center group cursor-pointer z-20"
+             onClick={() => navigate('/registration')}
+           >
+              {/* Triangular Hanging Rope */}
+              <svg width="120" height="60" viewBox="0 0 120 60" className="mb-[-2px]">
+                 <path d="M60 0 L10 60 M60 0 L110 60" stroke="#CBD5E1" strokeWidth="2" fill="none" />
+                 <circle cx="60" cy="0" r="4" fill="#64779F" />
+              </svg>
+
+              {/* The Sign Board - More Rectangular */}
+              <motion.div 
+                animate={{ rotate: [0, 1, -1, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="bg-white px-12 py-10 rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-100 flex flex-col items-center text-center relative hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] transition-all"
+              >
+                  <span className="text-[14px] font-black text-red-600 uppercase tracking-[0.4em] mb-2">Admission</span>
+                  <h4 className="text-5xl font-black text-[#18357a] uppercase mb-6 tracking-tight">Open</h4>
+                  
+                  <button className="flex items-center gap-3 px-8 py-4 bg-[#18357a] hover:bg-[#ffc107] text-white hover:text-[#18357a] rounded-2xl transition-all duration-300 shadow-lg shadow-black/10 scale-110">
+                      <div className="w-2 h-2 rounded-full bg-[#ffc107] group-hover:bg-[#18357a] animate-pulse" />
+                      <span className="text-[11px] font-black uppercase tracking-widest">Apply Now</span>
+                  </button>
+
+                  {/* Attachment Screws */}
+                  <div className="absolute top-4 left-0 right-0 flex justify-between px-6">
+                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
+                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
+                  </div>
+              </motion.div>
+
+              <p className="mt-6 text-[11px] font-black text-slate-400 uppercase tracking-[0.4em]">Academic Session 2025-26</p>
+           </motion.div>
+        </div>
 
            {/* Right Course Grid */}
            <div className="grid sm:grid-cols-2 gap-5">

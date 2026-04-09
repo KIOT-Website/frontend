@@ -10,7 +10,7 @@ import {
   Calendar, Zap
 } from 'lucide-react'
 import { courseData } from '../../data/courseData'
-import cseImage from '../../assets/CSE .png'
+import cseImage from '../../assets/main/CSE .png'
 
 const API_BASE = 'http://127.0.0.1:8000'
 

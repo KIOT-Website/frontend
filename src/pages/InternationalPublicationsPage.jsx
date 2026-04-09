@@ -6,11 +6,10 @@ import {
     ArrowLeft,
     BookOpen,
     Search,
-    Filter,
     FileText,
-    ExternalLink,
     Calendar,
-    Users
+    Users,
+    Terminal
 } from 'lucide-react'
 
 const InternationalPublicationsPage = () => {
@@ -22,91 +21,86 @@ const InternationalPublicationsPage = () => {
         return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     }
 
-    const publications = [
-        { id: 1, author: "Dr.PSS.Srinivasan", title: "Kirloskar TV – I Engine performance and emission characteristicsof methyl ester Mahua (Madhuca Indica) & Red Mud transesterified Mahua oil/diesel blends", journal: "International Journal of Applied Engineering Research, ISSN 0973-4562", year: "2015, 10,50,1323-1328" },
-        { id: 2, author: "Dr.PSS.Srinivasan", title: "Reduction of Filling Time in Injection Moulding Machine by Using Hydraulic System", journal: "International Journal of Applied Engineering Research, ISSN 0973-4562", year: "2015, 10, 50, 155-158" },
-        { id: 3, author: "P.Murugesan, K.Mayilsamy, S.Suresh, PSS.Srinivasan", title: "Heat transfer and pressure drop characteristics in a circular tube fitted with and without V-cut twisted tape insert", journal: "International Communications in Heat and Mass Transfer", year: "2011, 38 (3), 329-334, 68" },
-        { id: 4, author: "P.Murugesan, K.Mayilsamy, S.Suresh, PSS.Srinivasan", title: "Heat transfer and pressure drop characteristics of Turbulent flow in a tube fitted with trapezoidalcut Twisted tape insert", journal: "International journal of academic research", year: "2009, 1 (1), 38" },
-        { id: 5, author: "M.Ravikumar, PSS.Srinivasan", title: "Phase change material as a thermal energy storage Material for cooling of building", journal: "Journal of Theoretical & Applied Information Technology", year: "2008, 4 (6), 36" },
-        { id: 6, author: "KCK.Vijaykumar, PSS.Srinivasan, S.Dhandapani", title: "A performance of hollow clay tile (HCT) laid reinforced cement concrete (RCC) roof for tropical summer climates", journal: "Energy and Buildings", year: "2007, 39 (8), 886-892, 36" },
-        { id: 7, author: "G.Nallakumarasamy, PSS.Srinivasan, KV.Raja, R.Malayalamurthi", title: "Optimization of operation sequencing in CAPP using simulated annealing technique (SAT)", journal: "The International Journal of Advanced Manufacturing Technology", year: "2011, 54 (58), 721-728, 23" },
-        { id: 8, author: "S.Senthilkumar, K.Perumal, PSS.Srinivasan, Sadhana", title: "Optical and thermal performance of a three dimensional compound parabolic concentrator for spherical absorber", journal: "Sadhana", year: "2009, 34 (3), 369-380, 18" },
-        { id: 9, author: "R.Parameshwaran, PSS.Srinivasan, M.Punniyamoorthy", title: "Integrating fuzzy analytical hierarchy process and data envelopment analysis for performance management in automobile repair shops", journal: "European Journal of Industrial Engineering", year: "2009, 3 (4), 450-467, 15" },
-        { id: 10, author: "C.Jegadheesan, VP.Arunachalam, SR.Devadasan, PSS.Srinivasan", title: "Design and development of modified service failure mode and effects analysis model", journal: "International Journal of Services and Operations Management", year: "2006, 3 (1), 111-126, 11" },
-        { id: 11, author: "PSS.Srinivasan, M.Punniyamoorthy", title: "An integrated approach for performance enhancement in automobile repair shops, R Parameshwaran", journal: "International Journal of Business Excellence", year: "2009, (1), 77-104, 10" },
-        { id: 12, author: "R.Parameshwaran, PSS.Srinivasan", title: "An integrated closed loop model for service performance management", journal: "International Journal of Services and Operations Management", year: "2008, 4 (1), 34-55, 10" },
-        { id: 13, author: "G.Nallakumarasamy, PSS.Srinivasan, KV.Raja, R.Malayalamurthi", title: "Optimization of operation sequencing in CAPP using superhybrid genetic algorithms simulated annealing technique", journal: "ISRN Mechanical Engineering", year: "2011, 897498, 7" },
-        { id: 14, author: "R.Parameshwaran, PSS.Srinivasan, M.Punniyamoorthy", title: "Modified closed loop model for service performance management", journal: "International Journal of Quality & Reliability Management", year: "2009, 26 (8), 795-816, 7" },
-        { id: 15, author: "KK.Ramsamy, P.Srinivasan", title: "Wind Assisted Domestic Solar Hot Water System–A Novel Approach", journal: "European Journal of Scientific Research", year: "2011, 49 (1), 132-141, 6" },
-        { id: 16, author: "M.Ravikumar, PSS.Srinivasan", title: "Heat transfer analysis in PCM filled RCC roof for thermal management", journal: "Journal of Engineering and Applied Sciences", year: "2006, 7, 6" },
-        { id: 17, author: "A.Somasundaram, PSS.Srinivasan", title: "Design optimization of dosa making workstation for smooth ergonomic interface", journal: "Journal of Scientific and Industrial Research", year: "2010, 69 (3), 221-224, 5" },
-        { id: 18, author: "K.Tamilarasan, K.Perumal, PSS.Srinivasan", title: "Performance of forced and wind assisted domestic solar hot water systems–a comparative experimental study", journal: "Journal of Scientific and Industrial Research", year: "2008, 67, 717-723, 5" },
-        { id: 19, author: "M.Ravikumar, PSS.Srinivasan", title: "Analysis of Heat Transfer Across Building Roof with Phase Change Material", journal: "Journal of Computational Information Systems", year: "2012, (4), 1497-1505, 4" },
-        { id: 20, author: "K.Senthilkumar, PSS.Srinivasan", title: "Application of Taguchi method for the optimization of system parameters of centrifugal evaporative air cooler", journal: "Journal of Thermal Science", year: "19 (5), 473-479" },
-        { id: 21, author: "K.Visagavel, PSS.Srinivasan", title: "Experimental investigation on solar air heater assisted natural ventilation in single sided ventilated room", journal: "Indian Journal of Science and Technology", year: "2010, 3 (7), 803-807, 4" },
-        { id: 22, author: "G.Arunkumar, PSS.Srinivasan", title: "Design of displacement amplifying compliant mechanisms with integrated strain actuator using topology optimization", journal: "Proceedings of the Institution of Mechanical Engineers", year: "2006, 4" },
-        { id: 23, author: "PSS.Srinivasan, PP.Sethusundaram, KCK.Vijakumar, R.Deivasigamani", title: "Hollow Clay Tiled RCC Roofs foR Human Comfort and Energy Savings", journal: "Renewable Energy Technology for the New Millennium", year: "Proceedings, 4, 2000" },
-        { id: 24, author: "R.Vijayan, PSS.Srinivasan", title: "Experimental evaluation of internal heat exchanger influence on R22 window air conditioner retrofitted with R407C", journal: "Thermal Science", year: "2010, 14 (1), 39-47, 3" },
-        { id: 25, author: "R.Vijayan, PSS.Srinivasan", title: "Influence of internal heat exchanger on performance of window AC retrofitted with R407C", journal: "Journal of Scientific and Industrial Research", year: "2009, 68 (2), 153, 3" },
-        { id: 26, author: "M.Ravikumar, PSS.Srinivasan", title: "Natural Cooling of Building using Phase Change Material", journal: "International Journal of Engineering and Technology", year: "2008, 5 (1), 110, 3" },
-        { id: 27, author: "S.Senthilkumar, K.Perumal, PSS.Srinivasan", title: "Construction and performance analysis of a three dimensional compound parabolic concentrator for a spherical absorber", journal: "Journal of Scientific and Industrial Research", year: "2007, 66 (7), 558, 3" },
-        { id: 28, author: "K.Visagavel, PSS.Srinivasan", title: "Analysis of Cross and Single Sided Naturally Ventilated Rooms Using CFD", journal: "American Journal of Environmental Sciences", year: "2007, (4), 188-192, 2" },
-        { id: 29, author: "P.Navaneethakrishnan, PSS.Srinivasan, S.Dhandapani", title: "Effect of heating coil in commercial shop display cabinet", journal: "Journal of the Indian Institute of Science", year: "2013, 86 (5), 457, 1" },
-        { id: 30, author: "K.Senthilkumar, PSS.Srinivasan", title: "Experimental study of centrifugal humidifier fitted in an industrial shed located in tropical climates", journal: "Thermal Science", year: "2011, 15 (2), 467-475, 1" },
-        { id: 31, author: "P.Navaneethakrishnan, PSS.Srinivasan, S.Dhandapani", title: "Numerical and experimental investigation of temperature distribution inside a heating oven", journal: "Journal of food processing and preservatio", year: "2010, 34 (2), 275-288, 1" },
-        { id: 32, author: "M.Ravikumar, PSS.Srinivasan", title: "Analysis of natural cooling of building using phase change materials", journal: "International Journal of Engineering and Technology", year: "5, 1, 1-10, 2008" },
-        { id: 33, author: "R.Kumaravelan, PSS.Srinivasan, P.Tamilselvam, M.Madhan", title: "Intensification of the Subsisting Methodology to Enhance DFM without Discretization", journal: "Journal of Engineering and Technology", year: "2012, 2 (2), 87" },
-        { id: 34, author: "K.Senthilkumar, PSS.Srinivasan", title: "A Parametric and Experimental Study of a Centrifugal Atomizer Fitted in an Industrial Shed Located in a Tropical Climate", journal: "Arabian Journal for Science and Engineering", year: "2012, 37 (4), 1089-1100" },
-        { id: 35, author: "M.Ravikumar, PSS.Srinivasan", title: "Analysis of heat transfer across phase change material filled reinforced cement concrete roof for thermal management", journal: "Proceedings of the Institution of Mechanical Engineers", year: "Part C, 2012" },
-        { id: 36, author: "KK.Ramasamy, PSS.Srinivasan", title: "Experimental investigation of forced and wind assisted domestic solar hot water systems", journal: "Proceedings of the Institution of Mechanical Engineers", year: "Part C, 2011" },
-        { id: 37, author: "KK.Ramasamy, PSS.Srinivasan", title: "Enhancement of natural circulation type domestic solar hot water system performance by using a wind turbine", journal: "Journal of Thermal Science", year: "2011, 20 (4), 371-376" },
-        { id: 38, author: "GA.Kumar, PSS.Srinivasan", title: "Design of Compliant Mechanisms A Topology Optimization Approach for New Age Industries and Engineering Support", journal: "CURIE Journal", year: "2010, 3" },
-        { id: 39, author: "P.Srinivasan, P.Palanichamy", title: "Applications of topology in automobile engineering", journal: "Journal of Experimental Sciences", year: "2010, 1 (1)" },
-        { id: 40, author: "Senthilkumar Krishnasamy, PSS Srinivasan", title: "Optimizing Process Parameters of Centrifugal Evaporative Air Cooler", journal: "International J. of Recent Trends in Engineering and Technology", year: "2010, 3 (6)" },
-        { id: 41, author: "AG.Kumar, PSS.Srinivasan", title: "Design of Force and Displacement Amplifying Compliant Mechanisms A Multicriteria Optimization Approach", journal: "CURIE Journal", year: "2009, 2 (3)" },
-        { id: 42, author: "PSS.Srinivasan, S.Nithiyanandam", title: "Energy Savings in Compressed Air Supply System using Dynamic Controller", journal: "Journal of Energy Heat And Mass Transfer", year: "2008, 30 (1), 89" },
-        { id: 43, author: "K.Vijaykumar, S.Dhandapani, PSS.Srinivasan", title: "Energy Efficient Ecofriendly (E^ 3) Roof A Transient Thermal Analysis", journal: "Journal of Energy Heat And Mass Transfer", year: "2007, 29 (1), 27" },
-        { id: 44, author: "S.Senthilkumar, K.Perumal, PSS.Srinivasan", title: "Performance Analysis of a Three Dimensional Compound Parabolic Concentrator", journal: "Journal of Energy Heat And Mass Transfer", year: "2007, 29 (3), 241" },
-        { id: 45, author: "KCK.Vijaykumar, PSS.Srinivasan, S.Dhandapani", title: "Transient thermal analysis of hollow clay tiled concrete roof for energy conservation and comfort", journal: "Journal of Scientific And Industrial Research", year: "2006, 65 (8), 670" },
-        { id: 46, author: "GA.Kumar, PSS.Srinivasan", title: "Topology Optimisation of Compliant Mechanisms for Displacement Amplification in Strain Actuators", journal: "Journal of the Institution of Engineers(India)", year: "2006, Part MC, Mechanical" },
-        { id: 47, author: "P.Navaneethakrishnan, PSS.Srinivasan, S.Dhandapani", title: "Numerical and Experimental Investigation of Heating Ovens", journal: "Journal of Energy Heat And Mass Transfer", year: "2006, 28 (4), 251" },
-        { id: 48, author: "Mathi Arasu, A.Geddam, PSS.Srinivasan, DGH Samuel", title: "Computer Aided Ergonomic Design of Helmets Using Biomodelling", journal: "Computer Aided Design and Applications", year: "2004, 1 (14), 641-647" },
-        { id: 49, author: "N.MathiArasu, PSS.Srinivasan, KCK.Vijayakumar", title: "Trend Predictions in Effect of Spoilers for a Mini Car: A Low Cost Solution", journal: "ASME/JSME 2003 4th Joint Fluids Summer Engineering Conference", year: "2003, 1255-1260" },
-        { id: 50, author: "Palanivelu Rajmohan, Dr.PSS.Srinivasan", title: "Studies on Safety Practices in Indian Industries Through The Use Of Working Groups", journal: "Safety Science", year: "2019" },
-        { id: 51, author: "Dr.K.Visagavel", title: "Analysis of single side ventilated and cross ventilated rooms by varying the width of the window opening using CFD", journal: "Solar Energy", year: "2009, 83 (1), 2-5" },
-        { id: 52, author: "Dr.K.Visagavel", title: "Experimental investigation on solar air heater assisted natural ventilation in single-sided ventilated room", journal: "Indian Journal of Science and Technology", year: "2010, 3 (7), 803-807" },
-        { id: 53, author: "Dr.K.Visagavel", title: "Analysis of cross and single sided naturally ventilated rooms using CFD", journal: "American Journal of Environmental Sciences", year: "2007, 3 (4), 188-192" },
-        { id: 54, author: "Dr.K.Visagavel", title: "Risk Assessment for Blast Furnace Using FMEA", journal: "International Journal of Research in Engineering and Technology", year: "2014, 3, 27-31" },
-        { id: 55, author: "Dr.K.Visagavel", title: "Occupational Health and Safety Management in Manufacturing Industries", journal: "Journal of Scientific & Industrial Research", year: "2014, 73, 381-386" },
-        { id: 56, author: "Dr.K.Visagavel", title: "Failure mode and effect analysis using fuzzy analytic hierarchy process", journal: "International Journal of Productivity and Quality Management", year: "2014,14 (3), 296-313" },
-        { id: 57, author: "Dr.K.Visagavel", title: "Fire accident prevention system in heavy vehicles", journal: "NCAMESHE 2014", year: "2014,03(11) ,220-221" },
-        { id: 58, author: "Dr.K.Visagavel", title: "Development of biodegradable baby diapers", journal: "NCAMESHE 2014", year: "2014,03(11) ,186-191" },
-        { id: 59, author: "Dr.K.Visagavel", title: "Studying the thermal behaviour of concrete structure Using nanoencapsulated phase change materials", journal: "NCAMESHE 2014", year: "2014,03(11) ,107-111" },
-        { id: 60, author: "Dr.K.Visagavel", title: "Fabrication and testing of refrigeration using engine Waste heat", journal: "NCAMESHE 2014", year: "2014,03(11) ,299-304" },
-        { id: 61, author: "Dr.K.Visagavel", title: "Effective Use Of Bio Waste In Institutions", journal: "NCAMESHE 2014", year: "2014,03(11) ,202-204" },
-        { id: 62, author: "Dr.K.Visagavel", title: "Exposure hazard analysis in cement fiber sheet Manufacturing industry", journal: "NCAMESHE 2014", year: "2014,03(11) ,76-80" },
-        { id: 63, author: "Dr.K.Visagavel", title: "Characteristic data analysis of occupational accident in heavy engineering industry", journal: "NCAMESHE 2014", year: "2014,03(11) ,102-106" },
-        { id: 64, author: "Dr.K.Visagavel", title: "Assessment of indoor air quality in an automobile Industry", journal: "NCAMESHE 2014", year: "2014,03(11) ,265-272" },
-        { id: 65, author: "Dr.K.Visagavel", title: "Evaluvation of noise level and its adverse effect in metal Die manufacuturing industry", journal: "NCAMESHE 2014", year: "2014,03(11) ,252-255" },
-        { id: 66, author: "Dr.K.Visagavel", title: "Applying fuzzy ahp to evaluate the carbon foot print on the workplace in educational institutions", journal: "NCAMESHE 2014", year: "2014,03(11) ,124-129" },
-        { id: 67, author: "M.Senthil, Dr.K.Visagavel, CG. Saravanan, Karthick Rajendran", title: "Investigations of red mud as a catalyst in Mahua oil biodiesel production and its engine performance", journal: "Fuel Processing Technology", year: "149, 2016, 7-14" },
-        { id: 68, author: "M.Senthil, Dr.K.Visagavel, Avinash A", title: "Effects of exhaust gas recirculation on emission characteristics of Mahua (Madhuca Indica) biodiesel using red mud as catalyst", journal: "Energy Source Part A: Recovery, Utilization, and Environmental Effects", year: "Volume 38, 2016 - Issue 6" },
-        { id: 69, author: "P.Parthiban, H.Abdul Zubar, Pravin Katakar", title: "Vendor selection problem: A multi-criteria approach based on strategic decisions", journal: "International Journal of Production Research", year: "2013,Volume 51, Issue 5" },
-        { id: 70, author: "P.Parthiban, H.Abdul Zubar", title: "An integrated multi objective decision making process for the performance evaluation of the vendors", journal: "International Journal of Production Research", year: "2013,Volume 51 Issue 13" },
-        { id: 100, author: "P Navaneethakrishnan, TP Sathishkumar, S Ramakrishnan", title: "Mechanical behaviours of aluminium filler and jute fibre mat reinforced epoxy hybrid composites", journal: "Hybrid Natural Fibre Composites (Book chapter)", year: "21-40, 2021" },
-        { id: 131, author: "Shyjith, Kailas, Ilangkumaran, Maari Kumanan, Sabhya", title: "Multi Criteria decision making approach to evaluate optimum maintenance strategy in textile Industry", journal: "Journal of Quality in Maintenance Engineering", year: "14, 4, 375-386, 2008" },
-        { id: 150, author: "Sakthivel, G, Nagarajan, G, Ilangkumaran, M, Gaikwad, Aditya Bajirao", title: "Comparative analysis of performance, emission and combustion parameters of diesel engine fuelled with ethyl ester of fish oil and its diesel blends", journal: "Fuel", year: "132, 116-124, 2014" },
-        { id: 200, author: "A. Godwin Antony, V. Sivakumar, K.Visagavel", title: "Enhancement of induced natural ventilation using various ventilator configuration in single side ventilated building using CFD", journal: "Indian Journal of Geo Marine Sciences", year: "49 (03), 2020, 503-506" },
-        { id: 207, author: "Panneerselvam N, Murugesan A, Vijayakumar C, Subramaniam D", title: "Optimization of biodiesel produced from watermelon (Citrullus Vulgaris) by using batch type production unit", journal: "Energy Sources, Part A: Recovery, Utilization, andEnvironmental Effects", year: "38, 16, 2343-2348, 2016" }
-    ]
+    const allPublications = {
+        'mechanical-engineering': [
+            { id: 1, author: "Dr.PSS.Srinivasan", title: "Kirloskar TV – I Engine performance and emission characteristicsof methyl ester Mahua (Madhuca Indica) & Red Mud transesterified Mahua oil/diesel blends", journal: "International Journal of Applied Engineering Research, ISSN 0973-4562", year: "2015" },
+            { id: 2, author: "Dr.PSS.Srinivasan", title: "Reduction of Filling Time in Injection Moulding Machine by Using Hydraulic System", journal: "International Journal of Applied Engineering Research, ISSN 0973-4562", year: "2015" },
+            { id: 3, author: "P.Murugesan, K.Mayilsamy, S.Suresh, PSS.Srinivasan", title: "Heat transfer and pressure drop characteristics in a circular tube fitted with and without V-cut twisted tape insert", journal: "International Communications in Heat and Mass Transfer", year: "2011" },
+            { id: 4, author: "P.Murugesan, K.Mayilsamy, S.Suresh, PSS.Srinivasan", title: "Heat transfer and pressure drop characteristics of Turbulent flow in a tube fitted with trapezoidalcut Twisted tape insert", journal: "International journal of academic research", year: "2009" },
+            { id: 5, author: "M.Ravikumar, PSS.Srinivasan", title: "Phase change material as a thermal energy storage Material for cooling of building", journal: "Journal of Theoretical & Applied Information Technology", year: "2008" },
+            { id: 6, author: "KCK.Vijaykumar, PSS.Srinivasan, S.Dhandapani", title: "A performance of hollow clay tile (HCT) laid reinforced cement concrete (RCC) roof for tropical summer climates", journal: "Energy and Buildings", year: "2007" },
+            { id: 7, author: "G.Nallakumarasamy, PSS.Srinivasan, KV.Raja, R.Malayalamurthi", title: "Optimization of operation sequencing in CAPP using simulated annealing technique (SAT)", journal: "The International Journal of Advanced Manufacturing Technology", year: "2011" },
+            { id: 8, author: "S.Senthilkumar, K.Perumal, PSS.Srinivasan, Sadhana", title: "Optical and thermal performance of a three dimensional compound parabolic concentrator for spherical absorber", journal: "Sadhana", year: "2009" },
+            { id: 9, author: "R.Parameshwaran, PSS.Srinivasan, M.Punniyamoorthy", title: "Integrating fuzzy analytical hierarchy process and data envelopment analysis for performance management in automobile repair shops", journal: "European Journal of Industrial Engineering", year: "2009" },
+            { id: 10, author: "C.Jegadheesan, VP.Arunachalam, SR.Devadasan, PSS.Srinivasan", title: "Design and development of modified service failure mode and effects analysis model", journal: "International Journal of Services and Operations Management", year: "2006" }
+        ],
+        'electronics-&-communication-engineering': [
+            // 2024-25
+            { id: 101, author: "V. Saravanan, N. Santhiyakumari, M. Thangavel, R. Hemalatha", title: "Dynamic step-size normalized LMS algorithm for alpha-stable impulsive noise control and peak tracking", journal: "Signal, Image and Video Processing - Springer Nature", year: "May 2025" },
+            { id: 102, author: "V. Saravanan, N. Santhiyakumari, P. Shanmuga Sundaram", title: "Reducing impulsive noise in active noise control systems using FxLMS algorithm based on soft thresholding techniques", journal: "Analog Integrated Circuits and Signal Processing - Springer Nature", year: "March 2025" },
+            { id: 103, author: "C. Sreedhar, K. Mahesh babu, Suresh Kallam, G.S. Pradeep, S. Anthoniraj, S. Kumarganesh", title: "Enhancing healthcare data security using RFE and CRHSM for big data", journal: "Computers in Biology and Medicine", year: "May 2025" },
+            { id: 104, author: "M. Sahaya Sheela, S. Kumarganesh, Binay Kumar Pandey, Mesfin Esayas Lelisho", title: "Integration of silver nanostructures in wireless sensor networks for enhanced biochemical sensing", journal: "Discover Nano", year: "Jan 2025" },
+            { id: 105, author: "K Jayaram, S Kumarganesh, A Immanuvel, C Ganesh", title: "Classifications of meningioma brain images using the novel Convolutional Fuzzy C Means (CFCM) architecture and performance analysis of hardware incorporated tumor segmentation module", journal: "Network: Computation in Neural Systems – Taylor & Francis", year: "Apr 2025" },
+            { id: 106, author: "B. Selvalakshmi, K. Hemalatha, S. Kumarganesh, P. Vijayalakshmi", title: "Performance analysis of image retrieval system using deep learning techniques", journal: "Network: Computation in Neural Systems", year: "Jan 2025" },
+            { id: 107, author: "M Tamilarasi, S Kumarganesh, K Martin Sagayam, J Andrew", title: "Detection and Segmentation of Glioma Tumors Utilizing a UNet Convolutional Neural Network Approach with Non-Subsampled Shearlet Transform", journal: "Journal of Computational Biology", year: "June 2024" },
+            { id: 108, author: "S. Elarmathi, P. Rishabavarthani, M. Sindhuja, P. Elayaraja, Malathi Murugesan, S. Kumarganesh et al.", title: "Novel manufacturing systems for cancer diagnosis using ultra-sensitive photonic crystal fiber biosensor with dual-functionalized aptamer-nanocavity", journal: "Microsystem Technologies", year: "Dec 2024" },
+            { id: 109, author: "S Kumarganesh, Malathi Murugesan, C Ganesh, N Santhiyakumari, M Thangavel et al.", title: "Hybrid Plasmonic Biosensors with Deep Learning for Colorectal Cancer Detection", journal: "Plasmonics", year: "Nov 2024" },
+            { id: 110, author: "R Uma Maheshwari, S Kumarganesh, Shree KVM, A Gopalakrishnan et al.", title: "Advanced plasmonic resonance-enhanced biosensor for comprehensive real-time detection and analysis of deepfake content", journal: "Plasmonics", year: "July 2024" },
+            { id: 111, author: "N. Satheesh, N. Gopisankar, S. Kumarganesh, S. Anthoniraj et al.", title: "Advanced AI-driven emergency response systems for enhanced vehicle and human safety", journal: "Iran Journal of Computer Science", year: "Jan 2025" },
+            { id: 112, author: "K Baskar, K Muthumanickam, P Vijayalakshmi, S Kumarganesh", title: "A Strong Password Manager Using Multiple Encryption Techniques", journal: "Journal of The Institution of Engineers (India): Series B", year: "Sept 2024" },
+            { id: 113, author: "B Thiyaneswaran, S Kumarganesh, M Dharmalingam, PN Palanisamy et al.", title: "Environmental Pollution and Weather Data Monitoring Using Lora Low Power VLSI Solution", journal: "ICONSTEM - IEEE", year: "June 2024" },
+            
+            // 2023-24
+            { id: 114, author: "K.M. Majidha Fathima, M. Suganthi, N. Santhiyakumari", title: "Enhancing the Quality of Service by GBSO Splay Tree Routing Framework in Wireless Sensor Network", journal: "KSII Transactions on Internet and Information Systems", year: "Aug 2023" },
+            { id: 115, author: "P. Elayaraja, S. Kumarganesh, K Martin Sagayam, J. Andrew", title: "An automated cervical cancer diagnosis using genetic algorithm and CANFIS approaches", journal: "Technology and Health Care", year: "July 2024" },
+            { id: 116, author: "B Thiyaneswaran, S Kumarganesh, K Martin Sagayam, H Dang", title: "An effective model for the iris regional characteristics and classification using deep learning alex network", journal: "IET Image Processing", year: "Sept 2023" },
+            { id: 117, author: "B. V. Prakash, A. Rajiv Kannan, N. Santhiyakumari, S. Kumarganesh et al.", title: "Meningioma brain tumor detection and classification using hybrid CNN method and RIDGELET transform", journal: "Scientific Reports", year: "Sept 2023" },
+            { id: 118, author: "S. Sasidevi, S. Kumarganesh, S. Saranya, B. Thiyaneswaran et al.", title: "Design of Surface Plasmon Resonance (SPR) Sensors for Highly Sensitive Biomolecular Detection in Cancer Diagnostics", journal: "Plasmonics", year: "May 2024" },
+            { id: 119, author: "D. Siva Sundhara Raja, D. Rajesh Kumar, N. Santhiyakumari, S. Kumarganesh et al.", title: "A compact dual‐feed wide‐band slotted antenna for future wireless applications", journal: "Analog Integrated Circuits and Signal Processing", year: "Jan 2024" },
+            { id: 120, author: "N. Sugirtham, R. Sherine Jenny, B. Thiyaneswaran, S. Kumarganesh et al.", title: "Modified Play fair for Text File Encryption and Meticulous Decryption with Arbitrary Fillers", journal: "International Journal of Networked and Distributed Computing", year: "Feb 2024" },
+            { id: 121, author: "T Senthil Kumar, P Rajendran, N Santhiyakumari, S Kumarganesh et al.", title: "Analysis of Computational Methods for Diagnosis of Cervical Cancer–A Review", journal: "Applied Mathematics & Information Sciences", year: "July 2024" },
+            { id: 122, author: "V Rama Lahari, B Anusha, Shaik Hasane, A Immanuvel, S Kumarganesh et al.", title: "Sign Language Classification Using Deep Learning Convolution Neural Networks Algorithm", journal: "Journal of The Institution of Engineers (India): Series B", year: "March 2024" },
+            { id: 123, author: "Chairman M, Deepak M, Priyatharsini S, Maragatharaj S", title: "FPGA Based Efficient Detection of Blood Group and Hb-anemic Using Image Processing-VLSI Approach", journal: "International Research Journal of Multidisciplinary Scope", year: "April 2024" },
+            { id: 124, author: "A. Gopalakrishnan, S. Kumarganesh, Divya Bharathi G, S. Anthoniraj et al.", title: "Performance Analysis of Health Care Expense Anticipation using Computational Intelligence", journal: "ICIESTR - IEEE", year: "May 2024" },
+            { id: 125, author: "Ahmed A Elngar, B Thiyaneswaran, K Anguraj, S Kumarganesh et al.", title: "IOT based smart cold chain temperature monitoring with alert system for vaccination container", journal: "AIP Conference Proceedings", year: "Sept 2023" },
 
-    const filteredPublications = publications.filter(pub => 
+            // 2022-23
+            { id: 126, author: "T. Senthilkumar, S. Kumarganesh, P. Sivakumar, K. Periyarselvam", title: "Primitive detection of Alzheimer’s disease using neuroimaging: A progression model", journal: "Journal of Intelligent & Fuzzy Systems", year: "Aug 2022" },
+            { id: 127, author: "P Elayaraja, S Kumarganesh, K Martin Sagayam, Hien Dang, Marc Pomplun", title: "An efficient approach for detection and classification of cancer regions in cervical images using optimization-based CNN", journal: "Journal of Intelligent & Fuzzy Systems", year: "Aug 2022" },
+            { id: 128, author: "S Kumarganesh, S Anthoniraj, T Senthil Kumar, P Elayaraja et al.", title: "A Novel Analytical Framework is Developed for Wireless Heterogeneous Networks for Video Streaming Applications", journal: "Journal of Mathematics", year: "Sept 2022" },
+            { id: 129, author: "B. Thiyaneswaran, K. Anguraj, S. Kumarganesh, K. Martin Sagayam et al.", title: "IOT based smart cold chain temperature monitoring and alert system for vaccination container", journal: "Przegląd Elektrotechniczny", year: "2022" },
+            { id: 130, author: "G Rajamanickam, G Ravi", title: "Evaluation of Codebook Design Using SCMA Scheme Based on An and Dn Lattices", journal: "Intelligent Automation and Soft Computing", year: "Jan 2023" }
+        ],
+        'electrical-&-electronics-engineering': [
+            // 2023-24
+            { id: 1, author: "P. Gomathi, C. Muniraj, P.S. Periasamy", title: "Digital infrared thermal imaging system based breast cancer diagnosis using 4D U-Net segmentation", journal: "Biomedical Signal Processing and Control (Elsevier)", year: "2023" },
+            { id: 2, author: "N Rajasekaran, C Muniraj, T Venkatesan, A Kumaravel", title: "Analysis of electrical behavior in LDPE/BaTiO3 ceramic filler nanocomposites for cable insulation", journal: "Journal of Ceramic Processing Research", year: "2023" },
+            { id: 3, author: "S. Sathishkumar, V. Kamatchi Kannan et al.", title: "High gain novel two input two output buck-boost converter for EV applications", journal: "International Journal of Electronics (Taylor & Francis)", year: "2023" },
+            { id: 4, author: "P.A. Gowrisankar", title: "Analysis and Controlling of Uncertainty in BLDC Motor Using Optimal Hybrid Algorithm in State Space", journal: "Electric Power Components and Systems", year: "2023" },
+            { id: 5, author: "P.A.Gowri Sankar", title: "Simulation and Electrification of a Conventional Vehicle Into A Battery Electric Vehicle", journal: "Energy Sources (Taylor & Francis)", year: "May-24" },
+            { id: 6, author: "G.Karthikeyan & A. Jagadeeshwaran", title: "Machine Learning-Based PV Prediction and Fault Analysis System for Real-Time Tracking", journal: "Electric Power Components and Systems", year: "Dec 2023" },
+            { id: 7, author: "R.Sundar, G.Vijayakumar, R.Raja et al.", title: "Reduced switch cascaded asymmetrical 27 level inverter-STATCOM with fuzzy logic controller", journal: "Indonesian Journal of Electrical Engineering", year: "Dec 2023" },
+            { id: 8, author: "V.Prasanna Moorthy, S.Kalpana Devi et al.", title: "Investigation On Dielectric Properties Of Bio-Transol For Transformer Insulation", journal: "Journal Of Environmental Protection And Ecology", year: "Dec 2023" },
+
+            // 2022-23
+            { id: 101, author: "P. Gomathi, C. Muniraj, PS.Periasamy", title: "Micro Calcification Detection in Mammogram Images Using Contiguous CNN Algorithm", journal: "Computer Systems Science & Engineering", year: "2023" },
+            { id: 102, author: "V. Jamuna, C. Muniraj PS.Periasamy", title: "Fault detection for PV panels by linear iterative fault diagnosis based on thermal imaging", journal: "Journal of Electrical Engineering & Technology", year: "2023" },
+            { id: 103, author: "Kalpanadevi Subramaniam, Suganthi Muthusamy et al.", title: "A high-gain multi-input single-output switched quasi-Zsource converter for renewable integration", journal: "International Journal of Circuit Theory", year: "2022" },
+
+            // 2021-22
+            { id: 201, author: "P Govindaraju, C Muniraj, PS Periyasamy", title: "Environmental Impact Of High Voltage Insulator Quality Analysis Using Improved Deep Learning", journal: "Journal of environmental protection and ecology", year: "2022" },
+            { id: 202, author: "Gunapriya, D, Muniraj, C, Lakshmi, K", title: "Integrated PCA and FIS approach to mechanical fault classification of induction motor", journal: "Journal of Intelligent & Fuzzy Systems", year: "2022" },
+            { id: 203, author: "Gunapriya D, Muniraj C & Lakshmi K", title: "Detection and classification of mechanical faults via thermal image pixels analysis and ANFIS", journal: "Journal of Ambient Intelligence and Humanized Computing", year: "2021" }
+        ]
+    }
+
+    const currentPublications = allPublications[deptName?.toLowerCase()] || []
+
+    const filteredPublications = currentPublications.filter(pub => 
         pub.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
         pub.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
         pub.journal.toLowerCase().includes(searchTerm.toLowerCase())
     )
-
-    const isMechanical = deptName?.toLowerCase() === 'mechanical-engineering'
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
@@ -149,7 +143,7 @@ const InternationalPublicationsPage = () => {
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
                                 <p className="text-[#1e293b] text-base font-semibold leading-relaxed">
-                                    Comprehensive archive of 200+ scholarly articles published by {formatDeptName(deptName)} faculty in high-impact international journals and peer-reviewed periodicals.
+                                    Comprehensive archive of scholarly articles published by {formatDeptName(deptName)} faculty in high-impact international journals and peer-reviewed periodicals.
                                 </p>
                             </div>
                         </div>
@@ -185,7 +179,7 @@ const InternationalPublicationsPage = () => {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
-                                {isMechanical && filteredPublications.length > 0 ? (
+                                {filteredPublications.length > 0 ? (
                                     filteredPublications.map((pub, idx) => (
                                         <tr key={pub.id} className="group hover:bg-[#fafcff] transition-all duration-300">
                                             <td className="px-6 py-8 align-top">

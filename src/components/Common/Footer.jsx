@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Linkedin, Twitter, Youtube, Phone, Mail, ArrowRight, ArrowUpRight, GraduationCap } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import logoBlue from '../../assets/Kiot logo.webp'
+import logoBlue from '../../assets/main/Kiot logo.webp'
 
 const Footer = () => {
   const socialLinks = [

@@ -19,9 +19,9 @@ import {
   Star,
   Award
 } from 'lucide-react'
-import logo from '../../assets/logo.webp'
-import placement1 from '../../assets/placement 1.png'
-import campusImage from '../../assets/indian_college_students_campus.png'
+import logo from '../../assets/main/logo.webp'
+import placement1 from '../../assets/main/placement 1.png'
+import campusImage from '../../assets/main/indian_college_students_campus.png'
 
 // ─── Data Construction ────────────────────────────────────────────────────────
 
@@ -94,7 +94,7 @@ const AdmissionsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#FDFEFE] font-inter text-[16px] text-[#333333] leading-[1.8] pb-20">
+    <div className="min-h-screen bg-[#FDFEFE] font-sans text-[16px] text-[#333333] leading-[1.8] pb-20">
       
       {/* ─── HERO SECTION ─── */}
       <section className="relative h-[65vh] flex items-center overflow-hidden bg-[#0A1A3F]">
@@ -148,8 +148,7 @@ const AdmissionsPage = () => {
 
       {/* ─── OVERVIEW SECTION ─── */}
       <section id="Overview" className="py-20 relative overflow-hidden">
-         {/* Background Shapes */}
-         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#18357a]/[0.02] -z-10 skew-x-12 transform origin-right" />
+         
          
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
             <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -162,7 +161,7 @@ const AdmissionsPage = () => {
                  <div className="inline-block px-4 py-1.5 rounded-full bg-[#ffc107]/10 text-[#18357a] font-black text-[10px] uppercase tracking-[3px] mb-6">
                     Admission Overview
                  </div>
-                 <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#18357a] uppercase leading-tight tracking-tighter mb-10 pl-8 border-l-8 border-[#ffc107]">
+                 <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-black uppercase leading-tight tracking-tighter mb-10 pl-8 border-l-8 border-[#ffc107]">
                     TRANSFORMING <span className="text-[#ffc107] italic">POTENTIAL</span>
                  </h2>
                  <p className="text-[#333333] font-bold text-[16px] mb-12 leading-[1.8] max-w-xl">
@@ -205,11 +204,6 @@ const AdmissionsPage = () => {
 
       {/* ─── PROCESS SECTION: MODERN PREMIUM INFOGRAPHIC ─── */}
       <section id="Process" className="py-24 bg-white relative overflow-hidden">
-        {/* Background Mesh Gradient (Subtle) */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-10 pointer-events-none">
-           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#18357a] rounded-full blur-[120px]" />
-           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#ffc107] rounded-full blur-[120px]" />
-        </div>
 
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center relative z-10">
           <motion.div
@@ -222,33 +216,12 @@ const AdmissionsPage = () => {
                <span className="w-2 h-2 rounded-full bg-[#18357a] animate-pulse" />
                <span className="text-[10px] font-black text-[#18357a] uppercase tracking-[3px]">Admission Workflow</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#18357a] uppercase leading-tight tracking-tighter">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-black uppercase leading-tight tracking-tighter">
               Pathway to <span className="text-[#ffc107]">Your Future</span>
             </h2>
           </motion.div>
           
           <div className="relative">
-            {/* Connection Line (Gradient SVG) */}
-            <div className="absolute top-[80px] left-0 w-full h-[140px] -z-10 hidden lg:block px-20">
-              <svg viewBox="0 0 1000 100" preserveAspectRatio="none" className="w-full h-full fill-none stroke-[3]">
-                <defs>
-                   <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#18357a" stopOpacity="0.05" />
-                      <stop offset="50%" stopColor="#ffc107" stopOpacity="0.3" />
-                      <stop offset="100%" stopColor="#18357a" stopOpacity="0.05" />
-                   </linearGradient>
-                </defs>
-                <motion.path 
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
-                  d="M0,50 C100,50 150,10 250,10 C350,10 400,90 500,90 C600,90 650,10 750,10 C850,10 900,50 1000,50" 
-                  stroke="url(#waveGradient)"
-                  strokeDasharray="12 12"
-                />
-              </svg>
-            </div>
 
             <div className="grid lg:grid-cols-5 gap-16 lg:gap-4 relative px-4">
               {ADMISSION_STEPS.map((step, i) => (
@@ -300,7 +273,7 @@ const AdmissionsPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                >
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#18357a] uppercase leading-tight tracking-tighter mb-8">Programmes Offered</h2>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-black uppercase leading-tight tracking-tighter mb-8">Programmes Offered</h2>
                   <p className="text-[#333333] font-bold text-[16px] max-w-2xl mx-auto mb-10 leading-[1.8]">Discover our diverse range of engineering and management disciplines designed to empower your professional journey.</p>
                   
                   {/* Category Selection Tabs */}
@@ -369,7 +342,7 @@ const AdmissionsPage = () => {
                                     <div className="p-2 rounded-xl bg-white shadow-sm text-[#18357a] group-hover:bg-white/10 group-hover:text-white transition-colors">
                                        <CheckCircle2 size={16} />
                                     </div>
-                                    <p className="text-[13px] font-black leading-tight text-[#18357a] group-hover:text-white uppercase tracking-tight transition-colors">{item.name}</p>
+                                    <p className="text-[14px] font-black leading-tight text-[#0f172a] group-hover:text-white uppercase tracking-tight transition-colors">{item.name}</p>
                                  </div>
                               </motion.div>
                            ))}
@@ -419,7 +392,7 @@ const AdmissionsPage = () => {
                                     <div className="p-2 rounded-xl bg-white shadow-sm text-[#ffc107] group-hover:bg-[#18357a] group-hover:text-white transition-colors">
                                        <CheckCircle2 size={16} />
                                     </div>
-                                    <p className="text-[13px] font-black leading-tight text-[#18357a] group-hover:text-[#18357a] uppercase tracking-tight transition-colors">{item.name}</p>
+                                    <p className="text-[14px] font-black leading-tight text-[#0f172a] group-hover:text-black uppercase tracking-tight transition-colors">{item.name}</p>
                                  </div>
                               </motion.div>
                            ))}

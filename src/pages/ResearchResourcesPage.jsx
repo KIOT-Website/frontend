@@ -36,28 +36,60 @@ const ResearchResourcesPage = () => {
     }
 
     const getResourceItems = () => {
-        const isMechanical = deptName?.toLowerCase().includes('mechanical')
-        const isECE = deptName?.toLowerCase().includes('electronics')
-
-        if (isECE) {
+        const lowerDept = deptName?.toLowerCase()
+        
+        if (lowerDept === 'mechanical-engineering') {
             return [
                 { id: 1, title: "List of Ph.D Supervisors", icon: Users },
                 { id: 2, title: "Major Research Areas", icon: Target },
                 { id: 3, title: "List of Ph.Ds in the Department", icon: Award },
                 { id: 4, title: "List of Faculty pursuing Ph.D", icon: GraduationCap },
-                { id: 5, title: "List of Ph.D Scholars Guided by the Department Supervisors", icon: UserCheck },
-                { id: 6, title: "Facilities for doing Research", icon: Microscope },
-                { id: 7, title: "Centre for Medical Imaging", icon: Stethoscope },
-                { id: 8, title: "Publication in Indexed Journal", icon: FileText },
-                { id: 9, title: "Publication in Non Indexed Journal", icon: FileText },
-                { id: 10, title: "Publication in Conference", icon: Presentation },
-                { id: 11, title: "Research Proposal", icon: FileEdit },
-                { id: 12, title: "Consultancy Work", icon: Handshake },
-                { id: 13, title: "Projects Sanctioned", icon: CheckCircle2 }
+                { id: 5, title: "List of Ph.D Scholars Guided", icon: UserCheck },
+                { id: 6, title: "Research Facilities", icon: Microscope },
+                { id: 7, title: "Sponsored Research Projects", icon: Handshake }
             ]
         }
 
-        // Default or Mechanical
+        if (lowerDept === 'electronics-&-communication-engineering') {
+            return [
+                { id: 1, title: 'List of Ph.D Supervisors', icon: Users },
+                { id: 2, title: 'Major Research Areas', icon: Target },
+                { id: 3, title: 'List of Ph.Ds in the Department', icon: Award },
+                { id: 4, title: 'List of Faculty pursuing Ph.D', icon: GraduationCap },
+                { id: 5, title: 'List of Ph.D Scholars Guided', icon: UserCheck },
+                { id: 6, title: 'Research Facilities', icon: Microscope },
+                { id: 7, title: 'Centre for Medical Imaging', icon: Stethoscope },
+                { id: 8, title: 'Publication in Indexed Journal', icon: FileText },
+                { id: 9, title: 'Publication in Non Indexed Journal', icon: FileText },
+                { id: 10, title: 'Publication in Conference', icon: Presentation },
+                { id: 11, title: 'Research Proposal', icon: FileEdit },
+                { id: 12, title: 'Consultancy', icon: Handshake },
+                { id: 13, title: 'Projects Sanctioned', icon: CheckCircle2 }
+            ]
+        }
+        if (lowerDept === 'electrical-&-electronics-engineering') {
+            return [
+                { id: 1, title: 'List of Ph.D Supervisors', icon: Users },
+                { id: 2, title: 'Major Research Areas', icon: Target },
+                { id: 3, title: 'List of Ph.Ds in the Department', icon: Award },
+                { id: 4, title: 'List of Faculty pursuing Ph.D', icon: GraduationCap },
+                { id: 5, title: 'List of Ph.D Scholars Guided by the Department Supervisors', icon: UserCheck },
+                { id: 6, title: 'Facilities for doing Research', icon: Microscope },
+                { id: 7, title: 'List of Publications', icon: FileText }
+            ]
+        }
+        if (lowerDept === 'computer-science-&-engineering') {
+            return [
+                { id: 1, title: 'List of Ph.D Supervisors', icon: Users },
+                { id: 2, title: 'Major Research Areas', icon: Target },
+                { id: 3, title: 'List of Ph.Ds in the Department', icon: Award },
+                { id: 4, title: 'List of Faculty pursuing Ph.D', icon: GraduationCap },
+                { id: 5, title: 'List of Ph.D Scholars Guided by the Department Supervisors', icon: UserCheck },
+                { id: 6, title: 'Facilities for doing Research', icon: Microscope }
+            ]
+        }
+
+        // Default
         return [
             { id: 1, title: "List of Ph.D Supervisors", icon: Users },
             { id: 2, title: "Major Research Areas of the Department", icon: Target },
@@ -135,7 +167,11 @@ const ResearchResourcesPage = () => {
                                         <td className="px-8 py-2 text-right">
                                             <button 
                                                 onClick={() => {
-                                                    const isMech = deptName?.toLowerCase().includes('mechanical')
+                                                    const lowerDept = deptName?.toLowerCase()
+                                                    const isECE = lowerDept === 'electronics-&-communication-engineering'
+                                                    const isEEE = lowerDept === 'electrical-&-electronics-engineering'
+                                                    const isMech = lowerDept?.includes('mechanical')
+
                                                     if (isMech) {
                                                         if (item.id === 1) navigate(`/research/${deptName}/phd-supervisors`)
                                                         if (item.id === 2) navigate(`/research/${deptName}/research-areas`)
@@ -146,15 +182,27 @@ const ResearchResourcesPage = () => {
                                                         if (item.id === 7) navigate(`/research/${deptName}/sponsored-projects`)
                                                         if (item.id === 8) navigate(`/research/${deptName}/international-publications`)
                                                     } else {
-                                                        // ECE or other departments
-                                                        // navigate to appropriate sub-pages as they are built
-                                                        // for now, we can show specific paths or under-construction
+                                                        // ECE or EEE or other departments
                                                         if (item.id === 1) navigate(`/research/${deptName}/phd-supervisors`)
                                                         if (item.id === 2) navigate(`/research/${deptName}/research-areas`)
                                                         if (item.id === 3) navigate(`/research/${deptName}/phd-holders`)
                                                         if (item.id === 4) navigate(`/research/${deptName}/pursuing-phd`)
                                                         if (item.id === 5) navigate(`/research/${deptName}/guided-scholars`)
                                                         if (item.id === 6) navigate(`/research/${deptName}/facilities`)
+                                                        
+                                                        // Item 7: Medical Imaging for ECE, Publications for EEE
+                                                        if (item.id === 7) {
+                                                            if (isECE) navigate(`/research/${deptName}/medical-imaging`)
+                                                            else if (isEEE) navigate(`/research/${deptName}/international-publications`)
+                                                            else navigate(`/research/${deptName}/sponsored-projects`)
+                                                        }
+                                                        
+                                                        if (item.id === 8) navigate(`/research/${deptName}/international-publications`)
+                                                        if (item.id === 9) navigate(`/research/${deptName}/publications-non-indexed`)
+                                                        if (item.id === 10) navigate(`/research/${deptName}/conferences`)
+                                                        if (item.id === 11) navigate(`/research/${deptName}/research-proposals`)
+                                                        if (item.id === 12) navigate(`/research/${deptName}/consultancy`)
+                                                        if (item.id === 13) navigate(`/research/${deptName}/sponsored-projects`)
                                                     }
                                                 }}
                                                 className="inline-flex items-center gap-2 px-6 py-2.5 bg-white border border-slate-200 rounded-lg text-[#0f172a] text-[10px] font-bold uppercase tracking-wider hover:bg-[#ffc107] hover:border-[#ffc107] transition-all shadow-sm active:scale-95 group/btn"

@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import { TrendingUp, GraduationCap, Building2, UserCheck, Briefcase } from 'lucide-react'
 
 // Recruiter Logos
-import techMahindraLogo from '../../assets/tech mahendra.webp'
-import expleoLogo from '../../assets/ecpleo.webp'
-import codingmartLogo from '../../assets/codingmart.webp'
-import haritaLogo from '../../assets/harita.webp'
-import hexawareLogo from '../../assets/hexaware.webp'
-import itcLogo from '../../assets/itc.webp'
-import neyesLogo from '../../assets/neyes.webp'
-import raplLogo from '../../assets/rapl.webp'
-import tefologicLogo from '../../assets/tefologic.webp'
-import tessolveLogo from '../../assets/tessolve.webp'
+import techMahindraLogo from '../../assets/main/tech mahendra.webp'
+import expleoLogo from '../../assets/main/ecpleo.webp'
+import codingmartLogo from '../../assets/main/codingmart.webp'
+import haritaLogo from '../../assets/main/harita.webp'
+import hexawareLogo from '../../assets/main/hexaware.webp'
+import itcLogo from '../../assets/main/itc.webp'
+import neyesLogo from '../../assets/main/neyes.webp'
+import raplLogo from '../../assets/main/rapl.webp'
+import tefologicLogo from '../../assets/main/tefologic.webp'
+import tessolveLogo from '../../assets/main/tessolve.webp'
 
 const stats = [
   {

@@ -20,25 +20,69 @@ const ResearchFacilitiesPage = () => {
         return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     }
 
-    const facilities = [
-        {
-            id: 1,
-            lab: "Composite Research Centre for Product Design, Digital Manufacturing and Technical Documentation",
-            equipment: "Catia v6, Delmia V5 and 3DVia",
-            domain: "Design",
-            icon: Cpu
-        },
-        {
-            id: 2,
-            lab: "Centre for Environmental Health and safety",
-            equipment: "Vibration test facility, Whirling speed of shaft, Exhaust gas analyzer, Smoke meter, Friction tester, Impact tester, High volume sampler",
-            domain: "Industrial Safety Engg.",
-            icon: ShieldCheck
-        }
-    ]
+    const allFacilities = {
+        'mechanical-engineering': [
+            {
+                id: 1,
+                lab: "Composite Research Centre for Product Design, Digital Manufacturing and Technical Documentation",
+                equipment: "Catia v6, Delmia V5 and 3DVia",
+                domain: "Design",
+                icon: Cpu
+            },
+            {
+                id: 2,
+                lab: "Centre for Environmental Health and safety",
+                equipment: "Vibration test facility, Whirling speed of shaft, Exhaust gas analyzer, Smoke meter, Friction tester, Impact tester, High volume sampler",
+                domain: "Industrial Safety Engg.",
+                icon: ShieldCheck
+            }
+        ],
+        'electronics-&-communication-engineering': [
+            {
+                id: 101,
+                lab: "Centre for Medical Imaging",
+                equipment: "Advanced Signal Processing Kits, Medical Image Analysis Software, Virtual Reality Simulation for Medical Diagnostics",
+                domain: "Medical Research",
+                icon: FlaskConical
+            },
+            {
+                id: 102,
+                lab: "Signal Processing & Communication Lab",
+                equipment: "Digital Storage Oscilloscopes, Spectrum Analyzers, FPGA Kits, MATLAB with Toolbox",
+                domain: "Communication",
+                icon: Cpu
+            },
+            {
+                id: 103,
+                lab: "Embedded Systems & VLSI Design Lab",
+                equipment: "Xilinx Vivado, Cadence Tools, Microcontroller Development Boards (ARM, AVR, PIC)",
+                domain: "VLSI Design",
+                icon: Microscope
+            }
+        ],
+        'electrical-&-electronics-engineering': [
+            { id: 1, lab: "SIEMENS CoE's", equipment: "Siemens S7 200 Smart PLC Trainer", domain: "Control & Instrumentation", icon: Box },
+            { id: 2, lab: "SIEMENS CoE's", equipment: "Siemens S7 200 Smart PLC with RTD trainer kit", domain: "Control & Instrumentation", icon: Box },
+            { id: 3, lab: "SIEMENS CoE's", equipment: "Siemens S7 200 Smart PLC with VFD", domain: "Control & Instrumentation", icon: Box },
+            { id: 4, lab: "SIEMENS CoE's", equipment: "Siemens S7 200 Smart PLC with Servo Drive", domain: "Control & Instrumentation", icon: Box },
+            { id: 5, lab: "Power Electronics and Drives Lab", equipment: "DSP Controlled BLDC Drive", domain: "PED & Electrical Machines", icon: Cpu },
+            { id: 6, lab: "Power Electronics and Drives Lab", equipment: "DSP Controlled DC Drive", domain: "PED & Electrical Machines", icon: Cpu },
+            { id: 7, lab: "Power Electronics and Drives Lab", equipment: "DSP Controlled IM Drive", domain: "PED & Electrical Machines", icon: Cpu },
+            { id: 8, lab: "Robotics Lab", equipment: "Modelling 2D/3D Simulation Software", domain: "Electric Vehicle", icon: Microscope },
+            { id: 9, lab: "Robotics Lab", equipment: "Grid Connected Battery Charging Station", domain: "Electric Vehicle", icon: HardHat },
+            { id: 10, lab: "Robotics Lab", equipment: "Battery Performance Testing unit", domain: "Electric Vehicle", icon: HardHat },
+            { id: 11, lab: "Robotics Lab", equipment: "Axial Flex EV Motor Drive", domain: "Electric Vehicle", icon: Cpu },
+            { id: 12, lab: "Robotics Lab", equipment: "Axial Switched Reluctance Motor Drive", domain: "Electric Vehicle", icon: Cpu },
+            { id: 13, lab: "Robotics Lab", equipment: "dSpace Electric Test Bench", domain: "Electric Vehicle", icon: FlaskConical },
+            { id: 14, lab: "Robotics Lab", equipment: "dSpace real-time model for autonomous system", domain: "Electric Vehicle", icon: FlaskConical }
+        ],
+        'computer-science-&-engineering': [
+            { id: 1, lab: "Big Data Advanced Analytics Lab", equipment: "HADOOP Ecosystem", domain: "Big Data Analytics", icon: Cpu },
+            { id: 2, lab: "IOT Lab", equipment: "Intel Galileo Kit", domain: "Internet of Things", icon: Box }
+        ]
+    }
 
-    const isMechanical = deptName?.toLowerCase() === 'mechanical-engineering'
-    const displayFacilities = isMechanical ? facilities : []
+    const displayFacilities = allFacilities[deptName?.toLowerCase()] || []
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

@@ -18,25 +18,49 @@ const ResearchAreasPage = () => {
         return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     }
 
-    const researchAreas = [
-        "Heat Transfer Enhancement",
-        "Waste Heat Recovery",
-        "Phase Change Material",
-        "Energy Efficient Technologies",
-        "Hybrid Solar Hot Water Systems",
-        "Solar Passive Cooling of Buildings",
-        "Multi Criteria Decision Making Application",
-        "Indoor Air and Environmental Quality",
-        "Environmental Health and Safety",
-        "Composite Material",
-        "Optimization Technique",
-        "Maintenance Engineering",
-        "Supply Chain Management"
-    ]
+    const researchAreas = {
+        'mechanical-engineering': [
+            "Heat Transfer Enhancement",
+            "Waste Heat Recovery",
+            "Phase Change Material",
+            "Energy Efficient Technologies",
+            "Hybrid Solar Hot Water Systems",
+            "Solar Passive Cooling of Buildings",
+            "Multi Criteria Decision Making Application",
+            "Indoor Air and Environmental Quality",
+            "Environmental Health and Safety",
+            "Composite Material",
+            "Optimization Technique",
+            "Maintenance Engineering",
+            "Supply Chain Management"
+        ],
+        'electronics-&-communication-engineering': [
+            "Signal & Image Processing",
+            "VLSI & Circuit design",
+            "Biomedical Imaging and Sensing",
+            "Wireless Sensor Networks",
+            "Artificial Intelligence"
+        ],
+        'electrical-&-electronics-engineering': [
+            "Power System Engineering",
+            "Power Electronics and Drives",
+            "Control and Instrumentation",
+            "Renewable Energy",
+            "Embedded systems",
+            "High Voltage Engineering"
+        ],
+        'computer-science-&-engineering': [
+            "Wireless Sensor Networks",
+            "Data Mining",
+            "Image Processing",
+            "Image Mining",
+            "Big Data Analytics",
+            "Cloud Computing",
+            "Information and Communication Theory"
+        ]
+    }
 
-    // Only show for Mechanical Engineering for now
-    const isMechanical = deptName?.toLowerCase() === 'mechanical-engineering'
-    const displayAreas = isMechanical ? researchAreas : []
+    const displayAreas = researchAreas[deptName?.toLowerCase()] || []
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

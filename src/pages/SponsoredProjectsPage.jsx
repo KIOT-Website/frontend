@@ -21,68 +21,54 @@ const SponsoredProjectsPage = () => {
         return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     }
 
-    const mhrdPrograms = [
-        { id: 1, title: "Research Methodologies", dept: "Mech", agency: "MHRD", duration: "25.06.2012 to 04.07.2012", fund: "1,42,719" },
-        { id: 2, title: "Engineering Thermodynamics", dept: "Mech", agency: "MHRD", duration: "11.12.2012 to 21.12.2012", fund: "2,44,685" },
-        { id: 3, title: "Research Methods in Education Technology", dept: "Mech", agency: "MHRD", duration: "02.02.2013 & 09.02.2013", fund: "7,000" },
-        { id: 4, title: "Database Management Systems", dept: "CSE", agency: "MHRD", duration: "21.05.2013 to 31.05.2013", fund: "1,31,616" },
-        { id: 5, title: "Analog Electronics", dept: "ECE", agency: "MHRD", duration: "04.06.2013 to 14.06.2013", fund: "1,61,578" },
-        { id: 6, title: "Green Building Awareness", dept: "Civil", agency: "MHRD", duration: "24.08.2013", fund: "3,000" },
-        { id: 7, title: "Engineering Mechanics", dept: "Mech", agency: "MHRD", duration: "26.11.2013 to 06.11.2013", fund: "1,95,706" },
-        { id: 8, title: "Signals & Systems", dept: "ECE", agency: "MHRD", duration: "02.01.2014 to 12.01.2014", fund: "1,55,073" },
-        { id: 9, title: "Fluid Mechanics", dept: "Mech", agency: "MHRD", duration: "20.05.2014 to 30.05.2014", fund: "2,07,001" },
-        { id: 10, title: "Computer Programming", dept: "CSE", agency: "MHRD", duration: "16.06.2014 to 21.06.2014", fund: "81,422" },
-        { id: 11, title: "Computer Networking", dept: "CSE", agency: "MHRD", duration: "30.06.2014 to 05.07.2014", fund: "96,886" },
-        { id: 12, title: "Cyber Security", dept: "CSE", agency: "MHRD", duration: "10.07.2014 to 20.07.2014", fund: "1,64,626" },
-        { id: 13, title: "Control Systems", dept: "EEE", agency: "MHRD", duration: "02.12.2014 to 12.12.2014", fund: "1,76,970" },
-        { id: 14, title: "Pedagogy for Effective use of ICT in Engineering Education", dept: "Mech", agency: "MHRD", duration: "05.01.2015 to 07.01.2015 & 19.01.2015 to 21.01.2015", fund: "71,330" },
-        { id: 15, title: "Introduction to Design of Algorithms", dept: "CSE", agency: "MHRD", duration: "25.05.2015 to 30.05.2015", fund: "88,600" },
-        { id: 16, title: "Environmental Studies", dept: "CIVIL", agency: "MHRD", duration: "02.06.2015 to 12.06.2015", fund: "2,02,000" },
-        { id: 17, title: "Technical Communication", dept: "Mech", agency: "MHRD", duration: "30.11.2015 to 05.12.2015", fund: "-" },
-        { id: 18, title: "Engineering Physics", dept: "Mech", agency: "MHRD", duration: "08.12.2015 to 18.12.2015", fund: "1,41,099" },
-        { id: 19, title: "Introduction to Structural Engineering", dept: "Civil", agency: "MHRD", duration: "04.01.2016 to 09.01.2016", fund: "91,000" },
-        { id: 20, title: "Usage of ICT in Education for Online and Blended Learning", dept: "Mech", agency: "MHRD", duration: "02.05.2016 to 10.07.2016", fund: "-" },
-        { id: 21, title: "College to Corporate", dept: "Mech", agency: "MHRD", duration: "26.11.2016", fund: "-" },
-        { id: 22, title: "CMOS, Mixed Signal RF, VLSI Design", dept: "ECE", agency: "MHRD", duration: "30.01.2017 To 04.02.2017", fund: "87,680" },
-        { id: 23, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase I", dept: "Mech", agency: "AICTE-ISTE", duration: "01.03.2021 to 06.03.2021", fund: "93,000" },
-        { id: 24, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase II", dept: "Mech", agency: "AICTE-ISTE", duration: "05.04.2021 to 12.04.2021", fund: "93,000" },
-        { id: 25, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase III", dept: "Mech", agency: "AICTE-ISTE", duration: "03.05.2021 to 08.05.2021", fund: "93,000" },
-        { id: 26, title: "FDTP on ME8391- Engineering Thermodynamics", dept: "Mech", agency: "Anna University", duration: "12.07.2021-17.07.2021", fund: "30,000" }
-    ]
+    const allMhrdPrograms = {
+        'mechanical-engineering': [
+            { id: 1, title: "Research Methodologies", agency: "MHRD", duration: "2012", fund: "1,42,719" },
+            { id: 2, title: "Engineering Thermodynamics", agency: "MHRD", duration: "2012", fund: "2,44,685" },
+            { id: 3, title: "Research Methods in Education Technology", agency: "MHRD", duration: "2013", fund: "7,000" }
+        ],
+        'electronics-&-communication-engineering': [
+            { id: 1, year: "2024-2025", faculty: "Mr. K. Rajesh", agency: "MSME Idea Hackathon 4.0", title: "Landslide Monitoring and Warning System", date: "27.06.2025", amount: "9,00,000" },
+            { id: 2, year: "2024-2025", faculty: "Mr. A. Silambarasan", agency: "MSME Idea Hackathon 4.0", title: "TonoLITE", date: "27.06.2025", amount: "8,50,000" },
+            { id: 3, year: "2024-2025", faculty: "Mrs. V. Vadivu", agency: "TNSCST", title: "Air and Water quality index and Environment monitoring system", date: "13.05.2025", amount: "7,500" },
+            { id: 4, year: "2024-2025", faculty: "Mr.M.Chandraman", agency: "TNSDC NIRAL THIRUVIZHA 2.0", title: "IoT-Based Public Toilets Monitoring System", date: "05.03.2025", amount: "10,000" },
+            { id: 5, year: "2024-2025", faculty: "Mr.S.Premkumar", agency: "TNSDC NIRAL THIRUVIZHA 2.0", title: "Medicine Supply Management System", date: "05.03.2025", amount: "10,000" },
+            { id: 6, year: "2023-2024", faculty: "Mr.T.Praveen Kumar", agency: "TNSCST", title: "Login to windows computer using RFID tag and arduino", date: "01.10.2024", amount: "7,500" },
+            { id: 7, year: "2018-2019", faculty: "Dr.N.Santhiyakumari", agency: "AICTE", title: "Modernization of Embedded Lab using IoT", date: "16.05.2019", amount: "12,93,210" },
+            { id: 8, year: "2018-2019", faculty: "Mr.M.CHANDRAMAN", agency: "TNSCST", title: "Remote monitoring system for wildlife using IoT", date: "18.02.2019", amount: "7,500" },
+            { id: 10, year: "2012-2013", faculty: "Dr.N.Santhiyakumari", agency: "AICTE", title: "Implementation of medical Decision System for CV & CB Disease", date: "21.03.2013", amount: "10,63,650" }
+        ]
+    }
 
-    const mhrdSummary = "27,58,991"
+    const allSponsoredProjects = {
+        'mechanical-engineering': [
+            { id: 1, faculty: "Mr.K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "2013" }
+        ],
+        'electronics-&-communication-engineering': [
+            { id: 101, faculty: "Dr.N.Santhiyakumari", title: "Advanced Medical Imaging and Signal Processing Initiative", agency: "Institutional", amount: "In-Progress", period: "2024" }
+        ]
+    }
 
-    const sponsoredProjects = [
-        { id: 1, faculty: "Mr.K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "08.03.2013 to 09.03.2013" },
-        { id: 2, faculty: "Mr.T.Dheenathayalan", title: "Environmental Health and safety in Organisation", agency: "CSIR", amount: "30,000", period: "14.03.2013 to 15.03.2013" },
-        { id: 3, faculty: "Mr.M.Sathyanathan & Mr.N.Kamalakkannan", title: "Seminar on Sustainable Composites", agency: "IET", amount: "6,000", period: "20.01.2018" },
-        { id: 4, faculty: "Dr.K.Visagavel & Mr.N.Kamalakkannan", title: "Seminar on Industrial Internet of Things in manufacturing", agency: "IET", amount: "10,000", period: "19.07.2018" },
-        { id: 5, faculty: "Dr.M. Ilangkumaran, Dr. V. Sivakumar, Dr.N.Panneerselvam", title: "Current Trends in Recycling of Textile / Apparel Waste in Eco - Sustainable Aspects", agency: "CSIR", amount: "20,000", period: "05.08.2022 to 06.08.2022" }
-    ]
+    const allTnscstProjects = {
+        'mechanical-engineering': [
+            { id: 1, year: "2019-2020", title: "Quad – copter UAV assisted fertilizer and pesticide spraying system", mentor: "Mr.D.Manikandan", agency: "TNSCST", grant: "7,500", duration: "12 Months" }
+        ],
+        'electronics-&-communication-engineering': [
+            { id: 101, year: "2023-2024", title: "AI-driven emergency response systems for enhanced vehicle safety", mentor: "Dr.S. Kumarganesh", agency: "TNSCST", grant: "Ongoing", duration: "12 Months" }
+        ]
+    }
 
-    const tnscstProjects = [
-        { id: 1, year: "2019-2020", title: "Quad – copter UAV assisted fertilizer and pesticide spraying system", mentor: "Mr.D.Manikandan", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
-        { id: 2, year: "2019-2020", title: "Smart helmet – an accident preventer", mentor: "Mr.M.A.Rajeshkumar", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
-        { id: 3, year: "2017-2018", title: "Portable crop cutting machine", mentor: "Mr.P.Kalaiselvan", agency: "TNSCST", grant: "8,400", duration: "12 Months" },
-        { id: 4, year: "2017-2018", title: "Design and fabrication of mobile bucket milking machine with aid of solar system", mentor: "Mr.M.Loganathan", agency: "TNSCST", grant: "4,900", duration: "12 Months" },
-        { id: 5, year: "2017-2018", title: "Tonic gas defender in automobile", mentor: "Mr.M.A.Rajesh Kumar", agency: "TNSCST", grant: "8,300", duration: "12 Months" },
-        { id: 6, year: "2017-2018", title: "Design and Implementation of low cost intelligent wheelchair", mentor: "Mr.N.Kamalakannan", agency: "TNSCST", grant: "9,100", duration: "12 Months" },
-        { id: 7, year: "2016-2017", title: "Fabrication and performance measurement of manually powered fodder cutter", mentor: "Mr.P.Kalaiselvan", agency: "TNSCST", grant: "10,000", duration: "12 Months" },
-        { id: 8, year: "2016-2017", title: "Fabrication of semi-automated multipurpose wheel hoe with aid of Solar system for agriculture", mentor: "Mr.M.Loganathan", agency: "TNSCST", grant: "10,000", duration: "12 Months" },
-        { id: 9, year: "2016-2017", title: "Smart Helmet with Alcohol detection", mentor: "Mr.C.Eswaramoorthy", agency: "TNSCST", grant: "10,000", duration: "12 Months" }
-    ]
+    const mhrdPrograms = allMhrdPrograms[deptName?.toLowerCase()] || []
+    const sponsoredProjects = allSponsoredProjects[deptName?.toLowerCase()] || []
+    const tnscstProjects = allTnscstProjects[deptName?.toLowerCase()] || []
+    const consultancyWork = [] // Add ECE consultancy if available
 
-    const consultancyWork = [
-        { id: 1, faculty: "Dr.V.Sivakumar, Mr.A.Selvakumar", title: "Implementation of Total Quality Management", period: "10.11.2021 to 12.11.2021", client: "Spintec Enterprises Private Limited, Coimbatore", amount: "25,000" },
-        { id: 2, faculty: "Dr.M.Ilangkumaran, Mr.S.Nandha Kumar", title: "Implementation of Total Quality Management", period: "20.01.2022 to 22.01.2022", client: "Fluid Engineering Works, Coimbatore, Tamil Nadu", amount: "25,000" },
-        { id: 3, faculty: "Mr.A.Selvakumar, Mr.J.Prakash", title: "Training on Total Quality Management and 5S System", period: "12.04.2022 to 14.04.2022", client: "Sri Pone Arasalamman Battery Works, Dharmapuri", amount: "25,000" },
-        { id: 4, faculty: "Mr.A.Selvakumar, Mr.J.Prakash", title: "Training on Total Quality Management and 5S System", period: "21.04.2022 to 23.04.2022", client: "RnGn Batteries Private Limited, Dharmapuri", amount: "25,000" },
-        { id: 5, faculty: "Dr.K.S.Prabhakaran, Mr.G.Thangaraj", title: "Safety Audit", period: "04.10.2022 to 06.10.2022", client: "Vijay Blue Metal, Salem, Tamil Nadu", amount: "25,000" },
-        { id: 6, faculty: "Dr.N.Panneerselvam, Mr.G.Thangaraj", title: "Safety Audit", period: "17.11.2022 to 19.11.2022", client: "Senthil Blue Metals, Salem, Tamil Nadu", amount: "25,000" },
-        { id: 7, faculty: "Mr.A.Selvakumar, Mr.J.Prakash", title: "Design and Fabrication of Pick and Place Robot Arm", period: "On going", client: "Kaapi Stop, Salem, Tamil Nadu", amount: "1,47,950" }
-    ]
-
-    const isMechanical = deptName?.toLowerCase() === 'mechanical-engineering'
+    const getMhrdSummary = () => {
+        return mhrdPrograms.reduce((acc, curr) => {
+            const valStr = curr.amount || curr.fund || "0"
+            return acc + (parseInt(valStr.toString().replace(/,/g, '')) || 0)
+        }, 0).toLocaleString()
+    }
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
@@ -153,7 +139,7 @@ const SponsoredProjectsPage = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100 italic font-semibold text-[#1e293b]">
-                                    {isMechanical && mhrdPrograms.map((item, idx) => (
+                                    {mhrdPrograms.map((item, idx) => (
                                         <tr key={item.id} className="hover:bg-[#fafcff] transition-all duration-300">
                                             <td className="px-6 py-4">
                                                 <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
@@ -162,12 +148,12 @@ const SponsoredProjectsPage = () => {
                                             </td>
                                             <td className="px-6 py-4 text-[13px] uppercase tracking-tight">{item.title}</td>
                                             <td className="px-6 py-4 text-xs">{item.duration}</td>
-                                            <td className="px-6 py-4 text-right pr-8 text-xs font-bold text-[#0f172a]">{item.fund}</td>
+                                            <td className="px-6 py-4 text-right pr-8 text-xs font-bold text-[#0f172a]">{item.amount || item.fund}</td>
                                         </tr>
                                     ))}
                                     <tr className="bg-slate-50">
                                         <td colSpan="3" className="px-6 py-5 text-right text-xs font-bold text-[#0f172a] uppercase tracking-[2px]">Total Grant Received</td>
-                                        <td className="px-6 py-5 text-right pr-8 text-base font-bold text-[#ffc107] tracking-tight">₹ {mhrdSummary}</td>
+                                        <td className="px-6 py-5 text-right pr-8 text-base font-bold text-[#ffc107] tracking-tight">₹ {getMhrdSummary()}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -188,25 +174,42 @@ const SponsoredProjectsPage = () => {
                         <div className="overflow-x-auto">
                             <table className="w-full border-collapse">
                                 <thead>
-                                    <tr className="text-white">
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px] w-16">S.No.</th>
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Project Detail</th>
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Agency</th>
-                                        <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] uppercase tracking-[2px] pr-8">Funding</th>
+                                    <tr className="bg-black text-white text-left italic">
+                                        <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-widest w-16">S.No</th>
+                                        <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-widest">Project Details & Faculty</th>
+                                        <th className="px-6 py-5 text-center text-[10px] font-bold uppercase tracking-widest">Timeline / Year</th>
+                                        <th className="px-6 py-5 text-right text-[10px] font-bold text-[#ffc107] uppercase tracking-widest pr-8">Sanctioned Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
-                                    {isMechanical && sponsoredProjects.map((item, idx) => (
-                                        <tr key={item.id} className="hover:bg-[#fafcff] transition-all">
-                                            <td className="px-6 py-5 align-top pt-8"><span className="text-xs font-bold text-[#0f172a]">0{idx + 1}</span></td>
-                                            <td className="px-6 py-5 max-w-sm">
-                                                <div className="text-[14px] font-bold text-[#0f172a] uppercase leading-tight mb-2 italic">"{item.title}"</div>
-                                                <div className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest">{item.faculty}</div>
+                                    {sponsoredProjects.map((item, idx) => (
+                                        <tr key={item.id} className="hover:bg-[#fafcff] transition-all group">
+                                            <td className="px-6 py-5 align-top pt-8">
+                                                <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all">
+                                                    {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                                                </div>
                                             </td>
-                                            <td className="px-6 py-5 align-top pt-8 italic font-semibold text-[#1e293b] text-xs">{item.agency}</td>
-                                            <td className="px-6 py-5 text-right pr-8 align-top pt-7">
-                                                <div className="text-[13px] font-bold text-[#0f172a]">₹ {item.amount}</div>
-                                                <div className="text-[10px] font-semibold text-slate-400">{item.period}</div>
+                                            <td className="px-6 py-5 max-w-sm">
+                                                <p className="text-[13px] font-black text-[#18357a] uppercase leading-tight mb-2 italic">"{item.title}"</p>
+                                                <div className="flex flex-col gap-1">
+                                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item.agency}</p>
+                                                    {item.faculty && (
+                                                        <p className="text-[10px] font-bold text-[#ffc107] uppercase italic">PI: {item.faculty}</p>
+                                                    )}
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-5 text-center">
+                                                <div className="flex flex-col items-center gap-1">
+                                                    <span className="inline-flex items-center px-3 py-1 bg-[#0f172a] text-[#ffc107] text-[9px] font-black uppercase rounded-full border border-black/10 italic">
+                                                        {item.year || item.period}
+                                                    </span>
+                                                    {item.date && (
+                                                        <span className="text-[8px] font-bold text-slate-300 uppercase">{item.date}</span>
+                                                    )}
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-5 text-right pr-8">
+                                                <span className="text-[14px] font-black text-[#0f172a] tracking-tight group-hover:text-[#ffc107] transition-colors">₹ {item.amount || item.fund}</span>
                                             </td>
                                         </tr>
                                     ))}
@@ -237,7 +240,7 @@ const SponsoredProjectsPage = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
-                                    {isMechanical && consultancyWork.map((item, idx) => (
+                                    {consultancyWork.map((item, idx) => (
                                         <tr key={item.id} className="hover:bg-[#fafcff] transition-all group">
                                             <td className="px-6 py-5">
                                                 <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
@@ -271,7 +274,7 @@ const SponsoredProjectsPage = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {isMechanical && tnscstProjects.map((item) => (
+                        {tnscstProjects.map((item) => (
                             <motion.div 
                                 whileHover={{ y: -5 }}
                                 key={item.id}

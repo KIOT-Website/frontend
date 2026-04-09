@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle2, Quote, X, GraduationCap, Briefcase, Microscope, Heart } from 'lucide-react'
 
 // Asset imports
-import chairmanImg from '../../assets/Executive-Chairman.webp'
-import principalImg from '../../assets/KIOT-Principal-Message-Web-2025.webp'
-import secretaryImg from '../../assets/Secretarys-Message-KIOTT.webp'
+import chairmanImg from '../../assets/main/Executive-Chairman.webp'
+import principalImg from '../../assets/main/KIOT-Principal-Message-Web-2025.webp'
+import secretaryImg from '../../assets/main/Secretarys-Message-KIOTT.webp'
 
 const leaders = [
   {

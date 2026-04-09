@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BookOpen, Users, Trophy, Target, CheckCircle2, ArrowRight, ArrowDown } from 'lucide-react'
-import campusImg from '../../assets/kiot-campus.webp'
+import campusImg from '../../assets/main/campus .png'
 
 const AboutUs = () => {
   const [showAcademicStats, setShowAcademicStats] = useState(false);
