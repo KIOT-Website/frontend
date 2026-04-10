@@ -296,13 +296,15 @@ const PGRegistrationPage = () => {
                                         <label className={labelClass}>Caste (Select/Type) *</label>
                                         <input required type="text" className={inputClass} value={formData.caste} onChange={e => setFormData({...formData, caste: e.target.value})} />
                                     </div>
-                                    <div className="relative">
-                                        <label className={labelClass}><Globe size={14} className="text-[#ffc107]" /> Nationality *</label>
-                                        <select required className={selectClass} value={formData.nationality} onChange={e => setFormData({...formData, nationality: e.target.value})}>
-                                            {NATIONALITIES.map(n => <option key={n} value={n}>{n}</option>)}
-                                        </select>
-                                        <ChevronDown className="absolute right-6 bottom-4 text-[#18357a]" size={18} />
-                                    </div>
+                                    <CustomSelect 
+                                        label="Nationality" 
+                                        required 
+                                        icon={Globe}
+                                        value={formData.nationality} 
+                                        options={NATIONALITIES} 
+                                        onChange={val => setFormData({...formData, nationality: val})} 
+                                        placeholder="Select Nationality"
+                                    />
                                 </div>
                             </div>
 

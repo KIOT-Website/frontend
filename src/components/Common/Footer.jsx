@@ -17,7 +17,6 @@ const Footer = () => {
   const menuSections = {
     'Explore': [
       { name: 'About Us', href: '/about-us' },
-      { name: 'Our Values', href: '/our-values' },
       { name: 'Leadership & Council', href: '/leadership' },
       { name: 'Accreditation', href: '/accreditation-ranking' },
       { name: 'Governing Council', href: '/governing-council' },

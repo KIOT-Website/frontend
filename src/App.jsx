@@ -11,7 +11,6 @@ import Footer from './components/Common/Footer'
 // Page Components
 const Home = lazy(() => import('./pages/Home'))
 import AboutUsPage from './pages/AboutUsPage'
-import VisionMissionPage from './pages/VisionMissionPage'
 import LeadershipPage from './pages/LeadershipPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
@@ -143,7 +142,6 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about-us" element={<AboutUsPage />} />
-                  <Route path="/our-values" element={<VisionMissionPage />} />
                   <Route path="/leadership" element={<LeadershipPage />} />
                   <Route path="/guidelines" element={<GuidelinesPage />} />
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
