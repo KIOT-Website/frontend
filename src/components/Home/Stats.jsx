@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Trophy, TrendingUp, Briefcase, GraduationCap, 
   Calendar, Users, UserCheck, Landmark 
@@ -15,14 +16,14 @@ const statData = [
   { text: "Top 10% Colleges in Tamil Nadu", icon: Landmark, color: "#18357a" }
 ]
 
-const MiniStatCard = ({ text, icon: Icon, color, delay }) => (
+const MiniStatCard = ({ text, icon: Icon, color, delay, isMobile }) => (
   <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 30 }}
+    whileInView={isMobile ? { opacity: 1 } : { opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6, delay }}
     whileHover={{ y: -10 }}
-    className="group relative h-full"
+    className="group relative h-full w-full"
   >
     {/* Dynamic Background Glow */}
     <div className="absolute inset-0 bg-gradient-to-br from-[#18357a]/5 to-[#ffc107]/5 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -66,6 +67,17 @@ const MiniStatCard = ({ text, icon: Icon, color, delay }) => (
 )
 
 const Stats = () => {
+  const [index, setIndex] = useState(0)
+  const row1 = statData.slice(0, 4)
+  const row2 = statData.slice(4, 8)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % 4)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="relative py-16 lg:py-28 bg-[#FCFDFD] overflow-hidden">
       {/* Decorative Elements - Clean Version */}
@@ -85,7 +97,6 @@ const Stats = () => {
             <div className="h-1.5 w-1.5 bg-[#18357a] rounded-full animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">The KIOT Advantage</span>
           </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,11 +105,11 @@ const Stats = () => {
           >
             A Glimpse of our <span className="text-[#ffc107]">Legacy</span>
           </motion.h2>
-          
           <div className="h-2 w-24 bg-[#ffc107] mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* Desktop View: Grid */}
+        <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
           {statData.map((stat, idx) => (
             <div key={idx} className="h-full">
               <MiniStatCard 
@@ -107,6 +118,51 @@ const Stats = () => {
               />
             </div>
           ))}
+        </div>
+
+        {/* Mobile View: Changing One by One in Two Rows */}
+        <div className="md:hidden flex flex-col gap-6 relative px-2">
+          {/* Row 1: Sliding Right (Enter from left) */}
+          <div className="h-[280px] w-full relative">
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={`row1-${index}`}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="absolute inset-0"
+              >
+                <MiniStatCard {...row1[index]} delay={0} isMobile={true} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Row 2: Sliding Left (Enter from right) */}
+          <div className="h-[280px] w-full relative">
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={`row2-${index}`}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="absolute inset-0"
+              >
+                <MiniStatCard {...row2[index]} delay={0} isMobile={true} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Pagination Indicators */}
+          <div className="flex justify-center gap-2 mt-4">
+            {[0, 1, 2, 3].map((i) => (
+              <div 
+                key={i} 
+                className={`h-1.5 transition-all duration-500 rounded-full ${i === index ? 'w-8 bg-[#ffc107]' : 'w-2 bg-[#18357a]/20'}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
