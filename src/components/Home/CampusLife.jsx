@@ -4,14 +4,14 @@ import { BookOpen, FlaskConical, Home, Trophy, Utensils, Bus, ArrowUpRight, Spar
 import React from 'react'
 
 // Asset imports from life@kiot
-import labImg from '../../assets/life@kiot/Lab.jpg'
-import cafeteriaImg from '../../assets/life@kiot/cafeteria.jpg'
-import hostelImg from '../../assets/life@kiot/hostal.jpg'
-import sportsImg from '../../assets/life@kiot/sports.jpg'
-import trainingImg from '../../assets/life@kiot/training.jpg'
-import transportImg from '../../assets/life@kiot/transport.jpg'
-import gymImg from '../../assets/life@kiot/gym.jpg'
-import istartImg from '../../assets/life@kiot/istart.jpg'
+import labImg from '../../assets/life@kiot/Lab.webp'
+import cafeteriaImg from '../../assets/life@kiot/cafeteria.webp'
+import hostelImg from '../../assets/life@kiot/hostal.webp'
+import sportsImg from '../../assets/life@kiot/sports.webp'
+import trainingImg from '../../assets/life@kiot/training.webp'
+import transportImg from '../../assets/life@kiot/transport.webp'
+import gymImg from '../../assets/life@kiot/gym.webp'
+import istartImg from '../../assets/life@kiot/istart.webp'
 
 const facilities = [
   {

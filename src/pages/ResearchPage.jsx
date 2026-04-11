@@ -156,7 +156,7 @@ const ResearchPage = () => {
                                         </div>
                                     </div>
                                     <a 
-                                        href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.jpg"
+                                        href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.webp"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-3 px-8 py-3 bg-[#ffc107] text-[#18357a] rounded-xl font-black text-xs uppercase hover:bg-white transition-all shadow-lg active:scale-95"

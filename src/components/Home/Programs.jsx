@@ -8,7 +8,7 @@ import {
   ArrowRight, Search, Beaker, Landmark, Atom, Microscope
 } from 'lucide-react'
 
-import courseBg from '../../assets/main/home course.png'
+import courseBg from '../../assets/main/home course.webp'
 
 const programsData = {
   UG: {

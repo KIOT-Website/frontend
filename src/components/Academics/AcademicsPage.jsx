@@ -8,7 +8,7 @@ import {
   Briefcase, MessageSquare, Star, LayoutGrid, Building2,
   Zap, ShieldCheck, Car
 } from 'lucide-react'
-import ugBanner from '../../assets/main/ug banner .png'
+import ugBanner from '../../assets/main/ug banner .webp'
 
 const ugPrograms = [
   {

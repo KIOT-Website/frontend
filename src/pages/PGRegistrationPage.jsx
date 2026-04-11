@@ -22,7 +22,7 @@ import {
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../assets/main/logo.webp'
-import ugBanner from '../assets/main/ug banner .png'
+import ugBanner from '../assets/main/ug banner .webp'
 
 const PG_COURSES = [
   'MBA - GENERAL',

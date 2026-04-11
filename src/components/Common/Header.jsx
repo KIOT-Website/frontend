@@ -36,10 +36,10 @@ import {
   ArrowRight
 } from 'lucide-react'
 import logo from '../../assets/main/logo.webp'
-import naacLogo from '../../assets/main/NAAC-Logo.png'
+import naacLogo from '../../assets/main/NAAC-Logo.webp'
 import nirfLogo from '../../assets/main/nirf.webp'
 import nbaLogo from '../../assets/main/NBA1 (1).webp'
-import codeLogo from '../../assets/main/counciling code.png'
+import codeLogo from '../../assets/main/counciling code.webp'
 
 const navLinks = [
   {

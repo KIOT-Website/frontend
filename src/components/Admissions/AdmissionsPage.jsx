@@ -20,8 +20,8 @@ import {
   Award
 } from 'lucide-react'
 import logo from '../../assets/main/logo.webp'
-import placement1 from '../../assets/main/placement 1.png'
-import campusImage from '../../assets/main/indian_college_students_campus.png'
+import placement1 from '../../assets/main/placement 1.webp'
+import campusImage from '../../assets/main/indian_college_students_campus.webp'
 
 // ─── Data Construction ────────────────────────────────────────────────────────
 

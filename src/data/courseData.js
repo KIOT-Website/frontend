@@ -13,7 +13,7 @@ export const courseData = {
     topPackage: '12 LPA',
     icon: Wrench,
     color: '#18357a',
-    bannerImage: '/mech.png',
+    bannerImage: '/mech.webp',
     tagline: 'Design, Build, Innovate',
     overview: [
       'Department of Mechanical Engineering is one of the vibrant departments of KIOT, which offers B.E Mechanical Engineering, M.E Industrial Safety Engineering and Ph.D programs. The Department is NBA accredited and rich in terms of faculty members with an average teaching experience of 14.6 years and research exposure of 10 years. The Department has a team of 30 dedicated members of faculty, 9 with Ph.D and 10 pursuing their research, and the Research Center is approved by Anna University, Chennai. The Department Faculty and students have published more than 300 papers in National and International Conferences/Journals.',

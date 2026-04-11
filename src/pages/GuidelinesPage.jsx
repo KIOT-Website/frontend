@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, BookOpen, Clock, Users, ShieldCheck, Mail, MapPin, Phone } from 'lucide-react'
 
-import structureImg from '../assets/main/Strcutre .png'
+import structureImg from '../assets/main/Strcutre .webp'
 
 const GuidelinesPage = () => {
   const [activeSection, setActiveSection] = useState('administrators')
