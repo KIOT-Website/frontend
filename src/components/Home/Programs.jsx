@@ -87,8 +87,8 @@ const Programs = () => {
               </motion.div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-[#18357a] font-display mb-6 lg:mb-8 leading-[1.1] lg:leading-[1.05]">
-                Shape Your <span className="text-[#ffc107]">Future</span> <br className="hidden lg:block" />
-                With Expert Learning
+                Shape your future with <br className="hidden lg:block" />
+                AI embedded <span className="text-[#ffc107]">Engineering <br className="hidden xl:block" /> & Management courses.</span>
               </h2>
               
               <p className="text-sm lg:text-lg font-medium text-[#64779F] leading-relaxed max-w-xl">
@@ -162,33 +162,58 @@ const Programs = () => {
              onClick={() => navigate('/registration')}
            >
               {/* Triangular Hanging Rope */}
-              <svg width="120" height="60" viewBox="0 0 120 60" className="mb-[-2px]">
-                 <path d="M60 0 L10 60 M60 0 L110 60" stroke="#CBD5E1" strokeWidth="2" fill="none" />
-                 <circle cx="60" cy="0" r="4" fill="#64779F" />
+              <svg width="100" height="50" viewBox="0 0 100 50" className="mb-[-2px]">
+                 <path d="M50 0 L15 50 M50 0 L85 50" stroke="#CBD5E1" strokeWidth="1.5" fill="none" />
+                 <circle cx="50" cy="0" r="3" fill="#64779F" />
               </svg>
 
-              {/* The Sign Board - More Rectangular */}
+              {/* The Sign Board - Reduced Size */}
               <motion.div 
                 animate={{ rotate: [0, 1, -1, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="bg-white px-12 py-10 rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-slate-100 flex flex-col items-center text-center relative hover:shadow-[0_25px_60px_rgba(0,0,0,0.18)] transition-all"
+                className="bg-white px-8 py-6 rounded-[1.2rem] shadow-[0_15px_40px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col items-center text-center relative hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all"
               >
-                  <span className="text-[14px] font-black text-red-600 uppercase tracking-[0.4em] mb-2">Admission</span>
-                  <h4 className="text-5xl font-black text-[#18357a] uppercase mb-6 tracking-tight">Open</h4>
+                  <span className="text-[11px] font-black text-red-600 uppercase tracking-[0.3em] mb-1.5">Admission</span>
+                  <h4 className="text-3xl font-black text-[#18357a] uppercase mb-4 tracking-tight">Open</h4>
                   
-                  <button className="flex items-center gap-3 px-8 py-4 bg-[#18357a] hover:bg-[#ffc107] text-white hover:text-[#18357a] rounded-2xl transition-all duration-300 shadow-lg shadow-black/10 scale-110">
-                      <div className="w-2 h-2 rounded-full bg-[#ffc107] group-hover:bg-[#18357a] animate-pulse" />
-                      <span className="text-[11px] font-black uppercase tracking-widest">Apply Now</span>
+                  <button className="flex items-center gap-2.5 px-6 py-3 bg-[#18357a] hover:bg-[#ffc107] text-white hover:text-[#18357a] rounded-xl transition-all duration-300 shadow-md shadow-black/5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover:bg-[#18357a] animate-pulse" />
+                      <span className="text-[9px] font-black uppercase tracking-widest">Apply Now</span>
                   </button>
 
                   {/* Attachment Screws */}
-                  <div className="absolute top-4 left-0 right-0 flex justify-between px-6">
-                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
-                     <div className="w-2.5 h-2.5 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
+                  <div className="absolute top-3 left-0 right-0 flex justify-between px-5">
+                     <div className="w-2 h-2 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
+                     <div className="w-2 h-2 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
                   </div>
               </motion.div>
 
-              <p className="mt-6 text-[11px] font-black text-slate-400 uppercase tracking-[0.4em]">Academic Session 2025-26</p>
+              <p className="mt-4 text-[9px] font-black text-slate-400 uppercase tracking-[0.3em]">Academic Session 2026-27</p>
+
+              {/* Feature Highlights */}
+              <div className="mt-8 space-y-4 w-full px-6">
+                 {[
+                    'Institute Research Centre Recognition',
+                    'Industry ready AI Enabled Curriculum',
+                    'Advance Lab Facilities',
+                    'Industry supported Centre of Excellence',
+                    '360 Degree Personality Development',
+                    'Culture of Innovation & Creativity'
+                 ].map((text, i) => (
+                    <motion.div 
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="flex items-center gap-3 group/item cursor-default"
+                    >
+                       <div className="h-0.5 w-3 bg-[#ffc107] opacity-50 group-hover/item:opacity-100 transition-opacity" />
+                       <span className="text-[14px] font-bold text-[#18357a]/80 italic tracking-tight leading-none group-hover/item:text-[#18357a] transition-colors uppercase">
+                          {text}
+                       </span>
+                    </motion.div>
+                 ))}
+              </div>
            </motion.div>
         </div>
 

@@ -16,22 +16,28 @@ import tessolveLogo from '../../assets/main/tessolve.webp'
 
 const stats = [
   {
-    label: "Highest Package",
-    value: "12.50 LPA",
-    sub: "By Tefologic",
+    label: "Highest Salary",
+    value: "12 L",
+    sub: "By Top Industry Leaders",
     icon: TrendingUp
   },
   {
-    label: "Placement Rate",
-    value: "95%",
-    sub: "Across all streams",
-    icon: GraduationCap
-  },
-  {
     label: "Average Salary",
-    value: "4.50 LPA",
+    value: "4.30 L",
     sub: "Industry competitive",
     icon: Building2
+  },
+  {
+    label: "Companies Visited",
+    value: "100+",
+    sub: "Top tier corporates",
+    icon: Briefcase
+  },
+  {
+    label: "% Placement",
+    value: "84%",
+    sub: "Across all streams",
+    icon: GraduationCap
   }
 ]
 
@@ -76,7 +82,7 @@ const Placements = () => {
                 className="inline-flex items-center gap-3 mb-4"
               >
                 <div className="h-0.5 w-10 bg-[#ffc107] rounded-full" />
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-[#ffc107]">Placement Power</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-[#ffc107]">Placement Excellence</span>
               </motion.div>
               <h2 className="text-3xl lg:text-5xl font-black font-display leading-[1.1]">
                 Where Talent <br />

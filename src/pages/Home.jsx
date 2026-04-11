@@ -19,8 +19,8 @@ const Home = () => {
     >
       <Hero />
       <Stats />
-      <Programs />
       <Placements />
+      <Programs />
       <CampusLife />
       <Achievers />
       <Events />
