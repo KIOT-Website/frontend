@@ -2,38 +2,28 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Trophy, ArrowLeft, ArrowRight, Quote, Medal, Sparkles } from 'lucide-react'
 
-// Placeholder images from generated assets
-import arunImg from '../../assets/main/achiever_arun_balaji.webp'
-import nandhiniImg from '../../assets/main/achiever_nandhini_s.webp'
-import sathishImg from '../../assets/main/achiever_sathish_kumar.webp'
+// Actual images from achievements assets
+import tnStartupImg from '../../assets/achievements/tnstartup.jpg'
+import saeImg from '../../assets/achievements/sae.jpg'
 
 const achievements = [
   {
     id: 1,
-    title: "National Hackathon Champions 2025",
-    desc: "Developed an AI-powered traffic system for KIOT smart campus project, securing 1st place among nationwide competitors.",
-    name: "Arun Balaji",
-    dept: "Computer Science and Engineering",
-    image: arunImg,
-    tag: "1st Place Winner"
+    title: "StartupTN – Preincubation Centre",
+    desc: "KIOT received sanction letter to establish the StartupTN – Preincubation Centre with Rs.7.50 Lakh Grant.",
+    name: "Startup Recognition",
+    dept: "Startup Hub",
+    image: tnStartupImg,
+    tag: "Rs.7.50 Lakh Grant"
   },
   {
     id: 2,
-    title: "Inter-College Coding Champion",
-    desc: "Secured top position among 200+ participants in the South-Zone Coding Summit representing KIOT Salem.",
-    name: "Nandhini S",
-    dept: "Information Technology",
-    image: nandhiniImg,
-    tag: "Coding Excellence"
-  },
-  {
-    id: 3,
-    title: "University Rank Holder",
-    desc: "Achieved a prestigious top-10 university rank across all affiliated departments, bringing pride to KIOT.",
-    name: "Sathish Kumar",
-    dept: "Mechanical Engineering",
-    image: sathishImg,
-    tag: "Academic Topper"
+    title: "SAE Best Host Institution Award",
+    desc: "Received by Dr.K.Visagavel Principal, KIOT, Chairman of SAEISS Salem division.",
+    name: "Dr.K.Visagavel",
+    dept: "Principal, KIOT",
+    image: saeImg,
+    tag: "SAE Global Award"
   }
 ]
 
@@ -160,7 +150,7 @@ const Achievers = () => {
                           <p className="text-sm font-black text-[#18357a] uppercase tracking-[0.2em]">
                              {achievements[current].dept}
                           </p>
-                          <p className="text-xs font-medium text-[#64779F] mt-1">Class of 2024-25</p>
+                          <p className="text-xs font-medium text-[#64779F] mt-1">Knowledge Institute of Technology</p>
                        </div>
                     </motion.div>
                  </AnimatePresence>

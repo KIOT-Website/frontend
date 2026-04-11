@@ -178,13 +178,11 @@ const Footer = () => {
       {/* Modern Micro Footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-10 flex flex-col md:flex-row items-center justify-between text-white/50 gap-6 text-[11px] font-black uppercase tracking-widest relative z-10">
           <div className="flex items-center gap-6">
-            <span>&copy; {new Date().getFullYear()} KIOT ADMISSIONS</span>
-            <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-            <Link to="/accreditation-ranking" className="hover:text-[#ffc107]">Policy & Ranking</Link>
+            <span>&copy; {new Date().getFullYear()} Knowledge Institute of Technology. All rights reserved.</span>
           </div>
           <p className="flex items-center gap-2">
              <span className="opacity-40">Developed by</span>
-             <a href="https://www.kanavu.org/" target="_blank" rel="noopener noreferrer" className="text-white font-black hover:text-[#ffc107] transition-colors border-b-2 border-white/10 pb-0.5">KANAVU TECH</a>
+             <a href="https://www.kanavu.org/" target="_blank" rel="noopener noreferrer" className="text-white font-black hover:text-[#ffc107] transition-colors border-b-2 border-white/10 pb-0.5">Kanavu Technologies</a>
           </p>
       </div>
     </footer>

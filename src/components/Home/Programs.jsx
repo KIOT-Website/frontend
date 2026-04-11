@@ -12,7 +12,7 @@ import courseBg from '../../assets/main/home course.png'
 
 const programsData = {
   UG: {
-    title: 'Undergraduate',
+    title: 'UG',
     subtitle: 'B.E. / B.Tech Programmes',
     icon: GraduationCap,
     description: 'Foundation for technical brilliance and engineering innovation.',
@@ -30,7 +30,7 @@ const programsData = {
     ]
   },
   PG: {
-    title: 'Postgraduate',
+    title: 'PG',
     subtitle: 'M.E. / MBA / MCA Programmes',
     icon: Layers,
     description: 'Advanced specialization and leadership in technology & management.',

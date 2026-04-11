@@ -81,13 +81,13 @@ const navLinks = [
     ]
   },
   { name: 'Research & Innovations', href: 'research' },
+  { name: 'COE', href: 'coe' },
   { 
     name: 'Resources', 
     href: 'resources', 
     hasDropdown: true,
     subLinks: [
       { name: 'Autonomous', href: 'autonomous', icon: ShieldCheck },
-      { name: 'COE', href: 'coe', icon: FileText },
       { name: 'Campus Life', href: 'campus-life', icon: Building2 },
       { name: 'Student Life', href: 'student-life', icon: Users },
       { name: 'Alumni', href: 'alumni', icon: GraduationCap },
@@ -327,7 +327,7 @@ const Header = () => {
                           if (link.subLinks) e.preventDefault();
                           else handleNavClick(e, link.name, link.href);
                         }}
-                        className={`inline-flex items-center gap-1 text-[14.5px] font-bold transition-colors whitespace-nowrap py-5 ${
+                        className={`inline-flex items-center gap-1 text-[13px] font-bold transition-colors whitespace-nowrap py-5 ${
                             isActive
                               ? 'text-[#18357a]'
                               : 'text-[#64779F] hover:text-[#18357a]'
