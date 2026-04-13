@@ -1,93 +1,62 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Calendar, ArrowLeft, Mic2, Brain, Megaphone, CheckCircle2, Trophy, MonitorPlay } from 'lucide-react'
+import { Calendar, ArrowLeft, Mic2, Brain, Megaphone, CheckCircle2, Trophy, MonitorPlay, Loader2 } from 'lucide-react'
+import axios from 'axios'
 
-import symposiumImg from '../../assets/main/kiot_symposium.webp'
-import labImg from '../../assets/main/kiot_lab.webp'
-import campusImg from '../../assets/main/kiot-campus.webp'
-
-const eventDatabase = {
-  "College Symposium": [
-    {
-      id: 1,
-      date: "Mar 18, 2026",
-      title: "National Tech Symposium 2026",
-      desc: "Explore groundbreaking innovations, coding competitions, and expert-led tech talks from industry leaders.",
-      icon: Trophy,
-      image: symposiumImg,
-      status: "Upcoming"
-    },
-    {
-      id: 2,
-      date: "Apr 20, 2026",
-      title: "Innovation Hackathon",
-      desc: "A 48-hour intense coding hackathon for students to solve real-world problems.",
-      icon: MonitorPlay,
-      image: labImg,
-      status: "Registration Open"
-    }
-  ],
-  "Workshops": [
-    {
-      id: 3,
-      date: "Mar 12, 2026",
-      title: "AI & Machine Learning Lab",
-      desc: "Hands-on training session with real-world datasets and model building using industry-standard tools.",
-      icon: Brain,
-      image: labImg,
-      status: "Live Registration"
-    },
-    {
-      id: 4,
-      date: "May 15, 2026",
-      title: "Cloud Computing Fundamentals",
-      desc: "Learn AWS and Azure deployment architectures directly from certified cloud architects.",
-      icon: MonitorPlay,
-      image: campusImg,
-      status: "Upcoming"
-    }
-  ],
-  "Seminars": [
-    {
-      id: 5,
-      date: "Jun 05, 2026",
-      title: "Future of Blockchain",
-      desc: "An expert seminar focusing on Web3 ecosystems and smart contract vulnerabilities.",
-      icon: Mic2,
-      image: symposiumImg,
-      status: "Upcoming"
-    }
-  ],
-  "Announcements": [
-    {
-      id: 6,
-      date: "Mar 05, 2026",
-      title: "Admissions Open 2026",
-      desc: "Apply now for various Engineering (UG) and Management (PG) programs for the upcoming academic session.",
-      icon: Megaphone,
-      image: campusImg,
-      status: "Urgent"
-    },
-    {
-      id: 7,
-      date: "Aug 10, 2026",
-      title: "Semester Orientation",
-      desc: "Mandatory orientation for all first-year incoming students at the main auditorium.",
-      icon: CheckCircle2,
-      image: campusImg,
-      status: "Scheduled"
-    }
-  ]
-}
-
-const categories = ["College Symposium", "Workshops", "Seminars", "Announcements"]
+const API_BASE_URL = 'http://localhost:8000'
 
 const EventsPage = () => {
-  const [activeCategory, setActiveCategory] = useState(categories[0])
+  const [dbEvents, setDbEvents] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    const fetchEvents = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/events/`)
+        setDbEvents(res.data)
+      } catch (err) {
+        console.error("Failed to fetch events:", err)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchEvents()
   }, [])
+
+  const formatDate = (dateStr) => {
+    try {
+      const date = new Date(dateStr)
+      return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: '2-digit',
+        year: 'numeric'
+      })
+    } catch (e) {
+      return dateStr
+    }
+  }
+
+  const fallbackEvents = [
+    {
+      id: "f1",
+      event_name: "National Tech Symposium 2026",
+      event_date: "2026-03-18",
+      short_description: "Explore groundbreaking innovations, coding competitions, and expert-led tech talks from industry leaders.",
+      media_url: "https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800",
+      media_type: "image"
+    },
+    {
+      id: "f2",
+      event_name: "Innovation Hackathon",
+      event_date: "2026-04-20",
+      short_description: "A 48-hour intense coding hackathon for students to solve real-world problems.",
+      media_url: "https://images.unsplash.com/photo-1591453089816-0fbb971bac45?auto=format&fit=crop&q=80&w=800",
+      media_type: "image"
+    }
+  ]
+
+  const records = dbEvents.length > 0 ? dbEvents : (loading ? [] : fallbackEvents)
 
   return (
     <div className="min-h-screen bg-[#FCFDFD] pt-10 pb-20">
@@ -109,78 +78,76 @@ const EventsPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-12">
-        
-        {/* Navigation Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 lg:gap-4 mb-16">
-          {categories.map(cat => (
-             <button
-               key={cat}
-               onClick={() => setActiveCategory(cat)}
-               className={`relative px-6 py-3 rounded-xl text-xs md:text-sm font-black uppercase tracking-widest transition-all ${activeCategory === cat ? 'text-white' : 'text-[#64779F] bg-white border border-[#D5E2F4]/60 hover:border-[#18357a]/30 hover:bg-[#18357a]/5'}`}
-             >
-                {activeCategory === cat && (
-                  <motion.div 
-                    layoutId="eventPageTab"
-                    className="absolute inset-0 bg-[#18357a] rounded-xl -z-10 shadow-lg"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10">{cat}</span>
-             </button>
-          ))}
-        </div>
-
         {/* Dynamic Event Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-           <AnimatePresence mode="popLayout">
-              {eventDatabase[activeCategory].map((ev, idx) => (
-                <motion.div
-                   key={ev.id}
-                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                   animate={{ opacity: 1, scale: 1, y: 0 }}
-                   exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                   transition={{ duration: 0.4, delay: idx * 0.1 }}
-                   className="bg-white rounded-[32px] overflow-hidden border border-[#D5E2F4]/60 shadow-[0_20px_50px_rgba(34,66,146,0.06)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.12)] transition-all duration-500 group flex flex-col h-full"
-                >
-                   {/* Card Image */}
-                   <div className="h-56 w-full relative overflow-hidden">
-                      <img src={ev.image} alt={ev.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/80 to-transparent" />
-                      
-                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                         <div className="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white text-xs font-black uppercase tracking-widest flex items-center gap-2">
-                           <Calendar size={14} className="text-[#ffc107]" />
-                           {ev.date}
-                         </div>
-                         <div className={`h-2.5 w-2.5 rounded-full ${ev.status === 'Urgent' ? 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)]' : 'bg-[#ffc107] shadow-[0_0_10px_rgba(255,193,7,0.8)]'} animate-pulse`} />
-                      </div>
-                   </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
+           {loading ? (
+              <div className="col-span-full flex flex-col items-center justify-center py-20 opacity-30">
+                <Loader2 size={48} className="animate-spin text-[#18357a] mb-4" />
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#18357a]">Fetching Events...</p>
+              </div>
+           ) : (
+              <AnimatePresence mode="popLayout">
+                {records.map((ev, idx) => (
+                  <motion.div
+                    key={ev.id}
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    className="bg-white rounded-[32px] overflow-hidden border border-[#D5E2F4]/60 shadow-[0_20px_50px_rgba(34,66,146,0.06)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.12)] transition-all duration-500 group flex flex-col h-full"
+                  >
+                    {/* Card Image */}
+                    <div className="h-56 w-full relative overflow-hidden">
+                        {ev.media_type === 'video' ? (
+                          <video 
+                            src={ev.media_url} 
+                            muted loop playsInline 
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                            onMouseOver={e => e.target.play()}
+                            onMouseOut={e => e.target.pause()}
+                          />
+                        ) : (
+                          <img 
+                            src={ev.media_url} 
+                            alt={ev.event_name} 
+                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" 
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/80 to-transparent" />
+                        
+                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                          <div className="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+                             <Calendar size={14} className="text-[#ffc107]" />
+                             {formatDate(ev.event_date)}
+                          </div>
+                          <div className="h-2.5 w-2.5 rounded-full bg-[#ffc107] shadow-[0_0_10px_rgba(255,193,7,0.8)] animate-pulse" />
+                        </div>
+                    </div>
 
-                   {/* Card Body */}
-                   <div className="p-8 flex flex-col flex-grow">
-                      <div className="mb-4">
-                         <h3 className="text-xl lg:text-2xl font-black text-[#18357a] font-display leading-[1.2] mb-3 group-hover:text-[#ffc107] transition-colors">
-                           {ev.title}
-                         </h3>
-                         <p className="text-[#64779F] text-sm leading-relaxed">
-                           {ev.desc}
-                         </p>
-                      </div>
+                    {/* Card Body */}
+                    <div className="p-8 flex flex-col flex-grow">
+                        <div className="mb-4">
+                          <h3 className="text-xl lg:text-2xl font-black text-[#18357a] font-display leading-[1.2] mb-3 group-hover:text-[#ffc107] transition-colors line-clamp-2">
+                             {ev.event_name}
+                          </h3>
+                          <p className="text-[#64779F] text-sm leading-relaxed line-clamp-4">
+                             {ev.short_description}
+                          </p>
+                        </div>
 
-                      <div className="mt-auto pt-6 border-t border-[#D5E2F4]/50 flex items-center justify-between">
-                         <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">
-                            {ev.status}
-                         </span>
-                         <div className="h-10 w-10 rounded-full bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-colors cursor-pointer">
-                            <ArrowLeft className="h-4 w-4 rotate-180" />
-                         </div>
-                      </div>
-                   </div>
-                </motion.div>
-              ))}
-           </AnimatePresence>
-        </div>
+                        <div className="mt-auto pt-6 border-t border-[#D5E2F4]/50 flex items-center justify-between">
+                          <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">
+                             Institutional
+                          </span>
+                          <div className="h-10 w-10 rounded-full bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-colors cursor-pointer">
+                             <ArrowLeft className="h-4 w-4 rotate-180" />
+                          </div>
+                        </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+           )}
 
       </div>
     </div>

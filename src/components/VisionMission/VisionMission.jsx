@@ -90,7 +90,7 @@ const VisionMission = () => {
   ]
 
   return (
-    <div className="relative bg-[#FAFBFF] pt-16 pb-24 min-h-screen overflow-x-hidden">
+    <div id="values" className="relative bg-[#FAFBFF] pt-16 pb-24 min-h-screen overflow-x-hidden border-t border-slate-100">
       
       {/* Background Graphic Decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />

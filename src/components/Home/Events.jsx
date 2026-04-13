@@ -1,134 +1,194 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Calendar, Mic2, Brain, Megaphone, ArrowRight, UserCheck, Timer } from 'lucide-react'
+import { Calendar, Mic2, Brain, Megaphone, ArrowRight, Timer, Loader2, ChevronRight, MapPin } from 'lucide-react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
-// Assets
-import symposiumImg from '../../assets/main/kiot_symposium.webp'
-import labImg from '../../assets/main/kiot_lab.webp'
-import campusImg from '../../assets/main/kiot-campus.webp'
-
-const events = [
-  {
-    id: 1,
-    date: "Mar 18, 2026",
-    title: "National Tech Symposium",
-    desc: "Explore groundbreaking innovations, coding competitions, and expert-led tech talks from industry leaders.",
-    type: "Events",
-    icon: Mic2,
-    image: symposiumImg,
-    status: "Upcoming"
-  },
-  {
-    id: 2,
-    date: "Mar 12, 2026",
-    title: "AI & Machine Learning Workshop",
-    desc: "Hands-on training session with real-world datasets and model building using industry-standard tools.",
-    type: "Workshops",
-    icon: Brain,
-    image: labImg,
-    status: "Live Registration"
-  },
-  {
-    id: 3,
-    date: "Mar 05, 2026",
-    title: "Admissions Open 2026",
-    desc: "Apply now for various Engineering (UG) and Management (PG) programs for the upcoming academic session.",
-    type: "Announcements",
-    icon: Megaphone,
-    image: campusImg,
-    status: "Urgent"
-  }
-]
+const API_BASE_URL = 'http://localhost:8000'
 
 const Events = ({ onEventsClick }) => {
-  const displayEvents = events.slice(0, 3)
+  const [dbEvents, setDbEvents] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const res = await axios.get(`${API_BASE_URL}/events/`)
+        // The API returns events sorted by date or ID. 
+        // We'll take the first 3 for the home page.
+        setDbEvents(res.data.slice(0, 3))
+      } catch (err) {
+        console.error("Failed to fetch events:", err)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchEvents()
+  }, [])
+
+  const formatDate = (dateStr) => {
+    try {
+      const date = new Date(dateStr)
+      return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: '2-digit',
+        year: 'numeric'
+      })
+    } catch (e) {
+      return dateStr
+    }
+  }
+
+  // Fallback data if DB is empty or fetching fails
+  const fallbackEvents = [
+    {
+      id: "f1",
+      event_name: "National Tech Symposium",
+      event_date: "2026-03-18",
+      short_description: "Explore groundbreaking innovations, coding competitions, and expert-led tech talks from industry leaders.",
+      media_type: "image",
+      media_url: "https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+      id: "f2",
+      event_name: "AI & Machine Learning Workshop",
+      event_date: "2026-03-12",
+      short_description: "Hands-on training session with real-world datasets and model building using industry-standard tools.",
+      media_type: "image",
+      media_url: "https://images.unsplash.com/photo-1591453089816-0fbb971bac45?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+       id: "f3",
+       event_name: "Admissions Open 2026",
+       event_date: "2026-03-05",
+       short_description: "Apply now for various Engineering (UG) and Management (PG) programs for the upcoming academic session.",
+       media_type: "image",
+       media_url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
+    }
+  ]
+
+  const records = dbEvents.length > 0 ? dbEvents : (loading ? [] : fallbackEvents)
+
+  const slugify = (text) => {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');            // Trim - from end of text
+  }
 
   return (
-    <section className="relative py-10 lg:py-16 bg-[#FCFDFD] overflow-hidden">
+    <section id="events" className="relative py-16 lg:py-24 bg-[#FCFDFD] overflow-hidden">
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Header Section */}
-        <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
-           {/* Section Header */}
-            <div className="max-w-2xl flex flex-col items-center">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:mb-20 gap-8">
+            <div className="max-w-2xl">
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-2 mb-4 bg-[#18357a]/5 px-3 py-1 rounded-full border border-[#18357a]/10"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="inline-flex items-center gap-2 mb-5 bg-[#18357a]/5 px-4 py-1.5 rounded-full border border-[#18357a]/10"
               >
                 <Timer size={14} className="text-[#ffc107]" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#18357a]">Campus Buzz</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Institutional Hub</span>
               </motion.div>
-              <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-display leading-[1.1]">
+              <h2 className="text-4xl lg:text-6xl font-black text-[#18357a] font-display leading-[1.1]">
                 Upcoming <span className="text-[#ffc107]">Events</span>
               </h2>
            </div>
+           
+
         </div>
 
-        {/* SIDE-BY-SIDE GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-           <AnimatePresence mode="popLayout">
-              {displayEvents.map((event, idx) => (
-                <motion.div
-                  key={event.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="group relative bg-white rounded-3xl p-5 lg:p-7 border border-[#D5E2F4]/60 shadow-[0_20px_50px_rgba(34,66,146,0.04)] hover:shadow-[0_40px_100px_rgba(34,66,146,0.1)] transition-all duration-500 overflow-hidden flex flex-col h-full"
-                >
-                   {/* Image Area */}
-                   <div className="w-full h-[180px] lg:h-[200px] relative rounded-2xl overflow-hidden mb-6">
-                      <img 
-                        src={event.image} 
-                        alt={event.title} 
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" 
-                      />
-                      <div className="absolute inset-0 bg-[#18357a]/10 group-hover:bg-transparent transition-all" />
-                      
-                      {/* Corner Type Tag */}
-                      <div className="absolute top-3 left-3 px-3 py-1 bg-white/90 backdrop-blur-md rounded-md text-[9px] font-black uppercase tracking-widest text-[#18357a] shadow-sm">
-                          {event.type}
-                      </div>
-                   </div>
+        {/* LIST LAYOUT */}
+        <div className="max-w-5xl mx-auto space-y-6">
+           {loading ? (
+             <div className="flex flex-col items-center justify-center py-24 opacity-30">
+                <Loader2 size={48} className="animate-spin text-[#18357a] mb-6" />
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#18357a]">Fetching Latest Buzz...</p>
+             </div>
+           ) : records.length === 0 ? (
+             <div className="text-center py-20 bg-slate-50 rounded-[2.5rem] border-2 border-dashed border-slate-100">
+                <Calendar size={48} className="mx-auto text-slate-200 mb-4" />
+                <p className="font-black text-[10px] uppercase tracking-widest text-slate-400">No events found at the moment</p>
+             </div>
+           ) : (
+             <div className="space-y-4">
+                {records.map((event, idx) => (
+                  <motion.div
+                    key={event.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  >
+                    <Link 
+                      to={`/events/${slugify(event.event_name)}`} 
+                      state={{ from: 'home', eventId: event.id }}
+                      className="group bg-white rounded-2xl p-4 lg:p-5 border border-[#D5E2F4]/60 shadow-[0_10px_40px_rgba(34,66,146,0.03)] hover:shadow-[0_30px_70px_rgba(34,66,146,0.1)] hover:border-[#ffc107]/30 transition-all duration-500 flex flex-col md:flex-row md:items-center gap-4 lg:gap-8 relative overflow-hidden active:scale-[0.99]"
+                    >
+                       <div className="absolute top-0 right-0 w-24 h-24 bg-[#18357a]/[0.02] rounded-bl-full -mr-12 -mt-12 group-hover:bg-[#ffc107]/5 transition-colors" />
+                       
+                       {/* Date Badge */}
+                       <div className="flex flex-col items-center justify-center min-w-[80px] h-[80px] bg-slate-50 rounded-xl border border-slate-100 group-hover:bg-[#18357a] group-hover:border-[#18357a] transition-all duration-500 flex-shrink-0">
+                          <span className="text-[8px] font-black uppercase tracking-widest text-[#64779F] group-hover:text-white/60 mb-0.5">
+                             {formatDate(event.event_date).split(' ')[0]}
+                          </span>
+                          <span className="text-2xl font-black text-[#18357a] group-hover:text-[#ffc107]">
+                             {formatDate(event.event_date).split(' ')[1].replace(',', '')}
+                          </span>
+                          <span className="text-[8px] font-black uppercase tracking-widest text-[#18357a] group-hover:text-white">
+                             {formatDate(event.event_date).split(' ')[2]}
+                          </span>
+                       </div>
 
-                   {/* Content Area */}
-                   <div className="flex-grow flex flex-col">
-                      <p className="text-[10px] lg:text-[11px] font-black text-[#ffc107] uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
-                         <Calendar size={14} /> 
-                         {event.date}
-                      </p>
-                      
-                      <h3 className="text-xl lg:text-2xl font-black text-[#18357a] font-display mb-3 leading-tight group-hover:text-[#ffc107] transition-colors">
-                        {event.title}
-                      </h3>
-                      
-                      <p className="text-xs lg:text-sm font-medium text-[#64779F] leading-relaxed mb-6 opacity-80 flex-grow">
-                        {event.desc}
-                      </p>
-                      
-                      {/* Bottom Footer */}
-                      <div className="pt-5 border-t border-[#18357a]/5 flex items-center justify-between mt-auto">
-                         <div className="flex items-center gap-2">
-                            <div className={`h-2 w-2 rounded-full ${event.status === 'Urgent' ? 'bg-red-500' : 'bg-green-500'} animate-pulse`} />
-                            <span className="text-[9px] font-black uppercase text-[#18357a]/60 tracking-widest">{event.status}</span>
-                         </div>
-                         <div className="flex items-center gap-1 group/btn cursor-pointer">
-                           <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest group-hover/btn:text-[#ffc107] transition-colors">Details</span>
-                           <ArrowRight size={14} className="text-[#18357a] group-hover/btn:translate-x-1 group-hover/btn:text-[#ffc107] transition-all" />
-                         </div>
-                      </div>
-                   </div>
-                </motion.div>
-              ))}
-           </AnimatePresence>
+                       {/* Main Content */}
+                       <div className="flex-grow">
+                          <div className="flex items-center gap-2 mb-2">
+                             <div className="h-1 w-1 rounded-full bg-green-500 animate-pulse" />
+                             <span className="text-[8px] font-black text-[#18357a] uppercase tracking-widest opacity-60">Registration Open</span>
+                          </div>
+                          
+                          <h3 className="text-lg lg:text-xl font-black text-[#18357a] group-hover:translate-x-1 transition-transform duration-500 leading-tight">
+                            {event.event_name}
+                          </h3>
+                          
+                          <div className="mt-2 flex flex-wrap items-center gap-4">
+                             <div className="flex items-center gap-1.5 text-[#64779F]">
+                                <Calendar size={12} className="text-[#ffc107]" />
+                                <span className="text-[10px] font-bold uppercase tracking-wider">
+                                  {formatDate(event.event_date)}
+                                  {event.end_date && event.end_date !== event.event_date && (
+                                    ` - ${formatDate(event.end_date)}`
+                                  )}
+                                  {!event.end_date && ''}
+                                </span>
+                             </div>
+                             <div className="flex items-center gap-1.5 text-[#64779F]">
+                                <MapPin size={12} className="text-[#ffc107]" />
+                                <span className="text-[10px] font-bold uppercase tracking-wider">{event.venue || 'Main Auditorium'}</span>
+                             </div>
+                          </div>
+                       </div>
+
+                       {/* Action */}
+                       <div className="flex items-center gap-3 text-[9px] font-black uppercase tracking-[0.2em] flex-shrink-0 ml-auto mr-1">
+                          <span className="bg-[#18357a] text-white px-4 py-2 rounded-lg group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500 shadow-sm">
+                            View Details
+                          </span>
+                          <div className="h-10 w-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-[#18357a] group-hover:text-white group-hover:border-[#18357a] transition-all duration-500 shadow-sm">
+                             <ChevronRight size={16} />
+                          </div>
+                       </div>
+                    </Link>
+                  </motion.div>
+                ))}
+             </div>
+           )}
         </div>
-
-
-
       </div>
-
     </section>
   )
 }

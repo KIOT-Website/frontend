@@ -42,6 +42,17 @@ const NonIndexedPublicationsPage = () => {
             { id: 15, author: "Mr.M.Chandraman", title: "Smart Wireless Water Meter With WEB DB Using Internet of Things", journal: "International Journal of Engineering Research & Technology", volume: "Vol 10, Issue 08", issn: "2278-0181", year: "July 2022" },
             { id: 16, author: "Mr.A.Arun", title: "Wireless Controlled Distribution Transformer Load Management System", journal: "International Journal of Engineering Research & Technology", volume: "Vol 10, Issue 08", issn: "2278-0181", year: "July 2022" },
             { id: 17, author: "Mrs. L. Chitrapaavai", title: "Hydroponics Irrigation System using IoT", journal: "International Journal of Engineering Research & Technology", volume: "Vol 10, Issue 08", issn: "2278-0181", year: "July 2022" }
+        ],
+        'civil-engineering': [
+            { id: 1, author: "Dr.P.M.Shanmugavadivu", title: "Structural behaviour of quarry dust concrete with super cover", journal: "Indian Concrete Journal", volume: "Vol.84, No.6", issn: "-", year: "2010" },
+            { id: 2, author: "Dr.P.M.Shanmugavadivu", title: "Rice Husk Ash Paver Blocks", journal: "CIT journal of Research", volume: "Vol.1, No.4", issn: "-", year: "2010-11" },
+            { id: 3, author: "Dr.P.M.Shanmugavadivu", title: "Effect of gradation of manufactured sand in acid attack of concrete", journal: "Asian Journal of Chemistry", volume: "Vol.26, No.1", issn: "0970-7077", year: "2014" },
+            { id: 4, author: "Dr.P.M.Shanmugavadivu", title: "An Experimental study on light transmitting concrete", journal: "International Journal of Research in Engineering & Technology", volume: "Vol.3, No.11", issn: "2321-7308", year: "2014" },
+            { id: 5, author: "Dr.G. Siva Natarajan", title: "Statistical Analysis for Hydrogeochemical Data Interpretation in Upper Thirumanimuthar Sub Basin, Cauvery River", journal: "Journal of Annamalai University", volume: "Vol.46", issn: "-", year: "2010" },
+            { id: 6, author: "Dr.G. Siva Natarajan", title: "GIS Study for Locating Village wise Suitable Groundwater Quality Zones in Parts of Veeranam Catchments Area", journal: "Journal of Applied Geochemistry", volume: "Vol.12, No.1", issn: "0972-1967", year: "2009" },
+            { id: 7, author: "Dr.G. Siva Natarajan", title: "Aquifer Zone Thickness Identification for Artificial Rercharge Studies Through Geophysics in GIS at Upper Manimuktha Sub Basin", journal: "Journal of Geological Association & Research Centre", volume: "Vol.16, No.1", issn: "-", year: "2009" },
+            { id: 8, author: "Dr.G. Siva Natarajan", title: "Statistical Analysis for Hydrogeochemical Data Interpretation in Upper Thirumanimuthar Sub Basin, Cauvery River", journal: "Journal of Annamalai University", volume: "Vol.46", issn: "-", year: "2010" },
+            { id: 9, author: "K. Uma Shankar, S. Pradeep Kumar, K. Arun Prakash", title: "Experimental Study On The Behaviour Of Retempered Concrete", journal: "International Journal of Research in Engineering & Technology", volume: "Vol.3, No 11", issn: "2319-1163", year: "2014" }
         ]
     }
 
@@ -123,18 +134,18 @@ const NonIndexedPublicationsPage = () => {
                         <table className="w-full border-collapse text-left">
                             <thead>
                                 <tr className="text-white">
-                                    <th className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px] w-16">#</th>
-                                    <th className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px]">Publication Metadata</th>
-                                    <th className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px]">Journal Details</th>
-                                    <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] uppercase tracking-[2px] pr-8">Period</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">#</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px]">Publication Metadata</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px]">Journal Details</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] pr-8">Period</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-slate-100">
+                            <tbody className="divide-y divide-slate-100 italic">
                                 {filteredPublications.length > 0 ? (
                                     filteredPublications.map((pub, idx) => (
                                         <tr key={pub.id} className="group hover:bg-[#fafcff] transition-all duration-300">
-                                            <td className="px-6 py-8 align-top">
-                                                <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
+                                            <td className="px-6 py-8 align-top border-r border-slate-50">
+                                                <div className="w-8 h-8 bg-[#18357a]/5 rounded-lg flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>

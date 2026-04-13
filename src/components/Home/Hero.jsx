@@ -110,7 +110,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative w-full h-[200px] sm:h-[450px] lg:h-[620px] overflow-hidden bg-white pt-0 pb-0">
+    <section className="relative w-full h-[200px] sm:h-[430px] lg:h-[600px] overflow-hidden bg-white pt-0 pb-0 group">
       
       {/* BACKGROUND SLIDER */}
       <div className="absolute inset-0 z-0 bg-white">
@@ -135,7 +135,7 @@ const Hero = () => {
       </div>
 
       {/* NAVIGATION ARROWS */}
-      <div className="absolute inset-0 z-10 hidden items-center justify-between px-4 sm:flex pointer-events-none">
+      <div className="absolute inset-0 z-10 flex items-center justify-between px-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <button
           onClick={() => move(-1)}
           className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#18357a] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"

@@ -233,6 +233,12 @@ const FacultyPursuingPhdPage = () => {
             { id: 8, name: "Mrs.G.Eswari @ Pechiammal", topic: "Computer Science", supervisor: "Dr.P Pabitha", registration: "23244397295", university: "Anna University", status: "Course work completed" },
             { id: 9, name: "Mr.P.Nareshkumar", topic: "Computer Science", supervisor: "Dr.M.Kumaresan", registration: "JU2025RPHD10492", university: "Jain University", status: "Course work Pursuing" },
             { id: 10, name: "Mrs.A.Kasthuri", topic: "Computer Science", supervisor: "Dr.J.Gowrishankar", registration: "23PHREN043", university: "Jain University", status: "Course work Pursuing" }
+        ],
+        'civil-engineering': [
+            { id: 1, name: "Mr.L.Krishnan", topic: "Structural Engineering", supervisor: "Dr.Gulshan Taj M N A", registration: "Jan & 2020", university: "Anna University" },
+            { id: 2, name: "Mr. S.Arulkesavan", topic: "Concrete Structures", supervisor: "Dr.S.Ramesh", registration: "Jan & 2025", university: "Anna University" },
+            { id: 3, name: "Mr. R.Elavarasan", topic: "Concrete Structures", supervisor: "Dr.P.Mageshkumar", registration: "Jan & 2024", university: "Anna University" },
+            { id: 4, name: "Mr.L.M.Nirmal", topic: "Concrete Technology", supervisor: "Dr.P.Mageshkumar", registration: "Jan & 2025", university: "Anna University" }
         ]
     }
 
@@ -293,11 +299,11 @@ const FacultyPursuingPhdPage = () => {
                         <table className="w-full border-collapse text-left">
                             <thead>
                                 <tr className="text-white">
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px] w-16">S.No.</th>
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Supervision Detail</th>
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Research Scholar & Topic</th>
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Supervisor Affiliate</th>
-                                    <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] uppercase tracking-[2px] pr-8">Year</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">S.No.</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Supervision Detail</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Research Scholar & Topic</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Supervisor Affiliate</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] pr-8">Year</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
@@ -307,8 +313,8 @@ const FacultyPursuingPhdPage = () => {
                                             key={faculty.id}
                                             className="group hover:bg-[#fafcff] transition-all duration-300"
                                         >
-                                            <td className="px-6 py-5">
-                                                <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
+                                            <td className="px-6 py-5 border-r border-slate-50">
+                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>

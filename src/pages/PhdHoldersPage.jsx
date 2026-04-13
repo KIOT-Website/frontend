@@ -231,6 +231,9 @@ const PhdHoldersPage = () => {
             { id: 7, name: "Dr.I.Rajesh", topic: "Poultry Meat Quality Assessment using Image Mining", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
             { id: 8, name: "Dr.P.Malarvizhi", topic: "Energy Efficient Routing for Lifetime Maximization in WSN", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
             { id: 9, name: "Dr.M.Lakshaga jyothi", topic: "Performance Evaluation on Enabling Intelligence using Deep Learning in IoT", year: "2025", university: "Vinayaka Mission's Research Foundation", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } }
+        ],
+        'civil-engineering': [
+            { id: 1, name: "Dr.P.Prasath", topic: "Fibre Reinforced Concrete.", year: "2020", university: "Anna University", publications: { ij: 10, ic: 0, nj: 0, nc: 0 }, guided: "-", beingGuided: "-" }
         ]
     }
 
@@ -291,20 +294,20 @@ const PhdHoldersPage = () => {
                         <table className="w-full border-collapse text-left">
                             <thead>
                                 <tr className="text-white">
-                                    <th rowSpan="2" className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px] w-16 border-r border-[#ffffff10]">S.No.</th>
-                                    <th rowSpan="2" className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px] border-r border-[#ffffff10]">Faculty Details</th>
-                                    <th rowSpan="2" className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px] border-r border-[#ffffff10]">Research Topic</th>
-                                    <th rowSpan="2" className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px] border-r border-[#ffffff10]">Year / University</th>
-                                    <th colSpan="4" className="bg-black px-6 py-2 text-center text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] border-b border-[#ffffff10] border-r border-[#ffffff10]">Publications</th>
-                                    <th colSpan="2" className="bg-black px-6 py-2 text-center text-[10px] font-black text-[#ffc107] uppercase tracking-[2px]">Supervision</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">S.No.</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Faculty Details</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Research Topic</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Year / University</th>
+                                    <th colSpan="4" className="bg-[#0f172a] px-6 py-2 text-center text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] border-b border-white/5 border-r border-white/5">Scholar Publications</th>
+                                    <th colSpan="2" className="bg-[#0f172a] px-6 py-2 text-center text-[10px] font-black text-[#ffc107] uppercase tracking-[2px]">Supervision</th>
                                 </tr>
                                 <tr>
-                                    <th className="bg-black px-4 py-2 text-center text-[9px] font-black text-white/60 uppercase border-r border-[#ffffff10]">IJ</th>
-                                    <th className="bg-black px-4 py-2 text-center text-[9px] font-black text-white/60 uppercase border-r border-[#ffffff10]">IC</th>
-                                    <th className="bg-black px-4 py-2 text-center text-[9px] font-black text-white/60 uppercase border-r border-[#ffffff10]">NJ</th>
-                                    <th className="bg-black px-4 py-2 text-center text-[9px] font-black text-white/60 uppercase border-r border-[#ffffff10]">NC</th>
-                                    <th className="bg-black px-4 py-2 text-center text-[9px] font-black text-white/60 uppercase border-r border-[#ffffff10]">Guided</th>
-                                    <th className="bg-black px-4 py-2 text-center text-[9px] font-black text-white/60 uppercase">Being Guided</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">IJ</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">IC</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">NJ</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">NC</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">Guided</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase">Being Guided</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
@@ -315,7 +318,7 @@ const PhdHoldersPage = () => {
                                             className="group hover:bg-[#fafcff] transition-all duration-300"
                                         >
                                             <td className="px-6 py-5 border-r border-slate-50">
-                                                <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
+                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>

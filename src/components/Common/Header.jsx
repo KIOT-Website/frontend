@@ -39,7 +39,7 @@ import logo from '../../assets/main/logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
 import nirfLogo from '../../assets/main/nirf.webp'
 import nbaLogo from '../../assets/main/NBA1 (1).webp'
-import codeLogo from '../../assets/main/counciling code.webp'
+import codeLogo from '../../assets/main/2653 code .png'
 
 const navLinks = [
   {
@@ -48,8 +48,10 @@ const navLinks = [
     hasDropdown: true,
     subLinks: [
       { name: 'About Us', href: 'about-us', icon: Building2 },
+      { name: 'Our Values', href: 'our-values', icon: Target },
       { name: 'Leadership', href: 'leadership', icon: Users },
       { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
+      { name: 'Academic Council', href: 'academic-council', icon: ShieldCheck },
       { name: 'Guidelines', href: 'guidelines', icon: FileText },
       { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText },
       { name: 'Achievements', href: 'achievements', icon: GraduationCap }
@@ -62,6 +64,7 @@ const navLinks = [
     subLinks: [
       { name: 'Undergraduate (UG)', href: 'academics/undergraduate', icon: GraduationCap },
       { name: 'Postgraduate (PG)', href: 'academics/postgraduate', icon: GraduationCap },
+      { name: 'Autonomous', href: 'academics/autonomous', icon: ShieldCheck },
     ]
   },
   {
@@ -87,7 +90,6 @@ const navLinks = [
     href: 'resources', 
     hasDropdown: true,
     subLinks: [
-      { name: 'Autonomous', href: 'autonomous', icon: ShieldCheck },
       { name: 'Campus Life', href: 'campus-life', icon: Building2 },
       { name: 'Student Life', href: 'student-life', icon: Users },
       { name: 'Alumni', href: 'alumni', icon: GraduationCap },

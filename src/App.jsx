@@ -11,6 +11,7 @@ import Footer from './components/Common/Footer'
 // Page Components
 const Home = lazy(() => import('./pages/Home'))
 import AboutUsPage from './pages/AboutUsPage'
+import OurValuesPage from './pages/OurValuesPage'
 import LeadershipPage from './pages/LeadershipPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
@@ -59,6 +60,7 @@ const NonIndexedPublicationsPage = lazy(() => import('./pages/NonIndexedPublicat
 const ConferencesPage = lazy(() => import('./pages/ConferencesPage'))
 const ResearchProposalsPage = lazy(() => import('./pages/ResearchProposalsPage'))
 const ConsultancyPage = lazy(() => import('./pages/ConsultancyPage'))
+const EventDetailPage = lazy(() => import('./pages/EventDetailPage'))
 
 
 // Simple Loading Fallback
@@ -109,7 +111,24 @@ function App() {
   }, [loading])
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (location.hash) {
+      const id = location.hash.replace('#', '')
+      setTimeout(() => {
+        const element = document.getElementById(id)
+        if (element) {
+          const offset = 120
+          const bodyRect = document.body.getBoundingClientRect().top
+          const elementRect = element.getBoundingClientRect().top
+          const elementPosition = elementRect - bodyRect
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+          })
+        }
+      }, 100)
+    } else {
+      window.scrollTo(0, 0)
+    }
   }, [location])
 
   return (
@@ -142,6 +161,7 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about-us" element={<AboutUsPage />} />
+                  <Route path="/our-values" element={<OurValuesPage />} />
                   <Route path="/leadership" element={<LeadershipPage />} />
                   <Route path="/guidelines" element={<GuidelinesPage />} />
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
@@ -159,6 +179,7 @@ function App() {
                   {/* Academics Pages */}
                   <Route path="/academics/undergraduate" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/postgraduate" element={<AcademicsPageWrapper />} />
+                  <Route path="/academics/autonomous" element={<AutonomousPage />} />
                   <Route path="/ug-programs" element={<AcademicsPageWrapper />} />
                   <Route path="/pg-programs" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
@@ -202,6 +223,7 @@ function App() {
                   <Route path="/blogs" element={<UnderConstruction />} />
 
                   <Route path="/events" element={<EventsPage />} />
+                  <Route path="/events/:eventSlug" element={<EventDetailPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </Suspense>

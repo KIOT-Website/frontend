@@ -91,6 +91,31 @@ const InternationalPublicationsPage = () => {
             { id: 201, author: "P Govindaraju, C Muniraj, PS Periyasamy", title: "Environmental Impact Of High Voltage Insulator Quality Analysis Using Improved Deep Learning", journal: "Journal of environmental protection and ecology", year: "2022" },
             { id: 202, author: "Gunapriya, D, Muniraj, C, Lakshmi, K", title: "Integrated PCA and FIS approach to mechanical fault classification of induction motor", journal: "Journal of Intelligent & Fuzzy Systems", year: "2022" },
             { id: 203, author: "Gunapriya D, Muniraj C & Lakshmi K", title: "Detection and classification of mechanical faults via thermal image pixels analysis and ANFIS", journal: "Journal of Ambient Intelligence and Humanized Computing", year: "2021" }
+        ],
+        'civil-engineering': [
+            { id: 1, author: "Dr.P.M.Shanmugavadivu", title: "Effects of chloride attack on concrete with the replacement of natural sand by manufactured sand as fine aggregate", journal: "Journal of structural Engineering", year: "Dec 2012-Jan 2013" },
+            { id: 2, author: "Dr.P.M.Shanmugavadivu", title: "Effect of physical properties of manufactured sand as fine aggregate in elastic and shrinkage properties of concrete and mortar", journal: "International Journal of Advanced Materials Research", year: "2012" },
+            { id: 3, author: "Dr.P.M.Shanmugavadivu", title: "Effect of Fineness modulus and Specific gravity of manufactured sand as fine aggregate in Mix Proportioning of Concrete", journal: "International Journal of Earth Science & Engineering", year: "2010" },
+            { id: 4, author: "Dr.P.M.Shanmugavadivu", title: "The relationship between the Mechanical properties of Concrete with Manufactured sand is used as fine aggregate", journal: "International Journal of Emerging Technologies and Applications", year: "2010" },
+            { id: 5, author: "Dr.P.M.Shanmugavadivu", title: "The Durability Properties of Concrete with Manufactured Sand", journal: "International Journal of Earth Science & Engineering", year: "2010" },
+            { id: 6, author: "Dr.P.M.Shanmugavadivu", title: "A comparative study on Mechanical Properties of Concrete with Manufactured sand", journal: "International Journal, The Technology World, Malaysia", year: "2009" },
+            { id: 7, author: "Dr.P.M.Shanmugavadivu", title: "An Experimental Investigation On Energy Efficient Light Transmitting Concrete", journal: "Research in Civil and Environmental Engineering", year: "2014" },
+            { id: 8, author: "Dr.P.M.Shanmugavadivu", title: "Corrosion Behavior of Concrete with Partial Replacement of Cement with Rice Husk Ash", journal: "Advances in Materials and Corrosion", year: "2014" },
+            { id: 9, author: "K. Uma shankar", title: "Experimental Study on Compressive Strength of Self Compacting Concrete", journal: "BEST: IJMITE", year: "2013" },
+            { id: 10, author: "K. Uma shankar", title: "Durability Study of Structural Elements Using Fly Ash Aggregates", journal: "BEST: IJMITE", year: "2014" },
+            { id: 11, author: "K. Uma shankar", title: "Experimental Analysis on Effective Utilization of Industrial Waste Materials of Egg Shell, GGBS and Saw Dust Ash", journal: "BEST: IJMITE", year: "2014" },
+            { id: 12, author: "K. Uma shankar", title: "Rehabilitation and Retrofitting of Building Structures", journal: "BEST: IJMITE", year: "2015" },
+            { id: 13, author: "K. Uma shankar", title: "Experimental study on Jute fibre and Banana fibre in Fly ash bricks", journal: "International Journal of Research (IJR)", year: "2015" },
+            { id: 14, author: "K. Uma shankar", title: "Hazardous of waste water disposal", journal: "International Journal of Research (IJR)", year: "2015" },
+            { id: 15, author: "K. Uma shankar", title: "Utilization of textile cloth waste in clay brick", journal: "International Journal of Research (IJR)", year: "2015" },
+            { id: 16, author: "K. Uma shankar", title: "Expansive soil stabilization using waste from sugarcane industry", journal: "International Journal of Futuristic trends in Engineering and Technology", year: "2015" },
+            { id: 17, author: "K. Uma shankar", title: "Feasibility studies of acid resistant bricks using raw and waste materials", journal: "International Journal of Research (IJR)", year: "2015" },
+            { id: 18, author: "K. Arunprakash", title: "Experimental Study on Compressive Strength of Self Compacting Concrete", journal: "BEST: IJMITE", year: "2013" },
+            { id: 19, author: "T. Sarathivelan", title: "INNOVATIVE BRICK MATERIAL", journal: "IJRASET", year: "2015" },
+            { id: 20, author: "V. Scindhuja", title: "An Experimental Study on Granite Dust", journal: "IJAER journal", year: "2015" },
+            { id: 21, author: "G. Siva Natarajan", title: "Two-dimensional Modelling of Flood Inundation in Parts of Kundah River", journal: "International Journal of Research (IJR)", year: "2014" },
+            { id: 22, author: "J.Vidya Nandhini", title: "An experimental investigations on Replacement of sand by Bottom Ash from Mettur and Neyveli thermal power stations", journal: "IJAER journal", year: "2015" },
+            { id: 23, author: "S. Pradeep Kumar", title: "Self closing flood barrier a preventive system to defense extreme high flood events", journal: "IJERT", year: "2015" }
         ]
     }
 
@@ -172,18 +197,18 @@ const InternationalPublicationsPage = () => {
                         <table className="w-full border-collapse text-left">
                             <thead>
                                 <tr className="text-white">
-                                    <th className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px] w-16">#</th>
-                                    <th className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px]">Scholarly Article Detail</th>
-                                    <th className="bg-black px-6 py-5 text-[11px] font-bold uppercase tracking-[2px]">Source & Citation</th>
-                                    <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] uppercase tracking-[2px] pr-8">Timeline</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">#</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px]">Scholarly Article Detail</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px]">Source & Citation</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] pr-8">Timeline</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-slate-100">
+                            <tbody className="divide-y divide-slate-100 italic">
                                 {filteredPublications.length > 0 ? (
                                     filteredPublications.map((pub, idx) => (
                                         <tr key={pub.id} className="group hover:bg-[#fafcff] transition-all duration-300">
-                                            <td className="px-6 py-8 align-top">
-                                                <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
+                                            <td className="px-6 py-8 align-top border-r border-slate-50">
+                                                <div className="w-8 h-8 bg-[#18357a]/5 rounded-lg flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
