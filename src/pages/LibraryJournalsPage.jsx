@@ -166,6 +166,7 @@ const LibraryJournalsPage = () => {
                         ))}
                     </div>
                 </div>
+            </div>
 
             <div className="max-w-7xl mx-auto px-6 py-12">
                 <AnimatePresence mode="wait">
