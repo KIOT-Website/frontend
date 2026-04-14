@@ -62,6 +62,7 @@ const navLinks = [
     subLinks: [
       { name: 'Undergraduate (UG)', href: 'academics/undergraduate', icon: GraduationCap },
       { name: 'Postgraduate (PG)', href: 'academics/postgraduate', icon: GraduationCap },
+      { name: 'Autonomous', href: 'academics/autonomous', icon: ShieldCheck },
     ]
   },
   {
@@ -87,7 +88,6 @@ const navLinks = [
     href: 'resources', 
     hasDropdown: true,
     subLinks: [
-      { name: 'Autonomous', href: 'autonomous', icon: ShieldCheck },
       { name: 'Campus Life', href: 'campus-life', icon: Building2 },
       { name: 'Student Life', href: 'student-life', icon: Users },
       { name: 'Alumni', href: 'alumni', icon: GraduationCap },

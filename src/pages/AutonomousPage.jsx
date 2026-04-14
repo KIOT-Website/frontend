@@ -312,16 +312,13 @@ const AutonomousPage = () => {
 
                     <div className="mt-12 p-8 rounded-[2rem] bg-[#18357a] relative overflow-hidden group">
                          <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03]" />
-                         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                         <div className="relative z-10 text-center md:text-left">
                             <div>
                                 <h4 className="text-white font-black text-lg uppercase tracking-tight mb-2">Academic CDDA Integration</h4>
                                 <p className="text-white/60 text-xs font-bold uppercase tracking-widest max-w-xl leading-relaxed">
                                     The Board of Studies ensures academic excellence through rigorous curriculum review and industry-aligned committee supervision.
                                 </p>
                             </div>
-                            <button className="px-8 py-4 bg-[#ffc107] text-[#18357a] rounded-2xl font-black text-[10px] uppercase tracking-[2px] shadow-xl shadow-black/10 hover:translate-y-[-2px] transition-all">
-                                View Full Directory
-                            </button>
                          </div>
                     </div>
                 </div>

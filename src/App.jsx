@@ -159,6 +159,7 @@ function App() {
                   {/* Academics Pages */}
                   <Route path="/academics/undergraduate" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/postgraduate" element={<AcademicsPageWrapper />} />
+                  <Route path="/academics/autonomous" element={<AutonomousPage />} />
                   <Route path="/ug-programs" element={<AcademicsPageWrapper />} />
                   <Route path="/pg-programs" element={<AcademicsPageWrapper />} />
                   <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
