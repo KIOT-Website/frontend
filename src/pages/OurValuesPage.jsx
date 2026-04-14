@@ -3,17 +3,6 @@ import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 
 const OurValuesPage = () => {
-  useEffect(() => {
-    const hiddenScrollbarClass = 'page-scrollbar-hidden'
-
-    document.documentElement.classList.add(hiddenScrollbarClass)
-    document.body.classList.add(hiddenScrollbarClass)
-
-    return () => {
-      document.documentElement.classList.remove(hiddenScrollbarClass)
-      document.body.classList.remove(hiddenScrollbarClass)
-    }
-  }, [])
 
   return (
     <motion.div

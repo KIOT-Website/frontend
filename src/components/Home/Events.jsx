@@ -127,59 +127,62 @@ const Events = ({ onEventsClick }) => {
                     <Link 
                       to={`/events/${slugify(event.event_name)}`} 
                       state={{ from: 'home', eventId: event.id }}
-                      className="group bg-white rounded-2xl p-4 lg:p-5 border border-[#D5E2F4]/60 shadow-[0_10px_40px_rgba(34,66,146,0.03)] hover:shadow-[0_30px_70px_rgba(34,66,146,0.1)] hover:border-[#ffc107]/30 transition-all duration-500 flex flex-col md:flex-row md:items-center gap-4 lg:gap-8 relative overflow-hidden active:scale-[0.99]"
+                      className="group bg-white rounded-3xl p-5 lg:p-6 border border-[#D5E2F4]/60 shadow-[0_10px_40px_rgba(34,66,146,0.03)] hover:shadow-[0_30px_70px_rgba(34,66,146,0.1)] hover:border-[#ffc107]/30 transition-all duration-500 flex flex-col md:flex-row md:items-center gap-6 lg:gap-10 relative overflow-hidden active:scale-[0.98]"
                     >
-                       <div className="absolute top-0 right-0 w-24 h-24 bg-[#18357a]/[0.02] rounded-bl-full -mr-12 -mt-12 group-hover:bg-[#ffc107]/5 transition-colors" />
+                       <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/[0.02] rounded-bl-full -mr-16 -mt-16 group-hover:bg-[#ffc107]/5 transition-colors" />
                        
                        {/* Date Badge */}
-                       <div className="flex flex-col items-center justify-center min-w-[80px] h-[80px] bg-slate-50 rounded-xl border border-slate-100 group-hover:bg-[#18357a] group-hover:border-[#18357a] transition-all duration-500 flex-shrink-0">
-                          <span className="text-[8px] font-black uppercase tracking-widest text-[#64779F] group-hover:text-white/60 mb-0.5">
+                       <div className="flex flex-col items-center justify-center min-w-[90px] h-[90px] md:min-w-[85px] md:h-[85px] bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-[#18357a] group-hover:border-[#18357a] transition-all duration-500 flex-shrink-0 self-center md:self-auto shadow-sm group-hover:shadow-lg group-hover:-translate-y-1 md:group-hover:translate-y-0">
+                          <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#64779F] group-hover:text-white/70 mb-0.5 transition-colors">
                              {formatDate(event.event_date).split(' ')[0]}
                           </span>
-                          <span className="text-2xl font-black text-[#18357a] group-hover:text-[#ffc107]">
+                          <span className="text-3xl md:text-2xl font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors">
                              {formatDate(event.event_date).split(' ')[1].replace(',', '')}
                           </span>
-                          <span className="text-[8px] font-black uppercase tracking-widest text-[#18357a] group-hover:text-white">
+                          <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#18357a] group-hover:text-white transition-colors">
                              {formatDate(event.event_date).split(' ')[2]}
                           </span>
                        </div>
 
                        {/* Main Content */}
-                       <div className="flex-grow">
-                          <div className="flex items-center gap-2 mb-2">
-                             <div className="h-1 w-1 rounded-full bg-green-500 animate-pulse" />
-                             <span className="text-[8px] font-black text-[#18357a] uppercase tracking-widest opacity-60">Registration Open</span>
+                       <div className="flex-grow text-center md:text-left">
+                          <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                             <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                             <span className="text-[9px] font-black text-[#18357a] uppercase tracking-[0.25em] opacity-70">Registration Open</span>
                           </div>
                           
-                          <h3 className="text-lg lg:text-xl font-black text-[#18357a] group-hover:translate-x-1 transition-transform duration-500 leading-tight">
+                          <h3 className="text-xl md:text-xl lg:text-2xl font-black text-[#18357a] md:group-hover:translate-x-2 transition-all duration-500 leading-tight mb-4">
                             {event.event_name}
                           </h3>
                           
-                          <div className="mt-2 flex flex-wrap items-center gap-4">
-                             <div className="flex items-center gap-1.5 text-[#64779F]">
-                                <Calendar size={12} className="text-[#ffc107]" />
-                                <span className="text-[10px] font-bold uppercase tracking-wider">
+                          <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6">
+                             <div className="flex items-center gap-2 text-[#64779F]">
+                                <div className="p-1.5 rounded-lg bg-[#ffc107]/10">
+                                   <Calendar size={14} className="text-[#ffc107]" />
+                                </div>
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-[#18357a]/80">
                                   {formatDate(event.event_date)}
                                   {event.end_date && event.end_date !== event.event_date && (
                                     ` - ${formatDate(event.end_date)}`
                                   )}
-                                  {!event.end_date && ''}
                                 </span>
                              </div>
-                             <div className="flex items-center gap-1.5 text-[#64779F]">
-                                <MapPin size={12} className="text-[#ffc107]" />
-                                <span className="text-[10px] font-bold uppercase tracking-wider">{event.venue || 'Main Auditorium'}</span>
+                             <div className="flex items-center gap-2 text-[#64779F]">
+                                <div className="p-1.5 rounded-lg bg-[#18357a]/5">
+                                   <MapPin size={14} className="text-[#18357a]" />
+                                </div>
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-[#18357a]/80">{event.venue || 'Main Auditorium'}</span>
                              </div>
                           </div>
                        </div>
 
                        {/* Action */}
-                       <div className="flex items-center gap-3 text-[9px] font-black uppercase tracking-[0.2em] flex-shrink-0 ml-auto mr-1">
-                          <span className="bg-[#18357a] text-white px-4 py-2 rounded-lg group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500 shadow-sm">
+                       <div className="flex items-center justify-center md:justify-end gap-3 flex-shrink-0 md:ml-auto w-full md:w-auto pt-4 md:pt-0 border-t border-slate-50 md:border-0">
+                          <span className="flex-grow md:flex-grow-0 text-center bg-[#18357a] text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500 shadow-md group-hover:shadow-[#ffc107]/20">
                             View Details
                           </span>
-                          <div className="h-10 w-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-[#18357a] group-hover:text-white group-hover:border-[#18357a] transition-all duration-500 shadow-sm">
-                             <ChevronRight size={16} />
+                          <div className="h-12 w-12 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-[#18357a] group-hover:text-white group-hover:border-[#18357a] transition-all duration-500 shadow-sm hidden sm:flex">
+                             <ChevronRight size={18} />
                           </div>
                        </div>
                     </Link>

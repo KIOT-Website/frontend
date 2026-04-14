@@ -53,8 +53,7 @@ const navLinks = [
       { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
       { name: 'Academic Council', href: 'academic-council', icon: ShieldCheck },
       { name: 'Guidelines', href: 'guidelines', icon: FileText },
-      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText },
-      { name: 'Achievements', href: 'achievements', icon: GraduationCap }
+      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText }
     ]
   },
   {

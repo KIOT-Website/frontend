@@ -48,7 +48,7 @@ const GuidelinesPage = () => {
   }
 
   return (
-    <div className="bg-[#FCFDFD] min-h-screen font-inter selection:bg-[#ffc107]/20 overflow-x-hidden">
+    <div className="bg-[#FCFDFD] min-h-screen font-inter selection:bg-[#ffc107]/20">
       
       {/* 🔷 1. TOP SECTION (IMAGE + INTRO) */}
       <section className="relative pt-16 lg:pt-24 pb-6 border-b border-slate-100">
@@ -96,11 +96,11 @@ const GuidelinesPage = () => {
       </section>
 
       {/* 🔷 2. MAIN SECTION (STICKY LEFT + SCROLL RIGHT) */}
-      <section className="w-full px-4 lg:px-12 pt-4 lg:pt-10 pb-10 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+      <section className="w-full px-4 lg:px-12 pt-4 lg:pt-10 pb-10 grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-16">
         
         {/* 🔹 LEFT SIDE (Sticky Menu) */}
-        <aside className="hidden lg:block lg:w-1/5">
-          <div className="lg:sticky lg:top-[140px] space-y-8">
+        <aside className="hidden lg:block sticky top-[130px] self-start h-fit z-30">
+          <div className="space-y-8">
             <div className="space-y-4">
               <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-8">Directories</p>
               <nav className="flex flex-col gap-6">
@@ -122,7 +122,7 @@ const GuidelinesPage = () => {
         </aside>
 
         {/* 🔹 RIGHT SIDE (Content Flow) */}
-        <main className="lg:w-4/5 space-y-12 pb-16">
+        <main className="space-y-12 pb-16">
           
           {/* Section: Administrators */}
           <section id="administrators" className="scroll-mt-32">

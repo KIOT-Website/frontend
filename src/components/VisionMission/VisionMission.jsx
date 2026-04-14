@@ -90,13 +90,13 @@ const VisionMission = () => {
   ]
 
   return (
-    <div id="values" className="relative bg-[#FAFBFF] pt-16 pb-24 min-h-screen overflow-x-hidden border-t border-slate-100">
+    <div id="values" className="relative bg-[#FAFBFF] pt-16 pb-24 min-h-screen border-t border-slate-100">
       
       {/* Background Graphic Decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none opacity-50" />
 
-      <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto overflow-x-hidden">
+      <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto">
         
         {/* Header Section - Refined to match About Us style */}
         <div className="text-center mb-10 lg:mb-12 px-4 overflow-hidden">

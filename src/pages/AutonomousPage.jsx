@@ -81,12 +81,6 @@ const AutonomousPage = () => {
                     AUTONOMOUS <span className="text-[#ffc107]">PORTAL</span>
                 </h1>
 
-                {/* Breadcrumbs */}
-                <div className="flex items-center justify-center gap-4 text-white/60 text-[10px] font-black uppercase tracking-[2px]">
-                   <Link to="/" className="hover:text-[#ffc107] transition-colors">Home</Link>
-                   <ChevronRight size={14} className="opacity-40" />
-                   <span className="text-[#ffc107]">Autonomous</span>
-                </div>
             </motion.div>
         </div>
       </section>
