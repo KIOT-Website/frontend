@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Slide images from banner folder
-import slide1 from '../../assets/banner/web-01.webp'
+import slide1 from '../../assets/banner/update-home.webp'
 import slide2 from '../../assets/banner/web-02.webp'
 import slide3 from '../../assets/banner/web-03.webp'
-import slide4 from '../../assets/banner/web-04 (1).webp'
+import slide4 from '../../assets/banner/web-04.webp'
 import slide5 from '../../assets/banner/web-05.webp'
 import slide6 from '../../assets/banner/web-06.webp'
 import slide7 from '../../assets/banner/web-07.webp'
@@ -110,7 +110,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative w-full h-[200px] sm:h-[450px] lg:h-[620px] overflow-hidden bg-white pt-0 pb-0">
+    <section className="relative w-full h-[30vh] sm:h-[450px] md:h-[550px] lg:h-[650px] xl:h-[750px] 2xl:h-[850px] min-[2500px]:h-[1080px] overflow-hidden bg-white pt-0 pb-0 group">
       
       {/* BACKGROUND SLIDER */}
       <div className="absolute inset-0 z-0 bg-white">
@@ -124,18 +124,26 @@ const Hero = () => {
             exit="exit"
             className="absolute inset-0 w-full h-full bg-white flex items-center justify-center shadow-inner"
           >
+            {/* Standard Desktop/Mobile Code */}
             <img 
               src={slides[current].image} 
               alt={slides[current].title + " - " + slides[current].highlight} 
-              className="w-full h-full object-fill"
-              loading="eager" // Keep hero eager for LCP
+              className="w-full h-full object-cover min-[2500px]:hidden"
+              loading="eager"
+            />
+            {/* Separate 4K Optimized Code: Exactly 3840x2160 with no white space */}
+            <img 
+              src={slides[current].image} 
+              alt={slides[current].title + " - " + slides[current].highlight} 
+              className="hidden min-[2500px]:block w-full h-full object-cover"
+              loading="eager"
             />
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* NAVIGATION ARROWS */}
-      <div className="absolute inset-0 z-10 hidden items-center justify-between px-4 sm:flex pointer-events-none">
+      <div className="absolute inset-0 z-10 flex items-center justify-between px-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <button
           onClick={() => move(-1)}
           className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#18357a] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"

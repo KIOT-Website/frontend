@@ -48,7 +48,7 @@ const GuidelinesPage = () => {
   }
 
   return (
-    <div className="bg-[#FCFDFD] min-h-screen font-inter selection:bg-[#ffc107]/20 overflow-x-hidden">
+    <div className="bg-[#FCFDFD] min-h-screen font-inter selection:bg-[#ffc107]/20">
       
       {/* 🔷 1. TOP SECTION (IMAGE + INTRO) */}
       <section className="relative pt-16 lg:pt-24 pb-6 border-b border-slate-100">
@@ -66,7 +66,7 @@ const GuidelinesPage = () => {
                  </span>
                  <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Institutional Framework</span>
               </div>
-              <h1 className="text-5xl lg:text-7xl font-black text-[#18357a] tracking-tight leading-[1.1]">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-[#18357a] tracking-tight leading-[1.2]">
                 Governance & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] to-[#224292]">Policies</span>
               </h1>
               <div className="space-y-4 max-w-xl">
@@ -96,11 +96,11 @@ const GuidelinesPage = () => {
       </section>
 
       {/* 🔷 2. MAIN SECTION (STICKY LEFT + SCROLL RIGHT) */}
-      <section className="w-full px-4 lg:px-12 pt-2 pb-10 flex flex-col lg:flex-row gap-8 lg:gap-12">
+      <section className="w-full px-4 lg:px-12 pt-4 lg:pt-10 pb-10 grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-16">
         
         {/* 🔹 LEFT SIDE (Sticky Menu) */}
-        <aside className="hidden lg:block lg:w-1/5">
-          <div className="lg:sticky lg:top-24 space-y-8">
+        <aside className="hidden lg:block sticky top-[130px] self-start h-fit z-30">
+          <div className="space-y-8">
             <div className="space-y-4">
               <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-8">Directories</p>
               <nav className="flex flex-col gap-6">
@@ -108,10 +108,12 @@ const GuidelinesPage = () => {
                   <button
                     key={section.id}
                     onClick={() => scrollToContent(section.id)}
-                    className={`text-left text-sm font-black transition-all duration-300 relative group flex items-center gap-3 ${activeSection === section.id ? 'text-[#18357a]' : 'text-[#18357a] hover:text-[#ffc107]'}`}
+                    className={`text-left text-sm font-black transition-all duration-300 relative group flex items-center gap-3 ${activeSection === section.id ? 'text-[#18357a]' : 'text-[#64779F] hover:text-[#18357a]'}`}
                   >
                     <div className={`h-1.5 rounded-full bg-[#ffc107] transition-all duration-500 ${activeSection === section.id ? 'w-6' : 'w-0 group-hover:w-2'}`} />
-                    {section.label}
+                    <span className={activeSection === section.id ? 'translate-x-1 transition-transform' : ''}>
+                      {section.label}
+                    </span>
                   </button>
                 ))}
               </nav>
@@ -120,11 +122,11 @@ const GuidelinesPage = () => {
         </aside>
 
         {/* 🔹 RIGHT SIDE (Content Flow) */}
-        <main className="lg:w-4/5 space-y-12 pb-16">
+        <main className="space-y-12 pb-16">
           
           {/* Section: Administrators */}
           <section id="administrators" className="scroll-mt-32">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-10 lg:mb-16">
               Roles and Responsibilities of <span className="text-[#ffc107]">Administrators</span>
             </h2>
             
@@ -157,7 +159,7 @@ const GuidelinesPage = () => {
 
           {/* Section: Faculty & Staff */}
           <section id="faculty" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
               Code of Conduct for <span className="text-[#ffc107]">Faculty and Staff</span>
             </h2>
             
@@ -195,7 +197,7 @@ const GuidelinesPage = () => {
 
           {/* Section: Leave Provisions */}
           <section id="leave" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
               Leave <span className="text-[#ffc107]">Provisions</span>
             </h2>
             
@@ -218,7 +220,7 @@ const GuidelinesPage = () => {
 
           {/* Section: Vacation */}
           <section id="vacation" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
               Vacation <span className="text-[#ffc107]">Policy</span>
             </h2>
             
@@ -241,7 +243,7 @@ const GuidelinesPage = () => {
 
           {/* Section: On-Duty */}
           <section id="onduty" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
               On–Duty <span className="text-[#ffc107]">Provisions</span>
             </h2>
             
@@ -262,7 +264,7 @@ const GuidelinesPage = () => {
 
           {/* Section: Students */}
           <section id="students" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-4xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
               Code of Conduct for <span className="text-[#ffc107]">Students</span>
             </h2>
             

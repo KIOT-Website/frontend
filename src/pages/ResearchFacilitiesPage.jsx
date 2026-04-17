@@ -79,6 +79,15 @@ const ResearchFacilitiesPage = () => {
         'computer-science-&-engineering': [
             { id: 1, lab: "Big Data Advanced Analytics Lab", equipment: "HADOOP Ecosystem", domain: "Big Data Analytics", icon: Cpu },
             { id: 2, lab: "IOT Lab", equipment: "Intel Galileo Kit", domain: "Internet of Things", icon: Box }
+        ],
+        'civil-engineering': [
+            {
+                id: 1,
+                lab: "Concrete and Highway Engineering Laboratory",
+                equipment: "Compression Testing Machine (2000kN), Universal Testing Machine (1000kN), Ultrasonic Pulse Velocity Tester, Rebound Hammer, Los Angeles Abrasion Testing Machine.",
+                domain: "Structural & Material Research",
+                icon: HardHat
+            }
         ]
     }
 
@@ -88,16 +97,16 @@ const ResearchFacilitiesPage = () => {
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4">
-                <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
+                <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center gap-4">
+                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         {deptName?.toUpperCase()}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#0f172a] text-xs font-bold uppercase tracking-wider pt-0.5">
+                    <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
                         Research Facilities
                     </span>
                 </div>
@@ -113,7 +122,7 @@ const ResearchFacilitiesPage = () => {
                 >
                     <Link 
                         to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
+                        className="inline-flex items-center gap-2 text-[#18357a] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
                     >
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>

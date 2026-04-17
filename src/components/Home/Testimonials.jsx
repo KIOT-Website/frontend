@@ -97,20 +97,20 @@ const Testimonials = () => {
            </h2>
         </div>
 
-        {/* CATEGORY TABS (Option 2: Smart + Clean) */}
-        <div className="flex justify-center mb-12 lg:mb-16">
-           <div className="flex bg-[#18357a]/5 p-2 rounded-2xl border border-[#D5E2F4]/40 w-fit">
+        {/* CATEGORY TABS */}
+        <div className="flex justify-center mb-10 lg:mb-16">
+           <div className="flex bg-[#18357a]/5 p-1.5 rounded-2xl border border-[#D5E2F4]/40 w-fit max-w-full overflow-x-auto scrollbar-hide">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveTab(cat)}
-                  className={`relative py-3.5 px-8 md:px-12 text-xs font-black uppercase tracking-[0.2em] transition-all rounded-xl ${activeTab === cat ? 'text-[#18357a]' : 'text-[#64779F] hover:text-[#18357a]'}`}
+                  className={`relative py-3 px-5 sm:px-8 md:px-12 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] transition-all rounded-xl whitespace-nowrap ${activeTab === cat ? 'text-[#18357a]' : 'text-[#64779F] hover:text-[#18357a]'}`}
                 >
                   {cat}
                   {activeTab === cat && (
                     <motion.div 
                       layoutId="activeTestiTab" 
-                      className="absolute inset-0 bg-white shadow-xl -z-10 rounded-xl" 
+                      className="absolute inset-0 bg-white shadow-lg -z-10 rounded-xl border border-[#18357a]/5" 
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -120,25 +120,25 @@ const Testimonials = () => {
         </div>
 
         {/* TESTIMONIAL GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto px-1 sm:px-0">
            <AnimatePresence mode="wait">
               {testimonialData[activeTab].map((testi, idx) => (
                 <motion.div
                   key={testi.id}
-                  initial={{ opacity: 0, y: 20, rotateX: -10 }}
-                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="group relative bg-white p-6 lg:p-8 rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.06)] border border-[#D5E2F4]/40 flex flex-col justify-between h-full"
+                  className="group relative bg-white p-6 lg:p-8 rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.06)] border border-[#D5E2F4]/40 flex flex-col h-full"
                 >
                    {/* Top Bar with Icon & Quote */}
                    <div className="flex items-start justify-between mb-6">
                       <div className="h-10 w-1 flex bg-[#ffc107] rounded-full group-hover:h-12 transition-all duration-500" />
-                      <Quote size={36} className="text-[#18357a]/5 group-hover:text-[#ffc107]/20 transition-colors" />
+                      <Quote size={32} className="text-[#18357a]/5 group-hover:text-[#ffc107]/20 transition-colors" />
                    </div>
 
                    {/* The Content */}
-                   <div className="space-y-5">
+                   <div className="space-y-5 flex-grow">
                       <div className="flex flex-wrap gap-2">
                          {testi.tags.map(tag => (
                            <span key={tag} className="px-3 py-1 bg-[#18357a]/5 text-[9px] font-black uppercase tracking-[0.1em] text-[#18357a] rounded-full">
@@ -147,16 +147,16 @@ const Testimonials = () => {
                          ))}
                       </div>
 
-                      <p className="text-base lg:text-lg font-bold text-[#18357a] leading-relaxed italic pr-4">
+                      <p className="text-base lg:text-lg font-bold text-[#18357a] leading-relaxed italic pr-2">
                         "{testi.quote}"
                       </p>
 
-                      <div className="py-3 px-5 bg-[#18357a]/5 rounded-xl flex items-center justify-between group-hover:bg-[#ffc107]/10 transition-colors">
+                      <div className="py-3 px-4 sm:px-5 bg-[#18357a]/5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 group-hover:bg-[#ffc107]/10 transition-colors">
                          <div className="flex items-center gap-2">
                             <span className="text-[9px] font-black uppercase tracking-[0.1em] text-[#18357a]">Outcome:</span>
                             <span className="text-[11px] font-black text-[#18357a]">{testi.outcome}</span>
                          </div>
-                         <img src={testi.company} alt="Logo" className="h-4 opacity-40 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0" />
+                         <img src={testi.company} alt="Logo" className="h-5 sm:h-4 opacity-60 sm:opacity-40 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0 self-end sm:self-auto" />
                       </div>
                    </div>
 

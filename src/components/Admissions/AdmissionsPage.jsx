@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { 
+  Users,
   CheckCircle2, 
   ArrowRight, 
   Download, 
@@ -17,10 +18,11 @@ import {
   Calendar,
   Send,
   Star,
-  Award
+  Award,
+  Briefcase,
+  Globe
 } from 'lucide-react'
 import logo from '../../assets/main/logo.webp'
-import placement1 from '../../assets/main/placement 1.webp'
 import campusImage from '../../assets/main/indian_college_students_campus.webp'
 
 // ─── Data Construction ────────────────────────────────────────────────────────
@@ -58,8 +60,6 @@ const ADMISSION_STEPS = [
   }
 ]
 
-
-
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 const AdmissionsPage = () => {
@@ -67,7 +67,6 @@ const AdmissionsPage = () => {
   const [showApplyModal, setShowApplyModal] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [activeProgramTab, setActiveProgramTab] = useState('ug')
-
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -90,140 +89,301 @@ const AdmissionsPage = () => {
   }, [])
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/91XXXXXXXXXX?text=Hi, I am interested in KIOT admissions.', '_blank')
+    const msg = encodeURIComponent("Hello, I would like to enquire about admissions for 2026–27 at Knowledge Institute of Technology. Please share details about courses, eligibility, fees, and the application process.");
+    window.open(`https://wa.me/919894701234?text=${msg}`, '_blank');
   }
 
   return (
-    <div className="min-h-screen bg-[#FDFEFE] font-sans text-[16px] text-[#333333] leading-[1.8] pb-20">
+    <div className="min-h-screen bg-[#FDFEFE] font-graphik text-[16px] text-[#333333] leading-[1.8] pb-10 selection:bg-[#ffc107]/30">
       
       {/* ─── HERO SECTION ─── */}
-      <section className="relative h-[65vh] flex items-center overflow-hidden bg-[#0A1A3F]">
+      <section className="relative h-[60vh] flex items-center overflow-hidden bg-[#0A1A3F]">
         <div className="absolute inset-0 z-0">
           <img 
             src={campusImage} 
-            className="w-full h-full object-cover opacity-90 transition-opacity duration-1000" 
+            className="w-full h-full object-cover opacity-40 transition-opacity duration-1000 scale-105" 
             alt="KIOT Admissions" 
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A3F] via-[#0A1A3F]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/95 via-[#18357a]/80 to-[#18357a]/40" />
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:pl-12 lg:pr-20 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:pl-12 lg:pr-20 relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex flex-wrap items-center gap-4 mb-8">
-              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#ffc107] text-[#18357a] font-black text-[11px] uppercase tracking-widest shadow-2xl shadow-[#ffc107]/20">
-                <Calendar size={14} className="animate-bounce" /> Admission Portal 2026-27
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#ffc107] text-[#18357a] font-bold text-[10px] uppercase tracking-widest shadow-2xl shadow-[#ffc107]/20">
+                <Calendar size={12} className="animate-pulse" /> Admission Portal 2026-27
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tighter mb-6 max-w-4xl">
-              INSTITUTIONAL <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff3cc] to-[#ffc107] pr-4">ADMISSIONS</span>
+            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-tight tracking-tighter mb-8 max-w-5xl uppercase">
+              SHAPE YOUR FUTURE AT <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff3cc] to-[#ffc107] pr-4">KNOWLEDGE INSTITUTE OF TECHNOLOGY</span>
             </h1>
 
-            
             <div className="flex flex-wrap items-center gap-4">
               <button 
                 onClick={() => navigate('/admissions/ug-registration')}
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-[#ffc107] text-[#18357a] rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-white transition-all transform hover:scale-105 shadow-2xl shadow-[#ffc107]/20"
+                className="group inline-flex items-center gap-3 px-8 py-3.5 bg-[#ffc107] text-[#18357a] rounded-full font-bold text-[11px] uppercase tracking-[3px] hover:bg-white transition-all transform hover:scale-105 shadow-2xl shadow-[#ffc107]/30"
               >
                 UG Registration
               </button>
               <button 
                 onClick={() => navigate('/admissions/pg-registration')}
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#18357a] rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-[#ffc107] transition-all transform hover:scale-105 shadow-2xl"
+                className="group inline-flex items-center gap-3 px-8 py-3.5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold text-[11px] uppercase tracking-[3px] hover:bg-white hover:text-[#18357a] transition-all transform hover:scale-105 shadow-2xl"
               >
                 PG Registration
               </button>
-              <button onClick={openWhatsApp} className="flex items-center gap-3 px-8 py-4 bg-[#18357a] text-white rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-[#1d3a82] transition-all border border-white/20">
+              <button onClick={openWhatsApp} className="flex items-center gap-3 px-10 py-4 bg-[#18357a]/40 backdrop-blur-md border border-white/10 text-white rounded-full font-bold text-[11px] uppercase tracking-[3px] hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-xl">
                 <MessageCircle size={18} /> Support Desk
               </button>
             </div>
           </motion.div>
         </div>
       </section>
-
+      
       {/* ─── OVERVIEW SECTION ─── */}
-      <section id="Overview" className="py-20 relative overflow-hidden">
-         
-         
+      <section id="Overview" className="py-16 md:py-24 relative overflow-hidden bg-white">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
                <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                >
-                 <div className="inline-block px-4 py-1.5 rounded-full bg-[#ffc107]/10 text-[#18357a] font-black text-[10px] uppercase tracking-[3px] mb-6">
+                 <div className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] font-bold text-[10px] uppercase tracking-[3px] mb-8 border border-[#18357a]/10">
                     Admission Overview
                  </div>
-                 <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-black uppercase leading-tight tracking-tighter mb-10 pl-8 border-l-8 border-[#ffc107]">
-                    TRANSFORMING <span className="text-[#ffc107] italic">POTENTIAL</span>
+                 <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight tracking-tighter mb-10 pl-10 border-l-8 border-[#ffc107]">
+                    YOUR FUTURE <span className="text-[#ffc107]">STARTS HERE</span>
                  </h2>
-                 <p className="text-[#333333] font-bold text-[16px] mb-12 leading-[1.8] max-w-xl">
-                   At KIOT, we don't just teach engineering; we cultivate innovators. Our admission process is designed to find students who are ready to lead the future.
+                 <p className="text-black font-semibold text-lg mb-12 leading-[1.8] max-w-xl text-justify">
+                   At Knowledge Institute of Technology, we go beyond traditional learning to shape industry-ready professionals. Our admission process is designed to identify passionate students and provide them with the right opportunities.
                  </p>
                  
-                 <motion.button 
-                   whileHover={{ scale: 1.05, y: -2 }}
-                   whileTap={{ scale: 0.98 }}
-                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                   className="group inline-flex items-center gap-4 px-10 py-5 bg-[#18357a] text-white rounded-[2rem] font-black text-xs uppercase tracking-[3px] shadow-2xl shadow-blue-900/20 hover:bg-[#ffc107] hover:text-[#18357a] transition-all"
-                 >
-                   Apply Now
-                 </motion.button>
+                 <div className="flex flex-wrap items-center gap-6">
+                    <div className="space-y-3">
+                        <motion.button 
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => document.getElementById('WhyChoose').scrollIntoView({ behavior: 'smooth' })}
+                        className="group inline-flex items-center gap-4 px-10 py-5 bg-[#18357a] text-white rounded-full font-bold text-[11px] uppercase tracking-[3px] shadow-2xl shadow-blue-900/30 hover:bg-[#ffc107] hover:text-[#18357a] transition-all"
+                        >
+                        Explore KIOT Advantage
+                        </motion.button>
+                        <p className="text-[10px] font-semibold text-red-600 uppercase tracking-widest pl-4 animate-pulse">
+                            ● Limited seats available for 2026-27
+                        </p>
+                    </div>
+                 </div>
                </motion.div>
 
                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8, rotate: -2 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative lg:-mt-12 mt-12"
+                  className="relative group lg:mt-0 mt-6"
                >
-                  {/* Modern Frame for Image */}
-                  <div className="relative z-10 rounded-[4rem] bg-white p-4 shadow-[0_50px_100px_-20px_rgba(24,53,122,0.15)] border border-slate-100 overflow-hidden">
-                     <div className="absolute inset-0 bg-gradient-to-tr from-[#18357a]/10 to-transparent pointer-events-none" />
-                     <img 
-                       src={placement1} 
-                       className="w-full h-auto rounded-[3rem] object-contain hover:scale-105 transition-transform duration-1000" 
-                       alt="KIOT Campus" 
-                     />
+                  <div className="relative z-10 rounded-[4rem] bg-white p-5 shadow-[0_50px_100px_-20px_rgba(24,53,122,0.15)] border border-slate-100 overflow-hidden">
+                     <img src={campusImage} className="w-full h-auto rounded-[3rem] object-cover hover:scale-105 transition-transform duration-1000" alt="KIOT Campus" />
                   </div>
-
-                  {/* Decorative Elements */}
-                  <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-blue-600 rounded-full blur-[100px] opacity-10" />
                </motion.div>
             </div>
          </div>
       </section>
 
-      {/* ─── PROCESS SECTION: MODERN PREMIUM INFOGRAPHIC ─── */}
-      <section id="Process" className="py-24 bg-white relative overflow-hidden">
+      {/* ─── WHY CHOOSE KIOT SECTION ─── */}
+      <section id="WhyChoose" className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+            <div className="text-center mb-20 relative">
+               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+                  <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">The KIOT Advantage</span>
+                  <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black uppercase leading-tight tracking-tighter">
+                     Why Choose <span className="text-[#ffc107]">Knowledge Institute of Technology</span>
+                  </h2>
+               </motion.div>
+            </div>
 
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+               {[
+                  { title: "100% Placement Assistance", desc: "Dedicated placement cell ensuring top-tier corporate matching.", icon: Briefcase, color: "#18357a" },
+                  { title: "NAAC A+ Accredited", desc: "Recognized for academic excellence and institutional quality.", icon: Award, color: "#ffc107" },
+                  { title: "Industry-Oriented Curriculum", desc: "Syllabus designed in collaboration with global tech giants.", icon: Globe, color: "#18357a" },
+                  { title: "Modern Infrastructure", desc: "State-of-the-art labs and high-tech research centers.", icon: ShieldCheck, color: "#ffc107" },
+                  { title: "Experienced Faculty", desc: "Guided by Ph.D. scholars and veteran industry professionals.", icon: Users, color: "#18357a" },
+                  { title: "Elite Career Hub", desc: "Access to exclusive internships and global career paths.", icon: Star, color: "#ffc107" }
+               ].map((feature, i) => (
+                  <motion.div
+                    key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                    className="p-10 rounded-[2.5rem] bg-white border border-slate-100 hover:border-[#ffc107]/30 hover:shadow-2xl transition-all group"
+                  >
+                     <div className="w-14 h-14 rounded-2xl mb-8 flex items-center justify-center transition-transform group-hover:scale-110" style={{ backgroundColor: `${feature.color}15`, color: feature.color }}>
+                        <feature.icon size={28} />
+                     </div>
+                     <h4 className="text-[17px] font-bold text-[#18357a] uppercase mb-4 tracking-tight leading-tight group-hover:text-[#ffc107] transition-colors">{feature.title}</h4>
+                     <p className="text-black text-[13px] leading-relaxed font-semibold">{feature.desc}</p>
+                  </motion.div>
+               ))}
+            </div>
+         </div>
+      </section>
+
+      {/* ─── PROGRAMMES OFFERED SECTION ─── */}
+      <section id="Programmes" className="py-16 md:py-24 bg-white">
+         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black uppercase leading-tight tracking-tighter mb-8">Programmes <span className="text-[#ffc107]">Offered</span></h2>
+               <div className="flex flex-wrap items-center justify-center gap-4">
+                  <button onClick={() => setActiveProgramTab('ug')} className={`px-10 py-4 rounded-xl font-bold text-[11px] uppercase tracking-[3px] transition-all shadow-xl ${activeProgramTab === 'ug' ? 'bg-[#ffc107] text-[#18357a]' : 'bg-white text-slate-400 border border-slate-200'}`}>Undergraduate</button>
+                  <button onClick={() => setActiveProgramTab('pg')} className={`px-10 py-4 rounded-xl font-bold text-[11px] uppercase tracking-[3px] transition-all shadow-xl ${activeProgramTab === 'pg' ? 'bg-[#ffc107] text-[#18357a]' : 'bg-white text-slate-400 border border-slate-200'}`}>Postgraduate</button>
+               </div>
+            </motion.div>
+
+            <div className="relative min-h-[400px]">
+               <AnimatePresence mode="wait">
+                  {activeProgramTab === 'ug' ? (
+                     <motion.div key="ug" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-[2.5rem] border border-slate-100 shadow-2xl bg-white">
+                        <table className="w-full text-left">
+                           <thead>
+                              <tr className="bg-[#18357a] text-white">
+                                 <th className="hidden md:table-cell px-8 py-6 text-[10px] font-bold uppercase text-center w-24">S.No</th>
+                                 <th className="px-8 py-6 text-[10px] font-bold uppercase">Programme Name</th>
+                                 <th className="hidden md:table-cell px-8 py-6 text-[10px] font-bold uppercase text-center w-32">Duration</th>
+                                 <th className="px-8 py-6 text-[10px] font-bold uppercase text-center w-40">Action</th>
+                              </tr>
+                           </thead>
+                           <tbody className="divide-y divide-slate-50">
+                              {[
+                                 { name: 'B.E. Computer Science and Engineering', id: 'be-cse' },
+                                 { name: 'B.E. Mechanical Engineering', id: 'be-mechanical' },
+                                 { name: 'B.E. Electrical and Electronics Engineering', id: 'be-eee' },
+                                 { name: 'B.E. Electronics and Communication Engineering', id: 'be-ece' },
+                                 { name: 'B.E. Civil Engineering', id: 'be-civil' },
+                                 { name: 'B.E. Biomedical Engineering', id: '' },
+                                 { name: 'B.Tech. Information Technology', id: 'btech-it' },
+                                 { name: 'B.Tech. Artificial Intelligence and Data Science', id: 'btech-aids' },
+                                 { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs' }
+                              ].map((item, i) => (
+                                 <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
+                                    <td className="hidden md:table-cell px-8 py-6 text-center text-xs font-bold text-slate-300 group-hover:text-[#18357a]">{i + 1}</td>
+                                    <td className="px-8 py-6 font-bold text-[13px] uppercase text-[#18357a]">
+                                       <button onClick={() => { window.scrollTo(0, 0); navigate(item.id ? `/academics/course/${item.id}` : '#') }} className="hover:text-[#ffc107] transition-all text-left font-bold">{item.name}</button>
+                                    </td>
+                                    <td className="hidden md:table-cell px-8 py-6 text-center text-xs font-bold text-slate-400">4 Years</td>
+                                    <td className="px-8 py-6 text-center">
+                                       <button onClick={() => navigate('/admissions/ug-registration')} className="px-6 py-2 bg-[#ffc107] text-[#18357a] rounded-lg font-bold text-[9px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:scale-105">Apply Now</button>
+                                    </td>
+                                 </tr>
+                              ))}
+                           </tbody>
+                        </table>
+                     </motion.div>
+                  ) : (
+                     <motion.div key="pg" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-[2.5rem] border border-slate-100 shadow-2xl bg-white">
+                        <table className="w-full text-left">
+                           <thead>
+                              <tr className="bg-[#18357a] text-white">
+                                 <th className="hidden md:table-cell px-8 py-6 text-[10px] font-bold uppercase text-center w-24">S.No</th>
+                                 <th className="px-8 py-6 text-[10px] font-bold uppercase">Programme Name</th>
+                                 <th className="hidden md:table-cell px-8 py-6 text-[10px] font-bold uppercase text-center w-32">Duration</th>
+                                 <th className="px-8 py-6 text-[10px] font-bold uppercase text-center w-40">Action</th>
+                              </tr>
+                           </thead>
+                           <tbody className="divide-y divide-slate-50">
+                              {[
+                                 { name: 'MBA - GENERAL', id: 'mba-general' },
+                                 { name: 'MBA (IEV)', id: 'mba-iev' },
+                                 { name: 'MCA', id: 'mca' },
+                                 { name: 'M.E. INDUSTRIAL SAFETY ENGINEERING', id: 'me-ise' },
+                                 { name: 'M.E. AUTOMOTIVE ELECTRONICS', id: 'me-ae' },
+                                 { name: 'M.E. POWER ELECTRONICS AND DRIVES', id: 'me-ped' },
+                                 { name: 'M.E. SOFTWARE ENGINEERING', id: 'me-se' }
+                              ].map((item, i) => (
+                                 <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
+                                    <td className="hidden md:table-cell px-8 py-6 text-center text-xs font-bold text-slate-300 group-hover:text-[#18357a]">{i + 1}</td>
+                                    <td className="px-8 py-6 font-bold text-[13px] uppercase text-[#18357a]">
+                                       <button onClick={() => { window.scrollTo(0, 0); navigate(`/academics/course/${item.id}`) }} className="hover:text-[#ffc107] transition-all text-left font-bold">{item.name}</button>
+                                    </td>
+                                    <td className="hidden md:table-cell px-8 py-6 text-center text-xs font-bold text-slate-400">2 Years</td>
+                                    <td className="px-8 py-6 text-center">
+                                       <button onClick={() => navigate('/admissions/pg-registration')} className="px-6 py-2 bg-[#ffc107] text-[#18357a] rounded-lg font-bold text-[9px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:scale-105">Apply Now</button>
+                                    </td>
+                                 </tr>
+                              ))}
+                           </tbody>
+                        </table>
+                     </motion.div>
+                  )}
+               </AnimatePresence>
+            </div>
+         </div>
+      </section>
+
+      {/* ─── ELIGIBILITY CRITERIA SECTION ─── */}
+      <section id="Eligibility" className="py-16 md:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+               <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">📘 Qualifications</span>
+               <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black uppercase leading-tight tracking-tighter">Eligibility <span className="text-[#ffc107]">Criteria</span></h2>
+            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-12 text-left">
+               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white rounded-[3rem] p-10 md:p-14 border border-slate-100 shadow-xl relative group overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffc107]/5 rounded-bl-[100px] transition-colors" />
+                  <div className="flex items-center gap-4 mb-10">
+                     <div className="w-12 h-12 rounded-2xl bg-[#ffc107]/10 flex items-center justify-center text-[#ffc107]"><GraduationCap size={24} /></div>
+                     <h4 className="text-[20px] font-bold text-[#18357a] uppercase">UG (B.E / B.Tech)</h4>
+                  </div>
+                  <ul className="space-y-6">
+                     {[
+                        "A pass in HSC (Academic / Vocational) with minimum average in PCM.",
+                        "OC: 45% average, BC/BCM/MBC/DNC/SC/SCA/ST: 40% average in PCM.",
+                        "Accepted Boards: CBSE, ISC, State Board, or any equivalent board."
+                     ].map((t, i) => <li key={i} className="flex gap-4 items-start"><CheckCircle2 size={16} className="text-[#ffc107] mt-1 shrink-0" /><p className="text-[14px] font-semibold text-black leading-relaxed">{t}</p></li>)}
+                  </ul>
+               </motion.div>
+               <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white rounded-[3rem] p-10 md:p-14 border border-slate-100 shadow-xl relative group overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/5 rounded-bl-[100px] transition-colors" />
+                  <div className="flex items-center gap-4 mb-10">
+                     <div className="w-12 h-12 rounded-2xl bg-[#18357a]/10 flex items-center justify-center text-[#18357a]"><Briefcase size={24} /></div>
+                     <h4 className="text-[20px] font-bold text-[#18357a] uppercase">PG (M.E / MBA / MCA)</h4>
+                  </div>
+                  <ul className="space-y-6">
+                     {[
+                        "M.E: Relevant B.E. / B.Tech. with valid GATE / TANCET score.",
+                        "MBA/MCA: Recognized degree with 50% (45% for reserved categories).",
+                        "Must have appeared for TANCET or equivalent common entrance tests."
+                     ].map((t, i) => <li key={i} className="flex gap-4 items-start"><CheckCircle2 size={16} className="text-[#18357a] mt-1 shrink-0" /><p className="text-[14px] font-semibold text-black leading-relaxed">{t}</p></li>)}
+                  </ul>
+               </motion.div>
+            </div>
+        </div>
+      </section>
+
+      {/* ─── ADMISSION WORKFLOW SECTION ─── */}
+      <section id="Process" className="py-12 md:py-16 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-24"
+            className="mb-12"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border border-slate-100 shadow-sm mb-6">
+            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-slate-50 border border-slate-100 shadow-sm mb-6">
                <span className="w-2 h-2 rounded-full bg-[#18357a] animate-pulse" />
-               <span className="text-[10px] font-black text-[#18357a] uppercase tracking-[3px]">Admission Workflow</span>
+               <span className="text-[10px] font-bold text-[#18357a] uppercase tracking-[3px]">Admission Workflow</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-black uppercase leading-tight tracking-tighter">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black uppercase leading-tight tracking-tighter">
               Pathway to <span className="text-[#ffc107]">Your Future</span>
             </h2>
           </motion.div>
           
           <div className="relative">
-
-            <div className="grid lg:grid-cols-5 gap-16 lg:gap-4 relative px-4">
+            <div className="grid lg:grid-cols-5 gap-12 lg:gap-4 relative px-4">
               {ADMISSION_STEPS.map((step, i) => (
                 <motion.div 
                   key={step.id}
@@ -233,27 +393,24 @@ const AdmissionsPage = () => {
                   transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }}
                   className="flex flex-col items-center group"
                 >
-                  {/* Unique Geometric Node */}
-                  <div className="relative mb-12">
+                  <div className="relative mb-8">
                      <motion.div 
                         animate={{ rotate: [45, 55, 45] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-32 h-32 border-2 border-[#D5E2F4] rounded-3xl flex items-center justify-center bg-white relative group-hover:border-[#ffc107] transition-all duration-500 shadow-xl shadow-blue-900/5 group-hover:shadow-[#ffc107]/20"
+                        className="w-24 h-24 border-2 border-[#D5E2F4] rounded-[2rem] flex items-center justify-center bg-white relative group-hover:border-[#ffc107] transition-all duration-500 shadow-xl shadow-blue-900/5 group-hover:shadow-[#ffc107]/20"
                      >
-                        <div className="w-24 h-24 rotate-[-45deg] flex flex-col items-center justify-center text-[#18357a]">
-                           <span className="text-[10px] font-black opacity-30 group-hover:opacity-100 transition-opacity mb-1 block">0{i+1}</span>
-                           <step.icon size={28} className="group-hover:scale-110 group-hover:text-[#ffc107] transition-all duration-500" />
+                        <div className="w-16 h-16 rotate-[-45deg] flex flex-col items-center justify-center text-[#18357a]">
+                           <span className="text-[10px] font-bold opacity-30 group-hover:opacity-100 transition-opacity mb-1 block">0{i+1}</span>
+                           <step.icon size={20} className="group-hover:scale-110 group-hover:text-[#ffc107] transition-all duration-500" />
                         </div>
-                        <div className="absolute -top-1.5 -left-1.5 w-3 h-3 rounded-full bg-[#18357a] group-hover:bg-[#ffc107] transition-colors shadow-lg" />
-                        <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 rounded-full bg-[#ffc107] group-hover:bg-[#18357a] transition-colors shadow-lg" />
                      </motion.div>
                   </div>
 
                   <div className="text-center px-4">
-                    <h4 className="text-[15px] font-black text-[#18357a] uppercase mb-3 tracking-tighter leading-none group-hover:tracking-normal transition-all duration-500 pr-2">
+                    <h4 className="text-[14px] font-bold text-[#18357a] uppercase mb-3 tracking-tighter leading-none pr-1">
                        {step.title}
                     </h4>
-                    <p className="text-[#333333] text-[12px] leading-[1.6] font-normal font-inter max-w-[170px] opacity-60 group-hover:opacity-90 transition-opacity duration-500">
+                    <p className="text-black text-[11px] leading-[1.6] font-semibold max-w-[150px] mx-auto transition-opacity duration-500 group-hover:opacity-90">
                       {step.desc}
                     </p>
                   </div>
@@ -264,327 +421,88 @@ const AdmissionsPage = () => {
         </div>
       </section>
 
-      {/* ─── PROGRAMMES OFFERED SECTION ─── */}
-      <section id="Programmes" className="py-20 relative overflow-hidden bg-white">
-         <div className="max-width-7xl mx-auto px-6 sm:px-10 lg:px-20">
-            <div className="text-center mb-16">
-               <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-               >
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-black uppercase leading-tight tracking-tighter mb-8">Programmes Offered</h2>
-                  <p className="text-[#333333] font-bold text-[16px] max-w-2xl mx-auto mb-10 leading-[1.8]">Discover our diverse range of engineering and management disciplines designed to empower your professional journey.</p>
-                  
-                  {/* Category Selection Tabs */}
-                  <div className="flex flex-wrap items-center justify-center gap-4">
-                     <button 
-                       onClick={() => setActiveProgramTab('ug')}
-                       className={`px-10 py-4 rounded-xl font-black text-[11px] uppercase tracking-[3px] transition-all duration-500 shadow-xl ${activeProgramTab === 'ug' ? 'bg-[#ffc107] text-[#18357a]' : 'bg-slate-50 text-slate-400 border border-slate-200 hover:bg-slate-100 hover:text-[#18357a]'}`}
-                     >
-                       Undergraduate
-                     </button>
-                     <button 
-                       onClick={() => setActiveProgramTab('pg')}
-                       className={`px-10 py-4 rounded-xl font-black text-[11px] uppercase tracking-[3px] transition-all duration-500 shadow-xl ${activeProgramTab === 'pg' ? 'bg-[#ffc107] text-[#18357a]' : 'bg-slate-50 text-slate-400 border border-slate-200 hover:bg-slate-100 hover:text-[#18357a]'}`}
-                     >
-                       Postgraduate
-                     </button>
-                  </div>
-               </motion.div>
-            </div>
-
-            <div className="relative min-h-[400px]">
-               <AnimatePresence mode="wait">
-                  {activeProgramTab === 'ug' ? (
-                     /* Undergraduate Programmes */
-                     <motion.div 
-                        key="ug"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 20 }}
-                        transition={{ duration: 0.4 }}
-                        className="relative"
-                     >
-                        <div className="flex items-center gap-6 mb-12">
-                           <div className="w-12 h-12 rounded-2xl bg-[#18357a] flex items-center justify-center text-white shrink-0 shadow-lg shadow-blue-900/20">
-                              <GraduationCap size={24} />
-                           </div>
-                           <div>
-                              <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-wide">Undergraduate (B.E. / B.Tech.)</h3>
-                              <div className="h-1 w-24 bg-[#ffc107] rounded-full mt-1" />
-                           </div>
-                        </div>
-                        
-                         <div className="overflow-hidden rounded-xl border border-slate-200 shadow-xl shadow-blue-900/5 bg-white">
-                            <table className="w-full text-left border-collapse">
-                               <thead>
-                                  <tr className="bg-[#18357a] text-white">
-                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider w-20 text-center">S.No</th>
-                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider">Name of the Programme</th>
-                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider text-center">Duration</th>
-                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider text-center">Year of Starting</th>
-                                  </tr>
-                               </thead>
-                               <tbody className="divide-y divide-slate-100">
-                                  {[
-                                     { name: 'B.E. Computer Science and Engineering', id: 'be-cse', start: '2009' },
-                                     { name: 'B.E. Mechanical Engineering', id: 'be-mechanical', start: '2009' },
-                                     { name: 'B.E. Electrical and Electronics Engineering', id: 'be-eee', start: '2009' },
-                                     { name: 'B.E. Electronics and Communication Engineering', id: 'be-ece', start: '2009' },
-                                     { name: 'B.E. Civil Engineering', id: 'be-civil', start: '2012' },
-                                     { name: 'B.E. Biomedical Engineering', id: '', start: '2023' },
-                                     { name: 'B.Tech. Information Technology', id: 'btech-it', start: '2010' },
-                                     { name: 'B.Tech. Artificial Intelligence and Data Science', id: 'btech-aids', start: '2020' },
-                                     { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs', start: '2021' }
-                                  ].map((item, i) => (
-                                     <tr 
-                                       key={i} 
-                                       className="group hover:bg-[#18357a]/[0.02] transition-colors odd:bg-white even:bg-[#18357a]/[0.04]"
-                                     >
-                                        <td className="px-6 py-5 text-center text-xs font-black text-slate-400 group-hover:text-[#18357a] transition-colors">{i + 1}</td>
-                                        <td className="px-6 py-5">
-                                           <button 
-                                             onClick={() => {
-                                               window.scrollTo(0, 0);
-                                               navigate(item.id ? `/academics/course/${item.id}` : '#');
-                                             }}
-                                             className="text-[#18357a] font-black text-sm uppercase tracking-tight hover:text-[#ffc107] text-left transition-colors"
-                                           >
-                                              {item.name}
-                                           </button>
-                                        </td>
-                                        <td className="px-6 py-5 text-center text-xs font-black text-[#555555]">4 Years</td>
-                                        <td className="px-6 py-5 text-center text-xs font-black text-[#555555]">{item.start}</td>
-                                     </tr>
-                                  ))}
-                               </tbody>
-                            </table>
-                         </div>
-                      </motion.div>
-                  ) : (
-                     /* Postgraduate Programmes */
-                     <motion.div 
-                        key="pg"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 20 }}
-                        transition={{ duration: 0.4 }}
-                        className="relative"
-                     >
-                        <div className="flex items-center gap-6 mb-12">
-                           <div className="w-12 h-12 rounded-2xl bg-[#ffc107] flex items-center justify-center text-[#18357a] shrink-0 shadow-lg shadow-yellow-500/20">
-                              <ShieldCheck size={24} />
-                           </div>
-                           <div>
-                              <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-wide">Postgraduate (M.E. / MBA / MCA)</h3>
-                              <div className="h-1 w-24 bg-[#18357a] rounded-full mt-1" />
-                           </div>
-                        </div>
-                        
-                         <div className="overflow-hidden rounded-xl border border-slate-200 shadow-xl shadow-blue-900/5 bg-white">
-                            <table className="w-full text-left border-collapse">
-                               <thead>
-                                  <tr className="bg-[#18357a] text-white">
-                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider w-20 text-center">S.No</th>
-                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider">Name of the Programme</th>
-                                     <th className="px-6 py-5 text-[11px] font-black uppercase tracking-wider text-center">Duration</th>
-                                     <th className="hidden sm:table-cell px-6 py-5 text-[11px] font-black uppercase tracking-wider text-center">Year of Starting</th>
-                                  </tr>
-                               </thead>
-                               <tbody className="divide-y divide-slate-100">
-                                  {[
-                                     { name: 'MBA - GENERAL', id: 'mba-general', start: '2009' },
-                                     { name: 'MBA (IEV)', id: 'mba-iev', start: '2019' },
-                                     { name: 'MASTER OF COMPUTER APPLICATIONS (MCA)', id: 'mca', start: '2010' },
-                                     { name: 'M.E. INDUSTRIAL SAFETY ENGINEERING', id: 'me-ise', start: '2012' },
-                                     { name: 'M.E. AUTOMOTIVE ELECTRONICS', id: 'me-ae', start: '2014' },
-                                     { name: 'M.E. POWER ELECTRONICS AND DRIVES', id: 'me-ped', start: '2011' },
-                                     { name: 'M.E. SOFTWARE ENGINEERING', id: 'me-se', start: '2011' }
-                                  ].map((item, i) => (
-                                     <tr 
-                                       key={i} 
-                                       className="group hover:bg-[#18357a]/[0.05] transition-colors odd:bg-white even:bg-[#18357a]/[0.03]"
-                                     >
-                                        <td className="px-6 py-5 text-center text-xs font-black text-slate-400 group-hover:text-[#18357a] transition-colors">{i + 1}</td>
-                                        <td className="px-6 py-5">
-                                           <button 
-                                             onClick={() => {
-                                               window.scrollTo(0, 0);
-                                               navigate(`/academics/course/${item.id}`);
-                                             }}
-                                             className="text-[#18357a] font-black text-sm uppercase tracking-tight hover:text-[#ffc107] text-left transition-colors"
-                                           >
-                                              {item.name}
-                                           </button>
-                                        </td>
-                                        <td className="px-6 py-5 text-center text-xs font-black text-[#555555]">2 Years</td>
-                                        <td className="hidden sm:table-cell px-6 py-5 text-center text-xs font-black text-[#555555]">{item.start}</td>
-                                     </tr>
-                                  ))}
-                               </tbody>
-                            </table>
-                         </div>
-                      </motion.div>
-                  )}
-               </AnimatePresence>
-            </div>
-         </div>
-      </section>
-
-      {/* ─── FEES SECTION: DARK PREMIUM ─── */}
-      <section id="Fees" className="py-20 bg-[#0A1A3F] relative overflow-hidden min-h-[70vh] flex items-center">
-        {/* Animated Background Gradients */}
-        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[150px] opacity-20 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#ffc107] rounded-full blur-[150px] opacity-10" />
-
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 relative z-10">
-          <div className="grid lg:grid-cols-[2fr_3fr] gap-20 items-center">
-             <motion.div
-               initial={{ opacity: 0, x: -30 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-             >
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-[#ffc107] font-black text-[10px] uppercase tracking-widest mb-8 border border-white/10">
-                   <CreditCard size={14} /> Investment
-                </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-tight tracking-tighter mb-8">Fees <br/>Package</h2>
-                <p className="text-white/50 font-bold text-lg leading-relaxed max-w-sm">Transparent and competitive pricing structure for sustainable education excellence.</p>
-             </motion.div>
-
+      {/* ─── DOCUMENTS REQUIRED SECTION ─── */}
+      <section id="Documents" className="py-12 md:py-16 bg-slate-50 overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 sm:px-10">
              <motion.div 
-               initial={{ opacity: 0, y: 50, rotateX: 10 }}
-               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.8 }}
-               className="bg-white/5 border border-white/10 rounded-[3rem] p-10 backdrop-blur-2xl shadow-3xl overflow-hidden relative group"
-             >
-                 {/* Internal Glass Highlights */}
-                 <div className="absolute inset-x-0 top-0 h-[100px] bg-white opacity-[0.03] pointer-events-none" />
-                 
-                 <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8 relative z-10">
-                   {[
-                     { label: 'Tuition Fee', val: 'University Norms' },
-                     { label: 'Hostel Fee', val: '₹75K - ₹95K' },
-                     { label: 'Transport Fee', val: 'Distance Based' },
-                     { label: 'Development', val: 'Standardized' },
-                     { label: 'Library Fee', val: 'Included' },
-                     { label: 'Exam Fee', val: 'Per Semester' }
-                   ].map((f, i) => (
-                     <div key={i} className="group/item flex flex-col gap-2 border-b border-white/10 pb-4 last:border-0 hover:border-[#ffc107]/30 transition-colors">
-                       <span className="text-white/40 font-black text-[10px] uppercase tracking-widest group-hover/item:text-[#ffc107] transition-colors">{f.label}</span>
-                       <span className="text-white font-black text-lg tracking-tight">{f.val}</span>
-                     </div>
-                   ))}
-                 </div>
-                 
-                 <div className="mt-12 p-6 rounded-2xl bg-white/[0.03] border border-white/5 text-center">
-                    <p className="text-[10px] font-bold text-white/40 uppercase tracking-[4px]">Verified Information Portal</p>
-                 </div>
-             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── SCHOLARSHIPS SECTION: BENTO GRID STYLE ─── */}
-      <section id="Scholarships" className="py-20 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
-           <div className="text-center max-w-2xl mx-auto mb-20">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-              >
-                <div className="inline-block px-5 py-2 rounded-full bg-[#ffc107]/10 text-[#18357a] font-black text-[10px] uppercase tracking-widest mb-6">Incentives</div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#18357a] uppercase leading-tight tracking-tighter mb-8">
-                  Merit <br/><span className="text-[#ffc107]">Awards</span>
-                </h2>
-                <p className="text-[#333333] font-bold text-[16px] leading-[1.8]">We believe talent should never be limited by boundaries. Explore our wide array of funding opportunities.</p>
-              </motion.div>
-           </div>
+                className="text-center mb-16"
+             >
+                <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">📄 Checklist</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight tracking-tighter mb-8">Required <span className="text-[#ffc107]">Documents</span></h2>
+                <p className="text-black font-semibold text-sm leading-relaxed max-w-2xl mx-auto">Ensure you have scanned copies of the following documents ready before starting your registration for a smooth application process.</p>
+             </motion.div>
 
-           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-               {/* Large Highlight Card */}
-               <motion.div 
-                 initial={{ opacity: 0, scale: 0.9 }}
-                 whileInView={{ opacity: 1, scale: 1 }}
-                 viewport={{ once: true }}
-                 className="md:col-span-2 lg:col-span-1 row-span-2 p-12 bg-[#ffc107] rounded-[3rem] text-[#18357a] relative overflow-hidden group flex flex-col justify-between"
-               >
-                  <Trophy size={100} className="absolute -top-10 -right-10 opacity-20 group-hover:scale-125 transition-transform duration-1000" />
-                  <div>
-                    <h3 className="text-4xl font-black uppercase tracking-tighter leading-none mb-6">Impact <br/>Funding</h3>
-                    <p className="font-extrabold text-[#18357a]/70 text-lg leading-relaxed">Over ₹2.5 Crores disbursed annually to support academic excellence and social mobility.</p>
-                  </div>
-                  <div className="mt-20 p-8 bg-white/20 rounded-3xl border border-white/30 backdrop-blur-md">
-                     <h4 className="text-4xl font-black text-[#18357a] mb-1">State Rankers</h4>
-                     <p className="font-black uppercase text-[10px] tracking-widest opacity-60">100% Fee Waiver</p>
-                  </div>
-               </motion.div>
-
-               {/* Grid Cards */}
-               {[
-                 { title: 'Merit List', desc: 'Financial support based on high TNEA cut-offs and competitive scores.', icon: Star },
-                 { title: 'First Graduate', desc: 'Special government mandated support for first-gen learners.', icon: GraduationCap },
-                 { title: 'Sports Quota', desc: 'Grants for District, State, and National level athletes.', icon: Trophy },
-                 { title: 'Institutional', desc: 'Internal rewards for top-performing university candidates.', icon: Award }
-               ].map((s, i) => (
-                 <motion.div 
-                   key={i}
-                   initial={{ opacity: 0, y: 20 }}
-                   whileInView={{ opacity: 1, y: 0 }}
-                   viewport={{ once: true }}
-                   transition={{ delay: 0.2 + (i * 0.1) }}
-                   className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:bg-[#18357a] hover:text-white transition-all duration-500 group"
-                 >
-                    <div className="w-14 h-14 rounded-2xl bg-white shadow-xl shadow-blue-900/5 flex items-center justify-center text-[#18357a] mb-8 group-hover:scale-110 transition-transform">
-                       <s.icon size={28} />
-                    </div>
-                    <h4 className="text-xl font-black uppercase mb-4 tracking-tight leading-tight">{s.title}</h4>
-                    <p className="text-[#64779F] group-hover:text-white/60 font-medium text-[13px] leading-relaxed transition-colors">{s.desc}</p>
-                 </motion.div>
-               ))}
-           </div>
-        </div>
-      </section>
-
-      {/* ─── DOWNLOADS SECTION ─── */}
-      <section id="Downloads" className="py-20 relative">
-         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="bg-[#18357a] rounded-[4rem] p-12 md:p-24 relative overflow-hidden text-center group"
-            >
-                {/* Abstract Background Design */}
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-white/[0.02] skew-x-12" />
-                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500 rounded-full blur-[150px] opacity-20 -z-10" />
-
-                <div className="relative z-10 max-w-2xl mx-auto">
-                    <span className="text-[#ffc107] font-black uppercase text-[11px] tracking-[4px] mb-8 block">Documents</span>
-                    <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase leading-tight tracking-tighter mb-8">Secure Your <br/>Prospectus</h3>
-                    <p className="text-white/70 font-bold text-[16px] mb-12 leading-[1.8]">Download the comprehensive roadmap for 2026-27 including detailed intake and faculty information.</p>
-                    
-                    <div className="flex flex-wrap items-center justify-center gap-6">
-                        <button className="flex items-center gap-4 px-10 py-5 bg-[#ffc107] text-[#18357a] rounded-3xl font-black text-xs uppercase tracking-widest hover:bg-white hover:scale-105 transition-all shadow-2xl shadow-[#ffc107]/20">
-                          <Download size={20} /> Registration Guide
-                        </button>
-                        <button className="flex items-center gap-4 px-10 py-5 bg-white/10 backdrop-blur-xl border border-white/10 text-white rounded-3xl font-black text-xs uppercase tracking-widest hover:bg-white/20 transition-all">
-                          <FileText size={20} /> Fee Handbook
-                        </button>
-                    </div>
-                </div>
-            </motion.div>
+             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                   "10th & 12th Marksheet",
+                   "Transfer Certificate (TC)",
+                   "Community Certificate",
+                   "Permanent Residence Proof",
+                   "Entrance Exam Scorecard",
+                   "Passport Size Photographs"
+                ].map((doc, i) => (
+                   <motion.div 
+                     key={i} 
+                     initial={{ opacity: 0, scale: 0.95 }}
+                     whileInView={{ opacity: 1, scale: 1 }}
+                     viewport={{ once: true }}
+                     transition={{ delay: i * 0.05 }}
+                     className="flex items-center gap-4 p-6 rounded-2xl bg-white border border-slate-100 hover:border-[#ffc107]/30 hover:shadow-xl transition-all"
+                   >
+                      <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-[#ffc107] shadow-sm">
+                         <FileText size={18} />
+                      </div>
+                      <span className="text-[12px] font-bold text-[#18357a] uppercase tracking-tight">{doc}</span>
+                   </motion.div>
+                ))}
+             </div>
           </div>
+       </section>
+
+      {/* ─── FINAL CTA SECTION ─── */}
+      <section className="py-10 mb-10 px-6">
+         <div className="max-w-5xl mx-auto">
+            <motion.div 
+               initial={{ opacity: 0, scale: 0.95 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               className="bg-[#18357a] rounded-[2.5rem] p-8 md:p-10 relative overflow-hidden group text-center shadow-2xl"
+            >
+               <div className="absolute inset-0 bg-gradient-to-br from-[#18357a] via-[#1d3c8c] to-[#0A1A3F]" />
+               <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-400 rounded-full blur-[150px] opacity-10 -z-10" />
+               
+               <div className="relative z-10">
+                  <h3 className="text-2xl md:text-4xl font-bold text-white uppercase leading-tight tracking-tighter mb-8">
+                     Ready to <span className="text-[#ffc107]">Apply?</span> <br/>
+                     Start Your Journey Today
+                  </h3>
+                  
+                  <div className="flex flex-wrap items-center justify-center gap-4">
+                      <button onClick={() => setShowApplyModal(true)} className="px-10 py-4 bg-[#ffc107] text-[#18357a] rounded-xl font-bold text-[10px] uppercase tracking-[3px] hover:bg-white transition-all shadow-xl shadow-[#ffc107]/20 transform hover:scale-105">
+                         Apply Online Now
+                      </button>
+                      <button onClick={openWhatsApp} className="px-10 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-xl font-bold text-[10px] uppercase tracking-[3px] hover:bg-white hover:text-[#18357a] transition-all transform hover:scale-105">
+                         Chat on WhatsApp
+                      </button>
+                  </div>
+
+                  <p className="mt-8 text-white/50 font-bold text-[9px] uppercase tracking-[2px]">
+                     Institution Code: 2653 • AICTE Approved • NBA Accredited
+                  </p>
+               </div>
+            </motion.div>
+         </div>
       </section>
 
       {/* ─── STICKY APPLY BAR (MOBILE) ─── */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 p-4 z-[200] flex gap-3 shadow-2xl">
-         <button onClick={openWhatsApp} className="flex-1 py-4 bg-[#18357a]/5 text-[#18357a] border border-[#18357a]/10 rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center justify-center gap-2">
+         <button onClick={openWhatsApp} className="flex-1 py-4 bg-[#18357a]/5 text-[#18357a] border border-[#18357a]/10 rounded-xl font-bold text-[10px] uppercase tracking-widest flex items-center justify-center gap-2">
             <MessageCircle size={18} /> WhatsApp
          </button>
-         <button onClick={() => setShowApplyModal(true)} className="flex-[2] py-4 bg-[#18357a] text-white rounded-xl font-black text-[10px] uppercase tracking-widest">
+         <button onClick={() => setShowApplyModal(true)} className="flex-[2] py-4 bg-[#18357a] text-white rounded-xl font-bold text-[10px] uppercase tracking-widest">
             Apply Online Now
          </button>
       </div>
@@ -615,8 +533,8 @@ const AdmissionsPage = () => {
                   
                   <div className="absolute inset-0 p-10 flex flex-col justify-center">
                       <img src={logo} alt="KIOT" className="h-10 w-auto object-contain mb-4 filter brightness-0" />
-                      <h2 className="text-3xl font-black text-[#18357a] uppercase tracking-tighter leading-none">Admission 2026</h2>
-                      <p className="text-[#18357a]/60 font-black text-[10px] uppercase tracking-[3px] mt-2">Registration Portal</p>
+                      <h2 className="text-3xl font-bold text-[#18357a] uppercase tracking-tighter leading-none">Admission 2026</h2>
+                      <p className="text-[#18357a]/60 font-bold text-[10px] uppercase tracking-[3px] mt-2">Registration Portal</p>
                   </div>
                   <button 
                     onClick={() => setShowApplyModal(false)}
@@ -632,30 +550,30 @@ const AdmissionsPage = () => {
                      <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
                         <CheckCircle2 size={40} className="text-[#18357a]" />
                      </div>
-                     <h3 className="text-2xl font-black text-[#18357a] uppercase mb-4 tracking-tighter">Success!</h3>
-                     <p className="text-slate-500 font-bold text-sm leading-relaxed max-w-[280px] mx-auto">Your application request has been received. Our team will contact you within 24 hours.</p>
-                     <button onClick={() => setShowApplyModal(false)} className="mt-10 px-8 py-3 bg-[#18357a] text-white rounded-xl text-[10px] font-black uppercase tracking-widest active:scale-95 transition-all">Close Window</button>
+                     <h3 className="text-2xl font-bold text-[#18357a] uppercase mb-4 tracking-tighter">Success!</h3>
+                     <p className="text-slate-500 font-semibold text-sm leading-relaxed max-w-[280px] mx-auto">Your application request has been received. Our team will contact you within 24 hours.</p>
+                     <button onClick={() => setShowApplyModal(false)} className="mt-10 px-8 py-3 bg-[#18357a] text-white rounded-xl text-[10px] font-bold uppercase tracking-widest active:scale-95 transition-all">Close Window</button>
                   </div>
                 ) : (
                   <form onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }} className="space-y-6">
                      <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-1.5 transition-transform">
-                           <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">Full Name <div className="w-1 h-1 rounded-full bg-[#ffc107]" /></label>
-                           <input required type="text" placeholder="John Doe" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-sm font-bold focus:outline-none focus:border-[#18357a] transition-all" />
+                        <div className="space-y-1.5">
+                           <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">Full Name <div className="w-1 h-1 rounded-full bg-[#ffc107]" /></label>
+                           <input required type="text" placeholder="John Doe" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-sm font-semibold focus:outline-none focus:border-[#18357a] transition-all" />
                         </div>
-                        <div className="space-y-1.5 transition-transform">
-                           <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">Phone Number <div className="w-1 h-1 rounded-full bg-[#ffc107]" /></label>
-                           <input required type="tel" placeholder="+91 99XXX XXXXX" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-sm font-bold focus:outline-none focus:border-[#18357a] transition-all" />
+                        <div className="space-y-1.5">
+                           <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">Phone Number <div className="w-1 h-1 rounded-full bg-[#ffc107]" /></label>
+                           <input required type="tel" placeholder="+91 99XXX XXXXX" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-sm font-semibold focus:outline-none focus:border-[#18357a] transition-all" />
                         </div>
                      </div>
-                     <div className="space-y-1.5 transition-transform">
-                        <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">Email Address <div className="w-1 h-1 rounded-full bg-[#ffc107]" /></label>
-                        <input required type="email" placeholder="john@example.com" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-sm font-bold focus:outline-none focus:border-[#18357a] transition-all" />
+                     <div className="space-y-1.5">
+                        <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">Email Address <div className="w-1 h-1 rounded-full bg-[#ffc107]" /></label>
+                        <input required type="email" placeholder="john@example.com" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-sm font-semibold focus:outline-none focus:border-[#18357a] transition-all" />
                      </div>
-                     <div className="space-y-1.5 transition-transform">
-                        <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">Target Program <div className="w-1 h-1 rounded-full bg-[#ffc107]" /></label>
+                     <div className="space-y-1.5">
+                        <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">Target Program <div className="w-1 h-1 rounded-full bg-[#ffc107]" /></label>
                         <div className="relative">
-                           <select className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-[11px] font-black uppercase tracking-widest text-[#18357a] appearance-none focus:outline-none focus:border-[#18357a]">
+                           <select className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-[11px] font-bold uppercase tracking-widest text-[#18357a] appearance-none focus:outline-none focus:border-[#18357a]">
                               <option>B.E. Computer Science</option>
                               <option>B.E. Mechanical Engg</option>
                               <option>B.E. ECE</option>
@@ -666,7 +584,7 @@ const AdmissionsPage = () => {
                            <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
                         </div>
                      </div>
-                     <button type="submit" className="w-full py-5 bg-[#18357a] text-white rounded-xl font-black text-[12px] uppercase tracking-[3px] hover:bg-[#1d3a82] transition-all shadow-xl shadow-blue-900/10 active:scale-95 flex items-center justify-center gap-3">
+                     <button type="submit" className="w-full py-5 bg-[#18357a] text-white rounded-xl font-bold text-[12px] uppercase tracking-[3px] hover:bg-[#1d3a82] transition-all shadow-xl shadow-blue-900/10 active:scale-95 flex items-center justify-center gap-3">
                         Submit Application <Send size={18} />
                      </button>
                   </form>
@@ -679,15 +597,13 @@ const AdmissionsPage = () => {
                     <path d="M400 100C300 60 100 40 0 0V100H400Z" className="opacity-10" />
                   </svg>
                   <div className="absolute inset-0 flex items-center justify-center px-10">
-                     <p className="text-white text-[9px] font-black uppercase tracking-[2px] mt-4 relative z-10">Confidence Through Knowledge</p>
+                     <p className="text-white text-[9px] font-bold uppercase tracking-[2px] mt-4 relative z-10">Confidence Through Knowledge</p>
                   </div>
               </div>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
-
-
     </div>
   )
 }

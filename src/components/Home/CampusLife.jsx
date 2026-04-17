@@ -137,7 +137,7 @@ const CampusLife = () => {
 
                       {/* Tag pill (top-left) */}
                       <div className="absolute top-5 left-5">
-                          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] font-black uppercase tracking-widest shadow-xl">
+                          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#18357a] text-white text-[9px] font-black uppercase tracking-widest shadow-xl border border-white/10">
                               {fac.tag}
                           </span>
                       </div>
@@ -191,10 +191,15 @@ const CampusLife = () => {
            </div>
            
            <div className="relative z-10 flex flex-col items-center md:items-end md:pl-10 md:border-l border-white/20">
-              <div className="px-6 py-2 rounded-full bg-[#ffc107] mb-3">
-                 <p className="text-base font-black text-[#18357a] tracking-tight">ISO CERTIFIED</p>
+              <div className="flex flex-wrap justify-center md:justify-end gap-3 mb-3">
+                  <div className="px-6 py-2 rounded-full bg-[#ffc107]">
+                     <p className="text-base font-black text-[#18357a] tracking-tight">NAAC 'A' GRADE</p>
+                  </div>
+                  <div className="px-6 py-2 rounded-full bg-white">
+                     <p className="text-base font-black text-[#18357a] tracking-tight">NBA ACCREDITED</p>
+                  </div>
               </div>
-              <p className="text-[10px] uppercase font-black tracking-[0.4em] text-white/50">Global Quality Standard</p>
+              <p className="text-[10px] uppercase font-black tracking-[0.4em] text-white/50 text-center md:text-right">Institutional Quality Excellence</p>
            </div>
         </motion.div>
 

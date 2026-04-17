@@ -230,7 +230,7 @@ export default function CourseDetailPage() {
               {/* Massive Leaf-Shaped Branding Visual */}
               <div className="relative group">
                 <div className="absolute -inset-4 bg-[#ffc107]/10 rounded-[10rem_3rem_10rem_3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-duration-1000" />
-                <div className="relative h-[400px] w-full rounded-[10rem_3.5rem_10rem_3.5rem] overflow-hidden border-4 border-white/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
+                <div className="relative h-[398px] w-full rounded-[10rem_3.5rem_10rem_3.5rem] overflow-hidden border-4 border-white/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
                   <img 
                     src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"} 
                     alt={course.name} 
@@ -552,29 +552,43 @@ export default function CourseDetailPage() {
                   <h2 className="text-2xl font-extrabold text-[#18357a] mb-1">Our Faculty</h2>
                   <p className="text-[#64779F]">Industry-experienced academics committed to your success</p>
                 </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
                   {course.faculty.map((f, i) => (
                     <motion.div
                       key={f.name}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="bg-white rounded-2xl border border-[#E5EDF8] p-6 text-center hover:border-[#18357a]/30 hover:shadow-lg transition-all flex flex-col"
+                      transition={{ delay: i * 0.05 }}
+                      onClick={() => setSelectedFaculty(f)}
+                      className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
                     >
-                      <div className="w-16 h-16 rounded-2xl bg-[#18357a]/8 flex items-center justify-center mx-auto mb-4">
-                        <GraduationCap size={28} className="text-[#18357a]" />
+                      <div className="w-full aspect-[4/5] bg-slate-100 overflow-hidden">
+                        {f.image ? (
+                          <img 
+                            src={f.image} 
+                            alt={f.name} 
+                            className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" 
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-slate-300">
+                             <GraduationCap size={44} />
+                          </div>
+                        )}
                       </div>
-                      <h3 className="font-extrabold text-[#18357a] text-[15px] mb-1 leading-tight">{f.name}</h3>
-                      <p className="text-[#ffc107] text-[12px] font-bold mb-1">{f.designation}</p>
-                      <p className="text-[#64779F] text-[11px] mb-3 line-clamp-2">{f.specialization}</p>
                       
-                      <div className="mt-auto pt-4">
-                        <button 
-                          onClick={() => setSelectedFaculty(f)}
-                          className="w-full py-2 bg-[#18357a]/5 text-[#18357a] text-[11px] font-black tracking-widest uppercase rounded-lg hover:bg-[#18357a] hover:text-white transition-all"
-                        >
-                          View Profile
-                        </button>
+                      <div className="p-[13px] flex flex-col flex-1">
+                        <h3 className="font-bold text-[#18357a] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
+                          {f.name}
+                        </h3>
+                        <p className="text-slate-500 text-[10px] font-bold leading-tight mb-2.5 line-clamp-2">
+                          {f.designation}
+                        </p>
+                        
+                        <div className="mt-auto">
+                           <span className="inline-block text-[9px] font-black uppercase tracking-[0.15em] text-[#18357a] group-hover:text-[#ffc107] transition-all bg-[#18357a]/5 px-2 py-1 rounded">
+                              View Bio →
+                           </span>
+                        </div>
                       </div>
                     </motion.div>
                   ))}
@@ -976,8 +990,12 @@ export default function CourseDetailPage() {
                   </button>
 
                   <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
-                      <GraduationCap size={52} className="text-[#ffc107]" />
+                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden">
+                      {selectedFaculty.image ? (
+                        <img src={selectedFaculty.image} alt={selectedFaculty.name} className="w-full h-full object-cover" />
+                      ) : (
+                        <GraduationCap size={52} className="text-[#ffc107]" />
+                      )}
                     </div>
                     <div className="text-center md:text-left">
                       <h2 className="text-2xl md:text-3xl font-black text-white mb-2 leading-tight uppercase tracking-tight">

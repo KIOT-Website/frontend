@@ -22,6 +22,18 @@ const leaders = [
     ]
   },
   {
+    id: 5,
+    name: "Dr. J. Kumar",
+    role: "Secretary",
+    designation: "Secretary, KIOTT (B.E., M.Tech. (IIT-M), Ph.D., FIE.)",
+    image: secretaryImg,
+    fullMessage: [
+      "Greetings!",
+      "We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.",
+      "The latest curriculum, paired with modern insights into engineering, technology, and research, along with innovative facilities, ensures that each student gains a substantial edge in advanced technical expertise and competencies. I extend a warm welcome to you at KIOT and all the opportunities it presents. Join us and immerse yourself in the KIOT experience!"
+    ]
+  },
+  {
     id: 3,
     name: "Dr. K. Visagavel",
     role: "Principal",
@@ -33,18 +45,6 @@ const leaders = [
       "We at KIOT are committed to fostering a holistic learning environment, enriched by state-of-the-art infrastructure, industry collaborations, and extracurricular opportunities. I encourage you to actively participate in academic and co-curricular activities, network with peers and mentors, and embrace the culture of continuous learning.",
       "Remember, your journey at KIOT is not just about earning a degree; it is about transforming your potential into purpose. Together, let us strive to make a positive difference in our communities and the world.",
       "Wishing you a fulfilling and successful academic journey ahead!"
-    ]
-  },
-  {
-    id: 5,
-    name: "Dr. J. Kumar",
-    role: "Secretary",
-    designation: "Secretary, KIOTT (B.E., M.Tech. (IIT-M), Ph.D., FIE.)",
-    image: secretaryImg,
-    fullMessage: [
-      "Greetings!",
-      "We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.",
-      "The latest curriculum, paired with modern insights into engineering, technology, and research, along with innovative facilities, ensures that each student gains a substantial edge in advanced technical expertise and competencies. I extend a warm welcome to you at KIOT and all the opportunities it presents. Join us and immerse yourself in the KIOT experience!"
     ]
   }
 ]
@@ -70,7 +70,7 @@ const Leadership = () => {
   }, [selectedLeader])
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-16 pb-20 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-10 pb-20 min-h-screen overflow-hidden">
       
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
@@ -78,50 +78,50 @@ const Leadership = () => {
       <div className="relative z-10 w-full px-6 lg:px-12">
         
         {/* Main Page Header - Refined to match About Us style */}
-        <div className="text-center mb-16 lg:mb-24 pt-10">
-          <motion.div 
+        <div className="text-center mb-12 lg:mb-16 pt-5">
+          <div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center"
           >
             <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
                <span className="relative flex h-3.5 w-3.5">
-                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
+                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#18357a] opacity-60"></span>
                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
                </span>
-               <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Management & Governance</span>
+               <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Management & Governance</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap">
               Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block uppercase">Leadership</span>
             </h1>
-          </motion.div>
+          </div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter max-w-3xl mx-auto"
+            className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik max-w-3xl mx-auto"
           >
             Meet the collective wisdom of researchers, academicians, and entrepreneurs driving KIOT towards a future of global excellence and technical leadership.
           </motion.p>
         </div>
 
         {/* Promoters' Profile Section */}
-        <div className="mb-20">
+        <div className="mb-10">
           <div className="relative z-10 w-full">
             {/* Minimalist Section Header Design (Updated) */}
-            <div className="flex flex-col items-center mb-16 text-center">
-               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#18357a] uppercase tracking-tighter mb-12">
-                  The Trust <span className="text-[#ffc107]">Collective</span>
+            <div className="flex flex-col items-center mb-4 text-center">
+               <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] tracking-tighter mb-4">
+                  KIOT <span className=\"text-\[#ffc107\]\">Trust</span>
                </h2>
             </div>
 
             <div className="px-4">
               {/* Introduction Text - Standardized Styling */}
               <div className="mx-auto mb-16 max-w-4xl space-y-6">
-                <p className="text-[#333333] text-[15px] leading-[26px] font-normal font-inter text-justify">
+                <p className="text-[#333333] text-[15px] leading-[26px] font-normal font-graphik text-justify">
                   KIOT Trust is the right combination of 22 Academicians in Engineering, 7 working Professionals in India and Abroad and 15 Budding First-Generation Entrepreneurs with a strong acumen to achieve greater heights in life.
                 </p>
-                <p className="text-[#333333] text-[15px] leading-[26px] font-normal font-inter text-justify">
+                <p className="text-[#333333] text-[15px] leading-[26px] font-normal font-graphik text-justify">
                   Most of the promoters have rich experience in Teaching, Research and Administration of Engineering Institutions with National and International Exposure. The composition of the team itself is a testimony to the Quality of Education offered at KIOT. Most of the promoters themselves directly engage in teaching and career moulding of students.
                 </p>
               </div>
@@ -129,12 +129,12 @@ const Leadership = () => {
               {/* Composition Dashboards */}
               <div className="grid lg:grid-cols-2 gap-8 mb-16">
                  {/* Table 1: Qualification */}
-                 <motion.div 
-                    whileHover={{ scale: 1.01 }}
-                    className="bg-white rounded-[2.5rem] border border-[#D5E2F4]/60 p-8 shadow-xl shadow-slate-200/20 flex flex-col transition-all duration-500"
+                 <div 
+                    
+                    className="bg-white rounded-xl border border-[#D5E2F4]/60 p-8 shadow-xl shadow-slate-200/20 flex flex-col transition-all duration-500"
                  >
-                    <h3 className="text-[#18357a] font-black text-[12px] uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
-                       <div className="w-1 h-6 bg-[#ffc107] rounded-full" />
+                    <h3 className="text-[#18357a] font-graphik font-bold text-[12px] uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
+                       <div className="w-1 h-6 bg-[#18357a] rounded-full" />
                        Composition By Qualification
                     </h3>
                     <div className="space-y-1 flex-1">
@@ -147,18 +147,18 @@ const Leadership = () => {
                        ].map((item, i) => (
                          <div key={i} className="flex items-center justify-between py-2.5 border-b border-slate-50 last:border-0 hover:bg-slate-50 transition-colors px-4 rounded-xl group/row">
                             <span className="text-[13px] font-bold text-[#64779F] group-hover/row:text-[#18357a] transition-colors">{item.label}</span>
-                            <span className="text-[#18357a] font-black text-base">{item.value}</span>
+                            <span className="text-[#18357a] font-graphik font-bold text-base">{item.value}</span>
                          </div>
                        ))}
                     </div>
-                 </motion.div>
+                 </div>
 
                  {/* Table 2: Activity */}
-                 <motion.div 
-                    whileHover={{ scale: 1.01 }}
-                    className="bg-white rounded-[2.5rem] border border-[#D5E2F4]/60 p-8 shadow-xl shadow-slate-200/20 flex flex-col transition-all duration-500"
+                 <div 
+                    
+                    className="bg-white rounded-xl border border-[#D5E2F4]/60 p-8 shadow-xl shadow-slate-200/20 flex flex-col transition-all duration-500"
                  >
-                    <h3 className="text-[#18357a] font-black text-[12px] uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
+                    <h3 className="text-[#18357a] font-graphik font-bold text-[12px] uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
                        <div className="w-1 h-6 bg-[#18357a] rounded-full" />
                        Composition by Activity
                     </h3>
@@ -172,17 +172,17 @@ const Leadership = () => {
                        ].map((item, i) => (
                          <div key={i} className="flex items-center justify-between py-2.5 border-b border-slate-50 last:border-0 hover:bg-slate-50 transition-colors px-4 rounded-xl group/row">
                             <span className="text-[13px] font-bold text-[#64779F] group-hover/row:text-[#18357a] transition-colors">{item.label}</span>
-                            <span className="text-[#18357a] font-black text-base">{item.value}</span>
+                            <span className="text-[#18357a] font-graphik font-bold text-base">{item.value}</span>
                          </div>
                        ))}
                     </div>
-                 </motion.div>
+                 </div>
               </div>
 
               {/* Trust Members List - Two Columns - Full width on mobile */}
-              <div className="bg-[#18357a] rounded-none sm:rounded-[3.5rem] p-8 sm:p-12 lg:p-16 relative overflow-hidden -mx-4 sm:mx-0">
+              <div className="bg-[#18357a] rounded-2xl p-8 sm:p-12 lg:p-16 relative overflow-hidden -mx-4 sm:mx-0">
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -mr-48 -mb-48" />
-                <h3 className="text-[#ffc107] font-black text-[15px] sm:text-[18px] lg:text-[20px] uppercase tracking-[0.4em] mb-12 text-center px-4 leading-relaxed">
+                <h3 className="text-[#18357a] font-graphik font-bold text-[15px] sm:text-[18px] lg:text-[20px] uppercase tracking-[0.4em] mb-12 text-center px-4 leading-relaxed">
                    Directory of KIOT Trust Members
                 </h3>
                 
@@ -207,7 +207,7 @@ const Leadership = () => {
                         "Mr.Karuppiah Muthu B.A."
                       ].map((name, i) => (
                         <div key={i} className="flex gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border-b border-white/5 last:border-0 group">
-                           <span className="text-[#ffc107] font-black text-[10px] shrink-0 w-6 opacity-30 group-hover:opacity-100">{i + 1}</span>
+                           <span className="text-[#18357a] font-graphik font-bold text-[10px] shrink-0 w-6 opacity-30 group-hover:opacity-100">{i + 1}</span>
                            <span className="text-white font-bold text-[12px] leading-tight">{name}</span>
                         </div>
                       ))}
@@ -232,7 +232,7 @@ const Leadership = () => {
                         "Dr.AMJ Md. Zubair Rahman B.E., M.E., Ph.D."
                       ].map((name, i) => (
                         <div key={i + 17} className="flex gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border-b border-white/5 last:border-0 group">
-                           <span className="text-[#ffc107] font-black text-[10px] shrink-0 w-6 opacity-30 group-hover:opacity-100">{i + 17}</span>
+                           <span className="text-[#18357a] font-graphik font-bold text-[10px] shrink-0 w-6 opacity-30 group-hover:opacity-100">{i + 17}</span>
                            <span className="text-white font-bold text-[12px] leading-tight">{name}</span>
                         </div>
                       ))}
@@ -244,34 +244,34 @@ const Leadership = () => {
         </div>
 
         {/* Leadership Voices Section */}
-        <div className="text-center mb-16">
-          <motion.div 
+        <div className="text-center mb-8">
+          <div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl md:text-5xl font-black text-[#18357a] mb-6 tracking-tighter uppercase">
-              Leadership <span className="text-[#ffc107]">Voices</span>
+            <h1 className="text-3xl md:text-5xl font-graphik font-bold text-[#18357a] mb-6 tracking-tighter uppercase">
+              Leadership <span className="text-[#18357a]">Voices</span>
             </h1>
             <p className="text-[#64779F] text-[15px] font-bold max-w-2xl mx-auto text-center">
               Guidance and perspective from the leaders shaping the institutional vision and daily excellence of KIOT.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* Leadership Grid - Option 1: Profile Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-10 px-4">
           {leaders.map((leader, idx) => (
-            <motion.div
+            <div
               key={leader.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative group bg-white pt-10 pb-10 px-8 flex flex-col items-center text-center transition-all duration-500 rounded-[3rem]"
+              className="relative group bg-white pt-10 pb-10 px-8 flex flex-col items-center text-center transition-all duration-500 rounded-xl"
             >
-              <div className="absolute inset-0 border-[3px] border-slate-100 rounded-[3rem] transition-all duration-500 group-hover:border-[#18357a]/10" />
+              <div className="absolute inset-0 border-[3px] border-slate-100 rounded-xl transition-all duration-500 group-hover:border-[#18357a]/10" />
               <div className="absolute top-0 right-0 w-24 h-24 border-t-[3px] border-r-[3px] border-[#18357a]/40 rounded-tr-[3rem] -mr-[1px] -mt-[1px] transition-all duration-700 group-hover:border-[#18357a]" />
               <div className="absolute bottom-0 left-0 w-24 h-24 border-b-[3px] border-l-[3px] border-[#ffc107]/40 rounded-bl-[3rem] -ml-[1px] -mb-[1px] transition-all duration-700 group-hover:border-[#ffc107]" />
 
@@ -285,16 +285,16 @@ const Leadership = () => {
                  </div>
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-black text-[#18357a] font-display mb-1">{leader.name}</h3>
-              <p className="text-[#ffc107] text-[10px] font-black uppercase tracking-[0.2em] mb-6">{leader.role}</p>
+              <h3 className="text-xl lg:text-2xl font-graphik font-bold text-[#18357a] font-graphik mb-1">{leader.name}</h3>
+              <p className="text-[#18357a] text-[10px] font-graphik font-bold uppercase tracking-[0.2em] mb-6">{leader.role}</p>
 
               <button 
                 onClick={() => setSelectedLeader(leader)}
-                className="relative z-10 px-8 py-3.5 bg-white border-2 border-[#18357a]/10 rounded-full text-[#18357a] text-[11px] font-black uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+                className="relative z-10 px-8 py-3.5 bg-white border-2 border-[#18357a]/10 rounded-full text-[#18357a] text-[11px] font-graphik font-bold uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
               >
                 Read Message →
               </button>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -303,14 +303,14 @@ const Leadership = () => {
       <AnimatePresence>
         {selectedLeader && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-10 overflow-hidden">
-            <motion.div 
+            <div 
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                exit={{ opacity: 0 }}
                onClick={() => setSelectedLeader(null)}
                className="absolute inset-0 bg-[#18357a]/50 backdrop-blur-xl"
             />
-            <motion.div
+            <div
               layoutId={selectedLeader.id}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -334,29 +334,29 @@ const Leadership = () => {
                       style={selectedLeader.role !== 'Chairman' ? { objectPosition: 'center 15%' } : {}}
                     />
                   </div>
-                  <h3 className="text-lg lg:text-2xl font-black text-white font-display mb-1">{selectedLeader.name}</h3>
-                  <p className="text-[#ffc107] text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] mb-2 md:mb-8 leading-relaxed px-4">
+                  <h3 className="text-lg lg:text-2xl font-graphik font-bold text-white font-graphik mb-1">{selectedLeader.name}</h3>
+                  <p className="text-[#18357a] text-[9px] sm:text-[10px] font-graphik font-bold uppercase tracking-[0.2em] mb-2 md:mb-8 leading-relaxed px-4">
                     {selectedLeader.designation}
                   </p>
                </div>
 
                 {/* Message Body - Expanded space */}
                 <div className="flex-1 p-8 sm:p-10 lg:p-16 overflow-y-auto custom-scrollbar">
-                   <Quote size={40} className="text-[#ffc107]/20 mb-4" />
-                   <h2 className="text-xl lg:text-3xl font-black text-[#18357a] font-display mb-6">{selectedLeader.role} Message</h2>
+                   <Quote size={40} className="text-[#18357a]/20 mb-4" />
+                   <h2 className="text-xl lg:text-3xl font-graphik font-bold text-[#18357a] font-graphik mb-6">{selectedLeader.role} Message</h2>
                   <div className="space-y-6">
                     {selectedLeader.fullMessage.map((p, i) => (
-                      <p key={i} className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter text-justify">
+                      <p key={i} className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik text-justify">
                         {p}
                       </p>
                     ))}
                   </div>
                   <div className="mt-12 pt-8 border-t border-[#D5E2F4]">
-                     <p className="text-[#18357a] font-black italic">Warm Regards,</p>
-                     <p className="text-[#18357a] font-black text-xl mt-1">{selectedLeader.name}</p>
+                     <p className="text-[#18357a] font-graphik font-bold italic">Warm Regards,</p>
+                     <p className="text-[#18357a] font-graphik font-bold text-xl mt-1">{selectedLeader.name}</p>
                   </div>
                </div>
-            </motion.div>
+            </div>
           </div>
         )}
       </AnimatePresence>

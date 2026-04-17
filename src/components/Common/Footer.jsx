@@ -29,7 +29,6 @@ const Footer = () => {
       { name: 'Training & Skills', href: '/training' },
       { name: 'Recruitment Process', href: '/recruitment' },
       { name: 'Outcomes & Records', href: '/records' },
-      { name: 'Institutional Achievements', href: '/achievements' },
       { name: 'Events & Media', href: '/events' },
     ],
     'Admissions': [

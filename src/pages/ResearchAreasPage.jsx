@@ -94,6 +94,7 @@ const ResearchAreasPage = () => {
                         </Link>
                         <ChevronRight size={14} className="text-slate-300" />
                         <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+<<<<<<< HEAD
                             Departmentwise Research Initiatives
                         </Link>
                         <ChevronRight size={14} className="text-slate-300" />
@@ -103,6 +104,17 @@ const ResearchAreasPage = () => {
                         <ChevronRight size={14} className="text-slate-300" />
                         <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
                             Major Research Areas of Civil Department
+=======
+                            Research Initiatives
+                        </Link>
+                        <ChevronRight size={14} className="text-slate-300" />
+                        <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                            {deptName?.toUpperCase()}
+                        </Link>
+                        <ChevronRight size={14} className="text-slate-300" />
+                        <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
+                            Major Research Areas
+>>>>>>> becf6ba842c88b2ca2541fe7e06f86941ce745c2
                         </span>
                     </div>
                 </div>
@@ -121,12 +133,20 @@ const ResearchAreasPage = () => {
                         </Link>
 
                         <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+<<<<<<< HEAD
                             Major Research Areas of <span className="text-[#ffc107]">Civil Department</span>
+=======
+                            Major <span className="text-[#ffc107]">Research Areas</span>
+>>>>>>> becf6ba842c88b2ca2541fe7e06f86941ce745c2
                         </h1>
 
                         <div className="max-w-3xl border-l-4 border-[#ffc107] pl-8 py-1">
                             <p className="text-[#1e293b] text-base font-semibold leading-relaxed">
+<<<<<<< HEAD
                                 Civil Engineering research domains presented in the same visual style as the other department research pages.
+=======
+                                Advanced research domains within the Civil Department focusing on sustainable infrastructure, modern construction materials, and smart building technologies.
+>>>>>>> becf6ba842c88b2ca2541fe7e06f86941ce745c2
                             </p>
                         </div>
                     </motion.div>
@@ -138,11 +158,16 @@ const ResearchAreasPage = () => {
                     >
                         <div className="px-6 sm:px-8 py-6 bg-[#18357a]">
                             <h2 className="text-white text-lg sm:text-xl font-black uppercase tracking-[0.15em]">
+<<<<<<< HEAD
                                 Major Research Areas
+=======
+                                Major Research <span className="text-[#ffc107]">Focus Areas</span>
+>>>>>>> becf6ba842c88b2ca2541fe7e06f86941ce745c2
                             </h2>
                         </div>
 
                         <div className="overflow-x-auto">
+<<<<<<< HEAD
                             <table className="w-full border-collapse">
                                 <thead>
                                     <tr>
@@ -150,10 +175,20 @@ const ResearchAreasPage = () => {
                                         <th className="bg-black px-4 sm:px-6 py-4 text-left text-[11px] font-black text-white uppercase tracking-[2px]">Research Areas</th>
                                         <th className="bg-black px-4 sm:px-6 py-4 text-center text-[11px] font-black text-white uppercase tracking-[2px] w-20">S. No.</th>
                                         <th className="bg-black px-4 sm:px-6 py-4 text-left text-[11px] font-black text-white uppercase tracking-[2px]">Research Areas</th>
+=======
+                            <table className="w-full border-collapse text-left">
+                                <thead>
+                                    <tr>
+                                        <th className="bg-[#0f172a] px-4 sm:px-6 py-5 text-center text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] w-20 border-r border-white/5">S. No.</th>
+                                        <th className="bg-[#0f172a] px-4 sm:px-6 py-5 text-left text-[10px] font-black text-white uppercase tracking-[2px]">Core Research Domains</th>
+                                        <th className="bg-[#0f172a] px-4 sm:px-6 py-5 text-center text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] w-20 border-x border-white/5">S. No.</th>
+                                        <th className="bg-[#0f172a] px-4 sm:px-6 py-5 text-left text-[10px] font-black text-white uppercase tracking-[2px]">Specialized Areas</th>
+>>>>>>> becf6ba842c88b2ca2541fe7e06f86941ce745c2
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
                                     {civilResearchAreaRows.map((row, idx) => (
+<<<<<<< HEAD
                                         <tr key={idx} className="hover:bg-[#fafcff] transition-colors">
                                             <td className="px-4 sm:px-6 py-5 text-center">
                                                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50/50 text-black font-black text-xs">
@@ -166,11 +201,29 @@ const ResearchAreasPage = () => {
                                             <td className="px-4 sm:px-6 py-5 text-center">
                                                 {row.rightNo ? (
                                                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50/50 text-black font-black text-xs">
+=======
+                                        <tr key={idx} className="hover:bg-[#fafcff] group transition-colors">
+                                            <td className="px-4 sm:px-6 py-5 text-center border-r border-slate-50">
+                                                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#18357a]/5 text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all">
+                                                    {row.leftNo}
+                                                </span>
+                                            </td>
+                                            <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#1e293b] uppercase tracking-tight group-hover:text-[#18357a] transition-colors">
+                                                {row.leftArea}
+                                            </td>
+                                            <td className="px-4 sm:px-6 py-5 text-center border-x border-slate-50">
+                                                {row.rightNo ? (
+                                                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-[#18357a]/5 text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all">
+>>>>>>> becf6ba842c88b2ca2541fe7e06f86941ce745c2
                                                         {row.rightNo}
                                                     </span>
                                                 ) : null}
                                             </td>
+<<<<<<< HEAD
                                             <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#0f172a] uppercase tracking-tight">
+=======
+                                            <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#1e293b] uppercase tracking-tight group-hover:text-[#18357a] transition-colors">
+>>>>>>> becf6ba842c88b2ca2541fe7e06f86941ce745c2
                                                 {row.rightArea}
                                             </td>
                                         </tr>

@@ -35,24 +35,30 @@ import {
   Trophy,
   ArrowRight
 } from 'lucide-react'
-import logo from '../../assets/main/logo.webp'
+import logo from '../../assets/main/main-logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
 import nirfLogo from '../../assets/main/nirf.webp'
 import nbaLogo from '../../assets/main/NBA1 (1).webp'
-import codeLogo from '../../assets/main/counciling code.webp'
+import codeLogo from '../../assets/main/2653 code .webp'
 
 const navLinks = [
+  { 
+    name: 'Home', 
+    href: '', 
+    hasDropdown: false 
+  },
   {
     name: 'About',
     href: 'about',
     hasDropdown: true,
     subLinks: [
       { name: 'About Us', href: 'about-us', icon: Building2 },
+      { name: 'Our Values', href: 'our-values', icon: Target },
       { name: 'Leadership', href: 'leadership', icon: Users },
       { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
+      { name: 'Academic Council', href: 'academic-council', icon: ShieldCheck },
       { name: 'Guidelines', href: 'guidelines', icon: FileText },
-      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText },
-      { name: 'Achievements', href: 'achievements', icon: GraduationCap }
+      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText }
     ]
   },
   {
@@ -196,7 +202,7 @@ const Header = () => {
             <a
               href="#top"
               onClick={(e) => handleNavClick(e, 'Home')}
-              className="relative flex w-full items-center pl-6 pr-10 py-2 xl:pl-8 xl:pr-12 group/logo hover:opacity-90 transition-opacity"
+              className="relative flex w-full items-center pl-3 pr-10 py-2 xl:pl-4 xl:pr-12 group/logo hover:opacity-90 transition-opacity"
             >
               <img
                 src={logo}

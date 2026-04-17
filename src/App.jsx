@@ -11,11 +11,11 @@ import Footer from './components/Common/Footer'
 // Page Components
 const Home = lazy(() => import('./pages/Home'))
 import AboutUsPage from './pages/AboutUsPage'
+import OurValuesPage from './pages/OurValuesPage'
 import LeadershipPage from './pages/LeadershipPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
 import GuidelinesPage from './pages/GuidelinesPage'
-import AchievementsPage from './pages/AchievementsPage'
 import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 import PlacementOverviewPage from './pages/PlacementOverviewPage'
 import { GraduationCap, X } from 'lucide-react'
@@ -41,6 +41,8 @@ const LibraryAccessPage = lazy(() => import('./pages/LibraryAccessPage'))
 const LibraryBooksPage = lazy(() => import('./pages/LibraryBooksPage'))
 const LibraryJournalsPage = lazy(() => import('./pages/LibraryJournalsPage'))
 const LibraryMagazinesPage = lazy(() => import('./pages/LibraryMagazinesPage'))
+const SportsFacultyPage = lazy(() => import('./pages/SportsFacultyPage'))
+const SportsFacilitiesPage = lazy(() => import('./pages/SportsFacilitiesPage'))
 const AutonomousPage = lazy(() => import('./pages/AutonomousPage'))
 const COEPage = lazy(() => import('./pages/COEPage'))
 const ExamSchedulesPage = lazy(() => import('./pages/ExamSchedulesPage'))
@@ -59,6 +61,18 @@ const NonIndexedPublicationsPage = lazy(() => import('./pages/NonIndexedPublicat
 const ConferencesPage = lazy(() => import('./pages/ConferencesPage'))
 const ResearchProposalsPage = lazy(() => import('./pages/ResearchProposalsPage'))
 const ConsultancyPage = lazy(() => import('./pages/ConsultancyPage'))
+const EventDetailPage = lazy(() => import('./pages/EventDetailPage'))
+const LibraryPage = lazy(() => import('./pages/LibraryPage'))
+const SportsPage = lazy(() => import('./pages/SportsPage'))
+const ClassroomPage = lazy(() => import('./pages/ClassroomPage'))
+const TourPage = lazy(() => import('./pages/TourPage'))
+const TransportPage = lazy(() => import('./pages/TransportPage'))
+const AmenitiesPage = lazy(() => import('./pages/AmenitiesPage'))
+const InsurancePage = lazy(() => import('./pages/InsurancePage'))
+const MediaCenterPage = lazy(() => import('./pages/MediaCenterPage'))
+const EnergyPage = lazy(() => import('./pages/EnergyPage'))
+const InternetPage = lazy(() => import('./pages/InternetPage'))
+const StudentLifePage = lazy(() => import('./pages/StudentLifePage'))
 
 
 // Simple Loading Fallback
@@ -109,7 +123,24 @@ function App() {
   }, [loading])
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (location.hash) {
+      const id = location.hash.replace('#', '')
+      setTimeout(() => {
+        const element = document.getElementById(id)
+        if (element) {
+          const offset = 120
+          const bodyRect = document.body.getBoundingClientRect().top
+          const elementRect = element.getBoundingClientRect().top
+          const elementPosition = elementRect - bodyRect
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+          })
+        }
+      }, 100)
+    } else {
+      window.scrollTo(0, 0)
+    }
   }, [location])
 
   return (
@@ -142,12 +173,11 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about-us" element={<AboutUsPage />} />
+                  <Route path="/our-values" element={<OurValuesPage />} />
                   <Route path="/leadership" element={<LeadershipPage />} />
                   <Route path="/guidelines" element={<GuidelinesPage />} />
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/governing-council" element={<GoverningCouncilPage />} />
-                  <Route path="/awards-recognition" element={<AchievementsPage />} />
-                  <Route path="/achievements" element={<AchievementsPage />} />
                   
                   {/* Placement Pages */}
                   <Route path="/placements" element={<UnderConstruction />} />
@@ -192,17 +222,30 @@ function App() {
                   <Route path="/coe" element={<COEPage />} />
                   <Route path="/coe/exam-schedules" element={<ExamSchedulesPage />} />
                   <Route path="/campus-life" element={<CampusLifePage />} />
+              <Route path="/campus-life/library" element={<LibraryPage />} />
+              <Route path="/campus-life/sports" element={<SportsPage />} />
+              <Route path="/campus-life/classroom" element={<ClassroomPage />} />
+              <Route path="/campus-life/tour" element={<TourPage />} />
+              <Route path="/campus-life/transport" element={<TransportPage />} />
+              <Route path="/campus-life/amenities" element={<AmenitiesPage />} />
+              <Route path="/campus-life/insurance" element={<InsurancePage />} />
+              <Route path="/campus-life/media" element={<MediaCenterPage />} />
+              <Route path="/campus-life/energy" element={<EnergyPage />} />
+              <Route path="/campus-life/internet" element={<InternetPage />} />
                   <Route path="/campus-life/library/access" element={<LibraryAccessPage />} />
                   <Route path="/campus-life/library/collections" element={<LibraryBooksPage />} />
                   <Route path="/campus-life/library/journals" element={<LibraryJournalsPage />} />
                   <Route path="/campus-life/library/achievements" element={<LibraryMagazinesPage />} />
+                  <Route path="/campus-life/sports/faculty" element={<SportsFacultyPage />} />
+                  <Route path="/campus-life/sports/facilities" element={<SportsFacilitiesPage />} />
                   <Route path="/bus-routes" element={<BusRoutesPage />} />
-                  <Route path="/student-life" element={<UnderConstruction />} />
+                  <Route path="/student-life" element={<StudentLifePage />} />
                   <Route path="/alumni" element={<UnderConstruction />} />
                   <Route path="/news-events" element={<UnderConstruction />} />
                   <Route path="/blogs" element={<UnderConstruction />} />
 
                   <Route path="/events" element={<EventsPage />} />
+                  <Route path="/events/:eventSlug" element={<EventDetailPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </Suspense>

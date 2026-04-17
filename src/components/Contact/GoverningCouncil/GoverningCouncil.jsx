@@ -42,7 +42,7 @@ const GoverningCouncil = () => {
   ];
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-16 pb-32 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-6 pb-32 min-h-screen overflow-hidden">
       
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
@@ -51,36 +51,36 @@ const GoverningCouncil = () => {
       <section className="relative px-6 sm:px-10 lg:px-20 z-10 w-full">
         
         {/* Standardized Header */}
-        <div className="text-center mb-20">
-          <motion.div 
+        <div className="text-center mb-12">
+          <div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default group">
                <span className="relative flex h-3.5 w-3.5">
-                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
+                 <span className=" absolute inline-flex h-full w-full rounded-full bg-[#18357a] opacity-60"></span>
                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
                </span>
-               <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.2em]">Institutional Governance</span>
+               <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Institutional Governance</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-tight">
               Governing <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107] uppercase">Council</span>
             </h1>
             
-          </motion.div>
+          </div>
         </div>
 
         {/* Functions Section */}
         <div className="w-full mb-28">
-           <h3 className="text-2xl font-black text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 uppercase tracking-tight">
-              <ShieldCheck className="text-[#ffc107]" />
+           <h3 className="text-2xl font-graphik font-bold text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 uppercase tracking-tight">
+              <ShieldCheck className="text-[#18357a]" />
               Functions of the Council
            </h3>
-           <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-5">
               {functions.map((item, idx) => (
-                <motion.div 
+                <div 
                    key={idx}
                    initial={{ opacity: 0, x: -10 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -88,58 +88,58 @@ const GoverningCouncil = () => {
                    transition={{ delay: idx * 0.05 }}
                    className="flex items-start gap-3 group"
                 >
-                   <div className="mt-1.5 w-2 h-2 rounded-full bg-[#ffc107] shrink-0 group-hover:scale-125 transition-transform" />
+                   <div className="mt-1.5 w-2 h-2 rounded-full bg-[#18357a] shrink-0 group-hover:scale-125 transition-transform" />
                    <span className="text-[#64779F] font-semibold text-[15px] leading-relaxed">{item}</span>
-                </motion.div>
+                </div>
               ))}
            </div>
         </div>
 
         {/* Council Members Section */}
         <div className="max-w-5xl mx-auto">
-           <h3 className="text-2xl font-black text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 uppercase tracking-tight">
-              <Users className="text-[#ffc107]" />
+           <h3 className="text-2xl font-graphik font-bold text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 uppercase tracking-tight">
+              <Users className="text-[#18357a]" />
               Members of Governing Council
            </h3>
            
            {/* Mobile View: Centered Cards */}
            <div className="md:hidden space-y-6">
               {councilMembers.map((member, idx) => (
-                <motion.div 
+                <div 
                    key={`mobile-${idx}`}
                    initial={{ opacity: 0, y: 20 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    viewport={{ once: true }}
                    transition={{ delay: idx * 0.05 }}
-                   className="bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(24,53,122,0.04)] border border-[#D5E2F4]/50 flex flex-col items-center text-center space-y-4"
+                   className="bg-white rounded-xl p-8 shadow-[0_20px_50px_rgba(24,53,122,0.04)] border border-[#D5E2F4]/50 flex flex-col items-center text-center space-y-4"
                 >
                    <div className="space-y-2">
-                      <div className="text-lg font-black text-[#18357a] leading-tight px-4">{member.name}</div>
+                      <div className="text-lg font-graphik font-bold text-[#18357a] leading-tight px-4">{member.name}</div>
                       <div className="text-[#64779F] text-xs font-semibold leading-relaxed tracking-wide px-4">{member.desc}</div>
                    </div>
                    <div className="pt-2">
-                      <span className="inline-block px-5 py-2 rounded-full bg-[#ffc107]/10 text-[#e0a800] text-[10px] font-black uppercase tracking-widest border border-[#ffc107]/20 shadow-sm">
+                      <span className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] text-[10px] font-graphik font-bold uppercase tracking-widest border border-[#ffc107]/20 shadow-sm">
                         {member.role}
                       </span>
                    </div>
-                </motion.div>
+                </div>
               ))}
            </div>
 
            {/* Desktop View: Premium Table */}
-           <motion.div 
+           <div 
              initial={{ opacity: 0, y: 40 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.8 }}
-             className="hidden md:block bg-white rounded-[2.5rem] overflow-hidden shadow-[0_30px_80px_rgba(24,53,122,0.06)] border border-[#D5E2F4]/50"
+             className="hidden md:block bg-white rounded-xl overflow-hidden shadow-sm border border-[#D5E2F4]/50"
            >
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-[#18357a] text-white">
-                      <th className="px-10 py-7 text-sm font-black uppercase tracking-widest min-w-[300px]">Name & Designation</th>
-                      <th className="px-10 py-7 text-sm font-black uppercase tracking-widest min-w-[200px]">Position</th>
+                      <th className="px-10 py-7 text-sm font-graphik font-bold uppercase tracking-widest min-w-[300px]">Name & Designation</th>
+                      <th className="px-10 py-7 text-sm font-graphik font-bold uppercase tracking-widest min-w-[200px]">Position</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#D5E2F4]/50">
@@ -150,16 +150,16 @@ const GoverningCouncil = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.05 }}
-                        className="group hover:bg-[#18357a]/[0.02] transition-colors"
+                        className="group  transition-colors"
                       >
                         <td className="px-10 py-7">
                           <div className="space-y-1">
-                             <div className="text-[17px] font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors">{member.name}</div>
+                             <div className="text-[17px] font-graphik font-bold text-[#18357a]  transition-colors">{member.name}</div>
                              <div className="text-[#64779F] text-xs font-semibold leading-relaxed tracking-wide max-w-lg">{member.desc}</div>
                           </div>
                         </td>
                         <td className="px-10 py-7">
-                          <span className="inline-block px-5 py-2 rounded-full bg-[#ffc107]/10 text-[#e0a800] text-[11px] font-black uppercase tracking-wider border border-[#ffc107]/5 group-hover:bg-[#ffc107] group-hover:text-white transition-all duration-300">
+                          <span className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] text-[11px] font-graphik font-bold uppercase tracking-wider border border-[#ffc107]/5  transition-all duration-300">
                             {member.role}
                           </span>
                         </td>
@@ -168,7 +168,7 @@ const GoverningCouncil = () => {
                   </tbody>
                 </table>
               </div>
-           </motion.div>
+           </div>
         </div>
 
       </section>

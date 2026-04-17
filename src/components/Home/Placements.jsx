@@ -17,25 +17,25 @@ import tessolveLogo from '../../assets/main/tessolve.webp'
 const stats = [
   {
     label: "Highest Salary",
-    value: "12 L",
+    value: "12.00 Lakhs",
     sub: "By Top Industry Leaders",
     icon: TrendingUp
   },
   {
     label: "Average Salary",
-    value: "4.30 L",
+    value: "4.30 Lakhs",
     sub: "Industry competitive",
     icon: Building2
   },
   {
     label: "Companies Visited",
-    value: "100+",
+    value: "150+",
     sub: "Top tier corporates",
     icon: Briefcase
   },
   {
     label: "% Placement",
-    value: "84%",
+    value: "91%",
     sub: "Across all streams",
     icon: GraduationCap
   }
@@ -104,7 +104,7 @@ const Placements = () => {
                    </div>
                    <div>
                       <div className="flex items-baseline gap-1.5">
-                        <span className="text-white/40 text-[10px] font-black uppercase -mt-0.5">₹</span>
+                        {stat.label.includes('Salary') && <span className="text-white/40 text-[10px] font-black uppercase -mt-0.5">₹</span>}
                         <p className="text-3xl lg:text-4xl font-black font-display tracking-tight text-white">{stat.value}</p>
                       </div>
                       <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">{stat.label}</p>

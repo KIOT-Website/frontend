@@ -101,23 +101,51 @@ const LibraryJournalsPage = () => {
     const [searchQuery, setSearchQuery] = useState('')
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD]">
-            {/* Minimal Hero Section */}
-            <div className="pt-24 pb-8 px-6 bg-white border-b border-slate-100">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <div className="space-y-4">
-                        <motion.button
+        <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
+            {/* 🔷 Shared Hero Section (Consistent across Hub) */}
+            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+                <div className="absolute inset-0">
+                    <img 
+                        src="https://images.unsplash.com/photo-1523050335392-9bc0ad7c9f83?q=80&w=1920&auto=format&fit=crop" 
+                        className="w-full h-full object-cover opacity-40" 
+                        alt="Campus"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/80 via-[#18357a]/60 to-transparent" />
+                </div>
+                
+                <div className="relative z-10 text-center px-6">
+                    <motion.div
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <button 
                             onClick={() => navigate('/campus-life')}
-                            className="flex items-center gap-2 text-[10px] font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] transition-colors"
+                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
                         >
-                            <ArrowLeft size={14} /> Back to Library Hub
-                        </motion.button>
-                        <h1 className="text-4xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
-                            Journals & <span className="text-[#ffc107]">E-Digital</span>
+                            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                        </button>
+                        <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none mb-3 font-display">
+                            CAMPUS <span className="text-[#ffc107]">LIFE</span>
                         </h1>
+                        <p className="text-white/60 font-medium text-[10px] md:text-sm max-w-2xl mx-auto uppercase tracking-widest leading-loose">
+                            Institutional Infrastructure & Ecosystem
+                        </p>
+                    </motion.div>
+                </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 py-12 space-y-12">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-8 border-t border-slate-100">
+                    <div>
+                        <h2 className="text-3xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
+                            Journals & <span className="text-[#ffc107]">E-Digital</span>
+                        </h2>
+                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[4px] mt-2">Resource Publication Network</p>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1.5 rounded-2xl">
+                    <div className="flex flex-wrap bg-slate-100 p-1.5 rounded-[1.5rem] gap-1 shadow-inner">
                         {[
                             { id: 'stats', label: 'Journal Stats', icon: FileText },
                             { id: 'directory', label: 'Journal Hub', icon: Bookmark },
@@ -126,14 +154,14 @@ const LibraryJournalsPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
+                                className={`flex items-center gap-3 px-6 py-4 rounded-xl text-[11px] font-black uppercase tracking-widest transition-all ${
                                     activeTab === tab.id 
-                                    ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20' 
-                                    : 'text-slate-500 hover:bg-[#ffc107] hover:text-[#18357a]'
+                                    ? 'bg-[#18357a] text-white shadow-xl shadow-[#18357a]/30' 
+                                    : 'text-slate-500 hover:text-[#18357a] hover:bg-white'
                                 }`}
                             >
-                                <tab.icon size={14} />
-                                {tab.label}
+                                <tab.icon size={16} />
+                                <span className={activeTab === tab.id ? 'opacity-100' : 'opacity-60'}>{tab.label}</span>
                             </button>
                         ))}
                     </div>
@@ -184,10 +212,10 @@ const LibraryJournalsPage = () => {
                                     <tbody className="divide-y divide-slate-50 transition-all">
                                         {JOURNAL_STATS.map((row, i) => (
                                             <tr key={i} className="hover:bg-[#18357a]/5 transition-colors group even:bg-slate-50/50">
-                                                <td className="px-8 py-5 font-black text-[#18357a] text-xs opacity-40 uppercase">{row.deg}</td>
-                                                <td className="px-8 py-5 font-black text-[#18357a] text-sm uppercase group-hover:text-[#ffc107] transition-colors">{row.c}</td>
-                                                <td className="px-8 py-5 text-center font-bold text-slate-400 text-sm group-hover:bg-[#18357a]/5 transition-colors">{row.nj}</td>
-                                                <td className="px-8 py-5 text-center font-black text-[#18357a] text-sm">{row.ij}</td>
+                                                <td className="px-8 py-5 font-black text-[#18357a] text-[11px] opacity-40 uppercase">{row.deg}</td>
+                                                <td className="px-8 py-5 font-black text-[#18357a] text-base uppercase group-hover:text-[#ffc107] transition-colors">{row.c}</td>
+                                                <td className="px-8 py-5 text-center font-bold text-slate-400 text-base group-hover:bg-[#18357a]/5 transition-colors">{row.nj}</td>
+                                                <td className="px-8 py-5 text-center font-black text-[#18357a] text-base">{row.ij}</td>
                                             </tr>
                                         ))}
                                         <tr className="bg-[#18357a]/5">
@@ -323,11 +351,14 @@ const LibraryJournalsPage = () => {
                                                 <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 group-hover:bg-white/5 rounded-bl-[100%] transition-colors" />
                                                 <div className="relative z-10 flex items-center justify-between">
                                                     <div className="text-left">
-                                                        <p className="text-[11px] font-black text-[#18357a] group-hover:text-[#ffc107] uppercase tracking-widest">{link.n}</p>
-                                                        <p className="text-[9px] font-bold text-slate-400 group-hover:text-white/50 uppercase tracking-tight mt-1">{link.d}</p>
+                                                        <p className="text-[13px] font-black text-[#18357a] group-hover:text-[#ffc107] uppercase tracking-widest leading-none mb-1">{link.n}</p>
+                                                        <p className="text-[10px] font-bold text-slate-400 group-hover:text-white/50 uppercase tracking-tight mt-1">{link.d}</p>
                                                     </div>
-                                                    <div className="p-3 bg-slate-50 group-hover:bg-[#ffc107] rounded-xl transition-colors shrink-0">
-                                                        <ExternalLink size={18} className="text-[#18357a] group-hover:text-[#18357a]" />
+                                                    <div className="flex flex-col items-center gap-2">
+                                                        <div className="p-3 bg-slate-50 group-hover:bg-[#ffc107] rounded-xl transition-colors shrink-0">
+                                                            <ExternalLink size={18} className="text-[#18357a] group-hover:text-[#18357a]" />
+                                                        </div>
+                                                        <span className="text-[8px] font-black uppercase text-[#ffc107] group-hover:text-white transition-colors">View</span>
                                                     </div>
                                                 </div>
                                             </a>

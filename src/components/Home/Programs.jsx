@@ -19,14 +19,14 @@ const programsData = {
     accent: '#ffc107',
     courses: [
       { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
-      { id: 'be-ece', name: "Electronics & Communication", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
-      { id: 'be-eee', name: "Electrical & Electronics", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
-      { id: 'be-cse', name: "Computer Science & Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
+      { id: 'be-ece', name: "Electronics and Communication Engineering", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
+      { id: 'be-eee', name: "Electrical and Electronics Engineering", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
+      { id: 'be-cse', name: "Computer Science and Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
       { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
       { id: 'btech-it', name: "Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
-      { id: 'btech-csbs', name: "Computer Science & Business", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
-      { id: 'btech-aids', name: "AI and Data Science", icon: Brain, code: "AIDS", duration: "4 Years", phd: true },
-      { id: 'be-ecm', name: "Electronics & Computer Eng.", icon: Cpu, code: "ECC", duration: "4 Years", phd: true }
+      { id: 'btech-csbs', name: "Computer Science and Business Systems", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
+      { id: 'btech-aids', name: "Artificial Intelligence and Data Science", icon: Brain, code: "AIDS", duration: "4 Years", phd: true },
+      { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECC", duration: "4 Years", phd: true }
     ]
   },
   PG: {
@@ -37,12 +37,12 @@ const programsData = {
     accent: '#18357a',
     courses: [
       { id: 'me-ise', name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
-      { id: 'me-ped', name: "Power Electronics & Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
       { id: 'me-ae', name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
-      { id: 'me-se', name: "M.E Software Engineering", icon: FileCode2, code: "MSE", duration: "2 Years", phd: true },
-      { id: 'mba-general', name: "Master of Business (MBA)", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
-      { id: 'mca', name: "Computer Applications (MCA)", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
-      { id: 'mba-iev', name: "Innovation & Entrepreneurship", icon: Rocket, code: "MIE", duration: "2 Years", phd: true },
+      { id: 'me-ped', name: "Power Electronics and Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
+      { id: 'me-se', name: "Software Engineering", icon: FileCode2, code: "MSE", duration: "2 Years", phd: true },
+      { id: 'mba-general', name: "MBA - General", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
+      { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
+      { id: 'mba-iev', name: "MBA (IEV)", icon: Rocket, code: "MIE", duration: "2 Years", phd: true },
       { id: 'phd', name: "Ph.D. ALL Departments", icon: Microscope, code: "PhD", duration: "Part-Time / Full Time", phd: true }
     ]
   },

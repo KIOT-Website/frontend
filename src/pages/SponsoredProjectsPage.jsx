@@ -46,6 +46,9 @@ const SponsoredProjectsPage = () => {
         ],
         'electronics-&-communication-engineering': [
             { id: 101, faculty: "Dr.N.Santhiyakumari", title: "Advanced Medical Imaging and Signal Processing Initiative", agency: "Institutional", amount: "In-Progress", period: "2024" }
+        ],
+        'civil-engineering': [
+            { id: 1, faculty: "Dr.P.M.Shanmugavadivu", title: "Application of Geo spatial technology on impact of Climate changes in water resources", agency: "Ministry of Earth sciences", amount: "1,00,000", period: "Feb-15" }
         ]
     }
 
@@ -61,7 +64,7 @@ const SponsoredProjectsPage = () => {
     const mhrdPrograms = allMhrdPrograms[deptName?.toLowerCase()] || []
     const sponsoredProjects = allSponsoredProjects[deptName?.toLowerCase()] || []
     const tnscstProjects = allTnscstProjects[deptName?.toLowerCase()] || []
-    const consultancyWork = [] // Add ECE consultancy if available
+    const consultancyWork = [] 
 
     const getMhrdSummary = () => {
         return mhrdPrograms.reduce((acc, curr) => {
@@ -74,16 +77,16 @@ const SponsoredProjectsPage = () => {
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4">
-                <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
+                <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center gap-4">
+                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         {deptName?.toUpperCase()}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#0f172a] text-xs font-bold uppercase tracking-wider pt-0.5">
+                    <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
                         Sponsored Projects
                     </span>
                 </div>
@@ -99,7 +102,7 @@ const SponsoredProjectsPage = () => {
                 >
                     <Link 
                         to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
+                        className="inline-flex items-center gap-2 text-[#18357a] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
                     >
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
@@ -132,29 +135,33 @@ const SponsoredProjectsPage = () => {
                             <table className="w-full border-collapse">
                                 <thead>
                                     <tr className="text-white">
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px] w-16">S.No.</th>
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Workshop / Program Title</th>
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Duration</th>
-                                        <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] uppercase tracking-[2px] pr-8">Grant (Rs)</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">S.No.</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Workshop / Program Title</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Duration</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] pr-8">Grant (Rs)</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100 italic font-semibold text-[#1e293b]">
                                     {mhrdPrograms.map((item, idx) => (
-                                        <tr key={item.id} className="hover:bg-[#fafcff] transition-all duration-300">
-                                            <td className="px-6 py-4">
-                                                <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
+                                        <tr key={item.id} className="group hover:bg-[#fafcff] transition-all duration-300">
+                                            <td className="px-6 py-5 border-r border-slate-50">
+                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-4 text-[13px] uppercase tracking-tight">{item.title}</td>
-                                            <td className="px-6 py-4 text-xs">{item.duration}</td>
-                                            <td className="px-6 py-4 text-right pr-8 text-xs font-bold text-[#0f172a]">{item.amount || item.fund}</td>
+                                            <td className="px-6 py-5 text-[13px] uppercase tracking-tight group-hover:text-[#18357a] transition-colors">{item.title}</td>
+                                            <td className="px-6 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest">{item.duration}</td>
+                                            <td className="px-6 py-5 text-right pr-8">
+                                                <span className="text-[14px] font-black text-[#0f172a] tracking-tight group-hover:text-[#ffc107] transition-colors">₹ {item.amount || item.fund}</span>
+                                            </td>
                                         </tr>
                                     ))}
-                                    <tr className="bg-slate-50">
-                                        <td colSpan="3" className="px-6 py-5 text-right text-xs font-bold text-[#0f172a] uppercase tracking-[2px]">Total Grant Received</td>
-                                        <td className="px-6 py-5 text-right pr-8 text-base font-bold text-[#ffc107] tracking-tight">₹ {getMhrdSummary()}</td>
-                                    </tr>
+                                    {mhrdPrograms.length > 0 && (
+                                        <tr className="bg-slate-50/80">
+                                            <td colSpan="3" className="px-6 py-5 text-right text-xs font-black text-[#0f172a] uppercase tracking-[2px]">Total Grant Received</td>
+                                            <td className="px-6 py-5 text-right pr-8 text-base font-black text-[#ffc107] tracking-tighter">₹ {getMhrdSummary()}</td>
+                                        </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>
@@ -172,39 +179,39 @@ const SponsoredProjectsPage = () => {
 
                     <div className="bg-white rounded-[2rem] shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden">
                         <div className="overflow-x-auto">
-                            <table className="w-full border-collapse">
+                            <table className="w-full border-collapse text-left">
                                 <thead>
-                                    <tr className="bg-black text-white text-left italic">
-                                        <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-widest w-16">S.No</th>
-                                        <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-widest">Project Details & Faculty</th>
-                                        <th className="px-6 py-5 text-center text-[10px] font-bold uppercase tracking-widest">Timeline / Year</th>
-                                        <th className="px-6 py-5 text-right text-[10px] font-bold text-[#ffc107] uppercase tracking-widest pr-8">Sanctioned Amount</th>
+                                    <tr className="text-white italic">
+                                        <th className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">S.No</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Project Details & Faculty</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-center text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Timeline / Year</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] pr-8">Sanctioned Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
-                                    {sponsoredProjects.map((item, idx) => (
+                                    {sponsoredProjects.length > 0 ? sponsoredProjects.map((item, idx) => (
                                         <tr key={item.id} className="hover:bg-[#fafcff] transition-all group">
-                                            <td className="px-6 py-5 align-top pt-8">
-                                                <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-black font-black text-xs group-hover:bg-black group-hover:text-white transition-all">
+                                            <td className="px-6 py-5 align-top pt-6 border-r border-slate-50">
+                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5 max-w-sm">
-                                                <p className="text-[13px] font-black text-[#18357a] uppercase leading-tight mb-2 italic">"{item.title}"</p>
+                                                <p className="text-[13px] font-black text-[#18357a] uppercase leading-tight mb-2 italic group-hover:text-[#ffc107] transition-colors">"{item.title}"</p>
                                                 <div className="flex flex-col gap-1">
                                                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item.agency}</p>
                                                     {item.faculty && (
-                                                        <p className="text-[10px] font-bold text-[#ffc107] uppercase italic">PI: {item.faculty}</p>
+                                                        <p className="text-[10px] font-bold text-[#ffc107] uppercase italic bg-[#ffc107]/5 px-2 py-0.5 rounded w-fit">PI: {item.faculty}</p>
                                                     )}
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-5 text-center">
+                                            <td className="px-6 py-5 text-center border-x border-slate-50">
                                                 <div className="flex flex-col items-center gap-1">
                                                     <span className="inline-flex items-center px-3 py-1 bg-[#0f172a] text-[#ffc107] text-[9px] font-black uppercase rounded-full border border-black/10 italic">
                                                         {item.year || item.period}
                                                     </span>
                                                     {item.date && (
-                                                        <span className="text-[8px] font-bold text-slate-300 uppercase">{item.date}</span>
+                                                        <span className="text-[8px] font-bold text-slate-300 uppercase tracking-widest mt-1">{item.date}</span>
                                                     )}
                                                 </div>
                                             </td>
@@ -212,7 +219,11 @@ const SponsoredProjectsPage = () => {
                                                 <span className="text-[14px] font-black text-[#0f172a] tracking-tight group-hover:text-[#ffc107] transition-colors">₹ {item.amount || item.fund}</span>
                                             </td>
                                         </tr>
-                                    ))}
+                                    )) : (
+                                        <tr>
+                                            <td colSpan="4" className="px-6 py-10 text-center text-slate-400 font-bold uppercase text-xs tracking-widest italic">No Sponsored Projects Indexed for {formatDeptName(deptName)}</td>
+                                        </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>
@@ -233,31 +244,35 @@ const SponsoredProjectsPage = () => {
                             <table className="w-full border-collapse">
                                 <thead>
                                     <tr className="text-white">
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px] w-16">S.No.</th>
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Project & Client</th>
-                                        <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Faculty in Charge</th>
-                                        <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] uppercase tracking-[2px] pr-8">Consultancy Fee</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">S.No.</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Project & Client</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Faculty in Charge</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] pr-8">Consultancy Fee</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
-                                    {consultancyWork.map((item, idx) => (
+                                    {consultancyWork.length > 0 ? consultancyWork.map((item, idx) => (
                                         <tr key={item.id} className="hover:bg-[#fafcff] transition-all group">
-                                            <td className="px-6 py-5">
-                                                <div className="w-8 h-8 bg-blue-50/50 rounded flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-black group-hover:text-white transition-all duration-300">
+                                            <td className="px-6 py-5 border-r border-slate-50">
+                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5">
-                                                <div className="text-[13px] font-bold text-[#0f172a] uppercase leading-tight mb-1">{item.title}</div>
-                                                <div className="text-[10px] font-semibold text-[#64779F] italic line-clamp-1">{item.client}</div>
+                                                <div className="text-[13px] font-bold text-[#0f172a] uppercase leading-tight mb-1 group-hover:text-[#18357a] transition-colors italic">"{item.title}"</div>
+                                                <div className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest line-clamp-1">{item.client}</div>
                                             </td>
-                                            <td className="px-6 py-5 text-[11px] font-bold text-[#1e293b] uppercase italic">{item.faculty}</td>
+                                            <td className="px-6 py-5 text-[11px] font-black text-[#1e293b] uppercase italic border-x border-slate-50">{item.faculty}</td>
                                             <td className="px-6 py-5 text-right pr-8">
-                                                <div className="text-[13px] font-bold text-[#0f172a]">₹ {item.amount}</div>
-                                                <div className="text-[10px] font-semibold text-slate-400">{item.period}</div>
+                                                <div className="text-[14px] font-black text-[#0f172a] group-hover:text-[#ffc107] transition-colors">₹ {item.amount}</div>
+                                                <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">{item.period}</div>
                                             </td>
                                         </tr>
-                                    ))}
+                                    )) : (
+                                        <tr>
+                                            <td colSpan="4" className="px-6 py-10 text-center text-slate-400 font-bold uppercase text-xs tracking-widest italic">No Active Consultancy work recorded for {formatDeptName(deptName)}</td>
+                                        </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>
