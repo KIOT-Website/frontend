@@ -86,7 +86,7 @@ function AccordionItem({ title, children, defaultOpen = false }) {
         onClick={() => setOpen(o => !o)}
         className="w-full flex items-center justify-between p-5 bg-white hover:bg-[#F8FAFC] transition-colors text-left"
       >
-        <span className="font-bold text-[#18357a] text-[15px]">{title}</span>
+        <span className="font-bold font-graphik text-[#18357a] text-[15px]">{title}</span>
         <ChevronDown size={18} className={`text-[#ffc107] transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence initial={false}>
@@ -176,7 +176,7 @@ export default function CourseDetailPage() {
   }, [activeTab]);
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC]" style={{ fontFamily: "'Inter', 'Outfit', sans-serif" }}>
+    <div className="min-h-screen bg-[#F8FAFC] font-graphik text-[#333333]">
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#18357a] pt-10 pb-12 md:pt-16 md:pb-20">
@@ -193,8 +193,11 @@ export default function CourseDetailPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Back button */}
           <button
-            onClick={() => navigate('/academics')}
-            className="mb-6 inline-flex items-center gap-2 text-white/60 hover:text-white text-[13px] font-semibold transition-colors"
+            onClick={() => {
+              const category = (courseId && (courseId.startsWith('be-') || courseId.startsWith('btech-'))) ? 'undergraduate' : 'postgraduate';
+              navigate(`/academics/${category}`);
+            }}
+            className="mb-6 inline-flex items-center gap-2 text-white/60 hover:text-white text-[13px] font-bold font-graphik transition-colors"
           >
             <ArrowLeft size={15} /> Back to Academics
           </button>
@@ -202,23 +205,23 @@ export default function CourseDetailPage() {
           <div className="flex flex-col lg:flex-row lg:items-center gap-8">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="px-3 py-1 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/30 text-[#ffc107] text-xs font-bold">
+                <span className="px-3 py-1 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/30 text-[#ffc107] text-xs font-bold font-graphik">
                   {course.affiliation}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold font-graphik">
                   {course.accreditation}
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-graphik text-white mb-3 leading-tight">
                 {course.name}
               </h1>
-              <p className="text-[#ffc107] font-semibold text-lg mb-6">{course.tagline}</p>
+              <p className="text-[#ffc107] font-semibold font-graphik text-lg mb-6">{course.tagline}</p>
 
               {/* Course CTA Buttons */}
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => navigate('/admissions')}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ffc107] text-[#18357a] font-bold text-[14px] hover:bg-[#ffca2c] transition-all shadow-lg shadow-[#ffc107]/20"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ffc107] text-[#18357a] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] transition-all shadow-lg shadow-[#ffc107]/20"
                 >
                   Quick Apply <ArrowRight size={15} />
                 </button>
@@ -249,8 +252,8 @@ export default function CourseDetailPage() {
                   { label: 'Top Package', value: course.topPackage },
                 ].map(s => (
                   <div key={s.label} className="text-center group/stat">
-                    <p className="text-3xl font-black text-[#ffc107] group-hover/stat:scale-110 transition-transform tracking-tight">{s.value}</p>
-                    <p className="text-white/40 text-[10px] font-black uppercase tracking-[3px] mt-2">{s.label}</p>
+                    <p className="text-3xl font-bold font-graphik text-[#ffc107] group-hover/stat:scale-110 transition-transform tracking-tight">{s.value}</p>
+                    <p className="text-white/40 text-[10px] font-bold font-graphik uppercase tracking-[3px] mt-2">{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -259,15 +262,34 @@ export default function CourseDetailPage() {
         </div>
       </section>
 
-      {/* Tab Navigation */}
-      <div ref={tabsRef} className="sticky top-[104px] z-30 bg-white border-b border-[#E5EDF8] shadow-sm">
+      {/* ─── MOBILE TAB NAVIGATION (Pill Style) ─── */}
+      <div className="md:hidden bg-[#18357a] py-8 px-6 border-t border-white/10">
+        <div className="flex flex-wrap justify-center gap-3">
+          {TABS.map(tab => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-5 py-2.5 rounded-full text-[12px] font-bold font-graphik transition-all border-2 ${
+                activeTab === tab
+                  ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 scale-105'
+                  : 'bg-white/5 border-white/20 text-white hover:bg-white/10'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* ─── DESKTOP TAB NAVIGATION (Sticky Bar) ─── */}
+      <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-white border-b border-[#E5EDF8] shadow-sm">
         <div className="w-full px-6 lg:px-12">
           <div className="flex gap-1 overflow-x-auto scrollbar-hide py-1">
             {TABS.map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`whitespace-nowrap px-5 py-3.5 text-[14px] font-bold transition-all rounded-t-lg ${
+                className={`whitespace-nowrap px-5 py-3.5 text-[14px] font-bold font-graphik transition-all rounded-t-lg ${
                   activeTab === tab
                     ? 'text-[#18357a] border-b-2 border-[#ffc107] bg-[#18357a]/4'
                     : 'text-[#64779F] hover:text-[#18357a] hover:bg-[#F8FAFC]'
@@ -295,23 +317,23 @@ export default function CourseDetailPage() {
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-8">
                     <div className="text-center mb-12">
-                       <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight">
+                       <h2 className="text-3xl md:text-4xl font-bold font-graphik uppercase tracking-tight leading-tight">
                          <span className="text-[#18357a]">Academic</span> <span className="text-[#ffc107]">Overview</span>
                        </h2>
-                       <p className="text-[#64779F] text-xs font-bold uppercase tracking-[0.2em] mt-3">Course Fundamentals & Core Expertise</p>
+                       <p className="text-[#64779F] text-xs font-bold font-graphik uppercase tracking-[0.2em] mt-3">Course Fundamentals & Core Expertise</p>
                     </div>
 
-                    <div className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-8 md:p-14 shadow-2xl shadow-blue-900/5 transition-all relative overflow-hidden group">
+                    <div className="bg-transparent md:bg-white md:rounded-[2.5rem] md:border md:border-[#DEE7F4] p-0 md:p-14 md:shadow-2xl md:shadow-blue-900/5 transition-all relative overflow-hidden group">
                       {/* Decorative Background Pattern */}
                       <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-blue-50 transition-colors duration-700" />
                       <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -ml-16 -mb-16 blur-2xl" />
 
-                      <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[9px] font-black uppercase tracking-[0.3em] mb-8">
+                      <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-8">
                          <BookOpen size={14} className="text-[#18357a]" />
                          Program Roadmap
                       </div>
 
-                      <h2 className="text-2xl md:text-3xl font-black text-[#18357a] mb-8 flex items-center gap-3 uppercase tracking-tighter">
+                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#18357a] mb-8 flex items-center gap-3 uppercase tracking-tighter">
                         About the Program
                       </h2>
 
@@ -319,13 +341,13 @@ export default function CourseDetailPage() {
                       {Array.isArray(course.overview) ? (
                         <div className="space-y-6">
                           {course.overview.map((para, idx) => (
-                            <p key={idx} className="text-[#333333] leading-relaxed text-[16px] font-medium text-justify">
+                           <p key={idx} className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify">
                               {para}
                             </p>
                           ))}
                         </div>
                       ) : (
-                        <p className="text-[#333333] leading-relaxed text-[16px] font-medium text-justify">
+                        <p className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify">
                           {course.overview}
                         </p>
                       )}
@@ -334,22 +356,22 @@ export default function CourseDetailPage() {
                     {/* Program Highlight Bar */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-slate-100">
                        <div className="space-y-1">
-                          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">Recognition</p>
-                          <p className="text-[#18357a] font-bold text-sm flex items-center gap-2">
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-[#A9B1C3]">Recognition</p>
+                          <p className="text-[#18357a] font-bold font-graphik text-sm flex items-center gap-2">
                              <CheckCircle size={14} className="text-emerald-500" />
                              {course.accreditation}
                           </p>
                        </div>
                        <div className="space-y-1">
-                          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">Research Focus</p>
-                          <p className="text-[#18357a] font-bold text-sm flex items-center gap-2">
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-[#A9B1C3]">Research Focus</p>
+                          <p className="text-[#18357a] font-bold font-graphik text-sm flex items-center gap-2">
                              <Microscope size={14} className="text-blue-500" />
                              Modern Lab Infra
                           </p>
                        </div>
                        <div className="space-y-1">
-                          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">Career Path</p>
-                          <p className="text-[#18357a] font-bold text-sm flex items-center gap-2">
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-[#A9B1C3]">Career Path</p>
+                          <p className="text-[#18357a] font-bold font-graphik text-sm flex items-center gap-2">
                              <Briefcase size={14} className="text-amber-500" />
                              Globally Networked
                           </p>
@@ -374,7 +396,7 @@ export default function CourseDetailPage() {
                   {/* Modern Quick Info Card */}
                   <div className="bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2.5rem] p-8 text-white shadow-2xl shadow-[#18357a]/30 relative overflow-hidden">
                     <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/5 rounded-full -mb-16 -mr-16 blur-2xl" />
-                    <h3 className="font-black mb-8 text-[11px] uppercase tracking-[0.4em] text-[#ffc107]">Quick Insight</h3>
+                    <h3 className="font-bold font-graphik mb-8 text-[11px] uppercase tracking-[0.4em] text-[#ffc107]">Quick Insight</h3>
                     
                     <div className="space-y-6">
                       {[
@@ -384,10 +406,10 @@ export default function CourseDetailPage() {
                         { label: 'Standard', value: course.accreditation, icon: Award },
                       ].map(item => (
                         <div key={item.label} className="group cursor-default">
-                          <p className="text-white/40 text-[10px] font-black uppercase tracking-widest mb-1 group-hover:text-[#ffc107] transition-colors">{item.label}</p>
+                          <p className="text-white/40 text-[10px] font-bold font-graphik uppercase tracking-widest mb-1 group-hover:text-[#ffc107] transition-colors">{item.label}</p>
                           <div className="flex items-center gap-3">
                              <item.icon size={16} className="text-white/20" />
-                             <span className="text-white font-black text-sm tracking-tight">{item.value}</span>
+                             <span className="text-white font-bold font-graphik text-sm tracking-tight">{item.value}</span>
                           </div>
                         </div>
                       ))}
@@ -398,7 +420,7 @@ export default function CourseDetailPage() {
                   <div className="space-y-4">
                     <button
                       onClick={() => navigate('/admissions')}
-                      className="w-full flex items-center justify-center gap-3 p-5 rounded-2xl bg-white border-2 border-[#18357a] text-[#18357a] font-black text-[13px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all shadow-sm"
+                      className="w-full flex items-center justify-center gap-3 p-5 rounded-2xl bg-white border-2 border-[#18357a] text-[#18357a] font-bold font-graphik text-[13px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all shadow-sm"
                     >
                       Enroll Now <ArrowRight size={18} />
                     </button>
@@ -424,54 +446,66 @@ export default function CourseDetailPage() {
                 <>
                   <div className="space-y-16 py-12">
                     <div className="text-center mb-12">
-                       <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight">
+                       <h2 className="text-3xl md:text-4xl font-bold font-graphik uppercase tracking-tight leading-tight">
                          <span className="text-[#18357a]">Strategic</span> <span className="text-[#ffc107]">Outlook</span>
                        </h2>
-                       <p className="text-[#64779F] text-xs font-bold uppercase tracking-[0.2em] mt-3">Our Core Educational Philosophy</p>
+                       <p className="text-[#64779F] text-xs font-bold font-graphik uppercase tracking-[0.2em] mt-3">Our Core Educational Philosophy</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {/* Vision Card - Simplified Square Design */}
+                    <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        {/* Vision Card - Refined Compact Design */}
                         <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-10 md:p-14 shadow-2xl shadow-blue-900/5 relative overflow-hidden group hover:border-[#18357a]/20 transition-all duration-500"
+                            className="group relative bg-[#18357a] rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_40px_rgba(10,26,63,0.2)] overflow-hidden transition-all duration-700 hover:scale-[1.02]"
                         >
-                            <div className="absolute top-0 left-0 w-2 h-full bg-[#18357a]" />
-                            <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-8">
-                                <div className="w-20 h-20 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
-                                    <Globe size={32} />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#18357a] via-[#1d3c8c] to-[#0A1A3F] opacity-50" />
+                            <Globe size={200} className="absolute -bottom-10 -right-10 text-white/5 opacity-0 group-hover:opacity-10 transition-all duration-700 rotate-12 group-hover:rotate-0" />
+                            
+                            <div className="relative z-10">
+                                <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-[#ffc107] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-8">
+                                    <div className="w-2 h-2 rounded-full bg-[#ffc107] animate-pulse" />
+                                    Perspective
                                 </div>
-                                <div className="space-y-4">
-                                    <h3 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter">
-                                        Our <span className="text-[#ffc107]">Vision</span>
-                                    </h3>
-                                    <p className="text-[#333333] leading-relaxed text-[16px] font-medium text-justify italic border-l-4 border-[#ffc107]/30 pl-6">
+
+                                <h3 className="text-3xl md:text-4xl font-bold font-graphik text-white mb-6 tracking-tighter uppercase leading-none">
+                                    Our <span className="text-[#ffc107]">Vision</span>
+                                </h3>
+
+                                <div className="space-y-6">
+                                    <div className="w-12 h-1 bg-[#ffc107] rounded-full group-hover:w-32 transition-all duration-700" />
+                                    <p className="text-white/90 leading-relaxed text-[16px] md:text-[17px] font-normal font-graphik italic tracking-tight border-l-4 border-[#ffc107]/20 pl-6">
                                         "{course.vision || 'To provide a world-class academic environment for creating global leaders.'}"
                                     </p>
                                 </div>
                             </div>
                         </motion.div>
 
-                        {/* Mission Card - Simplified Square Design */}
+                        {/* Mission Card - Refined Compact Design */}
                         <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-10 md:p-14 shadow-2xl shadow-blue-900/5 relative overflow-hidden group hover:border-[#ffc107]/20 transition-all duration-500"
+                            className="group relative bg-white rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_40px_rgba(10,26,63,0.05)] border border-[#DEE7F4] overflow-hidden transition-all duration-700 hover:scale-[1.02]"
                         >
-                            <div className="absolute top-0 left-0 w-2 h-full bg-[#ffc107]" />
-                            <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-8">
-                                <div className="w-20 h-20 rounded-2xl bg-[#ffc107]/5 flex items-center justify-center text-[#ffc107] group-hover:bg-[#ffc107] group-hover:text-white transition-all duration-500">
-                                    <Target size={32} />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-slate-50 to-white opacity-50" />
+                            <Target size={200} className="absolute -bottom-10 -right-10 text-[#18357a]/5 opacity-0 group-hover:opacity-10 transition-all duration-700 rotate-12 group-hover:rotate-0" />
+
+                            <div className="relative z-10">
+                                <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-8">
+                                    <div className="w-2 h-2 rounded-full bg-[#18357a] animate-pulse" />
+                                    Execution
                                 </div>
-                                <div className="space-y-4">
-                                    <h3 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter">
-                                        Our <span className="text-[#ffc107]">Mission</span>
-                                    </h3>
-                                    <p className="text-[#333333] leading-relaxed text-[16px] font-medium text-justify border-l-4 border-[#18357a]/10 pl-6">
+
+                                <h3 className="text-3xl md:text-4xl font-bold font-graphik text-[#18357a] mb-6 tracking-tighter uppercase leading-none">
+                                    Our <span className="text-[#ffc107]">Mission</span>
+                                </h3>
+
+                                <div className="space-y-6">
+                                    <div className="w-12 h-1 bg-[#18357a] rounded-full group-hover:w-32 transition-all duration-700" />
+                                    <p className="text-[#333333] leading-relaxed text-[16px] md:text-[17px] font-normal font-graphik tracking-tight text-justify border-l-4 border-slate-100 pl-6">
                                         {course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.'}
                                     </p>
                                 </div>
@@ -483,11 +517,11 @@ export default function CourseDetailPage() {
                   <div className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-10 md:p-14 overflow-hidden mt-16">
                     <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
                        <div>
-                          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[9px] font-black uppercase tracking-[0.3em] mb-4">
+                          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-4">
                              <Award size={14} className="text-[#18357a]" />
                              Quality Framework
                           </div>
-                          <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter">Academic Objectives</h2>
+                          <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#18357a] uppercase tracking-tighter">Academic Objectives</h2>
                        </div>
                        
                        <div className="flex flex-wrap items-center gap-3 bg-slate-50/50 p-2 rounded-[2rem] border border-slate-100">
@@ -495,7 +529,7 @@ export default function CourseDetailPage() {
                             <button
                               key={obj.id}
                               onClick={() => setActiveObjectiveTab(obj.id)}
-                              className={`px-8 py-4 rounded-[1.5rem] flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 shadow-sm ${
+                              className={`px-8 py-4 rounded-[1.5rem] flex items-center gap-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-500 shadow-sm ${
                                 activeObjectiveTab === obj.id
                                   ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
                                   : 'bg-white text-[#64779F] hover:bg-white/80'
@@ -523,16 +557,44 @@ export default function CourseDetailPage() {
                                   <activeObj.icon size={32} />
                                </div>
                                <div>
-                                  <h3 className="text-[13px] font-black tracking-[0.3em] text-[#18357a] uppercase">
-                                     {activeObj.title}
+                                  <h3 className="text-[13px] font-bold font-graphik tracking-[0.3em] text-[#18357a] uppercase">
+                                    {activeObj.title}
                                   </h3>
-                                  <p className="text-[#A9B1C3] text-[9px] font-black uppercase tracking-[0.2em] mt-1">Institutional Standard Index</p>
+                                  <p className="text-[#A9B1C3] text-[9px] font-bold font-graphik uppercase tracking-[0.2em] mt-1">Institutional Standard Index</p>
                                </div>
                             </div>
 
-                            <p className="text-[#333333] font-bold leading-[2.0] text-[15px] sm:text-[16px]">
-                              {activeObj.content || 'Data current being optimized for digital view.'}
-                            </p>
+                            <div className="space-y-4" style={{ fontFamily: "Arial, sans-serif" }}>
+                                {(() => {
+                                  const text = activeObj.content || 'Data current being optimized for digital view.';
+                                  
+                                  // Split by specific academic markers to ensure labels like PEO/PO/PSO are not fragmented
+                                  // Updated regex to support multi-digit labels like PO-10, PO-11, etc.
+                                  const points = text.split(/(?=(?:PEO|PO|PSO)\s*[-–]\s*\d+:)/g).map(p => p.trim()).filter(p => p.length > 0);
+                                  
+                                  return points.map((point, idx) => {
+                                    // Check if this is an intro paragraph (doesn't start with a marker)
+                                    const isIntro = !/^(?:PEO|PO|PSO)\s*[-–]\s*\d+:/i.test(point);
+                                    
+                                    if (isIntro) {
+                                      return (
+                                        <p key={idx} className="text-[#333333] font-normal font-graphik leading-relaxed text-[15px] sm:text-[16px] mb-6 border-b border-slate-100 pb-4">
+                                          {point}
+                                        </p>
+                                      );
+                                    }
+
+                                    return (
+                                      <div key={idx} className="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all group/point">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-2.5 shrink-0 group-hover/point:scale-125 transition-transform" />
+                                        <span className="text-[#333333] font-normal font-graphik leading-[1.8] text-[15px] sm:text-[16px]">
+                                          {point}
+                                        </span>
+                                      </div>
+                                    );
+                                  });
+                                })()}
+                             </div>
                          </motion.div>
                       </AnimatePresence>
                      </div>
@@ -549,7 +611,7 @@ export default function CourseDetailPage() {
             {activeTab === 'Faculty' && (
               <div>
                 <div className="mb-6">
-                  <h2 className="text-2xl font-extrabold text-[#18357a] mb-1">Our Faculty</h2>
+                  <h2 className="text-2xl font-extrabold font-graphik text-[#18357a] mb-1">Our Faculty</h2>
                   <p className="text-[#64779F]">Industry-experienced academics committed to your success</p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
@@ -577,15 +639,15 @@ export default function CourseDetailPage() {
                       </div>
                       
                       <div className="p-[13px] flex flex-col flex-1">
-                        <h3 className="font-bold text-[#18357a] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
+                        <h3 className="font-bold font-graphik text-[#18357a] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
                           {f.name}
                         </h3>
-                        <p className="text-slate-500 text-[10px] font-bold leading-tight mb-2.5 line-clamp-2">
+                        <p className="text-slate-500 text-[10px] font-bold font-graphik leading-tight mb-2.5 line-clamp-2">
                           {f.designation}
                         </p>
                         
                         <div className="mt-auto">
-                           <span className="inline-block text-[9px] font-black uppercase tracking-[0.15em] text-[#18357a] group-hover:text-[#ffc107] transition-all bg-[#18357a]/5 px-2 py-1 rounded">
+                           <span className="inline-block text-[9px] font-bold font-graphik uppercase tracking-[0.15em] text-[#18357a] group-hover:text-[#ffc107] transition-all bg-[#18357a]/5 px-2 py-1 rounded">
                               View Bio →
                            </span>
                         </div>
@@ -604,8 +666,8 @@ export default function CourseDetailPage() {
                   {/* Left Sidebar: Lab List */}
                   <div className="lg:w-1/3 xl:w-1/4 space-y-3 max-h-[750px] overflow-y-auto px-4 py-2 scrollbar-hide">
                     <div className="mb-6 px-1">
-                       <h2 className="text-xl font-black text-[#18357a] uppercase tracking-tight mb-1">Labs & Facilities</h2>
-                       <p className="text-[#64779F] text-xs font-bold leading-relaxed">Select a facility to view full technical specifications.</p>
+                       <h2 className="text-xl font-bold font-graphik text-[#18357a] uppercase tracking-tight mb-1">Labs & Facilities</h2>
+                       <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Select a facility to view full technical specifications.</p>
                     </div>
                     {course.labs.map((lab, i) => {
                       const LabIcon = lab.icon;
@@ -625,7 +687,7 @@ export default function CourseDetailPage() {
                            }`}>
                              {LabIcon && <LabIcon size={20} />}
                            </div>
-                           <span className="text-[13px] font-black uppercase tracking-tight leading-tight flex-1">{lab.name}</span>
+                           <span className="text-[13px] font-bold font-graphik uppercase tracking-tight leading-tight flex-1">{lab.name}</span>
                            <ChevronRight size={14} className={isDesktopSelected ? 'text-[#ffc107]' : 'text-[#64779F] opacity-40'} />
                         </button>
                       );
@@ -658,10 +720,10 @@ export default function CourseDetailPage() {
                                     )}
                                  </div>
                                  <div className="text-center md:text-left">
-                                    <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tight mb-0.5">{activeLab.name}</h3>
+                                    <h3 className="text-lg md:text-xl font-bold font-graphik text-white uppercase tracking-tight mb-0.5">{activeLab.name}</h3>
                                     <div className="flex items-center gap-2 justify-center md:justify-start">
                                        <Building2 size={12} className="text-[#ffc107]" />
-                                       <p className="text-white/60 text-[9px] font-black uppercase tracking-widest leading-none">{course.name}</p>
+                                       <p className="text-white/60 text-[9px] font-bold font-graphik uppercase tracking-widest leading-none">{course.name}</p>
                                     </div>
                                  </div>
                               </div>
@@ -673,13 +735,13 @@ export default function CourseDetailPage() {
                               <div>
                                  <div className="flex items-center gap-3 mb-6">
                                     <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
-                                    <h4 className="text-[12px] font-black text-[#18357a] uppercase tracking-[0.2em]">Technical Inventory & Tools</h4>
+                                    <h4 className="text-[12px] font-bold font-graphik text-[#18357a] uppercase tracking-[0.2em]">Technical Inventory & Tools</h4>
                                  </div>
                                  <div className="grid sm:grid-cols-2 gap-3">
                                     {activeLab.equipments?.map((item, idx) => (
                                       <div key={idx} className="flex gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 items-start group hover:bg-white hover:border-[#ffc107]/20 transition-all">
                                          <div className="w-2 h-2 rounded-full bg-[#ffc107] mt-1.5 shrink-0 group-hover:scale-125 transition-all" />
-                                         <span className="text-[14px] font-bold text-[#18357a] leading-tight">{item}</span>
+                                         <span className="text-[14px] font-bold font-graphik text-[#18357a] leading-tight">{item}</span>
                                       </div>
                                     )) || (
                                       <p className="text-[#64779F] italic text-sm">Main specialized equipment list is being updated.</p>
@@ -688,16 +750,18 @@ export default function CourseDetailPage() {
                               </div>
 
                               {/* Personnel / Staff */}
-                              <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
-                                 <div className="bg-[#18357a]/5 p-6 rounded-2xl border border-[#18357a]/10">
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
-                                    <p className="text-[#18357a] font-black text-[16px]">{activeLab.incharge || 'Department HOD'}</p>
-                                 </div>
-                                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-[#64779F] mb-3">Technical Staff</p>
-                                    <p className="text-[#18357a] font-black text-[16px]">{activeLab.technician || 'Engineering Technician'}</p>
-                                 </div>
-                              </div>
+                              {courseId !== 'be-cse' && (
+                                <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
+                                   <div className="bg-[#18357a]/5 p-6 rounded-2xl border border-[#18357a]/10">
+                                      <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
+                                      <p className="text-[#18357a] font-bold font-graphik text-[16px]">{activeLab.incharge || 'Department HOD'}</p>
+                                   </div>
+                                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                                      <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-3">Technical Staff</p>
+                                      <p className="text-[#18357a] font-bold font-graphik text-[16px]">{activeLab.technician || 'Engineering Technician'}</p>
+                                   </div>
+                                </div>
+                              )}
                            </div>
                         </motion.div>
                         );
@@ -709,8 +773,8 @@ export default function CourseDetailPage() {
                 {/* MOBILE VIEW: Multi-Expandable Accordion List (Visible only below lg) */}
                 <div className="lg:hidden space-y-4 px-2 pb-10">
                    <div className="mb-6 px-1">
-                      <h2 className="text-xl font-black text-[#18357a] uppercase tracking-tight mb-1">Labs & Facilities</h2>
-                      <p className="text-[#64779F] text-xs font-bold leading-relaxed">Expand Multiple facilities to compare inventory.</p>
+                      <h2 className="text-xl font-bold font-graphik text-[#18357a] uppercase tracking-tight mb-1">Labs & Facilities</h2>
+                      <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Expand Multiple facilities to compare inventory.</p>
                    </div>
                    {course.labs.map((lab, i) => {
                       const LabIcon = lab.icon;
@@ -742,7 +806,7 @@ export default function CourseDetailPage() {
                               }`}>
                                 {LabIcon && <LabIcon size={20} />}
                               </div>
-                              <span className="text-[13px] font-black uppercase tracking-tight leading-tight flex-1">{lab.name}</span>
+                              <span className="text-[13px] font-bold font-graphik uppercase tracking-tight leading-tight flex-1">{lab.name}</span>
                               <ChevronDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#ffc107]' : 'text-[#64779F] opacity-40'}`} />
                            </button>
 
@@ -758,34 +822,36 @@ export default function CourseDetailPage() {
                                       {/* Mobile Content Display */}
                                       <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
                                          <Building2 size={14} className="text-[#ffc107]" />
-                                         <p className="text-[#64779F] text-[10px] font-black uppercase tracking-widest">{course.name}</p>
+                                         <p className="text-[#64779F] text-[10px] font-bold font-graphik uppercase tracking-widest">{course.name}</p>
                                       </div>
 
                                       <div>
                                          <div className="flex items-center gap-2 mb-4">
                                             <div className="w-1 h-4 bg-[#ffc107] rounded-full" />
-                                            <h4 className="text-[11px] font-black text-[#18357a] uppercase tracking-wider">Inventory & Tools</h4>
+                                            <h4 className="text-[11px] font-bold font-graphik text-[#18357a] uppercase tracking-wider">Inventory & Tools</h4>
                                          </div>
                                          <div className="grid gap-2">
                                             {lab.equipments?.map((item, idx) => (
                                               <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
                                                  <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                                                 <span className="text-[13px] font-bold text-[#18357a] leading-tight">{item}</span>
+                                                 <span className="text-[13px] font-bold font-graphik text-[#18357a] leading-tight">{item}</span>
                                               </div>
                                             ))}
                                          </div>
                                       </div>
 
-                                      <div className="grid gap-3 pt-4 border-t border-slate-100">
-                                         <div className="bg-[#18357a]/5 p-4 rounded-xl border border-[#18357a]/10">
-                                            <p className="text-[9px] font-black uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
-                                            <p className="text-[#18357a] font-black text-[14px]">{lab.incharge}</p>
-                                         </div>
-                                         <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                                            <p className="text-[9px] font-black uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
-                                            <p className="text-[#18357a] font-black text-[14px]">{lab.technician}</p>
-                                         </div>
-                                      </div>
+                                      {courseId !== 'be-cse' && (
+                                        <div className="grid gap-3 pt-4 border-t border-slate-100">
+                                           <div className="bg-[#18357a]/5 p-4 rounded-xl border border-[#18357a]/10">
+                                              <p className="text-[9px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
+                                              <p className="text-[#18357a] font-bold font-graphik text-[14px]">{lab.incharge}</p>
+                                           </div>
+                                           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                              <p className="text-[9px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
+                                              <p className="text-[#18357a] font-bold font-graphik text-[14px]">{lab.technician}</p>
+                                           </div>
+                                        </div>
+                                      )}
                                    </div>
                                 </motion.div>
                               )}
@@ -802,12 +868,12 @@ export default function CourseDetailPage() {
               <div className="space-y-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
                   <div>
-                    <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tight mb-2">
+                    <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#18357a] uppercase tracking-tight mb-2">
                        Intellectual <span className="text-[#ffc107]">Property</span>
                     </h2>
-                    <p className="text-[#64779F] font-bold text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
+                    <p className="text-[#64779F] font-bold font-graphik text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
                   </div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#18357a]/5 rounded-xl border border-[#18357a]/10 text-[#18357a] text-[10px] font-black uppercase tracking-widest">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#18357a]/5 rounded-xl border border-[#18357a]/10 text-[#18357a] text-[10px] font-bold font-graphik uppercase tracking-widest">
                      <ShieldCheck size={14} /> Registered Assets
                   </div>
                 </div>
@@ -824,11 +890,11 @@ export default function CourseDetailPage() {
                        <div className="w-16 h-16 rounded-2xl bg-[#18357a]/5 border border-[#18357a]/10 flex items-center justify-center mb-6 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
                           <FileText size={32} className="text-[#18357a] group-hover:text-white transition-colors" />
                        </div>
-                       <h3 className="text-lg font-black text-[#18357a] uppercase mb-3">Official Patents</h3>
-                       <p className="text-[#64779F] text-sm font-medium leading-relaxed">
+                       <h3 className="text-lg font-bold font-graphik text-[#18357a] uppercase mb-3">Official Patents</h3>
+                       <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
                           Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
                        </p>
-                       <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-black text-[#A9B1C3] uppercase tracking-[0.2em]">
+                       <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase tracking-[0.2em]">
                           Academic Year 2024-25
                        </div>
                     </motion.div>
@@ -847,11 +913,11 @@ export default function CourseDetailPage() {
                          <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
                             <Award size={28} className="text-[#ffc107]" />
                          </div>
-                         <h3 className="text-lg font-black uppercase mb-3 tracking-tight">Research Excellence</h3>
-                         <p className="text-white/70 text-sm font-medium leading-relaxed mb-6">
+                         <h3 className="text-lg font-bold font-graphik uppercase mb-3 tracking-tight">Research Excellence</h3>
+                         <p className="text-white/70 text-sm font-medium font-graphik leading-relaxed mb-6">
                             We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
                          </p>
-                         <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all">
+                         <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-bold font-graphik uppercase tracking-widest transition-all">
                             Contact R&D <ArrowRight size={14} />
                          </button>
                        </div>
@@ -864,7 +930,7 @@ export default function CourseDetailPage() {
             {activeTab === 'Placements' && (
               <div>
                 <div className="mb-6">
-                  <h2 className="text-2xl font-extrabold text-[#18357a] mb-1">Placement Record</h2>
+                  <h2 className="text-2xl font-extrabold font-graphik text-[#18357a] mb-1">Placement Record</h2>
                   <p className="text-[#64779F]">Consistent track record of placing students in top companies</p>
                 </div>
                 {/* Stat Cards */}
@@ -876,17 +942,17 @@ export default function CourseDetailPage() {
                     { label: 'Companies', value: course.placementStats.companies },
                   ].map(s => (
                     <div key={s.label} className="bg-[#18357a] rounded-2xl p-5 text-center">
-                      <p className="text-2xl font-extrabold text-[#ffc107]">{s.value}</p>
-                      <p className="text-white/70 text-[12px] font-medium mt-1">{s.label}</p>
+                      <p className="text-2xl font-extrabold font-graphik text-[#ffc107]">{s.value}</p>
+                      <p className="text-white/70 text-[12px] font-medium font-graphik mt-1">{s.label}</p>
                     </div>
                   ))}
                 </div>
                 {/* Company Logos / Tags */}
                 <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6 mb-6">
-                  <h3 className="font-extrabold text-[#18357a] mb-4 text-[15px]">Top Recruiting Companies</h3>
+                  <h3 className="font-extrabold font-graphik text-[#18357a] mb-4 text-[15px]">Top Recruiting Companies</h3>
                   <div className="flex flex-wrap gap-2.5">
                     {course.companies.map(c => (
-                      <span key={c} className="px-4 py-2 rounded-xl bg-[#F8FAFC] border border-[#E5EDF8] text-[#18357a] font-bold text-[13px]">
+                      <span key={c} className="px-4 py-2 rounded-xl bg-[#F8FAFC] border border-[#E5EDF8] text-[#18357a] font-bold font-graphik text-[13px]">
                         {c}
                       </span>
                     ))}
@@ -894,12 +960,12 @@ export default function CourseDetailPage() {
                 </div>
                 {/* Projects */}
                 <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6">
-                  <h3 className="font-extrabold text-[#18357a] mb-4 text-[15px]">Notable Final Year Projects</h3>
+                  <h3 className="font-extrabold font-graphik text-[#18357a] mb-4 text-[15px]">Notable Final Year Projects</h3>
                   <div className="space-y-2">
                     {course.projects.map(p => (
                       <div key={p} className="flex items-center gap-3 p-3 rounded-xl bg-[#F8FAFC] border border-[#E5EDF8]">
                         <div className="w-2 h-2 rounded-full bg-[#ffc107] shrink-0" />
-                        <span className="text-[14px] font-semibold text-[#18357a]">{p}</span>
+                        <span className="text-[14px] font-semibold font-graphik text-[#18357a]">{p}</span>
                       </div>
                     ))}
                   </div>
@@ -922,14 +988,14 @@ export default function CourseDetailPage() {
                 >
                   <div className="absolute inset-0 border-2 border-[#18357a]/10 rotate-[4deg] rounded-[2rem] pointer-events-none" />
                   <div className="relative bg-white rounded-2xl border border-[#E5EDF8] p-8 shadow-xl shadow-blue-900/5 z-10">
-                    <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/2 px-6 py-2 bg-[#18357a] text-white rounded-full text-[9px] font-black uppercase tracking-widest shadow-lg">
+                    <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/2 px-6 py-2 bg-[#18357a] text-white rounded-full text-[9px] font-bold font-graphik uppercase tracking-widest shadow-lg">
                        Eligibility
                     </div>
                     <ul className="space-y-4 mt-4">
                       {course.eligibility.map(item => (
                         <li key={item} className="flex items-start gap-4 p-4 rounded-xl bg-slate-50/50 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-slate-100">
                           <CheckCircle size={18} className="text-[#ffc107] mt-0.5 shrink-0" />
-                          <span className="text-[14px] font-bold text-[#18357a] leading-relaxed">{item}</span>
+                          <span className="text-[14px] font-bold font-graphik text-[#18357a] leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -937,19 +1003,19 @@ export default function CourseDetailPage() {
                 </motion.div>
                 <div className="space-y-4">
                   <div className="bg-[#18357a] rounded-2xl p-6 text-white">
-                    <h3 className="font-extrabold text-lg mb-3">Ready to Apply?</h3>
+                    <h3 className="font-extrabold font-graphik text-lg mb-3">Ready to Apply?</h3>
                     <p className="text-white/70 text-[14px] mb-5">Join thousands of students building their future at KIOT.</p>
                     <button
                       onClick={() => navigate('/admissions')}
-                      className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#ffc107] text-[#18357a] font-bold hover:bg-[#ffca2c] transition-all"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#ffc107] text-[#18357a] font-bold font-graphik hover:bg-[#ffca2c] transition-all"
                     >
                       Start Application <ArrowRight size={15} />
                     </button>
                   </div>
                   <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6">
-                    <h3 className="font-extrabold text-[#18357a] mb-3">Need Help?</h3>
+                    <h3 className="font-extrabold font-graphik text-[#18357a] mb-3">Need Help?</h3>
                     <p className="text-[#64779F] text-[13px] mb-4">Our admissions team is here to guide you through the process.</p>
-                    <a href="tel:9894701234" className="flex items-center gap-2 text-[#18357a] font-bold text-[14px] hover:text-[#ffc107] transition-colors">
+                    <a href="tel:9894701234" className="flex items-center gap-2 text-[#18357a] font-bold font-graphik text-[14px] hover:text-[#ffc107] transition-colors">
                       <MapPin size={15} className="text-[#ffc107]" /> +91 98947 01234
                     </a>
                   </div>
@@ -998,10 +1064,10 @@ export default function CourseDetailPage() {
                       )}
                     </div>
                     <div className="text-center md:text-left">
-                      <h2 className="text-2xl md:text-3xl font-black text-white mb-2 leading-tight uppercase tracking-tight">
+                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-white mb-2 leading-tight uppercase tracking-tight">
                         {selectedFaculty.name}
                       </h2>
-                      <p className="text-[#ffc107] font-bold text-lg md:text-xl">{selectedFaculty.designation}</p>
+                      <p className="text-[#ffc107] font-bold font-graphik text-lg md:text-xl">{selectedFaculty.designation}</p>
                     </div>
                   </div>
                 </div>
@@ -1011,29 +1077,29 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {selectedFaculty.qualification && (
                         <div>
-                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Academic Credentials</p>
-                          <p className="text-[#18357a] font-bold text-[15px]">{selectedFaculty.qualification}</p>
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Academic Credentials</p>
+                          <p className="text-[#18357a] font-bold font-graphik text-[15px]">{selectedFaculty.qualification}</p>
                         </div>
                       )}
                       {selectedFaculty.specialization && selectedFaculty.specialization !== 'N/A' && (
                         <div>
-                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Area of Specialization</p>
-                          <p className="text-[#18357a] font-bold text-[15px]">{selectedFaculty.specialization}</p>
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Area of Specialization</p>
+                          <p className="text-[#18357a] font-bold font-graphik text-[15px]">{selectedFaculty.specialization}</p>
                         </div>
                       )}
                       {selectedFaculty.experience && (
                         <div>
-                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Work Experience</p>
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Work Experience</p>
                           <div className="flex items-center gap-2 text-[#18357a]">
                             <Clock size={16} className="text-[#ffc107]" />
-                            <span className="font-bold text-[15px]">{selectedFaculty.experience}</span>
+                            <span className="font-bold font-graphik text-[15px]">{selectedFaculty.experience}</span>
                           </div>
                         </div>
                       )}
                       {selectedFaculty.joiningDate && (
                         <div>
-                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Date of Joining</p>
-                          <p className="text-[#18357a] font-bold text-[15px]">{selectedFaculty.joiningDate}</p>
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Date of Joining</p>
+                          <p className="text-[#18357a] font-bold font-graphik text-[15px]">{selectedFaculty.joiningDate}</p>
                         </div>
                       )}
                     </div>
@@ -1041,8 +1107,8 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {selectedFaculty.email && selectedFaculty.email !== 'N/A' && (
                         <div>
-                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">E-Mail Address</p>
-                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-[#18357a] font-bold text-[15px] hover:text-[#ffc107] transition-colors">
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">E-Mail Address</p>
+                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-[#18357a] font-bold font-graphik text-[15px] hover:text-[#ffc107] transition-colors">
                             <Mail size={16} className="text-[#ffc107]" />
                             {selectedFaculty.email}
                           </a>
@@ -1050,8 +1116,8 @@ export default function CourseDetailPage() {
                       )}
                       {selectedFaculty.association && (
                         <div>
-                          <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-2">Nature of Association</p>
-                          <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-black uppercase tracking-widest">
+                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Nature of Association</p>
+                          <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-bold font-graphik uppercase tracking-widest">
                             {selectedFaculty.association}
                           </span>
                         </div>
@@ -1059,13 +1125,13 @@ export default function CourseDetailPage() {
                       <div className="p-6 bg-[#F8FAFC] border border-[#E5EDF8] rounded-2xl">
                         <div className="flex items-center gap-2 mb-4">
                           <Award size={18} className="text-[#ffc107]" />
-                          <p className="text-[11px] font-black tracking-widest text-[#18357a] uppercase">Member Recognition</p>
+                          <p className="text-[11px] font-bold font-graphik tracking-widest text-[#18357a] uppercase">Member Recognition</p>
                         </div>
                         <div className="flex items-center gap-0.5">
                           {[...Array(5)].map((_, idx) => (
                             <Star key={idx} size={14} className={idx < Math.floor(selectedFaculty.rating) ? "text-[#ffc107] fill-[#ffc107]" : "text-[#E5EDF8] fill-[#E5EDF8]"} />
                           ))}
-                          <span className="ml-2 font-black text-[#18357a] text-sm">{selectedFaculty.rating}</span>
+                          <span className="ml-2 font-bold font-graphik text-[#18357a] text-sm">{selectedFaculty.rating}</span>
                         </div>
                       </div>
                     </div>
@@ -1073,9 +1139,9 @@ export default function CourseDetailPage() {
 
                   {selectedFaculty.publications && (
                     <div className="mt-8 pt-8 border-t border-[#E5EDF8]">
-                      <p className="text-[10px] font-black uppercase tracking-widest text-[#A9B1C3] mb-4">Research & Publications</p>
+                      <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-4">Research & Publications</p>
                       <div className="p-5 bg-[#18357a]/5 border border-[#18357a]/10 rounded-2xl">
-                        <p className="text-[#18357a] font-bold text-[14px] leading-relaxed italic">
+                        <p className="text-[#18357a] font-bold font-graphik text-[14px] leading-relaxed italic">
                           {selectedFaculty.publications}
                         </p>
                       </div>
@@ -1157,16 +1223,16 @@ function AchievementSection({ courseId, courseName }) {
               <Trophy size={28} className="text-[#ffc107]" />
             </div>
             <div>
-              <h3 className="text-4xl font-black text-[#18357a] uppercase tracking-tight leading-none mb-1">Department Honors</h3>
-              <p className="text-[#64779F] font-bold text-sm tracking-wide">Celebrating academic and professional milestones</p>
+              <h3 className="text-4xl font-bold font-graphik text-[#18357a] uppercase tracking-tight leading-none mb-1">Department Honors</h3>
+              <p className="text-[#64779F] font-bold font-graphik text-sm tracking-wide">Celebrating academic and professional milestones</p>
             </div>
           </div>
-          <p className="text-[#A9B1C3] text-[11px] font-black uppercase tracking-[0.2em]">Department of {courseName.split('Engineering')[0]}</p>
+          <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik uppercase tracking-[0.2em]">Department of {courseName.split('Engineering')[0]}</p>
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
           <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
             {['AWARD', 'ACHIEVEMENT'].map(tab => (
-              <button key={tab} onClick={() => setActiveSubTab(tab)} className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${activeSubTab === tab ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
+              <button key={tab} onClick={() => setActiveSubTab(tab)} className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${activeSubTab === tab ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
                 {tab === 'AWARD' ? 'Awards' : 'Achievements'}
               </button>
             ))}
@@ -1174,7 +1240,7 @@ function AchievementSection({ courseId, courseName }) {
           {selectedYear && (
             <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
               {audienceTabs.map(tab => (
-                <button key={tab.id} onClick={() => setActiveAudience(tab.id)} className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
+                <button key={tab.id} onClick={() => setActiveAudience(tab.id)} className={`px-6 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
                   {tab.id === 'STUDENT' ? 'Student' : 'Faculty'}
                 </button>
               ))}
@@ -1193,8 +1259,8 @@ function AchievementSection({ courseId, courseName }) {
                 <div className="h-12 w-12 bg-slate-50 flex items-center justify-center rounded-xl mb-3 group-hover:scale-110 transition-transform">
                   <Star size={24} className="text-[#ffc107]" />
                 </div>
-                <span className="text-xl font-black text-[#18357a]">{yr}</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.1em] text-[#A9B1C3] mt-1 opacity-60">View Folders</span>
+                <span className="text-xl font-bold font-graphik text-[#18357a]">{yr}</span>
+                <span className="text-[10px] font-bold font-graphik uppercase tracking-[0.1em] text-[#A9B1C3] mt-1 opacity-60">View Folders</span>
               </button>
             ))
           )}
@@ -1202,16 +1268,16 @@ function AchievementSection({ courseId, courseName }) {
       ) : (
         <>
           <div className="flex items-center gap-4 -mt-4">
-            <button onClick={() => setSelectedYear(null)} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[10px] font-black uppercase tracking-widest text-[#18357a] border-2 border-[#E2E8F0] hover:bg-slate-50 hover:translate-x-[-4px] transition-all">
+            <button onClick={() => setSelectedYear(null)} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[10px] font-bold font-graphik uppercase tracking-widest text-[#18357a] border-2 border-[#E2E8F0] hover:bg-slate-50 hover:translate-x-[-4px] transition-all">
               <ArrowLeft size={14} /> Back to Years
             </button>
-            <span className="px-4 py-2 bg-[#ffc107] text-[#18357a] text-[10px] font-black uppercase rounded-xl tracking-widest">Selected: {selectedYear}</span>
+            <span className="px-4 py-2 bg-[#ffc107] text-[#18357a] text-[10px] font-bold font-graphik uppercase rounded-xl tracking-widest">Selected: {selectedYear}</span>
           </div>
 
           {loading ? (
             <div className="py-24 flex flex-col items-center justify-center gap-5">
               <div className="w-16 h-16 rounded-full border-4 border-[#18357a]/10 border-t-[#ffc107] animate-spin" />
-              <p className="text-[11px] font-black uppercase tracking-[0.3em] text-[#18357a]/40">Fetching Records...</p>
+              <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#18357a]/40">Fetching Records...</p>
             </div>
           ) : visibleData.length === 0 ? (
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-24 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center group">
@@ -1221,8 +1287,8 @@ function AchievementSection({ courseId, courseName }) {
                   <Star size={20} className="absolute -top-1 -right-1 text-[#ffc107] animate-bounce" />
                 </div>
               </div>
-              <h4 className="text-xl font-black text-[#18357a] uppercase mb-3">No records found</h4>
-              <p className="text-[#64779F] font-bold text-sm">Nothing recorded for this folder yet.</p>
+              <h4 className="text-xl font-bold font-graphik text-[#18357a] uppercase mb-3">No records found</h4>
+              <p className="text-[#64779F] font-bold font-graphik text-sm">Nothing recorded for this folder yet.</p>
             </motion.div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1240,29 +1306,29 @@ function AchievementSection({ courseId, courseName }) {
                         <div className="h-12 w-12 rounded-xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-[#ffc107] transition-all shrink-0">
                           {isAward ? <Award size={22} /> : (activeAudience === 'FACULTY' ? <Users size={22} /> : <Trophy size={22} />)}
                         </div>
-                        <span className="text-[10px] font-black text-[#64779F] uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg">
+                        <span className="text-[10px] font-bold font-graphik text-[#64779F] uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg">
                           {item.year || item.academic_year || item.batch || 'Record'}
                         </span>
                       </div>
 
-                      <h4 className="text-lg font-black text-[#18357a] mb-2 leading-tight uppercase">{isAward ? item.award_name : item.description}</h4>
-                      <p className="text-[#64779F] text-sm font-semibold italic mb-6 opacity-80">{isStudent ? (isAward ? item.student_name : item.name) : item.faculty_name}</p>
+                      <h4 className="text-lg font-bold font-graphik text-[#18357a] mb-2 leading-tight uppercase">{isAward ? item.award_name : item.description}</h4>
+                      <p className="text-[#64779F] text-sm font-semibold font-graphik italic mb-6 opacity-80">{isStudent ? (isAward ? item.student_name : item.name) : item.faculty_name}</p>
 
                       {isRank && (
                         <div className="grid grid-cols-2 gap-3 mb-6">
                           <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                             <p className="text-[9px] font-black text-[#A9B1C3] uppercase mb-1">Rank</p>
-                             <p className="text-sm font-black text-[#18357a]">{item.university_rank}</p>
+                             <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">Rank</p>
+                             <p className="text-sm font-bold font-graphik text-[#18357a]">{item.university_rank}</p>
                           </div>
                           <div className="bg-teal-50 p-3 rounded-xl border border-teal-100">
-                             <p className="text-[9px] font-black text-[#A9B1C3] uppercase mb-1">CGPA</p>
-                             <p className="text-sm font-black text-teal-600">{item.cgpa}</p>
+                             <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">CGPA</p>
+                             <p className="text-sm font-bold font-graphik text-teal-600">{item.cgpa}</p>
                           </div>
                         </div>
                       )}
 
                       {fileUrl && (
-                        <a href={fileUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-3 bg-[#F8FAFC] border border-[#E5EDF8] rounded-xl text-[10px] font-black uppercase tracking-widest text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all">
+                        <a href={fileUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-3 bg-[#F8FAFC] border border-[#E5EDF8] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-widest text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all">
                           View PDF <ExternalLink size={12} />
                         </a>
                       )}
@@ -1314,9 +1380,9 @@ function CurriculumSection({ courseId, courseName }) {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#18357a] to-[#0A1A3F] flex items-center justify-center shadow-lg shadow-[#18357a]/20">
                  <BookOpen size={24} className="text-[#ffc107]" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#18357a] uppercase tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
            </div>
-           <p className="text-[#64779F] font-bold text-sm tracking-wide ml-16">Department of {courseName.split('Engineering')[0]}</p>
+           <p className="text-[#64779F] font-bold font-graphik text-sm tracking-wide ml-16">Department of {courseName.split('Engineering')[0]}</p>
         </div>
 
         <div className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200 self-start md:self-center">
@@ -1324,7 +1390,7 @@ function CurriculumSection({ courseId, courseName }) {
             <button
               key={t}
               onClick={() => setCurriculumTab(t)}
-              className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${
+              className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${
                 curriculumTab === t
                   ? 'bg-white text-[#18357a] shadow-xl shadow-blue-900/10 scale-[1.02] translate-y-[-1px]'
                   : 'text-[#64779F] hover:text-[#18357a]'
@@ -1339,25 +1405,25 @@ function CurriculumSection({ courseId, courseName }) {
       {loading ? (
         <div className="py-24 flex flex-col items-center justify-center gap-5">
            <div className="w-16 h-16 rounded-full border-4 border-[#18357a]/10 border-t-[#ffc107] animate-spin" />
-           <p className="text-[11px] font-black uppercase tracking-[0.3em] text-[#18357a]/40">Indexing Academic Files...</p>
+           <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#18357a]/40">Indexing Academic Files...</p>
         </div>
       ) : records.length === 0 ? (
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-20 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center">
            <div className="w-20 h-20 rounded-[2rem] bg-[#F8FAFC] flex items-center justify-center mb-8">
               <FileText size={40} className="text-[#A9B1C3]/30" />
            </div>
-           <h4 className="text-xl font-black text-[#18357a] uppercase mb-2">No {curriculumTab} Found</h4>
-           <p className="text-[#64779F] font-bold text-sm">Official documentation for this department is being updated.</p>
+           <h4 className="text-xl font-bold font-graphik text-[#18357a] uppercase mb-2">No {curriculumTab} Found</h4>
+           <p className="text-[#64779F] font-bold font-graphik text-sm">Official documentation for this department is being updated.</p>
         </motion.div>
       ) : (
         <div className="bg-white border border-[#D5E2F4]/80 rounded-[2rem] overflow-hidden">
            <table className="w-full text-left border-collapse">
               <thead>
                  <tr className="bg-[#18357a] border-b border-[#18357a]">
-                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-white">Document Info</th>
-                    <th className="px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
-                    {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-white">Semester</th>}
-                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-[0.2em] text-white text-right">Actions</th>
+                    <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Document Info</th>
+                    <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
+                    {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Semester</th>}
+                    <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white text-right">Actions</th>
                  </tr>
               </thead>
               <tbody className="divide-y divide-[#D5E2F4]/40">
@@ -1376,18 +1442,18 @@ function CurriculumSection({ courseId, courseName }) {
                           }`}>
                             {curriculumTab === 'Regulations' ? <ShieldCheck size={18} /> : <BookOpen size={18} />}
                           </div>
-                          <span className="text-sm font-bold text-[#18357a] group-hover:text-[#18357a] transition-colors uppercase">{item.title}</span>
+                          <span className="text-sm font-bold font-graphik text-[#18357a] group-hover:text-[#18357a] transition-colors uppercase">{item.title}</span>
                        </div>
                     </td>
                     <td className="px-3 py-3.5">
                        <div className="flex items-center gap-2">
                           <Calendar size={12} className="text-[#ffc107]" />
-                          <span className="text-[10px] font-black uppercase tracking-widest text-[#64779F]">{item.year_or_version}</span>
+                          <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#64779F]">{item.year_or_version}</span>
                        </div>
                     </td>
                     {curriculumTab === 'Syllabus' && (
                        <td className="px-3 py-3.5">
-                          <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-black text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                          <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-bold font-graphik text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all">
                              SEM - {item.semester}
                           </span>
                        </td>

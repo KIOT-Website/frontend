@@ -1,4 +1,4 @@
-import { Cpu, Globe, Wrench, BookOpen, FlaskConical, Zap, BarChart3, Layers, Award, TrendingUp, ShieldCheck, Car, Microscope, Flame, Settings, MonitorDot, CircuitBoard, Ruler, PenTool, Droplets, Wind, Building2, Terminal } from 'lucide-react'
+import { Cpu, Globe, Wrench, BookOpen, FlaskConical, Zap, BarChart3, Layers, Award, TrendingUp, ShieldCheck, Car, Microscope, Flame, Settings, MonitorDot, CircuitBoard, Ruler, PenTool, Droplets, Wind, Building2, Terminal, Monitor, Code, Radio, Rocket } from 'lucide-react'
 import balajiImage from '../assets/main/balaji.9da24d6e942fe40a1258.webp'
 
 export const courseData = {
@@ -57,7 +57,7 @@ export const courseData = {
       },
     ],
     faculty: [
-      { name: 'Dr. PSS. Srinivasan', designation: 'Senior Professor, Founder and Executive Chairman', experience: 'Teaching: 35 Years, Research : 24 Years', specialization: 'Thermal Engineering', rating: 5.0, qualification: 'B.E., M.Tech. (IIT-B), Ph.D.', email: 'chairman@kiot.ac.in', joiningDate: '27.04.2009', association: 'Regular', publications: 'IJ: 63, NJ: 52, IC: 65, NC: 134, Books: 03', image: balajiImage },
+      { name: 'Dr. PSS. Srinivasan', designation: 'Senior Professor, Founder and President', experience: 'Teaching: 35 Years, Research : 24 Years', specialization: 'Thermal Engineering', rating: 5.0, qualification: 'B.E., M.Tech. (IIT-B), Ph.D.', email: 'chairman@kiot.ac.in', joiningDate: '27.04.2009', association: 'Regular', publications: 'IJ: 63, NJ: 52, IC: 65, NC: 134, Books: 03', image: balajiImage },
       { name: 'Dr. K. Visagavel', designation: 'Principal', experience: 'Teaching : 27 Years, Research : 17 Years', specialization: 'Thermal Engineering, IAQ/IEQ, CFD', rating: 5.0, qualification: 'B.E., M.E., Ph.D.', email: 'principal@kiot.ac.in', joiningDate: '30.04.2009', association: 'Regular', publications: 'IJ: 57, NJ: 02, IC: 10, NC: 101, Books: 03' },
       { name: 'Dr. P. Navaneethakrishnan', designation: 'Professor & Director-SA', experience: 'Teaching : 29 Years, Research : 23 Years', specialization: 'Engineering Design', rating: 4.9, qualification: 'B.E., M.E., Ph.D.', email: 'pnkmech@kiot.ac.in', joiningDate: '25.01.2023', association: 'Regular', publications: 'IJ: 41, NJ: 13, IC: 22, NC: 11, Books: 03' },
       { name: 'Dr. M. Ilangkumaran', designation: 'Professor & Director - COE', experience: 'Teaching: 22.6 Years, Research: 13 Years', specialization: 'Industrial Engineering', rating: 4.9, qualification: 'B.E., M.E., Ph.D.', email: 'mikmech@kiot.ac.in', joiningDate: '31.12.2021', association: 'Regular', publications: 'IJ: 65, NJ: 04, IC:15, NC: 03' },
@@ -289,11 +289,298 @@ export const courseData = {
       // ... more curriculum
     ],
     faculty: [
-      { name: 'Dr. K. Vijayalakshmi', designation: 'HoD & Professor', experience: '20 Years', specialization: 'Machine Learning & AI', rating: 4.9 },
-      // ... more faculty
+      { 
+        name: 'Dr. P. Rajendran', 
+        designation: 'Professor & HOD', 
+        doj: '03.05.2010',
+        qualification: 'M.E., Ph.D., MISTE.',
+        association: 'Regular',
+        experience: 'Teaching: 25, Research: 17.5',
+        specialization: 'Image Mining',
+        email: 'hod.cse@kiot.ac.in',
+        publications: 'IJ:26, NJ:1, IC:19, NC:09, P:03',
+        researchSupervision: 'Supervised: 08, Supervising: 08',
+        rating: 5.0
+      },
+      { 
+        name: 'Dr. V. Kumar', 
+        designation: 'Professor & Director IM', 
+        doj: '04.06.2010',
+        qualification: 'B.E., M.E., Ph.D., MISTE., MIEEE.',
+        association: 'Regular',
+        experience: 'Teaching: 22.9, Research: 19',
+        specialization: 'Computer Networks',
+        email: 'directorim@kiot.ac.in',
+        publications: 'IJ:14, IC:07, NC:03',
+        rating: 4.9
+      },
+      { 
+        name: 'Mr. T. Karthikeyan', 
+        designation: 'Assistant Professor', 
+        doj: '01.06.2012',
+        qualification: 'B.Tech., M.S(IT)., (Ph.D)',
+        association: 'Regular',
+        experience: 'Teaching: 14.5, Industry: 2.10, Research: 11',
+        specialization: 'Data Mining & Artificial Intelligence',
+        email: 'tkcse@kiot.ac.in',
+        publications: 'IJ:11, IC:10, NC:11',
+        rating: 4.8
+      },
+      { 
+        name: 'Dr. R. Kumar', 
+        designation: 'Professor', 
+        doj: '13.03.2023',
+        qualification: 'M.Tech, Ph.D.',
+        association: 'Regular',
+        experience: 'Teaching: 27, Industry: 3, Research: 15',
+        specialization: 'e-Learning, Assistive Technologies',
+        email: 'rkcse@kiot.ac.in',
+        publications: 'IJ:15, NJ:1, IC:14, NC:2, BC:2',
+        researchSupervision: 'Supervising: 04',
+        rating: 4.9
+      },
+      { 
+        name: 'Dr. M. Sakthivel', 
+        designation: 'Associate Professor', 
+        doj: '02.08.2021',
+        qualification: 'B.E., M.E., Ph.D.',
+        association: 'Regular',
+        experience: 'Teaching: 20.1, Research: 14',
+        specialization: 'Software Engineering',
+        email: 'mskcse@kiot.ac.in',
+        publications: 'IJ:7, IC:6, NC:6, P:2',
+        rating: 4.8
+      },
+      { 
+        name: 'Dr. S. Sakthivel', 
+        designation: 'Associate Professor', 
+        doj: '30.04.2025',
+        qualification: 'B.E., M.E., Ph.D.',
+        association: 'Regular',
+        experience: 'Teaching: 20.1, Research: 13',
+        specialization: 'Data Mining and Image Mining',
+        email: 'sscse@kiot.ac.in',
+        publications: 'IJ: 7, P: 2, IC: 6, NC: 3',
+        rating: 4.8
+      },
+      { 
+        name: 'Mr. K. Ravikumar', 
+        designation: 'Assistant Professor', 
+        doj: '20.05.2011',
+        qualification: 'B.E., M.E., MISTE.',
+        association: 'Regular',
+        experience: 'Teaching: 23.3',
+        specialization: 'Computer Networks',
+        email: 'krkcse@kiot.ac.in',
+        publications: 'IJ:3, IC:5, NC:7',
+        rating: 4.7
+      },
+      { 
+        name: 'Dr. I. Rajesh', 
+        designation: 'Assistant Professor', 
+        doj: '02.06.2010',
+        qualification: 'B.E., M.E., Ph.D., MISTE.',
+        association: 'Regular',
+        experience: 'Teaching: 20, Research: 9',
+        specialization: 'Image Mining',
+        email: 'ircse@kiot.ac.in',
+        publications: 'IJ:1, NJ:2, IC:4, NC:5',
+        rating: 4.7
+      },
+      { 
+        name: 'Dr. P. Vijayalakshmi', 
+        designation: 'Associate Professor', 
+        doj: '22.10.2021',
+        qualification: 'B.E., M.E., Ph.D.',
+        association: 'Regular',
+        experience: 'Teaching: 21.4, Admin: 3, Research: 14',
+        specialization: 'WSN, AI, Image Processing',
+        email: 'pvcse@kiot.ac.in',
+        publications: 'IJ:16, IC:12, NC:3',
+        researchSupervision: 'Supervising: 04',
+        rating: 4.8
+      },
+      { 
+        name: 'Mr. M. Senthilkumar', 
+        designation: 'Assistant Professor', 
+        doj: '14.06.2012',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: 'Teaching: 13, Industry: 1.2',
+        specialization: 'Networks, Data Structures',
+        email: 'mscse@kiot.ac.in',
+        publications: 'IJ:2, IC:4, NC:6',
+        rating: 4.7
+      },
+      { 
+        name: 'Mr. A. Sekar', 
+        designation: 'Assistant Professor', 
+        doj: '11.07.2016',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: 'Teaching: 13, Industry: 1.8, Research: 2',
+        specialization: 'Mobile Computing, WSN',
+        email: 'ascse@kiot.ac.in',
+        publications: 'IJ:1, IC:2, NC:1',
+        rating: 4.7
+      },
+      { 
+        name: 'Mrs. K. Saranya', 
+        designation: 'Assistant Professor', 
+        doj: '01.06.2012',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: 'Teaching: 13.1',
+        specialization: 'Data Structures, Compiler Design',
+        email: 'kscse@kiot.ac.in',
+        publications: 'IJ:4, IC:5, NC:1',
+        rating: 4.6
+      },
+      { 
+        name: 'Dr. P. Malarvizhi', 
+        designation: 'Assistant Professor', 
+        doj: '01.06.2012',
+        qualification: 'B.E., M.E. Ph.D.',
+        association: 'Regular',
+        experience: 'Teaching: 13.1, Research: 5',
+        specialization: 'Wireless Sensor Networks',
+        email: 'pmcse@kiot.ac.in',
+        publications: 'IJ:8, IC:8, NC:10',
+        rating: 4.7
+      },
+      { 
+        name: 'Mrs. R. Saranya', 
+        designation: 'Assistant Professor', 
+        doj: '01.06.2016',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: 'Teaching: 9.2',
+        specialization: 'Data Structure, Network Security',
+        email: 'rscse@kiot.ac.in',
+        publications: 'IJ:4, IC:4, NC:3',
+        rating: 4.6
+      },
+      { 
+        name: 'Mr. P. Nareshkumar', 
+        designation: 'Assistant Professor', 
+        doj: '03.08.2020',
+        qualification: 'B.Tech., M.E., (Ph.D)',
+        association: 'Regular',
+        experience: 'Teaching: 13, Research: 01',
+        specialization: 'Data Structure',
+        email: 'pnkcse@kiot.ac.in',
+        publications: 'IJ:1, NJ:5, IC:3, NC:8',
+        rating: 4.7
+      },
+      { name: 'Mr. P. Sasikumar', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '13.1 Years', specialization: 'Image Mining', email: 'psacse@kiot.ac.in', publications: 'IJ:2, IC:5, NC:5', rating: 4.6 },
+      { name: 'Mr. K. Boopathi', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '12.8 Years', specialization: 'Networks, Data Structures', email: 'kbcse@kiot.ac.in', publications: 'IJ:1, IC:7, NC:1', rating: 4.6 },
+      { name: 'Mr. G. Babu', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: '9.10 Years', specialization: 'Data Structures', email: 'gbcse@kiot.ac.in', publications: 'IJ:8, NJ:3, IC:7, NC:2', rating: 4.7 },
+      { name: 'Mrs. N. Subha', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E, (Ph.D)', association: 'Regular', experience: '8.11 Years', specialization: 'Data Science', email: 'nscse@kiot.ac.in', publications: 'IJ:5, IC:5, NC:1', rating: 4.6 },
+      { name: 'Mr. R. Sivaguru', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '8.11 Years, Research: 04', specialization: 'Computer Networks, IoT', email: 'rsgcse@kiot.ac.in', publications: 'IJ:15, IC:17, NC:4', rating: 4.7 },
+      { name: 'Mr. K. Praveen', designation: 'Assistant Professor', doj: '29.03.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '4.3 Years', specialization: 'Object Oriented Programming', email: 'kpcse@kiot.ac.in', publications: 'NJ:3, NC:4', rating: 4.5 },
+      { name: 'Mrs. D. Ramya', designation: 'Assistant Professor', doj: '27.06.2022', qualification: 'B.Tech., M.E., (Ph.D)', association: 'Regular', experience: '6.10 Years', specialization: 'Networks', email: 'drcse@kiot.ac.in', publications: 'IJ:4, IC:2, NC:4', rating: 4.6 },
+      { name: 'Mr. P. Ganeshen', designation: 'Assistant Professor', doj: '15.07.2022', qualification: 'B.Tech, M.E', association: 'Regular', experience: '14.10 Years', specialization: 'Networking & Cloud computing', email: 'pgncse@kiot.ac.in', publications: 'IJ:6, NJ:6, IC:4, NC:8', rating: 4.7 },
+      { name: 'Mrs. S. Deepa', designation: 'Assistant Professor', doj: '04.08.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: '2.11 Years', specialization: 'Python, Networks', email: 'sdcse@kiot.ac.in', publications: 'IJ:1, IC:5, NC:1', rating: 4.5 },
+      { name: 'Dr. M. Lakshaga Jyothi', designation: 'Assistant Professor', doj: '22.08.2022', qualification: 'B.E., M.E., Ph.D', association: 'Regular', experience: '2.10 Years, Research: 5', specialization: 'IoT, Deep Learning', email: 'mljcse@kiot.ac.in', publications: 'IJ:3, NJ:1, IC:5, NC:2', rating: 4.7 },
+      { name: 'Mrs. V. Sathiyapriya', designation: 'Assistant Professor', doj: '29.08.2022', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '7.6 Years', specialization: 'OOPS & Data Structures', email: 'vspcse@kiot.ac.in', publications: 'IJ:6, IC:5, NC:2', rating: 4.6 },
+      { name: 'Mr. M.K. Sampath', designation: 'Assistant Professor', doj: '08.06.2023', qualification: 'B.E., M.E', association: 'Regular', experience: '10.2 Years', specialization: 'Human Computer Interaction', email: 'mkscse@kiot.ac.in', publications: 'IJ:3, IC:1, NC:2', rating: 4.6 },
+      { name: 'Mr. U.K. Balaji Saravana', designation: 'Assistant Professor', doj: '09.11.2024', qualification: 'B.E, M.E', association: 'Regular', experience: '16.8 Years', specialization: 'Data Science, Data Mining', email: 'ukbscse@kiot.ac.in', publications: 'IJ:2, IC:6', rating: 4.7 },
+      { name: 'Mrs. Pavithra G', designation: 'Assistant Professor', doj: '02.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: '11 Years', specialization: 'Networks, OOPS', email: 'gpcse@kiot.ac.in', publications: 'IJ:2, IC:1, NC:3', rating: 4.6 },
+      // Professors of Practice
+      { name: 'Mr. Ezhilavan B', designation: 'Associate POP', doj: '12.07.2024', qualification: 'B.E. CSE', experience: '14.10 Years', rating: 4.8 },
+      { name: 'Mrs. Gayathri Devi M', designation: 'Associate POP', doj: '10.07.2024', qualification: 'B.Tech. M.E. CSE', experience: '11.10 Years', rating: 4.8 },
+      { name: 'Mr. GOKULNATH P', designation: 'Associate POP', doj: '12.07.2024', qualification: 'B.E.', experience: '6.10 Years', rating: 4.5 },
+      { name: 'Mr. HARI PRASANNA V', designation: 'Associate POP', doj: '12.07.2024', qualification: 'B.E.', experience: '16.10 Years', rating: 4.7 },
+      { name: 'Mr. SADEESHKUMAR S', designation: 'Associate POP', qualification: 'B.Tech IT, B.E.', experience: '16.10 Years', rating: 4.7 },
+      { name: 'Mr. VENKATACHALAM RAMAKRISHNAN', designation: 'Associate POP', doj: '05.07.2024', qualification: 'B.Tech. IT', experience: '21.10 Years', rating: 4.9 },
+      // Science & Humanities Faculty
+      { name: 'Prof. K. Sudha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '19.11 Years', specialization: 'Differential Equations', email: 'sudharmsc@gmail.com', rating: 4.8 },
+      { name: 'Prof. R. Shanmugavalli', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '11.8 Years', specialization: 'Differential Equations', email: 'sangeesweety26@gmail.com', rating: 4.6 },
+      { name: 'Prof. S. Geetha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: '13.02 Years', specialization: 'Differential Equations', email: 'sgeetha.maths@gmail.com', rating: 4.7 },
+      { name: 'Prof. T. Srinivasaraja', designation: 'Assistant Professor', qualification: 'M.A., B.Ed., M.Phil', experience: '9.3 Years', specialization: 'British Literature', email: 'tseng@kiot.ac.in', publications: 'IJ:02, IC:03, NC:03', rating: 4.6 },
+      { name: 'Prof. G. Divya', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil', experience: '7.2 Years', specialization: 'Physics (Spectroscopy)', email: 'gdphy@kiot.ac.in', rating: 4.6 },
+      { name: 'Prof. Dr. T. Aruna Christry', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil., Ph.D', experience: '13 Months', specialization: 'Thin Film Technology', email: 'tacphy@kiot.ac.in', publications: 'IJ:3, IC:1', rating: 4.7 },
+      { name: 'Dhineshkumar S', designation: 'Assistant Professor (English)', doj: '02.05.2025', qualification: 'M.A., B.Ed., UGC-NET.', experience: '2 Months', specialization: 'English Literature', email: 'sdkeng@kiot.ac.in', rating: 4.5 },
+      { name: 'P.R. Karthik', designation: 'Assistant Professor (Mathematics)', doj: '26.11.2021', qualification: 'M.Sc., M.Phil.', experience: '8.10 Years', specialization: 'Partial Differential Equations', email: 'prkmat@kiot.ac.in', rating: 4.6 }
     ],
     labs: [
-      { name: 'Cloud Computing Lab', equipment: 'AWS, Azure, GCP — 60 workstations', icon: Globe },
+      { 
+        name: 'Networks Laboratory', 
+        equipments: ['Area: 74.76 Sq.m', 'Workstations: 40 Systems', 'Cisco Packet Tracer', 'Wireshark', 'NS2 Network Simulator'], 
+        icon: Globe,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Database Management System Laboratory', 
+        equipments: ['Area: 93.59 Sq.m', 'Workstations: 40 Systems', 'Oracle 11g DBMS', 'MySQL', 'MongoDB'], 
+        icon: Layers,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Mobile Application Development Laboratory', 
+        equipments: ['Area: 95.43 Sq.m', 'Workstations: 40 Systems', 'Android Studio', 'Flutter SDK', 'React Native'], 
+        icon: Zap,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Software Development Laboratory', 
+        equipments: ['Area: 75.49 Sq.m', 'Workstations: 40 Systems', 'IBM Rational Rose', 'Visual Studio', 'Netbeans IDE'], 
+        icon: Code,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Computer Practices Laboratory', 
+        equipments: ['Area: 65.91 Sq.m', 'Workstations: 40 Systems', 'Turbo C', 'Code Blocks', 'MS Office Suite'], 
+        icon: Monitor,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Data Structures Laboratory', 
+        equipments: ['Area: 65.91 Sq.m', 'Workstations: 40 Systems', 'C/C++ Libraries', 'Jupyter Notebook', 'Python IDLE'], 
+        icon: Cpu,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'PG - CSE Laboratory', 
+        equipments: ['Area: 42.20 Sq.m', 'Workstations: 24 Systems', 'Advanced Research Tools', 'High-Performance Computing Nodes'], 
+        icon: Microscope,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'IOT Laboratory', 
+        equipments: ['Area: 76.58 Sq.m', 'Workstations: 30 Systems', 'Arduino / Raspberry Pi Kits', 'Sensor Modules', 'Blynk IoT / Thingspeak'], 
+        icon: Cpu,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Python Laboratory', 
+        equipments: ['Area: 107.34 Sq.m', 'Workstations: 72 Systems', 'Anaconda Distribution', 'R Studio', 'TensorFlow / PyTorch'], 
+        icon: Terminal,
+        incharge: 'Faculty In-Charge',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Software Infrastructure & Licenses', 
+        equipments: [
+          'Oracle 11g Database (Perpetual)', 
+          'IBM Rational Rose (Perpetual)', 
+          'Microsoft Campus License (Annual)', 
+          'Open Source: Python, MySQL, Hadoop',
+          'IDE: Netbeans, Android Studio, Visual Studio',
+          'Tools: Wireshark, Virtual Box, Jupyter'
+        ], 
+        icon: ShieldCheck,
+        incharge: 'System Administrator',
+        technician: 'Lab Technician'
+      }
     ],
     companies: ['TCS', 'Infosys', 'Wipro', 'HCLTech', 'Cognizant', 'Zoho', 'Capgemini', 'Accenture', 'IBM', 'Amazon'],
     placementStats: { placed: '96%', avg: '5.8 LPA', top: '24 LPA', companies: '100+' },
@@ -324,7 +611,64 @@ export const courseData = {
     whyChoose: ['High-tech VLSI labs', 'Communication focus', 'Expert faculty'],
     curriculum: [{ year: 'Year 1', semesters: ['Maths', 'Physics', 'Circuits'] }],
     faculty: [{ name: 'Dr. R. Sundaram', designation: 'HoD', experience: '20 Years', specialization: 'VLSI', rating: 4.8 }],
-    labs: [{ name: 'VLSI Lab', equipment: 'Cadence Tools', icon: Cpu }],
+    labs: [
+      { 
+        name: 'Engineering Practices Laboratory – Electronics', 
+        equipments: ['Soldering Iron, Lead', 'Multi meter', 'Continuity tester', 'Used Laptop', 'Used desktop computer', 'Used LED TV'], 
+        icon: Wrench,
+        incharge: 'Mr. M. Chandraman, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Circuits and Devices Laboratory', 
+        equipments: ['CRO (30MHz)', 'Function Generators (3MHz)', 'Dual Regulated power Supplies (0-30V)', 'Dual power supply/single mode power supply', 'IC Trainer Kit', 'Multimeter', 'Digital LCR Meter'], 
+        icon: Zap,
+        incharge: 'Mr. A. Arun, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Communications System Laboratory', 
+        equipments: ['CRO / DSO (Min 30MHz)', 'Signal Generator / Function Generators (2 MHz)', 'Dual Regulated Power Supplies (0 - 30V)', 'Digital Multimeter', 'IC tester', 'Signal Sampling Kits (TDM, AM, FM, PCM, DM)', 'MSO / DSO'], 
+        icon: Globe,
+        incharge: 'Dr. S. Kumarganesh, Professor/ECE',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Advanced Communication Laboratory', 
+        equipments: ['Optical Fiber Trainer Kits (LED/PIN char)', 'Fiber Loss Analysis Kit', '2 Mbps PRBS Data Source', 'Advanced BER Measurement Kit', 'MM/SM Glass & Plastic Fiber chords', 'ST/SC/E2000 Connectors'], 
+        icon: Radio,
+        incharge: 'Mr. S. Manoharan, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Project Laboratory', 
+        equipments: ['GKS Sensor Kits (Hall, Accelero, DTMF, PIR)', 'GSM SIM 300 / GPS / RFID Kits', 'WSN Nodes & Gateway', 'MSP 430 / C2000 / Tiva C Launch pads', 'Analog System Lab Kit Pro', 'Sensor Hub & Motor Driver'], 
+        icon: Rocket,
+        incharge: 'Dr. P. Shanmugasundaram, ASP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Digital Signal Processing Laboratory', 
+        equipments: ['Fixed / Floating point DSP PCs', 'TMS320C5X / C6X Processors', 'Signal Generators (1MHz)', 'CRO (20MHz)'], 
+        icon: Terminal,
+        incharge: 'Mr. R. Shanmuga Sundaram, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'Communication Networks Laboratory', 
+        equipments: ['Standard LAN Trainer Kits', 'Network Analysis Tools', 'Network Simulation Software'], 
+        icon: Layers,
+        incharge: 'Mr. G. Rajamanickam, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      { 
+        name: 'VLSI Design Laboratory', 
+        equipments: ['Xilinx / Altera FPGA Boards', 'Logic Analyzer', 'DSO', 'ADC / DAC Interface Boards', 'Motor Control Training Kit'], 
+        icon: Cpu,
+        incharge: 'Mr. A. Tamilselvan, AP/ECE',
+        technician: 'Technical Support Staff'
+      }
+    ],
     companies: ['Intel', 'Qualcomm', 'Samsung'],
     placementStats: { placed: '90%', avg: '4.8 LPA', top: '18 LPA', companies: '50+' },
     projects: ['IoT Based Smart Home'],
@@ -452,5 +796,81 @@ export const courseData = {
     faculty: [{ name: 'Dr. J. Ramkumar', designation: 'HoD', experience: '17 Years', specialization: 'Power Systems', rating: 4.8 }],
     labs: [{ name: 'Electrical Machines Lab', equipment: 'DC/AC motors and generators', icon: Zap }],
     placementStats: { placed: '89%', avg: '4.2 LPA', top: '15 LPA', companies: '40+' },
+  },
+  'mba-general': {
+    name: 'MBA - Master of Business Administration',
+    short: 'MBA',
+    duration: '2 Years (4 Semesters)',
+    intake: 120,
+    affiliation: 'Anna University',
+    accreditation: 'NBA Accredited',
+    placement: '92%',
+    avgPackage: '4.5 LPA',
+    topPackage: '12 LPA',
+    icon: TrendingUp,
+    color: '#18357a',
+    tagline: 'Lead. Manage. Innovate.',
+    overview: 'The MBA program at KIOT is designed to develop future business leaders through a blend of academic rigor and practical industry exposure.',
+    whyChoose: ['Industry-aligned curriculum', 'Case study based learning', 'Strong placement record'],
+    curriculum: [{ year: 'Year 1', semesters: ['Management Concepts', 'Economics', 'Accounting'] }],
+    faculty: [{ name: 'Dr. M. Vidhya', designation: 'HoD', experience: '15 Years', specialization: 'Finance', rating: 4.8 }],
+    labs: [{ name: 'Management Lab', equipment: 'Financial Terminals', icon: BarChart3 }],
+  },
+  'mba-iev': {
+    name: 'MBA (IEV) - Innovation, Entrepreneurship and Venture Development',
+    short: 'MBA IEV',
+    duration: '2 Years (4 Semesters)',
+    intake: 60,
+    affiliation: 'Anna University',
+    accreditation: 'NBA Accredited',
+    placement: '90%',
+    avgPackage: '4.8 LPA',
+    topPackage: '15 LPA',
+    icon: Rocket,
+    color: '#18357a',
+    tagline: 'Innovate. Execute. Scale.',
+    overview: 'This unique program focuses on fostering entrepreneurial spirit and provides a platform for students to convert their ideas into viable business ventures.',
+    whyChoose: ['Startup Incubation', 'Venture Capital Connect', 'Experiential Learning'],
+    curriculum: [{ year: 'Year 1', semesters: ['Design Thinking', 'Business Modeling', 'Startup Finance'] }],
+    faculty: [{ name: 'Dr. P. Rajendran', designation: 'Director', experience: '18 Years', specialization: 'Entrepreneurship', rating: 4.9 }],
+    labs: [{ name: 'Innovation Hub', equipment: 'Productivity Tools', icon: Zap }],
+  },
+  'mca': {
+    name: 'MCA - Master of Computer Applications',
+    short: 'MCA',
+    duration: '2 Years (4 Semesters)',
+    intake: 60,
+    affiliation: 'Anna University',
+    accreditation: 'NBA Accredited',
+    placement: '91%',
+    avgPackage: '4.2 LPA',
+    topPackage: '10 LPA',
+    icon: Code,
+    color: '#18357a',
+    tagline: 'Code Your Future.',
+    overview: 'The MCA program focuses on advanced software development, algorithm design, and enterprise-level application management.',
+    whyChoose: ['Advanced coding labs', 'Industry projects', 'HackerRank certifications'],
+    curriculum: [{ year: 'Year 1', semesters: ['Advanced Data Structures', 'OS', 'DBMS'] }],
+    faculty: [{ name: 'Dr. B. Anitha', designation: 'HoD', experience: '14 Years', specialization: 'Software Engineering', rating: 4.7 }],
+    labs: [{ name: 'Advanced App Lab', equipment: 'High-end Servers', icon: Terminal }],
+  },
+  'phd': {
+    name: 'Doctor of Philosophy',
+    short: 'Ph.D.',
+    duration: 'Full Time / Part Time',
+    intake: '',
+    affiliation: 'Anna University',
+    accreditation: 'Recognized Research Center',
+    placement: 'N/A',
+    avgPackage: 'N/A',
+    topPackage: 'N/A',
+    icon: Microscope,
+    color: '#18357a',
+    tagline: 'Innovating Through Research.',
+    overview: 'Our Research Centers are recognized by Anna University and offer doctoral programs in all major engineering and management disciplines.',
+    whyChoose: ['Expert research supervisors', 'Modern research labs', 'Funding assistance for publications'],
+    curriculum: [{ year: 'Course Work', semesters: ['Research Methodology', 'Advanced Domain Elective'] }],
+    faculty: [{ name: 'Research Committee', designation: 'Coordinators', experience: '20+ Years', specialization: 'Multidisciplinary', rating: 5.0 }],
+    labs: [{ name: 'Research Center', equipment: 'Experimental Setup', icon: FlaskConical }],
   },
 };

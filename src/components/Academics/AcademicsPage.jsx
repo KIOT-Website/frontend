@@ -40,7 +40,7 @@ const ugPrograms = [
   {
     id: 'be-mechanical',
     name: 'B.E Mechanical Engineering',
-    short: 'Mechanical',
+    short: 'MECH',
     duration: '4 Years',
     intake: 120,
     category: 'Engineering',
@@ -65,7 +65,7 @@ const ugPrograms = [
   },
   {
     id: 'btech-aids',
-    name: 'B.Tech AI & Data Science',
+    name: 'B.Tech Artificial Intelligence and Data Science',
     short: 'AI & DS',
     duration: '4 Years',
     intake: 120,
@@ -81,7 +81,7 @@ const ugPrograms = [
     name: 'B.E Electrical & Electronics Engineering',
     short: 'EEE',
     duration: '4 Years',
-    intake: 60,
+    intake: 120,
     category: 'Engineering',
     icon: Zap,
     color: '#18357a',
@@ -91,7 +91,7 @@ const ugPrograms = [
   },
   {
     id: 'btech-csbs',
-    name: 'B.Tech CS & Business Systems',
+    name: 'B.Tech Computer Science and Business Systems',
     short: 'CSBS',
     duration: '4 Years',
     intake: 60,
@@ -118,9 +118,9 @@ const ugPrograms = [
   {
     id: 'be-civil',
     name: 'B.E Civil Engineering',
-    short: 'Civil',
+    short: 'CIVIL',
     duration: '4 Years',
-    intake: 30,
+    intake: 60,
     category: 'Engineering',
     icon: Layers,
     color: '#18357a',
@@ -227,7 +227,7 @@ const pgPrograms = [
     name: 'Ph.D. ALL Departments',
     short: 'Ph.D.',
     duration: 'Part-Time / Full Time',
-    intake: 'As per Norms',
+    intake: '',
     category: 'Research',
     icon: Microscope,
     color: '#224292',
@@ -384,17 +384,17 @@ export default function AcademicsPage() {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-[#18357a] border-b border-[#18357a]/10">
-                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em]">Program</th>
+                    <th className="px-5 sm:px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em]">Program</th>
                     <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] hidden md:table-cell">Category</th>
-                    <th className="px-8 py-6 text-[10px] font-black text-[#ffc107] uppercase tracking-[0.2em] text-center">Intake</th>
-                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] text-right"></th>
+                    <th className="px-5 sm:px-8 py-6 text-[10px] font-black text-[#ffc107] uppercase tracking-[0.2em] text-center">Intake</th>
+                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] text-right hidden sm:table-cell"></th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
                   {currentPrograms.map((prog, i) => {
                     const inCompare = compareList.find(p => p.id === prog.id)
                     return (
-                      <motion.tr
+                       <motion.tr
                         key={prog.id}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -406,16 +406,16 @@ export default function AcademicsPage() {
                         }}
                       >
                         {/* Column 1: Program (Icon + Name) */}
-                        <td className="px-8 py-4">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-[#18357a]/5 flex items-center justify-center group-hover:bg-[#18357a] transition-all duration-300 overflow-hidden">
+                        <td className="px-5 sm:px-8 py-4">
+                          <div className="flex items-center gap-3 sm:gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-[#18357a]/5 flex items-center justify-center group-hover:bg-[#18357a] transition-all duration-300 shrink-0">
                               <prog.icon size={18} className="text-[#18357a] group-hover:text-white transition-colors" />
                             </div>
                             <div>
-                               <h3 className="text-[14px] font-black text-[#18357a] leading-tight uppercase group-hover:text-[#18357a] transition-colors mb-0.5">
+                               <h3 className="text-[13px] sm:text-[14px] font-black text-[#18357a] leading-tight group-hover:text-[#18357a] transition-colors mb-0.5">
                                  {prog.name}
                                </h3>
-                               <p className="text-[10px] font-bold text-[#A9B1C3] uppercase tracking-wider">{prog.short}</p>
+                               <p className="text-[10px] font-bold text-[#ffc107] tracking-wider">{prog.short}</p>
                             </div>
                           </div>
                         </td>
@@ -428,27 +428,31 @@ export default function AcademicsPage() {
                         </td>
 
                         {/* Column 3: Intake */}
-                        <td className="px-8 py-4 text-center">
-                          <span className="text-[#18357a] font-black text-[13px]">{prog.intake}</span>
-                          <span className="ml-1 text-[9px] font-bold text-[#A9B1C3] uppercase tracking-widest hidden sm:inline">Seats</span>
+                        <td className="px-5 sm:px-8 py-4 text-center">
+                          {prog.id !== 'phd' && (
+                            <>
+                              <span className="text-[#18357a] font-black text-[13px]">{prog.intake}</span>
+                              <span className="ml-1 text-[9px] font-bold text-[#A9B1C3] uppercase tracking-widest hidden lg:inline font-graphik">Seats</span>
+                            </>
+                          )}
                         </td>
 
-                        {/* Column 4: Actions */}
-                        <td className="px-8 py-4">
+                        {/* Column 4: Actions (Hidden on Mobile/Small screens) */}
+                        <td className="px-8 py-4 hidden sm:table-cell">
                           <div className="flex items-center justify-end gap-3">
                              <button
-                               onClick={(e) => { e.stopPropagation(); toggleCompare(prog); }}
-                               className={`w-9 h-9 flex items-center justify-center rounded-lg border transition-all ${
-                                 inCompare
-                                   ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-md shadow-[#ffc107]/20'
-                                   : 'bg-white border-[#E5EDF8] text-[#A9B1C3] hover:border-[#18357a]/30 hover:text-[#18357a]'
-                               }`}
-                               title={inCompare ? 'Remove' : 'Compare'}
-                             >
-                               <BarChart3 size={14} />
+                                onClick={(e) => { e.stopPropagation(); toggleCompare(prog); }}
+                                className={`w-9 h-9 flex items-center justify-center rounded-lg border transition-all ${
+                                  inCompare
+                                    ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-md shadow-[#ffc107]/20'
+                                    : 'bg-white border-[#E5EDF8] text-[#A9B1C3] hover:border-[#18357a]/30 hover:text-[#18357a]'
+                                }`}
+                                title={inCompare ? 'Remove' : 'Compare'}
+                              >
+                                <BarChart3 size={14} />
                              </button>
-                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#18357a] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all transform active:scale-95 shadow-md shadow-blue-900/10 active:shadow-inner group-hover/btn:shadow-[#ffc107]/20">
-                                View <ArrowRight size={12} className="hidden sm:block" />
+                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#18357a] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all transform shadow-md shadow-blue-900/10">
+                                View <ArrowRight size={12} className="hidden lg:block" />
                              </div>
                           </div>
                         </td>

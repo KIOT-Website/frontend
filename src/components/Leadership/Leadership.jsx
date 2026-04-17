@@ -11,8 +11,8 @@ const leaders = [
   {
     id: 1,
     name: "Dr. PSS. Srinivasan",
-    role: "Chairman",
-    designation: "Founder & Executive Chairman (B.E., M.Tech. (IIT-B), Ph.D., MISTE., ISHMT., FMFPI.)",
+    role: "President",
+    designation: "Founder & President (B.E., M.Tech. (IIT-B), Ph.D., MISTE., ISHMT., FMFPI.)",
     image: chairmanImg,
     fullMessage: [
       "Welcome to the Trend Setters’ Paradise,",
@@ -70,7 +70,7 @@ const Leadership = () => {
   }, [selectedLeader])
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-10 pb-20 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-10 pb-20 min-h-screen overflow-hidden font-graphik">
       
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
@@ -79,20 +79,15 @@ const Leadership = () => {
         
         {/* Main Page Header - Refined to match About Us style */}
         <div className="text-center mb-12 lg:mb-16 pt-5">
-          <div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center"
-          >
-            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
+          <div className="flex flex-col items-center">
+            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 transition-shadow cursor-default font-graphik">
                <span className="relative flex h-3.5 w-3.5">
-                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#18357a] opacity-60"></span>
-                 <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
+                 <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#18357a]"></span>
                </span>
-               <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Management & Governance</span>
+               <span className="text-sm font-bold text-[#18357a] uppercase tracking-[0.15em]">Management & Governance</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap">
-              Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block uppercase">Leadership</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap font-graphik">
+              Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#18357a] to-[#18357a] inline-block">Leadership</span>
             </h1>
           </div>
           <motion.p 
@@ -110,8 +105,8 @@ const Leadership = () => {
           <div className="relative z-10 w-full">
             {/* Minimalist Section Header Design (Updated) */}
             <div className="flex flex-col items-center mb-4 text-center">
-               <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] tracking-tighter mb-4">
-                  KIOT <span className=\"text-\[#ffc107\]\">Trust</span>
+               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#18357a] tracking-tighter mb-4 font-graphik">
+                  KIOT <span className="text-[#18357a]">Trust</span>
                </h2>
             </div>
 
@@ -180,9 +175,9 @@ const Leadership = () => {
               </div>
 
               {/* Trust Members List - Two Columns - Full width on mobile */}
-              <div className="bg-[#18357a] rounded-2xl p-8 sm:p-12 lg:p-16 relative overflow-hidden -mx-4 sm:mx-0">
+              <div className="bg-[#18357a] rounded-2xl p-8 sm:p-12 lg:p-16 relative overflow-hidden -mx-4 sm:mx-0 font-graphik">
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -mr-48 -mb-48" />
-                <h3 className="text-[#18357a] font-graphik font-bold text-[15px] sm:text-[18px] lg:text-[20px] uppercase tracking-[0.4em] mb-12 text-center px-4 leading-relaxed">
+                <h3 className="text-white font-bold text-[15px] sm:text-[18px] lg:text-[20px] uppercase tracking-[0.4em] mb-12 text-center px-4 leading-relaxed font-graphik">
                    Directory of KIOT Trust Members
                 </h3>
                 
@@ -206,9 +201,9 @@ const Leadership = () => {
                         "Mrs.K.Indhirani",
                         "Mr.Karuppiah Muthu B.A."
                       ].map((name, i) => (
-                        <div key={i} className="flex gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border-b border-white/5 last:border-0 group">
-                           <span className="text-[#18357a] font-graphik font-bold text-[10px] shrink-0 w-6 opacity-30 group-hover:opacity-100">{i + 1}</span>
-                           <span className="text-white font-bold text-[12px] leading-tight">{name}</span>
+                        <div key={i} className="flex gap-4 p-3 rounded-xl border-b border-white/5 last:border-0">
+                           <span className="text-white/30 font-bold text-[10px] shrink-0 w-6 font-graphik">{i + 1}</span>
+                           <span className="text-white font-medium text-[12px] leading-tight font-graphik">{name}</span>
                         </div>
                       ))}
                    </div>
@@ -231,9 +226,9 @@ const Leadership = () => {
                         "Mrs. S. Vijaya B.Sc.",
                         "Dr.AMJ Md. Zubair Rahman B.E., M.E., Ph.D."
                       ].map((name, i) => (
-                        <div key={i + 17} className="flex gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors border-b border-white/5 last:border-0 group">
-                           <span className="text-[#18357a] font-graphik font-bold text-[10px] shrink-0 w-6 opacity-30 group-hover:opacity-100">{i + 17}</span>
-                           <span className="text-white font-bold text-[12px] leading-tight">{name}</span>
+                        <div key={i + 17} className="flex gap-4 p-3 rounded-xl border-b border-white/5 last:border-0">
+                           <span className="text-white/30 font-bold text-[10px] shrink-0 w-6 font-graphik">{i + 17}</span>
+                           <span className="text-white font-medium text-[12px] leading-tight font-graphik">{name}</span>
                         </div>
                       ))}
                    </div>
@@ -251,7 +246,7 @@ const Leadership = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl md:text-5xl font-graphik font-bold text-[#18357a] mb-6 tracking-tighter uppercase">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#18357a] mb-6 tracking-tighter font-graphik">
               Leadership <span className="text-[#18357a]">Voices</span>
             </h1>
             <p className="text-[#64779F] text-[15px] font-bold max-w-2xl mx-auto text-center">
@@ -269,11 +264,9 @@ const Leadership = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative group bg-white pt-10 pb-10 px-8 flex flex-col items-center text-center transition-all duration-500 rounded-xl"
+              className="relative group bg-white pt-10 pb-10 px-8 flex flex-col items-center text-center rounded-2xl border border-slate-100 shadow-sm font-graphik"
             >
-              <div className="absolute inset-0 border-[3px] border-slate-100 rounded-xl transition-all duration-500 group-hover:border-[#18357a]/10" />
-              <div className="absolute top-0 right-0 w-24 h-24 border-t-[3px] border-r-[3px] border-[#18357a]/40 rounded-tr-[3rem] -mr-[1px] -mt-[1px] transition-all duration-700 group-hover:border-[#18357a]" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 border-b-[3px] border-l-[3px] border-[#ffc107]/40 rounded-bl-[3rem] -ml-[1px] -mb-[1px] transition-all duration-700 group-hover:border-[#ffc107]" />
+              {/* Simplified Layout */}
 
               <div className="relative w-40 h-40 lg:w-48 lg:h-48 mb-6 flex items-center justify-center z-10">
                  <div className="absolute inset-[-10px] rounded-full border border-slate-100 group-hover:rotate-180 transition-transform duration-1000 border-dashed" />
@@ -285,14 +278,14 @@ const Leadership = () => {
                  </div>
               </div>
 
-              <h3 className="text-xl lg:text-2xl font-graphik font-bold text-[#18357a] font-graphik mb-1">{leader.name}</h3>
-              <p className="text-[#18357a] text-[10px] font-graphik font-bold uppercase tracking-[0.2em] mb-6">{leader.role}</p>
+              <h3 className="text-xl lg:text-2xl font-bold text-[#18357a] mb-1 font-graphik">{leader.name}</h3>
+              <p className="text-[#18357a] text-[10px] font-bold uppercase tracking-[0.2em] mb-6 font-graphik">{leader.role}</p>
 
               <button 
                 onClick={() => setSelectedLeader(leader)}
-                className="relative z-10 px-8 py-3.5 bg-white border-2 border-[#18357a]/10 rounded-full text-[#18357a] text-[11px] font-graphik font-bold uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+                className="relative z-10 px-8 py-3.5 bg-[#18357a] rounded-full text-white text-[11px] font-bold uppercase tracking-widest hover:bg-[#224292] transition-colors shadow-sm font-graphik"
               >
-                Read Message →
+                Read Message
               </button>
             </div>
           ))}
@@ -330,8 +323,8 @@ const Leadership = () => {
                     <img 
                       src={selectedLeader.image} 
                       alt={selectedLeader.name} 
-                      className={`w-full h-full object-cover ${selectedLeader.role !== 'Chairman' ? 'scale-[1.1]' : ''}`} 
-                      style={selectedLeader.role !== 'Chairman' ? { objectPosition: 'center 15%' } : {}}
+                      className={`w-full h-full object-cover ${selectedLeader.role !== 'President' ? 'scale-[1.1]' : ''}`} 
+                      style={selectedLeader.role !== 'President' ? { objectPosition: 'center 15%' } : {}}
                     />
                   </div>
                   <h3 className="text-lg lg:text-2xl font-graphik font-bold text-white font-graphik mb-1">{selectedLeader.name}</h3>
@@ -346,7 +339,7 @@ const Leadership = () => {
                    <h2 className="text-xl lg:text-3xl font-graphik font-bold text-[#18357a] font-graphik mb-6">{selectedLeader.role} Message</h2>
                   <div className="space-y-6">
                     {selectedLeader.fullMessage.map((p, i) => (
-                      <p key={i} className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik text-justify">
+                      <p key={i} className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter text-justify">
                         {p}
                       </p>
                     ))}

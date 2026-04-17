@@ -43,7 +43,7 @@ const programsData = {
       { id: 'mba-general', name: "MBA - General", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
       { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
       { id: 'mba-iev', name: "MBA (IEV)", icon: Rocket, code: "MIE", duration: "2 Years", phd: true },
-      { id: 'phd', name: "Ph.D. ALL Departments", icon: Microscope, code: "PhD", duration: "Part-Time / Full Time", phd: true }
+      { id: 'phd', name: "Ph.D. All Departments", icon: Microscope, code: "Ph.D.", duration: "Part-Time / Full Time", phd: true }
     ]
   },
   PHD: {
@@ -86,7 +86,7 @@ const Programs = () => {
                 <span className="text-[9px] lg:text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Academic Excellence</span>
               </motion.div>
               
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-[#18357a] font-display mb-6 lg:mb-8 leading-[1.1] lg:leading-[1.05]">
+              <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-display mb-6 lg:mb-8 leading-[1.1] lg:leading-[1.05]">
                 Shape your future with <br className="hidden lg:block" />
                 AI embedded <span className="text-[#ffc107]">Engineering <br className="hidden xl:block" /> & Management courses.</span>
               </h2>
@@ -253,9 +253,12 @@ const Programs = () => {
                              </div>
                           </div>
 
-                          <h4 className="text-[18px] font-black text-[#18357a] mb-2 leading-tight group-hover:translate-x-1 transition-transform duration-300">
+                          <h4 className="text-[17px] font-black text-[#18357a] mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
                              {course.name}
                           </h4>
+                          <p className="text-[11px] font-black text-[#ffc107] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
+                             {course.code}
+                          </p>
                           
                           <div className="flex items-center gap-2 mt-4">
                              <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107]" />

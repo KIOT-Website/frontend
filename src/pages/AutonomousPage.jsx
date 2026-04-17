@@ -275,13 +275,13 @@ const AutonomousPage = () => {
                             </thead>
                             <tbody className="divide-y divide-slate-50">
                                 {[
-                                    { name: "Faculty of Mechanical Engineering (MECH)", file: mechBos },
-                                    { name: "Faculty of Electronics and Communication Engineering (ECE)", file: eceBos },
-                                    { name: "Faculty of Electrical Engineering (EEE)", file: eeeBos },
-                                    { name: "Faculty of Computer Science and Engineering (CSE+)", file: cseBos },
-                                    { name: "Faculty of Civil Engineering", file: civilBos },
-                                    { name: "Faculty of Science and Humanities", file: shBos },
-                                    { name: "Faculty of Management Sciences", file: mbaBos }
+                                    { name: "Mechanical Engineering", file: mechBos },
+                                    { name: "Electronics and Communication Engineering", file: eceBos },
+                                    { name: "Electrical and Electronics Engineering", file: eeeBos },
+                                    { name: "Computer Science and Engineering", file: cseBos },
+                                    { name: "Civil Engineering", file: civilBos },
+                                    { name: "Science and Humanities", file: shBos },
+                                    { name: "Management Studies", file: mbaBos }
                                 ].map((faculty, idx) => (
                                     <tr 
                                         key={idx} 
@@ -294,7 +294,7 @@ const AutonomousPage = () => {
                                             </span>
                                         </td>
                                         <td className="px-8 py-4 text-center">
-                                            <span className="text-[13px] font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-all">
+                                            <span className="text-[13px] font-black text-[#18357a] tracking-tight group-hover:text-[#ffc107] transition-all">
                                                 {faculty.name}
                                             </span>
                                         </td>

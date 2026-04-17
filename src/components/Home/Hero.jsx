@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-// Slide images from banner folder
+// Slide images from main folder
 import slide1 from '../../assets/banner/update-home.webp'
 import slide2 from '../../assets/banner/web-02.webp'
 import slide3 from '../../assets/banner/web-03.webp'
@@ -110,7 +110,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative w-full h-[30vh] sm:h-[450px] md:h-[550px] lg:h-[650px] xl:h-[750px] 2xl:h-[850px] min-[2500px]:h-[1080px] overflow-hidden bg-white pt-0 pb-0 group">
+    <section className="relative w-full h-[200px] sm:h-[430px] lg:h-[600px] overflow-hidden bg-white pt-0 pb-0 group">
       
       {/* BACKGROUND SLIDER */}
       <div className="absolute inset-0 z-0 bg-white">
@@ -124,18 +124,11 @@ const Hero = () => {
             exit="exit"
             className="absolute inset-0 w-full h-full bg-white flex items-center justify-center shadow-inner"
           >
-            {/* Standard Desktop/Mobile Code */}
+            {/* Using object-fill to ensure all text/content in banner images is visible at any resolution */}
             <img 
               src={slides[current].image} 
               alt={slides[current].title + " - " + slides[current].highlight} 
-              className="w-full h-full object-cover min-[2500px]:hidden"
-              loading="eager"
-            />
-            {/* Separate 4K Optimized Code: Exactly 3840x2160 with no white space */}
-            <img 
-              src={slides[current].image} 
-              alt={slides[current].title + " - " + slides[current].highlight} 
-              className="hidden min-[2500px]:block w-full h-full object-cover"
+              className="w-full h-full object-fill"
               loading="eager"
             />
           </motion.div>

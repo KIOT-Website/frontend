@@ -30,7 +30,7 @@ const AboutUs = () => {
                <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Our Heritage</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap">
-              About the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block uppercase">KIOT Institution</span>
+              About the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block">KIOT</span>
             </h1>
           </motion.div>
           <motion.p 
@@ -58,19 +58,7 @@ const AboutUs = () => {
                  <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 to-transparent" />
                </div>
                
-               {/* Floating Stat Card - Redesigned */}
-               <div className="absolute -bottom-6 -right-4 sm:-right-10 bg-[#18357a] p-6 lg:p-8 rounded-xl shadow-[0_30px_60px_rgba(24,53,122,0.3)] border border-white/10 z-10 transition-transform hover:scale-105 duration-500">
-                  <div className="flex items-center gap-5">
-                    <div className="w-14 h-14 bg-[#ffc107] rounded-2xl flex items-center justify-center text-[#18357a] rotate-3 hover:rotate-0 transition-transform">
-                        <Trophy size={28} />
-                    </div>
-                    <div>
-                        <span className="text-[10px] font-graphik font-bold text-[#18357a] uppercase tracking-[3px] block mb-1">Institutional Excellence</span>
-                        <h4 className="text-3xl font-graphik font-bold text-white leading-none">A <span className="text-[#18357a]">Grade</span></h4>
-                        <p className="text-[10px] font-bold text-white/50 mt-2 uppercase tracking-widest">NAAC ACCREDITED</p>
-                    </div>
-                  </div>
-               </div>
+
            </motion.div>
 
            {/* Right Content */}
@@ -80,7 +68,7 @@ const AboutUs = () => {
              viewport={{ once: true }}
              transition={{ duration: 0.7 }}
            >
-              <h2 className="text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] mb-8 leading-tight uppercase tracking-normal">
+              <h2 className="text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] mb-8 leading-tight tracking-normal">
                 Our Foundation & <span className="text-[#18357a]">Leadership</span>
               </h2>
               <div className="space-y-6 text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter text-justify">
@@ -88,7 +76,7 @@ const AboutUs = () => {
                   Knowledge Institute of Technology (KIOT) was established by Knowledge Institute of Technology Trust (KIOT Trust) in 2009. Dr. PSS. Srinivasan is the Founder of the Trust. The KIOT Trust is a 41-member team: 20 of them are professors in engineering education and 21 of them are budding entrepreneurs.
                 </p>
                 <p>
-                  The Founder and President of the Trust, Dr. PSS. Srinivasan, is an IITian with 30+ years of rich academic, administrative and research experience and a recipient of Best Engineering College Principal Award from ISTE New Delhi and CSI Mumbai Chapter. He has visited 30+ Foreign Universities and 100+ Indian Institutions and has Global Exposure in Higher Education. At present, he is also the Executive Chairman of KIOT and takes care of Strategic Planning and Execution, Curriculum Design and Delivery, Research and Consultancy, International Connect and Incubation & Startups.
+                  The Founder and President of the Trust, Dr. PSS. Srinivasan, is an IITian with 30+ years of rich academic, administrative and research experience and a recipient of Best Engineering College Principal Award from ISTE New Delhi and CSI Mumbai Chapter. He has visited 30+ Foreign Universities and 100+ Indian Institutions and has Global Exposure in Higher Education. At present, he is also the President of KIOT and takes care of Strategic Planning and Execution, Curriculum Design and Delivery, Research and Consultancy, International Connect and Incubation & Startups.
                 </p>
               </div>
 
@@ -113,7 +101,7 @@ const AboutUs = () => {
                   >
                     <div className="pt-10 space-y-8">
                        <div className="p-8 rounded-[2rem] bg-[#f0f9f6] border border-[#d1e7dd]">
-                          <h3 className="text-[#198754] text-xl font-graphik font-bold mb-4 uppercase tracking-wider">Academic Excellence</h3>
+                          <h3 className="text-[#198754] text-xl font-graphik font-bold mb-4 tracking-wider">Academic Excellence</h3>
                           <div className="space-y-4 text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter text-justify">
                             <p>
                               Knowledge Institute of Technology (KIOT) is an Autonomous Institution, Affiliated to Anna University, Chennai and Approved by AICTE, New Delhi and UGC, New Delhi. The college offers nine B.E. / B.Tech. programs, four M.E. / M.Tech. programs in Engineering and Technology, MBA - Regular, MBA - IEV, MCA programs and Ph.D. programs in all the departments.
@@ -162,18 +150,18 @@ const AboutUs = () => {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ duration: 0.8 }}
-           className="mt-16 lg:mt-32 max-w-5xl mx-auto"
+           className="mt-8 lg:mt-16 max-w-7xl mx-auto px-2 sm:px-6"
         >
-           <div className="bg-white p-6 sm:p-12 rounded-xl shadow-[0_40px_80px_rgba(24,53,122,0.08)] border border-slate-100 flex flex-col items-center gap-10">
+           <div className="bg-white p-4 sm:p-12 rounded-[2rem] sm:rounded-xl shadow-[0_40px_80px_rgba(24,53,122,0.08)] border border-slate-100 flex flex-col items-center gap-6 sm:gap-10">
               <div className="text-center">
-                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#ffc107]/5 rounded-full mb-4">
+                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#ffc107]/5 rounded-full mb-2 sm:mb-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                    <span className="text-[10px] font-graphik font-bold text-[#18357a] uppercase tracking-widest">Experience KIOT</span>
+                    <span className="text-[9px] sm:text-[10px] font-graphik font-bold text-[#18357a] uppercase tracking-widest">Experience KIOT</span>
                  </div>
-                 <h2 className="text-2xl font-graphik font-bold text-[#18357a] uppercase tracking-normal">Institutional <span className="text-[#18357a]">Walkthrough</span></h2>
+                 <h2 className="text-xl sm:text-2xl font-graphik font-bold text-[#18357a] tracking-normal">Institutional <span className="text-[#18357a]">Walkthrough</span></h2>
               </div>
 
-              <div className="relative w-full aspect-video rounded-[2rem] overflow-hidden border-4 border-slate-50 shadow-inner group">
+              <div className="relative w-full aspect-video rounded-2xl sm:rounded-[2rem] overflow-hidden border-2 sm:border-4 border-slate-50 shadow-inner group">
                  <iframe
                     className="absolute inset-0 w-full h-full"
                     src="https://www.youtube.com/embed/EaYFykcBtEs"
