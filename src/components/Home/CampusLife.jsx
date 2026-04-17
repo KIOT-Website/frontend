@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom'
 import { BookOpen, FlaskConical, Home, Trophy, Utensils, Bus, ArrowUpRight, Sparkles, Dumbbell, Zap, GraduationCap } from 'lucide-react'
 import React from 'react'
 
-// Asset imports
-import labImg from '../../assets/main/kiot_lab.webp'
-import cafeteriaImg from '../../assets/main/kiot_cafeteria.webp'
-import hostelImg from '../../assets/main/kiot_hostel.webp'
-import sportsImg from '../../assets/main/kiot_sports.webp'
-import trainingImg from '../../assets/trainning team/about campus.webp'
-import transportImg from '../../assets/main/kiot_transport.webp'
-import gymImg from '../../assets/main/kiot-campus.webp'
-import istartImg from '../../assets/idea lap/IoT Design wing.webp'
+// Asset imports from life@kiot
+import labImg from '../../assets/life@kiot/Lab.webp'
+import cafeteriaImg from '../../assets/life@kiot/cafeteria.webp'
+import hostelImg from '../../assets/life@kiot/hostal.webp'
+import sportsImg from '../../assets/life@kiot/sports.webp'
+import trainingImg from '../../assets/life@kiot/training.webp'
+import transportImg from '../../assets/life@kiot/transport.webp'
+import gymImg from '../../assets/life@kiot/gym.webp'
+import istartImg from '../../assets/life@kiot/istart.webp'
 
 const facilities = [
   {
@@ -102,12 +102,12 @@ const CampusLife = () => {
                 <div className="h-1 w-4 bg-[#ffc107] rounded-full" />
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#18357a]">Life At KIOT</span>
               </motion.div>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#18357a] font-display leading-[1.1] uppercase tracking-tighter">
+              <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-display leading-[1.1] uppercase tracking-tighter">
                 Everything You Need, <br />
                 <span className="text-[#ffc107]">All in One Campus</span>
               </h2>
            </div>
-           <p className="text-black max-w-sm text-sm lg:text-base font-medium opacity-80 leading-relaxed border-l-2 border-[#ffc107]/30 pl-6">
+           <p className="text-[#64779F] max-w-sm text-sm lg:text-base font-medium opacity-80 leading-relaxed border-l-2 border-[#ffc107]/30 pl-6">
              Beyond classrooms, we provide a vibrant ecosystem designed to nurture your academic growth and personal well-being.
            </p>
         </div>
@@ -160,7 +160,7 @@ const CampusLife = () => {
                       <h3 className="text-2xl font-black text-[#18357a] font-display mb-3 leading-tight tracking-tight uppercase">
                           {fac.title}
                       </h3>
-                      <p className="text-sm font-bold text-black leading-relaxed flex-1 opacity-80">
+                      <p className="text-sm font-bold text-[#64779F] leading-relaxed flex-1 opacity-80">
                           {fac.desc}
                       </p>
 
@@ -179,7 +179,7 @@ const CampusLife = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="mt-24 p-12 rounded-[4rem] bg-[#18357a] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10"
+          className="mt-24 p-8 md:p-12 rounded-[2.5rem] md:rounded-[4rem] bg-[#18357a] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10"
         >
            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32" />
            
