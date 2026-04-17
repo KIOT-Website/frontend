@@ -28,25 +28,25 @@ const MiniStatCard = ({ text, icon: Icon, color, delay, isMobile }) => (
     {/* Dynamic Background Glow */}
     <div className="absolute inset-0 bg-gradient-to-br from-[#18357a]/5 to-[#ffc107]/5 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     
-    <div className="relative h-full bg-white border border-slate-100 p-8 lg:p-10 rounded-[2.5rem] shadow-[0_20px_40px_rgba(0,0,0,0.02)] flex flex-col items-center text-center justify-between gap-8 transition-all duration-500 group-hover:shadow-[0_40px_80px_rgba(24,53,122,0.08)] group-hover:border-[#18357a]/10 overflow-hidden">
+    <div className="relative h-full bg-white border border-slate-100 p-6 lg:p-7 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.02)] flex flex-col items-center text-center justify-between gap-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_rgba(24,53,122,0.08)] group-hover:border-[#18357a]/10 overflow-hidden">
        
        {/* Floating Background Icon */}
        <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500">
-          <Icon size={120} strokeWidth={1} />
+          <Icon size={100} strokeWidth={1} />
        </div>
 
        {/* Modern Icon Presentation */}
        <div className="relative">
-          <div className="absolute inset-0 bg-[#ffc107] rounded-3xl blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-[#ffc107] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
           <motion.div 
             whileHover={{ rotate: 15 }}
-            className="relative w-16 h-16 rounded-[1.25rem] bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-xl shadow-[#18357a]/20"
+            className="relative w-14 h-14 rounded-2xl bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-lg shadow-[#18357a]/20"
           >
-             <Icon size={30} strokeWidth={2} />
+             <Icon size={26} strokeWidth={2} />
           </motion.div>
        </div>
 
-       <p className="relative z-10 text-[14px] lg:text-[16px] font-black text-[#18357a] font-display leading-[1.3] tracking-tight transition-transform duration-500 group-hover:scale-105 italic">
+       <p className="relative z-10 text-[13px] lg:text-[14px] font-semibold text-[#18357a] font-graphik leading-snug tracking-tight transition-transform duration-500 group-hover:scale-105 italic">
           {text}
        </p>
 
