@@ -53,7 +53,7 @@ const navLinks = [
     hasDropdown: true,
     subLinks: [
       { name: 'About Us', href: 'about-us', icon: Building2 },
-      { name: 'Our Values', href: 'our-values', icon: Target },
+      { name: 'Our Institutional Values', href: 'our-values', icon: Target },
       { name: 'Leadership', href: 'leadership', icon: Users },
       { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
       { name: 'Academic Council', href: 'academic-council', icon: ShieldCheck },

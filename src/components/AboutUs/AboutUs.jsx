@@ -27,7 +27,7 @@ const AboutUs = () => {
                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
                </span>
-               <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Our Heritage</span>
+               <span className="text-sm font-graphik font-bold text-[#18357a] tracking-[0.15em]">Our Heritage</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap">
               About the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block">KIOT</span>

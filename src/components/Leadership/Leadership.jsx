@@ -84,7 +84,7 @@ const Leadership = () => {
                <span className="relative flex h-3.5 w-3.5">
                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#18357a]"></span>
                </span>
-               <span className="text-sm font-bold text-[#18357a] uppercase tracking-[0.15em]">Management & Governance</span>
+               <span className="text-sm font-bold text-[#18357a] tracking-[0.15em]">Management & Governance</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap font-graphik">
               Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#18357a] to-[#18357a] inline-block">Leadership</span>

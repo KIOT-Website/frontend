@@ -66,7 +66,7 @@ const GoverningCouncil = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-tight">
-              Governing <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107] uppercase">Council</span>
+              Governing <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107]">Council</span>
             </h1>
             
           </div>
@@ -74,7 +74,7 @@ const GoverningCouncil = () => {
 
         {/* Functions Section */}
         <div className="w-full mb-28">
-           <h3 className="text-2xl font-graphik font-bold text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 uppercase tracking-tight">
+           <h3 className="text-2xl font-graphik font-bold text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 tracking-tight">
               <ShieldCheck className="text-[#18357a]" />
               Functions of the Council
            </h3>
@@ -97,7 +97,7 @@ const GoverningCouncil = () => {
 
         {/* Council Members Section */}
         <div className="max-w-5xl mx-auto">
-           <h3 className="text-2xl font-graphik font-bold text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 uppercase tracking-tight">
+           <h3 className="text-2xl font-graphik font-bold text-[#18357a] mb-10 flex items-center justify-center md:justify-start gap-4 tracking-tight">
               <Users className="text-[#18357a]" />
               Members of Governing Council
            </h3>
