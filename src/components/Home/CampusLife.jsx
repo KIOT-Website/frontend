@@ -107,7 +107,7 @@ const CampusLife = () => {
                 <span className="text-[#ffc107]">All in One Campus</span>
               </h2>
            </div>
-           <p className="text-[#64779F] max-w-sm text-sm lg:text-base font-medium opacity-80 leading-relaxed border-l-2 border-[#ffc107]/30 pl-6">
+           <p className="text-black max-w-sm text-sm lg:text-base font-medium opacity-80 leading-relaxed border-l-2 border-[#ffc107]/30 pl-6">
              Beyond classrooms, we provide a vibrant ecosystem designed to nurture your academic growth and personal well-being.
            </p>
         </div>
@@ -160,7 +160,7 @@ const CampusLife = () => {
                       <h3 className="text-2xl font-black text-[#18357a] font-display mb-3 leading-tight tracking-tight uppercase">
                           {fac.title}
                       </h3>
-                      <p className="text-sm font-bold text-[#64779F] leading-relaxed flex-1 opacity-80">
+                      <p className="text-sm font-bold text-black leading-relaxed flex-1 opacity-80">
                           {fac.desc}
                       </p>
 
