@@ -112,8 +112,8 @@ const VisionMission = () => {
                </span>
                <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Institutional Philosophy</span>
             </div>
-            <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] break-words uppercase">
-              Our Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block">Values</span>
+            <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] break-words">
+              Our Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block uppercase">Values</span>
             </h1>
           </motion.div>
           <motion.p 
@@ -160,7 +160,7 @@ const VisionMission = () => {
                          {val.title}
                        </h3>
                        
-                       <p className="text-[#64779F] text-[10px] sm:text-[11px] font-medium leading-relaxed mb-4 uppercase">
+                       <p className="text-[#64779F] text-[10px] sm:text-[11px] font-medium leading-relaxed mb-4">
                          {val.content.length > 80 ? val.content.substring(0, 80) + "..." : val.content}
                        </p>
 
