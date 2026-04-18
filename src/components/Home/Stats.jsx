@@ -28,7 +28,7 @@ const MiniStatCard = ({ text, icon: Icon, color, delay, isMobile }) => (
     {/* Dynamic Background Glow */}
     <div className="absolute inset-0 bg-gradient-to-br from-[#18357a]/5 to-[#ffc107]/5 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     
-    <div className="relative h-full bg-white border border-slate-100 p-6 lg:p-7 rounded-[2rem] shadow-[0_15px_30px_rgba(0,0,0,0.02)] flex flex-col items-center text-center justify-between gap-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_rgba(24,53,122,0.08)] group-hover:border-[#18357a]/10 overflow-hidden">
+    <div className="relative h-full bg-white border border-slate-100 p-5 lg:p-7 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.12)] flex flex-col items-center text-center justify-between gap-4 lg:gap-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_rgba(24,53,122,0.15)] group-hover:border-[#18357a]/10 overflow-hidden">
        
        {/* Floating Background Icon */}
        <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500">
@@ -40,13 +40,13 @@ const MiniStatCard = ({ text, icon: Icon, color, delay, isMobile }) => (
           <div className="absolute inset-0 bg-[#ffc107] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
           <motion.div 
             whileHover={{ rotate: 15 }}
-            className="relative w-14 h-14 rounded-2xl bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-lg shadow-[#18357a]/20"
+            className="relative w-12 h-12 rounded-xl bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-lg shadow-[#18357a]/20"
           >
-             <Icon size={26} strokeWidth={2} />
+             <Icon size={22} strokeWidth={2} />
           </motion.div>
        </div>
 
-       <p className="relative z-10 text-[13px] lg:text-[14px] font-semibold text-[#18357a] font-graphik leading-snug tracking-tight transition-transform duration-500 group-hover:scale-105 italic">
+       <p className="relative z-10 text-[15px] lg:text-[17px] font-semibold text-[#18357a] font-graphik leading-snug tracking-tight transition-transform duration-500 group-hover:scale-105 italic">
           {text}
        </p>
 
@@ -79,7 +79,7 @@ const Stats = () => {
   }, [])
 
   return (
-    <section className="relative py-16 lg:py-28 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative pt-4 pb-12 md:py-16 lg:py-28 bg-[#FCFDFD] overflow-hidden">
       {/* Decorative Elements - Clean Version */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0">
          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#18357a05_1px,transparent_1px)] [background-size:32px_32px]" />
@@ -87,7 +87,7 @@ const Stats = () => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-6 md:mb-20">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -101,7 +101,7 @@ const Stats = () => {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl lg:text-7xl font-black text-[#18357a] mb-8 font-display tracking-tight"
+            className="text-3xl lg:text-5xl font-semibold text-[#18357a] mb-4 md:mb-8 font-graphik tracking-tight"
           >
             A Glimpse of our <span className="text-[#ffc107]">Legacy</span>
           </motion.h2>
@@ -123,7 +123,7 @@ const Stats = () => {
         {/* Mobile View: Changing One by One in Two Rows */}
         <div className="md:hidden flex flex-col gap-6 relative px-2">
           {/* Row 1: Sliding Right (Enter from left) */}
-          <div className="h-[300px] w-full relative">
+          <div className="h-[220px] w-full relative">
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={`row1-${index}`}
@@ -142,7 +142,7 @@ const Stats = () => {
           </div>
 
           {/* Row 2: Sliding Left (Enter from right) */}
-          <div className="h-[300px] w-full relative">
+          <div className="h-[220px] w-full relative">
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={`row2-${index}`}

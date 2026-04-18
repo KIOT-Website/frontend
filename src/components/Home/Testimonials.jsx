@@ -92,7 +92,7 @@ const Testimonials = () => {
              <Star size={14} className="text-[#ffc107] fill-[#ffc107]" />
              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Voice of Success</span>
            </motion.div>
-           <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-display">
+           <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik">
              Success Stories & <span className="text-[#ffc107]">Experiences</span>
            </h2>
         </div>
@@ -166,7 +166,7 @@ const Testimonials = () => {
                          <img src={testi.image} alt={testi.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       </div>
                       <div>
-                         <h4 className="text-lg font-black text-[#18357a] font-display">{testi.name}</h4>
+                         <h4 className="text-lg font-semibold text-[#18357a] font-graphik">{testi.name}</h4>
                          <p className="text-[10px] lg:text-xs font-bold text-[#64779F] uppercase tracking-[0.1em] mt-0.5">{testi.dept}</p>
                       </div>
                    </div>

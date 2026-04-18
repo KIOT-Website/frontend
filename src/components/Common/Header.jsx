@@ -87,7 +87,15 @@ const navLinks = [
       { name: 'Records', href: 'records', icon: Target },
     ]
   },
-  { name: 'Research & Innovations', href: 'research' },
+  { 
+    name: 'Research & Innovations', 
+    href: 'research',
+    hasDropdown: true,
+    subLinks: [
+      { name: 'Research', href: 'research', icon: Microscope },
+      { name: 'AICTE IDEA LAB', href: 'aicte-idea-lab', icon: Wrench },
+    ]
+  },
   { name: 'COE', href: 'coe' },
   { 
     name: 'Resources', 

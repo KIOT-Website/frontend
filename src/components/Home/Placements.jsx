@@ -84,7 +84,7 @@ const Placements = () => {
                 <div className="h-0.5 w-10 bg-[#ffc107] rounded-full" />
                 <span className="text-xs font-black uppercase tracking-[0.4em] text-[#ffc107]">Placement Excellence</span>
               </motion.div>
-              <h2 className="text-3xl lg:text-5xl font-black font-display leading-[1.1]">
+              <h2 className="text-3xl lg:text-5xl font-semibold font-graphik leading-[1.1] text-white">
                 Where Talent <br />
                 <span className="text-[#ffc107]">Meets Opportunity</span>
               </h2>
@@ -107,8 +107,8 @@ const Placements = () => {
                         {stat.label.includes('Salary') && <span className="text-white/40 text-[10px] font-black uppercase -mt-0.5">₹</span>}
                         <p className="text-3xl lg:text-4xl font-black font-display tracking-tight text-white">{stat.value}</p>
                       </div>
-                      <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">{stat.label}</p>
-                      <p className="text-[9px] font-bold text-[#ffc107]/60 mt-0.5">{stat.sub}</p>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A9B1C3]">{stat.label}</p>
+                      <p className="text-[11px] font-bold text-[#ffc107]/60 mt-0.5">{stat.sub}</p>
                    </div>
                 </motion.div>
               ))}
@@ -135,7 +135,7 @@ const Placements = () => {
           {/* RIGHT SIDE: Recruiter Slide (Infinite Loop) */}
           <div className="relative">
              <div className="mb-10 text-center lg:text-left">
-                <h3 className="text-2xl lg:text-3xl font-black font-display mb-1 text-white uppercase tracking-[0.1em]">Our Top Hiring Partners</h3>
+                <h3 className="text-2xl lg:text-3xl font-semibold font-graphik mb-1 text-white tracking-tight">Our Top Hiring Partners</h3>
                 <div className="h-1 w-12 bg-[#ffc107] mb-4 mx-auto lg:mx-0 rounded-full" />
              </div>
 

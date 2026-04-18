@@ -73,6 +73,8 @@ const MediaCenterPage = lazy(() => import('./pages/MediaCenterPage'))
 const EnergyPage = lazy(() => import('./pages/EnergyPage'))
 const InternetPage = lazy(() => import('./pages/InternetPage'))
 const StudentLifePage = lazy(() => import('./pages/StudentLifePage'))
+const AicteIdeaLabPage = lazy(() => import('./pages/AicteIdeaLabPage'))
+
 
 
 // Simple Loading Fallback
@@ -203,6 +205,8 @@ function App() {
                   <Route path="/admissions/ug-registration" element={<UGRegistrationPage />} />
                   <Route path="/admissions/pg-registration" element={<PGRegistrationPage />} />
                    <Route path="/research" element={<ResearchPage />} />
+                   <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
+
                    <Route path="/research/:deptName" element={<ResearchResourcesPage />} />
                    <Route path="/research/:deptName/phd-supervisors" element={<PhdSupervisorsPage />} />
                    <Route path="/research/:deptName/research-areas" element={<ResearchAreasPage />} />

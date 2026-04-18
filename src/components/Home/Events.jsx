@@ -94,7 +94,7 @@ const Events = ({ onEventsClick }) => {
                 <Timer size={14} className="text-[#ffc107]" />
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Institutional Hub</span>
               </motion.div>
-              <h2 className="text-4xl lg:text-6xl font-black text-[#18357a] font-display leading-[1.1]">
+              <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik leading-[1.1]">
                 Upcoming <span className="text-[#ffc107]">Events</span>
               </h2>
            </div>

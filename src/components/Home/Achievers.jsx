@@ -68,7 +68,7 @@ const Achievers = () => {
              <Sparkles size={14} className="text-[#ffc107]" />
              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Hall of Achievers</span>
            </motion.div>
-           <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-display">
+           <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik">
              Achievements That <span className="text-[#ffc107]">Inspire</span>
            </h2>
            <p className="mt-6 text-[#64779F] max-w-2xl mx-auto text-base lg:text-lg font-medium font-sans italic opacity-80">
@@ -137,7 +137,7 @@ const Achievers = () => {
                        className="space-y-6"
                     >
                        <div>
-                          <h3 className="text-xl lg:text-3xl font-black text-[#18357a] font-display leading-[1.2]">
+                          <h3 className="text-xl lg:text-3xl font-semibold text-[#18357a] font-graphik leading-[1.2]">
                              {achievements[current].title}
                           </h3>
                        </div>
