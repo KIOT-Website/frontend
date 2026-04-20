@@ -51,7 +51,7 @@ const MarqueeItem = ({ item }) => (
 
 const RecruitersMarquee = () => {
   return (
-    <div className="space-y-24 md:space-y-40 max-w-full overflow-hidden pt-10 md:pt-20 border-t border-[#D5E2F4]/40 pb-32 bg-white md:bg-[#f8fafc]/20 transition-colors">
+    <div className="space-y-24 md:space-y-32 max-w-full overflow-hidden pt-10 md:pt-16 border-t border-[#D5E2F4]/40 pb-10 bg-white md:bg-[#f8fafc]/20 transition-colors">
       {/* IT Recruiters */}
       <div className="space-y-8">
         <div className="max-w-7xl mx-auto px-6 mb-12">

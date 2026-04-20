@@ -57,7 +57,7 @@ const recruiterData = [
 const Placements = () => {
   const navigate = useNavigate()
   return (
-    <section className="relative py-10 lg:py-16 bg-[#18357a] overflow-hidden text-white" id="placements">
+    <section className="relative py-8 lg:py-12 bg-[#18357a] overflow-hidden text-white" id="placements">
       
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-[10%] left-[-5%] w-[500px] h-[500px] bg-white rounded-full blur-[120px]" />

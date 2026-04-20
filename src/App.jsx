@@ -26,6 +26,7 @@ import OutcomesOverviewPage from './pages/OutcomesOverviewPage'
 import AcademicsPageWrapper from './pages/AcademicsPage'
 import CourseDetailPageWrapper from './pages/CourseDetailPageWrapper'
 
+const RecruitmentPage = lazy(() => import('./pages/Recruitment'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const EventsPage = lazy(() => import('./pages/EventsPage'))
 const DepartmentPage = lazy(() => import('./pages/DepartmentPage'))
@@ -174,6 +175,12 @@ function App() {
                 <Routes location={location} key={location.pathname}>
                   <Route path="/" element={<Home />} />
                   <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/about/about-us" element={<AboutUsPage />} />
+                  <Route path="/about/our-values" element={<OurValuesPage />} />
+                  <Route path="/about/leadership" element={<LeadershipPage />} />
+                  <Route path="/about/guidelines" element={<GuidelinesPage />} />
+                  <Route path="/about/accreditation-ranking" element={<AccreditationPage />} />
+                  <Route path="/about/governing-council" element={<GoverningCouncilPage />} />
                   <Route path="/about-us" element={<AboutUsPage />} />
                   <Route path="/our-values" element={<OurValuesPage />} />
                   <Route path="/leadership" element={<LeadershipPage />} />
@@ -183,10 +190,16 @@ function App() {
                   
                   {/* Placement Pages */}
                   <Route path="/placements" element={<UnderConstruction />} />
+                  <Route path="/placements/overview" element={<PlacementOverviewPage />} />
+                  <Route path="/placements/training" element={<TrainingOverviewPage />} />
+                  <Route path="/placements/outcomes" element={<OutcomesOverviewPage />} />
+                  <Route path="/placements/recruitment" element={<OutcomesOverviewPage />} />
+                  <Route path="/placements/records" element={<OutcomesOverviewPage />} />
                   <Route path="/placement-overview" element={<PlacementOverviewPage />} />
                   <Route path="/training" element={<TrainingOverviewPage />} />
-                  <Route path="/recruitment" element={<RecruitmentProcessPage />} />
+                  <Route path="/recruitment" element={<RecruitmentPage />} />
                   <Route path="/records" element={<OutcomesOverviewPage />} />
+                  <Route path="/outcomes" element={<OutcomesOverviewPage />} />
 
                   {/* Academics Pages */}
                   <Route path="/academics/undergraduate" element={<AcademicsPageWrapper />} />
@@ -204,8 +217,10 @@ function App() {
                   <Route path="/admissions" element={<AdmissionsPageWrapper />} />
                   <Route path="/admissions/ug-registration" element={<UGRegistrationPage />} />
                   <Route path="/admissions/pg-registration" element={<PGRegistrationPage />} />
+                   <Route path="/research-innovation/research" element={<ResearchPage />} />
                    <Route path="/research" element={<ResearchPage />} />
-                   <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
+                   <Route path="/research-innovation/aicte-idea-lab" element={<AicteIdeaLabPage />} />
+                    <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
 
                    <Route path="/research/:deptName" element={<ResearchResourcesPage />} />
                    <Route path="/research/:deptName/phd-supervisors" element={<PhdSupervisorsPage />} />
@@ -221,8 +236,15 @@ function App() {
                    <Route path="/research/:deptName/conferences" element={<ConferencesPage />} />
                    <Route path="/research/:deptName/research-proposals" element={<ResearchProposalsPage />} />
                    <Route path="/research/:deptName/consultancy" element={<ConsultancyPage />} />
-                   <Route path="/resources" element={<UnderConstruction />} />
+                   <Route path="/resources/campus-life" element={<CampusLifePage />} />
+                    <Route path="/resources/student-life" element={<StudentLifePage />} />
+                    <Route path="/resources/alumni" element={<UnderConstruction />} />
+                    <Route path="/resources/news-events" element={<UnderConstruction />} />
+                    <Route path="/resources/blogs" element={<UnderConstruction />} />
+                    <Route path="/resources" element={<UnderConstruction />} />
                   <Route path="/autonomous" element={<AutonomousPage />} />
+                  <Route path="/exams" element={<COEPage />} />
+                  <Route path="/exams/schedules" element={<ExamSchedulesPage />} />
                   <Route path="/coe" element={<COEPage />} />
                   <Route path="/coe/exam-schedules" element={<ExamSchedulesPage />} />
                   <Route path="/campus-life" element={<CampusLifePage />} />
@@ -264,47 +286,40 @@ function App() {
             {showGlobalPopup && (
               <motion.div 
                 initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 exit={{ y: 100, opacity: 0 }}
-                className="fixed bottom-6 left-6 right-6 md:right-auto md:bottom-10 md:left-10 z-[3000] md:w-[310px] bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(10,26,63,0.3)] overflow-hidden p-6 border-2 border-[#18357a]/10"
+                className="fixed bottom-4 left-4 z-[3000] w-[160px] md:w-[220px] bg-white rounded-[1.5rem] md:rounded-[1.8rem] shadow-[0_15px_40px_rgba(10,26,63,0.25)] md:shadow-[0_20px_60px_rgba(10,26,63,0.3)] overflow-hidden p-4 md:p-6 border border-slate-100 flex flex-col items-center text-center md:bottom-8 md:left-8"
               >
                 <button 
                   onClick={handleClosePopup}
-                  className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-slate-50 flex items-center justify-center text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all shadow-sm"
+                  className="absolute top-4 right-4 w-5 h-5 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#18357a] hover:text-white transition-all"
                 >
-                  <X size={14} />
+                  <X size={10} />
                 </button>
 
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 bg-[#ffc107] rounded-2xl flex items-center justify-center shadow-lg shadow-[#ffc107]/30 shrink-0">
-                    <GraduationCap size={24} className="text-[#18357a]" />
-                  </div>
-                  <div>
-                    <span className="text-[#ffc107] font-black text-[8px] uppercase tracking-[2px] block mb-0.5">KIOT Admission</span>
-                    <h2 className="text-lg font-black text-[#18357a] uppercase tracking-tight leading-none">
-                      Open 2026-27
-                    </h2>
-                  </div>
+                {/* Decorative Dots */}
+                <div className="absolute top-4 left-6 flex gap-1.2 opacity-20">
+                   <div className="w-1 h-1 rounded-full bg-[#18357a]" />
+                   <div className="w-1 h-1 rounded-full bg-[#18357a]" />
                 </div>
 
-                <p className="text-[#64779F] font-bold text-[11px] leading-relaxed mb-6">
-                  Join a community of innovators. Applications are now live for all engineering programs.
+                <div className="mb-4 mt-1">
+                   <span className="text-red-600 font-black text-[9px] uppercase tracking-[0.3em] block mb-1">ADMISSION</span>
+                   <h2 className="text-3xl font-black text-[#18357a] uppercase tracking-tighter leading-none mb-4">
+                     Open
+                   </h2>
+                   
+                   <button 
+                     onClick={() => { handleClosePopup(); navigate('/admissions'); }}
+                     className="w-full py-3 bg-[#18357a] text-white rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-lg shadow-[#18357a]/20"
+                   >
+                     Apply Now
+                   </button>
+                </div>
+
+                <p className="text-black font-black text-[8px] uppercase tracking-[0.25em] opacity-80">
+                  Academic Session 2026-27
                 </p>
-
-                <div className="grid grid-cols-2 gap-3">
-                  <button 
-                    onClick={() => { handleClosePopup(); navigate('/admissions'); }}
-                    className="py-2.5 bg-[#18357a] text-white rounded-xl font-black text-[9px] uppercase tracking-[1px] hover:bg-[#1d3a82] transition-all active:scale-95"
-                  >
-                    Apply Now
-                  </button>
-                  <button 
-                    onClick={handleClosePopup}
-                    className="py-2.5 bg-slate-50 text-[#64779F] rounded-xl font-black text-[9px] uppercase tracking-[1px] hover:bg-slate-100 transition-all font-bold"
-                  >
-                    Later
-                  </button>
-                </div>
               </motion.div>
             )}
           </AnimatePresence>

@@ -18,50 +18,52 @@ const statData = [
 
 const MiniStatCard = ({ text, icon: Icon, color, delay, isMobile }) => (
   <motion.div
-    initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 30 }}
-    whileInView={isMobile ? { opacity: 1 } : { opacity: 1, y: 0 }}
+    initial={isMobile ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
+    whileInView={isMobile ? { opacity: 1 } : { opacity: 1, scale: 1 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.6, delay }}
-    whileHover={{ y: -10 }}
+    transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+    whileHover={{ y: -12 }}
     className="group relative h-full w-full"
   >
-    {/* Dynamic Background Glow */}
-    <div className="absolute inset-0 bg-gradient-to-br from-[#18357a]/5 to-[#ffc107]/5 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    {/* Decorative Background Shape */}
+    <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/5 rounded-bl-full translate-x-10 -translate-y-10 group-hover:bg-[#ffc107]/10 transition-colors duration-700" />
     
-    <div className="relative h-full bg-white border border-slate-100 p-5 lg:p-7 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.12)] flex flex-col items-center text-center justify-between gap-4 lg:gap-6 transition-all duration-500 group-hover:shadow-[0_30px_60px_rgba(24,53,122,0.15)] group-hover:border-[#18357a]/10 overflow-hidden">
+    <div className="relative h-full bg-white/80 backdrop-blur-sm border border-slate-200/60 p-6 lg:p-8 rounded-[3rem_1rem_3rem_1rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center justify-between gap-6 transition-all duration-700 group-hover:shadow-[0_40px_80px_-20px_rgba(24,53,122,0.2)] group-hover:border-[#18357a]/20 overflow-hidden group-hover:bg-white scale-100 group-hover:scale-[1.02]">
        
-       {/* Floating Background Icon */}
-       <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500">
-          <Icon size={100} strokeWidth={1} />
+       {/* Background Institutional Seal (Hidden Icon Parallax) */}
+       <div className="absolute -left-12 -top-12 opacity-[0.02] group-hover:opacity-[0.05] transition-all duration-1000 group-hover:rotate-12 group-hover:scale-150">
+          <Icon size={160} strokeWidth={0.5} />
        </div>
 
-       {/* Modern Icon Presentation */}
+       {/* Icon Container - Leaf Shape Design */}
        <div className="relative">
-          <div className="absolute inset-0 bg-[#ffc107] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
           <motion.div 
-            whileHover={{ rotate: 15 }}
-            className="relative w-12 h-12 rounded-xl bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-lg shadow-[#18357a]/20"
+            whileHover={{ rotate: [-5, 5, -5, 0] }}
+            className="relative w-16 h-16 rounded-[1.5rem_0.5rem_1.5rem_0.5rem] bg-gradient-to-br from-[#18357a] to-[#0d1c43] flex items-center justify-center text-[#ffc107] shadow-[0_15px_30px_-5px_rgba(24,53,122,0.4)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[#ffc107]/20"
           >
-             <Icon size={22} strokeWidth={2} />
+             <Icon size={24} strokeWidth={2.5} />
           </motion.div>
+          {/* Active Pulse Ring */}
+          <div className="absolute inset-0 rounded-[1.5rem_0.5rem_1.5rem_0.5rem] border-2 border-[#ffc107]/0 group-hover:border-[#ffc107]/40 group-hover:scale-125 transition-all duration-700" />
        </div>
 
-       <p className="relative z-10 text-[15px] lg:text-[17px] font-semibold text-[#18357a] font-graphik leading-snug tracking-tight transition-transform duration-500 group-hover:scale-105 italic">
-          {text}
-       </p>
-
-       {/* Progress Indicator */}
-       <div className="relative w-full h-1 bg-[#18357a]/5 rounded-full overflow-hidden">
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: '100%' }}
-            transition={{ delay: delay + 0.3, duration: 1.5, ease: "circOut" }}
-            className="h-full bg-gradient-to-r from-[#18357a] to-[#ffc107]"
-          />
+       <div className="space-y-4 relative z-10 w-full">
+          <p className="text-[14px] lg:text-[16px] font-black text-black font-graphik leading-tight tracking-tight uppercase group-hover:text-[#18357a] transition-colors duration-300">
+             {text}
+          </p>
+          
+          <div className="flex justify-center items-center gap-1">
+             <div className="w-1 h-1 rounded-full bg-[#ffc107]" />
+             <div className="w-2 h-1 rounded-full bg-[#18357a] group-hover:w-8 transition-all duration-700" />
+             <div className="w-1 h-1 rounded-full bg-[#ffc107]" />
+          </div>
        </div>
 
-       {/* Decorative Shine */}
-       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+       {/* Bottom Institution Accent Line */}
+       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1.5 bg-[#ffc107] group-hover:w-1/2 transition-all duration-700 rounded-t-full" />
+
+       {/* Corner Light Sweep Animation */}
+       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
     </div>
   </motion.div>
 )
@@ -79,7 +81,7 @@ const Stats = () => {
   }, [])
 
   return (
-    <section className="relative pt-4 pb-12 md:py-16 lg:py-28 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative pt-2 pb-8 md:py-10 lg:py-16 bg-[#FCFDFD] overflow-hidden">
       {/* Decorative Elements - Clean Version */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0">
          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#18357a05_1px,transparent_1px)] [background-size:32px_32px]" />
@@ -87,7 +89,7 @@ const Stats = () => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="text-center mb-6 md:mb-20">
+        <div className="text-center mb-6 md:mb-12">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -95,7 +97,7 @@ const Stats = () => {
             className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
           >
             <div className="h-1.5 w-1.5 bg-[#18357a] rounded-full animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">The KIOT Advantage</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">The KIOT Advantage</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -121,9 +123,9 @@ const Stats = () => {
         </div>
 
         {/* Mobile View: Changing One by One in Two Rows */}
-        <div className="md:hidden flex flex-col gap-6 relative px-2">
+        <div className="md:hidden flex flex-col gap-6 relative px-10">
           {/* Row 1: Sliding Right (Enter from left) */}
-          <div className="h-[220px] w-full relative">
+          <div className="h-[185px] w-full relative">
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={`row1-${index}`}
@@ -142,7 +144,7 @@ const Stats = () => {
           </div>
 
           {/* Row 2: Sliding Left (Enter from right) */}
-          <div className="h-[220px] w-full relative">
+          <div className="h-[185px] w-full relative">
             <AnimatePresence mode="popLayout" initial={false}>
               <motion.div
                 key={`row2-${index}`}

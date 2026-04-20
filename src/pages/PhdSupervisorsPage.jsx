@@ -59,7 +59,7 @@ const PhdSupervisorsPage = () => {
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
                     <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-[10px] font-black uppercase tracking-widest pt-0.5 transition-colors">
-                        {deptName?.toUpperCase()}
+                        Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
                     <span className="text-[#0f172a] text-[10px] font-black uppercase tracking-widest pt-0.5">

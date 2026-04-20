@@ -13,6 +13,7 @@ import cseBos from '../assets/resources/4.-CSE-BOS-Compositions.pdf'
 import civilBos from '../assets/resources/5.-Civil-BOS-Committee-Members-list.pdf'
 import shBos from '../assets/resources/6.-SH-BOS-Members-list.pdf'
 import mbaBos from '../assets/resources/7.-MBA-BOS-Members-list.pdf'
+import campusImg from '../assets/main/kiot-campus.webp'
 
 const AutonomousPage = () => {
     const [schedules, setSchedules] = React.useState([])
@@ -58,9 +59,17 @@ const AutonomousPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ─── MODERN HERO SECTION ─── */}
-      <section className="relative h-[45vh] lg:h-[55vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
-        {/* Abstract Background Design */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[30vh] lg:h-[40vh] flex items-center justify-center overflow-hidden bg-[#0A1A3F]">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <motion.img 
+            animate={{ scale: [1, 1.1] }}
+            transition={{ duration: 10, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
+            src={campusImg} 
+            alt="KIOT Campus" 
+            className="w-full h-full object-cover opacity-50 mix-blend-overlay"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A3F]/80 via-[#0A1A3F]/30 to-[#0A1A3F]/85" />
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/10 rounded-full blur-[120px] -mr-48 -mt-48" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] -ml-32 -mb-32" />
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -72,13 +81,13 @@ const AutonomousPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full mb-6 backdrop-blur-md border border-white/20">
+                <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full mb-6 backdrop-blur-md border border-white/10 text-[#ffc107] text-[13px] font-graphik font-bold tracking-widest uppercase">
                     <ShieldCheck size={16} className="text-[#ffc107]" />
-                    <span className="text-[10px] font-black text-white uppercase tracking-[4px]">Institutional Status</span>
+                    <span>Institutional Status</span>
                 </div>
                 
-                <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none mb-6 font-display">
-                    AUTONOMOUS <span className="text-[#ffc107]">PORTAL</span>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-graphik font-black text-white uppercase tracking-tighter leading-none mb-6">
+                    AUTONOMOUS <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff1cc] to-[#ffc107] animate-gradient">PORTAL</span>
                 </h1>
 
             </motion.div>
@@ -94,9 +103,9 @@ const AutonomousPage = () => {
                     <div className="space-y-6">
                         <div className="inline-flex items-center gap-3 px-3 py-1 bg-[#18357a]/5 rounded-full">
                             <ShieldCheck size={14} className="text-[#18357a]" />
-                            <span className="text-[9px] font-black text-[#18357a] uppercase tracking-widest leading-none">Journey of Excellence</span>
+                            <span className="text-[9px] font-graphik font-bold text-[#18357a] uppercase tracking-widest leading-none">Journey of Excellence</span>
                         </div>
-                        <h2 className="text-3xl font-black text-[#18357a] uppercase tracking-tight leading-none">
+                        <h2 className="text-3xl font-graphik font-semibold text-[#18357a] uppercase tracking-tight leading-none">
                             Institutional <span className="text-[#ffc107]">Evolution</span>
                         </h2>
                         <div className="w-16 h-1.5 bg-[#ffc107] rounded-full" />
@@ -107,13 +116,13 @@ const AutonomousPage = () => {
                             <div className="absolute top-6 left-6 w-10 h-10 bg-white rounded-xl shadow-lg flex items-center justify-center text-[#ffc107]">
                                 <Award size={20} />
                             </div>
-                            <p className="font-inter text-[16px] leading-[1.8] text-[#333333] font-normal pl-4 border-l-4 border-[#ffc107] pt-10">
+                            <p className="font-graphik text-[16px] leading-[1.8] text-[#333333] font-normal pl-4 border-l-4 border-[#ffc107] pt-10 text-justify">
                                 Knowledge Institute of Technology (KIOT) is a self-financing engineering institution established in 2009. KIOT is approved by AICTE, New Delhi and affiliated to Anna University, Chennai. The college is accredited with NAAC with ‘A’ Grade and B.E. MECH, ECE, EEE and CSE programs are accredited by NBA.
                             </p>
                         </div>
 
-                        <p className="font-inter text-[16px] leading-[1.8] text-[#333333] font-normal px-4">
-                            KIOT has reached a significant milestone in its journey of academic excellence by becoming an <span className="font-black text-[#18357a]">Autonomous institution</span> from the academic year <span className="text-[#ffc107] font-black">2022-2023</span>. This transformation empowers us to define innovative curricula and educational frameworks aligned with global industrial standards.
+                        <p className="font-graphik text-[16px] leading-[1.8] text-[#333333] font-normal px-4 text-justify">
+                            KIOT has reached a significant milestone in its journey of academic excellence by becoming an <span className="font-semibold text-[#18357a]">Autonomous institution</span> from the academic year <span className="text-[#ffc107] font-semibold">2022-2023</span>. This transformation empowers us to define innovative curricula and educational frameworks aligned with global industrial standards.
                         </p>
                     </div>
                 </div>
@@ -123,9 +132,9 @@ const AutonomousPage = () => {
                     <div className="space-y-6">
                         <div className="inline-flex items-center gap-3 px-3 py-1 bg-[#ffc107]/10 rounded-full">
                             <FileText size={14} className="text-[#18357a]" />
-                            <span className="text-[9px] font-black text-[#18357a] uppercase tracking-widest leading-none">Formal Certification</span>
+                            <span className="text-[9px] font-graphik font-bold text-[#18357a] uppercase tracking-widest leading-none">Formal Certification</span>
                         </div>
-                        <h3 className="text-3xl font-black text-[#18357a] uppercase tracking-tight leading-none">
+                        <h3 className="text-3xl font-graphik font-semibold text-[#18357a] uppercase tracking-tight leading-none">
                             Autonomous <span className="text-[#ffc107]">Approval</span>
                         </h3>
                         <div className="w-16 h-1.5 bg-[#ffc107] rounded-full" />
@@ -146,15 +155,15 @@ const AutonomousPage = () => {
                                         <FileText size={24} />
                                     </div>
                                     <div className="flex-1">
-                                        <h4 className="text-[13px] font-black text-[#18357a] uppercase tracking-tight mb-0.5 group-hover:text-[#ffc107] transition-colors">{doc.title}</h4>
-                                        <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none">{doc.desc}</p>
+                                        <h4 className="text-[13px] font-graphik font-semibold text-[#18357a] uppercase tracking-tight mb-0.5 group-hover:text-[#ffc107] transition-colors">{doc.title}</h4>
+                                        <p className="text-[9px] font-graphik font-bold text-slate-400 uppercase tracking-widest leading-none">{doc.desc}</p>
                                     </div>
                                 </div>
                                 
                                 <div className="mt-6 flex gap-3">
                                     <button 
                                         onClick={(e) => handleDownload(e, doc.file, doc.title)}
-                                        className="flex-1 h-12 bg-slate-50 hover:bg-[#18357a] text-[#18357a] hover:text-white rounded-xl flex items-center justify-center gap-3 transition-all duration-300 font-black text-[9px] uppercase tracking-[2px] shadow-sm group/btn"
+                                        className="flex-1 h-12 bg-slate-50 hover:bg-[#18357a] text-[#18357a] hover:text-white rounded-xl flex items-center justify-center gap-3 transition-all duration-300 font-graphik font-semibold text-[9px] uppercase tracking-[2px] shadow-sm group/btn"
                                     >
                                         <Download size={14} className="group-hover/btn:text-white transition-colors" />
                                         <span className="group-hover/btn:text-white transition-colors">Download PDF</span>
@@ -187,8 +196,8 @@ const AutonomousPage = () => {
                             <Calendar size={20} />
                          </div>
                          <div>
-                            <h3 className="text-xl font-black text-[#18357a] uppercase tracking-tight">Academic <span className="text-[#ffc107]">Schedule</span></h3>
-                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-[3px]">Historical Timeline</p>
+                            <h3 className="text-xl font-graphik font-semibold text-[#18357a] uppercase tracking-tight">Academic <span className="text-[#ffc107]">Schedule</span></h3>
+                            <p className="text-[9px] font-graphik font-bold text-slate-400 uppercase tracking-[3px]">Historical Timeline</p>
                          </div>
                     </div>
 
@@ -196,9 +205,9 @@ const AutonomousPage = () => {
                         <table className="w-full text-center border-collapse">
                             <thead>
                                 <tr className="bg-[#18357a]">
-                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Academic Year</th>
-                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Semester</th>
-                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1.5px] text-center">Schedule</th>
+                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-graphik font-semibold text-white uppercase tracking-[1.5px] text-center">Academic Year</th>
+                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-graphik font-semibold text-white uppercase tracking-[1.5px] text-center">Semester</th>
+                                    <th className="px-4 sm:px-8 py-4 text-[10px] font-graphik font-semibold text-white uppercase tracking-[1.5px] text-center">Schedule</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-50">
@@ -219,12 +228,12 @@ const AutonomousPage = () => {
                                             className={`group transition-all duration-300 cursor-pointer hover:bg-[#18357a]/5 ${i % 2 === 1 ? 'bg-[#18357a]/[0.06]' : 'bg-white'}`}
                                         >
                                             <td className="px-4 sm:px-8 py-4 text-center">
-                                                <span className="text-[13px] font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-all">
+                                                <span className="text-[13px] font-graphik font-semibold text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-all">
                                                     {row.year_or_version}
                                                 </span>
                                             </td>
                                             <td className="px-4 sm:px-8 py-4 text-center">
-                                                <span className="text-[11px] font-black text-[#18357a]/50 uppercase tracking-widest group-hover:text-[#ffc107] transition-all">
+                                                <span className="text-[11px] font-graphik font-semibold text-[#18357a]/50 uppercase tracking-widest group-hover:text-[#ffc107] transition-all">
                                                     {row.semester}
                                                 </span>
                                             </td>
@@ -255,13 +264,13 @@ const AutonomousPage = () => {
             {/* ─── BOARD OF STUDIES (BOS) SECTION ─── */}
             <div className="mt-24 pt-16 border-t border-slate-100">
                 <div className="max-w-4xl mx-auto">
-                    <div className="flex items-center gap-4 mb-10">
+                     <div className="flex items-center gap-4 mb-10">
                          <div className="w-10 h-10 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#18357a]">
                             <Users size={20} />
                          </div>
                          <div>
-                            <h3 className="text-xl font-black text-[#18357a] uppercase tracking-tight">Board of Studies <span className="text-[#ffc107]">(BoS)</span></h3>
-                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-[3px]">Statutory Committees & Members</p>
+                            <h3 className="text-xl font-graphik font-semibold text-[#18357a] uppercase tracking-tight">Board of Studies <span className="text-[#ffc107]">(BoS)</span></h3>
+                            <p className="text-[9px] font-graphik font-bold text-slate-400 uppercase tracking-[3px]">Statutory Committees & Members</p>
                          </div>
                     </div>
 
@@ -269,8 +278,8 @@ const AutonomousPage = () => {
                         <table className="w-full text-center border-collapse">
                             <thead>
                                 <tr className="bg-[#18357a]">
-                                    <th className="px-4 sm:px-8 py-5 text-[10px] font-black text-white uppercase tracking-[2px] w-16 sm:w-24 text-center">S.No</th>
-                                    <th className="px-4 sm:px-8 py-5 text-[10px] font-black text-white uppercase tracking-[2px] text-center">Board of Studies (BoS)</th>
+                                    <th className="px-4 sm:px-8 py-5 text-[10px] font-graphik font-semibold text-white uppercase tracking-[2px] w-16 sm:w-24 text-center">S.No</th>
+                                    <th className="px-4 sm:px-8 py-5 text-[10px] font-graphik font-semibold text-white uppercase tracking-[2px] text-center">Board of Studies (BoS)</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-50">
@@ -289,12 +298,12 @@ const AutonomousPage = () => {
                                         className={`group transition-all duration-300 cursor-pointer hover:bg-[#18357a]/5 ${idx % 2 === 1 ? 'bg-[#18357a]/[0.06]' : 'bg-white'}`}
                                     >
                                         <td className="px-8 py-4 text-center">
-                                            <span className="text-[14px] font-black text-[#18357a]/40 transition-all">
+                                            <span className="text-[14px] font-graphik font-semibold text-[#18357a]/40 transition-all">
                                                 {idx + 1}
                                             </span>
                                         </td>
                                         <td className="px-8 py-4 text-center">
-                                            <span className="text-[13px] font-black text-[#18357a] tracking-tight group-hover:text-[#ffc107] transition-all">
+                                            <span className="text-[13px] font-graphik font-semibold text-[#18357a] tracking-tight group-hover:text-[#ffc107] transition-all">
                                                 {faculty.name}
                                             </span>
                                         </td>
@@ -308,10 +317,10 @@ const AutonomousPage = () => {
                          <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03]" />
                          <div className="relative z-10 text-center md:text-left">
                             <div>
-                                <h4 className="text-white font-black text-lg uppercase tracking-tight mb-2">Academic CDDA Integration</h4>
-                                <p className="text-white/60 text-xs font-bold uppercase tracking-widest max-w-xl leading-relaxed">
-                                    The Board of Studies ensures academic excellence through rigorous curriculum review and industry-aligned committee supervision.
-                                </p>
+                                 <h4 className="text-white font-graphik font-semibold text-lg uppercase tracking-tight mb-2">Academic CDDA Integration</h4>
+                                 <p className="text-white/60 text-xs font-graphik font-bold uppercase tracking-widest max-w-xl leading-relaxed text-justify">
+                                     The Board of Studies ensures academic excellence through rigorous curriculum review and industry-aligned committee supervision.
+                                 </p>
                             </div>
                          </div>
                     </div>

@@ -94,12 +94,12 @@ const EventDetailPage = () => {
                     <motion.div 
                         initial={{ opacity: 0, scale: 0.98 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="w-full rounded-[2.5rem] overflow-hidden shadow-2xl mb-12 bg-slate-100 aspect-video lg:aspect-[21/9]"
+                        className="w-full rounded-2xl overflow-hidden shadow-2xl mb-12 bg-slate-100"
                     >
                         {event.media_type === 'video' ? (
-                            <video src={event.media_url} controls autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                            <video src={event.media_url} controls autoPlay loop muted playsInline className="w-full h-auto" />
                         ) : (
-                            <img src={event.media_url} alt={event.event_name} className="w-full h-full object-cover" />
+                            <img src={event.media_url} alt={event.event_name} className="w-full h-auto shadow-inner" />
                         )}
                     </motion.div>
                 )}

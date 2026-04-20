@@ -1,11 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import {
     Users,
     GraduationCap,
     BookOpen,
-    Info,
     ArrowRight,
     Search,
     Target,
@@ -17,7 +16,8 @@ import {
     FileText,
     Presentation,
     FileEdit,
-    CheckCircle2
+    CheckCircle2,
+    ChevronRight,
 } from 'lucide-react'
 
 const ResearchResourcesPage = () => {
@@ -44,6 +44,7 @@ const ResearchResourcesPage = () => {
                 { id: 5, title: 'List of Ph.D Scholars Guided', icon: UserCheck, path: 'guided-scholars' },
                 { id: 6, title: 'Research Facilities', icon: Microscope, path: 'facilities' },
                 { id: 7, title: 'Sponsored Research Projects', icon: Handshake, path: 'sponsored-projects' },
+                { id: 8, title: 'Publication in International Journal', icon: FileText, path: 'international-publications' },
             ]
         }
 
@@ -114,8 +115,21 @@ const ResearchResourcesPage = () => {
     const resourceItems = getResourceItems()
 
     return (
-        <div className="min-h-screen bg-[#f6f9fc] font-sans">
-            <div className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
+        <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
+            {/* Breadcrumbs */}
+            <div className="bg-white border-b border-slate-200 py-4">
+                <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
+                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                        Research Initiatives
+                    </Link>
+                    <ChevronRight size={14} className="text-slate-300" />
+                    <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
+                        Research in {formatDeptName(deptName)}
+                    </span>
+                </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto px-6 py-12 lg:py-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -127,7 +141,7 @@ const ResearchResourcesPage = () => {
                     </div>
 
                     <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-8">
-                        {formatDeptName(deptName)} <span className="text-[#ffc107]">Research Repository</span>
+                        <span className="text-[#ffc107]">Research in</span> {formatDeptName(deptName)}
                     </h1>
 
                     <div className="max-w-3xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -186,15 +200,6 @@ const ResearchResourcesPage = () => {
                     </table>
                 </motion.div>
 
-                <div className="mt-12 flex flex-wrap items-center justify-between gap-6">
-                    <div className="flex items-center gap-4 text-[#527a9b] bg-[#eef3fa] px-6 py-3 rounded-full text-[11px] font-black uppercase tracking-wider">
-                        <Info size={14} />
-                        <span>{resourceItems.length} research directories | Updated 2026</span>
-                    </div>
-                    <div className="flex items-center gap-4 text-[#527a9b] bg-[#eef3fa] px-6 py-3 rounded-full text-[11px] font-black uppercase tracking-wider">
-                        <span>Interdisciplinary excellence</span>
-                    </div>
-                </div>
             </div>
         </div>
     )

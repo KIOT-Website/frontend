@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BookOpen, Users, Trophy, Target, CheckCircle2, ArrowRight, ArrowDown } from 'lucide-react'
 import campusImg from '../../assets/main/campus .webp'
+import VisionMission from '../VisionMission/VisionMission'
 
 const AboutUs = () => {
   const [showAcademicStats, setShowAcademicStats] = useState(false);
@@ -43,8 +44,8 @@ const AboutUs = () => {
           </motion.p>
         </div>
 
-        {/* Story Section */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-12">
+        {/* Story Section (About the KIOT) */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-16 bg-white p-12 rounded-[3rem] border border-slate-100 shadow-xl shadow-black/5">
            {/* Left Image Side */}
            <motion.div 
              initial={{ opacity: 0, x: -40 }}
@@ -57,8 +58,6 @@ const AboutUs = () => {
                  <img src={campusImg} alt="KIOT Campus" className="w-full h-auto aspect-[4/5] sm:aspect-square object-cover" />
                  <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 to-transparent" />
                </div>
-               
-
            </motion.div>
 
            {/* Right Content */}
@@ -68,9 +67,6 @@ const AboutUs = () => {
              viewport={{ once: true }}
              transition={{ duration: 0.7 }}
            >
-              <h2 className="text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] mb-8 leading-tight tracking-normal">
-                Our Foundation & <span className="text-[#18357a]">Leadership</span>
-              </h2>
               <div className="space-y-6 text-[#333333] text-[16px] leading-[28.8px] font-normal font-inter text-justify">
                 <p>
                   Knowledge Institute of Technology (KIOT) was established by Knowledge Institute of Technology Trust (KIOT Trust) in 2009. Dr. PSS. Srinivasan is the Founder of the Trust. The KIOT Trust is a 41-member team: 20 of them are professors in engineering education and 21 of them are budding entrepreneurs.
@@ -144,13 +140,18 @@ const AboutUs = () => {
            </motion.div>
         </div>
 
-        {/* YouTube Video Section - Wrapped in White Box */}
+        {/* Vision Mission (Institutional Values) Section - Merged */}
+        <div className="mb-16 -mx-5 sm:-mx-10 lg:-mx-20">
+           <VisionMission />
+        </div>
+
+        {/* YouTube Video Section - Moved to Last */}
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ duration: 0.8 }}
-           className="mt-8 lg:mt-16 max-w-7xl mx-auto px-2 sm:px-6"
+           className="max-w-7xl mx-auto px-2 sm:px-6"
         >
            <div className="bg-white p-4 sm:p-12 rounded-[2rem] sm:rounded-xl shadow-[0_40px_80px_rgba(24,53,122,0.08)] border border-slate-100 flex flex-col items-center gap-6 sm:gap-10">
               <div className="text-center">
@@ -177,7 +178,6 @@ const AboutUs = () => {
               </div>
            </div>
         </motion.div>
-
       </section>
     </div>
   )

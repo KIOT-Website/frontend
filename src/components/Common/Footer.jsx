@@ -16,19 +16,17 @@ const Footer = () => {
 
   const menuSections = {
     'Explore': [
-      { name: 'About Us', href: '/about-us' },
-      { name: 'Leadership & Council', href: '/leadership' },
-      { name: 'Accreditation', href: '/accreditation-ranking' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Leadership & Council', href: '/about/leadership' },
+      { name: 'Accreditation', href: '/accreditation' },
       { name: 'Governing Council', href: '/governing-council' },
       { name: 'Guidelines', href: '/guidelines' },
-      { name: 'Programs Offered', href: '/academics' },
-      { name: 'Contact Institution', href: '/contact' },
+      { name: 'Programs Offered', href: '/programs' },
     ],
     'Resources': [
-      { name: 'Placement Overview', href: '/placement-overview' },
-      { name: 'Training & Skills', href: '/training' },
-      { name: 'Recruitment Process', href: '/recruitment' },
-      { name: 'Outcomes & Records', href: '/records' },
+      { name: 'Placement Overview', href: '/placements/overview' },
+      { name: 'Training & Skills', href: '/placements/training' },
+      { name: 'Placement Outcomes', href: '/placements/outcomes' },
       { name: 'Events & Media', href: '/events' },
     ],
     'Admissions': [
@@ -36,7 +34,7 @@ const Footer = () => {
       { name: 'UG Registration', href: '/admissions/ug-registration' },
       { name: 'PG Registration', href: '/admissions/pg-registration' },
       { name: 'Enquiry Form', href: '/admissions#enquiry' },
-      { name: 'Contact Admissions', href: '/contact' },
+      { name: 'Contact', href: '/contact' },
     ]
   }
 

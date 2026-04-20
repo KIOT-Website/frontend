@@ -41,6 +41,7 @@ const NATIONALITIES = ['Indian', 'NRI', 'Foreign National']
 const BOARDS = ['State Board', 'CBSE', 'ICSE', 'Other']
 const GENDERS = ['Male', 'Female', 'Transgender']
 const CATEGORIES = ['Engineering (B.E/B.Tech)', 'Lateral Entry']
+const TN_DISTRICTS = ['Ariyalur', 'Chengalpattu', 'Chennai', 'Coimbatore', 'Cuddalore', 'Dharmapuri', 'Dindigul', 'Erode', 'Kallakurichi', 'Kanchipuram', 'Kanyakumari', 'Karur', 'Krishnagiri', 'Madurai', 'Mayiladuthurai', 'Nagapattinam', 'Namakkal', 'Nilgiris', 'Perambalur', 'Pudukkottai', 'Ramanathapuram', 'Ranipet', 'Salem', 'Sivaganga', 'Tenkasi', 'Thanjavur', 'Theni', 'Thoothukudi', 'Tiruchirappalli', 'Tirunelveli', 'Tirupathur', 'Tiruppur', 'Tiruvallur', 'Tiruvannamalai', 'Tiruvarur', 'Vellore', 'Viluppuram', 'Virudhunagar', 'Other State']
 
 const CustomSelect = ({ label, value, options, onChange, icon: Icon, placeholder = 'Select', required }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -315,10 +316,14 @@ const UGRegistrationPage = () => {
                                         <label className={labelClass}><MapPin size={14} className="text-[#18357a]" /> Address for Communication *</label>
                                         <textarea required rows={4} className={inputClass} style={{ resize: 'none' }} value={formData.address} onChange={e => setFormData({...formData, address: e.target.value})} />
                                     </div>
-                                    <div>
-                                        <label className={labelClass}>District *</label>
-                                        <input required type="text" className={inputClass} value={formData.district} onChange={e => setFormData({...formData, district: e.target.value})} />
-                                    </div>
+                                     <CustomSelect 
+                                         label="District" 
+                                         required 
+                                         value={formData.district} 
+                                         options={TN_DISTRICTS} 
+                                         onChange={val => setFormData({...formData, district: val})} 
+                                         placeholder="Select District"
+                                     />
                                     <div>
                                         <label className={labelClass}><Phone size={14} className="text-[#18357a]" /> Mobile Number of Father *</label>
                                         <input required type="tel" maxLength={10} className={inputClass} value={formData.fatherMobile} onChange={e => setFormData({...formData, fatherMobile: e.target.value.replace(/\D/g, '').slice(0, 10)})} />
@@ -361,10 +366,14 @@ const UGRegistrationPage = () => {
                                         <label className={labelClass}>Name of the school / Diploma College *</label>
                                         <input required type="text" className={inputClass} value={formData.schoolName} onChange={e => setFormData({...formData, schoolName: e.target.value})} />
                                     </div>
-                                    <div>
-                                        <label className={labelClass}>District of the school / Diploma College *</label>
-                                        <input required type="text" className={inputClass} value={formData.schoolDistrict} onChange={e => setFormData({...formData, schoolDistrict: e.target.value})} />
-                                    </div>
+                                     <CustomSelect 
+                                         label="District of the school / Diploma College"
+                                         required 
+                                         value={formData.schoolDistrict} 
+                                         options={TN_DISTRICTS} 
+                                         onChange={val => setFormData({...formData, schoolDistrict: val})} 
+                                         placeholder="Select District"
+                                     />
                                 </div>
                             </div>
 
@@ -406,8 +415,8 @@ const UGRegistrationPage = () => {
                                         {submitError}
                                     </div>
                                 )}
-                                <button type="submit" disabled={submitting} className="w-full max-w-xl py-6 bg-[#18357a] text-white rounded-[2rem] font-black uppercase text-[14px] tracking-[5px] hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-2xl active:scale-95 flex items-center justify-center gap-4 group disabled:opacity-60 disabled:cursor-not-allowed">
-                                     {submitting ? 'Submitting...' : 'Submit UG Enquiry'} <Send size={20} className="group-hover:translate-x-2 transition-transform" />
+                                <button type="submit" disabled={submitting} className="w-full max-w-md mx-auto py-6 bg-[#ffc107] text-[#18357a] rounded-[2rem] font-black uppercase text-[14px] tracking-[5px] hover:bg-[#18357a] hover:text-white transition-all shadow-2xl active:scale-95 flex items-center justify-center gap-4 group disabled:opacity-60 disabled:cursor-not-allowed">
+                                     {submitting ? 'Submitting...' : 'SUBMIT'} <Send size={20} className="group-hover:translate-x-2 transition-transform" />
                                 </button>
                                 <p className="mt-8 text-[10px] font-black text-slate-400 uppercase tracking-[2px] flex items-center justify-center gap-2">
                                     <ShieldCheck size={14} className="text-[#ffc107]" /> Institutional Admission Portal 2026 Secured

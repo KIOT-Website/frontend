@@ -52,13 +52,13 @@ const PlacementRecordsStudentsAdmittedSection = () => {
   return (
     <div className="mb-20">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tighter">
+        <h2 className="text-2xl md:text-3xl font-black text-[#18357a] flex items-center justify-center gap-3 tracking-tighter">
           Placement Records (Students Admitted)
         </h2>
       </div>
       <div className="max-w-6xl mx-auto">
         {data.length === 0 ? (
-          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center">
+          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center min-h-[200px] flex items-center justify-center">
             <p className="text-[#64779F] font-bold text-lg">Records are currently being updated.</p>
           </div>
         ) : (

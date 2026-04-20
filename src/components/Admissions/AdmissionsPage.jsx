@@ -146,7 +146,7 @@ const AdmissionsPage = () => {
       </section>
       
       {/* ─── OVERVIEW SECTION ─── */}
-      <section id="Overview" className="py-16 md:py-24 relative overflow-hidden bg-white">
+      <section id="Overview" className="py-10 relative overflow-hidden bg-white">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
                <motion.div
@@ -158,10 +158,10 @@ const AdmissionsPage = () => {
                  <div className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] font-bold text-[10px] uppercase tracking-[3px] mb-8 border border-[#18357a]/10">
                     Admission Overview
                  </div>
-                 <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight tracking-tighter mb-10 pl-10 border-l-8 border-[#ffc107]">
+                 <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight tracking-tighter mb-6 pl-10 border-l-8 border-[#ffc107]">
                     YOUR FUTURE <span className="text-[#ffc107]">STARTS HERE</span>
                  </h2>
-                 <p className="text-black font-semibold text-lg mb-12 leading-[1.8] max-w-xl text-justify">
+                 <p className="text-black font-semibold text-lg mb-8 leading-[1.8] max-w-xl text-justify">
                    At Knowledge Institute of Technology, we go beyond traditional learning to shape industry-ready professionals. Our admission process is designed to identify passionate students and provide them with the right opportunities.
                  </p>
                  
@@ -175,9 +175,7 @@ const AdmissionsPage = () => {
                         >
                         Explore KIOT Advantage
                         </motion.button>
-                        <p className="text-[10px] font-semibold text-red-600 uppercase tracking-widest pl-4 animate-pulse">
-                            ● Limited seats available for 2026-27
-                        </p>
+
                     </div>
                  </div>
                </motion.div>
@@ -198,9 +196,9 @@ const AdmissionsPage = () => {
       </section>
 
       {/* ─── WHY CHOOSE KIOT SECTION ─── */}
-      <section id="WhyChoose" className="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+      <section id="WhyChoose" className="py-10 bg-slate-50 relative overflow-hidden">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
-            <div className="text-center mb-20 relative">
+            <div className="text-center mb-10 relative">
                <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
                   <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">The KIOT Advantage</span>
                   <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black uppercase leading-tight tracking-tighter">
@@ -212,7 +210,7 @@ const AdmissionsPage = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                {[
                   { title: "100% Placement Assistance", desc: "Dedicated placement cell ensuring top-tier corporate matching.", icon: Briefcase, color: "#18357a" },
-                  { title: "NAAC A+ Accredited", desc: "Recognized for academic excellence and institutional quality.", icon: Award, color: "#ffc107" },
+                  { title: "NAAC A Accredited", desc: "Recognized for academic excellence and institutional quality.", icon: Award, color: "#ffc107" },
                   { title: "Industry-Oriented Curriculum", desc: "Syllabus designed in collaboration with global tech giants.", icon: Globe, color: "#18357a" },
                   { title: "Modern Infrastructure", desc: "State-of-the-art labs and high-tech research centers.", icon: ShieldCheck, color: "#ffc107" },
                   { title: "Experienced Faculty", desc: "Guided by Ph.D. scholars and veteran industry professionals.", icon: Users, color: "#18357a" },
@@ -234,7 +232,7 @@ const AdmissionsPage = () => {
       </section>
 
       {/* ─── PROGRAMMES OFFERED SECTION ─── */}
-      <section id="Programmes" className="py-16 md:py-24 bg-white">
+      <section id="Programmes" className="py-10 bg-white">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black uppercase leading-tight tracking-tighter mb-8">Programmes <span className="text-[#ffc107]">Offered</span></h2>
@@ -247,14 +245,13 @@ const AdmissionsPage = () => {
             <div className="relative min-h-[400px]">
                <AnimatePresence mode="wait">
                   {activeProgramTab === 'ug' ? (
-                     <motion.div key="ug" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-[2.5rem] border border-slate-100 shadow-2xl bg-white">
+                     <motion.div key="ug" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-2xl border border-slate-100 shadow-2xl bg-white">
                         <table className="w-full text-left">
                            <thead>
-                              <tr className="bg-[#18357a] text-white">
-                                 <th className="hidden md:table-cell px-8 py-6 text-[10px] font-bold uppercase text-center w-24">S.No</th>
-                                 <th className="px-8 py-6 text-[10px] font-bold uppercase">Programme Name</th>
-                                 <th className="hidden md:table-cell px-8 py-6 text-[10px] font-bold uppercase text-center w-32">Duration</th>
-                                 <th className="px-8 py-6 text-[10px] font-bold uppercase text-center w-40">Action</th>
+                              <tr className="bg-[#18357a] text-white font-bold">
+                                 <th className="px-8 py-4 text-[11px] uppercase w-[60%]">Programme Name</th>
+                                 <th className="hidden md:table-cell px-8 py-4 text-[11px] uppercase text-center w-40">Duration</th>
+                                 <th className="px-8 py-4 text-[11px] uppercase text-center w-40">Action</th>
                               </tr>
                            </thead>
                            <tbody className="divide-y divide-slate-50">
@@ -270,13 +267,12 @@ const AdmissionsPage = () => {
                                  { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs' }
                               ].map((item, i) => (
                                  <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
-                                    <td className="hidden md:table-cell px-8 py-6 text-center text-xs font-bold text-slate-300 group-hover:text-[#18357a]">{i + 1}</td>
-                                    <td className="px-8 py-6 font-bold text-[13px] uppercase text-[#18357a]">
+                                    <td className="px-8 py-4 font-bold text-[15px] uppercase text-[#18357a]">
                                        <button onClick={() => { window.scrollTo(0, 0); navigate(item.id ? `/academics/course/${item.id}` : '#') }} className="hover:text-[#ffc107] transition-all text-left font-bold">{item.name}</button>
                                     </td>
-                                    <td className="hidden md:table-cell px-8 py-6 text-center text-xs font-bold text-slate-400">4 Years</td>
-                                    <td className="px-8 py-6 text-center">
-                                       <button onClick={() => navigate('/admissions/ug-registration')} className="px-6 py-2 bg-[#ffc107] text-[#18357a] rounded-lg font-bold text-[9px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:scale-105">Apply Now</button>
+                                    <td className="hidden md:table-cell px-8 py-4 text-center text-sm font-bold text-slate-500">4 Years</td>
+                                    <td className="px-8 py-4 text-center">
+                                       <button onClick={() => navigate('/admissions/ug-registration')} className="px-4 py-1.5 bg-[#ffc107] text-[#18357a] rounded-lg font-bold text-[10px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:scale-105">Apply Now</button>
                                     </td>
                                  </tr>
                               ))}
@@ -284,14 +280,13 @@ const AdmissionsPage = () => {
                         </table>
                      </motion.div>
                   ) : (
-                     <motion.div key="pg" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-[2.5rem] border border-slate-100 shadow-2xl bg-white">
+                     <motion.div key="pg" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-2xl border border-slate-100 shadow-2xl bg-white">
                         <table className="w-full text-left">
                            <thead>
-                              <tr className="bg-[#18357a] text-white">
-                                 <th className="hidden md:table-cell px-8 py-6 text-[10px] font-bold uppercase text-center w-24">S.No</th>
-                                 <th className="px-8 py-6 text-[10px] font-bold uppercase">Programme Name</th>
-                                 <th className="hidden md:table-cell px-8 py-6 text-[10px] font-bold uppercase text-center w-32">Duration</th>
-                                 <th className="px-8 py-6 text-[10px] font-bold uppercase text-center w-40">Action</th>
+                              <tr className="bg-[#18357a] text-white font-bold">
+                                 <th className="px-8 py-4 text-[11px] uppercase w-[60%]">Programme Name</th>
+                                 <th className="hidden md:table-cell px-8 py-4 text-[11px] uppercase text-center w-40">Duration</th>
+                                 <th className="px-8 py-4 text-[11px] uppercase text-center w-40">Action</th>
                               </tr>
                            </thead>
                            <tbody className="divide-y divide-slate-50">
@@ -305,13 +300,12 @@ const AdmissionsPage = () => {
                                  { name: 'M.E. SOFTWARE ENGINEERING', id: 'me-se' }
                               ].map((item, i) => (
                                  <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
-                                    <td className="hidden md:table-cell px-8 py-6 text-center text-xs font-bold text-slate-300 group-hover:text-[#18357a]">{i + 1}</td>
-                                    <td className="px-8 py-6 font-bold text-[13px] uppercase text-[#18357a]">
+                                    <td className="px-8 py-4 font-bold text-[15px] uppercase text-[#18357a]">
                                        <button onClick={() => { window.scrollTo(0, 0); navigate(`/academics/course/${item.id}`) }} className="hover:text-[#ffc107] transition-all text-left font-bold">{item.name}</button>
                                     </td>
-                                    <td className="hidden md:table-cell px-8 py-6 text-center text-xs font-bold text-slate-400">2 Years</td>
-                                    <td className="px-8 py-6 text-center">
-                                       <button onClick={() => navigate('/admissions/pg-registration')} className="px-6 py-2 bg-[#ffc107] text-[#18357a] rounded-lg font-bold text-[9px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:scale-105">Apply Now</button>
+                                    <td className="hidden md:table-cell px-8 py-4 text-center text-sm font-bold text-slate-500">2 Years</td>
+                                    <td className="px-8 py-4 text-center">
+                                       <button onClick={() => navigate('/admissions/pg-registration')} className="px-4 py-1.5 bg-[#ffc107] text-[#18357a] rounded-lg font-bold text-[10px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all transform hover:scale-105">Apply Now</button>
                                     </td>
                                  </tr>
                               ))}
@@ -325,110 +319,207 @@ const AdmissionsPage = () => {
       </section>
 
       {/* ─── ELIGIBILITY CRITERIA SECTION ─── */}
-      <section id="Eligibility" className="py-16 md:py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-               <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">📘 Qualifications</span>
+      <section id="Eligibility" className="py-10 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12 text-center">
+               <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">📘 Admission Norms</span>
                <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black uppercase leading-tight tracking-tighter">Eligibility <span className="text-[#ffc107]">Criteria</span></h2>
             </motion.div>
-            <div className="grid lg:grid-cols-2 gap-12 text-left">
-               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white rounded-[3rem] p-10 md:p-14 border border-slate-100 shadow-xl relative group overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffc107]/5 rounded-bl-[100px] transition-colors" />
-                  <div className="flex items-center gap-4 mb-10">
-                     <div className="w-12 h-12 rounded-2xl bg-[#ffc107]/10 flex items-center justify-center text-[#ffc107]"><GraduationCap size={24} /></div>
-                     <h4 className="text-[20px] font-bold text-[#18357a] uppercase">UG (B.E / B.Tech)</h4>
-                  </div>
-                  <ul className="space-y-6">
-                     {[
-                        "A pass in HSC (Academic / Vocational) with minimum average in PCM.",
-                        "OC: 45% average, BC/BCM/MBC/DNC/SC/SCA/ST: 40% average in PCM.",
-                        "Accepted Boards: CBSE, ISC, State Board, or any equivalent board."
-                     ].map((t, i) => <li key={i} className="flex gap-4 items-start"><CheckCircle2 size={16} className="text-[#ffc107] mt-1 shrink-0" /><p className="text-[14px] font-semibold text-black leading-relaxed">{t}</p></li>)}
-                  </ul>
-               </motion.div>
-               <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white rounded-[3rem] p-10 md:p-14 border border-slate-100 shadow-xl relative group overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/5 rounded-bl-[100px] transition-colors" />
-                  <div className="flex items-center gap-4 mb-10">
-                     <div className="w-12 h-12 rounded-2xl bg-[#18357a]/10 flex items-center justify-center text-[#18357a]"><Briefcase size={24} /></div>
-                     <h4 className="text-[20px] font-bold text-[#18357a] uppercase">PG (M.E / MBA / MCA)</h4>
-                  </div>
-                  <ul className="space-y-6">
-                     {[
-                        "M.E: Relevant B.E. / B.Tech. with valid GATE / TANCET score.",
-                        "MBA/MCA: Recognized degree with 50% (45% for reserved categories).",
-                        "Must have appeared for TANCET or equivalent common entrance tests."
-                     ].map((t, i) => <li key={i} className="flex gap-4 items-start"><CheckCircle2 size={16} className="text-[#18357a] mt-1 shrink-0" /><p className="text-[14px] font-semibold text-black leading-relaxed">{t}</p></li>)}
-                  </ul>
-               </motion.div>
-            </div>
-        </div>
-      </section>
 
-      {/* ─── ADMISSION WORKFLOW SECTION ─── */}
-      <section id="Process" className="py-12 md:py-16 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-slate-50 border border-slate-100 shadow-sm mb-6">
-               <span className="w-2 h-2 rounded-full bg-[#18357a] animate-pulse" />
-               <span className="text-[10px] font-bold text-[#18357a] uppercase tracking-[3px]">Admission Workflow</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black uppercase leading-tight tracking-tighter">
-              Pathway to <span className="text-[#ffc107]">Your Future</span>
-            </h2>
-          </motion.div>
-          
-          <div className="relative">
-            <div className="grid lg:grid-cols-5 gap-12 lg:gap-4 relative px-4">
-              {ADMISSION_STEPS.map((step, i) => (
-                <motion.div 
-                  key={step.id}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15, type: "spring", stiffness: 100 }}
-                  className="flex flex-col items-center group"
-                >
-                  <div className="relative mb-8">
-                     <motion.div 
-                        animate={{ rotate: [45, 55, 45] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-24 h-24 border-2 border-[#D5E2F4] rounded-[2rem] flex items-center justify-center bg-white relative group-hover:border-[#ffc107] transition-all duration-500 shadow-xl shadow-blue-900/5 group-hover:shadow-[#ffc107]/20"
-                     >
-                        <div className="w-16 h-16 rotate-[-45deg] flex flex-col items-center justify-center text-[#18357a]">
-                           <span className="text-[10px] font-bold opacity-30 group-hover:opacity-100 transition-opacity mb-1 block">0{i+1}</span>
-                           <step.icon size={20} className="group-hover:scale-110 group-hover:text-[#ffc107] transition-all duration-500" />
+            {/* 1. Cut-off Calculation & Interactive Calculator */}
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }} 
+               whileInView={{ opacity: 1, y: 0 }} 
+               viewport={{ once: true }}
+               className="bg-white rounded-2xl border border-slate-100 shadow-xl mb-12 overflow-hidden"
+            >
+               <div className="grid lg:grid-cols-[1fr_400px]">
+                  {/* Left: Calculation Norms */}
+                  <div className="p-8 md:p-12 border-r border-slate-100">
+                     <h3 className="text-2xl font-bold text-[#18357a] uppercase mb-8 border-l-4 border-[#ffc107] pl-6 tracking-tight">Cut-off Calculation <span className="text-slate-400 font-medium text-sm ml-4">(State Board / CBSE)</span></h3>
+                     <div className="space-y-6">
+                        {[
+                           { subject: "Mathematics (M)", formula: "M1 = Maths Reduced to 100", color: "#18357a", icon: "×" },
+                           { subject: "Physics (P)", formula: "P1 = Physics Reduced to 50", color: "#ffc107", icon: "÷" },
+                           { subject: "Chemistry (C)", formula: "C1 = Chemistry Reduced to 50", color: "#18357a", icon: "÷" }
+                        ].map((item, idx) => (
+                           <div key={idx} className="flex items-center gap-6 p-6 rounded-xl bg-slate-50 border border-slate-200">
+                              <div className="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-xl font-bold text-[#18357a]">
+                                 {item.icon}
+                              </div>
+                              <div>
+                                 <p className="font-bold text-[#18357a] text-sm uppercase mb-1">{item.subject}</p>
+                                 <p className="text-black font-bold text-lg">{item.formula}</p>
+                              </div>
+                           </div>
+                        ))}
+                     </div>
+                     <div className="mt-8 p-6 bg-[#18357a] rounded-xl text-center">
+                        <p className="text-white font-bold uppercase tracking-widest text-lg">Engineering Cut-Off Mark = M1 + P1 + C1</p>
+                     </div>
+                  </div>
+
+                  {/* Right: Stylish Modern Calculator */}
+                  <div className="p-8 md:p-12 bg-slate-50 flex flex-col justify-center">
+                     <div className="bg-[#18357a] rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[80px]" />
+                        <h4 className="text-white font-bold uppercase text-[10px] tracking-[4px] mb-8 block text-center">Calculate Your Mark</h4>
+                        
+                        <div className="space-y-5 mb-8">
+                           {[
+                              { label: "Mathematics", id: "maths", placeholder: "/ 100", showReduced: false },
+                              { label: "Physics", id: "physics", placeholder: "/ 100", showReduced: true },
+                              { label: "Chemistry", id: "chemistry", placeholder: "/ 100", showReduced: true }
+                           ].map((input) => (
+                              <div key={input.id} className="space-y-2">
+                                 <div className="flex justify-between items-center px-1">
+                                    <label className="text-[10px] font-bold text-white/50 uppercase tracking-widest">{input.label}</label>
+                                    {input.showReduced && (
+                                       <span className="text-[10px] font-bold text-[#ffc107]/60 uppercase tracking-tighter">
+                                          Reduced: <span id={`reduced-${input.id}`} className="text-[#ffc107]">0.00</span>
+                                       </span>
+                                    )}
+                                 </div>
+                                 <input 
+                                    type="number" 
+                                    id={`calc-${input.id}`}
+                                    placeholder={input.placeholder}
+                                    onInput={(e) => {
+                                       const val = parseFloat(e.target.value) || 0;
+                                       
+                                       // Update reduced text if applicable
+                                       const reducedEl = document.getElementById(`reduced-${input.id}`);
+                                       if (reducedEl) {
+                                          reducedEl.innerText = (val / 2).toFixed(2);
+                                       }
+
+                                       // Global calculation
+                                       const m = parseFloat(document.getElementById('calc-maths').value) || 0;
+                                       const p = parseFloat(document.getElementById('calc-physics').value) || 0;
+                                       const c = parseFloat(document.getElementById('calc-chemistry').value) || 0;
+                                       const total = m + (p/2) + (c/2);
+                                       document.getElementById('cutoff-result').innerText = total.toFixed(2);
+                                    }}
+                                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3.5 text-white font-bold focus:outline-none focus:border-[#ffc107] transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                 />
+                              </div>
+                           ))}
                         </div>
-                     </motion.div>
-                  </div>
 
-                  <div className="text-center px-4">
-                    <h4 className="text-[14px] font-bold text-[#18357a] uppercase mb-3 tracking-tighter leading-none pr-1">
-                       {step.title}
-                    </h4>
-                    <p className="text-black text-[11px] leading-[1.6] font-semibold max-w-[150px] mx-auto transition-opacity duration-500 group-hover:opacity-90">
-                      {step.desc}
-                    </p>
+                        <div className="bg-white/10 border border-white/20 rounded-2xl p-6 text-center backdrop-blur-sm">
+                           <p className="text-white/60 font-bold text-[10px] uppercase tracking-widest mb-1">Your Engineering Cut-off</p>
+                           <p className="text-5xl font-bold text-[#ffc107] tracking-tighter" id="cutoff-result">0.00</p>
+                           <p className="text-white/30 font-bold text-[8px] uppercase tracking-[3px] mt-2">Out of 200.00</p>
+                        </div>
+                     </div>
                   </div>
-                </motion.div>
-              ))}
+               </div>
+            </motion.div>
+
+            {/* 2. BE Admissions Table */}
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }} 
+               whileInView={{ opacity: 1, y: 0 }} 
+               viewport={{ once: true }}
+               className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-xl mb-12"
+            >
+               <div className="p-5 bg-[#18357a]">
+                  <h3 className="text-xl font-bold text-white uppercase tracking-tight">Eligibility for B.E Admissions</h3>
+               </div>
+               <div className="overflow-x-auto">
+                  <table className="w-full text-left">
+                     <thead>
+                        <tr className="bg-slate-50 text-[#18357a] text-[12px] font-black uppercase">
+                           <th className="px-10 py-5">Community</th>
+                           <th className="px-10 py-5 text-center">HSC Academic<br/><span className="lowercase text-[9px] font-medium opacity-60">(Avg of Mat, Phy, Che)</span></th>
+                           <th className="px-10 py-5 text-center">HSC Vocational<br/><span className="lowercase text-[9px] font-medium opacity-60">(Avg of Voc T&P*)</span></th>
+                           <th className="px-10 py-5 text-center">Lateral<br/><span className="lowercase text-[9px] font-medium opacity-60">(Overall % in Diploma)</span></th>
+                        </tr>
+                     </thead>
+                     <tbody className="divide-y divide-slate-100">
+                        {[
+                           { community: 'General', academic: '50%', vocational: '50%', lateral: '55%' },
+                           { community: 'BC / BCM', academic: '45%', vocational: '45%', lateral: '50%' },
+                           { community: 'MBC / DNC', academic: '40%', vocational: '40%', lateral: '45%' },
+                           { community: 'SC / SCA / ST', academic: '40%', vocational: '40%', lateral: 'Pass' }
+                        ].map((row, idx) => (
+                           <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
+                              <td className="px-10 py-5 text-[15px] font-bold text-black uppercase tracking-tight">{row.community}</td>
+                              <td className="px-10 py-5 text-center text-[15px] font-bold text-black">{row.academic}</td>
+                              <td className="px-10 py-5 text-center text-[15px] font-bold text-black">{row.vocational}</td>
+                              <td className="px-10 py-5 text-center text-[15px] font-bold text-black">{row.lateral}</td>
+                           </tr>
+                        ))}
+                     </tbody>
+                  </table>
+               </div>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+               {/* 3. ME Eligibility */}
+               <motion.div 
+                  initial={{ opacity: 0, x: -30 }} 
+                  whileInView={{ opacity: 1, x: 0 }} 
+                  viewport={{ once: true }}
+                  className="bg-white rounded-[2rem] p-10 border border-slate-100 shadow-xl"
+               >
+                  <div className="flex items-center gap-4 mb-8">
+                     <div className="w-12 h-12 rounded-2xl bg-[#ffc107]/10 flex items-center justify-center text-[#ffc107]"><GraduationCap size={24} /></div>
+                     <h4 className="text-[20px] font-bold text-[#18357a] uppercase tracking-tight">Eligibility for M.E Programs</h4>
+                  </div>
+                  <p className="text-[14px] font-semibold text-black leading-relaxed text-justify bg-slate-50 p-6 rounded-2xl border border-dotted border-slate-200">
+                     A Pass in a recognized Bachelor's degree or equivalent in the relevant field and obtained at least 50% (45% in the case of candidates belonging to reserved category) in the qualifying degree examination.
+                  </p>
+               </motion.div>
+
+               {/* 4. Reservation Policy */}
+               <motion.div 
+                  initial={{ opacity: 0, x: 30 }} 
+                  whileInView={{ opacity: 1, x: 0 }} 
+                  viewport={{ once: true }}
+                  className="bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-xl"
+               >
+                  <div className="p-6 bg-slate-50 border-b border-slate-100">
+                     <h4 className="text-[16px] font-bold text-[#18357a] uppercase flex items-center gap-3">
+                        <ShieldCheck size={20} className="text-[#ffc107]" /> Reservation Information
+                     </h4>
+                  </div>
+                  <table className="w-full text-left">
+                     <thead>
+                        <tr className="text-[9px] font-bold text-slate-400 uppercase">
+                           <th className="px-6 py-4">Reserved Category</th>
+                           <th className="px-6 py-4 text-center">Percentage</th>
+                        </tr>
+                     </thead>
+                     <tbody className="divide-y divide-slate-50">
+                        {[
+                           { name: 'Backward Class', value: '30%' },
+                           { name: 'MBC and DNC', value: '20%' },
+                           { name: 'Scheduled Caste', value: '18%' },
+                           { name: 'Scheduled Tribes', value: '1%' }
+                        ].map((row, i) => (
+                           <tr key={i} className="hover:bg-slate-50/50">
+                              <td className="px-6 py-4 text-xs font-bold text-[#18357a] uppercase">{row.name}</td>
+                              <td className="px-6 py-4 text-center text-xs font-bold text-[#ffc107]">{row.value}</td>
+                           </tr>
+                        ))}
+                     </tbody>
+                  </table>
+               </motion.div>
             </div>
-          </div>
         </div>
       </section>
+
+
 
       {/* ─── DOCUMENTS REQUIRED SECTION ─── */}
-      <section id="Documents" className="py-12 md:py-16 bg-slate-50 overflow-hidden">
+      <section id="Documents" className="py-10 bg-slate-50 overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 sm:px-10">
-             <motion.div 
+              <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="text-center mb-10"
              >
                 <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">📄 Checklist</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight tracking-tighter mb-8">Required <span className="text-[#ffc107]">Documents</span></h2>
@@ -462,50 +553,7 @@ const AdmissionsPage = () => {
           </div>
        </section>
 
-      {/* ─── FINAL CTA SECTION ─── */}
-      <section className="py-10 mb-10 px-6">
-         <div className="max-w-5xl mx-auto">
-            <motion.div 
-               initial={{ opacity: 0, scale: 0.95 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               viewport={{ once: true }}
-               className="bg-[#18357a] rounded-[2.5rem] p-8 md:p-10 relative overflow-hidden group text-center shadow-2xl"
-            >
-               <div className="absolute inset-0 bg-gradient-to-br from-[#18357a] via-[#1d3c8c] to-[#0A1A3F]" />
-               <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-400 rounded-full blur-[150px] opacity-10 -z-10" />
-               
-               <div className="relative z-10">
-                  <h3 className="text-2xl md:text-4xl font-bold text-white uppercase leading-tight tracking-tighter mb-8">
-                     Ready to <span className="text-[#ffc107]">Apply?</span> <br/>
-                     Start Your Journey Today
-                  </h3>
-                  
-                  <div className="flex flex-wrap items-center justify-center gap-4">
-                      <button onClick={() => setShowApplyModal(true)} className="px-10 py-4 bg-[#ffc107] text-[#18357a] rounded-xl font-bold text-[10px] uppercase tracking-[3px] hover:bg-white transition-all shadow-xl shadow-[#ffc107]/20 transform hover:scale-105">
-                         Apply Online Now
-                      </button>
-                      <button onClick={openWhatsApp} className="px-10 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-xl font-bold text-[10px] uppercase tracking-[3px] hover:bg-white hover:text-[#18357a] transition-all transform hover:scale-105">
-                         Chat on WhatsApp
-                      </button>
-                  </div>
 
-                  <p className="mt-8 text-white/50 font-bold text-[9px] uppercase tracking-[2px]">
-                     Institution Code: 2653 • AICTE Approved • NBA Accredited
-                  </p>
-               </div>
-            </motion.div>
-         </div>
-      </section>
-
-      {/* ─── STICKY APPLY BAR (MOBILE) ─── */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 p-4 z-[200] flex gap-3 shadow-2xl">
-         <button onClick={openWhatsApp} className="flex-1 py-4 bg-[#18357a]/5 text-[#18357a] border border-[#18357a]/10 rounded-xl font-bold text-[10px] uppercase tracking-widest flex items-center justify-center gap-2">
-            <MessageCircle size={18} /> WhatsApp
-         </button>
-         <button onClick={() => setShowApplyModal(true)} className="flex-[2] py-4 bg-[#18357a] text-white rounded-xl font-bold text-[10px] uppercase tracking-widest">
-            Apply Online Now
-         </button>
-      </div>
 
       {/* ─── APPLY MODAL ─── */}
       <AnimatePresence>

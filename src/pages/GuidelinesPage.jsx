@@ -130,9 +130,9 @@ const GuidelinesPage = () => {
               Roles and Responsibilities of <span className="text-[#ffc107]">Administrators</span>
             </h2>
             
-            <div className="space-y-16">
+            <div className="space-y-8">
               {[
-                { title: "Principal", content: "Academic and administrative leadership for the institute based on the directions from the Secretary/KIOT and KIOT GC." },
+
                 { title: "Vice Principal", content: "Works in consultation with the principal and the management in administering the academic and administrative activities." },
                 { title: "Directors - Placement and Training (PAT)", content: "Planning and execution of various training programs for the students, liaising with companies, arranging various industry institute interaction programs, industry linked labs/COEs, arranging ON/OFF campus placements for the students." },
                 { title: "Head of the Department (HOD)", content: "Takes care of academic and administrative responsibilities of the department under his preview. HoD has to take care of establishing and maintaining laboratories, teaching, research, consultancy and extension activities, faculty and supporting staff development as per the direction of the principal and management." },
@@ -163,7 +163,7 @@ const GuidelinesPage = () => {
               Code of Conduct for <span className="text-[#ffc107]">Faculty and Staff</span>
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-4">
               {[
                 "College working hours is 9.00 AM to 4.50 PM for faculty, staff and students.",
                 "Faculty should sign in the attendance register twice a day (8.45 AM – 09.00 AM in the morning and 4.45 PM – 5.15 PM in the evening) at the Department Office.",
@@ -201,7 +201,7 @@ const GuidelinesPage = () => {
               Leave <span className="text-[#ffc107]">Provisions</span>
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-4">
               {[
                 "Central and State Government holidays will be holidays for the institution, in general.",
                 "Faculty/Staff is eligible for 12 days Casual Leave (CL) per academic year and 08 days Medical Leave per academic year. Medical Leave can be taken as Casual Leave as well.",
@@ -224,7 +224,7 @@ const GuidelinesPage = () => {
               Vacation <span className="text-[#ffc107]">Policy</span>
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-4">
               {[
                 "Teaching staff are normally eligible for three weeks’ vacation per academic year, one week in winter and two weeks in summer, or three weeks in the summer.",
                 "Non-teaching staff are normally eligible for 10 days’ vacation per year.",
@@ -247,7 +247,7 @@ const GuidelinesPage = () => {
               On–Duty <span className="text-[#ffc107]">Provisions</span>
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-4">
               {[
                 "On-Duty (OD) permission can be availed for official work (assigned by the college), Career Development Programs (FDP, Conferences, Workshops, Research Work, Course work examinations, STTP and others), and Anna University Examination Duty (AUR, Invigilation, Practical Examinations and Valuations).",
                 "Prior permission from the HOD and Principal with proper alternate arrangement is essential.",
@@ -268,7 +268,7 @@ const GuidelinesPage = () => {
               Code of Conduct for <span className="text-[#ffc107]">Students</span>
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-4">
               {[
                 "Usage of cell phones inside the classrooms is not permitted.",
                 "Students shall not enter the college premises in intoxicated state and should not possess such materials.",

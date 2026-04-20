@@ -34,11 +34,10 @@ const HeaderSection = () => {
         </motion.div>
         
         {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-[#18357a] mb-10 tracking-tighter leading-[0.95] uppercase font-display">
-            Placement <br className="hidden md:block" />
-            <span className="relative inline-block mt-2">
+        <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-[#18357a] mb-10 tracking-tighter leading-[0.95] font-display">
+            <span className="relative inline-block">
               <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] animate-gradient-x">
-                Records
+                Outcomes
               </span>
               <div className="absolute -bottom-2 left-0 w-full h-3 bg-[#ffc107]/20 -skew-x-12 -z-10" />
             </span>

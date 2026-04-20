@@ -65,51 +65,54 @@ const TeamSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="hidden md:block bg-white rounded-[2.5rem] overflow-hidden shadow-[0_30px_80px_rgba(24,53,122,0.06)] border border-[#D5E2F4]/50"
+          className="hidden md:block bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
        >
           <table className="w-full text-left border-collapse">
              <thead>
                 <tr className="bg-[#18357a] text-white">
-                   <th className="px-8 py-6 text-sm font-black uppercase tracking-widest">Name & Designation</th>
-                   <th className="px-8 py-6 text-sm font-black uppercase tracking-widest">Responsibility</th>
-                   <th className="px-8 py-6 text-sm font-black uppercase tracking-widest text-right">Contact Info</th>
+                   <th className="px-8 py-5 text-sm font-bold uppercase tracking-widest">Name & Designation</th>
+                   <th className="px-8 py-5 text-sm font-bold uppercase tracking-widest">Responsibility</th>
+                   <th className="px-8 py-5 text-sm font-bold uppercase tracking-widest text-right">Contact Info</th>
                 </tr>
              </thead>
-             <tbody className="divide-y divide-[#D5E2F4]/40">
+             <tbody className="">
                 {teamMembers.map((member, idx) => (
-                  <tr key={idx} className="group hover:bg-[#18357a]/[0.02] transition-colors">
-                     <td className="px-8 py-6">
+                  <tr 
+                    key={idx} 
+                    className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
+                  >
+                     <td className="px-8 py-4">
                         <div className="flex items-center gap-4">
-                           <div className="relative h-[70px] w-[70px] shrink-0 overflow-hidden rounded-full border-2 border-[#18357a]/10 group-hover:border-[#ffc107] transition-all duration-500 bg-white flex items-center justify-center">
+                           <div className="relative h-[60px] w-[60px] shrink-0 overflow-hidden rounded-xl border-2 border-[#18357a]/10 group-hover:border-[#ffc107] transition-all duration-500 bg-white flex items-center justify-center shadow-sm">
                               {member.image ? (
                                 <img src={member.image} alt={member.name} className="h-full w-full object-contain" />
                               ) : (
-                                <Users className="text-[#18357a]/20" size={32} />
+                                <Users className="text-[#18357a]/20" size={28} />
                               )}
                            </div>
                            <div>
-                              <div className="font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors">{member.name}</div>
-                              <div className="text-[#64779F] text-xs font-semibold uppercase tracking-wider mt-0.5">{member.desig}</div>
+                              <div className="font-bold text-black group-hover:text-[#18357a] transition-colors text-[15px]">{member.name}</div>
+                              <div className="text-[#64779F] text-[11px] font-semibold uppercase tracking-wider mt-0.5">{member.desig}</div>
                            </div>
                         </div>
                      </td>
-                     <td className="px-8 py-6">
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18357a]/5 text-[#18357a] text-[11px] font-black uppercase tracking-wide border border-[#18357a]/10 group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                     <td className="px-8 py-4">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white text-[#18357a] text-[10px] font-bold uppercase tracking-wide border border-slate-200 group-hover:bg-[#18357a] group-hover:text-white transition-all shadow-sm">
                            <ShieldCheck size={12} />
                            {member.resp}
                         </span>
                      </td>
-                     <td className="px-8 py-6">
-                        <div className="flex flex-col items-end gap-1.5">
+                     <td className="px-8 py-4">
+                        <div className="flex flex-col items-end gap-1">
                            {member.email && (
-                             <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-[#64779F] hover:text-[#ffc107] text-[13px] font-bold transition-colors">
-                                <Mail size={14} />
+                             <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-black/60 hover:text-[#ffc107] text-[12px] font-semibold transition-colors">
+                                <Mail size={13} />
                                 {member.email}
                              </a>
                            )}
                            {member.phone && (
-                             <a href={`tel:${member.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-[#18357a] font-black text-[13px] transition-colors">
-                                <Phone size={14} className="text-[#ffc107]" />
+                             <a href={`tel:${member.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-black font-bold text-[12px] transition-colors">
+                                <Phone size={13} className="text-[#ffc107]" />
                                 {member.phone}
                              </a>
                            )}

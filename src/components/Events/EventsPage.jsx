@@ -1,13 +1,23 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Calendar, ArrowLeft, Mic2, Brain, Megaphone, CheckCircle2, Trophy, MonitorPlay, Loader2 } from 'lucide-react'
+import { Calendar, ArrowLeft, Mic2, Brain, Megaphone, CheckCircle2, Trophy, MonitorPlay, Loader2, MapPin } from 'lucide-react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const API_BASE_URL = 'http://localhost:8000'
 
 const EventsPage = () => {
   const [dbEvents, setDbEvents] = useState([])
   const [loading, setLoading] = useState(true)
+
+  const slugify = (text) => {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^\w\-]+/g, '')
+      .replace(/\-\-+/g, '-')
+      .replace(/^-+/, '')
+      .replace(/-+$/, '');
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -59,10 +69,10 @@ const EventsPage = () => {
   const records = dbEvents.length > 0 ? dbEvents : (loading ? [] : fallbackEvents)
 
   return (
-    <div className="min-h-screen bg-[#FCFDFD] pt-10 pb-20">
+    <div className="min-h-screen bg-[#FCFDFD] pb-20">
       
       {/* Page Header */}
-      <div className="bg-[#18357a] text-white py-16 lg:py-24 relative overflow-hidden">
+      <div className="bg-[#18357a] text-white py-12 lg:py-16 relative overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#224292] rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3 z-0" />
@@ -72,14 +82,13 @@ const EventsPage = () => {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
            >
-             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-display mb-6">College <span className="text-[#ffc107]">Events & News</span></h1>
-             <p className="max-w-2xl mx-auto text-white/80 text-lg">Stay connected with everything happening around our vibrant campus, from major symposiums to crucial academic announcements.</p>
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-display mb-0">College <span className="text-[#ffc107]">Events & News</span></h1>
            </motion.div>
         </div>
       </div>
 
-        {/* Dynamic Event Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
+        {/* Dynamic Event Cards Grid - Slightly down from hero */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px] mt-16 max-w-7xl mx-auto px-6 lg:px-10 items-start">
            {loading ? (
               <div className="col-span-full flex flex-col items-center justify-center py-20 opacity-30">
                 <Loader2 size={48} className="animate-spin text-[#18357a] mb-4" />
@@ -94,15 +103,15 @@ const EventsPage = () => {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.9, y: 20 }}
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
-                    className="bg-white rounded-[32px] overflow-hidden border border-[#D5E2F4]/60 shadow-[0_20px_50px_rgba(34,66,146,0.06)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.12)] transition-all duration-500 group flex flex-col h-full"
+                    className="bg-white rounded-2xl overflow-hidden border border-[#D5E2F4]/60 shadow-[0_20px_50px_rgba(34,66,146,0.06)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.12)] transition-all duration-500 group flex flex-col"
                   >
                     {/* Card Image */}
-                    <div className="h-56 w-full relative overflow-hidden">
+                    <div className="aspect-video w-full relative overflow-hidden">
                         {ev.media_type === 'video' ? (
                           <video 
                             src={ev.media_url} 
                             muted loop playsInline 
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                            className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" 
                             onMouseOver={e => e.target.play()}
                             onMouseOut={e => e.target.pause()}
                           />
@@ -110,14 +119,14 @@ const EventsPage = () => {
                           <img 
                             src={ev.media_url} 
                             alt={ev.event_name} 
-                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" 
+                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
                           />
                         )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/80 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         
                         <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                          <div className="px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-white text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
-                             <Calendar size={14} className="text-[#ffc107]" />
+                          <div className="px-4 py-2 bg-[#18357a] text-white text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-[0_8px_16px_rgba(0,0,0,0.5)] group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500 rounded-lg">
+                             <Calendar size={14} />
                              {formatDate(ev.event_date)}
                           </div>
                           <div className="h-2.5 w-2.5 rounded-full bg-[#ffc107] shadow-[0_0_10px_rgba(255,193,7,0.8)] animate-pulse" />
@@ -125,23 +134,27 @@ const EventsPage = () => {
                     </div>
 
                     {/* Card Body */}
-                    <div className="p-8 flex flex-col flex-grow">
-                        <div className="mb-4">
-                          <h3 className="text-xl lg:text-2xl font-black text-[#18357a] font-display leading-[1.2] mb-3 group-hover:text-[#ffc107] transition-colors line-clamp-2">
+                    <div className="pt-3 px-5 pb-1 flex flex-col text-left">
+                        <div className="mb-0">
+                          <h3 className="text-lg lg:text-xl font-black text-[#18357a] font-display leading-[1.2] mb-0 group-hover:text-[#ffc107] transition-colors line-clamp-1">
                              {ev.event_name}
                           </h3>
-                          <p className="text-[#64779F] text-sm leading-relaxed line-clamp-4">
-                             {ev.short_description}
-                          </p>
                         </div>
 
-                        <div className="mt-auto pt-6 border-t border-[#D5E2F4]/50 flex items-center justify-between">
-                          <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">
-                             Institutional
-                          </span>
-                          <div className="h-10 w-10 rounded-full bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-colors cursor-pointer">
-                             <ArrowLeft className="h-4 w-4 rotate-180" />
+                        <div className="pt-2 border-t border-[#D5E2F4]/50 flex items-center justify-between">
+                          <div className="flex items-center gap-2 text-[#64779F]">
+                             <MapPin size={14} className="text-[#ffc107]" />
+                             <span className="text-xs font-bold uppercase tracking-wider">{ev.venue || 'KIOT Campus'}</span>
                           </div>
+                          
+                          <Link 
+                            to={`/events/${slugify(ev.event_name)}`}
+                            state={{ from: 'gallery', eventId: ev.id }}
+                            className="text-[10px] font-black text-[#18357a] uppercase tracking-widest hover:text-[#ffc107] transition-colors flex items-center gap-2 group/btn"
+                          >
+                             View More
+                             <ArrowLeft className="h-3 w-3 rotate-180 group-hover/btn:translate-x-1 transition-transform" />
+                          </Link>
                         </div>
                     </div>
                   </motion.div>

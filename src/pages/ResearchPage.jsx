@@ -114,11 +114,7 @@ const ResearchPage = () => {
                                 <span className="text-[#ffc107]">Research Initiatives</span>
                             </h1>
 
-                            <div className="max-w-xl border-l-4 border-[#ffc107] pl-8">
-                                <p className="text-[#64779F] text-[16px] font-bold leading-relaxed">
-                                    The primary duties of any higher education institution are to carry out research and to generate new knowledge, dissemination of knowledge, and nurturing students. In this front, Research is the major focus at KIOT. At least one center of excellence in each department will be created to carry out cutting-edge research.
-                                </p>
-                            </div>
+
                         </motion.div>
 
                         {/* Block 2: Recognition Banner (Smaller Size) */}

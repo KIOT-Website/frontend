@@ -179,7 +179,7 @@ export default function CourseDetailPage() {
     <div className="min-h-screen bg-[#F8FAFC] font-graphik text-[#333333]">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#18357a] pt-10 pb-12 md:pt-16 md:pb-20">
+      <section className="relative overflow-hidden bg-[#18357a] pt-8 pb-10 md:pt-12 md:pb-16">
         {/* Background Image / Pattern Layer */}
         {/* Background Visuals - Clean Institutional Theme */}
         <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
@@ -208,9 +208,11 @@ export default function CourseDetailPage() {
                 <span className="px-3 py-1 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/30 text-[#ffc107] text-xs font-bold font-graphik">
                   {course.affiliation}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold font-graphik">
-                  {course.accreditation}
-                </span>
+                {course.accreditation && (
+                  <span className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold font-graphik">
+                    {course.accreditation}
+                  </span>
+                )}
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-graphik text-white mb-3 leading-tight">
                 {course.name}
@@ -233,7 +235,7 @@ export default function CourseDetailPage() {
               {/* Massive Leaf-Shaped Branding Visual */}
               <div className="relative group">
                 <div className="absolute -inset-4 bg-[#ffc107]/10 rounded-[10rem_3rem_10rem_3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-duration-1000" />
-                <div className="relative h-[398px] w-full rounded-[10rem_3.5rem_10rem_3.5rem] overflow-hidden border-4 border-white/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
+                <div className="relative h-[300px] lg:h-[350px] w-full rounded-[10rem_3.5rem_10rem_3.5rem] overflow-hidden border-4 border-white/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
                   <img 
                     src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"} 
                     alt={course.name} 
@@ -243,20 +245,7 @@ export default function CourseDetailPage() {
                 </div>
               </div>
 
-              {/* Stats card */}
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem_1rem_3rem_1rem] p-8 grid grid-cols-2 gap-8 shadow-2xl">
-                {[
-                  { label: 'Duration', value: course.duration.split(' ')[0] + ' Yrs' },
-                  { label: 'Seats', value: course.intake },
-                  { label: 'Avg Package', value: course.avgPackage },
-                  { label: 'Top Package', value: course.topPackage },
-                ].map(s => (
-                  <div key={s.label} className="text-center group/stat">
-                    <p className="text-3xl font-bold font-graphik text-[#ffc107] group-hover/stat:scale-110 transition-transform tracking-tight">{s.value}</p>
-                    <p className="text-white/40 text-[10px] font-bold font-graphik uppercase tracking-[3px] mt-2">{s.label}</p>
-                  </div>
-                ))}
-              </div>
+
             </div>
           </div>
         </div>
@@ -281,18 +270,18 @@ export default function CourseDetailPage() {
         </div>
       </div>
 
-      {/* ─── DESKTOP TAB NAVIGATION (Sticky Bar) ─── */}
-      <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-white border-b border-[#E5EDF8] shadow-sm">
-        <div className="w-full px-6 lg:px-12">
-          <div className="flex gap-1 overflow-x-auto scrollbar-hide py-1">
+      {/* ─── DESKTOP TAB NAVIGATION (Pill Design) ─── */}
+      <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-[#18357a] border-b border-white/10 shadow-xl">
+        <div className="w-full px-6 lg:px-12 py-5">
+          <div className="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-7xl mx-auto">
             {TABS.map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`whitespace-nowrap px-5 py-3.5 text-[14px] font-bold font-graphik transition-all rounded-t-lg ${
+                className={`whitespace-nowrap px-6 py-2.5 text-[13px] font-black font-graphik transition-all rounded-full border-2 tracking-wide uppercase ${
                   activeTab === tab
-                    ? 'text-[#18357a] border-b-2 border-[#ffc107] bg-[#18357a]/4'
-                    : 'text-[#64779F] hover:text-[#18357a] hover:bg-[#F8FAFC]'
+                    ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 scale-105'
+                    : 'bg-transparent border-white/20 text-white hover:border-white/50 hover:bg-white/5'
                 }`}
               >
                 {tab}
@@ -316,12 +305,7 @@ export default function CourseDetailPage() {
             {activeTab === 'Overview' && (
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-8">
-                    <div className="text-center mb-12">
-                       <h2 className="text-3xl md:text-4xl font-bold font-graphik uppercase tracking-tight leading-tight">
-                         <span className="text-[#18357a]">Academic</span> <span className="text-[#ffc107]">Overview</span>
-                       </h2>
-                       <p className="text-[#64779F] text-xs font-bold font-graphik uppercase tracking-[0.2em] mt-3">Course Fundamentals & Core Expertise</p>
-                    </div>
+
 
                     <div className="bg-transparent md:bg-white md:rounded-[2.5rem] md:border md:border-[#DEE7F4] p-0 md:p-14 md:shadow-2xl md:shadow-blue-900/5 transition-all relative overflow-hidden group">
                       {/* Decorative Background Pattern */}
@@ -401,8 +385,8 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {[
                         { label: 'Timeframe', value: course.duration, icon: Clock },
-                        { label: 'Capacity', value: `${course.intake} Students`, icon: Users },
-                        { label: 'Network', value: course.affiliation, icon: Building2 },
+                        { label: 'Intake', value: `${course.intake} Students`, icon: Users },
+                        { label: 'Affiliations', value: course.affiliation, icon: Building2 },
                         { label: 'Standard', value: course.accreditation, icon: Award },
                       ].map(item => (
                         <div key={item.label} className="group cursor-default">

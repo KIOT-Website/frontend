@@ -16,6 +16,13 @@ import {
 
 const MedicalImagingPage = () => {
     const { deptName } = useParams()
+    const formatDeptName = (name) => {
+        if (!name) return "Departmentwise"
+        return name.split('-').map(word => {
+            if (word === "&") return "&"
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        }).join(' ')
+    }
 
     const labData = {
         title: "Centre for Medical Imaging",
@@ -56,7 +63,7 @@ const MedicalImagingPage = () => {
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
                     <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
-                        {deptName?.toUpperCase()}
+                        Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
                     <span className="text-[#0f172a] text-xs font-bold uppercase tracking-wider pt-0.5">

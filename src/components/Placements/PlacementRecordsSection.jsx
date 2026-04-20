@@ -45,15 +45,15 @@ const PlacementRecordsSection = () => {
   }
 
   return (
-    <div className="mb-20">
+    <div className="">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tighter">
-          Placement records(Department wise )
+        <h2 className="text-2xl md:text-3xl font-black text-[#18357a] flex items-center justify-center gap-3 tracking-tighter">
+          Placement Records (Department Wise)
         </h2>
       </div>
-      <div className="max-w-5xl mx-auto">
+      <div className="w-full">
         {departments.length === 0 ? (
-          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-[#64779F] font-bold">
+          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-[#64779F] font-bold min-h-[200px] flex items-center justify-center">
             <p>Records are currently being updated.</p>
           </div>
         ) : (

@@ -75,7 +75,7 @@ const Testimonials = () => {
   const [activeTab, setActiveTab] = useState("Students")
 
   return (
-    <section className="relative py-12 lg:py-20 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
       
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#18357a]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
@@ -83,14 +83,14 @@ const Testimonials = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-12 lg:mb-16">
            <motion.div
              initial={{ opacity: 0, scale: 0.9 }}
              whileInView={{ opacity: 1, scale: 1 }}
              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
            >
              <Star size={14} className="text-[#ffc107] fill-[#ffc107]" />
-             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Voice of Success</span>
+             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Voice of Success</span>
            </motion.div>
            <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik">
              Success Stories & <span className="text-[#ffc107]">Experiences</span>

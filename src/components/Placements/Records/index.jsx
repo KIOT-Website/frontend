@@ -1,5 +1,4 @@
 import React from 'react'
-import HeaderSection from './HeaderSection'
 import GlobalStats from './GlobalStats'
 import AnalyticsCharts from './AnalyticsCharts'
 import ImpactDistribution from './ImpactDistribution'
@@ -23,15 +22,16 @@ const efficiencyData = [
 
 const OutcomesOverview = () => {
   return (
-    <div className="relative bg-[#F8FAFC] pt-16 pb-20 min-h-screen overflow-hidden">
+    <div className="relative bg-[#F8FAFC] pt-5 pb-20 min-h-screen overflow-hidden">
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#18357a]/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#ffc107]/5 rounded-full blur-3xl pointer-events-none" />
       
       <section className="relative px-6 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
-        <HeaderSection />
-        <PlacementRecordsSection />
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+          <PlacementRecordsSection />
+          <PlacementDetailsYearSection />
+        </div>
         <PlacementRecordsStudentsAdmittedSection />
-        <PlacementDetailsYearSection />
         <GlobalStats />
         <AnalyticsCharts statsData={statsData} efficiencyData={efficiencyData} />
         <ImpactDistribution />

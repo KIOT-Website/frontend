@@ -77,19 +77,26 @@ const Leadership = () => {
 
       <div className="relative z-10 w-full px-6 lg:px-12">
         
-        {/* Main Page Header - Refined to match About Us style */}
+        {/* Main Page Header - Standardized with Governing Council Style */}
         <div className="text-center mb-12 lg:mb-16 pt-5">
-          <div className="flex flex-col items-center">
-            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 transition-shadow cursor-default font-graphik">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col items-center"
+          >
+            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default group">
                <span className="relative flex h-3.5 w-3.5">
-                 <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#18357a]"></span>
+                 <span className="absolute inline-flex h-full w-full rounded-full bg-[#18357a] opacity-20 group-hover:opacity-40 transition-opacity"></span>
+                 <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
                </span>
-               <span className="text-sm font-bold text-[#18357a] tracking-[0.15em]">Management & Governance</span>
+               <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Management & Governance</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] text-wrap font-graphik">
-              Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#18357a] to-[#18357a] inline-block">Leadership</span>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-tight">
+              Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#4666B4] to-[#ffc107]">Leadership</span>
             </h1>
-          </div>
+          </motion.div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

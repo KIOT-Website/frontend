@@ -48,13 +48,13 @@ const PlacementDetailsYearSection = () => {
   return (
     <div className="mb-20">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter">
-          Placement detailS (year)
+        <h2 className="text-2xl md:text-3xl font-black text-[#18357a] flex items-center justify-center gap-3 tracking-tighter">
+          Placement Details (Batch Year)
         </h2>
       </div>
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-6xl mx-auto">
         {data.length === 0 ? (
-          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-[#64779F] font-bold">
+          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-[#64779F] font-bold min-h-[200px] flex items-center justify-center">
             <p>Annual placement reports are currently being updated.</p>
           </div>
         ) : (
@@ -76,7 +76,7 @@ const PlacementDetailsYearSection = () => {
               >
                 {/* Info */}
                 <div>
-                  <p className="text-base font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-colors">
+                  <p className="text-lg font-black text-[#18357a] tracking-tight group-hover:text-[#ffc107] transition-colors">
                     {record.batch_year}
                   </p>
                   <p className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest mt-0.5">Placement Report</p>

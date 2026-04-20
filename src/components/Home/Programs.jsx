@@ -67,7 +67,7 @@ const Programs = () => {
 
 
   return (
-    <section id="academics" className="relative py-16 lg:py-32 bg-[#FCFDFD] overflow-hidden">
+    <section id="academics" className="relative py-12 lg:py-20 bg-[#FCFDFD] overflow-hidden">
       
       <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-white to-transparent -z-10" />
 
@@ -83,7 +83,7 @@ const Programs = () => {
                 className="inline-flex items-center gap-2 mb-5 lg:mb-6 bg-[#18357a]/5 px-4 py-1.5 rounded-full border border-[#18357a]/10"
               >
                 <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107] animate-pulse" />
-                <span className="text-[9px] lg:text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Academic Excellence</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Academic Excellence</span>
               </motion.div>
               
               <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik mb-6 lg:mb-8 leading-[1.1] lg:leading-[1.05]">
@@ -91,7 +91,7 @@ const Programs = () => {
                 AI embedded <span className="text-[#ffc107]">Engineering <br className="hidden xl:block" /> & Management courses.</span>
               </h2>
               
-              <p className="text-sm lg:text-lg font-medium text-[#64779F] leading-relaxed max-w-xl">
+              <p className="text-base lg:text-lg font-medium text-black leading-relaxed max-w-xl">
                  Discover a spectrum of industry-leading programmes designed to cultivate next-gen engineers and leaders.
               </p>
            </div>
@@ -159,7 +159,7 @@ const Programs = () => {
              viewport={{ once: true }}
              transition={{ duration: 1, type: "spring", bounce: 0.4 }}
              className="relative -mt-6 flex flex-col items-center group cursor-pointer z-20"
-             onClick={() => navigate('/registration')}
+             onClick={() => navigate('/admissions')}
            >
               {/* Triangular Hanging Rope */}
               <svg width="100" height="50" viewBox="0 0 100 50" className="mb-[-2px]">
@@ -188,7 +188,7 @@ const Programs = () => {
                   </div>
               </motion.div>
 
-              <p className="mt-4 text-[9px] font-black text-slate-400 uppercase tracking-[0.3em]">Academic Session 2026-27</p>
+              <p className="mt-4 text-[9px] font-black text-black uppercase tracking-[0.3em]">Academic Session 2026-27</p>
 
               {/* Feature Highlights */}
               <div className="mt-8 space-y-4 w-full px-6">
@@ -208,7 +208,7 @@ const Programs = () => {
                       className="flex items-center gap-3 group/item cursor-default"
                     >
                        <div className="h-0.5 w-3 bg-[#ffc107] opacity-50 group-hover/item:opacity-100 transition-opacity" />
-                       <span className="text-[14px] font-bold text-[#18357a]/80 italic tracking-tight leading-none group-hover/item:text-[#18357a] transition-colors uppercase">
+                       <span className="text-[14px] font-bold text-black italic tracking-tight leading-none uppercase">
                           {text}
                        </span>
                     </motion.div>
@@ -249,11 +249,11 @@ const Programs = () => {
                                 <course.icon size={26} />
                              </div>
                              <div className="px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#ffc107]/20 transition-colors">
-                                <span className="text-[8px] font-black text-[#64779F] group-hover:text-[#18357a] tracking-[0.2em] uppercase">Course Details</span>
+                                <span className="text-[8px] font-black text-black tracking-[0.2em] uppercase">Course Details</span>
                              </div>
                           </div>
 
-                          <h4 className="text-lg font-semibold text-[#18357a] font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
+                          <h4 className="text-lg font-semibold text-black font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
                              {course.name}
                           </h4>
                           <p className="text-[11px] font-black text-[#ffc107] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
@@ -262,7 +262,7 @@ const Programs = () => {
                           
                           <div className="flex items-center gap-2 mt-4">
                              <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107]" />
-                             <span className="text-[10px] font-black text-[#64779F] uppercase tracking-widest">{course.duration} Program</span>
+                             <span className="text-[10px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
                           </div>
                        </div>
                     </motion.div>

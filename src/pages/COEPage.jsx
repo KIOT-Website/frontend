@@ -44,30 +44,30 @@ const COEPage = () => {
                         >
                             <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#18357a]/5 rounded-full">
                                 <ShieldCheck size={14} className="text-[#18357a]" />
-                                <span className="text-[10px] font-black text-[#18357a] uppercase tracking-[2px]">Statutory Office</span>
+                                <span className="text-[10px] font-graphik font-bold text-[#18357a] uppercase tracking-[2px]">Statutory Office</span>
                             </div>
 
-                            <h1 className="text-3xl lg:text-5xl font-black text-[#18357a] leading-[1.1] uppercase tracking-tighter">
+                            <h1 className="text-3xl lg:text-5xl font-graphik font-semibold text-[#18357a] leading-[1.1] tracking-tighter">
                                 Controller of <br />
-                                <span className="text-[#ffc107]">Examination (COE)</span>
+                                <span className="text-[#ffc107]">Examinations (Exams)</span>
                             </h1>
 
                             <div className="space-y-6">
-                                <p className="text-xl font-black text-[#18357a] leading-relaxed italic border-l-8 border-[#ffc107] pl-8 py-3 bg-[#18357a]/[0.02] rounded-r-3xl">
+                                <p className="text-xl font-graphik font-medium text-[#18357a] leading-relaxed italic border-l-8 border-[#ffc107] pl-8 py-3 bg-[#18357a]/[0.02] rounded-r-3xl">
                                     The Office of the Controller of Examinations was established in the Academic year 2022-2023.
                                 </p>
                                 
-                                <p className="text-[17px] font-black text-[#18357a]/90 leading-relaxed text-slate-800">
+                                <p className="text-[17px] font-graphik font-normal text-slate-700 leading-relaxed text-justify">
                                     The office is responsible for conducting Internal Assessment Test (IAT) and End Semester Examination (ESE) for UG, PG and Ph.D. programs. 
                                     The COE office is also responsible for publishing results and issue of mark sheets for UG, PG and Ph.D programs.
                                 </p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
                                     {[
-                                        { icon: Clock, text: "Examination Schedules", path: "/coe/exam-schedules" },
-                                        { icon: CheckCircle2, text: "Result Publication", path: "/coe/results" },
-                                        { icon: FileText, text: "Marksheet Issuance", path: "/coe/marksheet" },
-                                        { icon: GraduationCap, text: "PhD Coordination", path: "/coe/phd" }
+                                        { icon: Clock, text: "Examination Schedules", path: "/exams/schedules" },
+                                        { icon: CheckCircle2, text: "Result Publication", path: "/exams/results" },
+                                        { icon: FileText, text: "Marksheet Issuance", path: "/exams/marksheet" },
+                                        { icon: GraduationCap, text: "PhD Coordination", path: "/exams/phd" }
                                     ].map((feature, i) => (
                                         <div 
                                             key={i} 
@@ -78,14 +78,14 @@ const COEPage = () => {
                                             <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-[#18357a] shadow-sm group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500 shrink-0 border border-slate-100">
                                                 <feature.icon size={24} />
                                             </div>
-                                            <span className="text-[13px] font-black text-[#18357a] uppercase tracking-tight leading-tight group-hover:translate-x-1 transition-transform">{feature.text}</span>
+                                            <span className="text-[13px] font-graphik font-semibold text-[#18357a] uppercase tracking-tight leading-tight group-hover:translate-x-1 transition-transform">{feature.text}</span>
                                         </div>
                                     ))}
 
                                 </div>
 
-                                <p className="text-[14px] font-black text-[#18357a]/80 bg-[#f8fafc] p-8 rounded-[2.5rem] border-2 border-slate-100 italic leading-relaxed">
-                                    The Office of the Controller of Examinations is headed by the Controller of Examinations(COE), Supported by Deputy COE, Assistant COE, Technical and Administrative staff. The Controller of Examinations office and Examination Management Systems are working together Under one roof.
+                                <p className="text-[14px] font-graphik font-normal text-slate-600 bg-[#f8fafc] p-8 rounded-[2.5rem] border-2 border-slate-100 italic leading-relaxed text-justify">
+                                    The Office of the Controller of Examinations is headed by the Controller of Examinations (COE), supported by Deputy COE, Assistant COE, Technical and Administrative staff. The Controller of Examinations office and Examination Management Systems are working together under one roof.
                                 </p>
                             </div>
                         </motion.div>
@@ -94,8 +94,8 @@ const COEPage = () => {
                     {/* ─── RIGHT CONTENT: OFFICE BEARERS ─── */}
                     <div className="lg:w-1/2 w-full">
                         <div className="mb-10 text-center sm:text-left px-6 sm:px-0">
-                            <h3 className="text-3xl font-black text-[#18357a] uppercase tracking-tighter leading-tight mb-2">List of <span className="text-[#ffc107]">Office Bearers</span></h3>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[4px]">Statutory Committees & Members</p>
+                            <h3 className="text-3xl font-graphik font-semibold text-[#18357a] tracking-tighter leading-tight mb-2">List of <span className="text-[#ffc107]">Office Bearers</span></h3>
+                            <p className="text-[10px] font-graphik font-bold text-slate-400 uppercase tracking-[4px]">Statutory Committees & Members</p>
                         </div>
 
                         <motion.div 
@@ -109,9 +109,9 @@ const COEPage = () => {
                                     <table className="w-full text-left border-collapse">
                                         <thead>
                                             <tr className="bg-[#18357a]">
-                                                <th className="px-3 sm:px-6 py-4 text-[10px] font-black text-white uppercase tracking-[1px] sm:tracking-[2px] w-12 sm:w-20 text-center border-r border-white/10">S.No</th>
-                                                <th className="px-4 sm:px-8 py-4 text-[10px] font-black text-white uppercase tracking-[1px] sm:tracking-[2px] border-r border-white/10">Name of the Staff</th>
-                                                <th className="px-3 py-4 text-[10px] font-black text-white uppercase tracking-[1px] sm:tracking-[2px] text-center">Designation</th>
+                                                <th className="px-3 sm:px-6 py-4 text-[10px] font-graphik font-bold text-white uppercase tracking-[1px] sm:tracking-[2px] w-12 sm:w-20 text-center border-r border-white/10">S.No</th>
+                                                <th className="px-4 sm:px-8 py-4 text-[10px] font-graphik font-bold text-white uppercase tracking-[1px] sm:tracking-[2px] border-r border-white/10">Name of the Staff</th>
+                                                <th className="px-3 py-4 text-[10px] font-graphik font-bold text-white uppercase tracking-[1px] sm:tracking-[2px] text-center">Designation</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-100">
@@ -121,18 +121,18 @@ const COEPage = () => {
                                                     className={`hover:bg-[#18357a]/5 transition-all duration-300 group ${idx % 2 === 1 ? 'bg-[#18357a]/[0.06]' : 'bg-white'}`}
                                                 >
                                                     <td className="px-3 sm:px-6 py-4 text-center border-r border-slate-50">
-                                                        <span className="text-[12px] sm:text-[13px] font-black text-[#64779F] group-hover:text-[#18357a] transition-all">
+                                                        <span className="text-[12px] sm:text-[13px] font-graphik font-semibold text-[#64779F] group-hover:text-[#18357a] transition-all">
                                                             {idx + 1}
                                                         </span>
                                                     </td>
                                                     <td className="px-4 sm:px-8 py-4 border-r border-slate-50">
-                                                        <span className="text-[11px] sm:text-[13px] font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-all cursor-default">
+                                                        <span className="text-[11px] sm:text-[13px] font-graphik font-semibold text-[#18357a] tracking-tight group-hover:text-[#ffc107] transition-all cursor-default">
                                                             {staff.name}
                                                         </span>
                                                     </td>
                                                     <td className="px-3 py-4 text-center">
                                                         <div className="inline-flex px-2 sm:px-3 py-1 rounded-lg bg-slate-50 group-hover:bg-[#18357a] group-hover:text-white transition-all">
-                                                            <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-[1px]">
+                                                            <span className="text-[8px] sm:text-[9px] font-graphik font-bold uppercase tracking-[1px]">
                                                                 {staff.designation}
                                                             </span>
                                                         </div>

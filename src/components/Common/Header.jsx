@@ -49,16 +49,15 @@ const navLinks = [
   },
   {
     name: 'About',
-    href: 'about',
+    href: '#',
     hasDropdown: true,
     subLinks: [
-      { name: 'About Us', href: 'about-us', icon: Building2 },
-      { name: 'Our Institutional Values', href: 'our-values', icon: Target },
-      { name: 'Leadership', href: 'leadership', icon: Users },
-      { name: 'Governing Council', href: 'governing-council', icon: ShieldCheck },
-      { name: 'Academic Council', href: 'academic-council', icon: ShieldCheck },
-      { name: 'Guidelines', href: 'guidelines', icon: FileText },
-      { name: 'Accreditation & Ranking', href: 'accreditation-ranking', icon: FileText }
+      { name: 'About Us', href: 'about/about-us', icon: Building2 },
+      { name: 'Leadership', href: 'about/leadership', icon: Users },
+      { name: 'Governing Council', href: 'about/governing-council', icon: ShieldCheck },
+      { name: 'Academic Council', href: 'about/academic-council', icon: ShieldCheck },
+      { name: 'Guidelines', href: 'about/guidelines', icon: FileText },
+      { name: 'Accreditation & Ranking', href: 'about/accreditation-ranking', icon: FileText }
     ]
   },
   {
@@ -78,35 +77,34 @@ const navLinks = [
   },
   { 
     name: 'Placements', 
-    href: 'placements',
+    href: '#',
     hasDropdown: true,
     subLinks: [
-      { name: 'Overview', href: 'placement-overview', icon: Building2 },
-      { name: 'Training', href: 'training', icon: BookOpen },
-      { name: 'Recruitment', href: 'recruitment', icon: Users },
-      { name: 'Records', href: 'records', icon: Target },
+      { name: 'Overview', href: 'placements/overview', icon: Building2 },
+      { name: 'Training', href: 'placements/training', icon: BookOpen },
+      { name: 'Outcomes', href: 'placements/outcomes', icon: Target },
     ]
   },
   { 
     name: 'Research & Innovations', 
-    href: 'research',
+    href: '#',
     hasDropdown: true,
     subLinks: [
-      { name: 'Research', href: 'research', icon: Microscope },
-      { name: 'AICTE IDEA LAB', href: 'aicte-idea-lab', icon: Wrench },
+      { name: 'Research', href: 'research-innovation/research', icon: Microscope },
+      { name: 'AICTE Idea Lab', href: 'research-innovation/aicte-idea-lab', icon: Wrench },
     ]
   },
-  { name: 'COE', href: 'coe' },
+  { name: 'Exams', href: 'exams' },
   { 
     name: 'Resources', 
-    href: 'resources', 
+    href: '#', 
     hasDropdown: true,
     subLinks: [
-      { name: 'Campus Life', href: 'campus-life', icon: Building2 },
-      { name: 'Student Life', href: 'student-life', icon: Users },
-      { name: 'Alumni', href: 'alumni', icon: GraduationCap },
-      { name: 'News & Events', href: 'news-events', icon: Calendar },
-      { name: 'Blogs', href: 'blogs', icon: FileText }
+      { name: 'Campus Life', href: 'resources/campus-life', icon: Building2 },
+      { name: 'Student Life', href: 'resources/student-life', icon: Users },
+      { name: 'Alumni', href: 'resources/alumni', icon: GraduationCap },
+      { name: 'News & Events', href: 'resources/news-events', icon: Calendar },
+      { name: 'Blogs', href: 'resources/blogs', icon: FileText }
     ]
   },
   { name: 'Contact', href: 'contact' },
@@ -341,7 +339,7 @@ const Header = () => {
                           if (link.subLinks) e.preventDefault();
                           else handleNavClick(e, link.name, link.href);
                         }}
-                        className={`inline-flex items-center gap-1 text-[13px] font-bold transition-colors whitespace-nowrap py-5 ${
+                        className={`inline-flex items-center gap-1 text-[13px] font-black transition-colors whitespace-nowrap py-5 ${
                             isActive
                               ? 'text-[#18357a]'
                               : 'text-[#64779F] hover:text-[#18357a]'
@@ -367,7 +365,7 @@ const Header = () => {
                               onClick={(e) => handleNavClick(e, sub.name, sub.href)}
                               className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
                             >
-                              <span className="text-[14.5px] font-bold text-[#64779F] group-hover/sub:text-white transition-colors pr-12">{sub.name}</span>
+                              <span className="text-[14.5px] font-black text-[#64779F] group-hover/sub:text-white transition-colors pr-12">{sub.name}</span>
                               <div className="absolute right-5 flex items-center justify-center w-5 h-5">
                                  {sub.icon && (
                                    <sub.icon 
@@ -385,7 +383,7 @@ const Header = () => {
                 })}
               </ul>
 
-              <div className="flex items-center gap-2.5 sm:gap-4 lg:gap-6 pr-4 lg:pr-0 translate-y-[1.5px]">
+              <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3 pr-4 lg:pr-0 translate-y-[1.5px]">
                 <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
                   <img
                     src={naacLogo}
@@ -488,7 +486,7 @@ const Header = () => {
                                  handleNavClick(e, link.name, link.href);
                                }
                             }}
-                            className={`flex items-center justify-between px-4 py-4 text-[15px] font-bold transition-all ${
+                            className={`flex items-center justify-between px-4 py-4 text-[15px] font-black transition-all ${
                               isActive 
                                 ? 'text-[#18357a]' 
                                 : 'text-[#64779F] hover:text-[#18357a]'
@@ -516,7 +514,7 @@ const Header = () => {
                                        key={sub.name} 
                                        href={sub.href} 
                                        onClick={(e) => handleNavClick(e, sub.name, sub.href)} 
-                                       className="flex items-center gap-4 px-6 py-3.5 text-[13px] font-bold text-[#64779F] hover:text-[#18357a] hover:bg-white/50 transition-all group/subitem"
+                                       className="flex items-center gap-4 px-6 py-3.5 text-[13px] font-black text-[#64779F] hover:text-[#18357a] hover:bg-white/50 transition-all group/subitem"
                                      >
                                        {sub.icon && (
                                          <div className="w-8 h-8 rounded-lg bg-white/80 shadow-sm flex items-center justify-center shrink-0 border border-[#18357a]/5">

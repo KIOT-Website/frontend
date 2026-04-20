@@ -273,7 +273,7 @@ export default function AcademicsPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC]" style={{ fontFamily: "'Inter', 'Outfit', sans-serif" }}>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#0A1A3F] py-12 md:py-20">
+      <section className="relative overflow-hidden bg-[#0A1A3F] py-10 md:py-14">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <motion.img 
@@ -308,12 +308,12 @@ export default function AcademicsPage() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[#ffc107] text-[13px] font-bold tracking-widest uppercase mb-8"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[#ffc107] text-[13px] font-bold tracking-widest uppercase mb-5"
             >
               <GraduationCap size={16} className="animate-bounce" /> Academic Excellence
             </motion.span>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6 tracking-tight">
               Shape Your Future with<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff1cc] to-[#ffc107] animate-gradient">
                 {searchParams.get('program') || searchParams.get('type') 
@@ -322,7 +322,7 @@ export default function AcademicsPage() {
               </span>
             </h1>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-12">
+            <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -378,7 +378,7 @@ export default function AcademicsPage() {
                 <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter mb-1">
                    {programTab === 'UG Programs' ? 'Undergraduate' : 'Postgraduate'} <span className="text-[#ffc107]">Programmes</span>
                 </h2>
-                <p className="text-[#64779F] text-[11px] font-bold uppercase tracking-widest opacity-60">Full-Time Academic Portfolio</p>
+
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">

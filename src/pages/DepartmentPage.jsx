@@ -60,13 +60,13 @@ const DepartmentPage = () => {
           <div className="absolute inset-0 bg-[#18357a]/40" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-24 px-6 sm:px-10 lg:px-20">
+        <div className="relative z-10 max-w-7xl mx-auto pt-24 pb-16 px-6 sm:px-10 lg:px-20">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <Link to="/records" className="inline-flex items-center gap-2 text-white/70 hover:text-[#ffc107] font-bold text-sm mb-8 transition-colors group/back">
-              <ArrowLeft size={18} className="transition-transform group-hover/back:-translate-x-1" /> Back to Outcomes
+            <Link to="/records" className="inline-flex items-center gap-2 !text-white hover:text-[#ffc107] font-black text-sm mb-8 transition-colors group/back drop-shadow-md">
+              <ArrowLeft size={20} className="transition-transform group-hover/back:-translate-x-1" /> Back to Outcomes
             </Link>
             <div className="flex items-center gap-6 mb-6">
               <div className="h-16 w-16 rounded-2xl bg-[#ffc107] flex items-center justify-center shadow-2xl shadow-[#ffc107]/20 rotate-3 group-hover:rotate-0 transition-all">
@@ -85,32 +85,7 @@ const DepartmentPage = () => {
         </div>
       </div>
 
-      {/* QUICK INSIGHTS SECTION */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 -mt-12 relative z-20">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-           {[
-             { label: 'Annual Intake', value: deptInfo?.intake || '120', icon: '👥' },
-             { label: 'Course Duration', value: deptInfo?.duration?.split(' ')[0] || '4', sub: 'Years', icon: '⏳' },
-             { label: 'Placement Performance', value: deptInfo?.placement || '90%', sub: 'Last Batch', icon: '📈' },
-             { label: 'Avg Package', value: deptInfo?.avgPackage || '4.5 LPA', icon: '💰' }
-           ].map((stat, i) => (
-             <motion.div 
-               key={i}
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: i * 0.1 }}
-               className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-xl shadow-blue-900/5 group/card hover:border-[#ffc107]/50 transition-all"
-             >
-                <div className="text-3xl mb-4 group-hover/card:scale-110 transition-transform block w-fit">{stat.icon}</div>
-                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{stat.label}</h4>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-black text-[#18357a]">{stat.value}</span>
-                  {stat.sub && <span className="text-xs font-bold text-slate-400 uppercase">{stat.sub}</span>}
-                </div>
-             </motion.div>
-           ))}
-        </div>
-      </div>
+
 
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 mt-20 space-y-20 relative z-10">
         {/* ─── RECORDS SECTION ─── */}

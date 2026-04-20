@@ -23,21 +23,21 @@ import istartImg from '../../assets/life@kiot/istart.webp'
 import campusMainImg from '../../assets/main/campus .webp'
 
 const facilities = [
-  { id: 1, title: "Sports Arena", image: sportsImg, icon: Trophy, tag: "Sports Excellence" },
-  { id: 2, title: "Modern GYM", image: gymImg, icon: Dumbbell, tag: "Fitness Hub" },
-  { id: 3, title: "Transport Fleet", image: transportImg, icon: Bus, tag: "Swift Access" },
-  { id: 4, title: "Cafeteria", image: cafeteriaImg, icon: Coffee, tag: "Food & Social" },
-  { id: 5, title: "Smart Labs", image: labImg, icon: Microscope, tag: "Research Plus" },
-  { id: 6, title: "Hostels", image: hostelImg, icon: Home, tag: "Home Away" },
-  { id: 7, title: "Training Cell", image: trainingImg, icon: GraduationCap, tag: "Skill Focus" },
-  { id: 8, title: "iStart Hub", image: istartImg, icon: Cpu, tag: "Innovation" }
+  { id: 1, title: "Sports", image: sportsImg, icon: Trophy, tag: "Life@KIOT", link: "/campus-life/sports" },
+  { id: 2, title: "Gym", image: gymImg, icon: Dumbbell, tag: "Life@KIOT", link: "/campus-life/amenities" },
+  { id: 3, title: "Transport", image: transportImg, icon: Bus, tag: "Life@KIOT", link: "/campus-life/transport" },
+  { id: 4, title: "Cafeteria", image: cafeteriaImg, icon: Coffee, tag: "Life@KIOT", link: "/campus-life/amenities" },
+  { id: 5, title: "Lab", image: labImg, icon: Microscope, tag: "Life@KIOT", link: "/campus-life/classroom" },
+  { id: 6, title: "Hostel", image: hostelImg, icon: Home, tag: "Life@KIOT", link: "/campus-life/amenities" },
+  { id: 7, title: "Training", image: trainingImg, icon: GraduationCap, tag: "Life@KIOT", link: "/training" },
+  { id: 8, title: "iStart", image: istartImg, icon: Cpu, tag: "Life@KIOT", link: "/aicte-idea-lab" }
 ]
 
 const CampusLife = () => {
   return (
-    <section className="relative py-16 lg:py-28 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative py-12 lg:py-20 bg-[#FCFDFD] overflow-hidden">
       
-      {/* 🔷 SECTION HERO: "Life & KIOT" */}
+      {/* 🔷 SECTION HERO: "Life@KIOT" */}
       <div className="mx-auto max-w-7xl px-6 lg:px-10 mb-16 lg:mb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div 
@@ -48,7 +48,7 @@ const CampusLife = () => {
           >
             <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10">
               <Sparkles size={14} className="text-[#ffc107]" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#18357a]">Life & KIOT</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Life@KIOT</span>
             </div>
             
             <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik leading-tight tracking-tight">
@@ -56,7 +56,7 @@ const CampusLife = () => {
               Holistic Growth.
             </h2>
             
-            <p className="text-base lg:text-lg text-[#64779F] font-medium leading-relaxed max-w-xl">
+            <p className="text-base lg:text-lg text-black font-medium leading-relaxed max-w-xl">
               Beyond standard academics, KIOT offers an inspiring campus life designed to nurture your physical, social, and creative potential. Explore a world where excellence meets everyday living.
             </p>
 
@@ -77,7 +77,7 @@ const CampusLife = () => {
           >
             {/* Background shadow removed as requested */}
             <div className="relative rounded-[2.5rem] lg:rounded-[3.5rem] overflow-hidden border-8 border-white shadow-2xl aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
-              <img src={campusMainImg} alt="KIOT Campus Life" className="w-full h-full object-cover" />
+              <img src={sportsImg} alt="Life@KIOT" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 to-transparent" />
             </div>
           </motion.div>
@@ -88,25 +88,26 @@ const CampusLife = () => {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
           {facilities.map((fac, idx) => (
-            <motion.div
-              key={fac.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              className="group relative h-48 lg:h-64 rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-md hover:shadow-xl transition-all duration-500"
-            >
-              <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/90 via-[#18357a]/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
-              
-              <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-end">
-                <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-2 lg:mb-3 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500">
-                  <fac.icon size={16} className="lg:size-20" />
+            <Link to={fac.link} key={fac.id}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="group relative h-48 lg:h-64 rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer"
+              >
+                <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/90 via-[#18357a]/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+                
+                <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-end">
+                  <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-2 lg:mb-3 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500">
+                    <fac.icon size={16} className="lg:size-20" />
+                  </div>
+                  <h3 className="text-sm lg:text-lg font-bold text-white mb-1 font-graphik leading-tight transition-transform duration-500 group-hover:-translate-y-1">{fac.title}</h3>
+                  <span className="text-[8px] lg:text-[10px] font-bold text-white/60 uppercase tracking-widest transition-transform duration-500 group-hover:-translate-y-1">{fac.tag}</span>
                 </div>
-                <h3 className="text-sm lg:text-lg font-bold text-white mb-1 font-graphik leading-tight transition-transform duration-500 group-hover:-translate-y-1">{fac.title}</h3>
-                <span className="text-[8px] lg:text-[10px] font-bold text-white/60 uppercase tracking-widest transition-transform duration-500 group-hover:-translate-y-1">{fac.tag}</span>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

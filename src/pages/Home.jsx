@@ -5,6 +5,7 @@ import Placements from '../components/Home/Placements'
 import CampusLife from '../components/Home/CampusLife'
 import Achievers from '../components/Home/Achievers'
 import Events from '../components/Home/Events'
+import RecruitmentDrives from '../components/Home/RecruitmentDrives'
 import Testimonials from '../components/Home/Testimonials'
 import { motion } from 'framer-motion'
 
@@ -24,6 +25,7 @@ const Home = () => {
       <CampusLife />
       <Achievers />
       <Events />
+      <RecruitmentDrives />
       <Testimonials />
     </motion.div>
   )

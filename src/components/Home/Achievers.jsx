@@ -50,7 +50,7 @@ const Achievers = () => {
   }
 
   return (
-    <section className="relative py-10 lg:py-16 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
       
       {/* Background Decorative Rings */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] border border-[#18357a]/5 rounded-full pointer-events-none" />
@@ -59,19 +59,19 @@ const Achievers = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-10 lg:mb-16">
            <motion.div
              initial={{ opacity: 0, scale: 0.9 }}
              whileInView={{ opacity: 1, scale: 1 }}
              className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
            >
              <Sparkles size={14} className="text-[#ffc107]" />
-             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Hall of Achievers</span>
+             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Hall of Achievers</span>
            </motion.div>
            <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik">
              Achievements That <span className="text-[#ffc107]">Inspire</span>
            </h2>
-           <p className="mt-6 text-[#64779F] max-w-2xl mx-auto text-base lg:text-lg font-medium font-sans italic opacity-80">
+           <p className="mt-6 text-black max-w-2xl mx-auto text-base lg:text-lg font-medium font-sans italic opacity-80">
              Celebrating the icons of tomorrow who are making their mark today.
            </p>
         </div>

@@ -33,7 +33,7 @@ const ValueCard = ({ title, content, icon: Icon, idx }) => (
          <Icon size={26} />
       </div>
       
-      <h3 className="text-xl lg:text-2xl font-graphik font-bold text-[#18357a] uppercase tracking-normal mb-3">
+      <h3 className="text-xl lg:text-2xl font-graphik font-bold text-[#18357a] tracking-normal mb-3">
         {title}
       </h3>
       
@@ -90,7 +90,7 @@ const VisionMission = () => {
   ]
 
   return (
-    <div id="values" className="relative bg-[#FAFBFF] pt-16 pb-24 min-h-screen border-t border-slate-100">
+    <div id="values" className="relative bg-[#FAFBFF] pt-8 pb-12 border-t border-slate-100">
       
       {/* Background Graphic Decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />
@@ -113,7 +113,7 @@ const VisionMission = () => {
                <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Institutional Philosophy</span>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] break-words">
-              Our Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block uppercase">Values</span>
+              Our Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block">Values</span>
             </h1>
           </motion.div>
           <motion.p 
@@ -156,7 +156,7 @@ const VisionMission = () => {
                          {String(i + 1).padStart(2, '0')}
                        </div>
 
-                       <h3 className="text-[#18357a] font-graphik font-bold text-[12px] sm:text-[14px] uppercase tracking-wide mb-3 leading-tight px-2">
+                       <h3 className="text-[#18357a] font-graphik font-bold text-[12px] sm:text-[14px] tracking-wide mb-3 leading-tight px-2">
                          {val.title}
                        </h3>
                        
