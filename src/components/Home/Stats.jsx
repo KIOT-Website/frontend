@@ -81,7 +81,7 @@ const Stats = () => {
   }, [])
 
   return (
-    <section className="relative pt-2 pb-8 md:py-10 lg:py-16 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative pt-8 pb-4 md:pt-0 md:pb-6 lg:py-10 bg-[#FCFDFD] overflow-hidden">
       {/* Decorative Elements - Clean Version */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0">
          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#18357a05_1px,transparent_1px)] [background-size:32px_32px]" />

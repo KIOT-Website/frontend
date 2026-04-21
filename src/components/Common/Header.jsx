@@ -92,6 +92,7 @@ const navLinks = [
     subLinks: [
       { name: 'Research', href: 'research-innovation/research', icon: Microscope },
       { name: 'AICTE Idea Lab', href: 'research-innovation/aicte-idea-lab', icon: Wrench },
+      { name: 'iStart', href: 'research-innovation/istart', icon: Cpu },
     ]
   },
   { name: 'Exams', href: 'exams' },

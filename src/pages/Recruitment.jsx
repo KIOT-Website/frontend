@@ -60,10 +60,7 @@ const Recruitment = () => {
                                 Explore all active and upcoming recruitment notices and institutional posters.
                             </p>
                         </div>
-                        <div className="bg-white px-6 py-4 rounded-2xl shadow-sm border border-slate-100 hidden md:block">
-                            <span className="text-[10px] font-black uppercase tracking-widest text-[#18357a]/40 block mb-1">Total Posters</span>
-                            <span className="text-2xl font-black text-[#18357a]">{drives.length}</span>
-                        </div>
+
                     </div>
                 </div>
 
@@ -79,7 +76,7 @@ const Recruitment = () => {
                         <p className="font-bold text-sm mt-2">Publish from admin panel to see content here.</p>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {drives.map((drive, idx) => (
                             <motion.div
                                 key={drive.id}
@@ -87,22 +84,21 @@ const Recruitment = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.05 }}
                                 onClick={() => setSelectedPoster(drive)}
-                                className="group relative bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                                className="group relative bg-white rounded-xl overflow-hidden border border-slate-200 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] transition-all duration-300 cursor-pointer"
                             >
-                                <div className="aspect-[3/4] relative overflow-hidden bg-slate-50 flex items-center justify-center">
+                                <div className="relative overflow-hidden bg-white flex items-center justify-center p-2">
                                     {drive.media_url ? (
                                         drive.media_type === 'video' ? (
-                                            <video src={drive.media_url} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                                            <video src={drive.media_url} autoPlay muted loop playsInline className="w-full h-auto object-contain rounded-lg" />
                                         ) : (
-                                            <img src={drive.media_url} alt="" className="w-full h-full object-contain" />
+                                            <img src={drive.media_url} alt="" className="w-full h-auto object-contain rounded-lg" />
                                         )
                                     ) : (
-                                        <ImageIcon size={48} className="opacity-10" />
+                                        <div className="py-20">
+                                            <ImageIcon size={48} className="opacity-10" />
+                                        </div>
                                     )}
-                                    <div className="absolute inset-0 bg-[#18357a]/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4 text-white">
-                                        <h3 className="font-black text-center px-6 uppercase tracking-tight">{drive.company_name}</h3>
-                                        <span className="text-[10px] font-black uppercase tracking-widest bg-yellow-400 text-[#18357a] px-3 py-1 rounded-full">View Details</span>
-                                    </div>
+
                                 </div>
                             </motion.div>
                         ))}
@@ -113,17 +109,20 @@ const Recruitment = () => {
             {/* Lightbox Pop-up */}
             <AnimatePresence>
                 {selectedPoster && (
-                    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-10">
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedPoster(null)} className="absolute inset-0 bg-[#18357a]/90 backdrop-blur-xl" />
-                        <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center">
-                            <button onClick={() => setSelectedPoster(null)} className="absolute top-0 right-0 md:-top-16 md:-right-16 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 transition-all z-50">
-                                <X size={32} />
-                            </button>
-                            <div className="w-full h-full rounded-2xl overflow-hidden bg-black/20 flex items-center justify-center">
+                    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-2 md:p-10">
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedPoster(null)} className="absolute inset-0 bg-black/80 backdrop-blur-md" />
+                        <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} className="relative max-w-4xl w-full h-full flex flex-col items-center justify-center pointer-events-none">
+                            <div className="relative pointer-events-auto bg-white rounded-xl p-1 shadow-2xl">
+                                <button 
+                                    onClick={() => setSelectedPoster(null)} 
+                                    className="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-red-500 hover:bg-red-600 text-white rounded-full p-2 shadow-xl transition-all z-[1001]"
+                                >
+                                    <X size={20} />
+                                </button>
                                 {selectedPoster.media_type === 'video' ? (
-                                    <video src={selectedPoster.media_url} controls autoPlay className="max-w-full max-h-full" />
+                                    <video src={selectedPoster.media_url} controls autoPlay className="max-w-full max-h-[85vh] rounded-lg" />
                                 ) : (
-                                    <img src={selectedPoster.media_url} alt="" className="max-w-full max-h-full object-contain" />
+                                    <img src={selectedPoster.media_url} alt="" className="max-w-full max-h-[85vh] object-contain rounded-lg" />
                                 )}
                             </div>
                         </motion.div>

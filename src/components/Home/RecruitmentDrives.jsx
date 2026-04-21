@@ -60,14 +60,14 @@ const RecruitmentDrives = () => {
     const displayDrives = drives.length > 0 ? drives : fallbackDrives
 
     return (
-        <section id="recruitment-drives" className="relative pb-24 lg:pb-32 pt-4 lg:pt-8 bg-white overflow-hidden font-sans">
+        <section id="recruitment-drives" className="relative pb-10 lg:pb-16 pt-2 lg:pt-4 bg-white overflow-hidden font-sans">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-[#18357a]/[0.02] rounded-full blur-[100px]" />
                 <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-[#ffc107]/[0.03] rounded-full blur-[100px]" />
             </div>
 
             <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -86,16 +86,6 @@ const RecruitmentDrives = () => {
                         </p>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <Link to="/recruitment" className="group flex items-center gap-3 px-8 py-4 bg-[#ffc107] text-[#18357a] rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] shadow-xl shadow-yellow-500/10 hover:bg-[#18357a] hover:text-white transition-all active:scale-95 no-underline">
-                            View All Drives
-                            <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                    </motion.div>
                 </div>
 
                 {loading ? (
@@ -140,6 +130,25 @@ const RecruitmentDrives = () => {
                             </motion.div>
                         ))}
                     </div>
+                )}
+
+                {/* View All Button - Centered at Bottom */}
+                {!loading && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                        className="text-center mt-12 md:mt-16"
+                    >
+                        <Link 
+                            to="/recruitment"
+                            className="group relative inline-flex items-center gap-6 px-10 py-5 bg-[#18357a] text-white border border-[#18357a] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
+                        >
+                            <span className="text-white">View All Drives</span>
+                            <ChevronRight size={18} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
+                        </Link>
+                    </motion.div>
                 )}
             </div>
 

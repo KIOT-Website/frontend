@@ -35,10 +35,10 @@ const facilities = [
 
 const CampusLife = () => {
   return (
-    <section className="relative py-12 lg:py-20 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
       
       {/* 🔷 SECTION HERO: "Life@KIOT" */}
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 mb-16 lg:mb-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 mb-10 lg:mb-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}

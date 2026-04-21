@@ -119,7 +119,7 @@ const AdmissionsPage = () => {
               </div>
             </div>
             
-            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-tight tracking-tighter mb-8 max-w-5xl uppercase">
+            <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-tight tracking-tighter mb-8 max-w-5xl">
               SHAPE YOUR FUTURE AT <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff3cc] to-[#ffc107] pr-4">KNOWLEDGE INSTITUTE OF TECHNOLOGY</span>
             </h1>
@@ -158,8 +158,8 @@ const AdmissionsPage = () => {
                  <div className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] font-bold text-[10px] uppercase tracking-[3px] mb-8 border border-[#18357a]/10">
                     Admission Overview
                  </div>
-                 <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight tracking-tighter mb-6 pl-10 border-l-8 border-[#ffc107]">
-                    YOUR FUTURE <span className="text-[#ffc107]">STARTS HERE</span>
+                 <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight tracking-tighter mb-6 pl-10 border-l-8 border-[#ffc107]">
+                    Your Future <span className="text-[#ffc107]">Starts Here</span>
                  </h2>
                  <p className="text-black font-semibold text-lg mb-8 leading-[1.8] max-w-xl text-justify">
                    At Knowledge Institute of Technology, we go beyond traditional learning to shape industry-ready professionals. Our admission process is designed to identify passionate students and provide them with the right opportunities.
@@ -187,8 +187,8 @@ const AdmissionsPage = () => {
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   className="relative group lg:mt-0 mt-6"
                >
-                  <div className="relative z-10 rounded-[4rem] bg-white p-5 shadow-[0_50px_100px_-20px_rgba(24,53,122,0.15)] border border-slate-100 overflow-hidden">
-                     <img src={campusImage} className="w-full h-auto rounded-[3rem] object-cover hover:scale-105 transition-transform duration-1000" alt="KIOT Campus" />
+                  <div className="relative z-10 rounded-[2rem] bg-white p-5 shadow-[0_50px_100px_-20px_rgba(24,53,122,0.15)] border border-slate-100 overflow-hidden">
+                     <img src={campusImage} className="w-full h-auto rounded-[1.5rem] object-cover hover:scale-105 transition-transform duration-1000" alt="KIOT Campus" />
                   </div>
                </motion.div>
             </div>
@@ -201,7 +201,7 @@ const AdmissionsPage = () => {
             <div className="text-center mb-10 relative">
                <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
                   <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">The KIOT Advantage</span>
-                  <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black uppercase leading-tight tracking-tighter">
+                  <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black leading-tight tracking-tighter">
                      Why Choose <span className="text-[#ffc107]">Knowledge Institute of Technology</span>
                   </h2>
                </motion.div>
@@ -223,7 +223,7 @@ const AdmissionsPage = () => {
                      <div className="w-14 h-14 rounded-2xl mb-8 flex items-center justify-center transition-transform group-hover:scale-110" style={{ backgroundColor: `${feature.color}15`, color: feature.color }}>
                         <feature.icon size={28} />
                      </div>
-                     <h4 className="text-[17px] font-bold text-[#18357a] uppercase mb-4 tracking-tight leading-tight group-hover:text-[#ffc107] transition-colors">{feature.title}</h4>
+                     <h4 className="text-[17px] font-bold text-[#18357a] mb-4 tracking-tight leading-tight group-hover:text-[#ffc107] transition-colors">{feature.title}</h4>
                      <p className="text-black text-[13px] leading-relaxed font-semibold">{feature.desc}</p>
                   </motion.div>
                ))}
@@ -235,7 +235,7 @@ const AdmissionsPage = () => {
       <section id="Programmes" className="py-10 bg-white">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
-               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black uppercase leading-tight tracking-tighter mb-8">Programmes <span className="text-[#ffc107]">Offered</span></h2>
+               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tighter mb-8">Programmes <span className="text-[#ffc107]">Offered</span></h2>
                <div className="flex flex-wrap items-center justify-center gap-4">
                   <button onClick={() => setActiveProgramTab('ug')} className={`px-10 py-4 rounded-xl font-bold text-[11px] uppercase tracking-[3px] transition-all shadow-xl ${activeProgramTab === 'ug' ? 'bg-[#ffc107] text-[#18357a]' : 'bg-white text-slate-400 border border-slate-200'}`}>Undergraduate</button>
                   <button onClick={() => setActiveProgramTab('pg')} className={`px-10 py-4 rounded-xl font-bold text-[11px] uppercase tracking-[3px] transition-all shadow-xl ${activeProgramTab === 'pg' ? 'bg-[#ffc107] text-[#18357a]' : 'bg-white text-slate-400 border border-slate-200'}`}>Postgraduate</button>
@@ -323,7 +323,7 @@ const AdmissionsPage = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12 text-center">
                <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">📘 Admission Norms</span>
-               <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black uppercase leading-tight tracking-tighter">Eligibility <span className="text-[#ffc107]">Criteria</span></h2>
+               <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black leading-tight tracking-tighter">Eligibility <span className="text-[#ffc107]">Criteria</span></h2>
             </motion.div>
 
             {/* 1. Cut-off Calculation & Interactive Calculator */}
@@ -336,7 +336,7 @@ const AdmissionsPage = () => {
                <div className="grid lg:grid-cols-[1fr_400px]">
                   {/* Left: Calculation Norms */}
                   <div className="p-8 md:p-12 border-r border-slate-100">
-                     <h3 className="text-2xl font-bold text-[#18357a] uppercase mb-8 border-l-4 border-[#ffc107] pl-6 tracking-tight">Cut-off Calculation <span className="text-slate-400 font-medium text-sm ml-4">(State Board / CBSE)</span></h3>
+                     <h3 className="text-2xl font-bold text-[#18357a] mb-8 border-l-4 border-[#ffc107] pl-6 tracking-tight">Cut-off Calculation <span className="text-slate-400 font-medium text-sm ml-4">(State Board / CBSE)</span></h3>
                      <div className="space-y-6">
                         {[
                            { subject: "Mathematics (M)", formula: "M1 = Maths Reduced to 100", color: "#18357a", icon: "×" },
@@ -522,7 +522,7 @@ const AdmissionsPage = () => {
                 className="text-center mb-10"
              >
                 <span className="text-[#18357a] font-bold uppercase text-[10px] tracking-[4px] mb-6 block">📄 Checklist</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight tracking-tighter mb-8">Required <span className="text-[#ffc107]">Documents</span></h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight tracking-tighter mb-8">Required <span className="text-[#ffc107]">Documents</span></h2>
                 <p className="text-black font-semibold text-sm leading-relaxed max-w-2xl mx-auto">Ensure you have scanned copies of the following documents ready before starting your registration for a smooth application process.</p>
              </motion.div>
 

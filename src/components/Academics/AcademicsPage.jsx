@@ -66,7 +66,7 @@ const ugPrograms = [
   {
     id: 'btech-aids',
     name: 'B.Tech Artificial Intelligence and Data Science',
-    short: 'AI & DS',
+    short: 'AI&DS',
     duration: '4 Years',
     intake: 120,
     category: 'Technology',
@@ -105,7 +105,7 @@ const ugPrograms = [
   {
     id: 'be-ecm',
     name: 'B.E Electronics & Computer Engineering',
-    short: 'ECM',
+    short: 'ECX',
     duration: '4 Years',
     intake: 60,
     category: 'Engineering',
@@ -172,11 +172,11 @@ const pgPrograms = [
   },
   {
     id: 'me-ise',
-    name: 'M.E Industrial Safety Engineering',
-    short: 'M.E ISE',
+    name: 'M.E. Industrial Safety Engineering',
+    short: 'M.E. ISE',
     duration: '2 Years',
     intake: 24,
-    category: 'M.E Engineering',
+    category: 'M.E. Engineering',
     icon: ShieldCheck,
     color: '#224292',
     accent: '#ffc107',
@@ -185,11 +185,11 @@ const pgPrograms = [
   },
   {
     id: 'me-ae',
-    name: 'M.E Automotive Electronics',
-    short: 'M.E AE',
+    name: 'M.E. Automotive Electronics',
+    short: 'M.E. AE',
     duration: '2 Years',
     intake: 18,
-    category: 'M.E Engineering',
+    category: 'M.E. Engineering',
     icon: Car,
     color: '#224292',
     accent: '#ffc107',
@@ -198,11 +198,11 @@ const pgPrograms = [
   },
   {
     id: 'me-ped',
-    name: 'M.E Power Electronics and Drives',
-    short: 'M.E PED',
+    name: 'M.E. Power Electronics and Drives',
+    short: 'M.E. PED',
     duration: '2 Years',
     intake: 18,
-    category: 'M.E Engineering',
+    category: 'M.E. Engineering',
     icon: Zap,
     color: '#224292',
     accent: '#ffc107',
@@ -211,11 +211,11 @@ const pgPrograms = [
   },
   {
     id: 'me-se',
-    name: 'M.E Software Engineering',
-    short: 'M.E SE',
+    name: 'M.E. Software Engineering',
+    short: 'M.E. SE',
     duration: '2 Years',
     intake: 18,
-    category: 'M.E Engineering',
+    category: 'M.E. Engineering',
     icon: Cpu,
     color: '#224292',
     accent: '#ffc107',
@@ -271,7 +271,7 @@ export default function AcademicsPage() {
   const currentPrograms = programTab === 'UG Programs' ? ugPrograms : pgPrograms
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC]" style={{ fontFamily: "'Inter', 'Outfit', sans-serif" }}>
+    <div className="min-h-screen bg-[#F8FAFC] font-graphik">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0A1A3F] py-10 md:py-14">
         {/* Background Image with Overlay */}
@@ -327,7 +327,7 @@ export default function AcademicsPage() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => navigate('/admissions')}
-                className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#ffc107] text-[#18357a] font-black text-sm uppercase tracking-widest hover:bg-[#ffca2c] transition-all shadow-[0_10px_40px_-10px_rgba(255,193,7,0.4)]"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#ffc107] text-black font-medium font-graphik text-sm uppercase tracking-widest hover:bg-[#ffca2c] transition-all shadow-[0_10px_40px_-10px_rgba(255,193,7,0.4)]"
               >
                 Apply Now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
@@ -411,11 +411,11 @@ export default function AcademicsPage() {
                             <div className="w-10 h-10 rounded-xl bg-[#18357a]/5 flex items-center justify-center group-hover:bg-[#18357a] transition-all duration-300 shrink-0">
                               <prog.icon size={18} className="text-[#18357a] group-hover:text-white transition-colors" />
                             </div>
-                            <div>
-                               <h3 className="text-[13px] sm:text-[14px] font-black text-[#18357a] leading-tight group-hover:text-[#18357a] transition-colors mb-0.5">
+                             <div>
+                              <h3 className="text-[#18357a] group-hover:text-[#ffc107] text-[13px] sm:text-[14px] font-medium font-graphik leading-tight transition-colors duration-300">
                                  {prog.name}
                                </h3>
-                               <p className="text-[10px] font-bold text-[#ffc107] tracking-wider">{prog.short}</p>
+                               <p className="text-[#ffc107] group-hover:text-[#18357a] text-[10px] font-semibold font-graphik tracking-widest tracking-wider transition-colors duration-300">{prog.short}</p>
                             </div>
                           </div>
                         </td>
@@ -431,8 +431,8 @@ export default function AcademicsPage() {
                         <td className="px-5 sm:px-8 py-4 text-center">
                           {prog.id !== 'phd' && (
                             <>
-                              <span className="text-[#18357a] font-black text-[13px]">{prog.intake}</span>
-                              <span className="ml-1 text-[9px] font-bold text-[#A9B1C3] uppercase tracking-widest hidden lg:inline font-graphik">Seats</span>
+                               <span className="text-black font-medium font-graphik text-sm text-[13px]">{prog.intake}</span>
+                               <span className="ml-1 text-[#18357a] font-medium font-graphik text-[10px] tracking-wide uppercase tracking-widest hidden lg:inline font-graphik">Seats</span>
                             </>
                           )}
                         </td>
@@ -526,7 +526,7 @@ export default function AcademicsPage() {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-[#F8FAFC] border-b border-[#E5EDF8]">
-                      <th className="text-left p-4 text-[#64779F] font-bold text-[13px] uppercase tracking-wide">Feature</th>
+                      <th className="text-left p-4 text-[#18357a] font-medium font-graphik text-[10px] tracking-wide uppercase tracking-wide">Feature</th>
                       {compareList.map(p => (
                         <th key={p.id} className="p-4 text-center">
                           <div className="font-extrabold text-[#18357a] text-[14px]">{p.short}</div>

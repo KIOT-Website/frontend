@@ -79,12 +79,12 @@ const Events = ({ onEventsClick }) => {
   }
 
   return (
-    <section id="events" className="relative py-16 lg:py-24 bg-[#FCFDFD] overflow-hidden">
+    <section id="events" className="relative py-10 lg:py-16 bg-[#FCFDFD] overflow-hidden">
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Centered Header Section */}
-        <div className="text-center mb-16 lg:mb-20 px-4">
+        <div className="text-center mb-10 lg:mb-12 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

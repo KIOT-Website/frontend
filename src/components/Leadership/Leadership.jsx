@@ -36,8 +36,8 @@ const leaders = [
   {
     id: 3,
     name: "Dr. K. Visagavel",
-    role: "Principal",
-    designation: "Principal, KIOT (B.E., M.E., Ph.D., FIE.)",
+    role: "Trustee",
+    designation: "Trustee, KIOT (B.E., M.E., Ph.D., FIE.)",
     image: principalImg,
     fullMessage: [
       "Dear Students, Welcome to the Knowledge Institute of Technology, Salem!",

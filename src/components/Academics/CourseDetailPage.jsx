@@ -75,7 +75,7 @@ const defaultCourse = (id) => ({
   eligibility: ['10+2 with PCM / relevant subjects', 'Minimum 50% aggregate', 'TNEA rank required'],
 })
 
-const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Placements', 'Achievements', 'Admissions']
+const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Placements', 'Achievements']
 
 // ─── Accordion Item ──────────────────────────────────────────────────────────
 function AccordionItem({ title, children, defaultOpen = false }) {
@@ -317,7 +317,7 @@ export default function CourseDetailPage() {
                          Program Roadmap
                       </div>
 
-                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#18357a] mb-8 flex items-center gap-3 uppercase tracking-tighter">
+                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#18357a] mb-8 flex items-center gap-3 tracking-tighter">
                         About the Program
                       </h2>
 
@@ -325,13 +325,13 @@ export default function CourseDetailPage() {
                       {Array.isArray(course.overview) ? (
                         <div className="space-y-6">
                           {course.overview.map((para, idx) => (
-                           <p key={idx} className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify">
+                           <p key={idx} className="text-black leading-relaxed text-[16px] font-medium font-graphik text-justify">
                               {para}
                             </p>
                           ))}
                         </div>
                       ) : (
-                        <p className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify">
+                        <p className="text-black leading-relaxed text-[16px] font-medium font-graphik text-justify">
                           {course.overview}
                         </p>
                       )}
@@ -366,16 +366,6 @@ export default function CourseDetailPage() {
                 </div>
 
                 <div className="space-y-6 flex flex-col">
-                  {/* Department Visual Header */}
-                  {course.bannerImage && (
-                     <div className="w-full h-48 rounded-[2.5rem] overflow-hidden border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 transition-transform duration-700 hover:scale-[1.02]">
-                        <img 
-                          src={course.bannerImage} 
-                          alt="Department Facility" 
-                          className="w-full h-full object-cover"
-                        />
-                     </div>
-                  )}
 
                   {/* Modern Quick Info Card */}
                   <div className="bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2.5rem] p-8 text-white shadow-2xl shadow-[#18357a]/30 relative overflow-hidden">
@@ -409,17 +399,6 @@ export default function CourseDetailPage() {
                       Enroll Now <ArrowRight size={18} />
                     </button>
 
-                    {/* Clean Department Visual Highlight */}
-                    <div className="mt-10 pt-4">
-                       <div className="relative group w-full h-[320px] md:h-[400px] rounded-[2.5rem] overflow-hidden border border-[#DEE7F4] shadow-2xl shadow-blue-900/10 transition-transform duration-700 hover:scale-[1.02]">
-                          <img 
-                            src={cseImage} 
-                            alt="Campus Life" 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 via-transparent to-transparent" />
-                        </div>
-                     </div>
                   </div>
                 </div>
               </div>
@@ -430,10 +409,9 @@ export default function CourseDetailPage() {
                 <>
                   <div className="space-y-16 py-12">
                     <div className="text-center mb-12">
-                       <h2 className="text-3xl md:text-4xl font-bold font-graphik uppercase tracking-tight leading-tight">
+                       <h2 className="text-3xl md:text-4xl font-bold font-graphik tracking-tight leading-tight">
                          <span className="text-[#18357a]">Strategic</span> <span className="text-[#ffc107]">Outlook</span>
                        </h2>
-                       <p className="text-[#64779F] text-xs font-bold font-graphik uppercase tracking-[0.2em] mt-3">Our Core Educational Philosophy</p>
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -459,7 +437,7 @@ export default function CourseDetailPage() {
 
                                 <div className="space-y-6">
                                     <div className="w-12 h-1 bg-[#ffc107] rounded-full group-hover:w-32 transition-all duration-700" />
-                                    <p className="text-white/90 leading-relaxed text-[16px] md:text-[17px] font-normal font-graphik italic tracking-tight border-l-4 border-[#ffc107]/20 pl-6">
+                                    <p className="text-white/90 leading-relaxed text-[16px] md:text-[17px] font-medium font-graphik italic tracking-tight border-l-4 border-[#ffc107]/20 pl-6">
                                         "{course.vision || 'To provide a world-class academic environment for creating global leaders.'}"
                                     </p>
                                 </div>
@@ -489,7 +467,7 @@ export default function CourseDetailPage() {
 
                                 <div className="space-y-6">
                                     <div className="w-12 h-1 bg-[#18357a] rounded-full group-hover:w-32 transition-all duration-700" />
-                                    <p className="text-[#333333] leading-relaxed text-[16px] md:text-[17px] font-normal font-graphik tracking-tight text-justify border-l-4 border-slate-100 pl-6">
+                                    <p className="text-[#333333] leading-relaxed text-[16px] md:text-[17px] font-medium font-graphik tracking-tight text-justify border-l-4 border-slate-100 pl-6 whitespace-pre-line">
                                         {course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.'}
                                     </p>
                                 </div>
@@ -544,11 +522,10 @@ export default function CourseDetailPage() {
                                   <h3 className="text-[13px] font-bold font-graphik tracking-[0.3em] text-[#18357a] uppercase">
                                     {activeObj.title}
                                   </h3>
-                                  <p className="text-[#A9B1C3] text-[9px] font-bold font-graphik uppercase tracking-[0.2em] mt-1">Institutional Standard Index</p>
                                </div>
                             </div>
 
-                            <div className="space-y-4" style={{ fontFamily: "Arial, sans-serif" }}>
+                            <div className="space-y-4 font-graphik">
                                 {(() => {
                                   const text = activeObj.content || 'Data current being optimized for digital view.';
                                   
@@ -562,7 +539,7 @@ export default function CourseDetailPage() {
                                     
                                     if (isIntro) {
                                       return (
-                                        <p key={idx} className="text-[#333333] font-normal font-graphik leading-relaxed text-[15px] sm:text-[16px] mb-6 border-b border-slate-100 pb-4">
+                                        <p key={idx} className="text-[#333333] font-medium font-graphik leading-relaxed text-[15px] sm:text-[16px] mb-6 border-b border-slate-100 pb-4">
                                           {point}
                                         </p>
                                       );
@@ -571,7 +548,7 @@ export default function CourseDetailPage() {
                                     return (
                                       <div key={idx} className="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all group/point">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-2.5 shrink-0 group-hover/point:scale-125 transition-transform" />
-                                        <span className="text-[#333333] font-normal font-graphik leading-[1.8] text-[15px] sm:text-[16px]">
+                                        <span className="text-[#333333] font-medium font-graphik leading-[1.8] text-[15px] sm:text-[16px]">
                                           {point}
                                         </span>
                                       </div>
@@ -855,7 +832,7 @@ export default function CourseDetailPage() {
                     <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#18357a] uppercase tracking-tight mb-2">
                        Intellectual <span className="text-[#ffc107]">Property</span>
                     </h2>
-                    <p className="text-[#64779F] font-bold font-graphik text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
+                    <p className="text-black font-medium font-graphik text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#18357a]/5 rounded-xl border border-[#18357a]/10 text-[#18357a] text-[10px] font-bold font-graphik uppercase tracking-widest">
                      <ShieldCheck size={14} /> Registered Assets
@@ -1028,7 +1005,7 @@ export default function CourseDetailPage() {
               className="bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
               <div className="overflow-y-auto scrollbar-hide flex-1 pb-10">
-                <div className="bg-[#18357a] p-8 md:p-12 relative overflow-hidden">
+                <div className="bg-[#18357a] p-6 md:p-8 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-20 -mt-20 blur-3xl" />
                   
                   {/* Top Right Close Button */}
@@ -1040,15 +1017,15 @@ export default function CourseDetailPage() {
                   </button>
 
                   <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden">
+                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden">
                       {selectedFaculty.image ? (
                         <img src={selectedFaculty.image} alt={selectedFaculty.name} className="w-full h-full object-cover" />
                       ) : (
-                        <GraduationCap size={52} className="text-[#ffc107]" />
+                        <GraduationCap size={64} className="text-[#ffc107]" />
                       )}
                     </div>
                     <div className="text-center md:text-left">
-                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-white mb-2 leading-tight uppercase tracking-tight">
+                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-white mb-2 leading-tight tracking-tight">
                         {selectedFaculty.name}
                       </h2>
                       <p className="text-[#ffc107] font-bold font-graphik text-lg md:text-xl">{selectedFaculty.designation}</p>
@@ -1061,29 +1038,29 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {selectedFaculty.qualification && (
                         <div>
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Academic Credentials</p>
-                          <p className="text-[#18357a] font-bold font-graphik text-[15px]">{selectedFaculty.qualification}</p>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Academic Credentials</p>
+                          <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.qualification}</p>
                         </div>
                       )}
                       {selectedFaculty.specialization && selectedFaculty.specialization !== 'N/A' && (
                         <div>
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Area of Specialization</p>
-                          <p className="text-[#18357a] font-bold font-graphik text-[15px]">{selectedFaculty.specialization}</p>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Area of Specialization</p>
+                          <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.specialization}</p>
                         </div>
                       )}
                       {selectedFaculty.experience && (
                         <div>
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Work Experience</p>
-                          <div className="flex items-center gap-2 text-[#18357a]">
-                            <Clock size={16} className="text-[#ffc107]" />
-                            <span className="font-bold font-graphik text-[15px]">{selectedFaculty.experience}</span>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Work Experience</p>
+                          <div className="flex items-center gap-2 text-black">
+                            <Clock size={16} className="text-[#18357a]" />
+                            <span className="font-medium font-graphik text-[15px]">{selectedFaculty.experience}</span>
                           </div>
                         </div>
                       )}
                       {selectedFaculty.joiningDate && (
                         <div>
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Date of Joining</p>
-                          <p className="text-[#18357a] font-bold font-graphik text-[15px]">{selectedFaculty.joiningDate}</p>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Date of Joining</p>
+                          <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.joiningDate}</p>
                         </div>
                       )}
                     </div>
@@ -1091,17 +1068,17 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {selectedFaculty.email && selectedFaculty.email !== 'N/A' && (
                         <div>
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">E-Mail Address</p>
-                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-[#18357a] font-bold font-graphik text-[15px] hover:text-[#ffc107] transition-colors">
-                            <Mail size={16} className="text-[#ffc107]" />
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">E-Mail Address</p>
+                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[15px] hover:text-[#18357a] transition-colors">
+                            <Mail size={16} className="text-[#18357a]" />
                             {selectedFaculty.email}
                           </a>
                         </div>
                       )}
                       {selectedFaculty.association && (
                         <div>
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-2">Nature of Association</p>
-                          <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-bold font-graphik uppercase tracking-widest">
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Nature of Association</p>
+                          <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-medium font-graphik uppercase tracking-widest">
                             {selectedFaculty.association}
                           </span>
                         </div>
@@ -1123,9 +1100,9 @@ export default function CourseDetailPage() {
 
                   {selectedFaculty.publications && (
                     <div className="mt-8 pt-8 border-t border-[#E5EDF8]">
-                      <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#A9B1C3] mb-4">Research & Publications</p>
+                      <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-4">Research & Publications</p>
                       <div className="p-5 bg-[#18357a]/5 border border-[#18357a]/10 rounded-2xl">
-                        <p className="text-[#18357a] font-bold font-graphik text-[14px] leading-relaxed italic">
+                        <p className="text-black font-medium font-graphik text-[14px] leading-relaxed italic">
                           {selectedFaculty.publications}
                         </p>
                       </div>
@@ -1208,7 +1185,7 @@ function AchievementSection({ courseId, courseName }) {
             </div>
             <div>
               <h3 className="text-4xl font-bold font-graphik text-[#18357a] uppercase tracking-tight leading-none mb-1">Department Honors</h3>
-              <p className="text-[#64779F] font-bold font-graphik text-sm tracking-wide">Celebrating academic and professional milestones</p>
+              <p className="text-black font-medium font-graphik text-sm tracking-wide">Celebrating academic and professional milestones</p>
             </div>
           </div>
           <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik uppercase tracking-[0.2em]">Department of {courseName.split('Engineering')[0]}</p>
@@ -1366,7 +1343,7 @@ function CurriculumSection({ courseId, courseName }) {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#18357a] uppercase tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
            </div>
-           <p className="text-[#64779F] font-bold font-graphik text-sm tracking-wide ml-16">Department of {courseName.split('Engineering')[0]}</p>
+           <p className="text-black font-medium font-graphik text-sm tracking-wide ml-16">Department of {courseName.split('Engineering')[0]}</p>
         </div>
 
         <div className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200 self-start md:self-center">

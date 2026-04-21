@@ -11,8 +11,8 @@ const achievements = [
     id: 1,
     title: "StartupTN – Preincubation Centre",
     desc: "KIOT received sanction letter to establish the StartupTN – Preincubation Centre with Rs.7.50 Lakh Grant.",
-    name: "Startup Recognition",
-    dept: "Startup Hub",
+    name: "",
+    dept: "",
     image: tnStartupImg,
     tag: "Rs.7.50 Lakh Grant"
   },
@@ -20,182 +20,89 @@ const achievements = [
     id: 2,
     title: "SAE Best Host Institution Award",
     desc: "Received by Dr.K.Visagavel Principal, KIOT, Chairman of SAEISS Salem division.",
-    name: "Dr.K.Visagavel",
-    dept: "Principal, KIOT",
+    name: "",
+    dept: "",
     image: saeImg,
     tag: "SAE Global Award"
   }
 ]
 
 const Achievers = () => {
-  const [current, setCurrent] = useState(0)
-  const [isAutoPlay, setIsAutoPlay] = useState(true)
-
-  useEffect(() => {
-    if (!isAutoPlay) return
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % achievements.length)
-    }, 6000)
-    return () => clearInterval(interval)
-  }, [isAutoPlay])
-
-  const next = () => {
-    setIsAutoPlay(false)
-    setCurrent((prev) => (prev + 1) % achievements.length)
-  }
-
-  const prev = () => {
-    setIsAutoPlay(false)
-    setCurrent((prev) => (prev - 1 + achievements.length) % achievements.length)
-  }
-
   return (
-    <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative py-8 lg:py-12 bg-[#F8FAFC] overflow-hidden">
       
-      {/* Background Decorative Rings */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] border border-[#18357a]/5 rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-[#18357a]/5 rounded-full pointer-events-none" />
+      {/* Background Subtle Gradient */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/[0.03] rounded-full blur-[100px] -mr-64 -mt-64" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#18357a]/[0.03] rounded-full blur-[100px] -ml-64 -mb-64" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 md:px-8">
         
-        {/* Header Section */}
-        <div className="text-center mb-10 lg:mb-16">
+        {/* Header Section - Refined Kongu Style */}
+        <div className="text-center mb-8">
            <motion.div
-             initial={{ opacity: 0, scale: 0.9 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
+             initial={{ opacity: 0, y: 10 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             className="inline-flex items-center gap-2 mb-4 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
            >
              <Sparkles size={14} className="text-[#ffc107]" />
-             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Hall of Achievers</span>
+             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Institutional Excellence</span>
            </motion.div>
-           <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik">
+           <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-graphik tracking-tight leading-tight">
              Achievements That <span className="text-[#ffc107]">Inspire</span>
            </h2>
-           <p className="mt-6 text-black max-w-2xl mx-auto text-base lg:text-lg font-medium font-sans italic opacity-80">
-             Celebrating the icons of tomorrow who are making their mark today.
-           </p>
         </div>
 
-        {/* SPOTLIGHT CAROUSEL WRAPPER */}
-        <div className="relative max-w-5xl mx-auto">
-          
-           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-16 items-center bg-white rounded-[32px] p-6 lg:p-10 shadow-[0_30px_70px_rgba(34,66,146,0.1)] border border-[#D5E2F4]/40 overflow-hidden relative">
+        {/* STATIC 2-COLUMN GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {achievements.map((achievement, idx) => (
+            <motion.div
+              key={achievement.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: idx * 0.2 }}
+              className="group relative h-[400px] lg:h-[500px] rounded-[1.2rem] overflow-hidden shadow-2xl border-4 border-[#18357a]/20 hover:border-[#ffc107]/50 transition-all duration-500"
+            >
+              {/* Achievement Image */}
+              <img 
+                src={achievement.image} 
+                alt={achievement.title}
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              />
               
-              {/* Achievement Badge - Floating */}
-              <div className="absolute top-8 right-8 z-20 hidden lg:block">
-                 <div className="h-14 w-14 rounded-full bg-[#ffc107] flex items-center justify-center text-[#18357a] rotate-12 shadow-md">
-                    <Medal size={28} strokeWidth={2.5} />
-                 </div>
+              {/* Gradient Overlay - Subtle Bottom Fade */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-500" />
+              
+              {/* Badge */}
+              <div className="absolute top-8 left-8 z-20">
+                <div className="flex items-center gap-3 px-4 py-2 bg-[#ffc107] text-[#18357a] rounded-full shadow-lg">
+                  <Medal size={16} strokeWidth={3} />
+                  <span className="text-[10px] font-black uppercase tracking-widest">{achievement.tag}</span>
+                </div>
               </div>
 
-              {/* IMAGE PORTION */}
-              <div className="relative aspect-[4/5] lg:aspect-square overflow-hidden rounded-[24px] group">
-                 <AnimatePresence mode="wait">
-                    <motion.img
-                      key={achievements[current].id}
-                      src={achievements[current].image}
-                      initial={{ opacity: 0, scale: 1.1, x: -20 }}
-                      animate={{ opacity: 1, scale: 1, x: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, x: 20 }}
-                      transition={{ duration: 0.8, ease: "circOut" }}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                 </AnimatePresence>
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/80 via-[#18357a]/20 to-transparent" />
-                 
-                 {/* Student Label on Image */}
-                 <div className="absolute bottom-8 left-8 right-8 z-10">
-                    <motion.div
-                      key={achievements[current].name}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="inline-block px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 mb-3"
-                    >
-                       <span className="text-[#ffc107] text-[10px] lg:text-xs font-black uppercase tracking-widest">{achievements[current].tag}</span>
-                    </motion.div>
-                    <motion.p
-                      key={achievements[current].id + 'name'}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      className="text-white text-xl lg:text-2xl font-black font-display"
-                    >
-                       {achievements[current].name}
-                    </motion.p>
-                 </div>
-              </div>
-
-              {/* CONTENT PORTION */}
-              <div className="flex flex-col justify-center">
-                 <Quote className="text-[#ffc107]/20 h-12 w-12 mb-5" strokeWidth={3} />
-                 
-                 <AnimatePresence mode="wait">
-                    <motion.div
-                       key={achievements[current].id}
-                       initial={{ opacity: 0, y: 20 }}
-                       animate={{ opacity: 1, y: 0 }}
-                       exit={{ opacity: 0, y: -20 }}
-                       className="space-y-6"
-                    >
-                       <div>
-                          <h3 className="text-xl lg:text-3xl font-semibold text-[#18357a] font-graphik leading-[1.2]">
-                             {achievements[current].title}
-                          </h3>
-                       </div>
-
-                       <p className="text-xl text-[#64779F] font-bold leading-relaxed pr-6">
-                         "{achievements[current].desc}"
-                       </p>
-
-                       <div className="pt-6 border-t border-[#D5E2F4]">
-                          <p className="text-sm font-black text-[#18357a] uppercase tracking-[0.2em]">
-                             {achievements[current].dept}
-                          </p>
-                          <p className="text-xs font-medium text-[#64779F] mt-1">Knowledge Institute of Technology</p>
-                       </div>
-                    </motion.div>
-                 </AnimatePresence>
-
-                 {/* CONTROLS */}
-                 <div className="flex items-center gap-6 mt-12 lg:mt-16">
-                    <div className="flex gap-3">
-                       <button 
-                         onClick={prev}
-                         className="h-14 w-14 rounded-full border-2 border-[#D5E2F4] flex items-center justify-center text-[#18357a] hover:bg-[#18357a] hover:text-white hover:border-[#18357a] transition-all"
-                       >
-                          <ArrowLeft size={24} />
-                       </button>
-                       <button 
-                         onClick={next}
-                         className="h-14 w-14 rounded-full border-2 border-[#18357a] bg-[#18357a] flex items-center justify-center text-white hover:bg-[#ffc107] hover:text-[#18357a] hover:border-[#ffc107] transition-all"
-                       >
-                          <ArrowRight size={24} />
-                       </button>
+              {/* Content Overlay */}
+              <div className="absolute bottom-6 left-10 right-10 z-20">
+                <Quote className="text-[#ffc107]/40 h-6 w-6 mb-3 rotate-180" strokeWidth={3} />
+                <h3 className="text-xl lg:text-2xl font-black text-white mb-2 leading-tight font-graphik">
+                  {achievement.title}
+                </h3>
+                <p className="text-white/80 text-[12px] md:text-sm font-bold leading-relaxed mb-4 max-w-md">
+                  {achievement.desc}
+                </p>
+                {achievement.name && (
+                  <div className="flex items-center gap-4">
+                    <div className="h-[2px] w-12 bg-[#ffc107]" />
+                    <div>
+                      <p className="text-white text-base font-black uppercase tracking-widest">{achievement.name}</p>
+                      <p className="text-[#ffc107] text-[10px] font-bold uppercase tracking-widest">{achievement.dept}</p>
                     </div>
-
-                    {/* Progress Dots */}
-                    <div className="flex gap-2">
-                       {achievements.map((_, i) => (
-                         <div 
-                           key={i} 
-                           className={`h-2 transition-all rounded-full ${current === i ? 'w-8 bg-[#ffc107]' : 'w-2 bg-[#D5E2F4]'}`} 
-                         />
-                       ))}
-                    </div>
-                 </div>
+                  </div>
+                )}
               </div>
-
-           </div>
-
-        </div>
-
-        {/* FOOTER CTA */}
-        <div className="mt-20 text-center">
-           <button className="group relative px-10 py-5 bg-[#18357a] text-white rounded-full font-black uppercase tracking-[0.2em] text-xs overflow-hidden shadow-2xl hover:bg-[#ffc107] hover:text-[#18357a] transition-colors">
-              <span className="relative z-10 flex items-center gap-3">
-                 Explore Hall of Fame
-                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </span>
-           </button>
+            </motion.div>
+          ))}
         </div>
 
       </div>

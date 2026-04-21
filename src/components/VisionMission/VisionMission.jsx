@@ -90,7 +90,7 @@ const VisionMission = () => {
   ]
 
   return (
-    <div id="values" className="relative bg-[#FAFBFF] pt-8 pb-12 border-t border-slate-100">
+    <div id="values" className="relative bg-[#FAFBFF] pt-4 pb-8 border-t border-slate-100">
       
       {/* Background Graphic Decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />
@@ -98,29 +98,22 @@ const VisionMission = () => {
 
       <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto">
         
-        {/* Header Section - Refined to match About Us style */}
-        <div className="text-center mb-10 lg:mb-12 px-4 overflow-hidden">
+        {/* Header Section - Sub Heading Style */}
+        <div className="text-center mb-6 lg:mb-8 px-4 overflow-hidden">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center"
           >
-            <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
-               <span className="relative flex h-3.5 w-3.5">
-                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
-                 <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
-               </span>
-               <span className="text-sm font-graphik font-bold text-[#18357a] uppercase tracking-[0.15em]">Institutional Philosophy</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-graphik font-bold text-[#18357a] mb-8 tracking-tight leading-[1.1] break-words">
-              Our Institutional <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] inline-block">Values</span>
-            </h1>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] mb-4 tracking-tight leading-tight break-words uppercase">
+              Our Institutional <span className="text-[#ffc107]">Values</span>
+            </h2>
           </motion.div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[#333333] text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28.8px] font-normal max-w-3xl mx-auto"
+            className="text-[#333333] text-[14px] sm:text-[15px] leading-relaxed font-normal max-w-2xl mx-auto"
           >
             The core principles and aspirations that drive our commitment to academic excellence, innovative research, and student success.
           </motion.p>
@@ -156,11 +149,11 @@ const VisionMission = () => {
                          {String(i + 1).padStart(2, '0')}
                        </div>
 
-                       <h3 className="text-[#18357a] font-graphik font-bold text-[12px] sm:text-[14px] tracking-wide mb-3 leading-tight px-2">
+                       <h3 className="text-[#18357a] font-graphik font-bold text-[14px] sm:text-[16px] tracking-wide mb-3 leading-tight px-2">
                          {val.title}
                        </h3>
                        
-                       <p className="text-[#64779F] text-[10px] sm:text-[11px] font-medium leading-relaxed mb-4">
+                       <p className="text-[#64779F] text-[11px] sm:text-[12px] font-medium leading-relaxed mb-4">
                          {val.content.length > 80 ? val.content.substring(0, 80) + "..." : val.content}
                        </p>
 

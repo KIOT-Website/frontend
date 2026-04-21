@@ -75,6 +75,9 @@ const EnergyPage = lazy(() => import('./pages/EnergyPage'))
 const InternetPage = lazy(() => import('./pages/InternetPage'))
 const StudentLifePage = lazy(() => import('./pages/StudentLifePage'))
 const AicteIdeaLabPage = lazy(() => import('./pages/AicteIdeaLabPage'))
+const IStartPage = lazy(() => import('./pages/IStartPage'))
+const BlogsPage = lazy(() => import('./pages/BlogsPage'))
+const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
 
 
 
@@ -220,7 +223,9 @@ function App() {
                    <Route path="/research-innovation/research" element={<ResearchPage />} />
                    <Route path="/research" element={<ResearchPage />} />
                    <Route path="/research-innovation/aicte-idea-lab" element={<AicteIdeaLabPage />} />
-                    <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
+                   <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
+                   <Route path="/research-innovation/istart" element={<IStartPage />} />
+                   <Route path="/istart" element={<IStartPage />} />
 
                    <Route path="/research/:deptName" element={<ResearchResourcesPage />} />
                    <Route path="/research/:deptName/phd-supervisors" element={<PhdSupervisorsPage />} />
@@ -240,7 +245,7 @@ function App() {
                     <Route path="/resources/student-life" element={<StudentLifePage />} />
                     <Route path="/resources/alumni" element={<UnderConstruction />} />
                     <Route path="/resources/news-events" element={<UnderConstruction />} />
-                    <Route path="/resources/blogs" element={<UnderConstruction />} />
+                    <Route path="/resources/blogs" element={<BlogsPage />} />
                     <Route path="/resources" element={<UnderConstruction />} />
                   <Route path="/autonomous" element={<AutonomousPage />} />
                   <Route path="/exams" element={<COEPage />} />
@@ -268,7 +273,8 @@ function App() {
                   <Route path="/student-life" element={<StudentLifePage />} />
                   <Route path="/alumni" element={<UnderConstruction />} />
                   <Route path="/news-events" element={<UnderConstruction />} />
-                  <Route path="/blogs" element={<UnderConstruction />} />
+                  <Route path="/blogs" element={<BlogsPage />} />
+                  <Route path="/blog/:slug" element={<BlogDetailPage />} />
 
                   <Route path="/events" element={<EventsPage />} />
                   <Route path="/events/:eventSlug" element={<EventDetailPage />} />

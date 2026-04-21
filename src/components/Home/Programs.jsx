@@ -25,8 +25,8 @@ const programsData = {
       { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
       { id: 'btech-it', name: "Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
       { id: 'btech-csbs', name: "Computer Science and Business Systems", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
-      { id: 'btech-aids', name: "Artificial Intelligence and Data Science", icon: Brain, code: "AIDS", duration: "4 Years", phd: true },
-      { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECC", duration: "4 Years", phd: true }
+      { id: 'btech-aids', name: "Artificial Intelligence and Data Science", icon: Brain, code: "AI&DS", duration: "4 Years", phd: true },
+      { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX", duration: "4 Years", phd: true }
     ]
   },
   PG: {
@@ -39,7 +39,7 @@ const programsData = {
       { id: 'me-ise', name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
       { id: 'me-ae', name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
       { id: 'me-ped', name: "Power Electronics and Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
-      { id: 'me-se', name: "Software Engineering", icon: FileCode2, code: "MSE", duration: "2 Years", phd: true },
+      { id: 'me-se', name: "Software Engineering", icon: FileCode2, code: "SE", duration: "2 Years", phd: true },
       { id: 'mba-general', name: "MBA - General", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
       { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
       { id: 'mba-iev', name: "MBA - Innovation, Entrepreneurship and Venture Development", icon: Rocket, code: "IEV", duration: "2 Years", phd: true },
@@ -67,14 +67,14 @@ const Programs = () => {
 
 
   return (
-    <section id="academics" className="relative py-12 lg:py-20 bg-[#FCFDFD] overflow-hidden">
+    <section id="academics" className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
       
       <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-white to-transparent -z-10" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Modern Header Section */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-12 mb-16 lg:mb-28">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-12 mb-10 lg:mb-16">
            <div className="max-w-3xl">
               <motion.div
                 initial={{ opacity: 0, x: -10 }}
@@ -103,7 +103,7 @@ const Programs = () => {
                    <button
                      key={key}
                      onClick={() => setActiveTab(key)}
-                     className={`relative flex-1 lg:flex-none px-8 py-4 lg:py-3.5 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${
+                     className={`relative flex-1 lg:flex-none px-8 py-4 lg:py-3.5 rounded-2xl text-[11px] font-black tracking-widest transition-all duration-300 ${
                        activeTab === key 
                        ? 'text-white' 
                        : 'text-[#18357a] hover:bg-white/50'

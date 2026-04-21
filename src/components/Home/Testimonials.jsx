@@ -75,7 +75,7 @@ const Testimonials = () => {
   const [activeTab, setActiveTab] = useState("Students")
 
   return (
-    <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative py-6 lg:py-8 bg-[#FCFDFD] overflow-hidden">
       
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#18357a]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
@@ -83,7 +83,7 @@ const Testimonials = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
+        <div className="text-center mb-8 lg:mb-10">
            <motion.div
              initial={{ opacity: 0, scale: 0.9 }}
              whileInView={{ opacity: 1, scale: 1 }}
@@ -129,16 +129,16 @@ const Testimonials = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="group relative bg-white p-6 lg:p-8 rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.06)] border border-[#D5E2F4]/40 flex flex-col h-full"
+                  className="group relative bg-white p-5 lg:p-6 rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.06)] border border-[#D5E2F4]/40 flex flex-col h-full"
                 >
                    {/* Top Bar with Icon & Quote */}
-                   <div className="flex items-start justify-between mb-6">
+                   <div className="flex items-start justify-between mb-4">
                       <div className="h-10 w-1 flex bg-[#ffc107] rounded-full group-hover:h-12 transition-all duration-500" />
                       <Quote size={32} className="text-[#18357a]/5 group-hover:text-[#ffc107]/20 transition-colors" />
                    </div>
 
                    {/* The Content */}
-                   <div className="space-y-5 flex-grow">
+                   <div className="space-y-3 flex-grow">
                       <div className="flex flex-wrap gap-2">
                          {testi.tags.map(tag => (
                            <span key={tag} className="px-3 py-1 bg-[#18357a]/5 text-[9px] font-black uppercase tracking-[0.1em] text-[#18357a] rounded-full">
@@ -147,7 +147,7 @@ const Testimonials = () => {
                          ))}
                       </div>
 
-                      <p className="text-base lg:text-lg font-bold text-[#18357a] leading-relaxed italic pr-2">
+                      <p className="text-base lg:text-lg font-semibold text-black leading-relaxed font-graphik italic pr-2">
                         "{testi.quote}"
                       </p>
 
@@ -161,7 +161,7 @@ const Testimonials = () => {
                    </div>
 
                    {/* The Profile Part */}
-                   <div className="mt-8 pt-6 border-t border-[#D5E2F4]/60 flex items-center gap-4">
+                   <div className="mt-6 pt-4 border-t border-[#D5E2F4]/60 flex items-center gap-4">
                       <div className="h-14 w-14 lg:h-16 lg:w-16 rounded-full overflow-hidden border-4 border-[#18357a]/5 shadow-inner flex-shrink-0">
                          <img src={testi.image} alt={testi.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       </div>
@@ -178,13 +178,7 @@ const Testimonials = () => {
            </AnimatePresence>
         </div>
 
-        {/* View More Button */}
-        <div className="mt-16 text-center">
-           <button className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-[#64779F] hover:text-[#18357a] transition-colors group">
-              Explore All Stories
-              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-           </button>
-        </div>
+
 
       </div>
 
