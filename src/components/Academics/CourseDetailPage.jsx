@@ -7,7 +7,7 @@ import {
   Award, Building2, CheckCircle, ArrowRight, ExternalLink,
   Microscope, Star, MapPin, Layers, Cpu, Globe, Wrench, ShieldCheck,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
-  Calendar, Zap
+  Calendar, Zap, CheckCircle2
 } from 'lucide-react'
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
@@ -75,7 +75,7 @@ const defaultCourse = (id) => ({
   eligibility: ['10+2 with PCM / relevant subjects', 'Minimum 50% aggregate', 'TNEA rank required'],
 })
 
-const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Placements', 'Achievements']
+const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements']
 
 // ─── Accordion Item ──────────────────────────────────────────────────────────
 function AccordionItem({ title, children, defaultOpen = false }) {
@@ -415,61 +415,86 @@ export default function CourseDetailPage() {
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {/* Vision Card - Refined Compact Design */}
+                        {/* Vision Card - Premium Glass Design */}
                         <motion.div 
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="group relative bg-[#18357a] rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_40px_rgba(10,26,63,0.2)] overflow-hidden transition-all duration-700 hover:scale-[1.02]"
+                            className="group relative rounded-[3rem] p-10 lg:p-12 shadow-[0_40px_100px_-20px_rgba(24,53,122,0.25)] overflow-hidden transition-all duration-700 bg-[#18357a]"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#18357a] via-[#1d3c8c] to-[#0A1A3F] opacity-50" />
-                            <Globe size={200} className="absolute -bottom-10 -right-10 text-white/5 opacity-0 group-hover:opacity-10 transition-all duration-700 rotate-12 group-hover:rotate-0" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#18357a] via-[#1d3c8c] to-[#0A1A3F] transition-transform duration-1000 group-hover:scale-110" />
+                            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/10 rounded-full blur-[120px] -mr-64 -mt-64 group-hover:bg-[#ffc107]/20 transition-all duration-700" />
                             
-                            <div className="relative z-10">
-                                <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 text-[#ffc107] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-8">
-                                    <div className="w-2 h-2 rounded-full bg-[#ffc107] animate-pulse" />
+                            <Globe size={300} className="absolute -bottom-20 -right-20 text-white/5 opacity-0 group-hover:opacity-10 transition-all duration-700 rotate-12 group-hover:rotate-0" />
+                            
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 text-[#ffc107] text-[10px] font-bold font-graphik uppercase tracking-[0.4em] mb-10 w-fit shadow-xl group-hover:border-white/30 transition-all">
+                                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffc107] shadow-[0_0_12px_#ffc107] animate-pulse" />
                                     Perspective
                                 </div>
 
-                                <h3 className="text-3xl md:text-4xl font-bold font-graphik text-white mb-6 tracking-tighter uppercase leading-none">
-                                    Our <span className="text-[#ffc107]">Vision</span>
+                                <h3 className="text-4xl md:text-5xl font-black font-graphik text-white mb-8 tracking-tighter uppercase leading-tight italic">
+                                    Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#ffd54f]">Vision</span>
                                 </h3>
 
-                                <div className="space-y-6">
-                                    <div className="w-12 h-1 bg-[#ffc107] rounded-full group-hover:w-32 transition-all duration-700" />
-                                    <p className="text-white/90 leading-relaxed text-[16px] md:text-[17px] font-medium font-graphik italic tracking-tight border-l-4 border-[#ffc107]/20 pl-6">
-                                        "{course.vision || 'To provide a world-class academic environment for creating global leaders.'}"
-                                    </p>
+                                <div className="space-y-8 flex-grow">
+                                    <div className="w-20 h-1.5 bg-gradient-to-r from-[#ffc107] to-transparent rounded-full group-hover:w-48 transition-all duration-1000" />
+                                    <blockquote className="relative">
+                                        <span className="absolute -left-4 -top-4 text-7xl font-serif text-white/10">"</span>
+                                        <p className="text-white/95 leading-relaxed text-[18px] md:text-[20px] font-medium font-graphik italic tracking-tight transition-all duration-500 group-hover:text-white">
+                                            {course.vision || 'To provide a world-class academic environment for creating global leaders.'}
+                                        </p>
+                                    </blockquote>
+                                </div>
+                                
+                                <div className="mt-auto pt-10">
+                                    <div className="flex items-center gap-4 group/btn cursor-pointer">
+                                        <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-[#ffc107] group-hover/btn:border-[#ffc107] transition-all duration-500">
+                                            <ArrowRight size={18} className="text-white group-hover/btn:text-[#18357a] transition-all" />
+                                        </div>
+                                        <span className="text-white/60 font-graphik text-[11px] font-bold uppercase tracking-[0.2em] group-hover/btn:text-white transition-all">Foundation for Excellence</span>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
 
-                        {/* Mission Card - Refined Compact Design */}
+                        {/* Mission Card - High Contrast Premium Look */}
                         <motion.div 
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="group relative bg-white rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_40px_rgba(10,26,63,0.05)] border border-[#DEE7F4] overflow-hidden transition-all duration-700 hover:scale-[1.02]"
+                            className="group relative bg-white rounded-[3rem] p-10 lg:p-12 shadow-[0_40px_100px_-20px_rgba(20,40,80,0.08)] border border-slate-100/80 overflow-hidden transition-all duration-700 hover:shadow-[0_60px_120px_-20px_rgba(20,40,80,0.12)]"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-tr from-slate-50 to-white opacity-50" />
-                            <Target size={200} className="absolute -bottom-10 -right-10 text-[#18357a]/5 opacity-0 group-hover:opacity-10 transition-all duration-700 rotate-12 group-hover:rotate-0" />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-slate-50 via-white to-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                            <Target size={300} className="absolute -bottom-20 -right-20 text-[#18357a]/5 opacity-0 group-hover:opacity-10 transition-all duration-700 rotate-12 group-hover:rotate-0" />
 
-                            <div className="relative z-10">
-                                <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-8">
-                                    <div className="w-2 h-2 rounded-full bg-[#18357a] animate-pulse" />
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[10px] font-bold font-graphik uppercase tracking-[0.4em] mb-10 w-fit shadow-sm group-hover:bg-[#18357a]/10 transition-all">
+                                    <div className="w-2.5 h-2.5 rounded-full bg-[#18357a] shadow-[0_0_12px_rgba(24,53,122,0.4)] animate-pulse" />
                                     Execution
                                 </div>
 
-                                <h3 className="text-3xl md:text-4xl font-bold font-graphik text-[#18357a] mb-6 tracking-tighter uppercase leading-none">
+                                <h3 className="text-4xl md:text-5xl font-black font-graphik text-[#18357a] mb-8 tracking-tighter uppercase leading-tight italic">
                                     Our <span className="text-[#ffc107]">Mission</span>
                                 </h3>
 
-                                <div className="space-y-6">
-                                    <div className="w-12 h-1 bg-[#18357a] rounded-full group-hover:w-32 transition-all duration-700" />
-                                    <p className="text-[#333333] leading-relaxed text-[16px] md:text-[17px] font-medium font-graphik tracking-tight text-justify border-l-4 border-slate-100 pl-6 whitespace-pre-line">
-                                        {course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.'}
-                                    </p>
+                                <div className="space-y-8 flex-grow">
+                                    <div className="w-20 h-1.5 bg-gradient-to-r from-[#18357a] to-transparent rounded-full group-hover:w-48 transition-all duration-1000" />
+                                    <div className="relative border-l-4 border-[#18357a]/10 pl-8 group-hover:border-[#ffc107] transition-all duration-700">
+                                        <p className="text-[#333333] leading-relaxed text-[17px] md:text-[18px] font-medium font-graphik tracking-tight text-justify whitespace-pre-line group-hover:text-black transition-all">
+                                            {course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.'}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="mt-auto pt-10">
+                                    <div className="flex items-center gap-4 group/btn cursor-pointer">
+                                        <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover/btn:bg-[#18357a] group-hover/btn:border-[#18357a] transition-all duration-500">
+                                            <ArrowRight size={18} className="text-[#18357a] group-hover/btn:text-white transition-all" />
+                                        </div>
+                                        <span className="text-slate-400 font-graphik text-[11px] font-bold uppercase tracking-[0.2em] group-hover/btn:text-[#18357a] transition-all">Path to Impact</span>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -530,8 +555,8 @@ export default function CourseDetailPage() {
                                   const text = activeObj.content || 'Data current being optimized for digital view.';
                                   
                                   // Split by specific academic markers to ensure labels like PEO/PO/PSO are not fragmented
-                                  // Updated regex to support multi-digit labels like PO-10, PO-11, etc.
-                                  const points = text.split(/(?=(?:PEO|PO|PSO)\s*[-–]\s*\d+:)/g).map(p => p.trim()).filter(p => p.length > 0);
+                                  // Updated regex to support multi-digit labels like PO-10 and Roman Numerals like PEO-I
+                                  const points = text.split(/(?=(?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):)/g).map(p => p.trim()).filter(p => p.length > 0);
                                   
                                   return points.map((point, idx) => {
                                     // Check if this is an intro paragraph (doesn't start with a marker)
@@ -545,13 +570,33 @@ export default function CourseDetailPage() {
                                       );
                                     }
 
+                                    // Extract label (e.g., PEO – 1:) from point
+                                    const match = point.match(/^((?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):)\s*(.*)/i);
+                                    const label = match ? match[1] : '';
+                                    const description = match ? match[2] : point;
+
                                     return (
-                                      <div key={idx} className="flex gap-4 p-4 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all group/point">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-2.5 shrink-0 group-hover/point:scale-125 transition-transform" />
-                                        <span className="text-[#333333] font-medium font-graphik leading-[1.8] text-[15px] sm:text-[16px]">
-                                          {point}
-                                        </span>
-                                      </div>
+                                      <motion.div 
+                                        key={idx} 
+                                        whileHover={{ x: 10 }}
+                                        className="flex gap-5 p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
+                                      >
+                                        <div className="flex-shrink-0 mt-1">
+                                            <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
+                                                <CheckCircle2 size={16} className="text-[#18357a] group-hover/point:text-[#ffc107] transition-colors" />
+                                            </div>
+                                        </div>
+                                        <div className="space-y-1">
+                                          {label && (
+                                            <span className="block text-[11px] font-black font-graphik text-[#18357a] uppercase tracking-[0.2em]">
+                                              {label.replace(':', '')}
+                                            </span>
+                                          )}
+                                          <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[15px] sm:text-[16px]">
+                                            {description}
+                                          </p>
+                                        </div>
+                                      </motion.div>
                                     );
                                   });
                                 })()}
@@ -887,52 +932,6 @@ export default function CourseDetailPage() {
               </div>
             )}
 
-            {/* ── PLACEMENTS ── */}
-            {activeTab === 'Placements' && (
-              <div>
-                <div className="mb-6">
-                  <h2 className="text-2xl font-extrabold font-graphik text-[#18357a] mb-1">Placement Record</h2>
-                  <p className="text-[#64779F]">Consistent track record of placing students in top companies</p>
-                </div>
-                {/* Stat Cards */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                  {[
-                    { label: 'Placement Rate', value: course.placementStats.placed },
-                    { label: 'Avg Package', value: course.placementStats.avg },
-                    { label: 'Top Package', value: course.placementStats.top },
-                    { label: 'Companies', value: course.placementStats.companies },
-                  ].map(s => (
-                    <div key={s.label} className="bg-[#18357a] rounded-2xl p-5 text-center">
-                      <p className="text-2xl font-extrabold font-graphik text-[#ffc107]">{s.value}</p>
-                      <p className="text-white/70 text-[12px] font-medium font-graphik mt-1">{s.label}</p>
-                    </div>
-                  ))}
-                </div>
-                {/* Company Logos / Tags */}
-                <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6 mb-6">
-                  <h3 className="font-extrabold font-graphik text-[#18357a] mb-4 text-[15px]">Top Recruiting Companies</h3>
-                  <div className="flex flex-wrap gap-2.5">
-                    {course.companies.map(c => (
-                      <span key={c} className="px-4 py-2 rounded-xl bg-[#F8FAFC] border border-[#E5EDF8] text-[#18357a] font-bold font-graphik text-[13px]">
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                {/* Projects */}
-                <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6">
-                  <h3 className="font-extrabold font-graphik text-[#18357a] mb-4 text-[15px]">Notable Final Year Projects</h3>
-                  <div className="space-y-2">
-                    {course.projects.map(p => (
-                      <div key={p} className="flex items-center gap-3 p-3 rounded-xl bg-[#F8FAFC] border border-[#E5EDF8]">
-                        <div className="w-2 h-2 rounded-full bg-[#ffc107] shrink-0" />
-                        <span className="text-[14px] font-semibold font-graphik text-[#18357a]">{p}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
 
             {activeTab === 'Achievements' && (
               <AchievementSection courseId={courseId} courseName={course.name} />

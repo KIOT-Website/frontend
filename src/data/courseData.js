@@ -1490,11 +1490,50 @@ export const courseData = {
     icon: BarChart3,
     color: '#18357a',
     tagline: 'Leading Business with Technology.',
-    overview: 'Designed by TCS, this program explores the intersection of computer science and management, preparing students to solve business problems with engineering solutions.',
+    overview: [
+      "Department of Computer Science and Business Systems (CSBS) at the Knowledge Institute of Technology (KIOT), established in 2020, offers a B.Tech programme designed to bridge the gap between technology and business. The department is supported by experienced and dedicated faculty from reputed institutions and industry backgrounds, aiming to develop globally competent and socially responsible graduates. The curriculum is aligned with the evolving demands of the IT industry, particularly in the era of Business 4.0, and covers emerging areas such as analytics, machine learning, deep learning, cloud computing, Internet of Things, mobile computing, and design thinking. The programme emphasizes innovation, research, and industry adaptability to equip students with strong technical and professional skills.",
+      "Students are trained to handle the development, management, and maintenance of modern computing systems across domains including software, hardware, artificial intelligence, data mining, and information security. The department encourages active participation through clubs such as the Business Engineers and Innovators (BEI) Club, Full Stack Developers Club, and Frontier Area Awareness Club, along with memberships in professional bodies like ISTE and IEEE. Regular workshops, symposiums, and faculty development programmes enhance academic quality and practical exposure. With strong industry connections, leading companies such as TCS, Amazon, Zoho, Infosys, Cognizant, Wipro, and others actively recruit students, ensuring promising career opportunities."
+    ],
+    vision: "To excel in Computer Science and Business Systems education by producing globally competent professionals with technical, managerial, and ethical values.",
+    mission: "M1 To impart quality education in computer science and business systems through innovative teaching–learning practices and state-of-the-art infrastructure.\nM2 To collaborate with industry for training, internships, and research in emerging technologies with a focus on sustainability.\nM3 To nurture graduates with leadership qualities, entrepreneurial mindset, ethical values, and social responsibility.",
+    peo: "PEO-1: Apply fundamental knowledge of computer science and business systems to build successful careers in industry, academia, or entrepreneurship.\n\nPEO-2: Design and develop integrated computing and business solutions to address real-world problems effectively.\n\nPEO-3: Demonstrate leadership, teamwork, ethical practices, and lifelong learning in a dynamic professional environment.",
+    po: "PO-1: Engineering Knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\n\nPO-2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\n\nPO-3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\n\nPO-4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\n\nPO-5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\n\nPO-6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\n\nPO-7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\n\nPO-8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\n\nPO-9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\n\nPO-10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\n\nPO-11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\n\nPO-12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
+    pso: "PSO-1: Apply computing and business knowledge to develop sustainable solutions.\n\nPSO-2: Develop scalable enterprise applications using tools and technologies.\n\nPSO-3: Integrate business processes with computing for data-driven decisions.",
     whyChoose: ['Curriculum designed by TCS', 'Tech + Management focus'],
     curriculum: [{ year: 'Year 1', semesters: ['Maths', 'Business Systems'] }],
-    faculty: [{ name: 'Dr. T. Anita', designation: 'HoD', experience: '15 Years', specialization: 'Business Analytics', rating: 4.8 }],
-    labs: [{ name: 'Business Logic Lab', equipment: 'Analytics Tools', icon: TrendingUp }],
+    faculty: [
+      { name: 'Dr. M. Ramkumar', designation: 'Associate Professor & Head', joiningDate: '01.08.2022', qualification: 'B.E., M.E., Ph.D', association: 'Regular', experience: 'Teaching: 14 Years', specialization: 'Data Mining, Cloud Computing and Data Science', email: 'hod.csbs@kiot.ac.in', publications: 'IJ: 34 NJ:01 IC: 14 NC: 04', rating: 5.0 },
+      { name: 'Mrs. C. Vanitha', designation: 'Assistant Professor', joiningDate: '09.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 14 Years Industry: 1.4', specialization: 'Data Mining', email: 'cvcsbs@kiot.ac.in', publications: 'IJ:02, IC:01', rating: 4.8 },
+      { name: 'Mr. R. Karthick', designation: 'Assistant Professor', joiningDate: '01.06.2016', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 11.2 Years', specialization: 'Information Security, Big Data Analytics, Data Science', email: 'rkcsbs@kiot.ac.in', publications: 'IJ:04, IC:04, NC:02', rating: 4.8 },
+      { name: 'Mr. M. Ranjithkumar', designation: 'Assistant Professor', joiningDate: '18.07.2022', qualification: 'B.Tech. - IT, M.E.', association: 'Regular', experience: 'Teaching: 7.4 Years', specialization: 'Networking', email: 'mrcsbs@kiot.ac.in', publications: 'IJ:02', rating: 4.7 },
+      { name: 'Mrs. C. Nithya', designation: 'Assistant Professor', joiningDate: '01.06.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 5.6 Years', specialization: 'Networking, Information Security', email: 'cncsbs@kiot.ac.in', publications: 'IJ:02 IC: 02 NC: 04', rating: 4.6 },
+      { name: 'Mr. M. Gopikumaran', designation: 'Assistant Professor', joiningDate: '01.06.2023', qualification: 'B.Tech., M.E.', association: 'Regular', experience: 'Teaching: 6.3 Years', specialization: 'Database Management Systems, Python Programming', email: 'mgcsbs@kiot.ac.in', publications: 'NJ:1', rating: 4.6 },
+      { name: 'Mr. B. Venkata Ramanen', designation: 'Assistant Professor', joiningDate: '28.10.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 1.9 Years', specialization: 'Mobile App Development, Python Programming, Data Science and AI', email: 'bvcsbs@kiot.ac.in', rating: 4.5 },
+      { name: 'Mrs. P. RagaKeerthana', designation: 'Assistant Professor', joiningDate: '24.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Industry: 1.6 Years', specialization: 'Data structures, computer Networks', email: 'prkcsbs@kiot.ac.in', publications: 'IJ:1, IC:1', rating: 4.5 },
+      { name: 'Mrs. R. Yudhayapriya', designation: 'Assistant Professor', joiningDate: '24.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '1 Month', specialization: 'Data structures, computer Networks', email: 'rycsbs@kiot.ac.in', publications: 'IJ:1', rating: 4.3 },
+      { name: 'Mrs. K. Preethi', designation: 'Assistant Professor', joiningDate: '20.01.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Industry: 5.5 Years', specialization: 'DBMS, Computer Networks', email: 'pkcsbs@kiot.ac.in', publications: 'IC:01 NJ:01', rating: 4.6 },
+      { name: 'Mr. S. Saravana Manikandan', designation: 'Associate POP', joiningDate: '19.07.2024', qualification: 'B.E.', experience: '19.10 Years', association: 'Regular', rating: 4.7 },
+      { name: 'Mr. S. Vijay Chander', designation: 'Associate POP', joiningDate: '19.07.2024', qualification: 'B.E.', experience: '30.10 Years', association: 'Regular', rating: 4.8 },
+      { name: 'Mrs. A. Dheepika', designation: 'Assistant Professor', joiningDate: '03.06.2013', qualification: 'B.A., M.A., M.Phil., B.Ed.', association: 'Regular', experience: '11 Years', specialization: 'English Language Teaching', email: 'adeng@kiot.ac.in', rating: 4.7 },
+      { name: 'Mr. P. Madheswaran', designation: 'Assistant Professor', joiningDate: '01.06.2012', qualification: 'B.Sc., M.Sc., B.Ed., M.Phil., MISTE., D.M.E.', association: 'Regular', experience: 'Teaching: 21.5 Years, Industry: 7 Years', specialization: 'Ordinary differential equations', email: 'pmmat@kiot.ac.in', rating: 4.8 },
+      { name: 'Mr. J. Noorul Ameen', designation: 'Assistant Professor', joiningDate: '19.07.2024', qualification: 'B.Sc., M.Sc., M.Phil.', association: 'Regular', experience: '11.9 Years', specialization: 'Natural Products and Nano Technology', email: 'jnchem@kiot.ac.in', publications: 'IJ: 02', rating: 4.7 },
+      { name: 'Dr. C. Sambathkumar', designation: 'Assistant Professor', joiningDate: '16.04.2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Research: 6 Years', specialization: 'Nanomaterials for energy storage application', email: 'sambath7593@gmail.com', publications: 'IJ: 15, IC: 2, NJ: 2', rating: 4.8 }
+    ],
+    labs: [
+      { 
+        name: 'DBMS Laboratory', 
+        equipments: [
+          'Area: 74.76 Sq.m', 
+          'Workstations: 40 Systems', 
+          'Oracle 11g Database (Perpetual License)', 
+          'IBM Rational Rose Software (Perpetual License)',
+          'Modeling and Analytics Tools'
+        ], 
+        icon: Terminal,
+        incharge: 'Faculty In-Charge / CSBS',
+        technician: 'System Administrator'
+      }
+    ],
     placementStats: { placed: '93%', avg: '5.5 LPA', top: '22 LPA', companies: '40+' },
   },
   'be-ecm': {
@@ -1510,10 +1549,23 @@ export const courseData = {
     icon: Cpu,
     color: '#18357a',
     tagline: 'Bridging Hardware and Software.',
-    overview: 'ECM combines electronics and computer science, offering a comprehensive understanding of integrated circuit design, embedded systems, and software development.',
+    overview: [
+      "Department of Electronics and Computer Engineering (ECX) at the Knowledge Institute of Technology (KIOT), established in 2025, is a forward-looking initiative positioned at the intersection of electronics and computing. The programme is designed to build strong foundations in electronics while developing computational thinking, enabling students to meet the evolving demands of a technology-driven world. With a focused alignment to India’s Semiconductor Mission, the curriculum equips students with both theoretical and practical expertise in areas such as chip design, embedded systems, and semiconductor technologies. It also emphasizes emerging domains like Cyber-Physical Systems, preparing graduates to design and develop intelligent, interconnected systems for the future.",
+      "Driven by a commitment to academic excellence and innovation, the department is supported by experienced faculty who adopt modern teaching methodologies and actively contribute to research. Students are encouraged to enhance their professional skills through workshops, symposiums, guest lectures, and participation in professional bodies such as ISTE, SAE, and IEEE. As a newly established department, ECX offers a unique opportunity for students to be part of its formative journey, take on leadership roles, and shape its culture. With a clear vision and strong academic focus, the department aims to nurture competent engineers ready for industry and research. The programme offered is B.E in Electronics and Computer Engineering (4 years)."
+    ],
+    vision: "To produce competent, industry-relevant engineering professionals, blending expertise in electronic hardware and software development with strong ethical values and social responsibility",
+    mission: "To provide quality technical education in Electronics and Computer Engineering through well-equipped infrastructure and innovative teaching\nTo equip students with industry relevant skills and emerging technologies by collaborating with industries\nTo foster professional culture, research aptitude and entrepreneurial abilities among students",
+    peo: "PEO – 1: Graduates will demonstrate strong technical skills in digital computing technologies and software systems\n\nPEO – 2: Graduates will engage in professional practice and apply expertise in cyber physical systems to solve real world engineering problems\n\nPEO – 3: Graduates will demonstrate professional culture, research aptitude and entrepreneurial skills to drive technological innovation",
+    po: "PO – 1: Engineering Knowledge: Apply knowledge of mathematics, natural science, computing, engineering fundamentals and an engineering specialization as specified in respectively to develop to the solution of complex engineering problems.\n\nPO – 2: Problem analysis: Identify, formulate, review research literature and analyze complex engineering problems reaching substantiated conclusions with consideration for sustainable development.\n\nPO – 3: Design/development of solutions: Design creative solutions for complex engineering problems and design/develop systems/components/processes to meet identified needs with consideration for the public health and safety, whole-life cost, net zero carbon, culture, society and environment as required.\n\nPO – 4: Conduct investigations of complex problems: Conduct investigations of complex engineering problems using research-based knowledge including design of experiments, modelling, analysis & interpretation of data to provide valid conclusions.\n\nPO – 5: Modern Tool Usage: Create, select and apply appropriate techniques, resources and modern engineering & IT tools, including prediction and modelling recognizing their limitations to solve complex engineering problems.\n\nPO – 6: The engineer and society: Analyze and evaluate societal and environmental aspects while solving complex engineering problems for its impact on sustainability with reference to economy, health, safety, legal framework, culture and environment.\n\nPO – 7: Ethics: Apply ethical principles and commit to professional ethics, human values, diversity and inclusion; adhere to national & international laws.\n\nPO – 8: Individual and Team Work: Function effectively as an individual, and as a member or leader in diverse/multi-disciplinary teams.\n\nPO – 9: Communication: Communicate effectively and inclusively within the engineering community and society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations considering cultural, language, and learning differences.\n\nPO – 10: Project Management and Finance: Apply knowledge and understanding of engineering management principles and economic decision-making and apply these to one’s own work, as a member and leader in a team, and to manage projects and in multidisciplinary environments.\n\nPO – 11: Life-Long Learning: Recognize the need for and have the preparation and ability for i)independent and life-long learning ii) adaptability to new and emerging technologies and iii) critical thinking in the broadest context of technological change.",
+    pso: "PSO – 1: Apply concepts of digital architecture to build efficient hardware- software integrated solutions.\n\nPSO – 2: Develop and analyze software applications using embedded platforms and operating system frameworks for reliable computing solutions.\n\nPSO – 3: Develop and analyze cyber physical systems to address contemporary engineering challenges.",
     whyChoose: ['Dual domain expertise', 'Modern embedded labs'],
     curriculum: [{ year: 'Year 1', semesters: ['Network Analysis', 'Data Structures'] }],
-    faculty: [{ name: 'Dr. P. Senthilkumar', designation: 'HoD', experience: '19 Years', specialization: 'Embedded Systems', rating: 4.8 }],
+    faculty: [
+      { name: 'Dr. S. Maragatharaj', designation: 'Associate Professor & Head of the Department', joiningDate: '15.07.2022', qualification: 'B.E., M.E., Ph.D.', association: 'Regular', experience: 'Teaching: 12.09 Years', specialization: 'VLSI Design', email: 'hod.ecx@kiot.ac.in', publications: 'IJ: 12 IC:14 NC: 9', rating: 5.0 },
+      { name: 'Mrs. G. Valarmathi', designation: 'Assistant Professor', joiningDate: '16.03.2026', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 8 Years', specialization: 'Wireless Technologies', email: 'gvalarmathime@gmail.com', publications: 'IC:02', rating: 4.7 },
+      { name: 'Dr. T. Madhumathi', designation: 'Assistant Professor', joiningDate: '04.06.2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Teaching: 1.7 Years', specialization: 'Topology', email: 'tmmat@kiot.ac.in', publications: 'IJ: 9 NJ: - IC: 5 NC:1', rating: 4.8 },
+      { name: 'Dr. K. Priya Mol', designation: 'Assistant Professor', joiningDate: '09.06.2025', qualification: 'M.A., B.Ed., M.Phil., Ph.D.', association: 'Regular', experience: 'Teaching: 1 Year', specialization: 'American Literature', email: 'priyamolalvin@gmail.com', publications: 'IJ:2, IC:3, NJ:1, NC:2', rating: 4.6 }
+    ],
     labs: [{ name: 'Embedded Systems Lab', equipment: 'Arm Cortex kits', icon: Cpu }],
     placementStats: { placed: '90%', avg: '4.5 LPA', top: '18 LPA', companies: '35+' },
   },
@@ -1530,7 +1582,15 @@ export const courseData = {
     icon: Layers,
     color: '#18357a',
     tagline: 'Constructing Sustainable Future.',
-    overview: 'The Civil Engineering program focuses on infrastructure development, structural analysis, and geotechnical engineering, using modern BIM and CAD software.',
+    overview: [
+      "The Department of Civil Engineering at the Knowledge Institute of Technology (KIOT), established in 2010–11, is committed to developing competent engineers capable of contributing to a sustainable built environment. The department focuses on delivering strong technical knowledge through a balanced approach of theory and practical learning, aligned with current industry requirements. Alongside technical expertise, equal emphasis is placed on building interpersonal and professional skills to prepare students for the demands of a fast-paced global environment. Students are encouraged to undergo industrial training and actively participate in co-curricular and extracurricular activities, ensuring well-rounded development and enhanced career readiness.",
+      "The department is supported by well-qualified and experienced faculty specializing in key domains such as structural, geotechnical, environmental, water resources, transportation, surveying, construction engineering, remote sensing, and GIS. Faculty members actively contribute to research through publications and conference presentations. The laboratories are equipped with modern, state-of-the-art facilities to support advanced learning and experimentation. Students also gain a competitive edge through international certification courses such as Green Building, along with regular seminars, workshops, and conferences that provide exposure to the latest developments in civil engineering."
+    ],
+    vision: "To be a leader to impart quality Civil Engineering education to the young minds and make them into competent professionals with social and ethical values",
+    mission: "To generate new knowledge in Civil Engineering through innovative teaching and research by using the state-of-the art facilities\nTo nurture technical and entrepreneurship skills, ethics and social values among the students and to develop them into globally competitive engineering graduates\nTo create a spirit of Involvement in research by developing center of excellence in the field of Civil Engineering and allied research by long term interaction with industry\nTo provide knowledge based consultancy services to the community in all areas of Civil Engineering",
+    peo: "PEO - I: Graduates of Civil Engineering will design, simulate and execute the Civil Engineering projects using fundamental knowledge and modern engineering tools\n\nPEO - II: Graduates of Civil Engineering will analyze, solve and deliver the appropriate solution for construction industry problems using professional knowledge\n\nPEO - III: Graduates of Civil Engineering will work in multidisciplinary projects with administrative skills, communication skills and also exhibit professional ethics in their work place",
+    po: "PO-1: Engineering Knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\n\nPO-2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\n\nPO-3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\n\nPO-4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\n\nPO-5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\n\nPO-6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\n\nPO-7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\n\nPO-8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\n\nPO-9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\n\nPO-10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\n\nPO-11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\n\nPO-12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
+    pso: "PSO - I: Design a cost effective and optimized solution for Civil Engineering problems by using modern techniques\n\nPSO - II: Plan, Analyze, Design and execute the Civil Engineering projects using eco-friendly construction materials with technical knowledge",
     whyChoose: ['Extensive field work', 'Software focused studies'],
     curriculum: [{ year: 'Year 1', semesters: ['Building Materials', 'Surveying'] }],
     faculty: [{ name: 'Dr. S. Karthic', designation: 'HoD', experience: '22 Years', specialization: 'Structural Engg', rating: 4.7 }],
@@ -1550,11 +1610,57 @@ export const courseData = {
     icon: FlaskConical,
     color: '#18357a',
     tagline: 'Intelligence Made Simple.',
-    overview: 'AI & DS focuses on data analytics, machine learning, and intelligent agents, preparing students for the data-driven world of tomorrow.',
+    overview: [
+      "Department of Artificial Intelligence and Data Science at the Knowledge Institute of Technology (KIOT), established in 2021, is designed to meet the demands of today’s digital era. This undergraduate programme equips students with a strong foundation in core areas such as artificial intelligence, data mining, and data modeling, while also providing advanced exposure to machine learning and big data analytics. With a focus on academic excellence and research-driven learning, the department enables students to explore real-world applications and build industry-relevant skills.",
+      "Supported by a team of experienced and dedicated faculty, the department fosters an engaging learning environment through innovative teaching methodologies, well-equipped laboratories with high-end systems, and essential software tools. Regular industrial visits, guest lectures, workshops, and technical events enhance both technical and professional development. The programme prepares students with interdisciplinary expertise across statistics, computer science, and AI domains, opening diverse career opportunities in industries such as IT, healthcare, banking, e-commerce, and intelligent systems."
+    ],
+    vision: "To create globally competent industry-ready graduates in the field of Artificial Intelligence and Data Science to solve societal problems through cutting-edge research and entrepreneurship skills with values and ethics.",
+    mission: "To inculcate innovation and creativity through experiential learning with the modern infrastructure and technologies\nTo collaborate with the industry for enhancing the students’ research ability on cutting edge technologies of AI and Data Science\nTo develop competent industry-ready professionals with right attitude, values and ethics",
+    peo: "PEO-1: Perform data processing, analysis and visualization in real time applications for better prediction and data-driven decision making\n\nPEO-2: Enable multitasking for existing resources and execute complex tasks using Artificial Intelligence\n\nPEO-3: Carry out fundamental research to cater the critical needs of the society through cutting edge technologies of AI",
+    pso: "PSO-1: Apply the concepts of Machine Learning and Data Science to solve the real time business problems\n\nPSO-2: Exhibit their professional skills in team building, leadership, communication, values and ethics\n\nPSO-3: Build a suitable model to assist business analytics and helps solving business problems",
     whyChoose: ['AI focus', 'Data engineering specialisation'],
     curriculum: [{ year: 'Year 1', semesters: ['Data Science Fundamentals', 'Probability'] }],
-    faculty: [{ name: 'Dr. S. Umamaheshwari', designation: 'HoD', experience: '16 Years', specialization: 'AI/ML', rating: 4.8 }],
-    labs: [{ name: 'Artificial Intelligence Lab', equipment: 'NVIDIA GPUs', icon: Terminal }],
+    faculty: [
+      { name: 'Dr. B. Sasikumar', designation: 'Associate Professor & Head', doj: '01.07.2009', qualification: 'B.E., M.E(CSE)., (Ph.D.).', association: 'Regular', experience: '19 Yrs 10 Months', specialization: 'Digital Image Processing, AI, Data Science, ML', email: 'hod.aids@kiot.ac.in', publications: 'IJ:05, NJ:03, IC:05, NC:02', rating: 5.0 },
+      { name: 'Mr. A. Gopalakrishnan', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '13 Yrs 9 Months', specialization: 'Operating System, Cloud Computing', email: 'agaids@kiot.ac.in', publications: 'IJ:03,IC:05,NC:03', rating: 4.8 },
+      { name: 'Dr. A. Gomathi', designation: 'Associate Professor', doj: '04.07.2022', qualification: 'B.E., M.E., Ph.D.', association: 'Regular', experience: 'Teaching: 14 Years (Engg) , 4yrs (poly)', specialization: 'Information Retrieval', email: 'agit@kiot.ac.in', publications: 'IJ:06, NJ:01, IC:6', rating: 4.9 },
+      { name: 'Mrs. V. Brindha', designation: 'Assistant Professor', doj: '04.07.2022', qualification: 'B.E., M.E(CSE)', association: 'Regular', experience: '4 Yrs 7 Months', specialization: 'AI & Data Science', email: 'vbaids@kiot.ac.in', rating: 4.6 },
+      { name: 'Mrs. P.J. Esther Rani', designation: 'Assistant professor', doj: '07.06.2023', qualification: 'B.E., M.TECH(IT)', association: 'Regular', experience: '6 Yrs 10 Months', specialization: 'Mobile Adhoc network', email: 'pjeraids@kiot.ac.in', publications: 'IJ:2, NJ:1', rating: 4.7 },
+      { name: 'Mr. S. Jayaprakash', designation: 'Assistant professor', doj: '01.06.2023', qualification: 'B.E., M.E(CSE)', association: 'Regular', experience: '4 Yrs 7 Months', specialization: 'Computer Networks, Python Programming', email: 'sjaids@kiot.ac.in', publications: 'IJ:2, NJ:2', rating: 4.6 },
+      { name: 'Mrs. B. Bhuvaneswari', designation: 'Assistant professor', doj: '13.07.2023', qualification: 'B.TECH(IT).,M.TECH(IT)', association: 'Regular', experience: '9 Yrs 11 Months', specialization: 'DSA, Datawarehousing and Data Mining', email: 'bbaids@kiot.ac.in', publications: 'IJ:04 IC:05 NC:05', rating: 4.8 },
+      { name: 'Mrs. S. Sudha', designation: 'Assistant professor', doj: '01.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '4 Yrs 4 Months', specialization: 'Computer Architecture, Big Data Analytics', email: 'ssaids@kiot.ac.in', publications: 'NJ:3', rating: 4.5 },
+      { name: 'Mr. R. Rameshkumar', designation: 'Assistant professor', doj: '08.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '7 Yrs 7 Months', specialization: 'Data Structure', email: 'rraids@kiot.ac.in', rating: 4.6 },
+      { name: 'Ms. Selvi M', designation: 'Assistant professor', doj: '06.03.2024', qualification: 'M.E.', association: 'Regular', experience: '6 Yrs 6 Months', specialization: 'Machine learning', email: 'msaids@gmail.com', publications: 'NC:1', rating: 4.5 },
+      { name: 'Mrs. M. Deepa', designation: 'Assistant professor', doj: '04.09.2024', qualification: 'M.E(Ph.D)', association: 'Regular', experience: '8 Yrs 9 Months', specialization: 'Computer Networks', email: 'deepapec693@gmail.com', publications: 'NJ:2', rating: 4.6 },
+      { name: 'Mr. Gunasekar B', designation: 'Assistant professor', doj: '01.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '2 Industry and 2.5 Teaching', specialization: 'Cryptography', email: 'bgaids@kiot.ac.in', publications: 'NJ:2', rating: 4.5 },
+      { name: 'Dr. S. Manivel', designation: 'Assistant professor', doj: '20.06.2024', qualification: 'M.sc., Ph.D.', association: 'Regular', experience: '9 Yrs 10 Months', specialization: 'vibrational spectroscopy', email: 'smvphy@kiot.ac.in', publications: 'IJ:6, NJ:6', rating: 4.7 },
+      { name: 'Ms. Ranitha N.M', designation: 'Assistant professor', doj: '30.04.2025', qualification: 'B.E(CSE), M.E(CSE)', association: 'Regular', experience: '3 Months', specialization: 'Machine Learning', email: 'nmraids@kiot.ac.in', rating: 4.5 },
+      { name: 'Mr. S. Iyyappan', designation: 'Associate POP', doj: '05.07.2024', qualification: 'B.E.', experience: '18.10 Years', rating: 4.8 },
+      { name: 'Mr. V. Dhanaraj', designation: 'Associate POP', doj: '15.07.2024', qualification: 'B.E. ECE', experience: '20.10 Years', rating: 4.9 },
+      { name: 'Mr. S. Vigneswaran', designation: 'Associate POP', doj: '15.07.2024', qualification: 'B.E.', experience: '14.10 Years', rating: 4.7 },
+      { name: 'Dr. G. Venkatesh', designation: 'Professor/Chemistry', doj: '20.09.2023', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: '10.6 years, Research: 14.8 yrs', specialization: 'Supramolecular Nano materials', email: 'gvchem@kiot.ac.in', publications: 'IJ: 24, NJ: 04, IC: 05, NC: 14', rating: 5.0 },
+      { name: 'Mr. T. Venkatachalam', designation: 'Assistant Professor', doj: '16.07.2021', qualification: 'M.A., M.Phil., B.Ed.', association: 'Regular', experience: '12 Yrs 6 Months', specialization: 'Language and Linguistics', email: 'venkatachalamteng@kiot.ac.in', publications: 'IC:01', rating: 4.7 },
+      { name: 'Mrs. V. Gomathi', designation: 'Assistant Professor', doj: '26.08.2021', qualification: 'M.Sc., M.Phil.', association: 'Regular', experience: '8 Yrs 4 Months', specialization: 'Differential Equations', email: 'gomathivvs@gmail.com', rating: 4.6 },
+      { name: 'Dr. G. Sathya Priyanka', designation: 'Assistant Professor / Maths', doj: '09-05-2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Research: 6 Yrs Teaching: 3 Months', specialization: 'Stochastic Processes, Reliability', email: 'gspmat@kiot.ac.in', publications: 'IJ:3, NJ:6', rating: 4.7 }
+    ],
+    labs: [
+      { 
+        name: 'Data Science and Analytics Laboratory', 
+        equipments: ['Area: 103.05 Sq.m', 'Workstations: 40 Systems', 'High-performance computing nodes', 'NVIDIA GPUs for Deep Learning'], 
+        icon: Terminal 
+      },
+      { 
+        name: 'Software Infrastructure & Licenses', 
+        equipments: [
+          'Turbo C (Open Source)', 
+          'C++ (Open Source)', 
+          'JDK 1.9 (Open Source)', 
+          'Python (Open Source)', 
+          'PostgreSQL (Open Source)'
+        ], 
+        icon: ShieldCheck 
+      }
+    ],
     placementStats: { placed: '95%', avg: '5.5 LPA', top: '22 LPA', companies: '70+' },
   },
   'be-eee': {
@@ -1570,11 +1676,75 @@ export const courseData = {
     icon: Zap,
     color: '#18357a',
     tagline: 'Powering Progress.',
-    overview: 'EEE focuses on power generation, electrical machines, and electronics, preparing students for careers in the power and energy industries.',
+    overview: [
+      "Department of Electrical and Electronics Engineering (EEE) at the Knowledge Institute of Technology (KIOT), established in 2009, carries a strong legacy of teaching, research, and industry-focused education. The department offers B.E in Electrical and Electronics Engineering, M.E in Embedded System Technologies, and Ph.D programmes, with a curriculum designed to meet evolving industry demands. It covers core domains such as power systems, power electronics, control and automation, embedded systems, telecommunications, and computer technology. With a focus on building industry-relevant skills, the department emphasizes rapid adaptability to emerging technologies. Supported by experienced faculty with strong academic and industrial backgrounds, the department actively contributes to research through publications, sponsored projects, and collaborations with government and industry bodies.",
+      "The department is equipped with advanced, industry-collaborative laboratories that support both academic learning and research innovation, continuously upgraded to match corporate standards. Students benefit from hands-on experience, enabling them to excel in national and international competitions. Regular activities such as conferences, workshops, and seminars provide exposure to industry experts and emerging trends. The department also undertakes consultancy and funded projects, including AICTE-supported initiatives like MODROBS for modernization of power electronics labs focused on e-mobility, and STTP on big data analytics and cybersecurity in smart grids. With strong academic depth and a vibrant research culture, the EEE department prepares students for impactful careers while fostering innovation and technical excellence."
+    ],
+    vision: "To produce technically competent Electrical and Electronics Engineers having exemplary skills with ethical and social values",
+    mission: "To provide state-of-the art facilities in Electrical and Electronics Engineering for improving the learning environment and research activities\nTo continuously enrich the knowledge and skill of students towards the employment and creation of innovative products for society\nTo develop ethical, social-valued and entrepreneurship skilled Electrical and Electronics Engineers",
+    peo: "PEO – 1: Succeed in the areas of Electrical and Electronics Engineering and other diverse fields by utilizing the fundamental knowledge of engineering, analytical and creative skills\n\nPEO – 2: Design, simulate and develop new innovative product and system in multi-disciplinary fields through life-long learning skill and modern tools handling ability\n\nPEO – 3: Demonstrate communication skill, leadership qualities, ethics, team work and social responsibilities",
+    pso: "PSO – 1: Apply current technologies in Embedded System Design for providing solution to real world problems through smart product development\n\nPSO – 2: Design, develop and implement software based automated system in the field of Electrical Power and Energy to meet out the demands of society and industry",
+    po: "PO – 1: Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\n\nPO – 2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\n\nPO – 3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\n\nPO – 4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\n\nPO – 5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\n\nPO – 6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\n\nPO – 7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\n\nPO – 8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\n\nPO – 9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\nPO – 10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\n\nPO – 11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\n\nPO – 12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
     whyChoose: ['Power sector demand', 'EV engineering labs'],
     curriculum: [{ year: 'Year 1', semesters: ['Electrical Machines', 'Digital Systems'] }],
     faculty: [{ name: 'Dr. J. Ramkumar', designation: 'HoD', experience: '17 Years', specialization: 'Power Systems', rating: 4.8 }],
-    labs: [{ name: 'Electrical Machines Lab', equipment: 'DC/AC motors and generators', icon: Zap }],
+    labs: [
+      { 
+        name: 'Engineering Practices Laboratory', 
+        equipments: ['Assorted Electronic Components', 'Electrical measuring instruments', 'Study purpose items: Iron box, fan and regulator, emergency lamp', 'Megger(250v/500v)', 'Power Tools: Range Finder, Digital Live-wire detector'], 
+        icon: Wrench 
+      },
+      { 
+        name: 'Electric Circuits Laboratory', 
+        equipments: ['Regulated Power Supply : (0–15)V DC', 'Function Generator : 1 MHz', 'Single Phase Energy Meter', 'Oscilloscope : 20 MHz', 'Digital Storage Oscilloscope : 20 MHz', 'Circuit Simulation Software', 'AC/DC – Voltmeters'], 
+        icon: Zap 
+      },
+      { 
+        name: 'Electronics Laboratory', 
+        equipments: ['Cathode Ray Oscilloscope', 'Function Generator', 'Single / Dual Power Supply', 'Decade Resistance / Capacitance / Inductance Boxes', 'Rheostats', 'EDC type DC Ammeter & Voltmeter', 'Digital Multimeter'], 
+        icon: CircuitBoard 
+      },
+      { 
+        name: 'Control and Instrumentation Laboratory', 
+        equipments: ['PID Controller Trainer Kit', 'Strain Gauge Trainer Kit', 'Position Control System Trainer Kit', 'AC Synchro Transmitter & Receiver', 'Three Phase Synchronous Induction Motor', 'Flow measurement Trainer Kit', 'Thermometer, Thermistor, RTD', 'Optical Sensors', 'Air Foot Pump and Pressure Chamber'], 
+        icon: Settings 
+      },
+      { 
+        name: 'Linear and Digital Integrated Circuits Laboratory', 
+        equipments: ['Dual (0-30V) Power Supply', 'Cathode Ray Oscilloscope : 30MHz', 'Function Generator : 1MHz', 'IC Tester', 'Computer with PSPICE Software', 'Transformers / Auto Transformers', 'Digital IC Trainer Kit'], 
+        icon: Cpu 
+      },
+      { 
+        name: 'Electrical Machines Laboratory - I', 
+        equipments: ['DC Series / Shunt / Compound Motor & Generator', 'Three Phase Slip Ring / Synchronous / Squirrel Cage Induction Motor', 'Three Phase Alternator', 'Single Phase Induction Motor', 'Tachometer', 'Rectifier Unit'], 
+        icon: Settings 
+      },
+      { 
+        name: 'Electrical Machines Laboratory - II', 
+        equipments: ['Three Phase Slip Ring Motor', 'Single / Three Phase Loading Rheostat & Auto Transformer', 'Three Phase Loading Inductor', 'BLDC Motor', 'Three Phase Alternator & Synchronous Motor'], 
+        icon: Zap 
+      },
+      { 
+        name: 'Microprocessor and Microcontroller Laboratory', 
+        equipments: ['8085 Microprocessor Trainer', '8051 Micro Controller Trainer Kit', '8255 / 8251 / 8259 Interface boards', 'ADC and DAC Card', 'AC & DC Motor with Controller', 'Traffic Light Control System', 'Stepper Motor'], 
+        icon: Cpu 
+      },
+      { 
+        name: 'Power Electronics laboratory', 
+        equipments: ['SCR, MOSFET, IGBT And TRIAC Trainer Kits', 'Single Phase SCR based Half / Fully Controlled Converter', 'MOSFET based Step Up / Down Choppers', 'IGBT based Single / Three Phase PWM Inverter Module', 'Switched Mode Power Converter Module', 'Cyclo Converter Trainer Kit'], 
+        icon: Zap 
+      },
+      { 
+        name: 'Power System Simulation laboratory', 
+        equipments: ['High-end Workstations (Pentium-IV, 1GB RAM)', 'Power System Simulation Software: Mathcad and MATLAB', 'Compilers: C, C++, Visual Basic, VC++', 'Laser Printer'], 
+        icon: Terminal 
+      },
+      { 
+        name: 'Renewable Energy Systems Laboratory', 
+        equipments: ['1 kW Solar PV training system (On/OFF grid)', 'Hybrid 100 W PV solar and 200W Micro wind Generator System', '1 kW Solar Emulator Hardware Trainer Kit', 'Wind Anemometer', 'Digital Tachometer', 'Exide Battery'], 
+        icon: FlaskConical 
+      }
+    ],
     placementStats: { placed: '89%', avg: '4.2 LPA', top: '15 LPA', companies: '40+' },
   },
   'mba-general': {
