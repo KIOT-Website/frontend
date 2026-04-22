@@ -90,12 +90,9 @@ const VisionMission = () => {
   ]
 
   return (
-    <div id="values" className="relative bg-[#FAFBFF] pt-4 pb-8 border-t border-slate-100">
+    <div id="values" className="relative bg-white pt-4 pb-8 border-t border-slate-100 mt-16">
       
-      {/* Background Graphic Decoration */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none opacity-50" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc107]/5 to-transparent rounded-tr-full pointer-events-none opacity-50" />
-
+      {/* Background Graphic Decoration - Removed to ensure pure white experience */}
       <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto">
         
         {/* Header Section - Sub Heading Style */}
@@ -136,8 +133,15 @@ const VisionMission = () => {
                   transition={{ delay: i * 0.1, duration: 0.8 }}
                   className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[240px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
                 >
-                  {/* The Diamond Container */}
-                  <div className="relative bg-white aspect-square w-48 sm:w-52 lg:w-48 xl:w-56 rounded-[2rem] border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.06)] transform rotate-45 flex items-center justify-center group hover:shadow-[0_25px_60px_rgba(24,53,122,0.12)] transition-all duration-500 mx-auto">
+                  {/* The Diamond Container with New Stylish Border */}
+                  <div className="relative bg-white aspect-square w-48 sm:w-52 lg:w-48 xl:w-56 rounded-[2rem] border-2 border-[#18357a]/10 shadow-[0_15px_40px_rgba(0,0,0,0.06)] transform rotate-45 flex items-center justify-center group hover:shadow-[0_25px_60px_rgba(24,53,122,0.15)] hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">
+                    
+                    {/* Stylish Inner Border Line */}
+                    <div className="absolute inset-2 border border-dashed border-[#18357a]/15 rounded-[1.5rem] group-hover:border-[#ffc107]/30 transition-colors duration-500 pointer-events-none" />
+                    
+                    {/* Corner Accent Detail */}
+                    <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-br from-[#ffc107]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    
                     {/* Background Shine */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white via-[#18357a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     
@@ -153,7 +157,7 @@ const VisionMission = () => {
                          {val.title}
                        </h3>
                        
-                       <p className="text-[#64779F] text-[11px] sm:text-[12px] font-medium leading-relaxed mb-4">
+                       <p className="text-black text-[11px] sm:text-[12px] font-bold leading-relaxed mb-4">
                          {val.content.length > 80 ? val.content.substring(0, 80) + "..." : val.content}
                        </p>
 

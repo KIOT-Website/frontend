@@ -12,25 +12,25 @@ import {
 import React from 'react'
 
 // Asset imports
-import labImg from '../../assets/life@kiot/Lab.webp'
-import cafeteriaImg from '../../assets/life@kiot/cafeteria.webp'
+import labImg from '../../assets/life@kiot/image.png'
+import cafeteriaImg from '../../assets/life@kiot/cafetaria.png'
 import hostelImg from '../../assets/life@kiot/hostal.webp'
-import sportsImg from '../../assets/life@kiot/sports.webp'
+import sportsImg from '../../assets/life@kiot/sports.png'
 import trainingImg from '../../assets/life@kiot/training.webp'
-import transportImg from '../../assets/life@kiot/transport.webp'
-import gymImg from '../../assets/life@kiot/gym.webp'
+import transportImg from '../../assets/life@kiot/transport.png'
+import gymImg from '../../assets/life@kiot/gym.png'
 import istartImg from '../../assets/life@kiot/istart.webp'
 import campusMainImg from '../../assets/main/campus .webp'
 
 const facilities = [
-  { id: 1, title: "Sports", image: sportsImg, icon: Trophy, tag: "Life@KIOT", link: "/campus-life/sports" },
-  { id: 2, title: "Gym", image: gymImg, icon: Dumbbell, tag: "Life@KIOT", link: "/campus-life/amenities" },
-  { id: 3, title: "Transport", image: transportImg, icon: Bus, tag: "Life@KIOT", link: "/campus-life/transport" },
-  { id: 4, title: "Cafeteria", image: cafeteriaImg, icon: Coffee, tag: "Life@KIOT", link: "/campus-life/amenities" },
-  { id: 5, title: "Lab", image: labImg, icon: Microscope, tag: "Life@KIOT", link: "/campus-life/classroom" },
-  { id: 6, title: "Hostel", image: hostelImg, icon: Home, tag: "Life@KIOT", link: "/campus-life/amenities" },
-  { id: 7, title: "Training", image: trainingImg, icon: GraduationCap, tag: "Life@KIOT", link: "/training" },
-  { id: 8, title: "iStart", image: istartImg, icon: Cpu, tag: "Life@KIOT", link: "/aicte-idea-lab" }
+  { id: 1, title: "Sports", image: sportsImg, tag: "Life@KIOT", link: "/campus-life/sports" },
+  { id: 2, title: "Gym", image: gymImg, tag: "Life@KIOT", link: "/campus-life/amenities" },
+  { id: 3, title: "Transport", image: transportImg, tag: "Life@KIOT", link: "/campus-life/transport" },
+  { id: 4, title: "Cafeteria", image: cafeteriaImg, tag: "Life@KIOT", link: "/campus-life/amenities" },
+  { id: 5, title: "Lab", image: labImg, tag: "Life@KIOT", link: "/campus-life/classroom" },
+  { id: 6, title: "Hostel", image: hostelImg, tag: "Life@KIOT", link: "/campus-life/amenities" },
+  { id: 7, title: "Training", image: trainingImg, tag: "Life@KIOT", link: "/training" },
+  { id: 8, title: "iStart", image: istartImg, tag: "Life@KIOT", link: "/aicte-idea-lab" }
 ]
 
 const CampusLife = () => {
@@ -100,9 +100,6 @@ const CampusLife = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/90 via-[#18357a]/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                 
                 <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-end">
-                  <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-2 lg:mb-3 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500">
-                    <fac.icon size={16} className="lg:size-20" />
-                  </div>
                   <h3 className="text-sm lg:text-lg font-bold text-white mb-1 font-graphik leading-tight transition-transform duration-500 group-hover:-translate-y-1">{fac.title}</h3>
                   <span className="text-[8px] lg:text-[10px] font-bold text-white/60 uppercase tracking-widest transition-transform duration-500 group-hover:-translate-y-1">{fac.tag}</span>
                 </div>

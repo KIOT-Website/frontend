@@ -78,6 +78,7 @@ const AicteIdeaLabPage = lazy(() => import('./pages/AicteIdeaLabPage'))
 const IStartPage = lazy(() => import('./pages/IStartPage'))
 const BlogsPage = lazy(() => import('./pages/BlogsPage'))
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
+const AlumniPage = lazy(() => import('./pages/AlumniPage'))
 
 
 
@@ -243,7 +244,7 @@ function App() {
                    <Route path="/research/:deptName/consultancy" element={<ConsultancyPage />} />
                    <Route path="/resources/campus-life" element={<CampusLifePage />} />
                     <Route path="/resources/student-life" element={<StudentLifePage />} />
-                    <Route path="/resources/alumni" element={<UnderConstruction />} />
+                    <Route path="/resources/alumni" element={<AlumniPage />} />
                     <Route path="/resources/news-events" element={<UnderConstruction />} />
                     <Route path="/resources/blogs" element={<BlogsPage />} />
                     <Route path="/resources" element={<UnderConstruction />} />
@@ -271,7 +272,7 @@ function App() {
                   <Route path="/campus-life/sports/facilities" element={<SportsFacilitiesPage />} />
                   <Route path="/bus-routes" element={<BusRoutesPage />} />
                   <Route path="/student-life" element={<StudentLifePage />} />
-                  <Route path="/alumni" element={<UnderConstruction />} />
+                  <Route path="/alumni" element={<AlumniPage />} />
                   <Route path="/news-events" element={<UnderConstruction />} />
                   <Route path="/blogs" element={<BlogsPage />} />
                   <Route path="/blog/:slug" element={<BlogDetailPage />} />
@@ -294,36 +295,36 @@ function App() {
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 exit={{ y: 100, opacity: 0 }}
-                className="fixed bottom-4 left-4 z-[3000] w-[160px] md:w-[220px] bg-white rounded-[1.5rem] md:rounded-[1.8rem] shadow-[0_15px_40px_rgba(10,26,63,0.25)] md:shadow-[0_20px_60px_rgba(10,26,63,0.3)] overflow-hidden p-4 md:p-6 border border-slate-100 flex flex-col items-center text-center md:bottom-8 md:left-8"
+                className="fixed bottom-4 left-4 z-[3000] w-[190px] md:w-[260px] bg-white rounded-xl md:rounded-2xl shadow-[0_15px_40px_rgba(10,26,63,0.25)] md:shadow-[0_20px_60px_rgba(10,26,63,0.3)] overflow-hidden p-5 md:p-8 border border-slate-100 flex flex-col items-center text-center md:bottom-10 md:left-10"
               >
                 <button 
                   onClick={handleClosePopup}
-                  className="absolute top-4 right-4 w-5 h-5 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#18357a] hover:text-white transition-all"
+                  className="absolute top-4 right-4 w-7 h-7 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#18357a] hover:text-white transition-all"
                 >
-                  <X size={10} />
+                  <X size={16} />
                 </button>
 
                 {/* Decorative Dots */}
                 <div className="absolute top-4 left-6 flex gap-1.2 opacity-20">
-                   <div className="w-1 h-1 rounded-full bg-[#18357a]" />
-                   <div className="w-1 h-1 rounded-full bg-[#18357a]" />
+                   <div className="w-1.5 h-1.5 rounded-full bg-[#18357a]" />
+                   <div className="w-1.5 h-1.5 rounded-full bg-[#18357a]" />
                 </div>
 
-                <div className="mb-4 mt-1">
-                   <span className="text-red-600 font-black text-[9px] uppercase tracking-[0.3em] block mb-1">ADMISSION</span>
-                   <h2 className="text-3xl font-black text-[#18357a] uppercase tracking-tighter leading-none mb-4">
+                <div className="mb-4 mt-2 w-full">
+                   <span className="text-red-600 font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-1">ADMISSION</span>
+                   <h2 className="text-4xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter leading-none mb-6">
                      Open
                    </h2>
                    
                    <button 
                      onClick={() => { handleClosePopup(); navigate('/admissions'); }}
-                     className="w-full py-3 bg-[#18357a] text-white rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-lg shadow-[#18357a]/20"
+                     className="w-full py-4 bg-[#18357a] text-white rounded-xl font-black text-[11px] md:text-[12px] uppercase tracking-[0.2em] hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-lg shadow-[#18357a]/20"
                    >
                      Apply Now
                    </button>
                 </div>
 
-                <p className="text-black font-black text-[8px] uppercase tracking-[0.25em] opacity-80">
+                <p className="text-black font-black text-[9px] md:text-[10px] uppercase tracking-[0.25em] opacity-80">
                   Academic Session 2026-27
                 </p>
               </motion.div>

@@ -207,7 +207,7 @@ const AdmissionsPage = () => {
                </motion.div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                {[
                   { title: "100% Placement Assistance", desc: "Dedicated placement cell ensuring top-tier corporate matching.", icon: Briefcase, color: "#18357a" },
                   { title: "NAAC A Accredited", desc: "Recognized for academic excellence and institutional quality.", icon: Award, color: "#ffc107" },
@@ -217,14 +217,40 @@ const AdmissionsPage = () => {
                   { title: "Elite Career Hub", desc: "Access to exclusive internships and global career paths.", icon: Star, color: "#ffc107" }
                ].map((feature, i) => (
                   <motion.div
-                    key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                    className="p-10 rounded-[2.5rem] bg-white border border-slate-100 hover:border-[#ffc107]/30 hover:shadow-2xl transition-all group"
+                    key={i} 
+                    initial={{ opacity: 0, y: 20 }} 
+                    whileInView={{ opacity: 1, y: 0 }} 
+                    viewport={{ once: true }} 
+                    transition={{ delay: i * 0.1 }}
+                    className="relative group bg-white rounded-3xl p-8 shadow-[0_15px_40px_rgba(24,53,122,0.06)] border border-slate-100 hover:shadow-2xl transition-all duration-500 overflow-hidden text-center"
                   >
-                     <div className="w-14 h-14 rounded-2xl mb-8 flex items-center justify-center transition-transform group-hover:scale-110" style={{ backgroundColor: `${feature.color}15`, color: feature.color }}>
-                        <feature.icon size={28} />
+                     {/* Signature Top Accent */}
+                     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#18357a] via-[#18357a] to-[#ffc107] opacity-80" />
+                     
+                     {/* Subtle Background Pattern */}
+                     <div className="absolute inset-0 z-0 opacity-40 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #E5EDF8 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+
+                     <div className="relative z-10 flex flex-col items-center">
+                        <div className="w-16 h-16 rounded-full mb-6 flex items-center justify-center bg-slate-50 border border-slate-100 text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500 shadow-inner group-hover:scale-105">
+                           <feature.icon size={28} strokeWidth={1.5} />
+                        </div>
+                        
+                        <h4 className="text-[17px] font-black text-[#18357a] mb-3 tracking-tighter leading-tight uppercase font-graphik">
+                           {feature.title}
+                        </h4>
+                        
+                        <div className="w-10 h-0.5 bg-[#ffc107] mb-4 rounded-full group-hover:w-16 transition-all duration-500" />
+                        
+                        <p className="text-black text-[13px] leading-snug font-bold opacity-90 max-w-[220px]">
+                           {feature.desc}
+                        </p>
                      </div>
-                     <h4 className="text-[17px] font-bold text-[#18357a] mb-4 tracking-tight leading-tight group-hover:text-[#ffc107] transition-colors">{feature.title}</h4>
-                     <p className="text-black text-[13px] leading-relaxed font-semibold">{feature.desc}</p>
+
+                     {/* Background Watermark Icon */}
+                     <feature.icon 
+                        size={100} 
+                        className="absolute -bottom-6 -right-6 text-[#18357a]/[0.03] group-hover:text-[#ffc107]/10 transition-colors duration-700 pointer-events-none -rotate-12" 
+                     />
                   </motion.div>
                ))}
             </div>

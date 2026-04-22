@@ -5,10 +5,12 @@ import {
   GraduationCap, Layers, 
   Settings, Radio, Zap, Monitor, Building2, Globe, Briefcase, Brain, Cpu,
   ShieldCheck, CircuitBoard, CarFront, Code, TrendingUp, AppWindow, Rocket, FileCode2,
-  ArrowRight, Search, Beaker, Landmark, Atom, Microscope
+  ArrowRight, Search, Beaker, Landmark, Atom, Microscope,
+  Play, X
 } from 'lucide-react'
 
 import courseBg from '../../assets/main/home course.webp'
+import successVideo from '../../assets/main/susccess story.mp4'
 
 const programsData = {
   UG: {
@@ -61,8 +63,102 @@ const programsData = {
   }
 }
 
+const AdmissionSign = ({ navigate }) => (
+  <motion.div 
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 1, type: "spring", bounce: 0.4 }}
+    className="relative mt-8 lg:-mt-6 flex flex-col items-center group z-20"
+  >
+     {/* Triangular Hanging Rope - Desktop Only */}
+     <svg width="100" height="50" viewBox="0 0 100 50" className="mb-[-2px] hidden lg:block">
+        <path d="M50 0 L15 50 M50 0 L85 50" stroke="#CBD5E1" strokeWidth="1.5" fill="none" />
+        <circle cx="50" cy="0" r="3" fill="#64779F" />
+     </svg>
+
+     {/* The Sign Board */}
+     <motion.div 
+       animate={{ rotate: [0, 1, -1, 0] }}
+       transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+       onClick={() => navigate('/admissions')}
+       className="bg-white px-8 py-6 rounded-[1.2rem] shadow-[0_15px_40px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col items-center text-center relative hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all cursor-pointer"
+     >
+         <span className="text-[11px] font-black text-red-600 uppercase tracking-[0.3em] mb-1.5">Admission</span>
+         <h4 className="text-3xl font-semibold text-[#18357a] mb-4 tracking-tight font-graphik">Open</h4>
+         
+         <button className="flex items-center gap-2.5 px-6 py-3 bg-[#18357a] hover:bg-[#ffc107] text-white hover:text-[#18357a] rounded-xl transition-all duration-300 shadow-md shadow-black/5">
+             <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover:bg-[#18357a] animate-pulse" />
+             <span className="text-[9px] font-black uppercase tracking-widest">Apply Now</span>
+         </button>
+
+         {/* Attachment Screws */}
+         <div className="absolute top-3 left-0 right-0 flex justify-between px-5">
+            <div className="w-2 h-2 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
+            <div className="w-2 h-2 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
+         </div>
+     </motion.div>
+
+     <p className="mt-4 text-[9px] font-black text-black uppercase tracking-[0.3em]">Academic Session 2026-27</p>
+  </motion.div>
+)
+
+const CourseGrid = ({ activeTab, navigate }) => (
+  <div className="grid sm:grid-cols-2 gap-5">
+     <AnimatePresence mode="popLayout">
+        {programsData[activeTab].courses.map((course, idx) => (
+           <motion.div
+             key={course.name}
+             layout
+             initial={{ opacity: 0, scale: 0.9, y: 30 }}
+             animate={{ opacity: 1, scale: 1, y: 0 }}
+             exit={{ opacity: 0, scale: 0.9, y: -30 }}
+             transition={{ 
+               duration: 0.4, 
+               delay: idx * 0.05,
+               layout: { duration: 0.3 }
+             }}
+             whileHover={{ y: -5 }}
+             onClick={() => {
+               const base = activeTab === 'UG' ? 'undergraduate' : 'postgraduate'
+               navigate(`/academics/${base}/${course.id}`)
+             }}
+             className="group bg-white p-7 rounded-[32px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(24,53,122,0.1)] transition-all cursor-pointer relative overflow-hidden"
+           >
+              <div className="absolute inset-0 bg-gradient-to-br-white via-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/[0.02] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#ffc107]/5 transition-colors duration-500" />
+              
+              <div className="relative z-10">
+                 <div className="flex items-center justify-between mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-300 transform group-hover:rotate-6">
+                       <course.icon size={26} />
+                    </div>
+                    <div className="px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#ffc107]/20 transition-colors">
+                       <span className="text-[8px] font-black text-black tracking-[0.2em] uppercase">Course Details</span>
+                    </div>
+                 </div>
+
+                 <h4 className="text-lg font-semibold text-black font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
+                    {course.name}
+                 </h4>
+                 <p className="text-[11px] font-black text-[#ffc107] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
+                    {course.code}
+                 </p>
+                 
+                 <div className="flex items-center gap-2 mt-4">
+                    <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107]" />
+                    <span className="text-[10px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
+                 </div>
+              </div>
+           </motion.div>
+        ))}
+     </AnimatePresence>
+  </div>
+)
+
 const Programs = () => {
   const [activeTab, setActiveTab] = useState('UG')
+  const [showVideo, setShowVideo] = useState(false)
   const navigate = useNavigate()
 
 
@@ -123,156 +219,142 @@ const Programs = () => {
            </div>
         </div>
 
-        {/* Category Features */}
-        <div className="grid lg:grid-cols-[0.7fr_1.3fr] gap-12 lg:gap-20 items-start">
+        {/* Main Content Area - Strategic Responsive Structure */}
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-start">
            
-           {/* Left Info Column - Wrapped to keep CTA below card in first column */}
-           <div className="lg:sticky lg:top-32 relative">
-              <motion.div
-                key={`info-${activeTab}`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative rounded-[3rem] overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.25)] group min-h-[500px] flex flex-col justify-end"
-              >
-              {/* The "Full" Background Image */}
-              <div className="absolute inset-0 z-0 rounded-[3rem] overflow-hidden">
-                 <img src={courseBg} alt="" className="w-full h-full object-cover rounded-[3rem] transition-transform duration-700 group-hover:scale-105" />
-                 {/* Dark Gradient Overlay for Readability */}
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/95 via-[#18357a]/50 to-transparent rounded-[3rem]" />
+           {/* Column 1: Info & Contextual Features */}
+           <div className="flex flex-col space-y-12">
+              
+              {/* Info Card - Always First (Order 1) */}
+              <div className="order-1 w-full lg:sticky lg:top-32 relative">
+                 <motion.div
+                   key={`info-${activeTab}`}
+                   initial={{ opacity: 0, y: 30 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.6, ease: "easeOut" }}
+                   className="relative rounded-[3rem] overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.25)] group min-h-[400px] md:min-h-[500px] flex flex-col justify-end"
+                 >
+                   <div className="absolute inset-0 z-0 rounded-[3rem] overflow-hidden">
+                      <img src={courseBg} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/95 via-[#18357a]/50 to-transparent" />
+                   </div>
+
+                   <div className="space-y-8 relative z-10 p-10 lg:p-12">
+                      <div>
+                         <h3 className="text-3xl lg:text-4xl font-semibold text-white mb-4 leading-tight font-graphik">{programsData[activeTab].subtitle}</h3>
+                         <p className="text-white/90 font-medium leading-relaxed max-w-sm">
+                            {programsData[activeTab].description}
+                         </p>
+                      </div>
+                   </div>
+                 </motion.div>
               </div>
 
-              <div className="space-y-8 relative z-10 p-10 lg:p-12">
+              {/* Course Grid Overlay for Mobile (Order 2) */}
+              <div className="block lg:hidden order-2 w-full">
+                 <CourseGrid activeTab={activeTab} navigate={navigate} />
+              </div>
+
+              {/* Features (Order 3 Mobile / Column 1 Desktop) */}
+              <div className="order-3 flex flex-col space-y-2">
+                 {/* Highlights List */}
+                 <div className="space-y-4 w-full px-4 mb-8">
+                    {[
+                       'Institute Research Centre Recognition',
+                       'Industry ready AI Enabled Curriculum',
+                       'Advance Lab Facilities',
+                       'Industry supported Centre of Excellence',
+                       '360 Degree Personality Development',
+                       'Culture of Innovation & Creativity'
+                    ].map((text, i) => (
+                       <motion.div 
+                         key={i}
+                         initial={{ opacity: 0, x: -10 }}
+                         whileInView={{ opacity: 1, x: 0 }}
+                         transition={{ delay: i * 0.1 }}
+                         className="flex items-center gap-3 group/item cursor-default"
+                       >
+                          <div className="h-0.5 w-3 bg-[#ffc107] opacity-50 group-hover/item:opacity-100 transition-opacity" />
+                          <span className="text-[14px] font-bold text-black italic tracking-tight leading-none uppercase">
+                             {text}
+                          </span>
+                       </motion.div>
+                    ))}
+                 </div>
+
+                 {/* Video Card - Always Second (Both Mobile and Desktop) */}
+                 <div className="w-full px-4">
+                   <motion.div
+                     whileHover={{ y: -5 }}
+                     onClick={() => setShowVideo(true)}
+                     className="relative group cursor-pointer rounded-xl overflow-hidden shadow-xl border border-slate-200 bg-white"
+                   >
+                     <div className="aspect-video relative">
+                       <img 
+                         src={courseBg} 
+                         alt="Success Story" 
+                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                       />
+                       <div className="absolute inset-0 bg-[#18357a]/10 group-hover:bg-[#18357a]/5 transition-colors" />
+                       
+                       <div className="absolute inset-0 flex flex-col items-center justify-center">
+                         <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-2xl">
+                           <Play fill="currentColor" className="ml-1" size={28} />
+                         </div>
+                         <p className="mt-4 text-[10px] font-black text-white uppercase tracking-[0.3em] drop-shadow-md text-center">Watch Success Story</p>
+                       </div>
+                     </div>
+                   </motion.div>
+                 </div>
+
+                 {/* Admission Sign - Always Third (Both Mobile and Desktop) */}
                  <div>
-                    <h3 className="text-3xl lg:text-4xl font-semibold text-white mb-4 leading-tight font-graphik">{programsData[activeTab].subtitle}</h3>
-                    <p className="text-white/90 font-medium leading-relaxed max-w-sm">
-                       {programsData[activeTab].description}
-                    </p>
+                    <AdmissionSign navigate={navigate} />
                  </div>
               </div>
-           </motion.div>
+           </div>
 
-           {/* Hanging Admission Sign - Refined Creative Design */}
-           <motion.div 
-             initial={{ opacity: 0, y: -20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 1, type: "spring", bounce: 0.4 }}
-             className="relative -mt-6 flex flex-col items-center group cursor-pointer z-20"
-             onClick={() => navigate('/admissions')}
-           >
-              {/* Triangular Hanging Rope */}
-              <svg width="100" height="50" viewBox="0 0 100 50" className="mb-[-2px]">
-                 <path d="M50 0 L15 50 M50 0 L85 50" stroke="#CBD5E1" strokeWidth="1.5" fill="none" />
-                 <circle cx="50" cy="0" r="3" fill="#64779F" />
-              </svg>
-
-              {/* The Sign Board - Reduced Size */}
-              <motion.div 
-                animate={{ rotate: [0, 1, -1, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="bg-white px-8 py-6 rounded-[1.2rem] shadow-[0_15px_40px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col items-center text-center relative hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all"
-              >
-                  <span className="text-[11px] font-black text-red-600 uppercase tracking-[0.3em] mb-1.5">Admission</span>
-                  <h4 className="text-3xl font-semibold text-[#18357a] mb-4 tracking-tight font-graphik">Open</h4>
-                  
-                  <button className="flex items-center gap-2.5 px-6 py-3 bg-[#18357a] hover:bg-[#ffc107] text-white hover:text-[#18357a] rounded-xl transition-all duration-300 shadow-md shadow-black/5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover:bg-[#18357a] animate-pulse" />
-                      <span className="text-[9px] font-black uppercase tracking-widest">Apply Now</span>
-                  </button>
-
-                  {/* Attachment Screws */}
-                  <div className="absolute top-3 left-0 right-0 flex justify-between px-5">
-                     <div className="w-2 h-2 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
-                     <div className="w-2 h-2 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
-                  </div>
-              </motion.div>
-
-              <p className="mt-4 text-[9px] font-black text-black uppercase tracking-[0.3em]">Academic Session 2026-27</p>
-
-              {/* Feature Highlights */}
-              <div className="mt-8 space-y-4 w-full px-6">
-                 {[
-                    'Institute Research Centre Recognition',
-                    'Industry ready AI Enabled Curriculum',
-                    'Advance Lab Facilities',
-                    'Industry supported Centre of Excellence',
-                    '360 Degree Personality Development',
-                    'Culture of Innovation & Creativity'
-                 ].map((text, i) => (
-                    <motion.div 
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="flex items-center gap-3 group/item cursor-default"
-                    >
-                       <div className="h-0.5 w-3 bg-[#ffc107] opacity-50 group-hover/item:opacity-100 transition-opacity" />
-                       <span className="text-[14px] font-bold text-black italic tracking-tight leading-none uppercase">
-                          {text}
-                       </span>
-                    </motion.div>
-                 ))}
-              </div>
-           </motion.div>
-        </div>
-
-           {/* Right Course Grid */}
-           <div className="grid sm:grid-cols-2 gap-5">
-              <AnimatePresence mode="popLayout">
-                 {programsData[activeTab].courses.map((course, idx) => (
-                    <motion.div
-                      key={course.name}
-                      layout
-                      initial={{ opacity: 0, scale: 0.9, y: 30 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9, y: -30 }}
-                      transition={{ 
-                        duration: 0.4, 
-                        delay: idx * 0.05,
-                        layout: { duration: 0.3 }
-                      }}
-                      whileHover={{ y: -5 }}
-                      onClick={() => {
-                        const base = activeTab === 'UG' ? 'undergraduate' : 'postgraduate'
-                        navigate(`/academics/${base}/${course.id}`)
-                      }}
-                      className="group bg-white p-7 rounded-[32px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(24,53,122,0.1)] transition-all cursor-pointer relative overflow-hidden"
-                    >
-                       {/* Background Polish */}
-                       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                       <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/[0.02] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#ffc107]/5 transition-colors duration-500" />
-                       
-                       <div className="relative z-10">
-                          <div className="flex items-center justify-between mb-6">
-                             <div className="w-14 h-14 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-300 transform group-hover:rotate-6">
-                                <course.icon size={26} />
-                             </div>
-                             <div className="px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#ffc107]/20 transition-colors">
-                                <span className="text-[8px] font-black text-black tracking-[0.2em] uppercase">Course Details</span>
-                             </div>
-                          </div>
-
-                          <h4 className="text-lg font-semibold text-black font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
-                             {course.name}
-                          </h4>
-                          <p className="text-[11px] font-black text-[#ffc107] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
-                             {course.code}
-                          </p>
-                          
-                          <div className="flex items-center gap-2 mt-4">
-                             <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107]" />
-                             <span className="text-[10px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
-                          </div>
-                       </div>
-                    </motion.div>
-                 ))}
-              </AnimatePresence>
+           {/* Column 2: The Full Grid (Desktop Only Container) */}
+           <div className="hidden lg:block">
+              <CourseGrid activeTab={activeTab} navigate={navigate} />
            </div>
 
         </div>
 
       </div>
+
+      {/* Video Modal - Global Stacking Context */}
+      <AnimatePresence>
+        {showVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-10 bg-black/95 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-6xl aspect-video bg-black rounded-3xl overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] border border-white/10"
+            >
+              <button 
+                onClick={() => setShowVideo(false)}
+                className="absolute top-6 right-6 z-[10000] w-12 h-12 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-[#ffc107] hover:text-[#18357a] flex items-center justify-center transition-all duration-300 shadow-xl"
+              >
+                <X size={28} strokeWidth={3} />
+              </button>
+              <video 
+                src={successVideo} 
+                autoPlay 
+                controls 
+                preload="metadata"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

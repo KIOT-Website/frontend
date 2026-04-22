@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Library, 
   Monitor, 
@@ -16,8 +16,11 @@ import {
   Video,
   Zap,
   Wifi,
-  BookOpenCheck
+  BookOpenCheck,
+  X
 } from 'lucide-react'
+
+import campusTourVid from '../assets/main/campus tour.mp4'
 
 const CAMPUS_HUBS = [
   {
@@ -102,107 +105,157 @@ const CAMPUS_HUBS = [
 
 const CampusLifePage = () => {
     const navigate = useNavigate()
+    const [showVideo, setShowVideo] = useState(false)
 
     return (
-        <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-24">
-            {/* 🔷 Fixed Banner - Reduced Height */}
-            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
-                <div className="absolute inset-0">
-                    <img 
-                        src="https://images.unsplash.com/photo-1523050335392-9bc0ad7c9f83?q=80&w=1920&auto=format&fit=crop" 
-                        className="w-full h-full object-cover opacity-40" 
-                        alt="Campus"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/80 via-[#18357a]/60 to-transparent" />
-                </div>
-                
-                <div className="relative z-10 text-center px-6">
+        <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-24 relative">
+            {/* Video Modal - Global Stacking Context */}
+            <AnimatePresence>
+                {showVideo && (
                     <motion.div
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 md:p-10"
                     >
-                        <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none mb-3 font-display">
-                            CAMPUS <span className="text-[#ffc107]">LIFE</span>
-                        </h1>
-                        <p className="text-white/60 font-medium text-[10px] md:text-sm max-w-2xl mx-auto uppercase tracking-widest leading-loose">
-                            Explore the world-class facilities and vibrant <br className="hidden md:block"/> ecosystem at KIOT.
-                        </p>
-                    </motion.div>
-                </div>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-6 pt-12 pb-12 relative z-20">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <p className="text-[#18357a] font-black text-[13px] uppercase tracking-[0.6em] mb-2 font-display bg-[#ffc107] py-3 inline-block px-12 rounded-xl border-2 border-[#18357a]/10">CAMPUS HIGHLIGHTS</p>
-                    <p className="text-slate-900 font-black text-lg max-w-2xl mx-auto uppercase tracking-wide leading-relaxed">
-                        Our campus blends advanced facilities with a supportive <br className="hidden md:block"/> and inspiring learning atmosphere.
-                    </p>
-                </motion.div>
-
-                <div className="space-y-40">
-                    {[
-                        { 
-                            t: "Advanced Infrastructure", 
-                            d: "Cutting-edge classrooms, fully equipped labs, and smart learning environments designed for modern education. Our infrastructure is built to support innovation and high-performance academic research.",
-                            icon: Monitor,
-                            c: "#18357a",
-                            img: "https://images.unsplash.com/photo-1632833075677-2f1f6cba9c1e?q=80&w=1200&auto=format&fit=crop"
-                        },
-                        { 
-                            t: "Dynamic Campus Life", 
-                            d: "A welcoming and diverse community that encourages collaboration, creativity, and cultural engagement. Student-led initiatives and global exposure programs define our vibrant campus ecosystem.",
-                            icon: Compass,
-                            c: "#ffc107",
-                            img: "https://images.unsplash.com/photo-1620912189865-1e8a33da4c5e?q=80&w=1200&auto=format&fit=crop"
-                        },
-                        { 
-                            t: "Excellence in Sports", 
-                            d: "Top-tier sports facilities and expert guidance to develop skills, fitness, and competitive spirit. We provide professional coaching and international-standard arenas for every athlete.",
-                            icon: Trophy,
-                            c: "#18357a",
-                            img: "https://images.unsplash.com/photo-1541258283038-f80e7d953049?q=80&w=1200&auto=format&fit=crop"
-                        }
-                    ].map((item, idx) => (
                         <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className={`flex flex-col ${idx % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16 lg:gap-24`}
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="relative w-full max-w-6xl aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10"
                         >
-                            {/* Image Part - Reduced Size */}
-                            <div className="w-full md:w-[42%] relative group">
-                                <div className="absolute -inset-3 bg-slate-100 rounded-[2rem] -rotate-1 group-hover:rotate-0 transition-transform duration-500" />
-                                <div className="relative rounded-[1.8rem] overflow-hidden shadow-xl aspect-[16/11]">
-                                    <img src={item.img} alt={item.t} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/30 to-transparent" />
-                                </div>
-                            </div>
+                            {/* Close Button */}
+                            <button 
+                                onClick={() => setShowVideo(false)}
+                                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/10 hover:bg-[#ffc107] text-white hover:text-[#18357a] flex items-center justify-center transition-all shadow-xl backdrop-blur-md"
+                            >
+                                <X size={24} strokeWidth={3} />
+                            </button>
 
-                            {/* Text Part - Expanded Focus */}
-                            <div className="w-full md:w-[58%] space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <div className="h-0.5 w-10" style={{ backgroundColor: item.c }} />
-                                    <span className="text-[10px] font-black uppercase tracking-[4px]" style={{ color: item.c }}>Institutional Excellence</span>
-                                </div>
-                                <h3 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
-                                    {item.t.split(' ')[0]} <br/> 
-                                    <span className="text-[#ffc107]">{item.t.split(' ').slice(1).join(' ')}</span>
-                                </h3>
-                                <p className="text-[14px] md:text-[15px] font-black text-black leading-relaxed tracking-wide text-justify">
-                                    {item.d}
-                                </p>
-                            </div>
+                            <video 
+                                src={campusTourVid} 
+                                className="w-full h-full object-contain"
+                                controls
+                                autoPlay
+                                playsInline
+                            />
                         </motion.div>
-                    ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+            {/* 🔷 Cinematic Hero Banner - Compact Refined Style */}
+            <section className="relative min-h-[380px] md:min-h-[420px] bg-[#18357a] overflow-hidden flex items-center">
+                {/* Integrated Background Design */}
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#18357a] via-[#18357a]/90 to-transparent z-10" />
+                    
+                    <motion.img 
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 0.7, x: 0 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        src="/src/assets/main/indian_college_students_campus.webp" 
+                        alt="KIOT Indian Campus Life" 
+                        className="absolute right-[-2%] top-0 h-full w-full lg:w-[60%] object-cover object-center opacity-70"
+                    />
+                    
+                    {/* Subtle Glow Overlay */}
+                    <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffc107]/10 blur-[100px] rounded-full pointer-events-none" />
                 </div>
+
+                <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10 w-full py-12">
+                    <div className="max-w-2xl lg:max-w-4xl">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="flex items-center gap-4 mb-6"
+                        >
+                            <div className="w-10 h-[2px] bg-[#ffc107]" />
+                            <span className="text-[#ffc107] text-[12px] font-black uppercase tracking-[0.5em] font-graphik italic">Explore the Ecosystem</span>
+                        </motion.div>
+
+                        <motion.h1 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="text-5xl md:text-6xl lg:text-[75px] font-black leading-[0.9] tracking-tighter mb-8"
+                        >
+                            <span className="text-white">Campus</span> <br />
+                            <span className="text-[#ffc107]">Life.</span>
+                        </motion.h1>
+
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="text-base md:text-lg text-white/80 font-medium leading-[1.5] max-w-xl font-graphik"
+                        >
+                            Explore the world-class facilities and vibrant ecosystem at KIOT. 
+                            Experience a learning environment where innovation meets tradition.
+                        </motion.p>
+                    </div>
+                </div>
+            </section>
+
+            <div className="max-w-7xl mx-auto px-6 pt-12 pb-24 relative z-20">
+                
+                {/* ─── NEW INSTITUTIONAL EXCELLENCE SECTION ─── */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24"
+                >
+                    {/* Text Part - Comprehensive Institutional Narrative */}
+                    <div className="w-full lg:w-[55%] space-y-8">
+                        <div className="flex items-center gap-4">
+                            <div className="h-0.5 w-10 bg-[#18357a]" />
+                            <span className="text-[12px] font-black uppercase tracking-[4px] text-[#18357a]">Institutional Excellence</span>
+                        </div>
+                        <h3 className="text-4xl md:text-6xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
+                            BUILDING <span className="text-[#ffc107]">LEGACY</span> <br/> 
+                            THROUGH INNOVATION
+                        </h3>
+                        <div className="space-y-6">
+                           <p className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik text-justify">
+                               At KIOT, excellence is built through advanced infrastructure, vibrant campus life, and a strong sports culture. Smart classrooms, modern labs, and innovation-driven spaces support academic growth, while a dynamic student community encourages creativity, collaboration, and global exposure.
+                           </p>
+                           <p className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik text-justify">
+                               With top-tier sports facilities and professional training, students grow both physically and mentally, creating a well-well-rounded environment focused on performance, passion, and progress.
+                           </p>
+                        </div>
+                    </div>
+
+                    {/* Video Part - Cinematic Campus Tour */}
+                    <div className="w-full lg:w-[45%] relative group">
+                        <div className="absolute -inset-4 bg-slate-100 rounded-[2.5rem] -rotate-1 group-hover:rotate-0 transition-transform duration-500" />
+                        <div 
+                          onClick={() => setShowVideo(true)}
+                          className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-video cursor-pointer border-4 border-white group-hover:border-[#ffc107]/20 transition-all duration-500"
+                        >
+                            {/* Real Campus Image as Thumbnail */}
+                            <img 
+                              src="/src/assets/main/campus .webp" 
+                              alt="Campus Tour" 
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/40 to-transparent" />
+                            
+                            {/* Play Button Overlay */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center">
+                               <motion.div 
+                                 whileHover={{ scale: 1.1 }}
+                                 whileTap={{ scale: 0.9 }}
+                                 className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-[#18357a] shadow-2xl group-hover:bg-[#ffc107] transition-colors duration-500"
+                               >
+                                  <Video size={32} fill="currentColor" className="ml-1" />
+                               </motion.div>
+                               <span className="mt-4 text-[10px] font-black text-white uppercase tracking-[4px] drop-shadow-lg font-graphik">Watch Campus Tour</span>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
 
             {/* 🔷 Institutional Impact Stats - Pixel Perfect match to design */}

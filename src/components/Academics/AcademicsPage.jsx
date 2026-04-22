@@ -375,8 +375,8 @@ export default function AcademicsPage() {
           {/* Modern Row and Column Based (Table) Layout */}
           <div className="max-w-5xl mx-auto bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 overflow-hidden">
             <div className="px-8 pt-10 pb-6 border-b border-slate-50">
-                <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-tighter mb-1">
-                   {programTab === 'UG Programs' ? 'Undergraduate' : 'Postgraduate'} <span className="text-[#ffc107]">Programmes</span>
+                <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-normal mb-1">
+                   {programTab === 'UG Programs' ? 'Undergraduate' : 'Postgraduate'} <span className="text-[#ffc107] ml-4">Programmes</span>
                 </h2>
 
             </div>
