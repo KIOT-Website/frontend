@@ -29,7 +29,7 @@ const LibraryPage = () => {
     return (
       <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
         {/* 🔷 Shared Hero Section (Consistent across Hub) */}
-        <div className="relative h-[40vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+        <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
             <div className="absolute inset-0">
                 <img 
                     src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1920&auto=format&fit=crop" 

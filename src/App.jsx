@@ -65,6 +65,7 @@ const ConsultancyPage = lazy(() => import('./pages/ConsultancyPage'))
 const EventDetailPage = lazy(() => import('./pages/EventDetailPage'))
 const LibraryPage = lazy(() => import('./pages/LibraryPage'))
 const SportsPage = lazy(() => import('./pages/SportsPage'))
+const SportsDetailPage = lazy(() => import('./pages/SportsDetailPage'))
 const ClassroomPage = lazy(() => import('./pages/ClassroomPage'))
 const TourPage = lazy(() => import('./pages/TourPage'))
 const TransportPage = lazy(() => import('./pages/TransportPage'))
@@ -256,6 +257,7 @@ function App() {
                   <Route path="/campus-life" element={<CampusLifePage />} />
               <Route path="/campus-life/library" element={<LibraryPage />} />
               <Route path="/campus-life/sports" element={<SportsPage />} />
+              <Route path="/campus-life/sports/:category" element={<SportsDetailPage />} />
               <Route path="/campus-life/classroom" element={<ClassroomPage />} />
               <Route path="/campus-life/tour" element={<TourPage />} />
               <Route path="/campus-life/transport" element={<TransportPage />} />

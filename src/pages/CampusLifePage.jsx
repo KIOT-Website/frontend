@@ -171,7 +171,7 @@ const CampusLifePage = () => {
                             className="flex items-center gap-4 mb-6"
                         >
                             <div className="w-10 h-[2px] bg-[#ffc107]" />
-                            <span className="text-[#ffc107] text-[12px] font-black uppercase tracking-[0.5em] font-graphik italic">Explore the Ecosystem</span>
+                            <span className="text-[#ffc107] text-[14px] font-black uppercase tracking-[0.5em] font-graphik italic">Explore the Ecosystem</span>
                         </motion.div>
 
                         <motion.h1 
@@ -211,7 +211,7 @@ const CampusLifePage = () => {
                     <div className="w-full lg:w-[55%] space-y-8">
                         <div className="flex items-center gap-4">
                             <div className="h-0.5 w-10 bg-[#18357a]" />
-                            <span className="text-[12px] font-black uppercase tracking-[4px] text-[#18357a]">Institutional Excellence</span>
+                            <span className="text-[14px] font-black uppercase tracking-[4px] text-[#18357a]">Institutional Excellence</span>
                         </div>
                         <h3 className="text-4xl md:text-6xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
                             BUILDING <span className="text-[#ffc107]">LEGACY</span> <br/> 
@@ -287,7 +287,7 @@ const CampusLifePage = () => {
                                     <p className="text-4xl lg:text-5xl font-black text-white tracking-tighter leading-none">
                                         {stat.v}
                                     </p>
-                                    <p className="text-[11px] font-black uppercase tracking-[3px] text-white/70 leading-tight">
+                                    <p className="text-[13px] font-black uppercase tracking-[3px] text-white/70 leading-tight">
                                         {stat.l}
                                     </p>
                                 </div>
@@ -303,7 +303,7 @@ const CampusLifePage = () => {
                     <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tighter">
                         Campus <span className="text-[#ffc107]">Essentials</span>
                     </h2>
-                    <p className="text-[11px] font-black text-slate-900 uppercase tracking-[4px] mt-2 leading-none">
+                    <p className="text-[13px] font-black text-slate-900 uppercase tracking-[4px] mt-2 leading-none">
                         Built for excellence in learning, living, and growth
                     </p>
                 </div>
@@ -329,10 +329,10 @@ const CampusLifePage = () => {
                                     <hub.icon size={22} strokeWidth={2.5} />
                                 </div>
                                 <div className="space-y-1.5 w-full">
-                                    <h3 className="text-[14px] font-black text-[#18357a] uppercase tracking-tight leading-none group-hover:text-[#ffc107] transition-colors">{hub.title}</h3>
-                                    <p className="text-[10px] font-black text-black uppercase tracking-widest leading-tight opacity-80">{hub.subtitle}</p>
+                                    <h3 className="text-[18px] font-black text-[#18357a] uppercase tracking-tight leading-none group-hover:text-[#ffc107] transition-colors">{hub.title}</h3>
+                                    <p className="text-[12px] font-black text-black uppercase tracking-widest leading-tight opacity-80">{hub.subtitle}</p>
                                     <div className="flex items-center justify-center gap-2 pt-3 transition-all -translate-x-1 group-hover:translate-x-0">
-                                        <span className="text-[8px] font-black text-[#18357a] uppercase tracking-widest">Access Hub</span>
+                                        <span className="text-[11px] font-black text-[#18357a] uppercase tracking-widest">Access Hub</span>
                                         <ArrowUpRight size={10} className="text-[#ffc107]" />
                                     </div>
                                 </div>

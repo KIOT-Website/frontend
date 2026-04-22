@@ -13,7 +13,7 @@ import ugBanner from '../../assets/main/ug banner .webp'
 const ugPrograms = [
   {
     id: 'be-cse',
-    name: 'B.E Computer Science & Engineering',
+    name: 'B.E. Computer Science & Engineering',
     short: 'CSE',
     duration: '4 Years',
     intake: 240,
@@ -26,7 +26,7 @@ const ugPrograms = [
   },
   {
     id: 'be-ece',
-    name: 'B.E Electronics & Communication Engineering',
+    name: 'B.E. Electronics & Communication Engineering',
     short: 'ECE',
     duration: '4 Years',
     intake: 180,
@@ -39,7 +39,7 @@ const ugPrograms = [
   },
   {
     id: 'be-mechanical',
-    name: 'B.E Mechanical Engineering',
+    name: 'B.E. Mechanical Engineering',
     short: 'MECH',
     duration: '4 Years',
     intake: 120,
@@ -52,7 +52,7 @@ const ugPrograms = [
   },
   {
     id: 'btech-it',
-    name: 'B.Tech Information Technology',
+    name: 'B.Tech. Information Technology',
     short: 'IT',
     duration: '4 Years',
     intake: 120,
@@ -65,7 +65,7 @@ const ugPrograms = [
   },
   {
     id: 'btech-aids',
-    name: 'B.Tech Artificial Intelligence and Data Science',
+    name: 'B.Tech. Artificial Intelligence and Data Science',
     short: 'AI&DS',
     duration: '4 Years',
     intake: 120,
@@ -78,7 +78,7 @@ const ugPrograms = [
   },
   {
     id: 'be-eee',
-    name: 'B.E Electrical & Electronics Engineering',
+    name: 'B.E. Electrical & Electronics Engineering',
     short: 'EEE',
     duration: '4 Years',
     intake: 120,
@@ -91,7 +91,7 @@ const ugPrograms = [
   },
   {
     id: 'btech-csbs',
-    name: 'B.Tech Computer Science and Business Systems',
+    name: 'B.Tech. Computer Science and Business Systems',
     short: 'CSBS',
     duration: '4 Years',
     intake: 60,
@@ -104,7 +104,7 @@ const ugPrograms = [
   },
   {
     id: 'be-ecm',
-    name: 'B.E Electronics & Computer Engineering',
+    name: 'B.E. Electronics & Computer Engineering',
     short: 'ECX',
     duration: '4 Years',
     intake: 60,
@@ -117,7 +117,7 @@ const ugPrograms = [
   },
   {
     id: 'be-civil',
-    name: 'B.E Civil Engineering',
+    name: 'B.E. Civil Engineering',
     short: 'CIVIL',
     duration: '4 Years',
     intake: 60,
@@ -376,7 +376,7 @@ export default function AcademicsPage() {
           <div className="max-w-5xl mx-auto bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 overflow-hidden">
             <div className="px-8 pt-10 pb-6 border-b border-slate-50">
                 <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-normal mb-1">
-                   {programTab === 'UG Programs' ? 'Undergraduate' : 'Postgraduate'} <span className="text-[#ffc107] ml-4">Programmes</span>
+                   {programTab === 'UG Programs' ? 'B.E. / B.Tech.' : 'Postgraduate'} <span className="text-[#ffc107] ml-4">Programmes</span>
                 </h2>
 
             </div>

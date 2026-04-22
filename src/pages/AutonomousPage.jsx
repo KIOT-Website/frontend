@@ -59,7 +59,7 @@ const AutonomousPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* ─── MODERN HERO SECTION ─── */}
-      <section className="relative h-[30vh] lg:h-[40vh] flex items-center justify-center overflow-hidden bg-[#0A1A3F]">
+      <section className="relative h-[25vh] lg:h-[32vh] flex items-center justify-center overflow-hidden bg-[#0A1A3F]">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <motion.img 

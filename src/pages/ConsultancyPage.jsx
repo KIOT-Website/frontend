@@ -50,15 +50,15 @@ const ConsultancyPage = () => {
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4">
                 <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to="/research" className="text-slate-400 hover:text-[#0f172a] text-[13px] font-bold uppercase tracking-wider transition-colors pt-0.5">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#0f172a] text-[13px] font-bold uppercase tracking-wider transition-colors pt-0.5">
                         Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#0f172a] text-xs font-bold uppercase tracking-wider pt-0.5">
+                    <span className="text-[#0f172a] text-[13px] font-bold uppercase tracking-wider pt-0.5">
                         Industrial Consultancy
                     </span>
                 </div>
@@ -74,7 +74,7 @@ const ConsultancyPage = () => {
                 >
                     <Link 
                         to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
+                        className="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[12px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
                     >
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
@@ -92,9 +92,9 @@ const ConsultancyPage = () => {
                         </div>
 
                         <div className="bg-[#0f172a] rounded-[2rem] p-6 text-white shadow-2xl border-b-4 border-[#ffc107]">
-                            <p className="text-[10px] font-black uppercase tracking-widest text-[#ffc107] mb-1">Impact Metric</p>
+                            <p className="text-[12px] font-black uppercase tracking-widest text-[#ffc107] mb-1">Impact Metric</p>
                             <div className="text-2xl font-black italic tracking-tight">₹ 5,75,000+</div>
-                            <p className="text-[9px] font-bold opacity-50 uppercase tracking-widest mt-1">Total Consultancy Revenue</p>
+                            <p className="text-[11px] font-bold opacity-50 uppercase tracking-widest mt-1">Total Consultancy Revenue</p>
                         </div>
                     </div>
                 </motion.div>
@@ -114,10 +114,10 @@ const ConsultancyPage = () => {
                                     {item.icon}
                                 </div>
                                 <div className="text-right">
-                                    <span className="inline-flex items-center px-3 py-1 bg-[#18357a] text-white text-[9px] font-black uppercase rounded-full tracking-widest mb-2 italic">
+                                    <span className="inline-flex items-center px-3 py-1 bg-[#18357a] text-white text-[11px] font-black uppercase rounded-full tracking-widest mb-2 italic">
                                         {item.status}
                                     </span>
-                                    <div className="flex items-center justify-end gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">
+                                    <div className="flex items-center justify-end gap-2 text-[12px] font-bold text-slate-400 uppercase tracking-widest leading-none">
                                         <Calendar size={12} className="text-[#ffc107]" /> {item.year}
                                     </div>
                                 </div>
@@ -132,16 +132,16 @@ const ConsultancyPage = () => {
                                     <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100/50">
                                         <Building2 size={16} className="text-slate-300 mt-0.5 shrink-0" />
                                         <div>
-                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Industry Partner</p>
-                                            <p className="text-xs font-bold text-[#1e293b] uppercase tracking-tight">{item.industry}</p>
+                                            <p className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-1">Industry Partner</p>
+                                            <p className="text-[14px] font-bold text-[#1e293b] uppercase tracking-tight">{item.industry}</p>
                                         </div>
                                     </div>
                                     
                                     <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100/50">
                                         <Handshake size={16} className="text-[#ffc107] mt-0.5 shrink-0" />
                                         <div>
-                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Domain Expertise</p>
-                                            <p className="text-xs font-bold text-[#1e293b] uppercase tracking-tight">{item.domain}</p>
+                                            <p className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-1">Domain Expertise</p>
+                                            <p className="text-[14px] font-bold text-[#1e293b] uppercase tracking-tight">{item.domain}</p>
                                         </div>
                                     </div>
 
@@ -149,8 +149,8 @@ const ConsultancyPage = () => {
                                         <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100/50">
                                             <Users size={16} className="text-slate-300 mt-0.5 shrink-0" />
                                             <div>
-                                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Consultants (PI / Co-PI)</p>
-                                                <p className="text-[10px] font-bold text-[#1e293b] uppercase tracking-tight leading-relaxed">{item.pi}</p>
+                                                <p className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-1">Consultants (PI / Co-PI)</p>
+                                                <p className="text-[12px] font-bold text-[#1e293b] uppercase tracking-tight leading-relaxed">{item.pi}</p>
                                             </div>
                                         </div>
                                     )}
@@ -163,7 +163,7 @@ const ConsultancyPage = () => {
                                         <BadgeDollarSign size={20} />
                                     </div>
                                     <div>
-                                        <p className="text-[9px] font-bold text-slate-400 uppercase tracking-[2px]">Revenue Generated</p>
+                                        <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[2px]">Revenue Generated</p>
                                         <p className="text-lg font-black text-[#18357a] tracking-tight group-hover:text-[#ffc107] transition-colors italic">₹ {item.revenue}</p>
                                     </div>
                                 </div>

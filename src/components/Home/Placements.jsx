@@ -82,7 +82,7 @@ const Placements = () => {
                 className="inline-flex items-center gap-3 mb-4"
               >
                 <div className="h-0.5 w-10 bg-[#ffc107] rounded-full" />
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-[#ffc107]">Placement Excellence</span>
+                <span className="text-[13px] font-black uppercase tracking-[0.4em] text-[#ffc107]">Placement Excellence</span>
               </motion.div>
               <h2 className="text-3xl lg:text-5xl font-semibold font-graphik leading-[1.1] text-white">
                 Where Talent <br />
@@ -107,8 +107,8 @@ const Placements = () => {
                         {stat.label.includes('Salary') && <span className="text-white/40 text-[10px] font-black uppercase -mt-0.5">₹</span>}
                         <p className="text-3xl lg:text-4xl font-black font-display tracking-tight text-white">{stat.value}</p>
                       </div>
-                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#A9B1C3]">{stat.label}</p>
-                      <p className="text-[11px] font-bold text-[#ffc107]/60 mt-0.5">{stat.sub}</p>
+                      <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#A9B1C3]">{stat.label}</p>
+                      <p className="text-[13px] font-bold text-[#ffc107]/60 mt-0.5">{stat.sub}</p>
                    </div>
                 </motion.div>
               ))}
@@ -119,12 +119,12 @@ const Placements = () => {
                 <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#18357a]">
                    <UserCheck size={16} />
                 </div>
-                <p className="text-[10px] font-black text-white/70 uppercase tracking-widest leading-none">1000+ Placements <br/> in last 3 years</p>
+                <p className="text-[12px] font-black text-white/70 uppercase tracking-widest leading-none">1000+ Placements <br/> in last 3 years</p>
               </div>
 
               <button 
                 onClick={() => navigate('/placement-overview')}
-                className="group relative px-10 py-5 bg-[#ffc107] text-[#18357a] rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center gap-3"
+                className="group relative px-10 py-5 bg-[#ffc107] text-[#18357a] rounded-2xl font-black uppercase tracking-[0.2em] text-[12px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center gap-3"
               >
                  Explore Placements
                  <TrendingUp size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -161,7 +161,7 @@ const Placements = () => {
                               <span className="font-display font-black text-sm lg:text-base text-white/90 group-hover:text-white transition-colors mb-1">
                                 {rec.name}
                               </span>
-                              <div className="flex items-center gap-4 text-white/40 text-[9px] uppercase font-black tracking-widest">
+                              <div className="flex items-center gap-4 text-white/40 text-[11px] uppercase font-black tracking-widest">
                                  <span className="flex items-center gap-1.5"><TrendingUp size={12} className="text-[#ffc107]" /> {rec.lpa}</span>
                                  <span className="flex items-center gap-1.5"><UserCheck size={12} className="text-[#ffc107]/50" /> {rec.count} Placed</span>
                               </div>

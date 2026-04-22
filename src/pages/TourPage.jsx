@@ -8,7 +8,7 @@ const TourPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
             {/* 🔷 Shared Hero Section (Consistent across Hub) */}
-            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+            <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1523050335392-9bc0ad7c9f83?q=80&w=1920&auto=format&fit=crop" 
