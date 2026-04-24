@@ -44,17 +44,6 @@ const SportsFacilitiesPage = () => {
                         <h1 className="text-4xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
                             Ground <span className="text-[#ffc107]">Facilities</span>
                         </h1>
-                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[4px]">Institutional Athletic Infrastructure</p>
-                    </div>
-
-                    <div className="flex items-center gap-4 bg-white p-6 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/20">
-                        <div className="w-12 h-12 bg-[#18357a] text-[#ffc107] rounded-2xl flex items-center justify-center">
-                            <Trophy size={24} />
-                        </div>
-                        <div>
-                            <p className="text-2xl font-black text-[#18357a] leading-none mb-1">18+</p>
-                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Global Standard Venues</p>
-                        </div>
                     </div>
                 </div>
 

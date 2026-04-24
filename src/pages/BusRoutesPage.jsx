@@ -530,7 +530,7 @@ const BusRoutesPage = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <span className="text-white/60 font-black text-[10px] uppercase tracking-[8px] mb-4 block">Logistics & Connectivity</span>
-              <h1 className="text-4xl md:text-5xl font-black text-white uppercase tracking-[12px] leading-tight font-display">
+              <h1 className="text-4xl md:text-5xl font-black text-white uppercase tracking-wider leading-tight font-display">
                 Bus Route <span className="text-white/60">Details</span>
               </h1>
               <p className="text-white/60 mt-4 max-w-xl font-bold text-sm leading-relaxed">
@@ -585,14 +585,14 @@ const BusRoutesPage = () => {
         <div className="mb-16 overflow-hidden rounded-3xl shadow-2xl border border-slate-100">
           {/* Main Title Bar */}
           <div className="bg-[#000080] py-8 text-center px-4">
-            <h2 className="text-white text-2xl md:text-3xl font-black uppercase tracking-[15px] leading-tight">
+            <h2 className="text-white text-2xl md:text-3xl font-black uppercase tracking-widest leading-tight">
               Bus  Route  Details
             </h2>
           </div>
           
           <div className="bg-white overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+              <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                   <tr className="bg-slate-100 border-b-2 border-slate-200">
                     <th className="px-4 py-6 text-base font-black text-[#18357a] uppercase tracking-wider text-center border-r border-slate-200 w-28">
@@ -681,14 +681,14 @@ const BusRoutesPage = () => {
         <div className="mb-16 overflow-hidden rounded-3xl">
           {/* Main Title Bar */}
           <div className="bg-[#000080] py-5 text-center">
-            <h2 className="text-white text-lg md:text-xl font-black uppercase tracking-[15px] leading-loose">
+            <h2 className="text-white text-lg md:text-xl font-black uppercase tracking-widest leading-loose">
               Travelling  Plan  &  Operations
             </h2>
           </div>
           
           <div className="bg-white overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+              <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                   <tr className="bg-slate-100 border-b-2 border-slate-200">
                     <th className="px-6 py-5 text-sm font-black text-[#18357a] uppercase tracking-wider text-center border-r border-slate-200 w-32">

@@ -15,7 +15,12 @@ import {
   Star,
   MapPin,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  LayoutGrid,
+  Menu,
+  ArrowRight,
+  FileText,
+  Phone
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -31,10 +36,27 @@ import s8 from '../assets/sports/s-8.jpeg'
 
 const sportsImages = [s1, s2, s3, s4, s5, s6, s7, s8];
 
+// Dynamic import for 6th KIOT Trophy images
+const trophyImages = Object.values(import.meta.glob('../assets/sports/6TH KIOT TROPHY2025-26/*.webp', { eager: true, import: 'default' }));
+
+// Dynamic import for Chess Tournament images
+const chessImages = Object.values(import.meta.glob('../assets/sports/State level chess tournament  2026/*.webp', { eager: true, import: 'default' }));
+
+// Dynamic import for CM Trophy images
+const cmTrophyImages = Object.values(import.meta.glob('../assets/sports/CM TROPHY PHOTOS/*.webp', { eager: true, import: 'default' }));
+
+// Dynamic import for District Level images
+const districtImages = Object.values(import.meta.glob('../assets/sports/DISTRICT LEVEL PHOTOS/*.webp', { eager: true, import: 'default' }));
+
+
+
+
+
 const SportsPage = () => {
     const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0)
     const [selectedImage, setSelectedImage] = useState(null)
+    const [activeTab, setActiveTab] = useState('6TH KIOT TROPHY 2025-26')
 
     // Auto-slide effect
     useEffect(() => {
@@ -60,15 +82,15 @@ const SportsPage = () => {
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
-                            className="relative max-w-5xl w-full rounded-3xl overflow-hidden shadow-2xl"
+                            className="relative max-w-5xl w-full rounded-2xl overflow-hidden shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <img src={selectedImage} className="w-full max-h-[85vh] object-contain mx-auto shadow-2xl" alt="Full view" />
                             <button 
                                 onClick={() => setSelectedImage(null)}
-                                className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-[#ffc107] text-white hover:text-[#18357a] flex items-center justify-center backdrop-blur-md transition-all shadow-xl"
+                                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/50 hover:bg-[#ffc107] text-white hover:text-[#18357a] flex items-center justify-center backdrop-blur-md transition-all z-50 shadow-lg"
                             >
-                                <X size={24} strokeWidth={3} />
+                                <X size={16} strokeWidth={3} />
                             </button>
                         </motion.div>
                     </motion.div>
@@ -76,7 +98,7 @@ const SportsPage = () => {
             </AnimatePresence>
 
             {/* Hero Section */}
-            <div className="relative h-[25vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+            <div className="relative h-[18vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1459749411177-0421800673d6?q=80&w=1920&auto=format&fit=crop" 
@@ -107,7 +129,7 @@ const SportsPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-16 relative z-20 space-y-24">
+            <div className="max-w-7xl mx-auto px-6 py-10 md:py-16 relative z-20 space-y-16 md:space-y-24">
 
                 {/* Directory & Image Section (2nd) */}
                 <div className="grid lg:grid-cols-[1fr_0.6fr] gap-12 items-start">
@@ -151,66 +173,86 @@ const SportsPage = () => {
                         </div>
                     </div>
 
-                    {/* Right: Directory Table */}
-                    <div className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-2xl">
-                        <table className="w-full text-left border-collapse">
-                            <thead>
-                                <tr className="bg-[#18357a]">
-                                    <th className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[3px]">Directories</th>
-                                    <th className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[3px] text-right">Link</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-50">
+                    {/* Right: Quick Access Hub */}
+                    <div className="space-y-6">
+                        <div className="bg-[#18357a] p-7 rounded-3xl shadow-2xl relative overflow-hidden group">
+                            <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
+                            <h2 className="text-white text-lg font-black uppercase tracking-widest mb-6 flex items-center gap-3">
+                                <Menu size={20} className="text-[#ffc107]" />
+                                Directories
+                            </h2>
+                            <div className="space-y-3">
                                 {[
-                                    { d: 'FACULTY DETAILS', link: '/campus-life/sports/faculty' },
-                                    { d: 'GROUND FACILITIES', link: '/campus-life/sports/facilities' }
-                                ].map((row, i) => (
-                                    <tr key={i} className="group hover:bg-slate-50 transition-colors">
-                                        <td className="px-6 py-5 text-[13px] font-black text-[#18357a] uppercase tracking-tight">{row.d}</td>
-                                        <td className="px-6 py-5 text-right">
-                                            <button 
-                                                onClick={() => row.link !== '#' && navigate(row.link)}
-                                                className="inline-flex items-center gap-2 text-[#18357a] font-black text-[9px] uppercase tracking-widest px-4 py-2 bg-[#ffc107] rounded-lg hover:bg-[#18357a] hover:text-white transition-all group/btn shadow-md"
-                                            >
-                                                Go
-                                                <ArrowUpRight size={12} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    { title: 'Faculty Details', icon: <Users size={18} />, path: '/campus-life/sports/faculty' },
+                                    { title: 'Ground Facilities', icon: <MapPin size={18} />, path: '/campus-life/sports/facilities' },
+                                    { title: 'Department Contact', icon: <Phone size={18} />, path: 'tel:+919894701234', sub: '+91 98947 01234', isContact: true },
+                                ].map((item, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => item.isContact ? (window.location.href = item.path) : navigate(item.path)}
+                                        className={`w-full p-4 rounded-2xl flex items-center justify-between group/btn transition-all border border-white/5 backdrop-blur-sm ${
+                                            item.isContact ? 'bg-[#ffc107]/10 hover:bg-[#ffc107]/20 border-[#ffc107]/20' : 'bg-white/10 hover:bg-white/20'
+                                        }`}
+                                    >
+                                        <div className="flex items-center gap-4 text-white">
+                                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
+                                                item.isContact ? 'bg-[#ffc107] text-[#18357a]' : 'bg-white/10 text-[#ffc107] group-hover/btn:bg-[#ffc107] group-hover/btn:text-[#18357a]'
+                                            }`}>
+                                                {item.icon}
+                                            </div>
+                                            <div className="flex flex-col items-start">
+                                                <span className="font-black text-[11px] uppercase tracking-wider">{item.title}</span>
+                                                {item.sub && <span className="text-[10px] font-bold text-[#ffc107]">{item.sub}</span>}
+                                            </div>
+                                        </div>
+                                        <ArrowRight size={18} className={`transition-all ${item.isContact ? 'text-[#ffc107]' : 'text-white/40 group-hover/btn:translate-x-1 group-hover/btn:text-white'}`} />
+                                    </button>
                                 ))}
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {/* Vision & Mission (3rd) */}
-                <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+                <div className="grid lg:grid-cols-2 gap-6">
                     {/* Vision Section */}
                     <motion.div 
                         whileHover={{ y: -5 }}
-                        className="relative group bg-white p-8 rounded-xl shadow-2xl flex flex-col items-center border border-slate-100 transition-all duration-500"
+                        className="relative bg-white p-7 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-6 overflow-hidden group"
                     >
-                        <div className="w-16 h-16 rounded-full bg-[#18357a] flex items-center justify-center text-[#ffc107] mb-6 shadow-xl">
-                            <Eye size={28} />
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#18357a]/5 rounded-full -translate-x-[-20%] -translate-y-[20%] group-hover:scale-150 transition-transform duration-700" />
+                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#18357a] text-[#ffc107] flex items-center justify-center shadow-lg">
+                            <Eye size={22} />
                         </div>
-                        <h3 className="text-2xl font-black text-[#18357a] tracking-tighter uppercase mb-4">Vision</h3>
-                        <p className="text-slate-600 text-[14px] leading-relaxed font-bold text-justify uppercase">
-                            We aim to lead Physical Education, Health Education, and Sports Science education locally, regionally, and ultimately internationally. We focus on excellence through educational research, development, and innovation. We will continue to nurture outstanding, responsible, and caring educators and professionals who contribute to social progress and human well-being.
-                        </p>
+                        <div className="relative z-10">
+                            <h3 className="text-sm font-black text-[#18357a] uppercase tracking-[2px] mb-3 flex items-center gap-2">
+                                Vision
+                                <div className="w-6 h-0.5 bg-[#ffc107]" />
+                            </h3>
+                            <p className="text-slate-600 text-[12.5px] leading-relaxed font-bold text-justify">
+                                We aim to lead Physical Education, Health Education, and Sports Science education locally, regionally, and ultimately internationally. We focus on excellence through educational research, development, and innovation. We will continue to nurture outstanding, responsible, and caring educators and professionals who contribute to social progress and human well-being.
+                            </p>
+                        </div>
                     </motion.div>
 
                     {/* Mission Section */}
                     <motion.div 
                         whileHover={{ y: -5 }}
-                        className="relative group bg-white p-8 rounded-xl shadow-2xl flex flex-col items-center border border-slate-100 transition-all duration-500"
+                        className="relative bg-white p-7 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-6 overflow-hidden group"
                     >
-                        <div className="w-16 h-16 rounded-full bg-[#18357a] flex items-center justify-center text-[#ffc107] mb-6 shadow-xl">
-                            <Target size={28} />
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#ffc107]/5 rounded-full -translate-x-[-20%] -translate-y-[20%] group-hover:scale-150 transition-transform duration-700" />
+                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#ffc107] text-[#18357a] flex items-center justify-center shadow-lg">
+                            <Target size={22} />
                         </div>
-                        <h3 className="text-2xl font-black text-[#18357a] tracking-tighter uppercase mb-4">Mission</h3>
-                        <p className="text-slate-600 text-[14px] leading-relaxed font-bold text-justify uppercase">
-                            Nurturing quality Physical Education teachers, sports and health professionals who are self-reliant and life-long learners. We equip them to integrate theory and practice, serve as role models, and promote healthy personal and professional behaviors. The department is committed to innovatively and strategically strengthening its leadership in the field of Physical Education, Health, and Sports Science.
-                        </p>
+                        <div className="relative z-10">
+                            <h3 className="text-sm font-black text-[#18357a] uppercase tracking-[2px] mb-3 flex items-center gap-2">
+                                Mission
+                                <div className="w-6 h-0.5 bg-[#18357a]" />
+                            </h3>
+                            <p className="text-slate-600 text-[12.5px] leading-relaxed font-bold text-justify">
+                                Nurturing quality Physical Education teachers, sports and health professionals who are self-reliant and life-long learners. We equip them to integrate theory and practice, serve as role models, and promote healthy personal and professional behaviors. The department is committed to innovatively and strategically strengthening its leadership in the field of Physical Education, Health, and Sports Science.
+                            </p>
+                        </div>
                     </motion.div>
                 </div>
 
@@ -256,7 +298,7 @@ const SportsPage = () => {
                                             {item.title}
                                             <div className="w-8 h-1 bg-[#ffc107] mt-1 rounded-full" />
                                         </h4>
-                                        <p className="text-[11px] text-slate-800 font-bold leading-relaxed uppercase">
+                                        <p className="text-[11px] text-slate-800 font-bold leading-relaxed">
                                             {item.desc}
                                         </p>
                                     </div>
@@ -270,6 +312,90 @@ const SportsPage = () => {
                             </motion.div>
                         ))}
                     </div>
+                </div>
+
+                {/* Sports Gallery (5th) */}
+                <div className="space-y-12">
+                    <div className="space-y-8">
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 bg-[#18357a] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
+                                <LayoutGrid size={20} />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-black text-[#18357a] tracking-tight uppercase">Sports Gallery</h2>
+                                <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px]">Moments of Excellence</p>
+                            </div>
+                        </div>
+
+                        {/* Category Tabs - Wrapped and Centered */}
+                        <div className="flex flex-wrap gap-2 justify-center">
+                            {[
+                                "6TH KIOT TROPHY 2025-26",
+                                "STATE LEVEL CHESS TOURNAMENT 2026",
+                                "CM TROPHY PHOTOS",
+                                "DISTRICT LEVEL PHOTOS",
+                                "NATIONAL LEVEL PHOTOS",
+                                "OPEN TOURNAMENT FACULTY",
+                                "OPEN TOURNAMENT INTERNATIONAL",
+                                "PD EDITING WORK",
+                                "PD PHOTOS",
+                                "SPORTS DAY 2025-26",
+                                "STATE LEVEL PHOTOS",
+                                "WEB FACILITIES PHOTOS",
+                                "WEB ZONE LEVEL PHOTOS"
+                            ].map((tab) => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all border ${
+                                        activeTab === tab 
+                                        ? 'bg-[#18357a] text-white border-[#18357a] shadow-lg' 
+                                        : 'bg-white text-[#18357a] border-slate-100 hover:border-[#ffc107]'
+                                    }`}
+                                >
+                                    {tab}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    <motion.div 
+                        layout
+                        className="grid grid-cols-2 md:grid-cols-4 gap-4"
+                    >
+                        {(activeTab === '6TH KIOT TROPHY 2025-26' 
+                            ? trophyImages 
+                            : activeTab === 'STATE LEVEL CHESS TOURNAMENT 2026' 
+                                ? chessImages 
+                                : activeTab === 'CM TROPHY PHOTOS'
+                                    ? cmTrophyImages
+                                    : activeTab === 'DISTRICT LEVEL PHOTOS'
+                                        ? districtImages
+                                        : sportsImages
+                        ).map((img, idx) => (
+                            <motion.div
+                                layout
+                                key={`${activeTab}-${idx}`}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.4 }}
+                                whileHover={{ scale: 1.02, y: -5 }}
+                                onClick={() => setSelectedImage(img)}
+                                className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] aspect-[4/3] cursor-pointer group border-2 border-white transition-all duration-300"
+                            >
+                                <img src={img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={`Gallery ${idx + 1}`} />
+                                
+                                {/* Permanent Bottom Shadow Gradient */}
+                                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent z-10" />
+
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-end p-4">
+                                    <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+                                        <Eye size={16} />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </div>

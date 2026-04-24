@@ -29,7 +29,7 @@ const summaryStats = [
 
 const AlumniInsights = () => {
   return (
-    <section className="py-12 md:py-16 bg-white overflow-hidden">
+    <section className="py-8 md:py-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Heading */}

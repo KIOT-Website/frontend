@@ -27,7 +27,7 @@ const purposes = [
 
 const AlumniCorePurpose = () => {
   return (
-    <section className="py-12 md:py-16 bg-[#FCFDFD]">
+    <section className="py-8 md:py-10 bg-[#FCFDFD]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Heading */}

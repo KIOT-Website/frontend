@@ -89,7 +89,7 @@ const SportsDetailPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] font-sans pb-20">
             {/* Hero Header */}
-            <div className="bg-[#18357a] pt-28 pb-10 relative overflow-hidden">
+            <div className="bg-[#18357a] pt-12 pb-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <button 
@@ -105,10 +105,10 @@ const SportsDetailPage = () => {
                             {data.icon}
                         </div>
                         <div>
-                            <h1 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase mb-0.5">
+                            <h1 className="text-2xl md:text-3xl font-black text-white uppercase mb-0.5">
                                 {data.title}
                             </h1>
-                            <p className="text-[#ffc107] font-black tracking-[0.3em] uppercase text-[9px]">
+                            <p className="text-[#ffc107] font-black uppercase text-[11px] tracking-wider">
                                 {data.subtitle}
                             </p>
                         </div>
@@ -129,7 +129,7 @@ const SportsDetailPage = () => {
                         >
                             {section.title && (
                                 <div className="mb-6 text-center">
-                                    <h3 className="text-xl md:text-2xl font-black text-[#18357a] uppercase tracking-widest relative inline-block">
+                                    <h3 className="text-xl md:text-2xl font-black text-[#18357a] uppercase relative inline-block">
                                         {section.title}
                                         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#ffc107] rounded-full" />
                                     </h3>
@@ -137,11 +137,12 @@ const SportsDetailPage = () => {
                             )}
                             
                             <div className="bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden">
-                                <table className="w-full text-left border-collapse table-auto">
+                                <div className="overflow-x-auto">
+                                    <table className="w-full text-left border-collapse min-w-[800px]">
                                     <thead>
                                         <tr className="bg-[#18357a]">
                                             {section.headers.map((header, hIdx) => (
-                                                <th key={hIdx} className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[0.2em] text-center border-r border-white/10 last:border-0">
+                                                <th key={hIdx} className="px-6 py-5 text-[10px] font-black text-white uppercase text-center border-r border-white/10 last:border-0">
                                                     {header}
                                                 </th>
                                             ))}
@@ -155,7 +156,7 @@ const SportsDetailPage = () => {
                                             >
                                                 {row.map((cell, cIdx) => (
                                                     <td key={cIdx} className="px-6 py-4 border-b border-slate-100 last:border-b-0">
-                                                        <span className={`text-[13px] text-slate-800 font-bold uppercase tracking-tight leading-relaxed whitespace-pre-line ${cIdx === 0 ? 'text-center block' : ''}`}>
+                                                        <span className={`text-[13px] text-slate-800 font-bold uppercase leading-relaxed whitespace-pre-line ${cIdx === 0 ? 'text-center block' : ''}`}>
                                                             {cell}
                                                         </span>
                                                     </td>
@@ -165,20 +166,12 @@ const SportsDetailPage = () => {
                                     </tbody>
                                 </table>
                             </div>
+                        </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
 
-            {/* Bottom Footer Callout */}
-            <div className="max-w-7xl mx-auto px-6 mt-16 text-center">
-                <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-[#18357a]/5 rounded-lg border border-[#18357a]/10">
-                    <Flag size={14} className="text-[#18357a]" />
-                    <span className="text-[9px] font-black text-[#18357a] uppercase tracking-[0.2em]">
-                        Official Academic Year 2025-26 Records
-                    </span>
-                </div>
-            </div>
         </div>
     );
 };

@@ -77,7 +77,7 @@ const SportsFacultyPage = () => {
   return (
     <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
       {/* 🔷 Shared Hero Section (Consistent across Hub) */}
-      <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+      <div className="relative h-[22vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
           <div className="absolute inset-0">
               <img 
                   src="https://images.unsplash.com/photo-1523050335392-9bc0ad7c9f83?q=80&w=1920&auto=format&fit=crop" 
@@ -87,7 +87,7 @@ const SportsFacultyPage = () => {
               <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/80 via-[#18357a]/60 to-transparent" />
           </div>
           
-          <div className="relative z-10 text-center px-6">
+          <div className="relative z-10 text-center px-6 pt-4">
               <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -95,15 +95,15 @@ const SportsFacultyPage = () => {
               >
                   <button 
                       onClick={() => navigate('/campus-life/sports')}
-                      className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
+                      className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-4 group border border-[#ffc107]/30 px-4 py-1 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
                   >
                       <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                      <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Sports & Games</span>
+                      <span className="text-[9px] font-black uppercase tracking-[2px]">Back to Sports & Games</span>
                   </button>
-                  <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none mb-3">
+                  <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-2">
                       CAMPUS <span className="text-[#ffc107]">LIFE</span>
                   </h1>
-                  <p className="text-white/60 font-medium text-[10px] md:text-sm max-w-2xl mx-auto uppercase tracking-widest leading-loose">
+                  <p className="text-white/60 font-medium text-[9px] md:text-xs max-w-2xl mx-auto uppercase tracking-widest leading-loose">
                       Institutional Infrastructure & Ecosystem
                   </p>
               </motion.div>
@@ -120,9 +120,7 @@ const SportsFacultyPage = () => {
             <div>
               <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight">Faculty Profiles</h2>
             </div>
-          </div>
-
-          <div className="space-y-16">
+          </div>          <div className="space-y-12">
             {facultyData.map((faculty, idx) => (
               <motion.div 
                 key={faculty.id}
@@ -130,69 +128,61 @@ const SportsFacultyPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="grid lg:grid-cols-[0.8fr_2fr] gap-16 items-start group border-b border-slate-50 pb-16 last:border-0"
+                className="bg-white rounded-[2rem] p-8 md:p-12 border border-slate-100 shadow-2xl space-y-10 relative overflow-hidden group"
               >
-                {/* Left: Faculty Image */}
-                <div className="space-y-6">
-                    <div className="relative aspect-[4/5] bg-slate-100 rounded-3xl overflow-hidden border-8 border-white shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                        <img 
-                          src={faculty.image} 
-                          className="w-full h-full object-cover" 
-                          alt={faculty.name} 
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/40 to-transparent" />
+                {/* Background Pattern */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#18357a]/5 rounded-full -translate-x-[-30%] -translate-y-[30%] group-hover:scale-110 transition-transform duration-700" />
+                
+                {/* Header Section */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-slate-100 pb-10">
+                    <div className="flex items-center gap-6">
+                        <div className="w-20 h-20 rounded-2xl bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
+                            <User size={40} />
+                        </div>
+                        <div>
+                            <h3 className="text-4xl font-black text-[#18357a] uppercase tracking-tight leading-none mb-3">{faculty.name}</h3>
+                            <div className="flex items-center gap-3">
+                                <p className="text-[#ffc107] font-black text-xs uppercase tracking-[4px]">{faculty.designation}</p>
+                                <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                                <div className="flex items-center gap-2 text-slate-500 text-[10px] font-black uppercase tracking-widest">
+                                    <GraduationCap size={14} className="text-[#18357a]" />
+                                    {faculty.qualification}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-4 bg-slate-50 px-6 py-4 rounded-2xl border border-slate-100">
+                        <Award size={20} className="text-[#18357a]" />
+                        <div>
+                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Specialization</p>
+                            <p className="text-[12px] font-bold text-[#18357a] uppercase">{faculty.specialization}</p>
+                        </div>
                     </div>
                 </div>
 
-                {/* Right: Detailed Info */}
-                <div className="space-y-10">
-                    <div className="space-y-2">
-                        <h3 className="text-4xl font-black text-[#18357a] tracking-tight leading-none mb-2">{faculty.name}</h3>
-                        <p className="text-[#ffc107] font-black text-sm uppercase tracking-[4px] mb-6">{faculty.designation}</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="flex gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-100 h-fit">
-                            <div className="text-[#18357a] shrink-0"><GraduationCap size={24} /></div>
-                            <div>
-                                <p className="text-[10px] font-black text-[#18357a] uppercase tracking-widest mb-1">Qualification</p>
-                                <p className="text-[15px] font-bold text-black leading-tight">{faculty.qualification}</p>
+                {/* Achievements Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {faculty.sections.map((section, sidx) => (
+                        <div key={sidx} className="space-y-6">
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-lg bg-[#18357a]/10 flex items-center justify-center text-[#18357a]">
+                                    <Trophy size={16} />
+                                </div>
+                                <h4 className="text-[11px] font-black text-[#18357a] uppercase tracking-[2px]">
+                                    {section.title}
+                                    <div className="w-6 h-0.5 bg-[#ffc107] mt-1" />
+                                </h4>
                             </div>
-                        </div>
-                        <div className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-100 shadow-sm h-fit">
-                            <div className="text-[#18357a] shrink-0"><Award size={24} /></div>
-                            <div>
-                                <p className="text-[10px] font-black text-[#18357a] uppercase tracking-widest mb-1">Specialization</p>
-                                <p className="text-[15px] font-bold text-black leading-tight">{faculty.specialization}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Achievement Sections */}
-                    <div className="space-y-8">
-                      {faculty.sections.map((section, sIdx) => (
-                        <div key={sIdx} className="bg-[#18357a] p-8 md:p-10 rounded-3xl text-white relative overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-blue-900/20">
-                            <Trophy className="absolute -right-8 -bottom-8 text-white/5 w-48 h-48 rotate-12" />
-                            <div className="mb-8 border-b border-white/10 pb-4">
-                              <h4 className="text-[11px] font-black text-[#ffc107] uppercase tracking-[4px] mb-1">{section.title}</h4>
-                              {section.subtitle && (
-                                <p className="text-white/40 text-[10px] uppercase tracking-widest">{section.subtitle}</p>
-                              )}
-                            </div>
-                            <ul className="space-y-4 relative z-10">
-                                {section.items.map((achievement, aIdx) => (
-                                    <li key={aIdx} className="flex gap-4 text-[13px] font-medium leading-relaxed group/item">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0 mt-2 group-hover/item:scale-150 transition-transform duration-300" />
-                                        <span 
-                                          className="text-white/90 group-hover/item:text-white transition-colors"
-                                          dangerouslySetInnerHTML={{ __html: achievement }}
-                                        />
+                            <ul className="space-y-4">
+                                {section.items.map((item, iidx) => (
+                                    <li key={iidx} className="text-[12px] leading-relaxed font-bold text-slate-600 flex gap-4 group/item">
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0 group-hover/item:scale-150 transition-transform" />
+                                        <span dangerouslySetInnerHTML={{ __html: item }} />
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                      ))}
-                    </div>
+                    ))}
                 </div>
               </motion.div>
             ))}

@@ -143,61 +143,7 @@ const CampusLifePage = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-            {/* 🔷 Cinematic Hero Banner - Compact Refined Style */}
-            <section className="relative min-h-[380px] md:min-h-[420px] bg-[#18357a] overflow-hidden flex items-center">
-                {/* Integrated Background Design */}
-                <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#18357a] via-[#18357a]/90 to-transparent z-10" />
-                    
-                    <motion.img 
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 0.7, x: 0 }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        src="/src/assets/main/indian_college_students_campus.webp" 
-                        alt="KIOT Indian Campus Life" 
-                        className="absolute right-[-2%] top-0 h-full w-full lg:w-[60%] object-cover object-center opacity-70"
-                    />
-                    
-                    {/* Subtle Glow Overlay */}
-                    <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffc107]/10 blur-[100px] rounded-full pointer-events-none" />
-                </div>
-
-                <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10 w-full py-12">
-                    <div className="max-w-2xl lg:max-w-4xl">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="flex items-center gap-4 mb-6"
-                        >
-                            <div className="w-10 h-[2px] bg-[#ffc107]" />
-                            <span className="text-[#ffc107] text-[14px] font-black uppercase tracking-[0.5em] font-graphik italic">Explore the Ecosystem</span>
-                        </motion.div>
-
-                        <motion.h1 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-5xl md:text-6xl lg:text-[75px] font-black leading-[0.9] tracking-tighter mb-8"
-                        >
-                            <span className="text-white">Campus</span> <br />
-                            <span className="text-[#ffc107]">Life.</span>
-                        </motion.h1>
-
-                        <motion.p 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-base md:text-lg text-white/80 font-medium leading-[1.5] max-w-xl font-graphik"
-                        >
-                            Explore the world-class facilities and vibrant ecosystem at KIOT. 
-                            Experience a learning environment where innovation meets tradition.
-                        </motion.p>
-                    </div>
-                </div>
-            </section>
-
-            <div className="max-w-7xl mx-auto px-6 pt-12 pb-24 relative z-20">
+            <div className="max-w-7xl mx-auto px-6 pt-24 pb-24 relative z-20">
                 
                 {/* ─── NEW INSTITUTIONAL EXCELLENCE SECTION ─── */}
                 <motion.div
@@ -208,14 +154,14 @@ const CampusLifePage = () => {
                     className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24"
                 >
                     {/* Text Part - Comprehensive Institutional Narrative */}
-                    <div className="w-full lg:w-[55%] space-y-8">
+                    <div className="w-full lg:w-[45%] space-y-8">
                         <div className="flex items-center gap-4">
                             <div className="h-0.5 w-10 bg-[#18357a]" />
                             <span className="text-[14px] font-black uppercase tracking-[4px] text-[#18357a]">Institutional Excellence</span>
                         </div>
-                        <h3 className="text-4xl md:text-6xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
-                            BUILDING <span className="text-[#ffc107]">LEGACY</span> <br/> 
-                            THROUGH INNOVATION
+                        <h3 className="text-4xl md:text-6xl font-black text-[#18357a] tracking-tighter leading-none">
+                            Building <span className="text-[#ffc107]">Legacy</span> <br/> 
+                            Through Innovation
                         </h3>
                         <div className="space-y-6">
                            <p className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik text-justify">
@@ -228,7 +174,7 @@ const CampusLifePage = () => {
                     </div>
 
                     {/* Video Part - Cinematic Campus Tour */}
-                    <div className="w-full lg:w-[45%] relative group">
+                    <div className="w-full lg:w-[55%] relative group">
                         <div className="absolute -inset-4 bg-slate-100 rounded-[2.5rem] -rotate-1 group-hover:rotate-0 transition-transform duration-500" />
                         <div 
                           onClick={() => setShowVideo(true)}
@@ -303,7 +249,7 @@ const CampusLifePage = () => {
                     <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tighter">
                         Campus <span className="text-[#ffc107]">Essentials</span>
                     </h2>
-                    <p className="text-[13px] font-black text-slate-900 uppercase tracking-[4px] mt-2 leading-none">
+                    <p className="text-[13px] font-black text-slate-900 tracking-[4px] mt-2 leading-none">
                         Built for excellence in learning, living, and growth
                     </p>
                 </div>
@@ -320,20 +266,27 @@ const CampusLifePage = () => {
                         >
                             <button 
                                 onClick={() => navigate(hub.link)}
-                                className="w-full group bg-white rounded-[1.5rem] border border-slate-200 shadow-xl shadow-slate-200/20 overflow-hidden flex flex-col items-center text-center p-6 transition-all hover:border-[#18357a]/20 hover:-translate-y-1 duration-500 h-full gap-5"
+                                className="w-full group bg-white rounded-3xl border border-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col items-center text-center px-6 py-8 transition-all hover:-translate-y-1.5 duration-500 h-full relative"
                             >
+                                {/* Permanent Corner Accents */}
+                                <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-[#18357a]/10 group-hover:border-[#ffc107] transition-colors duration-500 rounded-tl-3xl" />
+                                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-[#18357a]/10 group-hover:border-[#ffc107] transition-colors duration-500 rounded-br-3xl" />
+
                                 <div 
-                                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-inner transition-all group-hover:scale-110 duration-500"
+                                  className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg transition-all group-hover:scale-110 duration-500 mb-1"
                                   style={{ backgroundColor: `${hub.color}15`, color: hub.color }}
                                 >
-                                    <hub.icon size={22} strokeWidth={2.5} />
+                                    <hub.icon size={24} strokeWidth={2.5} />
                                 </div>
-                                <div className="space-y-1.5 w-full">
-                                    <h3 className="text-[18px] font-black text-[#18357a] uppercase tracking-tight leading-none group-hover:text-[#ffc107] transition-colors">{hub.title}</h3>
-                                    <p className="text-[12px] font-black text-black uppercase tracking-widest leading-tight opacity-80">{hub.subtitle}</p>
-                                    <div className="flex items-center justify-center gap-2 pt-3 transition-all -translate-x-1 group-hover:translate-x-0">
-                                        <span className="text-[11px] font-black text-[#18357a] uppercase tracking-widest">Access Hub</span>
-                                        <ArrowUpRight size={10} className="text-[#ffc107]" />
+                                
+                                <div className="space-y-1.5 w-full relative z-10">
+                                    <h3 className="text-[17px] font-black text-[#18357a] uppercase tracking-tight leading-none">{hub.title}</h3>
+                                    <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-tight">{hub.subtitle}</p>
+                                    
+                                    <div className="pt-4">
+                                        <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-slate-50 text-[#18357a] text-[9px] font-black uppercase tracking-[3px] border border-slate-100 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
+                                            Explore <ArrowUpRight size={12} className="text-[#ffc107]" />
+                                        </div>
                                     </div>
                                 </div>
                             </button>
