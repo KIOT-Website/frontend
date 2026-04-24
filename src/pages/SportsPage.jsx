@@ -51,6 +51,12 @@ const districtImages = Object.values(import.meta.glob('../assets/sports/DISTRICT
 // Dynamic import for National Level images
 const nationalLevelImages = Object.values(import.meta.glob('../assets/sports/national_level_photos/*.webp', { eager: true, import: 'default' }));
 
+// Dynamic import for Faculty Open Tournament images
+const facultyOpenImages = Object.values(import.meta.glob('../assets/sports/open_tournament_faculty/*.webp', { eager: true, import: 'default' }));
+
+// Dynamic import for International Open Tournament images
+const internationalOpenImages = Object.values(import.meta.glob('../assets/sports/open_tournament_international/*.webp', { eager: true, import: 'default' }));
+
 
 
 
@@ -372,6 +378,8 @@ const SportsPage = () => {
                             if (activeTab === 'CM TROPHY PHOTOS') return cmTrophyImages;
                             if (activeTab === 'DISTRICT LEVEL PHOTOS') return districtImages;
                             if (activeTab.trim() === 'NATIONAL LEVEL PHOTOS') return nationalLevelImages;
+                            if (activeTab.trim() === 'OPEN TOURNAMENT FACULTY') return facultyOpenImages;
+                            if (activeTab.trim() === 'OPEN TOURNAMENT INTERNATIONAL') return internationalOpenImages;
                             return sportsImages;
                         })().map((img, idx) => (
                             <motion.div
