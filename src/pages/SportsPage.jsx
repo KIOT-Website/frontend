@@ -346,10 +346,7 @@ const SportsPage = () => {
                                 "NATIONAL LEVEL PHOTOS",
                                 "OPEN TOURNAMENT FACULTY",
                                 "OPEN TOURNAMENT INTERNATIONAL",
-                                "SPORTS DAY 2025-26",
-                                "STATE LEVEL PHOTOS",
-                                "WEB FACILITIES PHOTOS",
-                                "WEB ZONE LEVEL PHOTOS"
+                                "SPORTS DAY 2025-26"
                             ].map((tab) => (
                                 <button
                                     key={tab}
