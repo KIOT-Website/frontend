@@ -346,8 +346,6 @@ const SportsPage = () => {
                                 "NATIONAL LEVEL PHOTOS",
                                 "OPEN TOURNAMENT FACULTY",
                                 "OPEN TOURNAMENT INTERNATIONAL",
-                                "PD EDITING WORK",
-                                "PD PHOTOS",
                                 "SPORTS DAY 2025-26",
                                 "STATE LEVEL PHOTOS",
                                 "WEB FACILITIES PHOTOS",
