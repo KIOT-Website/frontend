@@ -48,6 +48,9 @@ const cmTrophyImages = Object.values(import.meta.glob('../assets/sports/CM TROPH
 // Dynamic import for District Level images
 const districtImages = Object.values(import.meta.glob('../assets/sports/DISTRICT LEVEL PHOTOS/*.webp', { eager: true, import: 'default' }));
 
+// Dynamic import for National Level images
+const nationalLevelImages = Object.values(import.meta.glob('../assets/sports/national_level_photos/*.webp', { eager: true, import: 'default' }));
+
 
 
 
@@ -363,16 +366,14 @@ const SportsPage = () => {
                         layout
                         className="grid grid-cols-2 md:grid-cols-4 gap-4"
                     >
-                        {(activeTab === '6TH KIOT TROPHY 2025-26' 
-                            ? trophyImages 
-                            : activeTab === 'STATE LEVEL CHESS TOURNAMENT 2026' 
-                                ? chessImages 
-                                : activeTab === 'CM TROPHY PHOTOS'
-                                    ? cmTrophyImages
-                                    : activeTab === 'DISTRICT LEVEL PHOTOS'
-                                        ? districtImages
-                                        : sportsImages
-                        ).map((img, idx) => (
+                        {(() => {
+                            if (activeTab === '6TH KIOT TROPHY 2025-26') return trophyImages;
+                            if (activeTab === 'STATE LEVEL CHESS TOURNAMENT 2026') return chessImages;
+                            if (activeTab === 'CM TROPHY PHOTOS') return cmTrophyImages;
+                            if (activeTab === 'DISTRICT LEVEL PHOTOS') return districtImages;
+                            if (activeTab.trim() === 'NATIONAL LEVEL PHOTOS') return nationalLevelImages;
+                            return sportsImages;
+                        })().map((img, idx) => (
                             <motion.div
                                 layout
                                 key={`${activeTab}-${idx}`}
