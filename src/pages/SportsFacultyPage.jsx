@@ -4,8 +4,8 @@ import { Trophy, ArrowLeft, User, GraduationCap, Award, Star } from 'lucide-reac
 import { useNavigate } from 'react-router-dom'
 
 // Import Images
-import devi from '../assets/sports/devi.png'
-import manikandan from '../assets/sports/manikandan.jpg'
+import devi from '../assets/sports/devi.webp'
+import manikandan from '../assets/sports/manikandan.webp'
 
 const SportsFacultyPage = () => {
   const navigate = useNavigate()

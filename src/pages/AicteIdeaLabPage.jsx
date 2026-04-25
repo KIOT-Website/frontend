@@ -167,30 +167,32 @@ const IdeaLabPage = () => {
                             </div>
                         </motion.div>
 
-                        {/* Right Content: Glowing Cards (Compacted with Lighting Logos) */}
+                        {/* Right Content: Drawn Line Art Cards (Exactly matching reference style) */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1 }}
                             className="lg:w-1/2 flex items-center justify-center gap-4"
                         >
-                            <div className="relative group w-56 h-72 bg-[#1e3c8a]/20 backdrop-blur-xl rounded-[1.5rem] border border-white/10 p-6 flex flex-col items-center justify-center text-center shadow-2xl overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/20 to-transparent rounded-[1.5rem]" />
-                                <div className="w-32 h-32 mb-4 mx-auto flex items-center justify-center">
-                                    <img src="/aicte_idea_lab_glow.png" alt="IDEA Lab Logo" className="w-full h-full object-contain relative z-20" />
+                            <div className="relative group w-60 h-80 bg-[#0A1A3F] rounded-[1.5rem] border border-[#3b82f6]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(59,130,246,0.15)] overflow-hidden transition-all duration-500 hover:border-[#3b82f6]/60">
+                                <div className="w-40 h-40 mb-6 mx-auto flex items-center justify-center">
+                                    <img src="/aicte_idea_lab_line.png" alt="IDEA Lab Logo" className="w-full h-full object-contain relative z-20 scale-110" />
                                 </div>
-                                <h3 className="text-xl font-black text-white leading-tight mb-2">AICTE<br/><span className="text-2xl text-[#3b82f6]">IDEA Lab</span></h3>
-                                <p className="text-[#3b82f6] text-[13px] font-black uppercase tracking-[0.2em]">Fostering Innovation</p>
+                                <div className="relative z-10">
+                                    <h3 className="text-xl font-black text-white leading-tight mb-2">AICTE<br/><span className="text-2xl text-[#3b82f6]">IDEA Lab</span></h3>
+                                    <p className="text-[#3b82f6] text-[13px] font-black uppercase tracking-[0.2em]">Fostering Innovation</p>
+                                </div>
                             </div>
 
-                            <div className="relative group w-56 h-72 bg-[#0A1A3F] rounded-[1.5rem] border border-white/10 p-6 flex flex-col items-center justify-center text-center shadow-2xl overflow-hidden mt-8 lg:mt-16">
-                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,193,7,0.1),transparent)]" />
-                                <div className="w-32 h-32 mb-4 mx-auto flex items-center justify-center">
-                                    <img src="/govt_initiative_glow.png" alt="Govt Logo" className="w-full h-full object-contain relative z-20" />
+                            <div className="relative group w-60 h-80 bg-[#0A1A3F] rounded-[1.5rem] border border-[#ffc107]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(255,193,7,0.15)] overflow-hidden transition-all duration-500 hover:border-[#ffc107]/60 lg:mt-12">
+                                <div className="w-40 h-40 mb-6 mx-auto flex items-center justify-center">
+                                    <img src="/govt_initiative_line.png" alt="Govt Logo" className="w-full h-full object-contain relative z-20 scale-110" />
                                 </div>
-                                <h3 className="text-xl font-black text-[#ffc107] leading-tight mb-3 uppercase">AICTE</h3>
-                                <p className="text-white text-[13px] font-black leading-tight mb-4">Government of India Initiative</p>
-                                <div className="h-1 w-10 bg-[#ffc107] rounded-full mx-auto" />
+                                <div className="relative z-10">
+                                    <h3 className="text-xl font-black text-[#ffc107] leading-tight mb-3 uppercase">AICTE</h3>
+                                    <p className="text-white text-[13px] font-black leading-tight mb-4">Government of India Initiative</p>
+                                    <div className="h-1 w-10 bg-[#ffc107] rounded-full mx-auto" />
+                                </div>
                             </div>
                         </motion.div>
                     </div>
