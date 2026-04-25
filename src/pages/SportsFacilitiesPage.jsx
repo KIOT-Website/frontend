@@ -29,7 +29,7 @@ const SportsFacilitiesPage = () => {
 
     return (
         <div className="min-h-screen bg-[#FCFDFD] font-graphik py-12 md:py-20">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-5xl mx-auto px-6">
                 {/* Minimal Header */}
                 <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="space-y-4">
@@ -51,26 +51,26 @@ const SportsFacilitiesPage = () => {
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-[1.5rem] border border-slate-100 shadow-2xl shadow-slate-200/20 overflow-hidden"
+                    className="bg-white rounded-xl border border-slate-100 shadow-2xl shadow-slate-200/20 overflow-hidden"
                 >
                     <div className="overflow-x-auto">
                         <table className="w-full text-left">
                             <thead>
                                 <tr className="bg-[#18357a]">
-                                    <th className="px-8 py-6 text-[11px] font-black text-white uppercase tracking-[3px]">Name of the Ground</th>
-                                    <th className="px-8 py-6 text-[11px] font-black text-white uppercase tracking-[3px]">Venue / Location</th>
+                                    <th className="px-8 py-5 text-[10px] font-black text-white uppercase tracking-[3px]">Name of the Ground</th>
+                                    <th className="px-8 py-5 text-[10px] font-black text-white uppercase tracking-[3px]">Venue / Location</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-50">
                                 {FACILITIES.map((item, i) => (
                                     <tr key={i} className="group hover:bg-slate-50 transition-colors">
-                                        <td className="px-8 py-8">
-                                            <span className="text-[17px] font-black text-[#18357a] uppercase tracking-tight">{item.n}</span>
+                                        <td className="px-8 py-4">
+                                            <span className="text-[14px] font-black text-[#18357a] uppercase tracking-tight">{item.n}</span>
                                         </td>
-                                        <td className="px-8 py-8">
+                                        <td className="px-8 py-4">
                                             <div className="flex items-center gap-3 text-slate-800 font-bold group-hover:text-[#18357a] transition-colors">
-                                                <MapPin size={16} className="text-[#ffc107]" />
-                                                <span className="text-[14px] uppercase tracking-wide">{item.v}</span>
+                                                <MapPin size={14} className="text-[#ffc107]" />
+                                                <span className="text-[12px] uppercase tracking-wide">{item.v}</span>
                                             </div>
                                         </td>
                                     </tr>

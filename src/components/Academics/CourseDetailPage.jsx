@@ -303,310 +303,202 @@ export default function CourseDetailPage() {
           >
             {/* ── OVERVIEW ── */}
             {activeTab === 'Overview' && (
-              <div className="grid lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2 space-y-8">
+              <div className="space-y-8">
+                {/* Full Width About Section */}
+                <div className="bg-transparent md:bg-white md:rounded-[2.5rem] md:border md:border-[#DEE7F4] p-0 md:p-14 md:shadow-2xl md:shadow-blue-900/5 transition-all relative overflow-hidden group">
+                  {/* Decorative Background Pattern */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-blue-50 transition-colors duration-700" />
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -ml-16 -mb-16 blur-2xl" />
 
 
-                    <div className="bg-transparent md:bg-white md:rounded-[2.5rem] md:border md:border-[#DEE7F4] p-0 md:p-14 md:shadow-2xl md:shadow-blue-900/5 transition-all relative overflow-hidden group">
-                      {/* Decorative Background Pattern */}
-                      <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-blue-50 transition-colors duration-700" />
-                      <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -ml-16 -mb-16 blur-2xl" />
 
-                      <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-8">
-                         <BookOpen size={14} className="text-[#18357a]" />
-                         Program Roadmap
+                  <h2 className="text-2xl md:text-3xl font-bold font-graphik mb-8 flex items-center gap-3 tracking-tighter not-italic normal-case">
+                    <span className="text-[#18357a]">About the</span> <span className="text-[#ffc107]">Program</span>
+                  </h2>
+
+                  <div className="relative z-10 mb-12">
+                    {Array.isArray(course.overview) ? (
+                      <div className="space-y-6">
+                        {course.overview.map((para, idx) => (
+                         <p key={idx} className="text-black leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
+                            {para}
+                          </p>
+                        ))}
                       </div>
-
-                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#18357a] mb-8 flex items-center gap-3 tracking-tighter">
-                        About the Program
-                      </h2>
-
-                    <div className="relative z-10">
-                      {Array.isArray(course.overview) ? (
-                        <div className="space-y-6">
-                          {course.overview.map((para, idx) => (
-                           <p key={idx} className="text-black leading-relaxed text-[16px] font-medium font-graphik text-justify">
-                              {para}
-                            </p>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="text-black leading-relaxed text-[16px] font-medium font-graphik text-justify">
-                          {course.overview}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Program Highlight Bar */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-slate-100">
-                       <div className="space-y-1">
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-[#A9B1C3]">Recognition</p>
-                          <p className="text-[#18357a] font-bold font-graphik text-sm flex items-center gap-2">
-                             <CheckCircle size={14} className="text-emerald-500" />
-                             {course.accreditation}
-                          </p>
-                       </div>
-                       <div className="space-y-1">
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-[#A9B1C3]">Research Focus</p>
-                          <p className="text-[#18357a] font-bold font-graphik text-sm flex items-center gap-2">
-                             <Microscope size={14} className="text-blue-500" />
-                             Modern Lab Infra
-                          </p>
-                       </div>
-                       <div className="space-y-1">
-                          <p className="text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-[#A9B1C3]">Career Path</p>
-                          <p className="text-[#18357a] font-bold font-graphik text-sm flex items-center gap-2">
-                             <Briefcase size={14} className="text-amber-500" />
-                             Globally Networked
-                          </p>
-                       </div>
-                    </div>
+                    ) : (
+                      <p className="text-black leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
+                        {course.overview}
+                      </p>
+                    )}
                   </div>
-                  
-                </div>
 
-                <div className="space-y-6 flex flex-col">
-
-                  {/* Modern Quick Info Card */}
-                  <div className="bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2.5rem] p-8 text-white shadow-2xl shadow-[#18357a]/30 relative overflow-hidden">
-                    <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/5 rounded-full -mb-16 -mr-16 blur-2xl" />
-                    <h3 className="font-bold font-graphik mb-8 text-[11px] uppercase tracking-[0.4em] text-[#ffc107]">Quick Insight</h3>
-                    
-                    <div className="space-y-6">
-                      {[
-                        { label: 'Timeframe', value: course.duration, icon: Clock },
-                        { label: 'Intake', value: `${course.intake} Students`, icon: Users },
-                        { label: 'Affiliations', value: course.affiliation, icon: Building2 },
-                        { label: 'Standard', value: course.accreditation, icon: Award },
-                      ].map(item => (
-                        <div key={item.label} className="group cursor-default">
-                          <p className="text-white/40 text-[10px] font-bold font-graphik uppercase tracking-widest mb-1 group-hover:text-[#ffc107] transition-colors">{item.label}</p>
-                          <div className="flex items-center gap-3">
-                             <item.icon size={16} className="text-white/20" />
-                             <span className="text-white font-bold font-graphik text-sm tracking-tight">{item.value}</span>
+                  {/* Integrated Quick Insight Metrics - 4 Column Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 pt-10 border-t border-slate-100">
+                    {[
+                      { label: 'Timeframe', value: course.duration, icon: Clock, color: 'text-blue-600', bg: 'bg-blue-100' },
+                      { label: 'Intake', value: `${course.intake} Students`, icon: Users, color: 'text-amber-600', bg: 'bg-amber-100' },
+                      { label: 'Affiliations', value: course.affiliation, icon: Building2, color: 'text-emerald-600', bg: 'bg-emerald-100' },
+                      { label: 'Standard', value: course.accreditation, icon: Award, color: 'text-purple-600', bg: 'bg-purple-100' },
+                    ].map(item => (
+                      <div key={item.label} className="group p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-[#ffc107] hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                          <p className="text-black font-black text-[9px] uppercase tracking-[0.2em] mb-4 opacity-40 group-hover:opacity-100 transition-opacity">{item.label}</p>
+                          <div className="flex items-center gap-4">
+                             <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center ${item.color} group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500`}>
+                                <item.icon size={20} />
+                             </div>
+                             <span className="text-black font-bold font-graphik text-[14px] leading-tight">{item.value}</span>
                           </div>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
 
-                  {/* Sidebar Actions */}
-                  <div className="space-y-4">
-                    <button
-                      onClick={() => navigate('/admissions')}
-                      className="w-full flex items-center justify-center gap-3 p-5 rounded-2xl bg-white border-2 border-[#18357a] text-[#18357a] font-bold font-graphik text-[13px] uppercase tracking-widest hover:bg-[#18357a] hover:text-white transition-all shadow-sm"
-                    >
-                      Enroll Now <ArrowRight size={18} />
-                    </button>
-
-                  </div>
+                {/* Enrollment CTA */}
+                <div className="flex justify-center pt-4">
+                  <button
+                    onClick={() => navigate('/admissions')}
+                    className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#18357a] text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:text-[#18357a] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
+                  >
+                    Enroll Now <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
+                  </button>
                 </div>
               </div>
             )}
 
             {/* ── VISION & MISSION ── */}
             {activeTab === 'Vision & Mission' && (
-                <>
-                  <div className="space-y-16 py-12">
-                    <div className="text-center mb-12">
-                       <h2 className="text-3xl md:text-4xl font-bold font-graphik tracking-tight leading-tight">
-                         <span className="text-[#18357a]">Strategic</span> <span className="text-[#ffc107]">Outlook</span>
-                       </h2>
-                    </div>
+              <>
+                <div className="space-y-8 py-8">
+                  <div className="grid lg:grid-cols-2 gap-8">
+                      {/* Vision Card */}
+                      <motion.div 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          className="group relative rounded-[2rem] p-10 bg-white border border-slate-100 shadow-xl shadow-black/5 overflow-hidden transition-all duration-500 hover:border-[#18357a]/30"
+                      >
+                          <div className="relative z-10 flex flex-col h-full">
+                              <h3 className="text-2xl font-bold font-graphik text-[#18357a] mb-6 flex items-center gap-3">
+                                 <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
+                                 Our Vision
+                              </h3>
 
-                    <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {/* Vision Card - Premium Glass Design */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="group relative rounded-[3rem] p-10 lg:p-12 shadow-[0_40px_100px_-20px_rgba(24,53,122,0.25)] overflow-hidden transition-all duration-700 bg-[#18357a]"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#18357a] via-[#1d3c8c] to-[#0A1A3F] transition-transform duration-1000 group-hover:scale-110" />
-                            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/10 rounded-full blur-[120px] -mr-64 -mt-64 group-hover:bg-[#ffc107]/20 transition-all duration-700" />
-                            
-                            <Globe size={300} className="absolute -bottom-20 -right-20 text-white/5 opacity-0 group-hover:opacity-10 transition-all duration-700 rotate-12 group-hover:rotate-0" />
-                            
-                            <div className="relative z-10 flex flex-col h-full">
-                                <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 text-[#ffc107] text-[10px] font-bold font-graphik uppercase tracking-[0.4em] mb-10 w-fit shadow-xl group-hover:border-white/30 transition-all">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffc107] shadow-[0_0_12px_#ffc107] animate-pulse" />
-                                    Perspective
-                                </div>
+                              <div className="space-y-6 flex-grow">
+                                  <p className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
+                                      {course.vision || 'To provide a world-class academic environment for creating global leaders.'}
+                                  </p>
+                              </div>
+                          </div>
+                      </motion.div>
 
-                                <h3 className="text-4xl md:text-5xl font-black font-graphik text-white mb-8 tracking-tighter uppercase leading-tight italic">
-                                    Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#ffd54f]">Vision</span>
-                                </h3>
+                      {/* Mission Card */}
+                      <motion.div 
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.1 }}
+                          className="group relative bg-white rounded-[2rem] p-10 shadow-xl shadow-black/5 border border-slate-100 overflow-hidden transition-all duration-500 hover:border-[#ffc107]/30"
+                      >
+                          <div className="relative z-10 flex flex-col h-full">
+                              <h3 className="text-2xl font-bold font-graphik text-[#ffc107] mb-6 flex items-center gap-3">
+                                  <div className="w-1.5 h-6 bg-[#18357a] rounded-full" />
+                                  Our Mission
+                              </h3>
 
-                                <div className="space-y-8 flex-grow">
-                                    <div className="w-20 h-1.5 bg-gradient-to-r from-[#ffc107] to-transparent rounded-full group-hover:w-48 transition-all duration-1000" />
-                                    <blockquote className="relative">
-                                        <span className="absolute -left-4 -top-4 text-7xl font-serif text-white/10">"</span>
-                                        <p className="text-white/95 leading-relaxed text-[18px] md:text-[20px] font-medium font-graphik italic tracking-tight transition-all duration-500 group-hover:text-white">
-                                            {course.vision || 'To provide a world-class academic environment for creating global leaders.'}
-                                        </p>
-                                    </blockquote>
-                                </div>
-                                
-                                <div className="mt-auto pt-10">
-                                    <div className="flex items-center gap-4 group/btn cursor-pointer">
-                                        <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-[#ffc107] group-hover/btn:border-[#ffc107] transition-all duration-500">
-                                            <ArrowRight size={18} className="text-white group-hover/btn:text-[#18357a] transition-all" />
-                                        </div>
-                                        <span className="text-white/60 font-graphik text-[11px] font-bold uppercase tracking-[0.2em] group-hover/btn:text-white transition-all">Foundation for Excellence</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        {/* Mission Card - High Contrast Premium Look */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                            className="group relative bg-white rounded-[3rem] p-10 lg:p-12 shadow-[0_40px_100px_-20px_rgba(20,40,80,0.08)] border border-slate-100/80 overflow-hidden transition-all duration-700 hover:shadow-[0_60px_120px_-20px_rgba(20,40,80,0.12)]"
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-tr from-slate-50 via-white to-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                            <Target size={300} className="absolute -bottom-20 -right-20 text-[#18357a]/5 opacity-0 group-hover:opacity-10 transition-all duration-700 rotate-12 group-hover:rotate-0" />
-
-                            <div className="relative z-10 flex flex-col h-full">
-                                <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-[10px] font-bold font-graphik uppercase tracking-[0.4em] mb-10 w-fit shadow-sm group-hover:bg-[#18357a]/10 transition-all">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-[#18357a] shadow-[0_0_12px_rgba(24,53,122,0.4)] animate-pulse" />
-                                    Execution
-                                </div>
-
-                                <h3 className="text-4xl md:text-5xl font-black font-graphik text-[#18357a] mb-8 tracking-tighter uppercase leading-tight italic">
-                                    Our <span className="text-[#ffc107]">Mission</span>
-                                </h3>
-
-                                <div className="space-y-8 flex-grow">
-                                    <div className="w-20 h-1.5 bg-gradient-to-r from-[#18357a] to-transparent rounded-full group-hover:w-48 transition-all duration-1000" />
-                                    <div className="relative border-l-4 border-[#18357a]/10 pl-8 group-hover:border-[#ffc107] transition-all duration-700">
-                                        <p className="text-[#333333] leading-relaxed text-[17px] md:text-[18px] font-medium font-graphik tracking-tight text-justify whitespace-pre-line group-hover:text-black transition-all">
-                                            {course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.'}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mt-auto pt-10">
-                                    <div className="flex items-center gap-4 group/btn cursor-pointer">
-                                        <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover/btn:bg-[#18357a] group-hover/btn:border-[#18357a] transition-all duration-500">
-                                            <ArrowRight size={18} className="text-[#18357a] group-hover/btn:text-white transition-all" />
-                                        </div>
-                                        <span className="text-slate-400 font-graphik text-[11px] font-bold uppercase tracking-[0.2em] group-hover/btn:text-[#18357a] transition-all">Path to Impact</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
+                              <div className="space-y-6 flex-grow">
+                                  {(course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.').split('\n').map((para, idx) => (
+                                      <p key={idx} className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
+                                          {para.trim()}
+                                      </p>
+                                  ))}
+                              </div>
+                          </div>
+                      </motion.div>
+                  </div>
                 </div>
 
-                  <div className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-10 md:p-14 overflow-hidden mt-16">
-                    <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
-                       <div>
-                          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-4">
-                             <Award size={14} className="text-[#18357a]" />
-                             Quality Framework
-                          </div>
-                          <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#18357a] uppercase tracking-tighter">Academic Objectives</h2>
-                       </div>
-                       
-                       <div className="flex flex-wrap items-center gap-3 bg-slate-50/50 p-2 rounded-[2rem] border border-slate-100">
-                          {objectiveData.map((obj) => (
-                            <button
-                              key={obj.id}
-                              onClick={() => setActiveObjectiveTab(obj.id)}
-                              className={`px-8 py-4 rounded-[1.5rem] flex items-center gap-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-500 shadow-sm ${
-                                activeObjectiveTab === obj.id
-                                  ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
-                                  : 'bg-white text-[#64779F] hover:bg-white/80'
-                              }`}
-                            >
-                               <obj.icon size={16} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#A9B1C3]'} />
-                               {obj.id}
-                            </button>
-                          ))}
-                       </div>
-                    </div>
-
-                    <div className="relative min-h-[300px]">
-                      <AnimatePresence mode="wait">
-                         <motion.div
-                           key={activeObjectiveTab}
-                           initial={{ opacity: 0, x: 20 }}
-                           animate={{ opacity: 1, x: 0 }}
-                           exit={{ opacity: 0, x: -20 }}
-                           transition={{ duration: 0.4 }}
-                           className="p-8 sm:p-10 rounded-[2.5rem] bg-slate-50/50 border border-[#DEE7F4]/50 group"
-                         >
-                            <div className="flex items-center gap-5 mb-10 pb-10 border-b border-slate-200/50">
-                               <div className={`w-16 h-16 rounded-2xl ${activeObj.bg} flex items-center justify-center ${activeObj.color} group-hover:scale-110 transition-transform duration-500`}>
-                                  <activeObj.icon size={32} />
-                               </div>
-                               <div>
-                                  <h3 className="text-[13px] font-bold font-graphik tracking-[0.3em] text-[#18357a] uppercase">
-                                    {activeObj.title}
-                                  </h3>
-                               </div>
-                            </div>
-
-                            <div className="space-y-4 font-graphik">
-                                {(() => {
-                                  const text = activeObj.content || 'Data current being optimized for digital view.';
-                                  
-                                  // Split by specific academic markers to ensure labels like PEO/PO/PSO are not fragmented
-                                  // Updated regex to support multi-digit labels like PO-10 and Roman Numerals like PEO-I
-                                  const points = text.split(/(?=(?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):)/g).map(p => p.trim()).filter(p => p.length > 0);
-                                  
-                                  return points.map((point, idx) => {
-                                    // Check if this is an intro paragraph (doesn't start with a marker)
-                                    const isIntro = !/^(?:PEO|PO|PSO)\s*[-–]\s*\d+:/i.test(point);
-                                    
-                                    if (isIntro) {
-                                      return (
-                                        <p key={idx} className="text-[#333333] font-medium font-graphik leading-relaxed text-[15px] sm:text-[16px] mb-6 border-b border-slate-100 pb-4">
-                                          {point}
-                                        </p>
-                                      );
-                                    }
-
-                                    // Extract label (e.g., PEO – 1:) from point
-                                    const match = point.match(/^((?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):)\s*(.*)/i);
-                                    const label = match ? match[1] : '';
-                                    const description = match ? match[2] : point;
-
-                                    return (
-                                      <motion.div 
-                                        key={idx} 
-                                        whileHover={{ x: 10 }}
-                                        className="flex gap-5 p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
-                                      >
-                                        <div className="flex-shrink-0 mt-1">
-                                            <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
-                                                <CheckCircle2 size={16} className="text-[#18357a] group-hover/point:text-[#ffc107] transition-colors" />
-                                            </div>
-                                        </div>
-                                        <div className="space-y-1">
-                                          {label && (
-                                            <span className="block text-[11px] font-black font-graphik text-[#18357a] uppercase tracking-[0.2em]">
-                                              {label.replace(':', '')}
-                                            </span>
-                                          )}
-                                          <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[15px] sm:text-[16px]">
-                                            {description}
-                                          </p>
-                                        </div>
-                                      </motion.div>
-                                    );
-                                  });
-                                })()}
-                             </div>
-                         </motion.div>
-                      </AnimatePresence>
+                <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] border border-[#DEE7F4] px-2 py-8 sm:px-10 md:p-14 overflow-hidden mt-16">
+                  <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
+                     <div>
+                        <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-4">
+                           <Award size={14} className="text-[#18357a]" />
+                           Quality Framework
+                        </div>
+                        <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#18357a] tracking-tighter">Academic Objectives</h2>
+                     </div>
+                     
+                     <div className="grid grid-cols-3 md:flex md:items-center gap-2 md:gap-3 bg-slate-50/50 p-1.5 md:p-2 rounded-2xl md:rounded-[2rem] border border-slate-100">
+                        {objectiveData.map((obj) => (
+                          <button
+                            key={obj.id}
+                            onClick={() => setActiveObjectiveTab(obj.id)}
+                            className={`px-2 md:px-8 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] flex items-center justify-center md:justify-start gap-1.5 md:gap-3 text-[8px] md:text-[10px] font-bold font-graphik uppercase tracking-tight md:tracking-[0.2em] transition-all duration-500 shadow-sm ${
+                              activeObjectiveTab === obj.id
+                                ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
+                                : 'bg-white text-[#64779F] hover:bg-white/80'
+                            }`}
+                          >
+                             <obj.icon size={14} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#A9B1C3]'} />
+                             {obj.id}
+                          </button>
+                        ))}
                      </div>
                   </div>
-                </>
-              )}
+
+                  <div className="relative min-h-[300px]">
+                    <AnimatePresence mode="wait">
+                       <motion.div
+                         key={activeObjectiveTab}
+                         initial={{ opacity: 0, x: 20 }}
+                         animate={{ opacity: 1, x: 0 }}
+                         exit={{ opacity: 0, x: -20 }}
+                         transition={{ duration: 0.4 }}
+                         className="px-1 md:px-10 pt-4 pb-8 rounded-[1.5rem] md:rounded-[2.5rem] bg-slate-50/50 border border-[#DEE7F4]/50 group"
+                       >
+                          <div className="space-y-4 font-graphik">
+                              {(() => {
+                                const text = activeObj.content || 'Data current being optimized for digital view.';
+                                const points = text.split(/(?=(?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):)/g).map(p => p.trim()).filter(p => p.length > 0);
+                                
+                                return points.filter(p => /^(?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):/i.test(p)).map((point, idx) => {
+                                  const match = point.match(/^((?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):)\s*(.*)/i);
+                                  const label = match ? match[1] : '';
+                                  const description = match ? match[2] : point;
+
+                                  return (
+                                    <motion.div 
+                                      key={idx} 
+                                      whileHover={{ x: 10 }}
+                                      className="flex gap-2.5 md:gap-5 px-3 py-4 md:p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
+                                    >
+                                      <div className="flex-shrink-0 mt-1">
+                                          <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
+                                              <CheckCircle2 size={16} className="text-[#18357a] group-hover/point:text-[#ffc107] transition-colors" />
+                                          </div>
+                                      </div>
+                                      <div className="space-y-1">
+                                        {label && (
+                                          <span className="block text-[11px] font-black font-graphik text-[#18357a] uppercase tracking-[0.2em]">
+                                            {label.replace(':', '')}
+                                          </span>
+                                        )}
+                                        <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[14px] sm:text-[16px] text-justify">
+                                          {description}
+                                        </p>
+                                      </div>
+                                    </motion.div>
+                                  );
+                                });
+                              })()}
+                           </div>
+                       </motion.div>
+                    </AnimatePresence>
+                   </div>
+                </div>
+              </>
+            )}
 
             {/* ── CURRICULUM ── */}
             {activeTab === 'Curriculum' && (
@@ -672,7 +564,7 @@ export default function CourseDetailPage() {
                   {/* Left Sidebar: Lab List */}
                   <div className="lg:w-1/3 xl:w-1/4 space-y-3 max-h-[750px] overflow-y-auto px-4 py-2 scrollbar-hide">
                     <div className="mb-6 px-1">
-                       <h2 className="text-xl font-bold font-graphik text-[#18357a] uppercase tracking-tight mb-1">Labs & Facilities</h2>
+                       <h2 className="text-xl font-bold font-graphik text-[#18357a] tracking-tight mb-1">Labs & Facilities</h2>
                        <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Select a facility to view full technical specifications.</p>
                     </div>
                     {course.labs.map((lab, i) => {
@@ -711,26 +603,22 @@ export default function CourseDetailPage() {
                           initial={{ opacity: 0, x: 20 }}
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
-                          className="bg-white rounded-[2.5rem] border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 h-full overflow-hidden flex flex-col"
+                          className="bg-white rounded-3xl border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 h-full overflow-hidden flex flex-col"
                         >
                            {/* Lab Header */}
-                           <div className="bg-[#18357a] p-4 md:p-5 relative overflow-hidden shrink-0">
+                           <div className="bg-[#18357a] p-3 md:p-4 relative overflow-hidden shrink-0">
                               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl" />
                               <div className="relative z-10 flex flex-col md:flex-row items-center gap-5">
-                                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
+                                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
                                     {activeLab.icon && (
                                        (() => {
                                           const LargeIcon = activeLab.icon;
-                                          return <LargeIcon size={24} className="text-[#ffc107]" />;
+                                          return <LargeIcon size={22} className="text-[#ffc107]" />;
                                        })()
                                     )}
                                  </div>
                                  <div className="text-center md:text-left">
-                                    <h3 className="text-lg md:text-xl font-bold font-graphik text-white uppercase tracking-tight mb-0.5">{activeLab.name}</h3>
-                                    <div className="flex items-center gap-2 justify-center md:justify-start">
-                                       <Building2 size={12} className="text-[#ffc107]" />
-                                       <p className="text-white/60 text-[9px] font-bold font-graphik uppercase tracking-widest leading-none">{course.name}</p>
-                                    </div>
+                                    <h3 className="text-lg md:text-xl font-bold font-graphik text-white tracking-tight mb-0.5">{activeLab.name}</h3>
                                  </div>
                               </div>
                            </div>
@@ -874,7 +762,7 @@ export default function CourseDetailPage() {
               <div className="space-y-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
                   <div>
-                    <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#18357a] uppercase tracking-tight mb-2">
+                    <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#18357a] tracking-tight mb-2">
                        Intellectual <span className="text-[#ffc107]">Property</span>
                     </h2>
                     <p className="text-black font-medium font-graphik text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
@@ -896,7 +784,7 @@ export default function CourseDetailPage() {
                        <div className="w-16 h-16 rounded-2xl bg-[#18357a]/5 border border-[#18357a]/10 flex items-center justify-center mb-6 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
                           <FileText size={32} className="text-[#18357a] group-hover:text-white transition-colors" />
                        </div>
-                       <h3 className="text-lg font-bold font-graphik text-[#18357a] uppercase mb-3">Official Patents</h3>
+                       <h3 className="text-lg font-bold font-graphik text-[#18357a] mb-3">Official Patents</h3>
                        <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
                           Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
                        </p>
@@ -919,7 +807,7 @@ export default function CourseDetailPage() {
                          <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
                             <Award size={28} className="text-[#ffc107]" />
                          </div>
-                         <h3 className="text-lg font-bold font-graphik uppercase mb-3 tracking-tight">Research Excellence</h3>
+                         <h3 className="text-lg font-bold font-graphik mb-3 tracking-tight">Research Excellence</h3>
                          <p className="text-white/70 text-sm font-medium font-graphik leading-relaxed mb-6">
                             We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
                          </p>
@@ -1340,9 +1228,8 @@ function CurriculumSection({ courseId, courseName }) {
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#18357a] to-[#0A1A3F] flex items-center justify-center shadow-lg shadow-[#18357a]/20">
                  <BookOpen size={24} className="text-[#ffc107]" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#18357a] uppercase tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#18357a] tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
            </div>
-           <p className="text-black font-medium font-graphik text-sm tracking-wide ml-16">Department of {courseName.split('Engineering')[0]}</p>
         </div>
 
         <div className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200 self-start md:self-center">
@@ -1376,82 +1263,137 @@ function CurriculumSection({ courseId, courseName }) {
            <p className="text-[#64779F] font-bold font-graphik text-sm">Official documentation for this department is being updated.</p>
         </motion.div>
       ) : (
-        <div className="bg-white border border-[#D5E2F4]/80 rounded-[2rem] overflow-hidden">
-           <table className="w-full text-left border-collapse">
-              <thead>
-                 <tr className="bg-[#18357a] border-b border-[#18357a]">
-                    <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Document Info</th>
-                    <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
-                    {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Semester</th>}
-                    <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white text-right">Actions</th>
-                 </tr>
-              </thead>
-              <tbody className="divide-y divide-[#D5E2F4]/40">
-                {records.map((item, i) => (
-                  <motion.tr 
-                    key={item.id}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="hover:bg-[#ffc107]/5 transition-colors group"
-                  >
-                    <td className="px-5 py-3.5">
-                       <div className="flex items-center gap-3">
-                          <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                             curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#18357a]' : 'bg-[#ffc107]/10 text-[#18357a]'
-                          }`}>
-                            {curriculumTab === 'Regulations' ? <ShieldCheck size={18} /> : <BookOpen size={18} />}
+        <div className="space-y-6">
+           {/* Desktop Table View (Visible on Medium screens and above) */}
+           <div className="hidden md:block bg-white border border-[#D5E2F4]/80 rounded-xl overflow-hidden shadow-sm">
+              <table className="w-full text-left border-collapse">
+                 <thead>
+                    <tr className="bg-[#18357a] border-b border-[#18357a]">
+                       <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Document Info</th>
+                       <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
+                       {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Semester</th>}
+                       <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white text-right">Actions</th>
+                    </tr>
+                 </thead>
+                 <tbody className="divide-y divide-[#D5E2F4]/40">
+                   {records.map((item, i) => (
+                     <motion.tr 
+                       key={item.id}
+                       initial={{ opacity: 0, x: -10 }}
+                       animate={{ opacity: 1, x: 0 }}
+                       transition={{ delay: i * 0.05 }}
+                       className="hover:bg-[#ffc107]/5 transition-colors group"
+                     >
+                       <td className="px-5 py-3.5">
+                          <div className="flex items-center gap-3">
+                             <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
+                                curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#18357a]' : 'bg-[#ffc107]/10 text-[#18357a]'
+                             }`}>
+                               {curriculumTab === 'Regulations' ? <ShieldCheck size={18} /> : <BookOpen size={18} />}
+                             </div>
+                             <span className="text-sm font-bold font-graphik text-black transition-colors">{item.title}</span>
                           </div>
-                          <span className="text-sm font-bold font-graphik text-[#18357a] group-hover:text-[#18357a] transition-colors uppercase">{item.title}</span>
-                       </div>
-                    </td>
-                    <td className="px-3 py-3.5">
-                       <div className="flex items-center gap-2">
-                          <Calendar size={12} className="text-[#ffc107]" />
-                          <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#64779F]">{item.year_or_version}</span>
-                       </div>
-                    </td>
-                    {curriculumTab === 'Syllabus' && (
-                       <td className="px-3 py-3.5">
-                          <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-bold font-graphik text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all">
-                             SEM - {item.semester}
-                          </span>
                        </td>
-                    )}
-                    <td className="px-5 py-3.5 text-right">
-                       <div className="flex items-center justify-end gap-3">
-                          {/* View Link - Yellow Hover */}
-                          <a 
-                            href={item.pdf_url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="p-2.5 rounded-xl bg-blue-50 text-[#18357a] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95"
-                            title="View Document"
-                          >
-                             <ExternalLink size={16} />
-                          </a>
+                       <td className="px-3 py-3.5">
+                          <div className="flex items-center gap-2">
+                             <Calendar size={12} className="text-[#ffc107]" />
+                             <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black">{item.year_or_version}</span>
+                          </div>
+                       </td>
+                       {curriculumTab === 'Syllabus' && (
+                          <td className="px-3 py-3.5">
+                             <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-bold font-graphik text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                                SEM - {item.semester}
+                             </span>
+                          </td>
+                       )}
+                       <td className="px-5 py-3.5 text-right">
+                          <div className="flex items-center justify-end gap-3">
+                             <a 
+                               href={item.pdf_url} 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               className="p-2.5 rounded-xl bg-blue-50 text-[#18357a] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95"
+                               title="View Document"
+                             >
+                                <ExternalLink size={16} />
+                             </a>
+                             <button 
+                               onClick={() => {
+                                  const downloadUrl = item.pdf_url.includes('/upload/') 
+                                    ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/')
+                                    : item.pdf_url;
+                                  window.open(downloadUrl, '_blank');
+                                }}
+                               className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#18357a] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
+                               title="Download Document"
+                             >
+                                <Download size={16} />
+                             </button>
+                          </div>
+                       </td>
+                     </motion.tr>
+                   ))}
+                 </tbody>
+              </table>
+           </div>
 
-                          {/* Download Button - Force Attachment */}
-                          <button 
-                            onClick={() => {
-                               // Cloudinary trick: inject fl_attachment to force download
-                               const downloadUrl = item.pdf_url.includes('/upload/') 
-                                 ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/')
-                                 : item.pdf_url;
-                                 
-                               window.open(downloadUrl, '_blank');
-                            }}
-                            className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#18357a] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
-                            title="Download Document"
-                          >
-                             <Download size={16} />
-                          </button>
-                       </div>
-                    </td>
-                  </motion.tr>
-                ))}
-              </tbody>
-           </table>
+           {/* Mobile List View (Visible only on mobile) */}
+           <div className="md:hidden space-y-4">
+              {records.map((item, i) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="bg-white border border-[#D5E2F4] rounded-2xl p-5 shadow-sm active:scale-[0.98] transition-transform"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
+                         curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#18357a]' : 'bg-[#ffc107]/10 text-[#18357a]'
+                      }`}>
+                        {curriculumTab === 'Regulations' ? <ShieldCheck size={20} /> : <BookOpen size={20} />}
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="text-[14px] font-bold font-graphik text-black leading-tight">{item.title}</h4>
+                        <div className="flex items-center gap-2">
+                          <Calendar size={11} className="text-[#ffc107]" />
+                          <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black/50">{item.year_or_version}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center pt-4 border-t border-slate-50 gap-4">
+                    {curriculumTab === 'Syllabus' && (
+                      <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold font-graphik text-[#18357a]">
+                         SEM - {item.semester}
+                      </span>
+                    )}
+                    <div className="flex items-center gap-3">
+                      <a 
+                        href={item.pdf_url} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="flex items-center gap-2 px-4 py-2.5 bg-blue-50 text-[#18357a] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider"
+                      >
+                         View <ExternalLink size={14} />
+                      </a>
+                      <button 
+                        onClick={() => {
+                          const downloadUrl = item.pdf_url.includes('/upload/') ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/') : item.pdf_url;
+                          window.open(downloadUrl, '_blank');
+                        }}
+                        className="flex items-center gap-2 px-4 py-2.5 bg-[#ffc107] text-[#18357a] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider shadow-sm shadow-[#ffc107]/20"
+                      >
+                         Download <Download size={14} />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+           </div>
         </div>
       )}
     </div>

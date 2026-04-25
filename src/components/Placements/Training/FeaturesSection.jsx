@@ -60,7 +60,7 @@ const FeaturesSection = () => {
         <div key={catIdx}>
            <div className="flex items-center gap-4 mb-12">
               <div className="w-10 h-10 rounded-xl bg-[#18357a] text-white flex items-center justify-center shadow-lg"><cat.icon size={20} /></div>
-              <h2 className="text-2xl font-bold text-black uppercase tracking-tight">{cat.title}</h2>
+              <h2 className="text-2xl font-black text-black tracking-tighter font-graphik">{cat.title}</h2>
               <div className="h-px flex-1 bg-slate-200" />
            </div>
 
@@ -80,12 +80,12 @@ const FeaturesSection = () => {
                   </div>
                   
                   <h3 className="text-xl font-bold text-black mb-4 tracking-tight leading-tight">{item.title}</h3>
-                  <p className="text-black/60 font-medium text-sm leading-relaxed mb-6">{item.desc}</p>
+                  <p className="text-black font-black text-[13px] leading-relaxed mb-6">{item.desc}</p>
                   
                   <div className="pt-4 border-t border-slate-50">
                      <div className="flex items-center gap-2 text-[#ffc107]">
                         <CheckCircle size={14} />
-                        <span className="text-[11px] font-bold text-black uppercase tracking-wider">{item.hint}</span>
+                        <span className="text-[12px] font-black text-black tracking-wider font-graphik">{item.hint}</span>
                      </div>
                   </div>
                 </motion.div>

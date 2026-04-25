@@ -27,49 +27,48 @@ const PillarsSection = () => {
   return (
     <div className="mb-32 px-6">
        <div className="flex flex-col items-center mb-16">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 mb-4"
-          >
-             <Sparkles size={12} className="text-[#ffc107]" />
-             <span className="text-[10px] font-semibold text-[#18357a] tracking-[0.1em]">Core Philosophy</span>
-          </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight text-center">
+          <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] leading-tight tracking-tighter font-graphik uppercase">
             Three <span className="text-[#ffc107]">Pillars</span>
           </h2>
-          <div className="w-12 h-1 bg-[#ffc107] mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-[#ffc107] mt-4 rounded-full" />
        </div>
-       
-       <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {pillars.map((pillar, idx) => (
-            <motion.div 
-               key={idx}
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               whileHover={{ y: -8 }}
-               transition={{ delay: idx * 0.1, duration: 0.5 }}
-               className="relative group bg-white p-8 rounded-2xl border border-slate-100 shadow-xl shadow-black/[0.03] hover:border-[#18357a]/20 transition-all duration-500"
-            >
-               <div className="relative z-10 flex flex-col items-center text-center">
-                  <div className={`w-16 h-16 rounded-xl mb-6 flex items-center justify-center transition-all duration-500 ${
-                    idx === 1 ? 'bg-[#18357a] text-white shadow-lg' : 'bg-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20'
-                  }`}>
-                     <pillar.icon size={28} />
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-black mb-3 tracking-tight">
-                     {pillar.title}
-                  </h3>
-                  
-                  <p className="text-black/70 font-medium text-[14px] leading-relaxed">
-                     {pillar.desc}
-                  </p>
-               </div>
-            </motion.div>
-          ))}
-       </div>
+        <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+           {pillars.map((pillar, idx) => (
+             <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -12 }}
+                transition={{ delay: idx * 0.1, duration: 0.6 }}
+                className="relative group bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-[0_20px_50px_rgba(24,53,122,0.04)] hover:shadow-[0_40px_80px_rgba(24,53,122,0.08)] transition-all duration-700 overflow-hidden"
+             >
+                {/* Decorative Numbering */}
+                <div className="absolute top-8 right-10 text-6xl font-black text-slate-50 group-hover:text-[#ffc107]/10 transition-colors duration-700 select-none">
+                   0{idx + 1}
+                </div>
+
+                <div className="relative z-10 flex flex-col items-center text-center">
+                   <div className="w-20 h-20 rounded-3xl mb-8 flex items-center justify-center transition-all duration-700 bg-slate-50 border border-slate-100 group-hover:scale-110 group-hover:bg-white group-hover:shadow-2xl">
+                      <pillar.icon size={32} strokeWidth={1.5} className="text-[#18357a] group-hover:text-[#ffc107] transition-colors" />
+                   </div>
+                   
+                   <h3 className="text-2xl font-black text-[#18357a] mb-4 tracking-tighter uppercase font-graphik">
+                      {pillar.title}
+                   </h3>
+                   
+                   <div className="w-10 h-0.5 bg-[#ffc107] mb-6 rounded-full group-hover:w-16 transition-all duration-700" />
+                   
+                   <p className="text-black font-bold text-[14px] leading-relaxed opacity-90">
+                      {pillar.desc}
+                   </p>
+                </div>
+
+                {/* Bottom Accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#18357a] to-[#ffc107] translate-y-1.5 group-hover:translate-y-0 transition-transform duration-700" />
+             </motion.div>
+           ))}
+        </div>
     </div>
   )
 }

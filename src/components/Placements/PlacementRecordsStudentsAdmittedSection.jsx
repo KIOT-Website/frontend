@@ -80,13 +80,13 @@ const PlacementRecordsStudentsAdmittedSection = () => {
                     <span className="font-black text-[#18357a] text-base tracking-tight group-hover:text-[#ffc107] transition-colors">
                       {item.academic_year}
                     </span>
-                    <span className="text-center text-[#64779F] font-bold text-base">
+                    <span className="text-center text-black font-black text-base">
                       {item.students_opted}
                     </span>
-                    <span className="text-center text-[#64779F] font-bold text-base">
+                    <span className="text-center text-black font-black text-base">
                       {item.students_placed}
                     </span>
-                    <span className="text-center text-[#64779F] font-bold text-base">
+                    <span className="text-center text-black font-black text-base">
                       {item.companies_count}
                     </span>
                     <span className="text-center flex justify-center">

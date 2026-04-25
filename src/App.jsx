@@ -257,7 +257,7 @@ function App() {
                   <Route path="/campus-life" element={<CampusLifePage />} />
               <Route path="/campus-life/library" element={<LibraryPage />} />
               <Route path="/campus-life/sports" element={<SportsPage />} />
-              <Route path="/campus-life/sports/:category" element={<SportsDetailPage />} />
+              <Route path="/campus-life/sports/achievements/:category" element={<SportsDetailPage />} />
               <Route path="/campus-life/classroom" element={<ClassroomPage />} />
               <Route path="/campus-life/tour" element={<TourPage />} />
               <Route path="/campus-life/transport" element={<TransportPage />} />
@@ -290,45 +290,50 @@ function App() {
           <Footer />
           <ScrollToTop />
 
-          {/* ─── GLOBAL ADMISSIONS POPUP ─── */}
+          {/* ─── GLOBAL ADMISSIONS POPUP - COMPACT VERSION ─── */}
           <AnimatePresence>
             {showGlobalPopup && (
               <motion.div 
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                exit={{ y: 100, opacity: 0 }}
-                className="fixed bottom-4 left-4 z-[3000] w-[190px] md:w-[260px] bg-white rounded-xl md:rounded-2xl shadow-[0_15px_40px_rgba(10,26,63,0.25)] md:shadow-[0_20px_60px_rgba(10,26,63,0.3)] overflow-hidden p-5 md:p-8 border border-slate-100 flex flex-col items-center text-center md:bottom-10 md:left-10"
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -100, opacity: 0 }}
+                className="fixed bottom-6 left-6 z-[3000] w-[260px] bg-white rounded-[2rem] shadow-[0_20px_70px_rgba(10,26,63,0.25)] overflow-hidden border border-slate-100 flex flex-col font-graphik"
               >
-                <button 
-                  onClick={handleClosePopup}
-                  className="absolute top-4 right-4 w-7 h-7 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#18357a] hover:text-white transition-all"
-                >
-                  <X size={16} />
-                </button>
+                <div className="bg-[#0A1A3F] p-5 pb-8 flex flex-col items-center text-center relative">
+                    <button 
+                      onClick={handleClosePopup}
+                      className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-[#0A1A3F] transition-all z-20"
+                    >
+                      <X size={16} />
+                    </button>
 
-                {/* Decorative Dots */}
-                <div className="absolute top-4 left-6 flex gap-1.2 opacity-20">
-                   <div className="w-1.5 h-1.5 rounded-full bg-[#18357a]" />
-                   <div className="w-1.5 h-1.5 rounded-full bg-[#18357a]" />
+                    <div className="w-12 h-12 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#0A1A3F] mb-4 shadow-lg relative z-10">
+                        <GraduationCap size={24} />
+                    </div>
+
+                    <h2 className="text-white text-[11px] font-black uppercase tracking-[0.2em] mb-1 relative z-10 opacity-80">Admissions</h2>
+                    <h3 className="text-white text-3xl font-black tracking-tighter leading-none relative z-10">2026-27</h3>
                 </div>
 
-                <div className="mb-4 mt-2 w-full">
-                   <span className="text-red-600 font-black text-[10px] md:text-[11px] uppercase tracking-[0.3em] block mb-1">ADMISSION</span>
-                   <h2 className="text-4xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter leading-none mb-6">
-                     Open
-                   </h2>
-                   
-                   <button 
-                     onClick={() => { handleClosePopup(); navigate('/admissions'); }}
-                     className="w-full py-4 bg-[#18357a] text-white rounded-xl font-black text-[11px] md:text-[12px] uppercase tracking-[0.2em] hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-lg shadow-[#18357a]/20"
-                   >
-                     Apply Now
-                   </button>
-                </div>
+                <div className="p-5 pt-0 -mt-4 relative z-20">
+                    <div className="bg-white rounded-2xl p-5 shadow-xl border border-slate-50 flex flex-col items-center text-center">
+                        <p className="text-[#0A1A3F] text-[13px] font-black leading-tight mb-4">
+                            Applications are now open for all departments.
+                        </p>
+                        
+                        <button 
+                          onClick={() => { handleClosePopup(); navigate('/admissions'); }}
+                          className="w-full py-3 bg-[#ffc107] text-[#0A1A3F] rounded-xl font-black text-[13px] uppercase tracking-[0.1em] hover:bg-[#0A1A3F] hover:text-white transition-all shadow-md flex items-center justify-center gap-2"
+                        >
+                          Apply Now
+                        </button>
 
-                <p className="text-black font-black text-[9px] md:text-[10px] uppercase tracking-[0.25em] opacity-80">
-                  Academic Session 2026-27
-                </p>
+                        <div className="mt-3 flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                            <span className="text-[#0A1A3F] text-[11px] font-black uppercase tracking-wider opacity-90">Registration Live</span>
+                        </div>
+                    </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>

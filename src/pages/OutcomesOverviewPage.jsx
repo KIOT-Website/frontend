@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import OutcomesOverview from '../components/Placements/Records'
-import RecruitmentProcess from '../components/Placements/Recruitment'
+import RecruitmentProcessHero from '../components/Placements/Records/RecruitmentProcessHero'
 
 const OutcomesOverviewPage = () => {
   return (
@@ -11,7 +11,7 @@ const OutcomesOverviewPage = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <RecruitmentProcess />
+      <RecruitmentProcessHero />
       <OutcomesOverview />
     </motion.div>
   )

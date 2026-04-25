@@ -13,7 +13,7 @@ const HiringGateways = () => {
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#18357a]">Strategic Access</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-[#18357a] tracking-tighter uppercase mb-6 leading-[0.9]">Hiring Gateways</h2>
-            <p className="text-[#64779F] text-base font-bold leading-relaxed italic opacity-80">
+            <p className="text-black text-base font-black leading-relaxed italic">
               Proprietary hiring frameworks engineered to bridge the gap between academic brilliance and global corporate mandates.
             </p>
           </div>

@@ -1,68 +1,134 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Briefcase, GraduationCap } from 'lucide-react'
+import { Award, GraduationCap, Users, Briefcase, Globe, BarChart, ArrowRight, CheckCircle2 } from 'lucide-react'
+
+const features = [
+  { 
+    title: "Skill Development", 
+    desc: "Industry-oriented training and certifications", 
+    icon: GraduationCap 
+  },
+  { 
+    title: "Expert Mentorship", 
+    desc: "Guidance from experienced faculty and industry experts", 
+    icon: Users 
+  },
+  { 
+    title: "Industry Exposure", 
+    desc: "Internships, live projects and workshops", 
+    icon: Briefcase 
+  },
+  { 
+    title: "Placement Support", 
+    desc: "Dedicated training and 100% placement assistance", 
+    icon: BarChart 
+  }
+];
+
+const stats = [
+  { label: "Recruiters", value: "200+", icon: Users },
+  { label: "Placement Assistance", value: "100%", icon: GraduationCap },
+  { label: "Students Placed", value: "5000+", icon: Award },
+  { label: "Highest Package", value: "25 LPA", icon: BarChart }
+];
 
 const HeaderSection = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 mb-24">
-      <div className="grid lg:grid-cols-2 gap-12 items-start">
+    <div className="max-w-[1440px] mx-auto px-6 lg:px-12 py-4">
+      <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
+        {/* Left Content */}
         <motion.div 
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col"
+          transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2.5 px-5 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 shadow-sm mb-6 w-fit">
-             <GraduationCap size={16} className="text-[#18357a]" />
-             <span className="text-[10px] font-bold text-[#18357a] uppercase tracking-[0.1em]">Centre for Career Development and Training</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 mb-8">
+            <Award size={16} className="text-[#18357a]" />
+            <span className="text-[11px] font-bold text-[#18357a] uppercase tracking-wider">Our Commitment</span>
           </div>
-          
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-8 tracking-tighter leading-tight">
-             Shaping <span className="text-[#ffc107]">Competent Professionals</span>
+
+          <h1 className="text-5xl md:text-6xl font-black text-[#0A1A3F] leading-[1.1] tracking-tighter mb-8 font-graphik">
+            Shaping Competent<br />
+            <span className="text-[#ffc107]">Professionals</span>
           </h1>
-          
-          <div className="space-y-6">
-            <p className="text-black font-semibold text-lg leading-relaxed text-justify">
-              The Centre for Career Development and Training (CDT) at Knowledge Institute of Technology (KIOT), Salem, is dedicated to shaping students into competent professionals and responsible individuals.
-            </p>
-            <p className="text-black/70 font-medium text-base leading-relaxed text-justify">
-              It focuses on building both employability skills and life skills through a comprehensive, structured, and progressive training program spread across four years.
-            </p>
-            <div className="p-6 bg-[#18357a] rounded-2xl border border-[#18357a]/10 shadow-xl shadow-[#18357a]/20">
-               <p className="text-white font-medium text-base leading-relaxed italic">
-                 "With more than 1200 hours of training, the program has been meticulously designed to ensure students are prepared not just for their first job, but also for lifelong success in their personal and professional lives."
-               </p>
-            </div>
+
+          <div className="w-20 h-1.5 bg-[#ffc107] mb-10 rounded-full" />
+
+          <p className="text-black font-bold text-lg leading-relaxed mb-12 max-w-xl text-justify font-graphik">
+            At KIOT, we go beyond academics to build industry-ready professionals. Through continuous training, mentorship, and real-world exposure, we empower students to succeed in their careers.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-10 mb-12">
+            {features.map((f, i) => (
+              <div key={i} className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#0A1A3F] flex items-center justify-center shrink-0 shadow-lg">
+                  <f.icon size={22} className="text-white" />
+                </div>
+                <div>
+                  <h4 className="text-[15px] font-black text-[#0A1A3F] mb-1 font-graphik">{f.title}</h4>
+                  <p className="text-[12px] font-black text-black leading-tight font-graphik">{f.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
+
+          <button className="flex items-center gap-3 px-8 py-4 bg-[#0A1A3F] text-white rounded-full font-black text-sm uppercase tracking-widest hover:bg-[#18357a] transition-all group shadow-xl shadow-blue-900/20">
+            Know More about Placements
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform text-[#ffc107]" />
+          </button>
         </motion.div>
 
+        {/* Right Image Content */}
         <motion.div
            initial={{ opacity: 0, scale: 0.95 }}
            whileInView={{ opacity: 1, scale: 1 }}
            viewport={{ once: true }}
-           className="relative lg:sticky lg:top-32"
+           transition={{ duration: 0.8 }}
+           className="relative"
         >
-          <div className="absolute top-0 right-0 w-48 h-48 bg-[#18357a]/5 rounded-full -mr-24 -mt-24 blur-3xl opacity-50" />
-          <div className="relative rounded-2xl overflow-hidden border-4 border-white shadow-2xl shadow-black/10">
-             <img 
-               src="https://images.unsplash.com/photo-1544717297-fa95b3d9d634?q=80&w=1200&auto=format&fit=crop" 
-               alt="CDT Training" 
-               className="w-full h-[450px] object-cover"
-             />
-             <div className="absolute inset-0 bg-gradient-to-tr from-[#18357a]/40 via-transparent to-transparent" />
-             
-             {/* Stats Overlay */}
-             <div className="absolute bottom-8 left-8 p-6 bg-white/95 backdrop-blur-md rounded-2xl border border-white shadow-2xl">
-                <p className="text-[10px] font-bold text-black/40 uppercase tracking-[0.2em] mb-2">Total Program Intensity</p>
-                <div className="flex items-baseline gap-2">
-                   <span className="text-4xl font-bold text-[#18357a]">1200+</span>
-                   <span className="text-lg font-bold text-black uppercase tracking-tight">Hours</span>
-                </div>
-                <p className="text-xs font-semibold text-black/60 mt-1 italic">Meticulously Designed for Success</p>
-             </div>
+          <div className="relative rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" 
+              alt="Successful Students" 
+              className="w-full h-[600px] object-cover"
+            />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3F]/60 via-transparent to-transparent" />
+            
+            {/* Floating Slogan */}
+            <div className="absolute top-12 right-12 text-right">
+               <div className="space-y-1">
+                 <p className="text-2xl font-black text-white/90 drop-shadow-md">Building Skills.</p>
+                 <p className="text-2xl font-black text-white/90 drop-shadow-md">Building Futures.</p>
+                 <p className="text-3xl font-black text-[#ffc107] drop-shadow-md">Building Success.</p>
+               </div>
+            </div>
+
+            {/* Placement Badge Overlay */}
+            <div className="absolute bottom-12 right-12">
+               <div className="relative w-48 h-48 bg-white/90 backdrop-blur-md rounded-full border-[10px] border-[#0A1A3F]/5 flex flex-col items-center justify-center p-6 text-center shadow-2xl overflow-hidden group">
+                  <div className="absolute inset-0 border-[3px] border-dashed border-[#ffc107]/20 rounded-full animate-spin-slow" />
+                  <div className="relative z-10">
+                    <p className="text-4xl font-black text-[#0A1A3F] mb-1 tracking-tighter">91%</p>
+                    <p className="text-[10px] font-black text-[#0A1A3F] uppercase leading-tight tracking-widest mb-4">Placement<br/>Success Rate</p>
+                    <div className="w-10 h-0.5 bg-[#ffc107] mx-auto mb-3" />
+                    <p className="text-[8px] font-black text-slate-500 uppercase tracking-widest leading-tight">Strong Connections.<br/>Bright Careers.</p>
+                  </div>
+               </div>
+            </div>
+
+            {/* Decorative Yellow Arrow/Path Line (Simplified) */}
+            <div className="absolute bottom-20 left-0 w-full px-12 pointer-events-none opacity-40">
+               <svg viewBox="0 0 500 100" className="w-full h-auto text-[#ffc107] fill-none">
+                  <path d="M0 80 Q 150 70 250 50 T 500 20" stroke="currentColor" strokeWidth="4" strokeDasharray="12 8" />
+               </svg>
+            </div>
           </div>
         </motion.div>
       </div>
+
+
     </div>
   )
 }

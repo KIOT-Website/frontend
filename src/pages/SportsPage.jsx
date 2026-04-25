@@ -25,14 +25,14 @@ import {
 import { motion, AnimatePresence } from 'framer-motion'
 
 // Import Sports Images
-import s1 from '../assets/sports/S-1.jpeg'
-import s2 from '../assets/sports/s-2.jpeg'
-import s3 from '../assets/sports/s-3.jpeg'
-import s4 from '../assets/sports/s-4.jpeg'
-import s5 from '../assets/sports/s-5.jpeg'
-import s6 from '../assets/sports/s-6.jpeg'
-import s7 from '../assets/sports/s-7.jpeg'
-import s8 from '../assets/sports/s-8.jpeg'
+import s1 from '../assets/sports/S-1.webp'
+import s2 from '../assets/sports/s-2.webp'
+import s3 from '../assets/sports/s-3.webp'
+import s4 from '../assets/sports/s-4.webp'
+import s5 from '../assets/sports/s-5.webp'
+import s6 from '../assets/sports/s-6.webp'
+import s7 from '../assets/sports/s-7.webp'
+import s8 from '../assets/sports/s-8.webp'
 
 const sportsImages = [s1, s2, s3, s4, s5, s6, s7, s8];
 
@@ -56,6 +56,9 @@ const facultyOpenImages = Object.values(import.meta.glob('../assets/sports/open_
 
 // Dynamic import for International Open Tournament images
 const internationalOpenImages = Object.values(import.meta.glob('../assets/sports/open_tournament_international/*.webp', { eager: true, import: 'default' }));
+
+// Dynamic import for Sports Day 2025-26 images
+const sportsDayImages = Object.values(import.meta.glob('../assets/sports/sports_day_2025_26/*.webp', { eager: true, import: 'default' }));
 
 
 
@@ -107,7 +110,7 @@ const SportsPage = () => {
             </AnimatePresence>
 
             {/* Hero Section */}
-            <div className="relative h-[18vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+            <div className="relative h-[25vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1459749411177-0421800673d6?q=80&w=1920&auto=format&fit=crop" 
@@ -122,18 +125,22 @@ const SportsPage = () => {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8 }}
+                        className="flex flex-col items-center"
                     >
-                        <button 
-                            onClick={() => navigate('/campus-life')}
-                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-4 group border border-[#ffc107]/30 px-3 py-1 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
-                        >
-                            <ArrowLeft size={12} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-[9px] font-black uppercase tracking-[2px]">Back to Hub</span>
-                        </button>
-                        <p className="text-[#ffc107] text-[9px] md:text-[10px] font-black uppercase tracking-[5px] mb-2 opacity-90">Department of Physical Education</p>
-                        <h1 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none mb-2">
+                        <p className="text-[#ffc107] text-[10px] md:text-[12px] font-black uppercase tracking-[4px] mb-3 drop-shadow-lg">
+                            Department of Physical Education
+                        </p>
+                        <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-6">
                             SPORTS & <span className="text-[#ffc107]">GAMES</span>
                         </h1>
+                        
+                        <button 
+                            onClick={() => navigate('/campus-life')}
+                            className="inline-flex items-center gap-2 text-white hover:text-[#18357a] transition-all group border border-white/30 px-5 py-2 rounded-full bg-white/10 hover:bg-[#ffc107] hover:border-[#ffc107] backdrop-blur-md shadow-2xl"
+                        >
+                            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                        </button>
                     </motion.div>
                 </div>
             </div>
@@ -238,7 +245,7 @@ const SportsPage = () => {
                                 Vision
                                 <div className="w-6 h-0.5 bg-[#ffc107]" />
                             </h3>
-                            <p className="text-slate-600 text-[12.5px] leading-relaxed font-bold text-justify">
+                            <p className="text-black text-[12.5px] leading-relaxed font-bold text-justify">
                                 We aim to lead Physical Education, Health Education, and Sports Science education locally, regionally, and ultimately internationally. We focus on excellence through educational research, development, and innovation. We will continue to nurture outstanding, responsible, and caring educators and professionals who contribute to social progress and human well-being.
                             </p>
                         </div>
@@ -258,7 +265,7 @@ const SportsPage = () => {
                                 Mission
                                 <div className="w-6 h-0.5 bg-[#18357a]" />
                             </h3>
-                            <p className="text-slate-600 text-[12.5px] leading-relaxed font-bold text-justify">
+                            <p className="text-black text-[12.5px] leading-relaxed font-bold text-justify">
                                 Nurturing quality Physical Education teachers, sports and health professionals who are self-reliant and life-long learners. We equip them to integrate theory and practice, serve as role models, and promote healthy personal and professional behaviors. The department is committed to innovatively and strategically strengthening its leadership in the field of Physical Education, Health, and Sports Science.
                             </p>
                         </div>
@@ -273,24 +280,22 @@ const SportsPage = () => {
                         </div>
                         <div>
                             <h2 className="text-2xl font-black text-[#18357a] tracking-tight uppercase">Achievements & Events</h2>
-                            <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px]">Institutional Sports Excellence</p>
+
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { title: 'Achievements', icon: <Trophy size={20} />, desc: 'Anna University & All India Level Excellence.' },
-                            { title: 'Zone Level', icon: <Medal size={20} />, desc: 'Regional Competitive Excellence.' },
-                            { title: 'Inter Zone Level', icon: <Star size={20} />, desc: 'Cross-University Zonal Championships.' },
-                            { title: 'Open Tournaments', icon: <Users size={20} />, desc: 'National & State Level Competitions.' },
-                            { title: 'CM Trophy', icon: <Award size={20} />, desc: 'Salem District Level Representations.' },
-                            { title: 'Organized Events', icon: <Calendar size={20} />, desc: 'Campus Tournaments & Festivals.' },
-                            { title: 'Sports Day', icon: <Flag size={20} />, desc: 'Annual Institutional Sports Meet.' }
+                            { title: 'Achievements', icon: <Trophy size={20} /> },
+                            { title: 'Zone Level', icon: <Medal size={20} /> },
+                            { title: 'Open Tournaments', icon: <Users size={20} /> },
+                            { title: 'CM Trophy', icon: <Award size={20} /> },
+                            { title: 'Organized Tournaments', icon: <Calendar size={20} /> }
                         ].map((item, idx) => (
                             <motion.div
                                 key={idx}
                                 whileHover={{ y: -5, x: 5 }}
-                                onClick={() => navigate(`/campus-life/sports/achievements`)} // All point to unified achievements page
+                                onClick={() => navigate(`/campus-life/sports/achievements/${item.title.toLowerCase().replace(/ /g, '-')}`)} // Pass category to detail page
                                 className="group relative bg-white py-4 px-6 rounded-xl border border-slate-100 shadow-xl hover:shadow-slate-300/50 transition-all duration-500 overflow-hidden h-full cursor-pointer"
                             >
                                 {/* Corner Accents */}
@@ -307,9 +312,6 @@ const SportsPage = () => {
                                             {item.title}
                                             <div className="w-8 h-1 bg-[#ffc107] mt-1 rounded-full" />
                                         </h4>
-                                        <p className="text-[11px] text-slate-800 font-bold leading-relaxed">
-                                            {item.desc}
-                                        </p>
                                     </div>
 
                                     <div className="mt-4 flex items-center">
@@ -332,7 +334,7 @@ const SportsPage = () => {
                             </div>
                             <div>
                                 <h2 className="text-2xl font-black text-[#18357a] tracking-tight uppercase">Sports Gallery</h2>
-                                <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px]">Moments of Excellence</p>
+
                             </div>
                         </div>
 
@@ -375,6 +377,7 @@ const SportsPage = () => {
                             if (activeTab.trim() === 'NATIONAL LEVEL PHOTOS') return nationalLevelImages;
                             if (activeTab.trim() === 'OPEN TOURNAMENT FACULTY') return facultyOpenImages;
                             if (activeTab.trim() === 'OPEN TOURNAMENT INTERNATIONAL') return internationalOpenImages;
+                            if (activeTab.trim() === 'SPORTS DAY 2025-26') return sportsDayImages;
                             return sportsImages;
                         })().map((img, idx) => (
                             <motion.div

@@ -87,7 +87,7 @@ const CAMPUS_HUBS = [
   },
   {
     id: 'energy',
-    title: 'ENERGY INITIATIVES',
+    title: 'Energy Initiatives',
     subtitle: 'Sustainable Campus',
     icon: Zap,
     link: '/campus-life/energy',
@@ -95,7 +95,7 @@ const CAMPUS_HUBS = [
   },
   {
     id: 'internet',
-    title: 'INTERNET & COMPUTING FACILITIES',
+    title: 'Internet & Computing',
     subtitle: '24/7 Digital Hub',
     icon: Wifi,
     link: '/campus-life/internet',
@@ -108,7 +108,7 @@ const CampusLifePage = () => {
     const [showVideo, setShowVideo] = useState(false)
 
     return (
-        <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-24 relative">
+        <div className="min-h-screen bg-white font-graphik pb-24 relative">
             {/* Video Modal - Global Stacking Context */}
             <AnimatePresence>
                 {showVideo && (
@@ -157,7 +157,7 @@ const CampusLifePage = () => {
                     <div className="w-full lg:w-[45%] space-y-8">
                         <div className="flex items-center gap-4">
                             <div className="h-0.5 w-10 bg-[#18357a]" />
-                            <span className="text-[14px] font-black uppercase tracking-[4px] text-[#18357a]">Institutional Excellence</span>
+                            <span className="text-[14px] font-black tracking-[4px] text-[#18357a]">Institutional Excellence</span>
                         </div>
                         <h3 className="text-4xl md:text-6xl font-black text-[#18357a] tracking-tighter leading-none">
                             Building <span className="text-[#ffc107]">Legacy</span> <br/> 
@@ -197,7 +197,7 @@ const CampusLifePage = () => {
                                >
                                   <Video size={32} fill="currentColor" className="ml-1" />
                                </motion.div>
-                               <span className="mt-4 text-[10px] font-black text-white uppercase tracking-[4px] drop-shadow-lg font-graphik">Watch Campus Tour</span>
+                               <span className="mt-4 text-[10px] font-black text-white tracking-[4px] drop-shadow-lg font-graphik">Watch Campus Tour</span>
                             </div>
                         </div>
                     </div>
@@ -212,10 +212,10 @@ const CampusLifePage = () => {
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                         {[
-                            { v: "12,000+", l: "ACTIVE STUDENTS", i: Users },
-                            { v: "150+", l: "STUDENT CLUBS", i: Landmark },
-                            { v: "25+", l: "SPORTS TEAMS", i: Trophy },
-                            { v: "500+", l: "ANNUAL EVENTS", i: CalendarDays }
+                            { v: "12,000+", l: "Active Students", i: Users },
+                            { v: "150+", l: "Student Clubs", i: Landmark },
+                            { v: "25+", l: "Sports Teams", i: Trophy },
+                            { v: "500+", l: "Annual Events", i: CalendarDays }
                         ].map((stat, i) => (
                             <motion.div
                                 key={i}
@@ -233,7 +233,7 @@ const CampusLifePage = () => {
                                     <p className="text-4xl lg:text-5xl font-black text-white tracking-tighter leading-none">
                                         {stat.v}
                                     </p>
-                                    <p className="text-[13px] font-black uppercase tracking-[3px] text-white/70 leading-tight">
+                                    <p className="text-[13px] font-black tracking-[3px] text-white/70 leading-tight">
                                         {stat.l}
                                     </p>
                                 </div>
@@ -246,12 +246,9 @@ const CampusLifePage = () => {
             <div className="max-w-7xl mx-auto px-6 py-12 md:py-20 relative z-20">
                 {/* Hub Cards Section Heading - Centered on Mobile */}
                 <div className="mb-12 text-center md:text-left border-l-0 md:border-l-4 border-[#ffc107] md:pl-6 py-2">
-                    <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tighter">
+                    <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter">
                         Campus <span className="text-[#ffc107]">Essentials</span>
                     </h2>
-                    <p className="text-[13px] font-black text-slate-900 tracking-[4px] mt-2 leading-none">
-                        Built for excellence in learning, living, and growth
-                    </p>
                 </div>
 
                 {/* Hub Cards Grid - Centered on Mobile */}
@@ -266,7 +263,7 @@ const CampusLifePage = () => {
                         >
                             <button 
                                 onClick={() => navigate(hub.link)}
-                                className="w-full group bg-white rounded-3xl border border-slate-100 shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col items-center text-center px-6 py-8 transition-all hover:-translate-y-1.5 duration-500 h-full relative"
+                                className="w-full group bg-white rounded-3xl border border-slate-100 overflow-hidden flex flex-col items-center text-center px-6 py-8 transition-all hover:-translate-y-1.5 duration-500 h-full relative"
                             >
                                 {/* Permanent Corner Accents */}
                                 <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-[#18357a]/10 group-hover:border-[#ffc107] transition-colors duration-500 rounded-tl-3xl" />
@@ -280,8 +277,8 @@ const CampusLifePage = () => {
                                 </div>
                                 
                                 <div className="space-y-1.5 w-full relative z-10">
-                                    <h3 className="text-[17px] font-black text-[#18357a] uppercase tracking-tight leading-none">{hub.title}</h3>
-                                    <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-tight">{hub.subtitle}</p>
+                                    <h3 className="text-[17px] font-black text-[#18357a] tracking-tight leading-none">{hub.title}</h3>
+                                    <p className="text-[10px] font-bold text-slate-800 tracking-wider leading-tight">{hub.subtitle}</p>
                                     
                                     <div className="pt-4">
                                         <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-slate-50 text-[#18357a] text-[9px] font-black uppercase tracking-[3px] border border-slate-100 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">

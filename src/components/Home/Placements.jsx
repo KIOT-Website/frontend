@@ -76,14 +76,6 @@ const Placements = () => {
           {/* LEFT SIDE: Big Numbers */}
           <div className="space-y-10 lg:pl-4">
             <div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="inline-flex items-center gap-3 mb-4"
-              >
-                <div className="h-0.5 w-10 bg-[#ffc107] rounded-full" />
-                <span className="text-[13px] font-black uppercase tracking-[0.4em] text-[#ffc107]">Placement Excellence</span>
-              </motion.div>
               <h2 className="text-3xl lg:text-5xl font-semibold font-graphik leading-[1.1] text-white">
                 Where Talent <br />
                 <span className="text-[#ffc107]">Meets Opportunity</span>

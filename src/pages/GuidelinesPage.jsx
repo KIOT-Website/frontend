@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, BookOpen, Clock, Users, ShieldCheck, Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowRight, BookOpen, Clock, Users, ShieldCheck, Mail, MapPin, Phone, Sparkle } from 'lucide-react'
 
 import structureImg from '../assets/main/Strcutre .webp'
+import governanceImg from '../assets/main/governance_meeting.png'
 
 const GuidelinesPage = () => {
   const [activeSection, setActiveSection] = useState('administrators')
@@ -13,8 +14,7 @@ const GuidelinesPage = () => {
     { id: 'leave', label: 'Leave Provisions' },
     { id: 'vacation', label: 'Vacation' },
     { id: 'onduty', label: 'On-Duty' },
-    { id: 'students', label: 'Students' },
-    { id: 'structure', label: 'Structure' }
+    { id: 'students', label: 'Students' }
   ]
 
   useEffect(() => {
@@ -48,31 +48,25 @@ const GuidelinesPage = () => {
   }
 
   return (
-    <div className="bg-[#FCFDFD] min-h-screen font-inter selection:bg-[#ffc107]/20">
+    <div className="bg-[#FCFDFD] min-h-screen font-graphik selection:bg-[#ffc107]/20">
       
       {/* 🔷 1. TOP SECTION (IMAGE + INTRO) */}
-      <section className="relative pt-16 lg:pt-24 pb-6 border-b border-slate-100">
-        <div className="w-full px-4 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+      <section className="relative pt-12 lg:pt-20 pb-6 border-b border-slate-100 font-graphik">
+        <div className="w-full px-4 lg:px-12 font-graphik">
+          <div className="grid lg:grid-cols-2 gap-8 items-center font-graphik">
             <motion.div 
                initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              className="space-y-6"
+              className="space-y-6 font-graphik"
             >
-              <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-white border border-[#D5E2F4]/80 shadow-sm transition-shadow cursor-default">
-                 <span className="relative flex h-3.5 w-3.5">
-                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#18357a] opacity-60"></span>
-                   <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#18357a]"></span>
-                 </span>
-                 <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.15em]">Institutional Framework</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-[#18357a] tracking-tight leading-[1.2]">
-                Governance & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] to-[#224292]">Policies</span>
+              {/* Badge Removed per request */}
+              
+              <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#18357a] mb-4 tracking-tighter leading-tight">
+                Governance & <span className="text-[#ffc107]">Policies</span>
               </h1>
-              <div className="space-y-4 max-w-xl">
-                <p className="text-xl font-bold text-[#18357a] uppercase tracking-wider">General regulations of KIOT</p>
-                <p className="text-[#333333] text-lg leading-relaxed font-medium">
-                  The Institution has developed of code of conduct for Students, Staff, Faculty and Administrators.
+              <div className="space-y-4 max-w-2xl font-graphik">
+                <p className="text-[#333333] text-base leading-[1.8] font-graphik font-medium text-justify">
+                  The Institution has established a code of conduct for students, staff, faculty, and administrators to maintain discipline and integrity. These guidelines promote professionalism and responsible behavior across the campus. They ensure a respectful, safe, and productive academic environment for everyone.
                 </p>
               </div>
             </motion.div>
@@ -81,56 +75,31 @@ const GuidelinesPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative aspect-video rounded-[3rem] overflow-hidden bg-slate-50 border border-slate-100"
+              className="relative aspect-video rounded-[3rem] overflow-hidden bg-slate-50 border border-slate-100 shadow-2xl shadow-[#18357a]/10"
             >
-               {/* Placeholder for Org Structure Image */}
-               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#18357a]/5 to-white p-12">
-                  <div className="text-center space-y-4">
-                     <ShieldCheck size={80} className="text-[#18357a] mx-auto opacity-20" />
-                     <p className="text-[10px] font-black text-[#18357a] uppercase tracking-[0.3em]">Institutional Policy Board</p>
-                  </div>
-               </div>
+               <img 
+                 src={governanceImg} 
+                 alt="Institutional Governance Meeting" 
+                 className="w-full h-full object-cover"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 to-transparent" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 🔷 2. MAIN SECTION (STICKY LEFT + SCROLL RIGHT) */}
-      <section className="w-full px-4 lg:px-12 pt-4 lg:pt-10 pb-10 grid lg:grid-cols-[240px_1fr] gap-8 lg:gap-16">
-        
-        {/* 🔹 LEFT SIDE (Sticky Menu) */}
-        <aside className="hidden lg:block sticky top-[130px] self-start h-fit z-30">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-8">Directories</p>
-              <nav className="flex flex-col gap-6">
-                {sections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => scrollToContent(section.id)}
-                    className={`text-left text-sm font-black transition-all duration-300 relative group flex items-center gap-3 ${activeSection === section.id ? 'text-[#18357a]' : 'text-[#64779F] hover:text-[#18357a]'}`}
-                  >
-                    <div className={`h-1.5 rounded-full bg-[#ffc107] transition-all duration-500 ${activeSection === section.id ? 'w-6' : 'w-0 group-hover:w-2'}`} />
-                    <span className={activeSection === section.id ? 'translate-x-1 transition-transform' : ''}>
-                      {section.label}
-                    </span>
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </div>
-        </aside>
-
-        {/* 🔹 RIGHT SIDE (Content Flow) */}
-        <main className="space-y-12 pb-16">
+      {/* 🔷 2. MAIN SECTION (FULL WIDTH CONTENT) */}
+      <section className="w-full px-4 lg:px-12 pt-4 lg:pt-10 pb-10">
+        <div className="max-w-5xl mx-auto">
+          <main className="space-y-8 pb-8 font-graphik">
           
           {/* Section: Administrators */}
           <section id="administrators" className="scroll-mt-32">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-10 lg:mb-16">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-8 font-graphik">
               Roles and Responsibilities of <span className="text-[#ffc107]">Administrators</span>
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-8 font-graphik">
               {[
 
                 { title: "Vice Principal", content: "Works in consultation with the principal and the management in administering the academic and administrative activities." },
@@ -149,8 +118,8 @@ const GuidelinesPage = () => {
                   viewport={{ once: true }}
                   className="space-y-4"
                 >
-                  <h3 className="text-xl font-black text-[#18357a] uppercase">{role.title}</h3>
-                  <p className="text-[#333333] font-medium leading-[1.8] text-justify">{role.content}</p>
+                  <h3 className="text-xl font-bold text-[#18357a] font-graphik">{role.title}</h3>
+                  <p className="text-[#333333] font-graphik font-medium leading-[1.8] text-justify">{role.content}</p>
                   <div className="w-12 h-0.5 bg-slate-100 rounded-full" />
                 </motion.div>
               ))}
@@ -158,8 +127,8 @@ const GuidelinesPage = () => {
           </section>
 
           {/* Section: Faculty & Staff */}
-          <section id="faculty" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
+          <section id="faculty" className="scroll-mt-32 pt-8 border-t border-slate-100">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
               Code of Conduct for <span className="text-[#ffc107]">Faculty and Staff</span>
             </h2>
             
@@ -187,17 +156,17 @@ const GuidelinesPage = () => {
                 "Each teaching staff with teaching experience of more than 3 years is expected to publish at least one technical paper per year. The technical paper may be an outcome of research / student project work.",
                 "Faculty promotions are considered during September each year considering his educational qualifications, experience, score in the Faculty Performance Appraisal and AICTE and University guidelines."
               ].map((rule, idx) => (
-                <div key={idx} className="flex gap-6 group">
-                   <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0 group-hover:scale-150 transition-transform" />
-                   <p className="text-[#333333] font-medium leading-[1.8] text-justify">{rule}</p>
+                <div key={idx} className="flex gap-4 group">
+                   <Sparkle size={14} className="text-[#ffc107] shrink-0 mt-1.5 fill-[#ffc107]/20" />
+                   <p className="text-[#333333] font-graphik font-medium leading-[1.8] text-justify">{rule}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* Section: Leave Provisions */}
-          <section id="leave" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
+          <section id="leave" className="scroll-mt-32 pt-8 border-t border-slate-100">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
               Leave <span className="text-[#ffc107]">Provisions</span>
             </h2>
             
@@ -210,17 +179,17 @@ const GuidelinesPage = () => {
                 "Faculty/Staff can avail one hour permission twice a month. However, such a facility should be used only for essential needs.",
                 "Leaves cannot be accumulated and carried forward to the next academic year, in general."
               ].map((rule, idx) => (
-                <div key={idx} className="flex gap-6 group">
-                   <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#18357a] shrink-0 group-hover:scale-150 transition-transform" />
-                   <p className="text-[#333333] font-medium leading-[1.8] text-justify">{rule}</p>
+                <div key={idx} className="flex gap-4 group">
+                   <Sparkle size={14} className="text-[#ffc107] shrink-0 mt-1.5 fill-[#ffc107]/20" />
+                   <p className="text-[#333333] font-graphik font-medium leading-[1.8] text-justify">{rule}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* Section: Vacation */}
-          <section id="vacation" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
+          <section id="vacation" className="scroll-mt-32 pt-8 border-t border-slate-100">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
               Vacation <span className="text-[#ffc107]">Policy</span>
             </h2>
             
@@ -233,17 +202,17 @@ const GuidelinesPage = () => {
                 "No leave can be combined with the vacation. The staff member should be present on the last working day before the vacation and also on the first working day after the vacation to become eligible to draw the vacation salary.",
                 "Personal On-Duties / leave will not be adjusted in the vacation in general. However Principal may permit based on genuine needs (like serious health issues, marriage)."
               ].map((rule, idx) => (
-                <div key={idx} className="flex gap-6 group">
-                   <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0 group-hover:scale-150 transition-transform" />
-                   <p className="text-[#333333] font-medium leading-[1.8] text-justify">{rule}</p>
+                <div key={idx} className="flex gap-4 group">
+                   <Sparkle size={14} className="text-[#ffc107] shrink-0 mt-1.5 fill-[#ffc107]/20" />
+                   <p className="text-[#333333] font-graphik font-medium leading-[1.8] text-justify">{rule}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* Section: On-Duty */}
-          <section id="onduty" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
+          <section id="onduty" className="scroll-mt-32 pt-8 border-t border-slate-100">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
               On–Duty <span className="text-[#ffc107]">Provisions</span>
             </h2>
             
@@ -254,17 +223,17 @@ const GuidelinesPage = () => {
                 "A faculty can avail OD upto 10 working days per semester for university examinations related works. Based on special requests from University, Principal can permit the faculty additionally.",
                 "In general, faculty shall not be eligible for OD for the examination related works of other universities"
               ].map((rule, idx) => (
-                <div key={idx} className="flex gap-6 group">
-                   <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#18357a] shrink-0 group-hover:scale-150 transition-transform" />
-                   <p className="text-[#333333] font-medium leading-[1.8] text-justify">{rule}</p>
+                <div key={idx} className="flex gap-4 group">
+                   <Sparkle size={14} className="text-[#ffc107] shrink-0 mt-1.5 fill-[#ffc107]/20" />
+                   <p className="text-[#333333] font-graphik font-medium leading-[1.8] text-justify">{rule}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* Section: Students */}
-          <section id="students" className="scroll-mt-32 pt-12 border-t border-slate-100">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter mb-8 lg:mb-10">
+          <section id="students" className="scroll-mt-32 pt-8 border-t border-slate-100">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
               Code of Conduct for <span className="text-[#ffc107]">Students</span>
             </h2>
             
@@ -296,18 +265,19 @@ const GuidelinesPage = () => {
                 "Students are not allowed to form any type of unauthorized union / meeting and not allowed to celebrate birthday and any form of parties.",
                 "If a student is found guilty of indiscipline, the College reserves the right to take disciplinary action against him/her and inform the Parents/Guardians about the action taken."
               ].map((rule, idx) => (
-                <div key={idx} className="flex gap-6 group">
-                   <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0 group-hover:scale-150 transition-transform" />
-                   <p className="text-[#333333] font-medium leading-[1.8] text-justify">{rule}</p>
+                <div key={idx} className="flex gap-4 group">
+                   <Sparkle size={14} className="text-[#ffc107] shrink-0 mt-1.5 fill-[#ffc107]/20" />
+                   <p className="text-[#333333] font-graphik font-medium leading-[1.8] text-justify">{rule}</p>
                 </div>
               ))}
             </div>
           </section>
+        </main>
+      </div>
 
-          {/* Section: Structure */}
-          <section id="structure" className="scroll-mt-32 pt-12 border-t border-slate-100">
+      <section id="structure" className="scroll-mt-32 pt-12 font-graphik w-full">
             <div className="mb-10">
-              <h2 className="text-4xl lg:text-5xl font-black text-[#18357a] uppercase tracking-tighter">
+              <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
                 Organizational <span className="text-[#ffc107]">Structure</span>
               </h2>
             </div>
@@ -325,18 +295,8 @@ const GuidelinesPage = () => {
                />
             </motion.div>
             
-            <div className="pt-10 text-center text-[10px] font-black text-slate-300 uppercase tracking-[0.5em] pb-6">
-               Direct Academic & Administrative Lineal Dependency
-            </div>
           </section>
-
-        </main>
       </section>
-
-      {/* 🔷 3. DIVIDER STYLE (Simple Footer Marker) */}
-      <footer className="bg-slate-50 py-12 border-t border-slate-100 italic text-center">
-         <p className="text-slate-400 font-medium tracking-widest text-[10px] uppercase">KIOT Institutional Policy Framework • 2026-27 Edition</p>
-      </footer>
 
     </div>
   )

@@ -60,7 +60,7 @@ const ValueCard = ({ title, content, icon: Icon, idx }) => (
 
 
 
-const VisionMission = () => {
+const VisionMission = ({ hideHeader = false }) => {
   const valuesData = [
     {
       title: "Our Vision",
@@ -96,31 +96,30 @@ const VisionMission = () => {
       <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto">
         
         {/* Header Section - Sub Heading Style */}
-        <div className="text-center mb-6 lg:mb-8 px-4 overflow-hidden">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center"
-          >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] mb-4 tracking-tight leading-tight break-words uppercase">
-              Our Institutional <span className="text-[#ffc107]">Values</span>
-            </h2>
-          </motion.div>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-[#333333] text-[14px] sm:text-[15px] leading-relaxed font-normal max-w-2xl mx-auto"
-          >
-            The core principles and aspirations that drive our commitment to academic excellence, innovative research, and student success.
-          </motion.p>
-        </div>
+        {!hideHeader && (
+          <div className="text-center mb-10 lg:mb-14 px-4 overflow-hidden">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col items-center"
+            >
+              <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#18357a] mb-4 tracking-tighter leading-tight break-words">
+                Our Institutional <span className="text-[#ffc107]">Values</span>
+              </h2>
+            </motion.div>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-[#333333] text-[14px] sm:text-[15px] leading-relaxed font-normal max-w-2xl mx-auto"
+            >
+              The core principles and aspirations that drive our commitment to academic excellence, innovative research, and student success.
+            </motion.p>
+          </div>
+        )}
 
         {/* ─── NEW DIAMOND ZIG-ZAG INFOGRAPHIC ─── */}
         <div className="relative w-full mx-auto px-4 py-8 lg:py-16">
-          {/* Connecting Dashed Lines Background */}
-          <div className="absolute top-1/2 left-0 right-0 h-[2px] border-t-2 border-dashed border-slate-200 -translate-y-1/2 z-0 hidden lg:block mx-20" />
-          
           <div className="flex flex-wrap lg:flex-nowrap justify-center gap-16 lg:gap-4 relative z-10 px-4">
             {valuesData.map((val, i) => {
               const isEven = i % 2 !== 0; // 0, 2, 4 are top | 1, 3 are bottom
@@ -133,14 +132,14 @@ const VisionMission = () => {
                   transition={{ delay: i * 0.1, duration: 0.8 }}
                   className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[240px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
                 >
-                  {/* The Diamond Container with New Stylish Border */}
-                  <div className="relative bg-white aspect-square w-48 sm:w-52 lg:w-48 xl:w-56 rounded-[2rem] border-2 border-[#18357a]/10 shadow-[0_15px_40px_rgba(0,0,0,0.06)] transform rotate-45 flex items-center justify-center group hover:shadow-[0_25px_60px_rgba(24,53,122,0.15)] hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">
+                  {/* The Diamond Container with New Stylish Border - Shadow Removed */}
+                  <div className="relative bg-white aspect-square w-48 sm:w-52 lg:w-48 xl:w-56 rounded-[2rem] border border-[#18357a]/15 transform rotate-45 flex items-center justify-center group hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">
                     
                     {/* Stylish Inner Border Line */}
-                    <div className="absolute inset-2 border border-dashed border-[#18357a]/15 rounded-[1.5rem] group-hover:border-[#ffc107]/30 transition-colors duration-500 pointer-events-none" />
+                    <div className="absolute inset-2 border border-dashed border-[#18357a]/10 rounded-[1.5rem] group-hover:border-[#ffc107]/20 transition-colors duration-500 pointer-events-none" />
                     
                     {/* Corner Accent Detail */}
-                    <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-br from-[#ffc107]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-br from-[#ffc107]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
                     {/* Background Shine */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white via-[#18357a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -148,7 +147,7 @@ const VisionMission = () => {
                     {/* Inner content (Counter-rotated back to normal) */}
                     <div className="transform -rotate-45 p-6 text-center flex flex-col items-center">
                        {/* Floating Number Circle */}
-                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[85%] w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg flex items-center justify-center font-graphik font-bold text-white text-[10px] sm:text-sm z-20"
+                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[85%] w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-graphik font-bold text-white text-[10px] sm:text-sm z-20"
                             style={{ backgroundColor: i % 2 === 0 ? '#18357a' : '#ffc107' }}>
                          {String(i + 1).padStart(2, '0')}
                        </div>
@@ -167,9 +166,6 @@ const VisionMission = () => {
                        </div>
                     </div>
                   </div>
-
-                  {/* Connecting Dots for Mobile/Tablet */}
-                  <div className="lg:hidden w-1 h-12 bg-dashed border-l border-dashed border-slate-300 mx-auto my-4" />
                 </motion.div>
               );
             })}

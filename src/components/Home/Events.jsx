@@ -67,7 +67,7 @@ const Events = ({ onEventsClick }) => {
     }
   ]
 
-  const records = dbEvents.length > 0 ? dbEvents : (loading ? [] : fallbackEvents)
+  const records = dbEvents
 
   const slugify = (text) => {
     return text.toString().toLowerCase()
@@ -91,11 +91,6 @@ const Events = ({ onEventsClick }) => {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <div className="inline-flex items-center gap-2 mb-6 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10">
-              <Timer size={14} className="text-[#ffc107]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Institutional Hub</span>
-            </div>
-            
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#18357a] font-display leading-tight tracking-tight">
               Upcoming <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Events</span>
             </h2>
@@ -114,7 +109,7 @@ const Events = ({ onEventsClick }) => {
            ) : records.length === 0 ? (
              <div className="text-center py-20 bg-slate-50 rounded-[2.5rem] border-2 border-dashed border-slate-100">
                 <Calendar size={48} className="mx-auto text-slate-200 mb-4" />
-                <p className="font-black text-[10px] uppercase tracking-widest text-slate-400">No events found at the moment</p>
+                <p className="font-black text-[12px] uppercase tracking-widest text-slate-400">No events right now — check back soon</p>
              </div>
            ) : (
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">

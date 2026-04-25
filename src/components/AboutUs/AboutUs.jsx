@@ -23,7 +23,7 @@ const AboutUs = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-graphik font-bold text-[#18357a] mb-4 tracking-tighter leading-[1.1]">
+            <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#18357a] mb-4 tracking-tighter leading-tight">
               About the <span className="text-[#ffc107]">KIOT</span>
             </h1>
           </motion.div>
@@ -76,54 +76,36 @@ const AboutUs = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
                 {[
-                  { label: "1308 Intake / Year", icon: CheckCircle2 },
-                  { label: "3500+ UG Students", icon: Users },
-                  { label: "350+ PG Students", icon: Trophy },
-                  { label: "50+ Ph.D. Scholars", icon: Target },
-                  { label: "230+ Faculty", icon: BookOpen },
-                  { label: "200+ Staff", icon: Users },
+                  { label: "1308 Intake / Year", icon: CheckCircle2, color: "#18357a" },
+                  { label: "3500+ UG Students", icon: Users, color: "#18357a" },
+                  { label: "350+ PG Students", icon: Trophy, color: "#18357a" },
+                  { label: "50+ Ph.D. Scholars", icon: Target, color: "#18357a" },
+                  { label: "230+ Faculty", icon: BookOpen, color: "#18357a" },
+                  { label: "200+ Staff", icon: Users, color: "#18357a" },
                 ].map((stat, idx) => (
                   <motion.div 
                     key={idx} 
-                    whileHover={{ scale: 1.02 }}
-                    className="relative group overflow-hidden bg-white rounded-3xl p-5 border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 min-h-[140px] flex items-center"
+                    whileHover={{ y: -5 }}
+                    className="relative group bg-[#FCFDFD] rounded-2xl p-6 border border-[#18357a]/5 hover:border-[#18357a]/20 transition-all duration-300 min-h-[120px] flex items-center shadow-sm hover:shadow-xl hover:shadow-[#18357a]/5"
                   >
-                     {/* Permanent 3D Hexagon Background - Inspired by user image */}
-                     <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden bg-slate-50">
-                        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                           <defs>
-                              <pattern id={`hexPattern-${idx}`} width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
-                                 {/* 3D Hexagon Shape */}
-                                 <path d="M15 0 L28 7.5 L28 22.5 L15 30 L2 22.5 L2 7.5 Z" fill="white" stroke="#18357a" strokeWidth="0.8" />
-                                 <path d="M15 0 L2 7.5 L2 22.5 L15 15 Z" fill="rgba(0,0,0,0.03)" /> {/* Side Shadow */}
-                                 <circle cx="15" cy="15" r="1" fill="#ffc107" opacity="0.5" />
-                              </pattern>
-                           </defs>
-                           <rect width="100" height="100" fill={`url(#hexPattern-${idx})`} />
-                        </svg>
-                     </div>
-
-                     {/* Vibrant Blue Accent Strip */}
-                     <div className="absolute top-0 left-0 bottom-0 w-1.5 bg-gradient-to-b from-[#18357a] to-[#ffc107]" />
-
-                     {/* Content Layout - Compact */}
-                     <div className="relative z-10 w-full flex items-center gap-5 px-3">
-                        <div className="w-14 h-14 rounded-2xl bg-white shadow-md border border-slate-100 flex items-center justify-center text-[#18357a] group-hover:scale-110 transition-transform duration-500 flex-shrink-0">
-                           <stat.icon size={26} />
+                     {/* Clean minimalist design - No background pattern */}
+                     <div className="flex items-center gap-5 w-full">
+                        <div className="w-14 h-14 rounded-xl bg-white border border-[#18357a]/10 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500 flex-shrink-0 shadow-sm">
+                           <stat.icon size={26} strokeWidth={1.5} />
                         </div>
                         
                         <div className="flex flex-col">
-                           <span className="text-[24px] font-graphik font-black text-[#18357a] leading-none mb-1">
+                           <span className="text-[28px] font-graphik font-bold text-[#18357a] leading-tight">
                               {stat.label.split(' ')[0]}
                            </span>
-                           <span className="text-[11px] font-graphik font-black text-[#18357a] uppercase tracking-[0.1em] leading-tight opacity-90">
+                           <span className="text-[12px] font-graphik font-bold text-[#64779F] uppercase tracking-wider leading-tight">
                               {stat.label.split(' ').slice(1).join(' ')}
                            </span>
                         </div>
                      </div>
 
-                     {/* Hover Glow */}
-                     <div className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                     {/* Subtle corner accent */}
+                     <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-[#ffc107]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-tr-2xl" />
                   </motion.div>
                 ))}
               </div>
@@ -132,7 +114,12 @@ const AboutUs = () => {
 
         {/* Vision Mission (Institutional Values) Section - Merged */}
         <div className="mb-16 -mx-5 sm:-mx-10 lg:-mx-20">
-           <VisionMission />
+           <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] tracking-tight">
+                Our Institutional <span className="text-[#ffc107]">Values</span>
+              </h2>
+           </div>
+           <VisionMission hideHeader={true} />
         </div>
 
         {/* YouTube Video Section - Moved to Last */}

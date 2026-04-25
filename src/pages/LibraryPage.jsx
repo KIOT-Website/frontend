@@ -29,7 +29,7 @@ const LibraryPage = () => {
     return (
       <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
         {/* 🔷 Shared Hero Section (Consistent across Hub) */}
-        <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+        <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
             <div className="absolute inset-0">
                 <img 
                     src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1920&auto=format&fit=crop" 
@@ -44,18 +44,20 @@ const LibraryPage = () => {
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8 }}
+                    className="flex flex-col items-center"
                 >
+                    <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-8">
+                        <span className="block">Library</span>
+                        <span className="text-[#ffc107]">Resource Center</span>
+                    </h1>
+
                     <button 
                         onClick={() => navigate('/campus-life')}
-                        className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 text-white hover:text-[#18357a] transition-all group border border-white/30 px-5 py-2 rounded-full bg-white/10 hover:bg-[#ffc107] hover:border-[#ffc107] backdrop-blur-md shadow-2xl"
                     >
                         <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
                         <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
                     </button>
-                        <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-3">
-                            <span className="block">LIBRARY</span>
-                            <span className="text-[#ffc107]">RESOURCE CENTER</span>
-                        </h1>
                 </motion.div>
             </div>
         </div>

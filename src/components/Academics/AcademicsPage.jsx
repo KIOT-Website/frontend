@@ -314,11 +314,14 @@ export default function AcademicsPage() {
             </motion.span>
             
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6 tracking-tight">
-              Shape Your Future with<br />
+              {programTab === 'PG Programs' ? 'Driven by Knowledge.' : 'Shape Your Future with'}
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff1cc] to-[#ffc107] animate-gradient">
-                {searchParams.get('program') || searchParams.get('type') 
-                  ? (programTab === 'UG Programs' ? 'UG Engineering' : 'PG Specializations') 
-                  : 'World-Class Education'}
+                {programTab === 'PG Programs' 
+                  ? 'Defined by Excellence.' 
+                  : (searchParams.get('program') || searchParams.get('type') 
+                      ? (programTab === 'UG Programs' ? 'UG Engineering' : 'PG Specializations') 
+                      : 'World-Class Education')}
               </span>
             </h1>
 
@@ -376,7 +379,7 @@ export default function AcademicsPage() {
           <div className="max-w-5xl mx-auto bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 overflow-hidden">
             <div className="px-8 pt-10 pb-6 border-b border-slate-50">
                 <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-normal mb-1">
-                   {programTab === 'UG Programs' ? 'B.E. / B.Tech.' : 'Postgraduate'} <span className="text-[#ffc107] ml-4">Programmes</span>
+                   {programTab === 'UG Programs' ? 'B.E. / B.Tech.' : 'Postgraduate'} <span className="block md:inline text-[#ffc107] md:ml-4">Programmes</span>
                 </h2>
 
             </div>

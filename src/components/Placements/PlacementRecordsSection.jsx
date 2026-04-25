@@ -53,7 +53,7 @@ const PlacementRecordsSection = () => {
       </div>
       <div className="w-full">
         {departments.length === 0 ? (
-          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-[#64779F] font-bold min-h-[200px] flex items-center justify-center">
+          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-black font-black min-h-[200px] flex items-center justify-center">
             <p>Records are currently being updated.</p>
           </div>
         ) : (
@@ -70,7 +70,7 @@ const PlacementRecordsSection = () => {
                     <span className="font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors text-base tracking-tight block">
                       {dept.name}
                     </span>
-                    <span className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest mt-0.5 block">View Reports</span>
+                    <span className="text-[10px] font-black text-black uppercase tracking-widest mt-0.5 block">View Reports</span>
                   </div>
                   <ChevronRight size={20} className="ml-auto text-[#D5E2F4] group-hover:text-[#ffc107] transition-all group-hover:translate-x-1" />
                 </Link>

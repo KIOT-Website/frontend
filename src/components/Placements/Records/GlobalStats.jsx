@@ -101,14 +101,14 @@ const StatCard = ({ item, index }) => {
               </span>
             </div>
             <div className={`mt-4 inline-flex self-start px-2 py-0.5 rounded-full text-[8px] font-black tracking-widest uppercase
-              ${item.accent === '#18357a' ? 'bg-white/10 text-[#ffc107]' : 'bg-[#18357a]/5 text-[#18357a]/50'}
+              ${item.accent === '#18357a' ? 'bg-white/10 text-[#ffc107]' : 'bg-[#18357a]/5 text-[#18357a]'}
             `}>
               {item.sub}
             </div>
           </div>
 
-          <p className={`mt-auto text-sm md:text-base font-bold leading-tight transition-all duration-300
-            ${item.accent === '#18357a' ? 'text-white/80 group-hover:text-white' : 'text-[#18357a]/70 group-hover:text-[#18357a]'}
+          <p className={`mt-auto text-sm md:text-base font-black leading-tight transition-all duration-300
+            ${item.accent === '#18357a' ? 'text-white' : 'text-[#18357a]'}
           `}>
             {item.text}
           </p>

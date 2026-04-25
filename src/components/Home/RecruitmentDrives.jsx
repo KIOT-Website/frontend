@@ -57,41 +57,39 @@ const RecruitmentDrives = () => {
         }
     ]
 
-    const displayDrives = drives.length > 0 ? drives : fallbackDrives
+    const displayDrives = drives
 
     return (
-        <section id="recruitment-drives" className="relative pb-10 lg:pb-16 pt-2 lg:pt-4 bg-white overflow-hidden font-sans">
+        <section id="recruitment-drives" className="relative py-6 lg:py-10 bg-white overflow-hidden font-sans">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-[#18357a]/[0.02] rounded-full blur-[100px]" />
                 <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-[#ffc107]/[0.03] rounded-full blur-[100px]" />
             </div>
 
             <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
+                <div className="text-center mb-10 lg:mb-12 px-4">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="max-w-2xl"
+                        className="flex flex-col items-center"
                     >
-                        <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10">
-                            <Briefcase size={14} className="text-[#18357a]" />
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#18357a]">Placement Cell</span>
-                        </div>
-                        <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] leading-tight">
-                            Recruitment <span className="text-[#ffc107]">Drives</span>
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#18357a] leading-tight">
+                            Recruitment <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Drives</span>
                         </h2>
-                        <p className="text-[#64779F] font-bold text-sm lg:text-base mt-4 max-w-xl">
-                            Empowering our students with premium career opportunities.
-                        </p>
+                        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mt-6 rounded-full" />
                     </motion.div>
-
                 </div>
 
                 {loading ? (
                     <div className="py-20 flex flex-col items-center justify-center opacity-30">
                         <Loader2 size={40} className="animate-spin text-[#18357a] mb-4" />
                         <p className="text-[10px] font-black uppercase tracking-widest">Loading Opportunities...</p>
+                    </div>
+                ) : displayDrives.length === 0 ? (
+                    <div className="text-center py-20 bg-slate-50 rounded-[2.5rem] border-2 border-dashed border-slate-100">
+                        <Briefcase size={48} className="mx-auto text-slate-200 mb-4" />
+                        <p className="font-black text-[12px] uppercase tracking-widest text-slate-400">New opportunities coming soon</p>
                     </div>
                 ) : (
                     <div className="flex flex-wrap lg:flex-nowrap justify-center gap-8 lg:gap-12">

@@ -45,7 +45,7 @@ const programsData = {
       { id: 'mba-general', name: "MBA - General", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
       { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
       { id: 'mba-iev', name: "MBA - Innovation, Entrepreneurship and Venture Development", icon: Rocket, code: "IEV", duration: "2 Years", phd: true },
-      { id: 'phd', name: "Ph.D. All Departments", icon: Microscope, code: "Ph.D.", duration: "Part-Time / Full Time", phd: true }
+      { id: 'phd', name: "Ph.D. All Departments", icon: Microscope, code: "", duration: "Part-Time / Full Time", phd: true }
     ]
   },
   PHD: {
@@ -55,10 +55,10 @@ const programsData = {
     description: 'Recognized Research Centers for advanced doctoral studies and innovation across all disciplines.',
     accent: '#ffc107',
     courses: [
-      { id: 'phd', name: "Engineering & Technology", icon: Settings, code: "PhD-ENG", duration: "Full Time / Part Time", phd: true },
-      { id: 'phd', name: "Management Studies", icon: Landmark, code: "PhD-MS", duration: "Full Time / Part Time", phd: true },
-      { id: 'phd', name: "Science & Humanities", icon: Beaker, code: "PhD-SNH", duration: "Full Time / Part Time", phd: true },
-      { id: 'phd', name: "Mathematics", icon: TrendingUp, code: "PhD-MA", duration: "Full Time / Part Time", phd: true }
+      { id: 'phd', name: "Engineering & Technology", icon: Settings, code: "", duration: "Full Time / Part Time", phd: true },
+      { id: 'phd', name: "Management Studies", icon: Landmark, code: "", duration: "Full Time / Part Time", phd: true },
+      { id: 'phd', name: "Science & Humanities", icon: Beaker, code: "", duration: "Full Time / Part Time", phd: true },
+      { id: 'phd', name: "Mathematics", icon: TrendingUp, code: "", duration: "Full Time / Part Time", phd: true }
     ]
   }
 }
@@ -82,10 +82,10 @@ const AdmissionSign = ({ navigate }) => (
        animate={{ rotate: [0, 1, -1, 0] }}
        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
        onClick={() => navigate('/admissions')}
-       className="bg-white px-8 py-6 rounded-[1.2rem] shadow-[0_15px_40px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col items-center text-center relative hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all cursor-pointer"
+       className="bg-white w-[230px] h-[210px] rounded-xl border border-slate-100 flex flex-col items-center justify-center text-center relative hover:bg-slate-50 transition-all cursor-pointer shadow-sm"
      >
          <span className="text-[11px] font-black text-red-600 uppercase tracking-[0.3em] mb-1.5">Admission</span>
-         <h4 className="text-3xl font-semibold text-[#18357a] mb-4 tracking-tight font-graphik">Open</h4>
+         <h4 className="text-4xl font-semibold text-[#18357a] mb-6 tracking-tight font-graphik">Open</h4>
          
          <button className="flex items-center gap-2.5 px-6 py-3 bg-[#18357a] hover:bg-[#ffc107] text-white hover:text-[#18357a] rounded-xl transition-all duration-300 shadow-md shadow-black/5">
              <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover:bg-[#18357a] animate-pulse" />
@@ -123,7 +123,7 @@ const CourseGrid = ({ activeTab, navigate }) => (
                const base = activeTab === 'UG' ? 'undergraduate' : 'postgraduate'
                navigate(`/academics/${base}/${course.id}`)
              }}
-             className="group bg-white p-7 rounded-[32px] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(24,53,122,0.1)] transition-all cursor-pointer relative overflow-hidden"
+             className="group bg-black/[0.02] p-7 rounded-2xl border border-slate-200/60 hover:bg-white transition-all cursor-pointer relative overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/5"
            >
               <div className="absolute inset-0 bg-gradient-to-br-white via-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/[0.02] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#ffc107]/5 transition-colors duration-500" />
@@ -141,9 +141,11 @@ const CourseGrid = ({ activeTab, navigate }) => (
                  <h4 className="text-lg font-semibold text-black font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
                     {course.name}
                  </h4>
-                 <p className="text-[11px] font-black text-[#ffc107] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
-                    {course.code}
-                 </p>
+                 {course.code && (
+                    <p className="text-[11px] font-black text-[#ffc107] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
+                       {course.code}
+                    </p>
+                 )}
                  
                  <div className="flex items-center gap-2 mt-4">
                     <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107]" />
@@ -163,7 +165,7 @@ const Programs = () => {
 
 
   return (
-    <section id="academics" className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
+    <section id="academics" className="relative py-8 lg:py-12 bg-white overflow-hidden">
       
       <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-white to-transparent -z-10" />
 
@@ -232,9 +234,9 @@ const Programs = () => {
                    initial={{ opacity: 0, y: 30 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, ease: "easeOut" }}
-                   className="relative rounded-[3rem] overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.25)] group min-h-[400px] md:min-h-[500px] flex flex-col justify-end"
+                   className="relative rounded-3xl overflow-hidden group min-h-[400px] md:min-h-[500px] flex flex-col justify-end border border-slate-100"
                  >
-                   <div className="absolute inset-0 z-0 rounded-[3rem] overflow-hidden">
+                   <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
                       <img src={courseBg} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/95 via-[#18357a]/50 to-transparent" />
                    </div>
@@ -287,7 +289,7 @@ const Programs = () => {
                    <motion.div
                      whileHover={{ y: -5 }}
                      onClick={() => setShowVideo(true)}
-                     className="relative group cursor-pointer rounded-xl overflow-hidden shadow-xl border border-slate-200 bg-white"
+                     className="relative group cursor-pointer rounded-xl overflow-hidden border border-slate-200 bg-white"
                    >
                      <div className="aspect-video relative">
                        <img 
@@ -301,7 +303,6 @@ const Programs = () => {
                          <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-2xl">
                            <Play fill="currentColor" className="ml-1" size={28} />
                          </div>
-                         <p className="mt-4 text-[10px] font-black text-white uppercase tracking-[0.3em] drop-shadow-md text-center">Watch Success Story</p>
                        </div>
                      </div>
                    </motion.div>
