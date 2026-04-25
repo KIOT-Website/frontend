@@ -123,7 +123,7 @@ const Leadership = () => {
           {/* Subtle Background Tint for Section Contrast */}
           <div className="absolute inset-x-[-100vw] top-[-20px] bottom-[-20px] bg-[#18357a]/[0.02] pointer-events-none" />
           
-          <div className="bg-white rounded-[3rem] p-8 lg:p-16 border border-[#D5E2F4]/60 relative overflow-hidden">
+          <div className="bg-transparent md:bg-white rounded-none md:rounded-[3rem] p-0 md:p-16 border-none md:border border-[#D5E2F4]/60 relative overflow-hidden">
              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-32 -mt-32 blur-3xl" />
              
              <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-start">
@@ -131,10 +131,10 @@ const Leadership = () => {
                    <div className="inline-block px-4 py-1.5 bg-[#18357a]/5 rounded-lg">
                       <span className="text-[11px] font-bold text-[#18357a] uppercase tracking-widest">About the Trust</span>
                    </div>
-                   <h2 className="text-4xl lg:text-6xl font-bold text-[#18357a] tracking-tighter leading-tight">
-                      The Foundation of <span className="text-[#ffc107]">Excellence</span>
-                   </h2>
-                   <div className="space-y-6 text-[#333333] text-[16px] leading-[1.8] font-normal text-justify">
+                    <h2 className="text-4xl lg:text-6xl font-bold text-[#18357a] tracking-tighter leading-tight">
+                       The Foundation of <span className="text-[#ffc107]">Excellence</span>
+                    </h2>
+                    <div className="space-y-6 text-[#333333] text-[15px] sm:text-[16px] leading-[1.7] font-normal text-left md:text-justify">
                       <p>
                         KIOT Trust is a unique synergy of 22 Academicians, 7 International Professionals, and 15 First-Generation Entrepreneurs. This diverse composition ensures that our education remains grounded in academic rigor while staying agile to industry demands.
                       </p>

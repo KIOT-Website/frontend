@@ -8,7 +8,7 @@ const AboutUs = () => {
   const [showAcademicStats, setShowAcademicStats] = useState(false);
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-20 pb-20 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-10 md:pt-16 pb-10 md:pb-16 min-h-screen overflow-hidden">
       
       {/* Decorative Brand Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
@@ -35,10 +35,10 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto mb-16 px-4 md:px-0"
+          className="max-w-7xl mx-auto mb-10 md:mb-16 px-4 md:px-0"
         >
-          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white aspect-[21/9] md:aspect-[3/1]">
-            <img src={campusImg} alt="KIOT Campus" className="w-full h-full object-cover object-center" />
+          <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl border-0 md:border-4 border-white h-[320px] md:h-auto md:aspect-[3/1]">
+            <img src={campusImg} alt="KIOT Campus" className="w-full h-full object-cover object-[70%_center] md:object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/40 via-transparent to-transparent" />
             
             {/* Subtle Overlay Lens Flare effect */}
@@ -47,13 +47,13 @@ const AboutUs = () => {
         </motion.div>
 
         {/* Full Width Paragraph Section */}
-        <div className="max-w-5xl mx-auto mb-20 bg-white p-10 md:p-16 rounded-[3rem] border border-slate-100 shadow-xl shadow-black/5">
+        <div className="max-w-5xl mx-auto mb-10 md:mb-14 bg-transparent md:bg-white p-0 md:p-16 rounded-none md:rounded-[3rem] border-none md:border border-slate-100 shadow-none md:shadow-xl shadow-black/5">
            <motion.div 
              initial={{ opacity: 0, y: 30 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.7 }}
-             className="space-y-8 text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik text-justify"
+             className="space-y-8 text-[#333333] text-[15px] sm:text-[16px] leading-[1.7] font-normal font-graphik text-justify"
            >
               <p>
                 Knowledge Institute of Technology (KIOT) was established by Knowledge Institute of Technology Trust (KIOT Trust) in 2009. Dr. PSS. Srinivasan is the Founder of the Trust. The KIOT Trust is a 41-member team: 20 of them are professors in engineering education and 21 of them are budding entrepreneurs.
@@ -113,7 +113,7 @@ const AboutUs = () => {
         </div>
 
         {/* Vision Mission (Institutional Values) Section - Merged */}
-        <div className="mb-16 -mx-5 sm:-mx-10 lg:-mx-20">
+        <div className="mb-10 md:mb-12 -mx-5 sm:-mx-10 lg:-mx-20">
            <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] tracking-tight">
                 Our Institutional <span className="text-[#ffc107]">Values</span>

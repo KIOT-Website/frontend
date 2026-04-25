@@ -76,11 +76,11 @@ const RecruitmentProcessHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <h1 className="text-5xl md:text-7xl font-black text-[#0A1A3F] tracking-tighter leading-[0.9] mb-8">
+              <h1 className="text-4xl md:text-5xl font-black text-[#0A1A3F] tracking-tighter leading-[0.9] mb-8">
                 Recruitment <span className="text-[#ffc107]">Process</span>
               </h1>
-              <div className="w-20 h-2 bg-[#ffc107] mb-8 rounded-full" />
-              <p className="max-w-2xl text-black font-black text-xl md:text-2xl leading-relaxed mb-16">
+              <div className="w-16 h-1.5 bg-[#ffc107] mb-8 rounded-full" />
+              <p className="max-w-2xl text-black font-black text-lg md:text-xl leading-relaxed mb-16">
                 A precision-engineered journey transforming academic potential into professional excellence, step by step.
               </p>
             </motion.div>
@@ -101,11 +101,11 @@ const RecruitmentProcessHero = () => {
                   >
                     {/* Number & Icon Circle */}
                     <div className="relative mb-8">
-                      <div className="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-[#18357a] text-white text-[11px] font-black flex items-center justify-center z-10 shadow-lg">
+                      <div className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-[#18357a] text-white text-[10px] font-black flex items-center justify-center z-10 shadow-lg">
                         {step.number}
                       </div>
-                      <div className="w-24 h-24 rounded-full bg-slate-50 flex items-center justify-center border-2 border-slate-100 group-hover:border-[#ffc107]/50 group-hover:bg-white group-hover:scale-110 transition-all duration-500 shadow-sm" style={{ color: step.color }}>
-                        <step.icon size={36} />
+                      <div className="w-20 h-20 md:w-22 md:h-22 rounded-full bg-slate-50 flex items-center justify-center border-2 border-slate-100 group-hover:border-[#ffc107]/50 group-hover:bg-white group-hover:scale-110 transition-all duration-500 shadow-sm" style={{ color: step.color }}>
+                        <step.icon size={28} />
                       </div>
                     </div>
                     
@@ -159,8 +159,8 @@ const RecruitmentProcessHero = () => {
             <div className="bg-white rounded-[2.5rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] p-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-6">
               {stats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col items-center text-center group">
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-4 border border-slate-100 group-hover:bg-white group-hover:scale-110 transition-all duration-500 shadow-sm" style={{ color: stat.color }}>
-                    <stat.icon size={22} />
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 border border-slate-100 group-hover:bg-white group-hover:scale-110 transition-all duration-500 shadow-sm" style={{ color: stat.color }}>
+                    <stat.icon size={18} />
                   </div>
                   <div className="space-y-1">
                     <p className="text-2xl font-black text-[#0A1A3F] tracking-tighter leading-none">{stat.value}</p>

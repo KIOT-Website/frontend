@@ -33,7 +33,7 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
           </div>
         ))}
       </div>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute left-10 right-0 inset-y-0 w-[calc(100%-2.5rem)] h-full overflow-visible">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute left-6 sm:left-10 right-0 inset-y-0 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] h-full overflow-visible">
         <defs>
           <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#18357a" stopOpacity="0.2" />
@@ -52,12 +52,12 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
           </motion.g>
         ))}
       </svg>
-      <div className="absolute left-10 right-0 bottom-[-2.5rem] flex justify-between px-1 w-[calc(100%-2.5rem)]">
+      <div className="absolute left-6 sm:left-10 right-0 bottom-[-2.5rem] flex justify-between px-1 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)]">
         {data.map((d, i) => (
-          <div key={i} className="text-[10px] font-black text-black uppercase tracking-tight">{d.year}</div>
+          <div key={i} className="text-[8px] sm:text-[10px] font-black text-black uppercase tracking-tight -rotate-45 sm:rotate-0 origin-top-right mt-2 sm:mt-0">{d.year.replace('20', "'")}</div>
         ))}
       </div>
-      <div className="absolute left-10 right-0 inset-y-0 w-[calc(100%-2.5rem)] flex justify-between overflow-visible">
+      <div className="absolute left-6 sm:left-10 right-0 inset-y-0 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] flex justify-between overflow-visible">
         {data.map((d, i) => (
           <div key={i} className="flex-1 h-full relative group/data-point" onMouseEnter={() => setIsHovered(i)} onMouseLeave={() => setIsHovered(null)}>
             <AnimatePresence>
@@ -83,7 +83,7 @@ const EliteEfficiencyChart = ({ data }) => {
   const icons = [GraduationCap, BookOpen, Building2, Briefcase, Users, Trophy];
   
   return (
-    <div className="relative h-64 w-full flex items-end justify-between px-8 gap-8 font-graphik">
+    <div className="relative h-64 w-full flex items-end justify-between px-4 sm:px-8 gap-4 sm:gap-8 font-graphik">
       <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
         {[0, 25, 50, 75, 100].map((v) => (
           <div key={v} className="flex items-center gap-6">
@@ -130,7 +130,7 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-8">
            {/* Left Card: Statistics */}
-           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-white p-2 rounded-[3rem] border border-slate-100 shadow-2xl">
+           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-transparent md:bg-white p-0 md:p-2 rounded-none md:rounded-[3rem] border-none md:border border-slate-100 shadow-none md:shadow-2xl">
               <div className="p-6 md:p-10 flex flex-col h-full">
                 <div className="flex items-start justify-between mb-8">
                    <div>
@@ -173,7 +173,7 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
            </motion.div>
 
            {/* Right Card: Efficiency */}
-           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-[#0A1A3F] p-2 rounded-[3rem] shadow-2xl shadow-[#18357a]/30 overflow-hidden relative text-white">
+           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-[#0A1A3F] p-0 md:p-2 rounded-none md:rounded-[3rem] shadow-none md:shadow-2xl shadow-[#18357a]/30 overflow-hidden relative text-white">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,193,7,0.15),transparent)]" />
               <div className="p-6 md:p-10 flex flex-col h-full relative z-10">
                 <div className="flex items-start justify-between mb-8">

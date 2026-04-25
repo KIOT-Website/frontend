@@ -24,6 +24,15 @@ const features = [
 ]
 
 const HeaderSection = () => {
+  const [isMobile, setIsMobile] = React.useState(false)
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   return (
     <div className="relative w-full bg-white overflow-hidden font-graphik min-h-[450px] lg:min-h-[500px] flex items-center">
       
@@ -60,14 +69,11 @@ const HeaderSection = () => {
                   key={idx}
                   className="flex gap-4 group"
                 >
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 border border-slate-100 shadow-sm" style={{ color: feature.color }}>
+                  <div className={`w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 border border-slate-100 shadow-sm transition-all`} style={{ color: feature.color }}>
                     <feature.icon size={18} />
                   </div>
-                  <div className="pt-0.5">
-                    <h4 className="text-base font-black text-[#0A1A3F] mb-0.5 tracking-tight">{feature.title}</h4>
-                    <p className="text-[11px] font-black text-black leading-tight tracking-tight max-w-sm">
-                      {feature.desc}
-                    </p>
+                  <div className="flex items-center">
+                    <h4 className="text-base font-black text-[#0A1A3F] tracking-tight">{feature.title}</h4>
                   </div>
                 </motion.div>
               ))}
@@ -98,8 +104,8 @@ const HeaderSection = () => {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="absolute inset-0 z-0 h-full w-full"
             style={{ 
-              // Deep S-curve slant that starts from the left side of the student laptop
-              clipPath: 'path("M 1000 0 L 250 0 C 100 0 180 150 150 300 L 0 1000 L 1000 1000 Z")',
+              // Sharp geometric triangle slant for a more dynamic look - Desktop Only
+              clipPath: isMobile ? 'none' : 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)',
               transform: 'scale(1.05)',
               transformOrigin: 'right center'
             }}
@@ -123,7 +129,7 @@ const HeaderSection = () => {
               initial: { delay: 1, duration: 0.8 },
               animate: { duration: 4, repeat: Infinity, ease: "easeInOut" } 
             }}
-            className="absolute top-6 -left-12 lg:-left-24 bg-white rounded-[2.5rem] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-white/50 z-30 max-w-[280px] w-full"
+            className="absolute top-6 -left-12 lg:-left-24 bg-white rounded-[2.5rem] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-white/50 z-30 max-w-[280px] w-full hidden lg:block"
           >
             <div className="flex items-start gap-4 mb-4">
               <div className="w-12 h-12 rounded-full bg-[#0A1A3F] flex items-center justify-center shrink-0 shadow-xl">

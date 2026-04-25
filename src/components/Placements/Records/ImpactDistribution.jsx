@@ -53,7 +53,7 @@ const ImpactDistribution = () => {
        </div>
 
        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className="bg-white/40 backdrop-blur-xl p-12 rounded-[5rem] shadow-2xl border border-white/60 relative group overflow-hidden">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className="bg-transparent md:bg-white/40 backdrop-blur-none md:backdrop-blur-xl p-0 md:p-12 rounded-none md:rounded-[5rem] border-none md:border border-white/60 relative group overflow-hidden">
              <h3 className="text-sm font-black text-[#18357a]/40 uppercase tracking-[0.3em] text-center mb-12">Sectoral Allocation</h3>
              <div className="flex flex-col md:flex-row items-center justify-center gap-12">
                  <AnimatedDonut radius={40} circumference={251.2} strokeWidth={12} centerLabel="100%" dark={false}
@@ -80,7 +80,7 @@ const ImpactDistribution = () => {
              </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#18357a] p-12 rounded-[5rem] shadow-2xl relative overflow-hidden group">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#18357a] p-0 md:p-12 rounded-none md:rounded-[5rem] shadow-none md:shadow-2xl relative overflow-hidden group">
              <h3 className="text-sm font-black text-white/20 uppercase tracking-[0.3em] text-center mb-12 relative z-10">Recruitment Influx</h3>
              <div className="flex flex-col md:flex-row items-center justify-center gap-10 relative z-10">
                  <AnimatedDonut radius={38} circumference={238.76} strokeWidth={10} centerLabel="2025" dark={true}

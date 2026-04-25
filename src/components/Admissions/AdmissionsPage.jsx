@@ -111,27 +111,27 @@ const AdmissionsPage = () => {
         </div>
 
         {/* Decorative Wave/Curve Wrapper */}
-        <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 z-10">
-            <div className="absolute inset-0 bg-[#0A1A3F] lg:rounded-r-[12rem] shadow-[20px_0_100px_rgba(0,0,0,0.5)] border-r-[12px] border-[#ffc107]" />
+        <div className="absolute inset-y-0 left-0 w-full lg:w-[45%] z-10">
+            <div className="absolute inset-0 bg-[#0A1A3F] lg:rounded-r-[10rem] shadow-[20px_0_100px_rgba(0,0,0,0.5)] border-r-0 lg:border-r-[8px] border-[#ffc107]" />
             
             {/* The Badge Circle from the image */}
             <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 z-20 hidden lg:block">
-                <div className="w-64 h-64 rounded-full bg-[#0A1A3F] border-[3px] border-[#ffc107] shadow-[0_0_50px_rgba(255,193,7,0.3)] flex flex-col items-center justify-center text-center relative group transition-all duration-700 hover:rotate-3">
+                <div className="w-48 h-48 lg:w-52 lg:h-52 rounded-full bg-[#0A1A3F] border-[3px] border-[#ffc107] shadow-[0_0_50px_rgba(255,193,7,0.2)] flex flex-col items-center justify-center text-center relative group transition-all duration-700 hover:rotate-3">
                      {/* Inner Dashed Ring */}
-                     <div className="absolute inset-2 rounded-full border-[2px] border-white/40 border-dashed" />
+                     <div className="absolute inset-2 rounded-full border-[1px] border-white/20 border-dashed" />
                      
-                     <div className="relative z-10 flex flex-col items-center">
-                        <Star size={28} className="text-[#ffc107] mb-2 fill-[#ffc107] drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]" />
-                        <p className="text-white text-[16px] font-black uppercase tracking-widest leading-[1.1]">SHAPE</p>
-                        <p className="text-white text-[16px] font-black uppercase tracking-widest leading-[1.1] mb-2">YOUR FUTURE</p>
+                     <div className="relative z-10 flex flex-col items-center scale-90 lg:scale-100">
+                        <Star size={24} className="text-[#ffc107] mb-1.5 fill-[#ffc107] drop-shadow-[0_0_10px_rgba(255,193,7,0.4)]" />
+                        <p className="text-white text-[12px] font-black uppercase tracking-widest leading-[1.1]">SHAPE</p>
+                        <p className="text-white text-[12px] font-black uppercase tracking-widest leading-[1.1] mb-1.5">YOUR FUTURE</p>
                         
                         <div className="flex items-center gap-2 mb-1">
-                           <div className="h-[1px] w-5 bg-[#ffc107]" />
-                           <span className="text-[#ffc107] text-[18px] font-serif italic lowercase leading-none">with</span>
-                           <div className="h-[1px] w-5 bg-[#ffc107]" />
+                           <div className="h-[1px] w-4 bg-[#ffc107]" />
+                           <span className="text-[#ffc107] text-[15px] font-serif italic lowercase leading-none">with</span>
+                           <div className="h-[1px] w-4 bg-[#ffc107]" />
                         </div>
                         
-                        <h2 className="text-white text-6xl font-black tracking-tighter leading-none mt-1">KIOT</h2>
+                        <h2 className="text-white text-5xl font-black tracking-tighter leading-none mt-1">KIOT</h2>
                      </div>
                 </div>
             </div>
@@ -152,10 +152,10 @@ const AdmissionsPage = () => {
 
             {/* Main Title */}
             <div className="mb-6">
-                <h1 className="text-4xl lg:text-6xl font-black text-white leading-none tracking-tight mb-1">ADMISSIONS</h1>
+                <h1 className="text-3xl lg:text-5xl font-black text-white leading-none tracking-tight mb-1">ADMISSIONS</h1>
                 <div className="flex items-center gap-4">
                     <h1 className="text-5xl lg:text-7xl font-black text-[#ffc107] leading-none tracking-tight">OPEN</h1>
-                    <div className="px-4 py-1.5 rounded-lg border-2 border-white/20 text-white font-black text-lg lg:text-2xl tracking-widest">
+                    <div className="px-3 py-1.5 rounded-lg border-2 border-white/20 text-white font-black text-sm lg:text-xl tracking-widest">
                         2026 - 27
                     </div>
                 </div>
@@ -164,10 +164,10 @@ const AdmissionsPage = () => {
             {/* Subtitle */}
             <div className="mb-8 pl-1">
                 <div className="flex items-center gap-3 mb-1">
-                    <p className="text-white/80 font-medium text-sm lg:text-base tracking-wide uppercase">Build Your Future at</p>
+                    <p className="text-white/80 font-medium text-[12px] lg:text-base tracking-wide uppercase">Build Your Future at</p>
                 </div>
-                <h2 className="text-xl lg:text-2xl font-black text-white uppercase tracking-tighter leading-tight">
-                    KNOWLEDGE INSTITUTE <br/>
+                <h2 className="text-lg lg:text-2xl font-black text-white uppercase tracking-tighter leading-tight">
+                    KNOWLEDGE INSTITUTE <br className="hidden sm:block"/>
                     <span className="text-[#ffc107]">OF TECHNOLOGY</span>
                 </h2>
             </div>
@@ -177,17 +177,17 @@ const AdmissionsPage = () => {
                <motion.div 
                  whileHover={{ y: -5 }}
                  onClick={() => navigate('/admissions/ug-registration')}
-                 className="bg-white rounded-xl p-4 flex items-center gap-4 cursor-pointer shadow-2xl group transition-all"
+                 className="bg-white rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 cursor-pointer shadow-2xl group transition-all"
                >
-                 <div className="w-12 h-12 bg-[#0A1A3F] rounded-lg flex items-center justify-center text-[#ffc107] group-hover:scale-110 transition-transform shrink-0">
-                    <GraduationCap size={24} />
+                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A1A3F] rounded-lg flex items-center justify-center text-[#ffc107] group-hover:scale-110 transition-transform shrink-0">
+                    <GraduationCap size={20} className="sm:w-6 sm:h-6" />
                  </div>
                  <div>
-                    <h4 className="text-[#0A1A3F] font-black text-[10px] lg:text-[11px] uppercase tracking-widest">UG PROGRAMS</h4>
+                    <h4 className="text-[#0A1A3F] font-black text-[9px] lg:text-[11px] uppercase tracking-widest">UG PROGRAMS</h4>
                     <motion.p 
                       animate={{ opacity: [1, 0.4, 1] }}
                       transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                      className="text-red-600 text-[10px] lg:text-[12px] font-black tracking-widest uppercase"
+                      className="text-red-600 text-[9px] lg:text-[12px] font-black tracking-widest uppercase"
                     >
                       APPLY NOW
                     </motion.p>
@@ -197,17 +197,17 @@ const AdmissionsPage = () => {
                <motion.div 
                  whileHover={{ y: -5 }}
                  onClick={() => navigate('/admissions/pg-registration')}
-                 className="bg-white rounded-xl p-4 flex items-center gap-4 cursor-pointer shadow-2xl group transition-all"
+                 className="bg-white rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 cursor-pointer shadow-2xl group transition-all"
                >
-                 <div className="w-12 h-12 bg-[#0A1A3F] rounded-lg flex items-center justify-center text-[#ffc107] group-hover:scale-110 transition-transform shrink-0">
-                    <Users size={24} />
+                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0A1A3F] rounded-lg flex items-center justify-center text-[#ffc107] group-hover:scale-110 transition-transform shrink-0">
+                    <Users size={20} className="sm:w-6 sm:h-6" />
                  </div>
                  <div>
-                    <h4 className="text-[#0A1A3F] font-black text-[10px] lg:text-[11px] uppercase tracking-widest">PG PROGRAMS</h4>
+                    <h4 className="text-[#0A1A3F] font-black text-[9px] lg:text-[11px] uppercase tracking-widest">PG PROGRAMS</h4>
                     <motion.p 
                       animate={{ opacity: [1, 0.4, 1] }}
                       transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                      className="text-red-600 text-[10px] lg:text-[12px] font-black tracking-widest uppercase"
+                      className="text-red-600 text-[9px] lg:text-[12px] font-black tracking-widest uppercase"
                     >
                       APPLY NOW
                     </motion.p>
@@ -235,23 +235,23 @@ const AdmissionsPage = () => {
                         {[
                             { icon: Award, label: "NAAC A" },
                             { icon: Briefcase, label: "100% Placement" },
-                            { icon: Globe, label: "Industry Collabs" }
+                            { icon: Globe, label: "Global Presence" }
                         ].map((item, i) => (
                             <div key={i} className="flex items-center gap-2">
-                                <item.icon size={18} className="text-[#ffc107]" />
-                                <span className="text-white text-[10px] lg:text-[11px] font-bold uppercase tracking-widest whitespace-nowrap">{item.label}</span>
+                                <item.icon size={16} className="text-[#ffc107]" />
+                                <span className="text-white text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">{item.label}</span>
                             </div>
                         ))}
                     </div>
 
                     <div className="flex items-center gap-6 lg:gap-8">
-                        <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg bg-[#ffc107]/10 flex items-center justify-center text-[#ffc107]">
-                            <Calendar size={24} />
+                        <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg bg-[#ffc107]/10 flex items-center justify-center text-[#ffc107]">
+                            <Calendar size={20} />
                         </div>
                         <div>
-                            <p className="text-white text-[12px] lg:text-[14px] font-black uppercase tracking-widest">APPLICATIONS</p>
-                            <p className="text-[#ffc107] text-[10px] lg:text-[12px] font-bold">NOW OPEN</p>
+                            <p className="text-white text-[11px] lg:text-[12px] font-black uppercase tracking-widest">APPLICATIONS</p>
+                            <p className="text-[#ffc107] text-[10px] font-bold">NOW OPEN</p>
                         </div>
                     </div>
                     </div>
@@ -282,7 +282,7 @@ const AdmissionsPage = () => {
                  <div className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] font-bold text-[10px] uppercase tracking-[3px] mb-8 border border-[#18357a]/10">
                     Admission Overview
                  </div>
-                  <h2 className="text-4xl md:text-5xl font-black leading-tight tracking-tighter mb-8 font-graphik">
+                  <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tighter mb-8 font-graphik">
                     <span className="text-[#0A1A3F]">Your Future</span> <br />
                     <span className="text-[#ffc107]">Starts Here</span>
                   </h2>
@@ -488,11 +488,11 @@ const AdmissionsPage = () => {
                initial={{ opacity: 0, y: 20 }} 
                whileInView={{ opacity: 1, y: 0 }} 
                viewport={{ once: true }}
-               className="bg-white rounded-2xl border border-slate-100 shadow-xl mb-12 overflow-hidden"
+               className="bg-transparent md:bg-white rounded-none md:rounded-2xl border-none md:border border-slate-100 shadow-none md:shadow-xl mb-12 overflow-hidden"
             >
                <div className="grid lg:grid-cols-[1fr_400px]">
                   {/* Left: Calculation Norms */}
-                  <div className="p-8 md:p-12 border-r border-slate-100">
+                  <div className="p-0 md:p-12 border-none md:border-r border-slate-100">
                      <h3 className="text-2xl font-bold text-[#18357a] mb-8 border-l-4 border-[#ffc107] pl-6 tracking-tight">Cut-off Calculation <span className="text-slate-400 font-medium text-sm ml-4">(State Board / CBSE)</span></h3>
                      <div className="space-y-6">
                         {[
@@ -517,7 +517,7 @@ const AdmissionsPage = () => {
                   </div>
 
                   {/* Right: Stylish Modern Calculator */}
-                  <div className="p-8 md:p-12 bg-slate-50 flex flex-col justify-center">
+                  <div className="p-0 py-8 md:p-12 bg-transparent md:bg-slate-50 flex flex-col justify-center">
                      <div className="bg-[#18357a] rounded-2xl p-8 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[80px]" />
                         <h4 className="text-white font-bold uppercase text-[10px] tracking-[4px] mb-8 block text-center">Calculate Your Mark</h4>
@@ -578,7 +578,7 @@ const AdmissionsPage = () => {
                initial={{ opacity: 0, y: 20 }} 
                whileInView={{ opacity: 1, y: 0 }} 
                viewport={{ once: true }}
-               className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-xl mb-12"
+               className="bg-transparent md:bg-white rounded-none md:rounded-2xl overflow-hidden border-none md:border border-slate-100 shadow-none md:shadow-xl mb-12"
             >
                <div className="p-5 bg-[#18357a]">
                   <h3 className="text-xl font-bold text-white uppercase tracking-tight">Eligibility for B.E Admissions</h3>
@@ -587,10 +587,10 @@ const AdmissionsPage = () => {
                   <table className="w-full text-left">
                      <thead>
                         <tr className="bg-slate-50 text-[#18357a] text-[12px] font-black uppercase">
-                           <th className="px-10 py-5">Community</th>
-                           <th className="px-10 py-5 text-center">HSC Academic<br/><span className="lowercase text-[8px] font-bold text-black">(Avg of Mat, Phy, Che)</span></th>
-                           <th className="px-10 py-5 text-center">HSC Vocational<br/><span className="lowercase text-[8px] font-bold text-black">(Avg of Voc T&P*)</span></th>
-                           <th className="px-10 py-5 text-center">Lateral<br/><span className="lowercase text-[8px] font-bold text-black">(Overall % in Diploma)</span></th>
+                           <th className="px-4 sm:px-10 py-5">Community</th>
+                           <th className="px-4 sm:px-10 py-5 text-center">HSC Academic<br/><span className="lowercase text-[8px] font-bold text-black">(Avg of Mat, Phy, Che)</span></th>
+                           <th className="px-4 sm:px-10 py-5 text-center">HSC Vocational<br/><span className="lowercase text-[8px] font-bold text-black">(Avg of Voc T&P*)</span></th>
+                           <th className="px-4 sm:px-10 py-5 text-center">Lateral<br/><span className="lowercase text-[8px] font-bold text-black">(Overall % in Diploma)</span></th>
                         </tr>
                      </thead>
                      <tbody className="divide-y divide-slate-100">
@@ -601,10 +601,10 @@ const AdmissionsPage = () => {
                            { community: 'SC / SCA / ST', academic: '40%', vocational: '40%', lateral: 'Pass' }
                         ].map((row, idx) => (
                            <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                              <td className="px-10 py-5 text-[15px] font-bold text-black uppercase tracking-tight">{row.community}</td>
-                              <td className="px-10 py-5 text-center text-[15px] font-bold text-black">{row.academic}</td>
-                              <td className="px-10 py-5 text-center text-[15px] font-bold text-black">{row.vocational}</td>
-                              <td className="px-10 py-5 text-center text-[15px] font-bold text-black">{row.lateral}</td>
+                              <td className="px-4 sm:px-10 py-5 text-[14px] sm:text-[15px] font-bold text-black uppercase tracking-tight">{row.community}</td>
+                              <td className="px-4 sm:px-10 py-5 text-center text-[14px] sm:text-[15px] font-bold text-black">{row.academic}</td>
+                              <td className="px-4 sm:px-10 py-5 text-center text-[14px] sm:text-[15px] font-bold text-black">{row.vocational}</td>
+                              <td className="px-4 sm:px-10 py-5 text-center text-[14px] sm:text-[15px] font-bold text-black">{row.lateral}</td>
                            </tr>
                         ))}
                      </tbody>
@@ -618,7 +618,7 @@ const AdmissionsPage = () => {
                   initial={{ opacity: 0, x: -30 }} 
                   whileInView={{ opacity: 1, x: 0 }} 
                   viewport={{ once: true }}
-                  className="bg-white rounded-[2rem] p-10 border border-slate-100 shadow-xl"
+                  className="bg-transparent md:bg-white rounded-none md:rounded-[2rem] p-0 md:p-10 border-none md:border border-slate-100 shadow-none md:shadow-xl"
                >
                   <div className="flex items-center gap-4 mb-8">
                      <div className="w-12 h-12 rounded-2xl bg-[#ffc107]/10 flex items-center justify-center text-[#ffc107]"><GraduationCap size={24} /></div>
@@ -634,7 +634,7 @@ const AdmissionsPage = () => {
                   initial={{ opacity: 0, x: 30 }} 
                   whileInView={{ opacity: 1, x: 0 }} 
                   viewport={{ once: true }}
-                  className="bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-xl"
+                  className="bg-transparent md:bg-white rounded-none md:rounded-[2rem] overflow-hidden border-none md:border border-slate-100 shadow-none md:shadow-xl"
                >
                   <div className="p-6 bg-slate-50 border-b border-slate-100">
                      <h4 className="text-[16px] font-bold text-[#18357a] uppercase flex items-center gap-3">

@@ -90,7 +90,7 @@ const VisionMission = ({ hideHeader = false }) => {
   ]
 
   return (
-    <div id="values" className="relative bg-white pt-4 pb-8 border-t border-slate-100 mt-16">
+    <div id="values" className="relative bg-white pt-6 md:pt-10 pb-10 md:pb-12 border-t border-slate-100 mt-6 md:mt-10">
       
       {/* Background Graphic Decoration - Removed to ensure pure white experience */}
       <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto">
@@ -120,7 +120,7 @@ const VisionMission = ({ hideHeader = false }) => {
 
         {/* ─── NEW DIAMOND ZIG-ZAG INFOGRAPHIC ─── */}
         <div className="relative w-full mx-auto px-4 py-8 lg:py-16">
-          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-16 lg:gap-4 relative z-10 px-4">
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-28 lg:gap-4 relative z-10 px-4">
             {valuesData.map((val, i) => {
               const isEven = i % 2 !== 0; // 0, 2, 4 are top | 1, 3 are bottom
               return (
@@ -130,10 +130,10 @@ const VisionMission = ({ hideHeader = false }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.8 }}
-                  className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[240px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
+                  className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[280px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
                 >
                   {/* The Diamond Container with New Stylish Border - Shadow Removed */}
-                  <div className="relative bg-white aspect-square w-48 sm:w-52 lg:w-48 xl:w-56 rounded-[2rem] border border-[#18357a]/15 transform rotate-45 flex items-center justify-center group hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">
+                  <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border border-[#18357a]/15 transform rotate-45 flex items-center justify-center group hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">
                     
                     {/* Stylish Inner Border Line */}
                     <div className="absolute inset-2 border border-dashed border-[#18357a]/10 rounded-[1.5rem] group-hover:border-[#ffc107]/20 transition-colors duration-500 pointer-events-none" />
