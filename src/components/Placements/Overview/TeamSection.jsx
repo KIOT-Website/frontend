@@ -53,7 +53,7 @@ const TeamSection = () => {
   return (
     <div className="mb-20">
        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-2xl font-black text-[#18357a] flex items-center justify-center gap-4 uppercase tracking-tight">
+          <h2 className="text-2xl font-black text-[#18357a] flex items-center justify-center gap-4 tracking-tight">
             <Users size={28} className="text-[#ffc107]" />
             Placement Team
           </h2>
@@ -92,12 +92,12 @@ const TeamSection = () => {
                            </div>
                            <div>
                               <div className="font-bold text-black group-hover:text-[#18357a] transition-colors text-[15px]">{member.name}</div>
-                              <div className="text-[#18357a] text-[11px] font-semibold uppercase tracking-wider mt-0.5">{member.desig}</div>
+                              <div className="text-[#18357a] text-[11px] font-semibold tracking-wider mt-0.5">{member.desig}</div>
                            </div>
                         </div>
                      </td>
                      <td className="px-8 py-4">
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white text-[#18357a] text-[10px] font-bold uppercase tracking-wide border border-slate-200 group-hover:bg-[#18357a] group-hover:text-white transition-all shadow-sm">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white text-[#18357a] text-[10px] font-bold tracking-wide border border-slate-200 group-hover:bg-[#18357a] group-hover:text-white transition-all shadow-sm">
                            <ShieldCheck size={12} />
                            {member.resp}
                         </span>
@@ -145,9 +145,9 @@ const TeamSection = () => {
                    
                    <div className="space-y-2">
                       <div className="text-xl font-black text-[#18357a] leading-tight px-2">{member.name}</div>
-                      <div className="text-[#18357a] text-[11px] font-bold uppercase tracking-wider">{member.desig}</div>
+                      <div className="text-[#18357a] text-[11px] font-bold tracking-wider">{member.desig}</div>
                       <div className="pt-2">
-                         <span className="text-[10px] font-black uppercase tracking-widest text-[#ffc107] px-4 py-1.5 bg-[#18357a] rounded-lg shadow-md inline-block">
+                         <span className="text-[10px] font-black tracking-widest text-[#ffc107] px-4 py-1.5 bg-[#18357a] rounded-lg shadow-md inline-block">
                            {member.resp}
                          </span>
                       </div>

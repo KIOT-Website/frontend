@@ -278,7 +278,7 @@ export default function CourseDetailPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`whitespace-nowrap px-6 py-2.5 text-[13px] font-black font-graphik transition-all rounded-full border-2 tracking-wide uppercase ${
+                className={`whitespace-nowrap px-6 py-2.5 text-[13px] font-black font-graphik transition-all rounded-full border-2 tracking-wide ${
                   activeTab === tab
                     ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 scale-105'
                     : 'bg-transparent border-white/20 text-white hover:border-white/50 hover:bg-white/5'
@@ -342,7 +342,7 @@ export default function CourseDetailPage() {
                     ].map(item => (
                       <div key={item.label} className="group p-6 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-[#ffc107] hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
                         <div>
-                          <p className="text-black font-black text-[9px] uppercase tracking-[0.2em] mb-4 opacity-40 group-hover:opacity-100 transition-opacity">{item.label}</p>
+                          <p className="text-black font-black text-[9px] tracking-[0.2em] mb-4 opacity-40 group-hover:opacity-100 transition-opacity">{item.label}</p>
                           <div className="flex items-center gap-4">
                              <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center ${item.color} group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500`}>
                                 <item.icon size={20} />
@@ -700,7 +700,7 @@ export default function CourseDetailPage() {
                               }`}>
                                 {LabIcon && <LabIcon size={20} />}
                               </div>
-                              <span className="text-[13px] font-bold font-graphik uppercase tracking-tight leading-tight flex-1">{lab.name}</span>
+                              <span className="text-[13px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
                               <ChevronDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#ffc107]' : 'text-[#64779F] opacity-40'}`} />
                            </button>
 
@@ -716,7 +716,7 @@ export default function CourseDetailPage() {
                                       {/* Mobile Content Display */}
                                       <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
                                          <Building2 size={14} className="text-[#ffc107]" />
-                                         <p className="text-[#64779F] text-[10px] font-bold font-graphik uppercase tracking-widest">{course.name}</p>
+                                         <p className="text-[#64779F] text-[10px] font-bold font-graphik tracking-widest">{course.name}</p>
                                       </div>
 
                                       <div>
