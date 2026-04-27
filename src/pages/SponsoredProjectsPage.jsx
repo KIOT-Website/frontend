@@ -126,7 +126,7 @@ const SponsoredProjectsPage = () => {
                         </div>
                         <div>
                             <h2 className="text-2xl font-bold text-[#0f172a] uppercase tracking-tight">MHRD Sponsored Programs</h2>
-                            <p className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest leading-none mt-1">Remote Centre Coordination: Dr. K. Visagavel</p>
+                            <p className="text-[10px] font-bold text-[#64779F] tracking-widest leading-none mt-1">Remote Centre Coordination: Dr. K. Visagavel</p>
                         </div>
                     </div>
 
@@ -201,7 +201,7 @@ const SponsoredProjectsPage = () => {
                                                 <div className="flex flex-col gap-1">
                                                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item.agency}</p>
                                                     {item.faculty && (
-                                                        <p className="text-[10px] font-bold text-[#ffc107] uppercase italic bg-[#ffc107]/5 px-2 py-0.5 rounded w-fit">PI: {item.faculty}</p>
+                                                        <p className="text-[10px] font-bold text-[#ffc107] italic bg-[#ffc107]/5 px-2 py-0.5 rounded w-fit">PI: {item.faculty}</p>
                                                     )}
                                                 </div>
                                             </td>
@@ -246,7 +246,7 @@ const SponsoredProjectsPage = () => {
                                     <tr className="text-white">
                                         <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">S.No.</th>
                                         <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Project & Client</th>
-                                        <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Faculty in Charge</th>
+                                        <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] border-r border-white/5">Faculty in Charge</th>
                                         <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] pr-8">Consultancy Fee</th>
                                     </tr>
                                 </thead>
@@ -262,7 +262,7 @@ const SponsoredProjectsPage = () => {
                                                 <div className="text-[13px] font-bold text-[#0f172a] uppercase leading-tight mb-1 group-hover:text-[#18357a] transition-colors italic">"{item.title}"</div>
                                                 <div className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest line-clamp-1">{item.client}</div>
                                             </td>
-                                            <td className="px-6 py-5 text-[11px] font-black text-[#1e293b] uppercase italic border-x border-slate-50">{item.faculty}</td>
+                                            <td className="px-6 py-5 text-[11px] font-black text-[#1e293b] italic border-x border-slate-50">{item.faculty}</td>
                                             <td className="px-6 py-5 text-right pr-8">
                                                 <div className="text-[14px] font-black text-[#0f172a] group-hover:text-[#ffc107] transition-colors">₹ {item.amount}</div>
                                                 <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">{item.period}</div>
@@ -303,8 +303,8 @@ const SponsoredProjectsPage = () => {
                                 <div className="pt-4 border-t border-slate-50 flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-[#0f172a] font-bold text-[10px]">M</div>
                                     <div>
-                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Mentor</p>
-                                        <p className="text-[11px] font-bold text-[#1e293b] uppercase leading-none">{item.mentor}</p>
+                                        <p className="text-[10px] font-bold text-slate-400 tracking-widest">Mentor</p>
+                                        <p className="text-[11px] font-bold text-[#1e293b] leading-none">{item.mentor}</p>
                                     </div>
                                 </div>
                             </motion.div>

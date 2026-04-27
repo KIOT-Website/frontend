@@ -46,7 +46,7 @@ const Achievers = () => {
              className="inline-flex items-center gap-2 mb-4 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
            >
              <Sparkles size={14} className="text-[#ffc107]" />
-             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#18357a]">Institutional Excellence</span>
+             <span className="text-[10px] font-black tracking-[0.3em] text-[#18357a]">Institutional Excellence</span>
            </motion.div>
            <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-graphik tracking-tight leading-tight">
              Achievements That <span className="text-[#ffc107]">Inspire</span>
@@ -95,8 +95,8 @@ const Achievers = () => {
                   <div className="flex items-center gap-4">
                     <div className="h-[2px] w-12 bg-[#ffc107]" />
                     <div>
-                      <p className="text-white text-base font-black uppercase tracking-widest">{achievement.name}</p>
-                      <p className="text-[#ffc107] text-[10px] font-bold uppercase tracking-widest">{achievement.dept}</p>
+                      <p className="text-white text-base font-black tracking-widest">{achievement.name}</p>
+                      <p className="text-[#ffc107] text-[10px] font-bold tracking-widest">{achievement.dept}</p>
                     </div>
                   </div>
                 )}

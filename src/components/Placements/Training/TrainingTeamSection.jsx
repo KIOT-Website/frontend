@@ -37,7 +37,7 @@ const TrainingTeamSection = () => {
       <div className="flex flex-col items-center mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 mb-6">
           <GraduationCap size={16} className="text-[#18357a]" />
-          <span className="text-[11px] font-bold text-[#18357a] uppercase tracking-widest">Our Expertise</span>
+          <span className="text-[11px] font-bold text-[#18357a] tracking-widest">Our Expertise</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] tracking-tighter text-center leading-tight">
           Dedicated <span className="text-[#ffc107]">Training Team</span>
@@ -54,9 +54,9 @@ const TrainingTeamSection = () => {
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-[#18357a] text-white">
-              <th className="px-10 py-6 text-xs font-black uppercase tracking-[0.2em]">Expert Faculty</th>
-              <th className="px-10 py-6 text-xs font-black uppercase tracking-[0.2em]">Specialization</th>
-              <th className="px-10 py-6 text-xs font-black uppercase tracking-[0.2em] text-center">Responsibility</th>
+              <th className="px-10 py-6 text-xs font-black tracking-[0.2em]">Expert Faculty</th>
+              <th className="px-10 py-6 text-xs font-black tracking-[0.2em]">Specialization</th>
+              <th className="px-10 py-6 text-xs font-black tracking-[0.2em] text-center">Responsibility</th>
             </tr>
           </thead>
           <tbody>
@@ -78,7 +78,7 @@ const TrainingTeamSection = () => {
                     </div>
                     <div>
                       <div className="font-black text-black text-base tracking-tight leading-tight mb-1 group-hover:text-[#18357a] transition-colors">{member.name}</div>
-                      <div className="text-[#18357a] text-[10px] font-black uppercase tracking-widest">{member.desig}</div>
+                      <div className="text-[#18357a] text-[10px] font-black tracking-widest">{member.desig}</div>
                     </div>
                   </div>
                 </td>
@@ -116,7 +116,7 @@ const TrainingTeamSection = () => {
             <h3 className="text-lg font-black text-black leading-tight mb-1">{member.name}</h3>
             <p className="text-[#18357a] text-[10px] font-black uppercase tracking-widest mb-4">{member.desig}</p>
             <div className="w-full pt-4 border-t border-slate-50 flex flex-col items-center gap-2">
-               <span className="text-[10px] font-black text-black uppercase tracking-widest">Responsibility</span>
+               <span className="text-[10px] font-black text-black tracking-widest">Responsibility</span>
                <p className="text-sm font-black text-black">{member.resp}</p>
             </div>
           </motion.div>
