@@ -64,7 +64,6 @@ const TracksSection = () => {
         <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] tracking-tighter mb-4">
           Employability <span className="text-[#ffc107]">Track</span>
         </h2>
-        <div className="w-16 h-1 bg-[#ffc107] mb-4 rounded-full" />
       </div>
 
       {/* Cards Grid */}

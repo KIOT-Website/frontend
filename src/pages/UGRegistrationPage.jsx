@@ -189,8 +189,8 @@ const UGRegistrationPage = () => {
         }
     }
 
-    const inputClass = "w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold focus:outline-none focus:border-[#18357a] focus:bg-white transition-all shadow-sm placeholder:text-slate-300 uppercase"
-    const labelClass = "text-[10px] font-black text-black uppercase tracking-widest flex items-center gap-2 mb-2 ml-1"
+    const inputClass = "w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold focus:outline-none focus:border-[#18357a] focus:bg-white transition-all shadow-sm placeholder:text-slate-300"
+    const labelClass = "text-[10px] font-black text-black tracking-widest flex items-center gap-2 mb-2 ml-1"
 
     return (
         <div className="min-h-screen bg-[#FDFEFE] font-sans relative overflow-hidden pb-20">
@@ -214,7 +214,7 @@ const UGRegistrationPage = () => {
                 <div className="relative z-10 text-center px-6 -mt-8 md:-mt-20">
                     <img src={logo} alt="KIOT" className="h-12 md:h-20 w-auto mx-auto mb-4 md:mb-8 invert brightness-0" />
                     <div className="space-y-1">
-                        <h1 className="text-3xl md:text-6xl font-black text-white uppercase tracking-wider leading-none font-display">UG ENQUIRY FORM</h1>
+                        <h1 className="text-3xl md:text-6xl font-black text-white tracking-wider leading-none font-display">UG ENQUIRY FORM</h1>
                     </div>
                 </div>
 
@@ -247,7 +247,7 @@ const UGRegistrationPage = () => {
                                 <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
                                     <div className="md:col-span-2">
                                         <label className={labelClass}><User size={14} className="text-[#ffc107]" /> Name of the student (in capital letters) *</label>
-                                        <input required type="text" className={inputClass} placeholder="Full Name" value={formData.studentName} onChange={e => setFormData({...formData, studentName: e.target.value.toUpperCase()})} />
+                                        <input required type="text" className={inputClass} placeholder="Full Name" value={formData.studentName} onChange={e => setFormData({...formData, studentName: e.target.value})} />
                                     </div>
                                     <div className="md:col-span-2">
                                         <label className={labelClass}><Mail size={14} className="text-[#ffc107]" /> Email address *</label>

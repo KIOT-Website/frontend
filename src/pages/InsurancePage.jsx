@@ -39,13 +39,13 @@ const InsurancePage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
+        <div className="min-h-screen bg-[#FCFDFD] pb-24">
             {/* 🔷 Hero Section */}
             <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1454165833767-027eeea160d7?q=80&w=1920&auto=format&fit=crop" 
-                        className="w-full h-full object-cover opacity-30" 
+                        className="w-full h-full object-cover opacity-100" 
                         alt="Campus"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
@@ -62,13 +62,13 @@ const InsurancePage = () => {
                             className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                            <span className="text-xs font-black tracking-[2px]">Back to Hub</span>
                         </button>
-                        <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none mb-3 font-display">
-                            CAMPUS <span className="text-[#ffc107]">INSURANCE</span>
+                        <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none mb-3">
+                            Campus <span className="text-[#ffc107]">Insurance</span>
                         </h1>
-                        <p className="text-white/60 font-medium text-[10px] md:text-sm max-w-2xl mx-auto uppercase tracking-widest leading-loose">
-                            PROTECTIVE COVERAGE FOR STUDENTS & STAFF
+                        <p className="text-white font-bold text-xs md:text-sm max-w-2xl mx-auto uppercase tracking-widest leading-loose">
+                            Protective Coverage for Students & Staff
                         </p>
                     </motion.div>
                 </div>
@@ -81,19 +81,19 @@ const InsurancePage = () => {
                     <div className="space-y-6">
                         <div className="inline-flex items-center gap-4 py-2 px-6 bg-[#ffc107]/10 border border-[#ffc107]/20 rounded-full">
                             <ShieldCheck size={18} className="text-[#ffc107]" />
-                            <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">Institutional Care</span>
+                            <span className="text-xs font-black text-[#18357a] uppercase tracking-widest">Institutional Care</span>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
+                        <h2 className="text-3xl md:text-5xl font-black text-[#18357a] tracking-tighter leading-none">
                             Insurance for <br/> <span className="text-[#ffc107]">Students & Staff</span>
                         </h2>
-                        <p className="text-black text-lg font-black leading-relaxed text-justify italic">
+                        <p className="text-slate-800 text-lg font-bold leading-relaxed text-justify">
                             KIOT is associated with leading insurance companies for the benefit of students, faculty and supporting staff and the college pays premium for the same.
                         </p>
                     </div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-video group">
                         <img 
                             src="https://images.unsplash.com/photo-1542382156909-9ae37b3f56fd?q=80&w=1200&auto=format&fit=crop" 
-                            className="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 duration-700 hover:scale-105"
+                            className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                             alt="Insurance"
                         />
                     </div>
@@ -113,7 +113,7 @@ const InsurancePage = () => {
                             <div className="w-12 h-12 bg-[#18357a] rounded-xl flex items-center justify-center text-[#ffc107] shadow-lg">
                                 <AlertTriangle size={24} />
                             </div>
-                            <h3 className="text-xl font-black text-[#18357a] uppercase tracking-tight">Special Features</h3>
+                            <h3 className="text-xl font-black text-[#18357a] tracking-tight">Special Features</h3>
                         </div>
                         <ul className="space-y-4">
                             {[
@@ -123,7 +123,7 @@ const InsurancePage = () => {
                             ].map((item, i) => (
                                 <li key={i} className="flex gap-4 items-start">
                                     <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-2 shrink-0" />
-                                    <p className="text-black text-[14px] font-black uppercase tracking-tight leading-relaxed">{item}</p>
+                                    <p className="text-slate-700 text-[15px] font-bold tracking-tight leading-relaxed">{item}</p>
                                 </li>
                             ))}
                         </ul>
@@ -141,7 +141,7 @@ const InsurancePage = () => {
                             <div className="w-12 h-12 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#18357a] shadow-lg">
                                 <HeartHandshake size={24} />
                             </div>
-                            <h3 className="text-xl font-black text-white uppercase tracking-tight">Financial Benefits</h3>
+                            <h3 className="text-xl font-black text-white tracking-tight">Financial Benefits</h3>
                         </div>
                         <div className="space-y-6">
                             {[
@@ -150,8 +150,8 @@ const InsurancePage = () => {
                                 { t: "Accidental Death", v: "Rs. 50,000/- (For Students & Staff)" }
                             ].map((item, i) => (
                                 <div key={i} className="border-l-2 border-[#ffc107] pl-4 space-y-1">
-                                    <p className="text-[10px] text-white/60 font-black uppercase tracking-widest">{item.t}</p>
-                                    <p className="text-xl font-black text-[#ffc107]">{item.v}</p>
+                                    <p className="text-xs text-white/80 font-black uppercase tracking-widest">{item.t}</p>
+                                    <p className="text-2xl font-black text-[#ffc107]">{item.v}</p>
                                 </div>
                             ))}
                         </div>
@@ -166,12 +166,12 @@ const InsurancePage = () => {
                                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#18357a] shadow-xl">
                                     <Stethoscope size={28} />
                                 </div>
-                                <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tighter">Treatment Policy</h3>
-                                <p className="text-black text-[14px] font-black leading-relaxed text-justify">
+                                <h3 className="text-2xl font-black text-[#18357a] tracking-tighter">Treatment Policy</h3>
+                                <p className="text-slate-700 text-[15px] font-bold leading-relaxed text-justify">
                                     Treatment can be taken in any network or non-network Hospitals of the insurance company in India. 
                                     College ID card and a letter from the office is sufficient for admission.
                                 </p>
-                                <div className="p-4 bg-white rounded-xl border border-blue-100 italic font-black text-[12px] text-blue-800">
+                                <div className="p-4 bg-white rounded-xl border border-blue-100 italic font-bold text-sm text-blue-900">
                                     Reimbursement is applicable for non-network hospitals.
                                 </div>
                             </div>
@@ -179,15 +179,15 @@ const InsurancePage = () => {
                             <div className="lg:col-span-2 space-y-8">
                                 <div className="flex items-center gap-4">
                                     <ClipboardList size={22} className="text-[#ffc107]" />
-                                    <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tighter">Claim Procedures</h3>
+                                    <h3 className="text-2xl font-black text-[#18357a] tracking-tighter">Claim Procedures</h3>
                                 </div>
                                 
                                 <div className="grid md:grid-cols-2 gap-8">
                                     <div className="bg-white p-8 rounded-[1.5rem] shadow-sm border border-slate-100">
-                                        <p className="text-[#18357a] font-black text-[12px] uppercase tracking-widest mb-4 border-b border-slate-100 pb-2">Accidental Medical</p>
+                                        <p className="text-[#18357a] font-black text-xs uppercase tracking-widest mb-4 border-b border-slate-100 pb-2">Accidental Medical</p>
                                         <ul className="space-y-3">
                                             {claimDocs.medical.map((doc, i) => (
-                                                <li key={i} className="flex gap-2 items-center text-[11px] font-black text-black uppercase">
+                                                <li key={i} className="flex gap-2 items-center text-[13px] font-bold text-slate-800">
                                                     <FileText size={12} className="text-[#ffc107]" />
                                                     {doc}
                                                 </li>
@@ -195,10 +195,10 @@ const InsurancePage = () => {
                                         </ul>
                                     </div>
                                     <div className="bg-white p-8 rounded-[1.5rem] shadow-sm border border-slate-100">
-                                        <p className="text-[#18357a] font-black text-[12px] uppercase tracking-widest mb-4 border-b border-slate-100 pb-2">Fatal Accidents</p>
+                                        <p className="text-[#18357a] font-black text-xs uppercase tracking-widest mb-4 border-b border-slate-100 pb-2">Fatal Accidents</p>
                                         <ul className="space-y-3">
                                             {claimDocs.fatal.map((doc, i) => (
-                                                <li key={i} className="flex gap-2 items-center text-[11px] font-black text-black uppercase">
+                                                <li key={i} className="flex gap-2 items-center text-[13px] font-bold text-slate-800">
                                                     <FileText size={12} className="text-[#ffc107]" />
                                                     {doc}
                                                 </li>
@@ -217,11 +217,11 @@ const InsurancePage = () => {
                                 <CalendarDays size={24} />
                             </div>
                             <div>
-                                <h4 className="text-white font-black text-[12px] uppercase tracking-widest">Normal Settlement Period</h4>
+                                <h4 className="text-white font-black text-xs uppercase tracking-widest">Normal Settlement Period</h4>
                                 <p className="text-2xl font-black text-[#ffc107]">Six to Nine Months</p>
                             </div>
                         </div>
-                        <p className="text-white/40 text-[10px] font-black uppercase tracking-[2px] max-w-xs text-right hidden md:block">
+                        <p className="text-white font-bold text-xs uppercase tracking-[2px] max-w-xs text-right hidden md:block">
                             Subject to proper documentation and institutional verification.
                         </p>
                     </div>

@@ -64,7 +64,7 @@ const AboutUs = () => {
 
               <div className="pt-6 border-t border-slate-100">
                 <div className="p-8 rounded-[2rem] bg-[#f0f9f6] border border-[#d1e7dd]">
-                  <h3 className="text-[#198754] text-xl font-graphik font-bold mb-4 tracking-wider uppercase">Academic Excellence</h3>
+                  <h3 className="text-[#198754] text-xl font-graphik font-bold mb-4 tracking-wider">Academic Excellence</h3>
                     <p className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik">
                       Knowledge Institute of Technology (KIOT) is an Autonomous Institution, Affiliated to Anna University, Chennai and Approved by AICTE, New Delhi and UGC, New Delhi. The college offers nine B.E. / B.Tech. programs, four M.E. / M.Tech. programs in Engineering and Technology, MBA - Regular, MBA - IEV, MCA programs and Ph.D. programs in all the departments.
                     </p>
@@ -98,7 +98,7 @@ const AboutUs = () => {
                            <span className="text-[28px] font-graphik font-bold text-[#18357a] leading-tight">
                               {stat.label.split(' ')[0]}
                            </span>
-                           <span className="text-[12px] font-graphik font-bold text-[#64779F] uppercase tracking-wider leading-tight">
+                           <span className="text-[12px] font-graphik font-bold text-[#64779F] tracking-wider leading-tight">
                               {stat.label.split(' ').slice(1).join(' ')}
                            </span>
                         </div>
@@ -134,7 +134,7 @@ const AboutUs = () => {
               <div className="text-center">
                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#ffc107]/5 rounded-full mb-2 sm:mb-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                    <span className="text-[9px] sm:text-[10px] font-graphik font-bold text-[#18357a] uppercase tracking-widest">Experience KIOT</span>
+                    <span className="text-[9px] sm:text-[10px] font-graphik font-bold text-[#18357a] tracking-widest">Experience KIOT</span>
                  </div>
                  <h2 className="text-xl sm:text-2xl font-graphik font-bold text-[#18357a] tracking-normal">Institutional <span className="text-[#18357a]">Walkthrough</span></h2>
               </div>
@@ -151,7 +151,7 @@ const AboutUs = () => {
               </div>
 
               <div className="text-center">
-                 <p className="text-[11px] font-graphik font-bold text-slate-400 uppercase tracking-[0.25em]">A journey through Salem's premier technical hub</p>
+                 <p className="text-[11px] font-graphik font-bold text-slate-400 tracking-[0.25em]">A journey through Salem's premier technical hub</p>
               </div>
            </div>
         </motion.div>

@@ -107,7 +107,7 @@ const ResearchPage = () => {
                             animate={{ opacity: 1, x: 0 }}
                         >
                             <h1 
-                                className="text-4xl lg:text-5xl font-black text-[#18357a] uppercase leading-[1.1] mb-8"
+                                className="text-4xl lg:text-5xl font-black text-[#18357a] leading-[1.1] mb-8"
                                 style={{ wordSpacing: '0.3rem' }}
                             >
                                 Departmentwise <br />
@@ -133,15 +133,15 @@ const ResearchPage = () => {
                                 <div className="text-center md:text-left">
                                     <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] animate-pulse" />
-                                        <span className="text-[#ffc107] font-black text-[12px] uppercase">Anna University, Chennai</span>
+                                        <span className="text-[#ffc107] font-black text-[12px]">Anna University, Chennai</span>
                                     </div>
                                     <h2 
-                                        className="text-2xl font-black text-white uppercase mb-4 leading-tight"
+                                        className="text-2xl font-black text-white mb-4 leading-tight"
                                         style={{ wordSpacing: '0.4rem' }}
                                     >
                                         Recognized R&D Centre
                                     </h2>
-                                    <div className="flex flex-col gap-3 text-blue-100/60 text-[11px] font-black uppercase mb-8">
+                                    <div className="flex flex-col gap-3 text-blue-100/60 text-[11px] font-black mb-8">
                                         <div className="flex items-center gap-2">
                                             <div className="w-1.5 h-1.5 rounded-full bg-blue-400/50" />
                                             Recognition No: 4265300
@@ -155,7 +155,7 @@ const ResearchPage = () => {
                                         href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.webp"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-3 px-8 py-3 bg-[#ffc107] text-[#18357a] rounded-xl font-black text-xs uppercase hover:bg-white transition-all shadow-lg active:scale-95"
+                                        className="inline-flex items-center gap-3 px-8 py-3 bg-[#ffc107] text-[#18357a] rounded-xl font-black text-xs hover:bg-white transition-all shadow-lg active:scale-95"
                                     >
                                         View Details <ChevronRight size={16} />
                                     </a>
@@ -175,7 +175,7 @@ const ResearchPage = () => {
                             <table className="w-full border-collapse">
                                 <thead className="bg-[#18357a]">
                                     <tr>
-                                        <th className="px-8 py-4 text-center text-[13px] font-black text-white uppercase">
+                                        <th className="px-8 py-4 text-center text-[13px] font-black text-white">
                                             Department Directory
                                         </th>
                                     </tr>

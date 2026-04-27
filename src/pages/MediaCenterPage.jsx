@@ -16,13 +16,13 @@ const MediaCenterPage = () => {
     const navigate = useNavigate();
 
     const facilities = [
-        { sno: '1', desc: 'SONY VIDEO CAMERA HXR-NX3/1 E32', qty: '1' },
-        { sno: '2', desc: 'NIKON CAMERA D90', qty: '1' },
-        { sno: '3', desc: 'NIKON CAMERA P610', qty: '1' },
-        { sno: '4', desc: 'SONY HANDYCAM', qty: '5' },
-        { sno: '5', desc: 'SPEAKER – CREATIVE INSPIRE', qty: '10' },
-        { sno: '6', desc: 'PA WIRELESS AMPLIFIER, NECKBAND PA SYSTEM', qty: '5' },
-        { sno: '7', desc: 'RAPTOR – INTERACTIVE WHITE BOARD - 80"', qty: '5' }
+        { sno: '1', desc: 'Sony Video Camera HXR-NX3/1 E32', qty: '1' },
+        { sno: '2', desc: 'Nikon Camera D90', qty: '1' },
+        { sno: '3', desc: 'Nikon Camera P610', qty: '1' },
+        { sno: '4', desc: 'Sony Handycam', qty: '5' },
+        { sno: '5', desc: 'Speaker – Creative Inspire', qty: '10' },
+        { sno: '6', desc: 'PA Wireless Amplifier, Neckband PA System', qty: '5' },
+        { sno: '7', desc: 'Raptor – Interactive White Board - 80"', qty: '5' }
     ];
 
     const topics = [
@@ -58,13 +58,13 @@ const MediaCenterPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
-            {/* ... hero stays same ... */}
+        <div className="min-h-screen bg-[#FCFDFD] pb-24">
+            {/* 🔷 Hero Section */}
             <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1574717024458-388ee7023efd?q=80&w=1920&auto=format&fit=crop" 
-                        className="w-full h-full object-cover opacity-30" 
+                        className="w-full h-full object-cover opacity-100" 
                         alt="Media Center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
@@ -81,10 +81,10 @@ const MediaCenterPage = () => {
                             className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                            <span className="text-xs font-black tracking-[2px]">Back to Hub</span>
                         </button>
-                        <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-3 font-display">
-                            MEDIA <span className="text-[#ffc107]">CENTER</span>
+                        <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none mb-3">
+                            Media <span className="text-[#ffc107]">Center</span>
                         </h1>
                     </motion.div>
                 </div>
@@ -100,8 +100,8 @@ const MediaCenterPage = () => {
                                 <Camera size={24} />
                             </div>
                             <div>
-                                <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tighter">Facilities Available</h2>
-                                <p className="text-[10px] font-black text-[#ffc107] uppercase tracking-[3px]">Multimedia Infrastructure</p>
+                                <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Facilities Available</h2>
+                                <p className="text-xs font-black text-[#ffc107] uppercase tracking-[3px]">Multimedia Infrastructure</p>
                             </div>
                         </div>
                     </div>
@@ -110,17 +110,17 @@ const MediaCenterPage = () => {
                         <table className="w-full text-left border-collapse">
                             <thead className="hidden md:table-header-group">
                                 <tr className="bg-[#18357a]">
-                                    <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[3px] w-24">S.No</th>
-                                    <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[3px]">Description</th>
-                                    <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[3px] text-right w-32">Qty</th>
+                                    <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px] w-24">S.No</th>
+                                    <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px]">Description</th>
+                                    <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px] text-right w-32">Qty</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
                                 {facilities.map((item, i) => (
                                     <tr key={i} className="group hover:bg-slate-50 transition-colors">
                                         <td className="hidden md:table-cell px-8 py-5 text-[13px] font-black text-[#18357a]">{item.sno}</td>
-                                        <td className="px-5 md:px-8 py-5 text-[13px] font-black text-black uppercase tracking-tight">{item.desc}</td>
-                                        <td className="px-5 md:px-8 py-5 text-[13px] font-black text-[#ffc107] text-right">{item.qty}</td>
+                                        <td className="px-5 md:px-8 py-5 text-[14px] font-bold text-slate-800 tracking-tight">{item.desc}</td>
+                                        <td className="px-5 md:px-8 py-5 text-[15px] font-black text-[#ffc107] text-right">{item.qty}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -133,9 +133,9 @@ const MediaCenterPage = () => {
                     <div className="text-center space-y-4">
                         <div className="inline-flex items-center gap-4 py-2 px-6 bg-slate-100 rounded-full border border-slate-200">
                             <MonitorPlay size={18} className="text-[#18357a]" />
-                            <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">E-Learning Resource</span>
+                            <span className="text-xs font-black text-[#18357a] uppercase tracking-widest">E-Learning Resource</span>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter">Multimedia <span className="text-[#ffc107]">Lecture Topics</span></h2>
+                        <h2 className="text-3xl md:text-5xl font-black text-[#18357a] tracking-tighter">Multimedia <span className="text-[#ffc107]">Lecture Topics</span></h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -155,23 +155,11 @@ const MediaCenterPage = () => {
                                     <PlayCircle size={16} className="text-[#ef4444] transition-colors" />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-[12px] font-black text-black uppercase leading-tight group-hover:text-[#18357a] transition-colors">{topic.t}</p>
-                                    <p className="text-[8px] font-black text-black uppercase tracking-widest opacity-60">Multimedia Module {i+1}</p>
+                                    <p className="text-[13px] font-bold text-slate-800 leading-tight group-hover:text-[#18357a] transition-colors">{topic.t}</p>
+                                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Multimedia Module {i+1}</p>
                                 </div>
                             </motion.a>
                         ))}
-                    </div>
-                </div>
-
-                {/* Footer Insight */}
-                <div className="bg-[#18357a] rounded-[2.5rem] p-12 text-center relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-10">
-                        <Video className="w-96 h-96 -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2" />
-                    </div>
-                    <div className="relative z-10 space-y-6">
-                        <h4 className="text-white text-2xl font-black uppercase tracking-tight italic">"Empowering Digital Learning through Professional Production"</h4>
-                        <div className="w-20 h-1 bg-[#ffc107] mx-auto" />
-                        <p className="text-white/60 text-[10px] font-black uppercase tracking-[4px]">KIOT Media Center & Tele-Education Hub</p>
                     </div>
                 </div>
 

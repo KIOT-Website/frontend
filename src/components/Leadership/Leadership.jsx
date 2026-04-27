@@ -110,7 +110,7 @@ const Leadership = () => {
                       <div className="px-6 py-2 bg-white border border-slate-100 rounded-full shadow-sm group-hover:border-[#ffc107]/50 transition-all duration-300">
                         <div className="text-xl font-bold text-[#18357a]">{stat.value}</div>
                       </div>
-                      <div className="text-[9px] font-bold text-[#333333] uppercase tracking-[0.2em] mt-3 opacity-60 group-hover:opacity-100 transition-opacity font-graphik">{stat.label}</div>
+                      <div className="text-[9px] font-bold text-[#333333] tracking-[0.2em] mt-3 opacity-60 group-hover:opacity-100 transition-opacity font-graphik">{stat.label}</div>
                    </div>
                  ))}
               </div>
@@ -129,7 +129,7 @@ const Leadership = () => {
              <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-start">
                 <div className="space-y-8">
                    <div className="inline-block px-4 py-1.5 bg-[#18357a]/5 rounded-lg">
-                      <span className="text-[11px] font-bold text-[#18357a] uppercase tracking-widest">About the Trust</span>
+                      <span className="text-[11px] font-bold text-[#18357a] tracking-widest">About the Trust</span>
                    </div>
                     <h2 className="text-4xl lg:text-6xl font-bold text-[#18357a] tracking-tighter leading-tight">
                        The Foundation of <span className="text-[#ffc107]">Excellence</span>
@@ -151,7 +151,7 @@ const Leadership = () => {
                          <div className="w-12 h-12 rounded-xl bg-[#18357a] text-white flex items-center justify-center">
                             <GraduationCap size={24} />
                          </div>
-                         <h3 className="text-lg font-bold text-[#18357a] uppercase tracking-tight">Academic Core</h3>
+                         <h3 className="text-lg font-bold text-[#18357a] tracking-tight">Academic Core</h3>
                       </div>
                       <div className="space-y-4">
                          {[
@@ -181,7 +181,7 @@ const Leadership = () => {
                          <div className="w-12 h-12 rounded-xl bg-[#ffc107] text-[#18357a] flex items-center justify-center">
                             <Briefcase size={24} />
                          </div>
-                         <h3 className="text-lg font-bold text-[#18357a] uppercase tracking-tight">Industry & Enterprise</h3>
+                         <h3 className="text-lg font-bold text-[#18357a] tracking-tight">Industry & Enterprise</h3>
                       </div>
                       <div className="space-y-4">
                          {[
@@ -306,7 +306,7 @@ const Leadership = () => {
                 </p>
                 <button 
                   onClick={() => setSelectedLeader(leader)}
-                  className="px-8 py-3 bg-[#18357a] text-white rounded-full text-[12px] font-graphik font-bold uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all duration-300"
+                  className="px-8 py-3 bg-[#18357a] text-white rounded-full text-[12px] font-graphik font-bold tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all duration-300"
                 >
                   Read Message
                 </button>
@@ -352,7 +352,7 @@ const Leadership = () => {
                     />
                   </div>
                   <h3 className="text-lg lg:text-2xl font-graphik font-bold text-white font-graphik mb-1">{selectedLeader.name}</h3>
-                  <p className="text-[#18357a] text-[9px] sm:text-[10px] font-graphik font-bold uppercase tracking-[0.2em] mb-2 md:mb-8 leading-relaxed px-4">
+                  <p className="text-[#18357a] text-[9px] sm:text-[10px] font-graphik font-bold tracking-[0.2em] mb-2 md:mb-8 leading-relaxed px-4">
                     {selectedLeader.designation}
                   </p>
                </div>

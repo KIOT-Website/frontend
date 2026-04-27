@@ -105,7 +105,7 @@ const GoverningCouncil = () => {
                       <div className="text-[#333333] text-xs font-semibold leading-relaxed tracking-wide px-4 opacity-80 font-graphik">{member.desc}</div>
                    </div>
                    <div className="pt-2 font-graphik">
-                      <span className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] text-[10px] font-graphik font-bold uppercase tracking-widest border border-[#ffc107]/20 shadow-sm">
+                      <span className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] text-[10px] font-graphik font-bold tracking-widest border border-[#ffc107]/20 shadow-sm">
                          {member.role}
                       </span>
                    </div>
@@ -121,8 +121,8 @@ const GoverningCouncil = () => {
                 <table className="w-full text-left border-collapse font-graphik">
                    <thead>
                      <tr className="bg-[#18357a] text-white font-graphik">
-                       <th className="px-10 py-7 text-sm font-graphik font-bold uppercase tracking-widest min-w-[300px]">Name & Designation</th>
-                       <th className="px-10 py-7 text-sm font-graphik font-bold uppercase tracking-widest min-w-[200px]">Position</th>
+                       <th className="px-10 py-7 text-sm font-graphik font-bold tracking-widest min-w-[300px]">Name & Designation</th>
+                       <th className="px-10 py-7 text-sm font-graphik font-bold tracking-widest min-w-[200px]">Position</th>
                      </tr>
                    </thead>
                    <tbody className="divide-y divide-[#D5E2F4]/50 font-graphik">
@@ -138,7 +138,7 @@ const GoverningCouncil = () => {
                            </div>
                          </td>
                          <td className="px-10 py-7 font-graphik">
-                           <span className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] text-[11px] font-graphik font-bold uppercase tracking-wider border border-[#ffc107]/5 transition-all duration-300 font-graphik">
+                           <span className="inline-block px-5 py-2 rounded-full bg-[#18357a]/5 text-[#18357a] text-[11px] font-graphik font-bold tracking-wider border border-[#ffc107]/5 transition-all duration-300 font-graphik">
                              {member.role}
                            </span>
                          </td>

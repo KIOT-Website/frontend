@@ -127,11 +127,11 @@ const SportsPage = () => {
                         transition={{ duration: 0.8 }}
                         className="flex flex-col items-center"
                     >
-                        <p className="text-[#ffc107] text-[10px] md:text-[12px] font-black uppercase tracking-[4px] mb-3 drop-shadow-lg">
+                        <p className="text-[#ffc107] text-[12px] md:text-[14px] font-black tracking-[4px] mb-3 drop-shadow-lg">
                             Department of Physical Education
                         </p>
-                        <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-6">
-                            SPORTS & <span className="text-[#ffc107]">GAMES</span>
+                        <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-none mb-6">
+                            Sports & <span className="text-[#ffc107]">Games</span>
                         </h1>
                         
                         <button 
@@ -139,7 +139,7 @@ const SportsPage = () => {
                             className="inline-flex items-center gap-2 text-white hover:text-[#18357a] transition-all group border border-white/30 px-5 py-2 rounded-full bg-white/10 hover:bg-[#ffc107] hover:border-[#ffc107] backdrop-blur-md shadow-2xl"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                            <span className="text-[12px] font-black tracking-[2px]">Back to Hub</span>
                         </button>
                     </motion.div>
                 </div>
@@ -170,7 +170,7 @@ const SportsPage = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 via-transparent to-transparent flex items-end p-8">
                             <div className="w-full flex flex-col md:flex-row justify-between items-end gap-4">
                                 <div>
-                                    <h3 className="text-white text-lg md:text-xl font-black uppercase tracking-tight">Gallery Showcase</h3>
+                                    <h3 className="text-white text-lg md:text-xl font-black tracking-tight">Gallery Showcase</h3>
                                 </div>
                                 {/* Dots Indicator */}
                                 <div className="flex gap-2 pb-1">
@@ -193,7 +193,7 @@ const SportsPage = () => {
                     <div className="space-y-6">
                         <div className="bg-[#18357a] p-7 rounded-3xl shadow-2xl relative overflow-hidden group">
                             <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
-                            <h2 className="text-white text-lg font-black uppercase tracking-widest mb-6 flex items-center gap-3">
+                            <h2 className="text-white text-lg font-black tracking-widest mb-6 flex items-center gap-3">
                                 <Menu size={20} className="text-[#ffc107]" />
                                 Directories
                             </h2>
@@ -217,8 +217,8 @@ const SportsPage = () => {
                                                 {item.icon}
                                             </div>
                                             <div className="flex flex-col items-start">
-                                                <span className="font-black text-[11px] uppercase tracking-wider">{item.title}</span>
-                                                {item.sub && <span className="text-[10px] font-bold text-[#ffc107]">{item.sub}</span>}
+                                                <span className="font-black text-[12px] tracking-wider">{item.title}</span>
+                                                {item.sub && <span className="text-[11px] font-bold text-[#ffc107]">{item.sub}</span>}
                                             </div>
                                         </div>
                                         <ArrowRight size={18} className={`transition-all ${item.isContact ? 'text-[#ffc107]' : 'text-white/40 group-hover/btn:translate-x-1 group-hover/btn:text-white'}`} />
@@ -241,7 +241,7 @@ const SportsPage = () => {
                             <Eye size={22} />
                         </div>
                         <div className="relative z-10">
-                            <h3 className="text-sm font-black text-[#18357a] uppercase tracking-[2px] mb-3 flex items-center gap-2">
+                            <h3 className="text-sm font-black text-[#18357a] tracking-[2px] mb-3 flex items-center gap-2">
                                 Vision
                                 <div className="w-6 h-0.5 bg-[#ffc107]" />
                             </h3>
@@ -261,7 +261,7 @@ const SportsPage = () => {
                             <Target size={22} />
                         </div>
                         <div className="relative z-10">
-                            <h3 className="text-sm font-black text-[#18357a] uppercase tracking-[2px] mb-3 flex items-center gap-2">
+                            <h3 className="text-sm font-black text-[#18357a] tracking-[2px] mb-3 flex items-center gap-2">
                                 Mission
                                 <div className="w-6 h-0.5 bg-[#18357a]" />
                             </h3>
@@ -279,7 +279,7 @@ const SportsPage = () => {
                             <Trophy size={20} />
                         </div>
                         <div>
-                            <h2 className="text-2xl font-black text-[#18357a] tracking-tight uppercase">Achievements & Events</h2>
+                            <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Achievements & Events</h2>
 
                         </div>
                     </div>
@@ -308,7 +308,7 @@ const SportsPage = () => {
                                     </div>
                                     
                                     <div className="space-y-1">
-                                        <h4 className="text-[16px] font-black text-[#18357a] tracking-tight leading-tight uppercase">
+                                        <h4 className="text-[16px] font-black text-[#18357a] tracking-tight leading-tight">
                                             {item.title}
                                             <div className="w-8 h-1 bg-[#ffc107] mt-1 rounded-full" />
                                         </h4>
@@ -333,7 +333,7 @@ const SportsPage = () => {
                                 <LayoutGrid size={20} />
                             </div>
                             <div>
-                                <h2 className="text-2xl font-black text-[#18357a] tracking-tight uppercase">Sports Gallery</h2>
+                                <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Sports Gallery</h2>
 
                             </div>
                         </div>
@@ -353,7 +353,7 @@ const SportsPage = () => {
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all border ${
+                                    className={`px-4 py-2 rounded-lg text-[12px] font-black tracking-wider transition-all border ${
                                         activeTab === tab 
                                         ? 'bg-[#18357a] text-white border-[#18357a] shadow-lg' 
                                         : 'bg-white text-[#18357a] border-slate-100 hover:border-[#ffc107]'

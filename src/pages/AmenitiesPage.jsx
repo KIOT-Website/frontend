@@ -78,12 +78,12 @@ const AmenitiesPage = () => {
                             className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                            <span className="text-[12px] font-black tracking-[2px]">Back to Hub</span>
                         </button>
-                        <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-3">
-                            CAMPUS <span className="text-[#ffc107]">AMENITIES</span>
+                        <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-none mb-3">
+                            Campus <span className="text-[#ffc107]">Amenities</span>
                         </h1>
-                        <p className="text-white/60 font-medium text-[10px] md:text-sm max-w-2xl mx-auto uppercase tracking-widest leading-loose">
+                        <p className="text-white/60 font-medium text-[12px] md:text-sm max-w-2xl mx-auto tracking-widest leading-loose">
                             Life Services & Essential Support Infrastructure
                         </p>
                     </motion.div>
@@ -105,7 +105,7 @@ const AmenitiesPage = () => {
                                 <service.i size={28} />
                             </div>
                             <div className="space-y-4 flex-1">
-                                <h3 className="text-xl font-black text-[#18357a] uppercase tracking-tight">{service.t}</h3>
+                                <h3 className="text-xl font-black text-[#18357a] tracking-tight">{service.t}</h3>
                                 <p className="text-sm font-black text-black leading-relaxed text-justify">
                                     {service.d}
                                 </p>
@@ -113,7 +113,7 @@ const AmenitiesPage = () => {
                             <div className="mt-8 pt-6 border-t border-slate-50 flex items-center justify-between">
                                 <div className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Campus Service</span>
+                                    <span className="text-[11px] font-black text-slate-400 tracking-widest">Campus Service</span>
                                 </div>
                                 <Zap size={14} className="text-[#ffc107] opacity-0 group-hover:opacity-100 transition-opacity" />
                             </div>

@@ -19,7 +19,9 @@ import {
   Handshake, 
   Backpack,
   CheckCircle,
-  ArrowLeft
+  ArrowLeft,
+  ChevronRight,
+  User
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -27,13 +29,13 @@ const LibraryPage = () => {
     const navigate = useNavigate();
 
     return (
-      <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
+      <div className="min-h-screen bg-[#F8FAFF] pb-24">
         {/* 🔷 Shared Hero Section (Consistent across Hub) */}
         <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
             <div className="absolute inset-0">
                 <img 
                     src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1920&auto=format&fit=crop" 
-                    className="w-full h-full object-cover opacity-30" 
+                    className="w-full h-full object-cover opacity-100" 
                     alt="Library Resource Center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
@@ -46,7 +48,7 @@ const LibraryPage = () => {
                     transition={{ duration: 0.8 }}
                     className="flex flex-col items-center"
                 >
-                    <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-8">
+                    <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-none mb-8">
                         <span className="block">Library</span>
                         <span className="text-[#ffc107]">Resource Center</span>
                     </h1>
@@ -56,112 +58,184 @@ const LibraryPage = () => {
                         className="inline-flex items-center gap-2 text-white hover:text-[#18357a] transition-all group border border-white/30 px-5 py-2 rounded-full bg-white/10 hover:bg-[#ffc107] hover:border-[#ffc107] backdrop-blur-md shadow-2xl"
                     >
                         <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                        <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                        <span className="text-sm font-black tracking-[2px]">Back to Hub</span>
                     </button>
                 </motion.div>
             </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-16 relative z-20 space-y-8">
-            <div className="flex items-center gap-4 mb-4">
-                <div className="w-10 h-10 bg-[#18357a] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
-                    <Library size={20} />
-                </div>
-                <div>
-                    <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight">Central Library</h2>
-                    <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px]">Resource & Knowledge Center</p>
-                </div>
-            </div>
-            {/* Intro Grid */}
-            <div className="relative p-10 bg-white rounded-[2rem] border border-slate-100 shadow-2xl shadow-[#18357a]/5">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl font-black text-[#18357a] uppercase tracking-tight leading-none">Vision & <span className="text-[#ffc107]">Mission</span></h2>
-                        <div className="grid grid-cols-2 gap-6">
-                            <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                <div className="flex items-center gap-3 mb-4 text-[#18357a]">
-                                    <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shadow-sm">
-                                        <Eye size={20} />
-                                    </div>
-                                    <span className="text-[11px] font-black uppercase tracking-[2px]">Vision</span>
-                                </div>
-                                <p className="text-sm text-black leading-relaxed font-medium">To nurture research scholars and promote knowledge enrichment.</p>
-                            </div>
-                            <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                <div className="flex items-center gap-3 mb-4 text-[#18357a]">
-                                    <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shadow-sm">
-                                        <Target size={20} />
-                                    </div>
-                                    <span className="text-[11px] font-black uppercase tracking-[2px]">Mission</span>
-                                </div>
-                                <p className="text-sm text-black leading-relaxed font-medium">To provide world-class knowledge for holistic excellence.</p>
-                            </div>
-                        </div>
+        <div className="max-w-7xl mx-auto px-6 py-12 relative z-20 space-y-12">
+            
+            {/* Header with Dots Pattern */}
+            <div className="relative flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 bg-[#18357a] text-[#ffc107] rounded-2xl flex items-center justify-center shadow-xl">
+                        <Library size={28} />
                     </div>
-                    <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-video">
-                        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop" className="w-full h-full object-cover" alt="Library" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 to-transparent flex items-end p-8">
-                            <a href="http://115.244.103.83/webopac" target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-[#ffc107] px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest text-[#18357a] hover:bg-white transition-all shadow-xl group">
-                                Web OPAC Access
-                                <ExternalLink size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </a>
-                        </div>
+                    <div>
+                        <h2 className="text-3xl font-black text-[#18357a] tracking-tight">Central Library</h2>
+                        <p className="text-base font-bold text-[#ffc107] tracking-[1px]">Resource & Knowledge Center</p>
                     </div>
                 </div>
             </div>
 
-            {/* Quick Access Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {[
-                    { id: 'access', title: 'Library Access', path: '/campus-life/library/access', icon: ShieldCheck },
-                    { id: 'books', title: 'Books & Collections', path: '/campus-life/library/collections', icon: BookOpen },
-                    { id: 'journals', title: 'Journals & Digital', path: '/campus-life/library/journals', icon: Monitor },
-                    { id: 'magazines', title: 'Periodicals', path: '/campus-life/library/achievements', icon: Trophy }
-                ].map((cat, i) => (
-                    <button 
-                        key={i} 
-                        onClick={() => navigate(cat.path)} 
-                        className="p-10 rounded-3xl bg-white border border-slate-100 text-center group transition-all duration-500 hover:-translate-y-2 shadow-2xl shadow-[#18357a]/5 flex flex-col items-center justify-center min-h-[220px]"
-                    >
-                        <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto bg-slate-50 text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500 shadow-inner">
-                            <cat.icon size={28} />
-                        </div>
-                        <div className="space-y-4">
-                            <h3 className="text-[15px] font-black uppercase tracking-tight text-[#18357a]">{cat.title}</h3>
-                            <div className="flex items-center justify-center gap-2 px-4 py-1.5 bg-[#ffc107]/10 rounded-full border border-[#ffc107]/20 transition-all duration-300 group-hover:bg-[#ffc107] group-hover:text-[#18357a]">
-                                <span className="text-[10px] font-black uppercase tracking-widest">View Details</span>
-                                <ExternalLink size={12} className="shrink-0" />
+            {/* Vision & Mission Grid */}
+            <div className="grid lg:grid-cols-2 gap-10">
+                <div className="space-y-10">
+                    <h2 className="text-4xl font-black text-[#18357a] tracking-tight leading-none">Vision & <span className="text-[#ffc107]">Mission</span></h2>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        {/* Vision Card */}
+                        <div className="relative p-8 bg-white rounded-3xl shadow-[0_20px_50px_rgba(24,53,122,0.06)] border border-slate-50 group hover:-translate-y-1 transition-all overflow-hidden">
+                            <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-400 to-transparent" />
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 shadow-sm border border-blue-100">
+                                    <Eye size={24} />
+                                </div>
+                                <div className="space-y-1">
+                                    <span className="text-sm font-black tracking-[1px] text-[#18357a]">Vision</span>
+                                    <div className="h-0.5 w-8 bg-blue-400 rounded-full" />
+                                </div>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="h-1.5 w-full bg-slate-100 rounded-full" />
+                                <div className="h-1.5 w-3/4 bg-slate-100 rounded-full" />
+                                <p className="text-base text-slate-700 font-bold leading-relaxed mt-4">To nurture research scholars and promote knowledge enrichment.</p>
                             </div>
                         </div>
-                    </button>
+
+                        {/* Mission Card */}
+                        <div className="relative p-8 bg-white rounded-3xl shadow-[0_20px_50px_rgba(24,53,122,0.06)] border border-slate-50 group hover:-translate-y-1 transition-all overflow-hidden">
+                            <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-[#ffc107] to-transparent" />
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-orange-500 shadow-sm border border-orange-100">
+                                    <Target size={24} />
+                                </div>
+                                <div className="space-y-1">
+                                    <span className="text-sm font-black tracking-[1px] text-[#18357a]">Mission</span>
+                                    <div className="h-0.5 w-8 bg-orange-400 rounded-full" />
+                                </div>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="h-1.5 w-full bg-slate-100 rounded-full" />
+                                <div className="h-1.5 w-3/4 bg-slate-100 rounded-full" />
+                                <p className="text-base text-slate-700 font-bold leading-relaxed mt-4">To provide world-class knowledge for holistic excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Hero Image with Floating Button */}
+                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl group border-8 border-white min-h-[350px]">
+                    <img 
+                        src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
+                        alt="Library" 
+                    />
+                    {/* Floating Center Icon Wrapper */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-md border border-white flex items-center justify-center shadow-2xl relative">
+                            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#18357a] shadow-lg">
+                                <BookOpen size={30} />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Bottom OPAC Link */}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full max-w-[280px] px-6">
+                        <a 
+                            href="http://115.244.103.83/webopac" 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="flex items-center justify-center gap-4 bg-[#18357a] text-white px-8 py-4 rounded-2xl font-black text-sm tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-[0_15px_30px_rgba(24,53,122,0.3)] group overflow-hidden relative"
+                        >
+                            Web OPAC Access
+                            <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Feature Row - Modern Mockup Style */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                    { t: 'Library Access', p: '/campus-life/library/access', i: Library, c: 'bg-blue-50 text-blue-600 border-blue-100', s: 'blue' },
+                    { t: 'Books & Collections', p: '/campus-life/library/collections', i: BookOpen, c: 'bg-orange-50 text-orange-500 border-orange-100', s: 'orange' },
+                    { t: 'Journals & Digital', p: '/campus-life/library/journals', i: Monitor, c: 'bg-indigo-50 text-indigo-600 border-indigo-100', s: 'indigo' },
+                    { t: 'Periodicals', p: '/campus-life/library/achievements', i: Trophy, c: 'bg-purple-50 text-purple-600 border-purple-100', s: 'purple' }
+                ].map((item, idx) => (
+                    <div 
+                        key={idx} 
+                        onClick={() => navigate(item.p)}
+                        className="group bg-white p-8 rounded-[2rem] border border-slate-50 shadow-[0_10px_30px_rgba(24,53,122,0.03)] hover:shadow-[0_20px_50px_rgba(24,53,122,0.08)] hover:-translate-y-1 transition-all cursor-pointer flex items-center gap-6"
+                    >
+                        <div className={`w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 border transition-all ${item.c}`}>
+                            <item.i size={28} />
+                        </div>
+                        <div className="flex-1 space-y-3">
+                            <div className="space-y-1">
+                                <h4 className="text-base font-black text-[#18357a] tracking-tight">{item.t}</h4>
+                                <div className={`h-0.5 w-8 rounded-full ${item.s === 'blue' ? 'bg-blue-400' : item.s === 'orange' ? 'bg-orange-400' : item.s === 'indigo' ? 'bg-indigo-400' : 'bg-purple-400'}`} />
+                            </div>
+                            <div className="flex items-center gap-2 text-[#18357a] group-hover:gap-3 transition-all">
+                                <span className="text-xs font-black uppercase tracking-widest">View Details</span>
+                                <ArrowLeft size={12} className="rotate-180" />
+                            </div>
+                        </div>
+                    </div>
                 ))}
             </div>
 
-            {/* Combined Team and Rules */}
-            <div className="grid lg:grid-cols-[1fr_2fr] gap-8">
-                {/* Team */}
-                <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-xl overflow-hidden">
-                    <h3 className="text-xl font-black text-[#18357a] uppercase tracking-tight mb-8">Expert Team</h3>
-                    <div className="space-y-4">
+            {/* Bottom Grid: Team and Regulations */}
+            <div className="grid lg:grid-cols-2 gap-10">
+                {/* Expert Team Card */}
+                <div className="bg-white p-10 rounded-[3rem] shadow-[0_25px_60px_rgba(24,53,122,0.06)] border border-slate-50 relative overflow-hidden">
+                    <div className="flex items-center gap-4 mb-10">
+                        <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
+                            <Users size={24} />
+                        </div>
+                        <div className="space-y-1">
+                            <h3 className="text-xl font-black text-[#18357a]">Expert Team</h3>
+                            <div className="h-1 w-10 bg-blue-600 rounded-full" />
+                        </div>
+                    </div>
+                    
+                    <div className="space-y-6">
                         {[
-                            { n: 'MR. M. GUNASEKARAN', d: 'Librarian' },
-                            { n: 'MR. C. RAMESH', d: 'Asst Librarian' },
-                            { n: 'MRS. N. INDUMATHI', d: 'Library Asst' },
-                            { n: 'MRS. T. BANUMATHI', d: 'Library Asst' },
-                            { n: 'MR. P. SAKTHIVEL', d: 'Library Asst' }
-                        ].map((row, i) => (
-                            <div key={i} className="flex justify-between items-center py-3 border-b border-slate-50 last:border-0 grow">
-                                <p className="text-[13px] font-black text-[#18357a] uppercase">{row.n}</p>
-                                <p className="text-[11px] font-bold text-[#ffc107] uppercase tracking-widest">{row.d}</p>
+                            { n: 'Mr. M. Gunasekaran', d: 'Librarian', c: 'bg-blue-600' },
+                            { n: 'Mr. C. Ramesh', d: 'Assistant Librarian', c: 'bg-orange-600' },
+                            { n: 'Mrs. N. Indumathi', d: 'Library Assistant', c: 'bg-purple-600' },
+                            { n: 'Mrs. T. Banumathi', d: 'Library Assistant', c: 'bg-green-600' },
+                            { n: 'Mr. P. Sakthivel', d: 'Library Assistant', c: 'bg-red-600' }
+                        ].map((member, i) => (
+                            <div key={i} className="flex items-center justify-between group cursor-default py-2 border-b border-slate-50 last:border-0">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-[#18357a] border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <User size={24} />
+                                    </div>
+                                    <div className="space-y-0.5">
+                                        <p className="text-base font-black text-black">{member.n}</p>
+                                        <p className="text-xs font-bold text-slate-600 uppercase tracking-widest">{member.d}</p>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Rules */}
-                <div className="bg-white p-8 rounded-2xl border border-slate-100 shadow-xl">
-                    <h3 className="text-xl font-black text-[#18357a] uppercase tracking-tight mb-8">Library Regulations</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
+                {/* Library Regulations Card */}
+                <div className="bg-[#FFFDF8] p-10 rounded-[3rem] shadow-[0_25px_60px_rgba(245,158,11,0.06)] border border-orange-50 relative overflow-hidden">
+                    <div className="flex items-center gap-4 mb-10">
+                        <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-orange-500">
+                            <ShieldCheck size={24} />
+                        </div>
+                        <div className="space-y-1">
+                            <h3 className="text-xl font-black text-[#18357a]">Library Regulations</h3>
+                            <div className="h-1 w-10 bg-[#ffc107] rounded-full" />
+                        </div>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-4">
                         {[
                             { i: VolumeX, t: 'Absolute silence inside premises.' },
                             { i: Smartphone, t: 'Mobile Phones are prohibited.' },
@@ -170,9 +244,11 @@ const LibraryPage = () => {
                             { i: PenTool, t: 'Resources return without marks.' },
                             { i: Sofa, t: 'Furniture should not move.' }
                         ].map((rule, idx) => (
-                            <div key={idx} className="flex gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100">
-                                <rule.i size={24} className="text-[#ffc107] shrink-0" />
-                                <p className="text-sm font-black text-[#18357a] leading-relaxed uppercase tracking-tight">{rule.t}</p>
+                            <div key={idx} className="bg-white p-5 rounded-2xl border border-orange-100 flex items-center gap-4 group hover:border-[#ffc107] transition-all">
+                                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all">
+                                    <rule.i size={20} />
+                                </div>
+                                <p className="text-sm font-bold text-black leading-snug">{rule.t}</p>
                             </div>
                         ))}
                     </div>

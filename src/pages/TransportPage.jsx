@@ -29,10 +29,10 @@ const TransportPage = () => {
                             className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                            <span className="text-[12px] font-black tracking-[2px]">Back to Hub</span>
                         </button>
-                        <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-3">
-                            CAMPUS <span className="text-[#ffc107]">TRANSPORT</span>
+                        <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-none mb-3">
+                            Campus <span className="text-[#ffc107]">Transport</span>
                         </h1>
                     </motion.div>
                 </div>
@@ -44,8 +44,8 @@ const TransportPage = () => {
                         <Bus size={20} />
                     </div>
                     <div>
-                        <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight">Campus Transport</h2>
-                        <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[3px]">Institutional Fleet & Routes</p>
+                        <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Campus Transport</h2>
+                        <p className="text-[12px] font-black text-[#ffc107] tracking-[2px]">Institutional Fleet & Routes</p>
                     </div>
                 </div>
                 <div className="relative p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#18357a]/5 overflow-hidden">
@@ -53,10 +53,10 @@ const TransportPage = () => {
                         <div className="space-y-6">
                             <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#ffc107]/10 rounded-full">
                                 <div className="w-2 h-2 rounded-full bg-[#ffc107] animate-pulse" />
-                                <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest leading-none">Official KIOT Transport</span>
+                                <span className="text-[11px] font-black text-[#18357a] tracking-widest leading-none">Official KIOT Transport</span>
                             </div>
                             
-                            <h2 className="text-4xl font-black text-[#18357a] uppercase tracking-tight leading-none font-display">
+                            <h2 className="text-4xl font-black text-[#18357a] tracking-tight leading-none font-display">
                                 KIOT <span className="text-[#ffc107]">Transport</span>
                             </h2>
                             
@@ -67,7 +67,7 @@ const TransportPage = () => {
                             <div className="pt-6">
                                 <Link to="/bus-routes" className="inline-flex items-center gap-4 px-8 py-5 bg-[#18357a] rounded-2xl group hover:bg-[#ffc107] transition-all shadow-xl shadow-[#18357a]/20">
                                     <Bus size={20} className="text-[#ffc107] group-hover:text-[#18357a] transition-colors" />
-                                    <span className="text-sm font-black uppercase tracking-[2px] text-white group-hover:text-[#18357a] transition-colors">
+                                    <span className="text-sm font-black tracking-[2px] text-white group-hover:text-[#18357a] transition-colors">
                                         View Bus Routes
                                     </span>
                                 </Link>

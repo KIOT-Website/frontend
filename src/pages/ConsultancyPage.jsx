@@ -91,7 +91,7 @@ const ConsultancyPage = () => {
                             </div>
                         </div>
 
-                        <div className="bg-[#0f172a] rounded-[2rem] p-6 text-white shadow-2xl border-b-4 border-[#ffc107]">
+                        <div className="bg-[#0f172a] rounded-2xl p-6 text-white shadow-2xl border-b-4 border-[#ffc107]">
                             <p className="text-[12px] font-black uppercase tracking-widest text-[#ffc107] mb-1">Impact Metric</p>
                             <div className="text-2xl font-black italic tracking-tight">₹ 5,75,000+</div>
                             <p className="text-[11px] font-bold opacity-50 uppercase tracking-widest mt-1">Total Consultancy Revenue</p>
@@ -107,9 +107,9 @@ const ConsultancyPage = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1 }}
                             key={item.id}
-                            className="group bg-white rounded-[2.5rem] border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all p-8 flex flex-col"
+                            className="group bg-white rounded-2xl border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all p-7 flex flex-col"
                         >
-                            <div className="flex justify-between items-start mb-8">
+                            <div className="flex justify-between items-start mb-6">
                                 <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#ffc107] group-hover:bg-[#0f172a] group-hover:text-white transition-all duration-500">
                                     {item.icon}
                                 </div>
@@ -128,7 +128,7 @@ const ConsultancyPage = () => {
                                     "{item.title}"
                                 </h3>
                                 
-                                <div className="space-y-4 mb-8">
+                                <div className="space-y-3 mb-6">
                                     <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-2xl border border-slate-100/50">
                                         <Building2 size={16} className="text-slate-300 mt-0.5 shrink-0" />
                                         <div>

@@ -62,13 +62,13 @@ const EnergyPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
+        <div className="min-h-screen bg-[#FCFDFD] pb-24">
             {/* 🔷 Hero Section */}
             <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1466611653911-954ffea11271?q=80&w=1920&auto=format&fit=crop" 
-                        className="w-full h-full object-cover opacity-50 scale-110 transition-transform duration-1000" 
+                        className="w-full h-full object-cover opacity-100 scale-110 transition-transform duration-1000" 
                         alt="Energy Initiatives"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
@@ -85,10 +85,10 @@ const EnergyPage = () => {
                             className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                            <span className="text-xs font-black tracking-[2px]">Back to Hub</span>
                         </button>
-                        <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-3">
-                            ENERGY <span className="text-[#ffc107]">INITIATIVES</span>
+                        <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none mb-3">
+                            Energy <span className="text-[#ffc107]">Initiatives</span>
                         </h1>
                     </motion.div>
                 </div>
@@ -100,12 +100,12 @@ const EnergyPage = () => {
                 <div className="space-y-12">
                     <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
                         <div className="space-y-2">
-                            <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter">Waste <span className="text-[#ffc107]">Management</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-black text-[#18357a] tracking-tighter">Waste <span className="text-[#ffc107]">Management</span></h2>
                             <div className="h-1 w-24 bg-[#ffc107]" />
                         </div>
-                        <p className="max-w-xl text-black text-sm font-black uppercase leading-relaxed text-justify opacity-80">
+                        <p className="max-w-xl text-black text-[15px] font-bold leading-relaxed text-justify">
                             Waste management involves the collection, transportation, processing, and monitoring of materials. 
-                            In KIOT campus, strategic initiatives target solid, liquid, and E-waste excellence.
+                            In KIOT campus, strategic initiatives target solid, liquid, and e-waste excellence.
                         </p>
                     </div>
 
@@ -122,12 +122,12 @@ const EnergyPage = () => {
                                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-[#18357a] mb-8 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
                                     <waste.icon size={28} />
                                 </div>
-                                <h3 className="text-xl font-black text-[#18357a] uppercase tracking-tight mb-6">{waste.title}</h3>
+                                <h3 className="text-xl font-black text-[#18357a] tracking-tight mb-6">{waste.title}</h3>
                                 <div className="space-y-4">
                                     {waste.items.map((item, i) => (
                                         <div key={i} className="flex gap-3 items-start">
                                             <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                                            <p className="text-[12px] font-black text-black uppercase leading-relaxed tracking-tight opacity-90">{item}</p>
+                                            <p className="text-[13px] font-bold text-slate-700 leading-relaxed tracking-tight">{item}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -145,23 +145,23 @@ const EnergyPage = () => {
                             <div className="space-y-8 text-center lg:text-left">
                                 <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/10 rounded-full border border-white/20">
                                     <CloudRain size={20} className="text-[#ffc107]" />
-                                    <span className="text-[10px] font-black uppercase tracking-[3px]">Resource Harvesting</span>
+                                    <span className="text-xs font-black uppercase tracking-[3px]">Resource Harvesting</span>
                                 </div>
-                                <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">
+                                <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none">
                                     Rain Water <br/> <span className="text-[#ffc107]">Harvesting</span>
                                 </h2>
-                                <p className="text-white/70 text-sm font-black uppercase leading-relaxed tracking-wide text-justify italic">
+                                <p className="text-white text-base font-bold leading-relaxed tracking-wide text-justify italic">
                                     Groundwater is mission-critical. To mitigate over-exploitation, KIOT has scaled ground water recharge 
                                     pits across institutional buildings, balancing water table depletion with intelligent surface-runoff collection.
                                 </p>
                                 <div className="grid grid-cols-2 gap-6 pt-4">
                                     <div className="p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                                        <div className="text-3xl font-black text-[#ffc107]">771 MM</div>
-                                        <div className="text-[9px] font-black uppercase tracking-widest leading-none mt-2">Annual Rainfall Average</div>
+                                        <div className="text-3xl font-black text-[#ffc107]">771 mm</div>
+                                        <div className="text-xs font-black uppercase tracking-widest leading-none mt-2">Annual Rainfall Average</div>
                                     </div>
                                     <div className="p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                                        <div className="text-3xl font-black text-[#ffc107]">0.338 MCFT</div>
-                                        <div className="text-[9px] font-black uppercase tracking-widest leading-none mt-2">Annual Collection Volume</div>
+                                        <div className="text-3xl font-black text-[#ffc107]">0.338 mcft</div>
+                                        <div className="text-xs font-black uppercase tracking-widest leading-none mt-2">Annual Collection Volume</div>
                                     </div>
                                 </div>
                             </div>
@@ -170,9 +170,9 @@ const EnergyPage = () => {
                                 <div className="space-y-6">
                                     <div className="flex items-center gap-4 border-b border-white/10 pb-4">
                                         <Recycle size={22} className="text-[#ffc107]" />
-                                        <h3 className="text-xl font-black uppercase">Collection Methodology</h3>
+                                        <h3 className="text-xl font-black">Collection Methodology</h3>
                                     </div>
-                                    <p className="text-white/60 text-[13px] font-black uppercase leading-relaxed text-justify">
+                                    <p className="text-white text-[14px] font-bold leading-relaxed text-justify">
                                         Our methodology involves collection, channelization, filtering, and storage. Roof top water is properly drained 
                                         to recharge points, while surface runoffs are channelized towards recharge pits and bore wells through filters.
                                     </p>
@@ -181,11 +181,11 @@ const EnergyPage = () => {
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div className="flex gap-4 p-5 bg-white rounded-3xl items-center text-[#18357a] hover:scale-105 transition-transform shadow-lg">
                                         <Container className="shrink-0" />
-                                        <div className="font-black text-[11px] uppercase tracking-tight">60ft Open Well (C-Block)</div>
+                                        <div className="font-black text-[13px] tracking-tight">60ft Open Well (C-Block)</div>
                                     </div>
                                     <div className="flex gap-4 p-5 bg-white rounded-3xl items-center text-[#18357a] hover:scale-105 transition-transform shadow-lg">
                                         <BarChart3 className="shrink-0" />
-                                        <div className="font-black text-[11px] uppercase tracking-tight">3 Strategic Bore Wells</div>
+                                        <div className="font-black text-[13px] tracking-tight">3 Strategic Bore Wells</div>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@ const EnergyPage = () => {
                     {/* Key Benefits Grid */}
                     <div className="space-y-10">
                         <div className="text-center">
-                            <h3 className="text-3xl font-black text-[#18357a] uppercase tracking-tighter">Strategic <span className="text-[#ffc107]">Benefits</span></h3>
+                            <h3 className="text-3xl font-black text-[#18357a] tracking-tighter">Strategic <span className="text-[#ffc107]">Benefits</span></h3>
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {rwhBenefits.map((benefit, i) => (
@@ -206,7 +206,7 @@ const EnergyPage = () => {
                                 >
                                     <div className="absolute top-0 right-0 w-16 h-16 bg-slate-50 rounded-bl-[2rem] group-hover:bg-[#ffc107]/20 transition-colors" />
                                     <CheckCircle2 className="text-[#ffc107] shrink-0 mt-1" size={20} />
-                                    <p className="text-black text-[12px] font-black uppercase leading-[1.8] tracking-tight relative z-10">{benefit}</p>
+                                    <p className="text-black text-[14px] font-bold leading-[1.8] tracking-tight relative z-10">{benefit}</p>
                                 </motion.div>
                             ))}
                         </div>

@@ -75,52 +75,28 @@ const SportsFacultyPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
-      {/* 🔷 Shared Hero Section (Consistent across Hub) */}
-      <div className="relative h-[22vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
-          <div className="absolute inset-0">
-              <img 
-                  src="https://images.unsplash.com/photo-1523050335392-9bc0ad7c9f83?q=80&w=1920&auto=format&fit=crop" 
-                  className="w-full h-full object-cover opacity-40" 
-                  alt="Campus"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/80 via-[#18357a]/60 to-transparent" />
-          </div>
-          
-          <div className="relative z-10 text-center px-6 pt-4">
-              <motion.div
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8 }}
-              >
-                  <button 
-                      onClick={() => navigate('/campus-life/sports')}
-                      className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-4 group border border-[#ffc107]/30 px-4 py-1 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
-                  >
-                      <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                      <span className="text-[9px] font-black uppercase tracking-[2px]">Back to Sports & Games</span>
-                  </button>
-                  <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-2">
-                      CAMPUS <span className="text-[#ffc107]">LIFE</span>
-                  </h1>
-                  <p className="text-white/60 font-medium text-[9px] md:text-xs max-w-2xl mx-auto uppercase tracking-widest leading-loose">
-                      Institutional Infrastructure & Ecosystem
-                  </p>
-              </motion.div>
-          </div>
-      </div>
+    <div className="min-h-screen bg-[#FCFDFD] pb-24 pt-16">
+      <div className="max-w-7xl mx-auto px-0 md:px-6 relative z-20">
+        <div className="mt-4 mb-8 px-6 md:px-0">
+          <button 
+            onClick={() => navigate('/campus-life/sports')}
+            className="inline-flex items-center gap-2 text-[#18357a] hover:text-[#ffc107] transition-colors group border border-slate-200 px-4 py-2 rounded-full bg-white shadow-sm"
+          >
+            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+            <span className="text-xs font-black tracking-[2px]">Back to Sports & Games</span>
+          </button>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-10 pb-16 relative z-20">
-
-        <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-2xl space-y-10">
-          <div className="flex items-center gap-4 border-b border-slate-50 pb-6">
+        <div className="space-y-8 md:space-y-16">
+          <div className="flex items-center gap-4 border-b border-slate-100 pb-6 px-6 md:px-0">
             <div className="w-12 h-12 bg-[#18357a] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
               <Star size={24} />
             </div>
             <div>
-              <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight">Faculty Profiles</h2>
+              <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Faculty Profiles</h2>
             </div>
-          </div>          <div className="space-y-12">
+          </div>
+          <div className="space-y-0 md:space-y-12">
             {facultyData.map((faculty, idx) => (
               <motion.div 
                 key={faculty.id}
@@ -128,35 +104,36 @@ const SportsFacultyPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-[2rem] p-8 md:p-12 border border-slate-100 shadow-2xl space-y-10 relative overflow-hidden group"
+                className="bg-white rounded-none md:rounded-[2rem] p-6 md:p-12 border-x-0 md:border border-slate-100 shadow-2xl space-y-10 relative overflow-hidden group"
               >
                 {/* Background Pattern */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#18357a]/5 rounded-full -translate-x-[-30%] -translate-y-[30%] group-hover:scale-110 transition-transform duration-700" />
                 
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-slate-100 pb-10">
-                    <div className="flex items-center gap-6">
-                        <div className="w-20 h-20 rounded-2xl bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
-                            <User size={40} />
-                        </div>
-                        <div>
-                            <h3 className="text-4xl font-black text-[#18357a] uppercase tracking-tight leading-none mb-3">{faculty.name}</h3>
-                            <div className="flex items-center gap-3">
-                                <p className="text-[#ffc107] font-black text-xs uppercase tracking-[4px]">{faculty.designation}</p>
-                                <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-                                <div className="flex items-center gap-2 text-slate-500 text-[10px] font-black uppercase tracking-widest">
-                                    <GraduationCap size={14} className="text-[#18357a]" />
-                                    {faculty.qualification}
-                                </div>
-                            </div>
-                        </div>
+                <div className="flex flex-col md:flex-row items-center md:items-end gap-10 border-b border-slate-100 pb-12 px-6 md:px-0">
+                    <div className="w-48 h-48 rounded-[2.5rem] bg-[#18357a] overflow-hidden shadow-2xl border-4 border-white flex items-center justify-center shrink-0">
+                        {faculty.image ? (
+                            <img src={faculty.image} className="w-full h-full object-cover" alt={faculty.name} />
+                        ) : (
+                            <User size={60} className="text-[#ffc107]" />
+                        )}
                     </div>
-                    <div className="flex items-center gap-4 bg-slate-50 px-6 py-4 rounded-2xl border border-slate-100">
-                        <Award size={20} className="text-[#18357a]" />
-                        <div>
-                            <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Specialization</p>
-                            <p className="text-[12px] font-bold text-[#18357a] uppercase">{faculty.specialization}</p>
+                    
+                    <div className="text-center md:text-left flex-1 space-y-4">
+                        <h3 className="text-4xl md:text-5xl font-black text-[#18357a] tracking-tight leading-none">{faculty.name}</h3>
+                        
+                            <div className="flex items-center justify-center md:justify-start gap-3 text-slate-800 text-sm md:text-base font-bold">
+                                <GraduationCap size={20} className="text-[#18357a]" />
+                                {faculty.qualification}
+                            </div>
+                    </div>
+
+                    <div className="w-full md:w-80 bg-slate-50 px-8 py-6 rounded-3xl border border-slate-100 shadow-sm">
+                        <div className="flex items-center gap-4 mb-3">
+                            <Award size={24} className="text-[#18357a]" />
+                            <p className="text-xs font-black text-[#18357a] tracking-[2px]">Specialization</p>
                         </div>
+                        <p className="text-[15px] font-black text-slate-700 leading-tight tracking-tight">{faculty.specialization}</p>
                     </div>
                 </div>
 
@@ -168,14 +145,14 @@ const SportsFacultyPage = () => {
                                 <div className="w-8 h-8 rounded-lg bg-[#18357a]/10 flex items-center justify-center text-[#18357a]">
                                     <Trophy size={16} />
                                 </div>
-                                <h4 className="text-[11px] font-black text-[#18357a] uppercase tracking-[2px]">
+                                <h4 className="text-xs font-black text-[#18357a] tracking-[2px]">
                                     {section.title}
                                     <div className="w-6 h-0.5 bg-[#ffc107] mt-1" />
                                 </h4>
                             </div>
                             <ul className="space-y-4">
                                 {section.items.map((item, iidx) => (
-                                    <li key={iidx} className="text-[12px] leading-relaxed font-bold text-slate-600 flex gap-4 group/item">
+                                    <li key={iidx} className="text-[13px] leading-relaxed font-bold text-slate-700 flex gap-4 group/item">
                                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0 group-hover/item:scale-150 transition-transform" />
                                         <span dangerouslySetInnerHTML={{ __html: item }} />
                                     </li>

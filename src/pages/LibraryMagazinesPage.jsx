@@ -62,7 +62,7 @@ const AWARDS = {
         { n: "S.Hariharan", c: "II ECE - B" },
         { n: "S.Harish", c: "III B.Tech. IT" },
         { n: "S.Rooban", c: "IV B.E Civil" },
-        { n: "K.Gokul", n: "K.Gokul", c: "II B.Tech. CSBS" },
+        { n: "K.Gokul", c: "II B.Tech. CSBS" },
         { n: "D.Rishikesan", c: "II M.E EST" },
         { n: "S.Sabarinathan", c: "II M.E VLSI" },
         { n: "E.Kiruthika", c: "II M.E CSE" },
@@ -84,12 +84,12 @@ const LibraryMagazinesPage = () => {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="space-y-4">
                         <motion.button
-                            onClick={() => navigate('/campus-life')}
-                            className="flex items-center gap-2 text-[10px] font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] transition-colors"
+                            onClick={() => navigate('/campus-life/library')}
+                            className="flex items-center gap-2 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] transition-colors"
                         >
                             <ArrowLeft size={14} /> Back to Library Hub
                         </motion.button>
-                        <h1 className="text-4xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
+                        <h1 className="text-4xl font-black text-[#18357a] tracking-tighter leading-none">
                             Magazines & <span className="text-[#ffc107]">Honors</span>
                         </h1>
                     </div>
@@ -102,10 +102,10 @@ const LibraryMagazinesPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
+                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
                                     activeTab === tab.id 
                                     ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20' 
-                                    : 'text-slate-500 hover:bg-[#ffc107] hover:text-[#18357a]'
+                                    : 'text-slate-700 hover:bg-[#ffc107] hover:text-[#18357a]'
                                 }`}
                             >
                                 <tab.icon size={14} />
@@ -128,15 +128,15 @@ const LibraryMagazinesPage = () => {
                         >
                             <div className="bg-white rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#18357a]/5 overflow-hidden">
                                 <div className="p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                                    <h2 className="text-lg font-black text-[#18357a] uppercase tracking-tight">Periodical Repository</h2>
+                                    <h2 className="text-lg font-black text-[#18357a] tracking-tight">Periodical Repository</h2>
                                     <div className="relative flex-1 max-w-sm">
-                                        <Search size={16} className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400" />
+                                        <Search size={16} className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500" />
                                         <input 
                                             type="text" 
-                                            placeholder="SEARCH MAGAZINES..."
+                                            placeholder="Search Magazines..."
                                             value={searchQuery}
                                             onChange={(e) => setSearchQuery(e.target.value)}
-                                            className="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-2xl text-[10px] font-black uppercase tracking-widest focus:ring-4 focus:ring-[#18357a]/5 transition-all"
+                                            className="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-2xl text-xs font-black uppercase tracking-widest focus:ring-4 focus:ring-[#18357a]/5 transition-all"
                                         />
                                     </div>
                                 </div>
@@ -146,9 +146,9 @@ const LibraryMagazinesPage = () => {
                                         <div key={i} className="group p-5 bg-white border border-slate-50 hover:border-[#18357a] rounded-2xl transition-all flex items-center justify-between shadow-sm hover:shadow-xl hover:shadow-[#18357a]/5">
                                             <div className="flex items-center gap-4">
                                                 <div className="w-2 h-2 rounded-full bg-[#ffc107] group-hover:scale-150 transition-all" />
-                                                <span className="text-[11px] font-black text-[#18357a] uppercase leading-none tracking-wide">{name}</span>
+                                                <span className="text-[13px] font-bold text-[#18357a] leading-none tracking-wide">{name}</span>
                                             </div>
-                                            <BookOpen size={14} className="text-slate-200 group-hover:text-[#18357a] transition-colors" />
+                                            <BookOpen size={14} className="text-slate-300 group-hover:text-[#18357a] transition-colors" />
                                         </div>
                                     ))}
                                 </div>
@@ -168,10 +168,10 @@ const LibraryMagazinesPage = () => {
                                     <button
                                         key={year}
                                         onClick={() => setActiveYear(year)}
-                                        className={`px-8 py-4 rounded-3xl text-[11px] font-black uppercase tracking-widest transition-all ${
+                                        className={`px-8 py-4 rounded-3xl text-xs font-black uppercase tracking-widest transition-all ${
                                             activeYear === year 
                                             ? 'bg-[#ffc107] text-[#18357a] shadow-[0_15px_40px_rgba(255,193,7,0.3)]' 
-                                            : 'bg-white border border-slate-100 text-slate-400 hover:text-[#18357a]'
+                                            : 'bg-white border border-slate-100 text-slate-700 hover:text-[#18357a]'
                                         }`}
                                     >
                                         Most Books Borrower {year}
@@ -187,15 +187,15 @@ const LibraryMagazinesPage = () => {
                                     <div className="space-y-6">
                                         <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/10 rounded-full border border-white/10">
                                             <Award size={14} className="text-[#ffc107]" />
-                                            <span className="text-[10px] font-black uppercase tracking-[3px]">Institutional Honor</span>
+                                            <span className="text-xs font-black uppercase tracking-[3px]">Institutional Honor</span>
                                         </div>
-                                        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
+                                        <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-none">
                                             Borrower's <br /><span className="text-[#ffc107]">Hall of Fame</span>
                                         </h2>
                                     </div>
                                     <div className="p-8 bg-white/5 rounded-3xl border border-white/10 text-right backdrop-blur-md">
                                         <Calendar size={32} className="text-[#ffc107] mb-4 ml-auto" />
-                                        <p className="text-[10px] font-black text-white/40 uppercase tracking-[4px]">Academic Cycle</p>
+                                        <p className="text-xs font-black text-white uppercase tracking-[4px]">Academic Cycle</p>
                                         <p className="text-2xl font-black text-white">{activeYear}</p>
                                     </div>
                                 </div>
@@ -215,10 +215,10 @@ const LibraryMagazinesPage = () => {
                                                     <User size={22} />
                                                 </div>
                                                 <div>
-                                                    <p className="text-[13px] font-black uppercase tracking-wide text-white group-hover:text-[#18357a] transition-colors">{student.n}</p>
+                                                    <p className="text-[14px] font-bold text-white group-hover:text-[#18357a] transition-colors">{student.n}</p>
                                                     <div className="flex items-center gap-2 mt-1">
-                                                        <GraduationCap size={12} className="text-[#ffc107] group-hover:text-[#18357a]/40" />
-                                                        <p className="text-[10px] font-bold text-white/40 group-hover:text-[#18357a]/60 uppercase tracking-widest">{student.c}</p>
+                                                        <GraduationCap size={12} className="text-[#ffc107]" />
+                                                        <p className="text-xs font-bold text-white group-hover:text-[#18357a] uppercase tracking-widest">{student.c}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -229,8 +229,8 @@ const LibraryMagazinesPage = () => {
                                     ))}
                                 </div>
 
-                                <div className="mt-16 pt-8 border-t border-white/5 text-center relative z-10">
-                                    <p className="text-[10px] font-black text-white/20 uppercase tracking-[5px]">Recognizing Academic Excellence & Library Engagement</p>
+                                <div className="mt-16 pt-8 border-t border-white/10 text-center relative z-10">
+                                    <p className="text-xs font-black text-white uppercase tracking-[5px]">Recognizing Academic Excellence & Library Engagement</p>
                                 </div>
                             </div>
                         </motion.div>

@@ -273,7 +273,7 @@ const PhdHoldersPage = () => {
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-6">
                         List of <span className="text-[#ffc107]">Doctorate Holders</span>
                     </h1>
 
@@ -294,20 +294,20 @@ const PhdHoldersPage = () => {
                         <table className="w-full border-collapse text-left">
                             <thead>
                                 <tr className="text-white">
-                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">S.No.</th>
-                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Faculty Details</th>
-                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Research Topic</th>
-                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Year / University</th>
-                                    <th colSpan="4" className="bg-[#0f172a] px-6 py-2 text-center text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] border-b border-white/5 border-r border-white/5">Scholar Publications</th>
-                                    <th colSpan="2" className="bg-[#0f172a] px-6 py-2 text-center text-[10px] font-black text-[#ffc107] uppercase tracking-[2px]">Supervision</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black tracking-[2px] w-16 border-r border-white/5">S.No.</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black tracking-[2px] border-r border-white/5">Faculty Details</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black tracking-[2px] border-r border-white/5">Research Topic</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black tracking-[2px] border-r border-white/5">Year / University</th>
+                                    <th colSpan="4" className="bg-[#0f172a] px-6 py-2 text-center text-[10px] font-black text-[#ffc107] tracking-[2px] border-b border-white/5 border-r border-white/5">Scholar Publications</th>
+                                    <th colSpan="2" className="bg-[#0f172a] px-6 py-2 text-center text-[10px] font-black text-[#ffc107] tracking-[2px]">Supervision</th>
                                 </tr>
                                 <tr>
-                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">IJ</th>
-                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">IC</th>
-                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">NJ</th>
-                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">NC</th>
-                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase border-r border-white/5">Guided</th>
-                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 uppercase">Being Guided</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">IJ</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">IC</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">NJ</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">NC</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">Guided</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60">Being Guided</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
@@ -327,7 +327,7 @@ const PhdHoldersPage = () => {
                                                     <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-[#0f172a] group-hover:bg-[#0f172a] group-hover:text-white transition-all">
                                                         <Award size={14} />
                                                     </div>
-                                                    <span className="text-[13px] font-bold text-[#0f172a] uppercase tracking-tight">{holder.name}</span>
+                                                    <span className="text-[13px] font-bold text-[#0f172a] tracking-tight">{holder.name}</span>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4 border-r border-slate-50">
@@ -337,8 +337,8 @@ const PhdHoldersPage = () => {
                                             </td>
                                             <td className="px-6 py-4 border-r border-slate-50">
                                                 <div>
-                                                    <div className="text-[11px] font-bold text-[#0f172a] uppercase leading-none mb-1">{holder.year}</div>
-                                                    <div className="text-[10px] font-bold text-[#334155] uppercase">{holder.university}</div>
+                                                    <div className="text-[11px] font-bold text-[#0f172a] leading-none mb-1">{holder.year}</div>
+                                                    <div className="text-[10px] font-bold text-[#334155]">{holder.university}</div>
                                                 </div>
                                             </td>
                                             <td className="px-4 py-4 text-center border-r border-slate-50 bg-[#fafcff]/50 font-bold text-[#0f172a] text-xs">{holder.publications.ij}</td>

@@ -85,7 +85,7 @@ const PhdSupervisorsPage = () => {
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-6">
                                 List of Ph.D <span className="text-[#ffc107]">Supervisors</span>
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -129,7 +129,7 @@ const PhdSupervisorsPage = () => {
                                             <GraduationCap size={32} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black text-[#0f172a] uppercase tracking-tight group-hover:text-[#18357a] transition-colors">
+                                            <h3 className="text-xl font-black text-[#0f172a] tracking-tight group-hover:text-[#18357a] transition-colors">
                                                 {supervisor.name}
                                             </h3>
                                             <div className="flex items-center gap-2 mt-1 px-3 py-1 bg-slate-50 rounded-full border border-slate-100 group-hover:bg-[#ffc107]/10 transition-colors w-fit">
@@ -171,8 +171,8 @@ const PhdSupervisorsPage = () => {
                                         <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Active Scholars</p>
                                     </div>
                                     <div className="text-center flex flex-col justify-center">
-                                        <div className="text-[12px] font-black text-[#0f172a] uppercase italic">{supervisor.university}</div>
-                                        <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Affiliation</p>
+                                        <div className="text-[12px] font-black text-[#0f172a] italic">{supervisor.university}</div>
+                                        <p className="text-[9px] font-black text-slate-400 tracking-widest">Affiliation</p>
                                     </div>
                                 </div>
                             </div>

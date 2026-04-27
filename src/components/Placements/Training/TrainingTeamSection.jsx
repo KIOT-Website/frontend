@@ -42,7 +42,6 @@ const TrainingTeamSection = () => {
         <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] tracking-tighter text-center leading-tight">
           Dedicated <span className="text-[#ffc107]">Training Team</span>
         </h2>
-        <div className="w-16 h-1.5 bg-[#ffc107] mt-6 rounded-full" />
       </div>
 
       {/* Desktop view: Table Design with Premium Look */}

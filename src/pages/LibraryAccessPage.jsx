@@ -27,7 +27,7 @@ const LibraryAccessPage = () => {
                         className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-slate-100 mb-8"
                     >
                         <ShieldCheck size={14} className="text-[#18357a]" />
-                        <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">Library Services Portal</span>
+                        <span className="text-xs font-black text-[#18357a] uppercase tracking-widest">Library Services Portal</span>
                     </motion.div>
                     
                     <motion.h1 
@@ -51,13 +51,13 @@ const LibraryAccessPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-12">
+            <div className="max-w-7xl mx-auto px-0 md:px-6 py-12">
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
                     {/* ILMS Section */}
                     <motion.div 
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="space-y-8"
+                        className="space-y-8 px-6 md:px-0"
                     >
                         <div className="p-10 bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 relative overflow-hidden group hover:border-[#18357a]/20 transition-all duration-500">
                              <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-125" />
@@ -68,7 +68,7 @@ const LibraryAccessPage = () => {
                                 </div>
                                 <div>
                                     <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight leading-none">Integrated Library <span className="text-[#ffc107]">(ILMS)</span></h2>
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[4px] mt-1">Institutional Operations</p>
+                                    <p className="text-xs font-black text-slate-500 uppercase tracking-[4px] mt-1">Institutional Operations</p>
                                 </div>
                              </div>
 
@@ -84,7 +84,7 @@ const LibraryAccessPage = () => {
                                             <item.icon size={18} />
                                         </div>
                                          <div>
-                                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">{item.label}</p>
+                                            <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest leading-none mb-1">{item.label}</p>
                                             <p className="text-base font-black text-[#18357a] uppercase">{item.value}</p>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@ const LibraryAccessPage = () => {
                              </div>
 
                              <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 relative z-10">
-                                <p className="text-base font-bold text-slate-600 leading-relaxed italic">
+                                <p className="text-base font-bold text-slate-700 leading-relaxed italic">
                                     "CampesiLIB is an ILMS software designed to manage the institutional library system efficiently. It captures almost every activity related to the library and maintains records of books, periodicals, and other materials."
                                 </p>
                              </div>
@@ -119,7 +119,7 @@ const LibraryAccessPage = () => {
                                             <div className="w-1.5 h-1.5 rounded-full bg-[#18357a] group-hover:bg-[#ffc107] group-hover:scale-150 transition-all" />
                                             <div>
                                                 <p className="text-[13px] font-black text-[#18357a] uppercase mb-0.5">{feat.t}</p>
-                                                <p className="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors uppercase tracking-tight">{feat.d}</p>
+                                                <p className="text-xs font-bold text-slate-600 group-hover:text-slate-800 transition-colors uppercase tracking-tight">{feat.d}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -132,9 +132,9 @@ const LibraryAccessPage = () => {
                     <motion.div 
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="space-y-8 h-full"
+                        className="space-y-8 h-full w-full"
                     >
-                        <div className="bg-[#18357a] p-8 md:p-12 rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden min-h-[600px] flex flex-col border border-[#18357a]">
+                        <div className="bg-[#18357a] p-8 md:p-12 rounded-none md:rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden min-h-[600px] flex flex-col border border-[#18357a]">
                              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white opacity-[0.02] rounded-full -translate-y-1/2 translate-x-1/2" />
                              
                              <div className="relative z-10 flex items-center gap-6 mb-12">
@@ -143,13 +143,13 @@ const LibraryAccessPage = () => {
                                 </div>
                                 <div>
                                     <h2 className="text-3xl font-black uppercase tracking-tight">Open Access</h2>
-                                    <p className="text-[10px] font-black text-white/40 uppercase tracking-[5px] mt-1">Digital Knowledge Highway</p>
+                                    <p className="text-xs font-black text-white uppercase tracking-[5px] mt-1">Digital Knowledge Highway</p>
                                 </div>
                              </div>
 
                              <div className="relative z-10 flex-1 space-y-10">
                                 <div>
-                                    <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full border border-white/10 mb-6 font-black text-[9px] uppercase tracking-[3px] text-[#ffc107]">
+                                    <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/20 mb-6 font-black text-[10px] uppercase tracking-[3px] text-[#ffc107]">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" /> Open Access Books
                                     </div>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
@@ -167,22 +167,22 @@ const LibraryAccessPage = () => {
                                                 href={link.u} 
                                                 target="_blank" 
                                                 rel="noreferrer" 
-                                                className="group px-6 py-5 bg-white/5 hover:bg-white rounded-2xl border border-white/5 transition-all flex items-center justify-between shadow-sm"
+                                                className="group px-6 py-5 bg-white/5 hover:bg-white rounded-2xl border border-white/10 transition-all flex items-center justify-between shadow-sm"
                                             >
                                                 <span className="text-xs font-black uppercase tracking-wide text-white group-hover:text-[#18357a] transition-colors">{link.n}</span>
                                                 <div className="flex items-center gap-2 text-[#ffc107] group-hover:text-[#18357a] transition-colors">
-                                                    <span className="text-[8px] font-black uppercase tracking-widest hidden sm:block">View</span>
-                                                    <ExternalLink size={14} className="opacity-40 group-hover:opacity-100" />
+                                                    <span className="text-[10px] font-black uppercase tracking-widest hidden sm:block">View</span>
+                                                    <ExternalLink size={14} className="opacity-100 group-hover:opacity-100" />
                                                 </div>
                                             </a>
                                         ))}
                                     </div>
                                 </div>
 
-                                <div className="h-px bg-white/10 w-full" />
+                                <div className="h-px bg-white/20 w-full" />
 
                                 <div>
-                                    <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full border border-white/10 mb-6 font-black text-[9px] uppercase tracking-[3px] text-[#ffc107]">
+                                    <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/20 mb-6 font-black text-[10px] uppercase tracking-[3px] text-[#ffc107]">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" /> Scholarly Journals
                                     </div>
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 relative z-10">
@@ -203,12 +203,12 @@ const LibraryAccessPage = () => {
                                                 href={link.u} 
                                                 target="_blank" 
                                                 rel="noreferrer" 
-                                                className="group px-6 py-5 bg-white/5 hover:bg-[#ffc107] rounded-2xl border border-white/5 transition-all flex items-center justify-between"
+                                                className="group px-6 py-5 bg-white/5 hover:bg-[#ffc107] rounded-2xl border border-white/10 transition-all flex items-center justify-between"
                                             >
                                                 <span className="text-xs font-black uppercase tracking-wide text-white group-hover:text-[#18357a] transition-colors">{link.n}</span>
                                                 <div className="flex items-center gap-2 text-[#ffc107] group-hover:text-[#18357a] transition-colors">
-                                                    <span className="text-[8px] font-black uppercase tracking-widest hidden sm:block">View</span>
-                                                    <ExternalLink size={12} className="opacity-40 group-hover:opacity-100" />
+                                                    <span className="text-[10px] font-black uppercase tracking-widest hidden sm:block">View</span>
+                                                    <ExternalLink size={12} className="opacity-100 group-hover:opacity-100" />
                                                 </div>
                                             </a>
                                         ))}
@@ -216,8 +216,8 @@ const LibraryAccessPage = () => {
                                 </div>
                              </div>
                              
-                             <div className="mt-12 pt-8 border-t border-white/10 relative z-10 text-center">
-                                <p className="text-[10px] font-black text-white/30 uppercase tracking-[4px]">24/7 Digital Library Infrastructure</p>
+                             <div className="mt-12 pt-8 border-t border-white/20 relative z-10 text-center">
+                                <p className="text-xs font-black text-white uppercase tracking-[4px]">24/7 Digital Library Infrastructure</p>
                              </div>
                         </div>
                     </motion.div>

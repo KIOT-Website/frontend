@@ -99,7 +99,7 @@ const MedicalImagingPage = () => {
                             </div>
                         </div>
 
-                        <div className="px-6 py-4 bg-[#0f172a] rounded-[1.5rem] border-b-4 border-[#ffc107] text-white shadow-xl">
+                        <div className="px-6 py-4 bg-[#0f172a] rounded-xl border-b-4 border-[#ffc107] text-white shadow-xl">
                             <span className="text-[10px] font-black uppercase tracking-widest text-[#ffc107] block mb-1">Infrastructure Hub</span>
                             <div className="text-xl font-black uppercase italic tracking-tight">{labData.infrastructure}</div>
                         </div>
@@ -124,7 +124,7 @@ const MedicalImagingPage = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: idx * 0.1 }}
                                 key={software.id}
-                                className="group bg-white rounded-[2rem] border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all duration-300 p-8"
+                                className="group bg-white rounded-2xl border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all duration-300 p-7"
                             >
                                 <div className="flex flex-col md:flex-row gap-8">
                                     <div className="flex-1">
@@ -148,7 +148,7 @@ const MedicalImagingPage = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="md:w-48 bg-[#fafcff] rounded-[1.5rem] border border-slate-100 p-6 flex flex-col justify-center items-center text-center group-hover:bg-[#0f172a] transition-all duration-300">
+                                    <div className="md:w-48 bg-[#fafcff] rounded-xl border border-slate-100 p-6 flex flex-col justify-center items-center text-center group-hover:bg-[#0f172a] transition-all duration-300">
                                         <BadgeDollarSign size={24} className="text-[#ffc107] mb-2" />
                                         <span className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest group-hover:text-slate-400">Software Cost</span>
                                         <div className="text-lg font-black text-[#18357a] group-hover:text-white">₹ {software.cost}</div>
@@ -160,7 +160,7 @@ const MedicalImagingPage = () => {
 
                     {/* Sidebar Stats */}
                     <div className="lg:col-span-4 space-y-6">
-                        <div className="bg-[#18357a] rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden group">
+                        <div className="bg-[#18357a] rounded-2xl p-8 text-white shadow-2xl relative overflow-hidden group">
                             <div className="absolute -right-10 -bottom-10 opacity-10 group-hover:scale-110 transition-transform duration-500">
                                 <Stethoscope size={200} />
                             </div>
@@ -191,7 +191,7 @@ const MedicalImagingPage = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-[2rem] p-8 border border-slate-200 shadow-xl overflow-hidden relative">
+                        <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xl overflow-hidden relative">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-[#ffc107]">
                                     <Microscope size={20} />

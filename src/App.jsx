@@ -80,6 +80,7 @@ const IStartPage = lazy(() => import('./pages/IStartPage'))
 const BlogsPage = lazy(() => import('./pages/BlogsPage'))
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
 const AlumniPage = lazy(() => import('./pages/AlumniPage'))
+const NewsEventsPage = lazy(() => import('./pages/NewsEventsPage'))
 
 
 
@@ -246,7 +247,7 @@ function App() {
                    <Route path="/resources/campus-life" element={<CampusLifePage />} />
                     <Route path="/resources/student-life" element={<StudentLifePage />} />
                     <Route path="/resources/alumni" element={<AlumniPage />} />
-                    <Route path="/resources/news-events" element={<UnderConstruction />} />
+                    <Route path="/resources/news-events" element={<NewsEventsPage />} />
                     <Route path="/resources/blogs" element={<BlogsPage />} />
                     <Route path="/resources" element={<UnderConstruction />} />
                   <Route path="/autonomous" element={<AutonomousPage />} />
@@ -275,7 +276,7 @@ function App() {
                   <Route path="/bus-routes" element={<BusRoutesPage />} />
                   <Route path="/student-life" element={<StudentLifePage />} />
                   <Route path="/alumni" element={<AlumniPage />} />
-                  <Route path="/news-events" element={<UnderConstruction />} />
+                  <Route path="/news-events" element={<NewsEventsPage />} />
                   <Route path="/blogs" element={<BlogsPage />} />
                   <Route path="/blog/:slug" element={<BlogDetailPage />} />
 
@@ -297,7 +298,7 @@ function App() {
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -100, opacity: 0 }}
-                className="fixed bottom-6 left-6 z-[3000] w-[260px] bg-white rounded-[2rem] shadow-[0_20px_70px_rgba(10,26,63,0.25)] overflow-hidden border border-slate-100 flex flex-col font-graphik"
+                className="fixed bottom-6 left-6 z-[3000] w-[260px] bg-white rounded-2xl shadow-[0_20px_70px_rgba(10,26,63,0.25)] overflow-hidden border border-slate-100 flex flex-col font-graphik"
               >
                 <div className="bg-[#0A1A3F] p-5 pb-6 flex flex-col items-center text-center relative">
                     <button 

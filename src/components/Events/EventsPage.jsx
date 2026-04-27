@@ -111,7 +111,7 @@ const EventsPage = () => {
                           <video 
                             src={ev.media_url} 
                             muted loop playsInline 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" 
+                            className="w-full h-full object-cover transition-all duration-700" 
                             onMouseOver={e => e.target.play()}
                             onMouseOut={e => e.target.pause()}
                           />
@@ -119,7 +119,7 @@ const EventsPage = () => {
                           <img 
                             src={ev.media_url} 
                             alt={ev.event_name} 
-                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
+                            className="w-full h-full object-cover transition-all duration-700" 
                           />
                         )}
                         <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

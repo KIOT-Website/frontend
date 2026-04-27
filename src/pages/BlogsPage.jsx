@@ -73,7 +73,7 @@ const BlogsPage = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-slate-500 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed px-4"
+                        className="text-slate-900 text-lg md:text-xl font-bold max-w-2xl mx-auto leading-relaxed px-4"
                     >
                         Discover the latest news, updates, and stories from the Knowledge Institute of Technology.
                     </motion.p>
@@ -87,8 +87,8 @@ const BlogsPage = () => {
                 {loading ? (
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[1, 2, 3, 4, 5, 6].map(i => (
-                            <div key={i} className="animate-pulse bg-white rounded-3xl p-4 shadow-sm border border-slate-100 h-[480px]">
-                                <div className="aspect-[16/10] bg-slate-100 rounded-2xl mb-6" />
+                            <div key={i} className="animate-pulse bg-white rounded-2xl p-4 shadow-sm border border-slate-100 h-[420px]">
+                                <div className="aspect-[16/10] bg-slate-100 rounded-xl mb-6" />
                                 <div className="h-6 bg-slate-100 rounded-full w-3/4 mb-4" />
                                 <div className="space-y-3">
                                     <div className="h-3 bg-slate-100 rounded-full w-full" />
@@ -112,7 +112,7 @@ const BlogsPage = () => {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: idx * 0.05 }}
-                                    className="group bg-white rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col h-full"
+                                    className="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col h-full"
                                     onClick={() => navigate(`/blog/${blog.slug}`)}
                                 >
                                     {/* Image Container */}
@@ -121,7 +121,7 @@ const BlogsPage = () => {
                                             <img 
                                                 src={blog.featured_image || blog.image} 
                                                 alt={blog.title}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                className="w-full h-full object-cover transition-transform duration-500"
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-[#18357a]/5 flex items-center justify-center">
@@ -132,25 +132,20 @@ const BlogsPage = () => {
                                     </div>
 
                                     {/* Content Section */}
-                                    <div className="p-8 pb-10 flex flex-col flex-1">
-                                        <div className="flex items-center gap-5 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">
+                                    <div className="p-6 pb-7 flex flex-col flex-1">
+                                        <div className="flex items-center gap-5 text-[10px] font-black text-slate-600 uppercase tracking-widest mb-4">
                                             <div className="flex items-center gap-2">
                                                 <Calendar size={13} className="text-[#ffc107]" />
                                                 <span>{blog.publish_date}</span>
                                             </div>
-                                            <div className="w-1 h-1 rounded-full bg-slate-200" />
-                                            <div className="flex items-center gap-2">
-                                                <User size={13} className="text-[#ffc107]" />
-                                                <span>{blog.author || 'Institutional Admin'}</span>
-                                            </div>
                                         </div>
 
-                                        <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 leading-[1.3] line-clamp-2 group-hover:text-[#18357a] transition-colors">
+                                        <h3 className="text-xl font-black text-black mb-3 leading-[1.4] line-clamp-2 group-hover:text-[#18357a] transition-colors">
                                             {blog.title}
                                         </h3>
 
-                                        <p className="text-slate-500 text-[15px] leading-relaxed mb-8 line-clamp-3 font-medium">
-                                            {blog.excerpt || 'Discover the full details and technical insights of this latest story from Knowledge Institute of Technology...'}
+                                        <p className="text-slate-900 text-[15px] leading-relaxed mb-6 line-clamp-3 font-bold">
+                                            {blog.excerpt || (blog.content ? blog.content.replace(/<[^>]*>/g, '').substring(0, 150) + '...' : '')}
                                         </p>
 
                                         <div className="mt-auto flex items-center text-[#18357a] font-bold text-[11px] uppercase tracking-[0.2em] gap-2 group/btn">

@@ -278,7 +278,7 @@ const FacultyPursuingPhdPage = () => {
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-6">
                         Faculty <span className="text-[#ffc107]">Pursuing Ph.D</span>
                     </h1>
 
@@ -299,11 +299,11 @@ const FacultyPursuingPhdPage = () => {
                         <table className="w-full border-collapse text-left">
                             <thead>
                                 <tr className="text-white">
-                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] w-16 border-r border-white/5">S.No.</th>
-                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Supervision Detail</th>
-                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Research Scholar & Topic</th>
-                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black uppercase tracking-[2px] border-r border-white/5">Supervisor Affiliate</th>
-                                    <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] uppercase tracking-[2px] pr-8">Year</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] w-16 border-r border-white/5">S.No.</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] border-r border-white/5">Supervision Detail</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] border-r border-white/5">Research Scholar & Topic</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] border-r border-white/5">Supervisor Affiliate</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] tracking-[2px] pr-8">Year</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
@@ -322,8 +322,8 @@ const FacultyPursuingPhdPage = () => {
                                                 <div className="flex items-center gap-3">
                                                     <div className="text-[#0f172a] group-hover:text-[#ffc107] transition-colors"><Users size={18} /></div>
                                                     <div>
-                                                        <div className="text-[13px] font-bold text-[#0f172a] uppercase tracking-tight">{faculty.name}</div>
-                                                        <div className="text-[10px] font-bold text-[#334155] uppercase">{faculty.university}</div>
+                                                        <div className="text-[13px] font-bold text-[#0f172a] tracking-tight">{faculty.name}</div>
+                                                        <div className="text-[10px] font-bold text-[#334155]">{faculty.university}</div>
                                                     </div>
                                                 </div>
                                             </td>
@@ -339,7 +339,7 @@ const FacultyPursuingPhdPage = () => {
                                                     <div className="w-7 h-7 bg-amber-50 rounded-lg flex items-center justify-center text-[#ffc107]">
                                                         <GraduationCap size={14} />
                                                     </div>
-                                                    <span className="text-[12px] font-bold text-[#0f172a] uppercase tracking-tight">{faculty.supervisor}</span>
+                                                    <span className="text-[12px] font-bold text-[#0f172a] tracking-tight">{faculty.supervisor}</span>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5">

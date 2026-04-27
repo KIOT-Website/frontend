@@ -44,6 +44,9 @@ import ambassadors25Img from '../assets/idea lap/Student Ambassadors2025-26.webp
 import sublimationImg from '../assets/idea lap/Sublimation Printing unit.webp'
 import run1 from '../assets/idea lap/run1.png'
 import run2 from '../assets/idea lap/run2.png'
+import aicteLogo from '../assets/idea lap/aicte_official_logo.png'
+import govtEmblem from '../assets/idea lap/govt_india_emblem.png'
+import ideaLabLogo from '../assets/idea lap/aicte_idea_lab_logo.png'
 
 const IdeaLabPage = () => {
     const navigate = useNavigate()
@@ -134,7 +137,7 @@ const IdeaLabPage = () => {
                                 <div className="w-4 h-4 rounded-full bg-[#ffc107] flex items-center justify-center">
                                     <Lightbulb size={10} className="text-[#0A1A3F]" />
                                 </div>
-                                <span className="text-[9px] font-black text-white uppercase tracking-widest">Research & Innovations</span>
+                                <span className="text-[9px] font-black text-white tracking-widest">Research & Innovations</span>
                             </div>
 
                             <h1 className="text-4xl lg:text-6xl font-black text-white leading-none mb-4 tracking-tight">
@@ -172,26 +175,17 @@ const IdeaLabPage = () => {
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1 }}
-                            className="lg:w-1/2 flex items-center justify-center gap-4"
+                            className="hidden lg:flex lg:w-1/2 items-center justify-center gap-4"
                         >
                             <div className="relative group w-60 h-80 bg-[#0A1A3F] rounded-[1.5rem] border border-[#3b82f6]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(59,130,246,0.15)] overflow-hidden transition-all duration-500 hover:border-[#3b82f6]/60">
-                                <div className="w-40 h-40 mb-6 mx-auto flex items-center justify-center">
-                                    <img src="/aicte_idea_lab_line.png" alt="IDEA Lab Logo" className="w-full h-full object-contain relative z-20 scale-110" />
-                                </div>
-                                <div className="relative z-10">
-                                    <h3 className="text-xl font-black text-white leading-tight mb-2">AICTE<br/><span className="text-2xl text-[#3b82f6]">IDEA Lab</span></h3>
-                                    <p className="text-[#3b82f6] text-[13px] font-black uppercase tracking-[0.2em]">Fostering Innovation</p>
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={run1} alt="IDEA Lab Logo" className="w-full h-full object-contain relative z-20 scale-110 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
                                 </div>
                             </div>
 
                             <div className="relative group w-60 h-80 bg-[#0A1A3F] rounded-[1.5rem] border border-[#ffc107]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(255,193,7,0.15)] overflow-hidden transition-all duration-500 hover:border-[#ffc107]/60 lg:mt-12">
-                                <div className="w-40 h-40 mb-6 mx-auto flex items-center justify-center">
-                                    <img src="/govt_initiative_line.png" alt="Govt Logo" className="w-full h-full object-contain relative z-20 scale-110" />
-                                </div>
-                                <div className="relative z-10">
-                                    <h3 className="text-xl font-black text-[#ffc107] leading-tight mb-3 uppercase">AICTE</h3>
-                                    <p className="text-white text-[13px] font-black leading-tight mb-4">Government of India Initiative</p>
-                                    <div className="h-1 w-10 bg-[#ffc107] rounded-full mx-auto" />
+                                <div className="w-full h-full flex items-center justify-center">
+                                    <img src={run2} alt="AICTE Logo" className="w-full h-full object-contain relative z-20 scale-125" />
                                 </div>
                             </div>
                         </motion.div>
@@ -227,7 +221,7 @@ const IdeaLabPage = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="lg:w-1/2">
-                            <h2 className="text-white text-[15px] font-black uppercase tracking-[0.3em] mb-2 opacity-80">About</h2>
+                            <h2 className="text-white text-[15px] font-black tracking-[0.3em] mb-2 opacity-80">About</h2>
                             <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
                                 <span className="text-[#ffc107]">IDEA</span> LAB
                             </h2>
@@ -270,10 +264,10 @@ const IdeaLabPage = () => {
             {/* OUR OBJECTIVES - CLEAN GRID DESIGN */}
             <section className="py-10 bg-[#f8fafc] font-graphik">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex items-center justify-center gap-4 mb-10">
-                        <div className="h-[2px] w-12 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-[20px] font-black text-[#0A1A3F] uppercase tracking-[0.2em]">Our Objectives</h2>
-                        <div className="h-[2px] w-12 bg-[#ffc107] rounded-full" />
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
+                        <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight">Our Objectives</h2>
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -294,7 +288,7 @@ const IdeaLabPage = () => {
                                 <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4 shrink-0 shadow-inner group-hover:scale-110 transition-transform" style={{ backgroundColor: `${obj.color}15` }}>
                                     <obj.icon size={26} style={{ color: obj.color }} />
                                 </div>
-                                <h3 className="text-[#0A1A3F] text-[18px] font-black mb-3 uppercase tracking-tight leading-tight">{obj.title}</h3>
+                                <h3 className="text-[#0A1A3F] text-[18px] font-black mb-3 tracking-tight leading-tight">{obj.title}</h3>
                                 <p className="text-[#0A1A3F] font-black text-[13px] leading-tight mb-4 max-w-[180px]">{obj.desc}</p>
                                 <div className="w-8 h-1 bg-[#ffc107] rounded-full" />
                             </motion.div>
@@ -306,9 +300,10 @@ const IdeaLabPage = () => {
             {/* OUR TEAM - MODERNIZED WITH BADGES */}
             <section className="py-10 bg-[#f8fafc] font-graphik">
                 <div className="max-w-7xl mx-auto px-6 text-center">
-                    <div className="flex flex-col items-center mb-10">
-                        <h2 className="text-[20px] font-black text-[#0A1A3F] uppercase tracking-[0.2em] mb-4">Our Team</h2>
-                        <div className="h-1 w-12 bg-[#1e3c8a] rounded-full" />
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
+                        <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight">Our Team</h2>
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
                     
                     {/* LEADERSHIP & COORDINATORS WRAPPER */}
@@ -317,7 +312,7 @@ const IdeaLabPage = () => {
                         <div>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#1e3c8a]/10 border border-[#1e3c8a]/20 rounded-full mb-6">
                                 <ShieldCheck size={14} className="text-[#1e3c8a]" />
-                                <span className="text-[13px] font-black text-[#1e3c8a] uppercase tracking-widest">Leadership</span>
+                                <span className="text-[13px] font-black text-[#1e3c8a] tracking-widest">Leadership</span>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                                 {[
@@ -346,7 +341,7 @@ const IdeaLabPage = () => {
                         <div>
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#ffc107]/10 border border-[#ffc107]/20 rounded-full mb-6">
                                 <Users size={14} className="text-[#ffc107]" />
-                                <span className="text-[13px] font-black text-[#ffc107] uppercase tracking-widest">Coordinators</span>
+                                <span className="text-[13px] font-black text-[#ffc107] tracking-widest">Coordinators</span>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                                 {[
@@ -372,9 +367,9 @@ const IdeaLabPage = () => {
                     {/* TECHGURUS GRID */}
                     <div className="pt-12 border-t border-slate-200">
                         <div className="flex items-center justify-center gap-4 mb-12">
-                            <div className="h-[1px] w-12 bg-[#ffc107] opacity-30" />
-                            <h3 className="text-[#0A1A3F] font-black text-[14px] uppercase tracking-[0.2em]">Techgurus of KIOT AICTE IDEA Lab</h3>
-                            <div className="h-[1px] w-12 bg-[#ffc107] opacity-30" />
+                            <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
+                            <h3 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight text-center">Techgurus of KIOT AICTE IDEA Lab</h3>
+                            <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                             {[
@@ -407,10 +402,10 @@ const IdeaLabPage = () => {
             {/* WING TUTORIALS - FULL 4-CARD MODERNIZED GRID */}
             <section className="py-16 bg-white font-graphik">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex items-center justify-center gap-4 mb-16">
-                        <div className="h-[2px] w-12 bg-[#1e3c8a] rounded-full" />
-                        <h2 className="text-[20px] font-black text-[#0A1A3F] uppercase tracking-[0.2em]">Wing Tutorials</h2>
-                        <div className="h-[2px] w-12 bg-[#1e3c8a] rounded-full" />
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
+                        <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight">Wing Tutorials</h2>
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
                     
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -421,7 +416,7 @@ const IdeaLabPage = () => {
                                     <div className="w-12 h-12 bg-[#1e3c8a] rounded-2xl flex items-center justify-center text-white">
                                         <CircuitBoard size={24} />
                                     </div>
-                                    <h3 className="text-[#0A1A3F] text-[16px] font-black uppercase tracking-tight">PCB Design Wing</h3>
+                                    <h3 className="text-[#0A1A3F] text-[16px] font-black tracking-tight">PCB Design Wing</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {[
@@ -450,7 +445,7 @@ const IdeaLabPage = () => {
                                     <div className="w-12 h-12 bg-[#ffc107] rounded-2xl flex items-center justify-center text-[#0A1A3F]">
                                         <Box size={24} />
                                     </div>
-                                    <h3 className="text-[#0A1A3F] text-[16px] font-black uppercase tracking-tight">3D Modelling Wing</h3>
+                                    <h3 className="text-[#0A1A3F] text-[16px] font-black tracking-tight">3D Modelling Wing</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {[
@@ -479,7 +474,7 @@ const IdeaLabPage = () => {
                                     <div className="w-12 h-12 bg-[#3b82f6] rounded-2xl flex items-center justify-center text-white">
                                         <Globe size={24} />
                                     </div>
-                                    <h3 className="text-[#0A1A3F] text-[16px] font-black uppercase tracking-tight">IOT Design Wing</h3>
+                                    <h3 className="text-[#0A1A3F] text-[16px] font-black tracking-tight">IOT Design Wing</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {[
@@ -508,7 +503,7 @@ const IdeaLabPage = () => {
                                     <div className="w-12 h-12 bg-[#22c55e] rounded-2xl flex items-center justify-center text-white">
                                         <Settings size={24} />
                                     </div>
-                                    <h3 className="text-[#0A1A3F] text-[16px] font-black uppercase tracking-tight">Special Machine Wing</h3>
+                                    <h3 className="text-[#0A1A3F] text-[16px] font-black tracking-tight">Special Machine Wing</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {[
@@ -535,10 +530,10 @@ const IdeaLabPage = () => {
             {/* FACILITIES GALLERY SECTION - RESTORED ORIGINAL CONTENT */}
             <section id="facilities" className="py-16 bg-white font-graphik">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex items-center justify-center gap-4 mb-16">
-                        <div className="h-[2px] w-12 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-[20px] font-black text-[#0A1A3F] uppercase tracking-[0.2em]">Facilities</h2>
-                        <div className="h-[2px] w-12 bg-[#ffc107] rounded-full" />
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
+                        <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight">Facilities</h2>
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

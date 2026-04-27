@@ -53,8 +53,6 @@ const HeaderSection = () => {
             <span className="text-[#ffc107]">Professionals</span>
           </h1>
 
-          <div className="w-20 h-1.5 bg-[#ffc107] mb-10 rounded-full" />
-
           <p className="text-black font-bold text-lg leading-relaxed mb-12 max-w-xl text-justify font-graphik">
             At KIOT, we go beyond academics to build industry-ready professionals. Through continuous training, mentorship, and real-world exposure, we empower students to succeed in their careers.
           </p>
@@ -73,10 +71,6 @@ const HeaderSection = () => {
             ))}
           </div>
 
-          <button className="flex items-center gap-3 px-8 py-4 bg-[#0A1A3F] text-white rounded-full font-black text-sm uppercase tracking-widest hover:bg-[#18357a] transition-all group shadow-xl shadow-blue-900/20">
-            Know More about Placements
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform text-[#ffc107]" />
-          </button>
         </motion.div>
 
         {/* Right Image Content */}

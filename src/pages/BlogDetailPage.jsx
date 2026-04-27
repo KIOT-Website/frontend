@@ -18,6 +18,10 @@ const BlogDetailPage = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
     const [showShareTooltip, setShowShareTooltip] = useState(false)
+    const [comments, setComments] = useState([])
+    const [commentData, setCommentData] = useState({ name: '', email: '', message: '' })
+    const [submittingComment, setSubmittingComment] = useState(false)
+    const [commentSuccess, setCommentSuccess] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -33,6 +37,7 @@ const BlogDetailPage = () => {
             
             if (found) {
                 setBlog(found)
+                fetchComments(found.id)
             } else {
                 setError(true)
             }
@@ -41,6 +46,32 @@ const BlogDetailPage = () => {
             setError(true)
         } finally {
             setLoading(false)
+        }
+    }
+
+    const fetchComments = async (blogId) => {
+        try {
+            const res = await axios.get(`${API_BASE_URL}/api/blogs/${blogId}/comments`)
+            // Only show approved comments
+            setComments(res.data.filter(c => c.status === 'approved'))
+        } catch (err) {
+            console.error("Failed to fetch comments:", err)
+        }
+    }
+
+    const handleCommentSubmit = async (e) => {
+        e.preventDefault()
+        setSubmittingComment(true)
+        try {
+            await axios.post(`${API_BASE_URL}/api/blogs/${blog.id}/comments`, commentData)
+            setCommentSuccess(true)
+            setCommentData({ name: '', email: '', message: '' })
+            setTimeout(() => setCommentSuccess(false), 5000)
+        } catch (err) {
+            console.error("Failed to post comment:", err)
+            alert("Failed to post comment. Please try again.")
+        } finally {
+            setSubmittingComment(false)
         }
     }
 
@@ -55,8 +86,8 @@ const BlogDetailPage = () => {
     if (loading) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-                <Loader2 size={48} className="animate-spin text-[#18357a] mb-6" />
-                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#18357a]">Loading Story...</p>
+                <Loader2 size={48} className="animate-spin text-black mb-6" />
+                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-black">Loading Story...</p>
             </div>
         )
     }
@@ -65,9 +96,9 @@ const BlogDetailPage = () => {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-[#FCFDFD] p-6 text-center">
                 <AlertCircle size={64} className="text-slate-100 mb-6" />
-                <h2 className="text-3xl font-black text-[#18357a] mb-4 uppercase tracking-tighter">Story Not Found</h2>
+                <h2 className="text-3xl font-black text-black mb-4 uppercase tracking-tighter">Story Not Found</h2>
                 <p className="text-slate-500 mb-10 max-w-md mx-auto">The article you are looking for might have been moved or is no longer available.</p>
-                <Link to="/resources/blogs" className="inline-flex items-center gap-3 bg-[#18357a] text-white px-10 py-4 rounded-[2rem] font-black text-[10px] uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-xl shadow-[#18357a]/20">
+                <Link to="/resources/blogs" className="inline-flex items-center gap-3 bg-black text-white px-10 py-4 rounded-[2rem] font-black text-[10px] uppercase tracking-widest hover:bg-[#ffc107] hover:text-black transition-all shadow-xl shadow-black/20">
                     <ArrowLeft size={16} /> Back to Stories
                 </Link>
             </div>
@@ -75,7 +106,7 @@ const BlogDetailPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-white font-graphik overflow-hidden selection:bg-[#ffc107]/20">
+        <div className="min-h-screen bg-white font-graphik font-sans overflow-hidden selection:bg-[#ffc107]/20">
             {/* ─── Reading Progress Bar ─── */}
             <motion.div 
                 className="fixed top-0 left-0 right-0 h-1.5 bg-[#ffc107] z-[100] origin-left"
@@ -84,115 +115,61 @@ const BlogDetailPage = () => {
             />
 
             {/* ─── Navigation & Header ─── */}
-            <div className="max-w-4xl mx-auto px-6 lg:px-10 pt-12 pb-20">
+            <div className="max-w-4xl mx-auto px-6 lg:px-10 pt-12">
                 <Link 
                     to="/resources/blogs" 
-                    className="inline-flex items-center gap-3 mb-12 text-[#18357a] hover:text-[#ffc107] transition-all text-[11px] font-black uppercase tracking-widest group"
+                    className="inline-flex items-center gap-3 mb-10 text-black hover:text-[#ffc107] transition-all text-[11px] font-black uppercase tracking-widest group"
                 >
                     <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" /> Back to Stories
                 </Link>
-
-                <div className="flex flex-wrap items-center gap-4 mb-8">
-                    <span className="px-5 py-1.5 bg-[#18357a]/5 rounded-full text-[10px] font-black text-[#18357a] uppercase tracking-widest">
-                        {blog.category || 'Technology'}
-                    </span>
-                    <div className="flex items-center gap-2 text-slate-400">
-                        <Calendar size={14} />
-                        <span className="text-[10px] font-black uppercase tracking-widest">{blog.publish_date}</span>
-                    </div>
-                </div>
-
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#18357a] mb-10 leading-[1.1] tracking-tight">
-                    {blog.title}
-                </h1>
-
-                <div className="flex flex-wrap items-center justify-between gap-8 pb-12 border-b border-slate-100">
-                    <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-2xl bg-[#ffc107] flex items-center justify-center text-[#18357a] font-black text-lg">
-                            {blog.author?.[0] || 'K'}
-                        </div>
-                        <div>
-                            <p className="text-sm font-black text-[#18357a] uppercase tracking-wider">{blog.author || 'Institutional Admin'}</p>
-                            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">Thought Leadership Team</p>
-                        </div>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                        <button 
-                            onClick={copyToClipboard}
-                            className="w-12 h-12 flex items-center justify-center rounded-2xl bg-slate-50 text-slate-400 hover:bg-[#18357a] hover:text-white transition-all relative"
-                            title="Copy link"
-                        >
-                            <LinkIcon size={18} />
-                            <AnimatePresence>
-                                {showShareTooltip && (
-                                    <motion.div 
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 10 }}
-                                        className="absolute -top-12 left-1/2 -translate-x-1/2 bg-[#18357a] text-white text-[9px] font-black uppercase px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl shadow-black/20"
-                                    >
-                                        Linked Copied!
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </button>
-                        <a 
-                            href={`https://twitter.com/intent/tweet?url=${shareUrl}`} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center rounded-2xl bg-slate-50 text-slate-400 hover:bg-[#00acee] hover:text-white transition-all"
-                        >
-                            <Twitter size={18} />
-                        </a>
-                        <a 
-                            href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center rounded-2xl bg-slate-50 text-slate-400 hover:bg-[#0077b5] hover:text-white transition-all"
-                        >
-                            <Linkedin size={18} />
-                        </a>
-                    </div>
-                </div>
             </div>
 
             {/* ─── Featured Image ─── */}
             {(blog.featured_image || blog.image) && (
-                <div className="max-w-6xl mx-auto px-6 mb-20">
-                    <motion.div 
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="w-full aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl relative"
-                    >
+                <div className="max-w-5xl mx-auto mb-16 flex justify-center">
+                    <div className="overflow-hidden rounded-[2.5rem] shadow-2xl border border-slate-100 bg-white" style={{ width: `${blog.featured_image_width || 100}%` }}>
                         <img 
                             src={blog.featured_image || blog.image} 
                             alt={blog.featured_image_alt || blog.title} 
-                            className="w-full h-full object-cover"
+                            className="w-full block"
+                            style={{ 
+                                height: blog.featured_image_height && blog.featured_image_height !== 'auto' 
+                                    ? (blog.featured_image_height.includes('px') ? blog.featured_image_height : `${blog.featured_image_height}px`) 
+                                    : 'auto',
+                                objectFit: 'contain'
+                            }}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-at from-black/20 to-transparent" />
-                    </motion.div>
-                    {blog.featured_image_alt && (
-                        <p className="mt-6 text-center text-[10px] font-black text-slate-300 uppercase tracking-widest">{blog.featured_image_alt}</p>
-                    )}
+                    </div>
                 </div>
             )}
+
+            {/* ─── Title & Metadata ─── */}
+            <div className="max-w-4xl mx-auto px-6 lg:px-10 mb-12">
+                <div className="flex items-center gap-2 text-black mb-6">
+                    <Calendar size={14} className="text-black" />
+                    <span className="text-[10px] font-black uppercase tracking-widest">{blog.publish_date}</span>
+                </div>
+
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-0 leading-[1.1] tracking-tight">
+                    {blog.title}
+                </h1>
+            </div>
 
             {/* ─── Article Body ─── */}
             <div className="max-w-4xl mx-auto px-6 lg:px-10 pb-32">
                 <article 
-                    className="prose prose-lg md:prose-xl max-w-none prose-slate prose-headings:font-black prose-headings:text-[#18357a] prose-p:text-[#333] prose-p:leading-[1.8] prose-p:font-medium prose-a:text-[#ffc107] prose-img:rounded-[2rem] prose-img:shadow-xl"
+                    className="prose prose-lg md:prose-xl max-w-none text-black prose-headings:text-black prose-p:text-black prose-p:leading-[1.8] prose-p:font-bold prose-a:text-black prose-strong:text-black prose-li:text-black prose-img:rounded-xl prose-img:shadow-lg prose-img:w-full prose-img:h-auto prose-img:object-contain"
                     dangerouslySetInnerHTML={{ __html: blog.content }}
                 />
 
                 {/* Second Featured Image Interaction if present */}
-                {blog.second_image && (
-                   <div className="my-20 p-8 md:p-12 bg-slate-50 rounded-[3rem] border border-slate-100 flex flex-col md:flex-row gap-12 items-center">
-                     <div className="w-full md:w-1/2 aspect-square rounded-[2rem] overflow-hidden shadow-lg border-4 border-white">
-                        <img src={blog.second_image} alt={blog.second_image_alt || "Research context"} className="w-full h-full object-cover" />
-                     </div>
+                 {blog.second_image && (
+                    <div className="my-20 p-8 md:p-12 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col md:flex-row gap-12 items-center">
+                      <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-lg border-4 border-white">
+                         <img src={blog.second_image} alt={blog.second_image_alt || "Research context"} className="w-full h-auto block" />
+                      </div>
                      <div className="w-full md:w-1/2">
-                        <h3 className="text-2xl font-black text-[#18357a] mb-6 uppercase tracking-tighter leading-tight">{blog.second_image_title || "Deep Tech Context"}</h3>
+                        <h3 className="text-2xl font-black text-black mb-6 uppercase tracking-tighter leading-tight">{blog.second_image_title || "Deep Tech Context"}</h3>
                         <p className="text-slate-500 font-medium leading-relaxed italic border-l-4 border-[#ffc107] pl-6 mb-8 text-[15px]">
                             {blog.second_image_caption || "Visualising technical data helps in better understanding the innovation roadmap at KIOT."}
                         </p>
@@ -202,32 +179,117 @@ const BlogDetailPage = () => {
 
                 {/* Tags */}
                 {blog.tags && (
-                    <div className="mt-20 pt-12 border-t border-slate-100 flex flex-wrap gap-3">
+                    <div className="mt-12 pt-10 border-t border-slate-100 flex flex-wrap gap-3">
                         {blog.tags.split(',').map(tag => (
-                            <span key={tag} className="px-5 py-2 bg-slate-100 rounded-xl text-[10px] font-black text-[#64779F] uppercase tracking-widest">
+                            <span key={tag} className="px-5 py-2 bg-slate-100 rounded-xl text-[10px] font-black text-black uppercase tracking-widest">
                                 # {tag.trim()}
                             </span>
                         ))}
                     </div>
                 )}
-
-                {/* Footer Section - Call to Action */}
-                <div className="mt-24 p-12 lg:p-16 bg-[#18357a] rounded-[4rem] text-white flex flex-col items-center justify-center text-center relative overflow-hidden group shadow-2xl">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#18357a] via-[#1a3a8a] to-[#ffc107]/10" />
-                    <div className="relative z-10 w-full">
-                        <h4 className="text-3xl font-black mb-6 tracking-tight leading-tight uppercase">Enjoyed this story?</h4>
-                        <p className="text-white/60 font-medium mb-10 max-w-lg mx-auto">Stay connected with our technical insights and institutional updates. Share this with your fellow researchers and friends.</p>
-                        <div className="flex flex-wrap justify-center gap-6">
-                            <Link to="/resources/blogs" className="px-10 py-4 bg-white text-[#18357a] rounded-[2rem] font-black text-[10px] uppercase tracking-widest hover:bg-[#ffc107] transition-all shadow-xl shadow-black/10">
-                                Explore All Stories
-                            </Link>
-                            <button 
-                                onClick={copyToClipboard}
-                                className="px-10 py-4 bg-white/10 border border-white/20 text-white rounded-[2rem] font-black text-[10px] uppercase tracking-widest hover:bg-white/20 transition-all"
-                            >
-                                Share Article
-                            </button>
+                
+                {/* ─── Comment Section ─── */}
+                <div className="mt-12 pt-10 border-t border-slate-100 w-full">
+                    {/* Comment List */}
+                    {comments.length > 0 ? (
+                        <div className="space-y-6 mb-20 max-w-2xl">
+                            {comments.map((c, idx) => (
+                                <motion.div 
+                                    initial={{ opacity: 0, scale: 0.98 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: idx * 0.1 }}
+                                    key={c.id} 
+                                    className="p-5 bg-slate-50/50 rounded-2xl border border-slate-100"
+                                >
+                                    <div className="flex gap-5 items-start">
+                                        <div className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-black text-xs shrink-0 shadow-lg shadow-black/10">
+                                            {c.name?.[0] || 'G'}
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <div className="flex items-center justify-between mb-1.5">
+                                                <h4 className="text-xs font-black text-black uppercase tracking-widest truncate">{c.name}</h4>
+                                                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em] shrink-0">
+                                                    {new Date(c.created_at).toLocaleDateString()}
+                                                </span>
+                                            </div>
+                                            <p className="text-black leading-relaxed font-bold text-[13px]">{c.message}</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
                         </div>
+                    ) : (
+                        <div className="py-12 px-8 bg-slate-50 rounded-2xl border border-slate-100 text-center mb-16">
+                            <p className="text-[13px] font-bold text-slate-400 uppercase tracking-widest">No discussion yet. Be the first to share your thoughts.</p>
+                        </div>
+                    )}
+
+                    {/* Comment Form */}
+                    <div className="bg-white rounded-[2rem] p-8 md:p-12 border border-slate-100 shadow-xl shadow-slate-100/50 max-w-2xl">
+                        <h4 className="text-2xl font-black text-black mb-10">Leave a Comment</h4>
+                        
+                        {commentSuccess ? (
+                            <motion.div 
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                className="p-8 bg-green-50 border border-green-100 rounded-2xl text-center"
+                            >
+                                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-green-200">
+                                    <Clock className="text-white" size={24} />
+                                </div>
+                                <h5 className="text-green-800 font-black text-base uppercase tracking-tight mb-2">Comment Received!</h5>
+                                <p className="text-green-600/80 font-bold text-xs uppercase tracking-wider">Awaiting moderation approval.</p>
+                            </motion.div>
+                        ) : (
+                            <form onSubmit={handleCommentSubmit} className="space-y-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div className="space-y-3">
+                                        <label className="text-[13px] font-black text-black">Name <span className="text-red-500">*</span></label>
+                                        <input 
+                                            required
+                                            type="text" 
+                                            value={commentData.name}
+                                            onChange={(e) => setCommentData({...commentData, name: e.target.value})}
+                                            className="w-full px-5 py-4 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all font-bold text-sm text-black"
+                                            placeholder="Your name"
+                                        />
+                                    </div>
+                                    <div className="space-y-3">
+                                        <label className="text-[13px] font-black text-black">Email <span className="text-red-500">*</span></label>
+                                        <input 
+                                            required
+                                            type="email" 
+                                            value={commentData.email}
+                                            onChange={(e) => setCommentData({...commentData, email: e.target.value})}
+                                            className="w-full px-5 py-4 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all font-bold text-sm text-black"
+                                            placeholder="your@email.com"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="space-y-3">
+                                    <label className="text-[13px] font-black text-black">Message <span className="text-red-500">*</span></label>
+                                    <textarea 
+                                        required
+                                        rows="6"
+                                        value={commentData.message}
+                                        onChange={(e) => setCommentData({...commentData, message: e.target.value})}
+                                        className="w-full px-5 py-4 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all font-bold text-sm text-black resize-none"
+                                        placeholder="Write your comment here..."
+                                    ></textarea>
+                                </div>
+                                <button 
+                                    disabled={submittingComment}
+                                    type="submit" 
+                                    className="px-10 py-5 bg-black text-white rounded-xl font-black text-[10px] uppercase tracking-[0.3em] hover:bg-[#ffc107] hover:text-black transition-all flex items-center justify-center gap-4 disabled:opacity-50"
+                                >
+                                    {submittingComment ? (
+                                        <Loader2 size={16} className="animate-spin" />
+                                    ) : (
+                                        "Post Comment"
+                                    )}
+                                </button>
+                            </form>
+                        )}
                     </div>
                 </div>
             </div>

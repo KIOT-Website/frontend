@@ -115,7 +115,7 @@ const PhdGuidedPage = () => {
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-6">
                         Scholars Successfully <span className="text-[#ffc107]">Guided</span>
                     </h1>
 
@@ -136,10 +136,10 @@ const PhdGuidedPage = () => {
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="text-white">
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px] w-16">S.No.</th>
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Supervision Detail</th>
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold uppercase tracking-[2px]">Research Scholar & Topic</th>
-                                    <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] uppercase tracking-[2px] pr-8">Affiliation & Status</th>
+                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold tracking-[2px] w-16">S.No.</th>
+                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold tracking-[2px]">Supervision Detail</th>
+                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold tracking-[2px]">Research Scholar & Topic</th>
+                                    <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] tracking-[2px] pr-8">Affiliation & Status</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
@@ -157,21 +157,21 @@ const PhdGuidedPage = () => {
                                             <td className="px-6 py-5">
                                                 <div className="flex flex-col gap-1">
                                                     <span className="text-[10px] font-bold text-[#ffc107] uppercase tracking-wider leading-none">Supervisor</span>
-                                                    <span className="text-[14px] font-bold text-[#0f172a] uppercase tracking-tight">{item.supervisor}</span>
+                                                    <span className="text-[14px] font-bold text-[#0f172a] tracking-tight">{item.supervisor}</span>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5">
                                                 <div className="flex items-center gap-4">
                                                     <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#0f172a] shrink-0"><GraduationCap size={18} /></div>
                                                     <div>
-                                                        <div className="text-[13px] font-bold text-[#0f172a] uppercase tracking-tight mb-1">{item.scholar}</div>
+                                                        <div className="text-[13px] font-bold text-[#0f172a] tracking-tight mb-1">{item.scholar}</div>
                                                         <p className="text-[12px] font-semibold text-[#1e293b] leading-tight italic max-w-[400px]">"{item.topic}"</p>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5 text-right pr-8">
                                                 <div className="flex flex-col items-end gap-1.5">
-                                                    <span className="text-[10px] font-bold text-[#334155] uppercase">{item.university}</span>
+                                                    <span className="text-[10px] font-bold text-[#334155]">{item.university}</span>
                                                     <div className="flex items-center gap-1.5 px-3 py-1 bg-green-50 rounded-full text-green-700 text-[9px] font-bold uppercase tracking-widest border border-green-100">
                                                         <CheckCircle2 size={12} /> {item.status}
                                                     </div>

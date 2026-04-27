@@ -585,7 +585,7 @@ export default function CourseDetailPage() {
                            }`}>
                              {LabIcon && <LabIcon size={20} />}
                            </div>
-                           <span className="text-[13px] font-bold font-graphik uppercase tracking-tight leading-tight flex-1">{lab.name}</span>
+                           <span className="text-[13px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
                            <ChevronRight size={14} className={isDesktopSelected ? 'text-[#ffc107]' : 'text-[#64779F] opacity-40'} />
                         </button>
                       );
@@ -629,7 +629,7 @@ export default function CourseDetailPage() {
                               <div>
                                  <div className="flex items-center gap-3 mb-6">
                                     <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
-                                    <h4 className="text-[12px] font-bold font-graphik text-[#18357a] uppercase tracking-[0.2em]">Technical Inventory & Tools</h4>
+                                    <h4 className="text-[12px] font-bold font-graphik text-[#18357a] tracking-[0.2em]">Technical Inventory & Tools</h4>
                                  </div>
                                  <div className="grid sm:grid-cols-2 gap-3">
                                     {activeLab.equipments?.map((item, idx) => (
@@ -647,11 +647,11 @@ export default function CourseDetailPage() {
                               {courseId !== 'be-cse' && (
                                 <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
                                    <div className="bg-[#18357a]/5 p-6 rounded-2xl border border-[#18357a]/10">
-                                      <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
+                                      <p className="text-[10px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
                                       <p className="text-[#18357a] font-bold font-graphik text-[16px]">{activeLab.incharge || 'Department HOD'}</p>
                                    </div>
                                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                      <p className="text-[10px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-3">Technical Staff</p>
+                                      <p className="text-[10px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
                                       <p className="text-[#18357a] font-bold font-graphik text-[16px]">{activeLab.technician || 'Engineering Technician'}</p>
                                    </div>
                                 </div>
@@ -667,7 +667,7 @@ export default function CourseDetailPage() {
                 {/* MOBILE VIEW: Multi-Expandable Accordion List (Visible only below lg) */}
                 <div className="lg:hidden space-y-4 px-2 pb-10">
                    <div className="mb-6 px-1">
-                      <h2 className="text-xl font-bold font-graphik text-[#18357a] uppercase tracking-tight mb-1">Labs & Facilities</h2>
+                      <h2 className="text-xl font-bold font-graphik text-[#18357a] tracking-tight mb-1">Labs & Facilities</h2>
                       <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Expand Multiple facilities to compare inventory.</p>
                    </div>
                    {course.labs.map((lab, i) => {
@@ -965,7 +965,7 @@ export default function CourseDetailPage() {
                       {selectedFaculty.association && (
                         <div>
                           <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Nature of Association</p>
-                          <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-medium font-graphik uppercase tracking-widest">
+                          <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-medium font-graphik tracking-widest">
                             {selectedFaculty.association}
                           </span>
                         </div>
@@ -973,7 +973,7 @@ export default function CourseDetailPage() {
                       <div className="p-6 bg-[#F8FAFC] border border-[#E5EDF8] rounded-2xl">
                         <div className="flex items-center gap-2 mb-4">
                           <Award size={18} className="text-[#ffc107]" />
-                          <p className="text-[11px] font-bold font-graphik tracking-widest text-[#18357a] uppercase">Member Recognition</p>
+                          <p className="text-[11px] font-bold font-graphik tracking-widest text-[#18357a]">Member Recognition</p>
                         </div>
                         <div className="flex items-center gap-0.5">
                           {[...Array(5)].map((_, idx) => (
@@ -987,7 +987,7 @@ export default function CourseDetailPage() {
 
                   {selectedFaculty.publications && (
                     <div className="mt-8 pt-8 border-t border-[#E5EDF8]">
-                      <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-4">Research & Publications</p>
+                      <p className="text-[10px] font-medium font-graphik tracking-widest text-[#18357a] mb-4">Research & Publications</p>
                       <div className="p-5 bg-[#18357a]/5 border border-[#18357a]/10 rounded-2xl">
                         <p className="text-black font-medium font-graphik text-[14px] leading-relaxed italic">
                           {selectedFaculty.publications}
@@ -1071,16 +1071,16 @@ function AchievementSection({ courseId, courseName }) {
               <Trophy size={28} className="text-[#ffc107]" />
             </div>
             <div>
-              <h3 className="text-4xl font-bold font-graphik text-[#18357a] uppercase tracking-tight leading-none mb-1">Department Honors</h3>
+              <h3 className="text-4xl font-bold font-graphik text-[#18357a] tracking-tight leading-none mb-1">Department Honors</h3>
               <p className="text-black font-medium font-graphik text-sm tracking-wide">Celebrating academic and professional milestones</p>
             </div>
           </div>
-          <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik uppercase tracking-[0.2em]">Department of {courseName.split('Engineering')[0]}</p>
+          <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik tracking-[0.2em]">Department of {courseName.split('Engineering')[0]}</p>
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
           <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
             {['AWARD', 'ACHIEVEMENT'].map(tab => (
-              <button key={tab} onClick={() => setActiveSubTab(tab)} className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${activeSubTab === tab ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
+              <button key={tab} onClick={() => setActiveSubTab(tab)} className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeSubTab === tab ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
                 {tab === 'AWARD' ? 'Awards' : 'Achievements'}
               </button>
             ))}
@@ -1088,7 +1088,7 @@ function AchievementSection({ courseId, courseName }) {
           {selectedYear && (
             <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
               {audienceTabs.map(tab => (
-                <button key={tab.id} onClick={() => setActiveAudience(tab.id)} className={`px-6 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
+                <button key={tab.id} onClick={() => setActiveAudience(tab.id)} className={`px-6 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
                   {tab.id === 'STUDENT' ? 'Student' : 'Faculty'}
                 </button>
               ))}
@@ -1108,7 +1108,7 @@ function AchievementSection({ courseId, courseName }) {
                   <Star size={24} className="text-[#ffc107]" />
                 </div>
                 <span className="text-xl font-bold font-graphik text-[#18357a]">{yr}</span>
-                <span className="text-[10px] font-bold font-graphik uppercase tracking-[0.1em] text-[#A9B1C3] mt-1 opacity-60">View Folders</span>
+                <span className="text-[10px] font-bold font-graphik tracking-[0.1em] text-[#A9B1C3] mt-1 opacity-60">View Folders</span>
               </button>
             ))
           )}
@@ -1116,7 +1116,7 @@ function AchievementSection({ courseId, courseName }) {
       ) : (
         <>
           <div className="flex items-center gap-4 -mt-4">
-            <button onClick={() => setSelectedYear(null)} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[10px] font-bold font-graphik uppercase tracking-widest text-[#18357a] border-2 border-[#E2E8F0] hover:bg-slate-50 hover:translate-x-[-4px] transition-all">
+            <button onClick={() => setSelectedYear(null)} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[10px] font-bold font-graphik tracking-widest text-[#18357a] border-2 border-[#E2E8F0] hover:bg-slate-50 hover:translate-x-[-4px] transition-all">
               <ArrowLeft size={14} /> Back to Years
             </button>
             <span className="px-4 py-2 bg-[#ffc107] text-[#18357a] text-[10px] font-bold font-graphik uppercase rounded-xl tracking-widest">Selected: {selectedYear}</span>
@@ -1135,7 +1135,7 @@ function AchievementSection({ courseId, courseName }) {
                   <Star size={20} className="absolute -top-1 -right-1 text-[#ffc107] animate-bounce" />
                 </div>
               </div>
-              <h4 className="text-xl font-bold font-graphik text-[#18357a] uppercase mb-3">No records found</h4>
+              <h4 className="text-xl font-bold font-graphik text-[#18357a] mb-3">No records found</h4>
               <p className="text-[#64779F] font-bold font-graphik text-sm">Nothing recorded for this folder yet.</p>
             </motion.div>
           ) : (
@@ -1159,7 +1159,7 @@ function AchievementSection({ courseId, courseName }) {
                         </span>
                       </div>
 
-                      <h4 className="text-lg font-bold font-graphik text-[#18357a] mb-2 leading-tight uppercase">{isAward ? item.award_name : item.description}</h4>
+                      <h4 className="text-lg font-bold font-graphik text-[#18357a] mb-2 leading-tight">{isAward ? item.award_name : item.description}</h4>
                       <p className="text-[#64779F] text-sm font-semibold font-graphik italic mb-6 opacity-80">{isStudent ? (isAward ? item.student_name : item.name) : item.faculty_name}</p>
 
                       {isRank && (

@@ -530,8 +530,8 @@ const BusRoutesPage = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <span className="text-white/60 font-black text-[10px] uppercase tracking-[8px] mb-4 block">Logistics & Connectivity</span>
-              <h1 className="text-4xl md:text-5xl font-black text-white uppercase tracking-wider leading-tight font-display">
-                Bus Route <span className="text-white/60">Details</span>
+              <h1 className="text-4xl md:text-5xl font-black text-white tracking-wider leading-tight">
+                Bus Route <span className="text-white/80">Details</span>
               </h1>
               <p className="text-white/60 mt-4 max-w-xl font-bold text-sm leading-relaxed">
                 KIOT operates a comprehensive fleet of buses across 4 districts. Click on any route to view detailed timings and stop points.
@@ -585,8 +585,8 @@ const BusRoutesPage = () => {
         <div className="mb-16 overflow-hidden rounded-3xl shadow-2xl border border-slate-100">
           {/* Main Title Bar */}
           <div className="bg-[#000080] py-8 text-center px-4">
-            <h2 className="text-white text-2xl md:text-3xl font-black uppercase tracking-widest leading-tight">
-              Bus  Route  Details
+            <h2 className="text-white text-2xl md:text-3xl font-black tracking-widest leading-tight">
+              Bus Route Details
             </h2>
           </div>
           
@@ -595,13 +595,13 @@ const BusRoutesPage = () => {
               <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                   <tr className="bg-slate-100 border-b-2 border-slate-200">
-                    <th className="px-4 py-6 text-base font-black text-[#18357a] uppercase tracking-wider text-center border-r border-slate-200 w-28">
+                    <th className="px-4 py-6 text-base font-black text-[#18357a] tracking-wider text-center border-r border-slate-200 w-28">
                       Route No.
                     </th>
-                    <th className="px-8 py-6 text-base font-black text-[#18357a] uppercase tracking-wider border-r border-slate-200">
+                    <th className="px-8 py-6 text-base font-black text-[#18357a] tracking-wider border-r border-slate-200">
                       Route
                     </th>
-                    <th className="px-8 py-6 text-base font-black text-[#18357a] uppercase tracking-wider text-center">
+                    <th className="px-8 py-6 text-base font-black text-[#18357a] tracking-wider text-center">
                       Bus Route
                     </th>
                   </tr>
@@ -622,8 +622,8 @@ const BusRoutesPage = () => {
                       </td>
                       <td className="px-8 py-5 border-r border-slate-200/50">
                         <div className="flex flex-col gap-0.5">
-                            <span className="text-lg font-black group-hover:text-[#ffc107] transition-colors uppercase leading-tight">{route.from}</span>
-                            <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-tighter">
+                            <span className="text-lg font-black group-hover:text-[#ffc107] transition-colors leading-tight">{route.from}</span>
+                            <div className="flex items-center gap-2 text-xs font-bold text-slate-500 tracking-tighter">
                                 <span>to</span>
                                 <span className="group-hover:text-[#ffc107]/60 transition-colors">KIOT</span>
                             </div>
@@ -681,8 +681,8 @@ const BusRoutesPage = () => {
         <div className="mb-16 overflow-hidden rounded-3xl">
           {/* Main Title Bar */}
           <div className="bg-[#000080] py-5 text-center">
-            <h2 className="text-white text-lg md:text-xl font-black uppercase tracking-widest leading-loose">
-              Travelling  Plan  &  Operations
+            <h2 className="text-white text-lg md:text-xl font-black tracking-widest leading-loose">
+              Travelling Plan & Operations
             </h2>
           </div>
           
@@ -691,13 +691,13 @@ const BusRoutesPage = () => {
               <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                   <tr className="bg-slate-100 border-b-2 border-slate-200">
-                    <th className="px-6 py-5 text-sm font-black text-[#18357a] uppercase tracking-wider text-center border-r border-slate-200 w-32">
+                    <th className="px-6 py-5 text-sm font-black text-[#18357a] tracking-wider text-center border-r border-slate-200 w-32">
                       Plan No.
                     </th>
-                    <th className="px-8 py-5 text-sm font-black text-[#18357a] uppercase tracking-wider border-r border-slate-200 w-1/3">
+                    <th className="px-8 py-5 text-sm font-black text-[#18357a] tracking-wider border-r border-slate-200 w-1/3">
                       Occasion & Timings
                     </th>
-                    <th className="px-8 py-5 text-sm font-black text-[#18357a] uppercase tracking-wider">
+                    <th className="px-8 py-5 text-sm font-black text-[#18357a] tracking-wider">
                       Route Coverage / Details
                     </th>
                   </tr>

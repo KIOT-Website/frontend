@@ -28,7 +28,7 @@ const SportsFacilitiesPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] font-graphik py-12 md:py-20">
+        <div className="min-h-screen bg-[#FCFDFD] py-12 md:py-20">
             <div className="max-w-5xl mx-auto px-6">
                 {/* Minimal Header */}
                 <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -37,11 +37,11 @@ const SportsFacilitiesPage = () => {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             onClick={() => navigate('/campus-life/sports')}
-                            className="inline-flex items-center gap-2 text-[10px] font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] transition-colors"
+                            className="inline-flex items-center gap-2 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] transition-colors"
                         >
                             <ArrowLeft size={14} /> Back to Sports
                         </motion.button>
-                        <h1 className="text-4xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
+                        <h1 className="text-4xl md:text-5xl font-black text-[#18357a] tracking-tighter leading-none">
                             Ground <span className="text-[#ffc107]">Facilities</span>
                         </h1>
                     </div>
@@ -57,20 +57,20 @@ const SportsFacilitiesPage = () => {
                         <table className="w-full text-left">
                             <thead>
                                 <tr className="bg-[#18357a]">
-                                    <th className="px-8 py-5 text-[10px] font-black text-white uppercase tracking-[3px]">Name of the Ground</th>
-                                    <th className="px-8 py-5 text-[10px] font-black text-white uppercase tracking-[3px]">Venue / Location</th>
+                                    <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px]">Name of the Ground</th>
+                                    <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px]">Venue / Location</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-50">
                                 {FACILITIES.map((item, i) => (
                                     <tr key={i} className="group hover:bg-slate-50 transition-colors">
                                         <td className="px-8 py-4">
-                                            <span className="text-[14px] font-black text-[#18357a] uppercase tracking-tight">{item.n}</span>
+                                            <span className="text-[15px] font-bold text-[#18357a] tracking-tight">{item.n}</span>
                                         </td>
                                         <td className="px-8 py-4">
-                                            <div className="flex items-center gap-3 text-slate-800 font-bold group-hover:text-[#18357a] transition-colors">
+                                            <div className="flex items-center gap-3 text-slate-700 font-bold group-hover:text-[#18357a] transition-colors">
                                                 <MapPin size={14} className="text-[#ffc107]" />
-                                                <span className="text-[12px] uppercase tracking-wide">{item.v}</span>
+                                                <span className="text-[13px] tracking-wide">{item.v}</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -81,7 +81,7 @@ const SportsFacilitiesPage = () => {
                 </motion.div>
                 
                 <div className="mt-12 text-center">
-                    <p className="text-[10px] font-black text-slate-300 uppercase tracking-[5px]">Department of Physical Education • Infrastructure Registry</p>
+                    <p className="text-xs font-black text-slate-500 uppercase tracking-[5px]">Department of Physical Education • Infrastructure Registry</p>
                 </div>
             </div>
         </div>

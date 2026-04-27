@@ -62,13 +62,13 @@ const InternetPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
+        <div className="min-h-screen bg-[#FCFDFD] pb-24">
             {/* 🔷 Hero Section */}
             <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1920&auto=format&fit=crop" 
-                        className="w-full h-full object-cover opacity-50 scale-110 transition-transform duration-1000" 
+                        className="w-full h-full object-cover opacity-100 scale-110 transition-transform duration-1000" 
                         alt="Network Infrastructure"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
@@ -85,10 +85,10 @@ const InternetPage = () => {
                             className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-[10px] font-black uppercase tracking-[2px]">Back to Hub</span>
+                            <span className="text-xs font-black tracking-[2px]">Back to Hub</span>
                         </button>
-                        <h1 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-none mb-3">
-                            INTERNET & <span className="text-[#ffc107]">COMPUTING FACILITIES</span>
+                        <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none mb-3">
+                            Internet & <span className="text-[#ffc107]">Computing Facilities</span>
                         </h1>
                     </motion.div>
                 </div>
@@ -98,20 +98,20 @@ const InternetPage = () => {
                 
                 {/* 🌐 ISP & Bandwidth Section */}
                 <div className="grid lg:grid-cols-3 gap-8">
-                    <div className="lg:col-span-1 bg-[#18357a] rounded-[2.5rem] p-10 text-white relative overflow-hidden group">
+                    <div className="lg:col-span-1 bg-[#18357a] rounded-[2.5rem] p-10 text-white relative overflow-hidden group shadow-2xl">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[5rem] group-hover:scale-110 transition-transform duration-700" />
                         <div className="relative z-10 space-y-8">
                             <div className="w-14 h-14 bg-[#ffc107] rounded-2xl flex items-center justify-center text-[#18357a] shadow-xl">
                                 <Zap size={28} />
                             </div>
                             <div>
-                                <h2 className="text-3xl font-black uppercase tracking-tighter leading-none mb-2">Total <br/> <span className="text-[#ffc107]">Bandwidth</span></h2>
+                                <h2 className="text-3xl font-black tracking-tighter leading-none mb-2">Total <br/> <span className="text-[#ffc107]">Bandwidth</span></h2>
                                 <div className="text-6xl font-black text-[#ffc107] tracking-tighter">500<span className="text-2xl ml-1">Mbps</span></div>
                             </div>
                             <div className="pt-6 space-y-4">
                                 {isps.map((isp, i) => (
                                     <div key={i} className="flex items-center justify-between border-b border-white/10 pb-3">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-white/60">{isp.name}</span>
+                                        <span className="text-xs font-black uppercase tracking-widest text-white/80">{isp.name}</span>
                                         <span className="text-sm font-black text-[#ffc107]">{isp.speed}</span>
                                     </div>
                                 ))}
@@ -121,9 +121,9 @@ const InternetPage = () => {
 
                     <div className="lg:col-span-2 space-y-8">
                          <div className="flex items-center gap-6">
-                            <h2 className="text-3xl md:text-5xl font-black text-[#18357a] uppercase tracking-tighter">Institutional <br/> <span className="text-[#ffc107]">Computing Hub</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-black text-[#18357a] tracking-tighter">Institutional <br/> <span className="text-[#ffc107]">Computing Hub</span></h2>
                         </div>
-                        <p className="text-black text-sm font-black uppercase leading-[1.8] tracking-tight text-left opacity-80">
+                        <p className="text-black text-[15px] font-bold leading-[1.8] tracking-tight text-left">
                             KIOT maintains a robust digital ecosystem with over 898 systems distributed across 24 specialized laboratories. 
                             Our infrastructure is engineered for high-performance computing, academic research, and seamless global connectivity.
                         </p>
@@ -135,7 +135,7 @@ const InternetPage = () => {
                                 { l: "Total Laptops", v: "75" }
                             ].map((stat, i) => (
                                 <div key={i} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-lg text-center">
-                                    <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">{stat.l}</div>
+                                    <div className="text-xs font-black text-slate-500 uppercase tracking-widest mb-1">{stat.l}</div>
                                     <div className="text-2xl font-black text-[#18357a]">{stat.v}</div>
                                 </div>
                             ))}
@@ -147,7 +147,7 @@ const InternetPage = () => {
                 <div className="space-y-8">
                     <div className="flex items-center gap-4">
                         <TableIcon className="text-[#ffc107]" />
-                        <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tighter">Laboratory Directory</h3>
+                        <h3 className="text-2xl font-black text-[#18357a] tracking-tighter">Laboratory Directory</h3>
                     </div>
                     
                     <div className="overflow-hidden rounded-xl md:rounded-[2.5rem] border border-slate-200 bg-white shadow-2xl">
@@ -155,29 +155,29 @@ const InternetPage = () => {
                             <table className="w-full text-left border-collapse min-w-[800px]">
                                 <thead className="bg-[#18357a]">
                                     <tr>
-                                        <th className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[2px] w-16">S.No</th>
-                                        <th className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[2px] w-20">Code</th>
-                                        <th className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[2px]">Laboratory Name</th>
-                                        <th className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[2px]">Area</th>
-                                        <th className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[2px] w-24">Dept</th>
-                                        <th className="px-6 py-5 text-[10px] font-black text-white uppercase tracking-[2px] text-right w-24">Systems</th>
+                                        <th className="px-6 py-5 text-xs font-black text-white uppercase tracking-[2px] w-16">S.No</th>
+                                        <th className="px-6 py-5 text-xs font-black text-white uppercase tracking-[2px] w-20">Code</th>
+                                        <th className="px-6 py-5 text-xs font-black text-white uppercase tracking-[2px]">Laboratory Name</th>
+                                        <th className="px-6 py-5 text-xs font-black text-white uppercase tracking-[2px]">Area</th>
+                                        <th className="px-6 py-5 text-xs font-black text-white uppercase tracking-[2px] w-24">Dept</th>
+                                        <th className="px-6 py-5 text-xs font-black text-white uppercase tracking-[2px] text-right w-24">Systems</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
                                     {labFacilities.map((lab, i) => (
                                         <tr key={i} className="hover:bg-slate-50 transition-colors">
-                                            <td className="px-6 py-4 text-[12px] font-black text-[#18357a]">{lab.sno}</td>
-                                            <td className="px-6 py-4 text-[12px] font-black text-slate-400 font-mono">{lab.cc}</td>
-                                            <td className="px-6 py-4 text-[12px] font-black text-black uppercase tracking-tight">{lab.name}</td>
-                                            <td className="px-6 py-4 text-[11px] font-bold text-slate-500 whitespace-nowrap">{lab.area}</td>
+                                            <td className="px-6 py-4 text-[13px] font-black text-[#18357a]">{lab.sno}</td>
+                                            <td className="px-6 py-4 text-[13px] font-black text-slate-500 font-mono">{lab.cc}</td>
+                                            <td className="px-6 py-4 text-[13px] font-bold text-black tracking-tight">{lab.name}</td>
+                                            <td className="px-6 py-4 text-xs font-bold text-slate-700 whitespace-nowrap">{lab.area}</td>
                                             <td className="px-6 py-4">
-                                                <span className="px-3 py-1 bg-slate-100 rounded-full text-[10px] font-black text-[#18357a]">{lab.dept}</span>
+                                                <span className="px-3 py-1 bg-slate-100 rounded-full text-[11px] font-black text-[#18357a]">{lab.dept}</span>
                                             </td>
-                                            <td className="px-6 py-4 text-[13px] font-black text-black text-right">{lab.systems}</td>
+                                            <td className="px-6 py-4 text-[14px] font-black text-black text-right">{lab.systems}</td>
                                         </tr>
                                     ))}
                                     <tr className="bg-slate-50">
-                                        <td colSpan="5" className="px-6 py-5 text-[11px] font-black text-[#18357a] uppercase text-right">Total Computing Power</td>
+                                        <td colSpan="5" className="px-6 py-5 text-xs font-black text-[#18357a] uppercase text-right">Total Computing Power</td>
                                         <td className="px-6 py-5 text-xl font-black text-[#18357a] text-right">898</td>
                                     </tr>
                                 </tbody>
@@ -191,14 +191,14 @@ const InternetPage = () => {
                     <div className="space-y-8">
                         <div className="flex items-center gap-4">
                             <Cpu className="text-[#ffc107]" />
-                            <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tighter">System Configurations</h3>
+                            <h3 className="text-2xl font-black text-[#18357a] tracking-tighter">System Configurations</h3>
                         </div>
                         <div className="grid sm:grid-cols-2 gap-4">
                             {configs.map((cfg, i) => (
                                 <div key={i} className="p-6 bg-white rounded-3xl border border-slate-100 shadow-lg hover:border-[#ffc107]/40 transition-all group">
-                                    <div className="text-[10px] font-black text-[#ffc107] uppercase tracking-widest mb-1">Config {cfg.id}</div>
-                                    <div className="text-sm font-black text-[#18357a] uppercase tracking-tight group-hover:text-black transition-colors">{cfg.name}</div>
-                                    <div className="text-[10px] font-bold text-slate-400 mt-2 uppercase">{cfg.ram} {cfg.hdd && ` | ${cfg.hdd}`}</div>
+                                    <div className="text-xs font-black text-[#ffc107] uppercase tracking-widest mb-1">Config {cfg.id}</div>
+                                    <div className="text-sm font-black text-[#18357a] tracking-tight group-hover:text-black transition-colors">{cfg.name}</div>
+                                    <div className="text-[11px] font-bold text-slate-600 mt-2">{cfg.ram} {cfg.hdd && ` | ${cfg.hdd}`}</div>
                                 </div>
                             ))}
                         </div>
@@ -209,7 +209,7 @@ const InternetPage = () => {
                          <div className="space-y-6">
                             <div className="flex items-center gap-4">
                                 <Server className="text-[#ffc107]" />
-                                <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tighter">Server Infrastructure</h3>
+                                <h3 className="text-2xl font-black text-[#18357a] tracking-tighter">Server Infrastructure</h3>
                             </div>
                             <div className="bg-[#18357a] rounded-[2rem] p-8 text-white space-y-6 shadow-xl">
                                 {[
@@ -221,7 +221,7 @@ const InternetPage = () => {
                                 ].map((srv, i) => (
                                     <div key={i} className="flex gap-6 items-start border-b border-white/10 pb-4 last:border-0">
                                         <div className="text-2xl font-black text-[#ffc107] w-8">{srv.q}</div>
-                                        <div className="text-[11px] font-black uppercase tracking-tight text-white/70 leading-relaxed">{srv.d}</div>
+                                        <div className="text-[13px] font-bold text-white leading-relaxed">{srv.d}</div>
                                     </div>
                                 ))}
                             </div>
@@ -231,7 +231,7 @@ const InternetPage = () => {
                          <div className="space-y-6">
                             <div className="flex items-center gap-4">
                                 <Laptop className="text-[#ffc107]" />
-                                <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tighter">Mobile Computing (Laptops)</h3>
+                                <h3 className="text-2xl font-black text-[#18357a] tracking-tighter">Mobile Computing (Laptops)</h3>
                             </div>
                             <div className="grid grid-cols-3 gap-3">
                                 {[
@@ -242,7 +242,7 @@ const InternetPage = () => {
                                     { b: "APPLE", q: "1" }
                                 ].map((lap, i) => (
                                     <div key={i} className="bg-slate-50 p-4 rounded-2xl border border-slate-100 flex flex-col items-center text-center">
-                                        <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{lap.b}</div>
+                                        <div className="text-xs font-black text-slate-500 uppercase tracking-widest">{lap.b}</div>
                                         <div className="text-xl font-black text-[#18357a]">{lap.q}</div>
                                     </div>
                                 ))}
@@ -252,13 +252,13 @@ const InternetPage = () => {
                 </div>
 
                 {/* Footer Insight */}
-                <div className="bg-[#18357a] rounded-[3rem] p-12 text-center relative overflow-hidden">
+                <div className="bg-[#18357a] rounded-[3rem] p-12 text-center relative overflow-hidden shadow-2xl">
                     <div className="absolute inset-0 opacity-10">
-                        <Network className="w-96 h-96 -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2" />
+                        <Network className="w-96 h-96 -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 text-white" />
                     </div>
                     <div className="relative z-10 space-y-6">
-                        <h4 className="text-white text-3xl font-black uppercase tracking-tighter leading-none">Global Connectivity <span className="text-[#ffc107]">Standards</span></h4>
-                        <p className="text-white/60 text-[11px] font-black uppercase tracking-[4px]">Ensuring Academic Excellence Through Digital Empowerment</p>
+                        <h4 className="text-white text-3xl font-black tracking-tighter leading-none">Global Connectivity <span className="text-[#ffc107]">Standards</span></h4>
+                        <p className="text-white text-xs font-black uppercase tracking-[4px]">Ensuring Academic Excellence Through Digital Empowerment</p>
                     </div>
                 </div>
 
