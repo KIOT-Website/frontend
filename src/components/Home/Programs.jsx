@@ -260,13 +260,12 @@ const Programs = () => {
               {/* Features (Order 3 Mobile / Column 1 Desktop) */}
               <div className="order-3 flex flex-col space-y-2">
                  {/* Highlights List */}
-                 <div className="space-y-4 w-full px-4 mb-8">
+                  <div className="space-y-4 w-full px-4 mb-8">
                     {[
-                       'Institute Research Centre Recognition',
-                       'Industry ready AI Enabled Curriculum',
-                       'Advance Lab Facilities',
-                       'Industry supported Centre of Excellence',
-                       '360 Degree Personality Development',
+                       'Industry Ready AI Enabled Curriculum',
+                       '360 Degree Career Development Program',
+                       '30+ Centres of Excellence (COEs)',
+                       'Industry Linked Advanced Labs',
                        'Culture of Innovation & Creativity'
                     ].map((text, i) => (
                        <motion.div 
@@ -277,7 +276,7 @@ const Programs = () => {
                          className="flex items-center gap-3 group/item cursor-default"
                        >
                           <div className="h-0.5 w-3 bg-[#ffc107] opacity-50 group-hover/item:opacity-100 transition-opacity" />
-                          <span className="text-[14px] font-bold text-black italic tracking-tight leading-none uppercase">
+                          <span className="text-[14px] font-bold text-black italic tracking-tight leading-none">
                              {text}
                           </span>
                        </motion.div>

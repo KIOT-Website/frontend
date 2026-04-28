@@ -20,7 +20,13 @@ import {
   Star,
   Award,
   Briefcase,
-  Globe
+  Globe,
+  Cpu,
+  Building2,
+  FlaskConical,
+  Target,
+  Languages,
+  Sparkles
 } from 'lucide-react'
 import logo from '../../assets/main/logo.webp'
 import campusImage from '../../assets/main/indian_college_students_campus.webp'
@@ -324,20 +330,26 @@ const AdmissionsPage = () => {
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
             <div className="text-center mb-12 relative">
                <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-                  <h2 className="text-3xl md:text-5xl font-black text-[#0A1A3F] leading-tight tracking-tighter">
-                     Why Choose <span className="text-[#ffc107]">KIOT</span>
+                  <h2 className="text-2xl md:text-4xl font-black text-[#0A1A3F] leading-tight tracking-tighter uppercase">
+                     Why Choose
+                  </h2>
+                  <h2 className="text-xl md:text-3xl font-black text-[#ffc107] leading-tight tracking-tighter mt-1">
+                     Knowledge Institute of Technology
                   </h2>
                </motion.div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                {[
-                  { title: "100% Placement Assistance", desc: "Dedicated placement cell ensuring top-tier corporate matching.", icon: Briefcase },
-                  { title: "NAAC A Accredited", desc: "Recognized for academic excellence and institutional quality.", icon: Award },
-                  { title: "Industry-Oriented Curriculum", desc: "Syllabus designed in collaboration with global tech giants.", icon: Globe },
-                  { title: "Modern Infrastructure", desc: "State-of-the-art labs and high-tech research centers.", icon: ShieldCheck },
-                  { title: "Experienced Faculty", desc: "Guided by Ph.D. scholars and veteran industry professionals.", icon: Users },
-                  { title: "Elite Career Hub", desc: "Access to exclusive internships and global career paths.", icon: Star }
+                  { title: "Industry-Ready AI Enabled Curriculum", desc: "Cutting-edge syllabus integrated with Artificial Intelligence across all programs.", icon: Cpu },
+                  { title: "30+ Centres of Excellence (CoEs) & iStart Incubation", desc: "Fostering innovation through dedicated centres and startup incubation support.", icon: Building2 },
+                  { title: "Emerging Technology Laboratories", desc: "Hands-on experience with next-gen technologies in state-of-the-art labs.", icon: FlaskConical },
+                  { title: "NAAC Accredited ('A' Grade)", desc: "Recognized for academic excellence and institutional quality with 'A' Grade accreditation.", icon: Award },
+                  { title: "Experienced Faculty", desc: "Highly Qualified & Experienced faculty with Ph.D. / Post Graduation.", icon: Users },
+                  { title: "360 Degree Career Development Program", desc: "1200+ hours of Training on Employability Skills & Life Skills.", icon: Target },
+                  { title: "Foreign Languages", desc: "International certification on Japanese and German Languages with exclusive placements.", icon: Languages },
+                  { title: "Good Placements", desc: "More than 90% Placements in leading CORE & IT Companies.", icon: Briefcase },
+                  { title: "Experiential Learning Ambience", desc: "70+ Clubs & Forums in-line with World Class Universities.", icon: Sparkles }
                ].map((feature, i) => (
                   <motion.div
                     key={i} 
