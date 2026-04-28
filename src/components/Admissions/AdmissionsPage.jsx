@@ -97,7 +97,7 @@ const AdmissionsPage = () => {
     <div className="min-h-screen bg-[#FDFEFE] text-[14px] text-[#1a1a1a] leading-[1.7] pb-10 selection:bg-[#ffc107]/30">
       
       {/* ─── NEW HIGH-FIDELITY HERO BANNER ─── */}
-      <section className="relative overflow-hidden bg-[#0A1A3F] min-h-[450px] lg:h-[75vh] flex items-start pt-4 lg:pt-8">
+      <section className="relative overflow-hidden bg-[#0A1A3F] min-h-[450px] lg:h-[80vh] flex items-center pt-16 lg:pt-0">
         {/* Background Image / Building View */}
         <div className="absolute top-0 right-0 w-full lg:w-3/5 h-full z-0 overflow-hidden">
           <img 
@@ -136,18 +136,14 @@ const AdmissionsPage = () => {
             </div>
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:pl-16 lg:pr-20 relative z-20 w-full pt-4 lg:pt-0">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:pl-16 lg:pr-20 relative z-20 w-full">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="max-w-2xl"
           >
-            {/* Tamil Slogan */}
-            <div className="mb-6">
-                <p className="text-[#ffc107] font-bold text-lg lg:text-xl leading-tight">உங்கள் கனவுகளுக்கு</p>
-                <p className="text-white font-bold text-lg lg:text-xl leading-tight">ஒரு உறுதியான துவக்கம்!</p>
-            </div>
+
 
             {/* Main Title */}
             <div className="mb-6">
@@ -223,8 +219,8 @@ const AdmissionsPage = () => {
                 <div className="flex items-center gap-6 lg:gap-10">
                     <div className="hidden lg:flex items-center gap-4 border-r border-white/10 pr-10">
                         <div className="space-y-0.5">
-                            <p className="text-white font-bold text-xs leading-tight">தமிழ்நாட்டின் முன்னணி</p>
-                            <p className="text-[#ffc107] font-black text-sm leading-tight">தொழில்நுட்பக் கல்விக் கழகம்</p>
+                            <p className="text-white font-bold text-xs leading-tight">A Strong Start</p>
+                            <p className="text-[#ffc107] font-black text-sm leading-tight uppercase">To Your Dreams!</p>
                         </div>
                     </div>
 

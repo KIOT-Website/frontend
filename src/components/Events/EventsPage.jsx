@@ -47,26 +47,9 @@ const EventsPage = () => {
     }
   }
 
-  const fallbackEvents = [
-    {
-      id: "f1",
-      event_name: "National Tech Symposium 2026",
-      event_date: "2026-03-18",
-      short_description: "Explore groundbreaking innovations, coding competitions, and expert-led tech talks from industry leaders.",
-      media_url: "https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800",
-      media_type: "image"
-    },
-    {
-      id: "f2",
-      event_name: "Innovation Hackathon",
-      event_date: "2026-04-20",
-      short_description: "A 48-hour intense coding hackathon for students to solve real-world problems.",
-      media_url: "https://images.unsplash.com/photo-1591453089816-0fbb971bac45?auto=format&fit=crop&q=80&w=800",
-      media_type: "image"
-    }
-  ]
 
-  const records = dbEvents.length > 0 ? dbEvents : (loading ? [] : fallbackEvents)
+
+  const records = dbEvents
 
   return (
     <div className="min-h-screen bg-[#FCFDFD] pb-20">
@@ -94,6 +77,12 @@ const EventsPage = () => {
                 <Loader2 size={48} className="animate-spin text-[#18357a] mb-4" />
                 <p className="text-xs font-black uppercase tracking-[0.4em] text-[#18357a]">Fetching Events...</p>
               </div>
+           ) : records.length === 0 ? (
+               <div className="col-span-full py-20 text-center">
+                  <Calendar size={48} className="mx-auto text-slate-200 mb-6" />
+                  <h3 className="text-xl font-bold text-[#18357a] mb-2">No Events Found</h3>
+                  <p className="text-slate-400 text-sm">Stay tuned for upcoming updates and news.</p>
+               </div>
            ) : (
               <AnimatePresence mode="popLayout">
                 {records.map((ev, idx) => (

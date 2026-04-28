@@ -38,26 +38,11 @@ const RecruitmentDrives = () => {
         fetchDrives()
     }, [])
 
-    const fallbackDrives = [
-        {
-            id: 'fb1',
-            company_name: 'Tech Mahindra',
-            drive_date: '2026-04-25',
-            media_url: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800',
-            media_type: 'image',
-            serial_number: 1
-        },
-        {
-            id: 'fb2',
-            company_name: 'Cognizant',
-            drive_date: '2026-05-10',
-            media_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800',
-            media_type: 'image',
-            serial_number: 2
-        }
-    ]
+
 
     const displayDrives = drives
+
+    if (!loading && displayDrives.length === 0) return null;
 
     return (
         <section id="recruitment-drives" className="relative py-6 lg:py-10 bg-white overflow-hidden font-sans">
@@ -85,11 +70,6 @@ const RecruitmentDrives = () => {
                     <div className="py-20 flex flex-col items-center justify-center opacity-30">
                         <Loader2 size={40} className="animate-spin text-[#18357a] mb-4" />
                         <p className="text-[10px] font-black uppercase tracking-widest">Loading Opportunities...</p>
-                    </div>
-                ) : displayDrives.length === 0 ? (
-                    <div className="text-center py-20 bg-slate-50 rounded-[2.5rem] border-2 border-dashed border-slate-100">
-                        <Briefcase size={48} className="mx-auto text-slate-200 mb-4" />
-                        <p className="font-black text-[12px] uppercase tracking-widest text-slate-400">New opportunities coming soon</p>
                     </div>
                 ) : (
                     <div className="flex flex-wrap lg:flex-nowrap justify-center gap-8 lg:gap-12">

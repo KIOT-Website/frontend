@@ -39,33 +39,7 @@ const Events = ({ onEventsClick }) => {
     }
   }
 
-  // Fallback data if DB is empty or fetching fails
-  const fallbackEvents = [
-    {
-      id: "f1",
-      event_name: "National Tech Symposium",
-      event_date: "2026-03-18",
-      short_description: "Explore groundbreaking innovations, coding competitions, and expert-led tech talks from industry leaders.",
-      media_type: "image",
-      media_url: "https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-      id: "f2",
-      event_name: "AI & Machine Learning Workshop",
-      event_date: "2026-03-12",
-      short_description: "Hands-on training session with real-world datasets and model building using industry-standard tools.",
-      media_type: "image",
-      media_url: "https://images.unsplash.com/photo-1591453089816-0fbb971bac45?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-      id: "f3",
-      event_name: "Admissions Open 2026",
-      event_date: "2026-03-05",
-      short_description: "Apply now for academic year 2026.",
-      media_type: "image",
-      media_url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
-    }
-  ]
+
 
   const records = dbEvents
 
@@ -77,6 +51,8 @@ const Events = ({ onEventsClick }) => {
       .replace(/^-+/, '')             // Trim - from start of text
       .replace(/-+$/, '');            // Trim - from end of text
   }
+
+  if (!loading && records.length === 0) return null;
 
   return (
     <section id="events" className="relative py-10 lg:py-16 bg-[#FCFDFD] overflow-hidden">
@@ -105,11 +81,6 @@ const Events = ({ onEventsClick }) => {
              <div className="flex flex-col items-center justify-center py-24 opacity-30">
                 <Loader2 size={48} className="animate-spin text-[#18357a] mb-6" />
                 <p className="text-xs font-black uppercase tracking-[0.4em] text-[#18357a]">Fetching Latest Buzz...</p>
-             </div>
-           ) : records.length === 0 ? (
-             <div className="text-center py-20 bg-slate-50 rounded-[2.5rem] border-2 border-dashed border-slate-100">
-                <Calendar size={48} className="mx-auto text-slate-200 mb-4" />
-                <p className="font-black text-[12px] uppercase tracking-widest text-slate-400">No events right now — check back soon</p>
              </div>
            ) : (
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">

@@ -16,42 +16,33 @@ const LibraryAccessPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white font-graphik">
             {/* Minimal Hero Header */}
-            <div className="relative pt-24 pb-12 px-6 bg-gradient-to-b from-[#18357a]/5 to-transparent overflow-hidden">
+            <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#18357a]/5 to-transparent overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-slate-100 mb-8"
-                    >
-                        <ShieldCheck size={14} className="text-[#18357a]" />
-                        <span className="text-xs font-black text-[#18357a] uppercase tracking-widest">Library Services Portal</span>
-                    </motion.div>
-                    
                     <motion.h1 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-black text-[#18357a] uppercase tracking-tighter leading-none mb-6"
+                        className="text-4xl md:text-6xl font-black text-[#18357a] tracking-tighter leading-none mb-6"
                     >
-                        LIBRARY <span className="text-[#ffc107]">ACCESS</span>
+                        Library <span className="text-[#ffc107]">Access</span>
                     </motion.h1>
                     
                     <motion.button
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        onClick={() => navigate('/campus-life')}
-                        className="flex items-center gap-2 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] transition-colors"
+                        onClick={() => navigate('/campus-life/library')}
+                        className="flex items-center gap-2 text-xs font-black text-[#64779F] tracking-widest hover:text-[#18357a] transition-colors"
                     >
                         <ArrowLeft size={14} /> Back to Library Hub
                     </motion.button>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-0 md:px-6 py-12">
+            <div className="max-w-7xl mx-auto px-0 md:px-6 py-6">
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
                     {/* ILMS Section */}
                     <motion.div 
@@ -67,8 +58,7 @@ const LibraryAccessPage = () => {
                                     <Library size={28} />
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight leading-none">Integrated Library <span className="text-[#ffc107]">(ILMS)</span></h2>
-                                    <p className="text-xs font-black text-slate-500 uppercase tracking-[4px] mt-1">Institutional Operations</p>
+                                    <h2 className="text-2xl font-bold text-[#18357a] tracking-tight leading-none">Integrated Library (ILMS)</h2>
                                 </div>
                              </div>
 
@@ -84,8 +74,8 @@ const LibraryAccessPage = () => {
                                             <item.icon size={18} />
                                         </div>
                                          <div>
-                                            <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest leading-none mb-1">{item.label}</p>
-                                            <p className="text-base font-black text-[#18357a] uppercase">{item.value}</p>
+                                            <p className="text-xs font-bold text-[#18357a] tracking-widest leading-none mb-0">{item.label}</p>
+                                            <p className="text-lg font-black text-black">{item.value}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -101,7 +91,7 @@ const LibraryAccessPage = () => {
                         {/* Salient Features Dashboard */}
                         <div className="p-10 bg-white rounded-[3rem] border border-slate-100 shadow-xl shadow-slate-200/20">
                              <div className="flex items-center justify-between mb-8">
-                                <h3 className="text-xs font-black text-[#ffc107] uppercase tracking-[5px]">Salient Features</h3>
+                                <h3 className="text-sm font-black text-[#ffc107] tracking-[5px]">Salient Features</h3>
                                 <div className="h-px flex-1 bg-slate-100 ml-6" />
                              </div>
                              
@@ -118,8 +108,8 @@ const LibraryAccessPage = () => {
                                         <div className="flex items-center gap-4">
                                             <div className="w-1.5 h-1.5 rounded-full bg-[#18357a] group-hover:bg-[#ffc107] group-hover:scale-150 transition-all" />
                                             <div>
-                                                <p className="text-[13px] font-black text-[#18357a] uppercase mb-0.5">{feat.t}</p>
-                                                <p className="text-xs font-bold text-slate-600 group-hover:text-slate-800 transition-colors uppercase tracking-tight">{feat.d}</p>
+                                                <p className="text-lg font-bold text-[#18357a] mb-0.5">{feat.t}</p>
+                                                <p className="text-sm font-bold text-slate-600 group-hover:text-slate-800 transition-colors tracking-tight">{feat.d}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -142,14 +132,13 @@ const LibraryAccessPage = () => {
                                     <Globe size={32} />
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl font-black uppercase tracking-tight">Open Access</h2>
-                                    <p className="text-xs font-black text-white uppercase tracking-[5px] mt-1">Digital Knowledge Highway</p>
+                                    <h2 className="text-3xl font-black tracking-tight">Open Access</h2>
                                 </div>
                              </div>
 
                              <div className="relative z-10 flex-1 space-y-10">
                                 <div>
-                                    <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/20 mb-6 font-black text-[10px] uppercase tracking-[3px] text-[#ffc107]">
+                                    <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/20 mb-6 font-black text-[10px] tracking-[3px] text-[#ffc107]">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" /> Open Access Books
                                     </div>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
@@ -169,9 +158,9 @@ const LibraryAccessPage = () => {
                                                 rel="noreferrer" 
                                                 className="group px-6 py-5 bg-white/5 hover:bg-white rounded-2xl border border-white/10 transition-all flex items-center justify-between shadow-sm"
                                             >
-                                                <span className="text-xs font-black uppercase tracking-wide text-white group-hover:text-[#18357a] transition-colors">{link.n}</span>
+                                                <span className="text-sm font-black tracking-wide text-white group-hover:text-[#18357a] transition-colors">{link.n}</span>
                                                 <div className="flex items-center gap-2 text-[#ffc107] group-hover:text-[#18357a] transition-colors">
-                                                    <span className="text-[10px] font-black uppercase tracking-widest hidden sm:block">View</span>
+                                                    <span className="text-xs font-black tracking-widest hidden sm:block">View</span>
                                                     <ExternalLink size={14} className="opacity-100 group-hover:opacity-100" />
                                                 </div>
                                             </a>
@@ -182,7 +171,7 @@ const LibraryAccessPage = () => {
                                 <div className="h-px bg-white/20 w-full" />
 
                                 <div>
-                                    <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/20 mb-6 font-black text-[10px] uppercase tracking-[3px] text-[#ffc107]">
+                                    <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/20 mb-6 font-black text-[10px] tracking-[3px] text-[#ffc107]">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" /> Scholarly Journals
                                     </div>
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 relative z-10">
@@ -205,19 +194,15 @@ const LibraryAccessPage = () => {
                                                 rel="noreferrer" 
                                                 className="group px-6 py-5 bg-white/5 hover:bg-[#ffc107] rounded-2xl border border-white/10 transition-all flex items-center justify-between"
                                             >
-                                                <span className="text-xs font-black uppercase tracking-wide text-white group-hover:text-[#18357a] transition-colors">{link.n}</span>
+                                                <span className="text-sm font-black tracking-wide text-white group-hover:text-[#18357a] transition-colors">{link.n}</span>
                                                 <div className="flex items-center gap-2 text-[#ffc107] group-hover:text-[#18357a] transition-colors">
-                                                    <span className="text-[10px] font-black uppercase tracking-widest hidden sm:block">View</span>
+                                                    <span className="text-xs font-black tracking-widest hidden sm:block">View</span>
                                                     <ExternalLink size={12} className="opacity-100 group-hover:opacity-100" />
                                                 </div>
                                             </a>
                                         ))}
                                     </div>
                                 </div>
-                             </div>
-                             
-                             <div className="mt-12 pt-8 border-t border-white/20 relative z-10 text-center">
-                                <p className="text-xs font-black text-white uppercase tracking-[4px]">24/7 Digital Library Infrastructure</p>
                              </div>
                         </div>
                     </motion.div>

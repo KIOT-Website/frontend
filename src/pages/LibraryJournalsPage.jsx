@@ -11,6 +11,7 @@ import {
   Headphones,
   Globe
 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
 const JOURNAL_STATS = [
@@ -100,50 +101,34 @@ const LibraryJournalsPage = () => {
     const [searchQuery, setSearchQuery] = useState('')
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] pb-24">
-            {/* 🔷 Shared Hero Section (Consistent across Hub) */}
-            <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
-                <div className="absolute inset-0">
-                    <img 
-                        src="https://images.unsplash.com/photo-1523050335392-9bc0ad7c9f83?q=80&w=1920&auto=format&fit=crop" 
-                        className="w-full h-full object-cover opacity-100" 
-                        alt="Campus"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/80 via-[#18357a]/60 to-transparent" />
-                </div>
-                
-                <div className="relative z-10 text-center px-6">
-                    <motion.div
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.8 }}
+        <div className="min-h-screen bg-[#FCFDFD] pb-24 font-graphik">
+            {/* Minimal Header (Removed Hero) */}
+            <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#18357a]/5 to-transparent overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+                <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+                    <motion.h1 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-bold text-[#18357a] tracking-tighter leading-none mb-6"
                     >
-                        <button 
-                            onClick={() => navigate('/campus-life/library')}
-                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
-                        >
-                            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-xs font-black tracking-[2px]">Back to Hub</span>
-                        </button>
-                        <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none mb-3">
-                            Campus <span className="text-[#ffc107]">Life</span>
-                        </h1>
-                        <p className="text-white font-bold text-xs md:text-sm max-w-2xl mx-auto uppercase tracking-widest leading-loose">
-                            Institutional Infrastructure & Ecosystem
-                        </p>
-                    </motion.div>
+                        Journals & <span className="text-[#ffc107]">E-Digital</span>
+                    </motion.h1>
+                    
+                    <motion.button
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        onClick={() => navigate('/campus-life/library')}
+                        className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#18357a] transition-colors"
+                    >
+                        <ArrowLeft size={14} /> Back to Library Hub
+                    </motion.button>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-12 space-y-12">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-8 border-t border-slate-100">
-                    <div>
-                        <h2 className="text-3xl font-black text-[#18357a] tracking-tighter leading-none">
-                            Journals & <span className="text-[#ffc107]">E-Digital</span>
-                        </h2>
-                        <p className="text-xs font-black text-slate-500 uppercase tracking-[4px] mt-2">Resource Publication Network</p>
-                    </div>
-
+            <div className="max-w-7xl mx-auto px-6 py-6 space-y-12">
+                <div className="flex flex-col md:flex-row md:items-center justify-center gap-8 pt-8 border-t border-slate-100">
                     <div className="flex flex-wrap bg-slate-100 p-1.5 rounded-[1.5rem] gap-1 shadow-inner">
                         {[
                             { id: 'stats', label: 'Journal Stats', icon: FileText },
@@ -153,7 +138,7 @@ const LibraryJournalsPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-4 rounded-xl text-xs font-black uppercase tracking-widest transition-all ${
+                                className={`flex items-center gap-3 px-6 py-4 rounded-xl text-xs font-bold tracking-widest transition-all ${
                                     activeTab === tab.id 
                                     ? 'bg-[#18357a] text-white shadow-xl shadow-[#18357a]/30' 
                                     : 'text-slate-700 hover:text-[#18357a] hover:bg-white'
@@ -185,16 +170,16 @@ const LibraryJournalsPage = () => {
                                         <FileText size={28} />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-black text-[#18357a] tracking-tight leading-none mb-2">Accession Distribution</h2>
+                                        <h2 className="text-2xl font-bold text-[#18357a] tracking-tight leading-none mb-2">Accession Distribution</h2>
                                         <div className="flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                            <p className="text-xs font-black text-slate-500 uppercase tracking-[4px]">Verified Network Growth</p>
+                                            <p className="text-xs font-bold text-slate-500 tracking-[4px]">Verified Network Growth</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="text-right relative z-10">
-                                    <p className="text-xs font-black text-slate-500 uppercase tracking-[4px] leading-none mb-2">Active Records</p>
-                                    <p className="text-4xl font-black text-[#18357a]">428</p>
+                                    <p className="text-xs font-bold text-slate-500 tracking-[4px] leading-none mb-2">Active Records</p>
+                                    <p className="text-4xl font-bold text-[#18357a]">428</p>
                                 </div>
                             </div>
                             
@@ -202,25 +187,25 @@ const LibraryJournalsPage = () => {
                                 <table className="w-full text-left">
                                     <thead>
                                         <tr className="bg-[#18357a] border-b border-[#18357a]/10 shadow-md">
-                                            <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[2px]">Degree</th>
-                                            <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[2px]">Department / Specialization</th>
-                                            <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[2px] text-center">National</th>
-                                            <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[2px] text-center">International</th>
+                                            <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Degree</th>
+                                            <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Department / Specialization</th>
+                                            <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] text-center">National</th>
+                                            <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] text-center">International</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-slate-100 transition-all">
                                         {JOURNAL_STATS.map((row, i) => (
                                             <tr key={i} className="hover:bg-[#18357a]/5 transition-colors group even:bg-slate-50/50">
-                                                <td className="px-8 py-5 font-black text-[#18357a] text-xs">{row.deg}</td>
+                                                <td className="px-8 py-5 font-bold text-[#18357a] text-xs">{row.deg}</td>
                                                 <td className="px-8 py-5 font-bold text-slate-800 text-base group-hover:text-[#18357a] transition-colors">{row.c}</td>
                                                 <td className="px-8 py-5 text-center font-bold text-slate-600 text-base">{row.nj}</td>
-                                                <td className="px-8 py-5 text-center font-black text-[#18357a] text-base">{row.ij}</td>
+                                                <td className="px-8 py-5 text-center font-bold text-[#18357a] text-base">{row.ij}</td>
                                             </tr>
                                         ))}
                                         <tr className="bg-[#18357a]/5">
-                                            <td colSpan="2" className="px-8 py-6 font-black text-[#18357a] text-xl tracking-tighter">Aggregated Network Volume</td>
-                                            <td className="px-8 py-6 text-center font-black text-[#ffc107] text-2xl">114</td>
-                                            <td className="px-8 py-6 text-center font-black text-[#18357a] text-2xl">314</td>
+                                            <td colSpan="2" className="px-8 py-6 font-bold text-[#18357a] text-xl tracking-tighter">Aggregated Network Volume</td>
+                                            <td className="px-8 py-6 text-center font-bold text-[#ffc107] text-2xl">114</td>
+                                            <td className="px-8 py-6 text-center font-bold text-[#18357a] text-2xl">314</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -244,10 +229,10 @@ const LibraryJournalsPage = () => {
                                         <Bookmark size={28} />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-black text-[#18357a] tracking-tight leading-none mb-2">Active Publications</h2>
+                                        <h2 className="text-2xl font-bold text-[#18357a] tracking-tight leading-none mb-2">Active Publications</h2>
                                         <div className="flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                            <p className="text-xs font-black text-slate-500 uppercase tracking-[4px]">Serial Resource Hub</p>
+                                            <p className="text-xs font-bold text-slate-500 tracking-[4px]">Serial Resource Hub</p>
                                         </div>
                                     </div>
                                 </div>
@@ -255,10 +240,10 @@ const LibraryJournalsPage = () => {
                                     <Search size={18} className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-500" />
                                     <input 
                                         type="text" 
-                                        placeholder="Search Journal Directory..."
+                                        placeholder="Search journal directory..."
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
-                                        className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-xs font-black uppercase tracking-widest focus:outline-none focus:ring-4 focus:ring-[#18357a]/5 focus:border-[#18357a] transition-all shadow-sm"
+                                        className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-xs font-bold tracking-widest focus:outline-none focus:ring-4 focus:ring-[#18357a]/5 focus:border-[#18357a] transition-all shadow-sm"
                                     />
                                 </div>
                             </div>
@@ -267,7 +252,7 @@ const LibraryJournalsPage = () => {
                                 {JOURNAL_LIST.filter(j => j.toLowerCase().includes(searchQuery.toLowerCase())).map((journal, i) => (
                                     <div key={i} className="group flex items-start gap-5 p-5 bg-white hover:bg-[#18357a] rounded-2xl border border-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-1">
                                         <div className="w-8 h-8 rounded-lg bg-slate-50 group-hover:bg-[#ffc107] flex items-center justify-center shadow-sm shrink-0 transition-all">
-                                            <span className="text-xs font-black text-[#18357a]">{i+1}</span>
+                                            <span className="text-xs font-bold text-[#18357a]">{i+1}</span>
                                         </div>
                                         <p className="text-[13px] font-bold text-slate-800 group-hover:text-white leading-relaxed tracking-tight transition-colors">
                                             {journal}
@@ -295,7 +280,7 @@ const LibraryJournalsPage = () => {
                                             <Monitor size={32} className="text-[#18357a]" />
                                         </div>
                                         <div>
-                                            <h3 className="text-3xl font-black tracking-tighter mb-4">Digital Library Lab</h3>
+                                            <h3 className="text-3xl font-bold tracking-tighter mb-4">Digital Library Lab</h3>
                                             <p className="text-white font-bold text-base leading-relaxed">
                                                 Our state-of-the-art digital hub features 30 high-speed computing nodes designed for seamless academic research and global citation access.
                                             </p>
@@ -304,11 +289,11 @@ const LibraryJournalsPage = () => {
                                     <div className="relative z-10 pt-12 space-y-4">
                                         <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
                                             <Headphones size={20} className="text-[#ffc107]" />
-                                            <p className="text-xs font-black uppercase tracking-widest text-[#ffc107]">Audio Learning Nodes (10 Available)</p>
+                                            <p className="text-xs font-bold tracking-widest text-[#ffc107]">Audio Learning Nodes (10 Available)</p>
                                         </div>
                                         <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
                                             <Globe size={20} className="text-[#ffc107]" />
-                                            <p className="text-xs font-black uppercase tracking-widest text-[#ffc107]">High Speed Fiber Ready</p>
+                                            <p className="text-xs font-bold tracking-widest text-[#ffc107]">High Speed Fiber Ready</p>
                                         </div>
                                     </div>
                                 </div>
@@ -321,18 +306,18 @@ const LibraryJournalsPage = () => {
                                                 <Clock size={28} />
                                             </div>
                                             <div>
-                                                <h4 className="text-xl font-black text-[#18357a] tracking-tight">Laboratory Access Hours</h4>
-                                                <p className="text-xs font-black text-slate-500 uppercase tracking-widest mt-1 italic">Real-time facility availability</p>
+                                                <h4 className="text-xl font-bold text-[#18357a] tracking-tight">Laboratory Access Hours</h4>
+                                                <p className="text-xs font-bold text-slate-500 tracking-widest mt-1 italic">Real-time facility availability</p>
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-2 gap-8 border-l border-slate-100 pl-10">
                                             <div>
-                                                <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-1">Working Days</p>
-                                                <p className="font-black text-[#18357a]">09:30 AM - 06:30 PM</p>
+                                                <p className="text-xs font-bold text-slate-500 tracking-widest mb-1">Working Days</p>
+                                                <p className="font-bold text-[#18357a]">09:30 AM - 06:30 PM</p>
                                             </div>
                                             <div>
-                                                <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-1">Public Holidays</p>
-                                                <p className="font-black text-[#ffc107]">09:30 AM - 03:30 PM</p>
+                                                <p className="text-xs font-bold text-slate-500 tracking-widest mb-1">Public Holidays</p>
+                                                <p className="font-bold text-[#ffc107]">09:30 AM - 03:30 PM</p>
                                             </div>
                                         </div>
                                     </div>
@@ -350,14 +335,14 @@ const LibraryJournalsPage = () => {
                                                 <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 group-hover:bg-white/5 rounded-bl-[100%] transition-colors" />
                                                 <div className="relative z-10 flex items-center justify-between">
                                                     <div className="text-left">
-                                                        <p className="text-[14px] font-black text-[#18357a] group-hover:text-[#ffc107] uppercase tracking-widest leading-none mb-1">{link.n}</p>
-                                                        <p className="text-xs font-bold text-slate-500 group-hover:text-white/70 uppercase tracking-tight mt-1">{link.d}</p>
+                                                        <p className="text-[14px] font-bold text-[#18357a] group-hover:text-[#ffc107] tracking-widest leading-none mb-1">{link.n}</p>
+                                                        <p className="text-xs font-bold text-slate-500 group-hover:text-white/70 tracking-tight mt-1">{link.d}</p>
                                                     </div>
                                                     <div className="flex flex-col items-center gap-2">
                                                         <div className="p-3 bg-slate-50 group-hover:bg-[#ffc107] rounded-xl transition-colors shrink-0">
                                                             <ExternalLink size={18} className="text-[#18357a] group-hover:text-[#18357a]" />
                                                         </div>
-                                                        <span className="text-xs font-black uppercase text-[#ffc107] group-hover:text-white transition-colors">View</span>
+                                                        <span className="text-xs font-bold text-[#ffc107] group-hover:text-white transition-colors">View</span>
                                                     </div>
                                                 </div>
                                             </a>

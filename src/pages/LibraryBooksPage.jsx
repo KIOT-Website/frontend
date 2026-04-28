@@ -234,40 +234,40 @@ const RARE_BOOKS = [
     { s: 196, t: "Disaster Management. Vol.3 Manmade Disasters", a: "Singh, K K", p: "APH Publishing Corporation; New Delhi", y: "N/A" },
     { s: 197, t: "CRC Handbook of Laboratory Safety", a: "Furr, Keith A", p: "CRC Press; Boca Raton", y: "N/A" },
     { s: 198, t: "Applications of Cognitive Work Analysis", a: "Bisantz, Ann M", p: "CRC Press; Boca Raton", y: "N/A" },
-    { s: 199, t: "Lubrication and Maintenance of Industrial Machinery: Best Practices and Reliability", a: "Gresham, Robert M", p: "CRC Press; Boca Raton", y: "N/A" },
-    { s: 200, t: "Mechanical Principles and Systems for Industrial Maintenance", a: "Knotek, Richard", p: "Pearson Education; New Delhi", y: "N/A" },
-    { s: 201, t: "Violence Assessment and Intervention: The Practitioner's Handbook", a: "Cawood, James S", p: "CRC Press; Boca Raton", y: "N/A" },
-    { s: 202, t: "Hazardous Chemicals Safety and Compliance Handbook for the Metal Working Industries", a: "Pohanish, Richard P", p: "Industrial Press Inc; New York", y: "N/A" },
-    { s: 203, t: "Maintenance Theory of Reliability", a: "Nakagawa, Tishio", p: "Springer; London", y: "N/A" },
-    { s: 204, t: "Radiation Safety: Protection and Management for Homeland Security and Emergency Response", a: "Burchfield, Larry A", p: "John Wiley Sons Inc; New Delhi", y: "N/A" },
-    { s: 205, t: "Environmental Encyclopedia", a: "Cunningham, William P", p: "Jaico Publishing House; New Delhi", y: "N/A" },
+    { s: 200, t: "Lubrication and Maintenance of Industrial Machinery: Best Practices and Reliability", a: "Gresham, Robert M", p: "CRC Press; Boca Raton", y: "N/A" },
+    { s: 201, t: "Mechanical Principles and Systems for Industrial Maintenance", a: "Knotek, Richard", p: "Pearson Education; New Delhi", y: "N/A" },
+    { s: 202, t: "Violence Assessment and Intervention: The Practitioner's Handbook", a: "Cawood, James S", p: "CRC Press; Boca Raton", y: "N/A" },
+    { s: 203, t: "Hazardous Chemicals Safety and Compliance Handbook for the Metal Working Industries", a: "Pohanish, Richard P", p: "Industrial Press Inc; New York", y: "N/A" },
+    { s: 204, t: "Maintenance Theory of Reliability", a: "Nakagawa, Tishio", p: "Springer; London", y: "N/A" },
+    { s: 205, t: "Radiation Safety: Protection and Management for Homeland Security and Emergency Response", a: "Burchfield, Larry A", p: "John Wiley Sons Inc; New Delhi", y: "N/A" },
     { s: 206, t: "Environmental Encyclopedia", a: "Cunningham, William P", p: "Jaico Publishing House; New Delhi", y: "N/A" },
-    { s: 207, t: "Electrical Safety Handbook", a: "Cadick, John", p: "McGraw Hill; New York", y: "N/A" },
-    { s: 208, t: "Handbook of Environmental Laws, Acts, Guidelines, Compliances and Standards. Vol. 1", a: "Trivedy, R K", p: "BSP Publications; Hyderabad", y: "N/A" },
-    { s: 209, t: "Handbook of Environmental Laws, Acts, Guidelines, Compliances and Standards.Vol. 2", a: "Trivedy, R K", p: "BSP Publications; Hyderabad", y: "N/A" },
-    { s: 210, t: "Physical Design Automation of VLSI Systems", a: "Bryan Preas", p: "The Benjamin Cummings Publishing Company Inc/ California", y: "N/A" },
-    { s: 211, t: "The Handbook of Optical Communication Networks", a: "Hussein T Mouftah", p: "CRC press", y: "N/A" },
-    { s: 212, t: "Academic American Encyclopaedia A - Ang, Vol - 1", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 213, t: "Academic American Encyclopaedia A - Ang - AZ, Vol - 2", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 214, t: "Academic American Encyclopaedia B, Vol - 3", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 215, t: "Academic American Encyclopaedia C - CIT, Vol - 4", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 216, t: "Academic American Encyclopaedia CIT - CZ, Vol - 5", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 217, t: "Academic American Encyclopaedia D, Vol - 6", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 218, t: "Academic American Encyclopaedia E, Vol - 7", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 219, t: "Academic American Encyclopaedia F, Vol - 8", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 220, t: "Academic American Encyclopaedia G, Vol - 9", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 221, t: "Academic American Encyclopaedia H, Vol - 10", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 222, t: "Academic American Encyclopaedia I - J, Vol - 11", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 223, t: "Academic American Encyclopaedia K - L, Vol - 12", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 224, t: "Academic American Encyclopaedia M, Vol - 13", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 225, t: "Academic American Encyclopaedia N - O, Vol - 14", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 226, t: "Academic American Encyclopaedia P Vol - 15", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 227, t: "Academic American Encyclopaedia Q - R, Vol - 16", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 228, t: "Academic American Encyclopaedia S - SNO, Vol - 17", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 229, t: "Academic American Encyclopaedia SNO - SZ, Vol - 18", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 230, t: "Academic American Encyclopaedia T-U-V, Vol - 19", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 231, t: "Academic American Encyclopaedia W-X-Y-Z, Vol - 20", a: "-", p: "Grolier International, USA", y: "N/A" },
-    { s: 232, t: "Academic American Encyclopaedia INDEX, Vol - 21", a: "-", p: "Grolier International, USA", y: "N/A" }
+    { s: 207, t: "Environmental Encyclopedia", a: "Cunningham, William P", p: "Jaico Publishing House; New Delhi", y: "N/A" },
+    { s: 208, t: "Electrical Safety Handbook", a: "Cadick, John", p: "McGraw Hill; New York", y: "N/A" },
+    { s: 209, t: "Handbook of Environmental Laws, Acts, Guidelines, Compliances and Standards. Vol. 1", a: "Trivedy, R K", p: "BSP Publications; Hyderabad", y: "N/A" },
+    { s: 210, t: "Handbook of Environmental Laws, Acts, Guidelines, Compliances and Standards.Vol. 2", a: "Trivedy, R K", p: "BSP Publications; Hyderabad", y: "N/A" },
+    { s: 211, t: "Physical Design Automation of VLSI Systems", a: "Bryan Preas", p: "The Benjamin Cummings Publishing Company Inc/ California", y: "N/A" },
+    { s: 212, t: "The Handbook of Optical Communication Networks", a: "Hussein T Mouftah", p: "CRC press", y: "N/A" },
+    { s: 213, t: "Academic American Encyclopaedia A - Ang, Vol - 1", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 214, t: "Academic American Encyclopaedia A - Ang - AZ, Vol - 2", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 215, t: "Academic American Encyclopaedia B, Vol - 3", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 216, t: "Academic American Encyclopaedia C - CIT, Vol - 4", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 217, t: "Academic American Encyclopaedia CIT - CZ, Vol - 5", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 218, t: "Academic American Encyclopaedia D, Vol - 6", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 219, t: "Academic American Encyclopaedia E, Vol - 7", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 220, t: "Academic American Encyclopaedia F, Vol - 8", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 221, t: "Academic American Encyclopaedia G, Vol - 9", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 222, t: "Academic American Encyclopaedia H, Vol - 10", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 223, t: "Academic American Encyclopaedia I - J, Vol - 11", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 224, t: "Academic American Encyclopaedia K - L, Vol - 12", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 225, t: "Academic American Encyclopaedia M, Vol - 13", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 226, t: "Academic American Encyclopaedia N - O, Vol - 14", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 227, t: "Academic American Encyclopaedia P Vol - 15", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 228, t: "Academic American Encyclopaedia Q - R, Vol - 16", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 229, t: "Academic American Encyclopaedia S - SNO, Vol - 17", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 230, t: "Academic American Encyclopaedia SNO - SZ, Vol - 18", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 231, t: "Academic American Encyclopaedia T-U-V, Vol - 19", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 232, t: "Academic American Encyclopaedia W-X-Y-Z, Vol - 20", a: "-", p: "Grolier International, USA", y: "N/A" },
+    { s: 233, t: "Academic American Encyclopaedia INDEX, Vol - 21", a: "-", p: "Grolier International, USA", y: "N/A" }
 ]
 
 const LibraryBooksPage = () => {
@@ -282,18 +282,18 @@ const LibraryBooksPage = () => {
     )
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD]">
+        <div className="min-h-screen bg-[#FCFDFD] font-graphik">
             {/* Header */}
             <div className="pt-24 pb-8 px-6 bg-white border-b border-slate-100">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="space-y-4">
                         <motion.button
-                            onClick={() => navigate('/campus-life')}
-                            className="flex items-center gap-2 text-[10px] font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] transition-colors"
+                            onClick={() => navigate('/campus-life/library')}
+                            className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#18357a] transition-colors"
                         >
                             <ArrowLeft size={14} /> Back to Library Hub
                         </motion.button>
-                        <h1 className="text-4xl font-black text-[#18357a] uppercase tracking-tighter leading-none">
+                        <h1 className="text-4xl font-bold text-[#18357a] tracking-tighter leading-none">
                             Books & <span className="text-[#ffc107]">Collections</span>
                         </h1>
                     </div>
@@ -306,7 +306,7 @@ const LibraryBooksPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
+                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-bold tracking-widest transition-all ${
                                     activeTab === tab.id 
                                     ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20' 
                                     : 'text-slate-500 hover:bg-[#ffc107] hover:text-[#18357a]'
@@ -339,16 +339,16 @@ const LibraryBooksPage = () => {
                                              <ShieldCheck size={28} />
                                          </div>
                                          <div>
-                                             <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight leading-none mb-2">Accession Statistics</h2>
+                                             <h2 className="text-2xl font-bold text-[#18357a] tracking-tight leading-none mb-2">Accession Statistics</h2>
                                              <div className="flex items-center gap-2">
                                                  <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-[4px]">Verified Library Network</p>
+                                                 <p className="text-xs font-bold text-slate-400 tracking-[4px]">Verified Library Network</p>
                                              </div>
                                          </div>
                                      </div>
                                      <div className="text-right relative z-10">
-                                         <p className="text-[10px] font-black text-[#ffc107] uppercase tracking-[4px] leading-none mb-2">Total Volumes</p>
-                                         <p className="text-4xl font-black text-[#18357a]">36,600</p>
+                                         <p className="text-xs font-bold text-[#ffc107] tracking-[4px] leading-none mb-2">Total Volumes</p>
+                                         <p className="text-4xl font-bold text-[#18357a]">36,600</p>
                                      </div>
                                 </div>
 
@@ -356,23 +356,23 @@ const LibraryBooksPage = () => {
                                     <table className="w-full text-left">
                                         <thead>
                                             <tr className="bg-[#18357a] border-b border-[#18357a]/10 shadow-md">
-                                                <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[2px]">Course / Department</th>
-                                                <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[2px] text-center">Titles</th>
-                                                <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[2px] text-center">Volumes</th>
+                                                <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Course / Department</th>
+                                                <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] text-center">Titles</th>
+                                                <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] text-center">Volumes</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-50">
                                             {DEPT_STATS.map((row, i) => (
                                                 <tr key={i} className="hover:bg-[#18357a]/5 transition-colors group even:bg-slate-50/50">
-                                                    <td className="px-8 py-4 font-black text-[#18357a] text-sm uppercase group-hover:text-[#ffc107] transition-colors">{row.c}</td>
+                                                    <td className="px-8 py-4 font-bold text-[#18357a] text-sm group-hover:text-[#ffc107] transition-colors">{row.c}</td>
                                                     <td className="px-8 py-4 text-center font-bold text-slate-500 text-sm whitespace-nowrap">{row.t.toLocaleString()}</td>
-                                                    <td className="px-8 py-4 text-center font-black text-[#18357a] text-sm whitespace-nowrap">{row.v.toLocaleString()}</td>
+                                                    <td className="px-8 py-4 text-center font-bold text-[#18357a] text-sm whitespace-nowrap">{row.v.toLocaleString()}</td>
                                                 </tr>
                                             ))}
                                             <tr className="bg-[#18357a]/5">
-                                                <td className="px-8 py-6 font-black text-[#18357a] text-lg uppercase">Grand Total</td>
-                                                <td className="px-8 py-6 text-center font-black text-[#ffc107] text-xl">7,444</td>
-                                                <td className="px-8 py-6 text-center font-black text-[#18357a] text-xl">36,600</td>
+                                                <td className="px-8 py-6 font-bold text-[#18357a] text-lg">Grand Total</td>
+                                                <td className="px-8 py-6 text-center font-bold text-[#ffc107] text-xl">7,444</td>
+                                                <td className="px-8 py-6 text-center font-bold text-[#18357a] text-xl">36,600</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -398,10 +398,10 @@ const LibraryBooksPage = () => {
                                              <History size={28} />
                                          </div>
                                          <div>
-                                             <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight leading-none mb-2">Rare Book List</h2>
+                                             <h2 className="text-2xl font-bold text-[#18357a] tracking-tight leading-none mb-2">Rare Book List</h2>
                                              <div className="flex items-center gap-2">
                                                  <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-[4px]">Historical Archives</p>
+                                                 <p className="text-xs font-bold text-slate-400 tracking-[4px]">Historical Archives</p>
                                              </div>
                                          </div>
                                      </div>
@@ -412,8 +412,8 @@ const LibraryBooksPage = () => {
                                              type="text"
                                              value={searchQuery}
                                              onChange={(e) => setSearchQuery(e.target.value)}
-                                             placeholder="SEARCH BY TITLE, AUTHOR OR PUBLISHER..."
-                                             className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-[11px] font-black uppercase tracking-widest focus:outline-none focus:ring-4 focus:ring-[#18357a]/5 focus:border-[#18357a] transition-all shadow-sm"
+                                             placeholder="Search by title, author or publisher..."
+                                             className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-xs font-bold tracking-widest focus:outline-none focus:ring-4 focus:ring-[#18357a]/5 focus:border-[#18357a] transition-all shadow-sm"
                                          />
                                      </div>
                                 </div>
@@ -422,20 +422,20 @@ const LibraryBooksPage = () => {
                                     <table className="w-full text-left">
                                         <thead className="sticky top-0 z-10">
                                             <tr className="bg-[#18357a]">
-                                                <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[2px] w-20">S.No</th>
-                                                <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[2px]">Book Specification</th>
-                                                <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[2px]">Institutional Publication</th>
-                                                <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-[2px] text-center">Year</th>
+                                                <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] w-20">S.No</th>
+                                                <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Book Specification</th>
+                                                <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Institutional Publication</th>
+                                                <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] text-center">Year</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-50">
                                             {filteredRareBooks.map((book, idx) => (
                                                 <tr key={idx} className="hover:bg-[#18357a]/5 transition-colors group even:bg-slate-50/50">
-                                                    <td className="px-8 py-5 text-[11px] font-black text-[#18357a] opacity-40">{book.s}</td>
+                                                    <td className="px-8 py-5 text-xs font-bold text-[#18357a] opacity-40">{book.s}</td>
                                                     <td className="px-8 py-5">
                                                         <div className="space-y-1">
-                                                            <p className="font-black text-[#18357a] text-sm uppercase group-hover:text-[#ffc107] transition-colors">{book.t}</p>
-                                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider italic flex items-center gap-2">
+                                                            <p className="font-bold text-[#18357a] text-sm group-hover:text-[#ffc107] transition-colors">{book.t}</p>
+                                                            <p className="text-xs font-bold text-slate-500 tracking-wider italic flex items-center gap-2">
                                                                 <FileText size={10} className="text-[#ffc107]" /> {book.a}
                                                             </p>
                                                         </div>
@@ -445,17 +445,17 @@ const LibraryBooksPage = () => {
                                                             <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-[#18357a]/5 group-hover:text-[#18357a] transition-all">
                                                                 <BookOpen size={14} />
                                                             </div>
-                                                            <p className="text-[11px] font-black text-slate-500 uppercase leading-relaxed max-w-xs">{book.p}</p>
+                                                            <p className="text-xs font-bold text-slate-500 leading-relaxed max-w-xs">{book.p}</p>
                                                         </div>
                                                     </td>
                                                     <td className="px-8 py-5 text-center">
-                                                        <span className="px-4 py-1.5 bg-[#18357a]/5 text-[#18357a] rounded-full text-[10px] font-black tracking-widest">{book.y}</span>
+                                                        <span className="px-4 py-1.5 bg-[#18357a]/5 text-[#18357a] rounded-full text-xs font-bold tracking-widest">{book.y}</span>
                                                     </td>
                                                 </tr>
                                             ))}
                                             {filteredRareBooks.length === 0 && (
                                                 <tr>
-                                                    <td colSpan="4" className="px-8 py-20 text-center text-slate-400 font-bold uppercase tracking-widest">No books matching your search...</td>
+                                                    <td colSpan="4" className="px-8 py-20 text-center text-slate-400 font-bold tracking-widest">No books matching your search...</td>
                                                 </tr>
                                             )}
                                         </tbody>

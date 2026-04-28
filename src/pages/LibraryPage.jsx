@@ -29,38 +29,29 @@ const LibraryPage = () => {
     const navigate = useNavigate();
 
     return (
-      <div className="min-h-screen bg-[#F8FAFF] pb-24">
-        {/* 🔷 Shared Hero Section (Consistent across Hub) */}
-        <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
-            <div className="absolute inset-0">
-                <img 
-                    src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1920&auto=format&fit=crop" 
-                    className="w-full h-full object-cover opacity-100" 
-                    alt="Library Resource Center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
-            </div>
-            
-            <div className="relative z-10 text-center px-6">
-                <motion.div
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    className="flex flex-col items-center"
+      <div className="min-h-screen bg-[#F8FAFF] pb-24 font-graphik">
+        {/* Minimal Header (Removed Hero) */}
+        <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#18357a]/5 to-transparent overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+                <motion.h1 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="text-4xl md:text-6xl font-bold text-[#18357a] tracking-tighter leading-none mb-6"
                 >
-                    <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-none mb-8">
-                        <span className="block">Library</span>
-                        <span className="text-[#ffc107]">Resource Center</span>
-                    </h1>
-
-                    <button 
-                        onClick={() => navigate('/campus-life')}
-                        className="inline-flex items-center gap-2 text-white hover:text-[#18357a] transition-all group border border-white/30 px-5 py-2 rounded-full bg-white/10 hover:bg-[#ffc107] hover:border-[#ffc107] backdrop-blur-md shadow-2xl"
-                    >
-                        <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                        <span className="text-sm font-black tracking-[2px]">Back to Hub</span>
-                    </button>
-                </motion.div>
+                    Library <span className="text-[#ffc107]">Resource Center</span>
+                </motion.h1>
+                
+                <motion.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    onClick={() => navigate('/campus-life')}
+                    className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#18357a] transition-colors"
+                >
+                    <ArrowLeft size={14} /> Back to Hub
+                </motion.button>
             </div>
         </div>
 
@@ -73,7 +64,7 @@ const LibraryPage = () => {
                         <Library size={28} />
                     </div>
                     <div>
-                        <h2 className="text-3xl font-black text-[#18357a] tracking-tight">Central Library</h2>
+                        <h2 className="text-3xl font-bold text-[#18357a] tracking-tight">Central Library</h2>
                         <p className="text-base font-bold text-[#ffc107] tracking-[1px]">Resource & Knowledge Center</p>
                     </div>
                 </div>
@@ -82,7 +73,7 @@ const LibraryPage = () => {
             {/* Vision & Mission Grid */}
             <div className="grid lg:grid-cols-2 gap-10">
                 <div className="space-y-10">
-                    <h2 className="text-4xl font-black text-[#18357a] tracking-tight leading-none">Vision & <span className="text-[#ffc107]">Mission</span></h2>
+                    <h2 className="text-4xl font-bold text-[#18357a] tracking-tight leading-none">Vision & <span className="text-[#ffc107]">Mission</span></h2>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {/* Vision Card */}
@@ -93,7 +84,7 @@ const LibraryPage = () => {
                                     <Eye size={24} />
                                 </div>
                                 <div className="space-y-1">
-                                    <span className="text-sm font-black tracking-[1px] text-[#18357a]">Vision</span>
+                                    <span className="text-sm font-bold tracking-[1px] text-[#18357a]">Vision</span>
                                     <div className="h-0.5 w-8 bg-blue-400 rounded-full" />
                                 </div>
                             </div>
@@ -112,7 +103,7 @@ const LibraryPage = () => {
                                     <Target size={24} />
                                 </div>
                                 <div className="space-y-1">
-                                    <span className="text-sm font-black tracking-[1px] text-[#18357a]">Mission</span>
+                                    <span className="text-sm font-bold tracking-[1px] text-[#18357a]">Mission</span>
                                     <div className="h-0.5 w-8 bg-orange-400 rounded-full" />
                                 </div>
                             </div>
@@ -147,7 +138,7 @@ const LibraryPage = () => {
                             href="http://115.244.103.83/webopac" 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="flex items-center justify-center gap-4 bg-[#18357a] text-white px-8 py-4 rounded-2xl font-black text-sm tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-[0_15px_30px_rgba(24,53,122,0.3)] group overflow-hidden relative"
+                            className="flex items-center justify-center gap-4 bg-[#18357a] text-white px-8 py-4 rounded-2xl font-bold text-sm tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-[0_15px_30px_rgba(24,53,122,0.3)] group overflow-hidden relative"
                         >
                             Web OPAC Access
                             <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -174,11 +165,11 @@ const LibraryPage = () => {
                         </div>
                         <div className="flex-1 space-y-3">
                             <div className="space-y-1">
-                                <h4 className="text-base font-black text-[#18357a] tracking-tight">{item.t}</h4>
+                                <h4 className="text-base font-bold text-[#18357a] tracking-tight">{item.t}</h4>
                                 <div className={`h-0.5 w-8 rounded-full ${item.s === 'blue' ? 'bg-blue-400' : item.s === 'orange' ? 'bg-orange-400' : item.s === 'indigo' ? 'bg-indigo-400' : 'bg-purple-400'}`} />
                             </div>
                             <div className="flex items-center gap-2 text-[#18357a] group-hover:gap-3 transition-all">
-                                <span className="text-xs font-black uppercase tracking-widest">View Details</span>
+                                <span className="text-xs font-bold tracking-widest">View details</span>
                                 <ArrowLeft size={12} className="rotate-180" />
                             </div>
                         </div>
@@ -195,7 +186,7 @@ const LibraryPage = () => {
                             <Users size={24} />
                         </div>
                         <div className="space-y-1">
-                            <h3 className="text-xl font-black text-[#18357a]">Expert Team</h3>
+                            <h3 className="text-xl font-bold text-[#18357a]">Expert Team</h3>
                             <div className="h-1 w-10 bg-blue-600 rounded-full" />
                         </div>
                     </div>
@@ -214,8 +205,8 @@ const LibraryPage = () => {
                                         <User size={24} />
                                     </div>
                                     <div className="space-y-0.5">
-                                        <p className="text-base font-black text-black">{member.n}</p>
-                                        <p className="text-xs font-bold text-slate-600 uppercase tracking-widest">{member.d}</p>
+                                        <p className="text-base font-bold text-black">{member.n}</p>
+                                        <p className="text-xs font-bold text-slate-600 tracking-widest">{member.d}</p>
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +221,7 @@ const LibraryPage = () => {
                             <ShieldCheck size={24} />
                         </div>
                         <div className="space-y-1">
-                            <h3 className="text-xl font-black text-[#18357a]">Library Regulations</h3>
+                            <h3 className="text-xl font-bold text-[#18357a]">Library Regulations</h3>
                             <div className="h-1 w-10 bg-[#ffc107] rounded-full" />
                         </div>
                     </div>
