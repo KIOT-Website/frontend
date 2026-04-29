@@ -46,7 +46,7 @@ const steps = [
 const stats = [
   { label: "Recruiters On Campus", value: "500+", icon: Building2, color: "#18357a" },
   { label: "Offers Extended", value: "1000+", icon: GraduationCap, color: "#ffc107" },
-  { label: "Placement Success Rate", value: "91%", icon: Trophy, color: "#18357a" },
+  { label: "Placement Success Rate", value: "95%", icon: Trophy, color: "#18357a" },
   { label: "Highest Package Offered", value: "25 LPA", icon: Briefcase, color: "#ffc107" }
 ]
 

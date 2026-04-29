@@ -124,7 +124,7 @@ const EventsPage = () => {
 
                     {/* Card Body */}
                     <div className="pt-3 px-5 pb-1 flex flex-col text-left">
-                        <div className="mb-0">
+                        <div className="mb-2">
                           <h3 className="text-lg lg:text-xl font-black text-[#18357a] font-display leading-[1.2] mb-0 group-hover:text-[#ffc107] transition-colors line-clamp-1">
                              {ev.event_name}
                           </h3>

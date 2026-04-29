@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   ChevronDown,
+  ChevronRight,
   ChevronsRight,
   Facebook,
   Instagram,
@@ -54,6 +55,7 @@ const navLinks = [
     subLinks: [
       { name: 'About Us', href: 'about/about-us', icon: Building2 },
       { name: 'Leadership', href: 'about/leadership', icon: Users },
+      { name: 'Head of the Department', href: 'about/head-of-the-department', icon: Users },
       { name: 'Governing Council', href: 'about/governing-council', icon: ShieldCheck },
       { name: 'Academic Council', href: 'about/academic-council', icon: ShieldCheck },
       { name: 'Guidelines', href: 'about/guidelines', icon: FileText },
@@ -101,11 +103,12 @@ const navLinks = [
     href: '#', 
     hasDropdown: true,
     subLinks: [
-      { name: 'Campus Life', href: 'resources/campus-life', icon: Building2 },
-      { name: 'Student Life', href: 'resources/student-life', icon: Users },
-      { name: 'Alumni', href: 'resources/alumni', icon: GraduationCap },
-      { name: 'News & Events', href: 'resources/news-events', icon: Calendar },
-      { name: 'Blogs', href: 'resources/blogs', icon: FileText }
+      { name: 'IQAC', href: '/resources/iqac', icon: ShieldCheck },
+      { name: 'Campus Life', href: '/resources/campus-life', icon: Building2 },
+      { name: 'Student Life', href: '/resources/student-life', icon: Users },
+      { name: 'Alumni', href: '/resources/alumni', icon: GraduationCap },
+      { name: 'News & Events', href: '/resources/news-events', icon: Calendar },
+      { name: 'Blogs', href: '/resources/blogs', icon: FileText }
     ]
   },
   { name: 'Contact', href: 'contact' },
@@ -122,11 +125,17 @@ const socialLinks = [
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const [activeSubDropdown, setActiveSubDropdown] = useState(null)
   const navigate = useNavigate()
   const location = useLocation()
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
+
+    if (!isOpen) {
+      setActiveDropdown(null)
+      setActiveSubDropdown(null)
+    }
 
     return () => {
       document.body.style.overflow = ''
@@ -360,22 +369,49 @@ const Header = () => {
                       {link.subLinks && (
                         <div className="absolute top-[100%] left-0 w-64 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] before:content-[''] before:absolute before:top-[-15px] before:left-0 before:w-full before:h-[15px]">
                           {link.subLinks.map(sub => (
-                            <a
-                              key={sub.name}
-                              href={sub.href}
-                              onClick={(e) => handleNavClick(e, sub.name, sub.href)}
-                              className="group/sub relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
-                            >
-                              <span className="text-[14.5px] font-black text-[#64779F] group-hover/sub:text-white transition-colors pr-12">{sub.name}</span>
-                              <div className="absolute right-5 flex items-center justify-center w-5 h-5">
-                                 {sub.icon && (
-                                   <sub.icon 
-                                     size={16} 
-                                     className="text-[#A9B1C3] group-hover/sub:text-[#ffc107] transition-all duration-300 transform group-hover/sub:scale-110" 
-                                   />
-                                 )}
-                              </div>
-                            </a>
+                            <div key={sub.name} className="relative group/sub">
+                              <a
+                                href={sub.href}
+                                onClick={(e) => handleNavClick(e, sub.name, sub.href)}
+                                className="group/subitem relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
+                              >
+                                <span className="text-[14.5px] font-black text-[#64779F] group-hover/subitem:text-white transition-colors pr-12">{sub.name}</span>
+                                <div className="absolute right-5 flex items-center justify-center w-5 h-5">
+                                   {sub.subLinks ? (
+                                      <ChevronRight size={14} className="text-[#A9B1C3] group-hover/subitem:text-[#ffc107] transition-all duration-300" />
+                                   ) : sub.icon && (
+                                     <sub.icon 
+                                       size={16} 
+                                       className="text-[#A9B1C3] group-hover/subitem:text-[#ffc107] transition-all duration-300 transform group-hover/subitem:scale-110" 
+                                     />
+                                   )}
+                                </div>
+                              </a>
+
+                              {/* Nested Level (Desktop) */}
+                              {sub.subLinks && (
+                                <div className="absolute left-[100%] top-0 ml-1 w-64 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform translate-x-2 group-hover/sub:translate-x-0 z-[110]">
+                                  {sub.subLinks.map(nested => (
+                                    <a
+                                      key={nested.name}
+                                      href={nested.href}
+                                      onClick={(e) => handleNavClick(e, nested.name, nested.href)}
+                                      className="group/nested relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#18357a] transition-all duration-300"
+                                    >
+                                      <span className="text-[14.5px] font-black text-[#64779F] group-hover/nested:text-white transition-colors pr-12">{nested.name}</span>
+                                      <div className="absolute right-5 flex items-center justify-center w-5 h-5">
+                                         {nested.icon && (
+                                           <nested.icon 
+                                             size={16} 
+                                             className="text-[#A9B1C3] group-hover/nested:text-[#ffc107] transition-all duration-300 transform group-hover/nested:scale-110" 
+                                           />
+                                         )}
+                                      </div>
+                                    </a>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
                           ))}
                         </div>
                       )}
@@ -511,20 +547,60 @@ const Header = () => {
                               >
                                  <div className="py-2">
                                    {link.subLinks.map(sub => (
-                                     <a 
-                                       key={sub.name} 
-                                       href={sub.href} 
-                                       onClick={(e) => handleNavClick(e, sub.name, sub.href)} 
-                                       className="flex items-center gap-4 px-6 py-3.5 text-[13px] font-black text-[#64779F] hover:text-[#18357a] hover:bg-white/50 transition-all group/subitem"
-                                     >
-                                       {sub.icon && (
-                                         <div className="w-8 h-8 rounded-lg bg-white/80 shadow-sm flex items-center justify-center shrink-0 border border-[#18357a]/5">
-                                           <sub.icon size={14} className="text-[#18357a]" />
+                                     <div key={sub.name}>
+                                       <a 
+                                         href={sub.href} 
+                                         onClick={(e) => {
+                                           if (sub.subLinks) {
+                                             e.preventDefault();
+                                             setActiveSubDropdown(activeSubDropdown === sub.name ? null : sub.name);
+                                           } else {
+                                             handleNavClick(e, sub.name, sub.href);
+                                           }
+                                         }} 
+                                         className={`flex items-center justify-between px-6 py-3.5 text-[13px] font-black transition-all group/subitem ${
+                                            activeSubDropdown === sub.name ? 'text-[#18357a] bg-[#18357a]/5' : 'text-[#64779F] hover:text-[#18357a] hover:bg-white/50'
+                                         }`}
+                                       >
+                                         <div className="flex items-center gap-4">
+                                           {sub.icon && (
+                                             <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border transition-all ${
+                                                activeSubDropdown === sub.name ? 'bg-[#18357a] border-[#18357a] text-white' : 'bg-white/80 border-[#18357a]/5 text-[#18357a]'
+                                             }`}>
+                                               <sub.icon size={14} />
+                                             </div>
+                                           )}
+                                           {!sub.icon && <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover/subitem:scale-125 transition-transform" />}
+                                           <span>{sub.name}</span>
                                          </div>
-                                       )}
-                                       {!sub.icon && <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover/subitem:scale-125 transition-transform" />}
-                                       <span>{sub.name}</span>
-                                     </a>
+                                         {sub.subLinks && (
+                                           <ChevronDown size={14} className={`transition-transform duration-300 ${activeSubDropdown === sub.name ? 'rotate-180' : ''}`} />
+                                         )}
+                                       </a>
+
+                                       <AnimatePresence>
+                                          {sub.subLinks && activeSubDropdown === sub.name && (
+                                            <motion.div
+                                              initial={{ height: 0, opacity: 0 }}
+                                              animate={{ height: 'auto', opacity: 1 }}
+                                              exit={{ height: 0, opacity: 0 }}
+                                              className="overflow-hidden bg-[#18357a]/[0.02]"
+                                            >
+                                              {sub.subLinks.map(nested => (
+                                                <a
+                                                  key={nested.name}
+                                                  href={nested.href}
+                                                  onClick={(e) => handleNavClick(e, nested.name, nested.href)}
+                                                  className="flex items-center gap-4 pl-16 pr-6 py-3 text-[12.5px] font-bold text-[#64779F] hover:text-[#18357a] transition-all"
+                                                >
+                                                  <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]/40" />
+                                                  <span>{nested.name}</span>
+                                                </a>
+                                              ))}
+                                            </motion.div>
+                                          )}
+                                       </AnimatePresence>
+                                     </div>
                                    ))}
                                  </div>
                               </motion.div>

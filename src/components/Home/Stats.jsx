@@ -6,17 +6,17 @@ import {
 } from 'lucide-react'
 
 const statData = [
-  { text: "Within Top 50 Position in Admission (TNEA 2025)", icon: Trophy, color: "#ffc107" },
-  { text: "95% Placements in every Year", icon: TrendingUp, color: "#18357a" },
-  { text: "150+ Companies for placements", icon: Briefcase, color: "#ffc107" },
-  { text: "Career Development (1200 hours Training)", icon: GraduationCap, color: "#18357a" },
-  { text: "17+ Years of Experience", icon: Calendar, color: "#ffc107" },
-  { text: "250+ Faculty (Faculty student ratio 1:15)", icon: Users, color: "#18357a" },
-  { text: "8000+ Alumni", icon: UserCheck, color: "#ffc107" },
-  { text: "Top 10% Colleges in Tamil Nadu", icon: Landmark, color: "#18357a" }
+  { value: "Top 50", label: "Position in Admission (TNEA 2025)", icon: Trophy, color: "#ffc107" },
+  { value: "95%", label: "Placements in Every Year", icon: TrendingUp, color: "#18357a" },
+  { value: "150+", label: "Companies for Placements", icon: Briefcase, color: "#ffc107" },
+  { value: "1200", label: "Hours of Career Development Training", icon: GraduationCap, color: "#18357a" },
+  { value: "17+", label: "Years of Academic Excellence", icon: Calendar, color: "#ffc107" },
+  { value: "250+", label: "Expert Faculty Members", icon: Users, color: "#18357a" },
+  { value: "8000+", label: "Global Alumni Network", icon: UserCheck, color: "#ffc107" },
+  { value: "Top 10%", label: "Best Colleges in Tamil Nadu", icon: Landmark, color: "#18357a" }
 ]
 
-const MiniStatCard = ({ text, icon: Icon, color, delay, isMobile }) => (
+const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile }) => (
   <motion.div
     initial={isMobile ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
     whileInView={isMobile ? { opacity: 1 } : { opacity: 1, scale: 1 }}
@@ -28,7 +28,7 @@ const MiniStatCard = ({ text, icon: Icon, color, delay, isMobile }) => (
     {/* Decorative Background Shape */}
     <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/5 rounded-bl-full translate-x-10 -translate-y-10 group-hover:bg-[#ffc107]/10 transition-colors duration-700" />
     
-    <div className="relative h-full bg-white/80 backdrop-blur-sm border border-slate-200/60 p-6 lg:p-8 rounded-[3rem_1rem_3rem_1rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center justify-between gap-6 transition-all duration-700 group-hover:shadow-[0_40px_80px_-20px_rgba(24,53,122,0.2)] group-hover:border-[#18357a]/20 overflow-hidden group-hover:bg-white scale-100 group-hover:scale-[1.02]">
+    <div className="relative h-full bg-white/80 backdrop-blur-sm border border-slate-200/60 p-8 lg:p-10 rounded-[3.5rem_1rem_3.5rem_1rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center justify-between gap-8 transition-all duration-700 group-hover:shadow-[0_40px_80px_-20px_rgba(24,53,122,0.2)] group-hover:border-[#18357a]/20 overflow-hidden group-hover:bg-white scale-100 group-hover:scale-[1.02]">
        
        {/* Background Institutional Seal (Hidden Icon Parallax) */}
        <div className="absolute -left-12 -top-12 opacity-[0.02] group-hover:opacity-[0.05] transition-all duration-1000 group-hover:rotate-12 group-hover:scale-150">
@@ -39,31 +39,31 @@ const MiniStatCard = ({ text, icon: Icon, color, delay, isMobile }) => (
        <div className="relative">
           <motion.div 
             whileHover={{ rotate: [-5, 5, -5, 0] }}
-            className="relative w-16 h-16 rounded-[1.5rem_0.5rem_1.5rem_0.5rem] bg-gradient-to-br from-[#18357a] to-[#0d1c43] flex items-center justify-center text-[#ffc107] shadow-[0_15px_30px_-5px_rgba(24,53,122,0.4)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[#ffc107]/20"
+            className="relative w-12 h-12 rounded-[1rem_0.3rem_1rem_0.3rem] bg-gradient-to-br from-[#18357a] to-[#0d1c43] flex items-center justify-center text-[#ffc107] shadow-[0_10px_25px_-5px_rgba(24,53,122,0.3)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
           >
-             <Icon size={24} strokeWidth={2.5} />
+             <Icon size={18} strokeWidth={2.5} />
           </motion.div>
           {/* Active Pulse Ring */}
-          <div className="absolute inset-0 rounded-[1.5rem_0.5rem_1.5rem_0.5rem] border-2 border-[#ffc107]/0 group-hover:border-[#ffc107]/40 group-hover:scale-125 transition-all duration-700" />
+          <div className="absolute inset-0 rounded-[1rem_0.3rem_1rem_0.3rem] border-2 border-[#ffc107]/0 group-hover:border-[#ffc107]/40 group-hover:scale-125 transition-all duration-700" />
        </div>
 
-       <div className="space-y-4 relative z-10 w-full">
-          <p className="text-[14px] lg:text-[16px] font-black text-black font-graphik leading-tight tracking-tight uppercase group-hover:text-[#18357a] transition-colors duration-300">
-             {text}
+       <div className="space-y-2 relative z-10 w-full text-center">
+          <div className="text-[28px] lg:text-[40px] font-black text-[#18357a] font-graphik leading-none tracking-tighter group-hover:text-[#ffc107] transition-colors duration-300">
+             {value}
+          </div>
+          <p className="text-[12px] lg:text-[14px] font-bold text-black font-graphik leading-tight transition-colors duration-300">
+             {label}
           </p>
           
-          <div className="flex justify-center items-center gap-1">
+          <div className="flex justify-center items-center gap-1.5 pt-4">
              <div className="w-1 h-1 rounded-full bg-[#ffc107]" />
-             <div className="w-2 h-1 rounded-full bg-[#18357a] group-hover:w-8 transition-all duration-700" />
+             <div className="w-8 h-1 rounded-full bg-[#18357a]/10 group-hover:bg-[#ffc107] transition-all duration-700" />
              <div className="w-1 h-1 rounded-full bg-[#ffc107]" />
           </div>
        </div>
 
        {/* Bottom Institution Accent Line */}
        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1.5 bg-[#ffc107] group-hover:w-1/2 transition-all duration-700 rounded-t-full" />
-
-       {/* Corner Light Sweep Animation */}
-       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
     </div>
   </motion.div>
 )
@@ -97,7 +97,7 @@ const Stats = () => {
             className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
           >
             <div className="h-1.5 w-1.5 bg-[#18357a] rounded-full animate-pulse" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">The KIOT Advantage</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#18357a]">The KIOT Advantage</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}

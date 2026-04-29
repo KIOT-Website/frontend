@@ -35,7 +35,7 @@ const stats = [
   },
   {
     label: "% Placement",
-    value: "91%",
+    value: "95%",
     sub: "Across all streams",
     icon: GraduationCap
   }
@@ -111,7 +111,7 @@ const Placements = () => {
                 <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#18357a]">
                    <UserCheck size={16} />
                 </div>
-                <p className="text-[12px] font-black text-white/70 uppercase tracking-widest leading-none">1000+ Placements <br/> in last 3 years</p>
+                <p className="text-[12px] font-black text-white/70 uppercase tracking-widest leading-none">Quality Placements <br/> Are Our Motto</p>
               </div>
 
               <button 

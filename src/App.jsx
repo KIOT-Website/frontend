@@ -13,9 +13,11 @@ const Home = lazy(() => import('./pages/Home'))
 import AboutUsPage from './pages/AboutUsPage'
 import OurValuesPage from './pages/OurValuesPage'
 import LeadershipPage from './pages/LeadershipPage'
+import HeadOfDepartmentPage from './pages/HeadOfDepartmentPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
 import GuidelinesPage from './pages/GuidelinesPage'
+import IQACPage from './pages/IQACPage'
 import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 import PlacementOverviewPage from './pages/PlacementOverviewPage'
 import { GraduationCap, X } from 'lucide-react'
@@ -184,6 +186,7 @@ function App() {
                   <Route path="/about/about-us" element={<AboutUsPage />} />
                   <Route path="/about/our-values" element={<OurValuesPage />} />
                   <Route path="/about/leadership" element={<LeadershipPage />} />
+                  <Route path="/about/head-of-the-department" element={<HeadOfDepartmentPage />} />
                   <Route path="/about/guidelines" element={<GuidelinesPage />} />
                   <Route path="/about/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/about/governing-council" element={<GoverningCouncilPage />} />
@@ -244,6 +247,7 @@ function App() {
                    <Route path="/research/:deptName/conferences" element={<ConferencesPage />} />
                    <Route path="/research/:deptName/research-proposals" element={<ResearchProposalsPage />} />
                    <Route path="/research/:deptName/consultancy" element={<ConsultancyPage />} />
+                   <Route path="/resources/iqac" element={<IQACPage />} />
                    <Route path="/resources/campus-life" element={<CampusLifePage />} />
                     <Route path="/resources/student-life" element={<StudentLifePage />} />
                     <Route path="/resources/alumni" element={<AlumniPage />} />

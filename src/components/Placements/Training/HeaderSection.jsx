@@ -104,7 +104,7 @@ const HeaderSection = () => {
                <div className="relative w-48 h-48 bg-white/90 backdrop-blur-md rounded-full border-[10px] border-[#0A1A3F]/5 flex flex-col items-center justify-center p-6 text-center shadow-2xl overflow-hidden group">
                   <div className="absolute inset-0 border-[3px] border-dashed border-[#ffc107]/20 rounded-full animate-spin-slow" />
                   <div className="relative z-10">
-                    <p className="text-4xl font-black text-[#0A1A3F] mb-1 tracking-tighter">91%</p>
+                    <p className="text-4xl font-black text-[#0A1A3F] mb-1 tracking-tighter">95%</p>
                     <p className="text-[10px] font-black text-[#0A1A3F] uppercase leading-tight tracking-widest mb-4">Placement<br/>Success Rate</p>
                     <div className="w-10 h-0.5 bg-[#ffc107] mx-auto mb-3" />
                     <p className="text-[8px] font-black text-slate-500 uppercase tracking-widest leading-tight">Strong Connections.<br/>Bright Careers.</p>

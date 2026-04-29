@@ -42,9 +42,9 @@ const programsData = {
       { id: 'me-ae', name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
       { id: 'me-ped', name: "Power Electronics and Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
       { id: 'me-se', name: "Software Engineering", icon: FileCode2, code: "SE", duration: "2 Years", phd: true },
-      { id: 'mba-general', name: "MBA - General", icon: TrendingUp, code: "MBA", duration: "2 Years", phd: true },
+      { id: 'mba-general', name: "MBA - Master of Business Administration (General)", icon: TrendingUp, code: "MBA-General", duration: "2 Years", phd: true },
       { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
-      { id: 'mba-iev', name: "MBA - Innovation, Entrepreneurship and Venture Development", icon: Rocket, code: "IEV", duration: "2 Years", phd: true },
+      { id: 'mba-iev', name: "MBA - Master of Business Administration (Innovation, Entrepreneurship and Venture Development)", icon: Rocket, code: "MBA-IEV", duration: "2 Years", phd: true },
       { id: 'phd', name: "Ph.D. All Departments", icon: Microscope, code: "", duration: "Part-Time / Full Time", phd: true }
     ]
   },
@@ -142,7 +142,7 @@ const CourseGrid = ({ activeTab, navigate }) => (
                     {course.name}
                  </h4>
                  {course.code && (
-                    <p className="text-[11px] font-black text-[#ffc107] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
+                    <p className="text-[11px] font-black text-[#18357a] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
                        {course.code}
                     </p>
                  )}

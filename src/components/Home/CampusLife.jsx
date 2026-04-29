@@ -23,14 +23,14 @@ import istartImg from '../../assets/life@kiot/istart.webp'
 import campusMainImg from '../../assets/main/campus .webp'
 
 const facilities = [
-  { id: 1, title: "Sports", image: sportsImg, tag: "Life@KIOT", link: "/campus-life/sports" },
-  { id: 2, title: "Gym", image: gymImg, tag: "Life@KIOT", link: "/campus-life/amenities" },
-  { id: 3, title: "Transport", image: transportImg, tag: "Life@KIOT", link: "/campus-life/transport" },
-  { id: 4, title: "Cafeteria", image: cafeteriaImg, tag: "Life@KIOT", link: "/campus-life/amenities" },
-  { id: 5, title: "Lab", image: labImg, tag: "Life@KIOT", link: "/campus-life/classroom" },
-  { id: 6, title: "Hostel", image: hostelImg, tag: "Life@KIOT", link: "/campus-life/amenities" },
-  { id: 7, title: "Training", image: trainingImg, tag: "Life@KIOT", link: "/training" },
-  { id: 8, title: "iStart", image: istartImg, tag: "Life@KIOT", link: "/aicte-idea-lab" }
+  { id: 1, title: "Sports", image: sportsImg, link: "/campus-life/sports" },
+  { id: 2, title: "Gym", image: gymImg, link: "/campus-life/amenities" },
+  { id: 3, title: "Transport", image: transportImg, link: "/campus-life/transport" },
+  { id: 4, title: "Cafeteria", image: cafeteriaImg, link: "/campus-life/amenities" },
+  { id: 5, title: "Lab", image: labImg, link: "/campus-life/classroom" },
+  { id: 6, title: "Hostel", image: hostelImg, link: "/campus-life/amenities" },
+  { id: 7, title: "Training", image: trainingImg, link: "/training" },
+  { id: 8, title: "iStart", image: istartImg, link: "/aicte-idea-lab" }
 ]
 
 const CampusLife = () => {
@@ -101,7 +101,7 @@ const CampusLife = () => {
                 
                 <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-end">
                   <h3 className="text-sm lg:text-lg font-bold text-white mb-1 font-graphik leading-tight transition-transform duration-500 group-hover:-translate-y-1">{fac.title}</h3>
-                  <span className="text-[8px] lg:text-[10px] font-bold text-white/60 uppercase tracking-widest transition-transform duration-500 group-hover:-translate-y-1">{fac.tag}</span>
+
                 </div>
               </motion.div>
             </Link>

@@ -83,7 +83,7 @@ const Events = ({ onEventsClick }) => {
                 <p className="text-xs font-black uppercase tracking-[0.4em] text-[#18357a]">Fetching Latest Buzz...</p>
              </div>
            ) : (
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {records.map((event, idx) => (
                   <motion.div
                     key={event.id}
@@ -98,7 +98,7 @@ const Events = ({ onEventsClick }) => {
                       className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-[0_15px_40px_rgba(34,66,146,0.04)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.12)] hover:border-[#ffc107]/20 transition-all duration-700 h-full active:scale-[0.98]"
                     >
                        {/* Image with Integrated Date Badge */}
-                       <div className="relative aspect-video overflow-hidden">
+                       <div className="relative overflow-hidden" style={{aspectRatio: '16/8'}}>
                           <img 
                             src={event.media_url || 'https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800'} 
                             alt={event.event_name}
@@ -117,8 +117,8 @@ const Events = ({ onEventsClick }) => {
                        </div>
 
                        {/* Event Title Below Image - Reduced Padding */}
-                       <div className="p-6 flex flex-grow items-center">
-                          <h3 className="text-lg lg:text-xl font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors duration-500 leading-tight">
+                       <div className="p-4 flex flex-grow items-center">
+                          <h3 className="text-sm lg:text-base font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors duration-500 leading-tight">
                             {event.event_name}
                           </h3>
                        </div>

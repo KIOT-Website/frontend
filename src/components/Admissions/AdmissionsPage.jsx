@@ -314,7 +314,7 @@ const AdmissionsPage = () => {
                   { value: "₹ 12.00 Lakhs", label: "HIGHEST SALARY" },
                   { value: "₹ 4.30 Lakhs", label: "AVERAGE SALARY" },
                   { value: "150+", label: "COMPANIES VISITED" },
-                  { value: "91%", label: "% PLACEMENT" }
+                  { value: "95%", label: "% PLACEMENT" }
                ].map((stat, i) => (
                   <div key={i} className="flex flex-col items-center justify-center text-center p-6 lg:px-10 group hover:bg-white/5 transition-all cursor-default">
                      <h3 className="text-3xl lg:text-4xl font-black text-[#ffc107] mb-3 tracking-tighter group-hover:scale-105 transition-transform">{stat.value}</h3>

@@ -3,15 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle2, Quote, X, GraduationCap, Briefcase, Microscope, Heart } from 'lucide-react'
 
 // Asset imports
-import chairmanImg from '../../assets/main/Executive-Chairman.webp'
+import chairmanImg from '../../assets/main/srinivasan.jpeg'
 import principalImg from '../../assets/main/KIOT-Principal-Message-Web-2025.webp'
 import secretaryImg from '../../assets/main/Secretarys-Message-KIOTT.webp'
+import treasurerImg from '../../assets/main/Mr.V.Sureshkumar, Treasurer.jpg'
 
 const leaders = [
   {
     id: 1,
     name: "Dr. PSS. Srinivasan",
-    role: "President",
+    role: "Founder and President",
     designation: "Founder & President (B.E., M.Tech. (IIT-B), Ph.D., MISTE., ISHMT., FMFPI.)",
     image: chairmanImg,
     fullMessage: [
@@ -31,6 +32,19 @@ const leaders = [
       "Greetings!",
       "We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.",
       "The latest curriculum, paired with modern insights into engineering, technology, and research, along with innovative facilities, ensures that each student gains a substantial edge in advanced technical expertise and competencies. I extend a warm welcome to you at KIOT and all the opportunities it presents. Join us and immerse yourself in the KIOT experience!"
+    ]
+  },
+  {
+    id: 4,
+    name: "Mr. V. Sureshkumar",
+    role: "Treasurer",
+    designation: "Treasurer, KIOTT (B.E.)",
+    image: treasurerImg,
+    fullMessage: [
+      "Greetings!",
+      "We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.",
+      "The latest curriculum, paired with modern insights into engineering, technology, and research, along with innovative facilities, ensures that each student gains a substantial edge in advanced technical expertise and competencies.",
+      "I extend a warm welcome to you at KIOT and all the opportunities it presents. Join us and immerse yourself in the KIOT experience!"
     ]
   },
   {
@@ -294,7 +308,11 @@ const Leadership = () => {
                     <div className="w-full h-full rounded-full bg-white" />
                  </div>
                  <div className="relative w-full h-full rounded-full overflow-hidden border-[1px] border-[#18357a]/10 shadow-2xl bg-white z-10">
-                    <img src={leader.image} alt={leader.name} className="w-full h-full object-cover" />
+                    <img 
+                      src={leader.image} 
+                      alt={leader.name} 
+                      className={`w-full h-full object-cover ${(leader.name.includes('Kumar') || leader.name.includes('Visagavel')) ? 'scale-[1.12]' : ''}`} 
+                    />
                  </div>
               </div>
               <div className="flex flex-col items-center">
