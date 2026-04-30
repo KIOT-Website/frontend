@@ -85,11 +85,11 @@ const LibraryMagazinesPage = () => {
                     <div className="space-y-4">
                         <motion.button
                             onClick={() => navigate('/campus-life/library')}
-                            className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#18357a] transition-colors"
+                            className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#224292] transition-colors"
                         >
                             <ArrowLeft size={14} /> Back to Library Hub
                         </motion.button>
-                        <h1 className="text-4xl font-bold text-[#18357a] tracking-tighter leading-none">
+                        <h1 className="text-4xl font-bold text-[#224292] tracking-tighter leading-none">
                             Magazines & <span className="text-[#ffc107]">Honors</span>
                         </h1>
                     </div>
@@ -104,8 +104,8 @@ const LibraryMagazinesPage = () => {
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-bold tracking-widest transition-all ${
                                     activeTab === tab.id 
-                                    ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20' 
-                                    : 'text-slate-700 hover:bg-[#ffc107] hover:text-[#18357a]'
+                                    ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20' 
+                                    : 'text-slate-700 hover:bg-[#ffc107] hover:text-[#224292]'
                                 }`}
                             >
                                 <tab.icon size={14} />
@@ -126,9 +126,9 @@ const LibraryMagazinesPage = () => {
                             exit={{ opacity: 0, scale: 0.98 }}
                             className="space-y-8"
                         >
-                            <div className="bg-white rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#18357a]/5 overflow-hidden">
+                            <div className="bg-white rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
                                 <div className="p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                                    <h2 className="text-lg font-bold text-[#18357a] tracking-tight">Periodical Repository</h2>
+                                    <h2 className="text-lg font-bold text-[#224292] tracking-tight">Periodical Repository</h2>
                                     <div className="relative flex-1 max-w-sm">
                                         <Search size={16} className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500" />
                                         <input 
@@ -136,19 +136,19 @@ const LibraryMagazinesPage = () => {
                                             placeholder="Search magazines..."
                                             value={searchQuery}
                                             onChange={(e) => setSearchQuery(e.target.value)}
-                                            className="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-2xl text-xs font-bold tracking-widest focus:ring-4 focus:ring-[#18357a]/5 transition-all"
+                                            className="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-2xl text-xs font-bold tracking-widest focus:ring-4 focus:ring-[#224292]/5 transition-all"
                                         />
                                     </div>
                                 </div>
                                 
                                 <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                     {MAGAZINES.filter(m => m.toLowerCase().includes(searchQuery.toLowerCase())).map((name, i) => (
-                                        <div key={i} className="group p-5 bg-white border border-slate-50 hover:border-[#18357a] rounded-2xl transition-all flex items-center justify-between shadow-sm hover:shadow-xl hover:shadow-[#18357a]/5">
+                                        <div key={i} className="group p-5 bg-white border border-slate-50 hover:border-[#224292] rounded-2xl transition-all flex items-center justify-between shadow-sm hover:shadow-xl hover:shadow-[#224292]/5">
                                             <div className="flex items-center gap-4">
                                                 <div className="w-2 h-2 rounded-full bg-[#ffc107] group-hover:scale-150 transition-all" />
-                                                <span className="text-[13px] font-bold text-[#18357a] leading-none tracking-wide">{name}</span>
+                                                <span className="text-[13px] font-bold text-[#224292] leading-none tracking-wide">{name}</span>
                                             </div>
-                                            <BookOpen size={14} className="text-slate-300 group-hover:text-[#18357a] transition-colors" />
+                                            <BookOpen size={14} className="text-slate-300 group-hover:text-[#224292] transition-colors" />
                                         </div>
                                     ))}
                                 </div>
@@ -170,8 +170,8 @@ const LibraryMagazinesPage = () => {
                                         onClick={() => setActiveYear(year)}
                                         className={`px-8 py-4 rounded-3xl text-xs font-bold tracking-widest transition-all ${
                                             activeYear === year 
-                                            ? 'bg-[#ffc107] text-[#18357a] shadow-[0_15px_40px_rgba(255,193,7,0.3)]' 
-                                            : 'bg-white border border-slate-100 text-slate-700 hover:text-[#18357a]'
+                                            ? 'bg-[#ffc107] text-[#224292] shadow-[0_15px_40px_rgba(255,193,7,0.3)]' 
+                                            : 'bg-white border border-slate-100 text-slate-700 hover:text-[#224292]'
                                         }`}
                                     >
                                         Most Books Borrower {year}
@@ -180,7 +180,7 @@ const LibraryMagazinesPage = () => {
                             </div>
 
                             {/* Hall of Fame Visuals */}
-                            <div className="bg-[#18357a] rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden">
+                            <div className="bg-[#224292] rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-[0.03] rounded-bl-full pointer-events-none" />
                                 
                                 <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-12 mb-16">
@@ -211,18 +211,18 @@ const LibraryMagazinesPage = () => {
                                             className="group flex items-center justify-between p-6 bg-white/5 hover:bg-white rounded-[2rem] border border-white/5 transition-all duration-500"
                                         >
                                             <div className="flex items-center gap-6">
-                                                <div className="w-12 h-12 rounded-2xl bg-white/10 group-hover:bg-[#ffc107] flex items-center justify-center text-white group-hover:text-[#18357a] transition-all duration-500 shadow-sm">
+                                                <div className="w-12 h-12 rounded-2xl bg-white/10 group-hover:bg-[#ffc107] flex items-center justify-center text-white group-hover:text-[#224292] transition-all duration-500 shadow-sm">
                                                     <User size={22} />
                                                 </div>
                                                 <div>
-                                                    <p className="text-[14px] font-bold text-white group-hover:text-[#18357a] transition-colors">{student.n}</p>
+                                                    <p className="text-[14px] font-bold text-white group-hover:text-[#224292] transition-colors">{student.n}</p>
                                                     <div className="flex items-center gap-2 mt-1">
                                                         <GraduationCap size={12} className="text-[#ffc107]" />
-                                                        <p className="text-xs font-bold text-white group-hover:text-[#18357a] tracking-widest">{student.c}</p>
+                                                        <p className="text-xs font-bold text-white group-hover:text-[#224292] tracking-widest">{student.c}</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="w-10 h-10 rounded-full border border-white/10 group-hover:border-[#18357a]/10 flex items-center justify-center text-[#ffc107] group-hover:text-[#18357a] transition-all">
+                                            <div className="w-10 h-10 rounded-full border border-white/10 group-hover:border-[#224292]/10 flex items-center justify-center text-[#ffc107] group-hover:text-[#224292] transition-all">
                                                 <ChevronRight size={18} className="translate-x-0.5" />
                                             </div>
                                         </motion.div>

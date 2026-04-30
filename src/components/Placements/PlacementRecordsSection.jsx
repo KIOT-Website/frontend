@@ -30,7 +30,7 @@ const PlacementRecordsSection = () => {
   if (loading) {
     return (
       <section className="py-24 flex items-center justify-center min-h-[30vh]">
-        <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-12 h-12 border-4 border-[#18357a] border-t-[#ffc107] rounded-full" />
+        <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-12 h-12 border-4 border-[#224292] border-t-[#ffc107] rounded-full" />
       </section>
     )
   }
@@ -47,7 +47,7 @@ const PlacementRecordsSection = () => {
   return (
     <div className="">
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-black text-[#18357a] flex items-center justify-center gap-3 tracking-tighter">
+        <h2 className="text-2xl md:text-3xl font-black text-[#224292] flex items-center justify-center gap-3 tracking-tighter">
           Placement Records (Department Wise)
         </h2>
       </div>
@@ -59,7 +59,7 @@ const PlacementRecordsSection = () => {
         ) : (
           <div className="bg-white border border-[#D5E2F4]/50 rounded-2xl overflow-hidden shadow-sm">
             {/* Header */}
-            <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-4 bg-[#18357a]">
+            <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-4 bg-[#224292]">
               <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Department</span>
               <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Records</span>
             </div>
@@ -67,7 +67,7 @@ const PlacementRecordsSection = () => {
               <div key={dept.name} className="border-b border-[#F1F5FB] last:border-b-0 hover:bg-[#F8FAFC] transition-colors group">
                 <Link to={`/department/${encodeURIComponent(dept.name.toLowerCase())}`} className="w-full flex items-center px-8 py-5">
                   <div>
-                    <span className="font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors text-base tracking-tight block">
+                    <span className="font-black text-[#224292] group-hover:text-[#ffc107] transition-colors text-base tracking-tight block">
                       {dept.name}
                     </span>
                     <span className="text-[10px] font-black text-black uppercase tracking-widest mt-0.5 block">View Reports</span>

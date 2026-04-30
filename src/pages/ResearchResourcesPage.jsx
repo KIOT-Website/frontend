@@ -119,11 +119,11 @@ const ResearchResourcesPage = () => {
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4">
                 <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to="/research" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
+                    <span className="text-[#224292] text-xs font-black uppercase tracking-wider pt-0.5">
                         Research in {formatDeptName(deptName)}
                     </span>
                 </div>
@@ -140,7 +140,7 @@ const ResearchResourcesPage = () => {
                         <span>Research & Doctoral Initiatives</span>
                     </div>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-8">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] leading-tight mb-8">
                         <span className="text-[#ffc107]">Research in</span> {formatDeptName(deptName)}
                     </h1>
 
@@ -179,7 +179,7 @@ const ResearchResourcesPage = () => {
                                 </div>
 
                                 <div className="relative z-10 shrink-0">
-                                    <div className="bg-[#ffc107] text-[#0A1A3F] px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest flex items-center gap-3 group-hover:bg-white transition-all shadow-xl">
+                                    <div className="bg-[#ffc107] text-[#224292] px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest flex items-center gap-3 group-hover:bg-white transition-all shadow-xl">
                                         View Supervisors
                                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                                     </div>

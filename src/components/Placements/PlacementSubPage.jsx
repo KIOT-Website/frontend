@@ -40,7 +40,7 @@ const PlacementSubPage = () => {
     <div className="relative bg-[#FCFDFD] pt-24 pb-32 min-h-screen overflow-hidden">
       
       {/* Background Graphic elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#224292]/5 to-transparent rounded-bl-full pointer-events-none" />
 
       <section className="relative px-6 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
         
@@ -56,11 +56,11 @@ const PlacementSubPage = () => {
                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-60"></span>
                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#e0a800]"></span>
                </span>
-               <span className="text-sm font-black text-[#18357a] uppercase tracking-[0.2em]">Training & Placement</span>
+               <span className="text-sm font-black text-[#224292] uppercase tracking-[0.2em]">Training & Placement</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#18357a] mb-8 tracking-tighter leading-[1.1]">
-              {currentCategory.title.split(' ')[0]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] via-[#224292] to-[#ffc107] uppercase">{currentCategory.title.split(' ').slice(1).join(' ')}</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-black text-[#224292] mb-8 tracking-tighter leading-[1.1]">
+              {currentCategory.title.split(' ')[0]} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#224292] via-[#224292] to-[#ffc107] uppercase">{currentCategory.title.split(' ').slice(1).join(' ')}</span>
             </h1>
             
             <div className="max-w-3xl mx-auto p-8 rounded-[2.5rem] bg-white border-2 border-transparent border-l-4 border-l-[#ffc107] shadow-xl relative mt-4 hidden md:block hover:border-[#ffc107] transition-all duration-500 group">
@@ -83,14 +83,14 @@ const PlacementSubPage = () => {
                  className="group relative bg-white rounded-[2rem] p-8 md:p-10 border border-[#D5E2F4]/50 shadow-[0_20px_50px_rgba(24,53,122,0.03)] hover:shadow-[0_30px_70px_rgba(24,53,122,0.08)] transition-all duration-500 overflow-hidden"
               >
                   {/* Subtle Background Accent */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/[0.02] rounded-bl-[4rem] transition-colors" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#224292]/[0.02] rounded-bl-[4rem] transition-colors" />
                   
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] mb-6 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
+                    <div className="w-14 h-14 rounded-2xl bg-[#224292]/5 flex items-center justify-center text-[#224292] mb-6 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
                        <currentCategory.icon size={26} className="group-hover:scale-110 transition-transform" />
                     </div>
                     
-                    <h3 className="text-2xl font-black text-[#18357a] mb-4 tracking-tight uppercase group-hover:text-[#4666B4] transition-colors leading-tight">
+                    <h3 className="text-2xl font-black text-[#224292] mb-4 tracking-tight uppercase group-hover:text-[#4666B4] transition-colors leading-tight">
                        {item}
                     </h3>
                     
@@ -111,7 +111,7 @@ const PlacementSubPage = () => {
         <div className="mt-24 text-center">
            <Link 
              to="/"
-             className="inline-flex items-center gap-3 text-[#18357a] font-black uppercase text-xs tracking-[0.2em] hover:gap-5 transition-all border-b-2 border-[#ffc107] pb-2"
+             className="inline-flex items-center gap-3 text-[#224292] font-black uppercase text-xs tracking-[0.2em] hover:gap-5 transition-all border-b-2 border-[#ffc107] pb-2"
            >
               <ArrowLeft size={16} />
               Return to Placements Home

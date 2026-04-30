@@ -42,7 +42,7 @@ const MarqueeItem = ({ item }) => (
        {item.logo ? (
           <img src={item.logo} alt={item.name} className="max-h-12 w-full object-contain transition-all duration-500 transform group-hover:scale-110" />
        ) : (
-          <span className="text-[#18357a] font-black text-xs uppercase tracking-tighter text-center leading-tight">
+          <span className="text-[#224292] font-black text-xs uppercase tracking-tighter text-center leading-tight">
              {item.name}
           </span>
        )}
@@ -57,14 +57,14 @@ const RecruitersMarquee = () => {
         <div className="max-w-7xl mx-auto px-6 mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <div className="flex items-center gap-3 text-[#18357a] font-black text-[10px] uppercase tracking-[0.3em] mb-3">
-                <span className="w-10 h-[2px] bg-[#18357a]" /> Technology Sector
+              <div className="flex items-center gap-3 text-[#224292] font-black text-[10px] uppercase tracking-[0.3em] mb-3">
+                <span className="w-10 h-[2px] bg-[#224292]" /> Technology Sector
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-[#18357a] text-white rounded-xl inline-block mt-2">IT</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-[#224292] text-white rounded-xl inline-block mt-2">IT</span></h2>
             </div>
             <div className="px-6 py-4 bg-white rounded-2xl border border-[#D5E2F4]/50 shadow-sm backdrop-blur-md">
               <span className="text-[#64779F] text-[10px] uppercase font-black tracking-widest block mb-1">Salary Range</span>
-              <span className="text-[#18357a] font-extrabold text-lg md:text-xl tracking-tight">₹3.75 to ₹12.75 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
+              <span className="text-[#224292] font-extrabold text-lg md:text-xl tracking-tight">₹3.75 to ₹12.75 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
             </div>
           </div>
         </div>
@@ -119,11 +119,11 @@ const RecruitersMarquee = () => {
               <div className="flex items-center gap-3 text-[#4666B4] font-black text-[10px] uppercase tracking-[0.3em] mb-3">
                 <span className="w-10 h-[2px] bg-[#4666B4]" /> Engineering Services
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-[#4666B4] text-white rounded-xl inline-block mt-2">Core</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-[#4666B4] text-white rounded-xl inline-block mt-2">Core</span></h2>
             </div>
             <div className="px-6 py-4 bg-white rounded-2xl border border-[#D5E2F4]/50 shadow-sm backdrop-blur-md">
               <span className="text-[#64779F] text-[10px] uppercase font-black tracking-widest block mb-1">Salary Range</span>
-              <span className="text-[#18357a] font-extrabold text-lg md:text-xl tracking-tight">₹3.00 to ₹8.50 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
+              <span className="text-[#224292] font-extrabold text-lg md:text-xl tracking-tight">₹3.00 to ₹8.50 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
             </div>
           </div>
         </div>
@@ -173,11 +173,11 @@ const RecruitersMarquee = () => {
               <div className="flex items-center gap-3 text-emerald-600 font-black text-[10px] uppercase tracking-[0.3em] mb-3">
                 <span className="w-10 h-[2px] bg-emerald-600" /> Management Sector
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-emerald-600 text-white rounded-xl inline-block mt-2">MBA</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-emerald-600 text-white rounded-xl inline-block mt-2">MBA</span></h2>
             </div>
             <div className="px-6 py-4 bg-white rounded-2xl border border-[#D5E2F4]/50 shadow-sm backdrop-blur-md">
               <span className="text-[#64779F] text-[10px] uppercase font-black tracking-widest block mb-1">Salary Range</span>
-              <span className="text-[#18357a] font-extrabold text-lg md:text-xl tracking-tight">₹3.00 to ₹10.00 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
+              <span className="text-[#224292] font-extrabold text-lg md:text-xl tracking-tight">₹3.00 to ₹10.00 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
             </div>
           </div>
         </div>
@@ -227,11 +227,11 @@ const RecruitersMarquee = () => {
               <div className="flex items-center gap-3 text-indigo-600 font-black text-[10px] uppercase tracking-[0.3em] mb-3">
                 <span className="w-10 h-[2px] bg-indigo-600" /> Industry Training
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter uppercase leading-none">Companies Offered <br /><span className="px-5 py-1.5 bg-indigo-600 text-white rounded-xl inline-block mt-2">Internships</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter uppercase leading-none">Companies Offered <br /><span className="px-5 py-1.5 bg-indigo-600 text-white rounded-xl inline-block mt-2">Internships</span></h2>
             </div>
             <div className="px-6 py-4 bg-white rounded-2xl border border-[#D5E2F4]/50 shadow-sm backdrop-blur-md">
               <span className="text-[#64779F] text-[10px] uppercase font-black tracking-widest block mb-1">Impact Record</span>
-              <span className="text-[#18357a] font-extrabold text-lg md:text-xl tracking-tight">50+ Global <span className="text-xs uppercase font-bold text-[#64779F]">Partners</span></span>
+              <span className="text-[#224292] font-extrabold text-lg md:text-xl tracking-tight">50+ Global <span className="text-xs uppercase font-bold text-[#64779F]">Partners</span></span>
             </div>
           </div>
         </div>

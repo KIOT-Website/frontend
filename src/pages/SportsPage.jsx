@@ -100,7 +100,7 @@ const SportsPage = () => {
                             <img src={selectedImage} className="w-full max-h-[85vh] object-contain mx-auto shadow-2xl" alt="Full view" />
                             <button 
                                 onClick={() => setSelectedImage(null)}
-                                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/50 hover:bg-[#ffc107] text-white hover:text-[#18357a] flex items-center justify-center backdrop-blur-md transition-all z-50 shadow-lg"
+                                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/50 hover:bg-[#ffc107] text-white hover:text-[#224292] flex items-center justify-center backdrop-blur-md transition-all z-50 shadow-lg"
                             >
                                 <X size={16} strokeWidth={3} />
                             </button>
@@ -110,14 +110,14 @@ const SportsPage = () => {
             </AnimatePresence>
 
             {/* Hero Section */}
-            <div className="relative h-[25vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+            <div className="relative h-[25vh] flex items-center justify-center overflow-hidden bg-[#224292]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1459749411177-0421800673d6?q=80&w=1920&auto=format&fit=crop" 
                         className="w-full h-full object-cover opacity-50" 
                         alt="Sports"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#224292]/90 via-[#224292]/70 to-transparent" />
                 </div>
                 
                 <div className="relative z-10 text-center px-6">
@@ -136,7 +136,7 @@ const SportsPage = () => {
                         
                         <button 
                             onClick={() => navigate('/campus-life')}
-                            className="inline-flex items-center gap-2 text-white hover:text-[#18357a] transition-all group border border-white/30 px-5 py-2 rounded-full bg-white/10 hover:bg-[#ffc107] hover:border-[#ffc107] backdrop-blur-md shadow-2xl"
+                            className="inline-flex items-center gap-2 text-white hover:text-[#224292] transition-all group border border-white/30 px-5 py-2 rounded-full bg-white/10 hover:bg-[#ffc107] hover:border-[#ffc107] backdrop-blur-md shadow-2xl"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
                             <span className="text-[12px] font-black tracking-[2px]">Back to Hub</span>
@@ -167,7 +167,7 @@ const SportsPage = () => {
                             />
                         </AnimatePresence>
                         
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 via-transparent to-transparent flex items-end p-8">
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/60 via-transparent to-transparent flex items-end p-8">
                             <div className="w-full flex flex-col md:flex-row justify-between items-end gap-4">
                                 <div>
                                     <h3 className="text-white text-lg md:text-xl font-black tracking-tight">Gallery Showcase</h3>
@@ -191,7 +191,7 @@ const SportsPage = () => {
 
                     {/* Right: Quick Access Hub */}
                     <div className="space-y-6">
-                        <div className="bg-[#18357a] p-7 rounded-3xl shadow-2xl relative overflow-hidden group">
+                        <div className="bg-[#224292] p-7 rounded-3xl shadow-2xl relative overflow-hidden group">
                             <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
                             <h2 className="text-white text-lg font-black tracking-widest mb-6 flex items-center gap-3">
                                 <Menu size={20} className="text-[#ffc107]" />
@@ -212,7 +212,7 @@ const SportsPage = () => {
                                     >
                                         <div className="flex items-center gap-4 text-white">
                                             <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
-                                                item.isContact ? 'bg-[#ffc107] text-[#18357a]' : 'bg-white/10 text-[#ffc107] group-hover/btn:bg-[#ffc107] group-hover/btn:text-[#18357a]'
+                                                item.isContact ? 'bg-[#ffc107] text-[#224292]' : 'bg-white/10 text-[#ffc107] group-hover/btn:bg-[#ffc107] group-hover/btn:text-[#224292]'
                                             }`}>
                                                 {item.icon}
                                             </div>
@@ -236,12 +236,12 @@ const SportsPage = () => {
                         whileHover={{ y: -5 }}
                         className="relative bg-white p-7 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-6 overflow-hidden group"
                     >
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#18357a]/5 rounded-full -translate-x-[-20%] -translate-y-[20%] group-hover:scale-150 transition-transform duration-700" />
-                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#18357a] text-[#ffc107] flex items-center justify-center shadow-lg">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#224292]/5 rounded-full -translate-x-[-20%] -translate-y-[20%] group-hover:scale-150 transition-transform duration-700" />
+                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#224292] text-[#ffc107] flex items-center justify-center shadow-lg">
                             <Eye size={22} />
                         </div>
                         <div className="relative z-10">
-                            <h3 className="text-sm font-black text-[#18357a] tracking-[2px] mb-3 flex items-center gap-2">
+                            <h3 className="text-sm font-black text-[#224292] tracking-[2px] mb-3 flex items-center gap-2">
                                 Vision
                                 <div className="w-6 h-0.5 bg-[#ffc107]" />
                             </h3>
@@ -257,13 +257,13 @@ const SportsPage = () => {
                         className="relative bg-white p-7 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-6 overflow-hidden group"
                     >
                         <div className="absolute top-0 right-0 w-24 h-24 bg-[#ffc107]/5 rounded-full -translate-x-[-20%] -translate-y-[20%] group-hover:scale-150 transition-transform duration-700" />
-                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#ffc107] text-[#18357a] flex items-center justify-center shadow-lg">
+                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#ffc107] text-[#224292] flex items-center justify-center shadow-lg">
                             <Target size={22} />
                         </div>
                         <div className="relative z-10">
-                            <h3 className="text-sm font-black text-[#18357a] tracking-[2px] mb-3 flex items-center gap-2">
+                            <h3 className="text-sm font-black text-[#224292] tracking-[2px] mb-3 flex items-center gap-2">
                                 Mission
-                                <div className="w-6 h-0.5 bg-[#18357a]" />
+                                <div className="w-6 h-0.5 bg-[#224292]" />
                             </h3>
                             <p className="text-black text-[12.5px] leading-relaxed font-bold text-justify">
                                 Nurturing quality Physical Education teachers, sports and health professionals who are self-reliant and life-long learners. We equip them to integrate theory and practice, serve as role models, and promote healthy personal and professional behaviors. The department is committed to innovatively and strategically strengthening its leadership in the field of Physical Education, Health, and Sports Science.
@@ -275,11 +275,11 @@ const SportsPage = () => {
                 {/* Achievements & Events (4th) */}
                 <div className="space-y-12">
                     <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 bg-[#18357a] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
+                        <div className="w-10 h-10 bg-[#224292] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
                             <Trophy size={20} />
                         </div>
                         <div>
-                            <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Achievements & Events</h2>
+                            <h2 className="text-2xl font-black text-[#224292] tracking-tight">Achievements & Events</h2>
 
                         </div>
                     </div>
@@ -299,23 +299,23 @@ const SportsPage = () => {
                                 className="group relative bg-white py-4 px-6 rounded-xl border border-slate-100 shadow-xl hover:shadow-slate-300/50 transition-all duration-500 overflow-hidden h-full cursor-pointer"
                             >
                                 {/* Corner Accents */}
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-[#18357a] translate-x-10 -translate-y-10 rotate-45 group-hover:scale-110 transition-transform duration-500" />
+                                <div className="absolute top-0 right-0 w-20 h-20 bg-[#224292] translate-x-10 -translate-y-10 rotate-45 group-hover:scale-110 transition-transform duration-500" />
                                 <div className="absolute top-0 right-0 w-14 h-14 bg-[#ffc107] translate-x-7 -translate-y-7 rotate-45 group-hover:scale-110 transition-transform duration-700 shadow-xl" />
 
                                 <div className="relative z-10 flex flex-col h-full pr-8">
-                                    <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-100 text-[#18357a] flex items-center justify-center group-hover:bg-[#18357a] group-hover:text-[#ffc107] transition-all duration-500 mb-3 shadow-inner">
+                                    <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-100 text-[#224292] flex items-center justify-center group-hover:bg-[#224292] group-hover:text-[#ffc107] transition-all duration-500 mb-3 shadow-inner">
                                         {item.icon}
                                     </div>
                                     
                                     <div className="space-y-1">
-                                        <h4 className="text-[16px] font-black text-[#18357a] tracking-tight leading-tight">
+                                        <h4 className="text-[16px] font-black text-[#224292] tracking-tight leading-tight">
                                             {item.title}
                                             <div className="w-8 h-1 bg-[#ffc107] mt-1 rounded-full" />
                                         </h4>
                                     </div>
 
                                     <div className="mt-4 flex items-center">
-                                        <div className="w-7 h-7 rounded-full bg-[#18357a] flex items-center justify-center text-white group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all shadow-md">
+                                        <div className="w-7 h-7 rounded-full bg-[#224292] flex items-center justify-center text-white group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all shadow-md">
                                             <ArrowUpRight size={12} />
                                         </div>
                                     </div>
@@ -329,11 +329,11 @@ const SportsPage = () => {
                 <div className="space-y-12">
                     <div className="space-y-8">
                         <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-[#18357a] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
+                            <div className="w-10 h-10 bg-[#224292] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
                                 <LayoutGrid size={20} />
                             </div>
                             <div>
-                                <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Sports Gallery</h2>
+                                <h2 className="text-2xl font-black text-[#224292] tracking-tight">Sports Gallery</h2>
 
                             </div>
                         </div>
@@ -355,8 +355,8 @@ const SportsPage = () => {
                                     onClick={() => setActiveTab(tab)}
                                     className={`px-4 py-2 rounded-lg text-[12px] font-black tracking-wider transition-all border ${
                                         activeTab === tab 
-                                        ? 'bg-[#18357a] text-white border-[#18357a] shadow-lg' 
-                                        : 'bg-white text-[#18357a] border-slate-100 hover:border-[#ffc107]'
+                                        ? 'bg-[#224292] text-white border-[#224292] shadow-lg' 
+                                        : 'bg-white text-[#224292] border-slate-100 hover:border-[#ffc107]'
                                     }`}
                                 >
                                     {tab}

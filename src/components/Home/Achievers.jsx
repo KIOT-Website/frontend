@@ -33,7 +33,7 @@ const Achievers = () => {
       
       {/* Background Subtle Gradient */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/[0.03] rounded-full blur-[100px] -mr-64 -mt-64" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#18357a]/[0.03] rounded-full blur-[100px] -ml-64 -mb-64" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#224292]/[0.03] rounded-full blur-[100px] -ml-64 -mb-64" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 md:px-8">
         
@@ -43,12 +43,12 @@ const Achievers = () => {
              initial={{ opacity: 0, y: 10 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             className="inline-flex items-center gap-2 mb-4 px-5 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
+             className="inline-flex items-center gap-2 mb-4 px-5 py-2 rounded-full bg-[#224292]/5 border border-[#224292]/10"
            >
              <Sparkles size={14} className="text-[#ffc107]" />
-             <span className="text-[10px] font-black tracking-[0.3em] text-[#18357a]">Institutional Excellence</span>
+             <span className="text-[10px] font-black tracking-[0.3em] text-[#224292]">Institutional Excellence</span>
            </motion.div>
-           <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-graphik tracking-tight leading-tight">
+           <h2 className="text-3xl lg:text-5xl font-black text-[#224292] font-graphik tracking-tight leading-tight">
              Achievements That <span className="text-[#ffc107]">Inspire</span>
            </h2>
         </div>
@@ -62,7 +62,7 @@ const Achievers = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group relative h-[400px] lg:h-[500px] rounded-[1.2rem] overflow-hidden shadow-2xl border-4 border-[#18357a]/20 hover:border-[#ffc107]/50 transition-all duration-500"
+              className="group relative h-[400px] lg:h-[500px] rounded-[1.2rem] overflow-hidden shadow-2xl border-4 border-[#224292]/20 hover:border-[#ffc107]/50 transition-all duration-500"
             >
               {/* Achievement Image */}
               <img 
@@ -76,7 +76,7 @@ const Achievers = () => {
               
               {/* Badge */}
               <div className="absolute top-8 left-8 z-20">
-                <div className="flex items-center gap-3 px-4 py-2 bg-[#ffc107] text-[#18357a] rounded-full shadow-lg">
+                <div className="flex items-center gap-3 px-4 py-2 bg-[#ffc107] text-[#224292] rounded-full shadow-lg">
                   <Medal size={16} strokeWidth={3} />
                   <span className="text-[10px] font-black uppercase tracking-widest">{achievement.tag}</span>
                 </div>

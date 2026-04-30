@@ -85,7 +85,7 @@ const ResearchProposalsPage = () => {
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6 italic">
+                            <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6 italic">
                                 Funded <span className="text-[#ffc107]">Proposals</span>
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -97,7 +97,7 @@ const ResearchProposalsPage = () => {
 
                         <div className="flex gap-4">
                             <div className="px-6 py-4 bg-white rounded-2xl shadow-xl border border-slate-100 text-center">
-                                <div className="text-2xl font-black text-[#18357a]">₹ 130L+</div>
+                                <div className="text-2xl font-black text-[#224292]">₹ 130L+</div>
                                 <div className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest">Total Pipeline</div>
                             </div>
                             <div className="px-6 py-4 bg-[#0f172a] rounded-2xl shadow-xl border-b-4 border-[#ffc107] text-white text-center">
@@ -148,7 +148,7 @@ const ResearchProposalsPage = () => {
                                     </div>
                                     <div className="lg:w-48 text-right shrink-0">
                                         <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Proposed Value</div>
-                                        <div className="text-2xl font-black text-[#18357a] flex items-center justify-end gap-2 group-hover:text-[#ffc107] transition-colors">
+                                        <div className="text-2xl font-black text-[#224292] flex items-center justify-end gap-2 group-hover:text-[#ffc107] transition-colors">
                                             <Coins size={20} /> {proposal.amount}
                                         </div>
                                     </div>

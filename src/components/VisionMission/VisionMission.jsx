@@ -24,16 +24,16 @@ const ValueCard = ({ title, content, icon: Icon, idx }) => (
 
     {/* Background Decorative Lines */}
     <div className="absolute inset-0 opacity-[0.015] pointer-events-none" 
-         style={{ backgroundImage: 'repeating-linear-gradient(90deg, #18357a 0, #18357a 1px, transparent 0, transparent 40px)' }} />
+         style={{ backgroundImage: 'repeating-linear-gradient(90deg, #224292 0, #224292 1px, transparent 0, transparent 40px)' }} />
 
     {/* Content */}
     <div className="relative z-10 w-full flex flex-col">
       {/* Icon Box - Reduced Spacing to decrease height */}
-      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#18357a] to-[#224292] text-[#18357a] flex items-center justify-center mb-6 shadow-lg shadow-[#18357a]/20 border-4 border-white group-hover:border-[#ffc107]/50 transition-all duration-500 mx-auto lg:mx-0">
+      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#224292] to-[#224292] text-[#224292] flex items-center justify-center mb-6 shadow-lg shadow-[#224292]/20 border-4 border-white group-hover:border-[#ffc107]/50 transition-all duration-500 mx-auto lg:mx-0">
          <Icon size={26} />
       </div>
       
-      <h3 className="text-xl lg:text-2xl font-graphik font-bold text-[#18357a] tracking-normal mb-3">
+      <h3 className="text-xl lg:text-2xl font-graphik font-bold text-[#224292] tracking-normal mb-3">
         {title}
       </h3>
       
@@ -103,7 +103,7 @@ const VisionMission = ({ hideHeader = false }) => {
               animate={{ opacity: 1, y: 0 }}
               className="flex flex-col items-center"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#18357a] mb-4 tracking-tighter leading-tight break-words">
+              <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#224292] mb-4 tracking-tighter leading-tight break-words">
                 Our Institutional <span className="text-[#ffc107]">Values</span>
               </h2>
             </motion.div>
@@ -133,26 +133,26 @@ const VisionMission = ({ hideHeader = false }) => {
                   className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[280px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
                 >
                   {/* The Diamond Container with New Stylish Border - Shadow Removed */}
-                  <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border border-[#18357a]/15 transform rotate-45 flex items-center justify-center group hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">
+                  <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border border-[#224292]/15 transform rotate-45 flex items-center justify-center group hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">
                     
                     {/* Stylish Inner Border Line */}
-                    <div className="absolute inset-2 border border-dashed border-[#18357a]/10 rounded-[1.5rem] group-hover:border-[#ffc107]/20 transition-colors duration-500 pointer-events-none" />
+                    <div className="absolute inset-2 border border-dashed border-[#224292]/10 rounded-[1.5rem] group-hover:border-[#ffc107]/20 transition-colors duration-500 pointer-events-none" />
                     
                     {/* Corner Accent Detail */}
                     <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-br from-[#ffc107]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
                     {/* Background Shine */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white via-[#18357a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-white via-[#224292]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     
                     {/* Inner content (Counter-rotated back to normal) */}
                     <div className="transform -rotate-45 p-6 text-center flex flex-col items-center">
                        {/* Floating Number Circle */}
                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[85%] w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-graphik font-bold text-white text-[10px] sm:text-sm z-20"
-                            style={{ backgroundColor: i % 2 === 0 ? '#18357a' : '#ffc107' }}>
+                            style={{ backgroundColor: i % 2 === 0 ? '#224292' : '#ffc107' }}>
                          {String(i + 1).padStart(2, '0')}
                        </div>
 
-                       <h3 className="text-[#18357a] font-graphik font-bold text-[14px] sm:text-[16px] tracking-wide mb-3 leading-tight px-2">
+                       <h3 className="text-[#224292] font-graphik font-bold text-[14px] sm:text-[16px] tracking-wide mb-3 leading-tight px-2">
                          {val.title}
                        </h3>
                        
@@ -162,7 +162,7 @@ const VisionMission = ({ hideHeader = false }) => {
 
                        {/* Icon at Bottom */}
                        <div className="mt-auto pt-2">
-                         <val.icon size={20} className={i % 2 === 0 ? 'text-[#18357a]' : 'text-[#18357a]'} />
+                         <val.icon size={20} className={i % 2 === 0 ? 'text-[#224292]' : 'text-[#224292]'} />
                        </div>
                     </div>
                   </div>

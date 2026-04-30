@@ -7,7 +7,7 @@ const stats = [
     label: "Total Offers Generated",
     value: "5000+",
     icon: Award,
-    color: "#18357a",
+    color: "#224292",
     desc: "Cumulative placement offers across all disciplines."
   },
   {
@@ -21,7 +21,7 @@ const stats = [
     label: "Highest Package",
     value: "25 LPA",
     icon: TrendingUp,
-    color: "#18357a",
+    color: "#224292",
     desc: "The record-breaking CTC offered this session."
   },
   {
@@ -38,7 +38,7 @@ const OutcomesHero = () => {
     <div className="relative py-20 overflow-hidden font-graphik bg-[#F8FAFC]">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#18357a]/5 rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#224292]/5 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#ffc107]/5 rounded-full blur-[100px]" />
       </div>
 
@@ -50,15 +50,15 @@ const OutcomesHero = () => {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white border border-slate-100 shadow-sm mb-8"
           >
-            <GraduationCap size={16} className="text-[#18357a]" />
-            <span className="text-[11px] font-black text-[#18357a] uppercase tracking-[0.2em]">Placement Outcomes</span>
+            <GraduationCap size={16} className="text-[#224292]" />
+            <span className="text-[11px] font-black text-[#224292] uppercase tracking-[0.2em]">Placement Outcomes</span>
           </motion.div>
 
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-[#0A1A3F] tracking-tighter mb-6 leading-[0.95]"
+            className="text-5xl md:text-7xl font-black text-[#224292] tracking-tighter mb-6 leading-[0.95]"
           >
             Defining Success <br/>Through <span className="text-[#ffc107]">Excellence.</span>
           </motion.h1>
@@ -93,7 +93,7 @@ const OutcomesHero = () => {
                 </div>
 
                 <div className="space-y-1 mb-6">
-                  <h3 className="text-4xl md:text-5xl font-black text-[#0A1A3F] tracking-tighter leading-none">{stat.value}</h3>
+                  <h3 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter leading-none">{stat.value}</h3>
                   <p className="text-[12px] font-black text-black uppercase tracking-widest">{stat.label}</p>
                 </div>
 

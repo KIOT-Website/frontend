@@ -31,7 +31,7 @@ const AlumniVoices = () => {
         {/* Section Heading */}
         <div className="text-center mb-20">
           <h2 className="text-sm font-black text-[#ffc107] tracking-[0.4em] mb-4">Community Feedback</h2>
-          <h3 className="text-4xl lg:text-5xl font-black text-[#18357a] tracking-tighter">Alumni Voices</h3>
+          <h3 className="text-4xl lg:text-5xl font-black text-[#224292] tracking-tighter">Alumni Voices</h3>
           <div className="mt-4 w-12 h-1.5 bg-[#ffc107] mx-auto rounded-full" />
         </div>
 
@@ -80,7 +80,7 @@ const AlumniVoices = () => {
               {/* Footer Name with Line */}
               <div className="mt-8 flex items-center gap-4">
                 <div className="w-12 h-[2px] bg-[#ffc107]" />
-                <span className="text-[#18357a] font-black text-sm tracking-tight">{item.name}</span>
+                <span className="text-[#224292] font-black text-sm tracking-tight">{item.name}</span>
               </div>
 
               {/* Closing Quote Icon - bottom right */}

@@ -25,7 +25,7 @@ const StudentLifePage = () => {
             title: "Dynamic Ecosystem",
             desc: "A vibrant blend of learning, creativity, and personal growth defining the KIOT experience.",
             icon: Sparkles,
-            color: "#18357a"
+            color: "#224292"
         },
         {
             title: "Holistic Development",
@@ -37,21 +37,21 @@ const StudentLifePage = () => {
             title: "Inclusive Community",
             desc: "An environment where every individual can explore interests and showcase unique talents.",
             icon: Globe,
-            color: "#18357a"
+            color: "#224292"
         }
     ];
 
     return (
         <div className="min-h-screen bg-[#FCFDFD] pb-24">
             {/* 🔷 Hero Section */}
-            <div className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+            <div className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-[#224292]">
                 <div className="absolute inset-0">
                     <img 
                         src={campusLifeImg} 
                         className="w-full h-full object-cover object-center opacity-100 scale-110 transition-transform duration-1000" 
                         alt="Student Life"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#224292]/90 via-[#224292]/70 to-transparent" />
                 </div>
                 
                 <div className="relative z-10 text-center px-6">
@@ -78,11 +78,11 @@ const StudentLifePage = () => {
                     viewport={{ once: true }}
                     className="max-w-4xl mx-auto text-center space-y-8 mb-24"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 text-[#18357a] text-xs font-black uppercase tracking-widest mb-4">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10 text-[#224292] text-xs font-black uppercase tracking-widest mb-4">
                         <Sparkles size={14} />
                         <span>The KIOT Experience</span>
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-black text-[#18357a] tracking-tighter leading-[1.1]">
+                    <h2 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tighter leading-[1.1]">
                         Embracing a <span className="text-[#ffc107]">Dynamic Academic</span> Ecosystem
                     </h2>
                     <p className="text-lg md:text-xl font-bold text-slate-700 leading-relaxed text-justify md:text-center">

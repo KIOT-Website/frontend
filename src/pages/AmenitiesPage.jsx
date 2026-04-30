@@ -17,7 +17,7 @@ const AMENITIES = [
         t: "Security / CCTV",
         d: "Video surveillance is an invaluable tool, allowing students to wander under the safe watch of campus security cameras. Footage from cameras throughout the campus can be viewed online from any computer with an internet connection and access to the network.",
         i: ShieldCheck,
-        c: "#18357a"
+        c: "#224292"
     },
     {
         t: "Stationery / Reprography",
@@ -29,7 +29,7 @@ const AMENITIES = [
         t: "Gym",
         d: "A Healthy Body bears a Healthy Mind. Keeping in mind the health and fitness of students and staff, Knowledge Institute of Technology provides a state-of-the-art gymnasium, fully-equipped with the latest equipment within the campus. One can avail this facility either in the morning or in the evening as per the convenience.",
         i: Dumbbell,
-        c: "#18357a"
+        c: "#224292"
     },
     {
         t: "ATM",
@@ -41,7 +41,7 @@ const AMENITIES = [
         t: "Cafeteria",
         d: "Spacious, airy & trendy cafeteria offers students to break free from their arduous schedules and enjoy appetizing food in an extremely pleasant ambience. The cafeteria is open on all working days. The homely atmosphere and aroma of delicious food permeates the air as they eat, drink and chat. It remains a focal place of the students for rest and refreshment. A variety of hygienic food and savories are provided in the cafeteria. These serve wholesome cuisine for the health consciousness and fast food for those intended in quick bite between classes.",
         i: Coffee,
-        c: "#18357a"
+        c: "#224292"
     },
     {
         t: "Fresh Juice Corner",
@@ -57,14 +57,14 @@ const AmenitiesPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-24">
             {/* 🔷 Shared Hero Section */}
-            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#224292]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1541339907198-e08756eaa539?q=80&w=1920&auto=format&fit=crop" 
                         className="w-full h-full object-cover opacity-40" 
                         alt="Amenities"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/80 via-[#18357a]/60 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#224292]/80 via-[#224292]/60 to-transparent" />
                 </div>
                 
                 <div className="relative z-10 text-center px-6">
@@ -75,7 +75,7 @@ const AmenitiesPage = () => {
                     >
                         <button 
                             onClick={() => navigate('/campus-life')}
-                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
+                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#224292]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
                             <span className="text-[12px] font-black tracking-[2px]">Back to Hub</span>
@@ -99,13 +99,13 @@ const AmenitiesPage = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="group p-8 bg-white rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/20 hover:border-[#18357a]/20 transition-all flex flex-col"
+                            className="group p-8 bg-white rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/20 hover:border-[#224292]/20 transition-all flex flex-col"
                         >
                             <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-inner transition-transform group-hover:scale-110 duration-500`} style={{ backgroundColor: `${service.c}10`, color: service.c }}>
                                 <service.i size={28} />
                             </div>
                             <div className="space-y-4 flex-1">
-                                <h3 className="text-xl font-black text-[#18357a] tracking-tight">{service.t}</h3>
+                                <h3 className="text-xl font-black text-[#224292] tracking-tight">{service.t}</h3>
                                 <p className="text-sm font-black text-black leading-relaxed text-justify">
                                     {service.d}
                                 </p>

@@ -90,7 +90,7 @@ const PhdGuidedPage = () => {
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
@@ -115,7 +115,7 @@ const PhdGuidedPage = () => {
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-6">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] leading-tight mb-6">
                         Scholars Successfully <span className="text-[#ffc107]">Guided</span>
                     </h1>
 

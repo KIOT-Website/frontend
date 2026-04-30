@@ -10,7 +10,7 @@ const AlumniIntro = () => {
         {/* Centered Heading */}
         <div className="text-center mb-16">
           <h2 className="text-sm font-black text-[#ffc107] uppercase tracking-[0.4em] mb-4">The Association</h2>
-          <h3 className="text-4xl lg:text-5xl font-black text-[#18357a] tracking-tighter">What is Alumni @ KIOT</h3>
+          <h3 className="text-4xl lg:text-5xl font-black text-[#224292] tracking-tighter">What is Alumni @ KIOT</h3>
           <div className="mt-4 w-12 h-1.5 bg-[#ffc107] mx-auto rounded-full" />
         </div>
 
@@ -31,7 +31,7 @@ const AlumniIntro = () => {
           </div>
           
           <div className="pt-8 flex justify-center">
-             <div className="w-32 h-[1px] bg-[#18357a]/20" />
+             <div className="w-32 h-[1px] bg-[#224292]/20" />
           </div>
         </motion.div>
       </div>

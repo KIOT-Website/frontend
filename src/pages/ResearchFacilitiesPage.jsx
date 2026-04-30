@@ -98,15 +98,15 @@ const ResearchFacilitiesPage = () => {
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4">
                 <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to="/research" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
+                    <span className="text-[#224292] text-xs font-black uppercase tracking-wider pt-0.5">
                         Research Facilities
                     </span>
                 </div>
@@ -122,12 +122,12 @@ const ResearchFacilitiesPage = () => {
                 >
                     <Link 
                         to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#18357a] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
+                        className="inline-flex items-center gap-2 text-[#224292] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
                     >
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6">
                         Advanced <span className="text-[#ffc107]">Research Facilities</span>
                     </h1>
 
@@ -173,7 +173,7 @@ const ResearchFacilitiesPage = () => {
                                             <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#0f172a] shadow-sm">
                                                 <Microscope size={20} />
                                             </div>
-                                            <span className="text-lg font-bold text-[#18357a] uppercase tracking-tight italic">"{facility.domain}"</span>
+                                            <span className="text-lg font-bold text-[#224292] uppercase tracking-tight italic">"{facility.domain}"</span>
                                         </div>
                                     </div>
                                 </div>

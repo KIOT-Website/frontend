@@ -11,8 +11,8 @@ const AboutUs = () => {
     <div className="relative bg-[#FCFDFD] pt-10 md:pt-16 pb-10 md:pb-16 min-h-screen overflow-hidden">
       
       {/* Decorative Brand Background */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none" />
-      <div className="absolute -top-10 -left-10 w-40 h-40 bg-[radial-gradient(#18357a_2px,transparent_2px)] [background-size:16px_16px] opacity-10" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#224292]/5 to-transparent rounded-bl-full pointer-events-none" />
+      <div className="absolute -top-10 -left-10 w-40 h-40 bg-[radial-gradient(#224292_2px,transparent_2px)] [background-size:16px_16px] opacity-10" />
 
       <section className="relative px-5 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
         
@@ -23,7 +23,7 @@ const AboutUs = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#18357a] mb-4 tracking-tighter leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#224292] mb-4 tracking-tighter leading-tight">
               About the <span className="text-[#ffc107]">KIOT</span>
             </h1>
           </motion.div>
@@ -39,7 +39,7 @@ const AboutUs = () => {
         >
           <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl border-0 md:border-4 border-white h-[320px] md:h-auto md:aspect-[3/1]">
             <img src={campusImg} alt="KIOT Campus" className="w-full h-full object-cover object-[70%_center] md:object-center" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/40 via-transparent to-transparent" />
             
             {/* Subtle Overlay Lens Flare effect */}
             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none" />
@@ -76,26 +76,26 @@ const AboutUs = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
                 {[
-                  { label: "1308 Intake / Year", icon: CheckCircle2, color: "#18357a" },
-                  { label: "3500+ UG Students", icon: Users, color: "#18357a" },
-                  { label: "350+ PG Students", icon: Trophy, color: "#18357a" },
-                  { label: "50+ Ph.D. Scholars", icon: Target, color: "#18357a" },
-                  { label: "230+ Faculty", icon: BookOpen, color: "#18357a" },
-                  { label: "200+ Staff", icon: Users, color: "#18357a" },
+                  { label: "1308 Intake / Year", icon: CheckCircle2, color: "#224292" },
+                  { label: "3500+ UG Students", icon: Users, color: "#224292" },
+                  { label: "350+ PG Students", icon: Trophy, color: "#224292" },
+                  { label: "50+ Ph.D. Scholars", icon: Target, color: "#224292" },
+                  { label: "230+ Faculty", icon: BookOpen, color: "#224292" },
+                  { label: "200+ Staff", icon: Users, color: "#224292" },
                 ].map((stat, idx) => (
                   <motion.div 
                     key={idx} 
                     whileHover={{ y: -5 }}
-                    className="relative group bg-[#FCFDFD] rounded-2xl p-6 border border-[#18357a]/5 hover:border-[#18357a]/20 transition-all duration-300 min-h-[120px] flex items-center shadow-sm hover:shadow-xl hover:shadow-[#18357a]/5"
+                    className="relative group bg-[#FCFDFD] rounded-2xl p-6 border border-[#224292]/5 hover:border-[#224292]/20 transition-all duration-300 min-h-[120px] flex items-center shadow-sm hover:shadow-xl hover:shadow-[#224292]/5"
                   >
                      {/* Clean minimalist design - No background pattern */}
                      <div className="flex items-center gap-5 w-full">
-                        <div className="w-14 h-14 rounded-xl bg-white border border-[#18357a]/10 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500 flex-shrink-0 shadow-sm">
+                        <div className="w-14 h-14 rounded-xl bg-white border border-[#224292]/10 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-500 flex-shrink-0 shadow-sm">
                            <stat.icon size={26} strokeWidth={1.5} />
                         </div>
                         
                         <div className="flex flex-col">
-                           <span className="text-[28px] font-graphik font-bold text-[#18357a] leading-tight">
+                           <span className="text-[28px] font-graphik font-bold text-[#224292] leading-tight">
                               {stat.label.split(' ')[0]}
                            </span>
                            <span className="text-[12px] font-graphik font-bold text-[#64779F] tracking-wider leading-tight">
@@ -115,7 +115,7 @@ const AboutUs = () => {
         {/* Vision Mission (Institutional Values) Section - Merged */}
         <div className="mb-10 md:mb-12 -mx-5 sm:-mx-10 lg:-mx-20">
            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#18357a] tracking-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#224292] tracking-tight">
                 Our Institutional <span className="text-[#ffc107]">Values</span>
               </h2>
            </div>
@@ -134,9 +134,9 @@ const AboutUs = () => {
               <div className="text-center">
                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#ffc107]/5 rounded-full mb-2 sm:mb-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                    <span className="text-[9px] sm:text-[10px] font-graphik font-bold text-[#18357a] tracking-widest">Experience KIOT</span>
+                    <span className="text-[9px] sm:text-[10px] font-graphik font-bold text-[#224292] tracking-widest">Experience KIOT</span>
                  </div>
-                 <h2 className="text-xl sm:text-2xl font-graphik font-bold text-[#18357a] tracking-normal">Institutional <span className="text-[#18357a]">Walkthrough</span></h2>
+                 <h2 className="text-xl sm:text-2xl font-graphik font-bold text-[#224292] tracking-normal">Institutional <span className="text-[#224292]">Walkthrough</span></h2>
               </div>
 
               <div className="relative w-full aspect-video rounded-2xl sm:rounded-[2rem] overflow-hidden border-2 sm:border-4 border-slate-50 shadow-inner group">

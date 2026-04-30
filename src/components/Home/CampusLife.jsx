@@ -46,12 +46,12 @@ const CampusLife = () => {
             viewport={{ once: true }}
             className="space-y-6 lg:space-y-8"
           >
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10">
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10">
               <Sparkles size={14} className="text-[#ffc107]" />
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Life@KIOT</span>
             </div>
             
-            <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik leading-tight tracking-tight">
+            <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
               A Vibrant <span className="text-[#ffc107]">Ecosystem</span> for <br />
               Holistic Growth.
             </h2>
@@ -62,7 +62,7 @@ const CampusLife = () => {
 
             <Link 
               to="/campus-life"
-              className="inline-flex items-center gap-4 px-8 py-4 bg-[#18357a] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#18357a] transition-all shadow-xl shadow-[#18357a]/20"
+              className="inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
             >
               Explore Full Campus
               <ArrowUpRight size={18} />
@@ -78,7 +78,7 @@ const CampusLife = () => {
             {/* Background shadow removed as requested */}
             <div className="relative rounded-[2.5rem] lg:rounded-[3.5rem] overflow-hidden border-8 border-white shadow-2xl aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
               <img src={sportsImg} alt="Life@KIOT" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/20 to-transparent" />
             </div>
           </motion.div>
         </div>
@@ -97,7 +97,7 @@ const CampusLife = () => {
                 className="group relative h-48 lg:h-64 rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer"
               >
                 <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/90 via-[#18357a]/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/90 via-[#224292]/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                 
                 <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-end">
                   <h3 className="text-sm lg:text-lg font-bold text-white mb-1 font-graphik leading-tight transition-transform duration-500 group-hover:-translate-y-1">{fac.title}</h3>

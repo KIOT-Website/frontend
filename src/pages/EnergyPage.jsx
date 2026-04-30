@@ -64,14 +64,14 @@ const EnergyPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] pb-24">
             {/* 🔷 Hero Section */}
-            <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+            <div className="relative h-[32vh] flex items-center justify-center overflow-hidden bg-[#224292]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1466611653911-954ffea11271?q=80&w=1920&auto=format&fit=crop" 
                         className="w-full h-full object-cover opacity-100 scale-110 transition-transform duration-1000" 
                         alt="Energy Initiatives"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#224292]/90 via-[#224292]/70 to-transparent" />
                 </div>
                 
                 <div className="relative z-10 text-center px-6">
@@ -82,7 +82,7 @@ const EnergyPage = () => {
                     >
                         <button 
                             onClick={() => navigate('/campus-life')}
-                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
+                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#224292]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
                             <span className="text-xs font-black tracking-[2px]">Back to Hub</span>
@@ -100,7 +100,7 @@ const EnergyPage = () => {
                 <div className="space-y-12">
                     <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
                         <div className="space-y-2">
-                            <h2 className="text-3xl md:text-5xl font-black text-[#18357a] tracking-tighter">Waste <span className="text-[#ffc107]">Management</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tighter">Waste <span className="text-[#ffc107]">Management</span></h2>
                             <div className="h-1 w-24 bg-[#ffc107]" />
                         </div>
                         <p className="max-w-xl text-black text-[15px] font-bold leading-relaxed text-justify">
@@ -117,12 +117,12 @@ const EnergyPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="bg-white rounded-[2.5rem] border border-slate-100 shadow-xl p-8 hover:border-[#18357a]/20 transition-all group"
+                                className="bg-white rounded-[2.5rem] border border-slate-100 shadow-xl p-8 hover:border-[#224292]/20 transition-all group"
                             >
-                                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-[#18357a] mb-8 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
+                                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-[#224292] mb-8 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
                                     <waste.icon size={28} />
                                 </div>
-                                <h3 className="text-xl font-black text-[#18357a] tracking-tight mb-6">{waste.title}</h3>
+                                <h3 className="text-xl font-black text-[#224292] tracking-tight mb-6">{waste.title}</h3>
                                 <div className="space-y-4">
                                     {waste.items.map((item, i) => (
                                         <div key={i} className="flex gap-3 items-start">
@@ -138,7 +138,7 @@ const EnergyPage = () => {
 
                 {/* 🌧️ Rain Water Harvesting Section */}
                 <div className="space-y-16">
-                    <div className="bg-[#18357a] rounded-[3.5rem] p-12 lg:p-20 text-white relative overflow-hidden shadow-2xl">
+                    <div className="bg-[#224292] rounded-[3.5rem] p-12 lg:p-20 text-white relative overflow-hidden shadow-2xl">
                         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 -translate-y-1/2" />
                         
                         <div className="grid lg:grid-cols-2 gap-16 relative z-10">
@@ -179,11 +179,11 @@ const EnergyPage = () => {
                                 </div>
                                 
                                 <div className="grid md:grid-cols-2 gap-4">
-                                    <div className="flex gap-4 p-5 bg-white rounded-3xl items-center text-[#18357a] hover:scale-105 transition-transform shadow-lg">
+                                    <div className="flex gap-4 p-5 bg-white rounded-3xl items-center text-[#224292] hover:scale-105 transition-transform shadow-lg">
                                         <Container className="shrink-0" />
                                         <div className="font-black text-[13px] tracking-tight">60ft Open Well (C-Block)</div>
                                     </div>
-                                    <div className="flex gap-4 p-5 bg-white rounded-3xl items-center text-[#18357a] hover:scale-105 transition-transform shadow-lg">
+                                    <div className="flex gap-4 p-5 bg-white rounded-3xl items-center text-[#224292] hover:scale-105 transition-transform shadow-lg">
                                         <BarChart3 className="shrink-0" />
                                         <div className="font-black text-[13px] tracking-tight">3 Strategic Bore Wells</div>
                                     </div>
@@ -195,7 +195,7 @@ const EnergyPage = () => {
                     {/* Key Benefits Grid */}
                     <div className="space-y-10">
                         <div className="text-center">
-                            <h3 className="text-3xl font-black text-[#18357a] tracking-tighter">Strategic <span className="text-[#ffc107]">Benefits</span></h3>
+                            <h3 className="text-3xl font-black text-[#224292] tracking-tighter">Strategic <span className="text-[#ffc107]">Benefits</span></h3>
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {rwhBenefits.map((benefit, i) => (

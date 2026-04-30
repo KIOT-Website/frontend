@@ -11,7 +11,7 @@ const steps = [
     title: "Registration",
     desc: "Students register and create their profiles.",
     icon: UserPlus,
-    color: "#18357a"
+    color: "#224292"
   },
   {
     number: 2,
@@ -25,7 +25,7 @@ const steps = [
     title: "Assessments",
     desc: "Aptitude, technical & psychometric tests to evaluate skills.",
     icon: ClipboardCheck,
-    color: "#18357a"
+    color: "#224292"
   },
   {
     number: 4,
@@ -39,14 +39,14 @@ const steps = [
     title: "Offer & Onboarding",
     desc: "Technical extended and students begin their career journey.",
     icon: CheckCircle2,
-    color: "#18357a"
+    color: "#224292"
   }
 ]
 
 const stats = [
-  { label: "Recruiters On Campus", value: "500+", icon: Building2, color: "#18357a" },
+  { label: "Recruiters On Campus", value: "500+", icon: Building2, color: "#224292" },
   { label: "Offers Extended", value: "1000+", icon: GraduationCap, color: "#ffc107" },
-  { label: "Placement Success Rate", value: "95%", icon: Trophy, color: "#18357a" },
+  { label: "Placement Success Rate", value: "95%", icon: Trophy, color: "#224292" },
   { label: "Highest Package Offered", value: "25 LPA", icon: Briefcase, color: "#ffc107" }
 ]
 
@@ -64,10 +64,10 @@ const RecruitmentProcessHero = () => {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 mb-8 self-start"
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#224292]/5 border border-[#224292]/10 mb-8 self-start"
             >
-              <Sparkles size={14} className="text-[#18357a]" />
-              <span className="text-[10px] font-black text-[#18357a] uppercase tracking-[0.3em]">Placement Ecosystem</span>
+              <Sparkles size={14} className="text-[#224292]" />
+              <span className="text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Placement Ecosystem</span>
             </motion.div>
 
             {/* Header */}
@@ -76,7 +76,7 @@ const RecruitmentProcessHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <h1 className="text-4xl md:text-5xl font-black text-[#0A1A3F] tracking-tighter leading-[0.9] mb-8">
+              <h1 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter leading-[0.9] mb-8">
                 Recruitment <span className="text-[#ffc107]">Process</span>
               </h1>
               <div className="w-16 h-1.5 bg-[#ffc107] mb-8 rounded-full" />
@@ -101,7 +101,7 @@ const RecruitmentProcessHero = () => {
                   >
                     {/* Number & Icon Circle */}
                     <div className="relative mb-8">
-                      <div className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-[#18357a] text-white text-[10px] font-black flex items-center justify-center z-10 shadow-lg">
+                      <div className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-[#224292] text-white text-[10px] font-black flex items-center justify-center z-10 shadow-lg">
                         {step.number}
                       </div>
                       <div className="w-20 h-20 md:w-22 md:h-22 rounded-full bg-slate-50 flex items-center justify-center border-2 border-slate-100 group-hover:border-[#ffc107]/50 group-hover:bg-white group-hover:scale-110 transition-all duration-500 shadow-sm" style={{ color: step.color }}>
@@ -109,7 +109,7 @@ const RecruitmentProcessHero = () => {
                       </div>
                     </div>
                     
-                    <h3 className="text-lg font-black text-[#0A1A3F] mb-3 tracking-tight leading-tight">{step.title}</h3>
+                    <h3 className="text-lg font-black text-[#224292] mb-3 tracking-tight leading-tight">{step.title}</h3>
                     <p className="text-[14px] font-black text-black leading-snug tracking-tight px-1">
                       {step.desc}
                     </p>
@@ -134,7 +134,7 @@ const RecruitmentProcessHero = () => {
                 alt="Placement Training" 
                 className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-1000"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3F]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/40 to-transparent" />
               
               {/* Image Overlay Card */}
               <div className="absolute bottom-8 left-8 right-8">
@@ -144,12 +144,12 @@ const RecruitmentProcessHero = () => {
                   transition={{ delay: 0.5 }}
                   className="bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl flex items-center gap-6"
                 >
-                  <div className="w-14 h-14 rounded-full bg-[#18357a] flex items-center justify-center text-[#ffc107] shadow-lg">
+                  <div className="w-14 h-14 rounded-full bg-[#224292] flex items-center justify-center text-[#ffc107] shadow-lg">
                     <Users2 size={24} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black text-[#18357a] uppercase tracking-[0.3em] mb-1">Recruitment Cycle</p>
-                    <h4 className="text-xl font-black text-[#0A1A3F] tracking-tighter uppercase">Step-by-step flow</h4>
+                    <p className="text-[10px] font-black text-[#224292] uppercase tracking-[0.3em] mb-1">Recruitment Cycle</p>
+                    <h4 className="text-xl font-black text-[#224292] tracking-tighter uppercase">Step-by-step flow</h4>
                   </div>
                 </motion.div>
               </div>
@@ -163,7 +163,7 @@ const RecruitmentProcessHero = () => {
                     <stat.icon size={18} />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-2xl font-black text-[#0A1A3F] tracking-tighter leading-none">{stat.value}</p>
+                    <p className="text-2xl font-black text-[#224292] tracking-tighter leading-none">{stat.value}</p>
                     <p className="text-[9px] font-black text-black uppercase tracking-widest leading-tight">{stat.label}</p>
                   </div>
                 </div>

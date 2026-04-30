@@ -12,7 +12,7 @@ const roadmap = [
     title: "Foundation Skills", 
     icon: BookOpen,
     bottomIcon: Library,
-    color: "#18357a",
+    color: "#224292",
     points: [
       "Aptitude & Logical Reasoning",
       "Communication Skills",
@@ -38,7 +38,7 @@ const roadmap = [
     title: "Industry Exposure", 
     icon: Briefcase,
     bottomIcon: Building2,
-    color: "#18357a",
+    color: "#224292",
     points: [
       "Internships & Live Projects",
       "Workshops & Hackathons",
@@ -66,13 +66,13 @@ const TrainingFlow = () => {
     <div className="mb-24">
        {/* Header */}
        <div className="flex flex-col items-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 mb-6">
-             <div className="w-6 h-6 rounded-full bg-[#18357a] flex items-center justify-center text-white">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10 mb-6">
+             <div className="w-6 h-6 rounded-full bg-[#224292] flex items-center justify-center text-white">
                 <Sparkles size={12} />
              </div>
-             <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">Training Roadmap</span>
+             <span className="text-[10px] font-black text-[#224292] uppercase tracking-widest">Training Roadmap</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] tracking-tighter text-center mb-4 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter text-center mb-4 leading-tight">
              Student Success <span className="text-[#ffc107]">Journey</span>
           </h2>
           <div className="w-16 h-1.5 bg-[#ffc107] mb-6 rounded-full" />
@@ -101,7 +101,7 @@ const TrainingFlow = () => {
                   </div>
 
                   <p className="text-[11px] font-black uppercase tracking-[0.2em] mb-2" style={{ color: step.color }}>{step.year}</p>
-                  <h3 className="text-xl font-black text-[#0A1A3F] mb-4 tracking-tighter text-center leading-tight">{step.title}</h3>
+                  <h3 className="text-xl font-black text-[#224292] mb-4 tracking-tighter text-center leading-tight">{step.title}</h3>
                   <div className="w-8 h-0.5 bg-slate-200 mb-6 rounded-full" />
                   
                   <div className="w-full space-y-2 mb-2">
@@ -124,7 +124,7 @@ const TrainingOverview = () => {
   return (
     <div className="relative bg-[#F8FAFC] py-8 min-h-screen overflow-hidden font-graphik">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#18357a]/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#224292]/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
       
       <section className="relative z-10 max-w-7xl mx-auto">
         <HeaderSection />

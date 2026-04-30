@@ -43,12 +43,12 @@ const HeaderSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 mb-8">
-            <Award size={16} className="text-[#18357a]" />
-            <span className="text-[11px] font-bold text-[#18357a] uppercase tracking-wider">Our Commitment</span>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10 mb-8">
+            <Award size={16} className="text-[#224292]" />
+            <span className="text-[11px] font-bold text-[#224292] uppercase tracking-wider">Our Commitment</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-black text-[#0A1A3F] leading-[1.1] tracking-tighter mb-8 font-graphik">
+          <h1 className="text-5xl md:text-6xl font-black text-[#224292] leading-[1.1] tracking-tighter mb-8 font-graphik">
             Shaping Competent<br />
             <span className="text-[#ffc107]">Professionals</span>
           </h1>
@@ -60,11 +60,11 @@ const HeaderSection = () => {
           <div className="grid sm:grid-cols-2 gap-x-8 gap-y-10 mb-12">
             {features.map((f, i) => (
               <div key={i} className="flex gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#0A1A3F] flex items-center justify-center shrink-0 shadow-lg">
+                <div className="w-12 h-12 rounded-full bg-[#224292] flex items-center justify-center shrink-0 shadow-lg">
                   <f.icon size={22} className="text-white" />
                 </div>
                 <div>
-                  <h4 className="text-[15px] font-black text-[#0A1A3F] mb-1 font-graphik">{f.title}</h4>
+                  <h4 className="text-[15px] font-black text-[#224292] mb-1 font-graphik">{f.title}</h4>
                   <p className="text-[12px] font-black text-black leading-tight font-graphik">{f.desc}</p>
                 </div>
               </div>
@@ -88,7 +88,7 @@ const HeaderSection = () => {
               className="w-full h-[600px] object-cover"
             />
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3F]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/60 via-transparent to-transparent" />
             
             {/* Floating Slogan */}
             <div className="absolute top-12 right-12 text-right">
@@ -101,11 +101,11 @@ const HeaderSection = () => {
 
             {/* Placement Badge Overlay */}
             <div className="absolute bottom-12 right-12">
-               <div className="relative w-48 h-48 bg-white/90 backdrop-blur-md rounded-full border-[10px] border-[#0A1A3F]/5 flex flex-col items-center justify-center p-6 text-center shadow-2xl overflow-hidden group">
+               <div className="relative w-48 h-48 bg-white/90 backdrop-blur-md rounded-full border-[10px] border-[#224292]/5 flex flex-col items-center justify-center p-6 text-center shadow-2xl overflow-hidden group">
                   <div className="absolute inset-0 border-[3px] border-dashed border-[#ffc107]/20 rounded-full animate-spin-slow" />
                   <div className="relative z-10">
-                    <p className="text-4xl font-black text-[#0A1A3F] mb-1 tracking-tighter">95%</p>
-                    <p className="text-[10px] font-black text-[#0A1A3F] uppercase leading-tight tracking-widest mb-4">Placement<br/>Success Rate</p>
+                    <p className="text-4xl font-black text-[#224292] mb-1 tracking-tighter">95%</p>
+                    <p className="text-[10px] font-black text-[#224292] uppercase leading-tight tracking-widest mb-4">Placement<br/>Success Rate</p>
                     <div className="w-10 h-0.5 bg-[#ffc107] mx-auto mb-3" />
                     <p className="text-[8px] font-black text-slate-500 uppercase tracking-widest leading-tight">Strong Connections.<br/>Bright Careers.</p>
                   </div>

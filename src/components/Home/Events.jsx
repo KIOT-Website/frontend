@@ -67,8 +67,8 @@ const Events = ({ onEventsClick }) => {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#18357a] font-display leading-tight tracking-tight">
-              Upcoming <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Events</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#224292] font-display leading-tight tracking-tight">
+              Recent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Events</span>
             </h2>
             
             <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mt-6 rounded-full" />
@@ -79,8 +79,8 @@ const Events = ({ onEventsClick }) => {
         <div className="max-w-7xl mx-auto">
            {loading ? (
              <div className="flex flex-col items-center justify-center py-24 opacity-30">
-                <Loader2 size={48} className="animate-spin text-[#18357a] mb-6" />
-                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#18357a]">Fetching Latest Buzz...</p>
+                <Loader2 size={48} className="animate-spin text-[#224292] mb-6" />
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#224292]">Fetching Latest Buzz...</p>
              </div>
            ) : (
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -109,7 +109,7 @@ const Events = ({ onEventsClick }) => {
                           {/* Kongu-Style Date Badge (Bottom Left) */}
                           <div className="absolute bottom-6 left-6 z-20">
                              <div className="inline-flex items-center gap-3 px-5 py-2 bg-[#ffc107] rounded-full shadow-[0_10px_30px_rgba(255,193,7,0.3)] border-2 border-white/20">
-                                <span className="text-[10px] font-black text-[#18357a] uppercase tracking-widest">
+                                <span className="text-[10px] font-black text-[#224292] uppercase tracking-widest">
                                   {formatDate(event.event_date).split(' ')[0]} {formatDate(event.event_date).split(' ')[1].replace(',', '')}, {formatDate(event.event_date).split(' ')[2]}
                                 </span>
                              </div>
@@ -118,7 +118,7 @@ const Events = ({ onEventsClick }) => {
 
                        {/* Event Title Below Image - Reduced Padding */}
                        <div className="p-4 flex flex-grow items-center">
-                          <h3 className="text-sm lg:text-base font-black text-[#18357a] group-hover:text-[#ffc107] transition-colors duration-500 leading-tight">
+                          <h3 className="text-sm lg:text-base font-black text-[#224292] group-hover:text-[#ffc107] transition-colors duration-500 leading-tight">
                             {event.event_name}
                           </h3>
                        </div>
@@ -140,7 +140,7 @@ const Events = ({ onEventsClick }) => {
            >
               <Link 
                 to="/events"
-                className="group relative inline-flex items-center gap-6 px-10 py-5 bg-[#18357a] text-white border border-[#18357a] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
+                className="group relative inline-flex items-center gap-6 px-10 py-5 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
               >
                  <span className="text-white">View All Events</span>
                  <ArrowRight size={18} className="text-white transition-transform duration-500 group-hover:translate-x-2" />

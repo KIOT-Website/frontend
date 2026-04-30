@@ -80,7 +80,7 @@ const SportsFacultyPage = () => {
         <div className="mt-4 mb-8 px-6 md:px-0">
           <button 
             onClick={() => navigate('/campus-life/sports')}
-            className="inline-flex items-center gap-2 text-[#18357a] hover:text-[#ffc107] transition-colors group border border-slate-200 px-4 py-2 rounded-full bg-white shadow-sm"
+            className="inline-flex items-center gap-2 text-[#224292] hover:text-[#ffc107] transition-colors group border border-slate-200 px-4 py-2 rounded-full bg-white shadow-sm"
           >
             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
             <span className="text-xs font-black tracking-[2px]">Back to Sports & Games</span>
@@ -89,11 +89,11 @@ const SportsFacultyPage = () => {
 
         <div className="space-y-8 md:space-y-16">
           <div className="flex items-center gap-4 border-b border-slate-100 pb-6 px-6 md:px-0">
-            <div className="w-12 h-12 bg-[#18357a] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-[#224292] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
               <Star size={24} />
             </div>
             <div>
-              <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Faculty Profiles</h2>
+              <h2 className="text-2xl font-black text-[#224292] tracking-tight">Faculty Profiles</h2>
             </div>
           </div>
           <div className="space-y-0 md:space-y-12">
@@ -107,11 +107,11 @@ const SportsFacultyPage = () => {
                 className="bg-white rounded-none md:rounded-[2rem] p-6 md:p-12 border-x-0 md:border border-slate-100 shadow-2xl space-y-10 relative overflow-hidden group"
               >
                 {/* Background Pattern */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#18357a]/5 rounded-full -translate-x-[-30%] -translate-y-[30%] group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#224292]/5 rounded-full -translate-x-[-30%] -translate-y-[30%] group-hover:scale-110 transition-transform duration-700" />
                 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row items-center md:items-end gap-10 border-b border-slate-100 pb-12 px-6 md:px-0">
-                    <div className="w-48 h-48 rounded-[2.5rem] bg-[#18357a] overflow-hidden shadow-2xl border-4 border-white flex items-center justify-center shrink-0">
+                    <div className="w-48 h-48 rounded-[2.5rem] bg-[#224292] overflow-hidden shadow-2xl border-4 border-white flex items-center justify-center shrink-0">
                         {faculty.image ? (
                             <img src={faculty.image} className="w-full h-full object-cover" alt={faculty.name} />
                         ) : (
@@ -120,18 +120,18 @@ const SportsFacultyPage = () => {
                     </div>
                     
                     <div className="text-center md:text-left flex-1 space-y-4">
-                        <h3 className="text-4xl md:text-5xl font-black text-[#18357a] tracking-tight leading-none">{faculty.name}</h3>
+                        <h3 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tight leading-none">{faculty.name}</h3>
                         
                             <div className="flex items-center justify-center md:justify-start gap-3 text-slate-800 text-sm md:text-base font-bold">
-                                <GraduationCap size={20} className="text-[#18357a]" />
+                                <GraduationCap size={20} className="text-[#224292]" />
                                 {faculty.qualification}
                             </div>
                     </div>
 
                     <div className="w-full md:w-80 bg-slate-50 px-8 py-6 rounded-3xl border border-slate-100 shadow-sm">
                         <div className="flex items-center gap-4 mb-3">
-                            <Award size={24} className="text-[#18357a]" />
-                            <p className="text-xs font-black text-[#18357a] tracking-[2px]">Specialization</p>
+                            <Award size={24} className="text-[#224292]" />
+                            <p className="text-xs font-black text-[#224292] tracking-[2px]">Specialization</p>
                         </div>
                         <p className="text-[15px] font-black text-slate-700 leading-tight tracking-tight">{faculty.specialization}</p>
                     </div>
@@ -142,10 +142,10 @@ const SportsFacultyPage = () => {
                     {faculty.sections.map((section, sidx) => (
                         <div key={sidx} className="space-y-6">
                             <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-[#18357a]/10 flex items-center justify-center text-[#18357a]">
+                                <div className="w-8 h-8 rounded-lg bg-[#224292]/10 flex items-center justify-center text-[#224292]">
                                     <Trophy size={16} />
                                 </div>
-                                <h4 className="text-xs font-black text-[#18357a] tracking-[2px]">
+                                <h4 className="text-xs font-black text-[#224292] tracking-[2px]">
                                     {section.title}
                                     <div className="w-6 h-0.5 bg-[#ffc107] mt-1" />
                                 </h4>

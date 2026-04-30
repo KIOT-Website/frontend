@@ -23,7 +23,7 @@ const pgStats = [
 
 const summaryStats = [
   { label: "Total alumni", value: "8,674", icon: Users, color: "bg-blue-500" },
-  { label: "Male Students", value: "6,012", sub: "69%", icon: User, color: "bg-[#18357a]" },
+  { label: "Male Students", value: "6,012", sub: "69%", icon: User, color: "bg-[#224292]" },
   { label: "Female Students", value: "2,662", sub: "31%", icon: UserCheck, color: "bg-[#ffc107]" },
 ]
 
@@ -35,7 +35,7 @@ const AlumniInsights = () => {
         {/* Heading */}
         <div className="text-center mb-20">
           <h2 className="text-sm font-black text-[#ffc107] uppercase tracking-[0.4em] mb-4">Insights & Analytics</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-[#18357a] tracking-tight mb-6">
+          <h3 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tight mb-6">
             Alumni Statistics Report
           </h3>
           <p className="text-black font-black uppercase tracking-widest text-[11px] font-graphik">BATCH 2013 - BATCH 2025</p>
@@ -51,7 +51,7 @@ const AlumniInsights = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-[#18357a] p-8 rounded-[2rem] shadow-xl shadow-[#18357a]/20 flex items-center justify-between group transition-all duration-500"
+              className="bg-[#224292] p-8 rounded-[2rem] shadow-xl shadow-[#224292]/20 flex items-center justify-between group transition-all duration-500"
             >
               <div>
                 <p className="text-[10px] font-black text-white/70 uppercase tracking-widest mb-1">{stat.label}</p>
@@ -70,7 +70,7 @@ const AlumniInsights = () => {
         {/* UG Stats Table */}
         <div className="mb-16">
           <div className="mb-6">
-            <h4 className="text-xl md:text-2xl font-black text-[#18357a] uppercase tracking-tighter font-graphik">UG / B.E. & B.Tech.</h4>
+            <h4 className="text-xl md:text-2xl font-black text-[#224292] uppercase tracking-tighter font-graphik">UG / B.E. & B.Tech.</h4>
           </div>
           
           <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-xl bg-slate-50/50">
@@ -80,7 +80,7 @@ const AlumniInsights = () => {
                   <th className="px-6 py-5 text-[10px] font-black text-black uppercase tracking-[0.2em] font-graphik w-1/2">Course / Dept.</th>
                   <th className="px-4 py-5 text-[10px] font-black text-black uppercase tracking-[0.2em] text-center font-graphik whitespace-nowrap">Male</th>
                   <th className="px-4 py-5 text-[10px] font-black text-black uppercase tracking-[0.2em] text-center font-graphik whitespace-nowrap">Female</th>
-                  <th className="px-4 py-5 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em] text-center bg-slate-100 font-graphik whitespace-nowrap">Total</th>
+                  <th className="px-4 py-5 text-[10px] font-black text-[#224292] uppercase tracking-[0.2em] text-center bg-slate-100 font-graphik whitespace-nowrap">Total</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
@@ -89,14 +89,14 @@ const AlumniInsights = () => {
                     <td className="px-6 py-4 font-bold text-black font-graphik text-sm">{row.dept}</td>
                     <td className="px-4 py-4 text-center text-black font-bold font-graphik text-sm">{row.male}</td>
                     <td className="px-4 py-4 text-center text-black font-bold font-graphik text-sm">{row.female}</td>
-                    <td className="px-4 py-4 text-center font-black text-[#18357a] bg-slate-50/30 font-graphik text-sm">{row.total}</td>
+                    <td className="px-4 py-4 text-center font-black text-[#224292] bg-slate-50/30 font-graphik text-sm">{row.total}</td>
                   </tr>
                 ))}
-                <tr className="bg-[#18357a] text-white">
+                <tr className="bg-[#224292] text-white">
                   <td className="px-6 py-5 font-black uppercase tracking-widest text-[10px] font-graphik">Total UG Alumni</td>
                   <td className="px-4 py-5 text-center font-black text-lg font-graphik">4970</td>
                   <td className="px-4 py-5 text-center font-black text-lg font-graphik">2002</td>
-                  <td className="px-4 py-5 text-center font-black text-xl bg-[#ffc107] text-[#18357a] font-graphik">6972</td>
+                  <td className="px-4 py-5 text-center font-black text-xl bg-[#ffc107] text-[#224292] font-graphik">6972</td>
                 </tr>
               </tbody>
             </table>
@@ -106,7 +106,7 @@ const AlumniInsights = () => {
         {/* PG Stats Table */}
         <div>
           <div className="mb-6">
-            <h4 className="text-xl md:text-2xl font-black text-[#18357a] uppercase tracking-tighter font-graphik">PG / MBA & M.E.</h4>
+            <h4 className="text-xl md:text-2xl font-black text-[#224292] uppercase tracking-tighter font-graphik">PG / MBA & M.E.</h4>
           </div>
           
           <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-xl bg-slate-50/50">
@@ -116,7 +116,7 @@ const AlumniInsights = () => {
                   <th className="px-6 py-5 text-[10px] font-black text-black uppercase tracking-[0.2em] font-graphik w-1/2">Course / Dept.</th>
                   <th className="px-4 py-5 text-[10px] font-black text-black uppercase tracking-[0.2em] text-center font-graphik whitespace-nowrap">Male</th>
                   <th className="px-4 py-5 text-[10px] font-black text-black uppercase tracking-[0.2em] text-center font-graphik whitespace-nowrap">Female</th>
-                  <th className="px-4 py-4 text-[10px] font-black text-[#18357a] uppercase tracking-[0.2em] text-center bg-slate-100 font-graphik whitespace-nowrap">Total</th>
+                  <th className="px-4 py-4 text-[10px] font-black text-[#224292] uppercase tracking-[0.2em] text-center bg-slate-100 font-graphik whitespace-nowrap">Total</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
@@ -125,14 +125,14 @@ const AlumniInsights = () => {
                     <td className="px-6 py-4 font-bold text-black font-graphik text-sm">{row.dept}</td>
                     <td className="px-4 py-4 text-center text-black font-bold font-graphik text-sm">{row.male}</td>
                     <td className="px-4 py-4 text-center text-black font-bold font-graphik text-sm">{row.female}</td>
-                    <td className="px-4 py-4 text-center font-black text-[#18357a] bg-slate-50/30 font-graphik text-sm">{row.total}</td>
+                    <td className="px-4 py-4 text-center font-black text-[#224292] bg-slate-50/30 font-graphik text-sm">{row.total}</td>
                   </tr>
                 ))}
-                <tr className="bg-[#18357a] text-white">
+                <tr className="bg-[#224292] text-white">
                   <td className="px-6 py-5 font-black uppercase tracking-widest text-[10px] font-graphik">Total PG Alumni</td>
                   <td className="px-4 py-5 text-center font-black text-lg font-graphik">1042</td>
                   <td className="px-4 py-5 text-center font-black text-lg font-graphik">660</td>
-                  <td className="px-4 py-5 text-center font-black text-xl bg-[#ffc107] text-[#18357a] font-graphik">1702</td>
+                  <td className="px-4 py-5 text-center font-black text-xl bg-[#ffc107] text-[#224292] font-graphik">1702</td>
                 </tr>
               </tbody>
             </table>

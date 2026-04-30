@@ -89,7 +89,7 @@ const MedicalImagingPage = () => {
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6 italic">
+                            <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6 italic">
                                 Centre for <span className="text-[#ffc107]">Medical Imaging</span>
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -129,7 +129,7 @@ const MedicalImagingPage = () => {
                                 <div className="flex flex-col md:flex-row gap-8">
                                     <div className="flex-1">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#18357a] group-hover:bg-[#ffc107] transition-all">
+                                            <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#224292] group-hover:bg-[#ffc107] transition-all">
                                                 <Cpu size={18} />
                                             </div>
                                             <h3 className="text-lg font-bold text-[#0f172a] uppercase tracking-tight">{software.name}</h3>
@@ -151,7 +151,7 @@ const MedicalImagingPage = () => {
                                     <div className="md:w-48 bg-[#fafcff] rounded-xl border border-slate-100 p-6 flex flex-col justify-center items-center text-center group-hover:bg-[#0f172a] transition-all duration-300">
                                         <BadgeDollarSign size={24} className="text-[#ffc107] mb-2" />
                                         <span className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest group-hover:text-slate-400">Software Cost</span>
-                                        <div className="text-lg font-black text-[#18357a] group-hover:text-white">₹ {software.cost}</div>
+                                        <div className="text-lg font-black text-[#224292] group-hover:text-white">₹ {software.cost}</div>
                                     </div>
                                 </div>
                             </motion.div>
@@ -160,7 +160,7 @@ const MedicalImagingPage = () => {
 
                     {/* Sidebar Stats */}
                     <div className="lg:col-span-4 space-y-6">
-                        <div className="bg-[#18357a] rounded-2xl p-8 text-white shadow-2xl relative overflow-hidden group">
+                        <div className="bg-[#224292] rounded-2xl p-8 text-white shadow-2xl relative overflow-hidden group">
                             <div className="absolute -right-10 -bottom-10 opacity-10 group-hover:scale-110 transition-transform duration-500">
                                 <Stethoscope size={200} />
                             </div>
@@ -203,11 +203,11 @@ const MedicalImagingPage = () => {
                             </p>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
-                                    <div className="text-lg font-black text-[#18357a]">100%</div>
+                                    <div className="text-lg font-black text-[#224292]">100%</div>
                                     <div className="text-[8px] font-bold text-[#64779F] uppercase tracking-widest">Industry Standard</div>
                                 </div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
-                                    <div className="text-lg font-black text-[#18357a]">UG/PG</div>
+                                    <div className="text-lg font-black text-[#224292]">UG/PG</div>
                                     <div className="text-[8px] font-bold text-[#64779F] uppercase tracking-widest">Target Audience</div>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@ const MedicalImagingPage = () => {
                 </div>
 
                 <div className="mt-12 p-6 bg-white border border-slate-200 rounded-3xl shadow-sm inline-flex items-center gap-4">
-                   <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#18357a]">
+                   <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#224292]">
                        <Box size={20} />
                    </div>
                    <div>

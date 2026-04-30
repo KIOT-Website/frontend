@@ -6,13 +6,13 @@ import {
 } from 'lucide-react'
 
 const statsData = [
-  { text: "Within Top 50 Position In Admission", sub: "TNEA 2025", icon: Trophy, accent: "#18357a", metric: "50", unit: "th", size: "small" },
+  { text: "Within Top 50 Position In Admission", sub: "TNEA 2025", icon: Trophy, accent: "#224292", metric: "50", unit: "th", size: "small" },
   { text: "95% Placements In every Year", sub: "Strategic Growth", icon: TrendingUp, accent: "#ffc107", metric: "95", unit: "%", size: "large" },
-  { text: "150+ Companies for placements", sub: "Global Partners", icon: Briefcase, accent: "#18357a", metric: "150", unit: "+", size: "small" },
+  { text: "150+ Companies for placements", sub: "Global Partners", icon: Briefcase, accent: "#224292", metric: "150", unit: "+", size: "small" },
   { text: "Career Development Training", sub: "1200 Hours Skill-up", icon: GraduationCap, accent: "#ffc107", metric: "1.2", unit: "k", size: "medium" },
-  { text: "Academic Excellence", sub: "Since 2009", icon: Calendar, accent: "#18357a", metric: "17", unit: "+", size: "medium" },
+  { text: "Academic Excellence", sub: "Since 2009", icon: Calendar, accent: "#224292", metric: "17", unit: "+", size: "medium" },
   { text: "Dedicated Faculty", sub: "Ratio 1:15", icon: Users, accent: "#ffc107", metric: "250", unit: "+", size: "medium" },
-  { text: "Alumni across the globe", sub: "Global Network", icon: UserCheck, accent: "#18357a", metric: "8000", unit: "+", size: "large" },
+  { text: "Alumni across the globe", sub: "Global Network", icon: UserCheck, accent: "#224292", metric: "8000", unit: "+", size: "large" },
   { text: "Top 10% Colleges in TN", sub: "Elite Standing", icon: Landmark, accent: "#ffc107", metric: "10", unit: "%", size: "small" }
 ];
 
@@ -64,24 +64,24 @@ const StatCard = ({ item, index }) => {
       >
         {/* Prismatic Border */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-             style={{ background: `conic-gradient(from 0deg at 50% 50%, #18357a 0deg, #ffc107 180deg, #18357a 360deg)`, animation: 'spin 3s linear infinite' }} />
+             style={{ background: `conic-gradient(from 0deg at 50% 50%, #224292 0deg, #ffc107 180deg, #224292 360deg)`, animation: 'spin 3s linear infinite' }} />
 
         <div className={`relative h-full w-full rounded-[1.9rem] p-6 lg:p-8 flex flex-col z-10 
-          ${item.accent === '#18357a' ? 'bg-gradient-to-br from-[#18357a] to-[#224292]' : 'bg-white'}
+          ${item.accent === '#224292' ? 'bg-gradient-to-br from-[#224292] to-[#224292]' : 'bg-white'}
         `}>
           {/* Spotlight */}
           <motion.div className="absolute inset-0 pointer-events-none transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-            style={{ background: useTransform([spotlightX, spotlightY], ([lx, ly]) => `radial-gradient(400px circle at ${lx}px ${ly}px, ${item.accent === '#18357a' ? 'rgba(255,193,7,0.12)' : 'rgba(24,53,122,0.06)'}, transparent 40%)`) }} />
+            style={{ background: useTransform([spotlightX, spotlightY], ([lx, ly]) => `radial-gradient(400px circle at ${lx}px ${ly}px, ${item.accent === '#224292' ? 'rgba(255,193,7,0.12)' : 'rgba(24,53,122,0.06)'}, transparent 40%)`) }} />
 
           {/* Header */}
           <div className="flex justify-between items-start mb-10">
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-xl
-              ${item.accent === '#18357a' ? 'bg-white/10 text-[#ffc107]' : 'bg-[#18357a]/5 text-[#18357a]'}
+              ${item.accent === '#224292' ? 'bg-white/10 text-[#ffc107]' : 'bg-[#224292]/5 text-[#224292]'}
             `}>
               <item.icon size={22} strokeWidth={2} />
             </div>
             <div className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all opacity-20 group-hover:opacity-100
-              ${item.accent === '#18357a' ? 'border-white text-white' : 'border-[#18357a] text-[#18357a]'}
+              ${item.accent === '#224292' ? 'border-white text-white' : 'border-[#224292] text-[#224292]'}
             `}>
                <ArrowUpRight size={14} />
             </div>
@@ -92,7 +92,7 @@ const StatCard = ({ item, index }) => {
             <div className="flex items-baseline gap-1.5">
               <span className={`font-display font-black tracking-tighter leading-none transition-all duration-500
                 ${isLarge ? 'text-5xl md:text-7xl' : 'text-4xl md:text-5xl'}
-                ${item.accent === '#18357a' ? 'text-white' : 'text-[#18357a]'}
+                ${item.accent === '#224292' ? 'text-white' : 'text-[#224292]'}
               `}>
                 {item.metric}
               </span>
@@ -101,21 +101,21 @@ const StatCard = ({ item, index }) => {
               </span>
             </div>
             <div className={`mt-4 inline-flex self-start px-2 py-0.5 rounded-full text-[8px] font-black tracking-widest uppercase
-              ${item.accent === '#18357a' ? 'bg-white/10 text-[#ffc107]' : 'bg-[#18357a]/5 text-[#18357a]'}
+              ${item.accent === '#224292' ? 'bg-white/10 text-[#ffc107]' : 'bg-[#224292]/5 text-[#224292]'}
             `}>
               {item.sub}
             </div>
           </div>
 
           <p className={`mt-auto text-sm md:text-base font-black leading-tight transition-all duration-300
-            ${item.accent === '#18357a' ? 'text-white' : 'text-[#18357a]'}
+            ${item.accent === '#224292' ? 'text-white' : 'text-[#224292]'}
           `}>
             {item.text}
           </p>
         </div>
 
         <div className={`absolute -bottom-6 -right-6 w-24 h-24 opacity-[0.03] group-hover:opacity-[0.06] transition-all duration-700 pointer-events-none rotate-[-15deg] group-hover:rotate-0
-          ${item.accent === '#18357a' ? 'text-white' : 'text-[#18357a]'}
+          ${item.accent === '#224292' ? 'text-white' : 'text-[#224292]'}
         `}>
            <item.icon className="w-full h-full" />
         </div>

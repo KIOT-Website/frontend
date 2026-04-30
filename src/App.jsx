@@ -49,6 +49,8 @@ const SportsFacilitiesPage = lazy(() => import('./pages/SportsFacilitiesPage'))
 const AutonomousPage = lazy(() => import('./pages/AutonomousPage'))
 const COEPage = lazy(() => import('./pages/COEPage'))
 const ExamSchedulesPage = lazy(() => import('./pages/ExamSchedulesPage'))
+const CircularsPage = lazy(() => import('./pages/CircularsPage'))
+const AboutCOEPage = lazy(() => import('./pages/AboutCOEPage'))
 const ResearchPage = lazy(() => import('./pages/ResearchPage'))
 const ResearchResourcesPage = lazy(() => import('./pages/ResearchResourcesPage'))
 const PhdSupervisorsPage = lazy(() => import('./pages/PhdSupervisorsPage'))
@@ -88,7 +90,7 @@ const NewsEventsPage = lazy(() => import('./pages/NewsEventsPage'))
 
 // Simple Loading Fallback
 const PageLoader = () => (
-  <div className="flex items-center justify-center min-h-[60vh] text-[#18357a]">
+  <div className="flex items-center justify-center min-h-[60vh] text-[#224292]">
     <motion.div
       animate={{ rotate: 360 }}
       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
@@ -256,9 +258,11 @@ function App() {
                     <Route path="/resources" element={<UnderConstruction />} />
                   <Route path="/autonomous" element={<AutonomousPage />} />
                   <Route path="/exams" element={<COEPage />} />
-                  <Route path="/exams/schedules" element={<ExamSchedulesPage />} />
                   <Route path="/coe" element={<COEPage />} />
-                  <Route path="/coe/exam-schedules" element={<ExamSchedulesPage />} />
+                  <Route path="/exams/about-coe" element={<AboutCOEPage />} />
+                  <Route path="/exams/schedules" element={<ExamSchedulesPage />} />
+                  <Route path="/exams/circulars" element={<CircularsPage />} />
+                  <Route path="/exams/circular" element={<CircularsPage />} />
                   <Route path="/campus-life" element={<CampusLifePage />} />
               <Route path="/campus-life/library" element={<LibraryPage />} />
               <Route path="/campus-life/sports" element={<SportsPage />} />
@@ -304,14 +308,14 @@ function App() {
                 exit={{ x: -100, opacity: 0 }}
                 className="fixed bottom-6 left-6 z-[3000] w-[260px] bg-white rounded-2xl shadow-[0_20px_70px_rgba(10,26,63,0.25)] overflow-hidden border border-slate-100 flex flex-col font-graphik"
               >
-                <div className="bg-[#0A1A3F] p-5 pb-6 flex flex-col items-center text-center relative">
+                <div className="bg-[#224292] p-5 pb-6 flex flex-col items-center text-center relative">
                     <button 
                       onClick={handleClosePopup}
-                      className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-[#0A1A3F] transition-all z-20"
+                      className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-[#224292] transition-all z-20"
                     >
                       <X size={16} />
                     </button>
-                    <div className="w-12 h-12 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#0A1A3F] mb-4 shadow-lg relative z-10">
+                    <div className="w-12 h-12 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#224292] mb-4 shadow-lg relative z-10">
                         <GraduationCap size={24} />
                     </div>
                     <h2 className="text-white text-[11px] font-black uppercase tracking-[0.2em] mb-1 relative z-10 opacity-80">Admissions</h2>
@@ -319,12 +323,12 @@ function App() {
                 </div>
                 <div className="p-5 pt-0 -mt-4 relative z-20">
                     <div className="bg-white rounded-2xl p-4 shadow-xl border border-slate-50 flex flex-col items-center text-center">
-                        <p className="text-[#0A1A3F] text-[13px] font-black leading-tight mb-3">
+                        <p className="text-[#224292] text-[13px] font-black leading-tight mb-3">
                             Applications are now open for all departments.
                         </p>
                         <button 
                           onClick={() => { handleClosePopup(); navigate('/admissions'); }}
-                          className="w-full py-3 bg-[#ffc107] text-[#0A1A3F] rounded-xl font-black text-[13px] uppercase tracking-[0.1em] hover:bg-[#0A1A3F] hover:text-white transition-all shadow-md flex items-center justify-center gap-2"
+                          className="w-full py-3 bg-[#ffc107] text-[#224292] rounded-xl font-black text-[13px] uppercase tracking-[0.1em] hover:bg-[#224292] hover:text-white transition-all shadow-md flex items-center justify-center gap-2"
                         >
                           Apply Now
                         </button>

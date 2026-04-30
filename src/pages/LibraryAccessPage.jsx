@@ -18,14 +18,14 @@ const LibraryAccessPage = () => {
     return (
         <div className="min-h-screen bg-white font-graphik">
             {/* Minimal Hero Header */}
-            <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#18357a]/5 to-transparent overflow-hidden">
+            <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#224292]/5 to-transparent overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
                     <motion.h1 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-black text-[#18357a] tracking-tighter leading-none mb-6"
+                        className="text-4xl md:text-6xl font-black text-[#224292] tracking-tighter leading-none mb-6"
                     >
                         Library <span className="text-[#ffc107]">Access</span>
                     </motion.h1>
@@ -35,7 +35,7 @@ const LibraryAccessPage = () => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
                         onClick={() => navigate('/campus-life/library')}
-                        className="flex items-center gap-2 text-xs font-black text-[#64779F] tracking-widest hover:text-[#18357a] transition-colors"
+                        className="flex items-center gap-2 text-xs font-black text-[#64779F] tracking-widest hover:text-[#224292] transition-colors"
                     >
                         <ArrowLeft size={14} /> Back to Library Hub
                     </motion.button>
@@ -50,15 +50,15 @@ const LibraryAccessPage = () => {
                         animate={{ opacity: 1, x: 0 }}
                         className="space-y-8 px-6 md:px-0"
                     >
-                        <div className="p-10 bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 relative overflow-hidden group hover:border-[#18357a]/20 transition-all duration-500">
-                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-125" />
+                        <div className="p-10 bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/40 relative overflow-hidden group hover:border-[#224292]/20 transition-all duration-500">
+                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#224292]/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-125" />
                              
                              <div className="flex items-center gap-4 mb-10 relative z-10">
-                                <div className="w-14 h-14 bg-[#18357a] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-[#18357a]/20">
+                                <div className="w-14 h-14 bg-[#224292] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-[#224292]/20">
                                     <Library size={28} />
                                 </div>
                                 <div>
-                                    <h2 className="text-2xl font-bold text-[#18357a] tracking-tight leading-none">Integrated Library (ILMS)</h2>
+                                    <h2 className="text-2xl font-bold text-[#224292] tracking-tight leading-none">Integrated Library (ILMS)</h2>
                                 </div>
                              </div>
 
@@ -70,11 +70,11 @@ const LibraryAccessPage = () => {
                                     { label: 'Implementation', value: 'Since 2009', icon: Globe }
                                 ].map((item, idx) => (
                                     <div key={idx} className="flex gap-4 items-center">
-                                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-[#18357a] border border-slate-100">
+                                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-[#224292] border border-slate-100">
                                             <item.icon size={18} />
                                         </div>
                                          <div>
-                                            <p className="text-xs font-bold text-[#18357a] tracking-widest leading-none mb-0">{item.label}</p>
+                                            <p className="text-xs font-bold text-[#224292] tracking-widest leading-none mb-0">{item.label}</p>
                                             <p className="text-lg font-black text-black">{item.value}</p>
                                         </div>
                                     </div>
@@ -104,11 +104,11 @@ const LibraryAccessPage = () => {
                                     { t: 'Stock Verification', d: 'Real-time tracking of asset availability.' },
                                     { t: 'Reporting Suite', d: 'Automated daily transaction insights.' }
                                 ].map((feat, i) => (
-                                    <div key={i} className="group p-5 bg-white border border-slate-100 hover:border-[#18357a]/20 hover:bg-slate-50/50 rounded-2xl transition-all flex items-center">
+                                    <div key={i} className="group p-5 bg-white border border-slate-100 hover:border-[#224292]/20 hover:bg-slate-50/50 rounded-2xl transition-all flex items-center">
                                         <div className="flex items-center gap-4">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-[#18357a] group-hover:bg-[#ffc107] group-hover:scale-150 transition-all" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[#224292] group-hover:bg-[#ffc107] group-hover:scale-150 transition-all" />
                                             <div>
-                                                <p className="text-lg font-bold text-[#18357a] mb-0.5">{feat.t}</p>
+                                                <p className="text-lg font-bold text-[#224292] mb-0.5">{feat.t}</p>
                                                 <p className="text-sm font-bold text-slate-600 group-hover:text-slate-800 transition-colors tracking-tight">{feat.d}</p>
                                             </div>
                                         </div>
@@ -124,11 +124,11 @@ const LibraryAccessPage = () => {
                         animate={{ opacity: 1, x: 0 }}
                         className="space-y-8 h-full w-full"
                     >
-                        <div className="bg-[#18357a] p-8 md:p-12 rounded-none md:rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden min-h-[600px] flex flex-col border border-[#18357a]">
+                        <div className="bg-[#224292] p-8 md:p-12 rounded-none md:rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden min-h-[600px] flex flex-col border border-[#224292]">
                              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white opacity-[0.02] rounded-full -translate-y-1/2 translate-x-1/2" />
                              
                              <div className="relative z-10 flex items-center gap-6 mb-12">
-                                <div className="w-16 h-16 bg-[#ffc107] rounded-[1.5rem] flex items-center justify-center text-[#18357a] shadow-[0_15px_40px_rgba(255,193,7,0.4)]">
+                                <div className="w-16 h-16 bg-[#ffc107] rounded-[1.5rem] flex items-center justify-center text-[#224292] shadow-[0_15px_40px_rgba(255,193,7,0.4)]">
                                     <Globe size={32} />
                                 </div>
                                 <div>
@@ -158,8 +158,8 @@ const LibraryAccessPage = () => {
                                                 rel="noreferrer" 
                                                 className="group px-6 py-5 bg-white/5 hover:bg-white rounded-2xl border border-white/10 transition-all flex items-center justify-between shadow-sm"
                                             >
-                                                <span className="text-sm font-black tracking-wide text-white group-hover:text-[#18357a] transition-colors">{link.n}</span>
-                                                <div className="flex items-center gap-2 text-[#ffc107] group-hover:text-[#18357a] transition-colors">
+                                                <span className="text-sm font-black tracking-wide text-white group-hover:text-[#224292] transition-colors">{link.n}</span>
+                                                <div className="flex items-center gap-2 text-[#ffc107] group-hover:text-[#224292] transition-colors">
                                                     <span className="text-xs font-black tracking-widest hidden sm:block">View</span>
                                                     <ExternalLink size={14} className="opacity-100 group-hover:opacity-100" />
                                                 </div>
@@ -194,8 +194,8 @@ const LibraryAccessPage = () => {
                                                 rel="noreferrer" 
                                                 className="group px-6 py-5 bg-white/5 hover:bg-[#ffc107] rounded-2xl border border-white/10 transition-all flex items-center justify-between"
                                             >
-                                                <span className="text-sm font-black tracking-wide text-white group-hover:text-[#18357a] transition-colors">{link.n}</span>
-                                                <div className="flex items-center gap-2 text-[#ffc107] group-hover:text-[#18357a] transition-colors">
+                                                <span className="text-sm font-black tracking-wide text-white group-hover:text-[#224292] transition-colors">{link.n}</span>
+                                                <div className="flex items-center gap-2 text-[#ffc107] group-hover:text-[#224292] transition-colors">
                                                     <span className="text-xs font-black tracking-widest hidden sm:block">View</span>
                                                     <ExternalLink size={12} className="opacity-100 group-hover:opacity-100" />
                                                 </div>

@@ -103,14 +103,14 @@ const LibraryJournalsPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] pb-24 font-graphik">
             {/* Minimal Header (Removed Hero) */}
-            <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#18357a]/5 to-transparent overflow-hidden">
+            <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#224292]/5 to-transparent overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
                     <motion.h1 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-bold text-[#18357a] tracking-tighter leading-none mb-6"
+                        className="text-4xl md:text-6xl font-bold text-[#224292] tracking-tighter leading-none mb-6"
                     >
                         Journals & <span className="text-[#ffc107]">E-Digital</span>
                     </motion.h1>
@@ -120,7 +120,7 @@ const LibraryJournalsPage = () => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
                         onClick={() => navigate('/campus-life/library')}
-                        className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#18357a] transition-colors"
+                        className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#224292] transition-colors"
                     >
                         <ArrowLeft size={14} /> Back to Library Hub
                     </motion.button>
@@ -140,8 +140,8 @@ const LibraryJournalsPage = () => {
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`flex items-center gap-3 px-6 py-4 rounded-xl text-xs font-bold tracking-widest transition-all ${
                                     activeTab === tab.id 
-                                    ? 'bg-[#18357a] text-white shadow-xl shadow-[#18357a]/30' 
-                                    : 'text-slate-700 hover:text-[#18357a] hover:bg-white'
+                                    ? 'bg-[#224292] text-white shadow-xl shadow-[#224292]/30' 
+                                    : 'text-slate-700 hover:text-[#224292] hover:bg-white'
                                 }`}
                             >
                                 <tab.icon size={16} />
@@ -160,17 +160,17 @@ const LibraryJournalsPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-[#18357a]/5 overflow-hidden"
+                            className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden"
                         >
                             <div className="p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-8 rounded-t-[2.5rem] relative overflow-hidden group">
-                                <div className="absolute top-0 left-0 w-64 h-64 bg-[#18357a]/5 blur-[80px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+                                <div className="absolute top-0 left-0 w-64 h-64 bg-[#224292]/5 blur-[80px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
                                 
                                 <div className="flex items-center gap-6 relative z-10">
-                                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#18357a] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
+                                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#224292] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
                                         <FileText size={28} />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold text-[#18357a] tracking-tight leading-none mb-2">Accession Distribution</h2>
+                                        <h2 className="text-2xl font-bold text-[#224292] tracking-tight leading-none mb-2">Accession Distribution</h2>
                                         <div className="flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
                                             <p className="text-xs font-bold text-slate-500 tracking-[4px]">Verified Network Growth</p>
@@ -179,14 +179,14 @@ const LibraryJournalsPage = () => {
                                 </div>
                                 <div className="text-right relative z-10">
                                     <p className="text-xs font-bold text-slate-500 tracking-[4px] leading-none mb-2">Active Records</p>
-                                    <p className="text-4xl font-bold text-[#18357a]">428</p>
+                                    <p className="text-4xl font-bold text-[#224292]">428</p>
                                 </div>
                             </div>
                             
                             <div className="overflow-x-auto">
                                 <table className="w-full text-left">
                                     <thead>
-                                        <tr className="bg-[#18357a] border-b border-[#18357a]/10 shadow-md">
+                                        <tr className="bg-[#224292] border-b border-[#224292]/10 shadow-md">
                                             <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Degree</th>
                                             <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Department / Specialization</th>
                                             <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] text-center">National</th>
@@ -195,17 +195,17 @@ const LibraryJournalsPage = () => {
                                     </thead>
                                     <tbody className="divide-y divide-slate-100 transition-all">
                                         {JOURNAL_STATS.map((row, i) => (
-                                            <tr key={i} className="hover:bg-[#18357a]/5 transition-colors group even:bg-slate-50/50">
-                                                <td className="px-8 py-5 font-bold text-[#18357a] text-xs">{row.deg}</td>
-                                                <td className="px-8 py-5 font-bold text-slate-800 text-base group-hover:text-[#18357a] transition-colors">{row.c}</td>
+                                            <tr key={i} className="hover:bg-[#224292]/5 transition-colors group even:bg-slate-50/50">
+                                                <td className="px-8 py-5 font-bold text-[#224292] text-xs">{row.deg}</td>
+                                                <td className="px-8 py-5 font-bold text-slate-800 text-base group-hover:text-[#224292] transition-colors">{row.c}</td>
                                                 <td className="px-8 py-5 text-center font-bold text-slate-600 text-base">{row.nj}</td>
-                                                <td className="px-8 py-5 text-center font-bold text-[#18357a] text-base">{row.ij}</td>
+                                                <td className="px-8 py-5 text-center font-bold text-[#224292] text-base">{row.ij}</td>
                                             </tr>
                                         ))}
-                                        <tr className="bg-[#18357a]/5">
-                                            <td colSpan="2" className="px-8 py-6 font-bold text-[#18357a] text-xl tracking-tighter">Aggregated Network Volume</td>
+                                        <tr className="bg-[#224292]/5">
+                                            <td colSpan="2" className="px-8 py-6 font-bold text-[#224292] text-xl tracking-tighter">Aggregated Network Volume</td>
                                             <td className="px-8 py-6 text-center font-bold text-[#ffc107] text-2xl">114</td>
-                                            <td className="px-8 py-6 text-center font-bold text-[#18357a] text-2xl">314</td>
+                                            <td className="px-8 py-6 text-center font-bold text-[#224292] text-2xl">314</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -219,7 +219,7 @@ const LibraryJournalsPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-[#18357a]/5 overflow-hidden"
+                            className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden"
                         >
                             <div className="p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-8 rounded-t-[2.5rem] relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
@@ -229,7 +229,7 @@ const LibraryJournalsPage = () => {
                                         <Bookmark size={28} />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold text-[#18357a] tracking-tight leading-none mb-2">Active Publications</h2>
+                                        <h2 className="text-2xl font-bold text-[#224292] tracking-tight leading-none mb-2">Active Publications</h2>
                                         <div className="flex items-center gap-2">
                                             <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
                                             <p className="text-xs font-bold text-slate-500 tracking-[4px]">Serial Resource Hub</p>
@@ -243,16 +243,16 @@ const LibraryJournalsPage = () => {
                                         placeholder="Search journal directory..."
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
-                                        className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-xs font-bold tracking-widest focus:outline-none focus:ring-4 focus:ring-[#18357a]/5 focus:border-[#18357a] transition-all shadow-sm"
+                                        className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-xs font-bold tracking-widest focus:outline-none focus:ring-4 focus:ring-[#224292]/5 focus:border-[#224292] transition-all shadow-sm"
                                     />
                                 </div>
                             </div>
                             
                             <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[700px] overflow-y-auto custom-scrollbar">
                                 {JOURNAL_LIST.filter(j => j.toLowerCase().includes(searchQuery.toLowerCase())).map((journal, i) => (
-                                    <div key={i} className="group flex items-start gap-5 p-5 bg-white hover:bg-[#18357a] rounded-2xl border border-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-1">
+                                    <div key={i} className="group flex items-start gap-5 p-5 bg-white hover:bg-[#224292] rounded-2xl border border-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-1">
                                         <div className="w-8 h-8 rounded-lg bg-slate-50 group-hover:bg-[#ffc107] flex items-center justify-center shadow-sm shrink-0 transition-all">
-                                            <span className="text-xs font-bold text-[#18357a]">{i+1}</span>
+                                            <span className="text-xs font-bold text-[#224292]">{i+1}</span>
                                         </div>
                                         <p className="text-[13px] font-bold text-slate-800 group-hover:text-white leading-relaxed tracking-tight transition-colors">
                                             {journal}
@@ -273,11 +273,11 @@ const LibraryJournalsPage = () => {
                         >
                             {/* Infrastructure Overview */}
                             <div className="grid lg:grid-cols-3 gap-8">
-                                <div className="lg:col-span-1 p-10 bg-[#18357a] rounded-[3rem] text-white shadow-2xl relative overflow-hidden flex flex-col justify-between group">
+                                <div className="lg:col-span-1 p-10 bg-[#224292] rounded-[3rem] text-white shadow-2xl relative overflow-hidden flex flex-col justify-between group">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-110" />
                                     <div className="relative z-10 space-y-8">
                                         <div className="w-16 h-16 bg-[#ffc107] rounded-3xl flex items-center justify-center shadow-xl shadow-[#ffc107]/20">
-                                            <Monitor size={32} className="text-[#18357a]" />
+                                            <Monitor size={32} className="text-[#224292]" />
                                         </div>
                                         <div>
                                             <h3 className="text-3xl font-bold tracking-tighter mb-4">Digital Library Lab</h3>
@@ -300,20 +300,20 @@ const LibraryJournalsPage = () => {
 
                                 <div className="lg:col-span-2 space-y-8">
                                     {/* Operational Hours */}
-                                    <div className="p-10 bg-white rounded-[3rem] border border-slate-100 shadow-xl shadow-[#18357a]/5 flex flex-col md:flex-row md:items-center justify-between gap-10">
+                                    <div className="p-10 bg-white rounded-[3rem] border border-slate-100 shadow-xl shadow-[#224292]/5 flex flex-col md:flex-row md:items-center justify-between gap-10">
                                         <div className="flex items-center gap-6">
-                                            <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-[#18357a] border border-slate-100 shadow-sm">
+                                            <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-[#224292] border border-slate-100 shadow-sm">
                                                 <Clock size={28} />
                                             </div>
                                             <div>
-                                                <h4 className="text-xl font-bold text-[#18357a] tracking-tight">Laboratory Access Hours</h4>
+                                                <h4 className="text-xl font-bold text-[#224292] tracking-tight">Laboratory Access Hours</h4>
                                                 <p className="text-xs font-bold text-slate-500 tracking-widest mt-1 italic">Real-time facility availability</p>
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-2 gap-8 border-l border-slate-100 pl-10">
                                             <div>
                                                 <p className="text-xs font-bold text-slate-500 tracking-widest mb-1">Working Days</p>
-                                                <p className="font-bold text-[#18357a]">09:30 AM - 06:30 PM</p>
+                                                <p className="font-bold text-[#224292]">09:30 AM - 06:30 PM</p>
                                             </div>
                                             <div>
                                                 <p className="text-xs font-bold text-slate-500 tracking-widest mb-1">Public Holidays</p>
@@ -330,17 +330,17 @@ const LibraryJournalsPage = () => {
                                                 href={link.u} 
                                                 target="_blank" 
                                                 rel="noreferrer" 
-                                                className="group p-8 bg-white border border-slate-100 hover:border-[#18357a] hover:bg-[#18357a] rounded-[2.5rem] shadow-lg shadow-black/5 flex flex-col justify-between gap-8 transition-all duration-500 hover:-translate-y-2 overflow-hidden relative"
+                                                className="group p-8 bg-white border border-slate-100 hover:border-[#224292] hover:bg-[#224292] rounded-[2.5rem] shadow-lg shadow-black/5 flex flex-col justify-between gap-8 transition-all duration-500 hover:-translate-y-2 overflow-hidden relative"
                                             >
                                                 <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 group-hover:bg-white/5 rounded-bl-[100%] transition-colors" />
                                                 <div className="relative z-10 flex items-center justify-between">
                                                     <div className="text-left">
-                                                        <p className="text-[14px] font-bold text-[#18357a] group-hover:text-[#ffc107] tracking-widest leading-none mb-1">{link.n}</p>
+                                                        <p className="text-[14px] font-bold text-[#224292] group-hover:text-[#ffc107] tracking-widest leading-none mb-1">{link.n}</p>
                                                         <p className="text-xs font-bold text-slate-500 group-hover:text-white/70 tracking-tight mt-1">{link.d}</p>
                                                     </div>
                                                     <div className="flex flex-col items-center gap-2">
                                                         <div className="p-3 bg-slate-50 group-hover:bg-[#ffc107] rounded-xl transition-colors shrink-0">
-                                                            <ExternalLink size={18} className="text-[#18357a] group-hover:text-[#18357a]" />
+                                                            <ExternalLink size={18} className="text-[#224292] group-hover:text-[#224292]" />
                                                         </div>
                                                         <span className="text-xs font-bold text-[#ffc107] group-hover:text-white transition-colors">View</span>
                                                     </div>

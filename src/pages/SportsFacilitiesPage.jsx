@@ -37,11 +37,11 @@ const SportsFacilitiesPage = () => {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             onClick={() => navigate('/campus-life/sports')}
-                            className="inline-flex items-center gap-2 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#18357a] transition-colors"
+                            className="inline-flex items-center gap-2 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#224292] transition-colors"
                         >
                             <ArrowLeft size={14} /> Back to Sports
                         </motion.button>
-                        <h1 className="text-4xl md:text-5xl font-black text-[#18357a] tracking-tighter leading-none">
+                        <h1 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter leading-none">
                             Ground <span className="text-[#ffc107]">Facilities</span>
                         </h1>
                     </div>
@@ -56,7 +56,7 @@ const SportsFacilitiesPage = () => {
                     <div className="overflow-x-auto">
                         <table className="w-full text-left">
                             <thead>
-                                <tr className="bg-[#18357a]">
+                                <tr className="bg-[#224292]">
                                     <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px]">Name of the Ground</th>
                                     <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px]">Venue / Location</th>
                                 </tr>
@@ -65,10 +65,10 @@ const SportsFacilitiesPage = () => {
                                 {FACILITIES.map((item, i) => (
                                     <tr key={i} className="group hover:bg-slate-50 transition-colors">
                                         <td className="px-8 py-4">
-                                            <span className="text-[15px] font-bold text-[#18357a] tracking-tight">{item.n}</span>
+                                            <span className="text-[15px] font-bold text-[#224292] tracking-tight">{item.n}</span>
                                         </td>
                                         <td className="px-8 py-4">
-                                            <div className="flex items-center gap-3 text-slate-700 font-bold group-hover:text-[#18357a] transition-colors">
+                                            <div className="flex items-center gap-3 text-slate-700 font-bold group-hover:text-[#224292] transition-colors">
                                                 <MapPin size={14} className="text-[#ffc107]" />
                                                 <span className="text-[13px] tracking-wide">{item.v}</span>
                                             </div>

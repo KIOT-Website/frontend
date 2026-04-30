@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import { motion } from 'framer-motion'
 import { 
   ShieldCheck, Calendar, Award, Target, BookOpen, Users, FileText, 
@@ -9,14 +10,165 @@ import {
 
 export default function IQACPage() {
   const [activeReport, setActiveReport] = useState('aaa')
+  const [aaaRecords, setAaaRecords] = useState([])
+  const [financialRecords, setFinancialRecords] = useState([])
+  const [momRecords, setMomRecords] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [aaaRes, finRes, momRes] = await Promise.all([
+          axios.get('http://localhost:8000/api/iqac/aaa'),
+          axios.get('http://localhost:8000/api/iqac/financial'),
+          axios.get('http://localhost:8000/api/iqac/mom')
+        ])
+        setAaaRecords(aaaRes.data)
+        setFinancialRecords(finRes.data)
+        setMomRecords(momRes.data)
+      } catch (error) {
+        console.error("Error fetching IQAC data:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchData()
+  }, [])
+
+  // Helper to group MoM by year
+  const groupedMom = momRecords.reduce((acc, curr) => {
+    if (!acc[curr.academic_year]) {
+      acc[curr.academic_year] = []
+    }
+    acc[curr.academic_year].push(curr)
+    return acc
+  }, {})
+
+  const renderTable = (type) => {
+    switch (type) {
+      case 'aaa':
+        return (
+          <table className="w-full text-left border-collapse">
+             <thead>
+                <tr className="border-b border-white/10">
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Academic Year</th>
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Report Title</th>
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107] text-right">Action</th>
+                </tr>
+             </thead>
+             <tbody>
+                {aaaRecords.map((row) => (
+                  <tr key={row.id} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
+                     <td className="py-4 text-[14px] font-bold">{row.academic_year}</td>
+                     <td className="py-4 text-[14px] text-white">{row.report_title}</td>
+                     <td className="py-4 text-right">
+                        <a 
+                          href={row.pdf_url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all ${!row.pdf_url && 'opacity-50 pointer-events-none'}`}
+                        >
+                           {row.pdf_url ? 'View' : 'Processing'} <ExternalLink size={14} />
+                        </a>
+                     </td>
+                  </tr>
+                ))}
+                {!loading && aaaRecords.length === 0 && (
+                  <tr>
+                    <td colSpan="3" className="py-8 text-center text-white text-xs uppercase font-bold tracking-widest">No AAA reports found</td>
+                  </tr>
+                )}
+             </tbody>
+          </table>
+        );
+      case 'financial':
+        return (
+          <table className="w-full text-left border-collapse">
+             <thead>
+                <tr className="border-b border-white/10">
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Academic Year</th>
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Particulars</th>
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107] text-right">Action</th>
+                </tr>
+             </thead>
+             <tbody>
+                {financialRecords.map((row) => (
+                  <tr key={row.id} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
+                     <td className="py-4 text-[14px] font-bold">{row.academic_year}</td>
+                     <td className="py-4 text-[14px] text-white">{row.particulars}</td>
+                     <td className="py-4 text-right">
+                        <a 
+                          href={row.pdf_url} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className={`inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all ${!row.pdf_url && 'opacity-50 pointer-events-none'}`}
+                        >
+                           {row.pdf_url ? 'View' : 'Processing'} <ExternalLink size={14} />
+                        </a>
+                     </td>
+                  </tr>
+                ))}
+                {!loading && financialRecords.length === 0 && (
+                  <tr>
+                    <td colSpan="3" className="py-8 text-center text-white text-xs uppercase font-bold tracking-widest">No financial reports found</td>
+                  </tr>
+                )}
+             </tbody>
+          </table>
+        );
+      case 'minutes':
+        return (
+          <table className="w-full text-left border-collapse">
+             <thead>
+                <tr className="border-b border-white/10">
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Academic Year</th>
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Meeting</th>
+                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107] text-right">Action</th>
+                </tr>
+             </thead>
+             <tbody>
+                {Object.entries(groupedMom).map(([year, meetings]) => (
+                  <React.Fragment key={year}>
+                    {meetings.map((meeting, midx) => (
+                      <tr key={meeting.id} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
+                        {midx === 0 && (
+                          <td rowSpan={meetings.length} className="py-4 text-[14px] font-bold border-r border-white/5 align-top">{year}</td>
+                        )}
+                        <td className="py-4 px-4 text-[13px] text-white">{meeting.meeting_number}</td>
+                        <td className="py-4 text-right">
+                          <a 
+                            href={meeting.pdf_url} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className={`inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all ${!meeting.pdf_url && 'opacity-50 pointer-events-none'}`}
+                          >
+                            {meeting.pdf_url ? 'View' : 'Processing'} <ExternalLink size={14} />
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                  </React.Fragment>
+                ))}
+                {!loading && momRecords.length === 0 && (
+                  <tr>
+                    <td colSpan="3" className="py-8 text-center text-white/50 text-xs uppercase font-bold tracking-widest">No minutes found</td>
+                  </tr>
+                )}
+             </tbody>
+          </table>
+        );
+      default:
+        return null;
+    }
+  }
   
   return (
-    <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-20">
+    <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-10">
       
       {/* ─── HERO SECTION ─── */}
-      <section className="relative overflow-hidden bg-[#0A1A3F] pt-8 pb-12 md:pt-12 md:pb-16">
+      <section className="relative overflow-hidden bg-[#224292] pt-8 pb-12 md:pt-12 md:pb-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(255,193,7,0.05)_1px,transparent_0)] [background-size:32px_32px]" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#18357a]/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#224292]/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         
         <div className="w-full px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center">
@@ -60,11 +212,11 @@ export default function IQACPage() {
             >
               {/* Central Emblem */}
               <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full bg-white flex flex-col items-center justify-center border-[6px] border-[#ffc107] shadow-[0_0_50px_rgba(255,193,7,0.3)] z-10">
-                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-[#0A1A3F]/5 flex items-center justify-center text-[#0A1A3F] mb-3">
-                    <ShieldCheck size={40} strokeWidth={1.5} />
+                 <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center text-[#224292] mb-1">
+                    <ShieldCheck size={56} strokeWidth={1.5} />
                  </div>
-                 <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] leading-none mb-1.5 tracking-tighter">IQAC</h2>
-                 <p className="text-[10px] md:text-[12px] font-bold text-[#0A1A3F]/80 text-center px-4 leading-tight font-graphik">
+                 <h2 className="text-2xl md:text-3xl font-black text-[#224292] leading-none mb-1.5 tracking-tighter">IQAC</h2>
+                 <p className="text-[10px] md:text-[12px] font-bold text-black text-center px-4 leading-tight font-graphik">
                     Driving Quality,<br />Enhancing Excellence
                  </p>
               </div>
@@ -81,12 +233,12 @@ export default function IQACPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* Vision */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#0A1A3F]/5 p-8 rounded-2xl border border-slate-100 group font-graphik">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#224292]/5 p-8 rounded-2xl border border-slate-100 group font-graphik">
                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-[#0A1A3F] flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-xl bg-[#224292] flex items-center justify-center text-white">
                      <Eye size={24} />
                   </div>
-                  <h3 className="text-lg font-black text-[#0A1A3F] uppercase tracking-widest">Vision</h3>
+                  <h3 className="text-lg font-black text-[#224292] uppercase tracking-widest">Vision</h3>
                </div>
                <p className="text-black font-medium text-[15px] leading-relaxed text-justify">
                   To ensure quality culture as the prime concern for the Higher Education Institutions through institutionalizing and internalizing all the initiatives taken with internal and external support.
@@ -94,12 +246,12 @@ export default function IQACPage() {
             </motion.div>
 
             {/* Objectives */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-[#0A1A3F]/5 p-8 rounded-2xl border border-slate-100 group font-graphik">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-[#224292]/5 p-8 rounded-2xl border border-slate-100 group font-graphik">
                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-[#0A1A3F] flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-xl bg-[#224292] flex items-center justify-center text-white">
                      <Target size={24} />
                   </div>
-                  <h3 className="text-lg font-black text-[#0A1A3F] uppercase tracking-widest">Objectives</h3>
+                  <h3 className="text-lg font-black text-[#224292] uppercase tracking-widest">Objectives</h3>
                </div>
                <ul className="space-y-4">
                   {[
@@ -121,14 +273,11 @@ export default function IQACPage() {
       <section className="w-full px-6 lg:px-12 py-10 bg-[#F8FAFC]">
          <div className="max-w-[1400px] mx-auto">
             <div className="text-center mb-16">
-               <span className="inline-block px-4 py-1.5 bg-white border border-slate-200 rounded-full text-[10px] font-black text-[#0A1A3F] tracking-widest uppercase mb-4 shadow-sm">
-                  <span className="inline-block w-2 h-2 rounded-full bg-[#ffc107] mr-2" />
-                  Our Approach
-               </span>
-               <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] mb-4">
+
+               <h2 className="text-4xl md:text-5xl font-black text-[#224292] mb-4">
                   Strategies of <span className="text-[#ffc107]">IQAC</span>
                </h2>
-               <p className="text-slate-500 font-medium text-sm">IQAC shall evolve mechanisms and procedures for:</p>
+
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
@@ -150,10 +299,10 @@ export default function IQACPage() {
                    className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm relative group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                  >
                     <div className="flex flex-col items-center text-center mt-2">
-                       <div className="hidden md:flex w-16 h-16 rounded-full bg-white border border-slate-100 shadow-inner items-center justify-center text-[#0A1A3F] mb-6 group-hover:bg-[#0A1A3F] group-hover:text-white transition-colors duration-300">
+                       <div className="hidden md:flex w-16 h-16 rounded-full bg-white border border-slate-100 shadow-inner items-center justify-center text-[#224292] mb-6 group-hover:bg-[#224292] group-hover:text-white transition-colors duration-300">
                           <item.icon size={28} />
                        </div>
-                       <h4 className="text-[16px] font-black text-[#0A1A3F] mb-3 leading-tight h-10 flex items-center">{item.title}</h4>
+                       <h4 className="text-[16px] font-black text-[#224292] mb-3 leading-tight h-10 flex items-center">{item.title}</h4>
                        <p className="text-[12px] font-medium text-black leading-relaxed text-justify">
                           {item.desc}
                        </p>
@@ -168,7 +317,7 @@ export default function IQACPage() {
       <section className="w-full px-6 lg:px-12 py-10 bg-white">
          <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16">
-               <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] mb-4">
+               <h2 className="text-4xl md:text-5xl font-black text-[#224292] mb-4">
                   Functions of <span className="text-[#ffc107]">IQAC</span>
                </h2>
             </div>
@@ -193,13 +342,13 @@ export default function IQACPage() {
                    whileInView={{ opacity: 1, x: 0 }}
                    viewport={{ once: true }}
                    transition={{ delay: idx * 0.05 }}
-                   className="flex gap-5 bg-[#0A1A3F]/5 p-4 rounded-xl hover:bg-[#0A1A3F]/10 transition-colors duration-300"
+                   className="flex gap-5 bg-[#224292]/5 p-4 rounded-xl hover:bg-[#224292]/10 transition-colors duration-300"
                  >
-                   <div className="hidden md:flex shrink-0 w-14 h-14 rounded-xl bg-[#0A1A3F] items-center justify-center text-white shadow-lg mt-1">
+                   <div className="hidden md:flex shrink-0 w-14 h-14 rounded-xl bg-[#224292] items-center justify-center text-white shadow-lg mt-1">
                        <item.icon size={22} />
                     </div>
                     <div className="flex-1">
-                       <h4 className="text-[16px] font-black text-[#0A1A3F] mb-1 leading-tight">
+                       <h4 className="text-[16px] font-black text-[#224292] mb-1 leading-tight">
                           {item.title}
                        </h4>
                        <p className="text-[13px] font-medium text-black leading-relaxed text-justify">
@@ -212,14 +361,123 @@ export default function IQACPage() {
          </div>
       </section>
 
-      {/* ─── IQAC MEMBERS SECTION ─── */}
-      <section className="w-full px-6 lg:px-12 pt-6 pb-12 bg-[#F8FAFC]">
+
+      {/* ─── AAA SECTION ─── */}
+      <section className="w-full px-4 md:px-6 lg:px-12 pt-8 pb-20 bg-white">
          <div className="max-w-[1400px] mx-auto">
-            <div className="text-center mb-10">
-               <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 items-center">
+               
+               <motion.div
+                 initial={{ opacity: 0, x: -30 }}
+                 whileInView={{ opacity: 1, x: 0 }}
+                 viewport={{ once: true }}
+               >
+
+                  
+                  <h2 className="text-4xl md:text-5xl font-black text-[#224292] leading-[1.1] mb-8">
+                     Academic and <br />
+                     Administrative <span className="text-[#ffc107]">Audit (AAA)</span>
+                  </h2>
+                  
+                  <p className="text-black font-medium text-[15px] leading-relaxed text-justify mb-8">
+                     The Academic and Administrative Audit is a core quality sustenance measure of IQAC. It involves a systematic review of the institutional processes by internal and external experts to ensure that standards of excellence are maintained across all departments.
+                  </p>
+
+                  <div className="space-y-4">
+                     {[
+                       { id: 'aaa', title: "AAA (Internal & External)", desc: "Systematic review reports of institutional academic and administrative processes." },
+                       { id: 'financial', title: "Financial Reports", desc: "Annual financial statements and audit reports for transparency and accountability." },
+                       { id: 'minutes', title: "IQAC Minutes of Meeting", desc: "Detailed records of quality assurance meetings and strategic decisions." }
+                     ].map((item, i) => (
+                       <div key={item.id} className="space-y-2">
+                         <button 
+                           onClick={() => setActiveReport(activeReport === item.id ? null : item.id)}
+                           className={`w-full flex text-left gap-4 p-4 rounded-xl border transition-all ${
+                             activeReport === item.id 
+                             ? 'bg-[#224292] text-white border-[#224292] shadow-lg lg:translate-x-2' 
+                             : 'bg-[#F8FAFC] text-[#224292] border-slate-100 hover:border-[#ffc107]/30'
+                           }`}
+                         >
+                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
+                              activeReport === item.id ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292] text-[#ffc107]'
+                            }`}>
+                               <FileText size={20} />
+                            </div>
+                            <div className="flex-1">
+                               <h4 className={`text-[14px] font-black mb-1 ${activeReport === item.id ? 'text-white' : 'text-[#224292]'}`}>{item.title}</h4>
+                               <p className={`text-[12px] font-medium ${activeReport === item.id ? 'text-white' : 'text-black'}`}>{item.desc}</p>
+                            </div>
+                         </button>
+
+                         {/* Mobile Accordion Content */}
+                         <div className={`lg:hidden overflow-hidden transition-all duration-500 ${activeReport === item.id ? 'max-h-[2000px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                            <div className="bg-[#224292] rounded-[24px] p-5 text-white relative overflow-hidden shadow-2xl min-h-[300px]">
+                               <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+                               <div className="flex items-center justify-between mb-8 relative z-10">
+                                  <h3 className="text-xl font-black uppercase tracking-tight">
+                                     {item.id === 'aaa' && <>AAA <span className="text-[#ffc107]">Reports</span></>}
+                                     {item.id === 'financial' && <>Financial <span className="text-[#ffc107]">Audit</span></>}
+                                     {item.id === 'minutes' && <>IQAC <span className="text-[#ffc107]">Minutes</span></>}
+                                  </h3>
+                               </div>
+                               <div className="overflow-x-auto relative z-10">
+                                  {renderTable(item.id)}
+                               </div>
+                            </div>
+                         </div>
+                       </div>
+                     ))}
+                  </div>
+               </motion.div>
+
+               <motion.div
+                 key={activeReport}
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 className="relative hidden lg:block"
+               >
+                  <div className="bg-[#224292] rounded-[24px] md:rounded-[40px] p-5 md:p-12 text-white relative overflow-hidden shadow-2xl min-h-[500px]">
+                     <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+                     
+                     <div className="flex items-center justify-between mb-8 relative z-10">
+                        <h3 className="text-2xl font-black uppercase tracking-tight">
+                           {activeReport === 'aaa' && <>AAA <span className="text-[#ffc107]">Reports</span></>}
+                           {activeReport === 'financial' && <>Financial <span className="text-[#ffc107]">Audit</span></>}
+                           {activeReport === 'minutes' && <>IQAC <span className="text-[#ffc107]">Minutes</span></>}
+                        </h3>
+                        <div className="flex items-center gap-2 text-[#ffc107] text-[10px] font-black uppercase tracking-widest">
+                           <span className="w-2 h-2 rounded-full bg-[#ffc107] animate-pulse" />
+                           Direct Links
+                        </div>
+                     </div>
+
+                     <div className="overflow-x-auto relative z-10">
+                        {renderTable(activeReport)}
+                     </div>
+
+                     <div className="mt-auto pt-10 relative z-10">
+                        <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-4">
+                           <div className="w-8 h-8 rounded-full bg-[#ffc107]/10 flex items-center justify-center text-[#ffc107]">
+                              <Link size={16} />
+                           </div>
+                           <p className="text-[11px] text-white/80 italic">Note: These reports are institutional assets and are updated periodically by the IQAC Cell.</p>
+                        </div>
+                     </div>
+                  </div>
+               </motion.div>
+
+            </div>
+         </div>
+      </section>
+
+      {/* ─── IQAC MEMBERS SECTION ─── */}
+      <section className="w-full px-6 lg:px-12 pt-12 pb-10 bg-[#F8FAFC]">
+         <div className="max-w-[1400px] mx-auto">
+            <div className="text-center mb-16">
+               <h2 className="text-4xl md:text-5xl font-black text-[#224292] mb-4">
                   IQAC <span className="text-[#ffc107]">Members</span>
                </h2>
-               <p className="text-black font-normal text-[15px]">Academic Year 2024-25 to 2025-26</p>
+
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -270,11 +528,11 @@ export default function IQACPage() {
                    transition={{ delay: idx * 0.02 }}
                    className="flex items-center gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm group hover:border-[#ffc107]/30 transition-all"
                  >
-                    <div className="shrink-0 w-10 h-10 rounded-full bg-[#0A1A3F] flex items-center justify-center text-white text-[12px] font-bold">
+                    <div className="shrink-0 w-10 h-10 rounded-full bg-[#224292] flex items-center justify-center text-white text-[12px] font-bold">
                        {member.id}
                     </div>
                     <div className="flex-1 min-w-0">
-                       <h4 className="text-[14px] font-bold text-[#0A1A3F] truncate">{member.name}</h4>
+                       <h4 className="text-[14px] font-bold text-[#224292] truncate">{member.name}</h4>
                        <p className="text-[11px] text-black truncate">{member.desc}</p>
                     </div>
                     <div className="text-right shrink-0">
@@ -284,189 +542,6 @@ export default function IQACPage() {
                     </div>
                  </motion.div>
                ))}
-            </div>
-         </div>
-      </section>
-      {/* ─── AAA SECTION ─── */}
-      <section className="w-full px-6 lg:px-12 pt-8 pb-20 bg-white">
-         <div className="max-w-[1400px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 items-center">
-               
-               <motion.div
-                 initial={{ opacity: 0, x: -30 }}
-                 whileInView={{ opacity: 1, x: 0 }}
-                 viewport={{ once: true }}
-               >
-                  <div className="flex items-center gap-3 mb-6">
-                     <div className="w-10 h-10 rounded-lg bg-[#0A1A3F]/5 flex items-center justify-center text-[#0A1A3F]">
-                        <Search size={22} />
-                     </div>
-                     <span className="text-[#0A1A3F] text-[10px] font-black tracking-widest uppercase">Quality Review</span>
-                  </div>
-                  
-                  <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] leading-[1.1] mb-8">
-                     Academic and <br />
-                     Administrative <span className="text-[#ffc107]">Audit (AAA)</span>
-                  </h2>
-                  
-                  <p className="text-black font-medium text-[15px] leading-relaxed text-justify mb-8">
-                     The Academic and Administrative Audit is a core quality sustenance measure of IQAC. It involves a systematic review of the institutional processes by internal and external experts to ensure that standards of excellence are maintained across all departments.
-                  </p>
-
-                  <div className="space-y-4">
-                     {[
-                       { id: 'aaa', title: "AAA (Internal & External)", desc: "Systematic review reports of institutional academic and administrative processes." },
-                       { id: 'financial', title: "Financial Reports", desc: "Annual financial statements and audit reports for transparency and accountability." },
-                       { id: 'minutes', title: "IQAC Minutes of Meeting", desc: "Detailed records of quality assurance meetings and strategic decisions." }
-                     ].map((item, i) => (
-                       <button 
-                         key={i} 
-                         onClick={() => setActiveReport(item.id)}
-                         className={`w-full flex text-left gap-4 p-4 rounded-xl border transition-all ${
-                           activeReport === item.id 
-                           ? 'bg-[#0A1A3F] text-white border-[#0A1A3F] shadow-lg translate-x-2' 
-                           : 'bg-[#F8FAFC] text-[#0A1A3F] border-slate-100 hover:border-[#ffc107]/30'
-                         }`}
-                       >
-                          <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${
-                            activeReport === item.id ? 'bg-[#ffc107] text-[#0A1A3F]' : 'bg-[#0A1A3F] text-[#ffc107]'
-                          }`}>
-                             <FileText size={20} />
-                          </div>
-                          <div>
-                             <h4 className={`text-[14px] font-black mb-1 ${activeReport === item.id ? 'text-white' : 'text-[#0A1A3F]'}`}>{item.title}</h4>
-                             <p className={`text-[12px] font-medium ${activeReport === item.id ? 'text-white/70' : 'text-black'}`}>{item.desc}</p>
-                          </div>
-                       </button>
-                     ))}
-                  </div>
-               </motion.div>
-
-               <motion.div
-                 key={activeReport}
-                 initial={{ opacity: 0, y: 20 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 className="relative"
-               >
-                  <div className="bg-[#0A1A3F] rounded-[40px] p-8 md:p-12 text-white relative overflow-hidden shadow-2xl min-h-[500px]">
-                     <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
-                     
-                     <div className="flex items-center justify-between mb-8 relative z-10">
-                        <h3 className="text-2xl font-black uppercase tracking-tight">
-                           {activeReport === 'aaa' && <>AAA <span className="text-[#ffc107]">Reports</span></>}
-                           {activeReport === 'financial' && <>Financial <span className="text-[#ffc107]">Audit</span></>}
-                           {activeReport === 'minutes' && <>IQAC <span className="text-[#ffc107]">Minutes</span></>}
-                        </h3>
-                        <div className="flex items-center gap-2 text-[#ffc107] text-[10px] font-black uppercase tracking-widest">
-                           <span className="w-2 h-2 rounded-full bg-[#ffc107] animate-pulse" />
-                           Direct Links
-                        </div>
-                     </div>
-
-                     <div className="overflow-x-auto relative z-10">
-                        {activeReport === 'aaa' && (
-                          <table className="w-full text-left border-collapse">
-                             <thead>
-                                <tr className="border-b border-white/10">
-                                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Academic Year</th>
-                                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107] text-right">Action</th>
-                                </tr>
-                             </thead>
-                             <tbody>
-                                {[
-                                  { year: "2025-26", link: "#" },
-                                  { year: "2024-25", link: "#" },
-                                  { year: "2023-24", link: "#" }
-                                ].map((row, i) => (
-                                  <tr key={i} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
-                                     <td className="py-4 text-[14px] font-bold">{row.year}</td>
-                                     <td className="py-4 text-right">
-                                        <a href={row.link} className="inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#0A1A3F] transition-all">
-                                           View <ExternalLink size={14} />
-                                        </a>
-                                     </td>
-                                  </tr>
-                                ))}
-                             </tbody>
-                          </table>
-                        )}
-
-                        {activeReport === 'financial' && (
-                          <table className="w-full text-left border-collapse">
-                             <thead>
-                                <tr className="border-b border-white/10">
-                                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Particulars</th>
-                                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107] text-right">Action</th>
-                                </tr>
-                             </thead>
-                             <tbody>
-                                {[
-                                  { title: "External Audit (2024-25)", link: "https://kiot.ac.in/home-naac/audit-statements/" },
-                                  { title: "Internal Audit (2024-25)", link: "https://kiot.ac.in/home-naac/audit-statements/" }
-                                ].map((row, i) => (
-                                  <tr key={i} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
-                                     <td className="py-4 text-[14px] font-bold">{row.title}</td>
-                                     <td className="py-4 text-right">
-                                        <a href={row.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#0A1A3F] transition-all">
-                                           View <ExternalLink size={14} />
-                                        </a>
-                                     </td>
-                                  </tr>
-                                ))}
-                             </tbody>
-                          </table>
-                        )}
-
-                        {activeReport === 'minutes' && (
-                          <table className="w-full text-left border-collapse">
-                             <thead>
-                                <tr className="border-b border-white/10">
-                                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Academic Year</th>
-                                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Meeting</th>
-                                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107] text-right">Action</th>
-                                </tr>
-                             </thead>
-                             <tbody>
-                                {[
-                                  { year: "2025-26", meetings: ["Meeting-1", "Meeting-2"], link: "https://kiot.ac.in/iqac/iqac-minutes-of-meeting-2/" },
-                                  { year: "2024-25", meetings: ["Meeting-1", "Meeting-2"], link: "https://kiot.ac.in/iqac/iqac-minutes-of-meeting-2/" }
-                                ].map((row, i) => (
-                                  <>
-                                    <tr key={`${i}-1`} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
-                                       <td rowSpan={2} className="py-4 text-[14px] font-bold border-r border-white/5">{row.year}</td>
-                                       <td className="py-4 px-4 text-[13px]">{row.meetings[0]}</td>
-                                       <td className="py-4 text-right">
-                                          <a href={row.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#0A1A3F] transition-all">
-                                             View <ExternalLink size={14} />
-                                          </a>
-                                       </td>
-                                    </tr>
-                                    <tr key={`${i}-2`} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
-                                       <td className="py-4 px-4 text-[13px]">{row.meetings[1]}</td>
-                                       <td className="py-4 text-right">
-                                          <a href={row.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#0A1A3F] transition-all">
-                                             View <ExternalLink size={14} />
-                                          </a>
-                                       </td>
-                                    </tr>
-                                  </>
-                                ))}
-                             </tbody>
-                          </table>
-                        )}
-                     </div>
-
-                     <div className="mt-auto pt-10 relative z-10">
-                        <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-4">
-                           <div className="w-8 h-8 rounded-full bg-[#ffc107]/10 flex items-center justify-center text-[#ffc107]">
-                              <Link size={16} />
-                           </div>
-                           <p className="text-[11px] text-white/50 italic">Note: These reports are institutional assets and are updated periodically by the IQAC Cell.</p>
-                        </div>
-                     </div>
-                  </div>
-               </motion.div>
-
             </div>
          </div>
       </section>

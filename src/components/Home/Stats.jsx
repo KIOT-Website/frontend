@@ -7,13 +7,13 @@ import {
 
 const statData = [
   { value: "Top 50", label: "Position in Admission (TNEA 2025)", icon: Trophy, color: "#ffc107" },
-  { value: "95%", label: "Placements in Every Year", icon: TrendingUp, color: "#18357a" },
+  { value: "95%", label: "Placements in Every Year", icon: TrendingUp, color: "#224292" },
   { value: "150+", label: "Companies for Placements", icon: Briefcase, color: "#ffc107" },
-  { value: "1200", label: "Hours of Career Development Training", icon: GraduationCap, color: "#18357a" },
+  { value: "1200", label: "Hours of Career Development Training", icon: GraduationCap, color: "#224292" },
   { value: "17+", label: "Years of Academic Excellence", icon: Calendar, color: "#ffc107" },
-  { value: "250+", label: "Expert Faculty Members", icon: Users, color: "#18357a" },
+  { value: "250+", label: "Expert Faculty Members", icon: Users, color: "#224292" },
   { value: "8000+", label: "Global Alumni Network", icon: UserCheck, color: "#ffc107" },
-  { value: "Top 10%", label: "Best Colleges in Tamil Nadu", icon: Landmark, color: "#18357a" }
+  { value: "Top 10%", label: "Best Colleges in Tamil Nadu", icon: Landmark, color: "#224292" }
 ]
 
 const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile }) => (
@@ -26,9 +26,9 @@ const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile }) => (
     className="group relative h-full w-full"
   >
     {/* Decorative Background Shape */}
-    <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/5 rounded-bl-full translate-x-10 -translate-y-10 group-hover:bg-[#ffc107]/10 transition-colors duration-700" />
+    <div className="absolute top-0 right-0 w-32 h-32 bg-[#224292]/5 rounded-bl-full translate-x-10 -translate-y-10 group-hover:bg-[#ffc107]/10 transition-colors duration-700" />
     
-    <div className="relative h-full bg-white/80 backdrop-blur-sm border border-slate-200/60 p-8 lg:p-10 rounded-[3.5rem_1rem_3.5rem_1rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center justify-between gap-8 transition-all duration-700 group-hover:shadow-[0_40px_80px_-20px_rgba(24,53,122,0.2)] group-hover:border-[#18357a]/20 overflow-hidden group-hover:bg-white scale-100 group-hover:scale-[1.02]">
+    <div className="relative h-full bg-white/80 backdrop-blur-sm border border-slate-200/60 p-8 lg:p-10 rounded-[3.5rem_1rem_3.5rem_1rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] flex flex-col items-center text-center justify-between gap-8 transition-all duration-700 group-hover:shadow-[0_40px_80px_-20px_rgba(24,53,122,0.2)] group-hover:border-[#224292]/20 overflow-hidden group-hover:bg-white scale-100 group-hover:scale-[1.02]">
        
        {/* Background Institutional Seal (Hidden Icon Parallax) */}
        <div className="absolute -left-12 -top-12 opacity-[0.02] group-hover:opacity-[0.05] transition-all duration-1000 group-hover:rotate-12 group-hover:scale-150">
@@ -39,7 +39,7 @@ const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile }) => (
        <div className="relative">
           <motion.div 
             whileHover={{ rotate: [-5, 5, -5, 0] }}
-            className="relative w-12 h-12 rounded-[1rem_0.3rem_1rem_0.3rem] bg-gradient-to-br from-[#18357a] to-[#0d1c43] flex items-center justify-center text-[#ffc107] shadow-[0_10px_25px_-5px_rgba(24,53,122,0.3)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
+            className="relative w-12 h-12 rounded-[1rem_0.3rem_1rem_0.3rem] bg-gradient-to-br from-[#224292] to-[#0d1c43] flex items-center justify-center text-[#ffc107] shadow-[0_10px_25px_-5px_rgba(24,53,122,0.3)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
           >
              <Icon size={18} strokeWidth={2.5} />
           </motion.div>
@@ -48,7 +48,7 @@ const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile }) => (
        </div>
 
        <div className="space-y-2 relative z-10 w-full text-center">
-          <div className="text-[28px] lg:text-[40px] font-black text-[#18357a] font-graphik leading-none tracking-tighter group-hover:text-[#ffc107] transition-colors duration-300">
+          <div className="text-[28px] lg:text-[40px] font-black text-[#224292] font-graphik leading-none tracking-tighter group-hover:text-[#ffc107] transition-colors duration-300">
              {value}
           </div>
           <p className="text-[12px] lg:text-[14px] font-bold text-black font-graphik leading-tight transition-colors duration-300">
@@ -57,7 +57,7 @@ const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile }) => (
           
           <div className="flex justify-center items-center gap-1.5 pt-4">
              <div className="w-1 h-1 rounded-full bg-[#ffc107]" />
-             <div className="w-8 h-1 rounded-full bg-[#18357a]/10 group-hover:bg-[#ffc107] transition-all duration-700" />
+             <div className="w-8 h-1 rounded-full bg-[#224292]/10 group-hover:bg-[#ffc107] transition-all duration-700" />
              <div className="w-1 h-1 rounded-full bg-[#ffc107]" />
           </div>
        </div>
@@ -84,7 +84,7 @@ const Stats = () => {
     <section className="relative pt-8 pb-4 md:pt-0 md:pb-6 lg:py-10 bg-[#FCFDFD] overflow-hidden">
       {/* Decorative Elements - Clean Version */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0">
-         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#18357a05_1px,transparent_1px)] [background-size:32px_32px]" />
+         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#22429205_1px,transparent_1px)] [background-size:32px_32px]" />
          <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#D5E2F4]/30 rounded-full blur-[120px]" />
       </div>
 
@@ -94,16 +94,16 @@ const Stats = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
+            className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10"
           >
-            <div className="h-1.5 w-1.5 bg-[#18357a] rounded-full animate-pulse" />
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#18357a]">The KIOT Advantage</span>
+            <div className="h-1.5 w-1.5 bg-[#224292] rounded-full animate-pulse" />
+            <span className="text-[10px] font-bold tracking-[0.2em] text-[#224292]">The KIOT Advantage</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl lg:text-5xl font-semibold text-[#18357a] mb-4 md:mb-8 font-graphik tracking-tight"
+            className="text-3xl lg:text-5xl font-semibold text-[#224292] mb-4 md:mb-8 font-graphik tracking-tight"
           >
             A Glimpse of our <span className="text-[#ffc107]">Legacy</span>
           </motion.h2>
@@ -167,7 +167,7 @@ const Stats = () => {
             {[0, 1, 2, 3].map((i) => (
               <div 
                 key={i} 
-                className={`h-1.5 transition-all duration-500 rounded-full ${i === index ? 'w-8 bg-[#ffc107]' : 'w-2 bg-[#18357a]/20'}`}
+                className={`h-1.5 transition-all duration-500 rounded-full ${i === index ? 'w-8 bg-[#ffc107]' : 'w-2 bg-[#224292]/20'}`}
               />
             ))}
           </div>

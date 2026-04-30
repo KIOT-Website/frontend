@@ -35,7 +35,7 @@ const IStartPage = () => {
     ]
 
     const HighlightText = ({ children }) => (
-        <span className="font-bold text-[#18357a]">
+        <span className="font-bold text-[#224292]">
             {children}
         </span>
     )
@@ -55,16 +55,16 @@ const IStartPage = () => {
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
+                                className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10"
                             >
-                                <Lightbulb size={12} className="text-[#18357a]" />
-                                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#18357a]">Research & Innovation</span>
+                                <Lightbulb size={12} className="text-[#224292]" />
+                                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#224292]">Research & Innovation</span>
                             </motion.div>
                             
                             <motion.h1
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-5xl md:text-[5.5rem] font-black text-[#18357a] leading-[0.85] tracking-tighter mb-6"
+                                className="text-5xl md:text-[5.5rem] font-black text-[#224292] leading-[0.85] tracking-tighter mb-6"
                             >
                                 IIC & <span className="text-[#ffc107]">iStart</span>
                             </motion.h1>
@@ -90,18 +90,18 @@ const IStartPage = () => {
                                         <div className="w-14 h-14 rounded-full bg-white shadow-lg border border-slate-50 flex items-center justify-center mb-3">
                                             <f.icon size={26} style={{ color: f.color }} />
                                         </div>
-                                        <h4 className="text-[15px] font-black text-[#18357a] mb-1">{f.title}</h4>
+                                        <h4 className="text-[15px] font-black text-[#224292] mb-1">{f.title}</h4>
                                         <p className="text-[10px] text-black font-black leading-tight px-1 max-w-[100px]">{f.desc}</p>
                                     </div>
                                 ))}
                             </div>
 
                             <div className="flex flex-wrap gap-4">
-                                <button className="px-7 py-4 bg-[#18357a] text-white rounded-xl font-black text-[12px] tracking-tight flex items-center gap-3 shadow-xl hover:scale-105 transition-all">
+                                <button className="px-7 py-4 bg-[#224292] text-white rounded-xl font-black text-[12px] tracking-tight flex items-center gap-3 shadow-xl hover:scale-105 transition-all">
                                     Explore Initiatives
                                     <ArrowRight size={16} />
                                 </button>
-                                <button className="px-7 py-4 bg-white text-[#18357a] border-2 border-[#18357a]/10 rounded-xl font-black text-[12px] tracking-tight flex items-center gap-3 hover:bg-[#18357a] hover:text-white transition-all">
+                                <button className="px-7 py-4 bg-white text-[#224292] border-2 border-[#224292]/10 rounded-xl font-black text-[12px] tracking-tight flex items-center gap-3 hover:bg-[#224292] hover:text-white transition-all">
                                     View Success Stories
                                     <ArrowRight size={16} />
                                 </button>
@@ -121,14 +121,14 @@ const IStartPage = () => {
                                     alt="Indian Innovation Lab" 
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/30 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/30 to-transparent" />
                             </motion.div>
 
                             {/* Floating Card 1: Building Innovators (Reduced) */}
                             <motion.div
                                 initial={{ x: -50, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
-                                className="absolute bottom-6 left-0 lg:-left-6 bg-[#18357a] rounded-[2rem] p-6 shadow-2xl z-30 max-w-[240px] text-white"
+                                className="absolute bottom-6 left-0 lg:-left-6 bg-[#224292] rounded-[2rem] p-6 shadow-2xl z-30 max-w-[240px] text-white"
                             >
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
@@ -147,7 +147,7 @@ const IStartPage = () => {
                                 className="hidden lg:block absolute top-10 right-0 lg:-right-6 bg-white rounded-[2rem] p-6 shadow-2xl z-30 max-w-[240px] border border-slate-100"
                             >
                                 <TrendingUp className="text-[#ffc107] mb-3" size={32} />
-                                <h4 className="text-xl font-black text-[#18357a] tracking-tighter leading-none mb-3">Innovation <br/>in Action</h4>
+                                <h4 className="text-xl font-black text-[#224292] tracking-tighter leading-none mb-3">Innovation <br/>in Action</h4>
                                 <div className="space-y-2">
                                     {["Student ideas.", "Real impact."].map((t, i) => (
                                         <div key={i} className="flex items-center gap-2">
@@ -170,7 +170,7 @@ const IStartPage = () => {
                         <div className="relative">
                             <div className="flex items-center gap-4 mb-8">
                                 <div className="h-8 w-1.5 bg-[#ffc107] rounded-full" />
-                                <h2 className="text-3xl font-black text-[#18357a] tracking-tight">Overview</h2>
+                                <h2 className="text-3xl font-black text-[#224292] tracking-tight">Overview</h2>
                             </div>
                             <div className="space-y-6 text-sm md:text-base leading-relaxed text-black text-justify font-black">
                                 <p>
@@ -197,11 +197,11 @@ const IStartPage = () => {
                                 className="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 relative overflow-hidden"
                             >
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-xl bg-[#18357a]/5 flex items-center justify-center shrink-0">
-                                        <Target className="text-[#18357a]" size={24} />
+                                    <div className="w-12 h-12 rounded-xl bg-[#224292]/5 flex items-center justify-center shrink-0">
+                                        <Target className="text-[#224292]" size={24} />
                                     </div>
                                     <div className="flex flex-col">
-                                        <h3 className="text-2xl font-black text-[#18357a] tracking-tight">Vision</h3>
+                                        <h3 className="text-2xl font-black text-[#224292] tracking-tight">Vision</h3>
                                         <div className="h-1 w-8 bg-[#ffc107] mt-1" />
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@ const IStartPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
                                 viewport={{ once: true }}
-                                className="bg-[#18357a] p-8 rounded-[2rem] shadow-2xl relative overflow-hidden text-white"
+                                className="bg-[#224292] p-8 rounded-[2rem] shadow-2xl relative overflow-hidden text-white"
                             >
                                 <div className="flex items-center gap-4 mb-8">
                                     <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
@@ -251,7 +251,7 @@ const IStartPage = () => {
                     <div className="flex flex-col gap-1 mb-10">
                         <div className="flex items-center gap-3">
                             <div className="h-8 w-1.5 bg-[#ffc107] rounded-full" />
-                            <h2 className="text-3xl font-black text-[#18357a] tracking-tight">Leadership Team</h2>
+                            <h2 className="text-3xl font-black text-[#224292] tracking-tight">Leadership Team</h2>
                         </div>
                         <p className="text-slate-500 font-black text-[10px] uppercase tracking-widest pl-5">Guiding innovation, inspiring excellence.</p>
                     </div>
@@ -266,14 +266,14 @@ const IStartPage = () => {
                             { name: "Mr.M.M.Barat Kumar", role: "Incubation Associate", iic: "Technical Support", icon: Lightbulb }
                         ].map((m, i) => (
                             <div key={i} className="group relative bg-white rounded-[1.2rem] p-4 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col overflow-hidden transition-all duration-500 hover:shadow-xl">
-                                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#18357a]" />
+                                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#224292]" />
                                 
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0">
-                                        <Users className="text-[#18357a]" size={20} />
+                                        <Users className="text-[#224292]" size={20} />
                                     </div>
                                     <div className="flex flex-col">
-                                        <h4 className="text-[17px] font-black text-[#0A1A3F] leading-tight mb-0.5">{m.name}</h4>
+                                        <h4 className="text-[17px] font-black text-[#224292] leading-tight mb-0.5">{m.name}</h4>
                                         <div className="h-0.5 w-6 bg-[#ffc107] mb-1" />
                                         <p className="text-black font-black text-[10px] tracking-tight mb-2 leading-none">{m.role}</p>
                                         
@@ -282,7 +282,7 @@ const IStartPage = () => {
                                                 <div className="w-5 h-5 rounded bg-[#ffc107]/10 flex items-center justify-center">
                                                     <m.icon className="text-[#ffc107]" size={10} />
                                                 </div>
-                                                <p className="text-[#18357a] font-black text-[11px] tracking-tight leading-none">{m.iic}</p>
+                                                <p className="text-[#224292] font-black text-[11px] tracking-tight leading-none">{m.iic}</p>
                                             </div>
                                         )}
                                     </div>
@@ -293,7 +293,7 @@ const IStartPage = () => {
                 </div>
 
                 {/* Faculty Coordinators Section (Deep Blue Background) */}
-                <div className="bg-[#0A1A3F] py-12 relative overflow-hidden font-graphik">
+                <div className="bg-[#224292] py-12 relative overflow-hidden font-graphik">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,193,7,0.1),transparent)]" />
                     <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
                         <div className="flex flex-col gap-1 mb-12">
@@ -326,14 +326,14 @@ const IStartPage = () => {
                                 >
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shrink-0 border border-slate-100">
-                                            <Users className="text-[#18357a]" size={20} />
+                                            <Users className="text-[#224292]" size={20} />
                                         </div>
                                         <div className="flex flex-col">
-                                            <h4 className="text-[14px] font-black text-[#0A1A3F] leading-tight mb-0.5">{m.name}</h4>
+                                            <h4 className="text-[14px] font-black text-[#224292] leading-tight mb-0.5">{m.name}</h4>
                                             <p className="text-black font-black text-[10px] tracking-tight leading-none mb-2">{m.dept}</p>
                                             <div className="flex items-center gap-2">
                                                 <m.icon className="text-[#ffc107]" size={10} />
-                                                <p className="text-[#18357a] font-black text-[11px] tracking-tight leading-none">{m.role}</p>
+                                                <p className="text-[#224292] font-black text-[11px] tracking-tight leading-none">{m.role}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -349,12 +349,12 @@ const IStartPage = () => {
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
                     <div className="flex items-center gap-4 mb-12">
                         <div className="h-8 w-1.5 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-4xl font-black text-[#18357a] tracking-tight">Programs & Events</h2>
+                        <h2 className="text-4xl font-black text-[#224292] tracking-tight">Programs & Events</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-slate-100 relative overflow-hidden group">
-                            <h3 className="text-2xl font-black text-[#18357a] mb-8">Flagship Activities</h3>
+                            <h3 className="text-2xl font-black text-[#224292] mb-8">Flagship Activities</h3>
                             <ul className="space-y-6">
                                 {[
                                     { t: "Ideation Workshops", d: "Deep dive sessions into problem identification." },
@@ -364,14 +364,14 @@ const IStartPage = () => {
                                     <li key={i} className="flex items-start gap-4">
                                         <div className="mt-1.5 w-2.5 h-2.5 bg-[#ffc107] rounded-full shadow-[0_0_10px_rgba(255,193,7,0.5)] shrink-0" />
                                         <div>
-                                            <p className="font-black text-[#18357a] text-base uppercase tracking-tight">{item.t}</p>
+                                            <p className="font-black text-[#224292] text-base uppercase tracking-tight">{item.t}</p>
                                             <p className="text-black mt-0.5 font-black text-xs">{item.d}</p>
                                         </div>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                        <div id="pre-incubation" className="bg-[#18357a] p-10 rounded-[2.5rem] shadow-2xl text-white relative overflow-hidden">
+                        <div id="pre-incubation" className="bg-[#224292] p-10 rounded-[2.5rem] shadow-2xl text-white relative overflow-hidden">
                             <h3 className="text-2xl font-black text-[#ffc107] mb-8">Pre-Incubation Support</h3>
                             <p className="text-white/80 mb-8 text-base font-black leading-relaxed">
                                 Moving ideas from concept to early-stage MVP with full mentorship and prototyping lab access.
@@ -380,7 +380,7 @@ const IStartPage = () => {
                                 {[
                                     "Mentorship", "Prototyping Lab", "IP Support", "Business Modeling"
                                 ].map((tag) => (
-                                    <div key={tag} className="px-4 py-3 bg-white/10 rounded-xl border border-white/20 text-[9px] font-black uppercase tracking-widest text-center hover:bg-[#ffc107] hover:text-[#18357a] transition-all">
+                                    <div key={tag} className="px-4 py-3 bg-white/10 rounded-xl border border-white/20 text-[9px] font-black uppercase tracking-widest text-center hover:bg-[#ffc107] hover:text-[#224292] transition-all">
                                         {tag}
                                     </div>
                                 ))}
@@ -394,7 +394,7 @@ const IStartPage = () => {
             <section id="achievements" className="py-12 bg-white border-t border-slate-100">
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-4xl font-black text-[#18357a] mb-4 tracking-tight">iStart Achievements</h2>
+                        <h2 className="text-4xl font-black text-[#224292] mb-4 tracking-tight">iStart Achievements</h2>
                         <p className="text-slate-500 font-black text-[10px] uppercase tracking-[0.3em]">Witnessing the innovation journey at <HighlightText>KIOT</HighlightText></p>
                     </div>
 
@@ -413,7 +413,7 @@ const IStartPage = () => {
                                     alt={act.title} 
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#18357a] via-[#18357a]/20 to-transparent opacity-80 transition-opacity" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#224292] via-[#224292]/20 to-transparent opacity-80 transition-opacity" />
                                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-all">
                                     <h4 className="text-white font-black text-lg leading-tight">{act.title}</h4>
                                 </div>
@@ -439,7 +439,7 @@ const IStartPage = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.5 }}
                             onClick={() => setSelectedImg(null)}
-                            className="absolute top-6 right-6 z-[210] w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#ffc107] hover:text-[#18357a] transition-all"
+                            className="absolute top-6 right-6 z-[210] w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#ffc107] hover:text-[#224292] transition-all"
                         >
                             <CloseIcon size={20} />
                         </motion.button>

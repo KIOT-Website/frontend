@@ -81,7 +81,7 @@ const ConsultancyPage = () => {
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6 italic">
+                            <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6 italic">
                                 Industrial <span className="text-[#ffc107]">Consultancy</span>
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -114,7 +114,7 @@ const ConsultancyPage = () => {
                                     {item.icon}
                                 </div>
                                 <div className="text-right">
-                                    <span className="inline-flex items-center px-3 py-1 bg-[#18357a] text-white text-[11px] font-black uppercase rounded-full tracking-widest mb-2 italic">
+                                    <span className="inline-flex items-center px-3 py-1 bg-[#224292] text-white text-[11px] font-black uppercase rounded-full tracking-widest mb-2 italic">
                                         {item.status}
                                     </span>
                                     <div className="flex items-center justify-end gap-2 text-[12px] font-bold text-slate-400 uppercase tracking-widest leading-none">
@@ -124,7 +124,7 @@ const ConsultancyPage = () => {
                             </div>
 
                             <div className="flex-1">
-                                <h3 className="text-lg font-black text-[#0f172a] uppercase leading-tight mb-4 group-hover:text-[#18357a] transition-colors italic">
+                                <h3 className="text-lg font-black text-[#0f172a] uppercase leading-tight mb-4 group-hover:text-[#224292] transition-colors italic">
                                     "{item.title}"
                                 </h3>
                                 
@@ -164,7 +164,7 @@ const ConsultancyPage = () => {
                                     </div>
                                     <div>
                                         <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[2px]">Revenue Generated</p>
-                                        <p className="text-lg font-black text-[#18357a] tracking-tight group-hover:text-[#ffc107] transition-colors italic">₹ {item.revenue}</p>
+                                        <p className="text-lg font-black text-[#224292] tracking-tight group-hover:text-[#ffc107] transition-colors italic">₹ {item.revenue}</p>
                                     </div>
                                 </div>
                             </div>

@@ -13,7 +13,7 @@ const pillars = [
     title: "Exposure",
     desc: "Regular interaction with industry through internships, workshops, and live opportunities.",
     icon: Globe,
-    color: "#18357a"
+    color: "#224292"
   },
   {
     title: "Placement",
@@ -27,7 +27,7 @@ const PillarsSection = () => {
   return (
     <div className="mb-32 px-6">
        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] leading-tight tracking-tighter font-graphik uppercase">
+          <h2 className="text-4xl md:text-5xl font-black text-[#224292] leading-tight tracking-tighter font-graphik uppercase">
             Three <span className="text-[#ffc107]">Pillars</span>
           </h2>
           <div className="w-16 h-1 bg-[#ffc107] mt-4 rounded-full" />
@@ -50,10 +50,10 @@ const PillarsSection = () => {
 
                 <div className="relative z-10 flex flex-col items-center text-center">
                    <div className="w-20 h-20 rounded-3xl mb-8 flex items-center justify-center transition-all duration-700 bg-slate-50 border border-slate-100 group-hover:scale-110 group-hover:bg-white group-hover:shadow-2xl">
-                      <pillar.icon size={32} strokeWidth={1.5} className="text-[#18357a] group-hover:text-[#ffc107] transition-colors" />
+                      <pillar.icon size={32} strokeWidth={1.5} className="text-[#224292] group-hover:text-[#ffc107] transition-colors" />
                    </div>
                    
-                   <h3 className="text-2xl font-black text-[#18357a] mb-4 tracking-tighter uppercase font-graphik">
+                   <h3 className="text-2xl font-black text-[#224292] mb-4 tracking-tighter uppercase font-graphik">
                       {pillar.title}
                    </h3>
                    
@@ -65,7 +65,7 @@ const PillarsSection = () => {
                 </div>
 
                 {/* Bottom Accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#18357a] to-[#ffc107] translate-y-1.5 group-hover:translate-y-0 transition-transform duration-700" />
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#224292] to-[#ffc107] translate-y-1.5 group-hover:translate-y-0 transition-transform duration-700" />
              </motion.div>
            ))}
         </div>

@@ -100,7 +100,7 @@ const BlogsPage = () => {
                 ) : filteredBlogs.length === 0 ? (
                     <div className="py-20 text-center">
                         <BookOpen size={48} className="mx-auto text-slate-200 mb-6" />
-                        <h3 className="text-xl font-bold text-[#18357a] mb-2">No Articles Found</h3>
+                        <h3 className="text-xl font-bold text-[#224292] mb-2">No Articles Found</h3>
                         <p className="text-slate-400 text-sm">Try a different search term or category</p>
                     </div>
                 ) : (
@@ -124,8 +124,8 @@ const BlogsPage = () => {
                                                 className="w-full h-full object-cover transition-transform duration-500"
                                             />
                                         ) : (
-                                            <div className="w-full h-full bg-[#18357a]/5 flex items-center justify-center">
-                                                <BookOpen size={40} className="text-[#18357a]/20" />
+                                            <div className="w-full h-full bg-[#224292]/5 flex items-center justify-center">
+                                                <BookOpen size={40} className="text-[#224292]/20" />
                                             </div>
                                         )}
                                         <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -140,7 +140,7 @@ const BlogsPage = () => {
                                             </div>
                                         </div>
 
-                                        <h3 className="text-xl font-black text-black mb-3 leading-[1.4] line-clamp-2 group-hover:text-[#18357a] transition-colors">
+                                        <h3 className="text-xl font-black text-black mb-3 leading-[1.4] line-clamp-2 group-hover:text-[#224292] transition-colors">
                                             {blog.title}
                                         </h3>
 
@@ -148,9 +148,9 @@ const BlogsPage = () => {
                                             {blog.excerpt || (blog.content ? blog.content.replace(/<[^>]*>/g, '').substring(0, 150) + '...' : '')}
                                         </p>
 
-                                        <div className="mt-auto flex items-center text-[#18357a] font-bold text-[11px] uppercase tracking-[0.2em] gap-2 group/btn">
+                                        <div className="mt-auto flex items-center text-[#224292] font-bold text-[11px] uppercase tracking-[0.2em] gap-2 group/btn">
                                             <span>Read Story</span>
-                                            <div className="w-8 h-8 rounded-full bg-[#18357a]/5 flex items-center justify-center group-hover/btn:bg-[#18357a] group-hover/btn:text-white transition-all">
+                                            <div className="w-8 h-8 rounded-full bg-[#224292]/5 flex items-center justify-center group-hover/btn:bg-[#224292] group-hover/btn:text-white transition-all">
                                                 <ChevronRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
                                             </div>
                                         </div>
@@ -168,7 +168,7 @@ const BlogsPage = () => {
                                         onClick={() => paginate(i + 1)}
                                         className={`w-12 h-12 rounded-2xl font-bold text-xs uppercase tracking-widest transition-all ${
                                             currentPage === i + 1
-                                            ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20'
+                                            ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20'
                                             : 'bg-white text-slate-400 hover:bg-slate-50 border border-slate-100 hover:border-slate-200'
                                         }`}
                                     >

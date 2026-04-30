@@ -55,7 +55,7 @@ const EventsPage = () => {
     <div className="min-h-screen bg-[#FCFDFD] pb-20">
       
       {/* Page Header */}
-      <div className="bg-[#18357a] text-white py-12 lg:py-16 relative overflow-hidden">
+      <div className="bg-[#224292] text-white py-12 lg:py-16 relative overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#224292] rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3 z-0" />
@@ -74,13 +74,13 @@ const EventsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px] mt-16 max-w-7xl mx-auto px-6 lg:px-10 items-start">
            {loading ? (
               <div className="col-span-full flex flex-col items-center justify-center py-20 opacity-30">
-                <Loader2 size={48} className="animate-spin text-[#18357a] mb-4" />
-                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#18357a]">Fetching Events...</p>
+                <Loader2 size={48} className="animate-spin text-[#224292] mb-4" />
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#224292]">Fetching Events...</p>
               </div>
            ) : records.length === 0 ? (
                <div className="col-span-full py-20 text-center">
                   <Calendar size={48} className="mx-auto text-slate-200 mb-6" />
-                  <h3 className="text-xl font-bold text-[#18357a] mb-2">No Events Found</h3>
+                  <h3 className="text-xl font-bold text-[#224292] mb-2">No Events Found</h3>
                   <p className="text-slate-400 text-sm">Stay tuned for upcoming updates and news.</p>
                </div>
            ) : (
@@ -111,10 +111,10 @@ const EventsPage = () => {
                             className="w-full h-full object-cover transition-all duration-700" 
                           />
                         )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         
                         <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                          <div className="px-4 py-2 bg-[#18357a] text-white text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-[0_8px_16px_rgba(0,0,0,0.5)] group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500 rounded-lg">
+                          <div className="px-4 py-2 bg-[#224292] text-white text-[10px] font-black uppercase tracking-widest flex items-center gap-2 shadow-[0_8px_16px_rgba(0,0,0,0.5)] group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-500 rounded-lg">
                              <Calendar size={14} />
                              {formatDate(ev.event_date)}
                           </div>
@@ -125,7 +125,7 @@ const EventsPage = () => {
                     {/* Card Body */}
                     <div className="pt-3 px-5 pb-1 flex flex-col text-left">
                         <div className="mb-2">
-                          <h3 className="text-lg lg:text-xl font-black text-[#18357a] font-display leading-[1.2] mb-0 group-hover:text-[#ffc107] transition-colors line-clamp-1">
+                          <h3 className="text-lg lg:text-xl font-black text-[#224292] font-display leading-[1.2] mb-0 group-hover:text-[#ffc107] transition-colors line-clamp-1">
                              {ev.event_name}
                           </h3>
                         </div>
@@ -139,7 +139,7 @@ const EventsPage = () => {
                           <Link 
                             to={`/events/${slugify(ev.event_name)}`}
                             state={{ from: 'gallery', eventId: ev.id }}
-                            className="text-[10px] font-black text-[#18357a] uppercase tracking-widest hover:text-[#ffc107] transition-colors flex items-center gap-2 group/btn"
+                            className="text-[10px] font-black text-[#224292] uppercase tracking-widest hover:text-[#ffc107] transition-colors flex items-center gap-2 group/btn"
                           >
                              View More
                              <ArrowLeft className="h-3 w-3 rotate-180 group-hover/btn:translate-x-1 transition-transform" />

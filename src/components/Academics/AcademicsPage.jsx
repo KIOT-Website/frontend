@@ -19,36 +19,10 @@ const ugPrograms = [
     intake: 240,
     category: 'Engineering',
     icon: Cpu,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '96%',
     description: 'Core computing, algorithms, data structures, and software systems.'
-  },
-  {
-    id: 'be-ece',
-    name: 'B.E. Electronics & Communication Engineering',
-    short: 'ECE',
-    duration: '4 Years',
-    intake: 180,
-    category: 'Engineering',
-    icon: Globe,
-    color: '#18357a',
-    accent: '#ffc107',
-    placement: '90%',
-    description: 'Electronics, embedded systems, VLSI, and communication technologies.'
-  },
-  {
-    id: 'be-mechanical',
-    name: 'B.E. Mechanical Engineering',
-    short: 'MECH',
-    duration: '4 Years',
-    intake: 120,
-    category: 'Engineering',
-    icon: Wrench,
-    color: '#18357a',
-    accent: '#ffc107',
-    placement: '92%',
-    description: 'Design, analysis, and manufacturing of mechanical systems and machines.'
   },
   {
     id: 'btech-it',
@@ -58,7 +32,7 @@ const ugPrograms = [
     intake: 120,
     category: 'Technology',
     icon: BookOpen,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '94%',
     description: 'Software development, networking, cloud computing, and cyber security.'
@@ -71,23 +45,10 @@ const ugPrograms = [
     intake: 120,
     category: 'Technology',
     icon: FlaskConical,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '95%',
     description: 'Machine learning, data analytics, and intelligent systems engineering.'
-  },
-  {
-    id: 'be-eee',
-    name: 'B.E. Electrical & Electronics Engineering',
-    short: 'EEE',
-    duration: '4 Years',
-    intake: 120,
-    category: 'Engineering',
-    icon: Zap,
-    color: '#18357a',
-    accent: '#ffc107',
-    placement: '89%',
-    description: 'Power systems, electrical machines, control systems and power electronics.'
   },
   {
     id: 'btech-csbs',
@@ -97,10 +58,36 @@ const ugPrograms = [
     intake: 60,
     category: 'Technology',
     icon: BarChart3,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '93%',
     description: 'Bridging computer science with business analytics and systems thinking.'
+  },
+  {
+    id: 'be-ece',
+    name: 'B.E. Electronics & Communication Engineering',
+    short: 'ECE',
+    duration: '4 Years',
+    intake: 180,
+    category: 'Engineering',
+    icon: Globe,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '90%',
+    description: 'Electronics, embedded systems, VLSI, and communication technologies.'
+  },
+  {
+    id: 'be-eee',
+    name: 'B.E. Electrical & Electronics Engineering',
+    short: 'EEE',
+    duration: '4 Years',
+    intake: 120,
+    category: 'Engineering',
+    icon: Zap,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '89%',
+    description: 'Power systems, electrical machines, control systems and power electronics.'
   },
   {
     id: 'be-ecm',
@@ -110,10 +97,23 @@ const ugPrograms = [
     intake: 60,
     category: 'Engineering',
     icon: Cpu,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '90%',
     description: 'Integration of electronics engineering with computer science fundamentals.'
+  },
+  {
+    id: 'be-mechanical',
+    name: 'B.E. Mechanical Engineering',
+    short: 'MECH',
+    duration: '4 Years',
+    intake: 120,
+    category: 'Engineering',
+    icon: Wrench,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '92%',
+    description: 'Design, analysis, and manufacturing of mechanical systems and machines.'
   },
   {
     id: 'be-civil',
@@ -123,7 +123,7 @@ const ugPrograms = [
     intake: 60,
     category: 'Engineering',
     icon: Layers,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '88%',
     description: 'Infrastructure planning, structural design, and sustainable construction.'
@@ -273,7 +273,7 @@ export default function AcademicsPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC] font-graphik">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#0A1A3F] py-10 md:py-14">
+      <section className="relative overflow-hidden bg-[#224292] py-10 md:py-14">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <motion.img 
@@ -283,8 +283,8 @@ export default function AcademicsPage() {
             alt="KIOT Academics" 
             className="w-full h-full object-cover opacity-75 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A3F]/95 via-[#0A1A3F]/10 to-[#0A1A3F]" />
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full bg-[#18357a] blur-[120px] opacity-30 animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#224292]/95 via-[#224292]/10 to-[#224292]" />
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full bg-[#224292] blur-[120px] opacity-30 animate-pulse" />
           <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[60%] rounded-full bg-[#ffc107]/10 blur-[150px] animate-pulse" style={{ animationDelay: '3s' }} />
         </div>
 
@@ -313,7 +313,7 @@ export default function AcademicsPage() {
               <GraduationCap size={16} className="animate-bounce" /> Academic Excellence
             </motion.span>
             
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6 tracking-tight">
               {programTab === 'PG Programs' ? 'Driven by Knowledge.' : 'Shape Your Future with'}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff1cc] to-[#ffc107] animate-gradient">
@@ -364,8 +364,8 @@ export default function AcademicsPage() {
                     onClick={() => setProgramTab(t)}
                     className={`px-10 py-4 rounded-[1.5rem] text-sm font-black uppercase tracking-widest transition-all duration-300 ${
                       programTab === t
-                        ? 'bg-[#18357a] text-white shadow-xl shadow-[#18357a]/20 scale-105'
-                        : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'
+                        ? 'bg-[#224292] text-white shadow-xl shadow-[#224292]/20 scale-105'
+                        : 'text-[#64779F] hover:bg-slate-50 hover:text-[#224292]'
                     }`}
                   >
                     {t}
@@ -378,7 +378,7 @@ export default function AcademicsPage() {
           {/* Modern Row and Column Based (Table) Layout */}
           <div className="max-w-5xl mx-auto bg-transparent md:bg-white rounded-none md:rounded-[2rem] border-none md:border border-[#D5E2F4]/50 shadow-none md:shadow-2xl shadow-blue-900/5 overflow-hidden">
             <div className="px-5 sm:px-8 pt-6 md:pt-10 pb-6 border-b border-slate-50">
-                <h2 className="text-2xl md:text-3xl font-black text-[#18357a] uppercase tracking-normal mb-1">
+                <h2 className="text-xl md:text-2xl font-black text-[#224292] uppercase tracking-normal mb-1">
                    {programTab === 'UG Programs' ? 'B.E. / B.Tech.' : 'Postgraduate'} <span className="block md:inline text-[#ffc107] md:ml-4">Programmes</span>
                 </h2>
 
@@ -386,7 +386,7 @@ export default function AcademicsPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-[#18357a] border-b border-[#18357a]/10">
+                  <tr className="bg-[#224292] border-b border-[#224292]/10">
                     <th className="px-5 sm:px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em]">Program</th>
                     <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] hidden md:table-cell">Category</th>
                     <th className="px-5 sm:px-8 py-6 text-[10px] font-black text-[#ffc107] uppercase tracking-[0.2em] text-center">Intake</th>
@@ -402,7 +402,7 @@ export default function AcademicsPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.03 }}
-                        className="group hover:bg-[#18357a]/[0.02] transition-all cursor-pointer"
+                        className="group hover:bg-[#224292]/[0.02] transition-all cursor-pointer"
                         onClick={() => {
                           const base = programTab === 'UG Programs' ? 'undergraduate' : 'postgraduate'
                           navigate(`/academics/${base}/${prog.id}`)
@@ -411,21 +411,21 @@ export default function AcademicsPage() {
                         {/* Column 1: Program (Icon + Name) */}
                         <td className="px-5 sm:px-8 py-4">
                           <div className="flex items-center gap-3 sm:gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-[#18357a]/5 flex items-center justify-center group-hover:bg-[#18357a] transition-all duration-300 shrink-0">
-                              <prog.icon size={18} className="text-[#18357a] group-hover:text-white transition-colors" />
+                            <div className="w-10 h-10 rounded-xl bg-[#224292]/5 flex items-center justify-center group-hover:bg-[#224292] transition-all duration-300 shrink-0">
+                              <prog.icon size={18} className="text-[#224292] group-hover:text-white transition-colors" />
                             </div>
                              <div>
-                              <h3 className="text-[#18357a] group-hover:text-[#ffc107] text-[13px] sm:text-[14px] font-medium font-graphik leading-tight transition-colors duration-300">
+                              <h3 className="text-[#224292] group-hover:text-[#ffc107] text-[12px] sm:text-[13px] font-medium font-graphik leading-tight transition-colors duration-300">
                                  {prog.name}
                                </h3>
-                               <p className="text-[#ffc107] group-hover:text-[#18357a] text-[10px] font-semibold font-graphik tracking-widest tracking-wider transition-colors duration-300">{prog.short}</p>
+                               <p className="text-[#ffc107] group-hover:text-[#224292] text-[10px] font-semibold font-graphik tracking-widest tracking-wider transition-colors duration-300">{prog.short}</p>
                             </div>
                           </div>
                         </td>
 
                         {/* Column 2: Category (Hidden on Mobile) */}
                         <td className="px-8 py-4 hidden md:table-cell">
-                          <span className="px-3 py-1 rounded-full bg-[#18357a]/5 text-[#18357a] text-[9px] font-black uppercase tracking-widest">
+                          <span className="px-3 py-1 rounded-full bg-[#224292]/5 text-[#224292] text-[9px] font-black uppercase tracking-widest">
                             {prog.category}
                           </span>
                         </td>
@@ -435,7 +435,7 @@ export default function AcademicsPage() {
                           {prog.id !== 'phd' && (
                             <>
                                <span className="text-black font-medium font-graphik text-sm text-[13px]">{prog.intake}</span>
-                               <span className="ml-1 text-[#18357a] font-medium font-graphik text-[10px] tracking-wide uppercase tracking-widest hidden lg:inline font-graphik">Seats</span>
+                               <span className="ml-1 text-[#224292] font-medium font-graphik text-[10px] tracking-wide uppercase tracking-widest hidden lg:inline font-graphik">Seats</span>
                             </>
                           )}
                         </td>
@@ -447,14 +447,14 @@ export default function AcademicsPage() {
                                 onClick={(e) => { e.stopPropagation(); toggleCompare(prog); }}
                                 className={`w-9 h-9 flex items-center justify-center rounded-lg border transition-all ${
                                   inCompare
-                                    ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-md shadow-[#ffc107]/20'
-                                    : 'bg-white border-[#E5EDF8] text-[#A9B1C3] hover:border-[#18357a]/30 hover:text-[#18357a]'
+                                    ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-md shadow-[#ffc107]/20'
+                                    : 'bg-white border-[#E5EDF8] text-[#A9B1C3] hover:border-[#224292]/30 hover:text-[#224292]'
                                 }`}
                                 title={inCompare ? 'Remove' : 'Compare'}
                               >
                                 <BarChart3 size={14} />
                              </button>
-                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#18357a] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all transform shadow-md shadow-blue-900/10">
+                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#224292] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#224292] transition-all transform shadow-md shadow-blue-900/10">
                                 View <ArrowRight size={12} className="hidden lg:block" />
                              </div>
                           </div>
@@ -472,12 +472,12 @@ export default function AcademicsPage() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-6 py-4 rounded-3xl bg-[#18357a] text-white shadow-2xl flex items-center gap-6"
+              className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-6 py-4 rounded-3xl bg-[#224292] text-white shadow-2xl flex items-center gap-6"
             >
               <div className="flex -space-x-3">
                 {compareList.map(p => (
-                  <div key={p.id} className="w-10 h-10 rounded-full bg-white border-2 border-[#18357a] flex items-center justify-center">
-                    <p.icon size={16} className="text-[#18357a]" />
+                  <div key={p.id} className="w-10 h-10 rounded-full bg-white border-2 border-[#224292] flex items-center justify-center">
+                    <p.icon size={16} className="text-[#224292]" />
                   </div>
                 ))}
               </div>
@@ -492,7 +492,7 @@ export default function AcademicsPage() {
                 <button
                   disabled={compareList.length < 2}
                   onClick={() => setShowCompare(true)}
-                  className={`px-5 py-2 rounded-xl bg-[#ffc107] text-[#18357a] text-xs font-bold transition-all ${
+                  className={`px-5 py-2 rounded-xl bg-[#ffc107] text-[#224292] text-xs font-bold transition-all ${
                     compareList.length < 2 ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'
                   }`}
                 >
@@ -521,7 +521,7 @@ export default function AcademicsPage() {
               onClick={e => e.stopPropagation()}
               className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full overflow-hidden"
             >
-              <div className="bg-[#18357a] p-6">
+              <div className="bg-[#224292] p-6">
                 <h2 className="text-white font-extrabold text-xl">Course Comparison</h2>
                 <p className="text-white/60 text-sm">Side-by-side comparison to help you choose</p>
               </div>
@@ -529,10 +529,10 @@ export default function AcademicsPage() {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-[#F8FAFC] border-b border-[#E5EDF8]">
-                      <th className="text-left p-4 text-[#18357a] font-medium font-graphik text-[10px] tracking-wide uppercase tracking-wide">Feature</th>
+                      <th className="text-left p-4 text-[#224292] font-medium font-graphik text-[10px] tracking-wide uppercase tracking-wide">Feature</th>
                       {compareList.map(p => (
                         <th key={p.id} className="p-4 text-center">
-                          <div className="font-extrabold text-[#18357a] text-[14px]">{p.short}</div>
+                          <div className="font-extrabold text-[#224292] text-[14px]">{p.short}</div>
                         </th>
                       ))}
                     </tr>
@@ -548,7 +548,7 @@ export default function AcademicsPage() {
                       <tr key={row.label} className="hover:bg-[#F8FAFC]">
                         <td className="p-4 text-[13px] font-bold text-[#64779F]">{row.label}</td>
                         {compareList.map(p => (
-                          <td key={p.id} className="p-4 text-center text-[14px] font-semibold text-[#18357a]">
+                          <td key={p.id} className="p-4 text-center text-[14px] font-semibold text-[#224292]">
                             {p[row.key]}{row.suffix || ''}
                           </td>
                         ))}
@@ -566,7 +566,7 @@ export default function AcademicsPage() {
                 </button>
                 <button
                   onClick={() => navigate('/admissions')}
-                  className="px-5 py-2.5 rounded-xl bg-[#18357a] text-white font-bold text-[14px] hover:bg-[#1e42a0]"
+                  className="px-5 py-2.5 rounded-xl bg-[#224292] text-white font-bold text-[14px] hover:bg-[#1e42a0]"
                 >
                   Apply Now
                 </button>

@@ -51,7 +51,7 @@ const defaultCourse = (id) => ({
   avgPackage: '4.8 LPA',
   topPackage: '20 LPA',
   icon: BookOpen,
-  color: '#18357a',
+  color: '#224292',
   tagline: 'Learn. Grow. Succeed.',
   overview: 'This program offers a rigorous academic curriculum combined with industry-relevant hands-on training, preparing students for high-impact careers.',
   whyChoose: ['NBA Accredited', 'Experienced faculty', 'Industry partnerships', 'Placement assistance'],
@@ -86,7 +86,7 @@ function AccordionItem({ title, children, defaultOpen = false }) {
         onClick={() => setOpen(o => !o)}
         className="w-full flex items-center justify-between p-5 bg-white hover:bg-[#F8FAFC] transition-colors text-left"
       >
-        <span className="font-bold font-graphik text-[#18357a] text-[15px]">{title}</span>
+        <span className="font-bold font-graphik text-[#224292] text-[15px]">{title}</span>
         <ChevronDown size={18} className={`text-[#ffc107] transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence initial={false}>
@@ -125,9 +125,9 @@ export default function CourseDetailPage() {
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
   const objectiveData = [
-    { id: 'PEO', icon: Target, title: 'Program Educational Objectives', content: course.peo, color: 'text-[#18357a]', bg: 'bg-[#18357a]/5', activeBg: 'bg-[#18357a]', iconColor: 'text-[#ffc107]' },
-    { id: 'PO', icon: Layers, title: 'Program Outcomes', content: course.po, color: 'text-[#ffc107]', bg: 'bg-[#ffc107]/5', activeBg: 'bg-[#ffc107]', iconColor: 'text-[#18357a]' },
-    { id: 'PSO', icon: Star, title: 'Program Specific Outcomes', content: course.pso, color: 'text-[#18357a]', bg: 'bg-[#18357a]/5', activeBg: 'bg-[#18357a]', iconColor: 'text-[#ffc107]' }
+    { id: 'PEO', icon: Target, title: 'Program Educational Objectives', content: course.peo, color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' },
+    { id: 'PO', icon: Layers, title: 'Program Outcomes', content: course.po, color: 'text-[#ffc107]', bg: 'bg-[#ffc107]/5', activeBg: 'bg-[#ffc107]', iconColor: 'text-[#224292]' },
+    { id: 'PSO', icon: Star, title: 'Program Specific Outcomes', content: course.pso, color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' }
   ]
 
   // Force window to scroll to absolute top on initial page load and course change
@@ -179,7 +179,7 @@ export default function CourseDetailPage() {
     <div className="min-h-screen bg-[#F8FAFC] font-graphik text-[#333333]">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#18357a] pt-8 pb-10 md:pt-12 md:pb-16">
+      <section className="relative overflow-hidden bg-[#224292] pt-8 pb-10 md:pt-12 md:pb-16">
         {/* Background Image / Pattern Layer */}
         {/* Background Visuals - Clean Institutional Theme */}
         <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
@@ -223,7 +223,7 @@ export default function CourseDetailPage() {
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => navigate('/admissions')}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ffc107] text-[#18357a] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] transition-all shadow-lg shadow-[#ffc107]/20"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] transition-all shadow-lg shadow-[#ffc107]/20"
                 >
                   Quick Apply <ArrowRight size={15} />
                 </button>
@@ -241,7 +241,7 @@ export default function CourseDetailPage() {
                     alt={course.name} 
                     className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/50 via-transparent to-transparent" />
                 </div>
               </div>
 
@@ -252,7 +252,7 @@ export default function CourseDetailPage() {
       </section>
 
       {/* ─── MOBILE TAB NAVIGATION (Pill Style) ─── */}
-      <div className="md:hidden bg-[#18357a] py-8 px-6 border-t border-white/10">
+      <div className="md:hidden bg-[#224292] py-8 px-6 border-t border-white/10">
         <div className="flex flex-wrap justify-center gap-3">
           {TABS.map(tab => (
             <button
@@ -260,7 +260,7 @@ export default function CourseDetailPage() {
               onClick={() => setActiveTab(tab)}
               className={`px-5 py-2.5 rounded-full text-[12px] font-bold font-graphik transition-all border-2 ${
                 activeTab === tab
-                  ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 scale-105'
+                  ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 scale-105'
                   : 'bg-white/5 border-white/20 text-white hover:bg-white/10'
               }`}
             >
@@ -271,7 +271,7 @@ export default function CourseDetailPage() {
       </div>
 
       {/* ─── DESKTOP TAB NAVIGATION (Pill Design) ─── */}
-      <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-[#18357a] border-b border-white/10 shadow-xl">
+      <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-[#224292] border-b border-white/10 shadow-xl">
         <div className="w-full px-6 lg:px-12 py-5">
           <div className="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-7xl mx-auto">
             {TABS.map(tab => (
@@ -280,7 +280,7 @@ export default function CourseDetailPage() {
                 onClick={() => setActiveTab(tab)}
                 className={`whitespace-nowrap px-6 py-2.5 text-[13px] font-black font-graphik transition-all rounded-full border-2 tracking-wide ${
                   activeTab === tab
-                    ? 'bg-[#ffc107] border-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 scale-105'
+                    ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 scale-105'
                     : 'bg-transparent border-white/20 text-white hover:border-white/50 hover:bg-white/5'
                 }`}
               >
@@ -313,7 +313,7 @@ export default function CourseDetailPage() {
 
 
                   <h2 className="text-2xl md:text-3xl font-bold font-graphik mb-8 flex items-center gap-3 tracking-tighter not-italic normal-case">
-                    <span className="text-[#18357a]">About the</span> <span className="text-[#ffc107]">Program</span>
+                    <span className="text-[#224292]">About the</span> <span className="text-[#ffc107]">Program</span>
                   </h2>
 
                   <div className="relative z-10 mb-12">
@@ -344,7 +344,7 @@ export default function CourseDetailPage() {
                         <div>
                           <p className="text-black font-black text-[9px] tracking-[0.2em] mb-4 opacity-40 group-hover:opacity-100 transition-opacity">{item.label}</p>
                           <div className="flex items-center gap-4">
-                             <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center ${item.color} group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500`}>
+                             <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center ${item.color} group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-500`}>
                                 <item.icon size={20} />
                              </div>
                              <span className="text-black font-bold font-graphik text-[14px] leading-tight">{item.value}</span>
@@ -359,7 +359,7 @@ export default function CourseDetailPage() {
                 <div className="flex justify-center pt-4">
                   <button
                     onClick={() => navigate('/admissions')}
-                    className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#18357a] text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:text-[#18357a] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
+                    className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
                   >
                     Enroll Now <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
                   </button>
@@ -377,10 +377,10 @@ export default function CourseDetailPage() {
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true }}
-                          className="group relative rounded-[2rem] p-10 bg-white border border-slate-100 shadow-xl shadow-black/5 overflow-hidden transition-all duration-500 hover:border-[#18357a]/30"
+                          className="group relative rounded-[2rem] p-10 bg-white border border-slate-100 shadow-xl shadow-black/5 overflow-hidden transition-all duration-500 hover:border-[#224292]/30"
                       >
                           <div className="relative z-10 flex flex-col h-full">
-                              <h3 className="text-2xl font-bold font-graphik text-[#18357a] mb-6 flex items-center gap-3">
+                              <h3 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
                                  <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
                                  Our Vision
                               </h3>
@@ -403,7 +403,7 @@ export default function CourseDetailPage() {
                       >
                           <div className="relative z-10 flex flex-col h-full">
                               <h3 className="text-2xl font-bold font-graphik text-[#ffc107] mb-6 flex items-center gap-3">
-                                  <div className="w-1.5 h-6 bg-[#18357a] rounded-full" />
+                                  <div className="w-1.5 h-6 bg-[#224292] rounded-full" />
                                   Our Mission
                               </h3>
 
@@ -422,11 +422,11 @@ export default function CourseDetailPage() {
                 <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] border border-[#DEE7F4] px-2 py-8 sm:px-10 md:p-14 overflow-hidden mt-16">
                   <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
                      <div>
-                        <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#18357a] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-4">
-                           <Award size={14} className="text-[#18357a]" />
+                        <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#224292] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-4">
+                           <Award size={14} className="text-[#224292]" />
                            Quality Framework
                         </div>
-                        <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#18357a] tracking-tighter">Academic Objectives</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] tracking-tighter">Academic Objectives</h2>
                      </div>
                      
                      <div className="grid grid-cols-3 md:flex md:items-center gap-2 md:gap-3 bg-slate-50/50 p-1.5 md:p-2 rounded-2xl md:rounded-[2rem] border border-slate-100">
@@ -475,12 +475,12 @@ export default function CourseDetailPage() {
                                     >
                                       <div className="flex-shrink-0 mt-1">
                                           <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
-                                              <CheckCircle2 size={16} className="text-[#18357a] group-hover/point:text-[#ffc107] transition-colors" />
+                                              <CheckCircle2 size={16} className="text-[#224292] group-hover/point:text-[#ffc107] transition-colors" />
                                           </div>
                                       </div>
                                       <div className="space-y-1">
                                         {label && (
-                                          <span className="block text-[11px] font-black font-graphik text-[#18357a] uppercase tracking-[0.2em]">
+                                          <span className="block text-[11px] font-black font-graphik text-[#224292] uppercase tracking-[0.2em]">
                                             {label.replace(':', '')}
                                           </span>
                                         )}
@@ -509,7 +509,7 @@ export default function CourseDetailPage() {
             {activeTab === 'Faculty' && (
               <div>
                 <div className="mb-6">
-                  <h2 className="text-2xl font-extrabold font-graphik text-[#18357a] mb-1">Our Faculty</h2>
+                  <h2 className="text-2xl font-extrabold font-graphik text-[#224292] mb-1">Our Faculty</h2>
                   <p className="text-[#64779F]">Industry-experienced academics committed to your success</p>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
@@ -537,7 +537,7 @@ export default function CourseDetailPage() {
                       </div>
                       
                       <div className="p-[13px] flex flex-col flex-1">
-                        <h3 className="font-bold font-graphik text-[#18357a] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
+                        <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
                           {f.name}
                         </h3>
                         <p className="text-slate-500 text-[10px] font-bold font-graphik leading-tight mb-2.5 line-clamp-2">
@@ -545,7 +545,7 @@ export default function CourseDetailPage() {
                         </p>
                         
                         <div className="mt-auto">
-                           <span className="inline-block text-[9px] font-bold font-graphik uppercase tracking-[0.15em] text-[#18357a] group-hover:text-[#ffc107] transition-all bg-[#18357a]/5 px-2 py-1 rounded">
+                           <span className="inline-block text-[9px] font-bold font-graphik uppercase tracking-[0.15em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-1 rounded">
                               View Bio →
                            </span>
                         </div>
@@ -564,7 +564,7 @@ export default function CourseDetailPage() {
                   {/* Left Sidebar: Lab List */}
                   <div className="lg:w-1/3 xl:w-1/4 space-y-3 max-h-[750px] overflow-y-auto px-4 py-2 scrollbar-hide">
                     <div className="mb-6 px-1">
-                       <h2 className="text-xl font-bold font-graphik text-[#18357a] tracking-tight mb-1">Labs & Facilities</h2>
+                       <h2 className="text-xl font-bold font-graphik text-[#224292] tracking-tight mb-1">Labs & Facilities</h2>
                        <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Select a facility to view full technical specifications.</p>
                     </div>
                     {course.labs.map((lab, i) => {
@@ -576,12 +576,12 @@ export default function CourseDetailPage() {
                           onClick={() => setOpenLabIndices([i])}
                           className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left group ${
                             isDesktopSelected 
-                              ? 'bg-[#18357a] border-[#18357a] text-white shadow-xl shadow-[#18357a]/20' 
-                              : 'bg-white border-[#E5EDF8] text-[#18357a] hover:border-[#18357a]/30'
+                              ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20' 
+                              : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
                           }`}
                         >
                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                              isDesktopSelected ? 'bg-[#ffc107] text-[#18357a]' : 'bg-[#18357a]/5 text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white'
+                              isDesktopSelected ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292]/5 text-[#224292] group-hover:bg-[#224292] group-hover:text-white'
                            }`}>
                              {LabIcon && <LabIcon size={20} />}
                            </div>
@@ -606,7 +606,7 @@ export default function CourseDetailPage() {
                           className="bg-white rounded-3xl border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 h-full overflow-hidden flex flex-col"
                         >
                            {/* Lab Header */}
-                           <div className="bg-[#18357a] p-3 md:p-4 relative overflow-hidden shrink-0">
+                           <div className="bg-[#224292] p-3 md:p-4 relative overflow-hidden shrink-0">
                               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl" />
                               <div className="relative z-10 flex flex-col md:flex-row items-center gap-5">
                                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
@@ -629,13 +629,13 @@ export default function CourseDetailPage() {
                               <div>
                                  <div className="flex items-center gap-3 mb-6">
                                     <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
-                                    <h4 className="text-[12px] font-bold font-graphik text-[#18357a] tracking-[0.2em]">Technical Inventory & Tools</h4>
+                                    <h4 className="text-[12px] font-bold font-graphik text-[#224292] tracking-[0.2em]">Technical Inventory & Tools</h4>
                                  </div>
                                  <div className="grid sm:grid-cols-2 gap-3">
                                     {activeLab.equipments?.map((item, idx) => (
                                       <div key={idx} className="flex gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 items-start group hover:bg-white hover:border-[#ffc107]/20 transition-all">
                                          <div className="w-2 h-2 rounded-full bg-[#ffc107] mt-1.5 shrink-0 group-hover:scale-125 transition-all" />
-                                         <span className="text-[14px] font-bold font-graphik text-[#18357a] leading-tight">{item}</span>
+                                         <span className="text-[14px] font-bold font-graphik text-[#224292] leading-tight">{item}</span>
                                       </div>
                                     )) || (
                                       <p className="text-[#64779F] italic text-sm">Main specialized equipment list is being updated.</p>
@@ -646,13 +646,13 @@ export default function CourseDetailPage() {
                               {/* Personnel / Staff */}
                               {courseId !== 'be-cse' && (
                                 <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
-                                   <div className="bg-[#18357a]/5 p-6 rounded-2xl border border-[#18357a]/10">
+                                   <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
                                       <p className="text-[10px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
-                                      <p className="text-[#18357a] font-bold font-graphik text-[16px]">{activeLab.incharge || 'Department HOD'}</p>
+                                      <p className="text-[#224292] font-bold font-graphik text-[16px]">{activeLab.incharge || 'Department HOD'}</p>
                                    </div>
                                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
                                       <p className="text-[10px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
-                                      <p className="text-[#18357a] font-bold font-graphik text-[16px]">{activeLab.technician || 'Engineering Technician'}</p>
+                                      <p className="text-[#224292] font-bold font-graphik text-[16px]">{activeLab.technician || 'Engineering Technician'}</p>
                                    </div>
                                 </div>
                               )}
@@ -667,7 +667,7 @@ export default function CourseDetailPage() {
                 {/* MOBILE VIEW: Multi-Expandable Accordion List (Visible only below lg) */}
                 <div className="lg:hidden space-y-4 px-2 pb-10">
                    <div className="mb-6 px-1">
-                      <h2 className="text-xl font-bold font-graphik text-[#18357a] tracking-tight mb-1">Labs & Facilities</h2>
+                      <h2 className="text-xl font-bold font-graphik text-[#224292] tracking-tight mb-1">Labs & Facilities</h2>
                       <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Expand Multiple facilities to compare inventory.</p>
                    </div>
                    {course.labs.map((lab, i) => {
@@ -691,12 +691,12 @@ export default function CourseDetailPage() {
                              }}
                              className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left ${
                                isOpen 
-                                 ? 'bg-[#18357a] border-[#18357a] text-white shadow-xl shadow-[#18357a]/20 rounded-b-none' 
-                                 : 'bg-white border-[#E5EDF8] text-[#18357a] hover:border-[#18357a]/30'
+                                 ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20 rounded-b-none' 
+                                 : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
                              }`}
                            >
                               <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                                 isOpen ? 'bg-[#ffc107] text-[#18357a]' : 'bg-[#18357a]/5 text-[#18357a]'
+                                 isOpen ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292]/5 text-[#224292]'
                               }`}>
                                 {LabIcon && <LabIcon size={20} />}
                               </div>
@@ -710,7 +710,7 @@ export default function CourseDetailPage() {
                                   initial={{ height: 0, opacity: 0 }}
                                   animate={{ height: "auto", opacity: 1 }}
                                   exit={{ height: 0, opacity: 0 }}
-                                  className="bg-white border-2 border-t-0 border-[#18357a] rounded-b-2xl overflow-hidden"
+                                  className="bg-white border-2 border-t-0 border-[#224292] rounded-b-2xl overflow-hidden"
                                 >
                                    <div className="p-6 space-y-8">
                                       {/* Mobile Content Display */}
@@ -722,13 +722,13 @@ export default function CourseDetailPage() {
                                       <div>
                                          <div className="flex items-center gap-2 mb-4">
                                             <div className="w-1 h-4 bg-[#ffc107] rounded-full" />
-                                            <h4 className="text-[11px] font-bold font-graphik text-[#18357a] uppercase tracking-wider">Inventory & Tools</h4>
+                                            <h4 className="text-[11px] font-bold font-graphik text-[#224292] uppercase tracking-wider">Inventory & Tools</h4>
                                          </div>
                                          <div className="grid gap-2">
                                             {lab.equipments?.map((item, idx) => (
                                               <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
                                                  <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                                                 <span className="text-[13px] font-bold font-graphik text-[#18357a] leading-tight">{item}</span>
+                                                 <span className="text-[13px] font-bold font-graphik text-[#224292] leading-tight">{item}</span>
                                               </div>
                                             ))}
                                          </div>
@@ -736,13 +736,13 @@ export default function CourseDetailPage() {
 
                                       {courseId !== 'be-cse' && (
                                         <div className="grid gap-3 pt-4 border-t border-slate-100">
-                                           <div className="bg-[#18357a]/5 p-4 rounded-xl border border-[#18357a]/10">
+                                           <div className="bg-[#224292]/5 p-4 rounded-xl border border-[#224292]/10">
                                               <p className="text-[9px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
-                                              <p className="text-[#18357a] font-bold font-graphik text-[14px]">{lab.incharge}</p>
+                                              <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.incharge}</p>
                                            </div>
                                            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
                                               <p className="text-[9px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
-                                              <p className="text-[#18357a] font-bold font-graphik text-[14px]">{lab.technician}</p>
+                                              <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.technician}</p>
                                            </div>
                                         </div>
                                       )}
@@ -762,12 +762,12 @@ export default function CourseDetailPage() {
               <div className="space-y-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
                   <div>
-                    <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#18357a] tracking-tight mb-2">
+                    <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
                        Intellectual <span className="text-[#ffc107]">Property</span>
                     </h2>
                     <p className="text-black font-medium font-graphik text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
                   </div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#18357a]/5 rounded-xl border border-[#18357a]/10 text-[#18357a] text-[10px] font-bold font-graphik uppercase tracking-widest">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-[#224292] text-[10px] font-bold font-graphik uppercase tracking-widest">
                      <ShieldCheck size={14} /> Registered Assets
                   </div>
                 </div>
@@ -780,11 +780,11 @@ export default function CourseDetailPage() {
                       viewport={{ once: true }}
                       className="group relative bg-white p-7 rounded-[2rem] border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center transition-all duration-500"
                     >
-                       <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#18357a]/20 rounded-tl-[2rem]" />
-                       <div className="w-16 h-16 rounded-2xl bg-[#18357a]/5 border border-[#18357a]/10 flex items-center justify-center mb-6 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
-                          <FileText size={32} className="text-[#18357a] group-hover:text-white transition-colors" />
+                       <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#224292]/20 rounded-tl-[2rem]" />
+                       <div className="w-16 h-16 rounded-2xl bg-[#224292]/5 border border-[#224292]/10 flex items-center justify-center mb-6 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
+                          <FileText size={32} className="text-[#224292] group-hover:text-white transition-colors" />
                        </div>
-                       <h3 className="text-lg font-bold font-graphik text-[#18357a] mb-3">Official Patents</h3>
+                       <h3 className="text-lg font-bold font-graphik text-[#224292] mb-3">Official Patents</h3>
                        <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
                           Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
                        </p>
@@ -799,7 +799,7 @@ export default function CourseDetailPage() {
                       whileHover={{ y: -10, scale: 1.01 }}
                       transition={{ delay: 0.1 }}
                       viewport={{ once: true }}
-                      className="group bg-gradient-to-br from-[#18357a] to-[#0A1A3F] rounded-[2rem] p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
+                      className="group bg-gradient-to-br from-[#224292] to-[#224292] rounded-[2rem] p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
                     >
                        <div className="absolute -bottom-1 -right-1 w-12 h-12 border-b-4 border-r-4 border-dashed border-[#ffc107]/30 rounded-br-[2rem]" />
                        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
@@ -834,36 +834,36 @@ export default function CourseDetailPage() {
                   viewport={{ once: true }}
                   className="relative group"
                 >
-                  <div className="absolute inset-0 border-2 border-[#18357a]/10 rotate-[4deg] rounded-[2rem] pointer-events-none" />
+                  <div className="absolute inset-0 border-2 border-[#224292]/10 rotate-[4deg] rounded-[2rem] pointer-events-none" />
                   <div className="relative bg-white rounded-2xl border border-[#E5EDF8] p-8 shadow-xl shadow-blue-900/5 z-10">
-                    <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/2 px-6 py-2 bg-[#18357a] text-white rounded-full text-[9px] font-bold font-graphik uppercase tracking-widest shadow-lg">
+                    <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/2 px-6 py-2 bg-[#224292] text-white rounded-full text-[9px] font-bold font-graphik uppercase tracking-widest shadow-lg">
                        Eligibility
                     </div>
                     <ul className="space-y-4 mt-4">
                       {course.eligibility.map(item => (
                         <li key={item} className="flex items-start gap-4 p-4 rounded-xl bg-slate-50/50 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-slate-100">
                           <CheckCircle size={18} className="text-[#ffc107] mt-0.5 shrink-0" />
-                          <span className="text-[14px] font-bold font-graphik text-[#18357a] leading-relaxed">{item}</span>
+                          <span className="text-[14px] font-bold font-graphik text-[#224292] leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </motion.div>
                 <div className="space-y-4">
-                  <div className="bg-[#18357a] rounded-2xl p-6 text-white">
+                  <div className="bg-[#224292] rounded-2xl p-6 text-white">
                     <h3 className="font-extrabold font-graphik text-lg mb-3">Ready to Apply?</h3>
                     <p className="text-white/70 text-[14px] mb-5">Join thousands of students building their future at KIOT.</p>
                     <button
                       onClick={() => navigate('/admissions')}
-                      className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#ffc107] text-[#18357a] font-bold font-graphik hover:bg-[#ffca2c] transition-all"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik hover:bg-[#ffca2c] transition-all"
                     >
                       Start Application <ArrowRight size={15} />
                     </button>
                   </div>
                   <div className="bg-white rounded-2xl border border-[#E5EDF8] p-6">
-                    <h3 className="font-extrabold font-graphik text-[#18357a] mb-3">Need Help?</h3>
+                    <h3 className="font-extrabold font-graphik text-[#224292] mb-3">Need Help?</h3>
                     <p className="text-[#64779F] text-[13px] mb-4">Our admissions team is here to guide you through the process.</p>
-                    <a href="tel:9894701234" className="flex items-center gap-2 text-[#18357a] font-bold font-graphik text-[14px] hover:text-[#ffc107] transition-colors">
+                    <a href="tel:9894701234" className="flex items-center gap-2 text-[#224292] font-bold font-graphik text-[14px] hover:text-[#ffc107] transition-colors">
                       <MapPin size={15} className="text-[#ffc107]" /> +91 98947 01234
                     </a>
                   </div>
@@ -892,7 +892,7 @@ export default function CourseDetailPage() {
               className="bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
               <div className="overflow-y-auto scrollbar-hide flex-1 pb-10">
-                <div className="bg-[#18357a] p-6 md:p-8 relative overflow-hidden">
+                <div className="bg-[#224292] p-6 md:p-8 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-20 -mt-20 blur-3xl" />
                   
                   {/* Top Right Close Button */}
@@ -925,28 +925,28 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {selectedFaculty.qualification && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Academic Credentials</p>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Academic Credentials</p>
                           <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.qualification}</p>
                         </div>
                       )}
                       {selectedFaculty.specialization && selectedFaculty.specialization !== 'N/A' && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Area of Specialization</p>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Area of Specialization</p>
                           <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.specialization}</p>
                         </div>
                       )}
                       {selectedFaculty.experience && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Work Experience</p>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Work Experience</p>
                           <div className="flex items-center gap-2 text-black">
-                            <Clock size={16} className="text-[#18357a]" />
+                            <Clock size={16} className="text-[#224292]" />
                             <span className="font-medium font-graphik text-[15px]">{selectedFaculty.experience}</span>
                           </div>
                         </div>
                       )}
                       {selectedFaculty.joiningDate && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Date of Joining</p>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Date of Joining</p>
                           <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.joiningDate}</p>
                         </div>
                       )}
@@ -955,16 +955,16 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {selectedFaculty.email && selectedFaculty.email !== 'N/A' && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">E-Mail Address</p>
-                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[15px] hover:text-[#18357a] transition-colors">
-                            <Mail size={16} className="text-[#18357a]" />
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">E-Mail Address</p>
+                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[15px] hover:text-[#224292] transition-colors">
+                            <Mail size={16} className="text-[#224292]" />
                             {selectedFaculty.email}
                           </a>
                         </div>
                       )}
                       {selectedFaculty.association && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#18357a] mb-2">Nature of Association</p>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Nature of Association</p>
                           <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-medium font-graphik tracking-widest">
                             {selectedFaculty.association}
                           </span>
@@ -973,13 +973,13 @@ export default function CourseDetailPage() {
                       <div className="p-6 bg-[#F8FAFC] border border-[#E5EDF8] rounded-2xl">
                         <div className="flex items-center gap-2 mb-4">
                           <Award size={18} className="text-[#ffc107]" />
-                          <p className="text-[11px] font-bold font-graphik tracking-widest text-[#18357a]">Member Recognition</p>
+                          <p className="text-[11px] font-bold font-graphik tracking-widest text-[#224292]">Member Recognition</p>
                         </div>
                         <div className="flex items-center gap-0.5">
                           {[...Array(5)].map((_, idx) => (
                             <Star key={idx} size={14} className={idx < Math.floor(selectedFaculty.rating) ? "text-[#ffc107] fill-[#ffc107]" : "text-[#E5EDF8] fill-[#E5EDF8]"} />
                           ))}
-                          <span className="ml-2 font-bold font-graphik text-[#18357a] text-sm">{selectedFaculty.rating}</span>
+                          <span className="ml-2 font-bold font-graphik text-[#224292] text-sm">{selectedFaculty.rating}</span>
                         </div>
                       </div>
                     </div>
@@ -987,8 +987,8 @@ export default function CourseDetailPage() {
 
                   {selectedFaculty.publications && (
                     <div className="mt-8 pt-8 border-t border-[#E5EDF8]">
-                      <p className="text-[10px] font-medium font-graphik tracking-widest text-[#18357a] mb-4">Research & Publications</p>
-                      <div className="p-5 bg-[#18357a]/5 border border-[#18357a]/10 rounded-2xl">
+                      <p className="text-[10px] font-medium font-graphik tracking-widest text-[#224292] mb-4">Research & Publications</p>
+                      <div className="p-5 bg-[#224292]/5 border border-[#224292]/10 rounded-2xl">
                         <p className="text-black font-medium font-graphik text-[14px] leading-relaxed italic">
                           {selectedFaculty.publications}
                         </p>
@@ -1067,11 +1067,11 @@ function AchievementSection({ courseId, courseName }) {
       <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 pb-8 border-b border-[#D5E2F4]/50">
         <div>
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#18357a] to-[#0A1A3F] flex items-center justify-center shadow-xl shadow-[#18357a]/20">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#224292] to-[#224292] flex items-center justify-center shadow-xl shadow-[#224292]/20">
               <Trophy size={28} className="text-[#ffc107]" />
             </div>
             <div>
-              <h3 className="text-4xl font-bold font-graphik text-[#18357a] tracking-tight leading-none mb-1">Department Honors</h3>
+              <h3 className="text-4xl font-bold font-graphik text-[#224292] tracking-tight leading-none mb-1">Department Honors</h3>
               <p className="text-black font-medium font-graphik text-sm tracking-wide">Celebrating academic and professional milestones</p>
             </div>
           </div>
@@ -1080,7 +1080,7 @@ function AchievementSection({ courseId, courseName }) {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
           <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
             {['AWARD', 'ACHIEVEMENT'].map(tab => (
-              <button key={tab} onClick={() => setActiveSubTab(tab)} className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeSubTab === tab ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
+              <button key={tab} onClick={() => setActiveSubTab(tab)} className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeSubTab === tab ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#224292]'}`}>
                 {tab === 'AWARD' ? 'Awards' : 'Achievements'}
               </button>
             ))}
@@ -1088,7 +1088,7 @@ function AchievementSection({ courseId, courseName }) {
           {selectedYear && (
             <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
               {audienceTabs.map(tab => (
-                <button key={tab.id} onClick={() => setActiveAudience(tab.id)} className={`px-6 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#18357a]'}`}>
+                <button key={tab.id} onClick={() => setActiveAudience(tab.id)} className={`px-6 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#224292]'}`}>
                   {tab.id === 'STUDENT' ? 'Student' : 'Faculty'}
                 </button>
               ))}
@@ -1103,11 +1103,11 @@ function AchievementSection({ courseId, courseName }) {
             <div className="col-span-full py-12 text-center text-[#64779F]">No academic folders found for this category.</div>
           ) : (
             years.map(yr => (
-              <button key={yr} onClick={() => setSelectedYear(yr)} className="bg-white p-8 rounded-[2rem] border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#18357a]/20 transition-all flex flex-col items-center group">
+              <button key={yr} onClick={() => setSelectedYear(yr)} className="bg-white p-8 rounded-[2rem] border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#224292]/20 transition-all flex flex-col items-center group">
                 <div className="h-12 w-12 bg-slate-50 flex items-center justify-center rounded-xl mb-3 group-hover:scale-110 transition-transform">
                   <Star size={24} className="text-[#ffc107]" />
                 </div>
-                <span className="text-xl font-bold font-graphik text-[#18357a]">{yr}</span>
+                <span className="text-xl font-bold font-graphik text-[#224292]">{yr}</span>
                 <span className="text-[10px] font-bold font-graphik tracking-[0.1em] text-[#A9B1C3] mt-1 opacity-60">View Folders</span>
               </button>
             ))
@@ -1116,16 +1116,16 @@ function AchievementSection({ courseId, courseName }) {
       ) : (
         <>
           <div className="flex items-center gap-4 -mt-4">
-            <button onClick={() => setSelectedYear(null)} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[10px] font-bold font-graphik tracking-widest text-[#18357a] border-2 border-[#E2E8F0] hover:bg-slate-50 hover:translate-x-[-4px] transition-all">
+            <button onClick={() => setSelectedYear(null)} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[10px] font-bold font-graphik tracking-widest text-[#224292] border-2 border-[#E2E8F0] hover:bg-slate-50 hover:translate-x-[-4px] transition-all">
               <ArrowLeft size={14} /> Back to Years
             </button>
-            <span className="px-4 py-2 bg-[#ffc107] text-[#18357a] text-[10px] font-bold font-graphik uppercase rounded-xl tracking-widest">Selected: {selectedYear}</span>
+            <span className="px-4 py-2 bg-[#ffc107] text-[#224292] text-[10px] font-bold font-graphik uppercase rounded-xl tracking-widest">Selected: {selectedYear}</span>
           </div>
 
           {loading ? (
             <div className="py-24 flex flex-col items-center justify-center gap-5">
-              <div className="w-16 h-16 rounded-full border-4 border-[#18357a]/10 border-t-[#ffc107] animate-spin" />
-              <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#18357a]/40">Fetching Records...</p>
+              <div className="w-16 h-16 rounded-full border-4 border-[#224292]/10 border-t-[#ffc107] animate-spin" />
+              <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#224292]/40">Fetching Records...</p>
             </div>
           ) : visibleData.length === 0 ? (
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-24 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center group">
@@ -1135,7 +1135,7 @@ function AchievementSection({ courseId, courseName }) {
                   <Star size={20} className="absolute -top-1 -right-1 text-[#ffc107] animate-bounce" />
                 </div>
               </div>
-              <h4 className="text-xl font-bold font-graphik text-[#18357a] mb-3">No records found</h4>
+              <h4 className="text-xl font-bold font-graphik text-[#224292] mb-3">No records found</h4>
               <p className="text-[#64779F] font-bold font-graphik text-sm">Nothing recorded for this folder yet.</p>
             </motion.div>
           ) : (
@@ -1149,9 +1149,9 @@ function AchievementSection({ courseId, courseName }) {
                   const fileUrl = item.pdf_url || item.image_url;
 
                   return (
-                    <motion.div key={`${activeAudience}-${item.id}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }} className="bg-white rounded-[2rem] p-7 border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#18357a]/20 transition-all group">
+                    <motion.div key={`${activeAudience}-${item.id}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }} className="bg-white rounded-[2rem] p-7 border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#224292]/20 transition-all group">
                       <div className="flex items-start justify-between mb-6 gap-4">
-                        <div className="h-12 w-12 rounded-xl bg-[#18357a]/5 flex items-center justify-center text-[#18357a] group-hover:bg-[#18357a] group-hover:text-[#ffc107] transition-all shrink-0">
+                        <div className="h-12 w-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-[#ffc107] transition-all shrink-0">
                           {isAward ? <Award size={22} /> : (activeAudience === 'FACULTY' ? <Users size={22} /> : <Trophy size={22} />)}
                         </div>
                         <span className="text-[10px] font-bold font-graphik text-[#64779F] uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg">
@@ -1159,14 +1159,14 @@ function AchievementSection({ courseId, courseName }) {
                         </span>
                       </div>
 
-                      <h4 className="text-lg font-bold font-graphik text-[#18357a] mb-2 leading-tight">{isAward ? item.award_name : item.description}</h4>
+                      <h4 className="text-lg font-bold font-graphik text-[#224292] mb-2 leading-tight">{isAward ? item.award_name : item.description}</h4>
                       <p className="text-[#64779F] text-sm font-semibold font-graphik italic mb-6 opacity-80">{isStudent ? (isAward ? item.student_name : item.name) : item.faculty_name}</p>
 
                       {isRank && (
                         <div className="grid grid-cols-2 gap-3 mb-6">
                           <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
                              <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">Rank</p>
-                             <p className="text-sm font-bold font-graphik text-[#18357a]">{item.university_rank}</p>
+                             <p className="text-sm font-bold font-graphik text-[#224292]">{item.university_rank}</p>
                           </div>
                           <div className="bg-teal-50 p-3 rounded-xl border border-teal-100">
                              <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">CGPA</p>
@@ -1176,7 +1176,7 @@ function AchievementSection({ courseId, courseName }) {
                       )}
 
                       {fileUrl && (
-                        <a href={fileUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-3 bg-[#F8FAFC] border border-[#E5EDF8] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-widest text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all">
+                        <a href={fileUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-3 bg-[#F8FAFC] border border-[#E5EDF8] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-widest text-[#224292] hover:bg-[#224292] hover:text-white transition-all">
                           View PDF <ExternalLink size={12} />
                         </a>
                       )}
@@ -1225,10 +1225,10 @@ function CurriculumSection({ courseId, courseName }) {
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-8 pb-8 border-b border-[#D5E2F4]/50">
         <div>
            <div className="flex items-center gap-4 mb-2">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#18357a] to-[#0A1A3F] flex items-center justify-center shadow-lg shadow-[#18357a]/20">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#224292] to-[#224292] flex items-center justify-center shadow-lg shadow-[#224292]/20">
                  <BookOpen size={24} className="text-[#ffc107]" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#18357a] tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#224292] tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
            </div>
         </div>
 
@@ -1239,8 +1239,8 @@ function CurriculumSection({ courseId, courseName }) {
               onClick={() => setCurriculumTab(t)}
               className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${
                 curriculumTab === t
-                  ? 'bg-white text-[#18357a] shadow-xl shadow-blue-900/10 scale-[1.02] translate-y-[-1px]'
-                  : 'text-[#64779F] hover:text-[#18357a]'
+                  ? 'bg-white text-[#224292] shadow-xl shadow-blue-900/10 scale-[1.02] translate-y-[-1px]'
+                  : 'text-[#64779F] hover:text-[#224292]'
               }`}
             >
               {t}
@@ -1251,15 +1251,15 @@ function CurriculumSection({ courseId, courseName }) {
 
       {loading ? (
         <div className="py-24 flex flex-col items-center justify-center gap-5">
-           <div className="w-16 h-16 rounded-full border-4 border-[#18357a]/10 border-t-[#ffc107] animate-spin" />
-           <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#18357a]/40">Indexing Academic Files...</p>
+           <div className="w-16 h-16 rounded-full border-4 border-[#224292]/10 border-t-[#ffc107] animate-spin" />
+           <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#224292]/40">Indexing Academic Files...</p>
         </div>
       ) : records.length === 0 ? (
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-20 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center">
            <div className="w-20 h-20 rounded-[2rem] bg-[#F8FAFC] flex items-center justify-center mb-8">
               <FileText size={40} className="text-[#A9B1C3]/30" />
            </div>
-           <h4 className="text-xl font-bold font-graphik text-[#18357a] uppercase mb-2">No {curriculumTab} Found</h4>
+           <h4 className="text-xl font-bold font-graphik text-[#224292] uppercase mb-2">No {curriculumTab} Found</h4>
            <p className="text-[#64779F] font-bold font-graphik text-sm">Official documentation for this department is being updated.</p>
         </motion.div>
       ) : (
@@ -1268,7 +1268,7 @@ function CurriculumSection({ courseId, courseName }) {
            <div className="hidden md:block bg-white border border-[#D5E2F4]/80 rounded-xl overflow-hidden shadow-sm">
               <table className="w-full text-left border-collapse">
                  <thead>
-                    <tr className="bg-[#18357a] border-b border-[#18357a]">
+                    <tr className="bg-[#224292] border-b border-[#224292]">
                        <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Document Info</th>
                        <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
                        {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Semester</th>}
@@ -1287,7 +1287,7 @@ function CurriculumSection({ courseId, courseName }) {
                        <td className="px-5 py-3.5">
                           <div className="flex items-center gap-3">
                              <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                                curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#18357a]' : 'bg-[#ffc107]/10 text-[#18357a]'
+                                curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#224292]' : 'bg-[#ffc107]/10 text-[#224292]'
                              }`}>
                                {curriculumTab === 'Regulations' ? <ShieldCheck size={18} /> : <BookOpen size={18} />}
                              </div>
@@ -1302,7 +1302,7 @@ function CurriculumSection({ courseId, courseName }) {
                        </td>
                        {curriculumTab === 'Syllabus' && (
                           <td className="px-3 py-3.5">
-                             <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-bold font-graphik text-[#18357a] group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                             <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-bold font-graphik text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all">
                                 SEM - {item.semester}
                              </span>
                           </td>
@@ -1313,7 +1313,7 @@ function CurriculumSection({ courseId, courseName }) {
                                href={item.pdf_url} 
                                target="_blank" 
                                rel="noopener noreferrer"
-                               className="p-2.5 rounded-xl bg-blue-50 text-[#18357a] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95"
+                               className="p-2.5 rounded-xl bg-blue-50 text-[#224292] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95"
                                title="View Document"
                              >
                                 <ExternalLink size={16} />
@@ -1325,7 +1325,7 @@ function CurriculumSection({ courseId, courseName }) {
                                     : item.pdf_url;
                                   window.open(downloadUrl, '_blank');
                                 }}
-                               className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#18357a] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
+                               className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#224292] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
                                title="Download Document"
                              >
                                 <Download size={16} />
@@ -1351,7 +1351,7 @@ function CurriculumSection({ courseId, courseName }) {
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
-                         curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#18357a]' : 'bg-[#ffc107]/10 text-[#18357a]'
+                         curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#224292]' : 'bg-[#ffc107]/10 text-[#224292]'
                       }`}>
                         {curriculumTab === 'Regulations' ? <ShieldCheck size={20} /> : <BookOpen size={20} />}
                       </div>
@@ -1367,7 +1367,7 @@ function CurriculumSection({ courseId, courseName }) {
                   
                   <div className="flex items-center pt-4 border-t border-slate-50 gap-4">
                     {curriculumTab === 'Syllabus' && (
-                      <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold font-graphik text-[#18357a]">
+                      <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold font-graphik text-[#224292]">
                          SEM - {item.semester}
                       </span>
                     )}
@@ -1376,7 +1376,7 @@ function CurriculumSection({ courseId, courseName }) {
                         href={item.pdf_url} 
                         target="_blank" 
                         rel="noreferrer" 
-                        className="flex items-center gap-2 px-4 py-2.5 bg-blue-50 text-[#18357a] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider"
+                        className="flex items-center gap-2 px-4 py-2.5 bg-blue-50 text-[#224292] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider"
                       >
                          View <ExternalLink size={14} />
                       </a>
@@ -1385,7 +1385,7 @@ function CurriculumSection({ courseId, courseName }) {
                           const downloadUrl = item.pdf_url.includes('/upload/') ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/') : item.pdf_url;
                           window.open(downloadUrl, '_blank');
                         }}
-                        className="flex items-center gap-2 px-4 py-2.5 bg-[#ffc107] text-[#18357a] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider shadow-sm shadow-[#ffc107]/20"
+                        className="flex items-center gap-2 px-4 py-2.5 bg-[#ffc107] text-[#224292] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider shadow-sm shadow-[#ffc107]/20"
                       >
                          Download <Download size={14} />
                       </button>

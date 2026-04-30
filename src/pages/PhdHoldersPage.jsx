@@ -244,15 +244,15 @@ const PhdHoldersPage = () => {
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4">
                 <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to="/research" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
+                    <span className="text-[#224292] text-xs font-black uppercase tracking-wider pt-0.5">
                         Ph.D Holders List
                     </span>
                 </div>
@@ -268,12 +268,12 @@ const PhdHoldersPage = () => {
                 >
                     <Link 
                         to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#18357a] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
+                        className="inline-flex items-center gap-2 text-[#224292] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
                     >
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-6">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] leading-tight mb-6">
                         List of <span className="text-[#ffc107]">Doctorate Holders</span>
                     </h1>
 
@@ -318,7 +318,7 @@ const PhdHoldersPage = () => {
                                             className="group hover:bg-[#fafcff] transition-all duration-300"
                                         >
                                             <td className="px-6 py-5 border-r border-slate-50">
-                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
+                                                <div className="w-10 h-10 bg-[#224292]/5 rounded-xl flex items-center justify-center text-[#224292] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
@@ -353,8 +353,8 @@ const PhdHoldersPage = () => {
                                     <tr>
                                         <td colSpan="10" className="px-6 py-20 text-center">
                                             <div className="flex flex-col items-center gap-4">
-                                                <Search size={40} className="text-[#18357a]/10" />
-                                                <p className="text-[#18357a] font-black uppercase text-xs tracking-wider">No Data Available for {formatDeptName(deptName)}</p>
+                                                <Search size={40} className="text-[#224292]/10" />
+                                                <p className="text-[#224292] font-black uppercase text-xs tracking-wider">No Data Available for {formatDeptName(deptName)}</p>
                                             </div>
                                         </td>
                                     </tr>
@@ -367,12 +367,12 @@ const PhdHoldersPage = () => {
                 {/* Faculty Metrics Summary */}
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
-                        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#18357a]">
+                        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#224292]">
                             <BookOpen size={24} />
                         </div>
                         <div>
                             <span className="text-[9px] font-black text-[#64779F] uppercase tracking-wider block">Total Directory</span>
-                            <span className="text-sm font-black text-[#18357a] uppercase">{displayHolders.length} Ph.D Holders</span>
+                            <span className="text-sm font-black text-[#224292] uppercase">{displayHolders.length} Ph.D Holders</span>
                         </div>
                     </div>
                     <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
@@ -381,16 +381,16 @@ const PhdHoldersPage = () => {
                         </div>
                         <div>
                             <span className="text-[9px] font-black text-[#64779F] uppercase tracking-wider block">Impact Metric</span>
-                            <span className="text-sm font-black text-[#18357a] uppercase">Scholarly Excellence</span>
+                            <span className="text-sm font-black text-[#224292] uppercase">Scholarly Excellence</span>
                         </div>
                     </div>
                     <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
-                        <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-[#18357a]">
+                        <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-[#224292]">
                             <GraduationCap size={24} />
                         </div>
                         <div>
                             <span className="text-[9px] font-black text-[#64779F] uppercase tracking-wider block">Recognition</span>
-                            <span className="text-sm font-black text-[#18357a] uppercase">Recognized R&D Center</span>
+                            <span className="text-sm font-black text-[#224292] uppercase">Recognized R&D Center</span>
                         </div>
                     </div>
                 </div>

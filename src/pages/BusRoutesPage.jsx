@@ -511,7 +511,7 @@ const BusRoutesPage = () => {
   return (
     <div className="min-h-screen bg-[#FCFDFD] pb-20 font-sans">
       {/* Premium Header */}
-      <div className="bg-[#18357a] pt-20 pb-40 px-6 relative overflow-hidden">
+      <div className="bg-[#224292] pt-20 pb-40 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
         </div>
@@ -566,15 +566,15 @@ const BusRoutesPage = () => {
                 placeholder="Search route..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-6 py-4 bg-slate-50 border-none rounded-xl text-xs font-bold text-[#18357a] focus:ring-2 focus:ring-[#18357a]/10 placeholder:text-slate-400"
+                className="w-full pl-12 pr-6 py-4 bg-slate-50 border-none rounded-xl text-xs font-bold text-[#224292] focus:ring-2 focus:ring-[#224292]/10 placeholder:text-slate-400"
               />
             </div>
             <div className="flex gap-4 w-full md:w-auto">
                 <div className="flex-1 md:flex-none px-6 py-3 bg-slate-50 rounded-xl flex items-center gap-3">
-                    <Navigation size={16} className="text-[#18357a]" />
+                    <Navigation size={16} className="text-[#224292]" />
                     <div className="leading-none">
-                        <span className="text-[9px] font-black text-[#18357a]/40 uppercase block mb-0.5">Fleet Total</span>
-                        <span className="text-base font-black text-[#18357a]">31</span>
+                        <span className="text-[9px] font-black text-[#224292]/40 uppercase block mb-0.5">Fleet Total</span>
+                        <span className="text-base font-black text-[#224292]">31</span>
                     </div>
                 </div>
             </div>
@@ -595,13 +595,13 @@ const BusRoutesPage = () => {
               <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                   <tr className="bg-slate-100 border-b-2 border-slate-200">
-                    <th className="px-4 py-6 text-base font-black text-[#18357a] tracking-wider text-center border-r border-slate-200 w-28">
+                    <th className="px-4 py-6 text-base font-black text-[#224292] tracking-wider text-center border-r border-slate-200 w-28">
                       Route No.
                     </th>
-                    <th className="px-8 py-6 text-base font-black text-[#18357a] tracking-wider border-r border-slate-200">
+                    <th className="px-8 py-6 text-base font-black text-[#224292] tracking-wider border-r border-slate-200">
                       Route
                     </th>
-                    <th className="px-8 py-6 text-base font-black text-[#18357a] tracking-wider text-center">
+                    <th className="px-8 py-6 text-base font-black text-[#224292] tracking-wider text-center">
                       Bus Route
                     </th>
                   </tr>
@@ -653,24 +653,24 @@ const BusRoutesPage = () => {
         {/* Compact Logistics Highlights */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
             <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-lg flex flex-col items-center text-center gap-2 hover:shadow-xl transition-all">
-                <span className="text-[9px] font-black text-[#18357a]/40 uppercase tracking-widest">Attayampatty to KIOT</span>
-                <span className="text-xl font-black text-[#18357a]">08:45 AM</span>
+                <span className="text-[9px] font-black text-[#224292]/40 uppercase tracking-widest">Attayampatty to KIOT</span>
+                <span className="text-xl font-black text-[#224292]">08:45 AM</span>
                 <div className="mt-2 w-8 h-[2px] bg-slate-200 rounded-full" />
             </div>
 
-            <div className="bg-[#18357a] p-6 rounded-2xl shadow-lg flex flex-col items-center text-center gap-2 hover:shadow-[#18357a]/20 transition-all border border-white/5">
+            <div className="bg-[#224292] p-6 rounded-2xl shadow-lg flex flex-col items-center text-center gap-2 hover:shadow-[#224292]/20 transition-all border border-white/5">
                 <span className="text-[9px] font-black text-white/40 uppercase tracking-widest">KIOT to Attayampatty</span>
                 <span className="text-xl font-black text-white">05:10 PM</span>
                 <div className="mt-2 w-8 h-[2px] bg-white/20 rounded-full" />
             </div>
 
             <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-lg flex flex-col items-center text-center gap-2 hover:shadow-xl transition-all">
-                <span className="text-[9px] font-black text-[#18357a]/40 uppercase tracking-widest">Kakapalayam to KIOT</span>
-                <span className="text-xl font-black text-[#18357a]">08:45 & 08:50</span>
+                <span className="text-[9px] font-black text-[#224292]/40 uppercase tracking-widest">Kakapalayam to KIOT</span>
+                <span className="text-xl font-black text-[#224292]">08:45 & 08:50</span>
                 <div className="mt-2 w-8 h-[2px] bg-slate-200 rounded-full" />
             </div>
 
-            <div className="bg-[#18357a] p-6 rounded-2xl shadow-lg flex flex-col items-center text-center gap-2 hover:shadow-[#18357a]/20 transition-all border border-white/5">
+            <div className="bg-[#224292] p-6 rounded-2xl shadow-lg flex flex-col items-center text-center gap-2 hover:shadow-[#224292]/20 transition-all border border-white/5">
                 <span className="text-[9px] font-black text-white/40 uppercase tracking-widest">KIOT to Kakapalayam</span>
                 <span className="text-xl font-black text-white">05:10 PM</span>
                 <div className="mt-2 w-8 h-[2px] bg-white/20 rounded-full" />
@@ -691,13 +691,13 @@ const BusRoutesPage = () => {
               <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                   <tr className="bg-slate-100 border-b-2 border-slate-200">
-                    <th className="px-6 py-5 text-sm font-black text-[#18357a] tracking-wider text-center border-r border-slate-200 w-32">
+                    <th className="px-6 py-5 text-sm font-black text-[#224292] tracking-wider text-center border-r border-slate-200 w-32">
                       Plan No.
                     </th>
-                    <th className="px-8 py-5 text-sm font-black text-[#18357a] tracking-wider border-r border-slate-200 w-1/3">
+                    <th className="px-8 py-5 text-sm font-black text-[#224292] tracking-wider border-r border-slate-200 w-1/3">
                       Occasion & Timings
                     </th>
-                    <th className="px-8 py-5 text-sm font-black text-[#18357a] tracking-wider">
+                    <th className="px-8 py-5 text-sm font-black text-[#224292] tracking-wider">
                       Route Coverage / Details
                     </th>
                   </tr>
@@ -710,20 +710,20 @@ const BusRoutesPage = () => {
                     >
                       <td className="px-6 py-4 border-r border-slate-200/50">
                         <div className="flex flex-col items-center justify-center gap-1">
-                          <div className="w-8 h-8 rounded-full bg-[#18357a] text-white flex items-center justify-center text-sm font-black">
+                          <div className="w-8 h-8 rounded-full bg-[#224292] text-white flex items-center justify-center text-sm font-black">
                             {plan.title.split(' ')[1]}
                           </div>
-                          <span className="text-[9px] font-black text-[#18357a] uppercase">{plan.title}</span>
+                          <span className="text-[9px] font-black text-[#224292] uppercase">{plan.title}</span>
                         </div>
                       </td>
                       <td className="px-8 py-4 border-r border-slate-200/50">
                         <div className="flex flex-col gap-2">
-                            <span className="text-[13px] font-black text-[#18357a] uppercase leading-tight">{plan.occasion}</span>
+                            <span className="text-[13px] font-black text-[#224292] uppercase leading-tight">{plan.occasion}</span>
                             {plan.details && (
                                 <div className="space-y-1">
                                     {plan.details.map((detail, dIdx) => (
                                         <div key={dIdx} className="flex gap-2 text-[9px] font-bold text-slate-500 leading-tight">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-[#18357a]/20 mt-1 shrink-0" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[#224292]/20 mt-1 shrink-0" />
                                             <span>{detail}</span>
                                         </div>
                                     ))}
@@ -735,14 +735,14 @@ const BusRoutesPage = () => {
                         {Array.isArray(plan.routes) ? (
                             <div className="flex flex-col gap-2">
                                 {plan.routes.map((route, rIdx) => (
-                                    <div key={rIdx} className="text-[11px] font-black text-[#18357a] bg-slate-50 p-3 rounded-xl border border-slate-100 uppercase leading-tight">
+                                    <div key={rIdx} className="text-[11px] font-black text-[#224292] bg-slate-50 p-3 rounded-xl border border-slate-100 uppercase leading-tight">
                                         {route}
                                     </div>
                                 ))}
                             </div>
                         ) : (
                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                                <p className="text-[12px] font-black text-[#18357a] uppercase leading-relaxed">
+                                <p className="text-[12px] font-black text-[#224292] uppercase leading-relaxed">
                                     {plan.routes}
                                 </p>
                             </div>
@@ -757,9 +757,9 @@ const BusRoutesPage = () => {
         </div>
 
         {/* Footer Note */}
-        <div className="mt-16 bg-[#18357a]/5 p-8 rounded-[2rem] border-2 border-dashed border-[#18357a]/10 text-center">
-            <ShieldCheck size={32} className="mx-auto text-[#18357a] mb-4 opacity-20" />
-            <p className="text-sm font-bold text-[#18357a] max-w-2xl mx-auto leading-relaxed">
+        <div className="mt-16 bg-[#224292]/5 p-8 rounded-[2rem] border-2 border-dashed border-[#224292]/10 text-center">
+            <ShieldCheck size={32} className="mx-auto text-[#224292] mb-4 opacity-20" />
+            <p className="text-sm font-bold text-[#224292] max-w-2xl mx-auto leading-relaxed">
                 KIOT is committed to safe transit. For any last-minute changes in routes due to road works or specific institutional needs, please refer to the official notice board or contact the transport manager.
             </p>
         </div>
@@ -771,7 +771,7 @@ const BusRoutesPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 bg-[#18357a]/95 backdrop-blur-xl"
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 bg-[#224292]/95 backdrop-blur-xl"
             >
               <motion.div 
                 initial={{ scale: 0.95, y: 20 }}
@@ -782,7 +782,7 @@ const BusRoutesPage = () => {
                 {/* Refined Close Button - Smaller and repositioned */}
                 <button 
                   onClick={() => setSelectedRoute(null)}
-                  className="absolute right-6 top-12 z-[110] bg-[#18357a] text-white w-9 h-9 md:w-11 md:h-11 rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all group border-2 border-white"
+                  className="absolute right-6 top-12 z-[110] bg-[#224292] text-white w-9 h-9 md:w-11 md:h-11 rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all group border-2 border-white"
                 >
                   <X size={20} className="group-hover:rotate-90 transition-transform duration-300" />
                 </button>
@@ -805,24 +805,24 @@ const BusRoutesPage = () => {
                             transition={{ delay: 0.2, duration: 1, type: 'spring' }}
                             className="flex items-center gap-2 px-3 py-1 bg-slate-100 rounded-b-lg border border-t-0 border-slate-200 shadow-sm"
                         >
-                            <Bus size={12} className="text-[#18357a]" />
-                            <span className="text-[9px] font-black text-[#18357a] uppercase tracking-widest">Bus No. {selectedRoute.id}</span>
+                            <Bus size={12} className="text-[#224292]" />
+                            <span className="text-[9px] font-black text-[#224292] uppercase tracking-widest">Bus No. {selectedRoute.id}</span>
                         </motion.div>
                     </div>
 
                     <div className="flex flex-col items-center md:items-start relative z-10">
                         <div className="flex items-center gap-4 mb-2">
-                             <div className="w-12 h-12 bg-[#18357a] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-[#18357a]/20">
+                             <div className="w-12 h-12 bg-[#224292] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-[#224292]/20">
                                 <Bus size={24} />
                              </div>
                              <div>
-                                <h1 className="text-[18px] md:text-[28px] font-black text-[#18357a] uppercase tracking-tighter leading-none">{selectedRoute.from} Route</h1>
+                                <h1 className="text-[18px] md:text-[28px] font-black text-[#224292] uppercase tracking-tighter leading-none">{selectedRoute.from} Route</h1>
                              </div>
                         </div>
                     </div>
                     
-                    <div className="flex items-center gap-6 text-[10px] font-black text-[#18357a] uppercase bg-slate-50 px-8 py-4 rounded-[1.5rem] border border-slate-100 shadow-sm">
-                        <span className="flex items-center gap-3"><div className="w-2.5 h-2.5 rounded-full bg-[#18357a] shadow-inner" /> Morning Trip</span>
+                    <div className="flex items-center gap-6 text-[10px] font-black text-[#224292] uppercase bg-slate-50 px-8 py-4 rounded-[1.5rem] border border-slate-100 shadow-sm">
+                        <span className="flex items-center gap-3"><div className="w-2.5 h-2.5 rounded-full bg-[#224292] shadow-inner" /> Morning Trip</span>
                         <span className="flex items-center gap-3 border-l pl-6 border-slate-200"><div className="w-2.5 h-2.5 rounded-full bg-slate-300" /> Evening Trip</span>
                     </div>
                 </div>
@@ -840,19 +840,19 @@ const BusRoutesPage = () => {
                           <table className="w-full text-left border-separate border-spacing-0">
                             <thead className="z-10">
                               <tr>
-                                <th className="sticky top-0 z-20 px-6 py-4 text-[10px] font-black text-[#18357a] uppercase tracking-widest text-center border-b border-slate-200 bg-slate-100 shadow-[inset_0_-1px_0_rgba(226,232,240,1)]">S.No</th>
-                                <th className="sticky top-0 z-20 px-6 py-4 text-[10px] font-black text-[#18357a] uppercase tracking-widest border-b border-slate-200 bg-slate-100 shadow-[inset_0_-1px_0_rgba(226,232,240,1)]">Bus Stop Point</th>
-                                <th className="sticky top-0 z-20 px-6 py-4 text-[10px] font-black text-[#18357a] uppercase tracking-widest text-center border-b border-slate-200 bg-slate-100 shadow-[inset_0_-1px_0_rgba(226,232,240,1)]">Start (AM)</th>
-                                <th className="sticky top-0 z-20 px-6 py-4 text-[10px] font-black text-[#18357a] uppercase tracking-widest text-center border-b border-slate-200 bg-slate-100 shadow-[inset_0_-1px_0_rgba(226,232,240,1)]">Return (PM)</th>
+                                <th className="sticky top-0 z-20 px-6 py-4 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-200 bg-slate-100 shadow-[inset_0_-1px_0_rgba(226,232,240,1)]">S.No</th>
+                                <th className="sticky top-0 z-20 px-6 py-4 text-[10px] font-black text-[#224292] uppercase tracking-widest border-b border-slate-200 bg-slate-100 shadow-[inset_0_-1px_0_rgba(226,232,240,1)]">Bus Stop Point</th>
+                                <th className="sticky top-0 z-20 px-6 py-4 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-200 bg-slate-100 shadow-[inset_0_-1px_0_rgba(226,232,240,1)]">Start (AM)</th>
+                                <th className="sticky top-0 z-20 px-6 py-4 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-200 bg-slate-100 shadow-[inset_0_-1px_0_rgba(226,232,240,1)]">Return (PM)</th>
                               </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-50">
                               {ROUTE_DETAILS[selectedRoute.id].map((detail, dIdx) => (
                                 <tr key={dIdx} className="hover:bg-slate-50 transition-colors group">
                                   <td className="px-6 py-4 text-[10px] font-bold text-slate-300 text-center">{detail.sno}</td>
-                                  <td className="px-6 py-4 text-[11px] font-black text-[#18357a] uppercase">{detail.stop}</td>
-                                  <td className="px-6 py-4 text-[11px] font-black text-[#18357a] text-center">{detail.morning}</td>
-                                  <td className="px-6 py-4 text-[11px] font-black text-[#18357a] text-center">{detail.evening}</td>
+                                  <td className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase">{detail.stop}</td>
+                                  <td className="px-6 py-4 text-[11px] font-black text-[#224292] text-center">{detail.morning}</td>
+                                  <td className="px-6 py-4 text-[11px] font-black text-[#224292] text-center">{detail.evening}</td>
                                 </tr>
                               ))}
                             </tbody>
@@ -865,12 +865,12 @@ const BusRoutesPage = () => {
                           <Bus size={40} />
                         </div>
                         <div className="space-y-1">
-                          <p className="text-[#18357a] font-black uppercase text-xs tracking-widest">Schedule Updates In Progress</p>
+                          <p className="text-[#224292] font-black uppercase text-xs tracking-widest">Schedule Updates In Progress</p>
                           <p className="text-slate-400 font-medium text-[10px] max-w-[250px]">Detailed timings for Route {selectedRoute.id} will be available shortly.</p>
                         </div>
                         <button 
                             onClick={() => setSelectedRoute(null)}
-                            className="mt-6 px-10 py-3 bg-[#18357a] text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#18357a]/90 transition-all font-sans"
+                            className="mt-6 px-10 py-3 bg-[#224292] text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-[#224292]/90 transition-all font-sans"
                         >
                             Close / Back
                         </button>

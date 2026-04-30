@@ -54,11 +54,11 @@ const CustomSelect = ({ label, value, options, onChange, icon: Icon, placeholder
         <div 
             onClick={() => setIsOpen(!isOpen)}
             className={`w-full px-5 py-4 bg-slate-50 border transition-all rounded-2xl text-[11px] font-black uppercase tracking-widest flex items-center justify-between cursor-pointer ${
-                isOpen ? 'border-[#18357a] bg-white ring-4 ring-[#18357a]/5' : 'border-slate-200'
-            } ${value ? 'text-[#18357a]' : 'text-slate-400'}`}
+                isOpen ? 'border-[#224292] bg-white ring-4 ring-[#224292]/5' : 'border-slate-200'
+            } ${value ? 'text-[#224292]' : 'text-slate-400'}`}
         >
             <span className="truncate pr-4">{value || placeholder}</span>
-            <ChevronDown size={18} className={`transition-transform duration-300 text-[#18357a] shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+            <ChevronDown size={18} className={`transition-transform duration-300 text-[#224292] shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
         </div>
 
         <AnimatePresence>
@@ -81,8 +81,8 @@ const CustomSelect = ({ label, value, options, onChange, icon: Icon, placeholder
                                     }}
                                     className={`px-8 py-4 text-[10px] font-black uppercase tracking-[0.1em] transition-colors cursor-pointer border-l-4 ${
                                         value === option 
-                                        ? 'bg-[#18357a]/5 text-[#18357a] border-[#ffc107]' 
-                                        : 'text-slate-500 border-transparent hover:bg-slate-50 hover:text-[#18357a]'
+                                        ? 'bg-[#224292]/5 text-[#224292] border-[#ffc107]' 
+                                        : 'text-slate-500 border-transparent hover:bg-slate-50 hover:text-[#224292]'
                                     }`}
                                 >
                                     {option}
@@ -189,13 +189,13 @@ const UGRegistrationPage = () => {
         }
     }
 
-    const inputClass = "w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold focus:outline-none focus:border-[#18357a] focus:bg-white transition-all shadow-sm placeholder:text-slate-300"
+    const inputClass = "w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold focus:outline-none focus:border-[#224292] focus:bg-white transition-all shadow-sm placeholder:text-slate-300"
     const labelClass = "text-[10px] font-black text-black tracking-widest flex items-center gap-2 mb-2 ml-1"
 
     return (
         <div className="min-h-screen bg-[#FDFEFE] font-sans relative overflow-hidden pb-20">
             {/* Header / Banner (Invoice Theme) */}
-            <div className="relative h-48 md:h-64 bg-[#18357a] flex items-center justify-center overflow-hidden">
+            <div className="relative h-48 md:h-64 bg-[#224292] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
                     <div className="absolute inset-0" style={{ 
                         backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -232,9 +232,9 @@ const UGRegistrationPage = () => {
                             <div className="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-8">
                                 <CheckCircle2 size={56} className="text-green-600" />
                             </div>
-                            <h2 className="text-4xl font-black text-[#18357a] uppercase mb-4 tracking-tighter font-display">Enquiry Received</h2>
+                            <h2 className="text-4xl font-black text-[#224292] uppercase mb-4 tracking-tighter font-display">Enquiry Received</h2>
                             <p className="text-[#64779F] font-bold text-lg max-w-md mx-auto mb-10">Thank you, <strong>{formData.studentName}</strong>. Your enquiry for UG 2026 has been successfully registered. We will contact you shortly.</p>
-                            <button onClick={() => navigate('/admissions')} className="px-10 py-4 bg-[#18357a] text-white rounded-xl font-black uppercase text-[11px] tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all">Go Back</button>
+                            <button onClick={() => navigate('/admissions')} className="px-10 py-4 bg-[#224292] text-white rounded-xl font-black uppercase text-[11px] tracking-widest hover:bg-[#ffc107] hover:text-[#224292] transition-all">Go Back</button>
                         </motion.div>
                     ) : (
                         <form onSubmit={handleSubmit} className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
@@ -242,7 +242,7 @@ const UGRegistrationPage = () => {
                             <div className="p-10 md:p-16 border-b border-slate-50">
                                 <div className="flex items-center gap-4 mb-12">
                                     <div className="w-1.5 h-10 bg-[#ffc107] rounded-full" />
-                                    <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tight font-display">Basic Details</h3>
+                                    <h3 className="text-2xl font-black text-[#224292] uppercase tracking-tight font-display">Basic Details</h3>
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
                                     <div className="md:col-span-2">
@@ -308,12 +308,12 @@ const UGRegistrationPage = () => {
                             {/* Section 2: Communication Details */}
                             <div className="p-10 md:p-16 bg-[#F8FAFC]">
                                 <div className="flex items-center gap-4 mb-12">
-                                    <div className="w-1.5 h-10 bg-[#18357a] rounded-full" />
-                                    <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tight font-display">Communication Details</h3>
+                                    <div className="w-1.5 h-10 bg-[#224292] rounded-full" />
+                                    <h3 className="text-2xl font-black text-[#224292] uppercase tracking-tight font-display">Communication Details</h3>
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
                                     <div className="md:col-span-2">
-                                        <label className={labelClass}><MapPin size={14} className="text-[#18357a]" /> Address for Communication *</label>
+                                        <label className={labelClass}><MapPin size={14} className="text-[#224292]" /> Address for Communication *</label>
                                         <textarea required rows={4} className={inputClass} style={{ resize: 'none' }} value={formData.address} onChange={e => setFormData({...formData, address: e.target.value})} />
                                     </div>
                                      <CustomSelect 
@@ -325,11 +325,11 @@ const UGRegistrationPage = () => {
                                          placeholder="Select District"
                                      />
                                     <div>
-                                        <label className={labelClass}><Phone size={14} className="text-[#18357a]" /> Mobile Number of Father *</label>
+                                        <label className={labelClass}><Phone size={14} className="text-[#224292]" /> Mobile Number of Father *</label>
                                         <input required type="tel" maxLength={10} className={inputClass} value={formData.fatherMobile} onChange={e => setFormData({...formData, fatherMobile: e.target.value.replace(/\D/g, '').slice(0, 10)})} />
                                     </div>
                                     <div>
-                                        <label className={labelClass}><Phone size={14} className="text-[#18357a]" /> Mobile Number of Mother *</label>
+                                        <label className={labelClass}><Phone size={14} className="text-[#224292]" /> Mobile Number of Mother *</label>
                                         <input required type="tel" maxLength={10} className={inputClass} value={formData.motherMobile} onChange={e => setFormData({...formData, motherMobile: e.target.value.replace(/\D/g, '').slice(0, 10)})} />
                                     </div>
                                     <div>
@@ -343,7 +343,7 @@ const UGRegistrationPage = () => {
                             <div className="p-10 md:p-16">
                                 <div className="flex items-center gap-4 mb-12">
                                     <div className="w-1.5 h-10 bg-[#ffc107] rounded-full" />
-                                    <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tight">Educational Details</h3>
+                                    <h3 className="text-2xl font-black text-[#224292] uppercase tracking-tight">Educational Details</h3>
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
                                     <div>
@@ -378,10 +378,10 @@ const UGRegistrationPage = () => {
                             </div>
 
                             {/* Section 4: Admission Enquiry */}
-                            <div className="p-10 md:p-16 bg-[#18357a]/5">
+                            <div className="p-10 md:p-16 bg-[#224292]/5">
                                 <div className="flex items-center gap-4 mb-12">
-                                    <div className="w-1.5 h-10 bg-[#18357a] rounded-full" />
-                                    <h3 className="text-2xl font-black text-[#18357a] uppercase tracking-tight">Admission Enquiry</h3>
+                                    <div className="w-1.5 h-10 bg-[#224292] rounded-full" />
+                                    <h3 className="text-2xl font-black text-[#224292] uppercase tracking-tight">Admission Enquiry</h3>
                                 </div>
                                 <div className="space-y-8">
                                     <CustomSelect 
@@ -415,7 +415,7 @@ const UGRegistrationPage = () => {
                                         {submitError}
                                     </div>
                                 )}
-                                <button type="submit" disabled={submitting} className="w-full max-w-md mx-auto py-6 bg-[#ffc107] text-[#18357a] rounded-[2rem] font-black uppercase text-[14px] tracking-[5px] hover:bg-[#18357a] hover:text-white transition-all shadow-2xl active:scale-95 flex items-center justify-center gap-4 group disabled:opacity-60 disabled:cursor-not-allowed">
+                                <button type="submit" disabled={submitting} className="w-full max-w-md mx-auto py-6 bg-[#ffc107] text-[#224292] rounded-[2rem] font-black uppercase text-[14px] tracking-[5px] hover:bg-[#224292] hover:text-white transition-all shadow-2xl active:scale-95 flex items-center justify-center gap-4 group disabled:opacity-60 disabled:cursor-not-allowed">
                                      {submitting ? 'Submitting...' : 'SUBMIT'} <Send size={20} className="group-hover:translate-x-2 transition-transform" />
                                 </button>
                                 <p className="mt-8 text-[10px] font-black text-slate-400 uppercase tracking-[2px] flex items-center justify-center gap-2">

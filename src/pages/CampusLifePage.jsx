@@ -127,7 +127,7 @@ const CampusLifePage = () => {
                             {/* Close Button */}
                             <button 
                                 onClick={() => setShowVideo(false)}
-                                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#18357a] hover:bg-[#ffc107] transition-all shadow-xl"
+                                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#224292] hover:bg-[#ffc107] transition-all shadow-xl"
                             >
                                 <X size={24} strokeWidth={3} />
                             </button>
@@ -154,7 +154,7 @@ const CampusLifePage = () => {
                 >
                     {/* Text Part - Comprehensive Institutional Narrative */}
                     <div className="w-full lg:w-[45%] space-y-8">
-                        <h3 className="text-4xl md:text-6xl font-black text-[#18357a] tracking-tighter leading-none">
+                        <h3 className="text-4xl md:text-6xl font-black text-[#224292] tracking-tighter leading-none">
                             Building <span className="text-[#ffc107]">Legacy</span> <br/> 
                             Through Innovation
                         </h3>
@@ -181,14 +181,14 @@ const CampusLifePage = () => {
                               alt="Campus Tour" 
                               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/60 to-transparent" />
                             
                             {/* Play Button Overlay */}
                             <div className="absolute inset-0 flex flex-col items-center justify-center">
                                <motion.div 
                                  whileHover={{ scale: 1.1 }}
                                  whileTap={{ scale: 0.9 }}
-                                 className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-[#18357a] shadow-2xl group-hover:bg-[#ffc107] transition-colors duration-500"
+                                 className="w-20 h-20 rounded-full bg-white flex items-center justify-center text-[#224292] shadow-2xl group-hover:bg-[#ffc107] transition-colors duration-500"
                                >
                                   <Video size={32} fill="currentColor" className="ml-1" />
                                </motion.div>
@@ -239,7 +239,7 @@ const CampusLifePage = () => {
                 {/* Standardized Section Heading */}
                 <div className="flex items-center justify-center gap-4 mb-16">
                     <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
-                    <h2 className="text-3xl font-black text-[#18357a] tracking-tight text-center">Campus <span className="text-[#ffc107]">Essentials</span></h2>
+                    <h2 className="text-3xl font-black text-[#224292] tracking-tight text-center">Campus <span className="text-[#ffc107]">Essentials</span></h2>
                     <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                 </div>
 
@@ -266,12 +266,12 @@ const CampusLifePage = () => {
                                 
                                 <div className="space-y-3 w-full relative z-10 flex-1 flex flex-col items-center justify-between">
                                     <div>
-                                        <h3 className="text-lg font-black text-[#18357a] tracking-tight leading-tight mb-1">{hub.title}</h3>
+                                        <h3 className="text-lg font-black text-[#224292] tracking-tight leading-tight mb-1">{hub.title}</h3>
                                         <p className="text-sm font-bold text-slate-600 tracking-tight leading-snug px-2">{hub.subtitle}</p>
                                     </div>
                                     
                                     <div className="pt-6 mt-auto">
-                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-50 text-[#18357a] text-xs font-black uppercase tracking-[2px] border border-slate-100 group-hover:bg-[#18357a] group-hover:text-white transition-all duration-500">
+                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-50 text-[#224292] text-xs font-black uppercase tracking-[2px] border border-slate-100 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
                                             Explore <ArrowUpRight size={14} className="text-[#ffc107]" />
                                         </div>
                                     </div>

@@ -60,7 +60,7 @@ const Preloader = ({ onComplete }) => {
                 variants={letterVariants}
                 initial="initial"
                 animate="animate"
-                className="text-2xl md:text-5xl font-black text-[#18357a] font-display"
+                className="text-2xl md:text-5xl font-black text-[#224292] font-display"
               >
                 {letter}
               </motion.span>

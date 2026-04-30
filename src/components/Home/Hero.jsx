@@ -139,14 +139,14 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 flex items-center justify-between px-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <button
           onClick={() => move(-1)}
-          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#18357a] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#224292] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
           aria-label="Previous slide"
         >
           <ChevronLeft size={28} strokeWidth={2.5} className="group-hover/btn:-translate-x-0.5 transition-transform" />
         </button>
         <button
           onClick={() => move(1)}
-          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#18357a] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#224292] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
           aria-label="Next slide"
         >
           <ChevronRight size={28} strokeWidth={2.5} className="group-hover/btn:translate-x-0.5 transition-transform" />

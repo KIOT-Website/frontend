@@ -47,13 +47,13 @@ const HeaderSection = () => {
             className="max-w-xl w-full px-8 lg:px-12 py-6"
           >
             {/* Tag Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 shadow-sm mb-4">
-               <Trophy size={12} className="text-[#18357a]" />
-               <span className="text-[9px] font-black text-[#18357a] uppercase tracking-[0.2em]">Institutional Excellence</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#224292]/5 border border-[#224292]/10 shadow-sm mb-4">
+               <Trophy size={12} className="text-[#224292]" />
+               <span className="text-[9px] font-black text-[#224292] uppercase tracking-[0.2em]">Institutional Excellence</span>
             </div>
             
             {/* Main Header */}
-            <h1 className="text-4xl md:text-5xl font-black text-[#0A1A3F] mb-4 tracking-tighter leading-[0.9]">
+            <h1 className="text-4xl md:text-5xl font-black text-[#224292] mb-4 tracking-tighter leading-[0.9]">
               Placement <br/> <span className="text-[#ffc107]">Excellence</span>
             </h1>
             
@@ -73,7 +73,7 @@ const HeaderSection = () => {
                     <feature.icon size={18} />
                   </div>
                   <div className="flex items-center">
-                    <h4 className="text-base font-black text-[#0A1A3F] tracking-tight">{feature.title}</h4>
+                    <h4 className="text-base font-black text-[#224292] tracking-tight">{feature.title}</h4>
                   </div>
                 </motion.div>
               ))}
@@ -81,12 +81,12 @@ const HeaderSection = () => {
 
             {/* Primary Action Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="px-5 py-2.5 bg-[#ffc107] text-[#18357a] rounded-xl font-black text-[9px] uppercase tracking-widest flex items-center gap-2 shadow-lg shadow-[#ffc107]/20">
+              <button className="px-5 py-2.5 bg-[#ffc107] text-[#224292] rounded-xl font-black text-[9px] uppercase tracking-widest flex items-center gap-2 shadow-lg shadow-[#ffc107]/20">
                 <FileText size={14} />
                 View Report
                 <ArrowRight size={14} />
               </button>
-              <button className="px-5 py-2.5 bg-white text-[#18357a] border-2 border-[#18357a]/10 rounded-xl font-black text-[9px] uppercase tracking-widest flex items-center gap-2">
+              <button className="px-5 py-2.5 bg-white text-[#224292] border-2 border-[#224292]/10 rounded-xl font-black text-[9px] uppercase tracking-widest flex items-center gap-2">
                 <Users size={14} />
                 Recruiters
                 <ArrowRight size={14} />
@@ -115,7 +115,7 @@ const HeaderSection = () => {
               alt="Placement Students" 
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3F]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/40 to-transparent" />
           </motion.div>
 
           {/* Floating Success Overlay Card (Overlapping the deep slant) */}
@@ -132,7 +132,7 @@ const HeaderSection = () => {
             className="absolute top-6 -left-12 lg:-left-24 bg-white rounded-[2.5rem] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-white/50 z-30 max-w-[280px] w-full hidden lg:block"
           >
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full bg-[#0A1A3F] flex items-center justify-center shrink-0 shadow-xl">
+              <div className="w-12 h-12 rounded-full bg-[#224292] flex items-center justify-center shrink-0 shadow-xl">
                  <div className="relative">
                     <UserCheck size={24} className="text-white" />
                     <Star size={8} className="text-[#ffc107] absolute -top-0.5 -right-0.5 fill-[#ffc107]" />
@@ -140,7 +140,7 @@ const HeaderSection = () => {
               </div>
               <div>
                 <p className="text-[7px] font-black text-slate-400 uppercase tracking-[0.4em] mb-1 leading-none">Success</p>
-                <div className="bg-[#18357a] p-2 px-3 rounded-lg shadow-inner">
+                <div className="bg-[#224292] p-2 px-3 rounded-lg shadow-inner">
                   <h4 className="text-[12px] font-black text-white leading-tight tracking-tight">
                     Building Careers.<br/>
                     <span className="text-[#ffc107]">Creating Futures.</span>
@@ -157,7 +157,7 @@ const HeaderSection = () => {
               ].map((text, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-4 h-4 rounded-full bg-[#ffc107] flex items-center justify-center shrink-0 shadow-sm">
-                    <CheckCircle2 size={8} className="text-[#0A1A3F]" strokeWidth={5} />
+                    <CheckCircle2 size={8} className="text-[#224292]" strokeWidth={5} />
                   </div>
                   <span className="text-[10px] font-black text-black tracking-tight leading-none">{text}</span>
                 </div>

@@ -31,14 +31,14 @@ const LibraryPage = () => {
     return (
       <div className="min-h-screen bg-[#F8FAFF] pb-24 font-graphik">
         {/* Minimal Header (Removed Hero) */}
-        <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#18357a]/5 to-transparent overflow-hidden">
+        <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#224292]/5 to-transparent overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
                 <motion.h1 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-4xl md:text-6xl font-bold text-[#18357a] tracking-tighter leading-none mb-6"
+                    className="text-4xl md:text-6xl font-bold text-[#224292] tracking-tighter leading-none mb-6"
                 >
                     Library <span className="text-[#ffc107]">Resource Center</span>
                 </motion.h1>
@@ -48,7 +48,7 @@ const LibraryPage = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2 }}
                     onClick={() => navigate('/campus-life')}
-                    className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#18357a] transition-colors"
+                    className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#224292] transition-colors"
                 >
                     <ArrowLeft size={14} /> Back to Hub
                 </motion.button>
@@ -60,11 +60,11 @@ const LibraryPage = () => {
             {/* Header with Dots Pattern */}
             <div className="relative flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-[#18357a] text-[#ffc107] rounded-2xl flex items-center justify-center shadow-xl">
+                    <div className="w-14 h-14 bg-[#224292] text-[#ffc107] rounded-2xl flex items-center justify-center shadow-xl">
                         <Library size={28} />
                     </div>
                     <div>
-                        <h2 className="text-3xl font-bold text-[#18357a] tracking-tight">Central Library</h2>
+                        <h2 className="text-3xl font-bold text-[#224292] tracking-tight">Central Library</h2>
                         <p className="text-base font-bold text-[#ffc107] tracking-[1px]">Resource & Knowledge Center</p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ const LibraryPage = () => {
             {/* Vision & Mission Grid */}
             <div className="grid lg:grid-cols-2 gap-10">
                 <div className="space-y-10">
-                    <h2 className="text-4xl font-bold text-[#18357a] tracking-tight leading-none">Vision & <span className="text-[#ffc107]">Mission</span></h2>
+                    <h2 className="text-4xl font-bold text-[#224292] tracking-tight leading-none">Vision & <span className="text-[#ffc107]">Mission</span></h2>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {/* Vision Card */}
@@ -84,7 +84,7 @@ const LibraryPage = () => {
                                     <Eye size={24} />
                                 </div>
                                 <div className="space-y-1">
-                                    <span className="text-sm font-bold tracking-[1px] text-[#18357a]">Vision</span>
+                                    <span className="text-sm font-bold tracking-[1px] text-[#224292]">Vision</span>
                                     <div className="h-0.5 w-8 bg-blue-400 rounded-full" />
                                 </div>
                             </div>
@@ -103,7 +103,7 @@ const LibraryPage = () => {
                                     <Target size={24} />
                                 </div>
                                 <div className="space-y-1">
-                                    <span className="text-sm font-bold tracking-[1px] text-[#18357a]">Mission</span>
+                                    <span className="text-sm font-bold tracking-[1px] text-[#224292]">Mission</span>
                                     <div className="h-0.5 w-8 bg-orange-400 rounded-full" />
                                 </div>
                             </div>
@@ -126,7 +126,7 @@ const LibraryPage = () => {
                     {/* Floating Center Icon Wrapper */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                         <div className="w-24 h-24 rounded-full bg-white/20 backdrop-blur-md border border-white flex items-center justify-center shadow-2xl relative">
-                            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#18357a] shadow-lg">
+                            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#224292] shadow-lg">
                                 <BookOpen size={30} />
                             </div>
                         </div>
@@ -138,7 +138,7 @@ const LibraryPage = () => {
                             href="http://115.244.103.83/webopac" 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="flex items-center justify-center gap-4 bg-[#18357a] text-white px-8 py-4 rounded-2xl font-bold text-sm tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all shadow-[0_15px_30px_rgba(24,53,122,0.3)] group overflow-hidden relative"
+                            className="flex items-center justify-center gap-4 bg-[#224292] text-white px-8 py-4 rounded-2xl font-bold text-sm tracking-widest hover:bg-[#ffc107] hover:text-[#224292] transition-all shadow-[0_15px_30px_rgba(24,53,122,0.3)] group overflow-hidden relative"
                         >
                             Web OPAC Access
                             <ExternalLink size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -165,10 +165,10 @@ const LibraryPage = () => {
                         </div>
                         <div className="flex-1 space-y-3">
                             <div className="space-y-1">
-                                <h4 className="text-base font-bold text-[#18357a] tracking-tight">{item.t}</h4>
+                                <h4 className="text-base font-bold text-[#224292] tracking-tight">{item.t}</h4>
                                 <div className={`h-0.5 w-8 rounded-full ${item.s === 'blue' ? 'bg-blue-400' : item.s === 'orange' ? 'bg-orange-400' : item.s === 'indigo' ? 'bg-indigo-400' : 'bg-purple-400'}`} />
                             </div>
-                            <div className="flex items-center gap-2 text-[#18357a] group-hover:gap-3 transition-all">
+                            <div className="flex items-center gap-2 text-[#224292] group-hover:gap-3 transition-all">
                                 <span className="text-xs font-bold tracking-widest">View details</span>
                                 <ArrowLeft size={12} className="rotate-180" />
                             </div>
@@ -186,7 +186,7 @@ const LibraryPage = () => {
                             <Users size={24} />
                         </div>
                         <div className="space-y-1">
-                            <h3 className="text-xl font-bold text-[#18357a]">Expert Team</h3>
+                            <h3 className="text-xl font-bold text-[#224292]">Expert Team</h3>
                             <div className="h-1 w-10 bg-blue-600 rounded-full" />
                         </div>
                     </div>
@@ -201,7 +201,7 @@ const LibraryPage = () => {
                         ].map((member, i) => (
                             <div key={i} className="flex items-center justify-between group cursor-default py-2 border-b border-slate-50 last:border-0">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-[#18357a] border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                    <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-[#224292] border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                         <User size={24} />
                                     </div>
                                     <div className="space-y-0.5">
@@ -221,7 +221,7 @@ const LibraryPage = () => {
                             <ShieldCheck size={24} />
                         </div>
                         <div className="space-y-1">
-                            <h3 className="text-xl font-bold text-[#18357a]">Library Regulations</h3>
+                            <h3 className="text-xl font-bold text-[#224292]">Library Regulations</h3>
                             <div className="h-1 w-10 bg-[#ffc107] rounded-full" />
                         </div>
                     </div>
@@ -236,7 +236,7 @@ const LibraryPage = () => {
                             { i: Sofa, t: 'Furniture should not move.' }
                         ].map((rule, idx) => (
                             <div key={idx} className="bg-white p-5 rounded-2xl border border-orange-100 flex items-center gap-4 group hover:border-[#ffc107] transition-all">
-                                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all">
+                                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all">
                                     <rule.i size={20} />
                                 </div>
                                 <p className="text-sm font-bold text-black leading-snug">{rule.t}</p>

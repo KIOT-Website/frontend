@@ -47,7 +47,7 @@ const StudentsAdmittedDepartmentPage = () => {
           <Users size={40} />
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-black text-[#18357a] mb-6 uppercase tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-black text-[#224292] mb-6 uppercase tracking-tight">
           {department?.name || decodedName}
         </h1>
         
@@ -57,7 +57,7 @@ const StudentsAdmittedDepartmentPage = () => {
 
         {/* Section: Placement Records */}
         <div className="w-full max-w-5xl mx-auto mb-16 text-left">
-          <h2 className="text-2xl font-bold text-[#18357a] mb-6 border-b border-[#D5E2F4] pb-4">
+          <h2 className="text-2xl font-bold text-[#224292] mb-6 border-b border-[#D5E2F4] pb-4">
             Students Admitted Records
           </h2>
           
@@ -87,7 +87,7 @@ const StudentsAdmittedDepartmentPage = () => {
                           <FileText size={24} />
                         </div>
                         <div>
-                          <p className="text-sm font-black text-[#18357a] uppercase tracking-wider">{record.batch_year}</p>
+                          <p className="text-sm font-black text-[#224292] uppercase tracking-wider">{record.batch_year}</p>
                           <p className="text-xs font-bold text-[#64779F]">Admissions Report</p>
                         </div>
                       </div>
@@ -109,7 +109,7 @@ const StudentsAdmittedDepartmentPage = () => {
 
         <Link
           to="/records"
-          className="inline-flex items-center gap-2 bg-[#ffc107] text-[#18357a] font-bold px-8 py-4 rounded-xl hover:bg-[#18357a] hover:text-white transition-colors shadow-lg hover:shadow-xl group"
+          className="inline-flex items-center gap-2 bg-[#ffc107] text-[#224292] font-bold px-8 py-4 rounded-xl hover:bg-[#224292] hover:text-white transition-colors shadow-lg hover:shadow-xl group"
         >
           <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
           Back to Records

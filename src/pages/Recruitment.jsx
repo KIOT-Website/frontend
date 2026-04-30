@@ -42,18 +42,18 @@ const Recruitment = () => {
         <div className="min-h-screen bg-[#F8FAFC] pb-20 pt-32 font-sans">
             <div className="mx-auto max-w-7xl px-6 lg:px-10">
                 <div className="mb-12">
-                    <Link to="/" className="inline-flex items-center gap-2 text-[#64779F] hover:text-[#18357a] font-bold text-sm transition-colors mb-8 group">
+                    <Link to="/" className="inline-flex items-center gap-2 text-[#64779F] hover:text-[#224292] font-bold text-sm transition-colors mb-8 group">
                         <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
                         Back to Home
                     </Link>
                     
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
-                            <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10">
-                                <Briefcase size={14} className="text-[#18357a]" />
-                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#18357a]">Placement Cell</span>
+                            <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10">
+                                <Briefcase size={14} className="text-[#224292]" />
+                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#224292]">Placement Cell</span>
                             </div>
-                            <h1 className="text-4xl lg:text-6xl font-black text-[#18357a] leading-tight">
+                            <h1 className="text-4xl lg:text-6xl font-black text-[#224292] leading-tight">
                                 All Recruitment <span className="text-[#ffc107]">Drives</span>
                             </h1>
                             <p className="text-[#64779F] font-bold text-sm lg:text-base mt-4 max-w-2xl">
@@ -66,13 +66,13 @@ const Recruitment = () => {
 
                 {loading ? (
                     <div className="py-40 flex flex-col items-center justify-center">
-                        <Loader2 size={48} className="animate-spin text-[#18357a] mb-4" />
+                        <Loader2 size={48} className="animate-spin text-[#224292] mb-4" />
                         <p className="text-[10px] font-black uppercase tracking-widest opacity-40">Loading Database...</p>
                     </div>
                 ) : drives.length === 0 ? (
                     <div className="py-40 text-center flex flex-col items-center opacity-30">
-                        <ImageIcon size={64} className="text-[#18357a] mb-6" />
-                        <h2 className="text-2xl font-black text-[#18357a] uppercase tracking-tight">No Posters Found</h2>
+                        <ImageIcon size={64} className="text-[#224292] mb-6" />
+                        <h2 className="text-2xl font-black text-[#224292] uppercase tracking-tight">No Posters Found</h2>
                         <p className="font-bold text-sm mt-2">Publish from admin panel to see content here.</p>
                     </div>
                 ) : (

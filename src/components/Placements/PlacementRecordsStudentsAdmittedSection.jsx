@@ -32,7 +32,7 @@ const PlacementRecordsStudentsAdmittedSection = () => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-          className="w-12 h-12 border-4 border-[#18357a] border-t-[#ffc107] rounded-full"
+          className="w-12 h-12 border-4 border-[#224292] border-t-[#ffc107] rounded-full"
         />
       </section>
     )
@@ -52,7 +52,7 @@ const PlacementRecordsStudentsAdmittedSection = () => {
   return (
     <div className="mb-20">
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-black text-[#18357a] flex items-center justify-center gap-3 tracking-tighter">
+        <h2 className="text-2xl md:text-3xl font-black text-[#224292] flex items-center justify-center gap-3 tracking-tighter">
           Placement Records (Students Admitted)
         </h2>
       </div>
@@ -65,7 +65,7 @@ const PlacementRecordsStudentsAdmittedSection = () => {
           <div className="overflow-x-auto">
             <div className="min-w-[800px] bg-white border border-[#D5E2F4]/50 rounded-2xl overflow-hidden shadow-sm">
               {/* Table Header */}
-              <div className="grid grid-cols-5 bg-[#18357a] text-white px-8 py-4 text-[10px] font-black uppercase tracking-widest">
+              <div className="grid grid-cols-5 bg-[#224292] text-white px-8 py-4 text-[10px] font-black uppercase tracking-widest">
                 <span className="text-left">Academic Year</span>
                 <span className="text-center">Students Opted</span>
                 <span className="text-center">Students Placed</span>
@@ -77,7 +77,7 @@ const PlacementRecordsStudentsAdmittedSection = () => {
               <div>
                 {data.map((item) => (
                   <div key={item.id} className="grid grid-cols-5 items-center px-8 py-5 border-b border-[#F1F5FB] last:border-0 hover:bg-[#F8FAFC] transition-colors group">
-                    <span className="font-black text-[#18357a] text-base tracking-tight group-hover:text-[#ffc107] transition-colors">
+                    <span className="font-black text-[#224292] text-base tracking-tight group-hover:text-[#ffc107] transition-colors">
                       {item.academic_year}
                     </span>
                     <span className="text-center text-black font-black text-base">

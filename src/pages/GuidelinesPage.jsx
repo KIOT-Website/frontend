@@ -61,7 +61,7 @@ const GuidelinesPage = () => {
             >
               {/* Badge Removed per request */}
               
-              <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#18357a] mb-4 tracking-tighter leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#224292] mb-4 tracking-tighter leading-tight">
                 Governance & <span className="text-[#ffc107]">Policies</span>
               </h1>
               <div className="space-y-4 max-w-2xl font-graphik">
@@ -75,14 +75,14 @@ const GuidelinesPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative aspect-video rounded-[3rem] overflow-hidden bg-slate-50 border border-slate-100 shadow-2xl shadow-[#18357a]/10"
+              className="relative aspect-video rounded-[3rem] overflow-hidden bg-slate-50 border border-slate-100 shadow-2xl shadow-[#224292]/10"
             >
                <img 
                  src={governanceImg} 
                  alt="Institutional Governance Meeting" 
                  className="w-full h-full object-cover"
                />
-               <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/20 to-transparent" />
+               <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/20 to-transparent" />
             </motion.div>
           </div>
         </div>
@@ -95,7 +95,7 @@ const GuidelinesPage = () => {
           
           {/* Section: Administrators */}
           <section id="administrators" className="scroll-mt-32">
-            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-8 font-graphik">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#224292] tracking-tight mb-8 font-graphik">
               Roles and Responsibilities of <span className="text-[#ffc107]">Administrators</span>
             </h2>
             
@@ -118,7 +118,7 @@ const GuidelinesPage = () => {
                   viewport={{ once: true }}
                   className="space-y-4"
                 >
-                  <h3 className="text-xl font-bold text-[#18357a] font-graphik">{role.title}</h3>
+                  <h3 className="text-xl font-bold text-[#224292] font-graphik">{role.title}</h3>
                   <p className="text-[#333333] font-graphik font-medium leading-[1.8] text-justify">{role.content}</p>
                   <div className="w-12 h-0.5 bg-slate-100 rounded-full" />
                 </motion.div>
@@ -128,7 +128,7 @@ const GuidelinesPage = () => {
 
           {/* Section: Faculty & Staff */}
           <section id="faculty" className="scroll-mt-32 pt-8 border-t border-slate-100">
-            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#224292] tracking-tight mb-6 font-graphik">
               Code of Conduct for <span className="text-[#ffc107]">Faculty and Staff</span>
             </h2>
             
@@ -166,7 +166,7 @@ const GuidelinesPage = () => {
 
           {/* Section: Leave Provisions */}
           <section id="leave" className="scroll-mt-32 pt-8 border-t border-slate-100">
-            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#224292] tracking-tight mb-6 font-graphik">
               Leave <span className="text-[#ffc107]">Provisions</span>
             </h2>
             
@@ -189,7 +189,7 @@ const GuidelinesPage = () => {
 
           {/* Section: Vacation */}
           <section id="vacation" className="scroll-mt-32 pt-8 border-t border-slate-100">
-            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#224292] tracking-tight mb-6 font-graphik">
               Vacation <span className="text-[#ffc107]">Policy</span>
             </h2>
             
@@ -212,7 +212,7 @@ const GuidelinesPage = () => {
 
           {/* Section: On-Duty */}
           <section id="onduty" className="scroll-mt-32 pt-8 border-t border-slate-100">
-            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#224292] tracking-tight mb-6 font-graphik">
               On–Duty <span className="text-[#ffc107]">Provisions</span>
             </h2>
             
@@ -233,7 +233,7 @@ const GuidelinesPage = () => {
 
           {/* Section: Students */}
           <section id="students" className="scroll-mt-32 pt-8 border-t border-slate-100">
-            <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#224292] tracking-tight mb-6 font-graphik">
               Code of Conduct for <span className="text-[#ffc107]">Students</span>
             </h2>
             
@@ -277,7 +277,7 @@ const GuidelinesPage = () => {
 
       <section id="structure" className="scroll-mt-32 pt-12 font-graphik w-full">
             <div className="mb-10">
-              <h2 className="text-2xl lg:text-4xl font-bold text-[#18357a] tracking-tight mb-6 font-graphik">
+              <h2 className="text-2xl lg:text-4xl font-bold text-[#224292] tracking-tight mb-6 font-graphik">
                 Organizational <span className="text-[#ffc107]">Structure</span>
               </h2>
             </div>

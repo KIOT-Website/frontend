@@ -131,7 +131,7 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #18357a;
+  background: #224292;
   border-radius: 10px;
 }
 
@@ -142,5 +142,5 @@ html, body {
 /* For Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #18357a #f1f1f1;
+  scrollbar-color: #224292 #f1f1f1;
 }

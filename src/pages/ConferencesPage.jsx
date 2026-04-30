@@ -95,7 +95,7 @@ const ConferencesPage = () => {
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+                            <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6">
                                 Scholarly <span className="text-[#ffc107]">Conferences</span>
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -132,7 +132,7 @@ const ConferencesPage = () => {
                             >
                                 <div>
                                     <div className="flex justify-between items-start mb-6">
-                                        <div className="flex items-center gap-2 px-3 py-1 bg-[#18357a] rounded-full text-white text-[9px] font-black uppercase tracking-widest">
+                                        <div className="flex items-center gap-2 px-3 py-1 bg-[#224292] rounded-full text-white text-[9px] font-black uppercase tracking-widest">
                                             {conf.type === 'International' ? <Globe size={10} /> : <Award size={10} />}
                                             {conf.type}
                                         </div>

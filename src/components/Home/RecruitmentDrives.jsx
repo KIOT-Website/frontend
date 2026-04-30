@@ -47,7 +47,7 @@ const RecruitmentDrives = () => {
     return (
         <section id="recruitment-drives" className="relative py-6 lg:py-10 bg-white overflow-hidden font-sans">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-                <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-[#18357a]/[0.02] rounded-full blur-[100px]" />
+                <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-[#224292]/[0.02] rounded-full blur-[100px]" />
                 <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-[#ffc107]/[0.03] rounded-full blur-[100px]" />
             </div>
 
@@ -59,7 +59,7 @@ const RecruitmentDrives = () => {
                         viewport={{ once: true }}
                         className="flex flex-col items-center"
                     >
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#18357a] leading-tight">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#224292] leading-tight">
                             Recruitment <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Drives</span>
                         </h2>
                         <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mt-6 rounded-full" />
@@ -68,7 +68,7 @@ const RecruitmentDrives = () => {
 
                 {loading ? (
                     <div className="py-20 flex flex-col items-center justify-center opacity-30">
-                        <Loader2 size={40} className="animate-spin text-[#18357a] mb-4" />
+                        <Loader2 size={40} className="animate-spin text-[#224292] mb-4" />
                         <p className="text-[10px] font-black uppercase tracking-widest">Loading Opportunities...</p>
                     </div>
                 ) : (
@@ -121,7 +121,7 @@ const RecruitmentDrives = () => {
                     >
                         <Link 
                             to="/recruitment"
-                            className="group relative inline-flex items-center gap-6 px-10 py-5 bg-[#18357a] text-white border border-[#18357a] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
+                            className="group relative inline-flex items-center gap-6 px-10 py-5 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
                         >
                             <span className="text-white">View All Drives</span>
                             <ChevronRight size={18} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
@@ -139,7 +139,7 @@ const RecruitmentDrives = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedPoster(null)}
-                            className="absolute inset-0 bg-[#18357a]/90 backdrop-blur-xl"
+                            className="absolute inset-0 bg-[#224292]/90 backdrop-blur-xl"
                         />
                         <motion.div 
                             initial={{ scale: 0.9, opacity: 0 }}

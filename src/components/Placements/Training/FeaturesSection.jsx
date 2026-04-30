@@ -59,7 +59,7 @@ const FeaturesSection = () => {
       {categories.map((cat, catIdx) => (
         <div key={catIdx}>
            <div className="flex items-center gap-4 mb-12">
-              <div className="w-10 h-10 rounded-xl bg-[#18357a] text-white flex items-center justify-center shadow-lg"><cat.icon size={20} /></div>
+              <div className="w-10 h-10 rounded-xl bg-[#224292] text-white flex items-center justify-center shadow-lg"><cat.icon size={20} /></div>
               <h2 className="text-2xl font-black text-black tracking-tighter font-graphik">{cat.title}</h2>
               <div className="h-px flex-1 bg-slate-200" />
            </div>
@@ -73,9 +73,9 @@ const FeaturesSection = () => {
                    whileHover={{ y: -8 }}
                    viewport={{ once: true }}
                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                   className="bg-white p-8 rounded-2xl border border-slate-100 shadow-xl shadow-black/[0.03] group hover:border-[#18357a]/20 hover:shadow-black/[0.06] transition-all duration-500"
+                   className="bg-white p-8 rounded-2xl border border-slate-100 shadow-xl shadow-black/[0.03] group hover:border-[#224292]/20 hover:shadow-black/[0.06] transition-all duration-500"
                 >
-                  <div className="w-16 h-16 rounded-xl bg-slate-50 flex items-center justify-center text-[#18357a] group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 mb-8 border border-slate-100 shadow-sm">
+                  <div className="w-16 h-16 rounded-xl bg-slate-50 flex items-center justify-center text-[#224292] group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 mb-8 border border-slate-100 shadow-sm">
                      <item.icon size={28} strokeWidth={1.5} />
                   </div>
                   

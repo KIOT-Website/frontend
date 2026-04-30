@@ -78,7 +78,7 @@ const Testimonials = () => {
     <section className="relative py-6 lg:py-8 bg-[#FCFDFD] overflow-hidden">
       
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#18357a]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#224292]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
@@ -87,30 +87,30 @@ const Testimonials = () => {
            <motion.div
              initial={{ opacity: 0, scale: 0.9 }}
              whileInView={{ opacity: 1, scale: 1 }}
-             className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10"
+             className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10"
            >
              <Star size={14} className="text-[#ffc107] fill-[#ffc107]" />
              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Voice of Success</span>
            </motion.div>
-           <h2 className="text-3xl lg:text-5xl font-semibold text-[#18357a] font-graphik">
+           <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik">
              Success Stories & <span className="text-[#ffc107]">Experiences</span>
            </h2>
         </div>
 
         {/* CATEGORY TABS */}
         <div className="flex justify-center mb-10 lg:mb-16">
-           <div className="flex bg-[#18357a]/5 p-1.5 rounded-2xl border border-[#D5E2F4]/40 w-fit max-w-full overflow-x-auto scrollbar-hide">
+           <div className="flex bg-[#224292]/5 p-1.5 rounded-2xl border border-[#D5E2F4]/40 w-fit max-w-full overflow-x-auto scrollbar-hide">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveTab(cat)}
-                  className={`relative py-3 px-5 sm:px-8 md:px-12 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] transition-all rounded-xl whitespace-nowrap ${activeTab === cat ? 'text-[#18357a]' : 'text-[#64779F] hover:text-[#18357a]'}`}
+                  className={`relative py-3 px-5 sm:px-8 md:px-12 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] transition-all rounded-xl whitespace-nowrap ${activeTab === cat ? 'text-[#224292]' : 'text-[#64779F] hover:text-[#224292]'}`}
                 >
                   {cat}
                   {activeTab === cat && (
                     <motion.div 
                       layoutId="activeTestiTab" 
-                      className="absolute inset-0 bg-white shadow-lg -z-10 rounded-xl border border-[#18357a]/5" 
+                      className="absolute inset-0 bg-white shadow-lg -z-10 rounded-xl border border-[#224292]/5" 
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -134,14 +134,14 @@ const Testimonials = () => {
                    {/* Top Bar with Icon & Quote */}
                    <div className="flex items-start justify-between mb-4">
                       <div className="h-10 w-1 flex bg-[#ffc107] rounded-full group-hover:h-12 transition-all duration-500" />
-                      <Quote size={32} className="text-[#18357a]/5 group-hover:text-[#ffc107]/20 transition-colors" />
+                      <Quote size={32} className="text-[#224292]/5 group-hover:text-[#ffc107]/20 transition-colors" />
                    </div>
 
                    {/* The Content */}
                    <div className="space-y-3 flex-grow">
                       <div className="flex flex-wrap gap-2">
                          {testi.tags.map(tag => (
-                           <span key={tag} className="px-3 py-1 bg-[#18357a]/5 text-[9px] font-black uppercase tracking-[0.1em] text-[#18357a] rounded-full">
+                           <span key={tag} className="px-3 py-1 bg-[#224292]/5 text-[9px] font-black uppercase tracking-[0.1em] text-[#224292] rounded-full">
                               {tag}
                            </span>
                          ))}
@@ -151,10 +151,10 @@ const Testimonials = () => {
                         "{testi.quote}"
                       </p>
 
-                      <div className="py-3 px-4 sm:px-5 bg-[#18357a]/5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 group-hover:bg-[#ffc107]/10 transition-colors">
+                      <div className="py-3 px-4 sm:px-5 bg-[#224292]/5 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 group-hover:bg-[#ffc107]/10 transition-colors">
                          <div className="flex items-center gap-2">
-                            <span className="text-[9px] font-black uppercase tracking-[0.1em] text-[#18357a]">Outcome:</span>
-                            <span className="text-[11px] font-black text-[#18357a]">{testi.outcome}</span>
+                            <span className="text-[9px] font-black uppercase tracking-[0.1em] text-[#224292]">Outcome:</span>
+                            <span className="text-[11px] font-black text-[#224292]">{testi.outcome}</span>
                          </div>
                          <img src={testi.company} alt="Logo" className="h-5 sm:h-4 opacity-60 sm:opacity-40 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0 self-end sm:self-auto" />
                       </div>
@@ -162,11 +162,11 @@ const Testimonials = () => {
 
                    {/* The Profile Part */}
                    <div className="mt-6 pt-4 border-t border-[#D5E2F4]/60 flex items-center gap-4">
-                      <div className="h-14 w-14 lg:h-16 lg:w-16 rounded-full overflow-hidden border-4 border-[#18357a]/5 shadow-inner flex-shrink-0">
+                      <div className="h-14 w-14 lg:h-16 lg:w-16 rounded-full overflow-hidden border-4 border-[#224292]/5 shadow-inner flex-shrink-0">
                          <img src={testi.image} alt={testi.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       </div>
                       <div>
-                         <h4 className="text-lg font-semibold text-[#18357a] font-graphik">{testi.name}</h4>
+                         <h4 className="text-lg font-semibold text-[#224292] font-graphik">{testi.name}</h4>
                          <p className="text-[10px] lg:text-xs font-bold text-[#64779F] uppercase tracking-[0.1em] mt-0.5">{testi.dept}</p>
                       </div>
                    </div>

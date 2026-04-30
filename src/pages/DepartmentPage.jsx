@@ -56,8 +56,8 @@ const DepartmentPage = () => {
             className="w-full h-full object-cover transform scale-110 group-hover:scale-100 transition-transform duration-1000 ease-out"
             alt={departmentName}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#18357a]/95 via-[#18357a]/80 to-transparent" />
-          <div className="absolute inset-0 bg-[#18357a]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#224292]/95 via-[#224292]/80 to-transparent" />
+          <div className="absolute inset-0 bg-[#224292]/40" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto pt-24 pb-16 px-6 sm:px-10 lg:px-20">
@@ -70,7 +70,7 @@ const DepartmentPage = () => {
             </Link>
             <div className="flex items-center gap-6 mb-6">
               <div className="h-16 w-16 rounded-2xl bg-[#ffc107] flex items-center justify-center shadow-2xl shadow-[#ffc107]/20 rotate-3 group-hover:rotate-0 transition-all">
-                {deptInfo?.icon ? React.createElement(deptInfo.icon, { size: 32, className: "text-[#18357a]" }) : <Building2 size={32} className="text-[#18357a]" />}
+                {deptInfo?.icon ? React.createElement(deptInfo.icon, { size: 32, className: "text-[#224292]" }) : <Building2 size={32} className="text-[#224292]" />}
               </div>
               <div>
                 <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white leading-tight">
@@ -92,9 +92,9 @@ const DepartmentPage = () => {
         <div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <h2 className="text-3xl font-black text-[#18357a] flex items-center gap-3 uppercase tracking-tighter">
+              <h2 className="text-3xl font-black text-[#224292] flex items-center gap-3 uppercase tracking-tighter">
                   <div className="w-10 h-10 rounded-xl bg-[#ffc107] flex items-center justify-center shadow-lg shadow-[#ffc107]/20">
-                    <FileText size={20} className="text-[#18357a]" />
+                    <FileText size={20} className="text-[#224292]" />
                   </div>
                   Placement Archive
               </h2>
@@ -104,8 +104,8 @@ const DepartmentPage = () => {
 
           {loading ? (
             <div className="bg-white rounded-[3rem] p-40 flex flex-col items-center justify-center shadow-2xl border border-slate-100">
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-16 h-16 border-4 border-slate-100 border-t-[#18357a] rounded-full mb-6" />
-              <p className="font-black text-[#18357a] text-xs uppercase tracking-widest animate-pulse">Synchronizing Database...</p>
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-16 h-16 border-4 border-slate-100 border-t-[#224292] rounded-full mb-6" />
+              <p className="font-black text-[#224292] text-xs uppercase tracking-widest animate-pulse">Synchronizing Database...</p>
             </div>
           ) : error ? (
             <div className="bg-red-50 border-2 border-red-100 rounded-[3rem] p-24 text-center shadow-xl">
@@ -120,13 +120,13 @@ const DepartmentPage = () => {
               <div className="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-8 text-slate-200">
                 <FileText size={48} strokeWidth={1} />
               </div>
-              <h3 className="text-2xl font-black text-[#18357a] uppercase mb-3">No Reports Indexed</h3>
+              <h3 className="text-2xl font-black text-[#224292] uppercase mb-3">No Reports Indexed</h3>
               <p className="text-slate-400 font-bold max-w-md mx-auto">Electronic reports for {departmentName} are currently being processed by the administrative department.</p>
             </div>
           ) : (
             <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-lg">
               {/* List Header */}
-              <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-4 bg-[#18357a]">
+              <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-4 bg-[#224292]">
                 <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Batch Year</span>
                 <span className="text-[10px] font-black text-white/70 uppercase tracking-widest">Report</span>
               </div>
@@ -145,7 +145,7 @@ const DepartmentPage = () => {
                   >
                     {/* Info */}
                     <div>
-                      <p className="text-base font-black text-[#18357a] uppercase tracking-tight group-hover:text-[#ffc107] transition-colors">
+                      <p className="text-base font-black text-[#224292] uppercase tracking-tight group-hover:text-[#ffc107] transition-colors">
                         Batch {record.batch_year}
                       </p>
                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Placement Report</p>
@@ -157,16 +157,16 @@ const DepartmentPage = () => {
                         href={record.pdf_url}
                         target="_blank"
                         rel="noreferrer"
-                        style={{ backgroundColor: '#ffc107', color: '#18357a' }}
-                        onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#18357a'; e.currentTarget.style.color = '#ffc107' }}
-                        onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#ffc107'; e.currentTarget.style.color = '#18357a' }}
+                        style={{ backgroundColor: '#ffc107', color: '#224292' }}
+                        onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#224292'; e.currentTarget.style.color = '#ffc107' }}
+                        onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#ffc107'; e.currentTarget.style.color = '#224292' }}
                         className="flex items-center gap-2 px-5 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all active:scale-95 shadow-sm"
                       >
                         View <ArrowRight size={13} />
                       </a>
                       <a
                         href={record.pdf_url.replace('/upload/', '/upload/fl_attachment/')}
-                        className="p-2.5 bg-slate-50 border border-slate-100 text-slate-400 hover:text-[#18357a] hover:border-[#18357a]/20 rounded-xl transition-all"
+                        className="p-2.5 bg-slate-50 border border-slate-100 text-slate-400 hover:text-[#224292] hover:border-[#224292]/20 rounded-xl transition-all"
                         title="Download"
                       >
                         <Download size={15} />

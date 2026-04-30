@@ -36,11 +36,11 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute left-6 sm:left-10 right-0 inset-y-0 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] h-full overflow-visible">
         <defs>
           <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#18357a" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#18357a" stopOpacity="0.01" />
+            <stop offset="0%" stopColor="#224292" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#224292" stopOpacity="0.01" />
           </linearGradient>
           <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#18357a" />
+            <stop offset="0%" stopColor="#224292" />
             <stop offset="100%" stopColor="#ffc107" />
           </linearGradient>
         </defs>
@@ -48,7 +48,7 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
         <motion.path d={pathD} fill="none" stroke="url(#lineGradient)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2 }} viewport={{ once: true }} />
         {points.map((p, i) => (
           <motion.g key={i} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 + i * 0.05 }} viewport={{ once: true }}>
-            <circle cx={p.x} cy={p.y} r="2" fill={data[i].lpa > 3.5 ? "#ffc107" : "#18357a"} stroke="white" strokeWidth="1" onMouseEnter={() => setIsHovered(i)} onMouseLeave={() => setIsHovered(null)} className="cursor-pointer transition-all hover:r-3 shadow-lg" />
+            <circle cx={p.x} cy={p.y} r="2" fill={data[i].lpa > 3.5 ? "#ffc107" : "#224292"} stroke="white" strokeWidth="1" onMouseEnter={() => setIsHovered(i)} onMouseLeave={() => setIsHovered(null)} className="cursor-pointer transition-all hover:r-3 shadow-lg" />
           </motion.g>
         ))}
       </svg>
@@ -63,9 +63,9 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
             <AnimatePresence>
               {isHovered === i && (
                 <motion.div initial={{ opacity: 0, y: 10, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 10, scale: 0.9 }} className="absolute z-50 pointer-events-none" style={{ left: '50%', bottom: `${(d.lpa / maxVal) * 100}%`, transform: 'translateX(-50%) translateY(-25px)' }}>
-                  <div className="bg-[#18357a] text-white px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex flex-col items-center">
+                  <div className="bg-[#224292] text-white px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex flex-col items-center">
                     <span className="text-[14px] font-black tracking-tight">{d.lpa} LPA</span>
-                    <div className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-3 h-3 bg-[#18357a] rotate-45" />
+                    <div className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-3 h-3 bg-[#224292] rotate-45" />
                   </div>
                 </motion.div>
               )}
@@ -111,7 +111,7 @@ const EliteEfficiencyChart = ({ data }) => {
               </div>
             </div>
             
-            <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/20 flex items-center justify-center mb-2 mt-4 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-500 shadow-lg">
+            <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/20 flex items-center justify-center mb-2 mt-4 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-500 shadow-lg">
                <Icon size={18} />
             </div>
             <span className={`text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${hoverIndex === i ? 'text-white' : 'text-white'}`}>
@@ -135,13 +135,13 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
                 <div className="flex items-start justify-between mb-8">
                    <div>
                       <div className="flex items-center gap-3 mb-4">
-                        <TrendingUp size={20} className="text-[#18357a]" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#18357a]">Growth Matrix</span>
+                        <TrendingUp size={20} className="text-[#224292]" />
+                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#224292]">Growth Matrix</span>
                       </div>
-                      <h2 className="text-4xl font-black text-[#0A1A3F] uppercase tracking-tighter leading-none">Placement <br/><span className="text-[#ffc107]">Statistics</span></h2>
+                      <h2 className="text-4xl font-black text-[#224292] uppercase tracking-tighter leading-none">Placement <br/><span className="text-[#ffc107]">Statistics</span></h2>
                    </div>
                    <div className="flex flex-col items-end gap-2 pt-1">
-                      <div className="px-6 py-2 rounded-xl bg-[#0A1A3F] text-white font-black text-xs shadow-xl">MAX 4.05</div>
+                      <div className="px-6 py-2 rounded-xl bg-[#224292] text-white font-black text-xs shadow-xl">MAX 4.05</div>
                       <span className="text-[11px] font-black text-[#ffc107] uppercase tracking-widest">Avg 2.92 LPA</span>
                    </div>
                 </div>
@@ -149,9 +149,9 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
                 {/* Statistics Highlights */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 bg-slate-50 p-6 rounded-[2.5rem] border border-slate-100 shadow-inner">
                    {[
-                     { label: "Consistent Growth", sub: "Year over Year", icon: TrendingUp, color: "#18357a" },
+                     { label: "Consistent Growth", sub: "Year over Year", icon: TrendingUp, color: "#224292" },
                      { label: "Max Package", sub: "4.05 LPA", icon: Star, color: "#ffc107" },
-                     { label: "Strong Placement Rise", sub: "2021 onwards", icon: Award, color: "#18357a" },
+                     { label: "Strong Placement Rise", sub: "2021 onwards", icon: Award, color: "#224292" },
                      { label: "Industry Aligned", sub: "Career Ready", icon: Zap, color: "#ffc107" }
                    ].map((item, i) => (
                      <div key={i} className="flex flex-col gap-2 group">
@@ -159,7 +159,7 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
                           <item.icon size={20} />
                         </div>
                         <div>
-                          <p className="text-[11px] font-black text-[#0A1A3F] leading-tight mb-0.5">{item.label}</p>
+                          <p className="text-[11px] font-black text-[#224292] leading-tight mb-0.5">{item.label}</p>
                           <p className="text-[9px] font-black text-black uppercase tracking-tight">{item.sub}</p>
                         </div>
                      </div>
@@ -173,7 +173,7 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
            </motion.div>
 
            {/* Right Card: Efficiency */}
-           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-[#0A1A3F] p-0 md:p-2 rounded-none md:rounded-[3rem] shadow-none md:shadow-2xl shadow-[#18357a]/30 overflow-hidden relative text-white">
+           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-[#224292] p-0 md:p-2 rounded-none md:rounded-[3rem] shadow-none md:shadow-2xl shadow-[#224292]/30 overflow-hidden relative text-white">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,193,7,0.15),transparent)]" />
               <div className="p-6 md:p-10 flex flex-col h-full relative z-10">
                 <div className="flex items-start justify-between mb-8">
@@ -207,7 +207,7 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
                 {/* Footer Section */}
                 <div className="mt-auto border-t border-white/20 pt-8 flex items-center justify-between">
                    <div className="flex items-center gap-6 group">
-                      <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#0A1A3F] shadow-[0_20px_50px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-transform duration-700">
+                      <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#224292] shadow-[0_20px_50px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-transform duration-700">
                         <TrendingUp size={32} />
                       </div>
                       <div>

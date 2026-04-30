@@ -78,7 +78,7 @@ const Contact = () => {
     <section className="relative py-12 lg:py-16 bg-[#FCFDFD] overflow-hidden" id="contact">
       
       {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-[#18357a]/5 to-transparent -z-10" />
+      <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-[#224292]/5 to-transparent -z-10" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
@@ -87,12 +87,12 @@ const Contact = () => {
            <motion.div
              initial={{ opacity: 0, x: -10 }}
              whileInView={{ opacity: 1, x: 0 }}
-             className="inline-flex items-center gap-2 mb-4 bg-[#18357a]/5 px-4 py-1.5 rounded-full border border-[#18357a]/10"
+             className="inline-flex items-center gap-2 mb-4 bg-[#224292]/5 px-4 py-1.5 rounded-full border border-[#224292]/10"
            >
              <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107] animate-pulse" />
-             <span className="text-[10px] font-semibold tracking-[0.1em] text-[#18357a]">Support Center</span>
+             <span className="text-[10px] font-semibold tracking-[0.1em] text-[#224292]">Support Center</span>
            </motion.div>
-           <h2 className="text-4xl lg:text-5xl font-semibold text-[#18357a] mb-6">
+           <h2 className="text-4xl lg:text-5xl font-semibold text-[#224292] mb-6">
              Get in Touch <span className="text-[#ffc107]">With Us</span>
            </h2>
            <p className="text-base lg:text-lg font-medium text-[#64779F] leading-relaxed max-w-xl">
@@ -116,7 +116,7 @@ const Contact = () => {
                     <input 
                       type="text" 
                       placeholder="Search department, hostel, etc..."
-                      className="bg-transparent border-none outline-none flex-1 py-3 text-sm font-bold text-[#18357a] placeholder:text-[#64779F]/40"
+                      className="bg-transparent border-none outline-none flex-1 py-3 text-sm font-bold text-[#224292] placeholder:text-[#64779F]/40"
                       value={search}
                       onChange={(e) => setSearch(e.target.value.toLowerCase())}
                     />
@@ -138,19 +138,19 @@ const Contact = () => {
                      className="bg-white p-6 rounded-2xl shadow-xl shadow-black/10 border-2 border-transparent hover:border-[#ffc107]/30 transition-all flex flex-col justify-between"
                    >
                       <div>
-                         <div className="h-12 w-12 rounded-2xl bg-[#18357a]/5 flex items-center justify-center text-[#ffc107] mb-5">
+                         <div className="h-12 w-12 rounded-2xl bg-[#224292]/5 flex items-center justify-center text-[#ffc107] mb-5">
                            <c.icon size={24} />
                          </div>
-                         <h4 className="text-lg font-semibold text-[#18357a] mb-2">{c.title}</h4>
+                         <h4 className="text-lg font-semibold text-[#224292] mb-2">{c.title}</h4>
                          <p className="text-[10px] font-medium text-[#64779F] leading-relaxed mb-6 tracking-wide">{c.desc}</p>
                       </div>
 
                       <div className="space-y-3">
-                         <a href={`tel:${c.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-sm font-black text-[#18357a] group">
+                         <a href={`tel:${c.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-sm font-black text-[#224292] group">
                            <Phone size={14} className="text-[#ffc107]" />
                            <span className="group-hover:translate-x-1 transition-transform">{c.phone}</span>
                          </a>
-                         <a href={`mailto:${c.email}`} className="flex items-center gap-3 text-[11px] font-bold text-[#64779F] hover:text-[#18357a] transition-colors truncate">
+                         <a href={`mailto:${c.email}`} className="flex items-center gap-3 text-[11px] font-bold text-[#64779F] hover:text-[#224292] transition-colors truncate">
                            <Mail size={14} className="text-[#ffc107]/40" />
                            {c.email}
                          </a>
@@ -180,9 +180,9 @@ const Contact = () => {
                      >
                         <button 
                           onClick={() => setOpenAccordion(openAccordion === idx ? null : idx)}
-                          className="w-full flex items-center justify-between p-6 text-left hover:bg-[#18357a]/5 transition-colors"
+                          className="w-full flex items-center justify-between p-6 text-left hover:bg-[#224292]/5 transition-colors"
                         >
-                           <h5 className="text-sm font-semibold tracking-wide text-[#18357a]">{cat.title}</h5>
+                           <h5 className="text-sm font-semibold tracking-wide text-[#224292]">{cat.title}</h5>
                            <ChevronDown size={20} className={`text-[#64779F] transition-transform duration-500 ${openAccordion === idx ? 'rotate-180' : ''}`} />
                         </button>
                         <AnimatePresence>
@@ -196,13 +196,13 @@ const Contact = () => {
                                 <div className="p-4 bg-[#FCFDFD] grid md:grid-cols-2 gap-2">
                                    {filteredItems.map((item, i) => (
                                      <div key={i} className="p-4 hover:bg-white rounded-2xl transition-all border border-transparent hover:border-[#D5E2F4]/60 hover:shadow-sm">
-                                        <p className="text-[13px] font-semibold text-[#18357a] mb-2">{item.name}</p>
+                                        <p className="text-[13px] font-semibold text-[#224292] mb-2">{item.name}</p>
                                         <div className="flex flex-col gap-1.5">
-                                           <a href={`tel:${item.phone}`} className="flex items-center gap-2 text-[11px] font-bold text-[#64779F] hover:text-[#18357a]">
+                                           <a href={`tel:${item.phone}`} className="flex items-center gap-2 text-[11px] font-bold text-[#64779F] hover:text-[#224292]">
                                               <Phone size={12} className="text-[#ffc107]" />
                                               {item.phone}
                                            </a>
-                                           <a href={`mailto:${item.email}`} className="flex items-center gap-2 text-[11px] font-bold text-[#64779F] hover:text-[#18357a]">
+                                           <a href={`mailto:${item.email}`} className="flex items-center gap-2 text-[11px] font-bold text-[#64779F] hover:text-[#224292]">
                                               <Mail size={12} className="text-[#ffc107]/40" />
                                               {item.email}
                                            </a>
@@ -225,7 +225,7 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="bg-[#18357a] p-8 lg:p-10 rounded-2xl text-white shadow-xl shadow-black/20 relative overflow-hidden"
+                className="bg-[#224292] p-8 lg:p-10 rounded-2xl text-white shadow-xl shadow-black/20 relative overflow-hidden"
               >
                  {/* Decor */}
                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -271,7 +271,7 @@ const Contact = () => {
                     <div className="pt-6">
                        <button className="w-full relative group">
                           <div className="absolute inset-0 bg-[#ffc107] blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
-                           <div className="relative flex items-center justify-center gap-3 bg-[#ffc107] hover:bg-white text-[#18357a] py-5 rounded-2xl font-semibold tracking-wider text-xs transition-colors">
+                           <div className="relative flex items-center justify-center gap-3 bg-[#ffc107] hover:bg-white text-[#224292] py-5 rounded-2xl font-semibold tracking-wider text-xs transition-colors">
                               Request a Call Back
                              <Send size={16} />
                           </div>
@@ -298,7 +298,7 @@ const Contact = () => {
               </div>
               <div className="lg:w-1/3 space-y-8">
                   <div className="space-y-4">
-                    <h3 className="text-3xl font-semibold text-[#18357a]">Find Us on Campus</h3>
+                    <h3 className="text-3xl font-semibold text-[#224292]">Find Us on Campus</h3>
                     <div className="flex items-start gap-4">
                        <MapPin size={24} className="text-[#ffc107] shrink-0" />
                        <p className="text-sm lg:text-base font-bold text-black leading-relaxed">
@@ -314,9 +314,9 @@ const Contact = () => {
                       href="https://www.google.com/maps/dir/?api=1&destination=Knowledge+Institute+of+Technology+(KIOT),+Salem" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-2 px-6 py-3 bg-[#ffc107] text-[#18357a] hover:bg-white text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-[#ffc107]/20 border border-transparent hover:border-[#D5E2F4] hover:shadow-xl"
+                      className="group flex items-center gap-2 px-6 py-3 bg-[#ffc107] text-[#224292] hover:bg-white text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-[#ffc107]/20 border border-transparent hover:border-[#D5E2F4] hover:shadow-xl"
                     >
-                       <Navigation size={16} className="text-[#18357a]" />
+                       <Navigation size={16} className="text-[#224292]" />
                        <span className="relative z-10">Get Directions</span>
                     </a>
                  </div>

@@ -248,7 +248,7 @@ const SportsDetailPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] font-sans pb-20">
             {/* Hero Header */}
-            <div className="bg-[#18357a] pt-12 pb-6 relative overflow-hidden">
+            <div className="bg-[#224292] pt-12 pb-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <button 
@@ -288,7 +288,7 @@ const SportsDetailPage = () => {
                         >
                             {section.title && (
                                 <div className="mb-6 text-center">
-                                    <h3 className="text-xl md:text-2xl font-black text-[#18357a] uppercase relative inline-block">
+                                    <h3 className="text-xl md:text-2xl font-black text-[#224292] uppercase relative inline-block">
                                         {section.title}
                                         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#ffc107] rounded-full" />
                                     </h3>
@@ -299,7 +299,7 @@ const SportsDetailPage = () => {
                                 <div className="overflow-x-auto">
                                     <table className="w-full text-left border-collapse min-w-[800px]">
                                     <thead>
-                                        <tr className="bg-[#18357a]">
+                                        <tr className="bg-[#224292]">
                                             {section.headers.map((header, hIdx) => (
                                                 <th key={hIdx} className="px-6 py-5 text-[10px] font-black text-white uppercase text-center border-r border-white/10 last:border-0">
                                                     {header}

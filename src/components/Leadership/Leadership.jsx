@@ -86,12 +86,12 @@ const Leadership = () => {
   return (
     <div className="relative bg-[#FCFDFD] pt-4 pb-20 min-h-screen overflow-hidden font-graphik">
             {/* Decorative Background Elements - To break the "too much white" feel */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#18357a]/5 via-transparent to-transparent rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-[40%] right-[-5%] w-[400px] h-[400px] bg-[#18357a]/3 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#224292]/5 via-transparent to-transparent rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[40%] right-[-5%] w-[400px] h-[400px] bg-[#224292]/3 rounded-full blur-[80px] pointer-events-none" />
       
       {/* Subtle Grid Pattern Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(#18357a 0.5px, transparent 0.5px)', backgroundSize: '30px 30px' }} />
+           style={{ backgroundImage: 'radial-gradient(#224292 0.5px, transparent 0.5px)', backgroundSize: '30px 30px' }} />
 
       <div className="relative z-10 w-full px-6 lg:px-12">
         
@@ -106,7 +106,7 @@ const Leadership = () => {
             >
               {/* Badge Removed per request */}
               
-              <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] font-graphik font-bold text-[#18357a] mb-6 tracking-tighter leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] font-graphik font-bold text-[#224292] mb-6 tracking-tighter leading-tight">
                 Institutional <span className="text-[#ffc107]">Leadership</span>
               </h1>
               
@@ -122,7 +122,7 @@ const Leadership = () => {
                  ].map((stat, i) => (
                    <div key={i} className="flex flex-col items-center group cursor-default">
                       <div className="px-6 py-2 bg-white border border-slate-100 rounded-full shadow-sm group-hover:border-[#ffc107]/50 transition-all duration-300">
-                        <div className="text-xl font-bold text-[#18357a]">{stat.value}</div>
+                        <div className="text-xl font-bold text-[#224292]">{stat.value}</div>
                       </div>
                       <div className="text-[9px] font-bold text-[#333333] tracking-[0.2em] mt-3 opacity-60 group-hover:opacity-100 transition-opacity font-graphik">{stat.label}</div>
                    </div>
@@ -135,17 +135,17 @@ const Leadership = () => {
         {/* SECTION 2: KIOT TRUST COMPOSITION (MODERN DATA CARDS) - Tinted Background */}
         <div className="max-w-7xl mx-auto mb-12 relative">
           {/* Subtle Background Tint for Section Contrast */}
-          <div className="absolute inset-x-[-100vw] top-[-20px] bottom-[-20px] bg-[#18357a]/[0.02] pointer-events-none" />
+          <div className="absolute inset-x-[-100vw] top-[-20px] bottom-[-20px] bg-[#224292]/[0.02] pointer-events-none" />
           
           <div className="bg-transparent md:bg-white rounded-none md:rounded-[3rem] p-0 md:p-16 border-none md:border border-[#D5E2F4]/60 relative overflow-hidden">
              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-32 -mt-32 blur-3xl" />
              
              <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-start">
                 <div className="space-y-8">
-                   <div className="inline-block px-4 py-1.5 bg-[#18357a]/5 rounded-lg">
-                      <span className="text-[11px] font-bold text-[#18357a] tracking-widest">About the Trust</span>
+                   <div className="inline-block px-4 py-1.5 bg-[#224292]/5 rounded-lg">
+                      <span className="text-[11px] font-bold text-[#224292] tracking-widest">About the Trust</span>
                    </div>
-                    <h2 className="text-4xl lg:text-6xl font-bold text-[#18357a] tracking-tighter leading-tight">
+                    <h2 className="text-4xl lg:text-6xl font-bold text-[#224292] tracking-tighter leading-tight">
                        The Foundation of <span className="text-[#ffc107]">Excellence</span>
                     </h2>
                     <div className="space-y-6 text-[#333333] text-[15px] sm:text-[16px] leading-[1.7] font-normal text-left md:text-justify">
@@ -160,12 +160,12 @@ const Leadership = () => {
 
                 <div className="grid grid-cols-1 gap-6">
                    {/* Modern Composition Card 1 */}
-                   <div className="group bg-[#FCFDFD] p-8 rounded-3xl border border-slate-100 hover:border-[#18357a]/20 transition-all duration-300">
+                   <div className="group bg-[#FCFDFD] p-8 rounded-3xl border border-slate-100 hover:border-[#224292]/20 transition-all duration-300">
                       <div className="flex items-center gap-4 mb-6">
-                         <div className="w-12 h-12 rounded-xl bg-[#18357a] text-white flex items-center justify-center">
+                         <div className="w-12 h-12 rounded-xl bg-[#224292] text-white flex items-center justify-center">
                             <GraduationCap size={24} />
                          </div>
-                         <h3 className="text-lg font-bold text-[#18357a] tracking-tight">Academic Core</h3>
+                         <h3 className="text-lg font-bold text-[#224292] tracking-tight">Academic Core</h3>
                       </div>
                       <div className="space-y-4">
                          {[
@@ -175,13 +175,13 @@ const Leadership = () => {
                            <div key={i} className="space-y-2">
                               <div className="flex justify-between text-[13px] font-bold text-[#64779F]">
                                  <span>{item.label}</span>
-                                 <span className="text-[#18357a]">{item.value} Members</span>
+                                 <span className="text-[#224292]">{item.value} Members</span>
                               </div>
                               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
                                  <motion.div 
                                    initial={{ width: 0 }}
                                    whileInView={{ width: `${item.percent}%` }}
-                                   className="h-full bg-[#18357a] rounded-full"
+                                   className="h-full bg-[#224292] rounded-full"
                                  />
                               </div>
                            </div>
@@ -192,10 +192,10 @@ const Leadership = () => {
                    {/* Modern Composition Card 2 */}
                    <div className="group bg-[#FCFDFD] p-8 rounded-3xl border border-slate-100 hover:border-[#ffc107]/20 transition-all duration-300">
                       <div className="flex items-center gap-4 mb-6">
-                         <div className="w-12 h-12 rounded-xl bg-[#ffc107] text-[#18357a] flex items-center justify-center">
+                         <div className="w-12 h-12 rounded-xl bg-[#ffc107] text-[#224292] flex items-center justify-center">
                             <Briefcase size={24} />
                          </div>
-                         <h3 className="text-lg font-bold text-[#18357a] tracking-tight">Industry & Enterprise</h3>
+                         <h3 className="text-lg font-bold text-[#224292] tracking-tight">Industry & Enterprise</h3>
                       </div>
                       <div className="space-y-4">
                          {[
@@ -205,7 +205,7 @@ const Leadership = () => {
                            <div key={i} className="space-y-2">
                               <div className="flex justify-between text-[13px] font-bold text-[#64779F]">
                                  <span>{item.label}</span>
-                                 <span className="text-[#18357a]">{item.value} Members</span>
+                                 <span className="text-[#224292]">{item.value} Members</span>
                               </div>
                               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
                                  <motion.div 
@@ -226,7 +226,7 @@ const Leadership = () => {
         {/* SECTION 3: REFINED DIRECTORY LISTING - Modern Grid Format */}
         <div className="max-w-7xl mx-auto mb-16 px-4">
            <div className="text-center mb-10">
-              <h3 className="text-2xl font-graphik font-bold text-[#18357a] tracking-tight mb-2">Directory of KIOT Trust Members</h3>
+              <h3 className="text-2xl font-graphik font-bold text-[#224292] tracking-tight mb-2">Directory of KIOT Trust Members</h3>
               <div className="w-16 h-1 bg-[#ffc107] mx-auto rounded-full" />
            </div>
 
@@ -267,9 +267,9 @@ const Leadership = () => {
               ].map((name, i) => (
                 <div 
                   key={i} 
-                  className="bg-[#F8FAFC] p-5 rounded-2xl border border-slate-100 flex items-start gap-4 hover:border-[#18357a]/20 transition-all duration-300 group"
+                  className="bg-[#F8FAFC] p-5 rounded-2xl border border-slate-100 flex items-start gap-4 hover:border-[#224292]/20 transition-all duration-300 group"
                 >
-                   <span className="text-[13px] font-medium text-[#333333] leading-[1.4] font-graphik group-hover:text-[#18357a] transition-colors">{name}</span>
+                   <span className="text-[13px] font-medium text-[#333333] leading-[1.4] font-graphik group-hover:text-[#224292] transition-colors">{name}</span>
                 </div>
               ))}
            </div>
@@ -278,7 +278,7 @@ const Leadership = () => {
         {/* Leadership Voices Section */}
         <div className="text-center mb-8">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#18357a] mb-4 tracking-tighter font-graphik">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#224292] mb-4 tracking-tighter font-graphik">
               Voices of <span className="text-[#ffc107]">Leadership</span>
             </h1>
             <p className="text-[#333333] text-[15px] font-bold max-w-2xl mx-auto text-center opacity-80 font-graphik">
@@ -304,10 +304,10 @@ const Leadership = () => {
 
               <div className="relative w-40 h-40 lg:w-48 lg:h-48 mb-6 flex items-center justify-center z-10">
                  <div className="absolute inset-[-10px] rounded-full border border-slate-100 group-hover:rotate-180 transition-transform duration-1000 border-dashed" />
-                 <div className="absolute inset-[-5px] rounded-full p-[2px] bg-gradient-to-b from-[#18357a] via-[#1a3a8a]/20 to-transparent group-hover:rotate-90 transition-transform duration-700">
+                 <div className="absolute inset-[-5px] rounded-full p-[2px] bg-gradient-to-b from-[#224292] via-[#1a3a8a]/20 to-transparent group-hover:rotate-90 transition-transform duration-700">
                     <div className="w-full h-full rounded-full bg-white" />
                  </div>
-                 <div className="relative w-full h-full rounded-full overflow-hidden border-[1px] border-[#18357a]/10 shadow-2xl bg-white z-10">
+                 <div className="relative w-full h-full rounded-full overflow-hidden border-[1px] border-[#224292]/10 shadow-2xl bg-white z-10">
                     <img 
                       src={leader.image} 
                       alt={leader.name} 
@@ -324,7 +324,7 @@ const Leadership = () => {
                 </p>
                 <button 
                   onClick={() => setSelectedLeader(leader)}
-                  className="px-8 py-3 bg-[#18357a] text-white rounded-full text-[12px] font-graphik font-bold tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all duration-300"
+                  className="px-8 py-3 bg-[#224292] text-white rounded-full text-[12px] font-graphik font-bold tracking-widest hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-300"
                 >
                   Read Message
                 </button>
@@ -343,7 +343,7 @@ const Leadership = () => {
                animate={{ opacity: 1 }}
                exit={{ opacity: 0 }}
                onClick={() => setSelectedLeader(null)}
-               className="absolute inset-0 bg-[#18357a]/50 backdrop-blur-xl"
+               className="absolute inset-0 bg-[#224292]/50 backdrop-blur-xl"
             />
             <div
               layoutId={selectedLeader.id}
@@ -354,13 +354,13 @@ const Leadership = () => {
             >
                <button 
                  onClick={() => setSelectedLeader(null)}
-                 className="absolute top-6 right-6 z-10 p-4 bg-[#F8FAFC] rounded-full text-[#18357a] hover:bg-red-50 hover:text-red-500 transition-colors"
+                 className="absolute top-6 right-6 z-10 p-4 bg-[#F8FAFC] rounded-full text-[#224292] hover:bg-red-50 hover:text-red-500 transition-colors"
                >
                  <X size={24} />
                </button>
 
                {/* Top/Left Sidebar in Modal - Reduced vertical footprint on mobile */}
-               <div className="w-full md:w-[320px] bg-[#18357a] p-8 md:py-16 flex flex-col items-center justify-center text-center shrink-0">
+               <div className="w-full md:w-[320px] bg-[#224292] p-8 md:py-16 flex flex-col items-center justify-center text-center shrink-0">
                   <div className="w-32 h-32 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 md:border-8 border-white/10 mb-4 md:mb-8 shadow-2xl bg-white">
                     <img 
                       src={selectedLeader.image} 
@@ -370,15 +370,15 @@ const Leadership = () => {
                     />
                   </div>
                   <h3 className="text-lg lg:text-2xl font-graphik font-bold text-white font-graphik mb-1">{selectedLeader.name}</h3>
-                  <p className="text-[#18357a] text-[9px] sm:text-[10px] font-graphik font-bold tracking-[0.2em] mb-2 md:mb-8 leading-relaxed px-4">
+                  <p className="text-[#224292] text-[9px] sm:text-[10px] font-graphik font-bold tracking-[0.2em] mb-2 md:mb-8 leading-relaxed px-4">
                     {selectedLeader.designation}
                   </p>
                </div>
 
                 {/* Message Body - Expanded space */}
                 <div className="flex-1 p-8 sm:p-10 lg:p-16 overflow-y-auto custom-scrollbar">
-                   <Quote size={40} className="text-[#18357a]/20 mb-4" />
-                   <h2 className="text-xl lg:text-3xl font-graphik font-bold text-[#18357a] font-graphik mb-6">{selectedLeader.role} Message</h2>
+                   <Quote size={40} className="text-[#224292]/20 mb-4" />
+                   <h2 className="text-xl lg:text-3xl font-graphik font-bold text-[#224292] font-graphik mb-6">{selectedLeader.role} Message</h2>
                   <div className="space-y-6">
                     {selectedLeader.fullMessage.map((p, i) => (
                       <p key={i} className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik text-justify">
@@ -387,8 +387,8 @@ const Leadership = () => {
                     ))}
                   </div>
                   <div className="mt-12 pt-8 border-t border-[#D5E2F4]">
-                     <p className="text-[#18357a] font-graphik font-bold italic">Warm Regards,</p>
-                     <p className="text-[#18357a] font-graphik font-bold text-xl mt-1">{selectedLeader.name}</p>
+                     <p className="text-[#224292] font-graphik font-bold italic">Warm Regards,</p>
+                     <p className="text-[#224292] font-graphik font-bold text-xl mt-1">{selectedLeader.name}</p>
                   </div>
                </div>
             </div>

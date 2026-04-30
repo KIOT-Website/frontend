@@ -249,15 +249,15 @@ const FacultyPursuingPhdPage = () => {
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4">
                 <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to="/research" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
+                    <span className="text-[#224292] text-xs font-black uppercase tracking-wider pt-0.5">
                         Scholars in Progress
                     </span>
                 </div>
@@ -273,12 +273,12 @@ const FacultyPursuingPhdPage = () => {
                 >
                     <Link 
                         to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#18357a] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
+                        className="inline-flex items-center gap-2 text-[#224292] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
                     >
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-6">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] leading-tight mb-6">
                         Faculty <span className="text-[#ffc107]">Pursuing Ph.D</span>
                     </h1>
 
@@ -314,7 +314,7 @@ const FacultyPursuingPhdPage = () => {
                                             className="group hover:bg-[#fafcff] transition-all duration-300"
                                         >
                                             <td className="px-6 py-5 border-r border-slate-50">
-                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
+                                                <div className="w-10 h-10 bg-[#224292]/5 rounded-xl flex items-center justify-center text-[#224292] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
@@ -365,7 +365,7 @@ const FacultyPursuingPhdPage = () => {
                 <div className="mt-10 flex flex-wrap items-center gap-6">
                     <div className="px-6 py-3 bg-white border border-slate-200 rounded-full flex items-center gap-3 shadow-sm">
                         <Microchip size={16} className="text-[#ffc107]" />
-                        <span className="text-[11px] font-black text-[#18357a] uppercase tracking-wider">{displayFaculty.length} Research Scholars</span>
+                        <span className="text-[11px] font-black text-[#224292] uppercase tracking-wider">{displayFaculty.length} Research Scholars</span>
                     </div>
                 </div>
 

@@ -52,8 +52,8 @@ const EventDetailPage = () => {
     if (loading) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-white" style={{ fontFamily: "'Lato', sans-serif" }}>
-                <Loader2 size={48} className="animate-spin text-[#18357a] mb-6" />
-                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#18357a]">Loading Event Detail...</p>
+                <Loader2 size={48} className="animate-spin text-[#224292] mb-6" />
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#224292]">Loading Event Detail...</p>
             </div>
         )
     }
@@ -62,9 +62,9 @@ const EventDetailPage = () => {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-white p-6 text-center" style={{ fontFamily: "'Lato', sans-serif" }}>
                 <Calendar size={64} className="text-slate-100 mb-6" />
-                <h2 className="text-2xl font-black text-[#18357a] mb-4">Event Not Found</h2>
-                <Link to="/#events" className="bg-[#18357a] text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#18357a] transition-all">
-                    Back to Upcoming Events
+                <h2 className="text-2xl font-black text-[#224292] mb-4">Event Not Found</h2>
+                <Link to="/#events" className="bg-[#224292] text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#224292] transition-all">
+                    Back to Recent Events
                 </Link>
             </div>
         )
@@ -84,9 +84,9 @@ const EventDetailPage = () => {
                 {/* Back Button */}
                 <Link 
                     to="/#events" 
-                    className="inline-flex items-center gap-2 mb-10 text-[#18357a] hover:text-[#ffc107] transition-all text-[10px] font-black uppercase tracking-widest group"
+                    className="inline-flex items-center gap-2 mb-10 text-[#224292] hover:text-[#ffc107] transition-all text-[10px] font-black uppercase tracking-widest group"
                 >
-                    <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Upcoming Events
+                    <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Recent Events
                 </Link>
 
                 {/* Event Image - ONLY if it exists */}
@@ -110,7 +110,7 @@ const EventDetailPage = () => {
                         <div className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
                         <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#ffc107]">Active Institutional Event</span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#18357a] font-display leading-[1.1] mb-6">
+                    <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#224292] font-display leading-[1.1] mb-6">
                         {event.event_name}
                     </h1>
                 </div>
@@ -123,7 +123,7 @@ const EventDetailPage = () => {
                         </div>
                         <div>
                             <span className="text-[9px] font-black text-[#64779F] uppercase tracking-widest block mb-1">Time Schedule</span>
-                            <p className="text-sm font-black text-[#18357a] uppercase tracking-wider">
+                            <p className="text-sm font-black text-[#224292] uppercase tracking-wider">
                                 {formatDate(event.event_date)}
                                 {event.end_date && event.end_date !== event.event_date && ` - ${formatDate(event.end_date)}`}
                             </p>
@@ -136,7 +136,7 @@ const EventDetailPage = () => {
                         </div>
                         <div>
                             <span className="text-[9px] font-black text-[#64779F] uppercase tracking-widest block mb-1">Venue Location</span>
-                            <p className="text-sm font-black text-[#18357a] uppercase tracking-wider">{event.venue || 'Main Campus Auditorium'}</p>
+                            <p className="text-sm font-black text-[#224292] uppercase tracking-wider">{event.venue || 'Main Campus Auditorium'}</p>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,7 @@ const EventDetailPage = () => {
                 {/* Description */}
                 <div className="space-y-8 mb-20">
                     <div className="flex items-center gap-4">
-                        <h3 className="text-sm font-black text-[#18357a] uppercase tracking-[0.3em]">Brief Description</h3>
+                        <h3 className="text-sm font-black text-[#224292] uppercase tracking-[0.3em]">Brief Description</h3>
                         <div className="flex-1 h-px bg-slate-100" />
                     </div>
                     <div className="prose prose-slate max-w-none">
@@ -155,7 +155,7 @@ const EventDetailPage = () => {
                 </div>
 
                 {/* Contact Section - Removed Register Now */}
-                <div className="p-10 lg:p-14 bg-[#18357a] rounded-[3rem] text-white relative overflow-hidden group shadow-2xl">
+                <div className="p-10 lg:p-14 bg-[#224292] rounded-[3rem] text-white relative overflow-hidden group shadow-2xl">
                     <div className="absolute top-0 right-0 w-48 h-48 bg-white/[0.03] rounded-bl-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
                     
                     <h4 className="text-2xl font-black font-display mb-8 tracking-tight flex items-center gap-3">
@@ -164,7 +164,7 @@ const EventDetailPage = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                         <div className="flex items-center gap-5 group/item">
-                            <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#ffc107] group-hover/item:bg-[#ffc107] group-hover/item:text-[#18357a] transition-all">
+                            <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#ffc107] group-hover/item:bg-[#ffc107] group-hover/item:text-[#224292] transition-all">
                                 <Phone size={20} />
                             </div>
                             <div>
@@ -173,7 +173,7 @@ const EventDetailPage = () => {
                             </div>
                         </div>
                         <div className="flex items-center gap-5 group/item">
-                            <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#ffc107] group-hover/item:bg-[#ffc107] group-hover/item:text-[#18357a] transition-all">
+                            <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#ffc107] group-hover/item:bg-[#ffc107] group-hover/item:text-[#224292] transition-all">
                                 <Mail size={20} />
                             </div>
                             <div>

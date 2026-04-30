@@ -104,7 +104,7 @@ const IdeaLabPage = () => {
                         <motion.button
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
-                            className="absolute top-8 right-8 w-14 h-14 bg-white/10 hover:bg-white text-white hover:text-[#18357a] rounded-full flex items-center justify-center transition-all z-[110]"
+                            className="absolute top-8 right-8 w-14 h-14 bg-white/10 hover:bg-white text-white hover:text-[#224292] rounded-full flex items-center justify-center transition-all z-[110]"
                         >
                             <X size={28} />
                         </motion.button>
@@ -119,7 +119,7 @@ const IdeaLabPage = () => {
                 )}
             </AnimatePresence>
             {/* HERO SECTION - COMPACTED DESIGN */}
-            <div className="relative bg-[#0A1A3F] pt-12 pb-20 overflow-hidden rounded-b-[3rem] lg:rounded-b-[4rem] font-graphik">
+            <div className="relative bg-[#224292] pt-12 pb-20 overflow-hidden rounded-b-[3rem] lg:rounded-b-[4rem] font-graphik">
                 {/* Background decorative circles */}
                 <div className="absolute top-10 right-10 w-48 h-48 border border-white/5 rounded-full" />
                 <div className="absolute top-20 right-20 w-80 h-80 border border-white/5 rounded-full" />
@@ -135,7 +135,7 @@ const IdeaLabPage = () => {
                         >
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-6">
                                 <div className="w-4 h-4 rounded-full bg-[#ffc107] flex items-center justify-center">
-                                    <Lightbulb size={10} className="text-[#0A1A3F]" />
+                                    <Lightbulb size={10} className="text-[#224292]" />
                                 </div>
                                 <span className="text-[9px] font-black text-white tracking-widest">Research & Innovations</span>
                             </div>
@@ -177,13 +177,13 @@ const IdeaLabPage = () => {
                             transition={{ duration: 1 }}
                             className="hidden lg:flex lg:w-1/2 items-center justify-center gap-4"
                         >
-                            <div className="relative group w-60 h-80 bg-[#0A1A3F] rounded-[1.5rem] border border-[#3b82f6]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(59,130,246,0.15)] overflow-hidden transition-all duration-500 hover:border-[#3b82f6]/60">
+                            <div className="relative group w-60 h-80 bg-[#224292] rounded-[1.5rem] border border-[#3b82f6]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(59,130,246,0.15)] overflow-hidden transition-all duration-500 hover:border-[#3b82f6]/60">
                                 <div className="w-full h-full flex items-center justify-center">
                                     <img src={run1} alt="IDEA Lab Logo" className="w-full h-full object-contain relative z-20 scale-110 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
                                 </div>
                             </div>
 
-                            <div className="relative group w-60 h-80 bg-[#0A1A3F] rounded-[1.5rem] border border-[#ffc107]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(255,193,7,0.15)] overflow-hidden transition-all duration-500 hover:border-[#ffc107]/60 lg:mt-12">
+                            <div className="relative group w-60 h-80 bg-[#224292] rounded-[1.5rem] border border-[#ffc107]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(255,193,7,0.15)] overflow-hidden transition-all duration-500 hover:border-[#ffc107]/60 lg:mt-12">
                                 <div className="w-full h-full flex items-center justify-center">
                                     <img src={run2} alt="AICTE Logo" className="w-full h-full object-contain relative z-20 scale-125" />
                                 </div>
@@ -205,10 +205,10 @@ const IdeaLabPage = () => {
                             transition={{ delay: idx * 0.1 }}
                             className="bg-white p-6 rounded-[1.5rem] group cursor-default shadow-xl border border-slate-50 flex flex-col items-center text-center relative overflow-hidden"
                         >
-                            <div className="w-12 h-12 rounded-full bg-[#0A1A3F] flex items-center justify-center mb-4 shadow-lg shrink-0">
+                            <div className="w-12 h-12 rounded-full bg-[#224292] flex items-center justify-center mb-4 shadow-lg shrink-0">
                                 <feature.icon className="text-[#ffc107]" size={22} strokeWidth={2} />
                             </div>
-                            <h3 className="text-[#0A1A3F] text-[16px] font-black mb-1 tracking-tight">{feature.title}</h3>
+                            <h3 className="text-[#224292] text-[16px] font-black mb-1 tracking-tight">{feature.title}</h3>
                             <p className="text-slate-500 text-[11px] font-black mb-4 leading-tight">{feature.description}</p>
                             <div className="w-10 h-1 bg-[#ffc107] rounded-full" />
                         </motion.div>
@@ -217,7 +217,7 @@ const IdeaLabPage = () => {
             </div>
 
             {/* ABOUT SECTION - MODERNIZED 2-COLUMN DESIGN */}
-            <section className="py-10 bg-[#0A1A3F] overflow-hidden font-graphik mt-8">
+            <section className="py-10 bg-[#224292] overflow-hidden font-graphik mt-8">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="lg:w-1/2">
@@ -238,9 +238,9 @@ const IdeaLabPage = () => {
                         <div className="lg:w-1/2 grid grid-cols-2 gap-4 w-full">
                             {[
                                 { title: "Innovate", desc: "Encouraging creative ideas and solutions", icon: Lightbulb, bg: "bg-[#1e3c8a]/40", ic: "text-white", tc: "text-white/90" },
-                                { title: "Build", desc: "Building prototypes and real-world models", icon: Settings, bg: "bg-[#ffc107]", ic: "text-[#0A1A3F]", tc: "text-[#0A1A3F]/80" },
-                                { title: "Collaborate", desc: "Working together to grow better", icon: Users, bg: "bg-white", ic: "text-[#0A1A3F]", tc: "text-[#0A1A3F]/80" },
-                                { title: "Impact", desc: "Creating solutions that make a difference", icon: Zap, bg: "bg-[#0A1A3F] border border-white/10", ic: "text-white", tc: "text-white/90" }
+                                { title: "Build", desc: "Building prototypes and real-world models", icon: Settings, bg: "bg-[#ffc107]", ic: "text-[#224292]", tc: "text-[#224292]/80" },
+                                { title: "Collaborate", desc: "Working together to grow better", icon: Users, bg: "bg-white", ic: "text-[#224292]", tc: "text-[#224292]/80" },
+                                { title: "Impact", desc: "Creating solutions that make a difference", icon: Zap, bg: "bg-[#224292] border border-white/10", ic: "text-white", tc: "text-white/90" }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -266,7 +266,7 @@ const IdeaLabPage = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-center gap-4 mb-12">
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight">Our Objectives</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">Our Objectives</h2>
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
 
@@ -288,8 +288,8 @@ const IdeaLabPage = () => {
                                 <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4 shrink-0 shadow-inner group-hover:scale-110 transition-transform" style={{ backgroundColor: `${obj.color}15` }}>
                                     <obj.icon size={26} style={{ color: obj.color }} />
                                 </div>
-                                <h3 className="text-[#0A1A3F] text-[18px] font-black mb-3 tracking-tight leading-tight">{obj.title}</h3>
-                                <p className="text-[#0A1A3F] font-black text-[13px] leading-tight mb-4 max-w-[180px]">{obj.desc}</p>
+                                <h3 className="text-[#224292] text-[18px] font-black mb-3 tracking-tight leading-tight">{obj.title}</h3>
+                                <p className="text-[#224292] font-black text-[13px] leading-tight mb-4 max-w-[180px]">{obj.desc}</p>
                                 <div className="w-8 h-1 bg-[#ffc107] rounded-full" />
                             </motion.div>
                         ))}
@@ -302,7 +302,7 @@ const IdeaLabPage = () => {
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <div className="flex items-center justify-center gap-4 mb-12">
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight">Our Team</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">Our Team</h2>
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
                     
@@ -319,8 +319,8 @@ const IdeaLabPage = () => {
                                     { name: "Dr. PSS. Srinivasan", roles: ["Executive Chairman, KIOT", "Chief Advisor, KIOT AICTE IDEA LAB"], initials: "PS" },
                                     { name: "Dr. K. Visagavel", roles: ["Principal, KIOT", "Chief Mentor, KIOT AICTE IDEA LAB"], initials: "KV" }
                                 ].map((leader, i) => (
-                                    <div key={i} className="bg-[#0A1A3F] p-6 rounded-[2rem] flex items-center gap-4 relative overflow-hidden group shadow-xl">
-                                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white text-[18px] font-black border border-white/20 shrink-0 group-hover:bg-[#ffc107] group-hover:text-[#0A1A3F] transition-all">
+                                    <div key={i} className="bg-[#224292] p-6 rounded-[2rem] flex items-center gap-4 relative overflow-hidden group shadow-xl">
+                                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white text-[18px] font-black border border-white/20 shrink-0 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all">
                                             {leader.initials}
                                         </div>
                                         <div className="min-w-0">
@@ -349,13 +349,13 @@ const IdeaLabPage = () => {
                                     { name: "Mr. M. Dineshkumar", roles: ["AP/ECE", "Co-Coordinator, KIOT AICTE IDEA LAB"], initials: "MD" }
                                 ].map((coord, i) => (
                                     <div key={i} className="bg-white p-6 rounded-[2rem] flex items-center gap-4 border border-slate-100 shadow-sm group hover:shadow-xl transition-all">
-                                        <div className="w-12 h-12 bg-[#0A1A3F]/5 rounded-full flex items-center justify-center text-[#0A1A3F] text-[18px] font-black border border-[#0A1A3F]/10 shrink-0 group-hover:bg-[#0A1A3F] group-hover:text-white transition-all">
+                                        <div className="w-12 h-12 bg-[#224292]/5 rounded-full flex items-center justify-center text-[#224292] text-[18px] font-black border border-[#224292]/10 shrink-0 group-hover:bg-[#224292] group-hover:text-white transition-all">
                                             {coord.initials}
                                         </div>
                                         <div className="min-w-0">
-                                            <h4 className="text-[#0A1A3F] text-[15px] font-black leading-tight mb-1 whitespace-nowrap">{coord.name}</h4>
+                                            <h4 className="text-[#224292] text-[15px] font-black leading-tight mb-1 whitespace-nowrap">{coord.name}</h4>
                                             {coord.roles.map((role, ri) => (
-                                                <p key={ri} className={`text-[13px] ${ri === 0 ? 'text-[#0A1A3F]' : 'text-[#1e3c8a]'} font-black leading-tight`}>{role}</p>
+                                                <p key={ri} className={`text-[13px] ${ri === 0 ? 'text-[#224292]' : 'text-[#1e3c8a]'} font-black leading-tight`}>{role}</p>
                                             ))}
                                         </div>
                                     </div>
@@ -368,7 +368,7 @@ const IdeaLabPage = () => {
                     <div className="pt-12 border-t border-slate-200">
                         <div className="flex items-center justify-center gap-4 mb-12">
                             <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
-                            <h3 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight text-center">Techgurus of KIOT AICTE IDEA Lab</h3>
+                            <h3 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight text-center">Techgurus of KIOT AICTE IDEA Lab</h3>
                             <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -385,12 +385,12 @@ const IdeaLabPage = () => {
                                 { n: "Mr. M. Karthi", d: "Teaching Assistant" }
                             ].map((guru, i) => (
                                 <div key={i} className="bg-white p-5 rounded-2xl border border-slate-100 text-left hover:border-[#ffc107] transition-all flex flex-col gap-2 group shadow-sm hover:shadow-lg">
-                                    <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-[#0A1A3F] group-hover:bg-[#ffc107] transition-all">
+                                    <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-[#224292] group-hover:bg-[#ffc107] transition-all">
                                         <Users size={14} />
                                     </div>
                                     <div>
-                                        <h5 className="text-[#0A1A3F] text-[13px] font-black leading-tight">{guru.n}</h5>
-                                        <p className="text-[#0A1A3F] text-[13px] font-black leading-tight mt-1">{guru.d}</p>
+                                        <h5 className="text-[#224292] text-[13px] font-black leading-tight">{guru.n}</h5>
+                                        <p className="text-[#224292] text-[13px] font-black leading-tight mt-1">{guru.d}</p>
                                     </div>
                                 </div>
                             ))}
@@ -404,7 +404,7 @@ const IdeaLabPage = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-center gap-4 mb-12">
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight">Wing Tutorials</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">Wing Tutorials</h2>
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
                     
@@ -416,7 +416,7 @@ const IdeaLabPage = () => {
                                     <div className="w-12 h-12 bg-[#1e3c8a] rounded-2xl flex items-center justify-center text-white">
                                         <CircuitBoard size={24} />
                                     </div>
-                                    <h3 className="text-[#0A1A3F] text-[16px] font-black tracking-tight">PCB Design Wing</h3>
+                                    <h3 className="text-[#224292] text-[16px] font-black tracking-tight">PCB Design Wing</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {[
@@ -429,7 +429,7 @@ const IdeaLabPage = () => {
                                                 <div className="w-10 h-10 bg-white shadow-sm rounded-xl flex items-center justify-center text-[#1e3c8a] group-hover:bg-[#1e3c8a] group-hover:text-white transition-all">
                                                     <item.i size={18} />
                                                 </div>
-                                                <span className="text-[#0A1A3F] font-black text-sm">{item.t}</span>
+                                                <span className="text-[#224292] font-black text-sm">{item.t}</span>
                                             </div>
                                             <ChevronRight size={16} className="text-slate-300 group-hover:text-[#1e3c8a] transition-all" />
                                         </div>
@@ -442,10 +442,10 @@ const IdeaLabPage = () => {
                         <div className="bg-[#fff9e6] p-1 rounded-[2.5rem] border border-[#ffc107]/20 shadow-sm">
                             <div className="bg-white p-8 rounded-[2.2rem] h-full">
                                 <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-12 h-12 bg-[#ffc107] rounded-2xl flex items-center justify-center text-[#0A1A3F]">
+                                    <div className="w-12 h-12 bg-[#ffc107] rounded-2xl flex items-center justify-center text-[#224292]">
                                         <Box size={24} />
                                     </div>
-                                    <h3 className="text-[#0A1A3F] text-[16px] font-black tracking-tight">3D Modelling Wing</h3>
+                                    <h3 className="text-[#224292] text-[16px] font-black tracking-tight">3D Modelling Wing</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {[
@@ -458,7 +458,7 @@ const IdeaLabPage = () => {
                                                 <div className="w-10 h-10 bg-white shadow-sm rounded-xl flex items-center justify-center text-[#ffc107] group-hover:bg-[#ffc107] group-hover:text-white transition-all">
                                                     <item.i size={18} />
                                                 </div>
-                                                <span className="text-[#0A1A3F] font-black text-sm">{item.t}</span>
+                                                <span className="text-[#224292] font-black text-sm">{item.t}</span>
                                             </div>
                                             <ChevronRight size={16} className="text-[#ffc107]/50 group-hover:text-[#ffc107] transition-all" />
                                         </div>
@@ -474,7 +474,7 @@ const IdeaLabPage = () => {
                                     <div className="w-12 h-12 bg-[#3b82f6] rounded-2xl flex items-center justify-center text-white">
                                         <Globe size={24} />
                                     </div>
-                                    <h3 className="text-[#0A1A3F] text-[16px] font-black tracking-tight">IOT Design Wing</h3>
+                                    <h3 className="text-[#224292] text-[16px] font-black tracking-tight">IOT Design Wing</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {[
@@ -487,7 +487,7 @@ const IdeaLabPage = () => {
                                                 <div className="w-10 h-10 bg-white shadow-sm rounded-xl flex items-center justify-center text-[#3b82f6] group-hover:bg-[#3b82f6] group-hover:text-white transition-all">
                                                     <item.i size={18} />
                                                 </div>
-                                                <span className="text-[#0A1A3F] font-black text-sm">{item.t}</span>
+                                                <span className="text-[#224292] font-black text-sm">{item.t}</span>
                                             </div>
                                             <ChevronRight size={16} className="text-[#3b82f6]/50 group-hover:text-[#3b82f6] transition-all" />
                                         </div>
@@ -503,7 +503,7 @@ const IdeaLabPage = () => {
                                     <div className="w-12 h-12 bg-[#22c55e] rounded-2xl flex items-center justify-center text-white">
                                         <Settings size={24} />
                                     </div>
-                                    <h3 className="text-[#0A1A3F] text-[16px] font-black tracking-tight">Special Machine Wing</h3>
+                                    <h3 className="text-[#224292] text-[16px] font-black tracking-tight">Special Machine Wing</h3>
                                 </div>
                                 <div className="space-y-3">
                                     {[
@@ -515,7 +515,7 @@ const IdeaLabPage = () => {
                                                 <div className="w-10 h-10 bg-white shadow-sm rounded-xl flex items-center justify-center text-[#22c55e] group-hover:bg-[#22c55e] group-hover:text-white transition-all">
                                                     <item.i size={18} />
                                                 </div>
-                                                <span className="text-[#0A1A3F] font-black text-sm">{item.t}</span>
+                                                <span className="text-[#224292] font-black text-sm">{item.t}</span>
                                             </div>
                                             <ChevronRight size={16} className="text-[#22c55e]/50 group-hover:text-[#22c55e] transition-all" />
                                         </div>
@@ -532,7 +532,7 @@ const IdeaLabPage = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-center gap-4 mb-12">
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-2xl md:text-3xl font-black text-[#0A1A3F] tracking-tight">Facilities</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">Facilities</h2>
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
 
@@ -552,7 +552,7 @@ const IdeaLabPage = () => {
                                     alt={item.title} 
                                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A3F] via-[#0A1A3F]/20 to-transparent flex flex-col justify-end p-6 translate-y-2 group-hover:translate-y-0 transition-transform">
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#224292] via-[#224292]/20 to-transparent flex flex-col justify-end p-6 translate-y-2 group-hover:translate-y-0 transition-transform">
                                     <h4 className="text-white text-sm font-black leading-tight tracking-tight mb-0.5">
                                         {item.title}
                                     </h4>
@@ -566,8 +566,8 @@ const IdeaLabPage = () => {
 
             {/* BOTTOM CTA - MODERN PILL */}
             <div className="pb-16 flex justify-center font-graphik">
-                <div className="bg-[#0A1A3F] text-white px-10 py-5 rounded-full flex items-center gap-6 shadow-2xl shadow-[#0A1A3F]/20 group hover:scale-105 transition-all">
-                    <div className="w-10 h-10 bg-[#ffc107] rounded-full flex items-center justify-center text-[#0A1A3F]">
+                <div className="bg-[#224292] text-white px-10 py-5 rounded-full flex items-center gap-6 shadow-2xl shadow-[#224292]/20 group hover:scale-105 transition-all">
+                    <div className="w-10 h-10 bg-[#ffc107] rounded-full flex items-center justify-center text-[#224292]">
                         <Lightbulb size={20} className="animate-pulse" />
                     </div>
                     <span className="text-[16px] font-black tracking-tight">Empowering Ideas. Building Innovations. Creating Impact.</span>

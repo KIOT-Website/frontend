@@ -59,7 +59,7 @@ const AutonomousPage = () => {
   return (
     <div className="min-h-screen bg-white font-graphik">
       {/* ─── MODERN HERO SECTION ─── */}
-      <section className="relative h-[25vh] lg:h-[32vh] flex items-center justify-center overflow-hidden bg-[#0A1A3F]">
+      <section className="relative h-[25vh] lg:h-[32vh] flex items-center justify-center overflow-hidden bg-[#224292]">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <motion.img 
@@ -69,7 +69,7 @@ const AutonomousPage = () => {
             alt="KIOT Campus" 
             className="w-full h-full object-cover opacity-50 mix-blend-overlay"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A3F]/80 via-[#0A1A3F]/30 to-[#0A1A3F]/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#224292]/80 via-[#224292]/30 to-[#224292]/85" />
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#ffc107]/10 rounded-full blur-[120px] -mr-48 -mt-48" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px] -ml-32 -mb-32" />
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -101,11 +101,11 @@ const AutonomousPage = () => {
                 {/* LEFT COLUMN: INSTITUTIONAL EVOLUTION */}
                 <div className="space-y-12">
                     <div className="space-y-6">
-                        <div className="inline-flex items-center gap-3 px-3 py-1 bg-[#18357a]/5 rounded-full">
-                            <ShieldCheck size={14} className="text-[#18357a]" />
-                            <span className="text-[9px] font-graphik font-bold text-[#18357a] tracking-widest leading-none">Journey of Excellence</span>
+                        <div className="inline-flex items-center gap-3 px-3 py-1 bg-[#224292]/5 rounded-full">
+                            <ShieldCheck size={14} className="text-[#224292]" />
+                            <span className="text-[9px] font-graphik font-bold text-[#224292] tracking-widest leading-none">Journey of Excellence</span>
                         </div>
-                        <h2 className="text-3xl font-graphik font-semibold text-[#18357a] tracking-tight leading-none">
+                        <h2 className="text-3xl font-graphik font-semibold text-[#224292] tracking-tight leading-none">
                             Institutional <span className="text-[#ffc107]">Evolution</span>
                         </h2>
                         <div className="w-16 h-1.5 bg-[#ffc107] rounded-full" />
@@ -117,7 +117,7 @@ const AutonomousPage = () => {
                         </p>
 
                         <p className="font-graphik text-[16px] leading-[1.8] text-[#333333] font-normal text-justify">
-                            KIOT has reached a significant milestone in its journey of academic excellence by becoming an <span className="font-semibold text-[#18357a]">Autonomous institution</span> from the academic year <span className="text-[#ffc107] font-semibold">2022-2023</span>. This transformation empowers us to define innovative curricula and educational frameworks aligned with global industrial standards.
+                            KIOT has reached a significant milestone in its journey of academic excellence by becoming an <span className="font-semibold text-[#224292]">Autonomous institution</span> from the academic year <span className="text-[#ffc107] font-semibold">2022-2023</span>. This transformation empowers us to define innovative curricula and educational frameworks aligned with global industrial standards.
                         </p>
                     </div>
                 </div>
@@ -126,10 +126,10 @@ const AutonomousPage = () => {
                 <div className="space-y-12">
                     <div className="space-y-6">
                         <div className="inline-flex items-center gap-3 px-3 py-1 bg-[#ffc107]/10 rounded-full">
-                            <FileText size={14} className="text-[#18357a]" />
-                            <span className="text-[9px] font-graphik font-bold text-[#18357a] tracking-widest leading-none">Formal Certification</span>
+                            <FileText size={14} className="text-[#224292]" />
+                            <span className="text-[9px] font-graphik font-bold text-[#224292] tracking-widest leading-none">Formal Certification</span>
                         </div>
-                        <h3 className="text-3xl font-graphik font-semibold text-[#18357a] tracking-tight leading-none">
+                        <h3 className="text-3xl font-graphik font-semibold text-[#224292] tracking-tight leading-none">
                             Autonomous <span className="text-[#ffc107]">Approval</span>
                         </h3>
                         <div className="w-16 h-1.5 bg-[#ffc107] rounded-full" />
@@ -146,11 +146,11 @@ const AutonomousPage = () => {
                                 className="p-6 rounded-[2rem] bg-white border border-slate-100 shadow-xl shadow-slate-200/20 group hover:border-[#ffc107] transition-all duration-500 relative overflow-hidden max-w-md"
                             >
                                 <div className="flex items-center gap-5">
-                                    <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center group-hover:bg-[#18357a] group-hover:text-white transition-all shadow-inner shrink-0">
+                                    <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center group-hover:bg-[#224292] group-hover:text-white transition-all shadow-inner shrink-0">
                                         <FileText size={24} />
                                     </div>
                                      <div className="flex-1">
-                                        <h4 className="text-[15px] font-graphik font-bold text-[#18357a] tracking-tight mb-1 group-hover:text-[#ffc107] transition-colors">{doc.title}</h4>
+                                        <h4 className="text-[15px] font-graphik font-bold text-[#224292] tracking-tight mb-1 group-hover:text-[#ffc107] transition-colors">{doc.title}</h4>
                                         <p className="text-[11px] font-graphik font-bold text-black/60 leading-none">{doc.desc}</p>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@ const AutonomousPage = () => {
                                 <div className="mt-6 flex gap-3">
                                     <button 
                                         onClick={(e) => handleDownload(e, doc.file, doc.title)}
-                                        className="w-52 h-12 bg-slate-50 hover:bg-[#18357a] text-[#18357a] hover:text-white rounded-xl flex items-center justify-center gap-2 transition-all duration-300 font-graphik font-semibold text-[10px] tracking-wider shadow-sm group/btn"
+                                        className="w-52 h-12 bg-slate-50 hover:bg-[#224292] text-[#224292] hover:text-white rounded-xl flex items-center justify-center gap-2 transition-all duration-300 font-graphik font-semibold text-[10px] tracking-wider shadow-sm group/btn"
                                     >
                                         <Download size={14} className="group-hover/btn:text-white transition-colors" />
                                         <span className="group-hover/btn:text-white transition-colors">Download PDF</span>
@@ -167,14 +167,14 @@ const AutonomousPage = () => {
                                         href={doc.file} 
                                         target="_blank" 
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 bg-[#ffc107] hover:bg-[#18357a] text-[#18357a] hover:text-white rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg shadow-[#ffc107]/20 active:scale-95 text-center group/ext"
+                                        className="w-12 h-12 bg-[#ffc107] hover:bg-[#224292] text-[#224292] hover:text-white rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg shadow-[#ffc107]/20 active:scale-95 text-center group/ext"
                                     >
                                         <ExternalLink size={18} className="group-hover/ext:text-white transition-colors" />
                                     </a>
                                 </div>
 
                                 {/* Watermark Sequential Number */}
-                                <div className="absolute top-1/2 -right-4 -translate-y-1/2 text-7xl font-black text-[#18357a]/[0.02] pointer-events-none select-none italic group-hover:text-[#ffc107]/5 transition-colors">
+                                <div className="absolute top-1/2 -right-4 -translate-y-1/2 text-7xl font-black text-[#224292]/[0.02] pointer-events-none select-none italic group-hover:text-[#ffc107]/5 transition-colors">
                                     0{idx + 1}
                                 </div>
                             </motion.div>
@@ -190,18 +190,18 @@ const AutonomousPage = () => {
                     {/* LEFT COLUMN: ACADEMIC SCHEDULE */}
                     <div className="space-y-8">
                         <div className="flex items-center gap-4">
-                             <div className="w-10 h-10 bg-[#18357a] rounded-xl flex items-center justify-center text-[#ffc107]">
+                             <div className="w-10 h-10 bg-[#224292] rounded-xl flex items-center justify-center text-[#ffc107]">
                                 <Calendar size={20} />
                              </div>
                              <div>
-                                <h3 className="text-xl font-graphik font-semibold text-[#18357a] tracking-tight">Academic <span className="text-[#ffc107]">Schedule</span></h3>
+                                <h3 className="text-xl font-graphik font-semibold text-[#224292] tracking-tight">Academic <span className="text-[#ffc107]">Schedule</span></h3>
                              </div>
                         </div>
 
                         <div className="overflow-hidden rounded-xl border border-slate-100 shadow-xl shadow-slate-200/10 bg-white">
                             <table className="w-full text-center border-collapse">
                                 <thead>
-                                    <tr className="bg-[#18357a]">
+                                    <tr className="bg-[#224292]">
                                         <th className="px-4 py-4 text-[10px] font-graphik font-semibold text-white tracking-[1.5px] text-center">Academic Year</th>
                                         <th className="px-4 py-4 text-[10px] font-graphik font-semibold text-white tracking-[1.5px] text-center">Semester</th>
                                         <th className="px-4 py-4 text-[10px] font-graphik font-semibold text-white tracking-[1.5px] text-center">Schedule</th>
@@ -211,7 +211,7 @@ const AutonomousPage = () => {
                                     {loadingSchedules ? (
                                         <tr>
                                             <td colSpan="3" className="px-8 py-8 text-center">
-                                                <div className="flex items-center justify-center gap-2 text-[#18357a] font-black text-[9px] tracking-widest animate-pulse">
+                                                <div className="flex items-center justify-center gap-2 text-[#224292] font-black text-[9px] tracking-widest animate-pulse">
                                                     <div className="w-1.5 h-1.5 bg-[#ffc107] rounded-full animate-bounce" />
                                                     Synchronizing...
                                                 </div>
@@ -222,7 +222,7 @@ const AutonomousPage = () => {
                                             <tr 
                                                 key={i} 
                                                 onClick={() => window.open(row.pdf_url, '_blank')}
-                                                className={`group transition-all duration-300 cursor-pointer hover:bg-[#18357a]/5 ${i % 2 === 1 ? 'bg-[#18357a]/[0.06]' : 'bg-white'}`}
+                                                className={`group transition-all duration-300 cursor-pointer hover:bg-[#224292]/5 ${i % 2 === 1 ? 'bg-[#224292]/[0.06]' : 'bg-white'}`}
                                             >
                                                 <td className="px-4 py-4 text-center">
                                                     <span className="text-[13px] font-graphik font-semibold text-black tracking-tight group-hover:text-[#ffc107] transition-all">
@@ -237,7 +237,7 @@ const AutonomousPage = () => {
                                                 <td className="px-4 py-4 text-center flex items-center justify-center">
                                                     <button 
                                                         onClick={(e) => handleDownload(e, row.pdf_url, `Academic_Schedule_${row.year_or_version}_${row.semester}`)}
-                                                        className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#18357a]/40 group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all shadow-inner relative z-10"
+                                                        className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#224292]/40 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all shadow-inner relative z-10"
                                                         title="Download PDF"
                                                     >
                                                         <Download size={14} />
@@ -260,18 +260,18 @@ const AutonomousPage = () => {
                     {/* RIGHT COLUMN: BOARD OF STUDIES */}
                     <div className="space-y-8">
                          <div className="flex items-center gap-4">
-                             <div className="w-10 h-10 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#18357a]">
+                             <div className="w-10 h-10 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#224292]">
                                 <Users size={20} />
                              </div>
                              <div>
-                                <h3 className="text-xl font-graphik font-semibold text-[#18357a] tracking-tight">Board of Studies <span className="text-[#ffc107]">(BoS)</span></h3>
+                                <h3 className="text-xl font-graphik font-semibold text-[#224292] tracking-tight">Board of Studies <span className="text-[#ffc107]">(BoS)</span></h3>
                              </div>
                         </div>
 
                         <div className="overflow-hidden rounded-xl border border-slate-100 shadow-xl shadow-slate-200/10 bg-white">
                             <table className="w-full text-center border-collapse">
                                 <thead>
-                                    <tr className="bg-[#18357a]">
+                                    <tr className="bg-[#224292]">
                                         <th className="px-4 py-5 text-[10px] font-graphik font-semibold text-white tracking-[2px] w-20 text-center">S.No</th>
                                         <th className="px-4 py-5 text-[10px] font-graphik font-semibold text-white tracking-[2px] text-center">Board of Studies (BoS)</th>
                                     </tr>
@@ -289,7 +289,7 @@ const AutonomousPage = () => {
                                         <tr 
                                             key={idx} 
                                             onClick={() => window.open(faculty.file, '_blank')}
-                                            className={`group transition-all duration-300 cursor-pointer hover:bg-[#18357a]/5 ${idx % 2 === 1 ? 'bg-[#18357a]/[0.06]' : 'bg-white'}`}
+                                            className={`group transition-all duration-300 cursor-pointer hover:bg-[#224292]/5 ${idx % 2 === 1 ? 'bg-[#224292]/[0.06]' : 'bg-white'}`}
                                         >
                                             <td className="px-4 py-4 text-center">
                                                 <span className="text-[14px] font-graphik font-semibold text-black/50 transition-all">
@@ -309,7 +309,7 @@ const AutonomousPage = () => {
                     </div>
                 </div>
 
-                <div className="mt-12 p-8 rounded-[2rem] bg-[#18357a] relative overflow-hidden group">
+                <div className="mt-12 p-8 rounded-[2rem] bg-[#224292] relative overflow-hidden group">
                      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03]" />
                      <div className="relative z-10 text-center md:text-left">
                         <div>

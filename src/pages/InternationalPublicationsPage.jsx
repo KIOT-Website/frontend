@@ -163,7 +163,7 @@ const InternationalPublicationsPage = () => {
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+                            <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6">
                                 International <span className="text-[#ffc107]">Publications</span>
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -208,7 +208,7 @@ const InternationalPublicationsPage = () => {
                                     filteredPublications.map((pub, idx) => (
                                         <tr key={pub.id} className="group hover:bg-[#fafcff] transition-all duration-300">
                                             <td className="px-6 py-8 align-top border-r border-slate-50">
-                                                <div className="w-8 h-8 bg-[#18357a]/5 rounded-lg flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
+                                                <div className="w-8 h-8 bg-[#224292]/5 rounded-lg flex items-center justify-center text-[#224292] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>

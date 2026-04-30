@@ -4,12 +4,12 @@ import alumniTech from '../../assets/alumni/alumni_tech.png'
 
 const AlumniHero = () => {
   return (
-    <section className="relative min-h-[300px] md:min-h-[350px] bg-[#18357a] overflow-hidden flex items-center">
+    <section className="relative min-h-[300px] md:min-h-[350px] bg-[#224292] overflow-hidden flex items-center">
       
       {/* Integrated Background Design */}
       <div className="absolute inset-0 z-0">
         {/* Stronger gradient to create a clean 'gap' for the text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#18357a] via-[#18357a]/90 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#224292] via-[#224292]/90 to-transparent z-10" />
         
         <motion.img 
           initial={{ opacity: 0, scale: 1.1 }}

@@ -78,15 +78,15 @@ const SponsoredProjectsPage = () => {
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4">
                 <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to="/research" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
                         Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#18357a] text-xs font-black uppercase tracking-wider pt-0.5">
+                    <span className="text-[#224292] text-xs font-black uppercase tracking-wider pt-0.5">
                         Sponsored Projects
                     </span>
                 </div>
@@ -102,12 +102,12 @@ const SponsoredProjectsPage = () => {
                 >
                     <Link 
                         to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#18357a] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
+                        className="inline-flex items-center gap-2 text-[#224292] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
                     >
                         <ArrowLeft size={14} /> Back to Repository
                     </Link>
 
-                    <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] uppercase leading-tight mb-6">
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6">
                         Research & <span className="text-[#ffc107]">Grant Ecosystem</span>
                     </h1>
 
@@ -145,11 +145,11 @@ const SponsoredProjectsPage = () => {
                                     {mhrdPrograms.map((item, idx) => (
                                         <tr key={item.id} className="group hover:bg-[#fafcff] transition-all duration-300">
                                             <td className="px-6 py-5 border-r border-slate-50">
-                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
+                                                <div className="w-10 h-10 bg-[#224292]/5 rounded-xl flex items-center justify-center text-[#224292] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-5 text-[13px] uppercase tracking-tight group-hover:text-[#18357a] transition-colors">{item.title}</td>
+                                            <td className="px-6 py-5 text-[13px] uppercase tracking-tight group-hover:text-[#224292] transition-colors">{item.title}</td>
                                             <td className="px-6 py-5 text-xs font-bold text-slate-500 uppercase tracking-widest">{item.duration}</td>
                                             <td className="px-6 py-5 text-right pr-8">
                                                 <span className="text-[14px] font-black text-[#0f172a] tracking-tight group-hover:text-[#ffc107] transition-colors">₹ {item.amount || item.fund}</span>
@@ -192,12 +192,12 @@ const SponsoredProjectsPage = () => {
                                     {sponsoredProjects.length > 0 ? sponsoredProjects.map((item, idx) => (
                                         <tr key={item.id} className="hover:bg-[#fafcff] transition-all group">
                                             <td className="px-6 py-5 align-top pt-6 border-r border-slate-50">
-                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
+                                                <div className="w-10 h-10 bg-[#224292]/5 rounded-xl flex items-center justify-center text-[#224292] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5 max-w-sm">
-                                                <p className="text-[13px] font-black text-[#18357a] uppercase leading-tight mb-2 italic group-hover:text-[#ffc107] transition-colors">"{item.title}"</p>
+                                                <p className="text-[13px] font-black text-[#224292] uppercase leading-tight mb-2 italic group-hover:text-[#ffc107] transition-colors">"{item.title}"</p>
                                                 <div className="flex flex-col gap-1">
                                                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item.agency}</p>
                                                     {item.faculty && (
@@ -254,12 +254,12 @@ const SponsoredProjectsPage = () => {
                                     {consultancyWork.length > 0 ? consultancyWork.map((item, idx) => (
                                         <tr key={item.id} className="hover:bg-[#fafcff] transition-all group">
                                             <td className="px-6 py-5 border-r border-slate-50">
-                                                <div className="w-10 h-10 bg-[#18357a]/5 rounded-xl flex items-center justify-center text-[#18357a] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-all duration-300 shadow-inner">
+                                                <div className="w-10 h-10 bg-[#224292]/5 rounded-xl flex items-center justify-center text-[#224292] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-inner">
                                                     {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5">
-                                                <div className="text-[13px] font-bold text-[#0f172a] uppercase leading-tight mb-1 group-hover:text-[#18357a] transition-colors italic">"{item.title}"</div>
+                                                <div className="text-[13px] font-bold text-[#0f172a] uppercase leading-tight mb-1 group-hover:text-[#224292] transition-colors italic">"{item.title}"</div>
                                                 <div className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest line-clamp-1">{item.client}</div>
                                             </td>
                                             <td className="px-6 py-5 text-[11px] font-black text-[#1e293b] italic border-x border-slate-50">{item.faculty}</td>

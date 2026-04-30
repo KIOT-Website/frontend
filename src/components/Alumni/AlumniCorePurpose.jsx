@@ -34,7 +34,7 @@ const AlumniCorePurpose = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-sm font-black text-[#ffc107] uppercase tracking-[0.4em] mb-4">Our Mission</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-[#18357a] tracking-tighter leading-none">
+            <h3 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter leading-none">
               Core Purpose of <br />
               Alumni Association
             </h3>
@@ -56,7 +56,7 @@ const AlumniCorePurpose = () => {
               className="relative aspect-[1.6/1] md:aspect-[1.4/1] rounded-2xl md:rounded-3xl overflow-hidden group shadow-[0_10px_30px_rgba(24,53,122,0.1)] hover:shadow-[0_20px_50px_rgba(24,53,122,0.2)] transition-all duration-500"
             >
               {/* Background Split - Deep Blue and Yellow */}
-              <div className="absolute inset-0 bg-[#18357a]" />
+              <div className="absolute inset-0 bg-[#224292]" />
               
               {/* The Angled Yellow Accent - inspired by the business card design */}
               <div 
@@ -66,7 +66,7 @@ const AlumniCorePurpose = () => {
 
               {/* Card Content */}
               <div className="relative h-full p-6 md:p-8 flex flex-col justify-between z-10">
-                <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-4 group-hover:bg-[#ffc107] group-hover:border-[#18357a]/20 group-hover:text-[#18357a] transition-all duration-500">
+                <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-4 group-hover:bg-[#ffc107] group-hover:border-[#224292]/20 group-hover:text-[#224292] transition-all duration-500">
                   <item.icon size={24} />
                 </div>
                 

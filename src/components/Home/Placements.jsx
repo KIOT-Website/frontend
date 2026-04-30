@@ -57,7 +57,7 @@ const recruiterData = [
 const Placements = () => {
   const navigate = useNavigate()
   return (
-    <section className="relative py-6 lg:py-8 bg-[#18357a] overflow-hidden text-white" id="placements">
+    <section className="relative py-6 lg:py-8 bg-[#224292] overflow-hidden text-white" id="placements">
       
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-[10%] left-[-5%] w-[500px] h-[500px] bg-white rounded-full blur-[120px]" />
@@ -108,7 +108,7 @@ const Placements = () => {
 
             <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
               <div className="p-4 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 w-fit">
-                <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#18357a]">
+                <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292]">
                    <UserCheck size={16} />
                 </div>
                 <p className="text-[12px] font-black text-white/70 uppercase tracking-widest leading-none">Quality Placements <br/> Are Our Motto</p>
@@ -116,7 +116,7 @@ const Placements = () => {
 
               <button 
                 onClick={() => navigate('/placement-overview')}
-                className="group relative px-10 py-5 bg-[#ffc107] text-[#18357a] rounded-2xl font-black uppercase tracking-[0.2em] text-[12px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center gap-3"
+                className="group relative px-10 py-5 bg-[#ffc107] text-[#224292] rounded-2xl font-black uppercase tracking-[0.2em] text-[12px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center gap-3"
               >
                  Explore Placements
                  <TrendingUp size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -145,7 +145,7 @@ const Placements = () => {
                               {rec.logo ? (
                                 <img src={rec.logo} alt={rec.name + " corporate hiring partner logo"} className="max-h-full max-w-full object-contain" loading="lazy" />
                               ) : (
-                                <div className="text-[#18357a]/20 font-black text-[9px] text-center leading-none uppercase pr-1 italic">Logo Req.</div>
+                                <div className="text-[#224292]/20 font-black text-[9px] text-center leading-none uppercase pr-1 italic">Logo Req.</div>
                               )}
                            </div>
                            
@@ -181,8 +181,8 @@ const Placements = () => {
                 `}</style>
 
                 {/* Vertical Fade Effect Overlay */}
-                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#18357a] to-transparent z-10" />
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#18357a] to-transparent z-10" />
+                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#224292] to-transparent z-10" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#224292] to-transparent z-10" />
              </div>
           </div>
 

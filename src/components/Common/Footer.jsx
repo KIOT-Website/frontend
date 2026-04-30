@@ -62,7 +62,7 @@ const Footer = () => {
       {/* Straight Institutional Border - Clean Transition */}
       <div className="absolute top-0 left-0 w-full h-[8px] bg-[#ffc107] z-20 shadow-[0_4px_20px_rgba(255,193,7,0.3)]" />
 
-      <div className="absolute inset-x-0 bottom-0 top-0 bg-[#18357a] z-0" />
+      <div className="absolute inset-x-0 bottom-0 top-0 bg-[#224292] z-0" />
 
       {/* Academic Dot Pattern Texture */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
@@ -104,7 +104,7 @@ const Footer = () => {
             {/* Apply Now Button - Vivid Yellow */}
             <Link 
               to="/admissions" 
-              className="w-full bg-[#ffc107] text-[#18357a] py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl hover:bg-white hover:shadow-[#ffc107]/20 transition-all duration-500 flex items-center justify-center gap-3 active:scale-95 group mb-8"
+              className="w-full bg-[#ffc107] text-[#224292] py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-xl hover:bg-white hover:shadow-[#ffc107]/20 transition-all duration-500 flex items-center justify-center gap-3 active:scale-95 group mb-8"
             >
               Apply Now 2026-27 <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
@@ -112,7 +112,7 @@ const Footer = () => {
             {/* Integrated Contact Section (Moved to Left Column) */}
             <div className="w-full space-y-6 pt-6 border-t border-white/10">
                <div className="flex items-center gap-4 group/info">
-                 <div className="w-9 h-9 rounded-xl bg-[#ffc107] flex items-center justify-center text-[#18357a] transition-all shadow-lg scale-90">
+                 <div className="w-9 h-9 rounded-xl bg-[#ffc107] flex items-center justify-center text-[#224292] transition-all shadow-lg scale-90">
                    <Phone size={16} />
                  </div>
                  <div className="flex flex-col">
@@ -121,7 +121,7 @@ const Footer = () => {
                  </div>
                </div>
                <div className="flex items-center gap-4 group/info">
-                 <div className="w-9 h-9 rounded-xl bg-[#ffc107] flex items-center justify-center text-[#18357a] transition-all shadow-lg scale-90">
+                 <div className="w-9 h-9 rounded-xl bg-[#ffc107] flex items-center justify-center text-[#224292] transition-all shadow-lg scale-90">
                    <Mail size={16} />
                  </div>
                  <div className="flex flex-col">

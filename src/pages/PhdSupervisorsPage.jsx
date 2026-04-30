@@ -54,11 +54,11 @@ const PhdSupervisorsPage = () => {
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-slate-200 py-4 shadow-sm">
                 <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#18357a] text-[10px] font-black uppercase tracking-widest pt-0.5 transition-colors">
+                    <Link to="/research" className="text-slate-400 hover:text-[#224292] text-[10px] font-black uppercase tracking-widest pt-0.5 transition-colors">
                         Research Initiatives
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#18357a] text-[10px] font-black uppercase tracking-widest pt-0.5 transition-colors">
+                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-[10px] font-black uppercase tracking-widest pt-0.5 transition-colors">
                         Research in {formatDeptName(deptName)}
                     </Link>
                     <ChevronRight size={14} className="text-slate-300" />
@@ -85,7 +85,7 @@ const PhdSupervisorsPage = () => {
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
-                            <h1 className="text-3xl lg:text-5xl font-bold text-[#18357a] leading-tight mb-6">
+                            <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] leading-tight mb-6">
                                 List of Ph.D <span className="text-[#ffc107]">Supervisors</span>
                             </h1>
                             <div className="max-w-2xl border-l-4 border-[#ffc107] pl-8 py-1">
@@ -125,11 +125,11 @@ const PhdSupervisorsPage = () => {
                             <div className="relative z-10">
                                 <div className="flex items-start justify-between mb-8">
                                     <div className="flex items-center gap-4">
-                                        <div className="w-16 h-16 rounded-[1.5rem] bg-[#18357a] flex items-center justify-center text-white shadow-xl shadow-blue-900/20 group-hover:rotate-6 transition-transform">
+                                        <div className="w-16 h-16 rounded-[1.5rem] bg-[#224292] flex items-center justify-center text-white shadow-xl shadow-blue-900/20 group-hover:rotate-6 transition-transform">
                                             <GraduationCap size={32} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black text-[#0f172a] tracking-tight group-hover:text-[#18357a] transition-colors">
+                                            <h3 className="text-xl font-black text-[#0f172a] tracking-tight group-hover:text-[#224292] transition-colors">
                                                 {supervisor.name}
                                             </h3>
                                             <div className="flex items-center gap-2 mt-1 px-3 py-1 bg-slate-50 rounded-full border border-slate-100 group-hover:bg-[#ffc107]/10 transition-colors w-fit">
@@ -146,7 +146,7 @@ const PhdSupervisorsPage = () => {
                                             <BookOpen size={16} className="text-[#ffc107]" />
                                             <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-widest">Research Areas</span>
                                         </div>
-                                        <p className="text-xs font-bold text-[#18357a] leading-relaxed uppercase">
+                                        <p className="text-xs font-bold text-[#224292] leading-relaxed uppercase">
                                             {supervisor.researchArea}
                                         </p>
                                     </div>
@@ -156,14 +156,14 @@ const PhdSupervisorsPage = () => {
                                             <Mail size={16} className="text-[#ffc107]" />
                                             <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-widest leading-none">Scientific Liaison</span>
                                         </div>
-                                        <p className="text-sm font-black text-[#18357a] tracking-tight">{supervisor.email}</p>
+                                        <p className="text-sm font-black text-[#224292] tracking-tight">{supervisor.email}</p>
                                     </div>
                                 </div>
 
                                 {/* Metrics Section */}
                                 <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-100">
                                     <div className="text-center">
-                                        <div className="text-2xl font-black text-[#18357a] italic">{supervisor.guided}</div>
+                                        <div className="text-2xl font-black text-[#224292] italic">{supervisor.guided}</div>
                                         <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Ph.Ds Guided</p>
                                     </div>
                                     <div className="text-center border-x border-slate-100 flex flex-col justify-center">

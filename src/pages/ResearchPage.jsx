@@ -107,7 +107,7 @@ const ResearchPage = () => {
                             animate={{ opacity: 1, x: 0 }}
                         >
                             <h1 
-                                className="text-4xl lg:text-5xl font-black text-[#18357a] leading-[1.1] mb-8"
+                                className="text-4xl lg:text-5xl font-black text-[#224292] leading-[1.1] mb-8"
                                 style={{ wordSpacing: '0.3rem' }}
                             >
                                 Departmentwise <br />
@@ -123,11 +123,11 @@ const ResearchPage = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            <div className="max-w-md w-full bg-[#18357a] rounded-[2rem] p-8 md:p-10 flex flex-col items-center md:items-start gap-8 shadow-xl shadow-blue-900/10 border border-white/10 relative overflow-hidden group">
+                            <div className="max-w-md w-full bg-[#224292] rounded-[2rem] p-8 md:p-10 flex flex-col items-center md:items-start gap-8 shadow-xl shadow-blue-900/10 border border-white/10 relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -mr-12 -mt-12 blur-2xl" />
                                 
                                 <div className="w-14 h-14 bg-[#ffc107] rounded-2xl flex items-center justify-center shadow-lg transform rotate-3 group-hover:rotate-0 transition-transform">
-                                    <Award className="text-[#18357a]" size={28} />
+                                    <Award className="text-[#224292]" size={28} />
                                 </div>
 
                                 <div className="text-center md:text-left">
@@ -155,7 +155,7 @@ const ResearchPage = () => {
                                         href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.webp"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-3 px-8 py-3 bg-[#ffc107] text-[#18357a] rounded-xl font-black text-xs hover:bg-white transition-all shadow-lg active:scale-95"
+                                        className="inline-flex items-center gap-3 px-8 py-3 bg-[#ffc107] text-[#224292] rounded-xl font-black text-xs hover:bg-white transition-all shadow-lg active:scale-95"
                                     >
                                         View Details <ChevronRight size={16} />
                                     </a>
@@ -173,7 +173,7 @@ const ResearchPage = () => {
                             className="bg-white rounded-[2rem] border-2 border-slate-100 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-blue-900/5 transition-all"
                         >
                             <table className="w-full border-collapse">
-                                <thead className="bg-[#18357a]">
+                                <thead className="bg-[#224292]">
                                     <tr>
                                         <th className="px-8 py-4 text-center text-[13px] font-black text-white">
                                             Department Directory
@@ -193,7 +193,7 @@ const ResearchPage = () => {
                                                         <div className={`w-9 h-9 rounded-xl ${dept.color} flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm shrink-0`}>
                                                             <dept.icon size={18} />
                                                         </div>
-                                                        <span className="text-[15px] font-black text-[#18357a] transition-colors group-hover:text-[#ffc107] text-left leading-tight">
+                                                        <span className="text-[15px] font-black text-[#224292] transition-colors group-hover:text-[#ffc107] text-left leading-tight">
                                                             {dept.name}
                                                         </span>
                                                     </div>

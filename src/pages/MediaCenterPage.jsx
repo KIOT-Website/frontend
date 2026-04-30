@@ -60,14 +60,14 @@ const MediaCenterPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] pb-24">
             {/* 🔷 Hero Section */}
-            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#18357a]">
+            <div className="relative h-[35vh] flex items-center justify-center overflow-hidden bg-[#224292]">
                 <div className="absolute inset-0">
                     <img 
                         src="https://images.unsplash.com/photo-1574717024458-388ee7023efd?q=80&w=1920&auto=format&fit=crop" 
                         className="w-full h-full object-cover opacity-100" 
                         alt="Media Center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#18357a]/90 via-[#18357a]/70 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#224292]/90 via-[#224292]/70 to-transparent" />
                 </div>
                 
                 <div className="relative z-10 text-center px-6">
@@ -78,7 +78,7 @@ const MediaCenterPage = () => {
                     >
                         <button 
                             onClick={() => navigate('/campus-life')}
-                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#18357a]/50 backdrop-blur-sm"
+                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#224292]/50 backdrop-blur-sm"
                         >
                             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
                             <span className="text-xs font-black tracking-[2px]">Back to Hub</span>
@@ -96,11 +96,11 @@ const MediaCenterPage = () => {
                 <div className="space-y-8">
                     <div className="flex items-center justify-between border-b-2 border-slate-100 pb-6">
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-[#18357a] rounded-xl flex items-center justify-center text-[#ffc107] shadow-lg">
+                            <div className="w-12 h-12 bg-[#224292] rounded-xl flex items-center justify-center text-[#ffc107] shadow-lg">
                                 <Camera size={24} />
                             </div>
                             <div>
-                                <h2 className="text-2xl font-black text-[#18357a] tracking-tight">Facilities Available</h2>
+                                <h2 className="text-2xl font-black text-[#224292] tracking-tight">Facilities Available</h2>
                                 <p className="text-xs font-black text-[#ffc107] uppercase tracking-[3px]">Multimedia Infrastructure</p>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ const MediaCenterPage = () => {
                     <div className="overflow-hidden rounded-xl md:rounded-[2rem] border border-slate-200 bg-white shadow-2xl shadow-slate-200/20">
                         <table className="w-full text-left border-collapse">
                             <thead className="hidden md:table-header-group">
-                                <tr className="bg-[#18357a]">
+                                <tr className="bg-[#224292]">
                                     <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px] w-24">S.No</th>
                                     <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px]">Description</th>
                                     <th className="px-8 py-5 text-xs font-black text-white uppercase tracking-[3px] text-right w-32">Qty</th>
@@ -118,7 +118,7 @@ const MediaCenterPage = () => {
                             <tbody className="divide-y divide-slate-100">
                                 {facilities.map((item, i) => (
                                     <tr key={i} className="group hover:bg-slate-50 transition-colors">
-                                        <td className="hidden md:table-cell px-8 py-5 text-[13px] font-black text-[#18357a]">{item.sno}</td>
+                                        <td className="hidden md:table-cell px-8 py-5 text-[13px] font-black text-[#224292]">{item.sno}</td>
                                         <td className="px-5 md:px-8 py-5 text-[14px] font-bold text-slate-800 tracking-tight">{item.desc}</td>
                                         <td className="px-5 md:px-8 py-5 text-[15px] font-black text-[#ffc107] text-right">{item.qty}</td>
                                     </tr>
@@ -132,10 +132,10 @@ const MediaCenterPage = () => {
                 <div className="space-y-12">
                     <div className="text-center space-y-4">
                         <div className="inline-flex items-center gap-4 py-2 px-6 bg-slate-100 rounded-full border border-slate-200">
-                            <MonitorPlay size={18} className="text-[#18357a]" />
-                            <span className="text-xs font-black text-[#18357a] uppercase tracking-widest">E-Learning Resource</span>
+                            <MonitorPlay size={18} className="text-[#224292]" />
+                            <span className="text-xs font-black text-[#224292] uppercase tracking-widest">E-Learning Resource</span>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black text-[#18357a] tracking-tighter">Multimedia <span className="text-[#ffc107]">Lecture Topics</span></h2>
+                        <h2 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tighter">Multimedia <span className="text-[#ffc107]">Lecture Topics</span></h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -155,7 +155,7 @@ const MediaCenterPage = () => {
                                     <PlayCircle size={16} className="text-[#ef4444] transition-colors" />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-[13px] font-bold text-slate-800 leading-tight group-hover:text-[#18357a] transition-colors">{topic.t}</p>
+                                    <p className="text-[13px] font-bold text-slate-800 leading-tight group-hover:text-[#224292] transition-colors">{topic.t}</p>
                                     <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Multimedia Module {i+1}</p>
                                 </div>
                             </motion.a>

@@ -35,11 +35,11 @@ const TrainingTeamSection = () => {
   return (
     <div className="mb-24 px-6 sm:px-10 lg:px-12">
       <div className="flex flex-col items-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#18357a]/5 border border-[#18357a]/10 mb-6">
-          <GraduationCap size={16} className="text-[#18357a]" />
-          <span className="text-[11px] font-bold text-[#18357a] tracking-widest">Our Expertise</span>
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10 mb-6">
+          <GraduationCap size={16} className="text-[#224292]" />
+          <span className="text-[11px] font-bold text-[#224292] tracking-widest">Our Expertise</span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-black text-[#0A1A3F] tracking-tighter text-center leading-tight">
+        <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter text-center leading-tight">
           Dedicated <span className="text-[#ffc107]">Training Team</span>
         </h2>
       </div>
@@ -53,7 +53,7 @@ const TrainingTeamSection = () => {
       >
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-[#18357a] text-white">
+            <tr className="bg-[#224292] text-white">
               <th className="px-10 py-6 text-xs font-black tracking-[0.2em]">Expert Faculty</th>
               <th className="px-10 py-6 text-xs font-black tracking-[0.2em]">Specialization</th>
               <th className="px-10 py-6 text-xs font-black tracking-[0.2em] text-center">Responsibility</th>
@@ -77,8 +77,8 @@ const TrainingTeamSection = () => {
                       )}
                     </div>
                     <div>
-                      <div className="font-black text-black text-base tracking-tight leading-tight mb-1 group-hover:text-[#18357a] transition-colors">{member.name}</div>
-                      <div className="text-[#18357a] text-[10px] font-black tracking-widest">{member.desig}</div>
+                      <div className="font-black text-black text-base tracking-tight leading-tight mb-1 group-hover:text-[#224292] transition-colors">{member.name}</div>
+                      <div className="text-[#224292] text-[10px] font-black tracking-widest">{member.desig}</div>
                     </div>
                   </div>
                 </td>
@@ -89,7 +89,7 @@ const TrainingTeamSection = () => {
                    </div>
                 </td>
                 <td className="px-10 py-5 text-center">
-                  <span className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-white border border-slate-100 text-[#18357a] text-[10px] font-black uppercase tracking-widest shadow-sm group-hover:bg-[#18357a] group-hover:text-white group-hover:border-[#18357a] transition-all duration-300">
+                  <span className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-white border border-slate-100 text-[#224292] text-[10px] font-black uppercase tracking-widest shadow-sm group-hover:bg-[#224292] group-hover:text-white group-hover:border-[#224292] transition-all duration-300">
                     <ShieldCheck size={14} />
                     Active Mentor
                   </span>
@@ -114,7 +114,7 @@ const TrainingTeamSection = () => {
               <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
             </div>
             <h3 className="text-lg font-black text-black leading-tight mb-1">{member.name}</h3>
-            <p className="text-[#18357a] text-[10px] font-black uppercase tracking-widest mb-4">{member.desig}</p>
+            <p className="text-[#224292] text-[10px] font-black uppercase tracking-widest mb-4">{member.desig}</p>
             <div className="w-full pt-4 border-t border-slate-50 flex flex-col items-center gap-2">
                <span className="text-[10px] font-black text-black tracking-widest">Responsibility</span>
                <p className="text-sm font-black text-black">{member.resp}</p>

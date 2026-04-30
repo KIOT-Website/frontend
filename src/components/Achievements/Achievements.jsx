@@ -69,7 +69,7 @@ const Achievements = () => {
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#18357a] py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-[#224292] py-20 lg:py-32">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: 'radial-gradient(circle at 20% 50%, #ffc107 1px, transparent 1px), radial-gradient(circle at 80% 20%, #ffc107 1px, transparent 1px)',
           backgroundSize: '60px 60px'
@@ -102,7 +102,7 @@ const Achievements = () => {
                     onClick={() => setCategory(cat)}
                     className={`flex-1 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
                       category === cat
-                        ? 'bg-[#18357a] text-white shadow-lg'
+                        ? 'bg-[#224292] text-white shadow-lg'
                         : 'text-[#64779F] hover:bg-white'
                     }`}
                   >
@@ -116,7 +116,7 @@ const Achievements = () => {
                  <select 
                    value={selectedDept}
                    onChange={e => setSelectedDept(e.target.value)}
-                   className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:border-[#18357a] appearance-none font-bold text-[#18357a] text-xs uppercase tracking-wider"
+                   className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:border-[#224292] appearance-none font-bold text-[#224292] text-xs uppercase tracking-wider"
                  >
                    {DEPARTMENTS.map(d => <option key={d} value={d}>{d}</option>)}
                  </select>
@@ -129,7 +129,7 @@ const Achievements = () => {
                  <select 
                    value={selectedYear}
                    onChange={e => setSelectedYear(e.target.value)}
-                   className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:border-[#18357a] appearance-none font-bold text-[#18357a] text-xs uppercase tracking-wider"
+                   className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:border-[#224292] appearance-none font-bold text-[#224292] text-xs uppercase tracking-wider"
                  >
                    {years.map(y => <option key={y} value={y}>{y}</option>)}
                  </select>
@@ -145,7 +145,7 @@ const Achievements = () => {
                     onClick={() => setSubCategory(sub)}
                     className={`flex-1 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
                       subCategory === sub
-                        ? 'bg-[#ffc107] text-[#18357a] shadow-lg shadow-[#ffc107]/20'
+                        ? 'bg-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20'
                         : 'text-[#64779F] hover:bg-white'
                     }`}
                   >
@@ -162,7 +162,7 @@ const Achievements = () => {
                   <span className="text-[10px] font-black text-[#64779F] uppercase tracking-widest mr-2">Filter Type:</span>
                   <div className="flex gap-2">
                     {['RANK', 'CONTEST'].map(type => (
-                      <button key={type} onClick={() => setStudentType(type)} className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${studentType === type ? 'bg-[#18357a] text-white border-[#18357a]' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-300'}`}>
+                      <button key={type} onClick={() => setStudentType(type)} className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${studentType === type ? 'bg-[#224292] text-white border-[#224292]' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-300'}`}>
                         {type}
                       </button>
                     ))}
@@ -175,14 +175,14 @@ const Achievements = () => {
         {/* Content Display */}
         {loading ? (
           <div className="flex flex-col items-center justify-center py-40 gap-4">
-             <Loader2 size={40} className="animate-spin text-[#18357a]" />
-             <p className="font-black text-[#18357a]/40 text-xs uppercase tracking-[0.2em] animate-pulse">Retrieving Hall of Fame Records...</p>
+             <Loader2 size={40} className="animate-spin text-[#224292]" />
+             <p className="font-black text-[#224292]/40 text-xs uppercase tracking-[0.2em] animate-pulse">Retrieving Hall of Fame Records...</p>
           </div>
         ) : data.length === 0 ? (
           <div className="bg-white rounded-[3rem] p-32 text-center border border-slate-100 shadow-sm relative overflow-hidden">
-             <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#18357a 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+             <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#224292 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
              <FileText size={64} className="mx-auto text-slate-100 mb-6" />
-             <h3 className="text-2xl font-black text-[#18357a] mb-2 uppercase tracking-tight">No Records Found</h3>
+             <h3 className="text-2xl font-black text-[#224292] mb-2 uppercase tracking-tight">No Records Found</h3>
              <p className="text-[#64779F] font-bold text-sm italic">"Excellence is not a destination, it's a journey. Currently searching this sector."</p>
           </div>
         ) : (
@@ -197,7 +197,7 @@ const Achievements = () => {
                  className="group bg-white rounded-[2.5rem] p-10 border border-slate-100 shadow-sm hover:shadow-2xl hover:border-[#ffc107]/30 transition-all h-full flex flex-col relative"
                >
                  <div className="flex items-center justify-between mb-8">
-                    <span className="px-4 py-1.5 rounded-lg bg-[#18357a]/5 text-[#18357a] text-[9px] font-black uppercase tracking-[0.15em]">
+                    <span className="px-4 py-1.5 rounded-lg bg-[#224292]/5 text-[#224292] text-[9px] font-black uppercase tracking-[0.15em]">
                        {item.department_name}
                     </span>
                     <div className="h-10 w-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-500 shadow-sm">
@@ -208,42 +208,42 @@ const Achievements = () => {
                  {category === 'AWARD' ? (
                    <>
                      <div className="h-14 w-1 bg-gradient-to-b from-[#ffc107] to-amber-600 rounded-full mb-8" />
-                     <h3 className="text-2xl font-black text-[#18357a] mb-4 leading-tight uppercase tracking-tight">{item.award_name}</h3>
-                     <p className="text-sm font-bold text-[#64779F]/70 italic mb-10 group-hover:text-[#18357a]/80 transition-colors">Distinguished recognition awarded for exceptional performance and technical leadership.</p>
+                     <h3 className="text-2xl font-black text-[#224292] mb-4 leading-tight uppercase tracking-tight">{item.award_name}</h3>
+                     <p className="text-sm font-bold text-[#64779F]/70 italic mb-10 group-hover:text-[#224292]/80 transition-colors">Distinguished recognition awarded for exceptional performance and technical leadership.</p>
                      <div className="mt-auto pt-8 border-t border-slate-50 flex items-center gap-4">
-                        <div className="h-12 w-12 bg-slate-50 rounded-2xl flex items-center justify-center text-[#A9B1C3] group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                        <div className="h-12 w-12 bg-slate-50 rounded-2xl flex items-center justify-center text-[#A9B1C3] group-hover:bg-[#224292] group-hover:text-white transition-all">
                            <Users size={20} />
                         </div>
                         <div>
                            <p className="text-[8px] font-black text-[#64779F] uppercase tracking-widest opacity-60">Recipient</p>
-                           <p className="text-sm font-black text-[#18357a] uppercase">{item.student_name || item.faculty_name}</p>
+                           <p className="text-sm font-black text-[#224292] uppercase">{item.student_name || item.faculty_name}</p>
                         </div>
                      </div>
                    </>
                  ) : subCategory === 'FACULTY' ? (
                    <>
-                     <div className="absolute top-0 right-0 p-8 text-[#18357a]/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                     <div className="absolute top-0 right-0 p-8 text-[#224292]/5 opacity-0 group-hover:opacity-100 transition-opacity">
                         <Star size={40} />
                      </div>
-                     <h3 className="text-2xl font-black text-[#18357a] mb-8 leading-tight group-hover:text-amber-600 transition-colors uppercase tracking-tight">{item.description}</h3>
+                     <h3 className="text-2xl font-black text-[#224292] mb-8 leading-tight group-hover:text-amber-600 transition-colors uppercase tracking-tight">{item.description}</h3>
                      <div className="mt-auto space-y-4 pt-8 border-t border-slate-50">
                         <div className="p-6 bg-slate-50 rounded-[2rem] border border-transparent group-hover:border-blue-100 transition-all">
                            <p className="text-[10px] font-black text-[#64779F] uppercase mb-2 tracking-widest">Milestone Context</p>
-                           <p className="text-sm font-bold text-[#18357a] leading-relaxed italic opacity-80">Acknowledged for substantial contribution to institutional growth and domain expertise.</p>
+                           <p className="text-sm font-bold text-[#224292] leading-relaxed italic opacity-80">Acknowledged for substantial contribution to institutional growth and domain expertise.</p>
                         </div>
                      </div>
                    </>
                  ) : studentType === 'RANK' ? (
                     <>
                        <div className="flex items-baseline gap-2 mb-2">
-                          <h3 className="text-[3.5rem] font-black text-[#18357a] tracking-tighter leading-none group-hover:text-[#ffc107] transition-colors">{item.university_rank}</h3>
+                          <h3 className="text-[3.5rem] font-black text-[#224292] tracking-tighter leading-none group-hover:text-[#ffc107] transition-colors">{item.university_rank}</h3>
                           <span className="text-sm font-black text-slate-400 uppercase tracking-widest">RANK</span>
                        </div>
                        <p className="text-amber-600 font-black text-[9px] uppercase tracking-[0.2em] mb-8 px-4 py-1.5 bg-amber-50 rounded-full inline-block border border-amber-100">University Premier</p>
                        <div className="space-y-4 mt-auto">
                           <div className="flex justify-between items-center py-3 border-b border-slate-50">
                              <span className="font-black text-[#64779F] uppercase text-[9px] tracking-widest">Candidate</span>
-                             <span className="font-black text-[#18357a] uppercase text-xs">{item.name}</span>
+                             <span className="font-black text-[#224292] uppercase text-xs">{item.name}</span>
                           </div>
                           <div className="flex justify-between items-center py-3 border-b border-slate-50">
                              <span className="font-black text-[#64779F] uppercase text-[9px] tracking-widest">Evaluation</span>
@@ -253,14 +253,14 @@ const Achievements = () => {
                     </>
                  ) : (
                    <>
-                     <div className="h-14 w-14 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-[#18357a] group-hover:text-white transition-all">
+                     <div className="h-14 w-14 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-[#224292] group-hover:text-white transition-all">
                         <FileText size={28} />
                      </div>
-                     <h3 className="text-2xl font-black text-[#18357a] mb-4 uppercase tracking-tight">Contest Honor</h3>
+                     <h3 className="text-2xl font-black text-[#224292] mb-4 uppercase tracking-tight">Contest Honor</h3>
                      <p className="text-sm font-bold text-[#64779F]/70 mb-10 italic leading-relaxed">Meritorious recognition achieved in high-level technical symposium / competition.</p>
                      <div className="mt-auto pt-8 border-t border-slate-50 flex justify-end">
                         {item.image_url && (
-                          <a href={item.image_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-3.5 bg-[#18357a] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-blue-900/10 hover:bg-[#224292] hover:scale-105 active:scale-95 transition-all">
+                          <a href={item.image_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-3.5 bg-[#224292] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-blue-900/10 hover:bg-[#224292] hover:scale-105 active:scale-95 transition-all">
                              View Certificate <ExternalLink size={14} />
                           </a>
                         )}
