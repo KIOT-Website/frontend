@@ -1,50 +1,52 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Users, Mail, ShieldCheck, GraduationCap, Award } from 'lucide-react'
+import { Users, Mail, ShieldCheck, Award } from 'lucide-react'
 
-// Image Imports
-import imgThangavel from '../../../assets/trainning team/Dr.M.Thangavel B.E., M.E., M.B.A., Ph.D.,.webp'
-import imgKarthikeyan from '../../../assets/trainning team/Prof. P. Karthikeyan B.E., M.E.,(Ph.D) MISTE..webp'
-import imgSakthivel from '../../../assets/trainning team/Dr.M.Sakthivel B.E., M.E., Ph.D.,.webp'
-import imgGunasekar from '../../../assets/trainning team/Mr.B.Gunasekar B.E.,M.E.,.webp'
-import imgKrishnan from '../../../assets/trainning team/Mr.L.Krishnan B.E.,M.E.,.webp'
-import imgKathiresan from '../../../assets/trainning team/Mr.R.Kathiresan B.E.,M.E.,.webp'
-import imgVeerakumar from '../../../assets/trainning team/Mr.S.Veerakumar B.E.,M.E.,.webp'
-import imgSudha from '../../../assets/trainning team/Mrs. B.Sudha M.Sc.,M.Ed.,.webp'
-import imgSaranya from '../../../assets/trainning team/Mrs. M. SARANYA B.E.,M.E..webp'
-import imgRubigha from '../../../assets/trainning team/Mrs.M.Rubigha B.E., M.E.,.webp'
-import imgMahalakshmi from '../../../assets/trainning team/Mrs.P.Mahalakshmi M.A.,.webp'
-import imgYudhayapriya from '../../../assets/trainning team/Mrs.R.Yudhayapriya B.E.,M.E.,.webp'
+// Image Imports from pteam folder
+import imgThangavel from '../../../assets/placements/pteam/Dr.M.Thangavel B.E., M.E., M.B.A., Ph.D.,.png'
+import imgSakthivel from '../../../assets/placements/pteam/Dr.M.Sakthivel B.E., M.E., Ph.D.,.jpg'
+import imgLavanya from '../../../assets/placements/pteam/Mrs.S.Lavanya B.E., M.E., (Ph.D).png'
+import imgSangavi from '../../../assets/placements/pteam/Mrs. K. Sangavi B.Tech..png'
+import imgKrishnapriya from '../../../assets/placements/pteam/Mrs. K. Krishnapriya M.A., B.Ed.,.jpg'
+import imgHemalatha from '../../../assets/placements/pteam/Mrs.M. Hemalatha M.A.,NET.,.jpg'
+import imgVeerakumar from '../../../assets/placements/pteam/Mr.S.Veerakumar B.E.,M.E.,.jpg'
+import imgSaranya from '../../../assets/placements/pteam/Mrs. M. Saranya B.E.,M.E..png'
+import imgKathiresan from '../../../assets/placements/pteam/Mr.R.Kathiresan B.E.,M.E.,.jpg'
+import imgSurendar from '../../../assets/placements/pteam/Mr.S.Surendar B.E.,M.E.,.jpg'
+import imgRubigha from '../../../assets/placements/pteam/Mrs.M.Rubigha B.E., M.E.,.jpg'
+import imgYudhayapriya from '../../../assets/placements/pteam/Mrs.R.Yudhayapriya B.E.,M.E.,.jpg'
+import imgGunasekar from '../../../assets/placements/pteam/Mr.B.Gunasekar B.E.,M.E.,.jpg'
+import imgMahalakshmi from '../../../assets/placements/pteam/Mrs.P.Mahalakshmi M.A.,.png'
+import imgSudha from '../../../assets/placements/pteam/Mrs. B.Sudha M.Sc.,M.Ed.,.jpg'
 
 const trainingTeam = [
-  { name: "Dr. M. Thangavel B.E., M.E., M.B.A., Ph.D.", desig: "Head – Training & Development", resp: "Core Training Strategy", image: imgThangavel },
-  { name: "Prof. P. Karthikeyan B.E., M.E., (Ph.D.)", desig: "Placement & Training Officer", resp: "Technical & Aptitude Lead", image: imgKarthikeyan },
-  { name: "Dr. M. Sakthivel B.E., M.E., Ph.D.", desig: "Assistant Professor", resp: "Technical Training Coordinator", image: imgSakthivel },
-  { name: "Mr. B. Gunasekar B.E., M.E.", desig: "Assistant Professor", resp: "Skill Development Mentor", image: imgGunasekar },
-  { name: "Mr. L. Krishnan B.E., M.E.", desig: "Assistant Professor", resp: "Industry Projects Lead", image: imgKrishnan },
-  { name: "Mr. R. Kathiresan B.E., M.E.", desig: "Assistant Professor", resp: "Aptitude Training Specialist", image: imgKathiresan },
-  { name: "Mr. S. Veerakumar B.E., M.E.", desig: "Assistant Professor", resp: "Coding & Technical Mentor", image: imgVeerakumar },
-  { name: "Mrs. B. Sudha M.Sc., M.Ed.", desig: "Soft Skills Trainer", resp: "Communication & Verbal Lead", image: imgSudha },
-  { name: "Mrs. M. Saranya B.E., M.E.", desig: "Assistant Professor", resp: "Placement Coordinator", image: imgSaranya },
-  { name: "Mrs. M. Rubigha B.E., M.E.", desig: "Assistant Professor", resp: "Technical Mentor", image: imgRubigha },
-  { name: "Mrs. P. Mahalakshmi M.A.", desig: "Assistant Professor", resp: "Verbal Ability Trainer", image: imgMahalakshmi },
-  { name: "Mrs. R. Yudhayapriya B.E., M.E.", desig: "Assistant Professor", resp: "Technical Training Specialist", image: imgYudhayapriya }
+  { sNo: 1, name: "Dr. M. Thangavel B.E., M.E., M.B.A., Ph.D.", desig: "Professor / ECE", resp: "Director (C-CDT)", email: "directorcdt@kiot.ac.in", phone: "97510 71717 & 97900 71717", image: imgThangavel },
+  { sNo: 2, name: "Dr. M. Sakthivel B.E., M.E., Ph.D.", desig: "Associate Professor / CSE", resp: "Deputy Director (C-CDT)", email: "ddcdt@kiot.ac.in", image: imgSakthivel },
+  { sNo: 3, name: "Mrs. S. Lavanya B.E., M.E., Ph.D", desig: "Assistant Professor / IT", resp: "Technical Trainer - CDT", email: "slait@kiot.ac.in", image: imgLavanya },
+  { sNo: 4, name: "Mrs. K. Sangavi B.Tech.", desig: "Aptitude trainer - CDT", email: "skcdt@kiot.ac.in", image: imgSangavi },
+  { sNo: 5, name: "Mrs. K. Krishnapriya M.A., B.Ed.", desig: "Communication Trainer", email: "kkcdt@kiot.ac.in", image: imgKrishnapriya },
+  { sNo: 6, name: "Mrs. M. Hemalatha M.A., NET.,", desig: "Assistant Professor / EEE-S&H", resp: "Communication Trainer", email: "mheng@kiot.ac.in", image: imgHemalatha },
+  { sNo: 7, name: "Mr. S. Veerakumar B.E., M.E.", desig: "Assistant Professor / ECE", resp: "Training Coordinator / ECE", email: "svkece@kiot.ac.in", image: imgVeerakumar },
+  { sNo: 8, name: "Mrs. M. Saranya B.E., M.E.", desig: "Assistant Professor / CSE", resp: "Training Coordinator / CSE", email: "msarcse@kiot.ac.in", image: imgSaranya },
+  { sNo: 9, name: "Mr. R. Kathiresan B.E., M.E.", desig: "Assistant Professor / EEE", resp: "Training Coordinator / EEE", email: "rkeee@kiot.ac.in", image: imgKathiresan },
+  { sNo: 10, name: "Mr. S. Surendar B.E., M.E.", desig: "Assistant Professor / MECH", resp: "Training Coordinator / MECH", email: "ssumech@kiot.ac.in", image: imgSurendar },
+  { sNo: 11, name: "Mrs. M. Rubigha B.E., M.E.", desig: "Assistant Professor / IT", resp: "Training Coordinator / IT", email: "mrit@kiot.ac.in", image: imgRubigha },
+  { sNo: 13, name: "Mrs. R. Yudhayapriya B.E., M.E.", desig: "Assistant Professor / CSBS", resp: "Training Coordinator / CSBS", email: "krcsbs@kiot.ac.in", image: imgYudhayapriya },
+  { sNo: 14, name: "Mr. B. Gunasekar B.E., M.E.", desig: "Assistant Professor / AI&DS", resp: "Training Coordinator / AI&DS", email: "bgaids@kiot.ac.in", image: imgGunasekar },
+  { sNo: 15, name: "Mrs. P. Mahalakshmi M.A.", desig: "Programmer", resp: "Administrative Support", email: "toa@kiot.ac.in", image: imgMahalakshmi },
+  { sNo: 16, name: "Mrs. B. Sudha M.Sc., M.Ed.", desig: "Junior Assistant", resp: "Administrative Support", email: "cdtdeo@kiot.ac.in", image: imgSudha }
 ];
 
 const TrainingTeamSection = () => {
   return (
-    <div className="mb-24 px-6 sm:px-10 lg:px-12">
-      <div className="flex flex-col items-center mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10 mb-6">
-          <GraduationCap size={16} className="text-[#224292]" />
-          <span className="text-[11px] font-bold text-[#224292] tracking-widest">Our Expertise</span>
-        </div>
-        <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter text-center leading-tight">
+    <div className="max-w-7xl mx-auto px-6 mb-24 font-graphik">
+      <div className="flex flex-col mb-12">
+        <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter leading-tight">
           Dedicated <span className="text-[#ffc107]">Training Team</span>
         </h2>
       </div>
 
-      {/* Desktop view: Table Design with Premium Look */}
+      {/* Desktop view: Table Design */}
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -54,9 +56,9 @@ const TrainingTeamSection = () => {
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-[#224292] text-white">
-              <th className="px-10 py-6 text-xs font-black tracking-[0.2em]">Expert Faculty</th>
-              <th className="px-10 py-6 text-xs font-black tracking-[0.2em]">Specialization</th>
-              <th className="px-10 py-6 text-xs font-black tracking-[0.2em] text-center">Responsibility</th>
+              <th className="px-8 py-6 text-[14px] font-black tracking-tight">Faculty</th>
+              <th className="px-8 py-6 text-[14px] font-black tracking-tight">Role & Responsibility</th>
+              <th className="px-8 py-6 text-[14px] font-black tracking-tight">Contact Details</th>
             </tr>
           </thead>
           <tbody>
@@ -65,34 +67,39 @@ const TrainingTeamSection = () => {
                 key={idx} 
                 className={`group transition-all duration-300 ${idx % 2 === 0 ? 'bg-slate-50/50' : 'bg-white'} hover:bg-[#ffc107]/5`}
               >
-                <td className="px-10 py-5">
+                <td className="px-8 py-5">
                   <div className="flex items-center gap-5">
-                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border-2 border-slate-100 group-hover:border-[#ffc107] transition-all duration-500 bg-white shadow-sm">
+                    <div className="relative h-20 w-16 shrink-0 overflow-hidden rounded-2xl border-2 border-slate-100 group-hover:border-[#ffc107] transition-all duration-500 bg-white shadow-sm">
                       {member.image ? (
-                        <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
+                        <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top" />
                       ) : (
-                        <div className="h-full w-full flex items-center justify-center bg-slate-50 text-slate-300">
-                          <Users size={24} />
+                        <div className="h-full w-full flex items-center justify-center bg-slate-50 text-slate-300 uppercase font-black text-[10px]">
+                           {member.desig.charAt(0)}
                         </div>
                       )}
                     </div>
                     <div>
-                      <div className="font-black text-black text-base tracking-tight leading-tight mb-1 group-hover:text-[#224292] transition-colors">{member.name}</div>
-                      <div className="text-[#224292] text-[10px] font-black tracking-widest">{member.desig}</div>
+                      <div className="font-black text-black text-[14px] tracking-tight leading-tight mb-1 group-hover:text-[#224292] transition-colors">{member.name}</div>
+                      <div className="text-[#224292] text-[13px] font-bold tracking-tight">{member.desig}</div>
                     </div>
                   </div>
                 </td>
-                <td className="px-10 py-5">
+                <td className="px-8 py-5">
                    <div className="flex items-center gap-2">
                       <Award size={14} className="text-[#ffc107]" />
-                      <span className="text-black font-bold text-sm uppercase tracking-tight">{member.resp}</span>
+                      <span className="text-black font-bold text-[13px] tracking-tight">{member.resp || "CDT Trainer"}</span>
                    </div>
                 </td>
-                <td className="px-10 py-5 text-center">
-                  <span className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-white border border-slate-100 text-[#224292] text-[10px] font-black uppercase tracking-widest shadow-sm group-hover:bg-[#224292] group-hover:text-white group-hover:border-[#224292] transition-all duration-300">
-                    <ShieldCheck size={14} />
-                    Active Mentor
-                  </span>
+                <td className="px-8 py-5">
+                   <div className="space-y-1">
+                      <div className="flex items-center gap-2 text-black transition-colors">
+                         <Mail size={12} />
+                         <span className="text-[13px] font-bold">{member.email}</span>
+                      </div>
+                      {member.phone && (
+                         <div className="text-[13px] font-bold text-black tracking-tight ml-5">{member.phone}</div>
+                      )}
+                   </div>
                 </td>
               </tr>
             ))}
@@ -110,14 +117,20 @@ const TrainingTeamSection = () => {
             viewport={{ once: true }}
             className="bg-white rounded-3xl p-6 shadow-xl shadow-black/[0.02] border border-slate-100 flex flex-col items-center text-center group"
           >
-            <div className="w-24 h-24 rounded-[2rem] overflow-hidden border-4 border-white shadow-lg mb-4 group-hover:rotate-3 transition-transform duration-500">
-              <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+            <div className="w-24 h-24 rounded-[2rem] overflow-hidden border-4 border-white shadow-lg mb-4 group-hover:rotate-3 transition-transform duration-500 bg-slate-50">
+              {member.image ? (
+                <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-slate-300 font-black text-2xl uppercase">
+                  {member.desig.charAt(0)}
+                </div>
+              )}
             </div>
             <h3 className="text-lg font-black text-black leading-tight mb-1">{member.name}</h3>
             <p className="text-[#224292] text-[10px] font-black uppercase tracking-widest mb-4">{member.desig}</p>
             <div className="w-full pt-4 border-t border-slate-50 flex flex-col items-center gap-2">
-               <span className="text-[10px] font-black text-black tracking-widest">Responsibility</span>
-               <p className="text-sm font-black text-black">{member.resp}</p>
+               <span className="text-[11px] font-black text-black tracking-tight">{member.resp || "CDT Trainer"}</span>
+               <p className="text-[11px] font-bold text-black">{member.email}</p>
             </div>
           </motion.div>
         ))}

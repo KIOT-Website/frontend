@@ -1,4 +1,4 @@
-import { Cpu, Globe, Wrench, BookOpen, FlaskConical, Zap, BarChart3, Layers, Award, TrendingUp, ShieldCheck, Car, Microscope, Flame, Settings, MonitorDot, CircuitBoard, Ruler, PenTool, Droplets, Wind, Building2, Terminal, Monitor, Code, Radio, Rocket } from 'lucide-react'
+import { Cpu, Activity, Globe, Wrench, BookOpen, FlaskConical, Zap, BarChart3, Layers, Award, TrendingUp, ShieldCheck, Car, Microscope, Flame, Settings, MonitorDot, CircuitBoard, Ruler, PenTool, Droplets, Wind, Building2, Terminal, Monitor, Code, Radio, Rocket } from 'lucide-react'
 import balajiImage from '../assets/main/balaji.9da24d6e942fe40a1258.webp'
 
 export const courseData = {
@@ -1483,7 +1483,7 @@ export const courseData = {
     duration: '4 Years (8 Semesters)',
     intake: 60,
     affiliation: 'Anna University',
-    accreditation: 'NBA Accredited',
+    accreditation: 'Undergraduate Program',
     placement: '93%',
     avgPackage: '5.5 LPA',
     topPackage: '22 LPA',
@@ -1494,11 +1494,11 @@ export const courseData = {
       "Department of Computer Science and Business Systems (CSBS) at the Knowledge Institute of Technology (KIOT), established in 2020, offers a B.Tech programme designed to bridge the gap between technology and business. The department is supported by experienced and dedicated faculty from reputed institutions and industry backgrounds, aiming to develop globally competent and socially responsible graduates. The curriculum is aligned with the evolving demands of the IT industry, particularly in the era of Business 4.0, and covers emerging areas such as analytics, machine learning, deep learning, cloud computing, Internet of Things, mobile computing, and design thinking. The programme emphasizes innovation, research, and industry adaptability to equip students with strong technical and professional skills.",
       "Students are trained to handle the development, management, and maintenance of modern computing systems across domains including software, hardware, artificial intelligence, data mining, and information security. The department encourages active participation through clubs such as the Business Engineers and Innovators (BEI) Club, Full Stack Developers Club, and Frontier Area Awareness Club, along with memberships in professional bodies like ISTE and IEEE. Regular workshops, symposiums, and faculty development programmes enhance academic quality and practical exposure. With strong industry connections, leading companies such as TCS, Amazon, Zoho, Infosys, Cognizant, Wipro, and others actively recruit students, ensuring promising career opportunities."
     ],
-    vision: "To excel in Computer Science and Business Systems education by producing globally competent professionals with technical, managerial, and ethical values.",
-    mission: "M1 To impart quality education in computer science and business systems through innovative teaching–learning practices and state-of-the-art infrastructure.\nM2 To collaborate with industry for training, internships, and research in emerging technologies with a focus on sustainability.\nM3 To nurture graduates with leadership qualities, entrepreneurial mindset, ethical values, and social responsibility.",
-    peo: "PEO-1: Apply fundamental knowledge of computer science and business systems to build successful careers in industry, academia, or entrepreneurship.\n\nPEO-2: Design and develop integrated computing and business solutions to address real-world problems effectively.\n\nPEO-3: Demonstrate leadership, teamwork, ethical practices, and lifelong learning in a dynamic professional environment.",
+    vision: "To produce globally competent professionals in Computer Science and Business Systems with technical, managerial capabilities and ethical values.",
+    mission: "To impart quality education in computer science and business systems through innovative teaching–learning practices and state-of-the-art infrastructure.\nTo enhance employability skills through industry interaction, internships and training in emerging technologies with a focus on sustainability.\nTo nurture graduates with leadership qualities, entrepreneurial mindset, ethical values and social responsibility.",
+    peo: "The Graduates of Computer Science and Business Systems will be able to:\nPEO1: Apply fundamental knowledge of computer science and business systems to build successful careers in industry, academia and entrepreneurship.\nPEO2: Design and develop integrated computing and business solutions to address real-world problems effectively.\nPEO3: Demonstrate leadership, teamwork, ethical practices and lifelong learning in a dynamic professional environment.",
     po: "PO-1: Engineering Knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\n\nPO-2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\n\nPO-3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\n\nPO-4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\n\nPO-5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\n\nPO-6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\n\nPO-7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\n\nPO-8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\n\nPO-9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\n\nPO-10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\n\nPO-11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\n\nPO-12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
-    pso: "PSO-1: Apply computing and business knowledge to develop sustainable solutions.\n\nPSO-2: Develop scalable enterprise applications using tools and technologies.\n\nPSO-3: Integrate business processes with computing for data-driven decisions.",
+    pso: "After successful completion of B.TECH. Programme in Computer Science and Business Systems, the graduates will be able to:\nPSO1: Apply computing and business knowledge to develop sustainable solutions.\nPSO2: Develop scalable enterprise applications using tools and technologies.\nPSO3: Integrate business processes with computing for data-driven decisions.",
     whyChoose: ['Curriculum designed by TCS', 'Tech + Management focus'],
     curriculum: [{ year: 'Year 1', semesters: ['Maths', 'Business Systems'] }],
     faculty: [
@@ -1542,7 +1542,7 @@ export const courseData = {
     duration: '4 Years (8 Semesters)',
     intake: 60,
     affiliation: 'Anna University',
-    accreditation: 'NBA Accredited',
+    accreditation: 'Undergraduate Program',
     placement: '90%',
     avgPackage: '4.5 LPA',
     topPackage: '18 LPA',
@@ -1575,7 +1575,7 @@ export const courseData = {
     duration: '4 Years (8 Semesters)',
     intake: 30,
     affiliation: 'Anna University',
-    accreditation: 'NBA Accredited',
+    accreditation: 'Undergraduate Program',
     placement: '88%',
     avgPackage: '3.8 LPA',
     topPackage: '10 LPA',
@@ -1603,7 +1603,7 @@ export const courseData = {
     duration: '4 Years (8 Semesters)',
     intake: 120,
     affiliation: 'Anna University',
-    accreditation: 'NBA Accredited',
+    accreditation: 'Undergraduate Program',
     placement: '95%',
     avgPackage: '5.5 LPA',
     topPackage: '22 LPA',
@@ -1614,10 +1614,11 @@ export const courseData = {
       "Department of Artificial Intelligence and Data Science at the Knowledge Institute of Technology (KIOT), established in 2021, is designed to meet the demands of today’s digital era. This undergraduate programme equips students with a strong foundation in core areas such as artificial intelligence, data mining, and data modeling, while also providing advanced exposure to machine learning and big data analytics. With a focus on academic excellence and research-driven learning, the department enables students to explore real-world applications and build industry-relevant skills.",
       "Supported by a team of experienced and dedicated faculty, the department fosters an engaging learning environment through innovative teaching methodologies, well-equipped laboratories with high-end systems, and essential software tools. Regular industrial visits, guest lectures, workshops, and technical events enhance both technical and professional development. The programme prepares students with interdisciplinary expertise across statistics, computer science, and AI domains, opening diverse career opportunities in industries such as IT, healthcare, banking, e-commerce, and intelligent systems."
     ],
-    vision: "To create globally competent industry-ready graduates in the field of Artificial Intelligence and Data Science to solve societal problems through cutting-edge research and entrepreneurship skills with values and ethics.",
-    mission: "To inculcate innovation and creativity through experiential learning with the modern infrastructure and technologies\nTo collaborate with the industry for enhancing the students’ research ability on cutting edge technologies of AI and Data Science\nTo develop competent industry-ready professionals with right attitude, values and ethics",
-    peo: "PEO-1: Perform data processing, analysis and visualization in real time applications for better prediction and data-driven decision making\n\nPEO-2: Enable multitasking for existing resources and execute complex tasks using Artificial Intelligence\n\nPEO-3: Carry out fundamental research to cater the critical needs of the society through cutting edge technologies of AI",
-    pso: "PSO-1: Apply the concepts of Machine Learning and Data Science to solve the real time business problems\n\nPSO-2: Exhibit their professional skills in team building, leadership, communication, values and ethics\n\nPSO-3: Build a suitable model to assist business analytics and helps solving business problems",
+    vision: "To be a world class institution to impart value and need based professional education to the aspiring youth and carving them into disciplined world class professional who have the quest for excellence, achievement orientation and social responsibilities.",
+    mission: "To promote academic growth by offering state-of-art undergraduate, postgraduate, and doctoral PROGRAMs and to generate new knowledge by engaging in cutting – edge research.\nTo nurture talent, innovation, entrepreneurship, all-round personality, and value system among the students and to foster competitiveness among students.\nTo undertake collaborative projects which offer opportunities for long-term interaction with academia and industry.\nTo pursue global standards of excellence in all our endeavors namely teaching, research, consultancy, continuing education and support functions.",
+    peo: "The program Educational Objectives (PEOs) of the Department represent major accomplishments that the graduates are expected to achieve after three to five years of graduation.\nPEO – 1: Perform data processing, analysis and visualization in real time applications for better prediction and data-driven decision making.\nPEO – 2: Enable multitasking for existing resources and execute complex tasks using Artificial Intelligence.\nPEO – 3: Carry out fundamental research to cater the critical needs of the society through cutting edge technologies of AI.",
+    po: "The graduates of Artificial Intelligence and Data Science will be able to:\nPO – 1: Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\nPO – 2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\nPO – 3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\nPO – 4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\nPO – 5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\nPO – 6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\nPO – 7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\nPO – 8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\nPO – 9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\nPO – 10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\nPO – 11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\nPO – 12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
+    pso: "After the successful completion of B.Tech. PROGRAMme in Artificial Intelligence and Data Science, the graduates will able to\nPSO – 1: Apply the concepts of Machine Learning and Data Science to solve the real time business problems. \nPSO – 2: Exhibit their professional skills in team building, leadership, communication, values and ethics. \nPSO – 3: Build a suitable model to assist business analytics and helps solving business problems.",
     whyChoose: ['AI focus', 'Data engineering specialisation'],
     curriculum: [{ year: 'Year 1', semesters: ['Data Science Fundamentals', 'Probability'] }],
     faculty: [
@@ -1645,20 +1646,34 @@ export const courseData = {
     ],
     labs: [
       { 
+        name: 'AI LAB', 
+        equipments: [
+          'Area: 768 Sq.ft', 
+          'Systems: 38 High-performance computers', 
+          'Software: Python, Java, MySQL, Power BI, Visual Studio',
+          'Focus: AI & ML Algorithms, Data Analytics'
+        ], 
+        icon: Cpu 
+      },
+      { 
         name: 'Data Science and Analytics Laboratory', 
-        equipments: ['Area: 103.05 Sq.m', 'Workstations: 40 Systems', 'High-performance computing nodes', 'NVIDIA GPUs for Deep Learning'], 
+        equipments: [
+          'Area: 103.05 Sq.m', 
+          'Systems: 40 Workstations', 
+          'Software: Turbo C, C++, JDK 1.9, Python, PostgreSQL, Visual Studio',
+          'Focus: Programming, Data Handling, and Analytical Skills'
+        ], 
         icon: Terminal 
       },
       { 
-        name: 'Software Infrastructure & Licenses', 
+        name: 'COE LAB', 
         equipments: [
-          'Turbo C (Open Source)', 
-          'C++ (Open Source)', 
-          'JDK 1.9 (Open Source)', 
-          'Python (Open Source)', 
-          'PostgreSQL (Open Source)'
+          'Area: 546 Sq.ft', 
+          'Systems: 20 Systems', 
+          'Software: OpenCV, TensorFlow, PyTorch, Flask, MySQL, JDE',
+          'Focus: Deep Learning, Business Analytics, Enterprise Applications'
         ], 
-        icon: ShieldCheck 
+        icon: Activity 
       }
     ],
     placementStats: { placed: '95%', avg: '5.5 LPA', top: '22 LPA', companies: '70+' },

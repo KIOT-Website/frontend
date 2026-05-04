@@ -1,71 +1,68 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { 
-  Zap, ShieldCheck, Users, Lightbulb, Wallet, 
-  Clock, Award, CheckCircle2, TrendingUp, Target, BarChart, Heart, Trophy, Briefcase, ArrowRight
+  MessageSquare, Brain, Code, Clock, 
+  BarChart, Trophy, Star, Target, Users,
+  Briefcase, Zap, TrendingUp, Award, ArrowRight
 } from 'lucide-react'
 
-const lifeSkills = [
-  {
-    title: "Soft Skills for Life",
-    hours: "30 Hours",
-    icon: Zap,
-    color: "#ffc107",
-    desc: "Building confidence, adaptability, and professional etiquette."
-  },
-  {
-    title: "Values & Ethics",
-    hours: "40 Hours",
-    icon: ShieldCheck,
-    color: "#224292",
-    desc: "Instilling integrity, responsibility, and ethical decision-making."
-  },
-  {
-    title: "Interpersonal Skills",
-    hours: "30 Hours",
-    icon: Users,
-    color: "#ffc107",
-    desc: "Enhancing teamwork, relationship-building, and communication in diverse environments."
-  },
-  {
-    title: "Leadership & Entrepreneurial Skills",
-    hours: "60 Hours",
-    icon: Lightbulb,
-    color: "#224292",
-    desc: "Developing leadership mindset and innovation-driven thinking."
-  },
-  {
-    title: "Personal Finance Planning",
-    hours: "20 Hours",
-    icon: Wallet,
-    color: "#ffc107",
-    desc: "Educating students on financial literacy and responsible money management."
-  }
-];
+const trackData = {
+  title: "Employability Track",
+  cards: [
+    {
+      title: "Communication Skills",
+      hours: "300+ Hours",
+      icon: MessageSquare,
+      color: "#ffc107",
+      desc: "Enhancing verbal, non-verbal, and written communication for professional excellence."
+    },
+    {
+      title: "Aptitude & Problem-Solving Skills",
+      hours: "300 Hours",
+      icon: Brain,
+      color: "#224292",
+      desc: "Strengthening analytical thinking, logical reasoning, and quantitative ability."
+    },
+    {
+      title: "Programming Skills",
+      hours: "350 Hours",
+      icon: Code,
+      color: "#ffc107",
+      desc: "Developing strong coding proficiency and problem-solving using modern technologies."
+    },
+    {
+      title: "Group Discussion Skills",
+      hours: "50 Hours",
+      icon: Users,
+      color: "#224292",
+      desc: "Training students to articulate ideas clearly and participate effectively in group settings."
+    },
+    {
+      title: "Interview Skills",
+      hours: "50 Hours",
+      icon: Target,
+      color: "#ffc107",
+      desc: "Preparing students for HR and technical interviews through mock sessions and feedback."
+    }
+  ]
+};
 
-const benefits = [
-  { title: "Industry-ready skills from day one", icon: Briefcase },
-  { title: "Better opportunities with top recruiters", icon: Zap },
-  { title: "Higher confidence and career growth", icon: TrendingUp },
-  { title: "Stronger foundation for lifelong success", icon: Award }
-];
-
-const LifeSkillsSection = () => {
+const EmployabilitySection = () => {
   return (
     <div className="max-w-7xl mx-auto px-6 mb-12 font-graphik">
       {/* Header Section */}
       <div className="mb-8">
         <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter mb-4">
-          Life Skills <span className="text-[#ffc107]">Track</span>
+          Employability <span className="text-[#ffc107]">Skills Track</span>
         </h2>
         <p className="max-w-3xl text-black font-bold text-[15px] leading-relaxed mb-6">
-          This track nurtures personal growth, emotional intelligence, and leadership qualities essential for long-term success.
+          This track focuses on building core competencies required to succeed in recruitment processes and professional roles.
         </p>
       </div>
 
       {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-        {lifeSkills.map((card, idx) => (
+        {trackData.cards.map((card, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +73,7 @@ const LifeSkillsSection = () => {
           >
             {/* Top accent line */}
             <div className="h-1.5 w-full" style={{ backgroundColor: card.color }} />
-
+            
             <div className="p-5 flex-1">
                <div className="flex items-center justify-between mb-4">
                   <div className="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-[#224292] border border-slate-100/50">
@@ -96,9 +93,8 @@ const LifeSkillsSection = () => {
           </motion.div>
         ))}
       </div>
-
     </div>
   )
 }
 
-export default LifeSkillsSection
+export default EmployabilitySection

@@ -1,7 +1,8 @@
 import React from 'react'
 import HeaderSection from './HeaderSection'
-import TracksSection from './TracksSection'
+import EmployabilitySection from './EmployabilitySection'
 import LifeSkillsSection from './LifeSkillsSection'
+import FeaturesSection from './FeaturesSection'
 import TrainingTeamSection from './TrainingTeamSection'
 import { motion } from 'framer-motion'
 import { Sparkles, BookOpen, Monitor, Briefcase, Trophy, Library, Code2, Building2, Users } from 'lucide-react'
@@ -65,18 +66,11 @@ const TrainingFlow = () => {
   return (
     <div className="mb-24">
        {/* Header */}
-       <div className="flex flex-col items-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10 mb-6">
-             <div className="w-6 h-6 rounded-full bg-[#224292] flex items-center justify-center text-white">
-                <Sparkles size={12} />
-             </div>
-             <span className="text-[10px] font-black text-[#224292] uppercase tracking-widest">Training Roadmap</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter text-center mb-4 leading-tight">
+       <div className="flex flex-col mb-12">
+          <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter mb-4 leading-tight">
              Student Success <span className="text-[#ffc107]">Journey</span>
           </h2>
-          <div className="w-16 h-1.5 bg-[#ffc107] mb-6 rounded-full" />
-          <p className="max-w-2xl text-center text-black font-bold text-sm leading-relaxed px-6">
+          <p className="max-w-2xl text-black font-bold text-[15px] leading-relaxed">
              A step-by-step journey designed to build skills, gain experience, and unlock career opportunities.
           </p>
        </div>
@@ -128,9 +122,10 @@ const TrainingOverview = () => {
       
       <section className="relative z-10 max-w-7xl mx-auto">
         <HeaderSection />
-        <TracksSection />
+        <EmployabilitySection />
         <LifeSkillsSection />
-        <div className="px-6 sm:px-10 lg:px-12">
+        <FeaturesSection />
+        <div className="px-6">
           <TrainingFlow />
         </div>
         <TrainingTeamSection />

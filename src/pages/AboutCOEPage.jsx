@@ -61,22 +61,22 @@ const AboutCOEPage = () => {
         <div className="min-h-screen bg-[#FDFDFD] font-graphik pb-10 pt-10">
             
             {/* ─── VISION SECTION ─── */}
-            <div className="max-w-[1400px] mx-auto px-6 relative z-20">
+            <div className="max-w-[1400px] mx-auto px-0 sm:px-6 relative z-20">
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-[2rem] border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden relative"
+                    className="bg-white rounded-none sm:rounded-[2rem] border-y sm:border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden relative"
                 >
                     <div className="flex flex-col lg:flex-row items-stretch">
-                        <div className="lg:w-3/5 p-8 lg:p-12 space-y-12 relative z-10 bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:24px_24px]">
-                            <div className="space-y-12 relative">
-                                <div className="absolute left-[20px] top-4 bottom-4 w-0 border-l-[1.5px] border-dashed border-[#224292]/10 z-0" />
+                        <div className="lg:w-3/5 p-5 sm:p-12 space-y-8 lg:space-y-12 relative z-10 bg-[radial-gradient(#d1d5db_1px,transparent_1px)] [background-size:24px_24px]">
+                            <div className="space-y-8 lg:space-y-12 relative">
+                                <div className="absolute left-[20px] top-4 bottom-4 w-0 border-l-[1.5px] border-dashed border-[#224292]/10 z-0 hidden sm:block" />
                                 {visionPoints.map((point, i) => (
-                                    <div key={i} className="flex gap-6 group items-start relative z-10">
-                                        <div className="w-10 h-10 bg-[#224292] rounded-full flex items-center justify-center text-white shrink-0 shadow-lg ring-[8px] ring-white transition-transform group-hover:scale-110">
-                                            <point.icon size={16} />
+                                    <div key={i} className="flex gap-3 sm:gap-6 group items-start relative z-10">
+                                        <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#224292] rounded-full flex items-center justify-center text-white shrink-0 shadow-lg ring-[6px] sm:ring-[8px] ring-white transition-transform group-hover:scale-110">
+                                            <point.icon size={14} className="sm:size-[16px]" />
                                         </div>
-                                        <p className="text-[15px] text-slate-600 font-medium leading-relaxed pt-2">
+                                        <p className="text-[13.5px] lg:text-[15px] text-black font-bold leading-relaxed pt-1 lg:pt-2 text-justify">
                                             {point.text}
                                         </p>
                                     </div>
@@ -84,24 +84,11 @@ const AboutCOEPage = () => {
                             </div>
                         </div>
 
-                        <div className="lg:w-2/5 flex flex-col justify-between relative overflow-hidden bg-slate-50/30">
+                        <div className="hidden lg:flex lg:w-2/5 flex-col justify-between relative overflow-hidden bg-slate-50/30">
                             <div className="p-12 flex justify-center items-center flex-1">
                                 <div className="relative scale-110">
-                                    <div className="absolute inset-0 bg-[#224292]/5 rounded-full blur-3xl scale-150" />
-                                    <img src="/coe-illustration.png" alt="COE Vision" className="w-full max-w-sm h-auto relative z-10 mix-blend-multiply" />
+                                    <img src="/coe-illustration-clean.png" alt="COE Vision" className="w-full max-w-sm h-auto relative z-10" />
                                 </div>
-                            </div>
-                            <div className="bg-[#224292] grid grid-cols-2 relative z-20">
-                                {highlights.map((item, i) => (
-                                    <div key={i} className="flex flex-col items-center text-center gap-3 p-8 border-r border-t border-white/5 last:border-r-0">
-                                        <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-inner">
-                                            <item.icon size={18} />
-                                        </div>
-                                        <span className="text-[10px] font-black text-white/90 uppercase tracking-[0.1em] leading-tight max-w-[100px]">
-                                            {item.text}
-                                        </span>
-                                    </div>
-                                ))}
                             </div>
                         </div>
                     </div>
@@ -109,13 +96,13 @@ const AboutCOEPage = () => {
             </div>
 
             {/* ─── TABLES SECTION ─── */}
-            <section className="max-w-[1400px] mx-auto px-6 mt-20">
-                <div className="flex items-center gap-3 mb-10">
+            <section className="max-w-[1400px] mx-auto px-4 sm:px-6 mt-16 lg:mt-20">
+                <div className="flex items-center gap-3 mb-8 px-5 sm:px-0">
                     <div className="w-1.5 h-6 bg-[#224292] rounded-full" />
-                    <h3 className="text-2xl font-black text-[#224292] tracking-tight">Examination Administration</h3>
+                    <h3 className="text-xl md:text-2xl font-black text-[#224292] tracking-tight">Examination Administration</h3>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-stretch">
                     {/* Officials Table */}
                     <motion.div 
                         initial={{ opacity: 0, x: -20 }}
@@ -127,32 +114,32 @@ const AboutCOEPage = () => {
                             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white shadow-inner">
                                 <UserCheck size={20} />
                             </div>
-                            <h3 className="text-white text-[13px] font-black uppercase tracking-widest leading-tight">Officials of Office of COE</h3>
+                            <h3 className="text-white text-[13px] font-black uppercase tracking-widest leading-tight">Officials of COE</h3>
                         </div>
                         <div className="h-1 bg-[#ffc107] w-full" />
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse">
+                        <div className="overflow-x-auto sm:overflow-visible">
+                            <table className="w-full text-left border-collapse table-fixed md:table-auto">
                                 <thead>
-                                    <tr className="bg-[#f0f4f8] border-b border-slate-200 h-12">
-                                        <th className="px-8 text-[9px] font-black text-[#224292] uppercase tracking-[0.15em] border-r border-slate-200">Faculty Name</th>
-                                        <th className="px-5 text-[9px] font-black text-[#224292] uppercase tracking-[0.15em] border-r border-slate-200">Qualification</th>
-                                        <th className="px-5 text-[9px] font-black text-[#224292] uppercase tracking-[0.15em]">Designation</th>
+                                    <tr className="bg-[#f0f4f8] border-b border-slate-200 h-14 md:h-12">
+                                        <th className="w-[42%] px-3 md:px-8 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em]">Faculty Name</th>
+                                        <th className="w-[23%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em] text-center md:text-left">Qual.</th>
+                                        <th className="w-[35%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em]">Designation</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
                                     {officials.map((staff, idx) => (
-                                        <tr key={idx} className={`hover:bg-[#224292]/5 transition-colors group h-14 ${idx % 2 === 1 ? 'bg-slate-50/50' : 'bg-white'}`}>
-                                            <td className="px-8 border-r border-slate-100">
-                                                <div className="flex items-center gap-5">
-                                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all shadow-sm border border-slate-100">
+                                        <tr key={idx} className={`hover:bg-[#224292]/5 transition-colors group ${idx % 2 === 1 ? 'bg-slate-50/50' : 'bg-white'}`}>
+                                            <td className="px-3 md:px-8 py-4 md:py-3">
+                                                <div className="flex items-center gap-2 md:gap-5">
+                                                    <div className="hidden sm:flex w-8 h-8 rounded-full bg-white items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all shadow-sm border border-slate-100 shrink-0">
                                                         <UserCheck size={12} />
                                                     </div>
-                                                    <span className="text-[13px] font-bold text-slate-800 tracking-tight whitespace-nowrap">{staff.name}</span>
+                                                    <span className="text-[12px] md:text-[13px] font-bold text-slate-800 tracking-tight leading-tight">{staff.name}</span>
                                                 </div>
                                             </td>
-                                            <td className="px-5 text-[11.5px] font-bold text-slate-500 border-r border-slate-100">{staff.qualification}</td>
-                                            <td className="px-5">
-                                                <span className="text-[11px] font-bold text-[#224292] uppercase tracking-tight leading-tight block">{staff.designation}</span>
+                                            <td className="px-2 md:px-5 text-[10px] md:text-[11.5px] font-bold text-slate-500 py-4 md:py-3 text-center md:text-left break-words">{staff.qualification}</td>
+                                            <td className="px-2 md:px-5 py-4 md:py-3">
+                                                <span className="text-[9px] md:text-[11px] font-bold text-[#224292] uppercase tracking-tight leading-tight block break-words">{staff.designation}</span>
                                             </td>
                                         </tr>
                                     ))}
@@ -178,26 +165,26 @@ const AboutCOEPage = () => {
                         <div className="overflow-x-auto flex-1">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-[#f0f4f8] border-b border-slate-200 h-12">
-                                        <th className="px-8 text-[9px] font-black text-[#224292] uppercase tracking-[0.15em] border-r border-slate-200">Faculty Name</th>
-                                        <th className="px-5 text-[9px] font-black text-[#224292] uppercase tracking-[0.15em] border-r border-slate-200">Qualification</th>
-                                        <th className="px-5 text-[9px] font-black text-[#224292] uppercase tracking-[0.15em]">Designation</th>
+                                    <tr className="bg-[#f0f4f8] border-b border-slate-200 h-14 md:h-12">
+                                        <th className="w-[42%] px-3 md:px-8 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em] border-r border-slate-200">Faculty Name</th>
+                                        <th className="w-[23%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em] border-r border-slate-200 text-center md:text-left">Qual.</th>
+                                        <th className="w-[35%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em]">Designation</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
                                     {staffDetails.map((staff, idx) => (
-                                        <tr key={idx} className={`hover:bg-[#ffc107]/5 transition-colors group h-14 ${idx % 2 === 1 ? 'bg-slate-50/50' : 'bg-white'}`}>
-                                            <td className="px-8 border-r border-slate-100">
-                                                <div className="flex items-center gap-5">
-                                                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#ffc107] group-hover:bg-[#ffc107] group-hover:text-white transition-all shadow-sm border border-[#ffc107]/20">
+                                        <tr key={idx} className={`hover:bg-[#ffc107]/5 transition-colors group ${idx % 2 === 1 ? 'bg-slate-50/50' : 'bg-white'}`}>
+                                            <td className="px-3 md:px-8 py-4 md:py-3">
+                                                <div className="flex items-center gap-2 md:gap-5">
+                                                    <div className="hidden sm:flex w-8 h-8 rounded-full bg-white items-center justify-center text-[#ffc107] group-hover:bg-[#ffc107] group-hover:text-white transition-all shadow-sm border border-[#ffc107]/20 shrink-0">
                                                         <UserCheck size={12} />
                                                     </div>
-                                                    <span className="text-[13px] font-bold text-slate-800 tracking-tight whitespace-nowrap">{staff.name}</span>
+                                                    <span className="text-[12px] md:text-[13px] font-bold text-slate-800 tracking-tight leading-tight">{staff.name}</span>
                                                 </div>
                                             </td>
-                                            <td className="px-5 text-[11.5px] font-bold text-slate-500 border-r border-slate-100">{staff.qualification}</td>
-                                            <td className="px-5">
-                                                <span className="text-[11px] font-bold text-[#224292] uppercase tracking-tight leading-tight block">{staff.designation}</span>
+                                            <td className="px-2 md:px-5 text-[10px] md:text-[11.5px] font-bold text-slate-500 py-4 md:py-3 text-center md:text-left break-words">{staff.qualification}</td>
+                                            <td className="px-2 md:px-5 py-4 md:py-3">
+                                                <span className="text-[9px] md:text-[11px] font-bold text-[#224292] uppercase tracking-tight leading-tight block break-words">{staff.designation}</span>
                                             </td>
                                         </tr>
                                     ))}

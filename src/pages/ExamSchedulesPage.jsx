@@ -13,17 +13,27 @@ const ExamSchedulesPage = () => {
     const [searchTerm, setSearchTerm] = React.useState('')
 
     React.useEffect(() => {
-        const fetchSchedules = async () => {
+        const fetchData = async () => {
             try {
-                const res = await axios.get(`${API_BASE_URL}/coe-schedules/`)
-                setSchedules(res.data)
+                const [theoryRes, practicalRes] = await Promise.all([
+                    axios.get(`${API_BASE_URL}/coe-schedules/`),
+                    axios.get(`${API_BASE_URL}/coe-practical/`)
+                ])
+                
+                // Combine them with a flag to distinguish
+                const combined = [
+                    ...theoryRes.data.map(s => ({ ...s, type: 'theory' })),
+                    ...practicalRes.data.map(s => ({ ...s, type: 'practical' }))
+                ]
+                console.log("Fetched schedules:", combined)
+                setSchedules(combined)
             } catch (err) {
                 console.error("Error fetching schedules:", err)
             } finally {
                 setLoading(false)
             }
         }
-        fetchSchedules()
+        fetchData()
     }, [])
 
     const filteredSchedules = schedules.filter(item => {
@@ -78,7 +88,7 @@ const ExamSchedulesPage = () => {
                                 <div className="w-10 h-10 border-4 border-[#ffc107] border-t-transparent rounded-full animate-spin" />
                                 <p className="text-[10px] font-black text-[#224292] uppercase tracking-widest">Syncing with server...</p>
                             </div>
-                        ) : filteredSchedules.filter(s => !s.batch?.toLowerCase().includes('practical') && !s.title?.toLowerCase().includes('practical')).length === 0 ? (
+                        ) : filteredSchedules.filter(s => s.type === 'theory').length === 0 ? (
                            <div className="p-24 flex flex-col items-center text-center">
                                 <FileText size={48} className="text-slate-100 mb-4" />
                                 <h3 className="text-lg font-black text-[#224292] uppercase mb-1">No Theory Schedules</h3>
@@ -95,7 +105,7 @@ const ExamSchedulesPage = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {filteredSchedules.filter(s => !s.batch?.toLowerCase().includes('practical') && !s.title?.toLowerCase().includes('practical')).map((item, i) => (
+                                        {filteredSchedules.filter(s => s.type === 'theory').map((item, i) => (
                                             <motion.tr
                                                 key={item.id || i}
                                                 initial={{ opacity: 0 }}
@@ -152,7 +162,7 @@ const ExamSchedulesPage = () => {
                                 <div className="w-10 h-10 border-4 border-[#ffc107] border-t-transparent rounded-full animate-spin" />
                                 <p className="text-[10px] font-black text-[#224292] uppercase tracking-widest">Syncing with server...</p>
                             </div>
-                        ) : filteredSchedules.filter(s => s.batch?.toLowerCase().includes('practical') || s.title?.toLowerCase().includes('practical')).length === 0 ? (
+                        ) : filteredSchedules.filter(s => s.type === 'practical').length === 0 ? (
                            <div className="p-24 flex flex-col items-center text-center">
                                 <FileText size={48} className="text-slate-100 mb-4" />
                                 <h3 className="text-lg font-black text-[#224292] uppercase mb-1">No Practical Schedules</h3>
@@ -169,7 +179,7 @@ const ExamSchedulesPage = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {filteredSchedules.filter(s => s.batch?.toLowerCase().includes('practical') || s.title?.toLowerCase().includes('practical')).map((item, i) => (
+                                        {filteredSchedules.filter(s => s.type === 'practical').map((item, i) => (
                                             <motion.tr
                                                 key={item.id || i}
                                                 initial={{ opacity: 0 }}

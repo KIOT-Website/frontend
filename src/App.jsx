@@ -85,6 +85,7 @@ const BlogsPage = lazy(() => import('./pages/BlogsPage'))
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
 const AlumniPage = lazy(() => import('./pages/AlumniPage'))
 const NewsEventsPage = lazy(() => import('./pages/NewsEventsPage'))
+const COEDownloadsPage = lazy(() => import('./pages/COEDownloadsPage'))
 
 
 
@@ -202,12 +203,12 @@ function App() {
                   {/* Placement Pages */}
                   <Route path="/placements" element={<UnderConstruction />} />
                   <Route path="/placements/overview" element={<PlacementOverviewPage />} />
-                  <Route path="/placements/training" element={<TrainingOverviewPage />} />
+                  <Route path="/placements/cdt" element={<TrainingOverviewPage />} />
                   <Route path="/placements/outcomes" element={<OutcomesOverviewPage />} />
                   <Route path="/placements/recruitment" element={<OutcomesOverviewPage />} />
                   <Route path="/placements/records" element={<OutcomesOverviewPage />} />
                   <Route path="/placement-overview" element={<PlacementOverviewPage />} />
-                  <Route path="/training" element={<TrainingOverviewPage />} />
+                  <Route path="/cdt" element={<TrainingOverviewPage />} />
                   <Route path="/recruitment" element={<RecruitmentPage />} />
                   <Route path="/records" element={<OutcomesOverviewPage />} />
                   <Route path="/outcomes" element={<OutcomesOverviewPage />} />
@@ -262,6 +263,7 @@ function App() {
                   <Route path="/exams/about-coe" element={<AboutCOEPage />} />
                   <Route path="/exams/schedules" element={<ExamSchedulesPage />} />
                   <Route path="/exams/circulars" element={<CircularsPage />} />
+                  <Route path="/exams/downloads" element={<COEDownloadsPage />} />
                   <Route path="/exams/circular" element={<CircularsPage />} />
                   <Route path="/campus-life" element={<CampusLifePage />} />
               <Route path="/campus-life/library" element={<LibraryPage />} />

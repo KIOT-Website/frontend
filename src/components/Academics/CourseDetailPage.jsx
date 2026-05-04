@@ -56,10 +56,10 @@ const defaultCourse = (id) => ({
   overview: 'This program offers a rigorous academic curriculum combined with industry-relevant hands-on training, preparing students for high-impact careers.',
   whyChoose: ['NBA Accredited', 'Experienced faculty', 'Industry partnerships', 'Placement assistance'],
   curriculum: [
-    { year: 'Year 1 – Foundation', semesters: ['Mathematics', 'Physics', 'Engineering Graphics', 'Programming Basics'] },
-    { year: 'Year 2 – Core', semesters: ['Core Subject I', 'Core Subject II', 'Core Subject III', 'Core Subject IV'] },
-    { year: 'Year 3 – Specialisation', semesters: ['Advanced Core I', 'Advanced Core II', 'Electives', 'Mini Project'] },
-    { year: 'Year 4 – Capstone', semesters: ['Internship', 'Final Project', 'Advanced Electives', 'Industry Training'] },
+    { year: 'Year 1 â€“ Foundation', semesters: ['Mathematics', 'Physics', 'Engineering Graphics', 'Programming Basics'] },
+    { year: 'Year 2 â€“ Core', semesters: ['Core Subject I', 'Core Subject II', 'Core Subject III', 'Core Subject IV'] },
+    { year: 'Year 3 â€“ Specialisation', semesters: ['Advanced Core I', 'Advanced Core II', 'Electives', 'Mini Project'] },
+    { year: 'Year 4 â€“ Capstone', semesters: ['Internship', 'Final Project', 'Advanced Electives', 'Industry Training'] },
   ],
   faculty: [
     { name: 'Dr. Faculty 1', designation: 'HoD & Professor', experience: '18 Years', specialization: 'Core Domain', rating: 4.8 },
@@ -77,7 +77,7 @@ const defaultCourse = (id) => ({
 
 const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements']
 
-// ─── Accordion Item ──────────────────────────────────────────────────────────
+// â”€â”€â”€ Accordion Item â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function AccordionItem({ title, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
@@ -108,7 +108,7 @@ function AccordionItem({ title, children, defaultOpen = false }) {
   )
 }
 
-// ─── Main Component ──────────────────────────────────────────────────────────
+// â”€â”€â”€ Main Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export default function CourseDetailPage() {
   const { courseId } = useParams()
   const navigate = useNavigate()
@@ -251,7 +251,7 @@ export default function CourseDetailPage() {
         </div>
       </section>
 
-      {/* ─── MOBILE TAB NAVIGATION (Pill Style) ─── */}
+      {/* â”€â”€â”€ MOBILE TAB NAVIGATION (Pill Style) â”€â”€â”€ */}
       <div className="md:hidden bg-[#224292] py-8 px-6 border-t border-white/10">
         <div className="flex flex-wrap justify-center gap-3">
           {TABS.map(tab => (
@@ -270,7 +270,7 @@ export default function CourseDetailPage() {
         </div>
       </div>
 
-      {/* ─── DESKTOP TAB NAVIGATION (Pill Design) ─── */}
+      {/* â”€â”€â”€ DESKTOP TAB NAVIGATION (Pill Design) â”€â”€â”€ */}
       <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-[#224292] border-b border-white/10 shadow-xl">
         <div className="w-full px-6 lg:px-12 py-5">
           <div className="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-7xl mx-auto">
@@ -301,7 +301,7 @@ export default function CourseDetailPage() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
           >
-            {/* ── OVERVIEW ── */}
+            {/* â”€â”€ OVERVIEW â”€â”€ */}
             {activeTab === 'Overview' && (
               <div className="space-y-8">
                 {/* Full Width About Section */}
@@ -367,7 +367,7 @@ export default function CourseDetailPage() {
               </div>
             )}
 
-            {/* ── VISION & MISSION ── */}
+            {/* â”€â”€ VISION & MISSION â”€â”€ */}
             {activeTab === 'Vision & Mission' && (
               <>
                 <div className="space-y-8 py-8">
@@ -409,9 +409,14 @@ export default function CourseDetailPage() {
 
                               <div className="space-y-6 flex-grow">
                                   {(course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.').split('\n').map((para, idx) => (
-                                      <p key={idx} className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
-                                          {para.trim()}
-                                      </p>
+                                      <div key={idx} className="flex gap-4 items-start">
+                                          <div className="w-6 h-6 rounded-lg bg-[#224292]/5 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#ffc107]/20 transition-colors">
+                                              <CheckCircle2 size={14} className="text-[#224292] transition-colors" />
+                                          </div>
+                                          <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify not-italic flex-1">
+                                              {para.trim().replace(/^M\d+:\s*/i, '')}
+                                          </p>
+                                      </div>
                                   ))}
                               </div>
                           </div>
@@ -460,37 +465,49 @@ export default function CourseDetailPage() {
                           <div className="space-y-4 font-graphik">
                               {(() => {
                                 const text = activeObj.content || 'Data current being optimized for digital view.';
-                                const points = text.split(/(?=(?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):)/g).map(p => p.trim()).filter(p => p.length > 0);
+                                const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
                                 
-                                return points.filter(p => /^(?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):/i.test(p)).map((point, idx) => {
-                                  const match = point.match(/^((?:PEO|PO|PSO)\s*[-–]\s*(?:\d+|[IVXLC]+):)\s*(.*)/i);
-                                  const label = match ? match[1] : '';
-                                  const description = match ? match[2] : point;
+                                // Detect if first line is a preamble
+                                const hasPreamble = lines.length > 1 && (lines[0].endsWith(':') || lines[0].includes('will be able to') || lines[0].includes('completion of'));
+                                const preamble = hasPreamble ? lines[0] : null;
+                                const rawPoints = hasPreamble ? lines.slice(1) : lines;
 
-                                  return (
-                                    <motion.div 
-                                      key={idx} 
-                                      whileHover={{ x: 10 }}
-                                      className="flex gap-2.5 md:gap-5 px-3 py-4 md:p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
-                                    >
-                                      <div className="flex-shrink-0 mt-1">
-                                          <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
-                                              <CheckCircle2 size={16} className="text-[#224292] group-hover/point:text-[#ffc107] transition-colors" />
+                                return (
+                                  <div className="space-y-4">
+                                    {preamble && (
+                                      <p className="px-4 text-[#64779F] font-bold text-[13px] mb-6 italic leading-relaxed">{preamble}</p>
+                                    )}
+                                    {rawPoints.map((point, idx) => {
+                                      const match = point.match(/^((?:PEO|PO|PSO|M)\s*[-â€“]?\s*(?:\d+|[IVXLC]+):?)\s*(.*)/i);
+                                      const label = match ? match[1] : '';
+                                      const description = match ? match[2] : point;
+
+                                      return (
+                                        <motion.div 
+                                          key={idx} 
+                                          whileHover={{ x: 10 }}
+                                          className="flex gap-3 md:gap-5 px-4 py-5 md:p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
+                                        >
+                                          <div className="flex-shrink-0 mt-1">
+                                              <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
+                                                  <CheckCircle2 size={16} className="text-[#224292] group-hover/point:text-[#ffc107] transition-colors" />
+                                              </div>
                                           </div>
-                                      </div>
-                                      <div className="space-y-1">
-                                        {label && (
-                                          <span className="block text-[11px] font-black font-graphik text-[#224292] uppercase tracking-[0.2em]">
-                                            {label.replace(':', '')}
-                                          </span>
-                                        )}
-                                        <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[14px] sm:text-[16px] text-justify">
-                                          {description}
-                                        </p>
-                                      </div>
-                                    </motion.div>
-                                  );
-                                });
+                                          <div className="space-y-1 flex-1">
+                                            {label && (
+                                              <span className="block text-[11px] font-black font-graphik text-[#224292] uppercase tracking-[0.2em]">
+                                                {label.replace(':', '')}
+                                              </span>
+                                            )}
+                                            <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[14px] sm:text-[16px] text-justify">
+                                              {description}
+                                            </p>
+                                          </div>
+                                        </motion.div>
+                                      );
+                                    })}
+                                  </div>
+                                );
                               })()}
                            </div>
                        </motion.div>
@@ -500,12 +517,12 @@ export default function CourseDetailPage() {
               </>
             )}
 
-            {/* ── CURRICULUM ── */}
+            {/* â”€â”€ CURRICULUM â”€â”€ */}
             {activeTab === 'Curriculum' && (
               <CurriculumSection courseId={courseId} courseName={course.name} />
             )}
 
-            {/* ── FACULTY ── */}
+            {/* â”€â”€ FACULTY â”€â”€ */}
             {activeTab === 'Faculty' && (
               <div>
                 <div className="mb-6">
@@ -546,7 +563,7 @@ export default function CourseDetailPage() {
                         
                         <div className="mt-auto">
                            <span className="inline-block text-[9px] font-bold font-graphik uppercase tracking-[0.15em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-1 rounded">
-                              View Bio →
+                              View Bio â†’
                            </span>
                         </div>
                       </div>
@@ -556,7 +573,7 @@ export default function CourseDetailPage() {
               </div>
             )}
 
-            {/* ── LABS ── */}
+            {/* â”€â”€ LABS â”€â”€ */}
             {activeTab === 'Labs' && (
               <div className="w-full">
                 {/* DESKTOP VIEW: Sidebar + Detail Panel (Visible only on lg and above) */}
@@ -629,13 +646,13 @@ export default function CourseDetailPage() {
                               <div>
                                  <div className="flex items-center gap-3 mb-6">
                                     <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
-                                    <h4 className="text-[12px] font-bold font-graphik text-[#224292] tracking-[0.2em]">Technical Inventory & Tools</h4>
+                                    <h4 className="text-[12px] font-bold font-graphik text-[#64779F] tracking-[0.1em] uppercase">Technical Inventory & Tools</h4>
                                  </div>
                                  <div className="grid sm:grid-cols-2 gap-3">
                                     {activeLab.equipments?.map((item, idx) => (
                                       <div key={idx} className="flex gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 items-start group hover:bg-white hover:border-[#ffc107]/20 transition-all">
                                          <div className="w-2 h-2 rounded-full bg-[#ffc107] mt-1.5 shrink-0 group-hover:scale-125 transition-all" />
-                                         <span className="text-[14px] font-bold font-graphik text-[#224292] leading-tight">{item}</span>
+                                         <span className="text-[14px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
                                       </div>
                                     )) || (
                                       <p className="text-[#64779F] italic text-sm">Main specialized equipment list is being updated.</p>
@@ -722,13 +739,13 @@ export default function CourseDetailPage() {
                                       <div>
                                          <div className="flex items-center gap-2 mb-4">
                                             <div className="w-1 h-4 bg-[#ffc107] rounded-full" />
-                                            <h4 className="text-[11px] font-bold font-graphik text-[#224292] uppercase tracking-wider">Inventory & Tools</h4>
+                                            <h4 className="text-[11px] font-bold font-graphik text-[#64779F] uppercase tracking-wider">Inventory & Tools</h4>
                                          </div>
                                          <div className="grid gap-2">
                                             {lab.equipments?.map((item, idx) => (
                                               <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
                                                  <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                                                 <span className="text-[13px] font-bold font-graphik text-[#224292] leading-tight">{item}</span>
+                                                 <span className="text-[13px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
                                               </div>
                                             ))}
                                          </div>
@@ -757,7 +774,7 @@ export default function CourseDetailPage() {
               </div>
             )}
 
-            {/* ── PATENTS ── */}
+            {/* â”€â”€ PATENTS â”€â”€ */}
             {activeTab === 'Patents' && (
               <div className="space-y-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
@@ -825,7 +842,7 @@ export default function CourseDetailPage() {
               <AchievementSection courseId={courseId} courseName={course.name} />
             )}
 
-            {/* ── ADMISSIONS ── */}
+            {/* â”€â”€ ADMISSIONS â”€â”€ */}
             {activeTab === 'Admissions' && (
               <div className="grid md:grid-cols-2 gap-8">
                 <motion.div 
@@ -1005,7 +1022,7 @@ export default function CourseDetailPage() {
   )
 }
 
-// ─── Achievement Section Component ──────────────────────────────────────────
+// â”€â”€â”€ Achievement Section Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function AchievementSection({ courseId, courseName }) {
   const [activeSubTab, setActiveSubTab] = useState('AWARD')
   const [activeAudience, setActiveAudience] = useState('STUDENT')
@@ -1192,7 +1209,7 @@ function AchievementSection({ courseId, courseName }) {
   );
 }
 
-// ─── Curriculum Section Component ──────────────────────────────────────────
+// â”€â”€â”€ Curriculum Section Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function CurriculumSection({ courseId, courseName }) {
   const [curriculumTab, setCurriculumTab] = useState('Regulations')
   const [records, setRecords] = useState([])

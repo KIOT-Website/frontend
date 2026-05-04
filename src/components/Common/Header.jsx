@@ -85,7 +85,7 @@ const navLinks = [
     hasDropdown: true,
     subLinks: [
       { name: 'Overview', href: 'placements/overview', icon: Building2 },
-      { name: 'Training', href: 'placements/training', icon: BookOpen },
+      { name: 'CDT', href: 'placements/cdt', icon: BookOpen },
       { name: 'Outcomes', href: 'placements/outcomes', icon: Target },
     ]
   },
@@ -105,11 +105,9 @@ const navLinks = [
     hasDropdown: true,
     subLinks: [
       { name: 'About COE', href: 'exams/about-coe', icon: Building2 },
-      { name: 'Circulars', href: 'exams/circulars', icon: Bell },
       { name: 'Exam Schedules', href: 'exams/schedules', icon: Calendar },
-      { name: 'Result Publication', href: 'exams/results', icon: CheckCircle2 },
-      { name: 'Marksheet Issuance', href: 'exams/marksheet', icon: FileText },
-      { name: 'PhD Coordination', href: 'exams/phd', icon: GraduationCap }
+      { name: 'Results', href: 'https://coe.kiot.ac.in/', icon: CheckCircle2 },
+      { name: 'Downloads', href: 'exams/downloads', icon: Download }
     ]
   },
   { 
@@ -157,6 +155,12 @@ const Header = () => {
   }, [isOpen])
 
   const handleNavClick = (e, linkName, href) => {
+    if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+      e.preventDefault()
+      window.open(href, '_blank', 'noopener,noreferrer')
+      setIsOpen(false)
+      return
+    }
     if (linkName === 'Contact') {
       e.preventDefault()
       navigate('/contact')
