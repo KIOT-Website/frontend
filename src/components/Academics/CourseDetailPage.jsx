@@ -251,7 +251,7 @@ export default function CourseDetailPage() {
         </div>
       </section>
 
-      {/* â”€â”€â”€ MOBILE TAB NAVIGATION (Pill Style) â”€â”€â”€ */}
+      {/* --- MOBILE TAB NAVIGATION (Pill Style) --- */}
       <div className="md:hidden bg-[#224292] py-8 px-6 border-t border-white/10">
         <div className="flex flex-wrap justify-center gap-3">
           {TABS.map(tab => (
@@ -270,7 +270,7 @@ export default function CourseDetailPage() {
         </div>
       </div>
 
-      {/* â”€â”€â”€ DESKTOP TAB NAVIGATION (Pill Design) â”€â”€â”€ */}
+      {/* --- DESKTOP TAB NAVIGATION (Pill Design) --- */}
       <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-[#224292] border-b border-white/10 shadow-xl">
         <div className="w-full px-6 lg:px-12 py-5">
           <div className="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-7xl mx-auto">
@@ -301,7 +301,7 @@ export default function CourseDetailPage() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
           >
-            {/* â”€â”€ OVERVIEW â”€â”€ */}
+            {/* --- OVERVIEW --- */}
             {activeTab === 'Overview' && (
               <div className="space-y-8">
                 {/* Full Width About Section */}
@@ -367,7 +367,7 @@ export default function CourseDetailPage() {
               </div>
             )}
 
-            {/* â”€â”€ VISION & MISSION â”€â”€ */}
+            {/* --- VISION & MISSION --- */}
             {activeTab === 'Vision & Mission' && (
               <>
                 <div className="space-y-8 py-8">
@@ -478,7 +478,7 @@ export default function CourseDetailPage() {
                                       <p className="px-4 text-[#64779F] font-bold text-[13px] mb-6 italic leading-relaxed">{preamble}</p>
                                     )}
                                     {rawPoints.map((point, idx) => {
-                                      const match = point.match(/^((?:PEO|PO|PSO|M)\s*[-â€“]?\s*(?:\d+|[IVXLC]+):?)\s*(.*)/i);
+                                      const match = point.match(/^((?:PEO|PO|PSO|M)\s*[-]?\s*(?:\d+|[IVXLC]+):?)\s*(.*)/i);
                                       const label = match ? match[1] : '';
                                       const description = match ? match[2] : point;
 
@@ -517,12 +517,12 @@ export default function CourseDetailPage() {
               </>
             )}
 
-            {/* â”€â”€ CURRICULUM â”€â”€ */}
+            {/* --- CURRICULUM --- */}
             {activeTab === 'Curriculum' && (
               <CurriculumSection courseId={courseId} courseName={course.name} />
             )}
 
-            {/* â”€â”€ FACULTY â”€â”€ */}
+            {/* --- FACULTY --- */}
             {activeTab === 'Faculty' && (
               <div>
                 <div className="mb-6">
@@ -563,7 +563,7 @@ export default function CourseDetailPage() {
                         
                         <div className="mt-auto">
                            <span className="inline-block text-[9px] font-bold font-graphik uppercase tracking-[0.15em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-1 rounded">
-                              View Bio â†’
+                              View Bio
                            </span>
                         </div>
                       </div>
@@ -573,7 +573,7 @@ export default function CourseDetailPage() {
               </div>
             )}
 
-            {/* â”€â”€ LABS â”€â”€ */}
+            {/* --- LABS --- */}
             {activeTab === 'Labs' && (
               <div className="w-full">
                 {/* DESKTOP VIEW: Sidebar + Detail Panel (Visible only on lg and above) */}
@@ -774,7 +774,7 @@ export default function CourseDetailPage() {
               </div>
             )}
 
-            {/* â”€â”€ PATENTS â”€â”€ */}
+            {/* --- PATENTS --- */}
             {activeTab === 'Patents' && (
               <div className="space-y-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
@@ -842,7 +842,7 @@ export default function CourseDetailPage() {
               <AchievementSection courseId={courseId} courseName={course.name} />
             )}
 
-            {/* â”€â”€ ADMISSIONS â”€â”€ */}
+            {/* --- ADMISSIONS --- */}
             {activeTab === 'Admissions' && (
               <div className="grid md:grid-cols-2 gap-8">
                 <motion.div 

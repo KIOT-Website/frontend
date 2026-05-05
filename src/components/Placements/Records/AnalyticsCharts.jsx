@@ -138,7 +138,7 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
                         <TrendingUp size={20} className="text-[#224292]" />
                         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#224292]">Growth Matrix</span>
                       </div>
-                      <h2 className="text-4xl font-black text-[#224292] uppercase tracking-tighter leading-none">Placement <br/><span className="text-[#ffc107]">Statistics</span></h2>
+                      <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter leading-none">Placement <span className="text-[#ffc107]">Statistics</span></h2>
                    </div>
                    <div className="flex flex-col items-end gap-2 pt-1">
                       <div className="px-6 py-2 rounded-xl bg-[#224292] text-white font-black text-xs shadow-xl">MAX 4.05</div>
@@ -160,7 +160,7 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
                         </div>
                         <div>
                           <p className="text-[11px] font-black text-[#224292] leading-tight mb-0.5">{item.label}</p>
-                          <p className="text-[9px] font-black text-black uppercase tracking-tight">{item.sub}</p>
+                          <p className="text-[10px] font-bold text-[#64779F] tracking-tight">{item.sub}</p>
                         </div>
                      </div>
                    ))}
@@ -182,7 +182,7 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
                         <Target size={20} className="text-[#ffc107]" />
                         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white">Engagement Ratio</span>
                       </div>
-                      <h2 className="text-4xl font-black text-white uppercase tracking-tighter leading-none">Placement <br/><span className="text-[#ffc107]">Efficiency</span></h2>
+                      <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none">Placement <span className="text-[#ffc107]">Efficiency</span></h2>
                    </div>
                    <div className="flex gap-6 pt-2">
                       <div className="flex items-center gap-2">

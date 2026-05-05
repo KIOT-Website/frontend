@@ -62,7 +62,7 @@ const Achievers = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group relative h-[400px] lg:h-[500px] rounded-[1.2rem] overflow-hidden shadow-2xl border-4 border-[#224292]/20 hover:border-[#ffc107]/50 transition-all duration-500"
+              className="group relative h-[400px] lg:h-[500px] rounded-[6rem_1rem_6rem_1rem] overflow-hidden shadow-2xl border-4 border-[#224292]/20 hover:border-[#ffc107]/50 transition-all duration-500"
             >
               {/* Achievement Image */}
               <img 

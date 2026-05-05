@@ -86,6 +86,10 @@ const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
 const AlumniPage = lazy(() => import('./pages/AlumniPage'))
 const NewsEventsPage = lazy(() => import('./pages/NewsEventsPage'))
 const COEDownloadsPage = lazy(() => import('./pages/COEDownloadsPage'))
+const IICPage = lazy(() => import('./pages/IICPage'))
+const StartupTNPage = lazy(() => import('./pages/StartupTNPage'))
+const MSMEBIPage = lazy(() => import('./pages/MSMEBIPage'))
+const MXIncubatorPage = lazy(() => import('./pages/MXIncubatorPage'))
 
 
 
@@ -235,6 +239,10 @@ function App() {
                    <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
                    <Route path="/research-innovation/istart" element={<IStartPage />} />
                    <Route path="/istart" element={<IStartPage />} />
+                   <Route path="/research-innovation/iic" element={<IICPage />} />
+                   <Route path="/research-innovation/startuptn" element={<StartupTNPage />} />
+                   <Route path="/research-innovation/msme-bi" element={<MSMEBIPage />} />
+                   <Route path="/research-innovation/mx-incubator" element={<MXIncubatorPage />} />
 
                    <Route path="/research/:deptName" element={<ResearchResourcesPage />} />
                    <Route path="/research/:deptName/phd-supervisors" element={<PhdSupervisorsPage />} />

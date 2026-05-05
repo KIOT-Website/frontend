@@ -391,9 +391,14 @@ const Header = () => {
                               <a
                                 href={sub.href}
                                 onClick={(e) => handleNavClick(e, sub.name, sub.href)}
-                                className="group/subitem relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#224292] transition-all duration-300"
+                                className="group/subitem relative flex items-center gap-4 px-4 py-2.5 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#224292] transition-all duration-300"
                               >
-                                <span className="text-[14.5px] font-black text-[#64779F] group-hover/subitem:text-white transition-colors">{sub.name}</span>
+                                {sub.icon && (
+                                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-50 group-hover/subitem:bg-white/10 transition-colors">
+                                    <sub.icon size={16} className="text-[#224292] group-hover/subitem:text-[#ffc107] transition-colors" />
+                                  </div>
+                                )}
+                                <span className="text-[14px] font-black text-[#64779F] group-hover/subitem:text-white transition-colors">{sub.name}</span>
                               </a>
 
                               {/* Nested Level (Desktop) */}

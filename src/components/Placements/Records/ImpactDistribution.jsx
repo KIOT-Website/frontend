@@ -49,12 +49,12 @@ const ImpactDistribution = () => {
           <div className="flex items-center justify-center gap-3 text-[#ffc107] font-black text-[10px] uppercase tracking-[0.4em] mb-4">
              <span className="w-10 h-[1px] bg-[#ffc107]/30" /> Distribution Matrix <span className="w-10 h-[1px] bg-[#ffc107]/30" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter uppercase mb-2">Placement <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#224292] to-[#ffc107]">Impact</span> 2024-25</h2>
+          <h2 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tighter mb-2">Placement Impact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#224292] to-[#ffc107]">2024-25</span></h2>
        </div>
 
        <div className="grid md:grid-cols-2 gap-12">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className="bg-transparent md:bg-white/40 backdrop-blur-none md:backdrop-blur-xl p-0 md:p-12 rounded-none md:rounded-[5rem] border-none md:border border-white/60 relative group overflow-hidden">
-             <h3 className="text-sm font-black text-[#224292]/40 uppercase tracking-[0.3em] text-center mb-12">Sectoral Allocation</h3>
+             <h3 className="text-sm font-bold text-[#224292]/60 uppercase tracking-[0.3em] text-center mb-12">Sectoral Allocation</h3>
              <div className="flex flex-col md:flex-row items-center justify-center gap-12">
                  <AnimatedDonut radius={40} circumference={251.2} strokeWidth={12} centerLabel="100%" dark={false}
                     segments={[
@@ -81,7 +81,7 @@ const ImpactDistribution = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#224292] p-0 md:p-12 rounded-none md:rounded-[5rem] shadow-none md:shadow-2xl relative overflow-hidden group">
-             <h3 className="text-sm font-black text-white/20 uppercase tracking-[0.3em] text-center mb-12 relative z-10">Recruitment Influx</h3>
+             <h3 className="text-sm font-bold text-white/40 uppercase tracking-[0.3em] text-center mb-12 relative z-10">Recruitment Influx</h3>
              <div className="flex flex-col md:flex-row items-center justify-center gap-10 relative z-10">
                  <AnimatedDonut radius={38} circumference={238.76} strokeWidth={10} centerLabel="2025" dark={true}
                     segments={[

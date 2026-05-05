@@ -47,8 +47,8 @@ const PlacementRecordsSection = () => {
   return (
     <div className="">
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-black text-[#224292] flex items-center justify-center gap-3 tracking-tighter">
-          Placement Records (Department Wise)
+        <h2 className="text-3xl md:text-5xl font-black text-[#224292] flex items-center justify-center gap-3 tracking-tighter">
+          Placement Records <span className="text-[#ffc107]">(Department Wise)</span>
         </h2>
       </div>
       <div className="w-full">

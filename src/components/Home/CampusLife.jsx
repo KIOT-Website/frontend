@@ -16,6 +16,7 @@ import labImg from '../../assets/life@kiot/image.png'
 import cafeteriaImg from '../../assets/life@kiot/cafetaria.png'
 import hostelImg from '../../assets/life@kiot/hostal.webp'
 import sportsImg from '../../assets/life@kiot/sports.png'
+import homeLifeImg from '../../assets/main/home-life.png'
 import trainingImg from '../../assets/life@kiot/training.webp'
 import transportImg from '../../assets/life@kiot/transport.png'
 import gymImg from '../../assets/life@kiot/gym.png'
@@ -39,12 +40,12 @@ const CampusLife = () => {
       
       {/* 🔷 SECTION HERO: "Life@KIOT" */}
       <div className="mx-auto max-w-7xl px-6 lg:px-10 mb-10 lg:mb-12">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-6 lg:space-y-8"
+            className="lg:col-span-5 space-y-6 lg:space-y-8"
           >
             <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10">
               <Sparkles size={14} className="text-[#ffc107]" />
@@ -56,10 +57,10 @@ const CampusLife = () => {
               Holistic Growth.
             </h2>
             
-            <p className="text-base lg:text-lg text-black font-medium leading-relaxed max-w-xl">
+            <p className="text-sm lg:text-[15px] text-black font-medium leading-relaxed max-w-xl">
               Beyond standard academics, KIOT offers an inspiring campus life designed to nurture your physical, social, and creative potential. Explore a world where excellence meets everyday living.
             </p>
-
+ 
             <Link 
               to="/campus-life"
               className="inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
@@ -68,17 +69,15 @@ const CampusLife = () => {
               <ArrowUpRight size={18} />
             </Link>
           </motion.div>
-
+ 
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative lg:mt-0"
+            className="lg:col-span-7 relative lg:mt-0 lg:-mr-10 xl:-mr-24 flex justify-end items-center"
           >
-            {/* Background shadow removed as requested */}
-            <div className="relative rounded-[2.5rem] lg:rounded-[3.5rem] overflow-hidden border-8 border-white shadow-2xl aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
-              <img src={sportsImg} alt="Life@KIOT" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/20 to-transparent" />
+            <div className="w-full">
+              <img src={homeLifeImg} alt="Life@KIOT" className="w-full h-auto object-contain drop-shadow-2xl" />
             </div>
           </motion.div>
         </div>

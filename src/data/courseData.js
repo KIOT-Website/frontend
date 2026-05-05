@@ -1769,20 +1769,26 @@ export const courseData = {
     intake: 120,
     affiliation: 'Anna University',
     accreditation: 'Postgraduate Program',
-    placement: '92%',
+    placement: '90%',
     avgPackage: '4.5 LPA',
     topPackage: '12 LPA',
     icon: TrendingUp,
     color: '#18357a',
     tagline: 'Lead. Manage. Innovate.',
-    overview: 'The MBA program at KIOT is designed to develop future business leaders through a blend of academic rigor and practical industry exposure.',
+    overview: [
+      "Master of Business Administration (MBA) was established in the year 2011 by Knowledge Institute of Technology Trust (KIOTT), Kakapalayam (PO), Salem-637 504, TN, India. The trust consists of 42 Eminent Professors from Leading Engineering Colleges, Management schools and Budding Entrepreneurs with a vision to build our Nation through quality education.",
+      "Master of Business Administration (MBA), a part of Knowledge Institute of Technology(KIOT), is one of the prominent B-School in the State of Tamil Nadu. MBA@KIOT offers Two years MBA Programme with an intake of 120 students. MBA@KIOT is Unique for its Quality Placements, Inspiring Faculty, Project with Stipend, Joy of Learning and Industrial Consultancy.",
+      "The program has achieved significant rankings including 1st Position in Salem – Namakkal Region, 24th Position in the State of Tamil Nadu, and 6th Position in Coimbatore Region, maintaining a consistent 90% placement record."
+    ],
+    vision: "To produce managers and entrepreneurs who are business relevant, innovative and socially responsible.",
+    mission: "To offer state-of-the-art management programs and carry out research and consultancy\nTo nurture students with industry-relevant skills and knowledge with leadership and entrepreneurial capabilities.\nTo collaborate with industries and academic for academics and collaborative research and training.",
     whyChoose: ['Industry-aligned curriculum', 'Case study based learning', 'Strong placement record'],
     curriculum: [{ year: 'Year 1', semesters: ['Management Concepts', 'Economics', 'Accounting'] }],
     faculty: [{ name: 'Dr. M. Vidhya', designation: 'HoD', experience: '15 Years', specialization: 'Finance', rating: 4.8 }],
     labs: [{ name: 'Management Lab', equipment: 'Financial Terminals', icon: BarChart3 }],
   },
   'mba-iev': {
-    name: 'MBA (IEV) - Innovation, Entrepreneurship and Venture Development',
+    name: 'MBA - Innovation, Entrepreneurship and Venture Development',
     short: 'MBA IEV',
     duration: '2 Years (4 Semesters)',
     intake: 60,
@@ -1816,7 +1822,38 @@ export const courseData = {
     overview: 'The MCA program focuses on advanced software development, algorithm design, and enterprise-level application management.',
     whyChoose: ['Advanced coding labs', 'Industry projects', 'HackerRank certifications'],
     curriculum: [{ year: 'Year 1', semesters: ['Advanced Data Structures', 'OS', 'DBMS'] }],
-    faculty: [{ name: 'Dr. B. Anitha', designation: 'HoD', experience: '14 Years', specialization: 'Software Engineering', rating: 4.7 }],
+    faculty: [
+      { 
+        name: 'Dr. S. Mohanapriya', 
+        designation: 'Professor & Head', 
+        qualification: 'M.C.A. , M. Phil., Ph.D. SET', 
+        experience: 'Teaching - 23 Years', 
+        specialization: 'Mobile Adhoc Networks', 
+        email: 'hod.mca@kiot.ac.in', 
+        publications: 'IJ: 22, IC: 22, NJ : 2 NC: 24',
+        rating: 5.0 
+      },
+      { 
+        name: 'Dr. V. Nethaji', 
+        designation: 'Associate professor', 
+        qualification: 'MCA., M.Phil., PhD', 
+        experience: 'Teaching: 7 months, IT field - 17 yrs 05 months', 
+        specialization: 'Cloud computing, Network', 
+        email: 'vnmca@kiot.ac.in', 
+        publications: 'IJ - 6, NJ - 1, IC - 3, NC - 3',
+        rating: 4.8 
+      },
+      { 
+        name: 'Mrs. G. Sowndarya', 
+        designation: 'Assistant professor', 
+        qualification: 'MCA', 
+        experience: 'Industrial – 04 Years', 
+        specialization: 'Operating Systems', 
+        email: 'sowndthi1411@gmail.com', 
+        publications: '-',
+        rating: 4.5 
+      }
+    ],
     labs: [{ name: 'Advanced App Lab', equipment: 'High-end Servers', icon: Terminal }],
   },
   'phd': {
@@ -1851,10 +1888,51 @@ export const courseData = {
     icon: ShieldCheck,
     color: '#18357a',
     tagline: 'Ensuring Workplace Safety through Engineering.',
-    overview: 'The M.E. Industrial Safety Engineering program focuses on specialized training in industrial safety, risk assessment, and disaster management. It prepares engineers to design safer workplaces and implement robust safety protocols.',
+    overview: [
+      "Industrial Safety Engineering is an engineering discipline which assures that engineered systems provide acceptable levels of safety. It is strongly related to systems engineering, industrial engineering and the subset system safety engineering. Safety engineering assures that a life-critical system behaves as needed, even when components fail. The course is offered by the department of mechanical engineering. The main aim of this course is to train personnel of scientific know-how and orientation in theory and practice in the area of safety, health and hygiene. The department is equipped with state of art laboratories and workshops and has been providing excellent learning, practical skills and discipline to the students.",
+      "The faculty members are regularly encouraged to attend workshop, seminar, FDP and conferences for enrich their up to date knowledge which ensure the high quality education to the students. The students are highly motivated to participate in symposium, workshops and seminars. Industrial visits and guest lecturers are arranged for the students periodically to cater their in-depth knowledge in the subjects and to strengthen the Industry Institution fusion."
+    ],
     whyChoose: ['High industry demand', 'Safety audit specialization', 'Expert faculty'],
     curriculum: [{ year: 'Year 1', semesters: ['Safety Management', 'Occupational Health', 'Industrial Hygiene'] }],
-    faculty: [{ name: 'Prof. G. Sureshkrishna', designation: 'Assistant Professor', experience: '7.4 Years', specialization: 'Industrial Safety Engineering', rating: 4.5 }],
+    faculty: [
+      { 
+        name: 'Dr. PSS. Srinivasan', 
+        designation: 'Senior Professor, Founder and Executive Chairman', 
+        joiningDate: '27.04.2009', 
+        qualification: 'B.E., M.Tech. (IIT-B), Ph.D.', 
+        association: 'Regular', 
+        experience: 'Teaching: 35 Years, Research : 24 Years', 
+        specialization: 'Thermal Engineering', 
+        email: 'chairman@kiot.ac.in', 
+        publications: 'IJ: 63, NJ: 52, IC: 65, NC: 134, Books: 03', 
+        researchSupervision: 'Ph.D. (Supervised): 16; Ph.D. (Supervising): 01',
+        rating: 5.0 
+      },
+      { 
+        name: 'Dr. M. Ilangkumaran', 
+        designation: 'Professor', 
+        joiningDate: '31.12.2021', 
+        qualification: 'B.E., M.E., Ph.D.', 
+        association: 'Regular', 
+        experience: 'Teaching: 20.1 Years, Research: 12 Years', 
+        specialization: 'Industrial Engineering', 
+        email: 'mikmech@kiot.ac.in', 
+        publications: 'IJ: 65, NJ: 03, IC: 07, NC: 01', 
+        researchSupervision: 'Ph.D. (Supervised): 6; Ph.D. (Supervising): 5',
+        rating: 4.9 
+      },
+      { 
+        name: 'Prof. G. Sureshkrishna', 
+        designation: 'Assistant Professor', 
+        joiningDate: '21.03.2025', 
+        qualification: 'B.E., M.E.', 
+        association: 'Regular', 
+        experience: 'Teaching : 7.4 Years', 
+        specialization: 'Industrial Safety Engineering', 
+        email: 'sureshkpr13@gmail.com',
+        rating: 4.5 
+      }
+    ],
     labs: [{ name: 'Safety Engineering Lab', equipment: 'Fire Safety Setup, PPE Inventory', icon: ShieldCheck }],
     placementStats: { placed: '95%', avg: '5.2 LPA', top: '12 LPA', companies: '30+' },
   },

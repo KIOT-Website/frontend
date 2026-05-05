@@ -291,17 +291,22 @@ const AdmissionsPage = () => {
                   </p>
                </motion.div>
 
-               <motion.div 
+                <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative group lg:mt-0"
-               >
-                  <div className="relative z-10 rounded-[2rem] bg-white p-5 shadow-2xl border border-slate-100 overflow-hidden">
-                     <img src={campusImage} className="w-full h-auto rounded-[1.5rem] object-cover hover:scale-105 transition-transform duration-1000" alt="KIOT Campus" />
+                  className="relative group lg:mt-0 px-8 py-10"
+                >
+                  {/* Decorative Corner Shapes */}
+                  <div className="absolute top-4 left-4 w-24 h-24 bg-[#224292] rounded-3xl -z-10" />
+                  <div className="absolute bottom-4 right-4 w-24 h-24 bg-[#ffc107] rounded-3xl -z-10" />
+
+                  <div className="relative z-10 rounded-[8rem_2rem_8rem_2rem] bg-white p-4 shadow-2xl border-4 border-white overflow-hidden shadow-blue-900/10">
+                     <img src={campusImage} className="w-full h-auto rounded-[7.5rem_1.5rem_7.5rem_1.5rem] object-cover hover:scale-105 transition-transform duration-1000" alt="KIOT Campus" />
+                     <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/10 to-transparent" />
                   </div>
-               </motion.div>
+                </motion.div>
             </div>
          </div>
       </section>

@@ -100,7 +100,7 @@ const HeaderSection = () => {
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#224292] rounded-3xl -z-10" />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#ffc107] rounded-3xl -z-10" />
 
-            <div className="relative w-full h-full rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl">
+            <div className="relative w-full h-full rounded-[8rem_2rem_8rem_2rem] overflow-hidden border-8 border-white shadow-2xl shadow-blue-900/10">
               <img 
                 src={GdImage} 
                 alt="Placement Training" 

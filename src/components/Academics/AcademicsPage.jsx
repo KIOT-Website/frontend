@@ -146,7 +146,7 @@ const pgPrograms = [
   },
   {
     id: 'mba-iev',
-    name: 'MBA (IEV)',
+    name: 'MBA - Innovation, Entrepreneurship and Venture Development',
     short: 'MBA IEV',
     duration: '2 Years',
     intake: 60,

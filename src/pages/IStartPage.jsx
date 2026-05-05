@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link, useNavigate } from 'react-router-dom'
 import { 
   Microscope, Target, Lightbulb, Users, Rocket, Award, 
   ChevronRight, GraduationCap, Building2, X as CloseIcon,
-  Zap, Compass, ArrowRight, Star, Settings, Briefcase, Trophy
+  Zap, Compass, ArrowRight, Star, Settings, Briefcase, Trophy,
+  Check
 } from 'lucide-react'
 
 import achImg1 from '../assets/iStart/Achievements.webp'
@@ -13,9 +15,11 @@ import achImg4 from '../assets/iStart/Olimayam-2.0.webp'
 import achImg5 from '../assets/iStart/Young-India.webp'
 import achImg6 from '../assets/iStart/iStart-Hackathon-winner-1.webp'
 import achImg7 from '../assets/iStart/iStart-Hackathon-winner-2.webp'
+import istartLogo from '../assets/iStart/istart.png'
 
 const IStartPage = () => {
     const [selectedImg, setSelectedImg] = useState(null)
+    const navigate = useNavigate()
 
     const activities = [
         { img: achImg1, title: "Achievements" },
@@ -45,37 +49,34 @@ const IStartPage = () => {
             
             {/* 1. Compact Premium Hero Section */}
             <section className="relative w-full bg-white overflow-hidden py-6 lg:py-12 flex items-center">
-                <div className="absolute top-10 right-10 w-20 h-20 bg-[#ffc107] rounded-3xl -rotate-12 opacity-80 hidden lg:block" />
+
                 
                 <div className="mx-auto max-w-[1600px] w-full px-6 lg:px-12">
                     <div className="grid lg:grid-cols-12 gap-8 items-center">
                         
                         {/* Left Column: Content (Darkened Text) */}
                         <div className="lg:col-span-5 relative z-20">
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10"
-                            >
-                                <Lightbulb size={12} className="text-[#224292]" />
-                                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#224292]">Research & Innovation</span>
-                            </motion.div>
                             
-                            <motion.h1
+                            <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-5xl md:text-[5.5rem] font-black text-[#224292] leading-[0.85] tracking-tighter mb-6"
+                                className="mb-10"
                             >
-                                IIC & <span className="text-[#ffc107]">iStart</span>
-                            </motion.h1>
+                                <img src={istartLogo} alt="iStart Official Logo" className="w-full max-w-md md:max-w-xl lg:max-w-2xl h-auto" />
+                            </motion.div>
 
                             <div className="space-y-4 mb-10">
                                 <h3 className="text-2xl md:text-3xl font-black text-black leading-tight">
                                     Empowering Ideas. <br/> Enabling Innovation.
                                 </h3>
-                                <p className="text-black font-black text-sm md:text-base leading-tight max-w-xl">
-                                    IIC and iStart foster a culture of innovation, entrepreneurship, and research among students to solve real-world challenges.
-                                </p>
+                                <div className="space-y-4 text-black font-bold text-[13px] md:text-sm leading-relaxed max-w-2xl text-justify">
+                                    <p>
+                                        Knowledge Institute of Technology (KIOT) has established a comprehensive innovation and startup ecosystem comprising the Institution’s Innovation Council (IIC), StartupTN Pre-Incubation Centre, MSME Business Incubator, and the iStartKIOT MX Incubator Foundation (a Section 8 company).
+                                    </p>
+                                    <p>
+                                        In addition, the KIOT IPR Cell actively promotes awareness, protection, and commercialization of intellectual property among students, faculty, and researchers. Through StartupTN’s PIC, TBC, and MSME BI initiatives, KIOT provides end-to-end support, including idea validation, seed funding, and MVP development.
+                                    </p>
+                                </div>
                             </div>
 
                             {/* Features Grid (Colored Icons & Normal Case) */}
@@ -108,55 +109,27 @@ const IStartPage = () => {
                             </div>
                         </div>
 
-                        {/* Right Column: Visual Layout (Reduced Card Sizes) */}
-                        <div className="lg:col-span-7 relative h-[450px] lg:h-[550px] flex items-center">
-                            {/* Main Image Card (Indian Faces) */}
+                        {/* Right Column: Visual Layout (Premium Leaf Design) */}
+                        <div className="lg:col-span-7 relative h-[450px] lg:h-[600px] flex items-center justify-center">
+                            {/* Decorative Corner Shapes */}
+                            <div className="absolute top-10 left-10 w-24 h-24 bg-[#224292] rounded-3xl -z-0 opacity-20 lg:opacity-100" />
+                            <div className="absolute bottom-10 right-10 w-24 h-24 bg-[#ffc107] rounded-3xl -z-0 opacity-20 lg:opacity-100" />
+
+                            {/* Main Image Card (Premium Leaf Shape) */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                className="w-full h-[400px] lg:h-[480px] rounded-[3rem] overflow-hidden shadow-2xl relative z-10"
+                                className="w-full max-w-[600px] h-[400px] lg:h-[480px] rounded-[8rem_2rem_8rem_2rem] overflow-hidden shadow-2xl relative z-10 border-8 border-white"
                             >
                                 <img 
                                     src="/indian_students_innovation_group.png" 
                                     alt="Indian Innovation Lab" 
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/30 to-transparent" />
                             </motion.div>
 
-                            {/* Floating Card 1: Building Innovators (Reduced) */}
-                            <motion.div
-                                initial={{ x: -50, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                className="absolute bottom-6 left-0 lg:-left-6 bg-[#224292] rounded-[2rem] p-6 shadow-2xl z-30 max-w-[240px] text-white"
-                            >
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                                        <Users className="text-[#ffc107]" size={20} />
-                                    </div>
-                                    <h4 className="text-base font-black leading-tight tracking-tight">Building <br/>Innovators</h4>
-                                </div>
-                                <p className="text-white/70 text-[10px] font-black uppercase tracking-tight mb-4">Where curiosity meets creativity.</p>
-                                <div className="w-8 h-1 bg-[#ffc107] rounded-full" />
-                            </motion.div>
 
-                            {/* Floating Card 2: Innovation in Action (Hidden on Mobile) */}
-                            <motion.div
-                                initial={{ x: 50, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                className="hidden lg:block absolute top-10 right-0 lg:-right-6 bg-white rounded-[2rem] p-6 shadow-2xl z-30 max-w-[240px] border border-slate-100"
-                            >
-                                <TrendingUp className="text-[#ffc107] mb-3" size={32} />
-                                <h4 className="text-xl font-black text-[#224292] tracking-tighter leading-none mb-3">Innovation <br/>in Action</h4>
-                                <div className="space-y-2">
-                                    {["Student ideas.", "Real impact."].map((t, i) => (
-                                        <div key={i} className="flex items-center gap-2">
-                                            <div className="w-1.5 h-1.5 bg-[#ffc107] rounded-full" />
-                                            <span className="text-[9px] font-black text-black uppercase tracking-widest">{t}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </motion.div>
                         </div>
                     </div>
                 </div>
@@ -165,82 +138,59 @@ const IStartPage = () => {
             {/* 2. Overview, Vision & Mission */}
             <section id="overview" className="py-12 bg-white border-t border-slate-100">
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                        {/* Overview Column */}
-                        <div className="relative">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        {/* Vision Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 relative overflow-hidden h-full"
+                        >
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 rounded-xl bg-[#224292]/5 flex items-center justify-center shrink-0">
+                                    <Target className="text-[#224292]" size={24} />
+                                </div>
+                                <div className="flex flex-col">
+                                    <h3 className="text-2xl font-black text-[#224292] tracking-tight">Vision</h3>
+                                    <div className="h-1 w-8 bg-[#ffc107] mt-1" />
+                                </div>
+                            </div>
+                            <p className="text-black text-[15px] leading-relaxed text-justify font-bold">
+                                To foster a culture of innovation and entrepreneurship at <HighlightText>KIOT</HighlightText> by nurturing ideas into sustainable startups that create real-world impact.
+                            </p>
+                        </motion.div>
+
+                        {/* Mission Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            viewport={{ once: true }}
+                            className="bg-[#224292] p-8 rounded-[2rem] shadow-2xl relative overflow-hidden text-white h-full"
+                        >
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-8 w-1.5 bg-[#ffc107] rounded-full" />
-                                <h2 className="text-3xl font-black text-[#224292] tracking-tight">Overview</h2>
-                            </div>
-                            <div className="space-y-6 text-sm md:text-base leading-relaxed text-black text-justify font-black">
-                                <p>
-                                    At <HighlightText>Knowledge Institute of Technology (KIOT)</HighlightText>, innovation is not treated as an add-on—it is part of how students learn, build, and grow.
-                                </p>
-                                <p>
-                                    The <HighlightText>Institution’s Innovation Council (IIC)</HighlightText> at <HighlightText>KIOT</HighlightText>, established under the guidance of the Ministry of Education, Government of India, drives a structured approach to nurturing creativity, entrepreneurship, and problem-solving among students.
-                                </p>
-                                <p>
-                                    Complementing this, <HighlightText>iStart</HighlightText> functions as a dynamic student-driven initiative that promotes strategic thinking, innovation mindset, and real-world application of ideas.
-                                </p>
-                                <p>
-                                    From ideation sessions and workshops to pre-incubation support and industry connect, our ecosystem empowers students to <HighlightText>explore, experiment, and excel.</HighlightText>
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Vision & Mission Cards Column */}
-                        <div className="grid grid-cols-1 gap-8">
-                            <motion.div 
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="bg-white p-8 rounded-[2rem] shadow-xl border border-slate-100 relative overflow-hidden"
-                            >
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-xl bg-[#224292]/5 flex items-center justify-center shrink-0">
-                                        <Target className="text-[#224292]" size={24} />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <h3 className="text-2xl font-black text-[#224292] tracking-tight">Vision</h3>
-                                        <div className="h-1 w-8 bg-[#ffc107] mt-1" />
-                                    </div>
+                                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                                    <Rocket className="text-[#ffc107]" size={24} />
                                 </div>
-                                <p className="text-black text-base md:text-lg leading-relaxed text-justify font-black">
-                                    To foster a culture of innovation and entrepreneurship at <HighlightText>KIOT</HighlightText> by nurturing ideas into sustainable startups that create real-world impact.
-                                </p>
-                            </motion.div>
-
-                            <motion.div 
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 }}
-                                viewport={{ once: true }}
-                                className="bg-[#224292] p-8 rounded-[2rem] shadow-2xl relative overflow-hidden text-white"
-                            >
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                                        <Rocket className="text-[#ffc107]" size={24} />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <h3 className="text-2xl font-black text-white tracking-tight">Mission</h3>
-                                        <div className="h-1 w-8 bg-[#ffc107] mt-1" />
-                                    </div>
+                                <div className="flex flex-col">
+                                    <h3 className="text-2xl font-black text-white tracking-tight">Mission</h3>
+                                    <div className="h-1 w-8 bg-[#ffc107] mt-1" />
                                 </div>
-                                <ul className="space-y-0 text-white/90">
-                                    {[
-                                        "To build a supportive ecosystem that encourages innovation, critical thinking, and entrepreneurial mindset among students.",
-                                        "To provide structured programs, workshops, and bootcamps that strengthen startup skills and industry readiness.",
-                                        "To connect students with mentors, industry experts, and resources to transform ideas into impactful solutions.",
-                                        "To promote a culture of collaboration, experimentation, and continuous learning."
-                                    ].map((text, i) => (
-                                        <li key={i} className={`flex items-start gap-3 py-4 ${i !== 3 ? 'border-b border-white/10' : ''}`}>
-                                            <ChevronRight size={16} className="text-[#ffc107] shrink-0 mt-1" />
-                                            <span className="text-sm md:text-base font-black leading-relaxed">{text}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.div>
-                        </div>
+                            </div>
+                            <ul className="space-y-0 text-white/90">
+                                {[
+                                    "To build a supportive ecosystem that encourages innovation, critical thinking, and entrepreneurial mindset.",
+                                    "To provide structured programs that strengthen startup skills and industry readiness.",
+                                    "To connect students with mentors and resources to transform ideas into impactful solutions.",
+                                    "To promote a culture of collaboration and experimentation."
+                                ].map((text, i) => (
+                                    <li key={i} className={`flex items-start gap-3 py-3 ${i !== 3 ? 'border-b border-white/10' : ''}`}>
+                                        <ChevronRight size={16} className="text-[#ffc107] shrink-0 mt-1" />
+                                        <span className="text-[15px] font-bold leading-relaxed">{text}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -344,48 +294,112 @@ const IStartPage = () => {
                 </div>
             </section>
 
-            {/* 4. Programs & Events */}
-            <section id="programs" className="py-12 bg-white">
-                <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                    <div className="flex items-center gap-4 mb-12">
-                        <div className="h-8 w-1.5 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-4xl font-black text-[#224292] tracking-tight">Programs & Events</h2>
+            {/* 4. Centre for Innovation & Startups */}
+            <section id="centre" className="py-24 relative overflow-hidden font-graphik bg-[#F8FAFC]">
+                {/* Decorative Background Elements */}
+                <div className="absolute top-10 right-10 opacity-20 pointer-events-none">
+                    <div className="grid grid-cols-6 gap-2">
+                        {[...Array(30)].map((_, i) => (
+                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#224292]" />
+                        ))}
+                    </div>
+                </div>
+                <div className="absolute -left-20 top-[20%] w-64 h-64 bg-[#224292]/5 rounded-full blur-3xl pointer-events-none" />
+
+
+                <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
+                    <div className="flex flex-col items-center text-center mb-16">
+                        <div className="px-6 py-2 rounded-full bg-[#224292] text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6 shadow-xl shadow-blue-900/20">
+                            Empowering Innovation
+                        </div>
+                        <h2 className="text-5xl md:text-6xl font-black text-[#224292] tracking-tighter mb-6 leading-tight">
+                            Centre for <span className="text-[#224292]">Innovation</span> <br/>
+                            <span className="text-[#ffc107]">&</span> Startups
+                        </h2>
+                        <p className="text-black/60 text-[15px] font-bold max-w-2xl leading-relaxed">
+                            A multi-dimensional ecosystem providing end-to-end support for the next generation of entrepreneurs and innovators.
+                        </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                        <div className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-slate-100 relative overflow-hidden group">
-                            <h3 className="text-2xl font-black text-[#224292] mb-8">Flagship Activities</h3>
-                            <ul className="space-y-6">
-                                {[
-                                    { t: "Ideation Workshops", d: "Deep dive sessions into problem identification." },
-                                    { t: "Innovation Challenges", d: "Internal hackathons and design thinking competitions." },
-                                    { t: "Expert Lectures", d: "Interactions with successful entrepreneurs." }
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-4">
-                                        <div className="mt-1.5 w-2.5 h-2.5 bg-[#ffc107] rounded-full shadow-[0_0_10px_rgba(255,193,7,0.5)] shrink-0" />
-                                        <div>
-                                            <p className="font-black text-[#224292] text-base uppercase tracking-tight">{item.t}</p>
-                                            <p className="text-black mt-0.5 font-black text-xs">{item.d}</p>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div id="pre-incubation" className="bg-[#224292] p-10 rounded-[2.5rem] shadow-2xl text-white relative overflow-hidden">
-                            <h3 className="text-2xl font-black text-[#ffc107] mb-8">Pre-Incubation Support</h3>
-                            <p className="text-white/80 mb-8 text-base font-black leading-relaxed">
-                                Moving ideas from concept to early-stage MVP with full mentorship and prototyping lab access.
-                            </p>
-                            <div className="grid grid-cols-2 gap-3">
-                                {[
-                                    "Mentorship", "Prototyping Lab", "IP Support", "Business Modeling"
-                                ].map((tag) => (
-                                    <div key={tag} className="px-4 py-3 bg-white/10 rounded-xl border border-white/20 text-[9px] font-black uppercase tracking-widest text-center hover:bg-[#ffc107] hover:text-[#224292] transition-all">
-                                        {tag}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {[
+                            { 
+                                title: "Institution’s Innovation Council (IIC)", 
+                                desc: "Under the Ministry of Education, fostering a structured approach to creativity and problem-solving.",
+                                icon: Lightbulb,
+                                color: "#ffc107", // Gold (Brand)
+                                points: ["Promotes Innovation Culture", "Structured Framework", "Impactful Collaboration"],
+                                link: "/research-innovation/iic"
+                            },
+                            { 
+                                title: "StartupTN Pre-Incubation Centre", 
+                                desc: "Idea validation and early-stage support for transformative student-led startups.",
+                                icon: Rocket,
+                                color: "#3b82f6",
+                                points: ["Idea Validation", "Mentorship & Guidance", "Pre-Incubation Support"],
+                                link: "/research-innovation/startuptn"
+                            },
+                            { 
+                                title: "MSME Business Incubator", 
+                                desc: "Providing seed funding and industry-aligned incubation for sustainable business growth.",
+                                icon: Building2,
+                                color: "#10b981",
+                                points: ["Seed Funding Access", "Industry Alignment", "Sustainable Growth"],
+                                link: "/research-innovation/msme-bi"
+                            },
+                            { 
+                                title: "iStartKIOT MX Incubator Foundation", 
+                                desc: "A Section 8 company dedicated to global-scale startup acceleration and investment readiness.",
+                                icon: Briefcase,
+                                color: "#224292", // Deep Blue (Brand)
+                                points: ["Startup Acceleration", "Investment Readiness", "Global Opportunities"],
+                                link: "/research-innovation/mx-incubator"
+                            }
+                        ].map((item, i) => (
+                            <motion.div 
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                                viewport={{ once: true }}
+                                className="group relative bg-white rounded-xl p-5 shadow-2xl shadow-slate-200/50 flex flex-col h-full overflow-hidden border border-slate-50"
+                            >
+                                {/* Top Accent Bar */}
+                                <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: item.color }} />
+                                
+                                <div className="mb-4 relative">
+                                    <div className="w-12 h-12 rounded-full bg-white shadow-lg border border-slate-50 flex items-center justify-center mb-6">
+                                        <item.icon size={24} style={{ color: item.color }} />
                                     </div>
-                                ))}
-                            </div>
-                        </div>
+                                    <h3 className="text-[17px] font-black text-[#224292] leading-tight mb-2 min-h-[2.5rem]">
+                                        {item.title}
+                                    </h3>
+                                    <div className="h-0.5 w-8 bg-[#224292] mb-4" />
+                                    <p className="text-black text-[12px] font-bold leading-relaxed mb-4">
+                                        {item.desc}
+                                    </p>
+                                    
+                                    <ul className="space-y-2 mb-6">
+                                        {item.points.map((pt, idx) => (
+                                            <li key={idx} className="flex items-center gap-2">
+                                                <div className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 border border-slate-100" style={{ color: item.color }}>
+                                                    <Check className="w-2.5 h-2.5 stroke-[4]" />
+                                                </div>
+                                                <span className="text-[10px] font-black text-black">{pt}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div 
+                                    onClick={() => item.link && navigate(item.link)}
+                                    className={`mt-auto pt-2 flex items-center gap-2 group/btn ${item.link ? 'cursor-pointer' : 'opacity-50 cursor-default'}`}
+                                >
+                                    <span className="text-[11px] font-black tracking-tight transition-colors" style={{ color: item.color }}>View more</span>
+                                    <ArrowRight size={12} className="transition-transform group-hover/btn:translate-x-1" style={{ color: item.color }} />
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </section>
