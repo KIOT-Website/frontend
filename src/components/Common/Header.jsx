@@ -385,7 +385,7 @@ const Header = () => {
                       
                       {/* Desktop Dropdown: Regular subLinks */}
                       {link.subLinks && (
-                        <div className="absolute top-[100%] left-0 w-64 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] before:content-[''] before:absolute before:top-[-15px] before:left-0 before:w-full before:h-[15px]">
+                        <div className="absolute top-[100%] left-0 w-64 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border-r-4 border-[#224292] p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] before:content-[''] before:absolute before:top-[-15px] before:left-0 before:w-full before:h-[15px]">
                           {link.subLinks.map(sub => (
                             <div key={sub.name} className="relative group/sub">
                               <a
@@ -403,7 +403,7 @@ const Header = () => {
 
                               {/* Nested Level (Desktop) */}
                               {sub.subLinks && (
-                                <div className="absolute left-[100%] top-0 ml-1 w-64 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border border-[#D5E2F4]/60 p-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform translate-x-2 group-hover/sub:translate-x-0 z-[110]">
+                                <div className="absolute left-[100%] top-0 ml-1 w-64 bg-white rounded-2xl shadow-[0_20px_60px_rgba(34,66,146,0.15)] border-r-4 border-[#224292] p-2 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform translate-x-2 group-hover/sub:translate-x-0 z-[110]">
                                   {sub.subLinks.map(nested => (
                                     <a
                                       key={nested.name}
