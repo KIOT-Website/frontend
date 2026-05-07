@@ -2,6 +2,35 @@
 
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Graphik-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Medium.woff2') format('woff2'),
+       url('./assets/fonts/Graphik-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Semibold.woff2') format('woff2'),
+       url('./assets/fonts/Graphik-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Graphik';
+  src: url('./assets/fonts/Graphik-Bold.woff2') format('woff2'),
+       url('./assets/fonts/Graphik-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
 @theme {
   --color-primary-dark: #224292;
   --color-primary-medium: #64779F;
@@ -12,7 +41,7 @@
 
   --font-sans: "Plus Jakarta Sans", sans-serif;
   --font-inter: "Plus Jakarta Sans", sans-serif;
-  --font-graphik: "Plus Jakarta Sans", sans-serif;
+  --font-graphik: "Graphik", sans-serif;
   --font-display: "Plus Jakarta Sans", sans-serif;
 
   --animate-spin-slow: spin 4s linear infinite;

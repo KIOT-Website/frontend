@@ -53,7 +53,7 @@ const AboutUs = () => {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.7 }}
-             className="space-y-8 text-[#333333] text-[15px] sm:text-[16px] leading-[1.7] font-normal font-graphik text-justify"
+             className="space-y-8 text-[#333333] text-[16px] leading-[1.8] font-normal font-graphik text-justify"
            >
               <p>
                 Knowledge Institute of Technology (KIOT) was established by Knowledge Institute of Technology Trust (KIOT Trust) in 2009. Dr. PSS. Srinivasan is the Founder of the Trust. The KIOT Trust is a 41-member team: 20 of them are professors in engineering education and 21 of them are budding entrepreneurs.
