@@ -8,7 +8,7 @@ const AboutUs = () => {
   const [showAcademicStats, setShowAcademicStats] = useState(false);
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-10 md:pt-16 pb-10 md:pb-16 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-0 pb-10 md:pb-16 min-h-screen overflow-hidden">
       
       {/* Decorative Brand Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#224292]/5 to-transparent rounded-bl-full pointer-events-none" />
