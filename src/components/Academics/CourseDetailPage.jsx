@@ -776,7 +776,7 @@ export default function CourseDetailPage() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
                   <div>
                     <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
-                       Intellectual <span className="text-[#ffc107]">Property</span>
+                       Department <span className="text-[#ffc107]">Patents</span>
                     </h2>
                     <p className="text-black font-medium font-graphik text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
                   </div>
@@ -785,51 +785,109 @@ export default function CourseDetailPage() {
                   </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8">
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      whileHover={{ y: -10, scale: 1.01 }}
-                      viewport={{ once: true }}
-                      className="group relative bg-white p-7 rounded-[2rem] border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center transition-all duration-500"
-                    >
-                       <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#224292]/20 rounded-tl-[2rem]" />
-                       <div className="w-16 h-16 rounded-2xl bg-[#224292]/5 border border-[#224292]/10 flex items-center justify-center mb-6 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
-                          <FileText size={32} className="text-[#224292] group-hover:text-white transition-colors" />
-                       </div>
-                       <h3 className="text-lg font-bold font-graphik text-[#224292] mb-3">Official Patents</h3>
-                       <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
-                          Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
-                       </p>
-                       <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase tracking-[0.2em]">
-                          Academic Year 2024-25
-                       </div>
-                    </motion.div>
-
-                    <motion.div 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      whileHover={{ y: -10, scale: 1.01 }}
-                      transition={{ delay: 0.1 }}
-                      viewport={{ once: true }}
-                      className="group bg-gradient-to-br from-[#224292] to-[#224292] rounded-[2rem] p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
-                    >
-                       <div className="absolute -bottom-1 -right-1 w-12 h-12 border-b-4 border-r-4 border-dashed border-[#ffc107]/30 rounded-br-[2rem]" />
-                       <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
-                       <div className="relative z-10">
-                         <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
-                            <Award size={28} className="text-[#ffc107]" />
+                {course.patents && course.patents.length > 0 ? (
+                  <div className="space-y-12">
+                      <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden"
+                      >
+                        <div className="bg-[#224292] px-8 py-5 flex items-center justify-between">
+                          <h3 className="text-white font-bold font-graphik text-lg tracking-tight">Official Department Patents</h3>
+                        </div>
+                        
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-left border-collapse">
+                            <thead>
+                              <tr className="bg-slate-50 border-b border-slate-100">
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Applicant & Inventor</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Patent Title</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Type</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Application/Design No</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Date</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                              {course.patents.map((yearGroup) => (
+                                yearGroup.data.map((patent, pIdx) => (
+                                  <tr key={`${yearGroup.year}-${pIdx}`} className="hover:bg-blue-50/30 transition-colors group">
+                                    <td className="px-6 py-5">
+                                      <p className="text-[13px] font-bold text-black leading-tight mb-1">{patent.inventors}</p>
+                                    </td>
+                                    <td className="px-6 py-5">
+                                      <p className="text-[13px] font-medium text-black leading-snug max-w-xs">{patent.title}</p>
+                                    </td>
+                                    <td className="px-6 py-5">
+                                      <span className="text-[11px] font-bold text-[#64779F]">{patent.type}</span>
+                                    </td>
+                                    <td className="px-6 py-5">
+                                      <code className="text-[12px] font-bold text-[#224292] bg-slate-100 px-2 py-1 rounded">{patent.appNo}</code>
+                                    </td>
+                                    <td className="px-6 py-5 text-sm font-medium text-slate-600 whitespace-nowrap">{patent.date}</td>
+                                    <td className="px-6 py-5">
+                                      <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
+                                        patent.status === 'Granted' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700'
+                                      }`}>
+                                        {patent.status}
+                                      </span>
+                                    </td>
+                                  </tr>
+                                ))
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </motion.div>
+                  </div>
+                ) : (
+                  <div className="grid lg:grid-cols-2 gap-8">
+                      <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        whileHover={{ y: -10, scale: 1.01 }}
+                        viewport={{ once: true }}
+                        className="group relative bg-white p-7 rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center transition-all duration-500"
+                      >
+                         <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#224292]/20 rounded-tl-2xl" />
+                         <div className="w-16 h-16 rounded-2xl bg-[#224292]/5 border border-[#224292]/10 flex items-center justify-center mb-6 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
+                            <FileText size={32} className="text-[#224292] group-hover:text-white transition-colors" />
                          </div>
-                         <h3 className="text-lg font-bold font-graphik mb-3 tracking-tight">Research Excellence</h3>
-                         <p className="text-white/70 text-sm font-medium font-graphik leading-relaxed mb-6">
-                            We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
+                         <h3 className="text-lg font-bold font-graphik text-[#224292] mb-3">Official Patents</h3>
+                         <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
+                            Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
                          </p>
-                         <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-bold font-graphik uppercase tracking-widest transition-all">
-                            Contact R&D <ArrowRight size={14} />
-                         </button>
-                       </div>
-                    </motion.div>
-                </div>
+                         <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase tracking-[0.2em]">
+                            Academic Year 2024-25
+                         </div>
+                      </motion.div>
+
+                      <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        whileHover={{ y: -10, scale: 1.01 }}
+                        transition={{ delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="group bg-gradient-to-br from-[#224292] to-[#224292] rounded-2xl p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
+                      >
+                         <div className="absolute -bottom-1 -right-1 w-12 h-12 border-b-4 border-r-4 border-dashed border-[#ffc107]/30 rounded-br-2xl" />
+                         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
+                         <div className="relative z-10">
+                           <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
+                              <Award size={28} className="text-[#ffc107]" />
+                           </div>
+                           <h3 className="text-lg font-bold font-graphik mb-3 tracking-tight">Research Excellence</h3>
+                           <p className="text-white/70 text-sm font-medium font-graphik leading-relaxed mb-6">
+                              We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
+                           </p>
+                           <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-bold font-graphik uppercase tracking-widest transition-all">
+                              Contact R&D <ArrowRight size={14} />
+                           </button>
+                         </div>
+                      </motion.div>
+                  </div>
+                )}
               </div>
             )}
 

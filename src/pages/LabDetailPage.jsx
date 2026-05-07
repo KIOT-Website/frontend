@@ -123,7 +123,7 @@ export default function LabDetailPage() {
                       <div className="w-10 h-10 rounded-full bg-[#224292]/5 flex items-center justify-center">
                         <Users size={18} className="text-[#224292]" />
                       </div>
-                      <p className="text-[#224292] font-black text-lg leading-tight">{lab.incharge || 'Prof. Faculty Name'}</p>
+                      <p className="text-black font-bold text-lg leading-tight">{lab.incharge || 'Prof. Faculty Name'}</p>
                     </div>
                   </div>
 
@@ -134,7 +134,7 @@ export default function LabDetailPage() {
                       <div className="w-10 h-10 rounded-full bg-[#ffc107]/5 flex items-center justify-center">
                         <Wrench size={16} className="text-[#224292]" />
                       </div>
-                      <p className="text-[#224292] font-black text-lg leading-tight">{lab.technician || 'Mr. Technical Staff'}</p>
+                      <p className="text-black font-bold text-lg leading-tight">{lab.technician || 'Mr. Technical Staff'}</p>
                     </div>
                   </div>
                 </div>

@@ -1723,58 +1723,190 @@ export const courseData = {
     labs: [
       { 
         name: 'Engineering Practices Laboratory', 
-        equipments: ['Assorted Electronic Components', 'Electrical measuring instruments', 'Study purpose items: Iron box, fan and regulator, emergency lamp', 'Megger(250v/500v)', 'Power Tools: Range Finder, Digital Live-wire detector'], 
+        incharge: 'Mrs. N. Divya, AP / EEE',
+        technician: 'Mr. P. Munusamy, LT / EEE',
+        equipments: [
+          'Assorted Electronic Components', 
+          'Electrical measuring instruments', 
+          'Study purpose items: Iron box, fan with regulator, emergency lamp and Induction stove', 
+          'Arduino Microcontroller Board', 
+          'Megger (250V/500V)', 
+          'Power Tools: Range Finder, Digital Live-wire detector'
+        ], 
         icon: Wrench 
       },
       { 
-        name: 'Electric Circuits Laboratory', 
-        equipments: ['Regulated Power Supply : (0–15)V DC', 'Function Generator : 1 MHz', 'Single Phase Energy Meter', 'Oscilloscope : 20 MHz', 'Digital Storage Oscilloscope : 20 MHz', 'Circuit Simulation Software', 'AC/DC – Voltmeters'], 
+        name: 'Circuits Theory Laboratory', 
+        incharge: 'Mr. M. Rajkumar, AP / EEE',
+        technician: 'Mr. P. Munusamy, LT / EEE',
+        equipments: [
+          'Regulated Power Supply : (0–15)V DC', 
+          'Function Generator : 1 MHz', 
+          'Single Phase Energy Meter', 
+          'Oscilloscope : 20 MHz', 
+          'Digital Storage Oscilloscope : 20 MHz', 
+          'Circuit Simulation Software', 
+          'AC/DC – Voltmeters', 
+          'Intel dual core Desktop PC with 8GB RAM 500GB HDD'
+        ], 
         icon: Zap 
       },
       { 
-        name: 'Electronics Laboratory', 
-        equipments: ['Cathode Ray Oscilloscope', 'Function Generator', 'Single / Dual Power Supply', 'Decade Resistance / Capacitance / Inductance Boxes', 'Rheostats', 'EDC type DC Ammeter & Voltmeter', 'Digital Multimeter'], 
-        icon: CircuitBoard 
-      },
-      { 
-        name: 'Control and Instrumentation Laboratory', 
-        equipments: ['PID Controller Trainer Kit', 'Strain Gauge Trainer Kit', 'Position Control System Trainer Kit', 'AC Synchro Transmitter & Receiver', 'Three Phase Synchronous Induction Motor', 'Flow measurement Trainer Kit', 'Thermometer, Thermistor, RTD', 'Optical Sensors', 'Air Foot Pump and Pressure Chamber'], 
-        icon: Settings 
-      },
-      { 
-        name: 'Linear and Digital Integrated Circuits Laboratory', 
-        equipments: ['Dual (0-30V) Power Supply', 'Cathode Ray Oscilloscope : 30MHz', 'Function Generator : 1MHz', 'IC Tester', 'Computer with PSPICE Software', 'Transformers / Auto Transformers', 'Digital IC Trainer Kit'], 
-        icon: Cpu 
-      },
-      { 
         name: 'Electrical Machines Laboratory - I', 
-        equipments: ['DC Series / Shunt / Compound Motor & Generator', 'Three Phase Slip Ring / Synchronous / Squirrel Cage Induction Motor', 'Three Phase Alternator', 'Single Phase Induction Motor', 'Tachometer', 'Rectifier Unit'], 
+        incharge: 'Mr. G. Karthikeyan, AP / EEE',
+        technician: 'Mr. P. Munusamy, LT / EEE',
+        equipments: [
+          'DC Series Motor / Generator', 
+          'DC Shunt Motor / Generator', 
+          'DC Compound Motor / Generator', 
+          'Three Phase Slip Ring Induction Motor', 
+          'Three Phase Synchronous Induction Motor', 
+          'Three Phase Alternator', 
+          'Three Phase Squirrel Cage Induction Motor', 
+          'Single Phase Induction Motor', 
+          'Tachometer', 
+          'Rectifier Unit'
+        ], 
         icon: Settings 
       },
       { 
         name: 'Electrical Machines Laboratory - II', 
-        equipments: ['Three Phase Slip Ring Motor', 'Single / Three Phase Loading Rheostat & Auto Transformer', 'Three Phase Loading Inductor', 'BLDC Motor', 'Three Phase Alternator & Synchronous Motor'], 
+        incharge: 'Mr. R. Kathiresan, AP / EEE',
+        technician: 'Mr. P. Munusamy, LT / EEE',
+        equipments: [
+          'Three Phase Slip Ring Induction Motor', 
+          'Single / Three Phase Loading Rheostat', 
+          'Single / Three Phase Auto Transformer', 
+          'Three Phase Loading Inductor', 
+          'Single / Three Phase Transformer', 
+          'Three Phase Synchronous Induction Motor', 
+          'BLDC Motor', 
+          'Three Phase Alternator', 
+          'Three Phase Synchronous Motor', 
+          'Capacitance Loading', 
+          'Three Phase Inductive Loading'
+        ], 
         icon: Zap 
       },
       { 
-        name: 'Microprocessor and Microcontroller Laboratory', 
-        equipments: ['8085 Microprocessor Trainer', '8051 Micro Controller Trainer Kit', '8255 / 8251 / 8259 Interface boards', 'ADC and DAC Card', 'AC & DC Motor with Controller', 'Traffic Light Control System', 'Stepper Motor'], 
+        name: 'Analog and Digital Electronics Laboratory', 
+        incharge: 'Mr. R. Madhan Raj & Mrs. P. Rekha, AP / EEE',
+        technician: 'Mr. S. Ayyanar, LT / EEE',
+        equipments: [
+          'Cathode Ray Oscilloscope', 
+          'Function Generator', 
+          'Single Power Supply', 
+          'Dual Power Supply', 
+          'Decade Resistance Box', 
+          'Decade Capacitance Box', 
+          'Decade Inductance Box', 
+          'Rheostats', 
+          'EDC type DC Ammeter & Voltmeter', 
+          'Digital Multimeter', 
+          'Dual (0-30V) Power Supply', 
+          'Cathode Ray Oscilloscope : 30MHz', 
+          'IC Tester', 
+          'Computer with PSPICE Software', 
+          'Transformers / Auto Transformers', 
+          'Digital IC Trainer Kit'
+        ], 
+        icon: CircuitBoard 
+      },
+      { 
+        name: 'Control Systems Laboratory', 
+        incharge: 'Dr. P.A. Gowri Sankar, ASP / EEE',
+        technician: 'Mr. P. Sakthivel, LT / EEE',
+        equipments: [
+          'HP Intel Core i7 3.00GHZ Processor, 16 GB SSD RAM, 512 GB SSD HDD', 
+          'ACER Veriton Series Intel Core i3 3.60GHZ Processor, 4 GB DDR3 RAM, 500GB HDD', 
+          'Keyboard & wired Mouse USB', 
+          '19.5" / 18.5" Monitors'
+        ], 
+        icon: Settings 
+      },
+      { 
+        name: 'Microcontroller and Interfacing Laboratory', 
+        incharge: 'Mr. R. Madhan Raj & Mrs. P. Rekha, AP / EEE',
+        technician: 'Mr. S. Ayyanar, LT / EEE',
+        equipments: [
+          '8085 Microprocessor Trainer', 
+          '8051 Micro Controller Trainer Kit', 
+          '8255 / 8251 / 8259 Interface boards', 
+          '8279 Keyboard / Display Interface board', 
+          '8254 Timer Counter', 
+          'ADC and DAC Card', 
+          'AC & DC Motor with Controller', 
+          'Traffic Light Control System', 
+          'Stepper Motor'
+        ], 
         icon: Cpu 
       },
       { 
-        name: 'Power Electronics laboratory', 
-        equipments: ['SCR, MOSFET, IGBT And TRIAC Trainer Kits', 'Single Phase SCR based Half / Fully Controlled Converter', 'MOSFET based Step Up / Down Choppers', 'IGBT based Single / Three Phase PWM Inverter Module', 'Switched Mode Power Converter Module', 'Cyclo Converter Trainer Kit'], 
+        name: 'Power Electronics Laboratory', 
+        incharge: 'Mr. S.E. Murthy, AP / EEE',
+        technician: 'Mr. S. Ayyanar, LT / EEE',
+        equipments: [
+          'SCR, MOSFET, IGBT And TRIAC Trainer Kit', 
+          'Single Phase SCR based Half / Fully Controlled Converter', 
+          'MOSFET based Step Up / Down Choppers', 
+          'IGBT based Single / Three Phase PWM Inverter Module', 
+          'Switched Mode Power Converter Module', 
+          'SCR & TRIAC based Single Phase AC Controller', 
+          'Cyclo Converter Trainer Kit', 
+          'Single Phase Auto Transformer', 
+          'LCR Meter, Isolation Transformer and Rheostats'
+        ], 
         icon: Zap 
       },
       { 
-        name: 'Power System Simulation laboratory', 
-        equipments: ['High-end Workstations (Pentium-IV, 1GB RAM)', 'Power System Simulation Software: Mathcad and MATLAB', 'Compilers: C, C++, Visual Basic, VC++', 'Laser Printer'], 
+        name: 'Power System Analysis Laboratory', 
+        incharge: 'Dr. P.A. Gowri Sankar, ASP / EEE',
+        technician: 'Mr. P. Sakthivel, LT / EEE',
+        equipments: [
+          'HP Intel Core i7 3.00GHZ Processor, 16 GB SSD RAM, 512 GB SSD HDD', 
+          'ACER Veriton Series Intel Core i3 3.60GHZ Processor, 4 GB DDR3 RAM, 500GB HDD', 
+          'Keyboard & wired Mouse USB', 
+          '19.5" / 18.5" Monitors'
+        ], 
         icon: Terminal 
       },
       { 
         name: 'Renewable Energy Systems Laboratory', 
-        equipments: ['1 kW Solar PV training system (On/OFF grid)', 'Hybrid 100 W PV solar and 200W Micro wind Generator System', '1 kW Solar Emulator Hardware Trainer Kit', 'Wind Anemometer', 'Digital Tachometer', 'Exide Battery'], 
+        incharge: 'Mr. G. Karthikeyan, AP / EEE',
+        technician: 'Mr. P. Sakthivel, LT / EEE',
+        equipments: [
+          '1 kW Solar PV training system with On grid and OFF grid Inverter', 
+          'Hybrid 100 W PV solar and 200W Micro wind Generator System', 
+          '1 kW Solar Emulator Hardware Trainer Kit', 
+          'Multimeter', 
+          'Wind Anemometer', 
+          'Digital Tachometer', 
+          'Exide Battery'
+        ], 
         icon: FlaskConical 
+      }
+    ],
+    patents: [
+      {
+        year: '2023-2024',
+        data: [
+          { sno: 1, inventors: 'Dr.V.Kamatchi Kannan, Dr.C.Muniraj, Kalpanadevi S, Divya N, Jagadeeshraja M, Rajkumar M', title: 'Next-Generation Electric Vehicle Charging Infrastructure: IOT-Enabled Energy Storage Management', type: 'Utility Patent', appNo: '202341040168A', date: '18.08.2023', status: 'Published' },
+          { sno: 2, inventors: 'Dr.V.Kamatchi Kannan, Dr.C.Muniraj, Divya N', title: 'Smart Wearable Life Saver', type: 'Utility Patent', appNo: '202341057267A', date: '15.12.2023', status: 'Published' },
+          { sno: 3, inventors: 'Dr.V.Kamatchi Kannan', title: 'Smart systems for efficient waste water management and recycling Prediction', type: 'Utility Patent', appNo: '202441011624A', date: '08.03.2024', status: 'Published' },
+          { sno: 4, inventors: 'Dr.V.Kamatchi Kannan', title: 'An apparatus for monitoring the phase failure and overload', type: 'Utility Patent', appNo: '201841023898.00', date: '22.03.2024', status: 'Granted' },
+          { sno: 5, inventors: 'Dr.V.Kamatchi Kannan', title: 'AI Based Electric And Manual Home Care Bed Cum Wheelchair', type: 'Design Patent', appNo: '411013-001', date: '10.05.2024', status: 'Granted' },
+          { sno: 6, inventors: 'Dr.P.A.Gowri Sankar', title: 'Multi-Function Assistance Device for Visually Impaired People', type: 'Utility Patent', appNo: '202341084174.00', date: '05.01.2024', status: 'Published' },
+          { sno: 7, inventors: 'N/A', title: 'IOT Based Street Cleaning Vehicle', type: 'Design Patent', appNo: '387875-001', date: '23.08.2023', status: 'Granted' },
+          { sno: 8, inventors: 'N/A', title: 'Solar Wireless Electric Vehicle Charging System', type: 'Design Patent', appNo: '387219-001', date: '13.09.2023', status: 'Granted' },
+          { sno: 9, inventors: 'Mr.S.E.Murthy & Mr.R.Kathiresan', title: 'A Three Phase Multilevel Inverter Cascaded By three Two Level and Two Single Phase Boosted H Bridge Inverters', type: 'Utility Patent', appNo: '202341065452A', date: '06.10.2023', status: 'Published' },
+          { sno: 10, inventors: 'Mr.R.Madhanraj', title: 'Underwater Heads Up Display Helmet', type: 'Design Patent', appNo: '393410-001', date: '04.04.2024', status: 'Granted' },
+        ]
+      },
+      {
+        year: '2021-2022',
+        data: [
+          { sno: 11, inventors: 'Dr.C.Muniraj', title: 'Use of 5G IoT Network to Handle Moving Objects in a Smart Environment', type: 'Design Patent', appNo: '202241019214', date: '15.04.2022', status: 'Published' }
+        ]
       }
     ],
     placementStats: { placed: '89%', avg: '4.2 LPA', top: '15 LPA', companies: '40+' },
