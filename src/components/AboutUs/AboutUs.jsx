@@ -35,7 +35,7 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto mb-10 md:mb-16 px-4 md:px-0"
+          className="max-w-5xl mx-auto mb-10 md:mb-16 px-4 md:px-0"
         >
           <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl border-0 md:border-4 border-white h-[320px] md:h-auto md:aspect-[3/1]">
             <img src={campusImg} alt="KIOT Campus" className="w-full h-full object-cover object-[70%_center] md:object-center" />
