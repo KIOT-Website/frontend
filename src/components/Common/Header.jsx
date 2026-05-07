@@ -119,7 +119,6 @@ const navLinks = [
       { name: 'Campus Life', href: '/resources/campus-life', icon: Building2 },
       { name: 'Student Life', href: '/resources/student-life', icon: Users },
       { name: 'Alumni', href: '/resources/alumni', icon: GraduationCap },
-      { name: 'News & Events', href: '/resources/news-events', icon: Calendar },
       { name: 'Blogs', href: '/resources/blogs', icon: FileText }
     ]
   },

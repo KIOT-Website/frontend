@@ -1,99 +1,158 @@
 import { motion } from 'framer-motion'
-import { Building2, Target, Briefcase, Check, ArrowLeft, Shield } from 'lucide-react'
+import { 
+    Target, Users, Lightbulb, Zap, CreditCard, ArrowRight, Building2, 
+    Search, FileText, Download, Eye, ShieldCheck, Rocket, Calendar, 
+    GraduationCap, Building, Settings, Banknote
+} from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+
+import ist2Logo from '../assets/iStart/ist2.png'
+import istart1 from '../assets/iStart/istart (1).jpg'
+import msmiImg from '../assets/iStart/msmi.png'
 
 const MSMEBIPage = () => {
     const navigate = useNavigate()
 
+    const highlights = [
+        { label: "No. of Program Conducted (July 2025 – Feb 2026)", details: "21 Programs" },
+        { label: "No. of Ideas Identified and on-boarded as Preincubatee", details: "13 Preincubatee" },
+        { label: "No of Smart Card Received", details: "13 Cards" },
+        { label: "Grant Received [ StartupTN (7.5L) , MSME (27.5 L), IVP (3.00 L) ]", details: "38 Lakhs" },
+        { label: "TNGSS (10 Delegate Passes; Incubator Stall)", details: "02 Startup Displayed" },
+        { label: "Participated in HNI Meet with Mr.Sivarajah Ramananthan", details: "04 Members Participated" },
+        { label: "Grant Support for Students Prototype Development (so far)", details: "Rs. 1.70 Lakh" },
+        { label: "Patent Support Institution Contribution (16 Patents Identified filing)", details: "Rs. 4.00 Lakh" }
+    ]
+
+    const activities = [
+        { activity: "Incubatee Application, Agreement & Onboarding- Framework finalization", audience: "All Students+Public Startups", date: "28/02/2026", status: "Completed" },
+        { activity: "iStart Hackathon- Innovate India 2047(Academic edition) Idea Selection", audience: "All External Students+Public Startups", date: "March 2nd week", status: "Level 1 Completed" },
+        { activity: "FDP for KIOT faculty members related with Startups Creation and Evaluation", audience: "KIOT-Faculty members", date: "March 2nd week", status: "Planned" },
+        { activity: "KIOT Innovate India 2047- Stage two, Two Days Bootcamp", audience: "KIOT 2nd year UG+MBA students", date: "March 3rd week", status: "Planned" },
+        { activity: "iStart Hackathon- Innovate India 2047(Academic edition) Final Hackathon", audience: "All Students+Public", date: "March 4th week", status: "Planned" },
+        { activity: "KIOT Innovate India 2047- Stage two Final Hackathon", audience: "KIOT 2nd year UG+MBA students", date: "April 1st week", status: "Planned" },
+        { activity: "Two Days Bootcamp for First Year iStart members", audience: "First year iStart Members", date: "April 2nd week", status: "Planned" },
+        { activity: "Identifying 25 Startups ideas using MAP, Internal, External programs", audience: "Students+Public", date: "May", status: "Planned" },
+        { activity: "Entrepreneurship Alumni Meet", audience: "KIOT Alumni Members", date: "May", status: "Planned" },
+        { activity: "Entrepreneurship Conclave", audience: "Startups, Entrepreneurs, Startup enablers, etc", date: "June", status: "Planned" }
+    ]
+
     return (
-        <div className="min-h-screen bg-white font-graphik pb-20">
-            {/* Header / Navigation */}
-            <div className="bg-[#224292] py-4 px-6 sticky top-0 z-[100] shadow-xl">
-                <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    <button 
-                        onClick={() => navigate('/research-innovation/istart')}
-                        className="flex items-center gap-2 text-white hover:text-[#ffc107] transition-colors font-black text-sm"
-                    >
-                        <ArrowLeft size={18} />
-                        Back to Innovation Hub
-                    </button>
-                    <div className="text-white/50 text-[10px] font-black uppercase tracking-widest hidden md:block">
-                        MSME Business Incubator @ KIOT
+        <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-20">
+            <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+                
+                <div className="space-y-16">
+                    {/* Hero Section */}
+                    <div className="grid lg:grid-cols-2 gap-16 items-start">
+                        {/* Left Content */}
+                        <div className="space-y-10">
+                            <div className="space-y-4">
+                                <h1 className="text-5xl lg:text-7xl font-black text-[#224292] leading-[1.1] tracking-tighter">
+                                    MSME – <span className="text-[#ffc107]">BI</span>
+                                </h1>
+                            </div>
+
+                            <div className="space-y-6">
+                                <p className="text-black text-[16px] font-bold leading-relaxed text-justify">
+                                    Knowledge Institute of Technology (KIOT) has established Ministry of Micro, Small & Medium Enterprises Business Incubator (MSME BI) as per the approval Reference No. <span className="text-[#224292]">HIBITN008899</span> under Ministry of MSME.
+                                </p>
+                                <p className="text-black text-[16px] font-bold leading-relaxed text-justify">
+                                    The vision of the KIOT MSME BI to promote and support untapped creativity of individual by adopting latest technologies in manufacturing as well as knowledge based innovative MSMEs.
+                                </p>
+                                <p className="text-black text-[16px] font-bold leading-relaxed text-justify">
+                                    We provide the space, equipment's, lab and all the auxiliary support to the incubates for nurturing of their ideas for their Startup dreams.
+                                </p>
+                                <p className="text-black text-[16px] font-bold leading-relaxed text-justify">
+                                    KIOT MSME BIs is selected for the grant of up to <span className="text-[#224292]">Rs. 1.00 Cr.</span> for procurement and installation of relevant plant and machines including hardware and software etc. in order to strengthen the technology related R&D activities and common facilities for incubates.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right Image */}
+                        <div className="relative group lg:pl-10">
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[#224292]/5 rounded-full blur-3xl -z-10" />
+                            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-white">
+                                <img 
+                                    src={msmiImg} 
+                                    alt="MSME Lab" 
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/10 to-transparent pointer-events-none" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Table Section: Key Highlights */}
+                    <div className="space-y-8 pt-10">
+                        <div className="flex items-center gap-4">
+                            <h2 className="text-3xl font-black text-[#224292] tracking-tighter uppercase">
+                                Key Highlights
+                            </h2>
+                        </div>
+
+                        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr className="bg-[#224292] text-white">
+                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Key Highlights / Summary</th>
+                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100">
+                                        {highlights.map((item, idx) => (
+                                            <tr key={idx} className="even:bg-[#224292]/[0.04] hover:bg-[#224292]/[0.08] transition-colors group">
+                                                <td className="px-6 py-5 text-sm font-bold text-black align-middle">{item.label}</td>
+                                                <td className="px-6 py-5 text-sm font-black text-[#224292] align-middle">{item.details}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Table Section: Planned Activities */}
+                    <div className="space-y-8 pt-10">
+                        <div className="flex items-center gap-4">
+                            <h2 className="text-3xl font-black text-[#224292] tracking-tighter uppercase">
+                                Planned Activities
+                            </h2>
+                        </div>
+
+                        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr className="bg-[#224292] text-white">
+                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Planned Activity</th>
+                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Target Audience</th>
+                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Date</th>
+                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100">
+                                        {activities.map((item, idx) => (
+                                            <tr key={idx} className="even:bg-[#224292]/[0.04] hover:bg-[#224292]/[0.08] transition-colors group">
+                                                <td className="px-6 py-5 text-sm font-black text-[#224292] align-middle">{item.activity}</td>
+                                                <td className="px-6 py-5 text-sm font-bold text-black align-middle">{item.audience}</td>
+                                                <td className="px-6 py-5 text-sm font-bold text-black align-middle">{item.date}</td>
+                                                <td className="px-6 py-5 align-middle">
+                                                    <span className={`inline-flex px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${
+                                                        item.status.includes("Completed") ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"
+                                                    }`}>
+                                                        {item.status}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            {/* Hero Section */}
-            <section className="relative py-24 overflow-hidden bg-[#F8FAFC]">
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-[#10b981]/5 rounded-bl-[20rem] pointer-events-none" />
-                <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#10b981]/10 text-[#10b981] mb-8">
-                                <Building2 size={16} />
-                                <span className="text-xs font-black uppercase tracking-widest">Business Incubator</span>
-                            </div>
-                            <h1 className="text-5xl md:text-7xl font-black text-[#224292] leading-tight tracking-tighter mb-8">
-                                MSME <br/>
-                                <span className="text-[#10b981]">Incubator</span>
-                            </h1>
-                            <p className="text-black text-lg font-bold leading-relaxed text-justify mb-10">
-                                The MSME Business Incubator at KIOT provides essential resources and strategic funding for early-stage startups. We focus on transforming innovative prototypes into scalable business models through industry-aligned support.
-                            </p>
-                        </div>
-                        <div className="relative">
-                            <div className="aspect-video rounded-[3rem] bg-[#224292] overflow-hidden shadow-2xl">
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#10b981]/40 to-transparent flex items-center justify-center p-20">
-                                    <Shield size={180} className="text-white opacity-20" />
-                                </div>
-                            </div>
-                            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl border border-slate-100 max-w-[200px]">
-                                <h4 className="text-2xl font-black text-[#10b981] leading-none mb-2">Seed Funding</h4>
-                                <p className="text-black/60 text-[10px] font-black uppercase tracking-widest">Financial Fuel for Growth</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Services Grid */}
-            <section className="py-24">
-                <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                    <div className="grid md:grid-cols-2 gap-12">
-                        <div className="space-y-8">
-                            <h2 className="text-4xl font-black text-[#224292]">Incubation Support</h2>
-                            <p className="text-black/70 text-base font-bold leading-relaxed">
-                                We provide a comprehensive suite of services designed to help MSME-aligned startups thrive in a competitive market.
-                            </p>
-                            <div className="space-y-4">
-                                {[
-                                    "Financial assistance and seed funding support",
-                                    "Dedicated office space and infrastructure",
-                                    "Business planning and strategy development",
-                                    "Market linkage and networking opportunities"
-                                ].map((item, i) => (
-                                    <div key={i} className="flex items-center gap-4">
-                                        <div className="w-6 h-6 rounded-full bg-[#10b981] flex items-center justify-center shrink-0">
-                                            <Check className="text-white" size={12} />
-                                        </div>
-                                        <span className="text-black font-black text-sm">{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="bg-[#224292] rounded-[3rem] p-12 text-white relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[5rem]" />
-                            <h3 className="text-3xl font-black text-[#ffc107] mb-6">Industry Alignment</h3>
-                            <p className="text-white/80 font-bold leading-relaxed mb-8">
-                                Connecting startups with MSME clusters and industry bodies for real-world validation and commercialization support.
-                            </p>
-                            <button className="px-8 py-4 bg-[#ffc107] text-[#224292] rounded-xl font-black text-sm uppercase tracking-widest hover:bg-white transition-all">
-                                Get Started
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     )
 }

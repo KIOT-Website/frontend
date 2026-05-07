@@ -179,7 +179,7 @@ export default function CourseDetailPage() {
     <div className="min-h-screen bg-[#F8FAFC] font-graphik text-[#333333]">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#224292] pt-8 pb-10 md:pt-12 md:pb-16">
+      <section className="relative overflow-hidden bg-[#224292] pt-4 pb-6 md:pt-8 md:pb-10">
         {/* Background Image / Pattern Layer */}
         {/* Background Visuals - Clean Institutional Theme */}
         <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
@@ -197,13 +197,13 @@ export default function CourseDetailPage() {
               const category = (courseId && (courseId.startsWith('be-') || courseId.startsWith('btech-'))) ? 'undergraduate' : 'postgraduate';
               navigate(`/academics/${category}`);
             }}
-            className="mb-6 inline-flex items-center gap-2 text-white/60 hover:text-white text-[13px] font-bold font-graphik transition-colors"
+            className="mb-4 inline-flex items-center gap-2 text-white/60 hover:text-white text-[13px] font-bold font-graphik transition-colors"
           >
             <ArrowLeft size={15} /> Back to Academics
           </button>
 
           <div className="flex flex-col lg:flex-row lg:items-center gap-8">
-            <div className="flex-1">
+            <div className="flex-1 lg:pl-12">
               <div className="flex items-center gap-3 mb-4 flex-wrap">
                 <span className="px-3 py-1 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/30 text-[#ffc107] text-xs font-bold font-graphik">
                   {course.affiliation}
@@ -214,10 +214,10 @@ export default function CourseDetailPage() {
                   </span>
                 )}
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-graphik text-white mb-3 leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold font-graphik text-white mb-2 leading-tight">
                 {course.name}
               </h1>
-              <p className="text-[#ffc107] font-semibold font-graphik text-lg mb-6">{course.tagline}</p>
+              <p className="text-[#ffc107] font-semibold font-graphik text-base mb-4">{course.tagline}</p>
 
               {/* Course CTA Buttons */}
               <div className="flex flex-wrap gap-4">
@@ -235,7 +235,7 @@ export default function CourseDetailPage() {
               {/* Massive Leaf-Shaped Branding Visual */}
               <div className="relative group">
                 <div className="absolute -inset-4 bg-[#ffc107]/10 rounded-[10rem_3rem_10rem_3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-duration-1000" />
-                <div className="relative h-[300px] lg:h-[350px] w-full rounded-[10rem_3.5rem_10rem_3.5rem] overflow-hidden border-4 border-white/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
+                <div className="relative h-[260px] lg:h-[320px] w-full rounded-[10rem_3.5rem_10rem_3.5rem] overflow-hidden border-4 border-white/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
                   <img 
                     src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"} 
                     alt={course.name} 
@@ -424,13 +424,9 @@ export default function CourseDetailPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] border border-[#DEE7F4] px-2 py-8 sm:px-10 md:p-14 overflow-hidden mt-16">
+                <div className="px-2 py-8 sm:px-10 md:p-14 overflow-hidden mt-8">
                   <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
                      <div>
-                        <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 text-[#224292] text-[9px] font-bold font-graphik uppercase tracking-[0.3em] mb-4">
-                           <Award size={14} className="text-[#224292]" />
-                           Quality Framework
-                        </div>
                         <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] tracking-tighter">Academic Objectives</h2>
                      </div>
                      
@@ -442,10 +438,10 @@ export default function CourseDetailPage() {
                             className={`px-2 md:px-8 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] flex items-center justify-center md:justify-start gap-1.5 md:gap-3 text-[8px] md:text-[10px] font-bold font-graphik uppercase tracking-tight md:tracking-[0.2em] transition-all duration-500 shadow-sm ${
                               activeObjectiveTab === obj.id
                                 ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
-                                : 'bg-white text-[#64779F] hover:bg-white/80'
+                                : 'bg-white text-[#224292] hover:bg-white/80'
                             }`}
                           >
-                             <obj.icon size={14} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#A9B1C3]'} />
+                             <obj.icon size={14} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#224292]/60'} />
                              {obj.id}
                           </button>
                         ))}
@@ -460,7 +456,7 @@ export default function CourseDetailPage() {
                          animate={{ opacity: 1, x: 0 }}
                          exit={{ opacity: 0, x: -20 }}
                          transition={{ duration: 0.4 }}
-                         className="px-1 md:px-10 pt-4 pb-8 rounded-[1.5rem] md:rounded-[2.5rem] bg-slate-50/50 border border-[#DEE7F4]/50 group"
+                         className="py-4 group"
                        >
                           <div className="space-y-4 font-graphik">
                               {(() => {
@@ -602,7 +598,7 @@ export default function CourseDetailPage() {
                            }`}>
                              {LabIcon && <LabIcon size={20} />}
                            </div>
-                           <span className="text-[13px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
+                           <span className="text-[14px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
                            <ChevronRight size={14} className={isDesktopSelected ? 'text-[#ffc107]' : 'text-[#64779F] opacity-40'} />
                         </button>
                       );
@@ -610,7 +606,7 @@ export default function CourseDetailPage() {
                   </div>
 
                   {/* Right Panel: Lab Details (Desktop only shows the first active index) */}
-                  <div ref={labsDetailRef} className="flex-1 min-h-[600px]">
+                  <div ref={labsDetailRef} className="flex-1">
                     <AnimatePresence mode="wait">
                       {openLabIndices[0] !== null && course.labs[openLabIndices[0]] && (() => {
                         const activeLab = course.labs[openLabIndices[0]];
@@ -620,7 +616,7 @@ export default function CourseDetailPage() {
                           initial={{ opacity: 0, x: 20 }}
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
-                          className="bg-white rounded-3xl border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 h-full overflow-hidden flex flex-col"
+                          className="bg-white rounded-2xl border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 overflow-hidden flex flex-col"
                         >
                            {/* Lab Header */}
                            <div className="bg-[#224292] p-3 md:p-4 relative overflow-hidden shrink-0">
@@ -641,12 +637,12 @@ export default function CourseDetailPage() {
                            </div>
 
                            {/* Lab Content Scrollable Area */}
-                           <div className="p-8 md:p-12 space-y-10 flex-1 overflow-y-auto custom-scrollbar">
+                           <div className="p-8 md:p-12 space-y-10 overflow-y-auto custom-scrollbar">
                               {/* Inventory / Equipment */}
                               <div>
                                  <div className="flex items-center gap-3 mb-6">
                                     <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
-                                    <h4 className="text-[12px] font-bold font-graphik text-[#64779F] tracking-[0.1em] uppercase">Technical Inventory & Tools</h4>
+                                    <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-[0.1em]">Technical Inventory & Tools</h4>
                                  </div>
                                  <div className="grid sm:grid-cols-2 gap-3">
                                     {activeLab.equipments?.map((item, idx) => (
@@ -664,12 +660,12 @@ export default function CourseDetailPage() {
                               {courseId !== 'be-cse' && (
                                 <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
                                    <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
-                                      <p className="text-[10px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
-                                      <p className="text-[#224292] font-bold font-graphik text-[16px]">{activeLab.incharge || 'Department HOD'}</p>
+                                      <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
+                                      <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.incharge || 'Department HOD'}</p>
                                    </div>
                                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                      <p className="text-[10px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
-                                      <p className="text-[#224292] font-bold font-graphik text-[16px]">{activeLab.technician || 'Engineering Technician'}</p>
+                                      <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
+                                      <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.technician || 'Engineering Technician'}</p>
                                    </div>
                                 </div>
                               )}
@@ -717,7 +713,7 @@ export default function CourseDetailPage() {
                               }`}>
                                 {LabIcon && <LabIcon size={20} />}
                               </div>
-                              <span className="text-[13px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
+                              <span className="text-[14px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
                               <ChevronDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#ffc107]' : 'text-[#64779F] opacity-40'}`} />
                            </button>
 
@@ -733,19 +729,19 @@ export default function CourseDetailPage() {
                                       {/* Mobile Content Display */}
                                       <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
                                          <Building2 size={14} className="text-[#ffc107]" />
-                                         <p className="text-[#64779F] text-[10px] font-bold font-graphik tracking-widest">{course.name}</p>
+                                         <p className="text-[#64779F] text-[14px] font-bold font-graphik tracking-widest">{course.name}</p>
                                       </div>
 
                                       <div>
                                          <div className="flex items-center gap-2 mb-4">
                                             <div className="w-1 h-4 bg-[#ffc107] rounded-full" />
-                                            <h4 className="text-[11px] font-bold font-graphik text-[#64779F] uppercase tracking-wider">Inventory & Tools</h4>
+                                            <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-wider">Inventory & Tools</h4>
                                          </div>
                                          <div className="grid gap-2">
                                             {lab.equipments?.map((item, idx) => (
                                               <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
                                                  <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                                                 <span className="text-[13px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
+                                                 <span className="text-[14px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
                                               </div>
                                             ))}
                                          </div>
@@ -754,11 +750,11 @@ export default function CourseDetailPage() {
                                       {courseId !== 'be-cse' && (
                                         <div className="grid gap-3 pt-4 border-t border-slate-100">
                                            <div className="bg-[#224292]/5 p-4 rounded-xl border border-[#224292]/10">
-                                              <p className="text-[9px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
+                                              <p className="text-[14px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
                                               <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.incharge}</p>
                                            </div>
                                            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                                              <p className="text-[9px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
+                                              <p className="text-[14px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
                                               <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.technician}</p>
                                            </div>
                                         </div>
@@ -976,6 +972,15 @@ export default function CourseDetailPage() {
                           <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[15px] hover:text-[#224292] transition-colors">
                             <Mail size={16} className="text-[#224292]" />
                             {selectedFaculty.email}
+                          </a>
+                        </div>
+                      )}
+                      {selectedFaculty.phone && (
+                        <div>
+                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Contact Number</p>
+                          <a href={`tel:${selectedFaculty.phone}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[15px] hover:text-[#224292] transition-colors">
+                            <MapPin size={16} className="text-[#224292]" />
+                            {selectedFaculty.phone}
                           </a>
                         </div>
                       )}

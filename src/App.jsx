@@ -84,7 +84,6 @@ const IStartPage = lazy(() => import('./pages/IStartPage'))
 const BlogsPage = lazy(() => import('./pages/BlogsPage'))
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
 const AlumniPage = lazy(() => import('./pages/AlumniPage'))
-const NewsEventsPage = lazy(() => import('./pages/NewsEventsPage'))
 const COEDownloadsPage = lazy(() => import('./pages/COEDownloadsPage'))
 const IICPage = lazy(() => import('./pages/IICPage'))
 const StartupTNPage = lazy(() => import('./pages/StartupTNPage'))
@@ -262,7 +261,6 @@ function App() {
                    <Route path="/resources/campus-life" element={<CampusLifePage />} />
                     <Route path="/resources/student-life" element={<StudentLifePage />} />
                     <Route path="/resources/alumni" element={<AlumniPage />} />
-                    <Route path="/resources/news-events" element={<NewsEventsPage />} />
                     <Route path="/resources/blogs" element={<BlogsPage />} />
                     <Route path="/resources" element={<UnderConstruction />} />
                   <Route path="/autonomous" element={<AutonomousPage />} />
@@ -294,7 +292,6 @@ function App() {
                   <Route path="/bus-routes" element={<BusRoutesPage />} />
                   <Route path="/student-life" element={<StudentLifePage />} />
                   <Route path="/alumni" element={<AlumniPage />} />
-                  <Route path="/news-events" element={<NewsEventsPage />} />
                   <Route path="/blogs" element={<BlogsPage />} />
                   <Route path="/blog/:slug" element={<BlogDetailPage />} />
 

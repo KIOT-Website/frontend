@@ -348,7 +348,7 @@ const IStartPage = () => {
                                 link: "/research-innovation/msme-bi"
                             },
                             { 
-                                title: "iStartKIOT MX Incubator Foundation", 
+                                title: "iStartKIOT MXincubator Foundation", 
                                 desc: "A Section 8 company dedicated to global-scale startup acceleration and investment readiness.",
                                 icon: Briefcase,
                                 color: "#224292", // Deep Blue (Brand)

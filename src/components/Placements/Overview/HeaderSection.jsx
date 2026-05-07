@@ -71,19 +71,6 @@ const HeaderSection = () => {
               ))}
             </div>
 
-            {/* Primary Action Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <button className="px-5 py-2.5 bg-[#ffc107] text-[#224292] rounded-xl font-black text-[9px] uppercase tracking-widest flex items-center gap-2 shadow-lg shadow-[#ffc107]/20">
-                <FileText size={14} />
-                View Report
-                <ArrowRight size={14} />
-              </button>
-              <button className="px-5 py-2.5 bg-white text-[#224292] border-2 border-[#224292]/10 rounded-xl font-black text-[9px] uppercase tracking-widest flex items-center gap-2">
-                <Users size={14} />
-                Recruiters
-                <ArrowRight size={14} />
-              </button>
-            </div>
           </motion.div>
         </div>
 
