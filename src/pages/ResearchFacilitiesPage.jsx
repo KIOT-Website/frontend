@@ -88,6 +88,22 @@ const ResearchFacilitiesPage = () => {
                 domain: "Structural & Material Research",
                 icon: HardHat
             }
+        ],
+        'artificial-intelligence-&-data-science': [
+            {
+                id: 1,
+                lab: "Composite Research Centre for Product Design, Digital Manufacturing and Technical Documentation",
+                equipment: "Catia v6, Delmia V5 and 3DVia",
+                domain: "Design",
+                icon: Cpu
+            },
+            {
+                id: 2,
+                lab: "Centre for Environmental Health and safety",
+                equipment: "Vibration test facility, Whirling speed of shaft, Exhaust gas analyzer, Smoke meter, Friction tester, Impact tester, High volume sampler",
+                domain: "Industrial Safety Engg.",
+                icon: ShieldCheck
+            }
         ]
     }
 
