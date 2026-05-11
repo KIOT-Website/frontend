@@ -76,6 +76,15 @@ const PhdGuidedPage = () => {
             { id: 13, supervisor: "Dr.P.Vijayalakshmi", scholar: "Sekar A", topic: "Computer Science", university: "Anna University", status: "Course Work" },
             { id: 14, supervisor: "Dr.P.Vijayalakshmi", scholar: "Preetha B", topic: "Computer Science", university: "Anna University", status: "Course Work" },
             { id: 15, supervisor: "Dr.P.Vijayalakshmi", scholar: "Ramya D", topic: "Computer Science", university: "Anna University", status: "Course Work" }
+        ],
+        'artificial-intelligence-&-data-science': [
+            { id: 1, supervisor: "Dr.P.Rajendran", scholar: "Sasikumar B", topic: "Image Processing", university: "Anna University", status: "Thesis Submitted" },
+            { id: 2, supervisor: "Dr.S. Kumarganesh", scholar: "A.GOPALAKRISHNAN", topic: "Medical Image Processing", university: "Anna University", status: "Course Work" },
+            { id: 3, supervisor: "Dr.P.Rajendran", scholar: "Brindha V", topic: "Medical Image Processing", university: "Anna University", status: "Course Work" },
+            { id: 4, supervisor: "Dr.R.Kumar", scholar: "Bhuvaneswari B", topic: "Image Processing", university: "Anna University", status: "Course Work" },
+            { id: 5, supervisor: "Dr.E.Sathish Kumar", scholar: "M.DEEPA", topic: "Network Security", university: "Anna University", status: "Course Work" },
+            { id: 6, supervisor: "Dr.P.Rajendran", scholar: "Esther Rani P J", topic: "Wireless Sensor Network", university: "Anna University", status: "Course Work" },
+            { id: 7, supervisor: "Dr.R.Kumar", scholar: "Sudha S", topic: "AI in Special Education", university: "Anna University", status: "Course Work" }
         ]
     }
 
