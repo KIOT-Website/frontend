@@ -23,10 +23,10 @@ import {
 import campusTourVid from '../assets/main/campus tour.mp4'
 
 // Local Assets for Campus Essentials (Tamil Nadu / KIOT based)
-import kiotLibrary from '../assets/main/kiot_library.webp'
-import kiotSports from '../assets/main/kiot_sports.webp'
-import kiotTransport from '../assets/main/kiot_transport.webp'
-import kiotLab from '../assets/main/kiot_lab.webp'
+import kiotLibrary from '../assets/life@kiot/library1.png'
+import kiotSports from '../assets/life@kiot/sports ground.png'
+import kiotTransport from '../assets/life@kiot/collge bus.png'
+import kiotLab from '../assets/life@kiot/smart classrooms.png'
 import kiotCafeteria from '../assets/main/kiot_cafeteria.webp'
 import kiotSymposium from '../assets/main/kiot_symposium.webp'
 import campusMain from '../assets/main/campus .webp'
