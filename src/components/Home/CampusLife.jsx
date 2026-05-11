@@ -13,7 +13,7 @@ import React from 'react'
 
 // Asset imports
 import labImg from '../../assets/life@kiot/image.webp'
-import cafeteriaImg from '../../assets/life@kiot/cafetaria.webp'
+import cafeteriaImg from '../../assets/life@kiot/caf.png'
 import hostelImg from '../../assets/life@kiot/hostal.webp'
 import sportsImg from '../../assets/life@kiot/sports ground.png'
 import homeLifeImg from '../../assets/main/home-life.webp'
