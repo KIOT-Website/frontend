@@ -356,36 +356,7 @@ const PhdHoldersPage = () => {
                     </div>
                 </motion.div>
 
-                {/* Faculty Metrics Summary */}
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
-                        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-[#224292]">
-                            <BookOpen size={24} />
-                        </div>
-                        <div>
-                            <span className="text-[9px] font-black text-[#64779F] uppercase tracking-wider block">Total Directory</span>
-                            <span className="text-sm font-black text-[#224292] uppercase">{displayHolders.length} Ph.D Holders</span>
-                        </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
-                        <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-[#ffc107]">
-                            <BarChart size={24} />
-                        </div>
-                        <div>
-                            <span className="text-[9px] font-black text-[#64779F] uppercase tracking-wider block">Impact Metric</span>
-                            <span className="text-sm font-black text-[#224292] uppercase">Scholarly Excellence</span>
-                        </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
-                        <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-[#224292]">
-                            <GraduationCap size={24} />
-                        </div>
-                        <div>
-                            <span className="text-[9px] font-black text-[#64779F] uppercase tracking-wider block">Recognition</span>
-                            <span className="text-sm font-black text-[#224292] uppercase">Recognized R&D Center</span>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
         </div>
