@@ -23,9 +23,60 @@ const SponsoredProjectsPage = () => {
 
     const allMhrdPrograms = {
         'mechanical-engineering': [
-            { id: 1, title: "Research Methodologies", agency: "MHRD", duration: "2012", fund: "1,42,719" },
-            { id: 2, title: "Engineering Thermodynamics", agency: "MHRD", duration: "2012", fund: "2,44,685" },
-            { id: 3, title: "Research Methods in Education Technology", agency: "MHRD", duration: "2013", fund: "7,000" }
+            { id: 1, title: "Research Methodologies", agency: "MHRD", duration: "25.06.2012 to 04.07.2012", fund: "1,42,719" },
+            { id: 2, title: "Engineering Thermodynamics", agency: "MHRD", duration: "11.12.2012 to 21.12.2012", fund: "2,44,685" },
+            { id: 3, title: "Research Methods in Education Technology", agency: "MHRD", duration: "02.02.2013 & 09.02.2013", fund: "7,000" },
+            { id: 4, title: "Database Management Systems", agency: "MHRD", duration: "21.05.2013 to 31.05.2013", fund: "1,31,616" },
+            { id: 5, title: "Analog Electronics", agency: "MHRD", duration: "04.06.2013 to 14.06.2013", fund: "1,61,578" },
+            { id: 6, title: "Green Building Awareness", agency: "MHRD", duration: "24.08.2013", fund: "3,000" },
+            { id: 7, title: "Engineering Mechanics", agency: "MHRD", duration: "26.11.2013 to 06.11.2013", fund: "1,95,706" },
+            { id: 8, title: "Signals & Systems", agency: "MHRD", duration: "02.01.2014 to 12.01.2014", fund: "1,55,073" },
+            { id: 9, title: "Fluid Mechanics", agency: "MHRD", duration: "20.05.2014 to 30.05.2014", fund: "2,07,001" },
+            { id: 10, title: "Computer Programming", agency: "MHRD", duration: "16.06.2014 to 21.06.2014", fund: "81,422" },
+            { id: 11, title: "Computer Networking", agency: "MHRD", duration: "30.06.2014 to 05.07.2014", fund: "96,886" },
+            { id: 12, title: "Cyber Security", agency: "MHRD", duration: "10.07.2014 to 20.07.2014", fund: "1,64,626" },
+            { id: 13, title: "Control Systems", agency: "MHRD", duration: "02.12.2014 to 12.12.2014", fund: "1,76,970" },
+            { id: 14, title: "Pedagogy for Effective use of ICT in Engineering Education", agency: "MHRD", duration: "05.01.2015 to 07.01.2015 & 19.01.2015 to 21.01.2015", fund: "71,330" },
+            { id: 15, title: "Introduction to Design of Algorithms", agency: "MHRD", duration: "25.05.2015 to 30.05.2015", fund: "88,600" },
+            { id: 16, title: "Environmental Studies", agency: "MHRD", duration: "02.06.2015 to 12.06.2015", fund: "2,02,000" },
+            { id: 17, title: "Technical Communication", agency: "MHRD", duration: "30.11.2015 to 05.12.2015", fund: "-" },
+            { id: 18, title: "Engineering Physics", agency: "MHRD", duration: "08.12.2015 to 18.12.2015", fund: "1,41,099" },
+            { id: 19, title: "Introduction to Structural Engineering", agency: "MHRD", duration: "04.01.2016 to 09.01.2016", fund: "91,000" },
+            { id: 20, title: "Usage of ICT in Education for Online and Blended Learning", agency: "MHRD", duration: "02.05.2016 to 10.07.2016", fund: "-" },
+            { id: 21, title: "College to Corporate", agency: "MHRD", duration: "26.11.2016", fund: "-" },
+            { id: 22, title: "CMOS, Mixed Signal RF, VLSI Design", agency: "MHRD", duration: "30.01.2017 To 04.02.2017", fund: "87,680" },
+            { id: 23, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase I", agency: "AICTE-ISTE", duration: "01.03.2021 to 06.03.2021", fund: "93,000" },
+            { id: 24, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase II", agency: "AICTE-ISTE", duration: "05.04.2021 to 12.04.2021", fund: "93,000" },
+            { id: 25, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase III", agency: "AICTE-ISTE", duration: "03.05.2021 to 08.05.2021", fund: "93,000" },
+            { id: 26, title: "FDTP on ME8391- Engineering Thermodynamics", agency: "Anna University", duration: "12.07.2021-17.07.2021", fund: "30,000" }
+        ],
+        'artificial-intelligence-&-data-science': [
+            { id: 1, title: "Research Methodologies", agency: "MHRD", duration: "25.06.2012 to 04.07.2012", fund: "1,42,719" },
+            { id: 2, title: "Engineering Thermodynamics", agency: "MHRD", duration: "11.12.2012 to 21.12.2012", fund: "2,44,685" },
+            { id: 3, title: "Research Methods in Education Technology", agency: "MHRD", duration: "02.02.2013 & 09.02.2013", fund: "7,000" },
+            { id: 4, title: "Database Management Systems", agency: "MHRD", duration: "21.05.2013 to 31.05.2013", fund: "1,31,616" },
+            { id: 5, title: "Analog Electronics", agency: "MHRD", duration: "04.06.2013 to 14.06.2013", fund: "1,61,578" },
+            { id: 6, title: "Green Building Awareness", agency: "MHRD", duration: "24.08.2013", fund: "3,000" },
+            { id: 7, title: "Engineering Mechanics", agency: "MHRD", duration: "26.11.2013 to 06.11.2013", fund: "1,95,706" },
+            { id: 8, title: "Signals & Systems", agency: "MHRD", duration: "02.01.2014 to 12.01.2014", fund: "1,55,073" },
+            { id: 9, title: "Fluid Mechanics", agency: "MHRD", duration: "20.05.2014 to 30.05.2014", fund: "2,07,001" },
+            { id: 10, title: "Computer Programming", agency: "MHRD", duration: "16.06.2014 to 21.06.2014", fund: "81,422" },
+            { id: 11, title: "Computer Networking", agency: "MHRD", duration: "30.06.2014 to 05.07.2014", fund: "96,886" },
+            { id: 12, title: "Cyber Security", agency: "MHRD", duration: "10.07.2014 to 20.07.2014", fund: "1,64,626" },
+            { id: 13, title: "Control Systems", agency: "MHRD", duration: "02.12.2014 to 12.12.2014", fund: "1,76,970" },
+            { id: 14, title: "Pedagogy for Effective use of ICT in Engineering Education", agency: "MHRD", duration: "05.01.2015 to 07.01.2015 & 19.01.2015 to 21.01.2015", fund: "71,330" },
+            { id: 15, title: "Introduction to Design of Algorithms", agency: "MHRD", duration: "25.05.2015 to 30.05.2015", fund: "88,600" },
+            { id: 16, title: "Environmental Studies", agency: "MHRD", duration: "02.06.2015 to 12.06.2015", fund: "2,02,000" },
+            { id: 17, title: "Technical Communication", agency: "MHRD", duration: "30.11.2015 to 05.12.2015", fund: "-" },
+            { id: 18, title: "Engineering Physics", agency: "MHRD", duration: "08.12.2015 to 18.12.2015", fund: "1,41,099" },
+            { id: 19, title: "Introduction to Structural Engineering", agency: "MHRD", duration: "04.01.2016 to 09.01.2016", fund: "91,000" },
+            { id: 20, title: "Usage of ICT in Education for Online and Blended Learning", agency: "MHRD", duration: "02.05.2016 to 10.07.2016", fund: "-" },
+            { id: 21, title: "College to Corporate", agency: "MHRD", duration: "26.11.2016", fund: "-" },
+            { id: 22, title: "CMOS, Mixed Signal RF, VLSI Design", agency: "MHRD", duration: "30.01.2017 To 04.02.2017", fund: "87,680" },
+            { id: 23, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase I", agency: "AICTE-ISTE", duration: "01.03.2021 to 06.03.2021", fund: "93,000" },
+            { id: 24, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase II", agency: "AICTE-ISTE", duration: "05.04.2021 to 12.04.2021", fund: "93,000" },
+            { id: 25, title: "AICTE-ISTE Online Teaching and Learning Pedagogy - Phase III", agency: "AICTE-ISTE", duration: "03.05.2021 to 08.05.2021", fund: "93,000" },
+            { id: 26, title: "FDTP on ME8391- Engineering Thermodynamics", agency: "Anna University", duration: "12.07.2021-17.07.2021", fund: "30,000" }
         ],
         'electronics-&-communication-engineering': [
             { id: 1, year: "2024-2025", faculty: "Mr. K. Rajesh", agency: "MSME Idea Hackathon 4.0", title: "Landslide Monitoring and Warning System", date: "27.06.2025", amount: "9,00,000" },
@@ -42,7 +93,18 @@ const SponsoredProjectsPage = () => {
 
     const allSponsoredProjects = {
         'mechanical-engineering': [
-            { id: 1, faculty: "Mr.K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "2013" }
+            { id: 1, faculty: "Mr.K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "08.03.2013 to 09.03.2013" },
+            { id: 2, faculty: "Mr.T.Dheenathayalan", title: "Environmental Health and safety in Organisation", agency: "CSIR", amount: "30,000", period: "14.03.2013 to 15.03.2013" },
+            { id: 3, faculty: "Mr.S.Sathyanathan & Mr.N.Kamalakkannan", title: "Seminar on Sustainable Composites", agency: "IET", amount: "6,000", period: "20.01.2018" },
+            { id: 4, faculty: "Dr.K.Visagavel & Mr.N.Kamalakkannan", title: "Seminar on Industrial Internet of Things in manufacturing", agency: "IET", amount: "10,000", period: "19.07.2018" },
+            { id: 5, faculty: "Dr.M. Ilangkumaran, Dr. V. Sivakumar, Dr.N.Panneerselvam", title: "Current Trends in Recycling of Textile / Apparel Waste in Eco - Sustainable Aspects", agency: "CSIR", amount: "20,000", period: "05.08.2022 to 06.08.2022" }
+        ],
+        'artificial-intelligence-&-data-science': [
+            { id: 1, faculty: "Mr.K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "08.03.2013 to 09.03.2013" },
+            { id: 2, faculty: "Mr.T.Dheenathayalan", title: "Environmental Health and safety in Organisation", agency: "CSIR", amount: "30,000", period: "14.03.2013 to 15.03.2013" },
+            { id: 3, faculty: "Mr.S.Sathyanathan & Mr.N.Kamalakkannan", title: "Seminar on Sustainable Composites", agency: "IET", amount: "6,000", period: "20.01.2018" },
+            { id: 4, faculty: "Dr.K.Visagavel & Mr.N.Kamalakkannan", title: "Seminar on Industrial Internet of Things in manufacturing", agency: "IET", amount: "10,000", period: "19.07.2018" },
+            { id: 5, faculty: "Dr.M. Ilangkumaran, Dr. V. Sivakumar, Dr.N.Panneerselvam", title: "Current Trends in Recycling of Textile / Apparel Waste in Eco - Sustainable Aspects", agency: "CSIR", amount: "20,000", period: "05.08.2022 to 06.08.2022" }
         ],
         'electronics-&-communication-engineering': [
             { id: 101, faculty: "Dr.N.Santhiyakumari", title: "Advanced Medical Imaging and Signal Processing Initiative", agency: "Institutional", amount: "In-Progress", period: "2024" }
@@ -54,17 +116,57 @@ const SponsoredProjectsPage = () => {
 
     const allTnscstProjects = {
         'mechanical-engineering': [
-            { id: 1, year: "2019-2020", title: "Quad – copter UAV assisted fertilizer and pesticide spraying system", mentor: "Mr.D.Manikandan", agency: "TNSCST", grant: "7,500", duration: "12 Months" }
+            { id: 1, year: "2019-2020", title: "Quad – copter UAV assisted fertilizer and pesticide spraying system", mentor: "Mr.D.Manikandan", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
+            { id: 2, year: "2019-2020", title: "Smart helmet – an accident preventer", mentor: "Mr.M.A.Rajeshkumar", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
+            { id: 3, year: "2017-2018", title: "Portable crop cutting machine", mentor: "Mr.P.Kalaiselvan", agency: "TNSCST", grant: "8,400", duration: "12 Months" },
+            { id: 4, year: "2017-2018", title: "Design and fabrication of mobile bucket milking machine with aid of solar system", mentor: "Mr.M.Loganathan", agency: "TNSCST", grant: "4,900", duration: "12 Months" },
+            { id: 5, year: "2017-2018", title: "Tonic gas defender in automobile", mentor: "Mr.M.A.Rajesh Kumar", agency: "TNSCST", grant: "8,300", duration: "12 Months" },
+            { id: 6, year: "2017-2018", title: "Design and Implementation of low cost intelligent wheelchair", mentor: "Mr.N.Kamalakannan", agency: "TNSCST", grant: "9,100", duration: "12 Months" },
+            { id: 7, year: "2016-2017", title: "Fabrication and performance measurement of manually powered fodder cutter", mentor: "Mr.P.Kalaiselvan", agency: "TNSCST", grant: "10,000", duration: "12 Months" },
+            { id: 8, year: "2016-2017", title: "Fabrication of semi-automated multipurpose wheel hoe with aid of Solar system for agriculture", mentor: "Mr.M.Loganathan", agency: "TNSCST", grant: "10,000", duration: "12 Months" },
+            { id: 9, year: "2016-2017", title: "Smart Helmet with Alcohol detection", mentor: "Mr.C.Eswaramoorthy", agency: "TNSCST", grant: "10,000", duration: "12 Months" }
+        ],
+        'artificial-intelligence-&-data-science': [
+            { id: 1, year: "2019-2020", title: "Quad – copter UAV assisted fertilizer and pesticide spraying system", mentor: "Mr.D.Manikandan", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
+            { id: 2, year: "2019-2020", title: "Smart helmet – an accident preventer", mentor: "Mr.M.A.Rajeshkumar", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
+            { id: 3, year: "2017-2018", title: "Portable crop cutting machine", mentor: "Mr.P.Kalaiselvan", agency: "TNSCST", grant: "8,400", duration: "12 Months" },
+            { id: 4, year: "2017-2018", title: "Design and fabrication of mobile bucket milking machine with aid of solar system", mentor: "Mr.M.Loganathan", agency: "TNSCST", grant: "4,900", duration: "12 Months" },
+            { id: 5, year: "2017-2018", title: "Tonic gas defender in automobile", mentor: "Mr.M.A.Rajesh Kumar", agency: "TNSCST", grant: "8,300", duration: "12 Months" },
+            { id: 6, year: "2017-2018", title: "Design and Implementation of low cost intelligent wheelchair", mentor: "Mr.N.Kamalakannan", agency: "TNSCST", grant: "9,100", duration: "12 Months" },
+            { id: 7, year: "2016-2017", title: "Fabrication and performance measurement of manually powered fodder cutter", mentor: "Mr.P.Kalaiselvan", agency: "TNSCST", grant: "10,000", duration: "12 Months" },
+            { id: 8, year: "2016-2017", title: "Fabrication of semi-automated multipurpose wheel hoe with aid of Solar system for agriculture", mentor: "Mr.M.Loganathan", agency: "TNSCST", grant: "10,000", duration: "12 Months" },
+            { id: 9, year: "2016-2017", title: "Smart Helmet with Alcohol detection", mentor: "Mr.C.Eswaramoorthy", agency: "TNSCST", grant: "10,000", duration: "12 Months" }
         ],
         'electronics-&-communication-engineering': [
             { id: 101, year: "2023-2024", title: "AI-driven emergency response systems for enhanced vehicle safety", mentor: "Dr.S. Kumarganesh", agency: "TNSCST", grant: "Ongoing", duration: "12 Months" }
         ]
     }
 
+    const allConsultancyWork = {
+        'mechanical-engineering': [
+            { id: 1, title: "Implementation of Total Quality Management", client: "Spintec Enterprises Private Limited, Coimbatore", faculty: "Dr.V.Sivakumar, Mr.A.Selvakumar", amount: "25,000", period: "Nov-21" },
+            { id: 2, title: "Implementation of Total Quality Management", client: "Fluid Engineering Works, Coimbatore", faculty: "Dr.M.Ilangkumaran, Mr.S.Nandha Kumar", amount: "25,000", period: "Jan-22" },
+            { id: 3, title: "Training on Total Quality Management and 5S System", client: "Sri Pone Arasalamman Battery Works, Dharmapuri", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "25,000", period: "Apr-22" },
+            { id: 4, title: "Training on Total Quality Management and 5S System", client: "RnGn Batteries Private Limited, Dharmapuri", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "25,000", period: "Apr-22" },
+            { id: 5, title: "Safety Audit", client: "Vijay Blue Metal, Salem", faculty: "Dr.K.S.Prabhakaran, Mr.G.Thangaraj", amount: "25,000", period: "Oct-22" },
+            { id: 6, title: "Safety Audit", client: "Senthil Blue Metals, Salem", faculty: "Dr.N.Panneerselvam, Mr.G.Thangaraj", amount: "25,000", period: "Nov-22" },
+            { id: 7, title: "Design and Fabrication of Pick and Place Robot Arm", client: "Kaapi Stop, Salem", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "1,47,950", period: "Ongoing" }
+        ],
+        'artificial-intelligence-&-data-science': [
+            { id: 1, title: "Implementation of Total Quality Management", client: "Spintec Enterprises Private Limited, Coimbatore", faculty: "Dr.V.Sivakumar, Mr.A.Selvakumar", amount: "25,000", period: "Nov-21" },
+            { id: 2, title: "Implementation of Total Quality Management", client: "Fluid Engineering Works, Coimbatore", faculty: "Dr.M.Ilangkumaran, Mr.S.Nandha Kumar", amount: "25,000", period: "Jan-22" },
+            { id: 3, title: "Training on Total Quality Management and 5S System", client: "Sri Pone Arasalamman Battery Works, Dharmapuri", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "25,000", period: "Apr-22" },
+            { id: 4, title: "Training on Total Quality Management and 5S System", client: "RnGn Batteries Private Limited, Dharmapuri", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "25,000", period: "Apr-22" },
+            { id: 5, title: "Safety Audit", client: "Vijay Blue Metal, Salem", faculty: "Dr.K.S.Prabhakaran, Mr.G.Thangaraj", amount: "25,000", period: "Oct-22" },
+            { id: 6, title: "Safety Audit", client: "Senthil Blue Metals, Salem", faculty: "Dr.N.Panneerselvam, Mr.G.Thangaraj", amount: "25,000", period: "Nov-22" },
+            { id: 7, title: "Design and Fabrication of Pick and Place Robot Arm", client: "Kaapi Stop, Salem", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "1,47,950", period: "Ongoing" }
+        ]
+    }
+
     const mhrdPrograms = allMhrdPrograms[deptName?.toLowerCase()] || []
     const sponsoredProjects = allSponsoredProjects[deptName?.toLowerCase()] || []
     const tnscstProjects = allTnscstProjects[deptName?.toLowerCase()] || []
-    const consultancyWork = [] 
+    const consultancyWork = allConsultancyWork[deptName?.toLowerCase()] || []
 
     const getMhrdSummary = () => {
         return mhrdPrograms.reduce((acc, curr) => {
