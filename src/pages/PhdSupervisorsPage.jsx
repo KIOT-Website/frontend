@@ -94,64 +94,64 @@ const PhdSupervisorsPage = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.1 }}
                             key={supervisor.id}
-                            className="bg-white rounded-[2.5rem] p-8 border border-slate-200 shadow-2xl shadow-blue-900/5 hover:border-[#ffc107] transition-all group overflow-hidden relative"
+                            className="bg-white rounded-[2rem] p-6 border border-slate-200 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all group overflow-hidden relative"
                         >
                             {/* Decorative ID Background */}
-                            <div className="absolute -right-4 -top-8 text-[120px] font-black text-slate-50 opacity-50 group-hover:text-amber-50 group-hover:scale-110 transition-all duration-500 select-none">
+                            <div className="absolute -right-2 -top-6 text-[100px] font-black text-slate-50 opacity-50 group-hover:text-amber-50 group-hover:scale-110 transition-all duration-500 select-none">
                                 {supervisor.id < 10 ? `0${supervisor.id}` : supervisor.id}
                             </div>
 
                             <div className="relative z-10">
-                                <div className="flex items-start justify-between mb-8">
+                                <div className="flex items-start justify-between mb-6">
                                     <div className="flex items-center gap-4">
-                                        <div className="w-16 h-16 rounded-[1.5rem] bg-[#224292] flex items-center justify-center text-white shadow-xl shadow-blue-900/20 group-hover:rotate-6 transition-transform">
-                                            <GraduationCap size={32} />
+                                        <div className="w-14 h-14 rounded-2xl bg-[#224292] flex items-center justify-center text-white shadow-lg shadow-blue-900/20 group-hover:rotate-6 transition-transform">
+                                            <GraduationCap size={28} />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black text-[#0f172a] tracking-tight group-hover:text-[#224292] transition-colors">
+                                            <h3 className="text-lg font-black text-[#224292] tracking-tight transition-colors">
                                                 {supervisor.name}
                                             </h3>
-                                            <div className="flex items-center gap-2 mt-1 px-3 py-1 bg-slate-50 rounded-full border border-slate-100 group-hover:bg-[#ffc107]/10 transition-colors w-fit">
+                                            <div className="flex items-center gap-2 mt-1 px-2.5 py-1 bg-slate-50 rounded-full border border-slate-100 group-hover:bg-[#ffc107]/10 transition-colors w-fit">
                                                 <Fingerprint size={12} className="text-[#ffc107]" />
-                                                <span className="text-[10px] font-bold text-[#64779F] uppercase tracking-widest leading-none">ID: {supervisor.supervisorId}</span>
+                                                <span className="text-[9px] font-bold text-[#64779F] uppercase tracking-widest leading-none">ID: {supervisor.supervisorId}</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                                    <div className="p-5 bg-slate-50 rounded-[1.5rem] border border-slate-100 group-hover:bg-white transition-colors duration-300">
-                                        <div className="flex items-center gap-2 mb-3">
-                                            <BookOpen size={16} className="text-[#ffc107]" />
-                                            <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-widest">Research Areas</span>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                    <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-white transition-colors duration-300">
+                                        <div className="flex items-center gap-2 mb-2.5">
+                                            <BookOpen size={14} className="text-[#ffc107]" />
+                                            <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Research Areas</span>
                                         </div>
-                                        <p className="text-xs font-bold text-[#224292] leading-relaxed uppercase">
+                                        <p className="text-xs font-bold text-black leading-relaxed uppercase">
                                             {supervisor.researchArea}
                                         </p>
                                     </div>
 
-                                    <div className="p-5 bg-slate-50 rounded-[1.5rem] border border-slate-100 group-hover:bg-white transition-colors duration-300">
-                                        <div className="flex items-center gap-2 mb-3">
-                                            <Mail size={16} className="text-[#ffc107]" />
-                                            <span className="text-[10px] font-black text-[#0f172a] uppercase tracking-widest leading-none">Scientific Liaison</span>
+                                    <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-white transition-colors duration-300">
+                                        <div className="flex items-center gap-2 mb-2.5">
+                                            <Mail size={14} className="text-[#ffc107]" />
+                                            <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest leading-none">Scientific Liaison</span>
                                         </div>
-                                        <p className="text-sm font-black text-[#224292] tracking-tight">{supervisor.email}</p>
+                                        <p className="text-[12px] font-bold text-black tracking-tight">{supervisor.email}</p>
                                     </div>
                                 </div>
 
                                 {/* Metrics Section */}
-                                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-100">
+                                <div className="grid grid-cols-3 gap-4 pt-5 border-t border-slate-100">
                                     <div className="text-center">
-                                        <div className="text-2xl font-black text-[#224292] italic">{supervisor.guided}</div>
-                                        <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Ph.Ds Guided</p>
+                                        <div className="text-xl font-black text-[#224292] italic">{supervisor.guided}</div>
+                                        <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Ph.Ds Guided</p>
                                     </div>
                                     <div className="text-center border-x border-slate-100 flex flex-col justify-center">
-                                        <div className="text-2xl font-black text-[#ffc107] italic">{supervisor.guiding}</div>
-                                        <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Active Scholars</p>
+                                        <div className="text-xl font-black text-[#ffc107] italic">{supervisor.guiding}</div>
+                                        <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Active Scholars</p>
                                     </div>
                                     <div className="text-center flex flex-col justify-center">
-                                        <div className="text-[12px] font-black text-[#0f172a] italic">{supervisor.university}</div>
-                                        <p className="text-[9px] font-black text-slate-400 tracking-widest">Affiliation</p>
+                                        <div className="text-[11px] font-black text-[#0f172a] italic">{supervisor.university}</div>
+                                        <p className="text-[8px] font-black text-slate-400 tracking-widest">Affiliation</p>
                                     </div>
                                 </div>
                             </div>

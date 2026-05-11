@@ -273,18 +273,18 @@ const SponsoredProjectsPage = () => {
                             <motion.div 
                                 whileHover={{ y: -5 }}
                                 key={item.id}
-                                className="bg-white p-6 rounded-[1.5rem] border border-slate-200 shadow-xl shadow-blue-900/5"
+                                className="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all"
                             >
                                 <div className="flex justify-between items-start mb-4">
-                                    <span className="px-3 py-1 bg-blue-50 text-[#0f172a] text-[9px] font-bold uppercase tracking-widest rounded-full">{item.year}</span>
+                                    <span className="px-3 py-1 bg-blue-50 text-[#224292] text-[9px] font-bold uppercase tracking-widest rounded-full">{item.year}</span>
                                     <span className="text-[14px] font-bold text-[#ffc107]">₹ {item.grant}</span>
                                 </div>
-                                <h3 className="text-sm font-bold text-[#0f172a] uppercase leading-tight mb-4 italic line-clamp-3">"{item.title}"</h3>
+                                <h3 className="text-sm font-bold text-[#224292] uppercase leading-tight mb-4 italic line-clamp-3">"{item.title}"</h3>
                                 <div className="pt-4 border-t border-slate-50 flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-[#0f172a] font-bold text-[10px]">M</div>
+                                    <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-[#224292] font-bold text-[10px]">M</div>
                                     <div>
                                         <p className="text-[10px] font-bold text-slate-400 tracking-widest">Mentor</p>
-                                        <p className="text-[11px] font-bold text-[#1e293b] leading-none">{item.mentor}</p>
+                                        <p className="text-[11px] font-bold text-black leading-none">{item.mentor}</p>
                                     </div>
                                 </div>
                             </motion.div>

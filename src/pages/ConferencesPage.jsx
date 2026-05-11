@@ -108,30 +108,30 @@ const ConferencesPage = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.05 }}
                                 key={conf.id}
-                                className="group bg-white rounded-[2rem] border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all p-8 flex flex-col justify-between"
+                                className="group bg-white rounded-[2rem] border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all p-6 flex flex-col justify-between"
                             >
                                 <div>
                                     <div className="flex justify-between items-start mb-6">
-                                        <div className="flex items-center gap-2 px-3 py-1 bg-[#224292] rounded-full text-white text-[9px] font-black uppercase tracking-widest">
+                                        <div className="flex items-center gap-2 px-2.5 py-0.5 bg-[#224292] rounded-full text-white text-[9px] font-black uppercase tracking-widest">
                                             {conf.type === 'International' ? <Globe size={10} /> : <Award size={10} />}
                                             {conf.type}
                                         </div>
                                         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{conf.date}</span>
                                     </div>
-                                    <h3 className="text-base font-bold text-[#0f172a] uppercase leading-snug italic mb-4 line-clamp-3">
+                                    <h3 className="text-base font-bold text-[#224292] uppercase leading-snug italic mb-4 line-clamp-3 transition-colors">
                                         "{conf.title}"
                                     </h3>
                                     <div className="flex items-center gap-2 mb-6">
                                         <Users size={14} className="text-slate-300" />
-                                        <span className="text-[11px] font-bold text-[#64779F] uppercase tracking-wider">{conf.author}</span>
+                                        <span className="text-[11px] font-bold text-black uppercase tracking-wider">{conf.author}</span>
                                     </div>
                                 </div>
-                                <div className="pt-6 border-t border-slate-50">
+                                <div className="pt-5 border-t border-slate-50">
                                     <div className="flex items-start gap-3">
                                         <Presentation size={16} className="text-[#ffc107] shrink-0 mt-0.5" />
                                         <div>
-                                            <p className="text-[12px] font-bold text-[#1e293b] leading-tight mb-1">{conf.conference}</p>
-                                            <p className="text-[10px] font-bold text-[#64779F] uppercase italic">{conf.location}</p>
+                                            <p className="text-[12px] font-bold text-black leading-tight mb-1">{conf.conference}</p>
+                                            <p className="text-[10px] font-bold text-slate-400 uppercase italic">{conf.location}</p>
                                         </div>
                                     </div>
                                 </div>
