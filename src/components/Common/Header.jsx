@@ -57,7 +57,7 @@ const navLinks = [
     subLinks: [
       { name: 'About Us', href: 'about/about-us', icon: Building2 },
       { name: 'Leadership', href: 'about/leadership', icon: Users },
-      { name: 'Head of the Department', href: 'about/head-of-the-department', icon: Users },
+      { name: "Head of the Institution", href: 'about/head-of-the-department', icon: Users },
       { name: 'Governing Council', href: 'about/governing-council', icon: ShieldCheck },
       { name: 'Academic Council', href: 'about/academic-council', icon: ShieldCheck },
       { name: 'Guidelines', href: 'about/guidelines', icon: FileText },
@@ -366,7 +366,7 @@ const Header = () => {
                           if (link.subLinks) e.preventDefault();
                           else handleNavClick(e, link.name, link.href);
                         }}
-                        className={`inline-flex items-center gap-1.5 text-[13px] font-black transition-colors whitespace-nowrap py-5 ${
+                        className={`inline-flex items-center gap-1.5 text-[13px] font-bold transition-colors whitespace-nowrap py-5 ${
                             isActive
                               ? 'text-[#224292]'
                               : 'text-[#64779F] hover:text-[#224292]'
@@ -397,7 +397,7 @@ const Header = () => {
                                     <sub.icon size={16} className="text-[#224292] group-hover/subitem:text-[#ffc107] transition-colors" />
                                   </div>
                                 )}
-                                <span className="text-[14px] font-black text-[#64779F] group-hover/subitem:text-white transition-colors">{sub.name}</span>
+                                <span className="text-[14px] font-bold text-[#64779F] group-hover/subitem:text-white transition-colors">{sub.name}</span>
                               </a>
 
                               {/* Nested Level (Desktop) */}
@@ -410,7 +410,7 @@ const Header = () => {
                                       onClick={(e) => handleNavClick(e, nested.name, nested.href)}
                                       className="group/nested relative flex items-center px-5 py-3 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#224292] transition-all duration-300"
                                     >
-                                      <span className="text-[14.5px] font-black text-[#64779F] group-hover/nested:text-white transition-colors pr-12">{nested.name}</span>
+                                      <span className="text-[14.5px] font-bold text-[#64779F] group-hover/nested:text-white transition-colors pr-12">{nested.name}</span>
                                       <div className="absolute right-5 flex items-center justify-center w-5 h-5">
                                          {nested.icon && (
                                            <nested.icon 
@@ -437,7 +437,7 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[94px] lg:w-[100px] translate-y-0 md:translate-y-1 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[84px] lg:w-[90px] translate-y-0 md:translate-y-0.5 object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
@@ -535,7 +535,7 @@ const Header = () => {
                                  handleNavClick(e, link.name, link.href);
                                }
                             }}
-                            className={`flex items-center justify-between px-4 py-4 text-[15px] font-black transition-all ${
+                            className={`flex items-center justify-between px-4 py-4 text-[15px] font-bold transition-all ${
                               isActive 
                                 ? 'text-[#224292]' 
                                 : 'text-[#64779F] hover:text-[#224292]'
@@ -570,7 +570,7 @@ const Header = () => {
                                              handleNavClick(e, sub.name, sub.href);
                                            }
                                          }} 
-                                         className={`flex items-center justify-between px-6 py-3.5 text-[13px] font-black transition-all group/subitem ${
+                                         className={`flex items-center justify-between px-6 py-3.5 text-[13px] font-bold transition-all group/subitem ${
                                             activeSubDropdown === sub.name ? 'text-[#224292] bg-[#224292]/5' : 'text-[#64779F] hover:text-[#224292] hover:bg-white/50'
                                          }`}
                                        >

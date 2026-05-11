@@ -42,11 +42,11 @@ import specialMachineImg from '../assets/idea lap/Special Machine wing.webp'
 import ambassadors24Img from '../assets/idea lap/Student Ambassadors  2024-25.webp'
 import ambassadors25Img from '../assets/idea lap/Student Ambassadors2025-26.webp'
 import sublimationImg from '../assets/idea lap/Sublimation Printing unit.webp'
-import run1 from '../assets/idea lap/run1.png'
-import run2 from '../assets/idea lap/run2.png'
-import aicteLogo from '../assets/idea lap/aicte_official_logo.png'
-import govtEmblem from '../assets/idea lap/govt_india_emblem.png'
-import ideaLabLogo from '../assets/idea lap/aicte_idea_lab_logo.png'
+import run1 from '../assets/idea lap/run1.webp'
+import run2 from '../assets/idea lap/run2.webp'
+import aicteLogo from '../assets/idea lap/aicte_official_logo.webp'
+import govtEmblem from '../assets/idea lap/govt_india_emblem.webp'
+import ideaLabLogo from '../assets/idea lap/aicte_idea_lab_logo.webp'
 
 const IdeaLabPage = () => {
     const navigate = useNavigate()

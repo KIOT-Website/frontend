@@ -45,7 +45,7 @@ const RecruitmentDrives = () => {
     if (!loading && displayDrives.length === 0) return null;
 
     return (
-        <section id="recruitment-drives" className="relative py-6 lg:py-10 bg-white overflow-hidden font-sans">
+        <section id="recruitment-drives" className="relative py-4 lg:py-6 bg-white overflow-hidden font-sans">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-[#224292]/[0.02] rounded-full blur-[100px]" />
                 <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-[#ffc107]/[0.03] rounded-full blur-[100px]" />
@@ -76,10 +76,10 @@ const RecruitmentDrives = () => {
                         {displayDrives.map((drive, idx) => (
                             <motion.div
                                 key={drive.id}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.7, delay: idx * 0.2, ease: [0.22, 1, 0.36, 1] }}
                                 onClick={() => setSelectedPoster(drive)}
                                 className="w-full md:w-[450px] group relative bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 cursor-pointer"
                             >

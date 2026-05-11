@@ -22,84 +22,96 @@ import {
 
 import campusTourVid from '../assets/main/campus tour.mp4'
 
+// Local Assets for Campus Essentials (Tamil Nadu / KIOT based)
+import kiotLibrary from '../assets/main/kiot_library.webp'
+import kiotSports from '../assets/main/kiot_sports.webp'
+import kiotTransport from '../assets/main/kiot_transport.webp'
+import kiotLab from '../assets/main/kiot_lab.webp'
+import kiotCafeteria from '../assets/main/kiot_cafeteria.webp'
+import kiotSymposium from '../assets/main/kiot_symposium.webp'
+import campusMain from '../assets/main/campus .webp'
+
 const CAMPUS_HUBS = [
   {
     id: 'library',
     title: 'Library',
     subtitle: 'Gateway to Knowledge',
     icon: Library,
-    image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop',
+    image: kiotLibrary,
     link: '/campus-life/library',
-    color: '#3b82f6' // Vibrant Blue
+    color: '#224292'
   },
   {
     id: 'classroom',
     title: 'Smart Classroom',
     subtitle: 'Future Ready Learning',
     icon: Monitor,
-    image: 'https://images.unsplash.com/photo-1577891729319-3359938c8230?q=80&w=1200&auto=format&fit=crop',
+    image: kiotLab,
     link: '/campus-life/classroom',
-    color: '#f59e0b' // Vibrant Gold
+    color: '#ffc107'
   },
   {
     id: 'sports',
     title: 'Sports & Games',
     subtitle: 'Excellence in Action',
     icon: Trophy,
-    image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop',
+    image: kiotSports,
     link: '/campus-life/sports',
-    color: '#ef4444' // Vibrant Red
+    color: '#224292'
   },
   {
     id: 'tour',
     title: 'Campus Tour',
     subtitle: 'Explore our legacy',
     icon: Compass,
-    image: 'https://images.unsplash.com/photo-1541339907198-e08756eaa539?q=80&w=1200&auto=format&fit=crop',
+    image: campusMain,
     link: '/campus-life/tour',
-    color: '#10b981' // Vibrant Emerald
+    color: '#ffc107'
   },
   {
     id: 'transport',
     title: 'Transport',
     subtitle: 'Safe & Reliable Commute',
     icon: Bus,
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop',
+    image: kiotTransport,
     link: '/campus-life/transport',
-    color: '#6366f1' // Vibrant Indigo
+    color: '#224292'
   },
   {
     id: 'amenities',
     title: 'Amenities',
     subtitle: 'Campus Life Services',
     icon: LayoutGrid,
-    image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=1200&auto=format&fit=crop',
+    image: kiotCafeteria,
     link: '/campus-life/amenities',
-    color: '#ec4899' // Vibrant Pink
+    color: '#ffc107'
   },
   {
     id: 'media',
     title: 'Media Center',
     subtitle: 'Multimedia Excellence',
     icon: Video,
+    image: kiotSymposium,
     link: '/campus-life/media',
-    color: '#ef4444' // Red
+    color: '#224292'
   },
   {
     id: 'energy',
     title: 'Energy Initiatives',
     subtitle: 'Sustainable Campus',
     icon: Zap,
+    image: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=800&auto=format&fit=crop', // Realistic Solar Farm
     link: '/campus-life/energy',
-    color: '#f59e0b' // Gold
+    color: '#ffc107'
   },
   {
     id: 'internet',
     title: 'Internet & Computing',
     subtitle: '24/7 Digital Hub',
     icon: Wifi,
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop', // Kept as requested
     link: '/campus-life/internet',
-    color: '#3b82f6' // Blue
+    color: '#224292'
   }
 ]
 
@@ -109,7 +121,6 @@ const CampusLifePage = () => {
 
     return (
         <div className="min-h-screen bg-white pb-24 relative">
-            {/* Video Modal - Global Stacking Context */}
             <AnimatePresence>
                 {showVideo && (
                     <motion.div
@@ -124,14 +135,12 @@ const CampusLifePage = () => {
                             exit={{ scale: 0.9, opacity: 0 }}
                             className="relative w-full max-w-6xl aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/20"
                         >
-                            {/* Close Button */}
                             <button 
                                 onClick={() => setShowVideo(false)}
                                 className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#224292] hover:bg-[#ffc107] transition-all shadow-xl"
                             >
                                 <X size={24} strokeWidth={3} />
                             </button>
-
                             <video 
                                 src={campusTourVid} 
                                 className="w-full h-full object-contain"
@@ -143,8 +152,8 @@ const CampusLifePage = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+
             <div className="w-full px-6 lg:px-12 pt-24 pb-24 relative z-20">
-                
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +161,6 @@ const CampusLifePage = () => {
                     transition={{ duration: 0.8 }}
                     className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24"
                 >
-                    {/* Text Part - Comprehensive Institutional Narrative */}
                     <div className="w-full lg:w-[45%] space-y-8">
                         <h3 className="text-4xl md:text-6xl font-black text-[#224292] tracking-tighter leading-none">
                             Building <span className="text-[#ffc107]">Legacy</span> <br/> 
@@ -163,27 +171,23 @@ const CampusLifePage = () => {
                                 At KIOT, excellence is built through advanced infrastructure, vibrant campus life, and a strong sports culture. Smart classrooms, modern labs, and innovation-driven spaces support academic growth, while a dynamic student community encourages creativity, collaboration, and global exposure.
                            </p>
                            <p className="text-[#1a1a1a] text-lg leading-relaxed font-bold text-justify">
-                                With top-tier sports facilities and professional training, students grow both physically and mentally, creating a well-well-rounded environment focused on performance, passion, and progress.
+                                With top-tier sports facilities and professional training, students grow both physically and mentally, creating a well-rounded environment focused on performance, passion, and progress.
                            </p>
                         </div>
                     </div>
 
-                    {/* Video Part - Cinematic Campus Tour */}
                     <div className="w-full lg:w-[55%] relative group">
-                        <div className="absolute -inset-4 bg-slate-100 rounded-[2.5rem] -rotate-1 group-hover:rotate-0 transition-transform duration-500" />
+                        <div className="absolute -inset-4 bg-slate-100 rounded-[2rem] -rotate-1 group-hover:rotate-0 transition-transform duration-500" />
                         <div 
                           onClick={() => setShowVideo(true)}
-                          className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-video cursor-pointer border-4 border-white group-hover:border-[#ffc107]/20 transition-all duration-500"
+                          className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video cursor-pointer border-4 border-white group-hover:border-[#ffc107]/20 transition-all duration-500"
                         >
-                            {/* Real Campus Image as Thumbnail */}
                             <img 
-                              src="/src/assets/main/campus .webp" 
+                              src={campusMain} 
                               alt="Campus Tour" 
                               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/60 to-transparent" />
-                            
-                            {/* Play Button Overlay */}
                             <div className="absolute inset-0 flex flex-col items-center justify-center">
                                <motion.div 
                                  whileHover={{ scale: 1.1 }}
@@ -199,7 +203,6 @@ const CampusLifePage = () => {
                 </motion.div>
             </div>
 
-            {/* 🔷 Institutional Impact Stats - Pixel Perfect match to design */}
             <div className="bg-[#1b2a60] py-16 relative z-20 overflow-hidden border-y border-white/10 shadow-2xl">
                 <div className="w-full px-6 lg:px-12 relative z-10">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -217,7 +220,6 @@ const CampusLifePage = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="flex flex-col items-center text-center space-y-4"
                             >
-                                {/* Circular Icon Badge */}
                                 <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shadow-2xl backdrop-blur-md transition-transform hover:scale-110 duration-500">
                                     <stat.i size={28} className="text-[#ffc107]" />
                                 </div>
@@ -236,47 +238,51 @@ const CampusLifePage = () => {
             </div>
 
             <div className="w-full px-6 lg:px-12 py-12 md:py-16 relative z-20">
-                {/* Standardized Section Heading */}
                 <div className="flex items-center justify-center gap-4 mb-16">
                     <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     <h2 className="text-3xl font-black text-[#224292] tracking-tight text-center">Campus <span className="text-[#ffc107]">Essentials</span></h2>
                     <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                 </div>
 
-                {/* Compact Hub Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8">
                     {CAMPUS_HUBS.map((hub, idx) => (
                         <motion.div
                             key={hub.id}
-                            initial={{ opacity: 0, scale: 0.98 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.05 }}
+                            onClick={() => navigate(hub.link)}
+                            className="group bg-white rounded-xl border-l-[3px] border-b-[3px] border-[#224292] transition-all duration-500 cursor-pointer overflow-hidden flex flex-col relative shadow-lg hover:shadow-2xl"
                         >
-                            <button 
-                                onClick={() => navigate(hub.link)}
-                                className="w-full group bg-white rounded-[2rem] border border-slate-100 overflow-hidden flex flex-col items-center text-center px-5 py-8 transition-all hover:-translate-y-1.5 duration-500 h-full relative shadow-sm hover:shadow-xl hover:border-[#ffc107]/20"
-                            >
-                                <div 
-                                  className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-md transition-all group-hover:scale-110 duration-500 mb-6"
-                                  style={{ backgroundColor: `${hub.color}15`, color: hub.color }}
-                                >
-                                    <hub.icon size={24} strokeWidth={2.5} />
-                                </div>
+                            <div className="absolute top-0 left-0 w-full h-[3px] bg-[#ffc107] z-30" />
+                            <div className="absolute top-0 right-0 h-full w-[3px] bg-[#ffc107] z-30" />
+
+                            <div className="relative w-full h-40 overflow-hidden">
+                                <img 
+                                  src={hub.image} 
+                                  alt={hub.title} 
+                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/40 to-transparent" />
                                 
-                                <div className="space-y-3 w-full relative z-10 flex-1 flex flex-col items-center justify-between">
-                                    <div>
-                                        <h3 className="text-lg font-black text-[#224292] tracking-tight leading-tight mb-1">{hub.title}</h3>
-                                        <p className="text-sm font-bold text-slate-600 tracking-tight leading-snug px-2">{hub.subtitle}</p>
-                                    </div>
-                                    
-                                    <div className="pt-6 mt-auto">
-                                        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-50 text-[#224292] text-xs font-black uppercase tracking-[2px] border border-slate-100 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
-                                            Explore <ArrowUpRight size={14} className="text-[#ffc107]" />
-                                        </div>
-                                    </div>
+                                <div 
+                                  className="absolute bottom-3 left-4 w-10 h-10 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-md border border-white/20 transition-all group-hover:scale-110"
+                                  style={{ backgroundColor: `${hub.color}CC`, color: '#fff' }}
+                                >
+                                    <hub.icon size={20} strokeWidth={2.5} />
                                 </div>
-                            </button>
+                            </div>
+
+                            <div className="p-4 md:p-5 flex-1 flex flex-col bg-white">
+                                <h4 className="text-[16px] font-black text-[#224292] leading-tight mb-1.5">{hub.title}</h4>
+                                <p className="text-[11px] text-slate-500 font-bold leading-relaxed mb-4">{hub.subtitle}</p>
+                                
+                                <div className="text-[#ffc107] flex items-center gap-2 text-[11px] font-black uppercase tracking-widest mt-auto">
+                                    <span className="text-[#224292]">Explore</span>
+                                    <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                                </div>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

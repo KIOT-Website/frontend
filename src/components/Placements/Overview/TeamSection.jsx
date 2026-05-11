@@ -51,7 +51,7 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <div className="mb-20">
+    <div className="mb-12">
        <div className="flex flex-col items-center mb-16">
           <h2 className="text-2xl font-black text-[#224292] flex items-center justify-center gap-4 tracking-tight">
             <Users size={28} className="text-[#ffc107]" />

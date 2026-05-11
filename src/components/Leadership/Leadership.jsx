@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle2, Quote, X, GraduationCap, Briefcase, Microscope, Heart } from 'lucide-react'
 
 // Asset imports
-import chairmanImg from '../../assets/main/srinivasan.jpeg'
+import chairmanImg from '../../assets/main/srinivasan.webp'
 import principalImg from '../../assets/main/KIOT-Principal-Message-Web-2025.webp'
 import secretaryImg from '../../assets/main/Secretarys-Message-KIOTT.webp'
-import treasurerImg from '../../assets/main/Mr.V.Sureshkumar, Treasurer.jpg'
+import treasurerImg from '../../assets/main/Mr.V.Sureshkumar, Treasurer.webp'
 
 const leaders = [
   {
@@ -114,17 +114,23 @@ const Leadership = () => {
                 Driven by a collective vision of academic excellence and technical innovation, our leadership team brings together the expertise of world-class researchers and visionary entrepreneurs.
               </p>
 
-              <div className="flex flex-wrap justify-center gap-6 mt-6">
+              <div className="flex flex-wrap justify-center gap-12 md:gap-24 mt-12">
                  {[
                    { label: "Academicians", value: "22", icon: GraduationCap },
                    { label: "Professionals", value: "07", icon: Briefcase },
                    { label: "Entrepreneurs", value: "15", icon: Microscope }
                  ].map((stat, i) => (
-                   <div key={i} className="flex flex-col items-center group cursor-default">
-                      <div className="px-6 py-2 bg-white border border-slate-100 rounded-full shadow-sm group-hover:border-[#ffc107]/50 transition-all duration-300">
-                        <div className="text-xl font-bold text-[#224292]">{stat.value}</div>
+                   <div key={i} className="flex flex-col items-center group cursor-default relative">
+                      <div className="absolute inset-0 bg-[#ffc107] blur-[40px] opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-full" />
+                      
+                      <div className="w-16 h-16 mb-5 rounded-2xl bg-white border border-slate-100 shadow-sm text-[#224292] flex items-center justify-center group-hover:-translate-y-2 group-hover:bg-[#224292] group-hover:text-[#ffc107] group-hover:border-[#224292] transition-all duration-500">
+                         <stat.icon size={28} strokeWidth={1.5} />
                       </div>
-                      <div className="text-[9px] font-bold text-[#333333] tracking-[0.2em] mt-3 opacity-60 group-hover:opacity-100 transition-opacity font-graphik">{stat.label}</div>
+                      <div className="flex items-baseline gap-1 mb-1">
+                        <span className="text-4xl md:text-5xl font-bold text-[#224292] tracking-tighter">{stat.value}</span>
+                        <span className="text-[#ffc107] text-3xl font-bold">+</span>
+                      </div>
+                      <div className="text-xs md:text-sm font-bold text-[#64779F] uppercase tracking-[0.15em] font-graphik group-hover:text-[#224292] transition-colors">{stat.label}</div>
                    </div>
                  ))}
               </div>

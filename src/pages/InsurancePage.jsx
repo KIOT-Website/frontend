@@ -57,13 +57,7 @@ const InsurancePage = () => {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <button 
-                            onClick={() => navigate('/campus-life')}
-                            className="inline-flex items-center gap-2 text-[#ffc107] hover:text-white transition-colors mb-6 group border border-[#ffc107]/30 px-4 py-1.5 rounded-full bg-[#224292]/50 backdrop-blur-sm"
-                        >
-                            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-xs font-black tracking-[2px]">Back to Hub</span>
-                        </button>
+
                         <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none mb-3">
                             Campus <span className="text-[#ffc107]">Insurance</span>
                         </h1>

@@ -90,7 +90,7 @@ const VisionMission = ({ hideHeader = false }) => {
   ]
 
   return (
-    <div id="values" className="relative bg-white pt-6 md:pt-10 pb-10 md:pb-12 border-t border-slate-100 mt-6 md:mt-10">
+    <div id="values" className="relative bg-white pt-2 md:pt-4 pb-4 md:pb-6 border-t border-slate-100 mt-4 md:mt-6">
       
       {/* Background Graphic Decoration - Removed to ensure pure white experience */}
       <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto">
@@ -119,7 +119,7 @@ const VisionMission = ({ hideHeader = false }) => {
         )}
 
         {/* ─── NEW DIAMOND ZIG-ZAG INFOGRAPHIC ─── */}
-        <div className="relative w-full mx-auto px-4 py-8 lg:py-16">
+        <div className="relative w-full mx-auto px-4 py-4 lg:py-8">
           <div className="flex flex-wrap lg:flex-nowrap justify-center gap-28 lg:gap-4 relative z-10 px-4">
             {valuesData.map((val, i) => {
               const isEven = i % 2 !== 0; // 0, 2, 4 are top | 1, 3 are bottom
@@ -130,7 +130,7 @@ const VisionMission = ({ hideHeader = false }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.8 }}
-                  className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[280px] flex justify-center ${isEven ? 'lg:mt-32' : 'lg:mb-32'}`}
+                  className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[280px] flex justify-center ${isEven ? 'lg:mt-16' : 'lg:mb-16'}`}
                 >
                   {/* The Diamond Container with New Stylish Border - Shadow Removed */}
                   <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border border-[#224292]/15 transform rotate-45 flex items-center justify-center group hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">

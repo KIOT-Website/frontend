@@ -2,22 +2,22 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { Zap, Sprout, Cpu, HeartPulse, Building2, ShieldCheck, Handshake } from 'lucide-react'
 
-import ist2Logo from '../assets/iStart/ist2.png'
-import mxi1 from '../assets/iStart/mxi-1.jpg'
-import serviceImg1 from '../assets/iStart/istart.png'
-import serviceImg2 from '../assets/iStart/istart2.png'
+import ist2Logo from '../assets/iStart/ist2.webp'
+import mxi1 from '../assets/iStart/mxi-1.webp'
+import serviceImg1 from '../assets/iStart/istart.webp'
+import serviceImg2 from '../assets/iStart/istart2.webp'
 import serviceImg3 from '../assets/iStart/iStart-Hackathon-winner-1.webp'
 
 const MXIncubatorPage = () => {
     const navigate = useNavigate()
 
     return (
-        <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-10">
-            <div className="max-w-7xl mx-auto px-4 lg:px-10 py-8">
+        <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-6">
+            <div className="max-w-7xl mx-auto px-4 lg:px-10 py-4">
                 
-                <div className="space-y-12">
+                <div className="space-y-8">
                     {/* Hero Section */}
-                    <div className="grid lg:grid-cols-2 gap-10 items-start">
+                    <div className="grid lg:grid-cols-2 gap-8 items-start">
                         {/* Left Content */}
                         <div className="space-y-6">
                             <div className="space-y-2">

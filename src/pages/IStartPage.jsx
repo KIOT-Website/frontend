@@ -15,7 +15,7 @@ import achImg4 from '../assets/iStart/Olimayam-2.0.webp'
 import achImg5 from '../assets/iStart/Young-India.webp'
 import achImg6 from '../assets/iStart/iStart-Hackathon-winner-1.webp'
 import achImg7 from '../assets/iStart/iStart-Hackathon-winner-2.webp'
-import istartLogo from '../assets/iStart/istart.png'
+import istartLogo from '../assets/iStart/istart.webp'
 
 const IStartPage = () => {
     const [selectedImg, setSelectedImg] = useState(null)
@@ -122,7 +122,7 @@ const IStartPage = () => {
                                 className="w-full max-w-[600px] h-[400px] lg:h-[480px] rounded-[8rem_2rem_8rem_2rem] overflow-hidden shadow-2xl relative z-10 border-8 border-white"
                             >
                                 <img 
-                                    src="/indian_students_innovation_group.png" 
+                                    src="/indian_students_innovation_group.webp" 
                                     alt="Indian Innovation Lab" 
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                                 />
@@ -393,10 +393,10 @@ const IStartPage = () => {
 
                                 <div 
                                     onClick={() => item.link && navigate(item.link)}
-                                    className={`mt-auto pt-2 flex items-center gap-2 group/btn ${item.link ? 'cursor-pointer' : 'opacity-50 cursor-default'}`}
+                                    className={`flex items-center gap-2 group/btn ${item.link ? 'cursor-pointer' : 'opacity-50 cursor-default'}`}
                                 >
-                                    <span className="text-[11px] font-black tracking-tight transition-colors" style={{ color: item.color }}>View more</span>
-                                    <ArrowRight size={12} className="transition-transform group-hover/btn:translate-x-1" style={{ color: item.color }} />
+                                    <span className="text-[13px] font-black tracking-tight transition-colors" style={{ color: item.color }}>View more</span>
+                                    <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" style={{ color: item.color }} />
                                 </div>
                             </motion.div>
                         ))}

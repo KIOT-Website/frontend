@@ -13,20 +13,33 @@ const Home = () => {
   return (
     <motion.div
       key="home"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.4 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <Hero />
-      <Stats />
-      <Placements />
-      <Programs />
-      <CampusLife />
-      <Achievers />
-      <Events />
-      <RecruitmentDrives />
-      <Testimonials />
+      
+      {[
+        { Comp: Stats },
+        { Comp: Placements },
+        { Comp: Programs },
+        { Comp: CampusLife },
+        { Comp: Achievers },
+        { Comp: Events },
+        { Comp: RecruitmentDrives },
+        { Comp: Testimonials }
+      ].map(({ Comp }, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <Comp />
+        </motion.div>
+      ))}
     </motion.div>
   )
 }

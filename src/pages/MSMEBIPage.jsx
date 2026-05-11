@@ -6,9 +6,9 @@ import {
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-import ist2Logo from '../assets/iStart/ist2.png'
-import istart1 from '../assets/iStart/istart (1).jpg'
-import msmiImg from '../assets/iStart/msmi.png'
+import ist2Logo from '../assets/iStart/ist2.webp'
+import istart1 from '../assets/iStart/istart (1).webp'
+import msmiImg from '../assets/iStart/msmi.webp'
 
 const MSMEBIPage = () => {
     const navigate = useNavigate()

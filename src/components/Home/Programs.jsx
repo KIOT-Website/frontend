@@ -165,24 +165,15 @@ const Programs = () => {
 
 
   return (
-    <section id="academics" className="relative py-8 lg:py-12 bg-white overflow-hidden">
+    <section id="academics" className="relative py-6 lg:py-8 bg-white overflow-hidden">
       
       <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-white to-transparent -z-10" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Modern Header Section */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-12 mb-10 lg:mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-12 mb-8 lg:mb-12">
            <div className="max-w-3xl">
-              <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 mb-5 lg:mb-6 bg-[#224292]/5 px-4 py-1.5 rounded-full border border-[#224292]/10"
-              >
-                <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107] animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Academic Excellence</span>
-              </motion.div>
               
               <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik mb-6 lg:mb-8 leading-[1.1] lg:leading-[1.05]">
                 Shape your future with <br className="hidden lg:block" />

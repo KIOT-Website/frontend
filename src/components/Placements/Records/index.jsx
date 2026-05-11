@@ -1,7 +1,6 @@
 import React from 'react'
 import AnalyticsCharts from './AnalyticsCharts'
 import ImpactDistribution from './ImpactDistribution'
-import HiringPartners from './HiringPartners'
 import PlacementRecordsSection from '../PlacementRecordsSection'
 import PlacementRecordsStudentsAdmittedSection from '../PlacementRecordsStudentsAdmittedSection'
 import PlacementDetailsYearSection from '../PlacementDetailsYearSection'
@@ -34,7 +33,6 @@ const OutcomesOverview = () => {
 
       <section className="relative px-6 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
         <ImpactDistribution />
-        <HiringPartners />
       </section>
     </div>
   )

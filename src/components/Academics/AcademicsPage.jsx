@@ -388,7 +388,7 @@ export default function AcademicsPage() {
                 <thead>
                   <tr className="bg-[#224292] border-b border-[#224292]/10">
                     <th className="px-5 sm:px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em]">Program</th>
-                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] hidden md:table-cell">Category</th>
+                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] text-center hidden md:table-cell">Category</th>
                     <th className="px-5 sm:px-8 py-6 text-[10px] font-black text-[#ffc107] uppercase tracking-[0.2em] text-center">Intake</th>
                     <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] text-right hidden sm:table-cell"></th>
                   </tr>
@@ -422,10 +422,10 @@ export default function AcademicsPage() {
                             </div>
                           </div>
                         </td>
-
+ 
                         {/* Column 2: Category (Hidden on Mobile) */}
-                        <td className="px-8 py-4 hidden md:table-cell">
-                          <span className="px-3 py-1 rounded-full bg-[#224292]/5 text-[#224292] text-[9px] font-black uppercase tracking-widest">
+                        <td className="px-8 py-4 text-center hidden md:table-cell">
+                          <span className="inline-block whitespace-nowrap px-3 py-1 rounded-full bg-[#224292]/5 text-[#224292] text-[9px] font-black uppercase tracking-widest">
                             {prog.category}
                           </span>
                         </td>

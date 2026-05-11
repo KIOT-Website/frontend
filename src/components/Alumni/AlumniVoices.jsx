@@ -46,11 +46,11 @@ const AlumniVoices = () => {
               className="relative p-10 group"
             >
               {/* The Styled Card Background and Border */}
-              <div className="absolute inset-x-4 top-0 bottom-12 bg-white border-[3px] border-black rounded-[2rem] rounded-bl-sm shadow-[10px_10px_0px_rgba(0,0,0,0.05)] -z-10" />
+              <div className="absolute inset-x-4 top-0 bottom-12 bg-white border-[3px] border-[#224292] rounded-[2rem] rounded-bl-sm shadow-[10px_10px_0px_#ffc107] -z-10" />
               
               {/* The Tail - carefully crafted to match the image */}
               <div className="absolute left-4 bottom-0 w-16 h-12 -z-10">
-                <svg viewBox="0 0 100 100" className="w-full h-full text-black" preserveAspectRatio="none">
+                <svg viewBox="0 0 100 100" className="w-full h-full text-[#224292]" preserveAspectRatio="none">
                   <path 
                     d="M0 0 V60 L50 100 L100 60 H0" 
                     fill="white" 
@@ -63,29 +63,29 @@ const AlumniVoices = () => {
               </div>
 
               {/* Top Quote Icon */}
-              <div className="text-black mb-6">
-                <Quote size={50} fill="currentColor" stroke="none" className="opacity-90" />
+              <div className="text-[#224292] mb-6">
+                <Quote size={50} fill="currentColor" stroke="none" />
               </div>
 
               {/* Title */}
-              <h4 className="text-2xl font-black text-black mb-6 font-graphik">Testimonial</h4>
+              <h4 className="text-2xl font-black text-[#224292] mb-6 font-graphik">Testimonial</h4>
 
               {/* Content */}
               <div className="min-h-[140px]">
-                <p className="text-black/80 font-medium leading-relaxed font-graphik text-base">
+                <p className="text-black font-bold leading-relaxed font-graphik text-base">
                   {item.quote}
                 </p>
               </div>
 
               {/* Footer Name with Line */}
               <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-[2px] bg-[#ffc107]" />
+                <div className="w-12 h-[3px] bg-[#ffc107]" />
                 <span className="text-[#224292] font-black text-sm tracking-tight">{item.name}</span>
               </div>
 
               {/* Closing Quote Icon - bottom right */}
-              <div className="absolute bottom-4 right-8 text-black/90 rotate-180">
-                <Quote size={60} fill="currentColor" stroke="none" className="opacity-90" />
+              <div className="absolute bottom-4 right-8 text-[#ffc107]">
+                <Quote size={60} fill="currentColor" stroke="none" className="opacity-40" />
               </div>
             </motion.div>
           ))}

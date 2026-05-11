@@ -74,19 +74,12 @@ const HeaderSection = () => {
         >
           <div className="relative rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl">
             <img 
-              src="/indian-students-training.png" 
+              src="/indian-students-training.webp" 
               alt="CDT Training Session" 
               className="w-full h-[600px] object-cover"
             />
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/60 via-transparent to-transparent" />
-
-            {/* Decorative Yellow Arrow/Path Line (Simplified) */}
-            <div className="absolute bottom-20 left-0 w-full px-12 pointer-events-none opacity-40">
-               <svg viewBox="0 0 500 100" className="w-full h-auto text-[#ffc107] fill-none">
-                  <path d="M0 80 Q 150 70 250 50 T 500 20" stroke="currentColor" strokeWidth="4" strokeDasharray="12 8" />
-               </svg>
-            </div>
           </div>
         </motion.div>
       </div>

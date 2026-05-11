@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import alumniTech from '../../assets/alumni/alumni_tech.png'
+import alumniTech from '../../assets/alumni/alumni_tech.webp'
 
 const AlumniHero = () => {
   return (

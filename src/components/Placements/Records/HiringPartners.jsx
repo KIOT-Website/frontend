@@ -3,11 +3,11 @@ import { motion } from 'framer-motion'
 
 // Dynamically import all images from the companies folder
 const imageModules = import.meta.glob('../../../assets/placements/companies/*.{png,jpg,jpeg,svg,webp}', { eager: true });
-import designBg from '../../../assets/placements/companies/design.png'
+import designBg from '../../../assets/placements/companies/design.webp'
 
 // Convert the object to an array of objects with name and logo
 const partners = Object.entries(imageModules)
-  .filter(([path]) => !path.includes('design.png')) // Exclude the background image from the logo grid
+  .filter(([path]) => !path.includes('design.webp')) // Exclude the background image from the logo grid
   .map(([path, module]) => {
     // Extract filename and clean it up for the name tag
     const fileName = path.split('/').pop().split('.')[0];
@@ -22,7 +22,7 @@ const partners = Object.entries(imageModules)
 
 const HiringPartners = () => {
   return (
-    <div className="relative max-w-7xl mx-auto mb-32 px-6 py-20 rounded-[4rem] overflow-hidden">
+    <div className="relative max-w-7xl mx-auto mb-16 px-6 py-12 rounded-[4rem] overflow-hidden">
       {/* Background Image Layer */}
       <div className="absolute inset-0 z-0">
         <img 

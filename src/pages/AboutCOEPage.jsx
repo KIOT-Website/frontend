@@ -87,7 +87,7 @@ const AboutCOEPage = () => {
                         <div className="hidden lg:flex lg:w-2/5 flex-col justify-between relative overflow-hidden bg-slate-50/30">
                             <div className="p-12 flex justify-center items-center flex-1">
                                 <div className="relative scale-110">
-                                    <img src="/coe-illustration-clean.png" alt="COE Vision" className="w-full max-w-sm h-auto relative z-10" />
+                                    <img src="/coe-illustration-clean.webp" alt="COE Vision" className="w-full max-w-sm h-auto relative z-10" />
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@ const AboutCOEPage = () => {
                         </div>
                         <div className="p-8 flex justify-center items-end relative overflow-hidden bg-slate-50/30 mt-auto">
                             <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-100/80 to-transparent z-0" />
-                            <img src="/staff-sub-illustration.png" alt="Staff Support" className="w-full max-w-[280px] h-auto relative z-10 mix-blend-multiply" />
+                            <img src="/staff-sub-illustration.webp" alt="Staff Support" className="w-full max-w-[280px] h-auto relative z-10 mix-blend-multiply" />
                         </div>
                     </motion.div>
                 </div>

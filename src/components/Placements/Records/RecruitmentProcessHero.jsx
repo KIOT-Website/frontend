@@ -130,7 +130,7 @@ const RecruitmentProcessHero = () => {
               className="relative rounded-[3rem] overflow-hidden shadow-2xl group"
             >
               <img 
-                src="/students_placements_discussion.png" 
+                src="/students_placements_discussion.webp" 
                 alt="Placement Training" 
                 className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-1000"
               />

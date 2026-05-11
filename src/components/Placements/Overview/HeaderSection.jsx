@@ -1,99 +1,169 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Star, UserCheck, Briefcase, CheckCircle2, Trophy, FileText, Users } from 'lucide-react'
-import GdImage from '../../../assets/placements/CDT/Gd.png'
+import { Trophy, GraduationCap, UserCheck, Briefcase, ArrowRight, Download, Users, TrendingUp, IndianRupee } from 'lucide-react'
+import placementImage from '../../../assets/placements/CDT/placement.webp'
 
 const features = [
   {
     title: "Industry-Aligned Training",
-    desc: "Curriculum designed with real industry insights to build in-demand skills.",
-    icon: Star,
-    color: "#ffc107"
+    desc: "Build in-demand skills for tomorrow",
+    icon: GraduationCap,
+    bgColor: "bg-blue-50",
+    iconColor: "text-[#224292]"
   },
   {
     title: "Dedicated Placement Support",
-    desc: "Mock interviews, resume building & personalized mentoring support.",
+    desc: "Guidance at every step of your journey",
     icon: UserCheck,
-    color: "#ffc107"
+    bgColor: "bg-yellow-50",
+    iconColor: "text-[#ffc107]"
   },
   {
     title: "Internships & Live Projects",
-    desc: "Hands-on exposure through internships and real-world projects.",
+    desc: "Real experience that builds confidence",
     icon: Briefcase,
-    color: "#ffc107"
+    bgColor: "bg-blue-50",
+    iconColor: "text-[#224292]"
   }
 ]
 
 const HeaderSection = () => {
   return (
-    <div className="relative w-full bg-white overflow-hidden font-graphik min-h-[450px] lg:min-h-[500px] flex items-center">
+    <div className="relative w-full bg-slate-50/50 overflow-hidden font-graphik min-h-[450px] lg:min-h-[600px] flex items-center">
       
-      <div className="grid lg:grid-cols-12 w-full h-full items-center relative">
+      {/* Background Decorative Blob */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-100/40 rounded-l-full blur-3xl -z-10" />
+
+      <div className="grid lg:grid-cols-12 w-full h-full items-center relative max-w-[1400px] mx-auto">
         
         {/* Left Column: Content Area */}
-        <div className="lg:col-span-5 relative z-20 flex justify-end">
+        <div className="lg:col-span-7 relative z-20 flex justify-center flex-col px-6 sm:px-10 lg:pl-16 py-6 lg:py-10">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="max-w-xl w-full px-8 lg:px-12 py-6"
+            className="w-full"
           >
             {/* Tag Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#224292]/5 border border-[#224292]/10 shadow-sm mb-4">
-               <Trophy size={12} className="text-[#224292]" />
-               <span className="text-[9px] font-black text-[#224292] uppercase tracking-[0.2em]">Institutional Excellence</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 shadow-sm mb-6">
+               <Trophy size={14} className="text-[#224292]" />
+               <span className="text-[10px] sm:text-xs font-black text-[#224292] uppercase tracking-widest">PLACEMENT EXCELLENCE</span>
             </div>
             
             {/* Main Header */}
-            <h1 className="text-4xl md:text-5xl font-black text-[#224292] mb-4 tracking-tighter leading-[0.9]">
-              Placement <br/> <span className="text-[#ffc107]">Excellence</span>
+            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-black text-[#224292] mb-5 tracking-tighter leading-tight">
+              Launch Your Career <br className="hidden md:block" />
+              with <span className="text-[#ffc107]">Confidence</span>
             </h1>
+
+            {/* Small yellow line */}
+            <div className="w-16 h-1.5 bg-[#ffc107] mb-6 rounded-full" />
             
             {/* Description */}
-            <p className="text-black font-black text-sm md:text-base leading-tight mb-8 max-w-md">
-              At KIOT, placement is a continuous journey driven by structured training, skill development, and industry alignment from day one.
+            <p className="text-slate-600 font-medium text-base lg:text-lg leading-relaxed mb-10 max-w-xl">
+              Industry-oriented training, real-world exposure, and dedicated placement support to help you achieve your dream career.
             </p>
 
-            {/* Premium Features List */}
-            <div className="space-y-4 mb-8">
+            {/* Premium Features List - Horizontal */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
               {features.map((feature, idx) => (
                 <motion.div 
                   key={idx}
-                  className="flex gap-4 group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="flex flex-row sm:flex-col items-start gap-4"
                 >
-                  <div className={`w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 border border-slate-100 shadow-sm transition-all`} style={{ color: feature.color }}>
-                    <feature.icon size={18} />
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-sm border border-slate-100 ${feature.bgColor} ${feature.iconColor}`}>
+                    <feature.icon size={20} />
                   </div>
-                  <div className="flex items-center">
-                    <h4 className="text-base font-black text-[#224292] tracking-tight">{feature.title}</h4>
+                  <div className="flex flex-col">
+                    <h4 className="text-sm font-bold text-[#224292] leading-tight mb-1">{feature.title}</h4>
+                    <p className="text-xs text-slate-500 font-medium leading-relaxed">{feature.desc}</p>
                   </div>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4">
+               <button className="flex items-center gap-2 px-8 py-3.5 bg-[#0a2351] hover:bg-[#224292] text-white rounded-full font-bold text-sm transition-all shadow-lg hover:shadow-xl group">
+                  <Download size={18} className="group-hover:scale-110 transition-transform" /> Placement Brochure <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+               </button>
             </div>
 
           </motion.div>
         </div>
 
         {/* Right Column: Refined Image Layout */}
-        <div className="lg:col-span-7 relative h-full min-h-[450px] lg:min-h-[600px] flex items-center p-8 lg:p-16">
+        <div className="lg:col-span-5 relative h-full flex items-center justify-start p-6 lg:p-10 lg:pl-0 pr-8">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full h-full"
+            className="relative w-full h-[80%] max-h-[480px]"
           >
-            {/* Decorative Corner Shapes */}
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#224292] rounded-3xl -z-10" />
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#ffc107] rounded-3xl -z-10" />
-
-            <div className="relative w-full h-full rounded-[8rem_2rem_8rem_2rem] overflow-hidden border-8 border-white shadow-2xl shadow-blue-900/10">
+            {/* The Main Image */}
+            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl">
               <img 
-                src={GdImage} 
+                src={placementImage} 
                 alt="Placement Training" 
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/20 to-transparent" />
+            </div>
+
+            {/* Floating Stats Cards */}
+            <div className="absolute top-[60%] -translate-y-1/2 -right-24 flex flex-col gap-5 z-30">
+               
+               {/* 95% Placement Record */}
+               <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="bg-white rounded-2xl shadow-xl p-4 pr-6 flex items-center gap-4 border border-slate-50 w-48"
+               >
+                  <div className="w-12 h-12 rounded-full bg-[#1a3673] flex items-center justify-center text-white shrink-0 shadow-inner">
+                     <TrendingUp size={20} />
+                  </div>
+                  <div>
+                     <h4 className="font-black text-[#1a3673] text-[22px] leading-tight">95%</h4>
+                     <p className="text-[11px] text-slate-500 font-bold leading-tight mt-0.5">Placement<br/>Record</p>
+                  </div>
+               </motion.div>
+
+               {/* 25 LPA Highest Package */}
+               <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="bg-white rounded-2xl shadow-xl p-4 pr-6 flex items-center gap-4 border border-slate-50 w-48"
+               >
+                  <div className="w-12 h-12 rounded-full bg-[#ffc107] flex items-center justify-center text-white shrink-0 shadow-inner">
+                     <IndianRupee size={20} />
+                  </div>
+                  <div>
+                     <h4 className="font-black text-[#ffc107] text-[22px] leading-tight">25 LPA</h4>
+                     <p className="text-[11px] text-slate-500 font-bold leading-tight mt-0.5">Highest<br/>Package</p>
+                  </div>
+               </motion.div>
+
+               {/* 150+ Recruiters */}
+               <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.7 }}
+                  className="bg-white rounded-2xl shadow-xl p-4 pr-6 flex items-center gap-4 border border-slate-50 w-48"
+               >
+                  <div className="w-12 h-12 rounded-full bg-[#1a3673] flex items-center justify-center text-white shrink-0 shadow-inner">
+                     <Users size={20} />
+                  </div>
+                  <div>
+                     <h4 className="font-black text-[#1a3673] text-[22px] leading-tight">150+</h4>
+                     <p className="text-[11px] text-slate-500 font-bold leading-tight mt-0.5">Recruiters</p>
+                  </div>
+               </motion.div>
             </div>
           </motion.div>
         </div>

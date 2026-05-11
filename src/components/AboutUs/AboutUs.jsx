@@ -8,7 +8,7 @@ const AboutUs = () => {
   const [showAcademicStats, setShowAcademicStats] = useState(false);
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-6 md:pt-10 pb-10 md:pb-16 min-h-screen overflow-hidden">
+    <div className="relative bg-[#FCFDFD] pt-4 md:pt-6 pb-6 md:pb-10 min-h-screen overflow-hidden">
       
       {/* Decorative Brand Background */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#224292]/5 to-transparent rounded-bl-full pointer-events-none" />
@@ -17,7 +17,7 @@ const AboutUs = () => {
       <section className="relative px-5 sm:px-10 lg:px-20 z-10 max-w-7xl mx-auto">
         
         {/* Page Header - Centered */}
-        <div className="text-center mb-12 lg:mb-16">
+        <div className="text-center mb-8 lg:mb-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto mb-10 md:mb-16 px-4 md:px-0"
+          className="max-w-5xl mx-auto mb-6 md:mb-10 px-4 md:px-0"
         >
           <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl border-0 md:border-4 border-white h-[320px] md:h-auto md:aspect-[3/1]">
             <img src={campusImg} alt="KIOT Campus" className="w-full h-full object-cover object-[70%_center] md:object-center" />
@@ -47,7 +47,7 @@ const AboutUs = () => {
         </motion.div>
 
         {/* Full Width Paragraph Section */}
-        <div className="max-w-5xl mx-auto mb-10 md:mb-14 bg-transparent md:bg-white p-0 md:p-16 rounded-none md:rounded-[3rem] border-none md:border border-slate-100 shadow-none md:shadow-xl shadow-black/5">
+        <div className="max-w-5xl mx-auto mb-6 md:mb-10 bg-transparent md:bg-white p-0 md:p-12 rounded-none md:rounded-[3rem] border-none md:border border-slate-100 shadow-none md:shadow-xl shadow-black/5">
            <motion.div 
              initial={{ opacity: 0, y: 30 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ const AboutUs = () => {
         </div>
 
         {/* Vision Mission (Institutional Values) Section - Merged */}
-        <div className="mb-10 md:mb-12 -mx-5 sm:-mx-10 lg:-mx-20">
+        <div className="mb-6 md:mb-8 -mx-5 sm:-mx-10 lg:-mx-20">
            <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#224292] tracking-tight">
                 Our Institutional <span className="text-[#ffc107]">Values</span>
@@ -130,7 +130,7 @@ const AboutUs = () => {
            transition={{ duration: 0.8 }}
            className="max-w-7xl mx-auto px-2 sm:px-6"
         >
-           <div className="bg-white p-4 sm:p-12 rounded-[2rem] sm:rounded-xl shadow-[0_40px_80px_rgba(24,53,122,0.08)] border border-slate-100 flex flex-col items-center gap-6 sm:gap-10">
+           <div className="bg-white p-4 sm:p-8 rounded-[2rem] sm:rounded-xl shadow-[0_40px_80px_rgba(24,53,122,0.08)] border border-slate-100 flex flex-col items-center gap-6 sm:gap-10">
               <div className="text-center">
                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#ffc107]/5 rounded-full mb-2 sm:mb-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />

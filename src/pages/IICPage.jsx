@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Lightbulb, ArrowLeft, Users, Target, Rocket, Star, ArrowRight, X as CloseIcon } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import iicImg from '../assets/iStart/iic.png'
-import certImg from '../assets/iStart/IIC-certificate.jpg'
+import iicImg from '../assets/iStart/iic.webp'
+import certImg from '../assets/iStart/IIC-certificate.webp'
 
 const IICPage = () => {
     const navigate = useNavigate()

@@ -30,6 +30,7 @@ import {
 } from 'lucide-react'
 import logo from '../../assets/main/logo.webp'
 import campusImage from '../../assets/main/indian_college_students_campus.webp'
+import admission2 from '../../assets/Admissions/admision-2.webp'
 
 // ─── Data Construction ────────────────────────────────────────────────────────
 
@@ -111,8 +112,6 @@ const AdmissionsPage = () => {
             className="w-full h-full object-cover lg:object-[25%_center] opacity-100" 
             alt="KIOT Campus" 
           />
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#224292] to-transparent hidden lg:block" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#224292] via-[#224292]/80 lg:via-transparent to-transparent" />
         </div>
 
         {/* Decorative Wave/Curve Wrapper */}
@@ -269,44 +268,65 @@ const AdmissionsPage = () => {
       </section>
 
       {/* ─── OVERVIEW SECTION ─── */}
-      <section id="Overview" className="py-12 relative overflow-hidden bg-white">
+      <section id="Overview" className="py-4 relative overflow-hidden bg-white">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-               <motion.div
+            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">
+                <motion.div 
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-               >
-                 <div className="inline-block px-5 py-2 rounded-full bg-[#224292] text-white font-bold text-[10px] uppercase tracking-[3px] mb-6 border border-[#224292]/10">
-                    Admission Overview
-                 </div>
-                  <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tighter mb-6 text-[#224292]">
-                    Your Future <br />
-                    <span className="text-[#ffc107]">Starts Here</span>
-                  </h2>
-                  <div className="w-16 h-1 bg-[#ffc107] mb-6" />
-                  <p className="text-[#1a1a1a] font-bold text-base lg:text-lg mb-4 lg:mb-8 leading-relaxed max-w-xl text-justify">
-                    At Knowledge Institute of Technology, we go beyond traditional learning to shape industry-ready professionals. Our admission process is designed to identify passionate students and provide them with the right opportunities.
-                  </p>
-               </motion.div>
-
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative group lg:mt-0 px-8 py-10"
+                  className="relative group lg:mt-0 order-2 lg:order-1"
                 >
-                  {/* Decorative Corner Shapes */}
-                  <div className="absolute top-4 left-4 w-24 h-24 bg-[#224292] rounded-3xl -z-10" />
-                  <div className="absolute bottom-4 right-4 w-24 h-24 bg-[#ffc107] rounded-3xl -z-10" />
+                  {/* MAIN DECORATIVE CONTAINER */}
+                  <div className="relative w-full aspect-[4/3] bg-[#0A1D4D] rounded-[2rem] overflow-hidden shadow-2xl p-6 lg:p-8">
+                     
+                     {/* Background Accents */}
+                     <div className="absolute top-8 right-8 grid grid-cols-4 gap-2 opacity-20">
+                        {[...Array(16)].map((_, i) => (
+                           <div key={i} className="w-1.5 h-1.5 rounded-full bg-white" />
+                        ))}
+                     </div>
+                     <div className="absolute bottom-8 left-8 grid grid-cols-4 gap-2 opacity-20">
+                        {[...Array(16)].map((_, i) => (
+                           <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                        ))}
+                     </div>
 
-                  <div className="relative z-10 rounded-[8rem_2rem_8rem_2rem] bg-white p-4 shadow-2xl border-4 border-white overflow-hidden shadow-blue-900/10">
-                     <img src={campusImage} className="w-full h-auto rounded-[7.5rem_1.5rem_7.5rem_1.5rem] object-cover hover:scale-105 transition-transform duration-1000" alt="KIOT Campus" />
-                     <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/10 to-transparent" />
+                     {/* Image with Custom Shape */}
+                     <div className="absolute inset-4 lg:inset-6 rounded-[2.5rem_1rem_12rem_1rem] overflow-hidden border-4 border-white/10 group-hover:scale-[1.02] transition-transform duration-700">
+                        <img 
+                           src={admission2} 
+                           className="w-full h-full object-cover" 
+                           alt="KIOT Admissions" 
+                        />
+                        {/* Overlay Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0A1D4D]/40 to-transparent" />
+                     </div>
+
+                     {/* Yellow Corner Wave */}
+                     <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#ffc107] rounded-full blur-3xl opacity-20" />
+                     <div className="absolute bottom-0 right-0 w-32 h-20 bg-[#ffc107] rounded-tl-[5rem]" />
+
+                     <div className="absolute bottom-0 right-0 w-32 h-20 bg-[#ffc107] rounded-tl-[5rem]" />
                   </div>
                 </motion.div>
+
+               <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="order-1 lg:order-2"
+               >
+                  <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tighter mb-6 text-[#224292]">
+                    Transforming <br />
+                    <span className="text-[#ffc107]">Dreams Into Careers</span>
+                  </h2>
+                  <p className="text-[#1a1a1a] font-medium text-sm lg:text-[15px] mb-4 lg:mb-8 leading-relaxed max-w-xl text-justify">
+                    <span className="text-[#224292] font-black">Knowledge Institute of Technology</span>, we believe education is the foundation for a successful future. Our institution provides a dynamic learning environment focused on innovation, practical knowledge, and academic excellence. With experienced faculty and modern facilities, students gain the skills needed to excel in today’s competitive world. We encourage creativity, leadership, and industry-oriented learning through every program. Our commitment is to shape confident professionals ready to achieve their goals and make a meaningful impact.
+                  </p>
+               </motion.div>
             </div>
          </div>
       </section>
@@ -331,7 +351,7 @@ const AdmissionsPage = () => {
       </section>
 
       {/* ─── WHY CHOOSE KIOT SECTION ─── */}
-      <section id="WhyChoose" className="py-16 bg-slate-50 relative overflow-hidden">
+      <section id="WhyChoose" className="pt-10 pb-6 bg-slate-50 relative overflow-hidden">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
             <div className="text-center mb-12 relative">
                <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
@@ -362,18 +382,15 @@ const AdmissionsPage = () => {
                     whileInView={{ opacity: 1, y: 0 }} 
                     viewport={{ once: true }} 
                     transition={{ delay: i * 0.1 }}
-                    className="relative group bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition-all duration-500 overflow-hidden text-center"
+                    className="relative group bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl transition-all duration-500 overflow-hidden text-center flex flex-col justify-center h-full"
                   >
                      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#224292] to-[#ffc107]" />
                      <div className="relative z-10 flex flex-col items-center">
-                        <div className="w-16 h-16 rounded-full mb-6 flex items-center justify-center bg-slate-50 border border-slate-100 text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-500 shadow-inner group-hover:scale-105">
-                           <feature.icon size={28} strokeWidth={1.5} />
-                        </div>
-                        <h4 className="text-lg font-black text-[#224292] mb-3 tracking-tighter leading-tight uppercase">
+                        <h4 className="text-base font-black text-[#224292] mb-3 tracking-tighter leading-tight uppercase mt-2">
                            {feature.title}
                         </h4>
-                        <div className="w-10 h-1 bg-[#ffc107] mb-5 rounded-full group-hover:w-16 transition-all duration-500" />
-                        <p className="text-[#1a1a1a] text-sm leading-snug font-bold max-w-[220px]">
+                        <div className="w-10 h-1 bg-[#ffc107] mb-4 rounded-full group-hover:w-16 transition-all duration-500" />
+                        <p className="text-[#1a1a1a] text-sm leading-snug font-medium">
                            {feature.desc}
                         </p>
                      </div>
@@ -384,7 +401,7 @@ const AdmissionsPage = () => {
       </section>
 
       {/* ─── PROGRAMMES OFFERED SECTION ─── */}
-      <section id="Programmes" className="py-16 bg-white">
+      <section id="Programmes" className="pt-2 pb-10 bg-white">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
                <h2 className="text-3xl md:text-5xl font-black text-[#224292] leading-tight tracking-tighter mb-8">Programmes <span className="text-[#ffc107]">Offered</span></h2>
@@ -397,13 +414,12 @@ const AdmissionsPage = () => {
             <div className="relative min-h-[400px]">
                <AnimatePresence mode="wait">
                   {activeProgramTab === 'ug' ? (
-                     <motion.div key="ug" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl">
+                     <motion.div key="ug" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl max-w-5xl mx-auto">
                         <table className="w-full text-left">
                            <thead>
                               <tr className="bg-[#224292] text-white font-black">
-                                 <th className="px-8 py-5 text-xs uppercase w-[60%]">Programme Name</th>
-                                 <th className="hidden md:table-cell px-8 py-5 text-xs uppercase text-center w-40">Duration</th>
-                                 <th className="px-8 py-5 text-xs uppercase text-center w-40">Action</th>
+                                 <th className="px-8 py-5 text-xs uppercase w-[70%]">Programme Name</th>
+                                 <th className="hidden md:table-cell px-8 py-5 text-xs uppercase text-left w-[30%]">Duration</th>
                               </tr>
                            </thead>
                            <tbody className="divide-y divide-slate-100">
@@ -419,46 +435,39 @@ const AdmissionsPage = () => {
                                  { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs' }
                               ].map((item, i) => (
                                  <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
-                                    <td className="px-8 py-5 font-black text-base uppercase text-[#224292]">
+                                    <td className="px-8 py-5 font-semibold text-sm text-[#224292]">
                                        <button onClick={() => { window.scrollTo(0, 0); navigate(item.id ? `/academics/course/${item.id}` : '#') }} className="hover:text-[#ffc107] transition-all text-left">{item.name}</button>
                                     </td>
-                                    <td className="hidden md:table-cell px-8 py-5 text-center text-sm font-bold text-slate-600">4 Years</td>
-                                    <td className="px-8 py-5 text-center">
-                                       <button onClick={() => navigate('/admissions/ug-registration')} className="px-5 py-2 bg-[#ffc107] text-[#224292] rounded-lg font-black text-[10px] uppercase tracking-widest hover:bg-[#224292] hover:text-white transition-all shadow-sm">Apply Now</button>
-                                    </td>
+                                    <td className="hidden md:table-cell px-8 py-5 text-left text-sm font-bold text-slate-600">4 Years</td>
                                  </tr>
                               ))}
                            </tbody>
                         </table>
                      </motion.div>
                   ) : (
-                     <motion.div key="pg" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-xl">
+                     <motion.div key="pg" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl max-w-5xl mx-auto">
                         <table className="w-full text-left">
                            <thead>
                               <tr className="bg-[#224292] text-white font-black">
-                                 <th className="px-8 py-5 text-xs uppercase w-[60%]">Programme Name</th>
-                                 <th className="hidden md:table-cell px-8 py-5 text-xs uppercase text-center w-40">Duration</th>
-                                 <th className="px-8 py-5 text-xs uppercase text-center w-40">Action</th>
+                                 <th className="px-8 py-5 text-xs uppercase w-[70%]">Programme Name</th>
+                                 <th className="hidden md:table-cell px-8 py-5 text-xs uppercase text-left w-[30%]">Duration</th>
                               </tr>
                            </thead>
                            <tbody className="divide-y divide-slate-100">
                               {[
-                                 { name: 'MBA - GENERAL', id: 'mba-general' },
+                                 { name: 'MBA - General', id: 'mba-general' },
                                  { name: 'MBA (IEV)', id: 'mba-iev' },
                                  { name: 'MCA', id: 'mca' },
-                                 { name: 'M.E. INDUSTRIAL SAFETY ENGINEERING', id: 'me-ise' },
-                                 { name: 'M.E. AUTOMOTIVE ELECTRONICS', id: 'me-ae' },
-                                 { name: 'M.E. POWER ELECTRONICS AND DRIVES', id: 'me-ped' },
-                                 { name: 'M.E. SOFTWARE ENGINEERING', id: 'me-se' }
+                                 { name: 'M.E. Industrial Safety Engineering', id: 'me-ise' },
+                                 { name: 'M.E. Automotive Electronics', id: 'me-ae' },
+                                 { name: 'M.E. Power Electronics and Drives', id: 'me-ped' },
+                                 { name: 'M.E. Software Engineering', id: 'me-se' }
                               ].map((item, i) => (
                                  <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
-                                    <td className="px-8 py-5 font-black text-base uppercase text-[#224292]">
+                                    <td className="px-8 py-5 font-semibold text-sm text-[#224292]">
                                        <button onClick={() => { window.scrollTo(0, 0); navigate(`/academics/course/${item.id}`) }} className="hover:text-[#ffc107] transition-all text-left">{item.name}</button>
                                     </td>
-                                    <td className="hidden md:table-cell px-8 py-5 text-center text-sm font-bold text-slate-600">2 Years</td>
-                                    <td className="px-8 py-5 text-center">
-                                       <button onClick={() => navigate('/admissions/pg-registration')} className="px-5 py-2 bg-[#ffc107] text-[#224292] rounded-lg font-black text-[10px] uppercase tracking-widest hover:bg-[#224292] hover:text-white transition-all shadow-sm">Apply Now</button>
-                                    </td>
+                                    <td className="hidden md:table-cell px-8 py-5 text-left text-sm font-bold text-slate-600">2 Years</td>
                                  </tr>
                               ))}
                            </tbody>
@@ -471,8 +480,8 @@ const AdmissionsPage = () => {
       </section>
 
       {/* ─── ELIGIBILITY CRITERIA SECTION ─── */}
-      <section id="Eligibility" className="py-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+      <section id="Eligibility" className="pt-2 pb-10 bg-slate-50">
+         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12 text-center">
                <h2 className="text-3xl md:text-5xl font-black text-[#224292] leading-tight tracking-tighter">Eligibility <span className="text-[#ffc107]">Criteria</span></h2>
             </motion.div>
@@ -481,38 +490,38 @@ const AdmissionsPage = () => {
                initial={{ opacity: 0, y: 20 }} 
                whileInView={{ opacity: 1, y: 0 }} 
                viewport={{ once: true }}
-               className="bg-white rounded-3xl border border-slate-100 shadow-xl mb-12 overflow-hidden"
+               className="mb-16"
             >
-               <div className="grid lg:grid-cols-[1fr_400px]">
+               <div className="grid lg:grid-cols-[1fr_400px] gap-12 lg:gap-16">
                   {/* Left: Calculation Norms */}
-                  <div className="p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-slate-100">
-                     <h3 className="text-xl font-black text-[#224292] mb-8 border-l-4 border-[#ffc107] pl-6 tracking-tight">Cut-off Calculation</h3>
+                  <div className="flex flex-col justify-center">
+                     <h3 className="text-xl font-bold text-[#224292] mb-8 border-l-4 border-[#ffc107] pl-6 tracking-tight">Cut-off Calculation</h3>
                      <div className="space-y-5">
                         {[
                            { subject: "Mathematics (M)", formula: "M1 = Maths Reduced to 100", icon: "×" },
                            { subject: "Physics (P)", formula: "P1 = Physics Reduced to 50", icon: "÷" },
                            { subject: "Chemistry (C)", formula: "C1 = Chemistry Reduced to 50", icon: "÷" }
                         ].map((item, idx) => (
-                           <div key={idx} className="flex items-center gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                              <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-xl font-black text-[#224292] shadow-sm">
+                           <div key={idx} className="flex items-center gap-6 p-6 rounded-2xl bg-white shadow-sm border border-slate-100">
+                              <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-xl font-bold text-[#224292]">
                                  {item.icon}
                               </div>
                               <div>
-                                 <p className="font-black text-[#224292] text-[10px] uppercase mb-1 tracking-widest">{item.subject}</p>
-                                 <p className="text-[#1a1a1a] font-black text-lg">{item.formula}</p>
+                                 <p className="font-semibold text-[#224292] text-base mb-1">{item.subject}</p>
+                                 <p className="text-[#1a1a1a] font-medium text-base">{item.formula}</p>
                               </div>
                            </div>
                         ))}
                      </div>
                      <div className="mt-8 p-6 bg-[#224292] rounded-2xl text-center shadow-lg">
-                        <p className="text-white font-black uppercase tracking-[3px] text-lg">Cut-Off Mark = M1 + P1 + C1</p>
+                        <p className="text-white font-semibold text-lg">Cut-Off Mark = M1 + P1 + C1</p>
                      </div>
                   </div>
-
+ 
                   {/* Right: Calculator */}
-                  <div className="p-8 lg:p-10 bg-slate-50 flex flex-col justify-center">
+                  <div className="flex flex-col justify-center">
                      <div className="bg-[#224292] rounded-[2rem] p-8 shadow-2xl relative overflow-hidden">
-                        <h4 className="text-white font-black uppercase text-[10px] tracking-[4px] mb-8 block text-center">Calculator</h4>
+                        <h4 className="text-white font-bold text-lg mb-8 block text-center">Calculator</h4>
                         
                         <div className="space-y-5 mb-8">
                            {[
@@ -521,7 +530,7 @@ const AdmissionsPage = () => {
                               { label: "Chemistry", id: "chemistry", placeholder: "/ 100" }
                            ].map((input) => (
                               <div key={input.id} className="space-y-1.5">
-                                 <label className="text-[10px] font-black text-white uppercase tracking-widest pl-1">{input.label}</label>
+                                 <label className="text-sm font-semibold text-white pl-1">{input.label}</label>
                                  <input 
                                     type="number" 
                                     id={`calc-${input.id}`}
@@ -533,15 +542,15 @@ const AdmissionsPage = () => {
                                        const total = m + (p/2) + (c/2);
                                        document.getElementById('cutoff-result').innerText = total.toFixed(2);
                                     }}
-                                    className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-3 text-white font-black text-base focus:outline-none focus:border-[#ffc107] transition-all"
+                                    className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-3 text-white font-bold text-base focus:outline-none focus:border-[#ffc107] transition-all"
                                  />
                               </div>
                            ))}
                         </div>
 
                         <div className="bg-white p-6 rounded-2xl text-center shadow-xl">
-                           <p className="text-[#224292] font-black text-[10px] uppercase tracking-widest mb-1">Your Cut-off</p>
-                           <p className="text-4xl font-black text-[#224292] tracking-tighter" id="cutoff-result">0.00</p>
+                           <p className="text-[#224292] font-semibold text-sm mb-1">Your Cut-off</p>
+                           <p className="text-4xl font-bold text-[#224292] tracking-tighter" id="cutoff-result">0.00</p>
                         </div>
                      </div>
                   </div>
@@ -561,7 +570,7 @@ const AdmissionsPage = () => {
                <div className="overflow-x-auto">
                   <table className="w-full text-left">
                      <thead>
-                        <tr className="bg-slate-50 text-[#224292] text-xs font-black uppercase">
+                        <tr className="bg-slate-50 text-[#224292] text-sm font-bold border-b border-slate-100">
                            <th className="px-8 py-5">Community</th>
                            <th className="px-8 py-5 text-center">Academic</th>
                            <th className="px-8 py-5 text-center">Vocational</th>
@@ -576,10 +585,10 @@ const AdmissionsPage = () => {
                            { community: 'SC / SCA / ST', academic: '40%', vocational: '40%', lateral: 'Pass' }
                         ].map((row, idx) => (
                            <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                              <td className="px-8 py-5 text-base font-black text-[#1a1a1a] uppercase tracking-tight">{row.community}</td>
-                              <td className="px-8 py-5 text-center text-base font-black text-[#1a1a1a]">{row.academic}</td>
-                              <td className="px-8 py-5 text-center text-base font-black text-[#1a1a1a]">{row.vocational}</td>
-                              <td className="px-8 py-5 text-center text-base font-black text-[#1a1a1a]">{row.lateral}</td>
+                              <td className="px-8 py-5 text-base font-semibold text-[#1a1a1a]">{row.community}</td>
+                              <td className="px-8 py-5 text-center text-base font-medium text-[#1a1a1a]">{row.academic}</td>
+                              <td className="px-8 py-5 text-center text-base font-medium text-[#1a1a1a]">{row.vocational}</td>
+                              <td className="px-8 py-5 text-center text-base font-medium text-[#1a1a1a]">{row.lateral}</td>
                            </tr>
                         ))}
                      </tbody>
@@ -590,7 +599,7 @@ const AdmissionsPage = () => {
       </section>
 
       {/* ─── DOCUMENTS REQUIRED SECTION ─── */}
-      <section id="Documents" className="py-16 bg-white overflow-hidden">
+      <section id="Documents" className="py-10 bg-white overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
@@ -629,31 +638,7 @@ const AdmissionsPage = () => {
           </div>
        </section>
 
-      {/* ─── CONTACT SECTION ─── */}
-       <section className="py-16 bg-[#224292] text-white">
-          <div className="max-w-7xl mx-auto px-6 text-center space-y-10">
-             <div className="space-y-3">
-                <h2 className="text-3xl md:text-4xl font-black tracking-tighter">Have More <span className="text-[#ffc107]">Questions?</span></h2>
-                <p className="text-lg font-bold">Our experts are here to help you guide through the process.</p>
-             </div>
-             <div className="flex flex-wrap justify-center gap-6">
-                <button onClick={() => window.open('tel:+919894701234')} className="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-6 py-4 rounded-xl border border-white/10 transition-all">
-                   <div className="w-10 h-10 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292]"><MessageCircle size={20} /></div>
-                   <div className="text-left">
-                      <p className="text-[10px] font-black uppercase tracking-widest opacity-80">Call Helpline</p>
-                      <p className="text-lg font-black">+91 98947 01234</p>
-                   </div>
-                </button>
-                <button onClick={openWhatsApp} className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba56] px-6 py-4 rounded-xl transition-all shadow-xl">
-                   <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#25D366]"><MessageCircle size={20} /></div>
-                   <div className="text-left text-white">
-                      <p className="text-[10px] font-black uppercase tracking-widest opacity-80">WhatsApp Us</p>
-                      <p className="text-lg font-black">Click to Chat</p>
-                   </div>
-                </button>
-             </div>
-          </div>
-       </section>
+
     </div>
   )
 }

@@ -3,18 +3,18 @@ import "./studentLife.css";
 import { ArrowUpRight, X } from 'lucide-react';
 
 // Image Imports
-import asset4 from '../assets/student life/Asset 4.png';
-import asset5 from '../assets/student life/Asset 5.png';
-import asset12 from '../assets/student life/Asset 12.png';
-import asset13 from '../assets/student life/Asset 13.png';
-import asset14 from '../assets/student life/Asset 14.png';
-import asset20 from '../assets/student life/Asset 20.png';
-import asset21 from '../assets/student life/Asset 21 (2).png';
-import asset22 from '../assets/student life/Asset 22 (2).png';
-import asset23 from '../assets/student life/Asset 23 (3).png';
-import asset24 from '../assets/student life/Asset 24.png';
-import asset25 from '../assets/student life/Asset 25 (2).png';
-import asset26 from '../assets/student life/Asset 26.png';
+import asset4 from '../assets/student life/Asset 4.webp';
+import asset5 from '../assets/student life/Asset 5.webp';
+import asset12 from '../assets/student life/Asset 12.webp';
+import asset13 from '../assets/student life/Asset 13.webp';
+import asset14 from '../assets/student life/Asset 14.webp';
+import asset20 from '../assets/student life/Asset 20.webp';
+import asset21 from '../assets/student life/Asset 21 (2).webp';
+import asset22 from '../assets/student life/Asset 22 (2).webp';
+import asset23 from '../assets/student life/Asset 23 (3).webp';
+import asset24 from '../assets/student life/Asset 24.webp';
+import asset25 from '../assets/student life/Asset 25 (2).webp';
+import asset26 from '../assets/student life/Asset 26.webp';
 
 export default function StudentLifePage() {
   const [activeTab, setActiveTab] = useState("Department Associations");

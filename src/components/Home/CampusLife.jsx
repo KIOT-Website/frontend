@@ -12,14 +12,14 @@ import {
 import React from 'react'
 
 // Asset imports
-import labImg from '../../assets/life@kiot/image.png'
-import cafeteriaImg from '../../assets/life@kiot/cafetaria.png'
+import labImg from '../../assets/life@kiot/image.webp'
+import cafeteriaImg from '../../assets/life@kiot/cafetaria.webp'
 import hostelImg from '../../assets/life@kiot/hostal.webp'
-import sportsImg from '../../assets/life@kiot/sports.png'
-import homeLifeImg from '../../assets/main/home-life.png'
+import sportsImg from '../../assets/life@kiot/sports.webp'
+import homeLifeImg from '../../assets/main/home-life.webp'
 import trainingImg from '../../assets/life@kiot/training.webp'
-import transportImg from '../../assets/life@kiot/transport.png'
-import gymImg from '../../assets/life@kiot/gym.png'
+import transportImg from '../../assets/life@kiot/transport.webp'
+import gymImg from '../../assets/life@kiot/gym.webp'
 import istartImg from '../../assets/life@kiot/istart.webp'
 import campusMainImg from '../../assets/main/campus .webp'
 
@@ -47,23 +47,19 @@ const CampusLife = () => {
             viewport={{ once: true }}
             className="lg:col-span-5 space-y-6 lg:space-y-8"
           >
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10">
-              <Sparkles size={14} className="text-[#ffc107]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Life@KIOT</span>
-            </div>
             
-            <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
-              A Vibrant <span className="text-[#ffc107]">Ecosystem</span> for <br />
-              Holistic Growth.
+            <h2 className="text-3xl lg:text-[42px] xl:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
+              A Vibrant <span className="text-[#ffc107]">Ecosystem</span> <br className="hidden lg:block" />
+              for Holistic Growth.
             </h2>
             
-            <p className="text-sm lg:text-[15px] text-black font-medium leading-relaxed max-w-xl">
+            <p className="text-sm lg:text-[15px] text-black font-medium leading-relaxed max-w-xl text-justify">
               Beyond standard academics, KIOT offers an inspiring campus life designed to nurture your physical, social, and creative potential. Explore a world where excellence meets everyday living.
             </p>
  
             <Link 
               to="/campus-life"
-              className="inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
+              className="hidden lg:inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
             >
               Explore Full Campus
               <ArrowUpRight size={18} />
@@ -81,6 +77,17 @@ const CampusLife = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Mobile Centered Button */}
+        <div className="mt-8 flex justify-center lg:hidden">
+          <Link 
+            to="/campus-life"
+            className="inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
+          >
+            Explore Full Campus
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
       </div>
 
       {/* 🔷 AMENITY GRID - 8 Cards Version */}
@@ -93,14 +100,17 @@ const CampusLife = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group relative h-48 lg:h-64 rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer"
+                className="group relative h-48 lg:h-64 rounded-xl lg:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border-l-[3px] border-b-[3px] border-[#224292]"
               >
+                {/* Yellow Borders (Top & Right) */}
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-[#ffc107] z-30" />
+                <div className="absolute top-0 right-0 h-full w-[3px] bg-[#ffc107] z-30" />
+
                 <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/90 via-[#224292]/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                 
                 <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-end">
                   <h3 className="text-sm lg:text-lg font-bold text-white mb-1 font-graphik leading-tight transition-transform duration-500 group-hover:-translate-y-1">{fac.title}</h3>
-
                 </div>
               </motion.div>
             </Link>

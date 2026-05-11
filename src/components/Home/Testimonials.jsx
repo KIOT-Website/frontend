@@ -146,7 +146,7 @@ const Testimonials = () => {
   const [activeTab, setActiveTab] = useState("Students")
 
   return (
-    <section className="relative py-16 lg:py-24 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
       
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#224292]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
@@ -154,14 +154,14 @@ const Testimonials = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
+        <div className="text-center mb-8 lg:mb-10">
            <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik">
              Success Stories & <span className="text-[#ffc107]">Experiences</span>
            </h2>
         </div>
 
         {/* CATEGORY TABS */}
-        <div className="flex justify-center mb-16 lg:mb-24">
+        <div className="flex justify-center mb-10 lg:mb-12">
            <div className="flex bg-[#224292]/5 p-1.5 rounded-2xl border border-[#D5E2F4]/40 w-fit max-w-full overflow-x-auto scrollbar-hide">
               {categories.map((cat) => (
                 <button

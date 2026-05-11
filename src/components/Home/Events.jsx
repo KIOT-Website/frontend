@@ -55,12 +55,12 @@ const Events = ({ onEventsClick }) => {
   if (!loading && records.length === 0) return null;
 
   return (
-    <section id="events" className="relative py-10 lg:py-16 bg-[#FCFDFD] overflow-hidden">
+    <section id="events" className="relative py-6 lg:py-10 bg-[#FCFDFD] overflow-hidden">
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
         {/* Centered Header Section */}
-        <div className="text-center mb-10 lg:mb-12 px-4">
+        <div className="text-center mb-8 lg:mb-10 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,14 +71,14 @@ const Events = ({ onEventsClick }) => {
               Recent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Events</span>
             </h2>
             
-            <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mt-6 rounded-full" />
+            <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mt-4 rounded-full" />
           </motion.div>
         </div>
 
         {/* CARD GRID LAYOUT */}
         <div className="max-w-7xl mx-auto">
            {loading ? (
-             <div className="flex flex-col items-center justify-center py-24 opacity-30">
+             <div className="flex flex-col items-center justify-center py-16 opacity-30">
                 <Loader2 size={48} className="animate-spin text-[#224292] mb-6" />
                 <p className="text-xs font-black uppercase tracking-[0.4em] text-[#224292]">Fetching Latest Buzz...</p>
              </div>
@@ -87,10 +87,10 @@ const Events = ({ onEventsClick }) => {
                 {records.map((event, idx) => (
                   <motion.div
                     key={event.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: idx * 0.1 }}
+                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <Link 
                       to={`/events/${slugify(event.event_name)}`} 
@@ -136,7 +136,7 @@ const Events = ({ onEventsClick }) => {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.3 }}
-             className="text-center mt-12"
+             className="text-center mt-8"
            >
               <Link 
                 to="/events"

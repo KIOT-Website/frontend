@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 import { 
   FileText, 
   Download, 
@@ -12,7 +13,8 @@ import {
   Medal,
   Star,
   ExternalLink,
-  ChevronRight
+  ChevronRight,
+  Loader2
 } from 'lucide-react';
 
 const AccreditationPage = () => {
@@ -58,6 +60,31 @@ const AccreditationPage = () => {
       ribbonColor: "bg-purple-600"
     }
   ];
+
+  const [nirfRecords, setNirfRecords] = useState([]);
+  const [loadingNirf, setLoadingNirf] = useState(true);
+  const [aqarRecords, setAqarRecords] = useState([]);
+  const [loadingAqar, setLoadingAqar] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [nirfRes, aqarRes] = await Promise.all([
+          axios.get('http://localhost:8000/api/iqac/nirf'),
+          axios.get('http://localhost:8000/api/iqac/aqar')
+        ]);
+        
+        setNirfRecords(nirfRes.data.sort((a, b) => b.academic_year.localeCompare(a.academic_year)));
+        setAqarRecords(aqarRes.data.sort((a, b) => b.academic_year.localeCompare(a.academic_year)));
+      } catch (error) {
+        console.error("Failed to fetch reports:", error);
+      } finally {
+        setLoadingNirf(false);
+        setLoadingAqar(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="min-h-screen bg-white font-graphik pt-12 pb-10">
@@ -158,20 +185,37 @@ const AccreditationPage = () => {
                     <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center">SDG</th>
                  </tr>
               </thead>
-              <tbody className="divide-y divide-slate-50 font-graphik">
-                 {[2026, 2025, 2024].map((year) => (
-                    <tr key={year} className="hover:bg-slate-50/50 transition-colors">
-                       <td className="px-6 py-5 text-[14px] font-black text-[#224292]">{year}</td>
-                       {[1, 2, 3, 4].map((i) => (
-                          <td key={i} className="px-6 py-5 text-center">
-                             <a 
-                               href="https://kiot.ac.in/iqac/nirf-reports/" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               className="inline-flex items-center gap-2 px-4 py-2 bg-[#ffc107]/10 text-[#224292] border border-[#ffc107]/30 rounded-lg text-[10px] font-black uppercase hover:bg-[#ffc107] transition-all"
-                             >
-                                View Report <ExternalLink size={12} />
-                             </a>
+              <tbody className="divide-y divide-slate-50 font-graphik text-[#224292]">
+                 {loadingNirf ? (
+                    <tr>
+                       <td colSpan="5" className="px-6 py-12 text-center">
+                          <Loader2 className="animate-spin mx-auto text-[#ffc107]" size={30} />
+                          <p className="text-[10px] font-black mt-2 uppercase tracking-widest text-slate-400">Loading Reports...</p>
+                       </td>
+                    </tr>
+                 ) : nirfRecords.length === 0 ? (
+                    <tr>
+                       <td colSpan="5" className="px-6 py-12 text-center">
+                          <p className="text-[12px] font-bold text-slate-400 italic">No NIRF reports available at the moment.</p>
+                       </td>
+                    </tr>
+                 ) : nirfRecords.map((record) => (
+                    <tr key={record.id} className="hover:bg-slate-50/50 transition-colors">
+                       <td className="px-6 py-5 text-[14px] font-black">{record.academic_year}</td>
+                       {['engineering', 'overall', 'innovation', 'sdg'].map((cat) => (
+                          <td key={cat} className="px-6 py-5 text-center">
+                             {record[`${cat}_pdf_url`] ? (
+                                <a 
+                                  href={record[`${cat}_pdf_url`]} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#ffc107]/10 text-[#224292] border border-[#ffc107]/30 rounded-lg text-[10px] font-black uppercase hover:bg-[#ffc107] transition-all shadow-sm hover:shadow-md active:scale-95"
+                                >
+                                   View Report <ExternalLink size={12} />
+                                </a>
+                             ) : (
+                                <span className="text-[10px] font-bold text-slate-300 italic">Not Available</span>
+                             )}
                           </td>
                        ))}
                     </tr>
@@ -199,21 +243,32 @@ const AccreditationPage = () => {
                     </tr>
                  </thead>
                  <tbody className="divide-y divide-slate-50 font-graphik">
-                    {[
-                      "2023 - 2024", "2022 - 2023", "2021 - 2022", "2020 - 2021", 
-                      "2019 - 2020", "2018 - 2019", "2017 - 2018"
-                    ].map((year, idx) => (
-                       <tr key={year} className={`hover:bg-slate-50 transition-colors ${idx % 2 === 1 ? 'bg-[#224292]/5' : 'bg-white'}`}>
-                          <td className="px-8 py-5 text-[14px] font-bold text-[#224292]">{year}</td>
+                    {loadingAqar ? (
+                        <tr>
+                           <td colSpan="2" className="px-8 py-12 text-center">
+                              <Loader2 className="animate-spin mx-auto text-[#ffc107]" size={24} />
+                           </td>
+                        </tr>
+                    ) : aqarRecords.length === 0 ? (
+                        <tr>
+                           <td colSpan="2" className="px-8 py-12 text-center text-slate-400 italic">No AQAR reports found.</td>
+                        </tr>
+                    ) : aqarRecords.map((record, idx) => (
+                       <tr key={record.id} className={`hover:bg-slate-50 transition-colors ${idx % 2 === 1 ? 'bg-[#224292]/5' : 'bg-white'}`}>
+                          <td className="px-8 py-5 text-[14px] font-bold text-[#224292]">{record.academic_year}</td>
                           <td className="px-8 py-5 text-center">
-                             <a 
-                               href="#" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               className="inline-flex items-center gap-2 px-6 py-2 bg-slate-50 text-[#224292] border border-slate-100 rounded-full font-black text-[10px] uppercase tracking-wider hover:bg-[#224292] hover:text-white transition-all group"
-                             >
-                                VIEW <ExternalLink size={12} className="group-hover:translate-x-1 transition-transform" />
-                             </a>
+                             {record.pdf_url ? (
+                                <a 
+                                  href={record.pdf_url} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 px-6 py-2 bg-slate-50 text-[#224292] border border-slate-100 rounded-full font-black text-[10px] uppercase tracking-wider hover:bg-[#224292] hover:text-white transition-all group"
+                                >
+                                   VIEW <ExternalLink size={12} className="group-hover:translate-x-1 transition-transform" />
+                                </a>
+                             ) : (
+                                <span className="text-[10px] font-bold text-slate-300">N/A</span>
+                             )}
                           </td>
                        </tr>
                     ))}
@@ -226,7 +281,7 @@ const AccreditationPage = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#224292]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               
               <div className="mb-8 flex justify-center relative z-10">
-                 <img src="/aqar-illustration.png" alt="About AQAR" className="w-44 h-auto drop-shadow-2xl mix-blend-multiply" />
+                 <img src="/aqar-illustration.webp" alt="About AQAR" className="w-44 h-auto drop-shadow-2xl mix-blend-multiply" />
               </div>
               
               <h3 className="text-[#224292] text-xl font-black mb-4 tracking-tight relative z-10">About AQAR</h3>
