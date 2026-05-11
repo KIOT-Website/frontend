@@ -109,14 +109,6 @@ const ResearchResourcesPage = () => {
             ]
         }
 
-        if (lowerDept === 'artificial-intelligence-&-data-science' || lowerDept === 'artificial-intelligence-and-data-science') {
-            return [
-                { id: 1, title: 'Major Research Areas of the Department', icon: Target, path: 'research-areas' },
-                { id: 2, title: 'List of Ph.Ds in the Department', icon: Award, path: 'phd-holders' },
-                { id: 3, title: 'List of Faculty pursuing Ph.D', icon: GraduationCap, path: 'pursuing-phd' },
-            ]
-        }
-
         return [
             { id: 1, title: 'List of Ph.D Supervisors', icon: Users, path: 'phd-supervisors' },
             { id: 2, title: 'Major Research Areas of the Department', icon: Target, path: 'research-areas' },

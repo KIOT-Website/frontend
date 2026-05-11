@@ -252,15 +252,6 @@ const FacultyPursuingPhdPage = () => {
                 university: "Anna University"
             }
         ],
-        'artificial-intelligence-and-data-science': [
-            { id: 1, name: "B. SASIKUMAR", topic: "Image Processing", supervisor: "Dr.P.Rajendran", registration: "-", university: "-" },
-            { id: 2, name: "A.GOPALAKRISHNAN", topic: "Medical Image Processing", supervisor: "Dr. S. Kumarganesh", registration: "-", university: "-" },
-            { id: 3, name: "V.BRINDHA", topic: "Medical Image Processing", supervisor: "Dr.P.Rajendran", registration: "-", university: "-" },
-            { id: 4, name: "B.BHUVANESWARI", topic: "Image Processing", supervisor: "Dr.R.Kumar", registration: "-", university: "-" },
-            { id: 5, name: "M.DEEPA", topic: "Network Security", supervisor: "Dr.E.Sathish Kumar", registration: "-", university: "-" },
-            { id: 6, name: "P. J. ESTHER RANI", topic: "Wireless Sensor Network", supervisor: "Dr.P.Rajendran", registration: "-", university: "-" },
-            { id: 7, name: "S.SUDHA", topic: "AI in Special Education", supervisor: "Dr.R.Kumar", registration: "-", university: "-" }
-        ],
         'civil-engineering': [
             { id: 10, name: "Mr.S.Pradeep Kumar", topic: "Civil Engineering", supervisor: "Dr.P.M.Shanmugavadivu", registration: "July 2024", university: "Anna University" },
             { id: 1, name: "Mr.L.Krishnan", topic: "Structural Engineering", supervisor: "Dr.Gulshan Taj M N A", registration: "Jan & 2020", university: "Anna University" },
