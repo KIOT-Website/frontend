@@ -87,25 +87,7 @@ const ResearchAreasPage = () => {
     if (isCivilDepartment) {
         return (
             <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
-                <div className="bg-white border-b border-slate-200 py-4">
-                    <div className="max-w-6xl mx-auto px-6 flex flex-wrap items-center gap-4">
-                        <Link to="/" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
-                            Home
-                        </Link>
-                        <ChevronRight size={14} className="text-slate-300" />
-                        <Link to="/research" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
-                            Departmentwise Research Initiatives
-                        </Link>
-                        <ChevronRight size={14} className="text-slate-300" />
-                        <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
-                            Research in {formatDeptName(deptName)}
-                        </Link>
-                        <ChevronRight size={14} className="text-slate-300" />
-                        <span className="text-[#224292] text-xs font-black uppercase tracking-wider pt-0.5">
-                            Major Research Areas of Civil Department
-                        </span>
-                    </div>
-                </div>
+
 
                 <div className="max-w-6xl mx-auto px-6 py-12 lg:py-16">
                     <motion.div
@@ -181,21 +163,7 @@ const ResearchAreasPage = () => {
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
-            <div className="bg-white border-b border-slate-200 py-4">
-                <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
-                        Research Initiatives
-                    </Link>
-                    <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
-                        Research in {formatDeptName(deptName)}
-                    </Link>
-                    <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#224292] text-xs font-black uppercase tracking-wider pt-0.5">
-                        Major Research Areas
-                    </span>
-                </div>
-            </div>
+
 
             <div className="max-w-5xl mx-auto px-6 py-12 lg:py-16">
                 <motion.div

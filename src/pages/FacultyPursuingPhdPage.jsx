@@ -246,22 +246,7 @@ const FacultyPursuingPhdPage = () => {
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
-            {/* Breadcrumbs */}
-            <div className="bg-white border-b border-slate-200 py-4">
-                <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
-                        Research Initiatives
-                    </Link>
-                    <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#224292] text-xs font-black uppercase tracking-wider transition-colors pt-0.5">
-                        Research in {formatDeptName(deptName)}
-                    </Link>
-                    <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#224292] text-xs font-black uppercase tracking-wider pt-0.5">
-                        Scholars in Progress
-                    </span>
-                </div>
-            </div>
+
 
             <div className="max-w-6xl mx-auto px-6 py-12 lg:py-16">
                 
