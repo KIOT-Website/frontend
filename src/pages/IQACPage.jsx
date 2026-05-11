@@ -248,7 +248,8 @@ export default function IQACPage() {
                     {item.title}
                   </span>
                 </motion.div>
-              ))}
+                ))}
+              </div>
             </motion.div>
 
           </div>
