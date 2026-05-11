@@ -19,7 +19,7 @@ import sportsImg from '../../assets/life@kiot/sports ground.png'
 import homeLifeImg from '../../assets/main/home-life.webp'
 import trainingImg from '../../assets/life@kiot/training.webp'
 import transportImg from '../../assets/life@kiot/collge bus.png'
-import gymImg from '../../assets/life@kiot/gym.webp'
+import gymImg from '../../assets/life@kiot/gym.png'
 import istartImg from '../../assets/life@kiot/istart.webp'
 import campusMainImg from '../../assets/main/campus .webp'
 
