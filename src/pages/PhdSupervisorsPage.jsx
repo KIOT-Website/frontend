@@ -94,7 +94,7 @@ const PhdSupervisorsPage = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.1 }}
                             key={supervisor.id}
-                            className="bg-white rounded-[2rem] p-6 border border-slate-200 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all group overflow-hidden relative"
+                            className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all group overflow-hidden relative"
                         >
                             {/* Decorative ID Background */}
                             <div className="absolute -right-2 -top-6 text-[100px] font-black text-slate-50 opacity-50 group-hover:text-amber-50 group-hover:scale-110 transition-all duration-500 select-none">

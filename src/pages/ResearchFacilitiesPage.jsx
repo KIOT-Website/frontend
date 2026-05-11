@@ -127,7 +127,7 @@ const ResearchFacilitiesPage = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: idx * 0.1 }}
                                 key={facility.id}
-                                className="group bg-white rounded-[2rem] border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all duration-300 overflow-hidden"
+                                className="group bg-white rounded-2xl border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all duration-300 overflow-hidden"
                             >
                                 <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100">
                                     <div className="p-8 md:w-3/5">

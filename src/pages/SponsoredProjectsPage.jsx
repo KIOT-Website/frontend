@@ -110,7 +110,7 @@ const SponsoredProjectsPage = () => {
                         </div>
                     </div>
 
-                    <div className="bg-white rounded-[2rem] shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden">
+                    <div className="bg-white rounded-2xl shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden">
                         <div className="overflow-x-auto">
                             <table className="w-full border-collapse">
                                 <thead>
@@ -219,7 +219,7 @@ const SponsoredProjectsPage = () => {
                         <h2 className="text-2xl font-bold text-[#0f172a] uppercase tracking-tight">Industrial Consultancy Work</h2>
                     </div>
 
-                    <div className="bg-white rounded-[2rem] shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden">
+                    <div className="bg-white rounded-2xl shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden">
                         <div className="overflow-x-auto">
                             <table className="w-full border-collapse">
                                 <thead>

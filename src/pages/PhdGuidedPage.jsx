@@ -110,7 +110,7 @@ const PhdGuidedPage = () => {
                 <motion.div 
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-white rounded-[2rem] shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden"
+                    className="bg-white rounded-2xl shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden"
                 >
                     <div className="overflow-x-auto">
                         <table className="w-full border-collapse">

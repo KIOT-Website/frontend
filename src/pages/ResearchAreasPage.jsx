@@ -120,7 +120,7 @@ const ResearchAreasPage = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className="bg-white rounded-[2rem] p-20 text-center border border-slate-200/60 shadow-2xl shadow-blue-900/5">
+                    <div className="bg-white rounded-2xl p-20 text-center border border-slate-200/60 shadow-2xl shadow-blue-900/5">
                         <div className="flex flex-col items-center gap-4">
                             <Target size={48} className="text-[#224292]/10" />
                             <h3 className="text-[#224292] font-black uppercase tracking-wider">No Research Areas Listed</h3>

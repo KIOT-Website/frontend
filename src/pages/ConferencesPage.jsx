@@ -108,7 +108,7 @@ const ConferencesPage = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.05 }}
                                 key={conf.id}
-                                className="group bg-white rounded-[2rem] border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all p-6 flex flex-col justify-between"
+                                className="group bg-white rounded-2xl border border-slate-200/60 shadow-xl shadow-blue-900/5 hover:border-[#ffc107] transition-all p-6 flex flex-col justify-between"
                             >
                                 <div>
                                     <div className="flex justify-between items-start mb-6">

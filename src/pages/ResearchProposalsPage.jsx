@@ -97,7 +97,7 @@ const ResearchProposalsPage = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: idx * 0.1 }}
                                 key={proposal.id}
-                                className={`group bg-white rounded-[2rem] border-2 ${(proposal.status || "").includes('Granted') ? 'border-[#ffc107]/20 hover:border-[#ffc107]' : 'border-slate-100 hover:border-blue-200'} shadow-xl shadow-blue-900/5 transition-all p-8`}
+                                className={`group bg-white rounded-2xl border-2 ${(proposal.status || "").includes('Granted') ? 'border-[#ffc107]/20 hover:border-[#ffc107]' : 'border-slate-100 hover:border-blue-200'} shadow-xl shadow-blue-900/5 transition-all p-8`}
                             >
                                 <div className="flex flex-col lg:flex-row gap-10 items-center">
                                     <div className="lg:w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-[#ffc107] shrink-0 border border-slate-100 group-hover:bg-[#0f172a] transition-all">
@@ -136,7 +136,7 @@ const ResearchProposalsPage = () => {
                             </motion.div>
                         ))
                     ) : (
-                        <div className="py-32 text-center text-slate-300 font-bold uppercase text-sm tracking-widest bg-white rounded-[2rem] border border-slate-100">
+                        <div className="py-32 text-center text-slate-300 font-bold uppercase text-sm tracking-widest bg-white rounded-2xl border border-slate-100">
                             No active proposals found for this department
                         </div>
                     )}
