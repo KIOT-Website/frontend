@@ -96,6 +96,7 @@ const navLinks = [
     subLinks: [
       { name: 'Research', href: 'research-innovation/research', icon: Microscope },
       { name: 'AICTE Idea Lab', href: 'research-innovation/aicte-idea-lab', icon: Wrench },
+      { name: 'IQAC', href: '/resources/iqac', icon: ShieldCheck },
       { name: 'iStart', href: 'research-innovation/istart', icon: Cpu },
     ]
   },
@@ -115,7 +116,6 @@ const navLinks = [
     href: '#', 
     hasDropdown: true,
     subLinks: [
-      { name: 'IQAC', href: '/resources/iqac', icon: ShieldCheck },
       { name: 'Campus Life', href: '/resources/campus-life', icon: Building2 },
       { name: 'Student Life', href: '/resources/student-life', icon: Users },
       { name: 'Alumni', href: '/resources/alumni', icon: GraduationCap },
