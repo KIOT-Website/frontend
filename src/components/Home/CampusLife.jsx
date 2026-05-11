@@ -94,7 +94,7 @@ const CampusLife = () => {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
           {facilities.map((fac, idx) => (
-            <Link to={fac.link} key={fac.id}>
+            <Link to={fac.link} key={fac.id} onClick={() => window.scrollTo(0, 0)}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
