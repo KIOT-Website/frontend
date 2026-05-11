@@ -192,14 +192,14 @@ const ResearchResourcesPage = () => {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-white rounded-xl shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden"
+                    className="bg-white rounded-[2rem] shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden"
                 >
                     <table className="w-full border-collapse">
                         <thead>
                             <tr>
-                                <th className="bg-black px-4 sm:px-8 py-5 text-left text-[11px] font-black text-white tracking-[2px] w-12 sm:w-24 hidden sm:table-cell">S.No.</th>
+                                <th className="bg-black px-4 sm:px-8 py-5 text-left text-[11px] font-black text-white tracking-[2px] w-12 sm:w-24 hidden sm:table-cell rounded-tl-[2rem]">S.No.</th>
                                 <th className="bg-black px-4 sm:px-8 py-5 text-left text-[11px] font-black text-white tracking-[2px]">Other Research Details</th>
-                                <th className="bg-black px-4 sm:px-8 py-5 text-left text-[11px] font-black text-[#ffc107] tracking-[2px] text-right">Access</th>
+                                <th className="bg-black px-4 sm:px-8 py-5 text-left text-[11px] font-black text-[#ffc107] tracking-[2px] text-right rounded-tr-[2rem]">Access</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-[#eef3fa]">
