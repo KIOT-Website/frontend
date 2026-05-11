@@ -296,6 +296,48 @@ const Contact = () => {
           ))}
         </div>
       </div>
+
+      {/* Map Section */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-20">
+        <div className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-blue-900/5 overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
+            {/* Address Column */}
+            <div className="p-12 lg:border-r border-slate-100 flex flex-col justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-[#224292] mb-8 shadow-inner">
+                <MapPin size={32} />
+              </div>
+              <h2 className="text-3xl font-bold text-[#224292] uppercase tracking-tight mb-4">Our Campus</h2>
+              <div className="space-y-1 mb-8">
+                <p className="text-lg font-bold text-[#224292] leading-tight">Knowledge Institute of Technology</p>
+                <p className="text-sm font-bold text-[#64779F] leading-relaxed italic">
+                  KIOT Campus, Kakapalayam,<br />
+                  Salem - 637 504, Tamil Nadu.
+                </p>
+              </div>
+              <a 
+                href="https://maps.app.goo.gl/uXvE2YmXyXnXZXkX9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 text-[#224292] font-black uppercase tracking-widest text-xs hover:text-[#ffc107] transition-colors"
+              >
+                Open in Google Maps <Navigation size={14} />
+              </a>
+            </div>
+            
+            {/* Map Column */}
+            <div className="lg:col-span-2 h-[400px] lg:h-auto min-h-[450px] relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.366258414457!2d77.98188167586561!3d11.597371141315993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bab96193796695b%3A0x7d013063f91851e0!2sKnowledge%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1715408800000!5m2!1sen!2sin"
+                className="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="KIOT Salem Map"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
