@@ -116,6 +116,25 @@ const InternationalPublicationsPage = () => {
             { id: 21, author: "G. Siva Natarajan", title: "Two-dimensional Modelling of Flood Inundation in Parts of Kundah River", journal: "International Journal of Research (IJR)", year: "2014" },
             { id: 22, author: "J.Vidya Nandhini", title: "An experimental investigations on Replacement of sand by Bottom Ash from Mettur and Neyveli thermal power stations", journal: "IJAER journal", year: "2015" },
             { id: 23, author: "S. Pradeep Kumar", title: "Self closing flood barrier a preventive system to defense extreme high flood events", journal: "IJERT", year: "2015" }
+        ],
+        'information-technology': [
+            { id: 1, author: "Dr.P.Sachidhanandam", title: "Energy-Efficient Routing In Wireless Networks Using Deep Belief Networks and LSTM for Mobile Sink Path Optimization and Cluster Head Selection", journal: "ICTACT Journal On Communication Technology", year: "2024, 15, 33, 3308-3313" },
+            { id: 2, author: "Dr.P.Sachidhanandam", title: "Medico-Bot", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
+            { id: 3, author: "Dr.P.Sachidhanandam", title: "Improved Resource Allocation in 5G using Deep Learning", journal: "ICTACT Journal on Communication Technology", year: "2022, Volume: 13, Issue: 4, Pages: 2826 – 2829" },
+            { id: 4, author: "Dr.P.Sachidhanandam", title: "Elevated Ensemble Dynamic Energy-Aware Routing Optimization Based Energy Management and Network Lifetime Improvement in WSN", journal: "Wireless Personal Communications", year: "2021, 127:2501–2513" },
+            { id: 5, author: "Mr.J.Murugesan", title: "A comprehensive survey on artificial intelligence techniques and applications", journal: "Journal of Propulsion Technology(JPT)", year: "44, 3,1170-1177, 2023" },
+            { id: 6, author: "Mr.J.Murugesan", title: "PC Chatbot: A chatbot for Indian Penal Code", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
+            { id: 7, author: "Mr.J.Murugesan", title: "Medvista - A Companion for Medication Insight", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, a526 - a530 & 2024" },
+            { id: 8, author: "Ms.B.Manjubashini", title: "Annoyed Turn out ability Transmittal using Heap - Structure", journal: "International Journal of Innovative Research in computer and communication engineering", year: "2021, Volume9, Issue 5, May 2021, pg no: 6034 – 6038" },
+            { id: 9, author: "Ms.B.Manjubashini", title: "New security authentication with graphical passwords for multi images", journal: "International Journal of Innovative Research in computer and communication engineering", year: "Volume9, Issue 5, May 2021, pg no: 6039 – 6043" },
+            { id: 10, author: "Ms.B.Manjubashini", title: "Intrusion Detection of Imbalanced Network Based on Machine Learning", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "Volume 10, Issue 6, March 2022, pg no: 5043 – 5047" },
+            { id: 11, author: "Ms.B.Manjubashini", title: "Detection of Cyberbullying on social media", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "Volume 10, Issue 5, March 2022" },
+            { id: 12, author: "Ms.B.Manjubashini", title: "Prevent Vulnerability from Intruder Using IoT", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "pg no: 5055 – 5059" },
+            { id: 13, author: "Ms.B.Manjubashini", title: "User Interface of Blockchain Based Agri Food Traceability Applications", journal: "International Journal of Multidisciplinary Research in Science, Engineering and Technology", year: "Volume 6, Issue 3, March 2023, pg no: 5074 - 5078" },
+            { id: 14, author: "Ms.B.Manjubashini", title: "Machine Learning Techniques for 5G and Beyond", journal: "International Journal of Multidisciplinary Research in Science, Engineering and Technology", year: "Volume 6, Issue 3, March 2023, pg no: 7077 - 7080" },
+            { id: 15, author: "Mrs.G.Usha", title: "Energy-Efficient Routing In Wireless Networks Using Deep Belief Networks and LSTM for Mobile Sink Path Optimization and Cluster Head Selection", journal: "ICTACT Journal On Communication Technology", year: "2024, 15, 33, 3308-3313" },
+            { id: 16, author: "Mrs.G.Usha", title: "Nutrition Analyzer Using AI", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
+            { id: 17, author: "Mrs.M.Priya", title: "Agriculture Loan Recommender Sysrem", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" }
         ]
     }
 
