@@ -135,6 +135,12 @@ const InternationalPublicationsPage = () => {
             { id: 15, author: "Mrs.G.Usha", title: "Energy-Efficient Routing In Wireless Networks Using Deep Belief Networks and LSTM for Mobile Sink Path Optimization and Cluster Head Selection", journal: "ICTACT Journal On Communication Technology", year: "2024, 15, 33, 3308-3313" },
             { id: 16, author: "Mrs.G.Usha", title: "Nutrition Analyzer Using AI", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
             { id: 17, author: "Mrs.M.Priya", title: "Agriculture Loan Recommender Sysrem", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" }
+        ],
+        'artificial-intelligence-&-data-science': [
+            { id: 1, author: "B. Sasikumar, K. Venkatasalam, P. Rajendran", title: "Machine Learning Techniques for Comparing Time-Frequency of P-QRS-T Signal Wave for Diagnosing Induction Motor Fault Under Environmental Impact", journal: "Scientific Bulgarian Communication", year: "Vol. 24, No 7 (2023) / ISSN 1311-5065" },
+            { id: 2, author: "B. Manjubashini, M .Gopikumaran, S. Jayaprakash, R. Ayyappan, P.J .Esther Rani", title: "Wireless Sensor Networks For Environmental Monitoring: Design And Deployment Strategies", journal: "Educational Administration: Theory and Practice", year: "E-ISSN:2148-2403, P-ISSN: 1300-4832" },
+            { id: 3, author: "Ruma Maheshwari, S.Kumarganesh, Shree K V M, A.Gopalakrishnan", title: "Advanced Plasmonic Resonance-enhanced Biosensor for Comprehensive Real-time Detection and Analysis of Deepfake Content", journal: "Plasmonics(Springer)", year: "DOI:10.1007/s11468-024-02407-0" },
+            { id: 4, author: "S.Kumarganesh, D Jennifer, B.Ramesh, S.Elango, A.Gopalakrishnan", title: "Image Encryption Using Artificial Intelligence Algorithms for Secure Communication", journal: "International Journal of Electronic Security and Digital Forensics", year: "E-ISSN:1751-9128, P-ISSN: 1751-911X" }
         ]
     }
 
