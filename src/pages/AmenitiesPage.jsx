@@ -104,13 +104,7 @@ const AmenitiesPage = () => {
                                     {service.d}
                                 </p>
                             </div>
-                            <div className="mt-8 pt-6 border-t border-slate-50 flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                    <span className="text-[11px] font-black text-slate-400 tracking-widest">Campus Service</span>
-                                </div>
-                                <Zap size={14} className="text-[#ffc107] opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </div>
+
                         </motion.div>
                     ))}
                 </div>
