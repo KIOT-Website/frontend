@@ -162,13 +162,13 @@ const ResearchResourcesPage = () => {
                             onClick={() => navigate(`/research/${deptName}/phd-supervisors`)}
                             className="group cursor-pointer bg-white p-1 rounded-[2rem] border border-slate-200 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden"
                         >
-                            <div className="bg-[#224292] p-8 sm:p-10 rounded-[1.8rem] flex flex-col sm:flex-row items-center justify-between gap-8 relative">
+                            <div className="bg-[#224292] p-6 sm:p-7 rounded-[1.8rem] flex flex-col sm:flex-row items-center justify-between gap-8 relative">
                                 {/* Decorative elements */}
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                                 
                                 <div className="flex items-center gap-6 relative z-10">
-                                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-[1.5rem] flex items-center justify-center text-[#ffc107] group-hover:scale-110 transition-transform duration-500">
-                                        <Users size={32} />
+                                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/10 rounded-[1.5rem] flex items-center justify-center text-[#ffc107] group-hover:scale-110 transition-transform duration-500">
+                                        <Users size={28} />
                                     </div>
                                     <div className="space-y-2">
                                         <h2 className="text-white text-2xl sm:text-3xl font-black tracking-tight leading-tight">
