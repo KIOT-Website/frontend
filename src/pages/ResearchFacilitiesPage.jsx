@@ -120,12 +120,7 @@ const ResearchFacilitiesPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-12 text-center md:text-left"
                 >
-                    <Link 
-                        to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#224292] font-black text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
-                    >
-                        <ArrowLeft size={14} /> Back to Repository
-                    </Link>
+
 
                     <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6">
                         Advanced <span className="text-[#ffc107]">Research Facilities</span>

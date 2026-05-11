@@ -72,12 +72,7 @@ const ConsultancyPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-12"
                 >
-                    <Link 
-                        to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[12px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
-                    >
-                        <ArrowLeft size={14} /> Back to Repository
-                    </Link>
+
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
