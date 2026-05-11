@@ -229,10 +229,10 @@ export default function IQACPage() {
 
                 {/* Floating Feature Bubbles */}
                 {[
-                  { title: "Continuous Improvement", icon: TrendingUp, pos: "top-[-20px] left-[-20px] md:top-[-10px] md:left-[-20px]" },
-                  { title: "Quality Processes", icon: ClipboardList, pos: "top-[-20px] right-[-20px] md:top-[-10px] md:right-[-20px]" },
-                  { title: "Academic Excellence", icon: Star, pos: "bottom-[-20px] left-[-20px] md:bottom-[-10px] md:left-[-20px]" },
-                  { title: "Better Education", icon: GraduationCap, pos: "bottom-[-20px] right-[-20px] md:bottom-[-10px] md:right-[-20px]" }
+                  { title: "Continuous Improvement", icon: TrendingUp, pos: "top-[-25px] left-[-25px] md:top-[-35px] md:left-[-35px]" },
+                  { title: "Quality Processes", icon: ClipboardList, pos: "top-[-25px] right-[-25px] md:top-[-35px] md:right-[-35px]" },
+                  { title: "Academic Excellence", icon: Star, pos: "bottom-[-25px] left-[-25px] md:bottom-[-35px] md:left-[-35px]" },
+                  { title: "Better Education", icon: GraduationCap, pos: "bottom-[-25px] right-[-25px] md:bottom-[-35px] md:right-[-35px]" }
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
