@@ -18,6 +18,7 @@ const ResearchAreasPage = () => {
     }
 
     const isCivilDepartment = deptName?.toLowerCase() === 'civil-engineering'
+    const isITDepartment = deptName?.toLowerCase() === 'information-technology'
 
     const researchAreas = {
         'mechanical-engineering': [
@@ -58,6 +59,12 @@ const ResearchAreasPage = () => {
             'Big Data Analytics',
             'Cloud Computing',
             'Information and Communication Theory'
+        ],
+        'information-technology': [
+            'Wireless Sensor Networks',
+            'Machine Learning',
+            'Information Retrieval',
+            'Data Science and Analytics'
         ]
     }
 
@@ -82,9 +89,29 @@ const ResearchAreasPage = () => {
         }
     ]
 
+    const itResearchAreaRows = [
+        {
+            leftNo: '1',
+            leftArea: 'Wireless Sensor Networks',
+            rightNo: '3',
+            rightArea: 'Information Retrieval'
+        },
+        {
+            leftNo: '2',
+            leftArea: 'Machine Learning',
+            rightNo: '4',
+            rightArea: 'Data Science and Analytics'
+        }
+    ]
+
     const displayAreas = researchAreas[deptName?.toLowerCase()] || []
 
-    if (isCivilDepartment) {
+    if (isCivilDepartment || isITDepartment) {
+        const rows = isCivilDepartment ? civilResearchAreaRows : itResearchAreaRows
+        const deptTitle = isCivilDepartment ? 'Civil Department' : 'Information Technology'
+        const deptDesc = isCivilDepartment 
+            ? 'Civil Engineering research domains presented in the same visual style as the other department research pages.'
+            : 'Pioneering research domains at Information Technology. Focused on energy transition, sustainable materials, and industrial optimization to address global challenges.'
         return (
             <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
 
@@ -98,12 +125,12 @@ const ResearchAreasPage = () => {
 
 
                         <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6">
-                            Major Research Areas of <span className="text-[#ffc107]">Civil Department</span>
+                            Major Research Areas of <span className="text-[#ffc107]">{deptTitle}</span>
                         </h1>
 
                         <div className="max-w-3xl border-l-4 border-[#ffc107] pl-8 py-1">
                             <p className="text-[#1e293b] text-base font-semibold leading-relaxed">
-                                Civil Engineering research domains presented in the same visual style as the other department research pages.
+                                {deptDesc}
                             </p>
                         </div>
                     </motion.div>
@@ -130,14 +157,14 @@ const ResearchAreasPage = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100">
-                                    {civilResearchAreaRows.map((row, idx) => (
+                                    {rows.map((row, idx) => (
                                         <tr key={idx} className="hover:bg-[#fafcff] transition-colors">
                                             <td className="px-4 sm:px-6 py-5 text-center">
                                                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50/50 text-black font-black text-xs">
                                                     {row.leftNo}
                                                 </span>
                                             </td>
-                                            <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#0f172a] uppercase tracking-tight">
+                                            <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#224292] uppercase tracking-tight">
                                                 {row.leftArea}
                                             </td>
                                             <td className="px-4 sm:px-6 py-5 text-center">
@@ -147,7 +174,7 @@ const ResearchAreasPage = () => {
                                                     </span>
                                                 ) : null}
                                             </td>
-                                            <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#0f172a] uppercase tracking-tight">
+                                            <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#224292] uppercase tracking-tight">
                                                 {row.rightArea}
                                             </td>
                                         </tr>
