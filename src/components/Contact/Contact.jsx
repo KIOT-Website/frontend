@@ -101,10 +101,10 @@ const Contact = () => {
         </div>
 
         {/* MAIN LAYOUT */}
-        <div className="grid lg:grid-cols-[1.4fr_0.8fr] gap-12 items-start">
+        <div className="max-w-4xl mx-auto">
            
-           {/* LEFT: CONTACT DIRECTORY */}
-           <div className="space-y-8 lg:pr-10">
+           {/* CENTERED: CONTACT DIRECTORY */}
+           <div className="space-y-8">
               
               {/* Directory Search */}
               <div className="relative group max-w-md">
@@ -220,66 +220,7 @@ const Contact = () => {
 
            </div>
 
-           {/* RIGHT SIDE: ENQUIRY FORM */}
-           <div className="sticky top-32">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                className="bg-[#224292] p-8 lg:p-10 rounded-2xl text-white shadow-xl shadow-black/20 relative overflow-hidden"
-              >
-                 {/* Decor */}
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-                 
-                 <h3 className="text-2xl lg:text-3xl font-semibold mb-2">Admission Enquiry</h3>
-                 <p className="text-white/60 text-[11px] font-medium tracking-widest mb-8">Start your journey with KIOT</p>
 
-                 <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                    <div className="space-y-1.5">
-                       <label className="text-[10px] font-semibold tracking-widest text-[#ffc107]">Full Name</label>
-                       <div className="relative">
-                          <User size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" />
-                          <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold focus:border-[#ffc107] transition-all outline-none" />
-                       </div>
-                    </div>
-                    
-                    <div className="space-y-1.5">
-                       <label className="text-[10px] font-semibold tracking-widest text-[#ffc107]">Phone Number</label>
-                       <div className="relative">
-                          <PhoneIncoming size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" />
-                          <input type="tel" placeholder="+91 98765 43210" className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold focus:border-[#ffc107] transition-all outline-none" />
-                       </div>
-                    </div>
-
-                    <div className="space-y-1.5">
-                       <label className="text-[10px] font-semibold tracking-widest text-[#ffc107]">Email Address</label>
-                       <div className="relative">
-                          <AtSign size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" />
-                          <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold focus:border-[#ffc107] transition-all outline-none" />
-                       </div>
-                    </div>
-
-                    <div className="space-y-1.5 pt-2">
-                       <label className="text-[10px] font-semibold tracking-widest text-[#ffc107]">Program Interest</label>
-                       <select className="w-full bg-white/5 border border-white/10 rounded-2xl py-3.5 px-4 text-sm font-bold focus:border-[#ffc107] transition-all outline-none appearance-none cursor-pointer">
-                          <option className="text-slate-800">UG Engineering (B.E/B.Tech)</option>
-                          <option className="text-slate-800">PG Engineering (M.E)</option>
-                          <option className="text-slate-800">Management (MBA)</option>
-                          <option className="text-slate-800">Applications (MCA)</option>
-                       </select>
-                    </div>
-
-                    <div className="pt-6">
-                       <button className="w-full relative group">
-                          <div className="absolute inset-0 bg-[#ffc107] blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
-                           <div className="relative flex items-center justify-center gap-3 bg-[#ffc107] hover:bg-white text-[#224292] py-5 rounded-2xl font-semibold tracking-wider text-xs transition-colors">
-                              Request a Call Back
-                             <Send size={16} />
-                          </div>
-                       </button>
-                    </div>
-                 </form>
-              </motion.div>
-           </div>
 
         </div>
 

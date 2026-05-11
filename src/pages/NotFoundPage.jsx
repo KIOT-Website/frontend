@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Home, ArrowLeft, SearchX } from 'lucide-react'
+import { Home, ArrowLeft, HardHat } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 const NotFoundPage = () => {
@@ -23,7 +23,7 @@ const NotFoundPage = () => {
             className="w-32 h-32 rounded-[40px] shadow-xl bg-white border border-[#D5E2F4]/50 flex items-center justify-center relative overflow-hidden"
           >
              <div className="absolute inset-0 bg-[#ffc107]/10 animate-pulse" />
-             <SearchX className="w-16 h-16 text-[#224292]" strokeWidth={1.5} />
+             <HardHat className="w-16 h-16 text-[#224292]" strokeWidth={1.5} />
           </motion.div>
         </div>
 
@@ -33,17 +33,17 @@ const NotFoundPage = () => {
            transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
            className="bg-white/80 backdrop-blur-xl p-10 lg:p-14 rounded-[40px] shadow-[0_30px_60px_rgba(34,66,146,0.06)] border border-white"
         >
-          <div className="inline-flex items-center gap-2 mb-6 bg-red-50 px-4 py-1.5 rounded-full border border-red-100">
-            <div className="w-1.5 h-1.5 bg-red-500 rounded-full" />
-            <span className="text-xs font-black uppercase tracking-[0.2em] text-red-600">404 Error</span>
+          <div className="inline-flex items-center gap-2 mb-6 bg-[#ffc107]/10 px-4 py-1.5 rounded-full border border-[#ffc107]/20">
+            <div className="w-1.5 h-1.5 bg-[#ffc107] rounded-full animate-ping" />
+            <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1a1a1a]">Work in Progress</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-black text-[#224292] font-display leading-[1.1] tracking-tight mb-6">
-            Oops! Page <span className="text-[#ffc107]">Not Found</span>
+            Under <span className="text-[#ffc107]">Construction</span>
           </h1>
           
           <p className="text-[#64779F] text-lg font-medium leading-relaxed mb-10 max-w-lg mx-auto">
-            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+            We are currently building this page to bring you the best experience. Please check back soon or visit our homepage.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
