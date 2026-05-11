@@ -17,7 +17,7 @@ const ResearchAreasPage = () => {
         return name.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     }
 
-    const isCivilDepartment = deptName?.toLowerCase() === 'civil-engineering'
+
 
     const researchAreas = {
         'mechanical-engineering': [
@@ -64,108 +64,17 @@ const ResearchAreasPage = () => {
             'Machine Learning',
             'Information Retrieval',
             'Data Science and Analytics'
+        ],
+        'civil-engineering': [
+            'Concrete Technology',
+            'Remote Sensing and GIS',
+            'Construction Materials',
+            'Structural Engineering',
+            'Green Building'
         ]
     }
 
-    const civilResearchAreaRows = [
-        {
-            leftNo: '1',
-            leftArea: 'Concrete Technology',
-            rightNo: '4',
-            rightArea: 'Remote Sensing and GIS'
-        },
-        {
-            leftNo: '2',
-            leftArea: 'Construction Materials',
-            rightNo: '5',
-            rightArea: 'Structural Engineering'
-        },
-        {
-            leftNo: '3',
-            leftArea: 'Green Building',
-            rightNo: '',
-            rightArea: ''
-        }
-    ]
-
     const displayAreas = researchAreas[deptName?.toLowerCase()] || []
-
-    if (isCivilDepartment) {
-        return (
-            <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
-
-
-                <div className="max-w-6xl mx-auto px-6 py-12 lg:py-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="mb-12"
-                    >
-
-
-                        <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] uppercase leading-tight mb-6">
-                            Major Research Areas of <span className="text-[#ffc107]">Civil Department</span>
-                        </h1>
-
-                        <div className="max-w-3xl border-l-4 border-[#ffc107] pl-8 py-1">
-                            <p className="text-[#1e293b] text-base font-semibold leading-relaxed">
-                                Civil Engineering research domains presented in the same visual style as the other department research pages.
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="bg-white rounded-[2rem] shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden"
-                    >
-                        <div className="px-6 sm:px-8 py-6 bg-[#224292]">
-                            <h2 className="text-white text-lg sm:text-xl font-black uppercase tracking-[0.15em]">
-                                Major Research Areas
-                            </h2>
-                        </div>
-
-                        <div className="overflow-x-auto">
-                            <table className="w-full border-collapse">
-                                <thead>
-                                    <tr>
-                                        <th className="bg-black px-4 sm:px-6 py-4 text-center text-[11px] font-black text-white uppercase tracking-[2px] w-20">S. No.</th>
-                                        <th className="bg-black px-4 sm:px-6 py-4 text-left text-[11px] font-black text-white uppercase tracking-[2px]">Research Areas</th>
-                                        <th className="bg-black px-4 sm:px-6 py-4 text-center text-[11px] font-black text-white uppercase tracking-[2px] w-20">S. No.</th>
-                                        <th className="bg-black px-4 sm:px-6 py-4 text-left text-[11px] font-black text-white uppercase tracking-[2px]">Research Areas</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-slate-100">
-                                    {civilResearchAreaRows.map((row, idx) => (
-                                        <tr key={idx} className="hover:bg-[#fafcff] transition-colors">
-                                            <td className="px-4 sm:px-6 py-5 text-center">
-                                                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50/50 text-black font-black text-xs">
-                                                    {row.leftNo}
-                                                </span>
-                                            </td>
-                                            <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#0f172a] uppercase tracking-tight">
-                                                {row.leftArea}
-                                            </td>
-                                            <td className="px-4 sm:px-6 py-5 text-center">
-                                                {row.rightNo ? (
-                                                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50/50 text-black font-black text-xs">
-                                                        {row.rightNo}
-                                                    </span>
-                                                ) : null}
-                                            </td>
-                                            <td className="px-4 sm:px-6 py-5 text-[13px] font-bold text-[#0f172a] uppercase tracking-tight">
-                                                {row.rightArea}
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-        )
-    }
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

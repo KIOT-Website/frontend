@@ -113,6 +113,18 @@ const PhdHoldersPage = () => {
                 beingGuided: "-"
             }
         ],
+        'information-technology': [
+            {
+                id: 1,
+                name: "Dr.P.Sachidhanandam",
+                topic: "Energy Efficient Routing in Wireless Sensor Neworks through Linear Motion of Mobile Sink",
+                year: "2018",
+                university: "Anna University, Chennai",
+                publications: { ij: 10, ic: 65, nj: 6, nc: 2 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
         'electronics-&-communication-engineering': [
             {
                 id: 1,

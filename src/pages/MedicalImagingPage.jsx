@@ -55,22 +55,7 @@ const MedicalImagingPage = () => {
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
-            {/* Breadcrumbs */}
-            <div className="bg-white border-b border-slate-200 py-4">
-                <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-                    <Link to="/research" className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
-                        Research Initiatives
-                    </Link>
-                    <ChevronRight size={14} className="text-slate-300" />
-                    <Link to={`/research/${deptName}`} className="text-slate-400 hover:text-[#0f172a] text-xs font-bold uppercase tracking-wider transition-colors pt-0.5">
-                        Research in {formatDeptName(deptName)}
-                    </Link>
-                    <ChevronRight size={14} className="text-slate-300" />
-                    <span className="text-[#0f172a] text-xs font-bold uppercase tracking-wider pt-0.5">
-                        Medical Imaging
-                    </span>
-                </div>
-            </div>
+
 
             <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
                 
@@ -80,12 +65,7 @@ const MedicalImagingPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-12"
                 >
-                    <Link 
-                        to={`/research/${deptName}`}
-                        className="inline-flex items-center gap-2 text-[#0f172a] font-bold text-[10px] uppercase tracking-wider mb-6 hover:translate-x-[-4px] transition-transform"
-                    >
-                        <ArrowLeft size={14} /> Back to Repository
-                    </Link>
+
 
                     <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
                         <div>
