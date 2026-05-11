@@ -126,7 +126,7 @@ const BlogDetailPage = () => {
 
             {/* ─── Featured Image ─── */}
             {(blog.featured_image || blog.image) && (
-                <div className="max-w-5xl mx-auto mb-16 flex justify-center">
+                <div className="max-w-4xl mx-auto px-6 lg:px-10 mb-16">
                     <div className="overflow-hidden rounded-[2.5rem] shadow-2xl border border-slate-100 bg-white" style={{ width: `${blog.featured_image_width || 100}%` }}>
                         <img 
                             src={blog.featured_image || blog.image} 

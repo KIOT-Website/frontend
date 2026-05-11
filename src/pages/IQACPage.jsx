@@ -227,28 +227,37 @@ export default function IQACPage() {
                   </p>
                 </div>
 
-                {/* Floating Feature Bubbles */}
-                {[
-                  { title: "Continuous Improvement", icon: TrendingUp, pos: "top-[-25px] left-[-25px] md:top-[-35px] md:left-[-35px]" },
-                  { title: "Quality Processes", icon: ClipboardList, pos: "top-[-25px] right-[-25px] md:top-[-35px] md:right-[-35px]" },
-                  { title: "Academic Excellence", icon: Star, pos: "bottom-[-25px] left-[-25px] md:bottom-[-35px] md:left-[-35px]" },
-                  { title: "Better Education", icon: GraduationCap, pos: "bottom-[-25px] right-[-25px] md:bottom-[-35px] md:right-[-35px]" }
-                ].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.5 + (idx * 0.1), type: 'spring' }}
-                    className={`absolute ${item.pos} z-30 flex flex-col items-center gap-2`}
-                  >
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#224292] border-2 border-[#ffc107] flex items-center justify-center text-white shadow-xl group hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-300 cursor-default">
-                      <item.icon size={24} className="group-hover:scale-110 transition-transform" />
+                {/* Floating Feature Bubbles (Rotating Orbit) */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-[-50px] md:inset-[-70px] z-30 pointer-events-none"
+                >
+                  {[
+                    { title: "Continuous Improvement", icon: TrendingUp, pos: "top-0 left-0" },
+                    { title: "Quality Processes", icon: ClipboardList, pos: "top-0 right-0" },
+                    { title: "Academic Excellence", icon: Star, pos: "bottom-0 left-0" },
+                    { title: "Better Education", icon: GraduationCap, pos: "bottom-0 right-0" }
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className={`absolute ${item.pos} pointer-events-auto`}
+                    >
+                      <motion.div
+                        animate={{ rotate: -360 }}
+                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                        className="flex flex-col items-center gap-2"
+                      >
+                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#224292] border-2 border-[#ffc107] flex items-center justify-center text-white shadow-xl group hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-300 cursor-default">
+                          <item.icon size={24} className="group-hover:scale-110 transition-transform" />
+                        </div>
+                        <span className="text-[9px] md:text-[10px] font-black text-white uppercase tracking-wider text-center max-w-[80px] leading-tight drop-shadow-md">
+                          {item.title}
+                        </span>
+                      </motion.div>
                     </div>
-                  <span className="text-[9px] md:text-[10px] font-black text-white uppercase tracking-wider text-center max-w-[80px] leading-tight drop-shadow-md">
-                    {item.title}
-                  </span>
+                  ))}
                 </motion.div>
-                ))}
               </div>
             </motion.div>
 
