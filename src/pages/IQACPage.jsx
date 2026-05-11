@@ -198,7 +198,7 @@ export default function IQACPage() {
                 <span>Established on 09 September 2015</span>
               </div>
 
-              <p className="text-white text-[15px] font-medium leading-relaxed max-w-xl text-justify">
+              <p className="text-white text-[15px] font-normal leading-relaxed max-w-xl text-justify">
                 IQAC is committed to fostering a culture of quality through continuous improvement in academic and administrative processes, ensuring excellence in higher education.
               </p>
             </motion.div>
@@ -278,7 +278,7 @@ export default function IQACPage() {
                   </div>
                   <h3 className="text-lg font-black text-[#224292] uppercase tracking-widest">Vision</h3>
                </div>
-               <p className="text-black font-medium text-[15px] leading-relaxed text-justify">
+               <p className="text-black font-normal text-[15px] leading-relaxed text-justify">
                   To ensure quality culture as the prime concern for the Higher Education Institutions through institutionalizing and internalizing all the initiatives taken with internal and external support.
                </p>
             </motion.div>
@@ -296,7 +296,7 @@ export default function IQACPage() {
                     "To develop a system for conscious, consistent and catalytic action to improve the academic and administrative performance.",
                     "To promote measures for institutional functioning towards quality enhancement through internalization of quality culture and institutionalization of best practices."
                   ].map((text, i) => (
-                    <li key={i} className="flex gap-3 text-black font-medium text-[15px] leading-relaxed text-justify">
+                    <li key={i} className="flex gap-3 text-black font-normal text-[15px] leading-relaxed text-justify">
                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
                        {text}
                     </li>
@@ -341,7 +341,7 @@ export default function IQACPage() {
                           <item.icon size={28} />
                        </div>
                        <h4 className="text-[16px] font-black text-[#224292] mb-3 leading-tight h-10 flex items-center">{item.title}</h4>
-                       <p className="text-[12px] font-medium text-black leading-relaxed text-justify">
+                       <p className="text-[12px] font-normal text-black leading-relaxed text-justify">
                           {item.desc}
                        </p>
                     </div>
@@ -389,7 +389,7 @@ export default function IQACPage() {
                        <h4 className="text-[16px] font-black text-[#224292] mb-1 leading-tight">
                           {item.title}
                        </h4>
-                       <p className="text-[13px] font-medium text-black leading-relaxed text-justify">
+                       <p className="text-[13px] font-normal text-black leading-relaxed text-justify">
                           {item.desc}
                        </p>
                     </div>
