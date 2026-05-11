@@ -71,6 +71,12 @@ const ResearchAreasPage = () => {
             'Construction Materials',
             'Structural Engineering',
             'Green Building'
+        ],
+        'computer-science-and-business-systems': [
+            'Wireless Sensor Networks',
+            'Machine Learning',
+            'Data privacy & Security',
+            'Data Science and Analytics'
         ]
     }
 
