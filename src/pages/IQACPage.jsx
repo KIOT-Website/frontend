@@ -208,7 +208,7 @@ export default function IQACPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[450px] md:h-[550px] flex items-center justify-center lg:mt-0"
+              className="relative h-[400px] md:h-[480px] flex items-center justify-center lg:mt-0 lg:-ml-24"
             >
               {/* Outer Decorative Rings */}
               <div className="absolute w-[300px] h-[300px] md:w-[380px] md:h-[380px] rounded-full border border-dashed border-[#ffc107]/30 animate-[spin_20s_linear_infinity] pointer-events-none" />
