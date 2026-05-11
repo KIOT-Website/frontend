@@ -170,7 +170,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
-              className="group relative bg-white rounded-[3rem] p-8 border border-slate-100 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+              className="group relative bg-white rounded-[3rem] p-8 border border-slate-100 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col min-h-[520px]"
             >
               {/* Card Header */}
               <div className="flex items-center gap-5 mb-6">
@@ -183,23 +183,27 @@ const Contact = () => {
               </div>
 
               {/* Card Description */}
-              <p className="text-sm font-bold text-[#64779F] mb-10 leading-relaxed max-w-[200px]">
+              <p className="text-sm font-bold text-black mb-8 leading-relaxed">
                 {contact.desc}
               </p>
 
-              {/* 3D Illustration Overlay */}
-              <div className="absolute bottom-4 right-4 w-40 h-40 opacity-90 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700 pointer-events-none">
-                <img src={contact.illustration} alt={contact.title} className="w-full h-full object-contain" />
+              {/* 3D Illustration - Centered and non-overlapping */}
+              <div className="flex-1 flex items-center justify-center mb-8 relative z-10">
+                <img 
+                  src={contact.illustration} 
+                  alt={contact.title} 
+                  className="w-48 h-48 object-contain group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700" 
+                />
               </div>
 
               {/* Contact Info */}
-              <div className="relative z-10">
+              <div className="relative z-20 mt-auto">
                 <a 
                   href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-[#224292] rounded-full text-white text-sm font-black shadow-lg shadow-blue-900/20 hover:bg-[#ffc107] transition-all"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#224292] rounded-2xl text-white hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-300 shadow-xl shadow-blue-900/10 group/btn"
                 >
-                  <Phone size={16} />
-                  {contact.phone}
+                  <Phone size={18} className="text-[#ffc107] group-hover/btn:text-[#224292] transition-colors" />
+                  <span className="text-base font-black tracking-tight text-white group-hover/btn:text-[#224292] transition-colors">{contact.phone}</span>
                 </a>
               </div>
             </motion.div>
@@ -207,29 +211,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Feature Footer Bar */}
-      <div className="bg-[#224292] py-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Clock, title: "Quick Response", sub: "We reply within 24 hours" },
-              { icon: ShieldCheck, title: "Verified & Trusted", sub: "Official support from KIOT" },
-              { icon: Users, title: "Multiple Channels", sub: "Call, Email & In-Person" },
-              { icon: PhoneIncoming, title: "Always Here to Help", sub: "Your success is our priority" }
-            ].map((feature, idx) => (
-              <div key={idx} className="flex items-center gap-5 text-white">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
-                  <feature.icon size={22} className="text-[#ffc107]" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-black tracking-tight">{feature.title}</h4>
-                  <p className="text-[11px] font-bold text-blue-200 uppercase tracking-wider">{feature.sub}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Detailed Listings (Accordions) */}
       <div className="max-w-4xl mx-auto px-6 py-20">
