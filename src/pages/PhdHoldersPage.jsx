@@ -125,6 +125,18 @@ const PhdHoldersPage = () => {
                 beingGuided: "-"
             }
         ],
+        'artificial-intelligence-and-data-science': [
+            {
+                id: 1,
+                name: "Dr.A. Gomathi",
+                topic: "Enhanced Information Extraction On Multiple Search Engines Using Hybrid Algorithms",
+                year: "2019",
+                university: "Anna University, Chennai",
+                publications: { ij: 8, ic: 13, nj: 2, nc: 7 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
         'electronics-&-communication-engineering': [
             {
                 id: 1,
