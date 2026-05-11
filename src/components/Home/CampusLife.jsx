@@ -30,7 +30,7 @@ const facilities = [
   { id: 4, title: "Cafeteria", image: cafeteriaImg, link: "/campus-life/amenities" },
   { id: 5, title: "Lab", image: labImg, link: "/campus-life/classroom" },
   { id: 6, title: "Hostel", image: hostelImg, link: "/campus-life/amenities" },
-  { id: 7, title: "Training", image: trainingImg, link: "/training" },
+  { id: 7, title: "Training", image: trainingImg, link: "/placements/cdt" },
   { id: 8, title: "iStart", image: istartImg, link: "/aicte-idea-lab" }
 ]
 
