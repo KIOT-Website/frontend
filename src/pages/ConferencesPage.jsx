@@ -48,6 +48,14 @@ const ConferencesPage = () => {
             { id: 201, author: "Dr.N.Santhiyakumari", title: "Augmented Reality Based Gesture Controlled Virtual Board", conference: "ETEDM 22", location: "KIOT", type: "National", date: "2022" },
             { id: 202, author: "Dr.M.Thangavel", title: "Leaf Disease Detection Using Machine Learning", conference: "ETEDM 22", location: "KIOT", type: "National", date: "2022" },
             { id: 203, author: "Dr. S Kumarganesh", title: "An Efficient Detection And Classification Of Covid -19 Using Deep Learning Approach", conference: "ETEDM 22", location: "KIOT", type: "National", date: "2022" }
+        ],
+        'artificial-intelligence-&-data-science': [
+            { id: 1, author: "R SIVAGURU, P SASIKUMAR, A GOPALAKRISHNAN, V BRINDHA, S MONISHA", title: "A Comprehensive Literature review of Network security in cyber security", conference: "International Conference on Artificial Intelligence, Cybersecurity, and Game Design (ICAICGD 2024)", location: "-", type: "International", date: "2024" },
+            { id: 2, author: "A.GOPALAKRISHNAN, S. ANTHONIRAJ, S. KUMARGANESH, N. SURESH KUMAR, G. DIVYA BHARATHI, AIKAT GOCHHAIT", title: "Performance Analysis of Health Care Expense Anticipation using Computational Intelligence", conference: "International Conference on Innovative Engineering Sciences & Technological Research (ICIESTR-2024)", location: "-", type: "International", date: "2024" },
+            { id: 3, author: "A.GOPALAKRISHNAN", title: "Automatic Detection on Rheumatoid Arthritis Machine Learning", conference: "International Conference on Additive Manufacturing Technologies (ICAMT24)", location: "-", type: "International", date: "2024" },
+            { id: 4, author: "V. BRINDHA", title: "A survey on Rheumatic Heart Disease Diagnosis using Machine Learning Techniques", conference: "International Conference on Innovative Trends in IT Industry (ICITII 2K24)", location: "-", type: "International", date: "2024" },
+            { id: 5, author: "A.GOPALAKRISHNAN, V. HARINI, O. OBU SUBIKSHA, V. KRITHIGA", title: "Heart Failure Prediction and Enhanced Healthcare Strategies Using Classification Techniques", conference: "Multidisciplinary Research Innovations in Engineering and Technology", location: "-", type: "National", date: "ISBN: 978-93-340-1681-9" },
+            { id: 6, author: "S. PRASANNA, A. SARAVANAN, S. HARIPRASATH, S.BOOPALAN", title: "Personalized health care recommendation system", conference: "Intelligent Computing Technologies and Business System", location: "-", type: "National", date: "-" }
         ]
     }
 
@@ -138,12 +146,15 @@ const ConferencesPage = () => {
                             </motion.div>
                         ))
                     ) : (
-                        <div className="col-span-2 py-32 text-center text-slate-300 font-bold uppercase text-sm tracking-widest">
-                            No conference papers found matching your search
+                        <div className="col-span-full py-20 bg-white rounded-2xl border border-dashed border-slate-200 flex flex-col items-center justify-center text-center">
+                            <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-slate-300 mb-4">
+                                <Search size={32} />
+                            </div>
+                            <h3 className="text-lg font-bold text-[#0f172a] uppercase tracking-tight mb-1">No Papers Found</h3>
+                            <p className="text-sm text-slate-400 font-medium">Try adjusting your search terms</p>
                         </div>
                     )}
                 </div>
-
             </div>
         </div>
     )
