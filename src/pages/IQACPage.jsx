@@ -214,35 +214,36 @@ export default function IQACPage() {
               <div className="absolute w-[300px] h-[300px] md:w-[380px] md:h-[380px] rounded-full border border-dashed border-[#ffc107]/30 animate-[spin_20s_linear_infinity] pointer-events-none" />
               <div className="absolute w-[340px] h-[340px] md:w-[440px] md:h-[440px] rounded-full border border-dotted border-white/10 animate-[spin_30s_linear_infinity_reverse] pointer-events-none" />
 
-              {/* Central Emblem */}
-              <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full bg-white flex flex-col items-center justify-center border-[8px] border-[#ffc107] shadow-[0_0_80px_rgba(255,193,7,0.4)] z-20 overflow-hidden group">
-                 <div className="absolute inset-0 bg-gradient-to-tr from-[#ffc107]/5 to-transparent pointer-events-none" />
-                 <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center text-[#224292] mb-2 group-hover:scale-110 transition-transform duration-500">
+              <div className="relative">
+                {/* Central Emblem */}
+                <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full bg-white flex flex-col items-center justify-center border-[8px] border-[#ffc107] shadow-[0_0_80px_rgba(255,193,7,0.4)] z-20 overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#ffc107]/5 to-transparent pointer-events-none" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center text-[#224292] mb-2 group-hover:scale-110 transition-transform duration-500">
                     <ShieldCheck size={64} strokeWidth={1.5} className="drop-shadow-sm" />
-                 </div>
-                 <h2 className="text-3xl md:text-4xl font-black text-[#224292] leading-none mb-1 tracking-tighter">IQAC</h2>
-                 <p className="text-[10px] md:text-[11px] font-black text-black text-center px-6 leading-tight uppercase tracking-wider">
-                    Driving Quality,<br />Enhancing Excellence
-                 </p>
-              </div>
-
-              {/* Floating Feature Bubbles */}
-              {[
-                { title: "Continuous Improvement", icon: TrendingUp, pos: "top-[20px] left-[-20px] md:top-[40px] md:left-[-40px]" },
-                { title: "Quality Processes", icon: ClipboardList, pos: "top-[20px] right-[-20px] md:top-[40px] md:right-[-40px]" },
-                { title: "Academic Excellence", icon: Star, pos: "bottom-[20px] left-[-20px] md:bottom-[40px] md:left-[-40px]" },
-                { title: "Better Education", icon: GraduationCap, pos: "bottom-[20px] right-[-20px] md:bottom-[40px] md:right-[-40px]" }
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + (idx * 0.1), type: 'spring' }}
-                  className={`absolute ${item.pos} z-30 flex flex-col items-center gap-2`}
-                >
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#224292] border-2 border-[#ffc107] flex items-center justify-center text-white shadow-xl group hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-300 cursor-default">
-                     <item.icon size={24} className="group-hover:scale-110 transition-transform" />
                   </div>
+                  <h2 className="text-3xl md:text-4xl font-black text-[#224292] leading-none mb-1 tracking-tighter">IQAC</h2>
+                  <p className="text-[10px] md:text-[11px] font-black text-black text-center px-6 leading-tight uppercase tracking-wider">
+                    Driving Quality,<br />Enhancing Excellence
+                  </p>
+                </div>
+
+                {/* Floating Feature Bubbles */}
+                {[
+                  { title: "Continuous Improvement", icon: TrendingUp, pos: "top-[-20px] left-[-20px] md:top-[-10px] md:left-[-20px]" },
+                  { title: "Quality Processes", icon: ClipboardList, pos: "top-[-20px] right-[-20px] md:top-[-10px] md:right-[-20px]" },
+                  { title: "Academic Excellence", icon: Star, pos: "bottom-[-20px] left-[-20px] md:bottom-[-10px] md:left-[-20px]" },
+                  { title: "Better Education", icon: GraduationCap, pos: "bottom-[-20px] right-[-20px] md:bottom-[-10px] md:right-[-20px]" }
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5 + (idx * 0.1), type: 'spring' }}
+                    className={`absolute ${item.pos} z-30 flex flex-col items-center gap-2`}
+                  >
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#224292] border-2 border-[#ffc107] flex items-center justify-center text-white shadow-xl group hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-300 cursor-default">
+                      <item.icon size={24} className="group-hover:scale-110 transition-transform" />
+                    </div>
                   <span className="text-[9px] md:text-[10px] font-black text-white uppercase tracking-wider text-center max-w-[80px] leading-tight drop-shadow-md">
                     {item.title}
                   </span>
