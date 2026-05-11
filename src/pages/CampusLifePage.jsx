@@ -28,7 +28,7 @@ import kiotSports from '../assets/life@kiot/sports ground.png'
 import kiotTransport from '../assets/life@kiot/collge bus.png'
 import kiotLab from '../assets/life@kiot/smart classrooms.png'
 import kiotCafeteria from '../assets/main/kiot_cafeteria.webp'
-import kiotSymposium from '../assets/main/kiot_symposium.webp'
+import kiotSymposium from '../assets/life@kiot/media center.png'
 import campusMain from '../assets/main/campus .webp'
 
 const CAMPUS_HUBS = [
@@ -45,7 +45,7 @@ const CAMPUS_HUBS = [
     id: 'classroom',
     title: 'Smart Classroom',
     subtitle: 'Future Ready Learning',
-    icon: Monitor,
+    icon: null,
     image: kiotLab,
     link: '/campus-life/classroom',
     color: '#ffc107'
@@ -266,12 +266,14 @@ const CampusLifePage = () => {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/40 to-transparent" />
                                 
-                                <div 
-                                  className="absolute bottom-3 left-4 w-10 h-10 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-md border border-white/20 transition-all group-hover:scale-110"
-                                  style={{ backgroundColor: `${hub.color}CC`, color: '#fff' }}
-                                >
-                                    <hub.icon size={20} strokeWidth={2.5} />
-                                </div>
+                                {hub.icon && (
+                                    <div 
+                                      className="absolute bottom-3 left-4 w-10 h-10 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-md border border-white/20 transition-all group-hover:scale-110"
+                                      style={{ backgroundColor: `${hub.color}CC`, color: '#fff' }}
+                                    >
+                                        <hub.icon size={20} strokeWidth={2.5} />
+                                    </div>
+                                )}
                             </div>
 
                             <div className="p-4 md:p-5 flex-1 flex flex-col bg-white">
