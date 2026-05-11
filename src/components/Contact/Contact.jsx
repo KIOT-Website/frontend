@@ -1,6 +1,25 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, Mail, MessageCircle, Search, ChevronDown, MapPin, Navigation, Send, User, AtSign, PhoneIncoming, GraduationCap, Building2, TrendingUp } from 'lucide-react'
+import { 
+  Phone, 
+  Mail, 
+  MessageCircle, 
+  Search, 
+  ChevronDown, 
+  MapPin, 
+  Navigation, 
+  Send, 
+  User, 
+  AtSign, 
+  PhoneIncoming, 
+  GraduationCap, 
+  Building2, 
+  TrendingUp,
+  Clock,
+  ShieldCheck,
+  Users,
+  Home as HomeIcon
+} from 'lucide-react'
 
 const priorityContacts = [
   {
@@ -11,6 +30,7 @@ const priorityContacts = [
     isPriority: true,
     whatsapp: "https://wa.me/919894701234",
     icon: GraduationCap,
+    illustration: "/contact_assets/admission_3d_icon.png",
     desc: "Reach our dedicated counselors for admission help."
   },
   {
@@ -21,6 +41,7 @@ const priorityContacts = [
     isPriority: true,
     whatsapp: "https://wa.me/914272433917",
     icon: TrendingUp,
+    illustration: "/contact_assets/placement_3d_icon.png",
     desc: "Career opportunities and industry collaborations."
   },
   {
@@ -31,6 +52,7 @@ const priorityContacts = [
     isPriority: true,
     whatsapp: "https://wa.me/919500941414",
     icon: User,
+    illustration: "/contact_assets/principal_3d_icon.png",
     desc: "Institutional administration and academic leadership."
   }
 ]
@@ -75,198 +97,205 @@ const Contact = () => {
   const [openAccordion, setOpenAccordion] = useState(0)
 
   return (
-    <section className="relative py-12 lg:py-16 bg-[#FCFDFD] overflow-hidden" id="contact">
+    <section className="relative bg-[#FCFDFD] overflow-hidden font-sans" id="contact">
       
-      {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-[#224292]/5 to-transparent -z-10" />
+      {/* Hero Section */}
+      <div className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+        {/* Abstract Background Decor */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50 rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/4 opacity-60" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[100px] -z-10 -translate-x-1/4 translate-y-1/4 opacity-40" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-        
-        {/* HEADER */}
-        <div className="max-w-3xl mb-12">
-           <motion.div
-             initial={{ opacity: 0, x: -10 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             className="inline-flex items-center gap-2 mb-4 bg-[#224292]/5 px-4 py-1.5 rounded-full border border-[#224292]/10"
-           >
-             <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107] animate-pulse" />
-             <span className="text-[10px] font-semibold tracking-[0.1em] text-[#224292]">Support Center</span>
-           </motion.div>
-           <h2 className="text-4xl lg:text-5xl font-semibold text-[#224292] mb-6">
-             Get in Touch <span className="text-[#ffc107]">With Us</span>
-           </h2>
-           <p className="text-base lg:text-lg font-medium text-[#64779F] leading-relaxed max-w-xl">
-             Whether you're an aspirant, a parent, or a hiring partner, reach the right department instantly. We're here to help you.
-           </p>
-        </div>
-
-        {/* MAIN LAYOUT */}
-        <div className="max-w-4xl mx-auto">
-           
-           {/* CENTERED: CONTACT DIRECTORY */}
-           <div className="space-y-8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Column: Text & Search */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 mb-6 bg-blue-50 px-5 py-2 rounded-full border border-blue-100 shadow-sm">
+                <div className="h-2 w-2 rounded-full bg-[#ffc107] animate-pulse" />
+                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#224292]">Support Center</span>
+              </div>
               
-              {/* Directory Search */}
-              <div className="relative group max-w-md">
+              <h1 className="text-5xl lg:text-7xl font-bold text-[#224292] leading-[1.1] mb-8">
+                Get in Touch <br />
+                <span className="text-[#ffc107]">With Us</span>
+              </h1>
+              
+              <p className="text-lg lg:text-xl font-medium text-[#64779F] leading-relaxed max-w-xl mb-12">
+                Whether you're an aspirant, a parent, or a hiring partner, reach the right department instantly. We're here to help you.
+              </p>
 
-                 <div className="relative flex items-center bg-white border border-[#D5E2F4] rounded-2xl w-full p-1 shadow-sm">
-                    <div className="pl-4 pr-3 text-[#64779F]">
-                       <Search size={18} />
-                    </div>
-                    <input 
-                      type="text" 
-                      placeholder="Search department, hostel, etc..."
-                      className="bg-transparent border-none outline-none flex-1 py-3 text-sm font-bold text-[#224292] placeholder:text-[#64779F]/40"
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value.toLowerCase())}
-                    />
-                 </div>
+              {/* Enhanced Search Bar */}
+              <div className="relative max-w-xl group">
+                <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none text-slate-400 group-focus-within:text-[#224292] transition-colors">
+                  <Search size={24} />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search department, hostel, etc..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="w-full bg-white border-2 border-slate-100 rounded-3xl py-6 pl-16 pr-8 text-lg font-bold text-[#0f172a] shadow-2xl shadow-blue-900/5 outline-none focus:border-[#224292]/20 transition-all placeholder:text-slate-300"
+                />
               </div>
+            </motion.div>
 
-              {/* Priority Cards */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                 {priorityContacts.filter(c => 
-                   c.title.toLowerCase().includes(search) || 
-                   c.desc.toLowerCase().includes(search)
-                 ).map((c) => (
-                   <motion.div
-                     key={c.id}
-                     layout
-                     initial={{ opacity: 0, scale: 0.9 }}
-                     animate={{ opacity: 1, scale: 1 }}
-                     whileHover={{ y: -5 }}
-                     className="bg-white p-6 rounded-2xl shadow-xl shadow-black/10 border-2 border-transparent hover:border-[#ffc107]/30 transition-all flex flex-col justify-between"
-                   >
-                      <div>
-                         <div className="h-12 w-12 rounded-2xl bg-[#224292]/5 flex items-center justify-center text-[#ffc107] mb-5">
-                           <c.icon size={24} />
-                         </div>
-                         <h4 className="text-lg font-semibold text-[#224292] mb-2">{c.title}</h4>
-                         <p className="text-[10px] font-medium text-[#64779F] leading-relaxed mb-6 tracking-wide">{c.desc}</p>
-                      </div>
-
-                      <div className="space-y-3">
-                         <a href={`tel:${c.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-sm font-black text-[#224292] group">
-                           <Phone size={14} className="text-[#ffc107]" />
-                           <span className="group-hover:translate-x-1 transition-transform">{c.phone}</span>
-                         </a>
-                         <a href={`mailto:${c.email}`} className="flex items-center gap-3 text-[11px] font-bold text-[#64779F] hover:text-[#224292] transition-colors truncate">
-                           <Mail size={14} className="text-[#ffc107]/40" />
-                           {c.email}
-                         </a>
-
-                      </div>
-                   </motion.div>
-                 ))}
-              </div>
-
-              {/* Accordion Directory */}
-              <div className="space-y-4">
-                 {categories.map((cat, idx) => {
-                   const filteredItems = cat.items.filter(item => 
-                     item.name.toLowerCase().includes(search) || 
-                     cat.title.toLowerCase().includes(search)
-                   )
-
-                   if (search && filteredItems.length === 0) return null
-
-                   return (
-                     <motion.div 
-                       key={idx} 
-                       layout
-                       initial={{ opacity: 0 }}
-                       animate={{ opacity: 1 }}
-                       className="bg-white border border-[#D5E2F4] rounded-xl overflow-hidden"
-                     >
-                        <button 
-                          onClick={() => setOpenAccordion(openAccordion === idx ? null : idx)}
-                          className="w-full flex items-center justify-between p-6 text-left hover:bg-[#224292]/5 transition-colors"
-                        >
-                           <h5 className="text-sm font-semibold tracking-wide text-[#224292]">{cat.title}</h5>
-                           <ChevronDown size={20} className={`text-[#64779F] transition-transform duration-500 ${openAccordion === idx ? 'rotate-180' : ''}`} />
-                        </button>
-                        <AnimatePresence>
-                           {(openAccordion === idx || (search && filteredItems.length > 0)) && (
-                             <motion.div
-                               initial={{ height: 0 }}
-                               animate={{ height: "auto" }}
-                               exit={{ height: 0 }}
-                               className="overflow-hidden border-t border-[#D5E2F4]/60"
-                             >
-                                <div className="p-4 bg-[#FCFDFD] grid md:grid-cols-2 gap-2">
-                                   {filteredItems.map((item, i) => (
-                                     <div key={i} className="p-4 hover:bg-white rounded-2xl transition-all border border-transparent hover:border-[#D5E2F4]/60 hover:shadow-sm">
-                                        <p className="text-[13px] font-semibold text-[#224292] mb-2">{item.name}</p>
-                                        <div className="flex flex-col gap-1.5">
-                                           <a href={`tel:${item.phone}`} className="flex items-center gap-2 text-[11px] font-bold text-[#64779F] hover:text-[#224292]">
-                                              <Phone size={12} className="text-[#ffc107]" />
-                                              {item.phone}
-                                           </a>
-                                           <a href={`mailto:${item.email}`} className="flex items-center gap-2 text-[11px] font-bold text-[#64779F] hover:text-[#224292]">
-                                              <Mail size={12} className="text-[#ffc107]/40" />
-                                              {item.email}
-                                           </a>
-                                        </div>
-                                     </div>
-                                   ))}
-                                </div>
-                             </motion.div>
-                           )}
-                        </AnimatePresence>
-                     </motion.div>
-                   )
-                 })}
-              </div>
-
-           </div>
-
-
-
+            {/* Right Column: Hero Illustration */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <img 
+                src="/contact_assets/contact_hero_illustration.png" 
+                alt="Contact Illustration" 
+                className="w-full h-auto drop-shadow-[0_35px_35px_rgba(34,66,146,0.15)]"
+              />
+            </motion.div>
+          </div>
         </div>
-
-        {/* LOCATION SECTION */}
-        <div className="mt-16">
-           <div className="bg-white p-8 lg:p-12 rounded-2xl border border-[#D5E2F4] shadow-xl shadow-black/5 flex flex-col lg:flex-row gap-12 items-center">
-              <div className="flex-1 w-full h-[300px] rounded-xl overflow-hidden border border-[#D5E2F4]/60 shadow-inner bg-slate-100 relative">
-                 <iframe 
-                   title="KIOT Salem Campus"
-                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.9691540888566!2d78.0190263!3d11.554069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babe40754d8480f%3A0x4bf024dfe3e621ec!2sKnowledge%20Institute%20of%20Technology%20(KIOT)!5e0!3m2!1sen!2sin!4v1774031087222!5m2!1sen!2sin" 
-                   className="w-full h-full border-none"
-                   allowFullScreen="" 
-                   loading="lazy"
-                   referrerPolicy="no-referrer-when-downgrade"
-                 ></iframe>
-              </div>
-              <div className="lg:w-1/3 space-y-8">
-                  <div className="space-y-4">
-                    <h3 className="text-3xl font-semibold text-[#224292]">Find Us on Campus</h3>
-                    <div className="flex items-start gap-4">
-                       <MapPin size={24} className="text-[#ffc107] shrink-0" />
-                       <p className="text-sm lg:text-base font-bold text-black leading-relaxed">
-                          Knowledge Institute of Technology,<br />
-                          KIOT Campus, Kakapalayam (PO),<br />
-                          Salem - 637 504, Tamil Nadu, India.
-                       </p>
-                    </div>
-                 </div>
-
-                 <div className="flex flex-wrap gap-4 pt-4">
-                    <a 
-                      href="https://www.google.com/maps/dir/?api=1&destination=Knowledge+Institute+of+Technology+(KIOT),+Salem" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-2 px-6 py-3 bg-[#ffc107] text-[#224292] hover:bg-white text-[11px] font-black uppercase tracking-widest rounded-xl transition-all shadow-lg shadow-[#ffc107]/20 border border-transparent hover:border-[#D5E2F4] hover:shadow-xl"
-                    >
-                       <Navigation size={16} className="text-[#224292]" />
-                       <span className="relative z-10">Get Directions</span>
-                    </a>
-                 </div>
-              </div>
-           </div>
-        </div>
-
       </div>
 
+      {/* Priority Contact Cards */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {priorityContacts.map((contact, idx) => (
+            <motion.div
+              key={contact.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.15 }}
+              viewport={{ once: true }}
+              className="group relative bg-white rounded-[3rem] p-8 border border-slate-100 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+            >
+              {/* Card Header */}
+              <div className="flex items-center gap-5 mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-500 shadow-inner">
+                  <contact.icon size={28} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#224292] leading-tight">{contact.title}</h3>
+                </div>
+              </div>
+
+              {/* Card Description */}
+              <p className="text-sm font-bold text-[#64779F] mb-10 leading-relaxed max-w-[200px]">
+                {contact.desc}
+              </p>
+
+              {/* 3D Illustration Overlay */}
+              <div className="absolute bottom-4 right-4 w-40 h-40 opacity-90 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700 pointer-events-none">
+                <img src={contact.illustration} alt={contact.title} className="w-full h-full object-contain" />
+              </div>
+
+              {/* Contact Info */}
+              <div className="relative z-10">
+                <a 
+                  href={`tel:${contact.phone.replace(/\s/g, '')}`}
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-[#224292] rounded-full text-white text-sm font-black shadow-lg shadow-blue-900/20 hover:bg-[#ffc107] transition-all"
+                >
+                  <Phone size={16} />
+                  {contact.phone}
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Feature Footer Bar */}
+      <div className="bg-[#224292] py-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: Clock, title: "Quick Response", sub: "We reply within 24 hours" },
+              { icon: ShieldCheck, title: "Verified & Trusted", sub: "Official support from KIOT" },
+              { icon: Users, title: "Multiple Channels", sub: "Call, Email & In-Person" },
+              { icon: PhoneIncoming, title: "Always Here to Help", sub: "Your success is our priority" }
+            ].map((feature, idx) => (
+              <div key={idx} className="flex items-center gap-5 text-white">
+                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/20">
+                  <feature.icon size={22} className="text-[#ffc107]" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-black tracking-tight">{feature.title}</h4>
+                  <p className="text-[11px] font-bold text-blue-200 uppercase tracking-wider">{feature.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Detailed Listings (Accordions) */}
+      <div className="max-w-4xl mx-auto px-6 py-20">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-[#224292] uppercase tracking-tight mb-4">Directory Listings</h2>
+          <div className="h-1.5 w-20 bg-[#ffc107] mx-auto rounded-full" />
+        </div>
+
+        <div className="space-y-4">
+          {categories.map((category, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden"
+            >
+              <button
+                onClick={() => setOpenAccordion(openAccordion === idx ? -1 : idx)}
+                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292]">
+                    {idx === 0 ? <Building2 size={20} /> : idx === 1 ? <HomeIcon size={20} /> : <Navigation size={20} />}
+                  </div>
+                  <span className="text-lg font-black text-[#224292] uppercase tracking-tight">{category.title}</span>
+                </div>
+                <ChevronDown 
+                  className={`text-[#64779F] transition-transform duration-300 ${openAccordion === idx ? 'rotate-180' : ''}`} 
+                  size={24} 
+                />
+              </button>
+
+              <AnimatePresence>
+                {openAccordion === idx && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-8 pb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {category.items.filter(item => 
+                        item.name.toLowerCase().includes(search.toLowerCase()) || 
+                        category.title.toLowerCase().includes(search.toLowerCase())
+                      ).map((item, itemIdx) => (
+                        <div key={itemIdx} className="p-5 rounded-2xl bg-slate-50/50 border border-slate-100 hover:border-[#224292]/20 hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 transition-all group">
+                          <h4 className="text-[14px] font-black text-[#224292] uppercase mb-3 leading-tight tracking-tight">{item.name}</h4>
+                          <div className="flex flex-col gap-2">
+                            <a href={`tel:${item.phone}`} className="flex items-center gap-2 text-xs font-bold text-[#64779F] hover:text-[#ffc107] transition-colors">
+                              <Phone size={12} /> {item.phone}
+                            </a>
+                            <a href={`mailto:${item.email}`} className="flex items-center gap-2 text-xs font-bold text-[#64779F] hover:text-[#224292] transition-colors">
+                              <Mail size={12} /> {item.email}
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
