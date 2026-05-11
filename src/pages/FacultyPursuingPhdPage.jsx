@@ -234,7 +234,26 @@ const FacultyPursuingPhdPage = () => {
             { id: 9, name: "Mr.P.Nareshkumar", topic: "Computer Science", supervisor: "Dr.M.Kumaresan", registration: "JU2025RPHD10492", university: "Jain University", status: "Course work Pursuing" },
             { id: 10, name: "Mrs.A.Kasthuri", topic: "Computer Science", supervisor: "Dr.J.Gowrishankar", registration: "23PHREN043", university: "Jain University", status: "Course work Pursuing" }
         ],
+        'information-technology': [
+            {
+                id: 1,
+                name: "Ms.B.Manjubashini, AP/IT",
+                topic: "Wireless Sensor Networks",
+                supervisor: "Dr.K.R.Kavitha, Department of ECE, Sona college of technology.",
+                registration: "2022",
+                university: "Anna University"
+            },
+            {
+                id: 2,
+                name: "Mrs.S.Lalithambikai, AP/IT",
+                topic: "Wireless Sensor Networks",
+                supervisor: "RAJENDRAN P / 2340253, Professor, Department of Computer Science and Engineering, Knowledge Institute of Technology (Autonomous), KIOT Campus, Kakapalayam (PO), Salem - 637 504",
+                registration: "2024",
+                university: "Anna University"
+            }
+        ],
         'civil-engineering': [
+            { id: 10, name: "Mr.S.Pradeep Kumar", topic: "Civil Engineering", supervisor: "Dr.P.M.Shanmugavadivu", registration: "July 2024", university: "Anna University" },
             { id: 1, name: "Mr.L.Krishnan", topic: "Structural Engineering", supervisor: "Dr.Gulshan Taj M N A", registration: "Jan & 2020", university: "Anna University" },
             { id: 2, name: "Mr. S.Arulkesavan", topic: "Concrete Structures", supervisor: "Dr.S.Ramesh", registration: "Jan & 2025", university: "Anna University" },
             { id: 3, name: "Mr. R.Elavarasan", topic: "Concrete Structures", supervisor: "Dr.P.Mageshkumar", registration: "Jan & 2024", university: "Anna University" },
@@ -324,7 +343,7 @@ const FacultyPursuingPhdPage = () => {
                                             </td>
                                             <td className="px-6 py-5">
                                                 <div className="flex items-center justify-end gap-1.5 text-[#0f172a] text-[13px] font-bold uppercase transition-colors group-hover:text-[#ffc107]">
-                                                    <Calendar size={14} className="text-[#ffc107] group-hover:text-[#0f172a] transition-colors" /> {faculty.registration.split(' & ')[1]}
+                                                    <Calendar size={14} className="text-[#ffc107] group-hover:text-[#0f172a] transition-colors" /> {faculty.registration.split(' & ')[1] || faculty.registration}
                                                 </div>
                                             </td>
                                         </tr>
