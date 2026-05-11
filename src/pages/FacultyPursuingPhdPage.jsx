@@ -232,14 +232,7 @@ const FacultyPursuingPhdPage = () => {
             { id: 7, name: "Mrs.D.Ramya", topic: "Computer Science", supervisor: "Dr.P.Vijayalakshmi", registration: "24244697415", university: "Anna University", status: "Course work Pursuing" },
             { id: 8, name: "Mrs.G.Eswari @ Pechiammal", topic: "Computer Science", supervisor: "Dr.P Pabitha", registration: "23244397295", university: "Anna University", status: "Course work completed" },
             { id: 9, name: "Mr.P.Nareshkumar", topic: "Computer Science", supervisor: "Dr.M.Kumaresan", registration: "JU2025RPHD10492", university: "Jain University", status: "Course work Pursuing" },
-            { id: 10, name: "Mrs.A.Kasthuri", topic: "Computer Science", supervisor: "Dr.J.Gowrishankar", registration: "23PHREN043", university: "Jain University", status: "Course work Pursuing" },
-            { id: 11, name: "B. SASIKUMAR", topic: "Image Processing", supervisor: "Dr.P.Rajendran", registration: "-", university: "-" },
-            { id: 12, name: "A.GOPALAKRISHNAN", topic: "Medical Image Processing", supervisor: "Dr. S. Kumarganesh", registration: "-", university: "-" },
-            { id: 13, name: "V.BRINDHA", topic: "Medical Image Processing", supervisor: "Dr.P.Rajendran", registration: "-", university: "-" },
-            { id: 14, name: "B.BHUVANESWARI", topic: "Image Processing", supervisor: "Dr.R.Kumar", registration: "-", university: "-" },
-            { id: 15, name: "M.DEEPA", topic: "Network Security", supervisor: "Dr.E.Sathish Kumar", registration: "-", university: "-" },
-            { id: 16, name: "P. J. ESTHER RANI", topic: "Wireless Sensor Network", supervisor: "Dr.P.Rajendran", registration: "-", university: "-" },
-            { id: 17, name: "S.SUDHA", topic: "AI in Special Education", supervisor: "Dr.R.Kumar", registration: "-", university: "-" }
+            { id: 10, name: "Mrs.A.Kasthuri", topic: "Computer Science", supervisor: "Dr.J.Gowrishankar", registration: "23PHREN043", university: "Jain University", status: "Course work Pursuing" }
         ],
         'information-technology': [
             {
