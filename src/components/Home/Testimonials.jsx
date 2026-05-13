@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Star, Mail, Phone, Calendar, User } from 'lucide-react'
 
@@ -142,8 +142,57 @@ const testimonialData = {
   ]
 }
 
+const TestimonialCard = ({ testi }) => (
+  <div className="relative w-full max-w-[280px] mx-auto bg-white rounded-[1.2rem] shadow-[0_20px_50px_rgba(34,66,146,0.1)] border border-slate-200 overflow-hidden flex flex-col h-full transition-all duration-500 hover:scale-[1.02]">
+    
+    {/* Top Header */}
+    <div className="relative h-24 bg-[#224292] overflow-hidden shrink-0">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-24" />
+    </div>
+
+    {/* Profile Image */}
+    <div className="flex justify-center -mt-16 relative z-10 shrink-0">
+        <div className="w-24 h-24 rounded-full p-1 bg-white shadow-2xl">
+          <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white shadow-inner">
+              <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
+          </div>
+        </div>
+    </div>
+
+    {/* Name & Designation */}
+    <div className="text-center mt-4 px-4 shrink-0">
+        <h4 className="text-lg lg:text-xl font-semibold font-graphik text-[#224292] leading-tight">
+          {testi.name.split(' ').slice(0, -1).join(' ')} <span className="text-[#ffc107]">{testi.name.split(' ').slice(-1)}</span>
+        </h4>
+        <p className="text-[12px] lg:text-[14px] font-bold text-[#224292] uppercase tracking-[0.1em] mt-1 mb-4">
+          {testi.dept}
+        </p>
+    </div>
+
+    <div className="flex-1 flex flex-col px-4 mb-4">
+        <div className="p-3 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-center h-full flex items-center justify-center relative">
+          <p className="text-[12px] font-black text-black italic leading-relaxed">
+              "{testi.quote}"
+          </p>
+        </div>
+    </div>
+
+    {/* Bottom Triangle Decor */}
+    <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#224292] skew-x-[-45deg] translate-x-10 translate-y-10 z-0 shrink-0" />
+  </div>
+)
+
 const Testimonials = () => {
   const [activeTab, setActiveTab] = useState("Students")
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonialData[activeTab].length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [activeTab])
 
   return (
     <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
@@ -182,8 +231,8 @@ const Testimonials = () => {
            </div>
         </div>
 
-        {/* TESTIMONIAL GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-stretch max-w-[1400px] mx-auto px-4">
+        {/* TESTIMONIAL GRID - Desktop */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-stretch max-w-[1400px] mx-auto px-4">
            <AnimatePresence mode="wait">
               {testimonialData[activeTab].map((testi, idx) => (
                 <motion.div
@@ -194,50 +243,39 @@ const Testimonials = () => {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="flex flex-col group relative h-full"
                 >
-                   {/* The ID Card */}
-                   <div className="relative w-full max-w-[280px] mx-auto bg-white rounded-[1.2rem] shadow-[0_20px_50px_rgba(34,66,146,0.1)] border border-slate-200 overflow-hidden flex flex-col h-full transition-all duration-500 hover:scale-[1.02]">
-                      
-                      {/* Top Header */}
-                      <div className="relative h-24 bg-[#224292] overflow-hidden shrink-0">
-                         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
-                         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-24" />
-                         
-                         {/* Empty Header - Diagonal Style Only */}
-                      </div>
-
-                      {/* Profile Image */}
-                      <div className="flex justify-center -mt-16 relative z-10 shrink-0">
-                         <div className="w-24 h-24 rounded-full p-1 bg-white shadow-2xl">
-                            <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white shadow-inner">
-                               <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
-                            </div>
-                         </div>
-                      </div>
-
-                      {/* Name & Designation */}
-                      <div className="text-center mt-4 px-4 shrink-0">
-                         <h4 className="text-lg lg:text-xl font-semibold font-graphik text-[#224292] leading-tight">
-                            {testi.name.split(' ').slice(0, -1).join(' ')} <span className="text-[#ffc107]">{testi.name.split(' ').slice(-1)}</span>
-                         </h4>
-                         <p className="text-[12px] lg:text-[14px] font-bold text-[#224292] uppercase tracking-[0.1em] mt-1 mb-4">
-                            {testi.dept}
-                         </p>
-                      </div>
-
-                      <div className="flex-1 flex flex-col px-4 mb-4">
-                         <div className="p-3 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-center h-full flex items-center justify-center relative">
-                            <p className="text-[12px] font-black text-black italic leading-relaxed">
-                               "{testi.quote}"
-                            </p>
-                         </div>
-                      </div>
-
-                      {/* Bottom Triangle Decor */}
-                      <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#224292] skew-x-[-45deg] translate-x-10 translate-y-10 z-0 shrink-0" />
-                   </div>
+                   <TestimonialCard testi={testi} />
                 </motion.div>
               ))}
            </AnimatePresence>
+        </div>
+
+        {/* TESTIMONIAL SLIDER - Mobile */}
+        <div className="md:hidden relative">
+           <div className="overflow-hidden px-4 py-4">
+              <AnimatePresence mode="wait">
+                 <motion.div
+                   key={`${activeTab}-${currentIndex}`}
+                   initial={{ opacity: 0, x: 50 }}
+                   animate={{ opacity: 1, x: 0 }}
+                   exit={{ opacity: 0, x: -50 }}
+                   transition={{ duration: 0.4, ease: "easeOut" }}
+                   className="w-full"
+                 >
+                    <TestimonialCard testi={testimonialData[activeTab][currentIndex]} />
+                 </motion.div>
+              </AnimatePresence>
+           </div>
+
+           {/* Swipe Instructions or Dots */}
+           <div className="flex justify-center gap-2 mt-4">
+              {testimonialData[activeTab].map((_, i) => (
+                 <button
+                   key={i}
+                   onClick={() => setCurrentIndex(i)}
+                   className={`h-1.5 transition-all duration-500 rounded-full ${i === currentIndex ? 'w-8 bg-[#ffc107]' : 'w-2 bg-[#224292]/20'}`}
+                 />
+              ))}
+           </div>
         </div>
 
       </div>

@@ -45,7 +45,7 @@ const ExamSchedulesPage = () => {
     });
 
     return (
-        <div className="min-h-screen bg-[#F4F7FE] pt-12 pb-24">
+        <div className="min-h-screen bg-[#F4F7FE] pt-6 md:pt-12 pb-24">
             <div className="max-w-7xl mx-auto px-6">
                 
 
@@ -53,10 +53,7 @@ const ExamSchedulesPage = () => {
                 {/* ─── HEADER ─── */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                     <div className="max-w-2xl">
-                        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-[#D5E2F4]/50 shadow-sm mb-6">
-                            <Calendar size={14} className="text-[#ffc107]" />
-                            <span className="text-[10px] font-black text-[#224292] uppercase tracking-wider">Controller Office</span>
-                        </div>
+
                         <h1 className="text-4xl lg:text-5xl font-black text-[#224292] tracking-tight leading-tight">
                             Examination <span className="text-[#ffc107]">Schedules</span>
                         </h1>

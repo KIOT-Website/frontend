@@ -76,12 +76,9 @@ const Achievers = () => {
               {/* Content Overlay */}
               <div className="absolute bottom-6 left-10 right-10 z-20">
                 <Quote className="text-[#ffc107]/40 h-6 w-6 mb-3 rotate-180" strokeWidth={3} />
-                <h3 className="text-2xl lg:text-3xl font-semibold text-white mb-2 leading-tight font-graphik">
+                <h3 className="text-xl lg:text-3xl font-semibold text-white mb-2 leading-tight font-graphik">
                   {achievement.title}
                 </h3>
-                <p className="text-white/80 text-base lg:text-lg font-medium leading-relaxed mb-4 max-w-md">
-                  {achievement.desc}
-                </p>
                 {achievement.name && (
                   <div className="flex items-center gap-4">
                     <div className="h-[2px] w-12 bg-[#ffc107]" />

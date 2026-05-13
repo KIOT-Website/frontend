@@ -119,7 +119,7 @@ const IdeaLabPage = () => {
                 )}
             </AnimatePresence>
             {/* HERO SECTION - COMPACTED DESIGN */}
-            <div className="relative bg-[#224292] pt-12 pb-20 overflow-hidden rounded-b-[3rem] lg:rounded-b-[4rem] font-graphik">
+            <div className="relative bg-[#224292] pt-4 md:pt-12 pb-20 overflow-hidden rounded-b-[3rem] lg:rounded-b-[4rem] font-graphik">
                 {/* Background decorative circles */}
                 <div className="absolute top-10 right-10 w-48 h-48 border border-white/5 rounded-full" />
                 <div className="absolute top-20 right-20 w-80 h-80 border border-white/5 rounded-full" />
@@ -148,7 +148,7 @@ const IdeaLabPage = () => {
                             </p>
                             <div className="h-1 w-16 bg-[#ffc107] mb-6" />
                             
-                            <p className="text-white text-sm lg:text-base font-black leading-relaxed max-w-xl mb-6">
+                            <p className="text-white text-sm lg:text-base font-black leading-relaxed max-w-xl mb-6 text-justify">
                                 A collaborative maker space to turn ideas into real-world prototypes. Government-supported innovation hub for hands-on STEM learning.
                             </p>
 
@@ -203,13 +203,13 @@ const IdeaLabPage = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="bg-white p-6 rounded-[1.5rem] group cursor-default shadow-xl border border-slate-50 flex flex-col items-center text-center relative overflow-hidden"
+                            className="bg-white p-6 rounded-2xl group cursor-default shadow-xl border border-slate-50 flex flex-col items-center text-center relative overflow-hidden"
                         >
                             <div className="w-12 h-12 rounded-full bg-[#224292] flex items-center justify-center mb-4 shadow-lg shrink-0">
                                 <feature.icon className="text-[#ffc107]" size={22} strokeWidth={2} />
                             </div>
-                            <h3 className="text-[#224292] text-[16px] font-black mb-1 tracking-tight">{feature.title}</h3>
-                            <p className="text-slate-500 text-[11px] font-black mb-4 leading-tight">{feature.description}</p>
+                            <h3 className="text-black text-[16px] font-black mb-1 tracking-tight">{feature.title}</h3>
+                            <p className="text-black text-[11px] font-black mb-4 leading-tight">{feature.description}</p>
                             <div className="w-10 h-1 bg-[#ffc107] rounded-full" />
                         </motion.div>
                     ))}
@@ -225,7 +225,7 @@ const IdeaLabPage = () => {
                             <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
                                 <span className="text-[#ffc107]">IDEA</span> LAB
                             </h2>
-                            <div className="space-y-6 text-white text-base leading-relaxed font-black text-left">
+                            <div className="space-y-6 text-white text-base leading-relaxed font-black text-justify">
                                 <p>
                                     The AICTE IDEA Lab at KIOT is a <span className="text-[#ffc107]">state-of-the-art maker space</span> designed to foster innovation and entrepreneurship among students.
                                 </p>
@@ -247,7 +247,7 @@ const IdeaLabPage = () => {
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
-                                    className={`${item.bg} p-6 rounded-[2rem] flex flex-col items-center text-center shadow-xl group hover:scale-105 transition-all h-[180px] justify-center`}
+                                    className={`${item.bg} p-6 rounded-2xl flex flex-col items-center text-center shadow-xl group hover:scale-105 transition-all h-[180px] justify-center`}
                                 >
                                     <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 backdrop-blur-md">
                                         <item.icon className={item.ic} size={24} />
@@ -283,13 +283,13 @@ const IdeaLabPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="bg-white p-6 rounded-[2rem] flex flex-col items-center text-center shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-2xl transition-all"
+                                className="bg-white p-6 rounded-2xl flex flex-col items-center text-center shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-2xl transition-all"
                             >
                                 <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4 shrink-0 shadow-inner group-hover:scale-110 transition-transform" style={{ backgroundColor: `${obj.color}15` }}>
                                     <obj.icon size={26} style={{ color: obj.color }} />
                                 </div>
-                                <h3 className="text-[#224292] text-[18px] font-black mb-3 tracking-tight leading-tight">{obj.title}</h3>
-                                <p className="text-[#224292] font-black text-[13px] leading-tight mb-4 max-w-[180px]">{obj.desc}</p>
+                                <h3 className="text-black text-[18px] font-black mb-3 tracking-tight leading-tight">{obj.title}</h3>
+                                <p className="text-black font-black text-[13px] leading-tight mb-4 max-w-[180px]">{obj.desc}</p>
                                 <div className="w-8 h-1 bg-[#ffc107] rounded-full" />
                             </motion.div>
                         ))}

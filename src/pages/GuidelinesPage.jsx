@@ -75,7 +75,7 @@ const GuidelinesPage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="relative aspect-video rounded-[3rem] overflow-hidden bg-slate-50 border border-slate-100 shadow-2xl shadow-[#224292]/10"
+              className="relative aspect-video rounded-[4rem_1rem_4rem_1rem] lg:rounded-[3rem] overflow-hidden bg-slate-50 border border-slate-100 shadow-2xl shadow-[#224292]/10"
             >
                <img 
                  src={governanceImg} 

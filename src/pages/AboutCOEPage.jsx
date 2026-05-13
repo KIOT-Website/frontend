@@ -58,7 +58,18 @@ const AboutCOEPage = () => {
     ]
 
     return (
-        <div className="min-h-screen bg-[#FDFDFD] font-graphik pb-10 pt-10">
+        <div className="min-h-screen bg-[#FDFDFD] font-graphik pb-10">
+            
+            {/* ─── PAGE HEADER ─── */}
+            <div className="max-w-[1400px] mx-auto px-6 py-10 text-center">
+                <div className="inline-flex items-center gap-4 mb-4">
+                    <div className="h-[2px] w-12 bg-[#ffc107]" />
+                    <h1 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tight">
+                        Controller of <span className="text-[#ffc107]">Examinations</span>
+                    </h1>
+                    <div className="h-[2px] w-12 bg-[#ffc107]" />
+                </div>
+            </div>
             
             {/* ─── VISION SECTION ─── */}
             <div className="max-w-[1400px] mx-auto px-0 sm:px-6 relative z-20">
@@ -108,13 +119,13 @@ const AboutCOEPage = () => {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-[1.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden"
+                        className="bg-white rounded-xl border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden"
                     >
                         <div className="bg-[#224292] p-5 flex items-center gap-4">
                             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white shadow-inner">
                                 <UserCheck size={20} />
                             </div>
-                            <h3 className="text-white text-[13px] font-black uppercase tracking-widest leading-tight">Officials of COE</h3>
+                            <h3 className="text-white text-[13px] font-black tracking-widest leading-tight">Officials of COE</h3>
                         </div>
                         <div className="h-1 bg-[#ffc107] w-full" />
                         <div className="overflow-x-auto sm:overflow-visible">
@@ -122,7 +133,7 @@ const AboutCOEPage = () => {
                                 <thead>
                                     <tr className="bg-[#f0f4f8] border-b border-slate-200 h-14 md:h-12">
                                         <th className="w-[42%] px-3 md:px-8 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em]">Faculty Name</th>
-                                        <th className="w-[23%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em] text-center md:text-left">Qual.</th>
+                                        <th className="w-[23%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em] text-center md:text-left">Qualification</th>
                                         <th className="w-[35%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em]">Designation</th>
                                     </tr>
                                 </thead>
@@ -139,7 +150,7 @@ const AboutCOEPage = () => {
                                             </td>
                                             <td className="px-2 md:px-5 text-[10px] md:text-[11.5px] font-bold text-slate-500 py-4 md:py-3 text-center md:text-left break-words">{staff.qualification}</td>
                                             <td className="px-2 md:px-5 py-4 md:py-3">
-                                                <span className="text-[9px] md:text-[11px] font-bold text-[#224292] uppercase tracking-tight leading-tight block break-words">{staff.designation}</span>
+                                                <span className="text-[9px] md:text-[11px] font-bold text-[#224292] tracking-tight leading-tight block break-words">{staff.designation}</span>
                                             </td>
                                         </tr>
                                     ))}
@@ -153,13 +164,13 @@ const AboutCOEPage = () => {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-[1.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden flex flex-col"
+                        className="bg-white rounded-xl border border-slate-100 shadow-2xl shadow-slate-200/50 overflow-hidden flex flex-col"
                     >
                         <div className="bg-[#224292] p-5 flex items-center gap-4">
                             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white shadow-inner">
                                 <Users size={20} />
                             </div>
-                            <h3 className="text-white text-[13px] font-black uppercase tracking-widest leading-tight">Staff Details</h3>
+                            <h3 className="text-white text-[13px] font-black tracking-widest leading-tight">Staff Details</h3>
                         </div>
                         <div className="h-1 bg-[#ffc107] w-full" />
                         <div className="overflow-x-auto flex-1">
@@ -167,7 +178,7 @@ const AboutCOEPage = () => {
                                 <thead>
                                     <tr className="bg-[#f0f4f8] border-b border-slate-200 h-14 md:h-12">
                                         <th className="w-[42%] px-3 md:px-8 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em] border-r border-slate-200">Faculty Name</th>
-                                        <th className="w-[23%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em] border-r border-slate-200 text-center md:text-left">Qual.</th>
+                                        <th className="w-[23%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em] border-r border-slate-200 text-center md:text-left">Qualification</th>
                                         <th className="w-[35%] px-2 md:px-5 text-[8px] md:text-[9px] font-black text-[#224292] uppercase tracking-[0.1em] md:tracking-[0.15em]">Designation</th>
                                     </tr>
                                 </thead>
@@ -184,7 +195,7 @@ const AboutCOEPage = () => {
                                             </td>
                                             <td className="px-2 md:px-5 text-[10px] md:text-[11.5px] font-bold text-slate-500 py-4 md:py-3 text-center md:text-left break-words">{staff.qualification}</td>
                                             <td className="px-2 md:px-5 py-4 md:py-3">
-                                                <span className="text-[9px] md:text-[11px] font-bold text-[#224292] uppercase tracking-tight leading-tight block break-words">{staff.designation}</span>
+                                                <span className="text-[9px] md:text-[11px] font-bold text-[#224292] tracking-tight leading-tight block break-words">{staff.designation}</span>
                                             </td>
                                         </tr>
                                     ))}

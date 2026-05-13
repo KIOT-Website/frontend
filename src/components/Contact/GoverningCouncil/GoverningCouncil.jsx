@@ -69,7 +69,7 @@ const GoverningCouncil = () => {
 
         {/* Functions Section */}
         <div className="w-full mb-20 font-graphik">
-           <div className="text-center md:text-left mb-10 font-graphik">
+           <div className="hidden md:block text-center md:text-left mb-10 font-graphik">
               <h3 className="text-xl font-graphik font-semibold text-[#224292] tracking-tight mb-2">Functions of the Council</h3>
               <div className="w-16 h-1 bg-[#ffc107] mx-auto md:mx-0 rounded-full" />
            </div>

@@ -111,7 +111,7 @@ const Leadership = () => {
   }, [selectedLeader])
 
   return (
-    <div className="relative bg-[#FCFDFD] pt-4 pb-20 min-h-screen overflow-hidden font-graphik">
+    <div className="relative bg-[#FCFDFD] pt-2 md:pt-4 pb-20 min-h-screen overflow-hidden font-graphik">
             {/* Decorative Background Elements - To break the "too much white" feel */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#224292]/5 via-transparent to-transparent rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-[40%] right-[-5%] w-[400px] h-[400px] bg-[#224292]/3 rounded-full blur-[80px] pointer-events-none" />
@@ -134,7 +134,7 @@ const Leadership = () => {
 
       <div className="relative z-10 w-full px-6 lg:px-12">
                 {/* SECTION 1: CINEMATIC HERO SECTION */}
-        <div className="relative pt-16 pb-24 mb-6 overflow-hidden">
+        <div className="relative pt-6 md:pt-16 pb-12 md:pb-24 mb-4 md:mb-6 overflow-hidden">
           {/* Background Graphics like the image */}
           <div className="absolute top-10 left-10 opacity-20 hidden lg:block">
             <div className="grid grid-cols-4 gap-2">
@@ -159,14 +159,14 @@ const Leadership = () => {
               </h1>
 
               {/* Heading Divider with Dot */}
-              <div className="flex items-center gap-2 mb-8">
+              <div className="flex items-center gap-2 mb-6 md:mb-8">
                 <div className="w-12 h-[1px] bg-[#ffc107]" />
                 <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
                 <div className="w-12 h-[1px] bg-[#ffc107]" />
               </div>
               
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-10 mt-12 max-w-6xl mx-auto w-full px-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 lg:gap-10 mt-8 md:mt-12 max-w-6xl mx-auto w-full px-4">
                  {[
                    { label: "Academicians", value: "22", icon: GraduationCap, desc: "Experienced academicians driving academic excellence and innovation.", color: "#224292" },
                    { label: "Professionals", value: "07", icon: Briefcase, desc: "Industry professionals contributing expertise and practical insights.", color: "#ffc107" },
@@ -411,7 +411,7 @@ const Leadership = () => {
       {/* Modal / Expanded Message */}
       <AnimatePresence>
         {selectedLeader && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-10 overflow-hidden">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-10 overflow-hidden">
             <div 
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
@@ -424,7 +424,7 @@ const Leadership = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-5xl bg-white rounded-[40px] shadow-[0_50px_100px_rgba(24,53,122,0.25)] overflow-hidden flex flex-col md:flex-row max-h-[90vh]"
+              className="relative w-full max-w-5xl bg-white md:rounded-[40px] md:shadow-[0_50px_100px_rgba(24,53,122,0.25)] overflow-hidden flex flex-col md:flex-row h-full md:h-auto md:max-h-[90vh]"
             >
                <button 
                  onClick={() => setSelectedLeader(null)}

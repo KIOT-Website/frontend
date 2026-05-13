@@ -273,13 +273,13 @@ export default function AcademicsPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC] font-graphik">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#224292] py-10 md:py-14">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0">
+      <section className="relative overflow-hidden bg-[#224292] py-8 md:py-14">
+        {/* Background Image with Overlay - Hidden on Mobile */}
+        <div className="absolute inset-0 hidden md:block">
           <img 
             src={academicHero} 
             alt="KIOT Academics" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain md:object-cover object-right md:object-center"
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
@@ -292,12 +292,12 @@ export default function AcademicsPage() {
         
         {/* Abstract Floating Circle */}
 
-        <div className="w-full px-6 lg:pl-64 lg:pr-12 relative z-10">
+        <div className="w-full px-6 lg:pl-64 lg:pr-12 relative z-10 flex justify-center lg:justify-start">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-left max-w-2xl"
+            className="text-center lg:text-left max-w-2xl flex flex-col items-center lg:items-start"
           >
             <motion.span 
               initial={{ opacity: 0, scale: 0.8 }}
@@ -320,7 +320,7 @@ export default function AcademicsPage() {
               </span>
             </h1>
 
-            <div className="flex flex-wrap items-center gap-4 mt-8">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}

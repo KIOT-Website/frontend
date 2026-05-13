@@ -79,24 +79,24 @@ const LibraryPage = () => {
                     
                     <div className="grid sm:grid-cols-2 gap-6">
                         {/* Vision Card */}
-                        <div className="bg-white p-8 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-start gap-4 hover:-translate-y-1 transition-transform">
+                        <div className="bg-transparent sm:bg-white p-0 sm:p-8 rounded-none sm:rounded-[2rem] shadow-none sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-none sm:border border-slate-100 flex flex-col items-start gap-4 sm:hover:-translate-y-1 transition-transform">
                             <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2">
                                 <Eye size={20} />
                             </div>
                             <h3 className="text-[#224292] font-bold text-lg">Our Vision</h3>
-                            <p className="text-slate-500 text-sm leading-relaxed flex-1">
+                            <p className="text-black text-sm leading-relaxed flex-1">
                                 To nurture research scholars and promote knowledge enrichment through world-class learning resources and services.
                             </p>
                             <div className="w-8 h-1 bg-[#224292] rounded-full mt-2" />
                         </div>
 
                         {/* Mission Card */}
-                        <div className="bg-white p-8 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-start gap-4 hover:-translate-y-1 transition-transform">
+                        <div className="bg-transparent sm:bg-white p-0 sm:p-8 rounded-none sm:rounded-[2rem] shadow-none sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-none sm:border border-slate-100 flex flex-col items-start gap-4 sm:hover:-translate-y-1 transition-transform">
                             <div className="w-12 h-12 rounded-full bg-[#ffc107] text-[#224292] flex items-center justify-center mb-2">
                                 <Target size={20} />
                             </div>
                             <h3 className="text-[#224292] font-bold text-lg">Our Mission</h3>
-                            <p className="text-slate-500 text-sm leading-relaxed flex-1">
+                            <p className="text-black text-sm leading-relaxed flex-1">
                                 To provide world-class knowledge resources and innovative services for holistic academic growth and lifelong learning.
                             </p>
                             <div className="w-8 h-1 bg-[#ffc107] rounded-full mt-2" />

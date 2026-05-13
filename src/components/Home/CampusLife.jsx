@@ -78,16 +78,6 @@ const CampusLife = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Centered Button */}
-        <div className="mt-8 flex justify-center lg:hidden">
-          <Link 
-            to="/campus-life"
-            className="inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
-          >
-            Explore Full Campus
-            <ArrowUpRight size={18} />
-          </Link>
-        </div>
       </div>
 
       {/* 🔷 AMENITY GRID - 8 Cards Version */}
@@ -115,6 +105,17 @@ const CampusLife = () => {
               </motion.div>
             </Link>
           ))}
+        </div>
+
+        {/* Mobile Centered Button - Now at the Bottom */}
+        <div className="mt-10 flex justify-center lg:hidden">
+          <Link 
+            to="/campus-life"
+            className="inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
+          >
+            Explore Full Campus
+            <ArrowUpRight size={18} />
+          </Link>
         </div>
       </div>
 

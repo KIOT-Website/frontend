@@ -40,12 +40,12 @@ const AboutKIOT = () => {
               <span className="inline-block px-4 py-1.5 rounded-full bg-[#224292]/5 text-[#224292] text-[11px] font-black uppercase tracking-widest mb-3">
                 About the Institution
               </span>
-              <h2 className="text-3xl lg:text-4xl font-semibold text-[#224292] font-graphik leading-tight mb-4">
+              <h2 className="text-2xl lg:text-4xl font-semibold text-[#224292] font-graphik leading-tight mb-4">
                 Knowledge Institute of Technology (KIOT)
               </h2>
             </div>
 
-            <div className="text-[14px] text-slate-600 leading-relaxed font-graphik text-justify">
+            <div className="text-[13px] lg:text-[14px] text-slate-600 leading-relaxed font-graphik text-justify">
               <p>
                 Knowledge Institute of Technology (KIOT) was established by Knowledge Institute of Technology Trust (KIOT Trust) in 2009. 
                 <span className="font-bold text-[#224292]"> Dr. PSS. Srinivasan</span> is the Founder of the Trust. The KIOT Trust is a 41-member team: 

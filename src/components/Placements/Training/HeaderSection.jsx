@@ -22,7 +22,7 @@ const features = [
 
 const HeaderSection = () => {
   return (
-    <div className="relative pt-12 pb-24 overflow-hidden bg-white">
+    <div className="relative pt-2 md:pt-12 pb-24 overflow-hidden bg-white">
       
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Text Content */}

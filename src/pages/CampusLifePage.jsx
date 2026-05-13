@@ -153,7 +153,7 @@ const CampusLifePage = () => {
                 )}
             </AnimatePresence>
 
-            <div className="w-full px-6 lg:px-12 pt-24 pb-24 relative z-20">
+            <div className="w-full px-6 lg:px-12 pt-6 md:pt-24 pb-10 md:pb-24 relative z-20">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -203,7 +203,7 @@ const CampusLifePage = () => {
                 </motion.div>
             </div>
 
-            <div className="bg-slate-50/50 py-24 relative z-20 overflow-hidden">
+            <div className="bg-slate-50/50 py-12 md:py-24 relative z-20 overflow-hidden">
                 <div className="w-full px-6 lg:px-12 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
@@ -220,7 +220,7 @@ const CampusLifePage = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="flex flex-col bg-white rounded-3xl shadow-xl shadow-slate-200/60 overflow-hidden border border-slate-100 group hover:-translate-y-2 transition-all duration-500"
                             >
-                                <div className="p-8 pb-12 flex flex-col items-center text-center space-y-6">
+                                <div className="p-5 md:p-8 md:pb-12 flex flex-col items-center text-center space-y-6">
                                     <div 
                                         className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6 duration-500"
                                         style={{ backgroundColor: stat.c, color: stat.c === '#ffc107' ? '#224292' : '#fff' }}
@@ -228,14 +228,14 @@ const CampusLifePage = () => {
                                         <stat.i size={28} />
                                     </div>
                                     <div className="space-y-2">
-                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[3px]">{stat.l}</p>
+                                        <p className="text-[10px] font-black text-black uppercase tracking-[3px]">{stat.l}</p>
                                         <p className="text-4xl lg:text-5xl font-black text-[#224292] tracking-tighter leading-none">
                                             {stat.v}
                                         </p>
                                     </div>
                                 </div>
                                 <div 
-                                    className="p-6 text-center mt-auto"
+                                    className="p-4 md:p-6 text-center mt-auto"
                                     style={{ backgroundColor: stat.c }}
                                 >
                                     <p className={`text-[10px] font-black uppercase tracking-widest leading-relaxed ${stat.c === '#ffc107' ? 'text-[#224292]' : 'text-white'}`}>
@@ -269,7 +269,7 @@ const CampusLifePage = () => {
                             <div className="absolute top-0 left-0 w-full h-[3px] bg-[#ffc107] z-30" />
                             <div className="absolute top-0 right-0 h-full w-[3px] bg-[#ffc107] z-30" />
 
-                            <div className="relative w-full h-40 overflow-hidden">
+                            <div className="relative w-full h-32 md:h-40 overflow-hidden">
                                 <img 
                                   src={hub.image} 
                                   alt={hub.title} 

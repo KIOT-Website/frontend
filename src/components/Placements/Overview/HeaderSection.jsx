@@ -42,7 +42,7 @@ const HeaderSection = () => {
       <div className="grid lg:grid-cols-12 w-full h-full items-center relative max-w-[1400px] mx-auto">
         
         {/* Left Column: Content Area */}
-        <div className="lg:col-span-7 relative z-20 flex justify-center flex-col px-6 sm:px-10 lg:pl-16 py-6 lg:py-10">
+        <div className="lg:col-span-7 relative z-20 flex items-center lg:items-start justify-center flex-col px-6 sm:px-10 lg:pl-16 py-6 lg:py-10 text-center lg:text-left">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -56,17 +56,17 @@ const HeaderSection = () => {
             </h1>
 
             {/* Small yellow line */}
-            <div className="w-16 h-1.5 bg-[#ffc107] mb-6 rounded-full" />
+            <div className="w-16 h-1.5 bg-[#ffc107] mb-6 rounded-full mx-auto lg:mx-0" />
             
             {/* Description */}
-            <p className="text-black font-medium text-sm lg:text-base leading-relaxed mb-6 max-w-2xl text-justify">
+            <p className="text-black font-medium text-sm lg:text-base leading-relaxed mb-6 max-w-2xl text-center lg:text-justify">
               The Training and Placement Cell plays a vital role in preparing students for successful professional careers by bridging the gap between academic learning and industry expectations. Our mission is to empower students with the right skills, confidence, and practical exposure needed to excel in today’s competitive job market.
             </p>
-            <p className="text-black font-medium text-sm lg:text-base leading-relaxed mb-8 max-w-2xl text-justify">
+            <p className="text-black font-medium text-sm lg:text-base leading-relaxed mb-8 max-w-2xl text-center lg:text-justify">
               We provide continuous training programs focused on technical development, communication skills, aptitude improvement, personality enhancement, and interview preparation. Through expert mentoring and career-focused activities, students are guided towards achieving their professional goals with clarity and confidence.
             </p>
 
-            <h3 className="text-lg font-bold text-[#224292] mb-6 flex items-center gap-3">
+            <h3 className="text-lg font-bold text-[#224292] mb-6 flex items-center justify-center lg:justify-start gap-3">
               <div className="w-8 h-[2px] bg-[#ffc107]" />
               Key Highlights
             </h3>
@@ -95,7 +95,7 @@ const HeaderSection = () => {
 
 
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                <button className="flex items-center gap-2 px-8 py-3.5 bg-[#0a2351] hover:bg-[#224292] text-white rounded-full font-semibold text-sm transition-all shadow-lg hover:shadow-xl group">
                   <Download size={18} className="group-hover:scale-110 transition-transform" /> Placement Brochure <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                </button>

@@ -104,7 +104,7 @@ const AdmissionsPage = () => {
     <div className="min-h-screen bg-[#FDFEFE] text-[14px] text-[#1a1a1a] leading-[1.7] pb-10 selection:bg-[#ffc107]/30">
       
       {/* ─── NEW HIGH-FIDELITY HERO BANNER ─── */}
-      <section className="relative overflow-hidden bg-[#224292] min-h-[450px] lg:h-[80vh] flex items-center pt-16 lg:pt-0">
+      <section className="relative overflow-hidden bg-[#224292] min-h-[350px] lg:h-[80vh] flex items-center pt-8 lg:pt-0">
         {/* Background Image / Building View */}
         <div className="absolute top-0 right-0 w-full lg:w-3/5 h-full z-0 overflow-hidden">
           <img 
@@ -151,7 +151,7 @@ const AdmissionsPage = () => {
 
 
             {/* Main Title */}
-            <div className="mb-6">
+            <div className="mb-4 lg:mb-6">
                 <h1 className="text-2xl lg:text-4xl font-black text-white leading-none tracking-tight mb-1">ADMISSIONS</h1>
                 <div className="flex items-center gap-4">
                     <h1 className="text-4xl lg:text-6xl font-black text-[#ffc107] leading-none tracking-tight">OPEN</h1>
@@ -162,7 +162,7 @@ const AdmissionsPage = () => {
             </div>
 
             {/* Subtitle */}
-            <div className="mb-8 pl-1">
+            <div className="mb-6 lg:mb-8 pl-1">
                 <div className="flex items-center gap-3 mb-1">
                     <p className="text-white font-bold text-[11px] lg:text-sm tracking-wide uppercase">Build Your Future at</p>
                 </div>

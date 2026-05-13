@@ -23,7 +23,7 @@ const AboutUs = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight">
               About the <span className="text-[#ffc107]">KIOT</span>
             </h1>
           </motion.div>
@@ -53,7 +53,7 @@ const AboutUs = () => {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.7 }}
-             className="space-y-8 text-[#333333] text-[16px] leading-[1.8] font-normal font-graphik text-justify"
+             className="space-y-8 text-[#333333] text-[14px] md:text-[16px] leading-[1.8] font-normal font-graphik text-justify"
            >
               <p>
                 Knowledge Institute of Technology (KIOT) was established by Knowledge Institute of Technology Trust (KIOT Trust) in 2009. Dr. PSS. Srinivasan is the Founder of the Trust. The KIOT Trust is a 41-member team: 20 of them are professors in engineering education and 21 of them are budding entrepreneurs.
@@ -64,11 +64,11 @@ const AboutUs = () => {
 
               <div className="pt-6 border-t border-slate-100">
                 <div className="p-8 rounded-[2rem] bg-[#f0f9f6] border border-[#d1e7dd]">
-                  <h3 className="text-[#198754] text-xl font-graphik font-bold mb-4 tracking-wider">Academic Excellence</h3>
-                    <p className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik">
+                  <h3 className="text-[#198754] text-lg md:text-xl font-graphik font-bold mb-4 tracking-wider">Academic Excellence</h3>
+                    <p className="text-[#333333] text-[14px] md:text-[16px] leading-[1.8] font-normal font-graphik">
                       Knowledge Institute of Technology (KIOT) is an Autonomous Institution, Affiliated to Anna University, Chennai and Approved by AICTE, New Delhi and UGC, New Delhi. The college offers nine B.E. / B.Tech. programs, four M.E. / M.Tech. programs in Engineering and Technology, MBA - Regular, MBA - IEV, MCA programs and Ph.D. programs in all the departments.
                     </p>
-                    <p className="mt-4 text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik">
+                    <p className="mt-4 text-[#333333] text-[14px] md:text-[16px] leading-[1.8] font-normal font-graphik">
                       B.E. / B.Tech. programs are of 4 years duration with a total intake of 990. M.E., MBA and MCA programs are of 2 years duration with a total intake of 78 in M.E., 180 in MBA and 60 in MCA.
                     </p>
                 </div>
@@ -89,16 +89,16 @@ const AboutUs = () => {
                     className="relative group bg-[#FCFDFD] rounded-2xl p-6 border border-[#224292]/5 hover:border-[#224292]/20 transition-all duration-300 min-h-[120px] flex items-center shadow-sm hover:shadow-xl hover:shadow-[#224292]/5"
                   >
                      {/* Clean minimalist design - No background pattern */}
-                     <div className="flex items-center gap-5 w-full">
-                        <div className="w-14 h-14 rounded-xl bg-white border border-[#224292]/10 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-500 flex-shrink-0 shadow-sm">
-                           <stat.icon size={26} strokeWidth={1.5} />
+                      <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 w-full text-center sm:text-left">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white border border-[#224292]/10 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-500 flex-shrink-0 shadow-sm">
+                           <stat.icon size={22} className="sm:size-[26px]" strokeWidth={1.5} />
                         </div>
                         
-                        <div className="flex flex-col">
-                           <span className="text-[28px] font-graphik font-semibold text-black leading-tight">
+                        <div className="flex flex-col items-center sm:items-start">
+                           <span className="text-[22px] sm:text-[28px] font-graphik font-semibold text-black leading-tight">
                               {stat.label.split(' ')[0]}
                            </span>
-                           <span className="text-[12px] font-graphik font-semibold text-[#64779F] tracking-wider leading-tight">
+                           <span className="text-[10px] sm:text-[12px] font-graphik font-semibold text-[#64779F] tracking-wider leading-tight">
                               {stat.label.split(' ').slice(1).join(' ')}
                            </span>
                         </div>
@@ -115,7 +115,7 @@ const AboutUs = () => {
         {/* Vision Mission (Institutional Values) Section - Merged */}
         <div className="mb-6 md:mb-8 -mx-5 sm:-mx-10 lg:-mx-20">
            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl lg:text-[32px] font-graphik font-semibold text-[#224292] tracking-tight">
+              <h2 className="text-xl md:text-3xl lg:text-[32px] font-graphik font-semibold text-[#224292] tracking-tight">
                 Our Institutional <span className="text-[#ffc107]">Values</span>
               </h2>
            </div>

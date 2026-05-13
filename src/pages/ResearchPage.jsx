@@ -96,7 +96,7 @@ const ResearchPage = () => {
 
     return (
         <div className="min-h-screen bg-white font-sans">
-            <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
+            <div className="max-w-7xl mx-auto px-6 pt-4 md:py-16 lg:py-24 pb-16">
                 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                     {/* LEFT COLUMN: INTRO + RECOGNITION */}
@@ -141,13 +141,13 @@ const ResearchPage = () => {
                                     >
                                         Recognized R&D Centre
                                     </h2>
-                                    <div className="flex flex-col gap-3 text-blue-100/60 text-[11px] font-black mb-8">
+                                    <div className="flex flex-col gap-3 text-white text-[11px] font-black mb-8">
                                         <div className="flex items-center gap-2">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-blue-400/50" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
                                             Recognition No: 4265300
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-blue-400/50" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
                                             Valid upto: December 2027
                                         </div>
                                     </div>

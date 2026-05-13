@@ -145,11 +145,16 @@ const CourseGrid = ({ activeTab, navigate }) => (
                     </p>
                  )}
                  
-                 <div className="flex items-center gap-2 mt-2">
+                  <div className="flex items-center gap-2 mt-2">
                     <div className="h-1 w-1 rounded-full bg-[#ffc107]" />
                     <span className="text-[8px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
-                 </div>
-              </div>
+                  </div>
+
+                  {/* Bottom Right Arrow Link Indicator */}
+                  <div className="absolute bottom-3 right-3 w-6 h-6 rounded-full bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300">
+                    <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+               </div>
            </motion.div>
         ))}
      </AnimatePresence>

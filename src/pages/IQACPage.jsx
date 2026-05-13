@@ -170,7 +170,7 @@ export default function IQACPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,rgba(255,193,7,0.05)_1px,transparent_0)] [background-size:32px_32px]" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#224292]/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         
-        <div className="w-full px-6 lg:px-12 relative z-10">
+        <div className="w-full px-6 lg:px-12 relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center">
             
             {/* Left Content */}
@@ -179,7 +179,7 @@ export default function IQACPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#ffc107]">
                   <ShieldCheck size={24} />
                 </div>
@@ -188,17 +188,17 @@ export default function IQACPage() {
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-black text-white leading-[1.1] mb-8 tracking-tight">
+              <h1 className="text-4xl md:text-5xl font-black text-white leading-[1.1] mb-8 tracking-tight">
                 Internal Quality Assurance <br />
                 <span className="text-[#ffc107]">Cell (IQAC)</span>
               </h1>
               
-              <div className="flex items-center gap-3 text-white text-[15px] font-medium mb-8">
+              <div className="flex items-center justify-center lg:justify-start gap-3 text-white text-[15px] font-medium mb-8">
                 <Calendar size={20} className="text-[#ffc107]" />
                 <span>Established on 09 September 2015</span>
               </div>
 
-              <p className="text-white text-[15px] font-normal leading-relaxed max-w-xl text-justify">
+              <p className="text-white text-[15px] font-normal leading-relaxed max-w-xl text-center lg:text-justify">
                 IQAC is committed to fostering a culture of quality through continuous improvement in academic and administrative processes, ensuring excellence in higher education.
               </p>
             </motion.div>

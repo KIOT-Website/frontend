@@ -55,7 +55,7 @@ const IStartPage = () => {
                     <div className="grid lg:grid-cols-12 gap-8 items-center">
                         
                         {/* Left Column: Content (Darkened Text) */}
-                        <div className="lg:col-span-5 relative z-20">
+                        <div className="lg:col-span-5 relative z-20 flex flex-col items-center lg:items-start text-center lg:text-left">
                             
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -97,7 +97,7 @@ const IStartPage = () => {
                                 ))}
                             </div>
 
-                            <div className="flex flex-wrap gap-4">
+                            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                                 <button className="px-7 py-4 bg-[#224292] text-white rounded-xl font-black text-[12px] tracking-tight flex items-center gap-3 shadow-xl hover:scale-105 transition-all">
                                     Explore Initiatives
                                     <ArrowRight size={16} />
@@ -295,7 +295,7 @@ const IStartPage = () => {
             </section>
 
             {/* 4. Centre for Innovation & Startups */}
-            <section id="centre" className="py-24 relative overflow-hidden font-graphik bg-[#F8FAFC]">
+            <section id="centre" className="py-10 md:py-24 relative overflow-hidden font-graphik bg-[#F8FAFC]">
                 {/* Decorative Background Elements */}
                 <div className="absolute top-10 right-10 opacity-20 pointer-events-none">
                     <div className="grid grid-cols-6 gap-2">
@@ -312,7 +312,7 @@ const IStartPage = () => {
                         <div className="px-6 py-2 rounded-full bg-[#224292] text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6 shadow-xl shadow-blue-900/20">
                             Empowering Innovation
                         </div>
-                        <h2 className="text-5xl md:text-6xl font-black text-[#224292] tracking-tighter mb-6 leading-tight">
+                        <h2 className="text-3xl md:text-6xl font-black text-[#224292] tracking-tighter mb-6 leading-tight">
                             Centre for <span className="text-[#224292]">Innovation</span> <br/>
                             <span className="text-[#ffc107]">&</span> Startups
                         </h2>
@@ -385,7 +385,7 @@ const IStartPage = () => {
                                                 <div className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 border border-slate-100" style={{ color: item.color }}>
                                                     <Check className="w-2.5 h-2.5 stroke-[4]" />
                                                 </div>
-                                                <span className="text-[10px] font-black text-black">{pt}</span>
+                                                <span className="text-[12px] font-black text-black">{pt}</span>
                                             </li>
                                         ))}
                                     </ul>

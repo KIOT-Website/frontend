@@ -106,7 +106,7 @@ const Placements = () => {
                 <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292] shrink-0">
                    <UserCheck size={16} />
                 </div>
-                <p className="text-[10px] font-black text-white/70 uppercase tracking-widest leading-tight">Quality Placements <br className="hidden sm:block" /> Are Our Motto</p>
+                <p className="text-[10px] font-black text-white uppercase tracking-widest leading-tight">Quality Placements <br className="hidden sm:block" /> Are Our Motto</p>
               </div>
 
               <button 
@@ -148,7 +148,7 @@ const Placements = () => {
                               <span className="font-display font-black text-sm lg:text-base text-white/90 group-hover:text-white transition-colors mb-1">
                                 {rec.name}
                               </span>
-                              <div className="flex items-center gap-4 text-white/40 text-[11px] uppercase font-black tracking-widest">
+                              <div className="flex items-center gap-4 text-white text-[11px] uppercase font-black tracking-widest">
                                  <span className="flex items-center gap-1.5"><TrendingUp size={12} className="text-[#ffc107]" /> {rec.lpa}</span>
                                  <span className="flex items-center gap-1.5"><UserCheck size={12} className="text-[#ffc107]/50" /> {rec.count} Placed</span>
                               </div>
