@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import alumniTech from '../../assets/alumni/alumni_tech.webp'
+import alumniTech from '../../assets/alumni/alu.png'
 
 const AlumniHero = () => {
   return (
@@ -9,15 +9,15 @@ const AlumniHero = () => {
       {/* Integrated Background Design */}
       <div className="absolute inset-0 z-0">
         {/* Stronger gradient to create a clean 'gap' for the text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#224292] via-[#224292]/90 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#224292] via-[#224292]/70 to-transparent z-10" />
         
         <motion.img 
           initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 0.25, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
           src={alumniTech} 
-          alt="KIOT Digital Background" 
-          className="absolute right-0 top-0 h-full w-full lg:w-2/3 object-cover object-right-top opacity-25 mix-blend-overlay"
+          alt="KIOT Alumni Background" 
+          className="absolute right-0 top-0 h-full w-full lg:w-2/3 object-cover object-right-top opacity-100"
         />
         
         {/* Subtle Glow Overlay */}
