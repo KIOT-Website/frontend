@@ -27,7 +27,6 @@ const AlumniHero = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-4 mb-4"
           >
-            <div className="w-10 h-[2px] bg-[#ffc107]" />
             <span className="text-[#ffc107] text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em]">KIOT Alumni Association</span>
           </motion.div>
 
@@ -45,7 +44,7 @@ const AlumniHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm md:text-base text-white/90 font-medium leading-relaxed max-w-xl mb-8"
+            className="hidden md:block text-sm md:text-base text-white/90 font-medium leading-relaxed max-w-xl mb-8"
           >
             A lifelong network of achievers, mentors, and innovators. 
             Reconnect, celebrate, and shape the future together.
@@ -57,12 +56,22 @@ const AlumniHero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-wrap gap-4"
           >
-            <button className="px-6 py-2.5 bg-[#ffc107] text-[#224292] text-xs font-black uppercase tracking-widest rounded-full hover:bg-white transition-all transform hover:scale-105 active:scale-95 shadow-lg">
+            <a 
+              href="https://alumni.kiot.ac.in/user/signup.dz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-[#ffc107] text-[#224292] text-xs font-black uppercase tracking-widest rounded-xl hover:bg-white transition-all transform hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center"
+            >
               Join the Network
-            </button>
-            <button className="px-6 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-[#224292] transition-all transform hover:scale-105 active:scale-95">
+            </a>
+            <a 
+              href="https://alumni.kiot.ac.in/home.dz" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-white text-[#224292] text-xs font-black uppercase tracking-widest rounded-xl hover:bg-[#ffc107] transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center shadow-lg"
+            >
               Visit Portal
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>
