@@ -71,7 +71,7 @@ const Placements = () => {
           
           {/* LEFT SIDE: Big Numbers */}
           <div className="space-y-6 lg:pl-4">
-            <div>
+            <div className="text-center lg:text-left">
               <h2 className="text-3xl lg:text-4xl font-semibold font-graphik leading-[1.1] text-white">
                 Where Talent <br />
                 <span className="text-[#ffc107]">Meets Opportunity</span>
@@ -85,17 +85,17 @@ const Placements = () => {
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="flex items-start gap-4"
+                  className="flex flex-col items-center lg:flex-row lg:items-start gap-2 lg:gap-4 text-center lg:text-left"
                 >
                    <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ffc107]">
                       <stat.icon className="w-5 h-5 lg:w-6 lg:h-6" />
                    </div>
                    <div>
-                      <div className="flex items-baseline gap-1.5">
+                      <div className="flex items-baseline justify-center lg:justify-start gap-1.5">
                         {stat.label.includes('Salary') && <span className="text-white/40 text-[10px] font-black uppercase -mt-0.5">₹</span>}
                       <p className="text-2xl lg:text-3xl font-bold font-graphik tracking-tight text-white">{stat.value}</p>
                     </div>
-                    <p className="text-[10px] lg:text-[12px] font-semibold text-white">{stat.label}</p>
+                    <p className="text-[10px] lg:text-[12px] font-semibold text-white uppercase tracking-wider opacity-80">{stat.label}</p>
                    </div>
                 </motion.div>
               ))}
