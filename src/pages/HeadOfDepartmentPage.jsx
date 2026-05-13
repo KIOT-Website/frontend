@@ -34,18 +34,18 @@ export default function HeadOfDepartmentPage() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-3xl md:text-5xl font-black text-black mb-12 tracking-tight leading-tight max-w-3xl">
+            <h1 className="text-2xl md:text-3xl lg:text-[36px] font-semibold text-black mb-12 tracking-tight leading-tight max-w-3xl">
               Welcome to the <br />
               <span className="text-[#ffc107]">Trend Setters’ Paradise</span>
             </h1>
 
             {/* Message Body */}
             <div className="space-y-12 max-w-3xl w-full">
-              <p className="text-base lg:text-lg font-bold text-black leading-relaxed italic text-center px-8">
+              <p className="text-sm lg:text-[16px] font-medium text-black leading-relaxed italic text-center px-8">
                 "God has created the earth, you and me create a heaven on it. Every individual has innate talents. It is only our attitude that decides outcome."
               </p>
 
-              <div className="text-black font-bold text-base lg:text-lg leading-[1.9] text-justify">
+              <div className="text-black font-medium text-sm lg:text-[16px] leading-[1.8] text-justify">
                 <p>
                   Yes, we at KIOT have got rich experience on Engineering Education in India and abroad. We know the art of identifying individual talents, nurture them as talented engineers and professionals and make them world class professionals. If you are prepared to be a path breaking professionals poised to make miracles on the earth, the right destination is KIOT. Learn from the masters who know nothing less than excellence. Come on; let us all make a happy heaven on the earth.
                 </p>

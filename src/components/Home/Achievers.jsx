@@ -39,7 +39,7 @@ const Achievers = () => {
         
         {/* Header Section - Refined Kongu Style */}
         <div className="text-center mb-8">
-           <h2 className="text-3xl lg:text-5xl font-black text-[#224292] font-graphik tracking-tight leading-tight">
+           <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik tracking-tight leading-tight">
              Achievements That <span className="text-[#ffc107]">Inspire</span>
            </h2>
         </div>
@@ -76,10 +76,10 @@ const Achievers = () => {
               {/* Content Overlay */}
               <div className="absolute bottom-6 left-10 right-10 z-20">
                 <Quote className="text-[#ffc107]/40 h-6 w-6 mb-3 rotate-180" strokeWidth={3} />
-                <h3 className="text-xl lg:text-2xl font-black text-white mb-2 leading-tight font-graphik">
+                <h3 className="text-2xl lg:text-3xl font-semibold text-white mb-2 leading-tight font-graphik">
                   {achievement.title}
                 </h3>
-                <p className="text-white/80 text-[12px] md:text-sm font-bold leading-relaxed mb-4 max-w-md">
+                <p className="text-white/80 text-base lg:text-lg font-medium leading-relaxed mb-4 max-w-md">
                   {achievement.desc}
                 </p>
                 {achievement.name && (

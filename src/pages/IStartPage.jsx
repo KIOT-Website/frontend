@@ -186,7 +186,7 @@ const IStartPage = () => {
                                 ].map((text, i) => (
                                     <li key={i} className={`flex items-start gap-3 py-3 ${i !== 3 ? 'border-b border-white/10' : ''}`}>
                                         <ChevronRight size={16} className="text-[#ffc107] shrink-0 mt-1" />
-                                        <span className="text-[15px] font-bold leading-relaxed">{text}</span>
+                                        <span className="text-[15px] leading-relaxed">{text}</span>
                                     </li>
                                 ))}
                             </ul>

@@ -52,7 +52,7 @@ const GuidelinesPage = () => {
       
       {/* 🔷 1. TOP SECTION (IMAGE + INTRO) */}
       <section className="relative pt-12 lg:pt-20 pb-6 border-b border-slate-100 font-graphik">
-        <div className="w-full px-4 lg:px-12 font-graphik">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-12 font-graphik">
           <div className="grid lg:grid-cols-2 gap-8 items-center font-graphik">
             <motion.div 
                initial={{ opacity: 0, x: -30 }}
@@ -61,10 +61,10 @@ const GuidelinesPage = () => {
             >
               {/* Badge Removed per request */}
               
-              <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#224292] mb-4 tracking-tighter leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight">
                 Governance & <span className="text-[#ffc107]">Policies</span>
               </h1>
-              <div className="space-y-4 max-w-2xl font-graphik">
+              <div className="space-y-4 font-graphik">
                 <p className="text-[#333333] text-base leading-[1.8] font-graphik font-medium text-justify">
                   The Institution has established a code of conduct for students, staff, faculty, and administrators to maintain discipline and integrity. These guidelines promote professionalism and responsible behavior across the campus. They ensure a respectful, safe, and productive academic environment for everyone.
                 </p>
@@ -89,9 +89,8 @@ const GuidelinesPage = () => {
       </section>
 
       {/* 🔷 2. MAIN SECTION (FULL WIDTH CONTENT) */}
-      <section className="w-full px-4 lg:px-12 pt-4 lg:pt-10 pb-10">
-        <div className="max-w-5xl mx-auto">
-          <main className="space-y-8 pb-8 font-graphik">
+      <section className="max-w-[1440px] mx-auto px-4 lg:px-12 pt-4 lg:pt-10 pb-10">
+        <main className="space-y-8 pb-8 font-graphik">
           
           {/* Section: Administrators */}
           <section id="administrators" className="scroll-mt-32">
@@ -273,7 +272,6 @@ const GuidelinesPage = () => {
             </div>
           </section>
         </main>
-      </div>
 
       <section id="structure" className="scroll-mt-32 pt-12 font-graphik w-full">
             <div className="mb-10">

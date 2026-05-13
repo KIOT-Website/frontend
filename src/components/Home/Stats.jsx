@@ -13,7 +13,7 @@ const statData = [
   { value: "17+", label: "Years of Academic Excellence", icon: Calendar, color: "#ffc107" },
   { value: "250+", label: "Expert Faculty Members", icon: Users, color: "#224292" },
   { value: "8000+", label: "Global Alumni Network", icon: UserCheck, color: "#ffc107" },
-  { value: "Top 10%", label: "Best Colleges in Tamil Nadu", icon: Landmark, color: "#224292" }
+  { value: "Top 10%", label: "Colleges in Tamil Nadu", icon: Landmark, color: "#224292" }
 ]
 
 const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile, sectionViewed }) => {

@@ -22,9 +22,7 @@ const features = [
 
 const HeaderSection = () => {
   return (
-    <div className="relative pt-32 pb-24 overflow-hidden bg-white">
-      {/* Background Accents */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -z-10 skew-x-12 translate-x-24" />
+    <div className="relative pt-12 pb-24 overflow-hidden bg-white">
       
       <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Text Content */}
@@ -34,16 +32,13 @@ const HeaderSection = () => {
            viewport={{ once: true }}
            transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#224292]/5 text-[#224292] text-xs font-bold tracking-widest uppercase mb-8 border border-[#224292]/10">
-             <Award size={14} className="text-[#ffc107]" />
-             Centre for Career Development and Training (CDT)
-          </div>
 
-          <h1 className="text-5xl lg:text-7xl font-black text-[#1A1A1A] leading-[1.1] mb-8 tracking-tight">
-            Empowering Careers Through <span className="text-[#224292]">Excellence.</span>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1A1A1A] leading-[1.2] mb-8 tracking-tight">
+            Centre for Career Development <br />
+            and <span className="text-[#224292]">Training (CDT)</span>
           </h1>
 
-          <p className="text-lg text-slate-600 leading-relaxed mb-12 max-w-xl">
+          <p className="text-lg text-black font-medium leading-relaxed mb-12 max-w-xl">
              Comprehensive training programs designed to bridge the gap between academia 
              and industry, preparing students for global career opportunities.
           </p>
@@ -55,8 +50,8 @@ const HeaderSection = () => {
                     <feature.icon size={20} />
                  </div>
                  <div>
-                    <h3 className="font-bold text-[#1A1A1A] text-sm mb-1">{feature.title}</h3>
-                    <p className="text-xs text-slate-500 leading-normal">{feature.desc}</p>
+                    <h3 className="font-semibold text-[#1A1A1A] text-sm mb-1">{feature.title}</h3>
+                    <p className="text-xs text-black font-medium leading-normal">{feature.desc}</p>
                  </div>
               </div>
             ))}

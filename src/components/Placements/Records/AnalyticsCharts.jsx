@@ -28,8 +28,7 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
       <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
         {[0, 1, 2, 3, 4, 5].map((v) => (
           <div key={v} className="flex items-center gap-4">
-             <span className="text-[11px] font-black text-slate-400 w-6">{5-v}</span>
-             <div className="flex-1 h-px bg-slate-100 border-t border-dashed border-slate-200" />
+             <div className="flex-1 h-[1px] bg-slate-100" />
           </div>
         ))}
       </div>
@@ -48,7 +47,7 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
         <motion.path d={pathD} fill="none" stroke="url(#lineGradient)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2 }} viewport={{ once: true }} />
         {points.map((p, i) => (
           <motion.g key={i} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 + i * 0.05 }} viewport={{ once: true }}>
-            <circle cx={p.x} cy={p.y} r="2" fill={data[i].lpa > 3.5 ? "#ffc107" : "#224292"} stroke="white" strokeWidth="1" onMouseEnter={() => setIsHovered(i)} onMouseLeave={() => setIsHovered(null)} className="cursor-pointer transition-all hover:r-3 shadow-lg" />
+            <circle cx={p.x} cy={p.y} r="1.5" fill={data[i].lpa > 3.5 ? "#ffc107" : "#224292"} stroke="white" strokeWidth="0.5" onMouseEnter={() => setIsHovered(i)} onMouseLeave={() => setIsHovered(null)} className="cursor-pointer transition-all hover:r-2 shadow-sm" />
           </motion.g>
         ))}
       </svg>
@@ -87,8 +86,7 @@ const EliteEfficiencyChart = ({ data }) => {
       <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
         {[0, 25, 50, 75, 100].map((v) => (
           <div key={v} className="flex items-center gap-6">
-             <span className="text-[11px] font-black text-white w-10">{v}%</span>
-             <div className="flex-1 h-px bg-white/10 border-t border-dashed border-white/20" />
+             <div className="flex-1 h-[1px] bg-white/10" />
           </div>
         ))}
       </div>
@@ -100,21 +98,21 @@ const EliteEfficiencyChart = ({ data }) => {
         
         return (
           <div key={i} className="flex-1 flex flex-col items-center h-full group/col relative z-10" onMouseEnter={() => setHoverIndex(i)} onMouseLeave={() => setHoverIndex(null)}>
-            <div className="flex items-end gap-4 h-full w-full justify-center pb-2">
-              <div className="relative flex-1 flex flex-col items-center justify-end h-full">
-                <span className="absolute top-[-30px] text-[11px] font-black text-white">{Math.round(optedPercent)}%</span>
-                <motion.div initial={{ height: 0 }} whileInView={{ height: `${optedPercent}%` }} transition={{ duration: 1, delay: i * 0.1 }} viewport={{ once: true }} className="w-full bg-white/30 border border-white/30 rounded-full relative overflow-hidden" />
+            <div className="flex items-end gap-1.5 h-full w-full justify-center pb-2">
+              <div className="relative w-4 sm:w-6 flex flex-col items-center justify-end h-full">
+                <span className="absolute top-[-25px] text-[10px] font-semibold text-white/70">{Math.round(optedPercent)}%</span>
+                <motion.div initial={{ height: 0 }} whileInView={{ height: `${optedPercent}%` }} transition={{ duration: 1, delay: i * 0.1 }} viewport={{ once: true }} className="w-full bg-white/20 rounded-t-sm relative" />
               </div>
-              <div className="relative flex-1 flex flex-col items-center justify-end h-full">
-                <span className="absolute top-[-30px] text-[11px] font-black text-[#ffc107]">{Math.round(placedPercent)}%</span>
-                <motion.div initial={{ height: 0 }} whileInView={{ height: `${placedPercent}%` }} transition={{ duration: 1, delay: i * 0.1 + 0.1 }} viewport={{ once: true }} className="w-full bg-[#ffc107] rounded-full relative overflow-hidden shadow-[0_0_30px_rgba(255,193,7,0.4)]" />
+              <div className="relative w-4 sm:w-6 flex flex-col items-center justify-end h-full">
+                <span className="absolute top-[-25px] text-[10px] font-semibold text-[#ffc107]">{Math.round(placedPercent)}%</span>
+                <motion.div initial={{ height: 0 }} whileInView={{ height: `${placedPercent}%` }} transition={{ duration: 1, delay: i * 0.1 + 0.1 }} viewport={{ once: true }} className="w-full bg-[#ffc107] rounded-t-sm relative shadow-[0_0_20px_rgba(255,193,7,0.2)]" />
               </div>
             </div>
             
-            <div className="w-10 h-10 rounded-xl bg-white/20 border border-white/20 flex items-center justify-center mb-2 mt-4 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-500 shadow-lg">
-               <Icon size={18} />
+            <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center mb-2 mt-4 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-500">
+               <Icon size={14} />
             </div>
-            <span className={`text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${hoverIndex === i ? 'text-white' : 'text-white'}`}>
+            <span className={`text-[10px] font-semibold uppercase tracking-widest transition-all duration-300 text-white/70 group-hover:text-white`}>
               {d.year}
             </span>
           </div>
@@ -127,27 +125,19 @@ const EliteEfficiencyChart = ({ data }) => {
 const AnalyticsCharts = ({ statsData, efficiencyData }) => {
   return (
     <div className="w-full font-graphik py-12 bg-[#F8FAFC]">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 gap-12">
            {/* Left Card: Statistics */}
            <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-transparent md:bg-white p-0 md:p-2 rounded-none md:rounded-[3rem] border-none md:border border-slate-100 shadow-none md:shadow-2xl">
               <div className="p-6 md:p-10 flex flex-col h-full">
                 <div className="flex items-start justify-between mb-8">
                    <div>
-                      <div className="flex items-center gap-3 mb-4">
-                        <TrendingUp size={20} className="text-[#224292]" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#224292]">Growth Matrix</span>
-                      </div>
-                      <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter leading-none">Placement <span className="text-[#ffc107]">Statistics</span></h2>
-                   </div>
-                   <div className="flex flex-col items-end gap-2 pt-1">
-                      <div className="px-6 py-2 rounded-xl bg-[#224292] text-white font-black text-xs shadow-xl">MAX 4.05</div>
-                      <span className="text-[11px] font-black text-[#ffc107] uppercase tracking-widest">Avg 2.92 LPA</span>
+                      <h2 className="text-2xl md:text-3xl font-bold text-[#224292] tracking-tighter leading-none">Placement <span className="text-[#ffc107]">Statistics</span></h2>
                    </div>
                 </div>
 
                 {/* Statistics Highlights */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 bg-slate-50 p-6 rounded-[2.5rem] border border-slate-100 shadow-inner">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                    {[
                      { label: "Consistent Growth", sub: "Year over Year", icon: TrendingUp, color: "#224292" },
                      { label: "Max Package", sub: "4.05 LPA", icon: Star, color: "#ffc107" },
@@ -155,12 +145,12 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
                      { label: "Industry Aligned", sub: "Career Ready", icon: Zap, color: "#ffc107" }
                    ].map((item, i) => (
                      <div key={i} className="flex flex-col gap-2 group">
-                        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md border border-slate-100 group-hover:scale-110 transition-transform duration-500" style={{ color: item.color }}>
-                          <item.icon size={20} />
+                        <div className="w-8 h-8 flex items-center justify-center transition-transform duration-500" style={{ color: item.color }}>
+                          <item.icon size={18} />
                         </div>
                         <div>
-                          <p className="text-[11px] font-black text-[#224292] leading-tight mb-0.5">{item.label}</p>
-                          <p className="text-[10px] font-bold text-[#64779F] tracking-tight">{item.sub}</p>
+                          <p className="text-[11px] font-bold text-[#224292] leading-tight mb-0.5">{item.label}</p>
+                          <p className="text-[10px] font-medium text-[#64779F] tracking-tight">{item.sub}</p>
                         </div>
                      </div>
                    ))}
@@ -178,25 +168,21 @@ const AnalyticsCharts = ({ statsData, efficiencyData }) => {
               <div className="p-6 md:p-10 flex flex-col h-full relative z-10">
                 <div className="flex items-start justify-between mb-8">
                    <div>
-                      <div className="flex items-center gap-3 mb-4">
-                        <Target size={20} className="text-[#ffc107]" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white">Engagement Ratio</span>
-                      </div>
-                      <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none">Placement <span className="text-[#ffc107]">Efficiency</span></h2>
+                      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tighter leading-none">Placement <span className="text-[#ffc107]">Efficiency</span></h2>
                    </div>
-                   <div className="flex gap-6 pt-2">
+                    <div className="flex gap-4 pt-2">
                       <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full border-2 border-white" />
-                        <span className="text-[10px] font-black text-white uppercase tracking-widest">OPTED</span>
+                        <div className="w-2 h-2 rounded-full border border-white/50" />
+                        <span className="text-[9px] font-semibold text-white/50 uppercase tracking-widest">OPTED</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-[#ffc107] shadow-[0_0_15px_rgba(255,193,7,0.5)]" />
-                        <span className="text-[10px] font-black text-white uppercase tracking-widest">PLACED</span>
+                        <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                        <span className="text-[9px] font-semibold text-white/50 uppercase tracking-widest">PLACED</span>
                       </div>
-                   </div>
+                    </div>
                 </div>
                 
-                <p className="text-white font-black text-sm mb-10 max-w-md leading-relaxed">
+                <p className="text-white font-medium text-sm mb-10 max-w-md leading-relaxed">
                    A steady rise in student participation and successful placements over the years.
                 </p>
 

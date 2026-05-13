@@ -23,7 +23,7 @@ const AboutUs = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#224292] mb-4 tracking-tighter leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight">
               About the <span className="text-[#ffc107]">KIOT</span>
             </h1>
           </motion.div>
@@ -95,10 +95,10 @@ const AboutUs = () => {
                         </div>
                         
                         <div className="flex flex-col">
-                           <span className="text-[28px] font-graphik font-bold text-[#224292] leading-tight">
+                           <span className="text-[28px] font-graphik font-semibold text-black leading-tight">
                               {stat.label.split(' ')[0]}
                            </span>
-                           <span className="text-[12px] font-graphik font-bold text-[#64779F] tracking-wider leading-tight">
+                           <span className="text-[12px] font-graphik font-semibold text-[#64779F] tracking-wider leading-tight">
                               {stat.label.split(' ').slice(1).join(' ')}
                            </span>
                         </div>
@@ -115,7 +115,7 @@ const AboutUs = () => {
         {/* Vision Mission (Institutional Values) Section - Merged */}
         <div className="mb-6 md:mb-8 -mx-5 sm:-mx-10 lg:-mx-20">
            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-graphik font-bold text-[#224292] tracking-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-[32px] font-graphik font-semibold text-[#224292] tracking-tight">
                 Our Institutional <span className="text-[#ffc107]">Values</span>
               </h2>
            </div>

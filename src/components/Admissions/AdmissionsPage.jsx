@@ -29,7 +29,7 @@ import {
   Sparkles
 } from 'lucide-react'
 import logo from '../../assets/main/logo.webp'
-import campusImage from '../../assets/main/indian_college_students_campus.webp'
+import bannerAdmission from '../../assets/Admissions/banner admision.png'
 import admission2 from '../../assets/Admissions/admision-2.webp'
 
 // ─── Data Construction ────────────────────────────────────────────────────────
@@ -108,8 +108,8 @@ const AdmissionsPage = () => {
         {/* Background Image / Building View */}
         <div className="absolute top-0 right-0 w-full lg:w-3/5 h-full z-0 overflow-hidden">
           <img 
-            src={campusImage} 
-            className="w-full h-full object-cover lg:object-[25%_center] opacity-100" 
+            src={bannerAdmission} 
+            className="w-full h-full object-cover lg:object-center opacity-100" 
             alt="KIOT Campus" 
           />
         </div>
@@ -319,7 +319,7 @@ const AdmissionsPage = () => {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="order-1 lg:order-2"
                >
-                  <h2 className="text-3xl md:text-5xl font-black leading-tight tracking-tighter mb-6 text-[#224292]">
+                  <h2 className="text-2xl md:text-3xl font-bold leading-tight tracking-tight mb-6 text-[#224292]">
                     Transforming <br />
                     <span className="text-[#ffc107]">Dreams Into Careers</span>
                   </h2>
@@ -335,17 +335,24 @@ const AdmissionsPage = () => {
       <section className="bg-[#224292] py-10 border-y border-white/10">
          <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 divide-y md:divide-y-0 lg:divide-x divide-white/10">
-               {[
-                  { value: "₹ 12.00 Lakhs", label: "HIGHEST SALARY" },
-                  { value: "₹ 4.30 Lakhs", label: "AVERAGE SALARY" },
-                  { value: "150+", label: "COMPANIES VISITED" },
-                  { value: "95%", label: "% PLACEMENT" }
-               ].map((stat, i) => (
-                  <div key={i} className="flex flex-col items-center justify-center text-center p-6 lg:px-10 group hover:bg-white/5 transition-all cursor-default">
-                     <h3 className="text-3xl lg:text-4xl font-black text-[#ffc107] mb-3 tracking-tighter group-hover:scale-105 transition-transform">{stat.value}</h3>
-                     <p className="text-white font-black text-xs lg:text-sm tracking-[2px] uppercase leading-tight">{stat.label}</p>
-                  </div>
-               ))}
+                { [
+                   { value: "₹ 12.00 Lakhs", label: "HIGHEST SALARY" },
+                   { value: "₹ 4.30 Lakhs", label: "AVERAGE SALARY" },
+                   { value: "150+", label: "COMPANIES VISITED" },
+                   { value: "95%", label: "% PLACEMENT" }
+                ].map((stat, i) => (
+                   <motion.div 
+                     key={i} 
+                     initial={{ opacity: 0, y: 20 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ delay: i * 0.1 }}
+                     className="flex flex-col items-center justify-center text-center p-6 lg:px-10 group hover:bg-white/5 transition-all cursor-default"
+                   >
+                      <h3 className="text-3xl lg:text-4xl font-black text-[#ffc107] mb-3 tracking-tighter group-hover:scale-105 transition-transform">{stat.value}</h3>
+                      <p className="text-white font-black text-xs lg:text-sm tracking-[2px] uppercase leading-tight">{stat.label}</p>
+                   </motion.div>
+                ))}
             </div>
          </div>
       </section>
@@ -355,10 +362,10 @@ const AdmissionsPage = () => {
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
             <div className="text-center mb-12 relative">
                <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-                  <h2 className="text-2xl md:text-4xl font-black text-[#224292] leading-tight tracking-tighter uppercase">
+                  <h2 className="text-xl md:text-2xl font-bold text-[#224292] leading-tight tracking-tight uppercase">
                      Why Choose
                   </h2>
-                  <h2 className="text-xl md:text-3xl font-black text-[#ffc107] leading-tight tracking-tighter mt-1">
+                  <h2 className="text-lg md:text-xl font-bold text-[#ffc107] leading-tight tracking-tight mt-1">
                      Knowledge Institute of Technology
                   </h2>
                </motion.div>
@@ -404,7 +411,7 @@ const AdmissionsPage = () => {
       <section id="Programmes" className="pt-2 pb-10 bg-white">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
-               <h2 className="text-3xl md:text-5xl font-black text-[#224292] leading-tight tracking-tighter mb-8">Programmes <span className="text-[#ffc107]">Offered</span></h2>
+               <h2 className="text-2xl md:text-3xl font-bold text-[#224292] leading-tight tracking-tight mb-8">Programmes <span className="text-[#ffc107]">Offered</span></h2>
                <div className="flex flex-wrap items-center justify-center gap-4">
                   <button onClick={() => setActiveProgramTab('ug')} className={`px-10 py-4 rounded-xl font-black text-xs uppercase tracking-[2px] transition-all shadow-lg ${activeProgramTab === 'ug' ? 'bg-[#ffc107] text-[#224292]' : 'bg-slate-50 text-slate-500 border border-slate-200'}`}>Undergraduate</button>
                   <button onClick={() => setActiveProgramTab('pg')} className={`px-10 py-4 rounded-xl font-black text-xs uppercase tracking-[2px] transition-all shadow-lg ${activeProgramTab === 'pg' ? 'bg-[#ffc107] text-[#224292]' : 'bg-slate-50 text-slate-500 border border-slate-200'}`}>Postgraduate</button>
@@ -414,7 +421,7 @@ const AdmissionsPage = () => {
             <div className="relative min-h-[400px]">
                <AnimatePresence mode="wait">
                   {activeProgramTab === 'ug' ? (
-                     <motion.div key="ug" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl max-w-5xl mx-auto">
+                     <motion.div key="ug" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl max-w-4xl mx-auto">
                         <table className="w-full text-left">
                            <thead>
                               <tr className="bg-[#224292] text-white font-black">
@@ -434,18 +441,25 @@ const AdmissionsPage = () => {
                                  { name: 'B.Tech. Artificial Intelligence and Data Science', id: 'btech-aids' },
                                  { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs' }
                               ].map((item, i) => (
-                                 <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
-                                    <td className="px-8 py-5 font-semibold text-sm text-[#224292]">
-                                       <button onClick={() => { window.scrollTo(0, 0); navigate(item.id ? `/academics/course/${item.id}` : '#') }} className="hover:text-[#ffc107] transition-all text-left">{item.name}</button>
-                                    </td>
-                                    <td className="hidden md:table-cell px-8 py-5 text-left text-sm font-bold text-slate-600">4 Years</td>
-                                 </tr>
+                                  <motion.tr 
+                                     key={i} 
+                                     initial={{ opacity: 0, y: 10 }}
+                                     whileInView={{ opacity: 1, y: 0 }}
+                                     viewport={{ once: true }}
+                                     transition={{ delay: i * 0.05 }}
+                                     className="group hover:bg-slate-50/50 transition-colors"
+                                  >
+                                     <td className="px-8 py-5 font-semibold text-sm text-[#224292]">
+                                        <button onClick={() => { window.scrollTo(0, 0); navigate(item.id ? `/academics/course/${item.id}` : '#') }} className="hover:text-[#ffc107] transition-all text-left">{item.name}</button>
+                                     </td>
+                                     <td className="hidden md:table-cell px-8 py-5 text-left text-sm font-bold text-slate-600">4 Years</td>
+                                  </motion.tr>
                               ))}
                            </tbody>
                         </table>
                      </motion.div>
                   ) : (
-                     <motion.div key="pg" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl max-w-5xl mx-auto">
+                     <motion.div key="pg" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-xl max-w-4xl mx-auto">
                         <table className="w-full text-left">
                            <thead>
                               <tr className="bg-[#224292] text-white font-black">
@@ -463,12 +477,19 @@ const AdmissionsPage = () => {
                                  { name: 'M.E. Power Electronics and Drives', id: 'me-ped' },
                                  { name: 'M.E. Software Engineering', id: 'me-se' }
                               ].map((item, i) => (
-                                 <tr key={i} className="group hover:bg-slate-50/50 transition-colors">
-                                    <td className="px-8 py-5 font-semibold text-sm text-[#224292]">
-                                       <button onClick={() => { window.scrollTo(0, 0); navigate(`/academics/course/${item.id}`) }} className="hover:text-[#ffc107] transition-all text-left">{item.name}</button>
-                                    </td>
-                                    <td className="hidden md:table-cell px-8 py-5 text-left text-sm font-bold text-slate-600">2 Years</td>
-                                 </tr>
+                                  <motion.tr 
+                                     key={i} 
+                                     initial={{ opacity: 0, y: 10 }}
+                                     whileInView={{ opacity: 1, y: 0 }}
+                                     viewport={{ once: true }}
+                                     transition={{ delay: i * 0.05 }}
+                                     className="group hover:bg-slate-50/50 transition-colors"
+                                  >
+                                     <td className="px-8 py-5 font-semibold text-sm text-[#224292]">
+                                        <button onClick={() => { window.scrollTo(0, 0); navigate(`/academics/course/${item.id}`) }} className="hover:text-[#ffc107] transition-all text-left">{item.name}</button>
+                                     </td>
+                                     <td className="hidden md:table-cell px-8 py-5 text-left text-sm font-bold text-slate-600">2 Years</td>
+                                  </motion.tr>
                               ))}
                            </tbody>
                         </table>
@@ -483,7 +504,7 @@ const AdmissionsPage = () => {
       <section id="Eligibility" className="pt-2 pb-10 bg-slate-50">
          <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12 text-center">
-               <h2 className="text-3xl md:text-5xl font-black text-[#224292] leading-tight tracking-tighter">Eligibility <span className="text-[#ffc107]">Criteria</span></h2>
+               <h2 className="text-2xl md:text-3xl font-bold text-[#224292] leading-tight tracking-tight">Eligibility <span className="text-[#ffc107]">Criteria</span></h2>
             </motion.div>
 
             <motion.div 
@@ -502,7 +523,14 @@ const AdmissionsPage = () => {
                            { subject: "Physics (P)", formula: "P1 = Physics Reduced to 50", icon: "÷" },
                            { subject: "Chemistry (C)", formula: "C1 = Chemistry Reduced to 50", icon: "÷" }
                         ].map((item, idx) => (
-                           <div key={idx} className="flex items-center gap-6 p-6 rounded-2xl bg-white shadow-sm border border-slate-100">
+                           <motion.div 
+                             key={idx} 
+                             initial={{ opacity: 0, x: -20 }}
+                             whileInView={{ opacity: 1, x: 0 }}
+                             viewport={{ once: true }}
+                             transition={{ delay: idx * 0.1 }}
+                             className="flex items-center gap-6 p-6 rounded-2xl bg-white shadow-sm border border-slate-100"
+                           >
                               <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-xl font-bold text-[#224292]">
                                  {item.icon}
                               </div>
@@ -510,7 +538,7 @@ const AdmissionsPage = () => {
                                  <p className="font-semibold text-[#224292] text-base mb-1">{item.subject}</p>
                                  <p className="text-[#1a1a1a] font-medium text-base">{item.formula}</p>
                               </div>
-                           </div>
+                           </motion.div>
                         ))}
                      </div>
                      <div className="mt-8 p-6 bg-[#224292] rounded-2xl text-center shadow-lg">
@@ -607,7 +635,7 @@ const AdmissionsPage = () => {
                 viewport={{ once: true }}
                 className="mb-12"
              >
-                <h2 className="text-3xl md:text-5xl font-black text-[#224292] leading-tight tracking-tighter mb-6">Required <span className="text-[#ffc107]">Documents</span></h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#224292] leading-tight tracking-tight mb-6">Required <span className="text-[#ffc107]">Documents</span></h2>
                 <p className="text-[#1a1a1a] font-bold text-base leading-relaxed max-w-xl mx-auto">Ensure you have scanned copies of the following documents ready before starting your registration.</p>
              </motion.div>
 

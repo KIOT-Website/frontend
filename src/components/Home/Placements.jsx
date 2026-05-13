@@ -18,25 +18,21 @@ const stats = [
   {
     label: "Highest Salary",
     value: "12.00 Lakhs",
-    sub: "By Top Industry Leaders",
     icon: TrendingUp
   },
   {
     label: "Average Salary",
     value: "4.30 Lakhs",
-    sub: "Industry competitive",
     icon: Building2
   },
   {
     label: "Companies Visited",
     value: "150+",
-    sub: "Top tier corporates",
     icon: Briefcase
   },
   {
     label: "% Placement",
     value: "95%",
-    sub: "Across all streams",
     icon: GraduationCap
   }
 ]
@@ -74,15 +70,15 @@ const Placements = () => {
         <div className="grid lg:grid-cols-[0.45fr_0.55fr] gap-12 lg:gap-20 items-center">
           
           {/* LEFT SIDE: Big Numbers */}
-          <div className="space-y-10 lg:pl-4">
+          <div className="space-y-6 lg:pl-4">
             <div>
-              <h2 className="text-3xl lg:text-5xl font-semibold font-graphik leading-[1.1] text-white">
+              <h2 className="text-3xl lg:text-4xl font-semibold font-graphik leading-[1.1] text-white">
                 Where Talent <br />
                 <span className="text-[#ffc107]">Meets Opportunity</span>
               </h2>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-4">
               {stats.map((stat, idx) => (
                 <motion.div
                   key={idx}
@@ -97,26 +93,25 @@ const Placements = () => {
                    <div>
                       <div className="flex items-baseline gap-1.5">
                         {stat.label.includes('Salary') && <span className="text-white/40 text-[10px] font-black uppercase -mt-0.5">₹</span>}
-                        <p className="text-3xl lg:text-4xl font-black font-display tracking-tight text-white">{stat.value}</p>
-                      </div>
-                      <p className="text-[13px] font-bold uppercase tracking-[0.2em] text-[#A9B1C3]">{stat.label}</p>
-                      <p className="text-[13px] font-bold text-[#ffc107]/60 mt-0.5">{stat.sub}</p>
+                      <p className="text-2xl lg:text-3xl font-bold font-graphik tracking-tight text-white">{stat.value}</p>
+                    </div>
+                    <p className="text-[10px] lg:text-[12px] font-semibold text-white">{stat.label}</p>
                    </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 w-fit">
-                <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292]">
+            <div className="grid sm:grid-cols-2 gap-4 pt-2">
+              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 justify-center text-center sm:text-left">
+                <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292] shrink-0">
                    <UserCheck size={16} />
                 </div>
-                <p className="text-[12px] font-black text-white/70 uppercase tracking-widest leading-none">Quality Placements <br/> Are Our Motto</p>
+                <p className="text-[10px] font-black text-white/70 uppercase tracking-widest leading-tight">Quality Placements <br className="hidden sm:block" /> Are Our Motto</p>
               </div>
 
               <button 
                 onClick={() => navigate('/placement-overview')}
-                className="group relative px-10 py-5 bg-[#ffc107] text-[#224292] rounded-2xl font-black uppercase tracking-[0.2em] text-[12px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center gap-3"
+                className="group relative px-6 py-4 bg-[#ffc107] text-[#224292] rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center justify-center gap-3"
               >
                  Explore Placements
                  <TrendingUp size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -126,12 +121,12 @@ const Placements = () => {
 
           {/* RIGHT SIDE: Recruiter Slide (Infinite Loop) */}
           <div className="relative">
-             <div className="mb-10 text-center lg:text-left">
-                <h3 className="text-2xl lg:text-3xl font-semibold font-graphik mb-1 text-white tracking-tight">Our Top Hiring Partners</h3>
+             <div className="mb-6 text-center lg:text-left">
+                <h3 className="text-xl lg:text-2xl font-semibold font-graphik mb-1 text-white tracking-tight">Our Top Hiring Partners</h3>
                 <div className="h-1 w-12 bg-[#ffc107] mb-4 mx-auto lg:mx-0 rounded-full" />
              </div>
 
-             <div className="relative h-[440px] w-full overflow-hidden mask-fade-vertical group/marquee">
+             <div className="relative h-[380px] w-full overflow-hidden mask-fade-vertical group/marquee">
                 {/* Vertical Infinite Marquee - CSS Based for Pause on Hover */}
                 <div className="flex flex-col gap-4 animate-marquee-vertical hover:[animation-play-state:paused]">
                     {[...recruiterData, ...recruiterData, ...recruiterData].map((rec, i) => (

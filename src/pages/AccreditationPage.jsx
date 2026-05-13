@@ -95,7 +95,7 @@ const AccreditationPage = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-[#224292] text-4xl md:text-6xl font-black mb-6 tracking-tighter"
+          className="text-[#224292] text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tighter"
         >
           KIOT – <span className="text-[#ffc107]">Committed to Excellence</span>
         </motion.h1>

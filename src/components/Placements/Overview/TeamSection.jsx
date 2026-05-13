@@ -53,7 +53,7 @@ const TeamSection = () => {
   return (
     <div className="mb-12">
        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-2xl font-black text-[#224292] flex items-center justify-center gap-4 tracking-tight">
+          <h2 className="text-2xl font-semibold text-[#224292] flex items-center justify-center gap-4 tracking-tight">
             <Users size={28} className="text-[#ffc107]" />
             Placement Team
           </h2>
@@ -70,9 +70,9 @@ const TeamSection = () => {
           <table className="w-full text-left border-collapse">
              <thead>
                 <tr className="bg-[#224292] text-white">
-                   <th className="px-8 py-5 text-sm font-bold uppercase tracking-widest">Name & Designation</th>
-                   <th className="px-8 py-5 text-sm font-bold uppercase tracking-widest">Responsibility</th>
-                   <th className="px-8 py-5 text-sm font-bold uppercase tracking-widest text-right">Contact Info</th>
+                   <th className="px-8 py-5 text-sm font-semibold uppercase tracking-widest">Name & Designation</th>
+                   <th className="px-8 py-5 text-sm font-semibold uppercase tracking-widest">Responsibility</th>
+                   <th className="px-8 py-5 text-sm font-semibold uppercase tracking-widest text-right">Contact Info</th>
                 </tr>
              </thead>
              <tbody className="">
@@ -91,13 +91,13 @@ const TeamSection = () => {
                               )}
                            </div>
                            <div>
-                              <div className="font-bold text-black group-hover:text-[#224292] transition-colors text-[15px]">{member.name}</div>
-                              <div className="text-[#224292] text-[11px] font-semibold tracking-wider mt-0.5">{member.desig}</div>
+                              <div className="font-semibold text-black group-hover:text-[#224292] transition-colors text-[15px]">{member.name}</div>
+                              <div className="text-[#224292] text-[11px] font-medium tracking-wider mt-0.5">{member.desig}</div>
                            </div>
                         </div>
                      </td>
                      <td className="px-8 py-4">
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white text-[#224292] text-[10px] font-bold tracking-wide border border-slate-200 group-hover:bg-[#224292] group-hover:text-white transition-all shadow-sm">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white text-[#224292] text-[10px] font-semibold tracking-wide border border-slate-200 group-hover:bg-[#224292] group-hover:text-white transition-all shadow-sm">
                            <ShieldCheck size={12} />
                            {member.resp}
                         </span>
@@ -105,13 +105,13 @@ const TeamSection = () => {
                      <td className="px-8 py-4">
                         <div className="flex flex-col items-end gap-1">
                            {member.email && (
-                             <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-black/60 hover:text-[#ffc107] text-[12px] font-semibold transition-colors">
+                             <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-black/60 hover:text-[#ffc107] text-[12px] font-normal transition-colors">
                                 <Mail size={13} />
                                 {member.email}
                              </a>
                            )}
                            {member.phone && (
-                             <a href={`tel:${member.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-black font-bold text-[12px] transition-colors">
+                             <a href={`tel:${member.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-black font-semibold text-[12px] transition-colors">
                                 <Phone size={13} className="text-[#ffc107]" />
                                 {member.phone}
                              </a>
@@ -144,10 +144,10 @@ const TeamSection = () => {
                    </div>
                    
                    <div className="space-y-2">
-                      <div className="text-xl font-black text-[#224292] leading-tight px-2">{member.name}</div>
-                      <div className="text-[#224292] text-[11px] font-bold tracking-wider">{member.desig}</div>
+                      <div className="text-xl font-semibold text-[#224292] leading-tight px-2">{member.name}</div>
+                      <div className="text-[#224292] text-[11px] font-semibold tracking-wider">{member.desig}</div>
                       <div className="pt-2">
-                         <span className="text-[10px] font-black tracking-widest text-[#ffc107] px-4 py-1.5 bg-[#224292] rounded-lg shadow-md inline-block">
+                         <span className="text-[10px] font-semibold tracking-widest text-[#ffc107] px-4 py-1.5 bg-[#224292] rounded-lg shadow-md inline-block">
                            {member.resp}
                          </span>
                       </div>
@@ -156,13 +156,13 @@ const TeamSection = () => {
 
                 <div className="w-full pt-6 border-t border-[#D5E2F4]/50 flex flex-col items-center gap-4">
                    {member.email && (
-                     <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-[#64779F] text-[13px] font-bold hover:text-[#ffc107] transition-colors">
+                     <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-[#64779F] text-[13px] font-semibold hover:text-[#ffc107] transition-colors">
                         <Mail size={16} className="text-[#224292]" />
                         {member.email}
                      </a>
                    )}
                    {member.phone && (
-                     <a href={`tel:${member.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 text-[#224292] text-[13px] font-black hover:text-[#ffc107] transition-colors">
+                     <a href={`tel:${member.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 text-[#224292] text-[13px] font-semibold hover:text-[#ffc107] transition-colors">
                         <Phone size={16} className="text-[#ffc107]" />
                         {member.phone}
                      </a>

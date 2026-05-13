@@ -203,32 +203,43 @@ const CampusLifePage = () => {
                 </motion.div>
             </div>
 
-            <div className="bg-[#1b2a60] py-16 relative z-20 overflow-hidden border-y border-white/10 shadow-2xl">
+            <div className="bg-slate-50/50 py-24 relative z-20 overflow-hidden">
                 <div className="w-full px-6 lg:px-12 relative z-10">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { v: "12,000+", l: "Active Students", i: Users },
-                            { v: "150+", l: "Student Clubs", i: Landmark },
-                            { v: "25+", l: "Sports Teams", i: Trophy },
-                            { v: "500+", l: "Annual Events", i: CalendarDays }
+                            { v: "12,000+", l: "Active Students", i: Users, d: "Diverse community of learners and achievers.", c: "#224292" },
+                            { v: "150+", l: "Student Clubs", i: Landmark, d: "Nurturing talents beyond the classroom walls.", c: "#ffc107" },
+                            { v: "25+", l: "Sports Teams", i: Trophy, d: "Striving for excellence in state & national levels.", c: "#224292" },
+                            { v: "500+", l: "Annual Events", i: CalendarDays, d: "A vibrant calendar filled with tech & culturals.", c: "#ffc107" }
                         ].map((stat, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="flex flex-col items-center text-center space-y-4"
+                                className="flex flex-col bg-white rounded-3xl shadow-xl shadow-slate-200/60 overflow-hidden border border-slate-100 group hover:-translate-y-2 transition-all duration-500"
                             >
-                                <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shadow-2xl backdrop-blur-md transition-transform hover:scale-110 duration-500">
-                                    <stat.i size={28} className="text-[#ffc107]" />
+                                <div className="p-8 pb-12 flex flex-col items-center text-center space-y-6">
+                                    <div 
+                                        className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6 duration-500"
+                                        style={{ backgroundColor: stat.c, color: stat.c === '#ffc107' ? '#224292' : '#fff' }}
+                                    >
+                                        <stat.i size={28} />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[3px]">{stat.l}</p>
+                                        <p className="text-4xl lg:text-5xl font-black text-[#224292] tracking-tighter leading-none">
+                                            {stat.v}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="space-y-1">
-                                    <p className="text-4xl lg:text-5xl font-black text-white tracking-tighter leading-none">
-                                        {stat.v}
-                                    </p>
-                                    <p className="text-sm font-black tracking-[3px] text-white leading-tight uppercase">
-                                        {stat.l}
+                                <div 
+                                    className="p-6 text-center mt-auto"
+                                    style={{ backgroundColor: stat.c }}
+                                >
+                                    <p className={`text-[10px] font-black uppercase tracking-widest leading-relaxed ${stat.c === '#ffc107' ? 'text-[#224292]' : 'text-white'}`}>
+                                        {stat.d}
                                     </p>
                                 </div>
                             </motion.div>

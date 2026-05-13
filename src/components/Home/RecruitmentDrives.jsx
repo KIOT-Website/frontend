@@ -59,7 +59,7 @@ const RecruitmentDrives = () => {
                         viewport={{ once: true }}
                         className="flex flex-col items-center"
                     >
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#224292] leading-tight">
+                        <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
                             Recruitment <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Drives</span>
                         </h2>
                         <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mt-6 rounded-full" />

@@ -180,7 +180,57 @@ export default function CourseDetailPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#224292] pt-4 pb-6 md:pt-8 md:pb-10">
-        {/* Background Image / Pattern Layer */}
+        {/* Tech Lining / Circuit Background Layer */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+           <svg width="100%" height="100%" className="absolute inset-0">
+             <defs>
+               <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                 <stop offset="0%" stopColor="#ffffff" stopOpacity="0.05" />
+                 <stop offset="50%" stopColor="#ffc107" stopOpacity="0.25" />
+                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0.05" />
+               </linearGradient>
+               <filter id="glow">
+                  <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                  <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+               </filter>
+             </defs>
+             
+             {/* Branched Circuit Lines - Bottom Focus */}
+             <g stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="opacity-30">
+                <path d="M-100 280 L200 280 L240 240 L600 240 L640 280 L1400 280" />
+                <path d="M-100 320 L150 320 L200 370 L500 370 L550 320 L1400 320" />
+                <path d="M300 0 L300 150 L340 190 L340 500" />
+                <path d="M900 0 L900 120 L860 160 L860 500" />
+                <path d="M0 380 L400 380 L440 420 L900 420 L940 380 L1400 380" />
+                <path d="M-100 150 L100 150 L140 110 L400 110" />
+                <path d="M1400 150 L1100 150 L1060 110 L800 110" />
+             </g>
+             
+             {/* Glowing 'Light' Nodes */}
+             <g filter="url(#glow)">
+                {[
+                  {x: 200, y: 280}, {x: 240, y: 240}, {x: 600, y: 240}, {x: 640, y: 280},
+                  {x: 150, y: 320}, {x: 200, y: 370}, {x: 500, y: 370}, {x: 550, y: 320},
+                  {x: 340, y: 190}, {x: 860, y: 160}, {x: 440, y: 420}, {x: 900, y: 420},
+                  {x: 100, y: 150}, {x: 1100, y: 150}
+                ].map((pos, i) => (
+                  <circle 
+                    key={i} 
+                    cx={pos.x} 
+                    cy={pos.y} 
+                    r="2.5" 
+                    fill={i % 2 === 0 ? "#ffc107" : "#ffffff"} 
+                    className="animate-pulse"
+                    style={{ animationDelay: `${i * 0.5}s`, animationDuration: '2s' }}
+                  />
+                ))}
+             </g>
+           </svg>
+        </div>
+
         {/* Background Visuals - Clean Institutional Theme */}
         <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
           <div className="absolute inset-0" style={{ 

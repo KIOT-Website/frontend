@@ -216,10 +216,10 @@ const Testimonials = () => {
 
                       {/* Name & Designation */}
                       <div className="text-center mt-4 px-4 shrink-0">
-                         <h4 className="text-xl font-black font-graphik text-[#224292] leading-tight">
+                         <h4 className="text-lg lg:text-xl font-semibold font-graphik text-[#224292] leading-tight">
                             {testi.name.split(' ').slice(0, -1).join(' ')} <span className="text-[#ffc107]">{testi.name.split(' ').slice(-1)}</span>
                          </h4>
-                         <p className="text-[13px] font-black text-[#224292] uppercase tracking-[0.1em] mt-1 mb-4">
+                         <p className="text-[12px] lg:text-[14px] font-bold text-[#224292] uppercase tracking-[0.1em] mt-1 mb-4">
                             {testi.dept}
                          </p>
                       </div>

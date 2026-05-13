@@ -67,7 +67,7 @@ const Events = ({ onEventsClick }) => {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#224292] font-display leading-tight tracking-tight">
+            <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
               Recent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Events</span>
             </h2>
             
@@ -118,7 +118,7 @@ const Events = ({ onEventsClick }) => {
 
                        {/* Event Title Below Image - Reduced Padding */}
                        <div className="p-4 flex flex-grow items-center">
-                          <h3 className="text-sm lg:text-base font-black text-[#224292] group-hover:text-[#ffc107] transition-colors duration-500 leading-tight">
+                          <h3 className="text-lg lg:text-xl font-semibold text-[#224292] group-hover:text-[#ffc107] transition-colors duration-500 leading-tight">
                             {event.event_name}
                           </h3>
                        </div>

@@ -76,11 +76,11 @@ const RecruitmentProcessHero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <h1 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter leading-[0.9] mb-8">
+              <h1 className="text-3xl md:text-4xl lg:text-[40px] font-semibold text-[#224292] tracking-tighter leading-tight mb-8">
                 Recruitment <span className="text-[#ffc107]">Process</span>
               </h1>
               <div className="w-16 h-1.5 bg-[#ffc107] mb-8 rounded-full" />
-              <p className="max-w-2xl text-black font-black text-lg md:text-xl leading-relaxed mb-16">
+              <p className="max-w-2xl text-black font-medium text-lg md:text-xl leading-relaxed mb-16">
                 A precision-engineered journey transforming academic potential into professional excellence, step by step.
               </p>
             </motion.div>
@@ -109,8 +109,8 @@ const RecruitmentProcessHero = () => {
                       </div>
                     </div>
                     
-                    <h3 className="text-lg font-black text-[#224292] mb-3 tracking-tight leading-tight">{step.title}</h3>
-                    <p className="text-[14px] font-black text-black leading-snug tracking-tight px-1">
+                    <h3 className="text-lg font-semibold text-[#224292] mb-3 tracking-tight leading-tight">{step.title}</h3>
+                    <p className="text-[14px] font-medium text-black leading-snug tracking-tight px-1">
                       {step.desc}
                     </p>
                   </motion.div>
@@ -148,8 +148,8 @@ const RecruitmentProcessHero = () => {
                     <Users2 size={24} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black text-[#224292] uppercase tracking-[0.3em] mb-1">Recruitment Cycle</p>
-                    <h4 className="text-xl font-black text-[#224292] tracking-tighter uppercase">Step-by-step flow</h4>
+                    <p className="text-[10px] font-semibold text-[#224292] uppercase tracking-[0.3em] mb-1">Recruitment Cycle</p>
+                    <h4 className="text-xl font-semibold text-[#224292] tracking-tighter uppercase">Step-by-step flow</h4>
                   </div>
                 </motion.div>
               </div>
@@ -163,8 +163,8 @@ const RecruitmentProcessHero = () => {
                     <stat.icon size={18} />
                   </div>
                   <div className="space-y-1">
-                    <p className="text-2xl font-black text-[#224292] tracking-tighter leading-none">{stat.value}</p>
-                    <p className="text-[9px] font-black text-black uppercase tracking-widest leading-tight">{stat.label}</p>
+                    <p className="text-2xl font-semibold text-[#224292] tracking-tighter leading-none">{stat.value}</p>
+                    <p className="text-[9px] font-semibold text-black uppercase tracking-widest leading-tight">{stat.label}</p>
                   </div>
                 </div>
               ))}

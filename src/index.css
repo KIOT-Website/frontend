@@ -189,3 +189,11 @@ html, body {
   scrollbar-width: thin;
   scrollbar-color: #224292 #f1f1f1;
 }
+/* Custom Utilities */
+.clip-triangle {
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.mask-fade-vertical {
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}

@@ -1,6 +1,33 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence, useInView, useSpring } from 'framer-motion'
 import { CheckCircle2, Quote, X, GraduationCap, Briefcase, Microscope, Heart } from 'lucide-react'
+
+const CountUpNumber = ({ value, duration = 2 }) => {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+  
+  useEffect(() => {
+    if (isInView) {
+      let start = 0
+      const end = parseInt(value)
+      if (start === end) return
+      
+      let totalMiliseconds = duration * 1000
+      let incrementTime = totalMiliseconds / end
+      
+      let timer = setInterval(() => {
+        start += 1
+        setCount(start)
+        if (start === end) clearInterval(timer)
+      }, incrementTime)
+      
+      return () => clearInterval(timer)
+    }
+  }, [isInView, value, duration])
+  
+  return <span ref={ref}>{count}</span>
+}
 
 // Asset imports
 import chairmanImg from '../../assets/main/srinivasan.webp'
@@ -93,10 +120,33 @@ const Leadership = () => {
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#224292 0.5px, transparent 0.5px)', backgroundSize: '30px 30px' }} />
 
+      {/* Side Background Graphics - Hex/Circle shapes from the reference image */}
+      <div className="absolute top-[10%] right-[-120px] w-[600px] h-[600px] opacity-[0.04] pointer-events-none hidden lg:block select-none">
+         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full fill-[#ffc107]">
+            <path d="M44.7,-76.4C58.1,-69.2,70.1,-58.5,77.4,-45.4C84.7,-32.3,87.2,-16.1,86.1,-0.6C85,14.8,80.3,29.7,72.4,42.4C64.5,55.1,53.4,65.6,40.3,72.1C27.2,78.6,13.6,81,0.1,80.8C-13.4,80.6,-26.8,77.7,-39.5,71.1C-52.2,64.5,-64.1,54.1,-71.8,41.5C-79.5,28.8,-83,14.4,-82.7,0.2C-82.4,-14.1,-78.2,-28.1,-70.3,-40.4C-62.4,-52.7,-50.8,-63.3,-37.6,-70.7C-24.3,-78.1,-12.2,-82.3,1.3,-84.5C14.7,-86.7,29.4,-87,44.7,-76.4Z" transform="translate(100 100)" />
+         </svg>
+      </div>
+      <div className="absolute top-[15%] right-[-50px] w-[300px] h-[300px] opacity-[0.02] pointer-events-none hidden lg:block select-none scale-150">
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" className="w-full h-full text-[#ffc107]">
+            <path d="M12 2L2 7L2 17L12 22L22 17L22 7L12 2Z" />
+         </svg>
+      </div>
+
       <div className="relative z-10 w-full px-6 lg:px-12">
-        
-        {/* SECTION 1: CINEMATIC HERO SECTION */}
-        <div className="relative pt-8 pb-12 mb-6 overflow-hidden">
+                {/* SECTION 1: CINEMATIC HERO SECTION */}
+        <div className="relative pt-16 pb-24 mb-6 overflow-hidden">
+          {/* Background Graphics like the image */}
+          <div className="absolute top-10 left-10 opacity-20 hidden lg:block">
+            <div className="grid grid-cols-4 gap-2">
+              {[...Array(16)].map((_, i) => <div key={i} className="w-1 h-1 bg-[#224292] rounded-full" />)}
+            </div>
+          </div>
+          <div className="absolute bottom-20 right-10 opacity-20 hidden lg:block">
+            <div className="grid grid-cols-4 gap-2">
+              {[...Array(16)].map((_, i) => <div key={i} className="w-1 h-1 bg-[#224292] rounded-full" />)}
+            </div>
+          </div>
+          
           <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -104,39 +154,57 @@ const Leadership = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-col items-center"
             >
-              {/* Badge Removed per request */}
-              
-              <h1 className="text-4xl md:text-5xl lg:text-[4.5rem] font-graphik font-bold text-[#224292] mb-6 tracking-tighter leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight">
                 Institutional <span className="text-[#ffc107]">Leadership</span>
               </h1>
-              
-              <p className="text-[#333333] text-[17px] leading-[1.6] font-medium font-graphik max-w-4xl mx-auto mb-8 opacity-80">
-                Driven by a collective vision of academic excellence and technical innovation, our leadership team brings together the expertise of world-class researchers and visionary entrepreneurs.
-              </p>
 
-              <div className="flex flex-wrap justify-center gap-12 md:gap-24 mt-12">
+              {/* Heading Divider with Dot */}
+              <div className="flex items-center gap-2 mb-8">
+                <div className="w-12 h-[1px] bg-[#ffc107]" />
+                <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                <div className="w-12 h-[1px] bg-[#ffc107]" />
+              </div>
+              
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-10 mt-12 max-w-6xl mx-auto w-full px-4">
                  {[
-                   { label: "Academicians", value: "22", icon: GraduationCap },
-                   { label: "Professionals", value: "07", icon: Briefcase },
-                   { label: "Entrepreneurs", value: "15", icon: Microscope }
+                   { label: "Academicians", value: "22", icon: GraduationCap, desc: "Experienced academicians driving academic excellence and innovation.", color: "#224292" },
+                   { label: "Professionals", value: "07", icon: Briefcase, desc: "Industry professionals contributing expertise and practical insights.", color: "#ffc107" },
+                   { label: "Entrepreneurs", value: "15", icon: Microscope, desc: "Visionary entrepreneurs inspiring innovation and leadership.", color: "#224292" }
                  ].map((stat, i) => (
-                   <div key={i} className="flex flex-col items-center group cursor-default relative">
-                      <div className="absolute inset-0 bg-[#ffc107] blur-[40px] opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-full" />
+                   <div key={i} className="bg-white rounded-[2rem] p-8 pt-12 shadow-[0_15px_40px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center relative group hover:-translate-y-2 transition-all duration-500">
+                      {/* Top Icon Box - Always Blue in the image */}
+                      <div className="absolute top-0 -translate-y-1/2 w-16 h-16 bg-[#1e3a8a] text-white rounded-2xl flex items-center justify-center shadow-[0_10px_30px_rgba(30,58,138,0.3)] z-20">
+                         <stat.icon size={28} />
+                      </div>
                       
-                      <div className="w-16 h-16 mb-5 rounded-2xl bg-white border border-slate-100 shadow-sm text-[#224292] flex items-center justify-center group-hover:-translate-y-2 group-hover:bg-[#224292] group-hover:text-[#ffc107] group-hover:border-[#224292] transition-all duration-500">
-                         <stat.icon size={28} strokeWidth={1.5} />
+                      {/* Content */}
+                      <div className="flex-1 flex flex-col items-center justify-center">
+                        <div className="flex items-center justify-center gap-1 mb-2">
+                           <span className="text-4xl font-bold text-[#1e3a8a] tracking-tighter">
+                             <CountUpNumber value={stat.value} />
+                           </span>
+                           <span className="text-[#ffc107] text-3xl font-bold">+</span>
+                        </div>
+                        <h4 className="text-[13px] font-bold text-[#1e3a8a] uppercase tracking-[0.2em] mb-4">{stat.label}</h4>
+                        <p className="text-[12px] text-black font-medium leading-relaxed px-4">{stat.desc}</p>
                       </div>
-                      <div className="flex items-baseline gap-1 mb-1">
-                        <span className="text-4xl md:text-5xl font-bold text-[#224292] tracking-tighter">{stat.value}</span>
-                        <span className="text-[#ffc107] text-3xl font-bold">+</span>
-                      </div>
-                      <div className="text-xs md:text-sm font-bold text-[#64779F] uppercase tracking-[0.15em] font-graphik group-hover:text-[#224292] transition-colors">{stat.label}</div>
+
+                      {/* Thick Curved Bottom Accent */}
+                      <div 
+                        className="absolute bottom-0 left-0 right-0 h-8 rounded-b-[2rem] opacity-90" 
+                        style={{ 
+                          backgroundColor: stat.color === '#224292' ? '#1e3a8a' : '#ffc107',
+                          clipPath: 'ellipse(100% 100% at 50% 100%)' 
+                        }} 
+                      />
                    </div>
                  ))}
               </div>
             </motion.div>
           </div>
         </div>
+
 
         {/* SECTION 2: KIOT TRUST COMPOSITION (MODERN DATA CARDS) - Tinted Background */}
         <div className="max-w-7xl mx-auto mb-12 relative">
@@ -151,17 +219,17 @@ const Leadership = () => {
                    <div className="inline-block px-4 py-1.5 bg-[#224292]/5 rounded-lg">
                       <span className="text-[11px] font-bold text-[#224292] tracking-widest">About the Trust</span>
                    </div>
-                    <h2 className="text-4xl lg:text-6xl font-bold text-[#224292] tracking-tighter leading-tight">
+                    <h2 className="text-3xl lg:text-[42px] font-semibold text-[#224292] tracking-tighter leading-tight">
                        The Foundation of <span className="text-[#ffc107]">Excellence</span>
                     </h2>
-                    <div className="space-y-6 text-[#333333] text-[15px] sm:text-[16px] leading-[1.7] font-normal text-left md:text-justify">
-                      <p>
-                        KIOT Trust is a unique synergy of 22 Academicians, 7 International Professionals, and 15 First-Generation Entrepreneurs. This diverse composition ensures that our education remains grounded in academic rigor while staying agile to industry demands.
-                      </p>
-                      <p>
-                        Our promoters directly engage in teaching and career mentoring, bringing decades of research and administrative experience from across the globe to the classroom.
-                      </p>
-                   </div>
+                     <div className="space-y-6 text-black text-[15px] sm:text-[16px] leading-[1.7] font-normal text-left md:text-justify">
+                       <p>
+                         KIOT Trust is a unique synergy of 22 Academicians, 7 International Professionals, and 15 First-Generation Entrepreneurs. This diverse composition ensures that our education remains grounded in academic rigor while staying agile to industry demands.
+                       </p>
+                       <p>
+                         Our promoters directly engage in teaching and career mentoring, bringing decades of research and administrative experience from across the globe to the classroom.
+                       </p>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6">
@@ -179,7 +247,7 @@ const Leadership = () => {
                            { label: "Ph.D. in Science", value: "02", percent: 10 }
                          ].map((item, i) => (
                            <div key={i} className="space-y-2">
-                              <div className="flex justify-between text-[13px] font-bold text-[#64779F]">
+                              <div className="flex justify-between text-[13px] font-bold text-black">
                                  <span>{item.label}</span>
                                  <span className="text-[#224292]">{item.value} Members</span>
                               </div>
@@ -209,7 +277,7 @@ const Leadership = () => {
                            { label: "Global Professionals", value: "07", percent: 25 }
                          ].map((item, i) => (
                            <div key={i} className="space-y-2">
-                              <div className="flex justify-between text-[13px] font-bold text-[#64779F]">
+                              <div className="flex justify-between text-[13px] font-bold text-black">
                                  <span>{item.label}</span>
                                  <span className="text-[#224292]">{item.value} Members</span>
                               </div>
@@ -232,7 +300,7 @@ const Leadership = () => {
         {/* SECTION 3: REFINED DIRECTORY LISTING - Modern Grid Format */}
         <div className="max-w-7xl mx-auto mb-16 px-4">
            <div className="text-center mb-10">
-              <h3 className="text-2xl font-graphik font-bold text-[#224292] tracking-tight mb-2">Directory of KIOT Trust Members</h3>
+              <h3 className="text-xl font-graphik font-semibold text-[#224292] tracking-tight mb-2">Directory of KIOT Trust Members</h3>
               <div className="w-16 h-1 bg-[#ffc107] mx-auto rounded-full" />
            </div>
 
@@ -275,7 +343,7 @@ const Leadership = () => {
                   key={i} 
                   className="bg-[#F8FAFC] p-5 rounded-2xl border border-slate-100 flex items-start gap-4 hover:border-[#224292]/20 transition-all duration-300 group"
                 >
-                   <span className="text-[13px] font-medium text-[#333333] leading-[1.4] font-graphik group-hover:text-[#224292] transition-colors">{name}</span>
+                   <span className="text-[13px] font-medium text-black leading-[1.4] font-graphik group-hover:text-[#224292] transition-colors">{name}</span>
                 </div>
               ))}
            </div>
@@ -284,10 +352,10 @@ const Leadership = () => {
         {/* Leadership Voices Section */}
         <div className="text-center mb-8">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#224292] mb-4 tracking-tighter font-graphik">
+            <h1 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-[#224292] mb-4 tracking-tighter font-graphik">
               Voices of <span className="text-[#ffc107]">Leadership</span>
             </h1>
-            <p className="text-[#333333] text-[15px] font-bold max-w-2xl mx-auto text-center opacity-80 font-graphik">
+            <p className="text-black text-[15px] font-bold max-w-2xl mx-auto text-center opacity-90 font-graphik">
               Guidance and perspective from the leaders shaping the institutional vision and daily excellence of KIOT.
             </p>
           </div>
@@ -322,10 +390,10 @@ const Leadership = () => {
                  </div>
               </div>
               <div className="flex flex-col items-center">
-                <h3 className="text-xl lg:text-2xl font-graphik font-bold text-[#333333] mb-2 text-center leading-tight">
+                <h3 className="text-xl lg:text-2xl font-graphik font-bold text-black mb-2 text-center leading-tight">
                   {leader.name}
                 </h3>
-                <p className="text-[14px] font-graphik font-bold text-[#333333] mb-6 text-center opacity-80">
+                <p className="text-[14px] font-graphik font-bold text-black mb-6 text-center opacity-80">
                   {leader.role}
                 </p>
                 <button 
@@ -387,7 +455,7 @@ const Leadership = () => {
                    <h2 className="text-xl lg:text-3xl font-graphik font-bold text-[#224292] font-graphik mb-6">{selectedLeader.role} Message</h2>
                   <div className="space-y-6">
                     {selectedLeader.fullMessage.map((p, i) => (
-                      <p key={i} className="text-[#333333] text-[16px] leading-[28.8px] font-normal font-graphik text-justify">
+                      <p key={i} className="text-black text-[16px] leading-[28.8px] font-normal font-graphik text-justify">
                         {p}
                       </p>
                     ))}

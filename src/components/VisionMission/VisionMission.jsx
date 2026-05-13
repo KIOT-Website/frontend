@@ -103,7 +103,7 @@ const VisionMission = ({ hideHeader = false }) => {
               animate={{ opacity: 1, y: 0 }}
               className="flex flex-col items-center"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#224292] mb-4 tracking-tighter leading-tight break-words">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight break-words">
                 Our Institutional <span className="text-[#ffc107]">Values</span>
               </h2>
             </motion.div>
@@ -120,7 +120,7 @@ const VisionMission = ({ hideHeader = false }) => {
 
         {/* ─── NEW DIAMOND ZIG-ZAG INFOGRAPHIC ─── */}
         <div className="relative w-full mx-auto px-4 py-4 lg:py-8">
-          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-28 lg:gap-4 relative z-10 px-4">
+          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-28 lg:gap-16 relative z-10 px-4">
             {valuesData.map((val, i) => {
               const isEven = i % 2 !== 0; // 0, 2, 4 are top | 1, 3 are bottom
               return (
@@ -132,8 +132,13 @@ const VisionMission = ({ hideHeader = false }) => {
                   transition={{ delay: i * 0.1, duration: 0.8 }}
                   className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[280px] flex justify-center ${isEven ? 'lg:mt-16' : 'lg:mb-16'}`}
                 >
-                  {/* The Diamond Container with New Stylish Border - Shadow Removed */}
-                  <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border border-[#224292]/15 transform rotate-45 flex items-center justify-center group hover:border-[#ffc107]/50 transition-all duration-500 mx-auto overflow-hidden">
+                  {/* Connecting Line - Only on Large Screens */}
+                  {i < valuesData.length - 1 && (
+                    <div className={`hidden lg:block absolute top-1/2 left-full w-full h-[2px] bg-[#ffc107]/30 z-0 origin-left ${isEven ? '-rotate-[30deg] translate-y-[-100%] translate-x-[-10%]' : 'rotate-[30deg] translate-y-[100%] translate-x-[-10%]'}`} style={{ width: 'calc(100% + 4rem)' }} />
+                  )}
+
+                  {/* The Diamond Container with New Stylish Border */}
+                  <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border-2 border-[#ffc107] transform rotate-45 flex items-center justify-center group transition-all duration-500 mx-auto overflow-hidden shadow-sm z-10">
                     
                     {/* Stylish Inner Border Line */}
                     <div className="absolute inset-2 border border-dashed border-[#224292]/10 rounded-[1.5rem] group-hover:border-[#ffc107]/20 transition-colors duration-500 pointer-events-none" />

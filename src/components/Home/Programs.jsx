@@ -72,7 +72,7 @@ const AdmissionSign = ({ navigate }) => (
     className="relative mt-8 lg:-mt-6 flex flex-col items-center group z-20"
   >
      {/* Triangular Hanging Rope - Desktop Only */}
-     <svg width="100" height="50" viewBox="0 0 100 50" className="mb-[-2px] hidden lg:block">
+     <svg width="80" height="40" viewBox="0 0 100 50" className="mb-[-2px] hidden lg:block">
         <path d="M50 0 L15 50 M50 0 L85 50" stroke="#CBD5E1" strokeWidth="1.5" fill="none" />
         <circle cx="50" cy="0" r="3" fill="#64779F" />
      </svg>
@@ -82,29 +82,27 @@ const AdmissionSign = ({ navigate }) => (
        animate={{ rotate: [0, 1, -1, 0] }}
        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
        onClick={() => navigate('/admissions')}
-       className="bg-white w-[230px] h-[210px] rounded-xl border border-slate-100 flex flex-col items-center justify-center text-center relative hover:bg-slate-50 transition-all cursor-pointer shadow-sm"
+       className="bg-[#F8FAFC] w-[190px] h-[170px] rounded-xl border border-slate-200 flex flex-col items-center justify-center text-center relative hover:bg-white transition-all cursor-pointer shadow-lg shadow-black/5"
      >
-         <span className="text-[11px] font-black text-red-600 uppercase tracking-[0.3em] mb-1.5">Admission</span>
-         <h4 className="text-4xl font-semibold text-[#224292] mb-6 tracking-tight font-graphik">Open</h4>
+         <span className="text-[10px] font-black text-red-600 uppercase tracking-[0.3em] mb-1">Admission</span>
+         <h4 className="text-3xl font-semibold text-[#224292] mb-4 tracking-tight font-graphik">Open</h4>
          
-         <button className="flex items-center gap-2.5 px-6 py-3 bg-[#224292] hover:bg-[#ffc107] text-white hover:text-[#224292] rounded-xl transition-all duration-300 shadow-md shadow-black/5">
-             <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] group-hover:bg-[#224292] animate-pulse" />
-             <span className="text-[9px] font-black uppercase tracking-widest">Apply Now</span>
+         <button className="flex items-center gap-2 px-5 py-2.5 bg-[#224292] hover:bg-[#ffc107] text-white hover:text-[#224292] rounded-lg transition-all duration-300 shadow-sm">
+             <div className="w-1 h-1 rounded-full bg-[#ffc107] group-hover:bg-[#224292] animate-pulse" />
+             <span className="text-[8px] font-black uppercase tracking-widest">Apply Now</span>
          </button>
 
          {/* Attachment Screws */}
-         <div className="absolute top-3 left-0 right-0 flex justify-between px-5">
-            <div className="w-2 h-2 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
-            <div className="w-2 h-2 rounded-full bg-slate-200 border border-slate-300 shadow-inner" />
+         <div className="absolute top-3 left-0 right-0 flex justify-between px-4">
+            <div className="w-1.5 h-1.5 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
+            <div className="w-1.5 h-1.5 rounded-full bg-slate-300 border border-slate-400 shadow-inner" />
          </div>
      </motion.div>
-
-     <p className="mt-4 text-[9px] font-black text-black uppercase tracking-[0.3em]">Academic Session 2026-27</p>
   </motion.div>
 )
 
 const CourseGrid = ({ activeTab, navigate }) => (
-  <div className="grid sm:grid-cols-2 gap-5">
+  <div className="grid sm:grid-cols-2 gap-3">
      <AnimatePresence mode="popLayout">
         {programsData[activeTab].courses.map((course, idx) => (
            <motion.div
@@ -123,33 +121,33 @@ const CourseGrid = ({ activeTab, navigate }) => (
                const base = activeTab === 'UG' ? 'undergraduate' : 'postgraduate'
                navigate(`/academics/${base}/${course.id}`)
              }}
-             className="group bg-black/[0.02] p-7 rounded-2xl border border-slate-200/60 hover:bg-white transition-all cursor-pointer relative overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/5"
+             className="group bg-black/[0.02] p-3.5 rounded-xl border border-slate-200/60 hover:bg-white transition-all cursor-pointer relative overflow-hidden shadow-sm hover:shadow-lg"
            >
               <div className="absolute inset-0 bg-gradient-to-br-white via-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#224292]/[0.02] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#ffc107]/5 transition-colors duration-500" />
               
+              {/* Top Right Blue Design Accent */}
+              <div className="absolute top-0 right-0 w-10 h-10 bg-[#224292] clip-triangle" />
+              <div className="absolute top-0 right-0 w-6 h-6 bg-[#ffc107] clip-triangle" />
+
               <div className="relative z-10">
-                 <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-300 transform group-hover:rotate-6">
-                       <course.icon size={26} />
-                    </div>
-                    <div className="px-3 py-1 rounded-full bg-slate-100 group-hover:bg-[#ffc107]/20 transition-colors">
-                       <span className="text-[8px] font-black text-black tracking-[0.2em] uppercase">Course Details</span>
+                 <div className="flex items-center justify-between mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-300 transform group-hover:rotate-6">
+                       <course.icon size={18} />
                     </div>
                  </div>
 
-                 <h4 className="text-lg font-semibold text-black font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
+                 <h4 className="text-[13px] lg:text-[14px] font-bold text-black font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
                     {course.name}
                  </h4>
                  {course.code && (
-                    <p className="text-[11px] font-black text-[#224292] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-2">
+                    <p className="text-[9px] font-black text-[#224292] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-1.5">
                        {course.code}
                     </p>
                  )}
                  
-                 <div className="flex items-center gap-2 mt-4">
-                    <div className="h-1.5 w-1.5 rounded-full bg-[#ffc107]" />
-                    <span className="text-[10px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
+                 <div className="flex items-center gap-2 mt-2">
+                    <div className="h-1 w-1 rounded-full bg-[#ffc107]" />
+                    <span className="text-[8px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
                  </div>
               </div>
            </motion.div>
@@ -225,16 +223,16 @@ const Programs = () => {
                    initial={{ opacity: 0, y: 30 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.6, ease: "easeOut" }}
-                   className="relative rounded-3xl overflow-hidden group min-h-[400px] md:min-h-[500px] flex flex-col justify-end border border-slate-100"
+                   className="relative rounded-3xl overflow-hidden group min-h-[300px] md:min-h-[380px] flex flex-col justify-end border border-slate-100"
                  >
                    <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden">
                       <img src={courseBg} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/95 via-[#224292]/50 to-transparent" />
                    </div>
 
-                   <div className="space-y-8 relative z-10 p-10 lg:p-12">
+                   <div className="space-y-4 relative z-10 p-8 lg:p-10">
                       <div>
-                         <h3 className="text-3xl lg:text-4xl font-semibold text-white mb-4 leading-tight font-graphik">{programsData[activeTab].subtitle}</h3>
+                         <h3 className="text-2xl lg:text-3xl font-semibold text-white mb-4 leading-tight font-graphik">{programsData[activeTab].subtitle}</h3>
                          <p className="text-white/90 font-medium leading-relaxed max-w-sm">
                             {programsData[activeTab].description}
                          </p>
@@ -251,57 +249,32 @@ const Programs = () => {
               {/* Features (Order 3 Mobile / Column 1 Desktop) */}
               <div className="order-3 flex flex-col space-y-2">
                  {/* Highlights List */}
-                  <div className="space-y-4 w-full px-4 mb-8">
+                  <div className="space-y-0 w-full px-4 mb-8">
                     {[
-                       'Industry Ready AI Enabled Curriculum',
-                       '360 Degree Career Development Program',
-                       '30+ Centres of Excellence (COEs)',
-                       'Industry Linked Advanced Labs',
-                       'Culture of Innovation & Creativity'
-                    ].map((text, i) => (
+                       { text: 'Industry Ready AI Enabled Curriculum', icon: Brain },
+                       { text: '360 Degree Career Development Program', icon: Rocket },
+                       { text: '30+ Centres of Excellence (COEs)', icon: Building2 },
+                       { text: 'Industry Linked Advanced Labs', icon: Beaker },
+                       { text: 'Culture of Innovation & Creativity', icon: Zap }
+                    ].map((item, i) => (
                        <motion.div 
                          key={i}
                          initial={{ opacity: 0, x: -10 }}
                          whileInView={{ opacity: 1, x: 0 }}
                          transition={{ delay: i * 0.1 }}
-                         className="flex items-center gap-3 group/item cursor-default"
+                         className="flex items-center gap-4 py-4 border-b border-slate-100 last:border-0 group/item cursor-default"
                        >
-                          <div className="h-0.5 w-3 bg-[#ffc107] opacity-50 group-hover/item:opacity-100 transition-opacity" />
-                          <span className="text-[14px] font-bold text-black italic tracking-tight leading-none">
-                             {text}
+                          <div className="h-10 w-10 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292] shadow-sm group-hover/item:scale-110 transition-transform shrink-0">
+                             <item.icon size={18} />
+                          </div>
+                          <span className="text-[15px] font-semibold text-black tracking-tight leading-tight">
+                             {item.text}
                           </span>
                        </motion.div>
                     ))}
                  </div>
 
-                 {/* Video Card - Always Second (Both Mobile and Desktop) */}
-                 <div className="w-full px-4">
-                   <motion.div
-                     whileHover={{ y: -5 }}
-                     onClick={() => setShowVideo(true)}
-                     className="relative group cursor-pointer rounded-xl overflow-hidden border border-slate-200 bg-white"
-                   >
-                     <div className="aspect-video relative">
-                       <img 
-                         src={courseBg} 
-                         alt="Success Story" 
-                         className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-                       />
-                       <div className="absolute inset-0 bg-[#224292]/10 group-hover:bg-[#224292]/5 transition-colors" />
-                       
-                       <div className="absolute inset-0 flex flex-col items-center justify-center">
-                         <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-2xl">
-                           <Play fill="currentColor" className="ml-1" size={28} />
-                         </div>
-                       </div>
-                     </div>
-                   </motion.div>
-                 </div>
 
-                 {/* Admission Sign - Always Third (Both Mobile and Desktop) */}
-                 <div>
-                    <AdmissionSign navigate={navigate} />
-                 </div>
               </div>
            </div>
 

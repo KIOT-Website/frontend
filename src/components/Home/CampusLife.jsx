@@ -48,13 +48,13 @@ const CampusLife = () => {
             className="lg:col-span-5 space-y-6 lg:space-y-8"
           >
             
-            <h2 className="text-3xl lg:text-[42px] xl:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
+            <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
               A Vibrant <span className="text-[#ffc107]">Ecosystem</span> <br className="hidden lg:block" />
               for Holistic Growth.
             </h2>
             
             <p className="text-sm lg:text-[15px] text-black font-medium leading-relaxed max-w-xl text-justify">
-              Beyond standard academics, KIOT offers an inspiring campus life designed to nurture your physical, social, and creative potential. Explore a world where excellence meets everyday living.
+              Beyond academics, KIOT creates a vibrant campus experience that shapes confident, creative, and future-ready individuals. From modern infrastructure and student clubs to sports, innovation spaces, and cultural activities, every corner of campus is designed to support growth beyond the classroom. Experience a dynamic environment where learning, leadership, and everyday life come together seamlessly.
             </p>
  
             <Link 

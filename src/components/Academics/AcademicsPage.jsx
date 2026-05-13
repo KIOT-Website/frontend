@@ -8,7 +8,7 @@ import {
   Briefcase, MessageSquare, Star, LayoutGrid, Building2,
   Zap, ShieldCheck, Car
 } from 'lucide-react'
-import ugBanner from '../../assets/main/ug banner .webp'
+import academicHero from '../../assets/Admissions/academic.png'
 
 const ugPrograms = [
   {
@@ -276,16 +276,12 @@ export default function AcademicsPage() {
       <section className="relative overflow-hidden bg-[#224292] py-10 md:py-14">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <motion.img 
-            animate={{ scale: [1, 1.1] }}
-            transition={{ duration: 8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
-            src={ugBanner} 
+          <img 
+            src={academicHero} 
             alt="KIOT Academics" 
-            className="w-full h-full object-cover opacity-75 mix-blend-overlay"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#224292]/95 via-[#224292]/10 to-[#224292]" />
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[50%] rounded-full bg-[#224292] blur-[120px] opacity-30 animate-pulse" />
-          <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[60%] rounded-full bg-[#ffc107]/10 blur-[150px] animate-pulse" style={{ animationDelay: '3s' }} />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
 
         {/* Geometric Patterns */}
@@ -295,25 +291,24 @@ export default function AcademicsPage() {
         }} />
         
         {/* Abstract Floating Circle */}
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#ffc107]/20 to-transparent -translate-y-1/2 translate-x-1/2 blur-2xl pointer-events-none" />
 
-        <div className="w-full px-6 lg:px-12 relative z-10">
+        <div className="w-full px-6 lg:pl-64 lg:pr-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center"
+            className="text-left max-w-2xl"
           >
             <motion.span 
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[#ffc107] text-[13px] font-bold tracking-widest uppercase mb-5"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[#ffc107] text-[11px] font-bold tracking-widest uppercase mb-5"
             >
-              <GraduationCap size={16} className="animate-bounce" /> Academic Excellence
+              <GraduationCap size={14} className="animate-bounce" /> Academic Excellence
             </motion.span>
             
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-xl md:text-3xl lg:text-4xl font-black text-white leading-[1.1] mb-6 tracking-tight">
               {programTab === 'PG Programs' ? 'Driven by Knowledge.' : 'Shape Your Future with'}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff1cc] to-[#ffc107] animate-gradient">
@@ -325,7 +320,7 @@ export default function AcademicsPage() {
               </span>
             </h1>
 
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
+            <div className="flex flex-wrap items-center gap-4 mt-8">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -338,7 +333,7 @@ export default function AcademicsPage() {
               <motion.button
                 whileHover={{ scale: 1.05, bg: "rgba(255,255,255,0.1)" }}
                 onClick={() => document.getElementById('academics-content')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 rounded-2xl border border-white/20 text-white font-bold text-sm uppercase tracking-widest backdrop-blur-sm transition-all"
+                className="px-6 py-3 rounded-xl border border-white/20 text-white font-bold text-xs uppercase tracking-widest backdrop-blur-sm transition-all"
               >
                 Explore Programs
               </motion.button>

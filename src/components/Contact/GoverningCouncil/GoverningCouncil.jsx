@@ -60,7 +60,7 @@ const GoverningCouncil = () => {
           >
             {/* Badge Removed per request */}
             
-            <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-graphik font-bold text-[#224292] mb-4 tracking-tighter leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight">
               Governing <span className="text-[#ffc107]">Council</span>
             </h1>
             
@@ -70,7 +70,7 @@ const GoverningCouncil = () => {
         {/* Functions Section */}
         <div className="w-full mb-20 font-graphik">
            <div className="text-center md:text-left mb-10 font-graphik">
-              <h3 className="text-2xl font-graphik font-bold text-[#224292] tracking-tight mb-2">Functions of the Council</h3>
+              <h3 className="text-xl font-graphik font-semibold text-[#224292] tracking-tight mb-2">Functions of the Council</h3>
               <div className="w-16 h-1 bg-[#ffc107] mx-auto md:mx-0 rounded-full" />
            </div>
 
@@ -89,7 +89,7 @@ const GoverningCouncil = () => {
 
         {/* Council Members Section */}
         <div className="max-w-5xl mx-auto font-graphik">
-           <h3 className="text-2xl font-graphik font-bold text-[#224292] mb-10 flex items-center justify-center md:justify-start gap-4 tracking-tight">
+           <h3 className="text-xl font-graphik font-semibold text-[#224292] mb-10 flex items-center justify-center md:justify-start gap-4 tracking-tight">
               <Users className="text-[#224292]" />
               Members of Governing Council
            </h3>

@@ -33,10 +33,10 @@ const AnimatedDonut = ({ segments, circumference, radius, strokeWidth, centerLab
         })}
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-        <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={visible ? { opacity: 1, scale: 1 } : {}} className={`text-3xl font-black ${dark ? 'text-white' : 'text-[#224292]'}`}>
+        <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={visible ? { opacity: 1, scale: 1 } : {}} className={`text-3xl font-semibold ${dark ? 'text-white' : 'text-[#224292]'}`}>
           {centerLabel}
         </motion.span>
-        {dark && <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mt-1">Batch</div>}
+        {dark && <div className="text-[10px] font-semibold text-white/30 uppercase tracking-[0.2em] mt-1">Batch</div>}
       </div>
     </div>
   )
@@ -44,17 +44,17 @@ const AnimatedDonut = ({ segments, circumference, radius, strokeWidth, centerLab
 
 const ImpactDistribution = () => {
   return (
-    <div className="max-w-7xl mx-auto mb-40">
+    <div className="max-w-6xl mx-auto mb-40">
        <div className="text-center mb-20">
-          <div className="flex items-center justify-center gap-3 text-[#ffc107] font-black text-[10px] uppercase tracking-[0.4em] mb-4">
+          <div className="flex items-center justify-center gap-3 text-[#ffc107] font-semibold text-[10px] uppercase tracking-[0.4em] mb-4">
              <span className="w-10 h-[1px] bg-[#ffc107]/30" /> Distribution Matrix <span className="w-10 h-[1px] bg-[#ffc107]/30" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tighter mb-2">Placement Impact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#224292] to-[#ffc107]">2024-25</span></h2>
+          <h2 className="text-2xl md:text-4xl font-semibold text-[#224292] tracking-tighter mb-2">Placement Impact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#224292] to-[#ffc107]">2024-25</span></h2>
        </div>
 
        <div className="grid md:grid-cols-2 gap-12">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className="bg-transparent md:bg-white/40 backdrop-blur-none md:backdrop-blur-xl p-0 md:p-12 rounded-none md:rounded-[5rem] border-none md:border border-white/60 relative group overflow-hidden">
-             <h3 className="text-sm font-bold text-[#224292]/60 uppercase tracking-[0.3em] text-center mb-12">Sectoral Allocation</h3>
+             <h3 className="text-sm font-semibold text-[#224292]/60 uppercase tracking-[0.3em] text-center mb-12">Sectoral Allocation</h3>
              <div className="flex flex-col md:flex-row items-center justify-center gap-12">
                  <AnimatedDonut radius={40} circumference={251.2} strokeWidth={12} centerLabel="100%" dark={false}
                     segments={[
@@ -71,8 +71,8 @@ const ImpactDistribution = () => {
                       <div key={i} className="flex items-center gap-4">
                          <div className="w-10 h-10 rounded-xl shadow-md flex items-center justify-center" style={{ backgroundColor: `${item.color}15`, color: item.color }}> <item.icon size={20} /> </div>
                          <div>
-                            <div className="text-xl font-black text-[#224292] leading-none mb-1">{item.val}</div>
-                            <div className="text-[9px] font-black text-[#64779F] uppercase tracking-widest">{item.label}</div>
+                            <div className="text-xl font-semibold text-[#224292] leading-none mb-1">{item.val}</div>
+                            <div className="text-[9px] font-semibold text-[#64779F] uppercase tracking-widest">{item.label}</div>
                          </div>
                       </div>
                    ))}
@@ -81,7 +81,7 @@ const ImpactDistribution = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#224292] p-0 md:p-12 rounded-none md:rounded-[5rem] shadow-none md:shadow-2xl relative overflow-hidden group">
-             <h3 className="text-sm font-bold text-white/40 uppercase tracking-[0.3em] text-center mb-12 relative z-10">Recruitment Influx</h3>
+             <h3 className="text-sm font-semibold text-white/40 uppercase tracking-[0.3em] text-center mb-12 relative z-10">Recruitment Influx</h3>
              <div className="flex flex-col md:flex-row items-center justify-center gap-10 relative z-10">
                  <AnimatedDonut radius={38} circumference={238.76} strokeWidth={10} centerLabel="2025" dark={true}
                     segments={[
@@ -102,8 +102,8 @@ const ImpactDistribution = () => {
                       <div key={i} className="flex items-center gap-3">
                          <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: item.color }} />
                          <div>
-                            <div className="text-base font-black text-white leading-none mb-1">{item.val}</div>
-                            <div className="text-[8px] font-black text-white/30 uppercase tracking-widest">{item.label}</div>
+                            <div className="text-base font-semibold text-white leading-none mb-1">{item.val}</div>
+                            <div className="text-[8px] font-semibold text-white/30 uppercase tracking-widest">{item.label}</div>
                          </div>
                       </div>
                    ))}

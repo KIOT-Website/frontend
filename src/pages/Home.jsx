@@ -7,6 +7,7 @@ import Achievers from '../components/Home/Achievers'
 import Events from '../components/Home/Events'
 import RecruitmentDrives from '../components/Home/RecruitmentDrives'
 import Testimonials from '../components/Home/Testimonials'
+import AboutKIOT from '../components/Home/AboutKIOT'
 import { motion } from 'framer-motion'
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
       <Hero />
       
       {[
+        { Comp: AboutKIOT },
         { Comp: Stats },
         { Comp: Placements },
         { Comp: Programs },

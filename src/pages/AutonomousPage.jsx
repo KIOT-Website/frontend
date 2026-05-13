@@ -86,7 +86,7 @@ const AutonomousPage = () => {
                     <span>Institutional Status</span>
                 </div>
                 
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-graphik font-black text-white tracking-tighter leading-none mb-6">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-white tracking-tighter leading-none mb-6">
                     Autonomous <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff1cc] to-[#ffc107] animate-gradient">Portal</span>
                 </h1>
 
@@ -157,20 +157,12 @@ const AutonomousPage = () => {
                                 
                                 <div className="mt-6 flex gap-3">
                                     <button 
-                                        onClick={(e) => handleDownload(e, doc.file, doc.title)}
-                                        className="w-52 h-12 bg-slate-50 hover:bg-[#224292] text-[#224292] hover:text-white rounded-xl flex items-center justify-center gap-2 transition-all duration-300 font-graphik font-semibold text-[10px] tracking-wider shadow-sm group/btn"
+                                        onClick={() => window.open(doc.file, '_blank')}
+                                        className="w-full h-12 bg-slate-50 hover:bg-[#224292] text-[#224292] hover:text-white rounded-xl flex items-center justify-center gap-2 transition-all duration-300 font-graphik font-semibold text-[10px] tracking-wider shadow-sm group/btn"
                                     >
-                                        <Download size={14} className="group-hover/btn:text-white transition-colors" />
+                                        <Download size={14} className="text-red-600 group-hover/btn:text-white transition-colors" />
                                         <span className="group-hover/btn:text-white transition-colors">Download PDF</span>
                                     </button>
-                                    <a 
-                                        href={doc.file} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="w-12 h-12 bg-[#ffc107] hover:bg-[#224292] text-[#224292] hover:text-white rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg shadow-[#ffc107]/20 active:scale-95 text-center group/ext"
-                                    >
-                                        <ExternalLink size={18} className="group-hover/ext:text-white transition-colors" />
-                                    </a>
                                 </div>
 
                                 {/* Watermark Sequential Number */}
@@ -236,9 +228,9 @@ const AutonomousPage = () => {
                                                 </td>
                                                 <td className="px-4 py-4 text-center flex items-center justify-center">
                                                     <button 
-                                                        onClick={(e) => handleDownload(e, row.pdf_url, `Academic_Schedule_${row.year_or_version}_${row.semester}`)}
-                                                        className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-[#224292]/40 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all shadow-inner relative z-10"
-                                                        title="Download PDF"
+                                                        onClick={(e) => { e.stopPropagation(); window.open(row.pdf_url, '_blank'); }}
+                                                        className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-red-500 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all shadow-inner relative z-10"
+                                                        title="View PDF"
                                                     >
                                                         <Download size={14} />
                                                     </button>
