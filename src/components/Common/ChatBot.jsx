@@ -19,17 +19,17 @@ const FAQ_DATA = {
   questions: {
     admissions: [
       { q: 'How to apply for admission?', a: 'You can apply online via our Admissions Portal at /admissions or visit the campus directly with your original documents.' },
-      { q: 'Eligibility criteria என்ன?', a: 'Eligibility depends on the course. For B.E/B.Tech, a pass in 12th Std with Physics, Chemistry, and Maths is required. Lateral entry requires a Diploma.' },
-      { q: 'Application last date?', a: 'The last date for applications for the 2026-27 session is expected to be in June. Please check the portal regularly for updates.' },
-      { q: 'Scholarship available ah?', a: 'Yes! We offer Merit Scholarships, Sports Scholarships, and First Graduate concessions as per government norms.' }
+      { q: 'What is the eligibility criteria?', a: 'Eligibility depends on the course. For B.E/B.Tech, a pass in 12th Std with Physics, Chemistry, and Maths is required. Lateral entry requires a Diploma.' },
+      { q: 'What is the application last date?', a: 'The last date for applications for the 2026-27 session is expected to be in June. Please check the portal regularly for updates.' },
+      { q: 'Are scholarships available?', a: 'Yes! We offer Merit Scholarships, Sports Scholarships, and First Graduate concessions as per government norms.' }
     ],
     courses: [
       { q: 'What courses are available?', a: 'We offer UG programs in CSE, IT, ECE, EEE, MECH, CIVIL, AI&DS, and CSBS, along with PG programs like MBA and MCA.' },
-      { q: 'AI & DS available ah?', a: 'Yes, B.E. Artificial Intelligence and Data Science is one of our top-performing emerging departments.' },
-      { q: 'MBA / MCA irukka?', a: 'Yes, we offer both MBA and MCA programs with specialized training for industry readiness.' }
+      { q: 'Is AI & DS available?', a: 'Yes, B.E. Artificial Intelligence and Data Science is one of our top-performing emerging departments.' },
+      { q: 'Do you offer MBA / MCA?', a: 'Yes, we offer both MBA and MCA programs with specialized training for industry readiness.' }
     ],
     placements: [
-      { q: 'Highest package என்ன?', a: 'Our highest package offered to date is ₹12 LPA, with an average package of ₹4.5 LPA across departments.' },
+      { q: 'What is the highest package?', a: 'Our highest package offered to date is ₹12 LPA, with an average package of ₹4.5 LPA across departments.' },
       { q: 'Placement percentage?', a: 'We maintain a consistent 95%+ placement record with students placed in top-tier global companies.' },
       { q: 'Top recruiting companies?', a: 'Our recruiters include TCS, CTS, Wipro, ZOHO, Tech Mahindra, ITC, and many more.' }
     ],
