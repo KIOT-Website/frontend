@@ -43,27 +43,27 @@ const AlumniVoices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative p-8 md:p-10 bg-white border-[3px] border-[#224292] rounded-[2rem] rounded-bl-sm shadow-[10px_10px_0px_#ffc107] group transition-all hover:-translate-y-1 hover:shadow-[15px_15px_0px_#ffc107]"
+              className="relative p-6 md:p-8 bg-white border-[3px] border-[#224292] rounded-[2rem] rounded-bl-sm shadow-[10px_10px_0px_#ffc107] group transition-all hover:-translate-y-1 hover:shadow-[15px_15px_0px_#ffc107]"
             >
               {/* Top Quote Icon */}
-              <div className="text-[#224292] mb-6">
-                <Quote size={50} fill="currentColor" stroke="none" />
+              <div className="text-[#224292] mb-4">
+                <Quote size={40} fill="currentColor" stroke="none" />
               </div>
 
               {/* Title */}
-              <h4 className="text-2xl font-black text-[#224292] mb-6 font-graphik">Testimonial</h4>
+              <h4 className="text-xl font-black text-[#224292] mb-4 font-graphik">Testimonial</h4>
 
               {/* Content */}
-              <div className="min-h-[140px]">
-                <p className="text-black font-bold leading-relaxed font-graphik text-base">
+              <div className="min-h-[100px]">
+                <p className="text-black font-bold leading-relaxed font-graphik text-[13.5px]">
                   {item.quote}
                 </p>
               </div>
 
               {/* Footer Name with Line */}
-              <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-[3px] bg-[#ffc107]" />
-                <span className="text-[#224292] font-black text-sm tracking-tight">{item.name}</span>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="w-10 h-[3px] bg-[#ffc107]" />
+                <span className="text-[#224292] font-black text-xs tracking-tight">{item.name}</span>
               </div>
 
               {/* Closing Quote Icon - bottom right */}
