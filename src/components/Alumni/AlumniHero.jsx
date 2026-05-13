@@ -19,7 +19,7 @@ const AlumniHero = () => {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10 w-full mb-8">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -28,14 +28,14 @@ const AlumniHero = () => {
             className="flex items-center gap-4 mb-4"
           >
             <div className="w-10 h-[2px] bg-[#ffc107]" />
-            <span className="text-[#ffc107] text-[10px] md:text-[12px] font-black uppercase tracking-[0.4em]">KIOT Alumni Association</span>
+            <span className="text-[#ffc107] text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em]">KIOT Alumni Association</span>
           </motion.div>
 
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl md:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tighter mb-6"
+            className="text-3xl md:text-4xl lg:text-[60px] font-black leading-[1.05] tracking-tighter mb-5"
           >
             <span className="text-white">Once</span> <span className="text-[#ffc107]">KIOT.</span><br />
             <span className="text-[#ffc107]">Always</span> <span className="text-white">KIOT.</span>
@@ -45,11 +45,25 @@ const AlumniHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm md:text-base text-white/90 font-medium leading-relaxed max-w-xl"
+            className="text-sm md:text-base text-white/90 font-medium leading-relaxed max-w-xl mb-8"
           >
             A lifelong network of achievers, mentors, and innovators. 
             Reconnect, celebrate, and shape the future together.
           </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-wrap gap-4"
+          >
+            <button className="px-6 py-2.5 bg-[#ffc107] text-[#224292] text-xs font-black uppercase tracking-widest rounded-full hover:bg-white transition-all transform hover:scale-105 active:scale-95 shadow-lg">
+              Join the Network
+            </button>
+            <button className="px-6 py-2.5 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-[#224292] transition-all transform hover:scale-105 active:scale-95">
+              Visit Portal
+            </button>
+          </motion.div>
         </div>
       </div>
     </section>
