@@ -42,7 +42,7 @@ import specialMachineImg from '../assets/idea lap/Special Machine wing.webp'
 import ambassadors24Img from '../assets/idea lap/Student Ambassadors  2024-25.webp'
 import ambassadors25Img from '../assets/idea lap/Student Ambassadors2025-26.webp'
 import sublimationImg from '../assets/idea lap/Sublimation Printing unit.webp'
-import run1 from '../assets/idea lap/run1.webp'
+import run1 from '../assets/idea lap/aicetelogo.png'
 import run2 from '../assets/idea lap/aicte.png'
 import aicteLogo from '../assets/idea lap/aicetelogo.png'
 import govtEmblem from '../assets/idea lap/govt_india_emblem.webp'
@@ -177,13 +177,13 @@ const IdeaLabPage = () => {
                             transition={{ duration: 1 }}
                             className="hidden lg:flex lg:w-1/2 items-center justify-center gap-4"
                         >
-                            <div className="relative group w-60 h-80 bg-[#224292] rounded-[1.5rem] border border-[#3b82f6]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(59,130,246,0.15)] overflow-hidden transition-all duration-500 hover:border-[#3b82f6]/60">
+                            <div className="relative group w-44 h-56 bg-white rounded-2xl border border-slate-100 p-6 flex flex-col items-center justify-center text-center shadow-2xl overflow-hidden transition-all duration-500 hover:scale-105">
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src={run1} alt="IDEA Lab Logo" className="w-full h-full object-contain relative z-20 scale-110 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+                                    <img src={run1} alt="IDEA Lab Logo" className="w-full h-full object-contain relative z-20 scale-110" />
                                 </div>
                             </div>
 
-                            <div className="relative group w-60 h-80 bg-[#224292] rounded-[1.5rem] border border-[#ffc107]/30 p-6 flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(255,193,7,0.15)] overflow-hidden transition-all duration-500 hover:border-[#ffc107]/60 lg:mt-12">
+                            <div className="relative group w-44 h-56 bg-white rounded-2xl border border-slate-100 p-6 flex flex-col items-center justify-center text-center shadow-2xl overflow-hidden transition-all duration-500 hover:scale-105 lg:mt-12">
                                 <div className="w-full h-full flex items-center justify-center">
                                     <img src={run2} alt="AICTE Logo" className="w-full h-full object-contain relative z-20 scale-125" />
                                 </div>
