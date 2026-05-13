@@ -66,6 +66,17 @@ const ChatBot = () => {
     }
   }, [messages, isTyping]);
 
+  const GREETINGS = {
+    hi: 'Hello! I\'m your KIOT virtual assistant. How can I help you today?',
+    hello: 'Hi there! Welcome to KIOT. What can I help you with?',
+    hey: 'Hey! I\'m here to help. Feel free to ask about admissions, courses, or placements.',
+    bye: 'Goodbye! Have a wonderful day. Come back anytime!',
+    goodbye: 'Bye! It was a pleasure helping you. Have a great day ahead.',
+    thanks: 'You\'re very welcome! I\'m glad I could help.',
+    'thank you': 'My pleasure! Let me know if you need anything else.',
+    who: 'I\'m the KIOT AI assistant, designed to help you navigate our campus resources and information.'
+  };
+
   const handleSend = (text, directResponse = null) => {
     if (!text.trim()) return;
 
@@ -77,15 +88,23 @@ const ChatBot = () => {
       let reply = directResponse;
       
       if (!reply) {
-        const lower = text.toLowerCase();
-        // Simple global search
-        const allQA = Object.values(FAQ_DATA.questions).flat();
-        const found = allQA.find(item => lower.includes(item.q.toLowerCase()) || item.q.toLowerCase().includes(lower));
+        const lower = text.toLowerCase().trim();
         
-        if (found) {
-          reply = found.a;
+        // Check for greetings first
+        const greetingKey = Object.keys(GREETINGS).find(key => lower.includes(key));
+        
+        if (greetingKey) {
+          reply = GREETINGS[greetingKey];
         } else {
-          reply = "I'm sorry, I couldn't find a specific answer for that. You can reach us at info@kiot.ac.in for detailed queries. Alternatively, try selecting a category below! 👇";
+          // FAQ search
+          const allQA = Object.values(FAQ_DATA.questions).flat();
+          const found = allQA.find(item => lower.includes(item.q.toLowerCase()) || item.q.toLowerCase().includes(lower));
+          
+          if (found) {
+            reply = found.a;
+          } else {
+            reply = "I'm sorry, I couldn't find a specific answer for that. You can reach us at info@kiot.ac.in for detailed queries. Alternatively, try selecting a category below! 👇";
+          }
         }
       }
 
