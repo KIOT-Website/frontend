@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, User, Bot, ChevronRight } from 'lucide-react';
+import studentAvatar from '../../assets/main/chatbot_avatar.png';
 
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -60,8 +61,8 @@ const ChatBot = () => {
                         {/* Header */}
                         <div className="bg-[#224292] p-4 flex items-center justify-between text-white">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
-                                    <Bot size={24} className="text-[#ffc107]" />
+                                <div className="w-10 h-10 rounded-full bg-white overflow-hidden flex items-center justify-center border border-white/20">
+                                    <img src={studentAvatar} alt="Avatar" className="w-full h-full object-cover" />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-sm">KIOT Assistant</h3>
@@ -150,11 +151,11 @@ const ChatBot = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 ${
+                className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 overflow-hidden ${
                     isOpen ? 'bg-white text-[#224292]' : 'bg-[#224292] text-white'
                 }`}
             >
-                {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
+                {isOpen ? <X size={28} /> : <img src={studentAvatar} alt="Chat" className="w-full h-full object-cover" />}
                 
                 {/* Notification Badge */}
                 {!isOpen && (
