@@ -122,6 +122,7 @@ const navLinks = [
       { name: 'Blogs', href: '/resources/blogs', icon: FileText }
     ]
   },
+  { name: 'Online Payment', href: 'online-payment' },
   { name: 'Contact', href: 'contact' },
 ]
 
