@@ -78,7 +78,7 @@ const Placements = () => {
               </h2>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-y-8 lg:gap-y-4">
               {stats.map((stat, idx) => (
                 <motion.div
                   key={idx}
