@@ -74,7 +74,14 @@ const ChatBot = () => {
     goodbye: 'Bye! It was a pleasure helping you. Have a great day ahead.',
     thanks: 'You\'re very welcome! I\'m glad I could help.',
     'thank you': 'My pleasure! Let me know if you need anything else.',
-    who: 'I\'m the KIOT AI assistant, designed to help you navigate our campus resources and information.'
+    who: 'I\'m the KIOT AI assistant, designed to help you navigate our campus resources and information.',
+    'how are you': 'I\'m doing great, thank you for asking! Ready to help you with anything related to KIOT.',
+    'what can you do': 'I can help you with admissions, course details, placement records, hostel information, and more. Try clicking the categories above!',
+    'ok': 'Perfect! Let me know if you have any questions.',
+    'cool': 'Glad you think so! Feel free to explore our categories.',
+    'good morning': 'Good morning! Hope you have a productive day at KIOT. How can I help?',
+    'good afternoon': 'Good afternoon! How is your day going? Need any information?',
+    'good evening': 'Good evening! Hope you had a great day. Is there anything I can help with before I close?'
   };
 
   const [suggestions, setSuggestions] = useState([]);
