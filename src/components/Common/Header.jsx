@@ -119,10 +119,10 @@ const navLinks = [
       { name: 'Campus Life', href: '/resources/campus-life', icon: Building2 },
       { name: 'Student Life', href: '/resources/student-life', icon: Users },
       { name: 'Alumni', href: '/resources/alumni', icon: GraduationCap },
+      { name: 'Online Payment', href: 'https://formbuilder.ccavenue.com/live/city-union-bank/knowledge-institute-of-technology', icon: CheckCircle2 },
       { name: 'Blogs', href: '/resources/blogs', icon: FileText }
     ]
   },
-  { name: 'Online Payment', href: 'online-payment' },
   { name: 'Contact', href: 'contact' },
 ]
 
