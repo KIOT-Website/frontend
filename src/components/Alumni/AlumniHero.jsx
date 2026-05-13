@@ -11,7 +11,7 @@ const AlumniHero = () => {
         transition={{ duration: 1.5, ease: "easeOut" }}
         src={alumniTech} 
         alt="KIOT Alumni Banner" 
-        className="w-full h-full object-cover object-center sm:object-top"
+        className="w-full h-full object-cover object-left"
       />
     </section>
   )
