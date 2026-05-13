@@ -202,27 +202,14 @@ const ChatBot = () => {
                 </div>
               )}
 
-              {/* Navigation Menu */}
-              {!currentCategory ? (
-                <div className="grid grid-cols-2 gap-2 pt-2">
-                  {FAQ_DATA.categories.map((cat) => (
-                    <button
-                      key={cat.id}
-                      onClick={() => setCurrentCategory(cat.id)}
-                      className="flex flex-col items-center gap-2 p-4 bg-white border border-slate-100 rounded-2xl hover:border-[#ffc107] hover:shadow-md transition-all group"
-                    >
-                      <cat.icon size={20} style={{ color: cat.color }} />
-                      <span className="text-[10px] font-black uppercase text-[#224292]">{cat.label}</span>
-                    </button>
-                  ))}
-                </div>
-              ) : (
+              {/* Questions Area (Only show when a category is selected via search/type) */}
+              {currentCategory && (
                 <div className="space-y-2 pt-2">
                   <button 
                     onClick={() => setCurrentCategory(null)}
                     className="flex items-center gap-2 text-[10px] font-black text-[#224292] uppercase tracking-widest mb-3 hover:text-[#ffc107] transition-colors"
                   >
-                    <ArrowLeft size={14} /> Back to Categories
+                    <ArrowLeft size={14} /> Back to Search
                   </button>
                   {FAQ_DATA.questions[currentCategory].map((item, idx) => (
                     <button
