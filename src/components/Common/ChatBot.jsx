@@ -161,7 +161,7 @@ const ChatBot = () => {
             initial={{ opacity: 0, scale: 0.8, y: 50, transformOrigin: 'bottom right' }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            className="absolute bottom-16 right-0 w-[320px] sm:w-[380px] h-[550px] bg-white rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.2)] border border-slate-100 overflow-hidden flex flex-col"
+            className="absolute bottom-16 right-0 w-[320px] sm:w-[380px] h-[480px] bg-white rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.2)] border border-slate-100 overflow-hidden flex flex-col"
           >
             {/* Header */}
             <div className="bg-[#224292] p-4 flex items-center justify-between text-white shrink-0">
