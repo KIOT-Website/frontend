@@ -1,186 +1,242 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, User, Bot, ChevronRight } from 'lucide-react';
+import { 
+  MessageCircle, X, Send, User, Bot, ChevronRight, 
+  ArrowLeft, Search, Phone, Mail, MapPin, GraduationCap,
+  Building2, Trophy, Bus, BookOpen, Coffee
+} from 'lucide-react';
 import studentAvatar from '../../assets/main/chatbot_avatar.png';
 
+const FAQ_DATA = {
+  categories: [
+    { id: 'admissions', label: 'Admissions', icon: GraduationCap, color: '#ffc107' },
+    { id: 'courses', label: 'Courses', icon: BookOpen, color: '#224292' },
+    { id: 'placements', label: 'Placements', icon: Trophy, color: '#10b981' },
+    { id: 'hostel', label: 'Hostel & Food', icon: Coffee, color: '#f59e0b' },
+    { id: 'transport', label: 'Transport', icon: Bus, color: '#6366f1' },
+    { id: 'contact', label: 'Contact Us', icon: Phone, color: '#ef4444' }
+  ],
+  questions: {
+    admissions: [
+      { q: 'How to apply for admission?', a: 'You can apply online via our Admissions Portal at /admissions or visit the campus directly with your original documents.' },
+      { q: 'Eligibility criteria என்ன?', a: 'Eligibility depends on the course. For B.E/B.Tech, a pass in 12th Std with Physics, Chemistry, and Maths is required. Lateral entry requires a Diploma.' },
+      { q: 'Application last date?', a: 'The last date for applications for the 2026-27 session is expected to be in June. Please check the portal regularly for updates.' },
+      { q: 'Scholarship available ah?', a: 'Yes! We offer Merit Scholarships, Sports Scholarships, and First Graduate concessions as per government norms.' }
+    ],
+    courses: [
+      { q: 'What courses are available?', a: 'We offer UG programs in CSE, IT, ECE, EEE, MECH, CIVIL, AI&DS, and CSBS, along with PG programs like MBA and MCA.' },
+      { q: 'AI & DS available ah?', a: 'Yes, B.E. Artificial Intelligence and Data Science is one of our top-performing emerging departments.' },
+      { q: 'MBA / MCA irukka?', a: 'Yes, we offer both MBA and MCA programs with specialized training for industry readiness.' }
+    ],
+    placements: [
+      { q: 'Highest package என்ன?', a: 'Our highest package offered to date is ₹12 LPA, with an average package of ₹4.5 LPA across departments.' },
+      { q: 'Placement percentage?', a: 'We maintain a consistent 95%+ placement record with students placed in top-tier global companies.' },
+      { q: 'Top recruiting companies?', a: 'Our recruiters include TCS, CTS, Wipro, ZOHO, Tech Mahindra, ITC, and many more.' }
+    ],
+    hostel: [
+      { q: 'Hostel fees?', a: 'Hostel fees start from approximately ₹75,000 per year, covering both accommodation and healthy multi-cuisine food.' },
+      { q: 'AC/non-AC rooms?', a: 'Both AC and non-AC rooms are available with modern amenities, study tables, and high-speed WiFi.' },
+      { q: 'Food timing?', a: 'Breakfast: 7:30-9:00, Lunch: 12:30-2:00, Snacks: 5:00-6:00, Dinner: 7:30-9:00.' }
+    ],
+    transport: [
+      { q: 'Bus routes available?', a: 'We operate 50+ buses covering Salem, Namakkal, Erode, and Dharmapuri districts. Check /campus-life/transport for routes.' },
+      { q: 'Nearby railway station?', a: 'The nearest railway station is Salem Junction, which is approximately 15km from the campus.' }
+    ],
+    contact: [
+      { q: 'Admission office number', a: 'You can reach our admission cell at +91 98947 01234 or +91 86084 85944.' },
+      { q: 'Principal contact', a: 'Office of the Principal: 0427-2430399. Email: principal@kiot.ac.in.' },
+      { q: 'Email address', a: 'General inquiries: info@kiot.ac.in. Admissions: admissions@kiot.ac.in.' }
+    ]
+  }
+};
+
 const ChatBot = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [messages, setMessages] = useState([
-        { id: 1, type: 'bot', text: 'Hello! Welcome to KIOT. How can I help you today?' }
-    ]);
-    const [inputValue, setInputValue] = useState('');
-    const scrollRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    { id: 1, type: 'bot', text: '👋 Hi! Welcome to KIOT. How can I help you today?' }
+  ]);
+  const [inputValue, setInputValue] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState(null);
+  const scrollRef = useRef(null);
 
-    const quickActions = [
-        { id: 'admission', text: 'Admission Details', response: 'For admission details, please visit our Admissions portal or contact us at +91 98947 01234.' },
-        { id: 'courses', text: 'Courses Offered', response: 'We offer various UG and PG courses in Engineering, Technology, and Management. Which department are you interested in?' },
-        { id: 'placement', text: 'Placement Records', response: 'KIOT has an excellent placement record with 500+ recruiters. Our highest package is 12 LPA.' },
-        { id: 'contact', text: 'Contact Office', response: 'You can reach our main office at info@kiot.ac.in or call 0427-2430399.' }
-    ];
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages, isTyping]);
 
-    useEffect(() => {
-        if (scrollRef.current) {
-            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  const handleSend = (text, directResponse = null) => {
+    if (!text.trim()) return;
+
+    setMessages(prev => [...prev, { id: Date.now(), type: 'user', text }]);
+    setInputValue('');
+    setIsTyping(true);
+
+    setTimeout(() => {
+      let reply = directResponse;
+      
+      if (!reply) {
+        const lower = text.toLowerCase();
+        // Simple global search
+        const allQA = Object.values(FAQ_DATA.questions).flat();
+        const found = allQA.find(item => lower.includes(item.q.toLowerCase()) || item.q.toLowerCase().includes(lower));
+        
+        if (found) {
+          reply = found.a;
+        } else {
+          reply = "I'm sorry, I couldn't find a specific answer for that. You can reach us at info@kiot.ac.in for detailed queries. Alternatively, try selecting a category below! 👇";
         }
-    }, [messages]);
+      }
 
-    const handleSend = (text) => {
-        if (!text.trim()) return;
+      setMessages(prev => [...prev, { id: Date.now() + 1, type: 'bot', text: reply }]);
+      setIsTyping(false);
+    }, 800);
+  };
 
-        // Add user message
-        const userMsg = { id: Date.now(), type: 'user', text };
-        setMessages(prev => [...prev, userMsg]);
-        setInputValue('');
+  return (
+    <div className="fixed bottom-20 right-6 z-[9998] font-graphik">
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 50, transformOrigin: 'bottom right' }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 50 }}
+            className="absolute bottom-16 right-0 w-[320px] sm:w-[380px] h-[550px] bg-white rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.2)] border border-slate-100 overflow-hidden flex flex-col"
+          >
+            {/* Header */}
+            <div className="bg-[#224292] p-4 flex items-center justify-between text-white shrink-0">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-white overflow-hidden border border-white/20">
+                  <img src={studentAvatar} alt="Avatar" className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h3 className="font-black text-sm tracking-tight">KIOT Assistant</h3>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                    <span className="text-[10px] text-white/70 font-bold">Always Online</span>
+                  </div>
+                </div>
+              </div>
+              <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                <X size={20} />
+              </button>
+            </div>
 
-        // Simulate Bot Response
-        setTimeout(() => {
-            let botResponse = "I'm sorry, I don't have information on that yet. Please contact our support team.";
-            
-            // Basic matching for demo
-            const lowerText = text.toLowerCase();
-            if (lowerText.includes('admission')) botResponse = quickActions[0].response;
-            else if (lowerText.includes('course')) botResponse = quickActions[1].response;
-            else if (lowerText.includes('placement')) botResponse = quickActions[2].response;
-            else if (lowerText.includes('contact')) botResponse = quickActions[3].response;
+            {/* Chat Area */}
+            <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 scroll-smooth">
+              {messages.map((msg) => (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  key={msg.id}
+                  className={`flex ${msg.type === 'bot' ? 'justify-start' : 'justify-end'}`}
+                >
+                  <div className={`max-w-[85%] p-3.5 rounded-2xl text-[13px] font-bold leading-relaxed shadow-sm ${
+                    msg.type === 'bot' 
+                    ? 'bg-white text-slate-800 rounded-tl-none border border-slate-200' 
+                    : 'bg-[#224292] text-white rounded-tr-none'
+                  }`}>
+                    {msg.text}
+                  </div>
+                </motion.div>
+              ))}
 
-            setMessages(prev => [...prev, { id: Date.now() + 1, type: 'bot', text: botResponse }]);
-        }, 1000);
-    };
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 flex gap-1 items-center">
+                    <span className="w-1.5 h-1.5 bg-[#224292]/40 rounded-full animate-bounce" />
+                    <span className="w-1.5 h-1.5 bg-[#224292]/40 rounded-full animate-bounce [animation-delay:0.2s]" />
+                    <span className="w-1.5 h-1.5 bg-[#224292]/40 rounded-full animate-bounce [animation-delay:0.4s]" />
+                  </div>
+                </div>
+              )}
 
-    return (
-        <div className="fixed bottom-20 right-6 z-[9998] font-graphik">
-            {/* Chat Window */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8, y: 50, transformOrigin: 'bottom right' }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.8, y: 50 }}
-                        className="absolute bottom-16 right-0 w-[320px] sm:w-[380px] h-[500px] bg-white rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.2)] border border-slate-100 overflow-hidden flex flex-col"
+              {/* Navigation Menu */}
+              {!currentCategory ? (
+                <div className="grid grid-cols-2 gap-2 pt-2">
+                  {FAQ_DATA.categories.map((cat) => (
+                    <button
+                      key={cat.id}
+                      onClick={() => setCurrentCategory(cat.id)}
+                      className="flex flex-col items-center gap-2 p-4 bg-white border border-slate-100 rounded-2xl hover:border-[#ffc107] hover:shadow-md transition-all group"
                     >
-                        {/* Header */}
-                        <div className="bg-[#224292] p-4 flex items-center justify-between text-white">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-white overflow-hidden flex items-center justify-center border border-white/20">
-                                    <img src={studentAvatar} alt="Avatar" className="w-full h-full object-cover" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-sm">KIOT Assistant</h3>
-                                    <div className="flex items-center gap-1.5">
-                                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                                        <span className="text-[10px] text-white/70">Online</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button 
-                                onClick={() => setIsOpen(false)}
-                                className="p-2 hover:bg-white/10 rounded-full transition-colors"
-                            >
-                                <X size={20} />
-                            </button>
-                        </div>
+                      <cat.icon size={20} style={{ color: cat.color }} />
+                      <span className="text-[10px] font-black uppercase text-[#224292]">{cat.label}</span>
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <div className="space-y-2 pt-2">
+                  <button 
+                    onClick={() => setCurrentCategory(null)}
+                    className="flex items-center gap-2 text-[10px] font-black text-[#224292] uppercase tracking-widest mb-3 hover:text-[#ffc107] transition-colors"
+                  >
+                    <ArrowLeft size={14} /> Back to Categories
+                  </button>
+                  {FAQ_DATA.questions[currentCategory].map((item, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSend(item.q, item.a)}
+                      className="w-full text-left p-3 bg-white border border-slate-200 rounded-xl hover:border-[#224292] transition-all group flex items-center justify-between"
+                    >
+                      <span className="text-[12px] font-bold text-slate-700">{item.q}</span>
+                      <ChevronRight size={14} className="text-slate-300 group-hover:text-[#224292]" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
-                        {/* Messages Area */}
-                        <div 
-                            ref={scrollRef}
-                            className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50"
-                        >
-                            {messages.map((msg) => (
-                                <motion.div
-                                    initial={{ opacity: 0, x: msg.type === 'bot' ? -10 : 10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    key={msg.id}
-                                    className={`flex ${msg.type === 'bot' ? 'justify-start' : 'justify-end'}`}
-                                >
-                                    <div className={`max-w-[80%] p-3 rounded-2xl text-xs font-medium leading-relaxed shadow-sm ${
-                                        msg.type === 'bot' 
-                                        ? 'bg-white text-slate-700 rounded-tl-none border border-slate-100' 
-                                        : 'bg-[#224292] text-white rounded-tr-none'
-                                    }`}>
-                                        {msg.text}
-                                    </div>
-                                </motion.div>
-                            ))}
-                            
-                            {/* Quick Actions */}
-                            {messages.length === 1 && (
-                                <div className="grid grid-cols-1 gap-2 pt-2">
-                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Quick Links</p>
-                                    {quickActions.map((action) => (
-                                        <button
-                                            key={action.id}
-                                            onClick={() => handleSend(action.text)}
-                                            className="flex items-center justify-between p-3 bg-white border border-slate-100 rounded-xl text-left hover:border-[#ffc107] hover:bg-[#ffc107]/5 transition-all group"
-                                        >
-                                            <span className="text-xs font-bold text-[#224292]">{action.text}</span>
-                                            <ChevronRight size={14} className="text-slate-300 group-hover:text-[#ffc107] transition-colors" />
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+            {/* Input */}
+            <div className="p-4 bg-white border-t border-slate-100 shrink-0">
+              <form 
+                onSubmit={(e) => { e.preventDefault(); handleSend(inputValue); }}
+                className="flex items-center gap-2 bg-slate-100 p-1 rounded-2xl border border-slate-200"
+              >
+                <input 
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  placeholder="Ask about admissions, fees, hostel..."
+                  className="flex-1 bg-transparent border-none px-4 py-2 text-[13px] font-bold text-[#224292] outline-none placeholder:text-slate-400"
+                />
+                <button 
+                  type="submit"
+                  disabled={!inputValue.trim()}
+                  className="p-3 bg-[#224292] text-white rounded-xl hover:bg-[#224292]/90 disabled:opacity-50 transition-all shadow-lg"
+                >
+                  <Send size={18} />
+                </button>
+              </form>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-                        {/* Input Area */}
-                        <div className="p-4 bg-white border-t border-slate-100">
-                            <form 
-                                onSubmit={(e) => { e.preventDefault(); handleSend(inputValue); }}
-                                className="flex items-center gap-2"
-                            >
-                                <input 
-                                    type="text"
-                                    value={inputValue}
-                                    onChange={(e) => setInputValue(e.target.value)}
-                                    placeholder="Type your message..."
-                                    className="flex-1 bg-slate-100 border-none rounded-xl px-4 py-3 text-xs font-medium focus:ring-2 focus:ring-[#224292] outline-none"
-                                />
-                                <button 
-                                    type="submit"
-                                    disabled={!inputValue.trim()}
-                                    className="p-3 bg-[#224292] text-white rounded-xl hover:bg-[#224292]/90 transition-all disabled:opacity-50 shadow-lg shadow-[#224292]/20"
-                                >
-                                    <Send size={18} />
-                                </button>
-                            </form>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            {/* Floating Toggle Button */}
-            <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsOpen(!isOpen)}
-                className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 overflow-hidden ${
-                    isOpen ? 'bg-white text-[#224292]' : 'bg-[#224292] text-white'
-                }`}
-            >
-                {isOpen ? (
-                    <X size={28} />
-                ) : (
-                    <motion.img 
-                        src={studentAvatar} 
-                        alt="Chat" 
-                        className="w-full h-full object-cover"
-                        animate={{ 
-                            x: [0, -1, 1, -1, 0],
-                            y: [0, 1, -1, 1, 0]
-                        }}
-                        transition={{ 
-                            duration: 0.5,
-                            repeat: Infinity,
-                            repeatDelay: 2
-                        }}
-                    />
-                )}
-                
-                {/* Notification Badge */}
-                {!isOpen && (
-                    <span className="absolute top-0 right-0 w-4 h-4 bg-[#ffc107] rounded-full border-2 border-white animate-bounce" />
-                )}
-            </motion.button>
-        </div>
-    );
+      {/* FAB */}
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => setIsOpen(!isOpen)}
+        className={`relative w-16 h-16 rounded-full flex items-center justify-center shadow-[0_15px_40px_rgba(34,66,146,0.3)] transition-all duration-500 overflow-hidden ${
+          isOpen ? 'bg-white border-2 border-[#224292]' : 'bg-[#224292]'
+        }`}
+      >
+        {isOpen ? (
+          <X size={28} className="text-[#224292]" />
+        ) : (
+          <>
+            <img src={studentAvatar} alt="Chat" className="w-full h-full object-cover scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/40 to-transparent pointer-events-none" />
+          </>
+        )}
+        {!isOpen && (
+          <span className="absolute top-1 right-1 w-4 h-4 bg-[#ffc107] rounded-full border-2 border-white animate-bounce shadow-md" />
+        )}
+      </motion.button>
+    </div>
+  );
 };
 
 export default ChatBot;
