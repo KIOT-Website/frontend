@@ -53,7 +53,6 @@ const AlumniHero = () => {
         </div>
       </div>
     </section>
-    </section>
   )
 }
 
