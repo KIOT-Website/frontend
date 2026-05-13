@@ -82,12 +82,15 @@ const ChatBot = () => {
     'thank you': 'My pleasure! Let me know if you need anything else.',
     who: 'I\'m the KIOT AI assistant, designed to help you navigate our campus resources and information.',
     'how are you': 'I\'m doing great, thank you for asking! Ready to help you with anything related to KIOT.',
-    'what can you do': 'I can help you with admissions, course details, placement records, hostel information, and more. Try clicking the categories above!',
+    'how are yuo': 'I\'m doing great, thank you for asking! Ready to help you with anything related to KIOT.',
+    'what can you do': 'I can help you with admissions, course details, placement records, hostel information, and more.',
     'ok': 'Perfect! Let me know if you have any questions.',
-    'cool': 'Glad you think so! Feel free to explore our categories.',
-    'good morning': 'Good morning! Hope you have a productive day at KIOT. How can I help?',
-    'good afternoon': 'Good afternoon! How is your day going? Need any information?',
-    'good evening': 'Good evening! Hope you had a great day. Is there anything I can help with before I close?'
+    'good morning': 'Good morning! Hope you have a productive day at KIOT.',
+    'good afternoon': 'Good afternoon! How is your day going?',
+    'good evening': 'Good evening! Is there anything I can help with?',
+    'good night': 'Good night! Sleep well. See you tomorrow!',
+    'gund night': 'Good night! Sleep well. See you tomorrow!',
+    'night': 'Good night! Feel free to ask more tomorrow.'
   };
 
   const [suggestions, setSuggestions] = useState([]);
@@ -139,7 +142,7 @@ const ChatBot = () => {
             if (found) {
               reply = found.a;
             } else {
-              reply = "I'm sorry, I couldn't find a specific answer for that. You can reach us at info@kiot.ac.in for detailed queries. Alternatively, try selecting a category below! 👇";
+              reply = "I didn't quite catch that. Could you rephrase? You can ask about: • Admissions • Placements • Fees • Hostel • Or specific courses like CSE, ECE, B.Sc.";
             }
           }
         }
