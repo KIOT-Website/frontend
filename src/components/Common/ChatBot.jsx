@@ -77,11 +77,27 @@ const ChatBot = () => {
     who: 'I\'m the KIOT AI assistant, designed to help you navigate our campus resources and information.'
   };
 
+  const [suggestions, setSuggestions] = useState([]);
+
+  useEffect(() => {
+    if (inputValue.trim().length > 1) {
+      const lowerInput = inputValue.toLowerCase();
+      const allQuestions = Object.values(FAQ_DATA.questions).flat();
+      const filtered = allQuestions.filter(item => 
+        item.q.toLowerCase().includes(lowerInput)
+      ).slice(0, 3);
+      setSuggestions(filtered);
+    } else {
+      setSuggestions([]);
+    }
+  }, [inputValue]);
+
   const handleSend = (text, directResponse = null) => {
     if (!text.trim()) return;
 
     setMessages(prev => [...prev, { id: Date.now(), type: 'user', text }]);
     setInputValue('');
+    setSuggestions([]);
     setIsTyping(true);
 
     setTimeout(() => {
@@ -90,20 +106,28 @@ const ChatBot = () => {
       if (!reply) {
         const lower = text.toLowerCase().trim();
         
-        // Check for greetings first
+        // 1. Check for greetings
         const greetingKey = Object.keys(GREETINGS).find(key => lower.includes(key));
         
         if (greetingKey) {
           reply = GREETINGS[greetingKey];
         } else {
-          // FAQ search
-          const allQA = Object.values(FAQ_DATA.questions).flat();
-          const found = allQA.find(item => lower.includes(item.q.toLowerCase()) || item.q.toLowerCase().includes(lower));
+          // 2. Check if it's a category name
+          const matchedCat = FAQ_DATA.categories.find(c => lower.includes(c.label.toLowerCase()) || c.id.includes(lower));
           
-          if (found) {
-            reply = found.a;
+          if (matchedCat) {
+            setCurrentCategory(matchedCat.id);
+            reply = `I found some information related to ${matchedCat.label}. Please select a specific question below! 👇`;
           } else {
-            reply = "I'm sorry, I couldn't find a specific answer for that. You can reach us at info@kiot.ac.in for detailed queries. Alternatively, try selecting a category below! 👇";
+            // 3. Exact/Partial Question Match
+            const allQA = Object.values(FAQ_DATA.questions).flat();
+            const found = allQA.find(item => lower.includes(item.q.toLowerCase()) || item.q.toLowerCase().includes(lower));
+            
+            if (found) {
+              reply = found.a;
+            } else {
+              reply = "I'm sorry, I couldn't find a specific answer for that. You can reach us at info@kiot.ac.in for detailed queries. Alternatively, try selecting a category below! 👇";
+            }
           }
         }
       }
@@ -197,7 +221,7 @@ const ChatBot = () => {
                     <button
                       key={idx}
                       onClick={() => handleSend(item.q, item.a)}
-                      className="w-full text-left p-3 bg-white border border-slate-200 rounded-xl hover:border-[#224292] transition-all group flex items-center justify-between"
+                      className="w-full text-left p-3 bg-white border border-slate-200 rounded-xl hover:border-[#224292] transition-all group flex items-center justify-between shadow-sm"
                     >
                       <span className="text-[12px] font-bold text-slate-700">{item.q}</span>
                       <ChevronRight size={14} className="text-slate-300 group-hover:text-[#224292]" />
@@ -206,6 +230,30 @@ const ChatBot = () => {
                 </div>
               )}
             </div>
+
+            {/* Suggestions Overlay */}
+            <AnimatePresence>
+              {suggestions.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="px-4 py-2 bg-white border-t border-slate-100 space-y-1.5 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]"
+                >
+                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest px-1">Suggested Questions</p>
+                  {suggestions.map((item, i) => (
+                    <button
+                      key={i}
+                      onClick={() => handleSend(item.q, item.a)}
+                      className="w-full text-left p-2 bg-slate-50 hover:bg-[#ffc107]/10 rounded-lg text-[11px] font-bold text-[#224292] transition-colors flex items-center gap-2"
+                    >
+                      <Search size={12} className="text-[#ffc107]" />
+                      <span className="truncate">{item.q}</span>
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Input */}
             <div className="p-4 bg-white border-t border-slate-100 shrink-0">
@@ -259,3 +307,4 @@ const ChatBot = () => {
 };
 
 export default ChatBot;
+
