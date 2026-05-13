@@ -142,7 +142,7 @@ const ChatBot = () => {
             if (found) {
               reply = found.a;
             } else {
-              reply = "I didn't quite catch that. Could you rephrase? You can ask about: • Admissions • Placements • Fees • Hostel • Or specific courses like CSE, ECE, B.Sc.";
+              reply = "I didn't quite catch that. Could you rephrase? You can ask about: • **Admissions** • **Placements** • **Fees** • **Hostel** • Or specific courses like **CSE, ECE, B.Sc.**";
             }
           }
         }
@@ -171,10 +171,6 @@ const ChatBot = () => {
                 </div>
                 <div>
                   <h3 className="font-black text-sm tracking-tight">KIOT Assistant</h3>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-[10px] text-white/70 font-bold">Always Online</span>
-                  </div>
                 </div>
               </div>
               <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/10 rounded-full transition-colors">
@@ -193,10 +189,12 @@ const ChatBot = () => {
                 >
                   <div className={`max-w-[85%] p-3.5 rounded-2xl text-[13px] font-bold leading-relaxed shadow-sm ${
                     msg.type === 'bot' 
-                    ? 'bg-white text-slate-800 rounded-tl-none border border-slate-200' 
+                    ? 'bg-[#F1F5F9] text-slate-800 rounded-tl-none border border-slate-200' 
                     : 'bg-[#224292] text-white rounded-tr-none'
                   }`}>
-                    {msg.text}
+                    {msg.text.split('**').map((part, i) => (
+                      i % 2 === 1 ? <span key={i} className="font-black text-[#224292]">{part}</span> : part
+                    ))}
                   </div>
                 </motion.div>
               ))}
