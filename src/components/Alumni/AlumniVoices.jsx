@@ -43,25 +43,8 @@ const AlumniVoices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative p-10 group"
+              className="relative p-8 md:p-10 bg-white border-[3px] border-[#224292] rounded-[2rem] rounded-bl-sm shadow-[10px_10px_0px_#ffc107] group transition-all hover:-translate-y-1 hover:shadow-[15px_15px_0px_#ffc107]"
             >
-              {/* The Styled Card Background and Border */}
-              <div className="absolute inset-x-4 top-0 bottom-12 bg-white border-[3px] border-[#224292] rounded-[2rem] rounded-bl-sm shadow-[10px_10px_0px_#ffc107] -z-10" />
-              
-              {/* The Tail - carefully crafted to match the image */}
-              <div className="absolute left-4 bottom-0 w-16 h-12 -z-10">
-                <svg viewBox="0 0 100 100" className="w-full h-full text-[#224292]" preserveAspectRatio="none">
-                  <path 
-                    d="M0 0 V60 L50 100 L100 60 H0" 
-                    fill="white" 
-                    stroke="currentColor" 
-                    strokeWidth="8" 
-                  />
-                </svg>
-                {/* Visual fix for the join */}
-                <div className="absolute top-0 left-[2px] right-[2px] h-2 bg-white" />
-              </div>
-
               {/* Top Quote Icon */}
               <div className="text-[#224292] mb-6">
                 <Quote size={50} fill="currentColor" stroke="none" />
@@ -86,6 +69,16 @@ const AlumniVoices = () => {
               {/* Closing Quote Icon - bottom right */}
               <div className="absolute bottom-4 right-8 text-[#ffc107]">
                 <Quote size={60} fill="currentColor" stroke="none" className="opacity-40" />
+              </div>
+
+              {/* The Tail - speech bubble effect */}
+              <div className="absolute -bottom-[28px] left-0 w-12 h-8">
+                <svg viewBox="0 0 100 100" className="w-full h-full text-[#224292]" preserveAspectRatio="none">
+                  <path 
+                    d="M0 0 L0 100 L100 0 Z" 
+                    fill="#224292" 
+                  />
+                </svg>
               </div>
             </motion.div>
           ))}
