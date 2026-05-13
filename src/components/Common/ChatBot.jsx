@@ -19,9 +19,11 @@ const FAQ_DATA = {
   questions: {
     admissions: [
       { q: 'How to apply for admission?', a: 'You can apply online via our Admissions Portal at /admissions or visit the campus directly with your original documents.' },
-      { q: 'What is the eligibility criteria?', a: 'Eligibility depends on the course. For B.E/B.Tech, a pass in 12th Std with Physics, Chemistry, and Maths is required. Lateral entry requires a Diploma.' },
+      { q: 'Tell me about admissions', a: 'Admissions for 2026-27 are open. We offer UG and PG programs. You can apply online or visit our office for counseling.' },
+      { q: 'What is the eligibility criteria?', a: 'Eligibility depends on the course. For B.E/B.Tech, a pass in 12th Std with Physics, Chemistry, and Maths is required.' },
       { q: 'What is the application last date?', a: 'The last date for applications for the 2026-27 session is expected to be in June. Please check the portal regularly for updates.' },
-      { q: 'Are scholarships available?', a: 'Yes! We offer Merit Scholarships, Sports Scholarships, and First Graduate concessions as per government norms.' }
+      { q: 'Are scholarships available?', a: 'Yes! We offer Merit Scholarships, Sports Scholarships, and First Graduate concessions as per government norms.' },
+      { q: 'How to apply?', a: 'Visit /admissions to register online, upload documents, and pay the application fee. You can also visit our campus for offline support.' }
     ],
     courses: [
       { q: 'What courses are available?', a: 'We offer UG programs in CSE, IT, ECE, EEE, MECH, CIVIL, AI&DS, and CSBS, along with PG programs like MBA and MCA.' },
@@ -29,23 +31,27 @@ const FAQ_DATA = {
       { q: 'Do you offer MBA / MCA?', a: 'Yes, we offer both MBA and MCA programs with specialized training for industry readiness.' }
     ],
     placements: [
+      { q: 'Placement details', a: 'KIOT has a 95%+ placement record. Our students are placed in top companies like TCS, Wipro, and ZOHO with packages up to ₹12 LPA.' },
       { q: 'What is the highest package?', a: 'Our highest package offered to date is ₹12 LPA, with an average package of ₹4.5 LPA across departments.' },
       { q: 'Placement percentage?', a: 'We maintain a consistent 95%+ placement record with students placed in top-tier global companies.' },
       { q: 'Top recruiting companies?', a: 'Our recruiters include TCS, CTS, Wipro, ZOHO, Tech Mahindra, ITC, and many more.' }
     ],
     hostel: [
+      { q: 'Hostel facilities', a: 'We provide separate, secure hostels for boys and girls with multi-cuisine food, WiFi, gym, and 24/7 medical support.' },
+      { q: 'What is the fee structure?', a: 'Tuition fees start from ₹85,000/year, and Hostel fees from ₹75,000/year. Please contact admissions for a detailed PDF.' },
       { q: 'Hostel fees?', a: 'Hostel fees start from approximately ₹75,000 per year, covering both accommodation and healthy multi-cuisine food.' },
-      { q: 'AC/non-AC rooms?', a: 'Both AC and non-AC rooms are available with modern amenities, study tables, and high-speed WiFi.' },
-      { q: 'Food timing?', a: 'Breakfast: 7:30-9:00, Lunch: 12:30-2:00, Snacks: 5:00-6:00, Dinner: 7:30-9:00.' }
+      { q: 'AC/non-AC rooms?', a: 'Both AC and non-AC rooms are available with modern amenities, study tables, and high-speed WiFi.' }
     ],
     transport: [
       { q: 'Bus routes available?', a: 'We operate 50+ buses covering Salem, Namakkal, Erode, and Dharmapuri districts. Check /campus-life/transport for routes.' },
-      { q: 'Nearby railway station?', a: 'The nearest railway station is Salem Junction, which is approximately 15km from the campus.' }
+      { q: 'Nearby railway station?', a: 'The nearest railway station is Salem Junction, which is approximately 15km from the campus.' },
+      { q: 'Where is the college located?', a: 'KIOT is located at Kakapalayam, Salem, Tamil Nadu - 637504. You can find our location map on the Contact page.' }
     ],
     contact: [
+      { q: 'Contact details', a: 'You can contact us at info@kiot.ac.in or call our admission cell at +91 98947 01234.' },
+      { q: 'Campus facilities', a: 'Our campus features smart classrooms, advanced laboratories, a digital library, sports complexes, and 24/7 security.' },
       { q: 'Admission office number', a: 'You can reach our admission cell at +91 98947 01234 or +91 86084 85944.' },
-      { q: 'Principal contact', a: 'Office of the Principal: 0427-2430399. Email: principal@kiot.ac.in.' },
-      { q: 'Email address', a: 'General inquiries: info@kiot.ac.in. Admissions: admissions@kiot.ac.in.' }
+      { q: 'Principal contact', a: 'Office of the Principal: 0427-2430399. Email: principal@kiot.ac.in.' }
     ]
   }
 };
