@@ -165,7 +165,7 @@ const TestimonialCard = ({ testi }) => (
         <h4 className="text-lg lg:text-xl font-semibold font-graphik text-[#224292] leading-tight">
           {testi.name.split(' ').slice(0, -1).join(' ')} <span className="text-[#ffc107]">{testi.name.split(' ').slice(-1)}</span>
         </h4>
-        <p className="text-[12px] lg:text-[14px] font-bold text-[#224292] uppercase tracking-[0.1em] mt-1 mb-4">
+        <p className="text-[10px] lg:text-[11px] font-bold text-[#224292] uppercase tracking-[0.05em] mt-1 mb-4">
           {testi.dept}
         </p>
     </div>
