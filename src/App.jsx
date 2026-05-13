@@ -9,6 +9,7 @@ import Header from './components/Common/Header'
 import ScrollToTop from './components/Common/ScrollToTop'
 import Preloader from './components/Common/Preloader'
 import Footer from './components/Common/Footer'
+import ChatBot from './components/Common/ChatBot'
 
 // Page Components
 const Home = lazy(() => import('./pages/Home'))
@@ -333,6 +334,7 @@ function App() {
           </main>
 
           <Footer />
+          <ChatBot />
           <ScrollToTop />
 
           {/* ─── GLOBAL ADMISSIONS POPUP - COMPACT VERSION ─── */}
