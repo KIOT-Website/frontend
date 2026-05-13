@@ -155,7 +155,24 @@ const ChatBot = () => {
                     isOpen ? 'bg-white text-[#224292]' : 'bg-[#224292] text-white'
                 }`}
             >
-                {isOpen ? <X size={28} /> : <img src={studentAvatar} alt="Chat" className="w-full h-full object-cover" />}
+                {isOpen ? (
+                    <X size={28} />
+                ) : (
+                    <motion.img 
+                        src={studentAvatar} 
+                        alt="Chat" 
+                        className="w-full h-full object-cover"
+                        animate={{ 
+                            x: [0, -1, 1, -1, 0],
+                            y: [0, 1, -1, 1, 0]
+                        }}
+                        transition={{ 
+                            duration: 0.5,
+                            repeat: Infinity,
+                            repeatDelay: 2
+                        }}
+                    />
+                )}
                 
                 {/* Notification Badge */}
                 {!isOpen && (
