@@ -1,6 +1,21 @@
 import { Cpu, Activity, Globe, Wrench, BookOpen, FlaskConical, Zap, BarChart3, Layers, Award, TrendingUp, ShieldCheck, Car, Microscope, Flame, Settings, MonitorDot, CircuitBoard, Ruler, PenTool, Droplets, Wind, Building2, Terminal, Monitor, Code, Radio, Rocket } from 'lucide-react'
 import balajiImage from '../assets/main/balaji.9da24d6e942fe40a1258.webp'
 
+// Civil Faculty Imports
+import sathishKumarImage from '../assets/Faculity/civil/B.SATHISH KUMAR.png'
+import prasathImage from '../assets/Faculity/civil/Dr.P.PRASATH.png'
+import krishnanImage from '../assets/Faculity/civil/L.KRISHNAN.png'
+import nirmalImage from '../assets/Faculity/civil/L.M.NIRMAL.png'
+import selvakumarImage from '../assets/Faculity/civil/P.SELVAKUMAR.png'
+import elavarasanImage from '../assets/Faculity/civil/R.ELAVARASAN.png'
+// import arulkesavanImage from '../assets/Faculity/civil/S.ARULKESAVAN.png'
+// import kaalijoothiImage from '../assets/Faculity/civil/S.J.KAALIJOOTHI.png'
+// import rajeshkumarImage from '../assets/Faculity/civil/S.RAJESHKUMAR.png'
+// import sasikumarImage from '../assets/Faculity/civil/S.SASI KUMAR.png'
+// import senthilkumarImage from '../assets/Faculity/civil/S.SENTHIL KUMAR.png'
+// import balamuruganImage from '../assets/Faculity/civil/U.BALAMURUGAN.png'
+
+
 export const courseData = {
   'be-mechanical': {
     name: 'B.E Mechanical Engineering',
@@ -1593,7 +1608,22 @@ export const courseData = {
     pso: "PSO - I: Design a cost effective and optimized solution for Civil Engineering problems by using modern techniques\n\nPSO - II: Plan, Analyze, Design and execute the Civil Engineering projects using eco-friendly construction materials with technical knowledge",
     whyChoose: ['Extensive field work', 'Software focused studies'],
     curriculum: [{ year: 'Year 1', semesters: ['Building Materials', 'Surveying'] }],
-    faculty: [{ name: 'Dr. S. Karthic', designation: 'HoD', experience: '22 Years', specialization: 'Structural Engg', rating: 4.7 }],
+    faculty: [
+      { name: 'Dr. P. Prasath', designation: 'Professor & HOD', qualification: 'M.E., Ph.D.', specialization: 'Environmental Engineering', image: prasathImage, rating: 5.0, experience: '18 Years' },
+      { name: 'Mr. L. Krishnan', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Structural Engineering', image: krishnanImage, rating: 4.8, experience: '12 Years' },
+      { name: 'Mr. B. Sathish Kumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Water Resources Engineering', image: sathishKumarImage, rating: 4.7, experience: '10 Years' },
+      { name: 'Mr. L.M. Nirmal', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Geotechnical Engineering', image: nirmalImage, rating: 4.7, experience: '9 Years' },
+      { name: 'Mr. P. Selvakumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Construction Engineering', image: selvakumarImage, rating: 4.6, experience: '8 Years' },
+      { name: 'Mr. R. Elavarasan', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Remote Sensing & GIS', image: elavarasanImage, rating: 4.6, experience: '7 Years' },
+/*
+      { name: 'Mr. S. Arulkesavan', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Transportation Engineering', image: arulkesavanImage, rating: 4.6, experience: '7 Years' },
+      { name: 'Mr. S.J. Kaalijoothi', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Environmental Engineering', image: kaalijoothiImage, rating: 4.6, experience: '6 Years' },
+      { name: 'Mr. S. Rajeshkumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Structural Engineering', image: rajeshkumarImage, rating: 4.6, experience: '6 Years' },
+      { name: 'Mr. S. Sasi Kumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Construction Management', image: sasikumarImage, rating: 4.5, experience: '5 Years' },
+      { name: 'Mr. S. Senthil Kumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Surveying', image: senthilkumarImage, rating: 4.5, experience: '5 Years' },
+      { name: 'Mr. U. Balamurugan', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Structural Engineering', image: balamuruganImage, rating: 4.5, experience: '5 Years' }
+*/
+    ],
     labs: [{ name: 'Strength of Materials Lab', equipment: 'UTM Testing', icon: Wrench }],
     placementStats: { placed: '88%', avg: '3.8 LPA', top: '10 LPA', companies: '30+' },
   },

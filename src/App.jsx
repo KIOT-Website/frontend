@@ -334,7 +334,7 @@ function App() {
           </main>
 
           <Footer />
-          <ChatBot />
+
           <ScrollToTop />
 
           {/* ─── GLOBAL ADMISSIONS POPUP - COMPACT VERSION ─── */}

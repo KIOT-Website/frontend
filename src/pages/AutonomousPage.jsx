@@ -20,6 +20,7 @@ import civilBos from '../assets/resources/5.-Civil-BOS-Committee-Members-list.pd
 import shBos from '../assets/resources/6.-SH-BOS-Members-list.pdf'
 import mbaBos from '../assets/resources/7.-MBA-BOS-Members-list.pdf'
 import campusImg from '../assets/main/indian_campus_hero.png'
+import sixLegImg from '../assets/academics/Six-Leg.png'
 
 const AutonomousPage = () => {
     const [activeTab, setActiveTab] = useState('overview')
@@ -28,6 +29,7 @@ const AutonomousPage = () => {
     const [expandedCommittee, setExpandedCommittee] = useState(null)
     const [showMinutes, setShowMinutes] = useState(null)
     const [isSticky, setIsSticky] = useState(false)
+    const [selectedProgramme, setSelectedProgramme] = useState(null)
     const navRef = useRef(null)
     const sentinelRef = useRef(null)
 
@@ -141,11 +143,15 @@ const AutonomousPage = () => {
         { id: 6, title: 'Higher Order Thinking', color: 'bg-amber-500' },
     ]
 
-    const minorDegrees = []
+    const minorDegrees = [
+        { dept: 'AI&DS / CSBS', spec: 'Artificial Intelligence & Machine Learning' },
+        { dept: 'CSE / IT', spec: 'Data Analytics' },
+        { dept: 'ECE / EEE', spec: 'Internet of Things' },
+        { dept: 'ECE', spec: 'Automotive Electronics' }
+    ]
 
     const handleTabChange = (id) => {
         setActiveTab(id);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
@@ -183,13 +189,13 @@ const AutonomousPage = () => {
                                 <button
                                     key={tab.id}
                                     onClick={() => handleTabChange(tab.id)}
-                                    className={`flex items-center justify-center px-2 py-3 transition-all group shrink-0 rounded-xl ${
+                                    className={`flex items-center justify-center px-2 py-2 transition-all group shrink-0 rounded-lg border border-transparent ${
                                         activeTab === tab.id 
                                         ? 'bg-white text-[#224292] shadow-inner' 
-                                        : 'bg-[#ffc107] hover:bg-white/90 text-[#224292]'
+                                        : 'bg-[#ffc107] hover:bg-white text-white hover:text-[#224292]'
                                     }`}
                                 >
-                                    <span className="text-[11px] font-bold tracking-tight text-center leading-tight">{tab.name}</span>
+                                    <span className="text-[9px] font-black uppercase tracking-widest text-center leading-tight">{tab.name}</span>
                                 </button>
                             ))}
                         </div>
@@ -218,7 +224,7 @@ const AutonomousPage = () => {
                                     <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Academic Overview</h2>
                                 </div>
                                 
-                                <div className="space-y-8 text-black text-[15px] font-semibold leading-relaxed text-justify">
+                                <div className="space-y-8 text-black text-[13px] font-bold leading-relaxed text-justify mb-24">
                                     <p>
                                         Knowledge Institute of Technology (KIOT), functioning with autonomous status, is dedicated to providing quality technical education through a progressive, industry-focused, and student-centered academic system. The autonomous framework enables the institution to design and continuously update its curriculum in accordance with the latest technological advancements, industry expectations, and global academic standards while adhering to the guidelines of UGC and AICTE.
                                     </p>
@@ -232,6 +238,70 @@ const AutonomousPage = () => {
                                         The institution also promotes research culture, entrepreneurship, and innovation through dedicated centres, industry collaborations, and advanced laboratory facilities. With experienced faculty members and a strong academic ecosystem, KIOT prepares students to become competent professionals, responsible citizens, and future leaders capable of meeting global challenges with confidence and excellence.
                                     </p>
                                 </div>
+
+                                <div className="pt-24 border-t border-slate-100">
+                                <div className="w-full text-center">
+                                    <h3 className="text-3xl font-black mb-6 leading-tight max-w-4xl mx-auto">
+                                        <span className="text-[#224292]">Curriculum</span>{' '}
+                                        <span className="text-[#ffc107]">Excellence</span>
+                                    </h3>
+                                    <div className="space-y-6 max-w-4xl mx-auto mb-16">
+                                        <p className="text-[13px] font-bold text-black leading-relaxed text-justify">
+                                            The KIOT offers a Unique and Structured Six-LEG Model Curriculum aligned with industry requirements integrating engineering fundamentals, domain expertise, emerging technologies, employability skills, innovation, and higher-order thinking among graduates.
+                                        </p>
+                                        <p className="text-[13px] font-bold text-[#224292] leading-relaxed text-justify bg-blue-50/50 p-5 rounded-xl border-l-4 border-[#224292]">
+                                            The Curriculum nurtures Technically Strong, Digitally Empowered, Industry-Ready Professionals with Higher-Order Thinking Skills (HOTS) and Multi-Disciplinary exposure
+                                        </p>
+                                    </div>
+
+                                    <div className="mt-16 flex justify-center">
+                                        <img src={sixLegImg} alt="Six-Leg Model" className="max-w-5xl w-full rounded-3xl shadow-2xl" />
+                                    </div>
+
+                                    <div className="mt-24 text-left">
+                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-[#224292] mb-12 text-center">Curriculum Structure & Credit Distribution</h4>
+                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                            {[
+                                                { title: 'BSEC', subtitle: 'Basic Science & Engineering Courses', points: ['Builds strong engineering fundamentals', 'Covers common core subjects'], credits: '25 Cr' },
+                                                { title: 'PCC', subtitle: 'Professional Core Courses', points: ['Focuses on deep core domain learning', 'Strengthens professional technical knowledge'], credits: '50–60 Cr' },
+                                                { title: 'IRT (DIV)', subtitle: 'Industry Ready Track', points: ['Department Industry Vertical based learning', 'Makes students industry-ready in one domain'], credits: '18 Cr' },
+                                                { title: 'IDT (EmTV)', subtitle: 'Interdisciplinary Track', points: ['Emerging Technology Vertical based learning', 'Encourages interdisciplinary technology exposure'], credits: '09 Cr' },
+                                                { title: 'DAIT', subtitle: 'Digital & AI Track', points: ['Develops digital and AI competencies', 'Enhances future-ready technical skills'], credits: '26 Cr' },
+                                                { title: 'ICT', subtitle: 'Innovation & Creativity Track', points: ['Encourages innovation and product development', 'Supports startup and creative thinking skills'], credits: '15 Cr' },
+                                                { title: 'EE & LST', subtitle: 'Employability & Life Skills', points: ['Improves employability and professional skills', 'Focuses on communication and life skills'], credits: '13 Cr' },
+                                                { title: 'TLP (HOTS)', subtitle: 'Teaching Learning Practices', points: ['Develops higher-order thinking skills', 'Enhances analytical and problem-solving abilities'], credits: 'Integrated' },
+                                                { title: 'Honours / Minor', subtitle: 'Degree Options', points: ['Additional specialization opportunities', 'Supports advanced academic pathways'], credits: 'Optional' }
+                                            ].map((track, i) => (
+                                                <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:translate-y-[-4px] transition-all group">
+                                                    <div className="flex justify-between items-start mb-6">
+                                                        <h5 className="text-lg font-bold text-[#224292]">{track.title}</h5>
+                                                    </div>
+                                                    <ul className="space-y-4">
+                                                        {track.points.map((p, j) => (
+                                                            <li key={j} className="flex items-start gap-3 text-[13px] font-semibold text-black leading-tight">
+                                                                <div className="w-4 h-4 bg-blue-50 rounded-full flex items-center justify-center text-[#224292] shrink-0 mt-0.5">
+                                                                    <CheckCircle2 size={10} />
+                                                                </div>
+                                                                {p}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="mt-12 p-8 bg-[#224292] rounded-[2rem] text-white flex flex-col md:flex-row justify-between items-center gap-8">
+                                            <div>
+                                                <h5 className="text-2xl font-black mb-2">Total Credit Requirement</h5>
+                                                <p className="text-white/60 font-bold">Overall Academic Completion Milestone</p>
+                                            </div>
+                                            <div className="text-4xl font-black text-[#ffc107]">
+                                                160–170 Credits
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                                 </div>
                             </motion.section>
                         )}
@@ -242,7 +312,7 @@ const AutonomousPage = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
+                                transition={{ duration: 0.2 }}
                                 id="approvals" 
                                 className="scroll-mt-32"
                             >
@@ -352,35 +422,30 @@ const AutonomousPage = () => {
                                                     exit={{ height: 0, opacity: 0 }}
                                                     className="overflow-hidden mb-16"
                                                 >
-                                                    <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 lg:p-12">
-                                                        <table className="w-full text-left">
-                                                            <thead>
-                                                                <tr className="border-b border-slate-200">
-                                                                    <th className="pb-6 text-[10px] font-black text-[#224292] uppercase tracking-[0.2em]">Meeting No. / Date</th>
-                                                                    <th className="pb-6 text-[10px] font-black text-[#224292] uppercase tracking-[0.2em] text-right">Minutes of Meeting</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody className="divide-y divide-slate-100">
-                                                                {[
-                                                                    { no: '1st', date: '25.07.2023', file: '#' },
-                                                                    { no: '2nd', date: '12.12.2023', file: '#' },
-                                                                    { no: '3rd', date: '18.04.2024', file: '#' }
-                                                                ].map((m, idx) => (
-                                                                    <tr key={idx} className="group/row">
-                                                                        <td className="py-6">
-                                                                            <p className="text-[14px] font-black text-black">Academic Council Meeting - {m.no}</p>
-                                                                            <p className="text-[11px] font-bold text-slate-400 mt-1">{m.date}</p>
-                                                                        </td>
-                                                                        <td className="py-6 text-right">
-                                                                            <button className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-[10px] font-black text-[#224292] uppercase tracking-widest hover:bg-[#224292] hover:text-white hover:border-[#224292] transition-all group/v">
-                                                                                <FileText size={14} className="text-red-500 group-hover/v:text-white" />
-                                                                                View PDF
-                                                                            </button>
-                                                                        </td>
-                                                                    </tr>
-                                                                ))}
-                                                            </tbody>
-                                                        </table>
+                                                    <div className="max-w-4xl mx-auto bg-slate-50/50 border border-slate-100 rounded-[2.5rem] p-6 lg:p-8">
+                                                        <div className="grid gap-3">
+                                                            {[
+                                                                { no: '1st', date: '25.07.2023', file: '#' },
+                                                                { no: '2nd', date: '12.12.2023', file: '#' },
+                                                                { no: '3rd', date: '18.04.2024', file: '#' }
+                                                            ].map((m, idx) => (
+                                                                <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 bg-white rounded-2xl border border-slate-200/60 hover:border-[#224292]/30 hover:shadow-xl hover:shadow-[#224292]/5 transition-all group/row">
+                                                                    <div className="flex items-center gap-4">
+                                                                        <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-[#224292] group-hover/row:bg-[#224292] group-hover/row:text-white transition-all">
+                                                                            <Calendar size={18} />
+                                                                        </div>
+                                                                        <div>
+                                                                            <p className="text-[14px] font-black text-black leading-tight">{c.name} Meeting - {m.no}</p>
+                                                                            <p className="text-[10px] font-bold text-slate-400 mt-0.5 uppercase tracking-widest">{m.date}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <button className="flex items-center justify-center gap-2.5 px-5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-[9px] font-black text-[#224292] uppercase tracking-widest hover:bg-[#224292] hover:text-white hover:border-[#224292] transition-all group/v">
+                                                                        <FileText size={14} className="text-red-500 group-hover/v:text-white transition-colors" />
+                                                                        View PDF
+                                                                    </button>
+                                                                </div>
+                                                            ))}
+                                                        </div>
                                                     </div>
                                                 </motion.div>
                                             )}
@@ -417,55 +482,59 @@ const AutonomousPage = () => {
                             id="cdda" 
                             className="scroll-mt-32"
                         >
-                            <div className="bg-[#224292] rounded-[4rem] p-16 text-white relative overflow-hidden">
-                                <div className="absolute top-0 right-0 p-24 opacity-5 rotate-12">
-                                    <Building2 size={300} />
-                                </div>
-                                <div className="relative z-10 grid lg:grid-cols-2 gap-24 items-center">
-                                    <div>
-                                        <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full mb-8 backdrop-blur-md">
-                                            <Building2 size={16} className="text-[#ffc107]" />
-                                            <span className="text-[10px] font-black uppercase tracking-widest text-[#ffc107]">Academic Hub</span>
-                                        </div>
-                                        <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-tight">Centre for Curriculum Design Delivery and Assessment (CDDA)</h2>
-                                        <p className="text-white/60 text-lg font-medium leading-relaxed mb-12">
-                                            The CDDA coordinates and strengthens the academic processes of the Institute. It ensures quality 
-                                            curriculum planning, effective teaching-learning, and transparent assessment practices.
+                            <div className="mb-24 last:mb-0">
+                                <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-16">
+                                    <div className="max-w-3xl">
+                                        <h3 className="text-3xl font-black mb-6 leading-tight">
+                                            <span className="text-[#224292]">Centre for Curriculum</span>{' '}
+                                            <span className="text-[#ffc107]">Design Delivery and Assessment</span>
+                                        </h3>
+                                        <p className="text-[13px] font-bold text-black leading-relaxed text-justify">
+                                            The Centre for Curriculum Design, Delivery and Assessment (CDDA) coordinates and strengthens the academic processes of the Institute. It ensures quality curriculum planning, effective teaching-learning, and transparent assessment practices in alignment with institutional objectives and regulatory standards.
                                         </p>
-                                        <div className="flex gap-8">
-                                            <div className="p-6 bg-white/5 rounded-3xl border border-white/10">
-                                                <p className="text-[9px] font-black text-[#ffc107] uppercase tracking-[0.2em] mb-2">Academic Director</p>
-                                                <p className="text-lg font-black">Dr. V. Karthikeyan</p>
+                                    </div>
+                                    
+                                    <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full lg:w-auto">
+                                        <div className="flex items-center gap-4 px-6 py-4 bg-white border border-blue-100 rounded-2xl shadow-lg transition-all group/btn">
+                                            <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-[#224292] transition-all">
+                                                <Building2 size={20} />
+                                            </div>
+                                            <div>
+                                                <p className="text-[8px] font-black uppercase tracking-widest text-[#ffc107] mb-0.5">Academic Director</p>
+                                                <span className="text-[10px] font-black uppercase tracking-widest text-[#224292]">Dr. V. Karthikeyan</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="grid gap-3">
+                                </div>
+
+                                <div>
+                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#224292] mb-8">
+                                        Primary Functions & Responsibilities
+                                    </h4>
+                                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                         {[
-                                            'Formation of Institutional Regulations',
-                                            'Designing innovative UG and PG curricula.',
-                                            'Organizing Statutory Council & Board meetings.',
-                                            'Strict adherence to Academic Schedules.',
-                                            'Managing departmental syllabus attestations.',
-                                            'Innovative and industry-oriented pedagogy.',
-                                            'Coordinating centralized internal assessments.',
-                                            'Maintaining global academic compliance.'
-                                        ].map((func, i) => (
-                                            <motion.div 
-                                                key={i} 
-                                                initial={{ opacity: 0, x: 20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: i * 0.1 }}
-                                                className="flex items-center gap-5 p-5 bg-white/5 rounded-2xl border border-white/5 hover:bg-white hover:text-[#224292] transition-all group"
-                                            >
-                                                <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-[#ffc107] font-black text-sm group-hover:bg-[#224292] group-hover:text-white transition-all shadow-inner">
-                                                    {i + 1}
+                                            'Formation of Regulations',
+                                            'Design and revise curriculum for UG and PG programmes.',
+                                            'Organize Boards of Studies, Standing Committee, and Academic Council meetings.',
+                                            'Fixing of Academic Schedule.',
+                                            'Issue of Attested copies of the syllabus to the departments.',
+                                            'Monitor curriculum delivery through lesson plans and reviews.',
+                                            'Promote innovative and industry-oriented teaching practices.',
+                                            'Coordinate internal and end-semester assessments.',
+                                            'Maintain academic records and compliance documents.',
+                                            'Support continuous quality improvement in academics.'
+                                        ].map((f, j) => (
+                                            <div key={j} className="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-lg hover:shadow-blue-900/5 transition-all group">
+                                                <div className="w-5 h-5 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 shrink-0 mt-0.5">
+                                                    <CheckCircle2 size={12} />
                                                 </div>
-                                                <span className="text-[13px] font-black uppercase tracking-wide leading-tight">{func}</span>
-                                            </motion.div>
+                                                <p className="text-[13px] font-bold text-black leading-tight">{f}</p>
+                                            </div>
                                         ))}
                                     </div>
                                 </div>
+
+
                             </div>
                         </motion.section>
                     )}
@@ -480,40 +549,31 @@ const AutonomousPage = () => {
                             id="regulations" 
                             className="scroll-mt-32"
                         >
-                            <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-                                <div>
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-14 h-14 bg-amber-50 rounded-[1.5rem] flex items-center justify-center text-amber-600">
-                                            <FileText size={28} />
-                                        </div>
-                                        <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Academic Regulations</h2>
+                            <div className="mb-12">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-14 h-14 bg-amber-50 rounded-[1.5rem] flex items-center justify-center text-amber-600">
+                                        <FileText size={28} />
                                     </div>
-                                    <p className="text-slate-500 font-medium max-w-xl">Guidelines and policies governing the academic journey of every KIOT graduate.</p>
+                                    <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Academic Regulations</h2>
                                 </div>
-                                <button 
-                                    onClick={() => window.open('https://drive.google.com/drive/folders/15kf1Sq3msAHM34SXpdlFPqH8UwCTZJ8h', '_blank')}
-                                    className="px-8 py-4 bg-[#224292] text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:shadow-2xl hover:shadow-blue-900/40 transition-all flex items-center gap-3"
-                                >
-                                    <ExternalLink size={14} /> Open Shared Drive
-                                </button>
+                                <p className="text-black text-[13px] font-bold">Guidelines and policies governing the academic journey of every KIOT graduate.</p>
                             </div>
-                            <div className="grid md:grid-cols-3 gap-8">
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
                                 {[
-                                    { title: 'Regulation 2023', year: 'R-2023', desc: 'Current framework for all degree-granting departments.' },
-                                    { title: 'Regulation 2024', year: 'R-2024', desc: 'Updated regulations for the incoming academic batches.' },
-                                    { title: 'Institutional Amendments', year: 'R-2023/24', desc: 'Periodic updates and critical academic revisions.' }
+                                    { title: 'B.E. / B.Tech' },
+                                    { title: 'M.E. / M.Tech / M.C.A' },
+                                    { title: 'MBA' },
+                                    { title: 'MBA (IEV)' }
                                 ].map((reg, i) => (
-                                    <div key={i} className="p-10 bg-white border border-slate-100 rounded-[3rem] shadow-sm hover:shadow-2xl transition-all group">
-                                        <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-[#224292] mb-10 group-hover:bg-[#ffc107] transition-all">
-                                            <FileText size={32} />
+                                    <button key={i} className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-left">
+                                        <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-red-500 shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all">
+                                            <FileText size={20} />
                                         </div>
-                                        <h3 className="text-2xl font-black text-[#224292] mb-3">{reg.title}</h3>
-                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6">{reg.year}</p>
-                                        <p className="text-sm font-medium text-slate-500 leading-relaxed mb-10">{reg.desc}</p>
-                                        <button className="w-full py-5 bg-slate-50 text-[#224292] rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#224292] hover:text-white transition-all flex items-center justify-center gap-3">
-                                            <Download size={16} className="text-red-500 group-hover:text-white transition-colors" /> Download PDF
-                                        </button>
-                                    </div>
+                                        <div className="flex-1 min-w-0">
+                                            <p className="text-[14px] font-black text-[#224292] leading-tight">{reg.title}</p>
+                                        </div>
+                                    </button>
                                 ))}
                             </div>
                         </motion.section>
@@ -529,75 +589,110 @@ const AutonomousPage = () => {
                             id="syllabi" 
                             className="scroll-mt-32"
                         >
-                            <div className="text-center mb-16">
-                                <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Curriculum & Syllabi</h2>
-                            </div>
-                            <div className="grid lg:grid-cols-2 gap-12">
-                                <div className="bg-white border border-slate-100 rounded-[3.5rem] p-12 shadow-sm hover:shadow-xl transition-all">
-                                    <div className="flex items-center gap-6 mb-12">
-                                        <div className="w-16 h-16 bg-blue-50 rounded-3xl flex items-center justify-center text-[#224292]">
-                                            <GraduationCap size={32} />
+                            {!selectedProgramme ? (
+                                <>
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="w-14 h-14 bg-blue-50 rounded-[1.5rem] flex items-center justify-center text-[#224292]">
+                                            <BookOpen size={28} />
                                         </div>
-                                        <div>
-                                            <h3 className="text-3xl font-black text-[#224292]">B.E. / B.Tech.</h3>
-                                            <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-1">Undergraduate Programs</p>
-                                        </div>
+                                        <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Curriculum & Syllabi</h2>
                                     </div>
-                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                                        {['Mechanical', 'ECE', 'EEE', 'CSE', 'Civil', 'IT', 'CSBS', 'AI&DS', 'ECX'].map((dept) => (
-                                            <div key={dept} className="p-4 bg-slate-50 border border-slate-100 rounded-2xl text-[10px] font-black text-slate-600 uppercase tracking-[0.2em] text-center hover:bg-[#224292] hover:text-white transition-all cursor-default">
-                                                {dept}
-                                            </div>
+                                    <p className="text-black text-[13px] font-bold">Access detailed curriculum and course syllabi for all Undergraduate and Postgraduate programmes.</p>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+                                        {[
+                                            { title: 'B.E. / B.Tech.' },
+                                            { title: 'M.E. / M.Tech' },
+                                            { title: 'MBA' }
+                                        ].map((item, i) => (
+                                            <button 
+                                                key={i} 
+                                                onClick={() => setSelectedProgramme(item.title)}
+                                                className="flex items-center justify-center p-6 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-center"
+                                            >
+                                                <p className="text-[14px] font-black text-[#224292] leading-tight">{item.title}</p>
+                                            </button>
                                         ))}
                                     </div>
-                                    <button className="w-full mt-12 py-5 bg-[#224292] text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:shadow-xl hover:shadow-blue-900/30 transition-all flex items-center justify-center gap-3">
-                                        <Download size={16} /> Download Full UG Syllabi
+                                </>
+                            ) : (
+                                <motion.div
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    className="max-w-[1400px] mx-auto"
+                                >
+                                    <button 
+                                        onClick={() => setSelectedProgramme(null)}
+                                        className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-[#224292] transition-colors mb-8 group"
+                                    >
+                                        <ChevronRight size={16} className="rotate-180 group-hover:-translate-x-1 transition-transform" />
+                                        Back to Programmes
                                     </button>
-                                </div>
 
-                                <div className="bg-white border border-slate-100 rounded-[3.5rem] p-12 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
-                                    <div>
-                                        <div className="flex items-center gap-6 mb-12">
-                                            <div className="w-16 h-16 bg-purple-50 rounded-3xl flex items-center justify-center text-purple-600">
-                                                <Award size={32} />
-                                            </div>
-                                            <div>
-                                                <h3 className="text-3xl font-black text-[#224292]">M.E. / M.Tech. & MBA</h3>
-                                                <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-1">Postgraduate & Professional</p>
-                                            </div>
+                                    <div className="flex items-center gap-4 mb-12">
+                                        <div className="w-12 h-12 bg-[#224292] rounded-xl flex items-center justify-center text-white">
+                                            <GraduationCap size={24} />
                                         </div>
-                                        <div className="space-y-10">
-                                            <div>
-                                                <p className="text-[10px] font-black text-slate-300 uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
-                                                    <div className="w-8 h-px bg-slate-100" /> Technical Domains
-                                                </p>
-                                                <div className="flex flex-wrap gap-3">
-                                                    {['ISE', 'VLSI', 'AE', 'EST', 'PED', 'CSE', 'SE'].map((spec) => (
-                                                        <div key={spec} className="px-5 py-3 bg-purple-50 rounded-xl text-[11px] font-black text-purple-600 uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all cursor-default">
-                                                            {spec}
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <p className="text-[10px] font-black text-slate-300 uppercase tracking-[0.3em] mb-6 flex items-center gap-3">
-                                                    <div className="w-8 h-px bg-slate-100" /> Management Studies
-                                                </p>
-                                                <div className="flex flex-wrap gap-3">
-                                                    {['MBA (General)', 'MBA (IEV)'].map((m) => (
-                                                        <div key={m} className="px-5 py-3 bg-amber-50 rounded-xl text-[11px] font-black text-amber-600 uppercase tracking-widest hover:bg-amber-600 hover:text-white transition-all cursor-default">
-                                                            {m}
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
+                                        <div>
+                                            <h2 className="text-3xl font-black text-[#224292] tracking-tighter">{selectedProgramme}</h2>
+                                            <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mt-1">Department Wise Curriculum Records</p>
                                         </div>
                                     </div>
-                                    <button className="w-full mt-12 py-5 bg-slate-50 text-[#224292] rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:bg-[#224292] hover:text-white transition-all flex items-center justify-center gap-3">
-                                        <Download size={16} /> View PG Prospectus
-                                    </button>
-                                </div>
-                            </div>
+
+                                    <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                                        <table className="w-full text-left">
+                                            <thead>
+                                                <tr className="bg-[#224292] text-white">
+                                                    <th className="px-6 py-4 text-[13px] font-bold uppercase tracking-wider">PROGRAMME</th>
+                                                    <th className="px-6 py-4 text-[13px] font-bold uppercase tracking-wider">ACADEMIC YEARS</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-200">
+                                                {(selectedProgramme === 'B.E. / B.Tech.' ? [
+                                                    { name: 'BE - Mechanical Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'BE - Electronics and Communication Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'BE - Electrical and Electronics Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'BE - Computer Science and Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'BE - Civil Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'BTech - Information Technology', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'BTech - Computer Science and Business Systems', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'BTech - Artificial Intelligence and Data Science', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'BE - Electronics Engineering (Computer Science)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] }
+                                                ] : selectedProgramme === 'M.E. / M.Tech' ? [
+                                                    { name: 'ME - Information Security (ISE)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'ME - VLSI Design', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'ME - Applied Electronics (AE)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'ME - Embedded System Technologies (EST)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'ME - Power Electronics and Drives (PED)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'ME - Computer Science and Engineering (CSE)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'ME - Structural Engineering (SE)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] }
+                                                ] : selectedProgramme === 'MBA' ? [
+                                                    { name: 'MBA (General)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
+                                                    { name: 'MBA (IEV)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] }
+                                                ] : []).map((dept, i) => (
+                                                    <tr key={i} className="hover:bg-slate-50 transition-colors">
+                                                        <td className="px-6 py-4 text-[13px] font-bold text-black">{dept.name}</td>
+                                                        <td className="px-6 py-4">
+                                                            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                                                                {dept.years.map((year, yIdx) => (
+                                                                    <React.Fragment key={year}>
+                                                                        <button className="text-[13px] font-bold text-[#224292] hover:underline transition-all">
+                                                                            {year}
+                                                                        </button>
+                                                                        {yIdx < dept.years.length - 1 && (
+                                                                            <span className="text-slate-300 font-medium">|</span>
+                                                                        )}
+                                                                    </React.Fragment>
+                                                                ))}
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </motion.div>
+                            )}
                         </motion.section>
                     )}
 
@@ -611,72 +706,45 @@ const AutonomousPage = () => {
                             id="schedule" 
                             className="scroll-mt-32"
                         >
-                            <div className="max-w-5xl mx-auto">
-                                <div className="bg-white border border-slate-100 rounded-[4rem] overflow-hidden shadow-2xl relative">
-                                    <div className="bg-[#224292] p-12 text-white relative">
-                                        <div className="absolute top-0 right-0 p-12 opacity-10">
-                                            <Calendar size={150} />
-                                        </div>
-                                        <div className="relative z-10 text-center">
-                                            <h3 className="text-4xl font-black tracking-tighter leading-none mb-3">Institutional Calendar</h3>
-                                            <p className="text-white/60 text-[13px] font-medium uppercase tracking-widest">Academic Schedule for 2023-26 Batches</p>
-                                        </div>
+                            <div className="max-w-[1400px] mx-auto">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-14 h-14 bg-amber-50 rounded-[1.5rem] flex items-center justify-center text-amber-600">
+                                        <Calendar size={28} />
                                     </div>
-                                    <div className="p-12">
-                                        <div className="overflow-x-auto no-scrollbar">
-                                            <table className="w-full text-left">
-                                                <thead>
-                                                    <tr className="border-b border-slate-100">
-                                                        <th className="px-8 py-6 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Academic Year</th>
-                                                        <th className="px-8 py-6 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Semester Phase</th>
-                                                        <th className="px-8 py-6 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em] text-right">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody className="divide-y divide-slate-50">
-                                                    {loadingSchedules ? (
-                                                        <tr>
-                                                            <td colSpan="3" className="px-8 py-32 text-center">
-                                                                <div className="flex flex-col items-center gap-4">
-                                                                    <div className="w-12 h-12 border-4 border-[#ffc107] border-t-transparent rounded-full animate-spin" />
-                                                                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Syncing with server...</span>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    ) : (
-                                                        schedules.length > 0 ? (
-                                                            schedules.map((row, i) => (
-                                                                <tr key={i} className="hover:bg-slate-50 transition-all group">
-                                                                    <td className="px-8 py-8">
-                                                                        <span className="text-lg font-black text-[#224292] group-hover:text-[#ffc107] transition-colors">{row.year_or_version}</span>
-                                                                    </td>
-                                                                    <td className="px-8 py-8">
-                                                                        <span className="px-4 py-1.5 bg-slate-50 rounded-full text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:bg-[#224292]/5 group-hover:text-[#224292] transition-all">
-                                                                            {row.semester}
-                                                                        </span>
-                                                                    </td>
-                                                                    <td className="px-8 py-8 text-right">
-                                                                        <button 
-                                                                            onClick={() => window.open(row.pdf_url, '_blank')}
-                                                                            className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-[#224292] hover:bg-[#ffc107] hover:shadow-xl transition-all ml-auto group/dl"
-                                                                        >
-                                                                            <Download size={20} className="group-hover/dl:scale-110 transition-transform" />
-                                                                        </button>
-                                                                    </td>
-                                                                </tr>
-                                                            ))
-                                                        ) : (
-                                                            <tr>
-                                                                <td colSpan="3" className="px-8 py-20 text-center">
-                                                                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">No records found.</span>
-                                                                </td>
-                                                            </tr>
-                                                        )
-                                                    )}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+                                    <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Academic Schedule</h2>
                                 </div>
+                                <p className="text-black text-[13px] font-bold max-w-xl mb-12">Institutional academic calendar and semester schedules for all degree programmes.</p>
+
+                                {loadingSchedules ? (
+                                    <div className="flex flex-col items-center py-20 bg-white border border-slate-100 rounded-3xl shadow-sm">
+                                        <div className="w-10 h-10 border-4 border-[#ffc107] border-t-transparent rounded-full animate-spin mb-4" />
+                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Loading Records...</span>
+                                    </div>
+                                ) : (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                        {schedules.map((row, i) => (
+                                            <button 
+                                                key={i} 
+                                                onClick={() => window.open(row.pdf_url, '_blank')}
+                                                className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-left"
+                                            >
+                                                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-[#224292] shrink-0 group-hover:bg-[#224292] group-hover:text-white transition-all">
+                                                    <FileText size={20} />
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <p className="text-[14px] font-bold text-[#224292] truncate leading-tight">{row.year_or_version}</p>
+                                                    <p className="text-[11px] font-medium text-slate-400 mt-0.5">{row.semester}</p>
+                                                </div>
+                                                <Download size={14} className="text-slate-300 group-hover:text-[#224292] transition-colors shrink-0" />
+                                            </button>
+                                        ))}
+                                        {schedules.length === 0 && (
+                                            <div className="col-span-full py-12 text-center bg-slate-50/50 rounded-xl border border-dashed border-slate-200">
+                                                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">No schedules available.</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </motion.section>
                     )}
@@ -693,28 +761,28 @@ const AutonomousPage = () => {
                         >
                             <div className="grid lg:grid-cols-12 gap-12 items-start">
                                 <div className="lg:col-span-5">
-                                    <div className="bg-[#224292] p-12 rounded-[4rem] text-white relative overflow-hidden shadow-2xl h-full flex flex-col justify-between">
+                                    <div className="bg-[#224292] p-10 rounded-3xl text-white relative overflow-hidden shadow-2xl h-full flex flex-col justify-between">
                                         <div className="absolute -bottom-20 -right-20 opacity-10">
                                             <UserCheck size={400} />
                                         </div>
                                         <div className="relative z-10">
-                                            <div className="w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center mb-10 backdrop-blur-md">
+                                            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-md">
                                                 <UserCheck size={32} className="text-[#ffc107]" />
                                             </div>
-                                            <h3 className="text-4xl font-black tracking-tighter mb-8 leading-tight">Credits Equivalence Committee (CEC)</h3>
-                                            <p className="text-white/60 text-lg font-medium leading-relaxed mb-16">
-                                                Ensuring academic standards for external certifications and credit transfers across diverse academic streams.
+                                            <h3 className="text-4xl font-black tracking-tighter mb-6 leading-tight">Credits Equivalence Committee (CEC)</h3>
+                                            <p className="text-white/60 text-lg font-medium leading-relaxed mb-12">
+                                                Institute-level committee constituted to evaluate and approve credit equivalence requests for external, online, and special academic courses.
                                             </p>
                                         </div>
-                                        <div className="relative z-10 space-y-4">
-                                            <p className="text-[10px] font-black text-[#ffc107] uppercase tracking-[0.3em] mb-4">Board Composition</p>
+                                        <div className="relative z-10 space-y-3">
+                                            <p className="text-[10px] font-black text-[#ffc107] uppercase tracking-[0.3em] mb-4">Committee Composition</p>
                                             {[
-                                                { role: 'Institutional Chairman', name: 'Senior Professor' },
-                                                { role: 'Member Secretary', name: 'Director, CDDA' },
-                                                { role: 'Subject Expert', name: 'Concerned Head of the Department' }
+                                                { role: 'Chairman', name: 'Senior Professor nominated by the Principal' },
+                                                { role: 'Convenor', name: 'Director, CDDA' },
+                                                { role: 'Member', name: 'Concerned Head of the Department' }
                                             ].map((m, i) => (
-                                                <div key={i} className="flex items-center gap-5 p-4 bg-white/5 rounded-3xl border border-white/5">
-                                                    <div className="w-10 h-10 bg-white/10 rounded-2xl flex items-center justify-center">
+                                                <div key={i} className="flex items-center gap-5 p-4 bg-white/5 rounded-2xl border border-white/5">
+                                                    <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
                                                         <UserCheck size={18} className="text-[#ffc107]" />
                                                     </div>
                                                     <div>
@@ -727,24 +795,26 @@ const AutonomousPage = () => {
                                     </div>
                                 </div>
                                 <div className="lg:col-span-7">
-                                    <div className="bg-white border border-slate-100 rounded-[4rem] p-12 shadow-sm h-full">
-                                        <h4 className="text-3xl font-black text-[#224292] mb-12 tracking-tight">Institutional Functions</h4>
-                                        <div className="grid sm:grid-cols-2 gap-8">
+                                    <div className="bg-white border border-slate-100 rounded-3xl p-10 shadow-sm h-full">
+                                        <h4 className="text-3xl font-black text-[#224292] mb-10 tracking-tight">Functions of CEC</h4>
+                                        <div className="grid grid-cols-1 gap-6">
                                             {[
-                                                'Approve credit transfers for hybrid and off-campus certifications.',
-                                                'Validating external course alignment with KIOT curriculum.',
-                                                'Standardizing assessment and marks conversion protocols.',
-                                                'Credit categorization for professional elective exemptions.',
-                                                'Approving foreign language certifications for academic credits.',
-                                                'Evaluating academic equivalence for transfer students.',
-                                                'Reviewing corporate-aligned industry course integration.',
-                                                'Updating credit guidelines per global regulatory changes.'
+                                                'Approve credit transfer for online, off-campus, hybrid, and external courses.',
+                                                'Decide if external courses can replace KIOT curriculum courses.',
+                                                'Fix credit value, assessment method, marks conversion, and grades.',
+                                                'Approve foreign language course credits under elective category.',
+                                                'Approve addition or exemption of courses for transfer students.',
+                                                'Consider changes in elective streams and alternate completion options.',
+                                                'Review company certification and industry courses for academic credits.',
+                                                'Ensure external courses meet quality standards and regulations.',
+                                                'Recommend approved credits to CDDA / COE for student records.',
+                                                'Update guidelines based on university and regulatory changes.'
                                             ].map((func, i) => (
-                                                <div key={i} className="flex items-start gap-5 p-6 rounded-[2rem] hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all group">
-                                                    <div className="w-8 h-8 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-500 shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-inner">
+                                                <div key={i} className="flex items-start gap-5 p-5 rounded-2xl hover:bg-slate-50 border border-slate-50 hover:border-slate-100 transition-all group w-full">
+                                                    <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-500 shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-inner">
                                                         <CheckCircle2 size={16} />
                                                     </div>
-                                                    <p className="text-[13px] font-bold text-slate-600 leading-relaxed">{func}</p>
+                                                    <p className="text-[15px] font-bold text-slate-600 leading-relaxed">{func}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -764,7 +834,7 @@ const AutonomousPage = () => {
                             id="honours" 
                             className="scroll-mt-32"
                         >
-                            <div className="text-center max-w-3xl mx-auto mb-20">
+                            <div className="text-center max-w-3xl mx-auto mb-12">
                                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-amber-50 rounded-full mb-6">
                                     <Trophy size={16} className="text-amber-600" />
                                     <span className="text-[10px] font-black text-amber-600 uppercase tracking-widest">Optional Excellence Pathway</span>
@@ -775,8 +845,8 @@ const AutonomousPage = () => {
                                 </p>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-12 mb-24">
-                                <div className="bg-white border border-slate-100 rounded-[4rem] p-12 shadow-sm relative overflow-hidden group hover:shadow-2xl transition-all">
+                            <div className="grid md:grid-cols-2 gap-12 mb-12">
+                                <div className="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm relative overflow-hidden group hover:shadow-2xl transition-all">
                                     <div className="absolute top-0 right-0 p-12 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity">
                                         <Trophy size={250} />
                                     </div>
@@ -790,30 +860,31 @@ const AutonomousPage = () => {
                                                 <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-1">Intra-Departmental Vertical</p>
                                             </div>
                                         </div>
-                                        <p className="text-[15px] font-bold text-slate-600 leading-relaxed mb-10">
+                                        <p className="text-[14px] font-bold text-black leading-relaxed mb-10">
                                             Earn an additional 18 credits within the <span className="text-[#224292]">SAME Faculty</span> to gain deep specialized expertise in your primary discipline.
                                         </p>
-                                        <div className="space-y-4 mb-12">
+                                        <div className="space-y-4 mb-6">
                                             {[
-                                                'Minimum CGPA of 7.50 at end of 3rd sem.',
-                                                'No history of standing arrears.',
-                                                'All courses passed in the first attempt.',
-                                                'Optional path towards research & innovation.'
+                                                'Earn 18 additional credits from same programme verticals.',
+                                                'Max 6 online credits (NPTEL) above regular limit.',
+                                                'Min CGPA of 7.50 at end of 3rd sem with no arrears.',
+                                                'Must pass all courses in the first attempt.',
+                                                'Option to convert to Professional Electives if incomplete.',
+                                                'Higher grades considered for CGPA if credits exceed 18.'
                                             ].map((item, i) => (
-                                                <div key={i} className="flex items-center gap-4 text-[13px] font-black text-slate-500">
-                                                    <div className="w-2 h-2 bg-amber-400 rounded-full" />
-                                                    {item}
+                                                <div key={i} className="flex items-start gap-4 text-[14px] font-bold text-black">
+                                                    <div className="w-2 h-2 bg-amber-400 rounded-full mt-2 shrink-0" />
+                                                    <span className="leading-relaxed">{item}</span>
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className="p-6 bg-slate-50 rounded-[2rem] flex items-center justify-between">
+                                        <div className="p-6 bg-slate-50 rounded-2xl flex items-center justify-between">
                                             <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Requirement</span>
                                             <span className="text-lg font-black text-[#224292]">18 Credits</span>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="bg-white border border-slate-100 rounded-[4rem] p-12 shadow-sm relative overflow-hidden group hover:shadow-2xl transition-all">
+                                <div className="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm relative overflow-hidden group hover:shadow-2xl transition-all">
                                     <div className="absolute top-0 right-0 p-12 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity">
                                         <Award size={250} />
                                     </div>
@@ -827,23 +898,24 @@ const AutonomousPage = () => {
                                                 <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-1">Cross-Disciplinary Pathway</p>
                                             </div>
                                         </div>
-                                        <p className="text-[15px] font-bold text-slate-600 leading-relaxed mb-10">
+                                        <p className="text-[14px] font-bold text-black leading-relaxed mb-10">
                                             Broaden your horizons by earning 18 additional credits from a <span className="text-[#224292]">DIFFERENT Faculty</span> or Discipline.
                                         </p>
-                                        <div className="space-y-4 mb-12">
+                                        <div className="space-y-4 mb-6">
                                             {[
-                                                'Minimum CGPA of 7.50 without arrears.',
-                                                'Exposure to diverse industrial domains.',
-                                                'Integration of emerging tech specializations.',
-                                                'Flexible elective pathway for graduates.'
+                                                'Earn 18 additional credits from OTHER programmes.',
+                                                'Max 6 online credits (NPTEL) above regular limit.',
+                                                'Min CGPA of 7.50 at end of 3rd sem with no arrears.',
+                                                'Option to convert to Open Electives if incomplete.',
+                                                'Excess credits treated as Audit Courses.'
                                             ].map((item, i) => (
-                                                <div key={i} className="flex items-center gap-4 text-[13px] font-black text-slate-500">
-                                                    <div className="w-2 h-2 bg-emerald-400 rounded-full" />
-                                                    {item}
+                                                <div key={i} className="flex items-start gap-4 text-[14px] font-bold text-black">
+                                                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 shrink-0" />
+                                                    <span className="leading-relaxed">{item}</span>
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className="p-6 bg-slate-50 rounded-[2rem] flex items-center justify-between">
+                                        <div className="p-6 bg-slate-50 rounded-2xl flex items-center justify-between">
                                             <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Requirement</span>
                                             <span className="text-lg font-black text-[#224292]">18 Credits</span>
                                         </div>
@@ -852,30 +924,30 @@ const AutonomousPage = () => {
                             </div>
 
                             <div className="max-w-4xl mx-auto">
-                                <div className="bg-white border border-slate-100 rounded-[4rem] overflow-hidden shadow-2xl">
-                                    <div className="bg-[#224292] p-10 text-white flex items-center justify-between">
+                                <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-2xl">
+                                    <div className="bg-[#224292] p-8 text-white flex items-center justify-between">
                                         <div>
                                             <h4 className="text-3xl font-black tracking-tight">Minor Specialization Domains</h4>
                                             <p className="text-white/50 text-[11px] font-black uppercase tracking-[0.3em] mt-2">Available for Other Departments</p>
                                         </div>
-                                        <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center">
-                                            <Settings size={32} className="text-[#ffc107] animate-spin-slow" />
+                                        <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center">
+                                            <Settings size={28} className="text-[#ffc107] animate-spin-slow" />
                                         </div>
                                     </div>
-                                    <div className="p-8">
+                                    <div className="p-4">
                                         <table className="w-full text-left">
                                             <thead>
                                                 <tr className="border-b border-slate-100">
-                                                    <th className="px-8 py-6 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Offering Department</th>
-                                                    <th className="px-8 py-6 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Domain Specialization</th>
+                                                    <th className="px-8 py-4 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Offering Department</th>
+                                                    <th className="px-8 py-4 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Domain Specialization</th>
                                                 </tr>
                                             </thead>
                                             <tbody className="divide-y divide-slate-50">
                                                 {minorDegrees.length > 0 ? (
                                                     minorDegrees.map((m, i) => (
                                                         <tr key={i} className="hover:bg-slate-50/50 transition-all group">
-                                                            <td className="px-8 py-8 text-sm font-black text-[#224292]">{m.dept}</td>
-                                                            <td className="px-8 py-8">
+                                                            <td className="px-8 py-5 text-sm font-black text-[#224292]">{m.dept}</td>
+                                                            <td className="px-8 py-5">
                                                                 <div className="flex items-center gap-4">
                                                                     <div className="w-3 h-3 bg-[#ffc107] rounded-full group-hover:scale-150 transition-transform" />
                                                                     <span className="text-[15px] font-bold text-slate-600">{m.spec}</span>
@@ -885,7 +957,7 @@ const AutonomousPage = () => {
                                                     ))
                                                 ) : (
                                                     <tr>
-                                                        <td colSpan="2" className="px-8 py-20 text-center">
+                                                        <td colSpan="2" className="px-8 py-16 text-center">
                                                             <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">No domains listed.</span>
                                                         </td>
                                                     </tr>

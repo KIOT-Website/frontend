@@ -1,14 +1,14 @@
 import { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import {
-  GraduationCap, Clock, Users, ChevronDown, ChevronRight,
-  Download, ArrowLeft, Briefcase, FlaskConical, BookOpen,
-  Award, Building2, CheckCircle, ArrowRight, ExternalLink,
-  Microscope, Star, MapPin, Layers, Cpu, Globe, Wrench, ShieldCheck,
+import { 
+  ChevronLeft, GraduationCap, Building2, Users, BookOpen, 
+  MapPin, Clock, Award, CheckCircle2, ChevronRight,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
-  Calendar, Zap, CheckCircle2
-} from 'lucide-react'
+  Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase, ExternalLink,
+  Microscope, Star, Globe, ShieldCheck, ArrowRight
+} from 'lucide-react';
+import facultyBg from '../../assets/Faculity/background faculty.png';
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
 
@@ -209,35 +209,24 @@ export default function CourseDetailPage() {
                 <path d="M1400 150 L1100 150 L1060 110 L800 110" />
              </g>
              
-             {/* Glowing 'Light' Nodes */}
-             <g filter="url(#glow)">
-                {[
-                  {x: 200, y: 280}, {x: 240, y: 240}, {x: 600, y: 240}, {x: 640, y: 280},
-                  {x: 150, y: 320}, {x: 200, y: 370}, {x: 500, y: 370}, {x: 550, y: 320},
-                  {x: 340, y: 190}, {x: 860, y: 160}, {x: 440, y: 420}, {x: 900, y: 420},
-                  {x: 100, y: 150}, {x: 1100, y: 150}
-                ].map((pos, i) => (
-                  <circle 
-                    key={i} 
-                    cx={pos.x} 
-                    cy={pos.y} 
-                    r="2.5" 
-                    fill={i % 2 === 0 ? "#ffc107" : "#ffffff"} 
-                    className="animate-pulse"
-                    style={{ animationDelay: `${i * 0.5}s`, animationDuration: '2s' }}
-                  />
-                ))}
+             {/* Background Pattern */}
+             <g opacity="0.1">
+                <path 
+                  d="M0 100 Q 250 50 500 100 T 1000 100" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="1" 
+                />
+                <path 
+                  d="M0 200 Q 300 250 600 200 T 1200 200" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="1" 
+                />
              </g>
            </svg>
         </div>
 
-        {/* Background Visuals - Clean Institutional Theme */}
-        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-            backgroundSize: '32px 32px'
-          }} />
-        </div>
         <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-[#ffc107]/5 blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -585,12 +574,19 @@ export default function CourseDetailPage() {
                       onClick={() => setSelectedFaculty(f)}
                       className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
                     >
-                      <div className="w-full aspect-[4/5] bg-slate-100 overflow-hidden">
+                      <div 
+                        className="w-full aspect-square bg-slate-100 overflow-hidden relative"
+                        style={course.short === 'Civil Engineering' ? { 
+                          backgroundImage: `url(${facultyBg})`, 
+                          backgroundSize: 'cover', 
+                          backgroundPosition: 'center' 
+                        } : {}}
+                      >
                         {f.image ? (
                           <img 
                             src={f.image} 
                             alt={f.name} 
-                            className="w-full h-full object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" 
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-slate-300">
@@ -1025,7 +1021,14 @@ export default function CourseDetailPage() {
                   </button>
 
                   <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
-                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden">
+                    <div 
+                      className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden"
+                      style={course.short === 'Civil Engineering' ? { 
+                        backgroundImage: `url(${facultyBg})`, 
+                        backgroundSize: 'cover', 
+                        backgroundPosition: 'center' 
+                      } : {}}
+                    >
                       {selectedFaculty.image ? (
                         <img src={selectedFaculty.image} alt={selectedFaculty.name} className="w-full h-full object-cover" />
                       ) : (

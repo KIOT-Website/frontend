@@ -153,7 +153,7 @@ const CampusLifePage = () => {
                 )}
             </AnimatePresence>
 
-            <div className="w-full px-6 lg:px-12 pt-6 md:pt-24 pb-10 md:pb-24 relative z-20">
+            <div className="w-full px-6 lg:px-12 pt-6 md:pt-24 pb-6 md:pb-12 relative z-20">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -203,7 +203,7 @@ const CampusLifePage = () => {
                 </motion.div>
             </div>
 
-            <div className="bg-slate-50/50 py-12 md:py-24 relative z-20 overflow-hidden">
+            <div className="bg-slate-50/50 py-8 md:py-16 relative z-20 overflow-hidden">
                 <div className="w-full px-6 lg:px-12 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
@@ -220,22 +220,22 @@ const CampusLifePage = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="flex flex-col bg-white rounded-3xl shadow-xl shadow-slate-200/60 overflow-hidden border border-slate-100 group hover:-translate-y-2 transition-all duration-500"
                             >
-                                <div className="p-5 md:p-8 md:pb-12 flex flex-col items-center text-center space-y-6">
+                                <div className="p-4 md:p-6 md:pb-8 flex flex-col items-center text-center space-y-4">
                                     <div 
-                                        className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6 duration-500"
+                                        className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6 duration-500"
                                         style={{ backgroundColor: stat.c, color: stat.c === '#ffc107' ? '#224292' : '#fff' }}
                                     >
-                                        <stat.i size={28} />
+                                        <stat.i size={20} />
                                     </div>
                                     <div className="space-y-2">
                                         <p className="text-[10px] font-black text-black uppercase tracking-[3px]">{stat.l}</p>
-                                        <p className="text-4xl lg:text-5xl font-black text-[#224292] tracking-tighter leading-none">
+                                        <p className="text-3xl lg:text-4xl font-black text-[#224292] tracking-tighter leading-none">
                                             {stat.v}
                                         </p>
                                     </div>
                                 </div>
                                 <div 
-                                    className="p-4 md:p-6 text-center mt-auto"
+                                    className="p-3 md:p-4 text-center mt-auto"
                                     style={{ backgroundColor: stat.c }}
                                 >
                                     <p className={`text-[10px] font-black uppercase tracking-widest leading-relaxed ${stat.c === '#ffc107' ? 'text-[#224292]' : 'text-white'}`}>
