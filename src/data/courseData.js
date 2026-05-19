@@ -2,18 +2,35 @@ import { Cpu, Activity, Globe, Wrench, BookOpen, FlaskConical, Zap, BarChart3, L
 import balajiImage from '../assets/main/balaji.9da24d6e942fe40a1258.webp'
 
 // Civil Faculty Imports
-import sathishKumarImage from '../assets/Faculity/civil/B.SATHISH KUMAR.png'
-import prasathImage from '../assets/Faculity/civil/Dr.P.PRASATH.png'
-import krishnanImage from '../assets/Faculity/civil/L.KRISHNAN.png'
-import nirmalImage from '../assets/Faculity/civil/L.M.NIRMAL.png'
-import selvakumarImage from '../assets/Faculity/civil/P.SELVAKUMAR.png'
-import elavarasanImage from '../assets/Faculity/civil/R.ELAVARASAN.png'
-// import arulkesavanImage from '../assets/Faculity/civil/S.ARULKESAVAN.png'
-// import kaalijoothiImage from '../assets/Faculity/civil/S.J.KAALIJOOTHI.png'
-// import rajeshkumarImage from '../assets/Faculity/civil/S.RAJESHKUMAR.png'
-// import sasikumarImage from '../assets/Faculity/civil/S.SASI KUMAR.png'
-// import senthilkumarImage from '../assets/Faculity/civil/S.SENTHIL KUMAR.png'
-// import balamuruganImage from '../assets/Faculity/civil/U.BALAMURUGAN.png'
+import sathishKumarImage from '../assets/Faculity/civil/B.SATHISH KUMAR.webp'
+import prasathImage from '../assets/Faculity/civil/Dr.P.PRASATH.webp'
+import krishnanImage from '../assets/Faculity/civil/L.KRISHNAN.webp'
+import nirmalImage from '../assets/Faculity/civil/L.M.NIRMAL.webp'
+import selvakumarImage from '../assets/Faculity/civil/P.SELVAKUMAR.webp'
+import elavarasanImage from '../assets/Faculity/civil/R.ELAVARASAN.webp'
+import arulkesavanImage from '../assets/Faculity/civil/S.ARULKESAVAN.webp'
+import kaalijoothiImage from '../assets/Faculity/civil/S.J.KAALIJOOTHI.webp'
+import rajeshkumarImage from '../assets/Faculity/civil/S.RAJESHKUMAR.webp'
+import sasikumarImage from '../assets/Faculity/civil/S.SASI KUMAR.webp'
+import senthilkumarImage from '../assets/Faculity/civil/S.SENTHIL KUMAR.webp'
+import balamuruganImage from '../assets/Faculity/civil/U.BALAMURUGAN.webp'
+
+// CSBS Faculty Imports
+import ramkumarImage from '../assets/Faculity/csbs/ramkumar.webp'
+import vanithaImage from '../assets/Faculity/csbs/vanitha.webp'
+import karthickImage from '../assets/Faculity/csbs/karthick.webp'
+import ranjithkumarImage from '../assets/Faculity/csbs/ranjithkumar.webp'
+import nithyaImage from '../assets/Faculity/csbs/nithya.webp'
+import gopikumaranImage from '../assets/Faculity/csbs/gopikumaran.webp'
+import venkataRamanenImage from '../assets/Faculity/csbs/venkata_ramanen.webp'
+import ragaKeerthanaImage from '../assets/Faculity/csbs/raga_keerthana.webp'
+import yudhayapriyaImage from '../assets/Faculity/csbs/yudhayapriya.webp'
+import preethiImage from '../assets/Faculity/csbs/preethi.webp'
+import dheepikaImage from '../assets/Faculity/csbs/dheepika.webp'
+import madheswaranImage from '../assets/Faculity/csbs/madheswaran.webp'
+import noorulAmeenImage from '../assets/Faculity/csbs/noorul_ameen.webp'
+import sambathkumarImage from '../assets/Faculity/csbs/sambathkumar.webp'
+
 
 
 export const courseData = {
@@ -261,6 +278,153 @@ export const courseData = {
       'Minimum 50% aggregate in PCM',
       'TNEA rank / Valid TANCET score',
       'No upper age limit',
+    ],
+    patents: [
+      {
+        year: '2025',
+        data: [
+          {
+            inventors: 'Mr. A. Gajendran, Dr. K. S. Prabhakaran, Dr. P. S. S. Srinivasan, Dr. K. Visagavel, S. Gokul, R. Krishwanth, V. Krishnakumar, B. Aravinth S., S. Priyanka, R. Nagakeerthiga',
+            title: 'Terracotta based eco friendly air cooling apparatus',
+            type: 'Utility Patent',
+            appNo: '202541090639',
+            date: '24-10-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Dr. M. Sindhu',
+            title: 'Machine learning framework for predicting educational outcomes amid new policy interventions in higher education',
+            type: 'Utility Patent',
+            appNo: '202521080582 A',
+            date: '17-10-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Knowledge Institute of Technology',
+            title: 'Automated Load Barrier Check Post',
+            type: 'Design Patent',
+            appNo: '439245-001',
+            date: '11.09.2025',
+            status: 'Granted'
+          },
+          {
+            inventors: 'Dr. M. Sindhu',
+            title: 'Enhancing student outcomes, academic performance, and pedagogy in higher education through machine learning',
+            type: 'Utility Patent',
+            appNo: '202541041492 A',
+            date: '23-05-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Knowledge Institute of Technology',
+            title: 'Crop Reaping Machine',
+            type: 'Design Patent',
+            appNo: '439166-001',
+            date: '16.01.2025',
+            status: 'Granted'
+          }
+        ]
+      },
+      {
+        year: '2024',
+        data: [
+          {
+            inventors: 'Dr. P. S. S. Srinivasan, Mr. J. Prakash, Mr. A. Selvakumar, Mrs. A. Elavarasi, Mr. V. Karthikeyan',
+            title: 'Ai-Based Load Barrier Checkpost and a Control Method Thereof',
+            type: 'Utility Patent',
+            appNo: '202441092241',
+            date: '29.11.2024',
+            status: 'Published'
+          },
+          {
+            inventors: 'Dr. K. Visagavel, Mr. M. Sathyanathan, Mr. K. Mugundhan, Dr. M. Ilangkumaran, Dr. V. Sivakumar',
+            title: 'Crop Reaping Machine',
+            type: 'Utility Patent',
+            appNo: '202441088581',
+            date: '22.11.2024',
+            status: 'Published'
+          },
+          {
+            inventors: 'Dr. K. S. Prabhakaran, Mr. S. Santhosh, Mr. P. Kathikeyan',
+            title: 'Foot Board Travel Preventing Apparatus and A Method Thereof',
+            type: 'Utility Patent',
+            appNo: '202441088566',
+            date: '22.11.2024',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr. K. Mugundhan',
+            title: 'Deep Drawing System for Thin Sheet Metal',
+            type: 'Design Patent',
+            appNo: '388844-001',
+            date: '09.02.2024',
+            status: 'Granted'
+          }
+        ]
+      },
+      {
+        year: '2023',
+        data: [
+          {
+            inventors: 'Mr. J. Prakash',
+            title: 'Exoskeleton Knee Actuator',
+            type: 'Design Patent',
+            appNo: '393135-001',
+            date: '20-10-2023',
+            status: 'Granted'
+          },
+          {
+            inventors: 'Dr. K. Visagavel',
+            title: 'Thermal Ventilator',
+            type: 'Utility Patent',
+            appNo: '201941050745',
+            date: '17.10.2023',
+            status: 'Granted'
+          },
+          {
+            inventors: 'Dr. V. Sivakumar',
+            title: 'Nanotechnology Based Antimicrobial Bandage Dispensing Device',
+            type: 'Design Patent',
+            appNo: '391444-001',
+            date: '13-10-2023',
+            status: 'Granted'
+          }
+        ]
+      },
+      {
+        year: '2022',
+        data: [
+          {
+            inventors: 'Dr. N. Panneerselvam',
+            title: 'A Data Processing Device for Electric Vehicle Based On IOT',
+            type: 'Utility Patent',
+            appNo: '202241025599',
+            date: '13.05.2022',
+            status: 'Published'
+          }
+        ]
+      },
+      {
+        year: '2021',
+        data: [
+          {
+            inventors: 'Dr. N. Panneerselvam',
+            title: 'Design a Train Monitoring System and Method Using Machine Learning Approach',
+            type: 'Utility Patent',
+            appNo: '202141018796',
+            date: '30.04.2021',
+            status: 'Published'
+          },
+          {
+            inventors: 'Dr. N. Panneerselvam',
+            title: 'Artificial Intelligence Based Robotics for Determining Quality Of Battery In Manufacturing Industry',
+            type: 'Utility Patent',
+            appNo: '202141017805',
+            date: '23.04.2021',
+            status: 'Published'
+          }
+        ]
+      }
     ],
   },
   'be-cse': {
@@ -1102,81 +1266,324 @@ export const courseData = {
       }
     ],
     labs: [
-      { 
-        name: 'Engineering Practices Laboratory – Electronics', 
-        equipments: ['Soldering Iron, Lead', 'Multi meter', 'Continuity tester', 'Used Laptop', 'Used desktop computer', 'Used LED TV'], 
+      {
+        name: 'BE23GE305 & Engineering Practices Laboratory',
+        equipments: [
+          'Audio system',
+          'AM and FM Transceiver',
+          'LED TV',
+          'Regulated Power Supply',
+          'Voltmeters, Ammeters',
+          'Resistors, Capacitors, Zener Diode',
+          'Photo-resistors, Transistor'
+        ],
         icon: Wrench,
         incharge: 'Mr.M.Chandraman, AP/ECE',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Circuits and Devices Laboratory', 
-        equipments: ['CRO(30MHz)', 'Function Generators(3MHz)', 'Dual Regulated power Supplies(0-30V)', 'Dual power supply/single mode power supply', 'IC Trainer Kit', 'Multimeter', 'Digital LCR Meter'], 
+      {
+        name: 'BE23EC402 & Circuit Theory and Analysis',
+        equipments: [
+          'CRO',
+          'Function Generators',
+          'Regulated Power Supplies',
+          'Decade Resistance Box, Voltmeters, Ammeters',
+          'Resistors, Capacitors, Inductors'
+        ],
         icon: Zap,
+        incharge: 'Mrs.S.Elarmathi, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC405 & Analog Electronic Circuits',
+        equipments: [
+          'CRO',
+          'Function Generators',
+          'Regulated Power Supplies',
+          'Digital Multi-meter',
+          'Digital LCR Meter',
+          'Transistor/MOSFET',
+          'Open Source software- Spice'
+        ],
+        icon: CircuitBoard,
         incharge: 'Mr.A.Arun, AP/ECE',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Communications system Laboratory', 
-        equipments: ['CRO /DSO (Min 30MHz)', 'Signal Generator /Function Generators (2 MHz)', 'Dual Regulated Power Supplies ( 0 - 30V)', 'Digital Multimeter', 'IC tester', 'Kits for Signal Sampling, TDM, AM, FM, PCM, DM and Line Coding Schemes, Error control code', 'MSO', 'DSO'], 
-        icon: Globe,
-        incharge: 'Dr.S.Kumarganesh, Professor/ECE',
-        technician: 'Technical Support Staff'
-      },
-      { 
-        name: 'Advanced Communication Laboratory', 
+      {
+        name: 'BE23EC406 & Digital Electronics',
         equipments: [
-          'Trainer kit for carrying out LED and PIN diode characteristics, Digital multi meter, optical power meter',
-          'Trainer kit for determining the mode characteristics, losses in optical fiber',
-          'Trainer kit for analyzing Analog and Digital link performance, 2 Mbps PRBS Data source, 10 MHz signal generator, 20 MHz Digital storage Oscilloscope',
-          'Kit for measuring Numerical aperture and Attenuation of fiber',
-          'Advanced Optical fiber trainer kit for PC to PC communication, BER Measurement, Pulse broadening',
-          'MM/SM Glass and plastic fiber patch chords with ST/SC/E2000 connectors',
-          'LEDs with ST / SC / E2000 receptacles – 650 / 850 nm',
-          'PIN PDs with ST / SC / E2000 receptacles – 650 / 850 nm'
-        ], 
-        icon: Radio,
-        incharge: 'Mr.S.Manoharan, AP/ECE',
-        technician: 'Technical Support Staff'
-      },
-      { 
-        name: 'Project Laboratory', 
-        equipments: [
-          'GKS 13 Hall sensor kit/GKS 13 Acclero meter kit./ GKS 14 DTMF circuit kit/GKS 15 PIR module/GKS 16 GSM kit SIM 300/GKS 17 GPS Kit/GKS 18 RFID Kit',
-          'GKS 19 Serial Port based for 8051 series microcontroller/ USB based universal GKS 20 programmer/ GKS 22 light sensor kit/ T MSP 430 Advanced Embedded system trainer/ arget 64 MSP 430 General purpose Target Board/ LCD Target/ 3A – ACC VER1.1/ FET/ TCP MSP430/ MSD MSP430/ EMX-CC1120/ WSN GATEWAY/',
-          'WSN NODE',
-          'IAR-EW430-NW-EDU/GKS1Microcontroller Kit P89V51RD2 Sport/GKS 2 Microcontroller Kit P89V51RD2 USB/GKS 3 6 LEAD Stepper motor driver kit/GKS 4-4 Relay driver kit/GKS 5-8 Relay driver kit/GKS 6 OPTO coupler interfacing kit/GKS 7RF module/',
-          'GKS 8 Zigbee module 1 pair/GKS 9 L2 93D DC Motor driver kit/',
-          'GKS 10 infrared sensor/GKS 11 basic proximity sensor/GKS 12 LPG sensor kit',
-          'MSP 430 Launch pad/C2000 Launch pad /Tiva C series Launch pad/',
-          'Tiva Development board/C2000 Development board/Analog System lab kit Pro/ASLKV2010 Starter kit/Sensor Hub/Motor Driver /',
-          'CC110L Booster pack/Sensor Tag CC2650 STK/MSP 430 F4133/',
-          'MSP 430 F5529/MSP 430 F5969/Educational Booster pack (MK11 Boost - EDUMK11)/CC2650/MSP432 P401R/CC3100 Boost//',
-          'CC3200 Audio Booster Pack'
-        ], 
-        icon: Rocket,
-        incharge: 'Dr.P.Shanmugasundaram, ASP/ECE',
-        technician: 'Technical Support Staff'
-      },
-      { 
-        name: 'Digital Signal Processing Laboratory', 
-        equipments: ['PCs with Fixed / Floating point DSP', 'Processors (Kit / Add-on Cards)', 'Signal Generators (1MHz)', 'CRO (20MHz)'], 
-        icon: Terminal,
-        incharge: 'Mr.R.Shanmuga Sundaram, AP/ECE',
-        technician: 'Technical Support Staff'
-      },
-      { 
-        name: 'Communication Networks Laboratory', 
-        equipments: ['Standard LAN Trainer Kits'], 
-        icon: Layers,
-        incharge: 'Mr.G.Rajamanickam, AP/ECE',
-        technician: 'Technical Support Staff'
-      },
-      { 
-        name: 'VLSI Design Laboratory', 
-        equipments: ['Xilinx/Altera/equivalent FPGA Boards', 'Logic Analyzer', 'DSO', 'Interface Board - ADC', 'DAC', 'Motor Control'], 
+          'IC Trainer Kit',
+          'IC Tester',
+          'EDA Tool (Open-source)'
+        ],
         icon: Cpu,
-        incharge: 'Mr.A .Tamilselvan, AP/ECE',
+        incharge: 'Mrs.S.Sasidevi, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC409 & Digital Signal Processing',
+        equipments: [
+          'PCs with DSP Processors',
+          'MATLAB with Simulink'
+        ],
+        icon: Terminal,
+        incharge: 'Mr.R.Shamugasundaram, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC410 & Communication Systems',
+        equipments: [
+          'Standalone desktops PC',
+          'MATLAB with Simulink',
+          'Scilab Compiler'
+        ],
+        icon: Globe,
+        incharge: 'Mr.T.Praveen Kumar, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC411 & Microcontrollers and Embedded Systems',
+        equipments: [
+          '8051 Microcontroller trainer kit',
+          'Proteus Software'
+        ],
+        icon: Settings,
+        incharge: 'Mr.S.Premkumar, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC412 & VLSI Design',
+        equipments: [
+          'FPGA Trainer Kit',
+          'Standalone desktops PC',
+          'Microwind and DSCH Tool'
+        ],
+        icon: Layers,
+        incharge: 'Mrs.M.Vasanthi, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23GE312 & AI and IOT for Engineering Applications',
+        equipments: [
+          'Standalone desktops PC',
+          'Python'
+        ],
+        icon: MonitorDot,
+        incharge: 'Mr.M.Duraisamy, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC415 & Optical and Microwave Engineering',
+        equipments: [
+          'LED Module and Photo Diode Module',
+          'Advanced fiber optic trainer kit',
+          'Slotted section with probe carriage',
+          'Multihole Directional Coupler',
+          'Pyramidal horn antenna'
+        ],
+        icon: Radio,
+        incharge: 'Mr.M.Duraisamy, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC501 & Advanced Digital System Design (DIV)',
+        equipments: [
+          'Altera DE1-SOC Development Board',
+          'Altera MAX 10 FPGA DE10-Lite Evaluation Board',
+          'Standalone desktops PC',
+          'Vivado 2019.1'
+        ],
+        icon: Cpu,
+        incharge: 'Mr.K.Rajesh, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC502 & Low Power VLSI Design (DIV)',
+        equipments: [
+          'LT Spice 24.1',
+          'Microwind and DSCH Tool',
+          'Standalone desktops PC'
+        ],
+        icon: Layers,
+        incharge: 'Mr.A.Tamilselvan, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC503 & Digital Design Verification with System Verilog (DIV)',
+        equipments: [
+          'Standalone desktops PC',
+          'EDA playground'
+        ],
+        icon: Code,
+        incharge: 'Mr.K.Rajesh, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC504 & FPGA Based System Design (DIV)',
+        equipments: [
+          'Altera DE1-SOC Development Board',
+          'Altera MAX 10 FPGA DE10-Lite Evaluation Board',
+          'Standalone desktops PC',
+          'Intel Quartus Prime Lite 24.1'
+        ],
+        icon: Cpu,
+        incharge: 'Mr.A.Tamilselvan, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC505 & ASIC Design Flow and Verification (DIV)',
+        equipments: [
+          'Standalone desktops PC',
+          'Intel Quartus Prime Lite 24.1',
+          'Vivado'
+        ],
+        icon: Cpu,
+        incharge: 'Mr.K.Rajesh, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC506 & Introduction to RISC-V Architecture and FPGA Design (DIV)',
+        equipments: [
+          'Standalone desktops PC',
+          'Intel Quartus Prime Lite 24.1'
+        ],
+        icon: Cpu,
+        incharge: 'Mr.A.Tamilselvan, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC511 & Embedded Hardware Design Laboratory (DIV)',
+        equipments: [
+          'ARM Trainer Boards (STM32)',
+          'Standalone desktops PC',
+          'STM CUBE IDE'
+        ],
+        icon: CircuitBoard,
+        incharge: 'Mr.V.Vimalraj, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC512 & Embedded Programming for Automotive Laboratory (DIV)',
+        equipments: [
+          'ARM Trainer Boards (NXP S32)',
+          'Standalone desktops PC',
+          'S32 Design Studio'
+        ],
+        icon: Car,
+        incharge: 'Mr.M.Chandraman, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC513 & Automotive ECU Development Laboratory (DIV)',
+        equipments: [
+          'ARM Trainer Boards (NXP S32)',
+          'Standalone desktops PC',
+          'TS Master'
+        ],
+        icon: Car,
+        incharge: 'Mr.V.Vimalraj, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC514 & Testing and Simulations of Automotive ECUs Laboratory (DIV)',
+        equipments: [
+          'ARM Trainer Boards (NXP S32)',
+          'Standalone desktops PC',
+          'TS Master'
+        ],
+        icon: Car,
+        incharge: 'Mr.M.Chandraman, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC515 & Model-Based Application ECUs Logic Development Laboratory (DIV)',
+        equipments: [
+          'ARM Trainer Boards (NXP S32)',
+          'Standalone desktops PC',
+          'Programmable Vehicle Subsystem Kit',
+          'TS Master'
+        ],
+        icon: Car,
+        incharge: 'Mr.V.Vimalraj, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EC516 & AUTOSAR-Based ECUs Development Laboratory (DIV)',
+        equipments: [
+          'ARM Trainer Boards (NXP S32)',
+          'Standalone desktops PC',
+          'TS Master',
+          'S32 Design Studio'
+        ],
+        icon: Car,
+        incharge: 'Mr. M.Chandraman, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EE512 & ARM Processors (DIV)',
+        equipments: [
+          'ARM Development Board',
+          'Standalone desktops PC',
+          'Keil μVision 4',
+          'Proteus Design Suit'
+        ],
+        icon: Cpu,
+        incharge: 'Mrs.T.Devika, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EE511 & Embedded C Programming (DIV)',
+        equipments: [
+          'Standalone desktops PC',
+          'Keil μVision 4',
+          'Proteus Design Suit'
+        ],
+        icon: Code,
+        incharge: 'Mr.A.Silambarasan, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EE513 & Embedded Systems Interfacing (DIV)',
+        equipments: [
+          'ARM Development Board',
+          'Standalone desktops PC',
+          'Keil μVision 4',
+          'Proteus Design Suit'
+        ],
+        icon: CircuitBoard,
+        incharge: 'Mrs.T.Devika, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EE514 & Linux Operating System (DIV)',
+        equipments: [
+          'Standalone desktops PC',
+          'Ubuntu 24.04 LTS'
+        ],
+        icon: Terminal,
+        incharge: 'Mr.A.Silambarasan, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EE515 & Real Time Operating System (DIV)',
+        equipments: [
+          'ARM Development Board',
+          'Standalone desktops PC',
+          'STM CUBE IDE',
+          'Keil μVision 5'
+        ],
+        icon: Monitor,
+        incharge: 'Mrs.T.Devika, AP/ECE',
+        technician: 'Technical Support Staff'
+      },
+      {
+        name: 'BE23EE516 & TCP/IP for Embedded Systems',
+        equipments: [
+          'Standalone desktops PC',
+          'Ubuntu 24.04 LTS'
+        ],
+        icon: Globe,
+        incharge: 'Mr.A.Silambarasan, AP/ECE',
         technician: 'Technical Support Staff'
       }
     ],
@@ -1517,22 +1924,22 @@ export const courseData = {
     whyChoose: ['Curriculum designed by TCS', 'Tech + Management focus'],
     curriculum: [{ year: 'Year 1', semesters: ['Maths', 'Business Systems'] }],
     faculty: [
-      { name: 'Dr. M. Ramkumar', designation: 'Associate Professor & Head', joiningDate: '01.08.2022', qualification: 'B.E., M.E., Ph.D', association: 'Regular', experience: 'Teaching: 14 Years', specialization: 'Data Mining, Cloud Computing and Data Science', email: 'hod.csbs@kiot.ac.in', publications: 'IJ: 34 NJ:01 IC: 14 NC: 04', rating: 5.0 },
-      { name: 'Mrs. C. Vanitha', designation: 'Assistant Professor', joiningDate: '09.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 14 Years Industry: 1.4', specialization: 'Data Mining', email: 'cvcsbs@kiot.ac.in', publications: 'IJ:02, IC:01', rating: 4.8 },
-      { name: 'Mr. R. Karthick', designation: 'Assistant Professor', joiningDate: '01.06.2016', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 11.2 Years', specialization: 'Information Security, Big Data Analytics, Data Science', email: 'rkcsbs@kiot.ac.in', publications: 'IJ:04, IC:04, NC:02', rating: 4.8 },
-      { name: 'Mr. M. Ranjithkumar', designation: 'Assistant Professor', joiningDate: '18.07.2022', qualification: 'B.Tech. - IT, M.E.', association: 'Regular', experience: 'Teaching: 7.4 Years', specialization: 'Networking', email: 'mrcsbs@kiot.ac.in', publications: 'IJ:02', rating: 4.7 },
-      { name: 'Mrs. C. Nithya', designation: 'Assistant Professor', joiningDate: '01.06.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 5.6 Years', specialization: 'Networking, Information Security', email: 'cncsbs@kiot.ac.in', publications: 'IJ:02 IC: 02 NC: 04', rating: 4.6 },
-      { name: 'Mr. M. Gopikumaran', designation: 'Assistant Professor', joiningDate: '01.06.2023', qualification: 'B.Tech., M.E.', association: 'Regular', experience: 'Teaching: 6.3 Years', specialization: 'Database Management Systems, Python Programming', email: 'mgcsbs@kiot.ac.in', publications: 'NJ:1', rating: 4.6 },
-      { name: 'Mr. B. Venkata Ramanen', designation: 'Assistant Professor', joiningDate: '28.10.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 1.9 Years', specialization: 'Mobile App Development, Python Programming, Data Science and AI', email: 'bvcsbs@kiot.ac.in', rating: 4.5 },
-      { name: 'Mrs. P. RagaKeerthana', designation: 'Assistant Professor', joiningDate: '24.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Industry: 1.6 Years', specialization: 'Data structures, computer Networks', email: 'prkcsbs@kiot.ac.in', publications: 'IJ:1, IC:1', rating: 4.5 },
-      { name: 'Mrs. R. Yudhayapriya', designation: 'Assistant Professor', joiningDate: '24.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '1 Month', specialization: 'Data structures, computer Networks', email: 'rycsbs@kiot.ac.in', publications: 'IJ:1', rating: 4.3 },
-      { name: 'Mrs. K. Preethi', designation: 'Assistant Professor', joiningDate: '20.01.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Industry: 5.5 Years', specialization: 'DBMS, Computer Networks', email: 'pkcsbs@kiot.ac.in', publications: 'IC:01 NJ:01', rating: 4.6 },
+      { name: 'Dr. M. Ramkumar', designation: 'Associate Professor & Head', joiningDate: '01.08.2022', qualification: 'B.E., M.E., Ph.D', association: 'Regular', experience: 'Teaching: 14 Years', specialization: 'Data Mining, Cloud Computing and Data Science', email: 'hod.csbs@kiot.ac.in', publications: 'IJ: 34, NJ: 01, IC: 14, NC: 04', rating: 5.0, image: ramkumarImage },
+      { name: 'Mrs. C. Vanitha', designation: 'Assistant Professor', joiningDate: '09.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 14 Years, Industry: 1.4 Years', specialization: 'Data Mining', email: 'cvcsbs@kiot.ac.in', publications: 'IJ: 02, IC: 01', rating: 4.8, image: vanithaImage },
+      { name: 'Mr. R. Karthick', designation: 'Assistant Professor', joiningDate: '01.06.2016', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 11.2 Years', specialization: 'Information Security, Big Data Analytics, Data Science', email: 'rkcsbs@kiot.ac.in', publications: 'IJ: 04, IC: 04, NC: 02', rating: 4.8, image: karthickImage },
+      { name: 'Mr. M. Ranjithkumar', designation: 'Assistant Professor', joiningDate: '18.07.2022', qualification: 'B.Tech. - IT, M.E.', association: 'Regular', experience: 'Teaching: 7.4 Years', specialization: 'Networking', email: 'mrcsbs@kiot.ac.in', publications: 'IJ: 02', rating: 4.7, image: ranjithkumarImage },
+      { name: 'Mrs. C. Nithya', designation: 'Assistant Professor', joiningDate: '01.06.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 5.6 Years', specialization: 'Networking, Information Security', email: 'cncsbs@kiot.ac.in', publications: 'IJ: 02, IC: 02, NC: 04', rating: 4.6, image: nithyaImage },
+      { name: 'Mr. M. Gopikumaran', designation: 'Assistant Professor', joiningDate: '01.06.2023', qualification: 'B.Tech., M.E.', association: 'Regular', experience: 'Teaching: 6.3 Years', specialization: 'Database Management Systems, Python Programming', email: 'mgcsbs@kiot.ac.in', publications: 'NJ: 01', rating: 4.6, image: gopikumaranImage },
+      { name: 'Mr. B. Venkata Ramanen', designation: 'Assistant Professor', joiningDate: '28.10.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 1.9 Years', specialization: 'Mobile App Development, Python Programming, Data Science and AI', email: 'bvcsbs@kiot.ac.in', rating: 4.5, image: venkataRamanenImage },
+      { name: 'Mrs. P. RagaKeerthana', designation: 'Assistant Professor', joiningDate: '24.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Industry: 1.6 Years', specialization: 'Data Structures, Computer Networks', email: 'prkcsbs@kiot.ac.in', publications: 'IJ: 01, IC: 01', rating: 4.5, image: ragaKeerthanaImage },
+      { name: 'Mrs. R. Yudhayapriya', designation: 'Assistant Professor', joiningDate: '24.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '1 Month', specialization: 'Data Structures, Computer Networks', email: 'rycsbs@kiot.ac.in', publications: 'IJ: 01', rating: 4.3, image: yudhayapriyaImage },
+      { name: 'Mrs. K. Preethi', designation: 'Assistant Professor', joiningDate: '20.01.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Industry: 5.5 Years', specialization: 'DBMS, Computer Networks', email: 'pkcsbs@kiot.ac.in', publications: 'IC: 01, NJ: 01', rating: 4.6, image: preethiImage },
       { name: 'Mr. S. Saravana Manikandan', designation: 'Associate POP', joiningDate: '19.07.2024', qualification: 'B.E.', experience: '19.10 Years', association: 'Regular', rating: 4.7 },
       { name: 'Mr. S. Vijay Chander', designation: 'Associate POP', joiningDate: '19.07.2024', qualification: 'B.E.', experience: '30.10 Years', association: 'Regular', rating: 4.8 },
-      { name: 'Mrs. A. Dheepika', designation: 'Assistant Professor', joiningDate: '03.06.2013', qualification: 'B.A., M.A., M.Phil., B.Ed.', association: 'Regular', experience: '11 Years', specialization: 'English Language Teaching', email: 'adeng@kiot.ac.in', rating: 4.7 },
-      { name: 'Mr. P. Madheswaran', designation: 'Assistant Professor', joiningDate: '01.06.2012', qualification: 'B.Sc., M.Sc., B.Ed., M.Phil., MISTE., D.M.E.', association: 'Regular', experience: 'Teaching: 21.5 Years, Industry: 7 Years', specialization: 'Ordinary differential equations', email: 'pmmat@kiot.ac.in', rating: 4.8 },
-      { name: 'Mr. J. Noorul Ameen', designation: 'Assistant Professor', joiningDate: '19.07.2024', qualification: 'B.Sc., M.Sc., M.Phil.', association: 'Regular', experience: '11.9 Years', specialization: 'Natural Products and Nano Technology', email: 'jnchem@kiot.ac.in', publications: 'IJ: 02', rating: 4.7 },
-      { name: 'Dr. C. Sambathkumar', designation: 'Assistant Professor', joiningDate: '16.04.2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Research: 6 Years', specialization: 'Nanomaterials for energy storage application', email: 'sambath7593@gmail.com', publications: 'IJ: 15, IC: 2, NJ: 2', rating: 4.8 }
+      { name: 'Mrs. A. Dheepika', designation: 'Assistant Professor', joiningDate: '03.06.2013', qualification: 'B.A., M.A., M.Phil., B.Ed.', association: 'Regular', experience: '11 Years', specialization: 'English Language Teaching', email: 'adeng@kiot.ac.in', rating: 4.7, image: dheepikaImage },
+      { name: 'Mr. P. Madheswaran', designation: 'Assistant Professor', joiningDate: '01.06.2012', qualification: 'B.Sc., M.Sc., B.Ed., M.Phil., MISTE., D.M.E.', association: 'Regular', experience: 'Teaching: 21.5 Years, Industry: 7 Years', specialization: 'Ordinary Differential Equations', email: 'pmmat@kiot.ac.in', rating: 4.8, image: madheswaranImage },
+      { name: 'Mr. J. Noorul Ameen', designation: 'Assistant Professor', joiningDate: '19.07.2024', qualification: 'B.Sc., M.Sc., M.Phil.', association: 'Regular', experience: '11.9 Years', specialization: 'Natural Products and Nano Technology', email: 'jnchem@kiot.ac.in', publications: 'IJ: 02', rating: 4.7, image: noorulAmeenImage },
+      { name: 'Dr. C. Sambathkumar', designation: 'Assistant Professor', joiningDate: '16.04.2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Research: 6 Years', specialization: 'Nanomaterials for Energy Storage Application', email: 'sambath7593@gmail.com', publications: 'IJ: 15, IC: 02, NJ: 02', rating: 4.8, image: sambathkumarImage }
     ],
     labs: [
       { 
@@ -1609,20 +2016,18 @@ export const courseData = {
     whyChoose: ['Extensive field work', 'Software focused studies'],
     curriculum: [{ year: 'Year 1', semesters: ['Building Materials', 'Surveying'] }],
     faculty: [
-      { name: 'Dr. P. Prasath', designation: 'Professor & HOD', qualification: 'M.E., Ph.D.', specialization: 'Environmental Engineering', image: prasathImage, rating: 5.0, experience: '18 Years' },
-      { name: 'Mr. L. Krishnan', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Structural Engineering', image: krishnanImage, rating: 4.8, experience: '12 Years' },
-      { name: 'Mr. B. Sathish Kumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Water Resources Engineering', image: sathishKumarImage, rating: 4.7, experience: '10 Years' },
-      { name: 'Mr. L.M. Nirmal', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Geotechnical Engineering', image: nirmalImage, rating: 4.7, experience: '9 Years' },
-      { name: 'Mr. P. Selvakumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Construction Engineering', image: selvakumarImage, rating: 4.6, experience: '8 Years' },
-      { name: 'Mr. R. Elavarasan', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Remote Sensing & GIS', image: elavarasanImage, rating: 4.6, experience: '7 Years' },
-/*
-      { name: 'Mr. S. Arulkesavan', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Transportation Engineering', image: arulkesavanImage, rating: 4.6, experience: '7 Years' },
-      { name: 'Mr. S.J. Kaalijoothi', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Environmental Engineering', image: kaalijoothiImage, rating: 4.6, experience: '6 Years' },
-      { name: 'Mr. S. Rajeshkumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Structural Engineering', image: rajeshkumarImage, rating: 4.6, experience: '6 Years' },
-      { name: 'Mr. S. Sasi Kumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Construction Management', image: sasikumarImage, rating: 4.5, experience: '5 Years' },
-      { name: 'Mr. S. Senthil Kumar', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Surveying', image: senthilkumarImage, rating: 4.5, experience: '5 Years' },
-      { name: 'Mr. U. Balamurugan', designation: 'Assistant Professor', qualification: 'M.E.', specialization: 'Structural Engineering', image: balamuruganImage, rating: 4.5, experience: '5 Years' }
-*/
+      { name: 'Dr. P. Prasath', designation: 'Professor & Head', qualification: 'B.E., M.E., Ph.D.', experience: 'Teaching - 16.2 Years', specialization: 'Structural Engineering', email: 'hod.civil@kiot.ac.in', publications: 'IC-04, NC-06, INJ-06, NJ-04', rating: 5.0, image: prasathImage, association: 'Regular' },
+      { name: 'Prof. L. Krishnan', designation: 'Assistant Professor', qualification: 'B.E., M.E., Ph.D (Pursuing)', experience: 'Teaching - 11 Years, Industry - 2 Years', specialization: 'Structural Engineering', email: 'lkcivil@kiot.ac.in', publications: 'IJ:06, NJ:0, IC:05, NC:12', rating: 4.8, image: krishnanImage, association: 'Regular' },
+      { name: 'Mr. B. Sathish Kumar', designation: 'Assistant Professor', qualification: 'B.E., M.E.', experience: 'Teaching - 2.2 Years, Industry - 5.1 Years', specialization: 'Structural Engineering', email: 'bskcivil@kiot.ac.in', publications: 'IC-0, NC-0, INJ-0, NJ-0', rating: 4.7, image: sathishKumarImage, association: 'Regular' },
+      { name: 'Mr. L.M. Nirmal', designation: 'Assistant Professor', qualification: 'B.E., M.E.', experience: 'Teaching - 2.1 Years', specialization: 'Construction Engineering and Management', email: 'lmncivil@kiot.ac.in', publications: 'IC-1, NC-0, INJ-0, NJ-0', rating: 4.7, image: nirmalImage, association: 'Regular' },
+      { name: 'Mr. P. Selvakumar', designation: 'Assistant Professor', qualification: 'B.E., M.E.', experience: 'Teaching - 10.3 Years', specialization: 'Infrastructure Engineering', email: 'pscivil@kiot.ac.in', publications: 'IC-1, NC-2, INJ-1', rating: 4.6, image: selvakumarImage, association: 'Regular' },
+      { name: 'Mr. R. Elavarasan', designation: 'Assistant Professor', qualification: 'M.E., (Ph.D).', experience: 'Teaching - 11.10 Years', specialization: 'Structural Engineering', email: 'recivil@kiot.ac.in', publications: 'IC-3, NC-2, NJ-2, INJ-2', rating: 4.6, image: elavarasanImage, association: 'Regular' },
+      { name: 'Mr. S. Arulkesavan', designation: 'Assistant Professor', qualification: 'M.E.', experience: 'Teaching - 8.8 Years', specialization: 'Construction Engineering and Management', email: 'sakcivil@kiot.ac.in', publications: 'IC-6, NC-1, IJ-9', rating: 4.6, image: arulkesavanImage, association: 'Regular' },
+      { name: 'Mr. S.J. Kaalijoothi', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching - 9 Years', specialization: 'English', email: 'sjkeng@kiot.ac.in', publications: 'N/A', rating: 4.6, image: kaalijoothiImage, association: 'Regular' },
+      { name: 'Mr. S. Rajeshkumar', designation: 'Assistant Professor', qualification: 'B.E., M.E.', experience: 'Teaching - 5.1 Years, Industry - 1 Year', specialization: 'Structural Engineering', email: 'srcivil@kiot.ac.in', publications: 'IC-1, NC-2, INJ-0, NJ-0', rating: 4.6, image: rajeshkumarImage, association: 'Regular' },
+      { name: 'Mr. S. Sasi Kumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching - 17 Years', specialization: 'Physics', email: 'ssphy@kiot.ac.in', publications: 'N/A', rating: 4.5, image: sasikumarImage, association: 'Regular' },
+      { name: 'Mr. S. Senthil Kumar', designation: 'Assistant Professor', qualification: 'M.E.', experience: 'Teaching - 6.8 Years, Industry - 3.6 Years', specialization: 'Structural Engineering', email: 'sskcivil@kiot.ac.in', publications: 'IC-1, NC-3', rating: 4.5, image: senthilkumarImage, association: 'Regular' },
+      { name: 'Mr. U. Balamurugan', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching - 11.2 Years', specialization: 'Mathematics', email: 'ubmat@kiot.ac.in', publications: 'N/A', rating: 4.5, image: balamuruganImage, association: 'Regular' }
     ],
     labs: [{ name: 'Strength of Materials Lab', equipment: 'UTM Testing', icon: Wrench }],
     placementStats: { placed: '88%', avg: '3.8 LPA', top: '10 LPA', companies: '30+' },

@@ -8,7 +8,7 @@ import {
   Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase, ExternalLink,
   Microscope, Star, Globe, ShieldCheck, ArrowRight
 } from 'lucide-react';
-import facultyBg from '../../assets/Faculity/background faculty.png';
+import facultyBg from '../../assets/Faculity/background faculty.webp';
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
 
@@ -576,7 +576,7 @@ export default function CourseDetailPage() {
                     >
                       <div 
                         className="w-full aspect-square bg-slate-100 overflow-hidden relative"
-                        style={course.short === 'Civil Engineering' ? { 
+                        style={(courseId === 'be-civil' || courseId === 'btech-csbs') ? { 
                           backgroundImage: `url(${facultyBg})`, 
                           backgroundSize: 'cover', 
                           backgroundPosition: 'center' 
@@ -599,12 +599,12 @@ export default function CourseDetailPage() {
                         <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
                           {f.name}
                         </h3>
-                        <p className="text-slate-500 text-[10px] font-bold font-graphik leading-tight mb-2.5 line-clamp-2">
+                        <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
                           {f.designation}
                         </p>
                         
                         <div className="mt-auto">
-                           <span className="inline-block text-[9px] font-bold font-graphik uppercase tracking-[0.15em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-1 rounded">
+                           <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
                               View Bio
                            </span>
                         </div>
@@ -621,7 +621,7 @@ export default function CourseDetailPage() {
                 {/* DESKTOP VIEW: Sidebar + Detail Panel (Visible only on lg and above) */}
                 <div className="hidden lg:flex flex-row gap-8">
                   {/* Left Sidebar: Lab List */}
-                  <div className="lg:w-1/3 xl:w-1/4 space-y-3 max-h-[750px] overflow-y-auto px-4 py-2 scrollbar-hide">
+                  <div className="lg:w-1/3 xl:w-1/4 space-y-3 max-h-[750px] overflow-y-auto px-4 py-2 pr-2">
                     <div className="mb-6 px-1">
                        <h2 className="text-xl font-bold font-graphik text-[#224292] tracking-tight mb-1">Labs & Facilities</h2>
                        <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Select a facility to view full technical specifications.</p>
@@ -824,7 +824,6 @@ export default function CourseDetailPage() {
                     <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
                        Department <span className="text-[#ffc107]">Patents</span>
                     </h2>
-                    <p className="text-black font-medium font-graphik text-sm tracking-wide">Patents, Copyrights and Publications of the Department</p>
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-[#224292] text-[10px] font-bold font-graphik uppercase tracking-widest">
                      <ShieldCheck size={14} /> Registered Assets
@@ -1006,7 +1005,7 @@ export default function CourseDetailPage() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               onClick={e => e.stopPropagation()}
-              className="bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+              className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
               <div className="overflow-y-auto scrollbar-hide flex-1 pb-10">
                 <div className="bg-[#224292] p-6 md:p-8 relative overflow-hidden">
@@ -1022,8 +1021,8 @@ export default function CourseDetailPage() {
 
                   <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
                     <div 
-                      className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden"
-                      style={course.short === 'Civil Engineering' ? { 
+                      className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden"
+                      style={(courseId === 'be-civil' || courseId === 'btech-csbs') ? { 
                         backgroundImage: `url(${facultyBg})`, 
                         backgroundSize: 'cover', 
                         backgroundPosition: 'center' 
@@ -1049,29 +1048,29 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {selectedFaculty.qualification && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Academic Credentials</p>
-                          <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.qualification}</p>
+                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Academic Credentials</p>
+                          <p className="text-black font-medium font-graphik text-[13.5px]">{selectedFaculty.qualification}</p>
                         </div>
                       )}
                       {selectedFaculty.specialization && selectedFaculty.specialization !== 'N/A' && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Area of Specialization</p>
-                          <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.specialization}</p>
+                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Area of Specialization</p>
+                          <p className="text-black font-medium font-graphik text-[13.5px]">{selectedFaculty.specialization}</p>
                         </div>
                       )}
                       {selectedFaculty.experience && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Work Experience</p>
+                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Work Experience</p>
                           <div className="flex items-center gap-2 text-black">
-                            <Clock size={16} className="text-[#224292]" />
-                            <span className="font-medium font-graphik text-[15px]">{selectedFaculty.experience}</span>
+                            <Clock size={16} className="text-black/80" />
+                            <span className="font-medium font-graphik text-[13.5px]">{selectedFaculty.experience}</span>
                           </div>
                         </div>
                       )}
                       {selectedFaculty.joiningDate && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Date of Joining</p>
-                          <p className="text-black font-medium font-graphik text-[15px]">{selectedFaculty.joiningDate}</p>
+                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Date of Joining</p>
+                          <p className="text-black font-medium font-graphik text-[13.5px]">{selectedFaculty.joiningDate}</p>
                         </div>
                       )}
                     </div>
@@ -1079,40 +1078,40 @@ export default function CourseDetailPage() {
                     <div className="space-y-6">
                       {selectedFaculty.email && selectedFaculty.email !== 'N/A' && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">E-Mail Address</p>
-                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[15px] hover:text-[#224292] transition-colors">
-                            <Mail size={16} className="text-[#224292]" />
+                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">E-Mail Address</p>
+                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[13.5px] hover:text-[#224292] transition-colors">
+                            <Mail size={16} className="text-black/80" />
                             {selectedFaculty.email}
                           </a>
                         </div>
                       )}
                       {selectedFaculty.phone && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Contact Number</p>
-                          <a href={`tel:${selectedFaculty.phone}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[15px] hover:text-[#224292] transition-colors">
-                            <MapPin size={16} className="text-[#224292]" />
+                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Contact Number</p>
+                          <a href={`tel:${selectedFaculty.phone}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[13.5px] hover:text-[#224292] transition-colors">
+                            <MapPin size={16} className="text-black/80" />
                             {selectedFaculty.phone}
                           </a>
                         </div>
                       )}
                       {selectedFaculty.association && (
                         <div>
-                          <p className="text-[10px] font-medium font-graphik uppercase tracking-widest text-[#224292] mb-2">Nature of Association</p>
-                          <span className="inline-block px-3 py-1 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-medium font-graphik tracking-widest">
+                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Nature of Association</p>
+                          <span className="inline-block px-3 py-1 rounded-md bg-slate-100 text-black text-xs font-semibold font-graphik tracking-wide">
                             {selectedFaculty.association}
                           </span>
                         </div>
                       )}
-                      <div className="p-6 bg-[#F8FAFC] border border-[#E5EDF8] rounded-2xl">
+                      <div className="p-6 bg-[#F8FAFC] border border-[#E5EDF8] rounded-xl">
                         <div className="flex items-center gap-2 mb-4">
                           <Award size={18} className="text-[#ffc107]" />
-                          <p className="text-[11px] font-bold font-graphik tracking-widest text-[#224292]">Member Recognition</p>
+                          <p className="text-[15px] font-semibold font-graphik text-[#224292]">Member Recognition</p>
                         </div>
                         <div className="flex items-center gap-0.5">
                           {[...Array(5)].map((_, idx) => (
                             <Star key={idx} size={14} className={idx < Math.floor(selectedFaculty.rating) ? "text-[#ffc107] fill-[#ffc107]" : "text-[#E5EDF8] fill-[#E5EDF8]"} />
                           ))}
-                          <span className="ml-2 font-bold font-graphik text-[#224292] text-sm">{selectedFaculty.rating}</span>
+                          <span className="ml-2 font-bold font-graphik text-black text-sm">{selectedFaculty.rating}</span>
                         </div>
                       </div>
                     </div>
@@ -1120,9 +1119,9 @@ export default function CourseDetailPage() {
 
                   {selectedFaculty.publications && (
                     <div className="mt-8 pt-8 border-t border-[#E5EDF8]">
-                      <p className="text-[10px] font-medium font-graphik tracking-widest text-[#224292] mb-4">Research & Publications</p>
-                      <div className="p-5 bg-[#224292]/5 border border-[#224292]/10 rounded-2xl">
-                        <p className="text-black font-medium font-graphik text-[14px] leading-relaxed italic">
+                      <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-2">Research & Publications</p>
+                      <div className="p-5 bg-slate-50 border border-slate-200 rounded-xl">
+                        <p className="text-black font-medium font-graphik text-[13px] leading-relaxed italic">
                           {selectedFaculty.publications}
                         </p>
                       </div>

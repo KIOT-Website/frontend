@@ -394,7 +394,7 @@ const Header = () => {
                                 className="group/subitem relative flex items-center gap-4 px-4 py-2.5 mb-1 last:mb-0 rounded-xl bg-transparent hover:bg-[#224292] transition-all duration-300"
                               >
                                 {sub.icon && (
-                                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#ffc107] group-hover/subitem:bg-white/20 transition-colors">
+                                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#224292]/5 group-hover/subitem:bg-white/20 transition-colors">
                                     <sub.icon size={16} className="text-[#224292] group-hover/subitem:text-white transition-colors" />
                                   </div>
                                 )}
