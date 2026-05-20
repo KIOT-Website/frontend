@@ -77,8 +77,6 @@ const IdeaLabPage = () => {
 
     const galleryItems = [
         { title: "Inauguration Ceremony", desc: "Official launch of KIOT AICTE IDEA Lab", img: inaugurationImg },
-        { title: "Student Ambassadors 2024-25", desc: "Our first batch of student ambassadors", img: ambassadors24Img },
-        { title: "Student Ambassadors 2025-26", desc: "Current student ambassadors", img: ambassadors25Img },
         { title: "3D Printers", desc: "Advanced 3D printing facilities", img: printersImg },
         { title: "3D Modelling Wing", desc: "Digital design and rapid prototyping", img: modelingImg },
         { title: "CNC Wood Router Machine", desc: "Precision wood carving and routing", img: cncImg },
@@ -140,11 +138,11 @@ const IdeaLabPage = () => {
                                 <span className="text-[9px] font-black text-white tracking-widest">Research & Innovations</span>
                             </div>
 
-                            <h1 className="text-4xl lg:text-6xl font-black text-white leading-none mb-4 tracking-tight">
-                                AICTE <span className="text-[#ffc107]">IDEA LAB</span>
+                            <h1 className="text-4xl lg:text-6xl font-black text-white leading-none mb-3 tracking-tight">
+                                AICTE - <span className="text-[#ffc107]">IDEA Lab</span>
                             </h1>
-                            <p className="text-xl lg:text-2xl font-black mb-4 leading-tight text-white/90">
-                                Innovate. Build. Transform.
+                            <p className="text-lg lg:text-2xl font-bold mb-4 leading-tight text-white/95">
+                                (Idea Development, Evaluation & Application)
                             </p>
                             <div className="h-1 w-16 bg-[#ffc107] mb-6" />
                             
@@ -272,10 +270,10 @@ const IdeaLabPage = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {[
-                            { title: "Prototype Development", desc: "Convert ideas into working models", icon: Box, color: "#1e3c8a" },
-                            { title: "Skill Building", desc: "Enhancing skills in emerging technologies", icon: Brain, color: "#f59e0b" },
-                            { title: "Interdisciplinary Learning", desc: "Encouraging cross-domain collaboration", icon: Globe, color: "#3b82f6" },
-                            { title: "Industry Connect", desc: "Bridging the gap between academia and industry", icon: Handshake, color: "#f59e0b" }
+                            { title: "Prototype Development", desc: "To provide all facilities under one roof of the conversion of an IDEA into a prototype.", icon: Box, color: "#1e3c8a" },
+                            { title: "21st Century Skills", desc: "To train in the 21st century skills – critical thinking, innovative problem – solving, collaboration and team work.", icon: Brain, color: "#f59e0b" },
+                            { title: "Experiential Learning", desc: "To provide a platform for interdisciplinary experiential learning.", icon: Globe, color: "#3b82f6" },
+                            { title: "Collaborative Environment", desc: "To enable a collaborative environment for Institute – Industry – Faculty – student towards nation building.", icon: Handshake, color: "#f59e0b" }
                         ].map((obj, i) => (
                             <motion.div
                                 key={i}
@@ -289,7 +287,7 @@ const IdeaLabPage = () => {
                                     <obj.icon size={26} style={{ color: obj.color }} />
                                 </div>
                                 <h3 className="text-black text-[18px] font-black mb-3 tracking-tight leading-tight">{obj.title}</h3>
-                                <p className="text-black font-black text-[13px] leading-tight mb-4 max-w-[180px]">{obj.desc}</p>
+                                <p className="text-black font-black text-[13px] leading-relaxed mb-4">{obj.desc}</p>
                                 <div className="w-8 h-1 bg-[#ffc107] rounded-full" />
                             </motion.div>
                         ))}
@@ -316,8 +314,8 @@ const IdeaLabPage = () => {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                                 {[
-                                    { name: "Dr. PSS. Srinivasan", roles: ["Executive Chairman, KIOT", "Chief Advisor, KIOT AICTE IDEA LAB"], initials: "PS" },
-                                    { name: "Dr. K. Visagavel", roles: ["Principal, KIOT", "Chief Mentor, KIOT AICTE IDEA LAB"], initials: "KV" }
+                                    { name: "Dr. PSS. Srinivasan", roles: ["Executive Chairman"], initials: "PS" },
+                                    { name: "Dr. K. Visagavel", roles: ["Principal"], initials: "KV" }
                                 ].map((leader, i) => (
                                     <div key={i} className="bg-[#224292] p-6 rounded-[2rem] flex items-center gap-4 relative overflow-hidden group shadow-xl">
                                         <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white text-[18px] font-black border border-white/20 shrink-0 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all">
@@ -345,8 +343,8 @@ const IdeaLabPage = () => {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                                 {[
-                                    { name: "Mr. M. Jagadeeshraja", roles: ["AP/EEE", "Coordinator, KIOT AICTE IDEA LAB"], initials: "MJ" },
-                                    { name: "Mr. M. Dineshkumar", roles: ["AP/ECE", "Co-Coordinator, KIOT AICTE IDEA LAB"], initials: "MD" }
+                                    { name: "Mr. M. Jagadeeshraja", roles: ["Assistant Professor / EEE", "Coordinator"], initials: "MJ" },
+                                    { name: "Mr. M. Dineshkumar", roles: ["Assistant Professor / ECE", "Co-Coordinator"], initials: "MD" }
                                 ].map((coord, i) => (
                                     <div key={i} className="bg-white p-6 rounded-[2rem] flex items-center gap-4 border border-slate-100 shadow-sm group hover:shadow-xl transition-all">
                                         <div className="w-12 h-12 bg-[#224292]/5 rounded-full flex items-center justify-center text-[#224292] text-[18px] font-black border border-[#224292]/10 shrink-0 group-hover:bg-[#224292] group-hover:text-white transition-all">
@@ -373,15 +371,15 @@ const IdeaLabPage = () => {
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                             {[
-                                { n: "Mr. BST. Ragu", d: "AP/ECE" },
-                                { n: "Mr. A. Gajendran", d: "AP/MECH" },
-                                { n: "Mrs. S. Sasidevi", d: "AP/ECE" },
-                                { n: "Mr. M. Rajkumar", d: "AP/EEE" },
-                                { n: "Mr. S. Rajeshkumar", d: "AP/CIVIL" },
-                                { n: "Mr. R. Ayyappan", d: "AP/IT" },
-                                { n: "Mr. R. Sivaguru", d: "AP/CSE" },
-                                { n: "Mr. M. Gopikumaran", d: "AP/CSBS" },
-                                { n: "Mr. R. Ramesh", d: "AP/AI&DS" },
+                                { n: "Mr. BST. Ragu", d: "Assistant Professor / ECE" },
+                                { n: "Mr. A. Gajendran", d: "Assistant Professor / MECH" },
+                                { n: "Mrs. S. Sasidevi", d: "Assistant Professor / ECE" },
+                                { n: "Mr. M. Rajkumar", d: "Assistant Professor / EEE" },
+                                { n: "Mr. S. Rajeshkumar", d: "Assistant Professor / CIVIL" },
+                                { n: "Mr. R. Ayyappan", d: "Assistant Professor / IT" },
+                                { n: "Mr. R. Sivaguru", d: "Assistant Professor / CSE" },
+                                { n: "Mr. M. Gopikumaran", d: "Assistant Professor / CSBS" },
+                                { n: "Mr. R. Ramesh", d: "Assistant Professor / AI&DS" },
                                 { n: "Mr. M. Karthi", d: "Teaching Assistant" }
                             ].map((guru, i) => (
                                 <div key={i} className="bg-white p-5 rounded-2xl border border-slate-100 text-left hover:border-[#ffc107] transition-all flex flex-col gap-2 group shadow-sm hover:shadow-lg">
@@ -404,7 +402,7 @@ const IdeaLabPage = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-center gap-4 mb-12">
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">Wing Tutorials</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">Wing Tutorials – E-Content</h2>
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
                     

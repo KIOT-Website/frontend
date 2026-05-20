@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   ChevronLeft, GraduationCap, Building2, Users, BookOpen, 
-  MapPin, Clock, Award, CheckCircle2, ChevronRight,
+  MapPin, Clock, Calendar, Award, CheckCircle2, ChevronRight,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
   Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase, ExternalLink,
   Microscope, Star, Globe, ShieldCheck, ArrowRight
@@ -109,8 +109,9 @@ function AccordionItem({ title, children, defaultOpen = false }) {
 }
 
 // â”€â”€â”€ Main Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-export default function CourseDetailPage() {
-  const { courseId } = useParams()
+export default function CourseDetailPage({ overrides }) {
+  const { courseId: paramCourseId } = useParams()
+  const courseId = overrides?.courseId || paramCourseId
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('Overview')
   const [outcomeTab, setOutcomeTab] = useState(null)
@@ -233,7 +234,7 @@ export default function CourseDetailPage() {
           {/* Back button */}
           <button
             onClick={() => {
-              const category = (courseId && (courseId.startsWith('be-') || courseId.startsWith('btech-'))) ? 'undergraduate' : 'postgraduate';
+              const category = (courseId === 'science-humanities') ? 'undergraduate' : ((courseId && (courseId.startsWith('be-') || courseId.startsWith('btech-'))) ? 'undergraduate' : 'postgraduate');
               navigate(`/academics/${category}`);
             }}
             className="mb-4 inline-flex items-center gap-2 text-white/60 hover:text-white text-[13px] font-bold font-graphik transition-colors"
@@ -560,58 +561,178 @@ export default function CourseDetailPage() {
             {/* --- FACULTY --- */}
             {activeTab === 'Faculty' && (
               <div>
-                <div className="mb-6">
-                  <h2 className="text-2xl font-extrabold font-graphik text-[#224292] mb-1">Our Faculty</h2>
-                  <p className="text-[#64779F]">Industry-experienced academics committed to your success</p>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-                  {course.faculty.map((f, i) => (
-                    <motion.div
-                      key={f.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.05 }}
-                      onClick={() => setSelectedFaculty(f)}
-                      className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
-                    >
-                      <div 
-                        className="w-full aspect-square bg-slate-100 overflow-hidden relative"
-                        style={(courseId === 'be-civil' || courseId === 'btech-csbs') ? { 
-                          backgroundImage: `url(${facultyBg})`, 
-                          backgroundSize: 'cover', 
-                          backgroundPosition: 'center' 
-                        } : {}}
-                      >
-                        {f.image ? (
-                          <img 
-                            src={f.image} 
-                            alt={f.name} 
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center text-slate-300">
-                             <GraduationCap size={44} />
+                {courseId === 'science-humanities' ? (
+                  // ── S&H: Subject-grouped sections ──
+                  <div className="space-y-14">
+                    {['Mathematics', 'English', 'Physics', 'Chemistry'].map((subject) => {
+                      const subjectFaculty = course.faculty.filter(f => f.subject === subject)
+                      if (!subjectFaculty.length) return null
+
+                      const subjectConfig = {
+                        Mathematics: { emoji: '∑', color: 'from-blue-600 to-indigo-700', light: 'bg-blue-50 border-blue-100', badge: 'bg-blue-100 text-blue-800' },
+                        English:     { emoji: '✍', color: 'from-emerald-600 to-teal-700', light: 'bg-emerald-50 border-emerald-100', badge: 'bg-emerald-100 text-emerald-800' },
+                        Physics:     { emoji: '⚛', color: 'from-purple-600 to-violet-700', light: 'bg-purple-50 border-purple-100', badge: 'bg-purple-100 text-purple-800' },
+                        Chemistry:   { emoji: '⚗', color: 'from-orange-500 to-amber-600', light: 'bg-orange-50 border-orange-100', badge: 'bg-orange-100 text-orange-800' },
+                      }
+                      const cfg = subjectConfig[subject]
+
+                      return (
+                        <div key={subject}>
+                          {/* Subject Heading */}
+                          <div className={`flex items-center gap-4 mb-6 pb-4 border-b-2 ${cfg.light.split(' ')[1]}`}>
+                            <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${cfg.color} flex items-center justify-center text-white text-2xl font-bold shadow-lg`}>
+                              {cfg.emoji}
+                            </div>
+                            <div>
+                              <h2 className="text-xl font-black font-graphik text-[#224292] tracking-tight">
+                                Faculty of {subject}
+                              </h2>
+                              <p className="text-[#64779F] text-sm font-medium">
+                                {subjectFaculty.length} faculty member{subjectFaculty.length !== 1 ? 's' : ''}
+                              </p>
+                            </div>
+                            <span className={`ml-auto px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest ${cfg.badge}`}>
+                              {subject}
+                            </span>
                           </div>
-                        )}
-                      </div>
-                      
-                      <div className="p-[13px] flex flex-col flex-1">
-                        <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
-                          {f.name}
-                        </h3>
-                        <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
-                          {f.designation}
-                        </p>
-                        
-                        <div className="mt-auto">
-                           <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
-                              View Bio
-                           </span>
+
+                          {/* Faculty Cards Grid */}
+                          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                            {subjectFaculty.map((f, i) => (
+                              <motion.div
+                                key={f.name + i}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.04 }}
+                                onClick={() => setSelectedFaculty(f)}
+                                className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
+                              >
+                                <div
+                                  className="w-full aspect-square bg-slate-100 overflow-hidden relative"
+                                  style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                                >
+                                  {f.image ? (
+                                    <img src={f.image} alt={f.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                  ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                      <GraduationCap size={44} />
+                                    </div>
+                                  )}
+                                </div>
+                                <div className="p-[13px] flex flex-col flex-1">
+                                  <h3 className="font-bold font-graphik text-[#224292] text-[13px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-2">
+                                    {f.name}
+                                  </h3>
+                                  <p className="text-slate-500 text-[11.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
+                                    {f.designation}
+                                  </p>
+                                  <div className="mt-auto">
+                                    <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
+                                      View Bio
+                                    </span>
+                                  </div>
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+                      )
+                    })}
+                  </div>
+                ) : (
+                  // ── Other departments: original flat layout ──
+                  <div>
+                    <div className="mb-6">
+                      <h2 className="text-2xl font-extrabold font-graphik text-[#224292] mb-1">Our Faculty</h2>
+                      <p className="text-[#64779F]">Industry-experienced academics committed to your success</p>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                      {course.faculty.filter(f => f.category !== 'S&H').map((f, i) => (
+                        <motion.div
+                          key={f.name}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: i * 0.05 }}
+                          onClick={() => setSelectedFaculty(f)}
+                          className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
+                        >
+                          <div
+                            className="w-full aspect-square bg-slate-100 overflow-hidden relative"
+                            style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                          >
+                            {f.image ? (
+                              <img src={f.image} alt={f.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                <GraduationCap size={44} />
+                              </div>
+                            )}
+                          </div>
+                          <div className="p-[13px] flex flex-col flex-1">
+                            <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
+                              {f.name}
+                            </h3>
+                            <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
+                              {f.designation}
+                            </p>
+                            <div className="mt-auto">
+                              <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
+                                View Bio
+                              </span>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {course.faculty.some(f => f.category === 'S&H') && (
+                      <>
+                        <div className="mb-6 mt-12 pt-6 border-t border-[#E5EDF8]">
+                          <h2 className="text-2xl font-extrabold font-graphik text-[#224292] mb-1">Science & Humanities Faculty</h2>
+                          <p className="text-[#64779F]">Specialized educators supporting foundational sciences and communication skills</p>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                          {course.faculty.filter(f => f.category === 'S&H').map((f, i) => (
+                            <motion.div
+                              key={f.name}
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: i * 0.05 }}
+                              onClick={() => setSelectedFaculty(f)}
+                              className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
+                            >
+                              <div
+                                className="w-full aspect-square bg-slate-100 overflow-hidden relative"
+                                style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                              >
+                                {f.image ? (
+                                  <img src={f.image} alt={f.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                ) : (
+                                  <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                    <GraduationCap size={44} />
+                                  </div>
+                                )}
+                              </div>
+                              <div className="p-[13px] flex flex-col flex-1">
+                                <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
+                                  {f.name}
+                                </h3>
+                                <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
+                                  {f.designation}
+                                </p>
+                                <div className="mt-auto">
+                                  <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
+                                    View Bio
+                                  </span>
+                                </div>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
             )}
 
@@ -862,7 +983,7 @@ export default function CourseDetailPage() {
                                       <p className="text-[13px] font-bold text-black leading-tight mb-1">{patent.inventors}</p>
                                     </td>
                                     <td className="px-6 py-5">
-                                      <p className="text-[13px] font-medium text-black leading-snug max-w-xs">{patent.title}</p>
+                                      <p className="text-[13px] font-medium text-black leading-snug max-w-md">{patent.title}</p>
                                     </td>
                                     <td className="px-6 py-5">
                                       <span className="text-[11px] font-bold text-[#64779F]">{patent.type}</span>
@@ -1022,11 +1143,11 @@ export default function CourseDetailPage() {
                   <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
                     <div 
                       className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden"
-                      style={(courseId === 'be-civil' || courseId === 'btech-csbs') ? { 
+                      style={{ 
                         backgroundImage: `url(${facultyBg})`, 
                         backgroundSize: 'cover', 
                         backgroundPosition: 'center' 
-                      } : {}}
+                      }}
                     >
                       {selectedFaculty.image ? (
                         <img src={selectedFaculty.image} alt={selectedFaculty.name} className="w-full h-full object-cover" />
@@ -1067,10 +1188,10 @@ export default function CourseDetailPage() {
                           </div>
                         </div>
                       )}
-                      {selectedFaculty.joiningDate && (
+                       {(selectedFaculty.joiningDate || selectedFaculty.doj) && (
                         <div>
                           <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Date of Joining</p>
-                          <p className="text-black font-medium font-graphik text-[13.5px]">{selectedFaculty.joiningDate}</p>
+                          <p className="text-black font-medium font-graphik text-[13.5px]">{selectedFaculty.joiningDate || selectedFaculty.doj}</p>
                         </div>
                       )}
                     </div>

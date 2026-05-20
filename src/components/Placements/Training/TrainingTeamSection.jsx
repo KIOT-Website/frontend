@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Users, Mail, ShieldCheck, Award } from 'lucide-react'
+import cdeLast from '../../../assets/placements/CDT/cde last.png'
 
 // Image Imports from pteam folder
 import imgThangavel from '../../../assets/placements/pteam/Dr.M.Thangavel B.E., M.E., M.B.A., Ph.D.,.webp'
@@ -135,6 +136,21 @@ const TrainingTeamSection = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* CDE Banner Image */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="mt-12"
+      >
+        <img
+          src={cdeLast}
+          alt="CDE Training Program"
+          className="w-full rounded-[2rem] shadow-2xl shadow-black/10 border border-slate-100 object-cover"
+        />
+      </motion.div>
     </div>
   )
 }

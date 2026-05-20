@@ -33,15 +33,19 @@ const HeaderSection = () => {
            transition={{ duration: 0.8 }}
         >
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1A1A1A] leading-[1.2] mb-8 tracking-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-[#224292] leading-[1.2] mb-6 tracking-tight">
             Centre for Career Development <br />
-            and <span className="text-[#224292]">Training (CDT)</span>
+            and <span className="text-[#ffc107]">Training (CDT)</span>
           </h1>
 
-          <p className="text-lg text-black font-medium leading-relaxed mb-12 max-w-xl">
-             Comprehensive training programs designed to bridge the gap between academia 
-             and industry, preparing students for global career opportunities.
-          </p>
+          <div className="text-black font-medium leading-relaxed space-y-4 mb-10 max-w-xl text-justify text-sm md:text-base">
+            <p>
+              The Centre for Career Development and Training (CDT) at Knowledge Institute of Technology is committed to developing students into confident, competent, and industry-ready professionals. With a strong focus on holistic growth, CDT integrates technical, analytical, and life skills into a structured and continuous learning experience.
+            </p>
+            <p>
+              CDT delivers 1200+ hours of intensive training over four years, ensuring that every student is equipped not only for placements but also for lifelong success. The program is carefully designed to balance Employability Skills and Life Skills, creating well-rounded individuals ready to thrive in dynamic professional environments.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map((feature, idx) => (

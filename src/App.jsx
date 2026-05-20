@@ -255,6 +255,7 @@ function App() {
                   <Route path="/academics/course/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
                   <Route path="/academics/undergraduate/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
                   <Route path="/academics/postgraduate/:courseId" element={<CourseDetailPageWrapper key={location.pathname} />} />
+                  <Route path="/academics/science-humanities" element={<CourseDetailPageWrapper key={location.pathname} overrides={{ courseId: 'science-humanities' }} />} />
                   <Route path="/academics/course/:courseId/lab/:labIndex" element={<LabDetailPage />} />
                   <Route path="/department/:deptName" element={<DepartmentPage />} />
                   <Route path="/students-admitted-department/:deptName" element={<StudentsAdmittedDepartmentPage />} />

@@ -71,6 +71,7 @@ const navLinks = [
     subLinks: [
       { name: 'Undergraduate (UG)', href: 'academics/undergraduate', icon: GraduationCap },
       { name: 'Postgraduate (PG)', href: 'academics/postgraduate', icon: GraduationCap },
+      { name: 'Science & Humanities', href: 'academics/science-humanities', icon: FlaskConical },
       { name: 'Autonomous', href: 'academics/autonomous', icon: ShieldCheck },
     ]
   },
