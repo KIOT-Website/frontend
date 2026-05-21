@@ -221,22 +221,23 @@ function App() {
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about/about-us" element={<AboutUsPage />} />
                   <Route path="/about/our-values" element={<OurValuesPage />} />
-                  <Route path="/about/leadership" element={<LeadershipPage />} />
-                  <Route path="/about/head-of-the-department" element={<HeadOfDepartmentPage />} />
-                  <Route path="/about/guidelines" element={<GuidelinesPage />} />
+                  <Route path="/about/promoters" element={<LeadershipPage />} />
+                  <Route path="/about/leadership" element={<HeadOfDepartmentPage />} />
+                  <Route path="/about/institutional-policies" element={<GuidelinesPage />} />
                   <Route path="/about/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/about/governing-council" element={<GoverningCouncilPage />} />
                   <Route path="/about-us" element={<AboutUsPage />} />
                   <Route path="/our-values" element={<OurValuesPage />} />
-                  <Route path="/leadership" element={<LeadershipPage />} />
-                  <Route path="/guidelines" element={<GuidelinesPage />} />
+                  <Route path="/promoters" element={<LeadershipPage />} />
+                  <Route path="/leadership" element={<HeadOfDepartmentPage />} />
+                  <Route path="/institutional-policies" element={<GuidelinesPage />} />
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/governing-council" element={<GoverningCouncilPage />} />
                   
                   {/* Placement Pages */}
                   <Route path="/placements" element={<UnderConstruction />} />
-                  <Route path="/placements/overview" element={<PlacementOverviewPage />} />
-                  <Route path="/placements/cdt" element={<TrainingOverviewPage />} />
+                  <Route path="/placements/placement" element={<PlacementOverviewPage />} />
+                  <Route path="/placements/training" element={<TrainingOverviewPage />} />
                   <Route path="/placements/outcomes" element={<OutcomesOverviewPage />} />
                   <Route path="/placements/recruitment" element={<OutcomesOverviewPage />} />
                   <Route path="/placements/records" element={<OutcomesOverviewPage />} />

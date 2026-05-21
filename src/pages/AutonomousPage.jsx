@@ -156,59 +156,67 @@ const AutonomousPage = () => {
 
     return (
         <div className="min-h-screen bg-[#F8FAFC] font-graphik text-[#1a1a1a]">
-            {/* ─── PREMIUM HERO SECTION ─── */}
-            <section className="relative h-[45vh] flex flex-col justify-end bg-[#224292]">
-                <div className="absolute inset-0">
-                    <img src={campusImg} alt="Campus" className="w-full h-full object-cover opacity-60" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#1a3370] via-[#224292] to-transparent opacity-95" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#224292]/30 to-[#224292]" />
-                </div>
-                
-                <div className="relative z-10 max-w-7xl mx-auto px-6 w-full mb-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4 uppercase">Autonomous</h1>
-                        <p className="text-lg font-bold text-[#ffc107] italic mb-6">Academic Autonomy for Excellence</p>
+            {/* On Mobile: Header title since we don't have hero section */}
+            <div className="lg:hidden bg-[#224292] text-white py-8 px-6 text-center">
+                <h1 className="text-3xl font-black uppercase tracking-tighter mb-2">Autonomous</h1>
+                <p className="text-sm font-bold text-[#ffc107] italic">Academic Autonomy for Excellence</p>
+            </div>
 
-                    </motion.div>
-                </div>
-
-                {/* ─── SCROLL SENTINEL (Placed inside hero to trigger stickiness exactly at the bottom) ─── */}
-                <div ref={sentinelRef} className="h-px w-full" />
-
-                {/* ─── STICKY ANCHOR NAVIGATION (Part of Hero initially) ─── */}
-                <div 
-                    className={`${isSticky ? 'fixed top-[104px] shadow-2xl bg-[#224292]/95 backdrop-blur-md' : 'relative bg-[#224292]'} z-[45] w-full border-t border-white/10 border-b transition-all duration-300`}
-                >
-                    <div className="max-w-[1400px] mx-auto px-2 lg:px-4">
-                        <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-1 py-4 w-full">
-                            {tabs.map((tab) => (
-                                <button
-                                    key={tab.id}
-                                    onClick={() => handleTabChange(tab.id)}
-                                    className={`flex items-center justify-center px-2 py-2 transition-all group shrink-0 rounded-lg border border-transparent ${
-                                        activeTab === tab.id 
-                                        ? 'bg-white text-[#224292] shadow-inner' 
-                                        : 'bg-[#ffc107] hover:bg-white text-white hover:text-[#224292]'
-                                    }`}
-                                >
-                                    <span className="text-[9px] font-black uppercase tracking-widest text-center leading-tight">{tab.name}</span>
-                                </button>
-                            ))}
-                        </div>
+            {/* Mobile Tab Navigation - EXACTLY AS IT WAS BEFORE, ONLY SHOWN ON MOBILE */}
+            <div className="lg:hidden bg-[#224292] z-[45] w-full border-t border-white/10 border-b sticky top-[108px] md:top-[108px]">
+                <div className="max-w-[1400px] mx-auto px-2">
+                    <div className="grid grid-cols-3 md:grid-cols-5 gap-1 py-4 w-full">
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab.id}
+                                onClick={() => handleTabChange(tab.id)}
+                                className={`flex items-center justify-center px-2 py-2 transition-all group shrink-0 rounded-lg border border-transparent ${
+                                    activeTab === tab.id 
+                                    ? 'bg-white text-[#224292] shadow-inner' 
+                                    : 'bg-[#ffc107] hover:bg-white text-white hover:text-[#224292]'
+                                }`}
+                            >
+                                <span className="text-[9px] font-black uppercase tracking-widest text-center leading-tight">{tab.name}</span>
+                            </button>
+                        ))}
                     </div>
                 </div>
-            </section>
+            </div>
 
-            {/* SPACER FOR FIXED NAV */}
-            {isSticky && <div className="h-[73px]" />}
+            {/* Desktop and General Layout Container */}
+            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+                    
+                    {/* Desktop Sidebar Tabs - Left Side (Visible only on lg and up) */}
+                    <div className="hidden lg:block w-[300px] shrink-0 sticky top-[120px] self-start bg-white rounded-2xl border border-slate-100 p-4 shadow-sm z-20">
+                        <div className="mb-4 pb-3 border-b border-slate-100">
+                            <h1 className="text-xl font-black text-[#224292] uppercase tracking-tight">Autonomous</h1>
+                            <p className="text-[10px] font-bold text-[#ffc107] italic mt-0.5">Academic Autonomy</p>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                            {tabs.map((tab) => {
+                                const IconComponent = tab.icon;
+                                return (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => handleTabChange(tab.id)}
+                                        className={`flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl border transition-all text-left group ${
+                                            activeTab === tab.id 
+                                            ? 'bg-[#224292] text-white border-[#224292] shadow-md shadow-[#224292]/10' 
+                                            : 'bg-slate-50/50 hover:bg-white text-[#4a5568] hover:text-[#224292] border-slate-100 hover:border-[#224292]/20'
+                                        }`}
+                                    >
+                                        <IconComponent size={16} className={activeTab === tab.id ? 'text-[#ffc107]' : 'text-slate-400 group-hover:text-[#224292]'} />
+                                        <span className="text-[11px] font-bold uppercase tracking-wider leading-tight">{tab.name}</span>
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
 
-            {/* ─── CONTENT BLOCKS ─── */}
-            <div className="max-w-7xl mx-auto px-6 py-12 min-h-[60vh]">
-                <AnimatePresence mode="wait">
+                    {/* Main Content Area - Active Tab Content */}
+                    <div className="flex-1 w-full min-h-[60vh] max-w-full overflow-hidden">
+                        <AnimatePresence mode="wait">
                     {activeTab === 'overview' && (
                         <motion.section 
                             key="overview"
@@ -971,10 +979,9 @@ const AutonomousPage = () => {
                     )}
                 </AnimatePresence>
             </div>
-
-
-
-        </div>
+                    </div>
+                </div>
+            </div>
     )
 }
 

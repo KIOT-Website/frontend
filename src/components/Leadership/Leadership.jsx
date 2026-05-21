@@ -31,7 +31,6 @@ const CountUpNumber = ({ value, duration = 2 }) => {
 
 // Asset imports
 import chairmanImg from '../../assets/main/srinivasan.webp'
-import principalImg from '../../assets/main/KIOT-Principal-Message-Web-2025.webp'
 import secretaryImg from '../../assets/main/Secretarys-Message-KIOTT.webp'
 import treasurerImg from '../../assets/main/Mr.V.Sureshkumar, Treasurer.webp'
 
@@ -72,20 +71,6 @@ const leaders = [
       "We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.",
       "The latest curriculum, paired with modern insights into engineering, technology, and research, along with innovative facilities, ensures that each student gains a substantial edge in advanced technical expertise and competencies.",
       "I extend a warm welcome to you at KIOT and all the opportunities it presents. Join us and immerse yourself in the KIOT experience!"
-    ]
-  },
-  {
-    id: 3,
-    name: "Dr. K. Visagavel",
-    role: "Trustee",
-    designation: "Trustee, KIOT (B.E., M.E., Ph.D., FIE.)",
-    image: principalImg,
-    fullMessage: [
-      "Dear Students, Welcome to the Knowledge Institute of Technology, Salem!",
-      "At KIOT, we aim to provide a transformative education that blends academic rigor with practical skills to shape the leaders of tomorrow.",
-      "We at KIOT are committed to fostering a holistic learning environment, enriched by state-of-the-art infrastructure, industry collaborations, and extracurricular opportunities. I encourage you to actively participate in academic and co-curricular activities, network with peers and mentors, and embrace the culture of continuous learning.",
-      "Remember, your journey at KIOT is not just about earning a degree; it is about transforming your potential into purpose. Together, let us strive to make a positive difference in our communities and the world.",
-      "Wishing you a fulfilling and successful academic journey ahead!"
     ]
   }
 ]
@@ -155,7 +140,7 @@ const Leadership = () => {
               className="flex flex-col items-center"
             >
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight">
-                Institutional <span className="text-[#ffc107]">Leadership</span>
+                Institutional <span className="text-[#ffc107]">Promoters</span>
               </h1>
 
               {/* Heading Divider with Dot */}
@@ -353,10 +338,10 @@ const Leadership = () => {
         <div className="text-center mb-8">
           <div>
             <h1 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-[#224292] mb-4 tracking-tighter font-graphik">
-              Voices of <span className="text-[#ffc107]">Leadership</span>
+              Voices of <span className="text-[#ffc107]">Promoters</span>
             </h1>
             <p className="text-black text-[15px] font-bold max-w-2xl mx-auto text-center opacity-90 font-graphik">
-              Guidance and perspective from the leaders shaping the institutional vision and daily excellence of KIOT.
+              Guidance and perspective from the promoters shaping the institutional vision and daily excellence of KIOT.
             </p>
           </div>
         </div>
@@ -385,7 +370,7 @@ const Leadership = () => {
                     <img 
                       src={leader.image} 
                       alt={leader.name} 
-                      className={`w-full h-full object-cover ${(leader.name.includes('Kumar') || leader.name.includes('Visagavel')) ? 'scale-[1.12]' : ''}`} 
+                      className={`w-full h-full object-cover ${leader.name.includes('Kumar') ? 'scale-[1.12]' : ''}`} 
                     />
                  </div>
               </div>

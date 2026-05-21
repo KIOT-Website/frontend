@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Trophy, ArrowLeft, ArrowRight, Quote, Medal, Sparkles } from 'lucide-react'
 
 // Actual images from achievements assets
-import tnStartupImg from '../../assets/achievements/tnstartup.webp'
-import saeImg from '../../assets/achievements/sae.webp'
+import tnStartupImg from '../../assets/achievements/tnstartup.png'
+import saeImg from '../../assets/achievements/sae.png'
 
 const achievements = [
   {

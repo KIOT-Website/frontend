@@ -20,15 +20,15 @@ const programsData = {
     description: 'Foundation for technical brilliance and engineering innovation.',
     accent: '#ffc107',
     courses: [
-      { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
+      { id: 'be-cse', name: "Computer Science and Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
+      { id: 'btech-it', name: "Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
+      { id: 'btech-aids', name: "Artificial Intelligence and Data Science", icon: Brain, code: "AI&DS", duration: "4 Years", phd: true },
+      { id: 'btech-csbs', name: "Computer Science and Business Systems", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
       { id: 'be-ece', name: "Electronics and Communication Engineering", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
       { id: 'be-eee', name: "Electrical and Electronics Engineering", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
-      { id: 'be-cse', name: "Computer Science and Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
-      { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
-      { id: 'btech-it', name: "Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
-      { id: 'btech-csbs', name: "Computer Science and Business Systems", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
-      { id: 'btech-aids', name: "Artificial Intelligence and Data Science", icon: Brain, code: "AI&DS", duration: "4 Years", phd: true },
-      { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX", duration: "4 Years", phd: true }
+      { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX", duration: "4 Years", phd: true },
+      { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
+      { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true }
     ]
   },
   PG: {
@@ -38,13 +38,13 @@ const programsData = {
     description: 'Advanced specialization and leadership in technology & management.',
     accent: '#224292',
     courses: [
+      { id: 'mba-general', name: "MBA - Master of Business Administration (General)", icon: TrendingUp, code: "MBA-General", duration: "2 Years", phd: true },
+      { id: 'mba-iev', name: "MBA - Master of Business Administration (Innovation, Entrepreneurship and Venture Development)", icon: Rocket, code: "MBA-IEV", duration: "2 Years", phd: true },
+      { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
       { id: 'me-ise', name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
       { id: 'me-ae', name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
       { id: 'me-ped', name: "Power Electronics and Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
       { id: 'me-se', name: "Software Engineering", icon: FileCode2, code: "SE", duration: "2 Years", phd: true },
-      { id: 'mba-general', name: "MBA - Master of Business Administration (General)", icon: TrendingUp, code: "MBA-General", duration: "2 Years", phd: true },
-      { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
-      { id: 'mba-iev', name: "MBA - Master of Business Administration (Innovation, Entrepreneurship and Venture Development)", icon: Rocket, code: "MBA-IEV", duration: "2 Years", phd: true },
       { id: 'phd', name: "Ph.D. All Departments", icon: Microscope, code: "", duration: "Part-Time / Full Time", phd: true }
     ]
   },

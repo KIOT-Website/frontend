@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Linkedin, Twitter, Youtube, Phone, Mail, ArrowRight, ArrowUpRight, GraduationCap } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import logoBlue from '../../assets/main/Kiot logo.webp'
+import logoBlue from '../../assets/main/main-logo.webp'
 
 const Footer = () => {
   const socialLinks = [
@@ -17,10 +17,10 @@ const Footer = () => {
   const menuSections = {
     'Explore': [
       { name: 'About Us', href: '/about' },
-      { name: 'Leadership & Council', href: '/about/leadership' },
+      { name: 'Promoters & Council', href: '/about/promoters' },
       { name: 'Accreditation', href: '/accreditation' },
       { name: 'Governing Council', href: '/governing-council' },
-      { name: 'Guidelines', href: '/guidelines' },
+      { name: 'Institutional Policies', href: '/institutional-policies' },
       { name: 'Programs Offered', href: '/programs' },
     ],
     'Resources': [
@@ -79,12 +79,12 @@ const Footer = () => {
         <div className="relative lg:w-[32%] p-10 flex flex-col items-center justify-start overflow-hidden border-r border-white/5 bg-[#ffc107]/5">
           <div className="relative z-10 w-full flex flex-col items-center gap-10 pt-4">
             {/* Rectangle Logo Frame - Resized Smaller */}
-            <div className="w-full bg-white rounded-3xl p-8 py-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative flex items-center justify-center group overflow-hidden border-4 border-[#ffc107]/30 hover:border-[#ffc107] transition-all duration-700">
+            <div className="w-full bg-white rounded-3xl p-6 py-8 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative flex items-center justify-center group overflow-hidden border-4 border-[#ffc107]/30 hover:border-[#ffc107] transition-all duration-700">
                <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-slate-50" />
                <img 
                   src={logoBlue} 
                   alt="KIOT Branding" 
-                  className="w-10/12 h-auto object-contain relative z-10 group-hover:scale-105 transition-transform duration-700"
+                  className="max-h-[60px] w-auto object-contain relative z-10 group-hover:scale-105 transition-transform duration-700"
                />
                <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#ffc107] rounded-tr-3xl" />
                <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#ffc107] rounded-bl-3xl" />

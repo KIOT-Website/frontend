@@ -42,7 +42,7 @@ import logo from '../../assets/main/main-logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
 import nirfLogo from '../../assets/main/nirf.webp'
 import nbaLogo from '../../assets/main/NBA1 (1).webp'
-import codeLogo from '../../assets/main/2653 code .webp'
+import codeLogo from '../../assets/main/2653 code.jpeg'
 
 const navLinks = [
   { 
@@ -56,11 +56,10 @@ const navLinks = [
     hasDropdown: true,
     subLinks: [
       { name: 'About Us', href: 'about/about-us', icon: Building2 },
-      { name: 'Leadership', href: 'about/leadership', icon: Users },
-      { name: "Head of the Institution", href: 'about/head-of-the-department', icon: Users },
+      { name: 'Promoters', href: 'about/promoters', icon: Users },
+      { name: "Leadership", href: 'about/leadership', icon: Users },
       { name: 'Governing Council', href: 'about/governing-council', icon: ShieldCheck },
-      { name: 'Academic Council', href: 'about/academic-council', icon: ShieldCheck },
-      { name: 'Guidelines', href: 'about/guidelines', icon: FileText },
+      { name: 'Institutional Policies', href: 'about/institutional-policies', icon: FileText },
       { name: 'Accreditation & Ranking', href: 'about/accreditation-ranking', icon: FileText }
     ]
   },
@@ -85,8 +84,8 @@ const navLinks = [
     href: '#',
     hasDropdown: true,
     subLinks: [
-      { name: 'Overview', href: 'placements/overview', icon: Building2 },
-      { name: 'CDT', href: 'placements/cdt', icon: BookOpen },
+      { name: 'Placement', href: 'placements/placement', icon: Building2 },
+      { name: 'Training', href: 'placements/training', icon: BookOpen },
       { name: 'Outcomes', href: 'placements/outcomes', icon: Target },
     ]
   },
@@ -97,7 +96,6 @@ const navLinks = [
     subLinks: [
       { name: 'Research', href: 'research-innovation/research', icon: Microscope },
       { name: 'AICTE Idea Lab', href: 'research-innovation/aicte-idea-lab', icon: Wrench },
-      { name: 'IQAC', href: '/resources/iqac', icon: ShieldCheck },
       { name: 'iStart', href: 'research-innovation/istart', icon: Cpu },
     ]
   },
@@ -117,6 +115,7 @@ const navLinks = [
     href: '#', 
     hasDropdown: true,
     subLinks: [
+      { name: 'IQAC', href: '/resources/iqac', icon: ShieldCheck },
       { name: 'Campus Life', href: '/resources/campus-life', icon: Building2 },
       { name: 'Student Life', href: '/resources/student-life', icon: Users },
       { name: 'Alumni', href: '/resources/alumni', icon: GraduationCap },

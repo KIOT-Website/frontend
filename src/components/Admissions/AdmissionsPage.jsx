@@ -432,14 +432,14 @@ const AdmissionsPage = () => {
                            <tbody className="divide-y divide-slate-100">
                               {[
                                  { name: 'B.E. Computer Science and Engineering', id: 'be-cse' },
-                                 { name: 'B.E. Mechanical Engineering', id: 'be-mechanical' },
-                                 { name: 'B.E. Electrical and Electronics Engineering', id: 'be-eee' },
-                                 { name: 'B.E. Electronics and Communication Engineering', id: 'be-ece' },
-                                 { name: 'B.E. Civil Engineering', id: 'be-civil' },
-                                 { name: 'B.E. Biomedical Engineering', id: '' },
                                  { name: 'B.Tech. Information Technology', id: 'btech-it' },
                                  { name: 'B.Tech. Artificial Intelligence and Data Science', id: 'btech-aids' },
-                                 { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs' }
+                                 { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs' },
+                                 { name: 'B.E. Electronics and Communication Engineering', id: 'be-ece' },
+                                 { name: 'B.E. Electrical and Electronics Engineering', id: 'be-eee' },
+                                 { name: 'B.E. Electronics and Computer Engineering', id: 'be-ecm' },
+                                 { name: 'B.E. Mechanical Engineering', id: 'be-mechanical' },
+                                 { name: 'B.E. Civil Engineering', id: 'be-civil' }
                               ].map((item, i) => (
                                   <motion.tr 
                                      key={i} 
