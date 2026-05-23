@@ -24,9 +24,9 @@ import campusTourVid from '../assets/main/campus tour.mp4'
 
 // Local Assets for Campus Essentials (Tamil Nadu / KIOT based)
 import kiotLibrary from '../assets/life@kiot/library1.png'
-import kiotSports from '../assets/life@kiot/sports ground.png'
+import kiotSports from '../assets/main/sh-1.png'
 import kiotTransport from '../assets/life@kiot/collge bus.png'
-import kiotLab from '../assets/life@kiot/smart classrooms.png'
+import kiotLab from '../assets/main/l1.png'
 import kiotCafeteria from '../assets/main/kiot_cafeteria.webp'
 import kiotSymposium from '../assets/life@kiot/media center.png'
 import campusMain from '../assets/main/campus .webp'
@@ -264,22 +264,19 @@ const CampusLifePage = () => {
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.05 }}
                             onClick={() => navigate(hub.link)}
-                            className="group bg-white rounded-xl border-l-[3px] border-b-[3px] border-[#224292] transition-all duration-500 cursor-pointer overflow-hidden flex flex-col relative shadow-lg hover:shadow-2xl"
+                            className="group bg-white rounded-xl transition-all duration-500 cursor-pointer overflow-hidden flex flex-col relative shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_32px_rgba(34,66,146,0.08)] hover:-translate-y-1.5 border border-slate-100"
                         >
-                            <div className="absolute top-0 left-0 w-full h-[3px] bg-[#ffc107] z-30" />
-                            <div className="absolute top-0 right-0 h-full w-[3px] bg-[#ffc107] z-30" />
-
                             <div className="relative w-full h-32 md:h-40 overflow-hidden">
                                 <img 
                                   src={hub.image} 
                                   alt={hub.title} 
-                                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                                  className="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700" 
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/40 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-slate-900/10 to-transparent" />
                                 
                                 {hub.icon && (
                                     <div 
-                                      className="absolute bottom-3 left-4 w-10 h-10 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-md border border-white/20 transition-all group-hover:scale-110"
+                                      className="absolute bottom-3 left-4 w-10 h-10 rounded-xl flex items-center justify-center shadow-2xl backdrop-blur-md border border-white/20 transition-all group-hover:scale-110 group-hover:rotate-3 duration-500"
                                       style={{ backgroundColor: `${hub.color}CC`, color: '#fff' }}
                                     >
                                         <hub.icon size={20} strokeWidth={2.5} />
@@ -287,13 +284,14 @@ const CampusLifePage = () => {
                                 )}
                             </div>
 
-                            <div className="p-4 md:p-5 flex-1 flex flex-col bg-white">
-                                <h4 className="text-[16px] font-black text-[#224292] leading-tight mb-1.5">{hub.title}</h4>
+                            <div className="p-5 md:p-6 flex-1 flex flex-col bg-white transition-colors duration-500 group-hover:bg-[#FCFDFD]">
+                                <h4 className="text-[16px] font-semibold text-[#224292] leading-tight mb-1.5 transition-colors duration-300 group-hover:text-[#ffc107]">{hub.title}</h4>
                                 <p className="text-[11px] text-slate-500 font-bold leading-relaxed mb-4">{hub.subtitle}</p>
                                 
-                                <div className="text-[#ffc107] flex items-center gap-2 text-[11px] font-black uppercase tracking-widest mt-auto">
-                                    <span className="text-[#224292]">Explore</span>
-                                    <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                                <div className="flex items-center justify-end mt-auto">
+                                    <div className="w-6 h-6 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-sm">
+                                        <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

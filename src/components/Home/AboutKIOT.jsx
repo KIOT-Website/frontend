@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { ArrowRight, Users, Trophy, Globe } from 'lucide-react'
-import campusImage from '../../assets/main/home campus.png'
+import campusImage from '../../assets/main/home 1.png'
 
 const AboutKIOT = () => {
   const navigate = useNavigate()

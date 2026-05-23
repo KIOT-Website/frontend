@@ -92,6 +92,11 @@ const IICPage = lazy(() => import('./pages/IICPage'))
 const StartupTNPage = lazy(() => import('./pages/StartupTNPage'))
 const MSMEBIPage = lazy(() => import('./pages/MSMEBIPage'))
 const MXIncubatorPage = lazy(() => import('./pages/MXIncubatorPage'))
+const FlamePage = lazy(() => import('./pages/FlamePage'))
+const IntecPage = lazy(() => import('./pages/IntecPage'))
+const VibesPage = lazy(() => import('./pages/VibesPage'))
+const PacePage = lazy(() => import('./pages/PacePage'))
+const AmberzPage = lazy(() => import('./pages/AmberzPage'))
 
 
 
@@ -323,6 +328,16 @@ function App() {
                   <Route path="/campus-life/sports/facilities" element={<SportsFacilitiesPage />} />
                   <Route path="/bus-routes" element={<BusRoutesPage />} />
                   <Route path="/student-life" element={<StudentLifePage />} />
+                  <Route path="/student-life/flame" element={<FlamePage />} />
+                  <Route path="/resources/student-life/flame" element={<FlamePage />} />
+                  <Route path="/student-life/intec" element={<IntecPage />} />
+                  <Route path="/resources/student-life/intec" element={<IntecPage />} />
+                  <Route path="/student-life/vibes" element={<VibesPage />} />
+                  <Route path="/resources/student-life/vibes" element={<VibesPage />} />
+                  <Route path="/student-life/pace" element={<PacePage />} />
+                  <Route path="/resources/student-life/pace" element={<PacePage />} />
+                  <Route path="/student-life/amberz" element={<AmberzPage />} />
+                  <Route path="/resources/student-life/amberz" element={<AmberzPage />} />
                   <Route path="/alumni" element={<AlumniPage />} />
                   <Route path="/blogs" element={<BlogsPage />} />
                   <Route path="/blog/:slug" element={<BlogDetailPage />} />

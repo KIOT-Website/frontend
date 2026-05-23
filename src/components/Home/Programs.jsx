@@ -28,7 +28,8 @@ const programsData = {
       { id: 'be-eee', name: "Electrical and Electronics Engineering", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
       { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX", duration: "4 Years", phd: true },
       { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
-      { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true }
+      { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
+      { id: 'science-humanities', name: "Science & Humanities", icon: Beaker, code: "S&H", duration: "1 Year", phd: true }
     ]
   },
   PG: {

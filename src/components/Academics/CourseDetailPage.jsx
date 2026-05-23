@@ -11,6 +11,7 @@ import {
 import facultyBg from '../../assets/Faculity/background faculty.webp';
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
+import { getDepartmentSchematic } from './DepartmentSchematics'
 
 const API_BASE = 'http://127.0.0.1:8000'
 
@@ -203,27 +204,9 @@ export default function CourseDetailPage({ overrides }) {
              <g stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="opacity-30">
                 <path d="M-100 280 L200 280 L240 240 L600 240 L640 280 L1400 280" />
                 <path d="M-100 320 L150 320 L200 370 L500 370 L550 320 L1400 320" />
-                <path d="M300 0 L300 150 L340 190 L340 500" />
-                <path d="M900 0 L900 120 L860 160 L860 500" />
                 <path d="M0 380 L400 380 L440 420 L900 420 L940 380 L1400 380" />
                 <path d="M-100 150 L100 150 L140 110 L400 110" />
                 <path d="M1400 150 L1100 150 L1060 110 L800 110" />
-             </g>
-             
-             {/* Background Pattern */}
-             <g opacity="0.1">
-                <path 
-                  d="M0 100 Q 250 50 500 100 T 1000 100" 
-                  fill="none" 
-                  stroke="white" 
-                  strokeWidth="1" 
-                />
-                <path 
-                  d="M0 200 Q 300 250 600 200 T 1200 200" 
-                  fill="none" 
-                  stroke="white" 
-                  strokeWidth="1" 
-                />
              </g>
            </svg>
         </div>
@@ -242,52 +225,54 @@ export default function CourseDetailPage({ overrides }) {
             <ArrowLeft size={15} /> Back to Academics
           </button>
 
-          <div className="flex flex-col lg:flex-row lg:items-center gap-8">
-            <div className="flex-1 lg:pl-12">
-              <div className="flex items-center gap-3 mb-4 flex-wrap">
-                <span className="px-3 py-1 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/30 text-[#ffc107] text-xs font-bold font-graphik">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-5 flex-wrap">
+                <span className="px-3.5 py-1.5 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/40 text-[#ffc107] text-xs font-bold font-graphik">
                   {course.affiliation}
                 </span>
                 {course.accreditation && (
-                  <span className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold font-graphik">
+                  <span className="px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold font-graphik">
                     {course.accreditation}
                   </span>
                 )}
               </div>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold font-graphik text-white mb-2 leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-[2.6rem] font-bold font-graphik text-white mb-3 leading-[1.15]">
                 {course.name}
               </h1>
-              <p className="text-[#ffc107] font-semibold font-graphik text-base mb-4">{course.tagline}</p>
+              <p className="text-[#ffc107] font-semibold font-graphik text-base md:text-lg mb-6">{course.tagline}</p>
 
               {/* Course CTA Buttons */}
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => navigate('/admissions')}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] transition-all shadow-lg shadow-[#ffc107]/20"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
                 >
                   Quick Apply <ArrowRight size={15} />
                 </button>
               </div>
             </div>
 
-            {/* Right Column: Expansive Leaf Visual + Stats */}
-            <div className="lg:w-[500px] flex flex-col gap-6 shrink-0 relative">
-              {/* Massive Leaf-Shaped Branding Visual */}
+            {/* Right Column: Rounded Rectangle Image with Gold Border */}
+            <div className="lg:w-[480px] xl:w-[520px] flex flex-col gap-6 shrink-0 relative">
               <div className="relative group">
-                <div className="absolute -inset-4 bg-[#ffc107]/10 rounded-[10rem_3rem_10rem_3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-duration-1000" />
-                <div className="relative h-[260px] lg:h-[320px] w-full rounded-[10rem_3.5rem_10rem_3.5rem] overflow-hidden border-4 border-white/20 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-transform duration-700 hover:scale-[1.02] hover:-rotate-1">
+                {/* Glow effect behind image */}
+                <div className="absolute -inset-3 bg-[#ffc107]/15 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                <div className="relative h-[260px] lg:h-[320px] w-full rounded-[1.5rem] overflow-hidden border-[3px] border-[#ffc107]/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] transition-transform duration-700 hover:scale-[1.02]">
                   <img 
                     src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"} 
                     alt={course.name} 
                     className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a40]/40 via-transparent to-transparent" />
                 </div>
               </div>
-
-
             </div>
           </div>
+        </div>
+        {/* Hand-drawn department-specific schematic/pencil drawing at the bottom left of the hero */}
+        <div className="absolute bottom-[-10px] left-[18%] w-full lg:w-[60%] max-w-[750px] h-[130px] opacity-[0.24] pointer-events-none z-0">
+          {getDepartmentSchematic(courseId)}
         </div>
       </section>
 

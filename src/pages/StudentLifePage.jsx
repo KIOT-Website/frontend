@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./studentLife.css";
 import { ArrowUpRight, X } from 'lucide-react';
 
@@ -17,6 +18,7 @@ import asset25 from '../assets/student life/Asset 25 (2).webp';
 import asset26 from '../assets/student life/Asset 26.webp';
 
 export default function StudentLifePage() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Department Associations");
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -255,7 +257,23 @@ export default function StudentLifePage() {
         <div className="associations-grid">
           {filteredOrgs.length > 0 ? (
             filteredOrgs.map((org, i) => (
-              <div key={i} className="association-card">
+              <div 
+                key={i} 
+                className={`association-card ${(org.name === 'FLAME' || org.name === 'INTEC' || org.name === 'VIBES' || org.name === 'PACE' || org.name === "AMBER'Z") ? 'cursor-pointer hover:border-[#ffc107] transition-all duration-300' : ''}`}
+                onClick={() => {
+                  if (org.name === 'FLAME') {
+                    navigate('/resources/student-life/flame');
+                  } else if (org.name === 'INTEC') {
+                    navigate('/resources/student-life/intec');
+                  } else if (org.name === 'VIBES') {
+                    navigate('/resources/student-life/vibes');
+                  } else if (org.name === 'PACE') {
+                    navigate('/resources/student-life/pace');
+                  } else if (org.name === "AMBER'Z") {
+                    navigate('/resources/student-life/amberz');
+                  }
+                }}
+              >
                 {activeTab === "Department Associations" && (
                   <div className="assoc-arrow">
                     <ArrowUpRight size={18} />

@@ -1,5 +1,6 @@
 import { Cpu, Activity, Globe, Wrench, BookOpen, FlaskConical, Zap, BarChart3, Layers, Award, TrendingUp, ShieldCheck, Car, Microscope, Flame, Settings, MonitorDot, CircuitBoard, Ruler, PenTool, Droplets, Wind, Building2, Terminal, Monitor, Code, Radio, Rocket } from 'lucide-react'
 import balajiImage from '../assets/main/balaji.9da24d6e942fe40a1258.webp'
+import eceImage from '../assets/academics/departments/ece.JPG'
 
 // Civil Faculty Imports
 import sathishKumarImage from '../assets/Faculity/civil/B.SATHISH KUMAR.webp'
@@ -105,6 +106,43 @@ import sindhuImage from '../assets/Faculity/MECH/Dr.M.Sindhu.png'
 import sathiyaImage from '../assets/Faculity/MECH/Dr.S.Sathiya.png'
 import anandKumarImage from '../assets/Faculity/MECH/Mr.K.Anand Kumar.png'
 import indumathiImage from '../assets/Faculity/MECH/Mrs.B.Indumathi.png'
+
+// ECE Faculty Imports
+import eceSanthiyakumariImage from '../assets/Faculity/ECE/Dr. N. Santhiyakumari.png'
+import eceThangavelImage from '../assets/Faculity/ECE/Dr. M. Thangavel.png'
+import eceSaravananImage from '../assets/Faculity/ECE/Dr. V. Saravanan.png'
+import eceKumarganeshImage from '../assets/Faculity/ECE/Dr. S. Kumarganesh.png'
+import eceShanmugaSundaramImage from '../assets/Faculity/ECE/Dr. P. Shanmuga Sundaram.png'
+import eceManoharanImage from '../assets/Faculity/ECE/Mr. S. Manoharan.png'
+import eceRShanmugaSundaramImage from '../assets/Faculity/ECE/Mr. R. Shanmuga Sundaram.png'
+import ecePremkumarImage from '../assets/Faculity/ECE/Mr. S. Premkumar.png'
+import eceChandramanImage from '../assets/Faculity/ECE/Mr. M. Chandraman.png'
+import eceVeerakumarImage from '../assets/Faculity/ECE/Mr. S. Veerakumar.png'
+import eceRajeshImage from '../assets/Faculity/ECE/Mr. K. Rajesh.png'
+import eceDevikaImage from '../assets/Faculity/ECE/Mrs. T. Devika.png'
+import eceRajamanickamImage from '../assets/Faculity/ECE/Dr. G. Rajamanickam.png'
+import eceArunImage from '../assets/Faculity/ECE/Mr. A. Arun.png'
+import eceTamilselvanImage from '../assets/Faculity/ECE/Mr. A. Tamilselvan.png'
+import eceDuraisamyImage from '../assets/Faculity/ECE/Mr. M. Duraisamy.png'
+import eceDineshKumarImage from '../assets/Faculity/ECE/Mr. M. Dinesh Kumar.png'
+import eceVimalrajImage from '../assets/Faculity/ECE/Mr. V. Vimalraj.png'
+import eceHemalathaImage from '../assets/Faculity/ECE/Mrs. R. Hemalatha.png'
+import eceVasanthiImage from '../assets/Faculity/ECE/Mrs. M. Vasanthi.png'
+import ecePraveenKumarImage from '../assets/Faculity/ECE/Mr. T. Praveen Kumar.png'
+import eceElarmathiImage from '../assets/Faculity/ECE/Mrs. S. ELARMATHI.png'
+import eceVadivuImage from '../assets/Faculity/ECE/Mrs. V. Vadivu.png'
+import eceSasideviImage from '../assets/Faculity/ECE/Mrs. S. Sasidevi.png'
+import eceSilambarasanImage from '../assets/Faculity/ECE/Mr. A. Silambarasan.png'
+import eceSabarinathanImage from '../assets/Faculity/ECE/Mr. S. Sabarinathan.png'
+import eceRaguImage from '../assets/Faculity/ECE/Mr. B.S.T. Ragu.png'
+import eceSriKiruthikaImage from '../assets/Faculity/ECE/Ms. C. Sri kiruthika.png'
+import eceSanthiImage from '../assets/Faculity/ECE/Dr. T.K Santhi.png'
+import eceRajaImage from '../assets/Faculity/ECE/Mr. T. Raja.png'
+import eceSaranyaImage from '../assets/Faculity/ECE/Mrs. S. Saranya.png'
+import eceNaveenKumarImage from '../assets/Faculity/ECE/Mr. S. Naveen Kumar.png'
+import eceDhineshkumarImage from '../assets/Faculity/ECE/Mr. P. Dhineshkumar.png'
+import ecePriyaImage from '../assets/Faculity/ECE/Mrs. P. Priya.png'
+import ecePreethiImage from '../assets/Faculity/ECE/Mrs. A. Preethi.png'
 
 export const courseData = {
   'be-mechanical': {
@@ -858,6 +896,7 @@ export const courseData = {
     topPackage: '18 LPA',
     icon: Globe,
     color: '#18357a',
+    bannerImage: eceImage,
     tagline: 'Connect the World.',
     overview: [
       "The Department of Electronics and Communication Engineering was started in the year 2009 with an intake of 60 students, increased to 120 in the year 2011 and increased to 180 in the year 2024. The Department of ECE is accredited by the NBA. The rapid developments in the field of Automotive, triggered the inception of the PG programme on Automotive Electronics in the year 2025. The Department of ECE is recognized by the Anna University Research Centre. Training on soft skills development, memory enhancement programmes, value added courses, etc., are provided to the students to accelerate confidence and to equip them with the tools to meet the challenges of the competitive world. Seminars, Workshops, symposiums and Guest lectures are conducted to create awareness about the recent trends.",
@@ -882,7 +921,8 @@ export const courseData = {
         email: 'dirrd@kiot.ac.in',
         publications: 'IJ: 47 IC: 51 NJ: 1 NC: 50',
         supervision: 'Ph.D.(Supervised):07, Ph.D.(Supervising): 05',
-        rating: 5.0
+        rating: 5.0,
+        image: eceSanthiyakumariImage
       },
       {
         name: 'Dr. M. Thangavel',
@@ -894,7 +934,8 @@ export const courseData = {
         specialization: 'Medical Image Processing',
         email: 'mtece@kiot.ac.in',
         publications: 'IJ: 08, IC:04, NC : 15',
-        rating: 4.9
+        rating: 4.9,
+        image: eceThangavelImage
       },
       {
         name: 'Dr. R. Vijayaraghavan',
@@ -918,7 +959,8 @@ export const courseData = {
         specialization: 'Adaptive Signal Processing',
         email: 'hod.ece@kiot.ac.in',
         publications: 'IJ: 11 IC: 07 NC: 11',
-        rating: 4.9
+        rating: 4.9,
+        image: eceSaravananImage
       },
       {
         name: 'Dr. S. Kumarganesh',
@@ -931,7 +973,8 @@ export const courseData = {
         email: 'skgece@kiot.ac.in',
         publications: 'IJ:51 , NC:10, IC:25',
         supervision: '08',
-        rating: 4.9
+        rating: 4.9,
+        image: eceKumarganeshImage
       },
       {
         name: 'Dr. P. Shanmuga Sundaram',
@@ -943,7 +986,8 @@ export const courseData = {
         specialization: 'Medical Image Processing',
         email: 'psece@kiot.ac.in',
         publications: 'IJ: 8 NJ: 1 IC: 8 NC 18',
-        rating: 4.8
+        rating: 4.8,
+        image: eceShanmugaSundaramImage
       },
       {
         name: 'Mr. S. Manoharan',
@@ -955,7 +999,8 @@ export const courseData = {
         specialization: 'Applied Electronics, Microwave Engineering',
         email: 'smhece@kiot.ac.in',
         publications: 'IJ: 03 NC: 04',
-        rating: 4.7
+        rating: 4.7,
+        image: eceManoharanImage
       },
       {
         name: 'Mr. R. Shanmuga Sundaram',
@@ -967,7 +1012,8 @@ export const courseData = {
         specialization: 'Communication Systems, Signal and Digital Image Processing',
         email: 'rsece@kiot.ac.in',
         publications: 'IJ: 13 NJ: 2 IC: 19 NC 06',
-        rating: 4.7
+        rating: 4.7,
+        image: eceRShanmugaSundaramImage
       },
       {
         name: 'Mr. S. Premkumar',
@@ -979,7 +1025,8 @@ export const courseData = {
         specialization: 'Applied Electronics',
         email: 'spece@kiot.ac.in',
         publications: 'IJ: 06 IC: 04 NC: 08',
-        rating: 4.6
+        rating: 4.6,
+        image: ecePremkumarImage
       },
       {
         name: 'Mr. M. Chandraman',
@@ -991,7 +1038,8 @@ export const courseData = {
         specialization: 'Embedded Systems, Microprocessor & Microcontroller',
         email: 'mcece@kiot.ac.in',
         publications: 'IJ: 16 IC: 13 NC: 8',
-        rating: 4.7
+        rating: 4.7,
+        image: eceChandramanImage
       },
       {
         name: 'Mr. S. Veerakumar',
@@ -1003,7 +1051,8 @@ export const courseData = {
         specialization: 'Communication Systems, Agriculture & Image Processing',
         email: 'svkece@kiot.ac.in',
         publications: 'IJ: 11 IC: 4 NC: 5',
-        rating: 4.6
+        rating: 4.6,
+        image: eceVeerakumarImage
       },
       {
         name: 'Mr. K. Rajesh',
@@ -1015,7 +1064,8 @@ export const courseData = {
         specialization: 'Low Power VLSI design',
         email: 'krece@kiot.ac.in',
         publications: 'IJ:10 NJ: 4 IC:12 NC:11',
-        rating: 4.5
+        rating: 4.5,
+        image: eceRajeshImage
       },
       {
         name: 'Mrs. T. Devika',
@@ -1027,7 +1077,8 @@ export const courseData = {
         specialization: 'Applied electronics',
         email: 'tdece@kiot.ac.in',
         publications: 'IJ: 17 IC: 03 NC: 04',
-        rating: 4.7
+        rating: 4.7,
+        image: eceDevikaImage
       },
       {
         name: 'Dr. G. Rajamanickam',
@@ -1039,7 +1090,8 @@ export const courseData = {
         specialization: 'Wireless communication, VLSI Design',
         email: 'grece@kiot.ac.in',
         publications: 'IJ: 04, IC: 03, NC: 04',
-        rating: 4.6
+        rating: 4.6,
+        image: eceRajamanickamImage
       },
       {
         name: 'Mr. A. Arun',
@@ -1051,7 +1103,8 @@ export const courseData = {
         specialization: 'Image Processing, Analog Electronics',
         email: 'aaece@kiot.ac.in',
         publications: 'IJ: 08 IC: 09 NC: 08',
-        rating: 4.6
+        rating: 4.6,
+        image: eceArunImage
       },
       {
         name: 'Mr. A. Tamilselvan',
@@ -1063,7 +1116,8 @@ export const courseData = {
         specialization: 'VLSI Design',
         email: 'atece@kiot.ac.in',
         publications: 'IJ: 03 NC: 10 IC:06',
-        rating: 4.5
+        rating: 4.5,
+        image: eceTamilselvanImage
       },
       {
         name: 'Mr. M. Duraisamy',
@@ -1075,7 +1129,8 @@ export const courseData = {
         specialization: 'VLSI design',
         email: 'mduece@kiot.ac.in',
         publications: 'IJ:4 IC:03 NC:03',
-        rating: 4.5
+        rating: 4.5,
+        image: eceDuraisamyImage
       },
       {
         name: 'Mr. M. Dinesh Kumar',
@@ -1087,7 +1142,8 @@ export const courseData = {
         specialization: 'Wireless networks, Business Incubation',
         email: 'mdece@kiot.ac.in',
         publications: 'IJ: 06 NC: 07 IC: 02',
-        rating: 4.5
+        rating: 4.5,
+        image: eceDineshKumarImage
       },
       {
         name: 'Mr. V. Vimalraj',
@@ -1099,7 +1155,8 @@ export const courseData = {
         specialization: 'Embedded Systems, Internet of Things',
         email: 'vvrece@kiot.ac.in',
         publications: 'IJ: 02, IC: 03 NC: 04',
-        rating: 4.4
+        rating: 4.4,
+        image: eceVimalrajImage
       },
       {
         name: 'Mrs. R. Hemalatha',
@@ -1111,7 +1168,8 @@ export const courseData = {
         specialization: 'VLSI design',
         email: 'rhece@kiot.ac.in',
         publications: 'IJ:10 NJ:01 IC: 10 NC: 10',
-        rating: 4.5
+        rating: 4.5,
+        image: eceHemalathaImage
       },
       {
         name: 'Mrs. M. Vasanthi',
@@ -1123,7 +1181,8 @@ export const courseData = {
         specialization: 'VLSI Design',
         email: 'mvece@kiot.ac.in',
         publications: 'IJ: 06 IC: 08 NC:02',
-        rating: 4.4
+        rating: 4.4,
+        image: eceVasanthiImage
       },
       {
         name: 'Mr. T. Praveen Kumar',
@@ -1135,7 +1194,8 @@ export const courseData = {
         specialization: 'Communication Systems',
         email: 'tpece@kiot.ac.in',
         publications: 'IC: 02 NC: 01 IJ: 02 NJ:01',
-        rating: 4.3
+        rating: 4.3,
+        image: ecePraveenKumarImage
       },
       {
         name: 'Mrs. S. ELARMATHI',
@@ -1147,7 +1207,8 @@ export const courseData = {
         specialization: 'Digital Electronics, Embedded Systems, Circuit theory',
         email: 'seece@kiot.ac.in',
         publications: 'IC:04 NC: 07 IJ:05',
-        rating: 4.2
+        rating: 4.2,
+        image: eceElarmathiImage
       },
       {
         name: 'Mrs. V. Vadivu',
@@ -1159,7 +1220,8 @@ export const courseData = {
         specialization: 'Digital Electronics, Communication Systems',
         email: 'vvaece@kiot.ac.in',
         publications: 'IJ:04 NC:02 IC:03',
-        rating: 4.2
+        rating: 4.2,
+        image: eceVadivuImage
       },
       {
         name: 'Mrs. S. Sasidevi',
@@ -1171,7 +1233,8 @@ export const courseData = {
         specialization: 'VLSI design',
         email: 'ssdece@kiot.ac.in',
         publications: 'IJ: 02 IC: 03 NC:05',
-        rating: 4.1
+        rating: 4.1,
+        image: eceSasideviImage
       },
       {
         name: 'Mr. A. Silambarasan',
@@ -1183,7 +1246,8 @@ export const courseData = {
         specialization: 'VLSI Design',
         email: 'asece@kiot.ac.in',
         publications: 'IJ:01 NJ:03 NC:02 IC:01',
-        rating: 4.1
+        rating: 4.1,
+        image: eceSilambarasanImage
       },
       {
         name: 'Mr. S. Sabarinathan',
@@ -1195,7 +1259,8 @@ export const courseData = {
         specialization: 'Embedded System, VLSI Design, Internet of Things',
         email: 'ssnece@kiot.ac.in',
         publications: 'IJ:01 NJ:02 IC:01 NC:03',
-        rating: 4.0
+        rating: 4.0,
+        image: eceSabarinathanImage
       },
       {
         name: 'Mr. B.S.T. Ragu',
@@ -1207,7 +1272,8 @@ export const courseData = {
         specialization: 'VLSI design',
         email: 'bstrece@kiot.ac.in',
         publications: 'NIL',
-        rating: 4.0
+        rating: 4.0,
+        image: eceRaguImage
       },
       {
         name: 'Ms. C. Sri kiruthika',
@@ -1219,7 +1285,8 @@ export const courseData = {
         specialization: 'VLSI design',
         email: 'cskece@kiot.ac.in',
         publications: 'IJ:01 IC:03',
-        rating: 4.0
+        rating: 4.0,
+        image: eceSriKiruthikaImage
       },
       {
         name: 'Mr. P. Chinnadurai',
@@ -1263,7 +1330,9 @@ export const courseData = {
         specialization: 'Indian writing in English, Afro- American Lit & ELT',
         email: 'tkseng@kiot.ac.in',
         publications: 'IJ: 02 IC: 04 NC: 04',
-        rating: 5.0
+        rating: 5.0,
+        category: 'S&H',
+        image: eceSanthiImage
       },
       {
         name: 'Mr. T. Raja',
@@ -1275,7 +1344,9 @@ export const courseData = {
         specialization: 'Fluid Dynamics, Partial Differential Equation',
         email: 'trjmat@kiot.ac.in',
         publications: 'IJ: 01 NC: 01',
-        rating: 4.7
+        rating: 4.7,
+        category: 'S&H',
+        image: eceRajaImage
       },
       {
         name: 'Mrs. S. Saranya',
@@ -1287,7 +1358,9 @@ export const courseData = {
         specialization: 'Differential Equation',
         email: 'ssmat@kiot.ac.in',
         publications: 'NIL',
-        rating: 4.6
+        rating: 4.6,
+        category: 'S&H',
+        image: eceSaranyaImage
       },
       {
         name: 'Mr. S. Naveen Kumar',
@@ -1299,7 +1372,9 @@ export const courseData = {
         specialization: 'NanoTechnology, Nuclear Chemistry',
         email: 'snkchem@kiot.ac.in',
         publications: 'NIL',
-        rating: 4.5
+        rating: 4.5,
+        category: 'S&H',
+        image: eceNaveenKumarImage
       },
       {
         name: 'Mr. P. Dhineshkumar',
@@ -1311,7 +1386,9 @@ export const courseData = {
         specialization: 'Vibrational Spectroscopy',
         email: 'pdphy@kiot.ac.in',
         publications: 'NIL',
-        rating: 4.3
+        rating: 4.3,
+        category: 'S&H',
+        image: eceDhineshkumarImage
       },
       {
         name: 'Mrs. P. Priya',
@@ -1323,7 +1400,9 @@ export const courseData = {
         specialization: 'Topology, Diffrential Equations',
         email: 'ppmat@kiot.ac.in',
         publications: 'NIL',
-        rating: 4.6
+        rating: 4.6,
+        category: 'S&H',
+        image: ecePriyaImage
       },
       {
         name: 'Mrs. A. Preethi',
@@ -1335,7 +1414,9 @@ export const courseData = {
         specialization: 'Chemistry',
         email: 'preethiyasini@gmail.com',
         publications: 'IJ:3',
-        rating: 4.7
+        rating: 4.7,
+        category: 'S&H',
+        image: ecePreethiImage
       }
     ],
     labs: [

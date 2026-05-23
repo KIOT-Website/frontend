@@ -12,15 +12,15 @@ import {
 import React from 'react'
 
 // Asset imports
-import labImg from '../../assets/life@kiot/image.webp'
+import labImg from '../../assets/main/l1.png'
 import cafeteriaImg from '../../assets/life@kiot/caf.png'
-import hostelImg from '../../assets/life@kiot/hostal.webp'
-import sportsImg from '../../assets/life@kiot/sports ground.png'
+import hostelImg from '../../assets/main/hostel1.png'
+import sportsImg from '../../assets/main/sh-1.png'
 import homeLifeImg from '../../assets/main/home-life.webp'
 import trainingImg from '../../assets/life@kiot/smart classrooms.png'
 import transportImg from '../../assets/life@kiot/collge bus.png'
 import gymImg from '../../assets/life@kiot/gym.png'
-import istartImg from '../../assets/life@kiot/istart.webp'
+import istartImg from '../../assets/main/istart1.png'
 import campusMainImg from '../../assets/main/campus .webp'
 
 const facilities = [
@@ -30,7 +30,7 @@ const facilities = [
   { id: 4, title: "Cafeteria", image: cafeteriaImg, link: "/campus-life/amenities" },
   { id: 5, title: "Lab", image: labImg, link: "/campus-life/classroom" },
   { id: 6, title: "Hostel", image: hostelImg, link: "/campus-life/amenities" },
-  { id: 7, title: "Training", image: trainingImg, link: "/placements/cdt" },
+  { id: 7, title: "Training", image: trainingImg, link: "/placements/training" },
   { id: 8, title: "iStart", image: istartImg, link: "/research-innovation/istart" }
 ]
 
@@ -90,17 +90,20 @@ const CampusLife = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group relative h-48 lg:h-64 rounded-xl lg:rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border-l-[3px] border-b-[3px] border-[#224292]"
+                className="group bg-white rounded-xl overflow-hidden flex flex-col relative shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_32px_rgba(34,66,146,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100"
               >
-                {/* Yellow Borders (Top & Right) */}
-                <div className="absolute top-0 left-0 w-full h-[3px] bg-[#ffc107] z-30" />
-                <div className="absolute top-0 right-0 h-full w-[3px] bg-[#ffc107] z-30" />
-
-                <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/90 via-[#224292]/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="relative w-full h-32 lg:h-44 overflow-hidden">
+                  <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.08]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
+                </div>
                 
-                <div className="absolute inset-0 p-4 lg:p-6 flex flex-col justify-end">
-                  <h3 className="text-sm lg:text-lg font-bold text-white mb-1 font-graphik leading-tight transition-transform duration-500 group-hover:-translate-y-1">{fac.title}</h3>
+                <div className="p-4 lg:p-5 flex-1 flex flex-col justify-center bg-white transition-colors duration-500 group-hover:bg-[#FCFDFD]">
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="text-sm lg:text-[16px] font-semibold text-[#224292] leading-tight transition-colors duration-300 group-hover:text-[#ffc107]">{fac.title}</h3>
+                    <div className="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-sm shrink-0">
+                      <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </Link>
