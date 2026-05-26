@@ -105,7 +105,7 @@ const Footer = () => {
           <img 
             src={logoBlue} 
             alt="KIOT Logo" 
-            className="h-16 w-auto object-contain mb-6 mx-auto lg:mx-0"
+            className="h-16 w-auto object-contain mb-6 mx-auto lg:mx-0 rounded-xl"
           />
           <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-sm mx-auto lg:mx-0">
             Empowering young minds with quality education, innovation and values to build a better tomorrow.

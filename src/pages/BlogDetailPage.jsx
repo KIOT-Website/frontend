@@ -127,7 +127,7 @@ const BlogDetailPage = () => {
             {/* ─── Featured Image ─── */}
             {(blog.featured_image || blog.image) && (
                 <div className="max-w-4xl mx-auto px-6 lg:px-10 mb-16">
-                    <div className="overflow-hidden rounded-[2.5rem] shadow-2xl border border-slate-100 bg-white" style={{ width: `${blog.featured_image_width || 100}%` }}>
+                    <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/15 border border-slate-100 bg-white" style={{ width: `${blog.featured_image_width || 100}%` }}>
                         <img 
                             src={blog.featured_image || blog.image} 
                             alt={blog.featured_image_alt || blog.title} 
@@ -158,7 +158,7 @@ const BlogDetailPage = () => {
             {/* ─── Article Body ─── */}
             <div className="max-w-4xl mx-auto px-6 lg:px-10 pb-32">
                 <article 
-                    className="prose prose-lg md:prose-xl max-w-none text-black prose-headings:text-black prose-p:text-black prose-p:leading-[1.8] prose-p:font-bold prose-a:text-black prose-strong:text-black prose-li:text-black prose-img:rounded-xl prose-img:shadow-lg prose-img:w-full prose-img:h-auto prose-img:object-contain"
+                    className="prose prose-lg md:prose-xl max-w-none text-black prose-headings:text-black prose-p:text-black prose-p:leading-[1.8] prose-p:font-bold prose-a:text-black prose-a:underline prose-a:underline-offset-4 prose-a:decoration-2 hover:prose-a:text-[#224292] prose-strong:text-black prose-li:text-black prose-img:rounded-xl prose-img:shadow-lg prose-img:w-full prose-img:h-auto prose-img:object-contain"
                     dangerouslySetInnerHTML={{ __html: blog.content }}
                 />
 
@@ -191,42 +191,45 @@ const BlogDetailPage = () => {
                 {/* ─── Comment Section ─── */}
                 <div className="mt-12 pt-10 border-t border-slate-100 w-full">
                     {/* Comment List */}
-                    {comments.length > 0 ? (
-                        <div className="space-y-6 mb-20 max-w-2xl">
-                            {comments.map((c, idx) => (
-                                <motion.div 
-                                    initial={{ opacity: 0, scale: 0.98 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: idx * 0.1 }}
-                                    key={c.id} 
-                                    className="p-5 bg-slate-50/50 rounded-2xl border border-slate-100"
-                                >
-                                    <div className="flex gap-5 items-start">
-                                        <div className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-black text-xs shrink-0 shadow-lg shadow-black/10">
-                                            {c.name?.[0] || 'G'}
-                                        </div>
-                                        <div className="flex-1 min-w-0">
-                                            <div className="flex items-center justify-between mb-1.5">
-                                                <h4 className="text-xs font-black text-black uppercase tracking-widest truncate">{c.name}</h4>
-                                                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em] shrink-0">
-                                                    {new Date(c.created_at).toLocaleDateString()}
-                                                </span>
+                    <div className="mb-12">
+                        <h4 className="text-2xl font-black text-black mb-6 pb-3 border-b border-slate-100">Comments</h4>
+                        {comments.length > 0 ? (
+                            <div className="space-y-6 max-w-2xl">
+                                {comments.map((c, idx) => (
+                                    <motion.div 
+                                        initial={{ opacity: 0, scale: 0.98 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        key={c.id} 
+                                        className="p-5 bg-slate-50/50 rounded-2xl border border-slate-100 shadow-lg shadow-black/5"
+                                    >
+                                        <div className="flex gap-5 items-start">
+                                            <div className="w-10 h-10 rounded-xl bg-black text-white flex items-center justify-center font-black text-xs shrink-0 shadow-lg shadow-black/10">
+                                                {c.name?.[0] || 'G'}
                                             </div>
-                                            <p className="text-black leading-relaxed font-bold text-[13px]">{c.message}</p>
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex items-center justify-between mb-1.5">
+                                                    <h4 className="text-xs font-black text-black uppercase tracking-widest truncate">{c.name}</h4>
+                                                    <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em] shrink-0">
+                                                        {new Date(c.created_at).toLocaleDateString()}
+                                                    </span>
+                                                </div>
+                                                <p className="text-black leading-relaxed font-bold text-[13px]">{c.message}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="py-12 px-8 bg-slate-50 rounded-2xl border border-slate-100 text-center mb-16">
-                            <p className="text-[13px] font-bold text-slate-400 uppercase tracking-widest">No discussion yet. Be the first to share your thoughts.</p>
-                        </div>
-                    )}
+                                    </motion.div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="py-12 px-8 bg-slate-50 rounded-2xl border border-slate-100 shadow-xl shadow-black/5 text-center">
+                                <p className="text-[13px] font-bold text-slate-400 uppercase tracking-widest">No comments yet. Be the first to share your thoughts.</p>
+                            </div>
+                        )}
+                    </div>
 
                     {/* Comment Form */}
-                    <div className="bg-white rounded-[2rem] p-8 md:p-12 border border-slate-100 shadow-xl shadow-slate-100/50 max-w-2xl">
-                        <h4 className="text-2xl font-black text-black mb-10">Leave a Comment</h4>
+                    <div className="bg-white rounded-[2rem] p-8 md:p-12 border border-slate-100 shadow-2xl shadow-black/10 max-w-2xl">
+                        <h4 className="text-2xl font-black text-black mb-6 pb-3 border-b border-slate-100">Leave a Comment</h4>
                         
                         {commentSuccess ? (
                             <motion.div 

@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Star, Mail, Phone, Calendar, User } from 'lucide-react'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 // Assets
 import studentImg from '../../assets/main/testi_student.webp'
@@ -185,14 +184,6 @@ const TestimonialCard = ({ testi }) => (
 
 const Testimonials = () => {
   const [activeTab, setActiveTab] = useState("Students")
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonialData[activeTab].length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [activeTab])
 
   return (
     <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
@@ -231,49 +222,28 @@ const Testimonials = () => {
            </div>
         </div>
 
-        {/* TESTIMONIAL GRID - Desktop */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-stretch max-w-[1400px] mx-auto px-4">
-           <AnimatePresence mode="wait">
-              {testimonialData[activeTab].map((testi, idx) => (
-                <motion.div
-                  key={testi.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="flex flex-col group relative h-full"
+        {/* TESTIMONIAL RUNNING MARQUEE */}
+        <div className="relative w-full overflow-hidden py-4">
+
+           {/* Infinite Running Track - Tab key triggers restart animation for seamless view */}
+           <div key={activeTab} className="animate-marquee gap-8 py-2">
+              {/* Set 1 */}
+              {testimonialData[activeTab].map((testi) => (
+                <div
+                  key={`set1-${testi.id}`}
+                  className="w-[280px] md:w-[320px] shrink-0"
                 >
                    <TestimonialCard testi={testi} />
-                </motion.div>
+                </div>
               ))}
-           </AnimatePresence>
-        </div>
-
-        {/* TESTIMONIAL SLIDER - Mobile */}
-        <div className="md:hidden relative">
-           <div className="overflow-hidden px-4 py-4">
-              <AnimatePresence mode="wait">
-                 <motion.div
-                   key={`${activeTab}-${currentIndex}`}
-                   initial={{ opacity: 0, x: 50 }}
-                   animate={{ opacity: 1, x: 0 }}
-                   exit={{ opacity: 0, x: -50 }}
-                   transition={{ duration: 0.4, ease: "easeOut" }}
-                   className="w-full"
-                 >
-                    <TestimonialCard testi={testimonialData[activeTab][currentIndex]} />
-                 </motion.div>
-              </AnimatePresence>
-           </div>
-
-           {/* Swipe Instructions or Dots */}
-           <div className="flex justify-center gap-2 mt-4">
-              {testimonialData[activeTab].map((_, i) => (
-                 <button
-                   key={i}
-                   onClick={() => setCurrentIndex(i)}
-                   className={`h-1.5 transition-all duration-500 rounded-full ${i === currentIndex ? 'w-8 bg-[#ffc107]' : 'w-2 bg-[#224292]/20'}`}
-                 />
+              {/* Set 2 */}
+              {testimonialData[activeTab].map((testi) => (
+                <div
+                  key={`set2-${testi.id}`}
+                  className="w-[280px] md:w-[320px] shrink-0"
+                >
+                   <TestimonialCard testi={testi} />
+                </div>
               ))}
            </div>
         </div>

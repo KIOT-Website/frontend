@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
@@ -41,7 +41,6 @@ import {
 import logo from '../../assets/main/main-logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
 import nirfLogo from '../../assets/main/nirf.webp'
-import nbaLogo from '../../assets/main/NBA1 (1).webp'
 import codeLogo from '../../assets/main/2653 code.jpeg'
 
 const navLinks = [
@@ -119,9 +118,13 @@ const navLinks = [
       { name: 'Campus Life', href: '/resources/campus-life', icon: Building2 },
       { name: 'Student Life', href: '/resources/student-life', icon: Users },
       { name: 'Alumni', href: '/resources/alumni', icon: GraduationCap },
-      { name: 'Online Payment', href: 'https://formbuilder.ccavenue.com/live/city-union-bank/knowledge-institute-of-technology', icon: CheckCircle2 },
       { name: 'Blogs', href: '/resources/blogs', icon: FileText }
     ]
+  },
+  { 
+    name: 'Online Payment', 
+    href: 'https://formbuilder.ccavenue.com/live/city-union-bank/knowledge-institute-of-technology', 
+    hasDropdown: false 
   },
   { name: 'Contact', href: 'contact' },
 ]
@@ -134,12 +137,115 @@ const socialLinks = [
   { name: 'YouTube', href: 'https://www.youtube.com/@infokiot', icon: Youtube },
 ]
 
+const searchableItems = [
+  // Core pages
+  { title: 'Home', type: 'Page', path: '/' },
+  { title: 'Admissions & Registration', type: 'Admissions', path: '/admissions' },
+  { title: 'UG Registration Application', type: 'Admissions', path: '/admissions/ug-registration' },
+  { title: 'PG Registration Application', type: 'Admissions', path: '/admissions/pg-registration' },
+  { title: 'Contact Us / Location', type: 'Page', path: '/contact' },
+  
+  // About section sublinks
+  { title: 'About Us & History', type: 'About', path: '/about/about-us' },
+  { title: 'Promoters & Trustees', type: 'About', path: '/about/promoters' },
+  { title: 'Leadership & Executives', type: 'About', path: '/about/leadership' },
+  { title: 'Governing Council Members', type: 'About', path: '/about/governing-council' },
+  { title: 'Institutional Policies & Guidelines', type: 'About', path: '/about/institutional-policies' },
+  { title: 'Accreditation, Rankings & NAAC', type: 'About', path: '/about/accreditation-ranking' },
+  
+  // Academics section
+  { title: 'Undergraduate Programmes (B.E / B.Tech)', type: 'Academics', path: '/academics/undergraduate' },
+  { title: 'Postgraduate Programmes (M.E / MBA / MCA)', type: 'Academics', path: '/academics/postgraduate' },
+  { title: 'Science & Humanities Department', type: 'Academics', path: '/academics/science-humanities' },
+  { title: 'Academic Autonomy Overview', type: 'Academics', path: '/academics/autonomous' },
+  { title: 'Academic Schedule & Calendar', type: 'Academics', path: '/academics/autonomous#schedule' },
+  { title: 'Academic Regulations', type: 'Academics', path: '/academics/autonomous#regulations' },
+  
+  // Placement section
+  { title: 'Placement Cell Highlights', type: 'Placements', path: '/placements/placement' },
+  { title: 'Placement Training & CDT Programs', type: 'Placements', path: '/placements/training' },
+  { title: 'Placement Outcomes & Salary Statistics', type: 'Placements', path: '/placements/outcomes' },
+  
+  // Research & Innovations
+  { title: 'Research & Development (R&D)', type: 'Research', path: '/research-innovation/research' },
+  { title: 'AICTE Idea Lab Facility', type: 'Research', path: '/research-innovation/aicte-idea-lab' },
+  { title: 'iStart & Innovation Cell', type: 'Research', path: '/research-innovation/istart' },
+  
+  // Exams section
+  { title: 'About COE (Controller of Examinations)', type: 'Exams', path: '/exams/about-coe' },
+  { title: 'Exam Schedules & Timetables', type: 'Exams', path: '/exams/schedules' },
+  { title: 'Exam Results Portal', type: 'Exams', path: 'https://coe.kiot.ac.in/' },
+  { title: 'Exam Downloads & Applications', type: 'Exams', path: '/exams/downloads' },
+  
+  // Resources
+  { title: 'Internal Quality Assurance Cell (IQAC)', type: 'Resources', path: '/resources/iqac' },
+  { title: 'Campus Life & Infrastructure', type: 'Resources', path: '/resources/campus-life' },
+  { title: 'Student Life, Clubs & Forums', type: 'Resources', path: '/resources/student-life' },
+  { title: 'Alumni Association & Outcomes', type: 'Resources', path: '/resources/alumni' },
+  { title: 'Blogs & Articles', type: 'Resources', path: '/resources/blogs' },
+  
+  // Campus Life detailed sections
+  { title: 'Library & E-Resources Access', type: 'Campus Life', path: '/campus-life/library' },
+  { title: 'Library Books Collections', type: 'Campus Life', path: '/campus-life/library/collections' },
+  { title: 'Library Journals & Magazines', type: 'Campus Life', path: '/campus-life/library/journals' },
+  { title: 'Sports Facilities & Faculty', type: 'Campus Life', path: '/campus-life/sports' },
+  { title: 'Smart Classrooms', type: 'Campus Life', path: '/campus-life/classroom' },
+  { title: 'Virtual Campus Tour', type: 'Campus Life', path: '/campus-life/tour' },
+  { title: 'Transport & Bus Route Details', type: 'Campus Life', path: '/campus-life/transport' },
+  { title: 'Student Insurance Policies', type: 'Campus Life', path: '/campus-life/insurance' },
+  { title: 'Media Center', type: 'Campus Life', path: '/campus-life/media' },
+  
+  // Departments
+  { title: 'Mechanical Engineering (MECH)', type: 'Department', path: '/academics/course/be-mechanical' },
+  { title: 'Computer Science and Engineering (CSE)', type: 'Department', path: '/academics/course/be-cse' },
+  { title: 'Electronics and Communication (ECE)', type: 'Department', path: '/academics/course/be-ece' },
+  { title: 'Information Technology (IT)', type: 'Department', path: '/academics/course/btech-it' },
+  { title: 'Artificial Intelligence & Data Science (AI & DS)', type: 'Department', path: '/academics/course/btech-aids' },
+  { title: 'Electrical and Electronics (EEE)', type: 'Department', path: '/academics/course/be-eee' },
+]
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [activeSubDropdown, setActiveSubDropdown] = useState(null)
   const navigate = useNavigate()
   const location = useLocation()
+  const [searchQuery, setSearchQuery] = useState('')
+  const [showSuggestions, setShowSuggestions] = useState(false)
+  const searchRef = useRef(null)
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    if (!searchQuery.trim()) return
+    const matches = searchableItems.filter(item => 
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.type.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    if (matches.length > 0) {
+      handleSuggestionClick(e, matches[0])
+    }
+  }
+
+  const handleSuggestionClick = (e, item) => {
+    e.preventDefault()
+    setSearchQuery('')
+    setShowSuggestions(false)
+    if (item.path.startsWith('http')) {
+      window.open(item.path, '_blank', 'noopener,noreferrer')
+      return
+    }
+    handleNavClick(e, item.title, item.path.replace(/^\//, ''))
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setShowSuggestions(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
@@ -218,6 +324,13 @@ const Header = () => {
     }
   }
 
+  const filteredSuggestions = searchQuery.trim()
+    ? searchableItems.filter(item => 
+        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.type.toLowerCase().includes(searchQuery.toLowerCase())
+      ).slice(0, 6)
+    : []
+
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="border-b border-[#A9B1C3]/20 bg-white/92 shadow-[0_20px_60px_rgba(34,66,146,0.14)] backdrop-blur">
@@ -275,10 +388,10 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden h-[28px] items-stretch bg-[#ffc107] lg:flex overflow-hidden">
+            <div className="hidden h-[28px] items-stretch bg-[#ffc107] lg:flex">
               <div 
                 className="flex flex-1 items-stretch overflow-hidden bg-[#224292] pl-32 pr-10"
-                style={{ clipPath: 'polygon(0 0, 92% 0, 100% 100%, 0 100%)' }}
+                style={{ clipPath: 'polygon(0 0, 89% 0, 93% 100%, 0 100%)' }}
               >
                 <div
                   className="flex items-center gap-16 whitespace-nowrap text-[12px] font-medium text-white/95 xl:text-[13px] animate-marquee hover:[animation-play-state:paused]"
@@ -324,8 +437,46 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="flex shrink-0 items-center justify-end pr-10 overflow-hidden">
-                <div className="flex items-center gap-2 ml-8 translate-y-[-0.5px]">
+              <div className="flex shrink-0 items-center justify-end pr-10">
+                {/* Compact Top-Bar Search */}
+                <form onSubmit={handleSearchSubmit} ref={searchRef} className="relative flex items-center mr-6">
+                  <Search size={10} className="absolute left-2 text-[#224292]/70 pointer-events-none" />
+                  <input 
+                    type="text" 
+                    placeholder="Search..." 
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value)
+                      setShowSuggestions(true)
+                    }}
+                    onFocus={() => setShowSuggestions(true)}
+                    className="h-[20px] w-28 bg-[#ffc107] border border-[#224292] rounded-md pl-6 pr-2 text-[10px] font-bold text-[#224292] placeholder-[#224292]/50 focus:outline-none focus:border-[#224292] focus:ring-1 focus:ring-[#224292]/20 transition-all"
+                  />
+
+                  {/* Suggestions Dropdown */}
+                  {showSuggestions && searchQuery.trim() && (
+                    <div className="absolute top-full right-0 mt-2 w-64 bg-white border border-[#224292]/20 rounded-xl shadow-[0_20px_50px_rgba(34,66,146,0.12)] z-[999] overflow-hidden py-1.5 max-h-60 overflow-y-auto">
+                      {filteredSuggestions.map((item, idx) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={(e) => handleSuggestionClick(e, item)}
+                          className="w-full text-left px-4 py-2 hover:bg-[#224292]/5 transition-colors flex flex-col gap-0.5 border-b border-[#224292]/5 last:border-b-0"
+                        >
+                          <span className="text-[11px] font-bold text-[#224292] leading-snug">{item.title}</span>
+                          <span className="text-[8px] font-black uppercase tracking-wider text-[#224292]/60">{item.type}</span>
+                        </button>
+                      ))}
+                      {filteredSuggestions.length === 0 && (
+                        <div className="px-4 py-3 text-center">
+                          <span className="text-[9px] font-bold text-[#224292]/50 uppercase tracking-widest">No matching content</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </form>
+
+                <div className="flex items-center gap-2 ml-4 translate-y-[-0.5px]">
                     {socialLinks.map((social) => (
                       <a 
                         key={social.name} 
@@ -438,25 +589,18 @@ const Header = () => {
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="h-[120px] max-h-none w-auto md:w-20 lg:h-[84px] lg:w-[90px] translate-y-0 md:translate-y-0.5 object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="hidden md:block h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={nirfLogo}
                   alt="NIRF Logo"
-                  className="hidden md:block h-[52px] w-auto md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain"
+                  className="hidden md:block h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                 />
-                <a href="/pdfs/NBA-Accreditation-2025.pdf.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
-                  <img
-                    src={nbaLogo}
-                    alt="NBA Logo"
-                    className="h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
-                  />
-                </a>
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="hidden md:block h-[110px] w-auto md:h-[72px] md:w-[72px] lg:h-[76px] lg:w-[76px] object-contain"
+                  className="hidden md:block h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                 />
                 
                 <button
@@ -543,10 +687,8 @@ const Header = () => {
                             }`}
                           >
                             <span>{link.name}</span>
-                            {link.hasDropdown ? (
+                            {link.hasDropdown && (
                               <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''} ${isActive ? 'text-[#ffc107]' : 'text-[#A9B1C3]'}`} />
-                            ) : (
-                              <ChevronsRight className={`h-4 w-4 ${isActive ? 'text-[#ffc107]' : 'text-[#A9B1C3]'}`} />
                             )}
                           </a>
                           
@@ -628,10 +770,9 @@ const Header = () => {
 
               {/* Compliance/Accreditation Logos at the Bottom */}
               <div className="p-3 pt-6 pb-4 flex items-center justify-center gap-3 border-t border-[#D5E2F4]/50 bg-[#F8FAFC]/30 mt-auto">
-                <img src={naacLogo} alt="NAAC" className="h-[64px] w-auto object-contain shrink-0 drop-shadow-sm" />
-                <img src={nirfLogo} alt="NIRF" className="h-[46px] w-auto object-contain shrink-0 drop-shadow-sm" />
-                <img src={nbaLogo} alt="NBA" className="h-[46px] w-auto object-contain shrink-0 drop-shadow-sm" />
-                <img src={codeLogo} alt="Code" className="h-[52px] w-auto object-contain shrink-0 drop-shadow-sm" />
+                <img src={naacLogo} alt="NAAC" className="h-12 w-12 object-contain shrink-0 drop-shadow-sm" />
+                <img src={nirfLogo} alt="NIRF" className="h-12 w-12 object-contain shrink-0 drop-shadow-sm" />
+                <img src={codeLogo} alt="Code" className="h-12 w-12 object-contain shrink-0 drop-shadow-sm" />
               </div>
             </motion.div>
           </>

@@ -1,6 +1,76 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+
+// Animated Counter component
+const Counter = ({ value }) => {
+  const [count, setCount] = useState(0)
+  const elementRef = useRef(null)
+  const [hasStarted, setHasStarted] = useState(false)
+
+  // Extract number, commas, and suffix (e.g. "12,000+" -> target: 12000, suffix: "+")
+  const numStr = value.replace(/[^\d]/g, '')
+  const target = parseInt(numStr, 10) || 0
+  const suffix = value.replace(/[\d,]/g, '')
+  const hasCommas = value.includes(',')
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasStarted(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!hasStarted) return
+
+    let startTime = null
+    const duration = 2000 // 2 seconds
+
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp
+      const progress = timestamp - startTime
+      const progressPercentage = Math.min(progress / duration, 1)
+      
+      const easeOutQuad = (t) => t * (2 - t)
+      const currentCount = Math.floor(easeOutQuad(progressPercentage) * target)
+
+      setCount(currentCount)
+
+      if (progressPercentage < 1) {
+        requestAnimationFrame(animate)
+      } else {
+        setCount(target)
+      }
+    }
+
+    requestAnimationFrame(animate)
+  }, [hasStarted, target])
+
+  const formatNumber = (num) => {
+    if (hasCommas) {
+      return num.toLocaleString()
+    }
+    return num.toString()
+  }
+
+  return (
+    <span ref={elementRef}>
+      {formatNumber(count)}{suffix}
+    </span>
+  )
+}
 import { 
   Library, 
   Monitor, 
@@ -167,10 +237,10 @@ const CampusLifePage = () => {
                             Through Innovation
                         </h3>
                         <div className="space-y-6">
-                           <p className="text-[#1a1a1a] text-lg leading-relaxed font-bold text-justify">
+                           <p className="text-[#1a1a1a] text-base leading-relaxed font-bold text-justify">
                                 At KIOT, excellence is built through advanced infrastructure, vibrant campus life, and a strong sports culture. Smart classrooms, modern labs, and innovation-driven spaces support academic growth, while a dynamic student community encourages creativity, collaboration, and global exposure.
                            </p>
-                           <p className="text-[#1a1a1a] text-lg leading-relaxed font-bold text-justify">
+                           <p className="text-[#1a1a1a] text-base leading-relaxed font-bold text-justify">
                                 With top-tier sports facilities and professional training, students grow both physically and mentally, creating a well-rounded environment focused on performance, passion, and progress.
                            </p>
                         </div>
@@ -203,14 +273,14 @@ const CampusLifePage = () => {
                 </motion.div>
             </div>
 
-            <div className="bg-slate-50/50 py-8 md:py-16 relative z-20 overflow-hidden">
-                <div className="w-full px-6 lg:px-12 relative z-10">
+            <div className="bg-[#224292] py-12 md:py-16 relative z-20 overflow-hidden">
+                <div className="max-w-6xl mx-auto w-full px-6 lg:px-12 relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
-                            { v: "12,000+", l: "Active Students", i: Users, d: "Diverse community of learners and achievers.", c: "#224292" },
-                            { v: "150+", l: "Student Clubs", i: Landmark, d: "Nurturing talents beyond the classroom walls.", c: "#ffc107" },
-                            { v: "25+", l: "Sports Teams", i: Trophy, d: "Striving for excellence in state & national levels.", c: "#224292" },
-                            { v: "500+", l: "Annual Events", i: CalendarDays, d: "A vibrant calendar filled with tech & culturals.", c: "#ffc107" }
+                            { v: "12,000+", l: "Active Students", i: Users, d: "Diverse community of learners and achievers." },
+                            { v: "150+", l: "Student Clubs", i: Landmark, d: "Nurturing talents beyond the classroom walls." },
+                            { v: "25+", l: "Sports Teams", i: Trophy, d: "Striving for excellence in state & national levels." },
+                            { v: "500+", l: "Annual Events", i: CalendarDays, d: "A vibrant calendar filled with tech & culturals." }
                         ].map((stat, i) => (
                             <motion.div
                                 key={i}
@@ -218,27 +288,25 @@ const CampusLifePage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="flex flex-col bg-white rounded-3xl shadow-xl shadow-slate-200/60 overflow-hidden border border-slate-100 group hover:-translate-y-2 transition-all duration-500"
+                                className="flex flex-col bg-white rounded-2xl shadow-xl shadow-black/10 overflow-hidden group hover:-translate-y-2 transition-all duration-500 w-full max-w-[230px] mx-auto"
                             >
-                                <div className="p-4 md:p-6 md:pb-8 flex flex-col items-center text-center space-y-4">
+                                <div className="p-3 md:p-4 md:pb-4 flex flex-col items-center text-center space-y-2">
                                     <div 
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6 duration-500"
-                                        style={{ backgroundColor: stat.c, color: stat.c === '#ffc107' ? '#224292' : '#fff' }}
+                                        className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6 duration-500 bg-[#224292] text-white"
                                     >
-                                        <stat.i size={20} />
+                                        <stat.i size={18} />
                                     </div>
-                                    <div className="space-y-2">
+                                    <div className="space-y-1">
                                         <p className="text-[10px] font-black text-black uppercase tracking-[3px]">{stat.l}</p>
-                                        <p className="text-3xl lg:text-4xl font-black text-[#224292] tracking-tighter leading-none">
-                                            {stat.v}
+                                        <p className="text-2xl lg:text-3xl font-black text-[#224292] tracking-tighter leading-none">
+                                            <Counter value={stat.v} />
                                         </p>
                                     </div>
                                 </div>
                                 <div 
-                                    className="p-3 md:p-4 text-center mt-auto"
-                                    style={{ backgroundColor: stat.c }}
+                                    className="h-14 flex items-center justify-center p-2 text-center mt-auto bg-[#ffc107]"
                                 >
-                                    <p className={`text-[10px] font-black uppercase tracking-widest leading-relaxed ${stat.c === '#ffc107' ? 'text-[#224292]' : 'text-white'}`}>
+                                    <p className="text-[10px] font-black uppercase tracking-widest leading-normal text-[#224292]">
                                         {stat.d}
                                     </p>
                                 </div>
@@ -264,7 +332,7 @@ const CampusLifePage = () => {
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.05 }}
                             onClick={() => navigate(hub.link)}
-                            className="group bg-white rounded-xl transition-all duration-500 cursor-pointer overflow-hidden flex flex-col relative shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_32px_rgba(34,66,146,0.08)] hover:-translate-y-1.5 border border-slate-100"
+                            className="group bg-white rounded-xl transition-all duration-500 cursor-pointer overflow-hidden flex flex-col relative shadow-md shadow-black/10 hover:shadow-xl hover:shadow-black/15 hover:-translate-y-1.5 border border-slate-100"
                         >
                             <div className="relative w-full h-32 md:h-40 overflow-hidden">
                                 <img 
@@ -284,15 +352,14 @@ const CampusLifePage = () => {
                                 )}
                             </div>
 
-                            <div className="p-5 md:p-6 flex-1 flex flex-col bg-white transition-colors duration-500 group-hover:bg-[#FCFDFD]">
-                                <h4 className="text-[16px] font-semibold text-[#224292] leading-tight mb-1.5 transition-colors duration-300 group-hover:text-[#ffc107]">{hub.title}</h4>
-                                <p className="text-[11px] text-slate-500 font-bold leading-relaxed mb-4">{hub.subtitle}</p>
-                                
-                                <div className="flex items-center justify-end mt-auto">
-                                    <div className="w-6 h-6 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-sm">
+                            <div className="p-4 flex-1 flex flex-col justify-between">
+                                <div className="flex items-center justify-between gap-2">
+                                    <h4 className="text-[16px] font-semibold text-[#224292] leading-tight transition-colors duration-300 group-hover:text-[#ffc107]">{hub.title}</h4>
+                                    <div className="w-6 h-6 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-sm shrink-0">
                                         <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                                     </div>
                                 </div>
+                                <p className="text-[11px] text-slate-500 font-bold leading-relaxed mt-1">{hub.subtitle}</p>
                             </div>
                         </motion.div>
                     ))}

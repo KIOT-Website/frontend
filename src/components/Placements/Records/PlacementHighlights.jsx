@@ -76,31 +76,47 @@ const PlacementHighlights = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="group relative bg-white rounded-[2rem] shadow-[0_15px_40px_rgba(34,66,146,0.05)] border border-slate-50 flex flex-col items-center p-7 py-9 min-h-[240px] justify-center text-center overflow-hidden hover:shadow-[0_20px_50px_rgba(34,66,146,0.08)] transition-all duration-500"
+              className="group relative bg-white rounded-2xl border border-slate-100 flex flex-col items-center p-6 py-7 min-h-[170px] justify-center text-center overflow-hidden transition-all duration-300 hover:border-slate-200 hover:-translate-y-1.5 shadow-md shadow-black/10 hover:shadow-xl hover:shadow-black/15"
             >
+              {/* Top Accent Bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 transition-all duration-300" style={{ backgroundColor: stat.color }} />
+
               {/* Icon Circle */}
               <div 
-                className="w-14 h-14 rounded-full flex items-center justify-center mb-5 shadow-sm transition-transform duration-500 group-hover:scale-110"
+                className="w-11 h-11 rounded-full flex items-center justify-center mb-3.5 shadow-sm transition-transform duration-500 group-hover:scale-110"
                 style={{ backgroundColor: stat.color === '#ffc107' ? '#ffc107' : '#224292', color: stat.color === '#ffc107' ? '#224292' : 'white' }}
               >
-                <stat.icon size={24} />
+                <stat.icon size={18} />
               </div>
 
               {/* Label */}
-              <h3 className="text-[10px] font-black text-[#224292] tracking-[0.15em] uppercase mb-2 opacity-90">{stat.label}</h3>
+              <h3 className="text-[9px] font-black text-[#224292] tracking-[0.15em] uppercase mb-2 opacity-90">{stat.label}</h3>
               
               {/* Thin Yellow Separator Line */}
-              <div className="w-8 h-[2px] bg-[#ffc107] mb-4" />
+              <div className="w-6 h-[1.5px] bg-[#ffc107] mb-3" />
 
               {/* Value */}
-              <div className="text-2xl lg:text-3xl font-black text-[#224292] tracking-tighter leading-tight">
+              <div className="text-xl lg:text-2xl font-black text-[#224292] tracking-tighter leading-tight">
                 {stat.value.split(' ').map((part, idx) => (
-                  <span key={idx} className={idx > 0 ? "block text-sm lg:text-base mt-1" : ""}>{part} </span>
+                  <span key={idx} className={idx > 0 ? "block text-xs lg:text-sm mt-0.5" : ""}>{part} </span>
                 ))}
               </div>
 
-              {/* Decorative Corner Flourish */}
-              <div className={`absolute bottom-0 right-0 w-16 h-16 ${stat.cornerColor} rounded-tl-[60px] transition-transform duration-500 group-hover:scale-110`} />
+              {/* Soft Radial Background Glow */}
+              <div 
+                className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" 
+                style={{ backgroundColor: stat.color }} 
+              />
+
+              {/* Unique Corner Ring Outlines */}
+              <div 
+                className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full border border-dashed opacity-10 group-hover:opacity-25 group-hover:scale-105 group-hover:rotate-45 transition-all duration-700 pointer-events-none" 
+                style={{ borderColor: stat.color }} 
+              />
+              <div 
+                className="absolute -bottom-10 -right-10 w-20 h-20 rounded-full border opacity-5 group-hover:opacity-15 group-hover:scale-110 group-hover:-rotate-45 transition-all duration-700 pointer-events-none" 
+                style={{ borderColor: stat.color }} 
+              />
             </motion.div>
           ))}
         </div>

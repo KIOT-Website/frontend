@@ -67,7 +67,6 @@ const AutonomousPage = () => {
         { name: 'Statutory Committees', id: 'committees', icon: Users },
         { name: 'CDDA', id: 'cdda', icon: Building2 },
         { name: 'Regulations', id: 'regulations', icon: FileText },
-        { name: 'Curriculum & Syllabi', id: 'syllabi', icon: BookOpen },
         { name: 'Academic Schedule', id: 'schedule', icon: Calendar },
         { name: 'Credits Equivalence Committee', id: 'cec', icon: UserCheck },
         { name: 'Honours/Minor Degree', id: 'honours', icon: Trophy },
@@ -585,124 +584,7 @@ const AutonomousPage = () => {
                                 ))}
                             </div>
                         </motion.section>
-                    )}
-
-                    {activeTab === 'syllabi' && (
-                        <motion.section 
-                            key="syllabi"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            id="syllabi" 
-                            className="scroll-mt-32"
-                        >
-                            {!selectedProgramme ? (
-                                <>
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-14 h-14 bg-blue-50 rounded-[1.5rem] flex items-center justify-center text-[#224292]">
-                                            <BookOpen size={28} />
-                                        </div>
-                                        <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Curriculum & Syllabi</h2>
-                                    </div>
-                                    <p className="text-black text-[13px] font-bold">Access detailed curriculum and course syllabi for all Undergraduate and Postgraduate programmes.</p>
-
-                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-                                        {[
-                                            { title: 'B.E. / B.Tech.' },
-                                            { title: 'M.E. / M.Tech' },
-                                            { title: 'MBA' }
-                                        ].map((item, i) => (
-                                            <button 
-                                                key={i} 
-                                                onClick={() => setSelectedProgramme(item.title)}
-                                                className="flex items-center justify-center p-6 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-center"
-                                            >
-                                                <p className="text-[14px] font-black text-[#224292] leading-tight">{item.title}</p>
-                                            </button>
-                                        ))}
-                                    </div>
-                                </>
-                            ) : (
-                                <motion.div
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    className="max-w-[1400px] mx-auto"
-                                >
-                                    <button 
-                                        onClick={() => setSelectedProgramme(null)}
-                                        className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest hover:text-[#224292] transition-colors mb-8 group"
-                                    >
-                                        <ChevronRight size={16} className="rotate-180 group-hover:-translate-x-1 transition-transform" />
-                                        Back to Programmes
-                                    </button>
-
-                                    <div className="flex items-center gap-4 mb-12">
-                                        <div className="w-12 h-12 bg-[#224292] rounded-xl flex items-center justify-center text-white">
-                                            <GraduationCap size={24} />
-                                        </div>
-                                        <div>
-                                            <h2 className="text-3xl font-black text-[#224292] tracking-tighter">{selectedProgramme}</h2>
-                                            <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest mt-1">Department Wise Curriculum Records</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-                                        <table className="w-full text-left">
-                                            <thead>
-                                                <tr className="bg-[#224292] text-white">
-                                                    <th className="px-6 py-4 text-[13px] font-bold uppercase tracking-wider">PROGRAMME</th>
-                                                    <th className="px-6 py-4 text-[13px] font-bold uppercase tracking-wider">ACADEMIC YEARS</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody className="divide-y divide-slate-200">
-                                                {(selectedProgramme === 'B.E. / B.Tech.' ? [
-                                                    { name: 'BE - Mechanical Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'BE - Electronics and Communication Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'BE - Electrical and Electronics Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'BE - Computer Science and Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'BE - Civil Engineering', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'BTech - Information Technology', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'BTech - Computer Science and Business Systems', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'BTech - Artificial Intelligence and Data Science', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'BE - Electronics Engineering (Computer Science)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] }
-                                                ] : selectedProgramme === 'M.E. / M.Tech' ? [
-                                                    { name: 'ME - Information Security (ISE)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'ME - VLSI Design', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'ME - Applied Electronics (AE)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'ME - Embedded System Technologies (EST)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'ME - Power Electronics and Drives (PED)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'ME - Computer Science and Engineering (CSE)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'ME - Structural Engineering (SE)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] }
-                                                ] : selectedProgramme === 'MBA' ? [
-                                                    { name: 'MBA (General)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] },
-                                                    { name: 'MBA (IEV)', years: ['2024-2025', '2023-2024', '2022-2023', '2021-2022'] }
-                                                ] : []).map((dept, i) => (
-                                                    <tr key={i} className="hover:bg-slate-50 transition-colors">
-                                                        <td className="px-6 py-4 text-[13px] font-bold text-black">{dept.name}</td>
-                                                        <td className="px-6 py-4">
-                                                            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                                                                {dept.years.map((year, yIdx) => (
-                                                                    <React.Fragment key={year}>
-                                                                        <button className="text-[13px] font-bold text-[#224292] hover:underline transition-all">
-                                                                            {year}
-                                                                        </button>
-                                                                        {yIdx < dept.years.length - 1 && (
-                                                                            <span className="text-slate-300 font-medium">|</span>
-                                                                        )}
-                                                                    </React.Fragment>
-                                                                ))}
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </motion.section>
-                    )}
+                      )}
 
                     {activeTab === 'schedule' && (
                         <motion.section 
@@ -736,7 +618,7 @@ const AutonomousPage = () => {
                                                 onClick={() => window.open(row.pdf_url, '_blank')}
                                                 className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-left"
                                             >
-                                                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-[#224292] shrink-0 group-hover:bg-[#224292] group-hover:text-white transition-all">
+                                                <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-red-500 shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all">
                                                     <FileText size={20} />
                                                 </div>
                                                 <div className="flex-1 min-w-0">

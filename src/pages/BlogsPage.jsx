@@ -112,16 +112,16 @@ const BlogsPage = () => {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: idx * 0.05 }}
-                                    className="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col h-full"
+                                    className="group bg-white rounded-2xl border border-slate-100 shadow-md shadow-black/5 hover:shadow-2xl hover:shadow-black/15 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden cursor-pointer flex flex-col h-full"
                                     onClick={() => navigate(`/blog/${blog.slug}`)}
                                 >
                                     {/* Image Container */}
-                                    <div className="relative aspect-[16/10] overflow-hidden">
+                                    <div className="relative aspect-[16/9] overflow-hidden bg-[#f8fafc] flex items-center justify-center border-b border-slate-100">
                                         {blog.featured_image || blog.image ? (
                                             <img 
                                                 src={blog.featured_image || blog.image} 
                                                 alt={blog.title}
-                                                className="w-full h-full object-cover transition-transform duration-500"
+                                                className="w-full h-full object-contain transition-transform duration-500 p-2"
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-[#224292]/5 flex items-center justify-center">
@@ -132,26 +132,26 @@ const BlogsPage = () => {
                                     </div>
 
                                     {/* Content Section */}
-                                    <div className="p-6 pb-7 flex flex-col flex-1">
-                                        <div className="flex items-center gap-5 text-[10px] font-black text-slate-600 uppercase tracking-widest mb-4">
+                                    <div className="p-5 pb-5 flex flex-col flex-1">
+                                        <div className="flex items-center gap-5 text-[10px] font-black text-slate-600 uppercase tracking-widest mb-3">
                                             <div className="flex items-center gap-2">
                                                 <Calendar size={13} className="text-[#ffc107]" />
                                                 <span>{blog.publish_date}</span>
                                             </div>
                                         </div>
 
-                                        <h3 className="text-xl font-black text-black mb-3 leading-[1.4] line-clamp-2 group-hover:text-[#224292] transition-colors">
+                                        <h3 className="text-xl font-black text-black mb-2 leading-[1.4] line-clamp-2 group-hover:text-[#224292] transition-colors">
                                             {blog.title}
                                         </h3>
 
-                                        <p className="text-slate-900 text-[15px] leading-relaxed mb-6 line-clamp-3 font-bold">
+                                        <p className="text-slate-900 text-[15px] leading-relaxed mb-4 line-clamp-2 font-bold">
                                             {blog.excerpt || (blog.content ? blog.content.replace(/<[^>]*>/g, '').substring(0, 150) + '...' : '')}
                                         </p>
 
-                                        <div className="mt-auto flex items-center text-[#224292] font-bold text-[11px] uppercase tracking-[0.2em] gap-2 group/btn">
-                                            <span>Read Story</span>
-                                            <div className="w-8 h-8 rounded-full bg-[#224292]/5 flex items-center justify-center group-hover/btn:bg-[#224292] group-hover/btn:text-white transition-all">
-                                                <ChevronRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                                        <div className="mt-auto flex">
+                                            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ffc107] hover:bg-[#ffc107]/90 text-black font-black text-[10px] uppercase tracking-widest rounded-full transition-all duration-300 shadow-md shadow-[#ffc107]/10 group/btn">
+                                                <span>Read More</span>
+                                                <ChevronRight size={13} className="group-hover/btn:translate-x-0.5 transition-transform duration-300" />
                                             </div>
                                         </div>
                                     </div>
