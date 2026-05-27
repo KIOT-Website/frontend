@@ -469,7 +469,7 @@ const AdmissionsPage = () => {
                            </thead>
                            <tbody className="divide-y divide-slate-100">
                               {[
-                                 { name: 'MBA - General', id: 'mba-general' },
+                                 { name: 'Master of Business Administration', id: 'mba-general' },
                                  { name: 'MBA (IEV)', id: 'mba-iev' },
                                  { name: 'MCA', id: 'mca' },
                                  { name: 'M.E. Industrial Safety Engineering', id: 'me-ise' },

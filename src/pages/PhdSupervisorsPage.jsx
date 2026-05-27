@@ -17,11 +17,21 @@ const PhdSupervisorsPage = () => {
     const { deptName } = useParams()
 
     const formatDeptName = (name) => {
-        if (!name) return "Departmentwise"
-        return name.split('-').map(word => {
-            if (word === "&") return "&"
-            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-        }).join(' ')
+        if (!name) return 'Departmentwise'
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        if (decoded === 'science-&-humanities' || decoded === 'science-and-humanities') {
+            return 'Science & Humanities'
+        }
+        return decodeURIComponent(name)
+            .split('-')
+            .map((word) => {
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
+            .join(' ')
     }
 
     const allSupervisors = {
@@ -44,10 +54,30 @@ const PhdSupervisorsPage = () => {
             { id: 1, name: "Dr.P.Rajendran", university: "Anna University", department: "CSE", researchArea: "Image Mining, Data Mining", supervisorId: "2340253", email: "peerajendran@gmail.com", guided: "8", guiding: "8" },
             { id: 2, name: "Dr.R.Kumar", university: "Anna University", department: "CSE", researchArea: "E-Learning, Knowledge Engineering", supervisorId: "2840019", email: "rkumarnkl@gmail.com", guided: "-", guiding: "3" },
             { id: 3, name: "Dr.P.Vijayalakshmi", university: "Anna University", department: "CSE", researchArea: "Wireless Sensor Networks", supervisorId: "4140063", email: "vijii_s@yahoo.co.in", guided: "-", guiding: "4" }
+        ],
+        'science-&-humanities': [
+            {
+                id: 1,
+                name: "Dr.G.Venkatesh",
+                university: "Anna University",
+                department: "Chemistry",
+                researchArea: "Supramolecular Nano materials",
+                supervisorId: "2970011",
+                email: "drgvenkat@rediffmail.com",
+                guided: "-",
+                guiding: "-"
+            }
         ]
     }
 
-    const currentSupervisors = allSupervisors[deptName?.toLowerCase()] || []
+    const getDisplaySupervisors = () => {
+        if (!deptName) return []
+        const decoded = decodeURIComponent(deptName).toLowerCase()
+        const normalized = decoded.replace(/-and-/g, '-&-')
+        return allSupervisors[normalized] || allSupervisors[decoded] || allSupervisors[deptName.toLowerCase()] || []
+    }
+
+    const currentSupervisors = getDisplaySupervisors()
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

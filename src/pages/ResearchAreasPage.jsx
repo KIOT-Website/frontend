@@ -14,10 +14,18 @@ const ResearchAreasPage = () => {
 
     const formatDeptName = (name) => {
         if (!name) return 'Departmentwise'
-        return name.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        return decodeURIComponent(name)
+            .split('-')
+            .map((word) => {
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
+            .join(' ')
     }
-
-
 
     const researchAreas = {
         'mechanical-engineering': [
@@ -77,10 +85,37 @@ const ResearchAreasPage = () => {
             'Machine Learning',
             'Data privacy & Security',
             'Data Science and Analytics'
+        ],
+        'science-&-humanities': [
+            'Supramolecular Nanomaterials',
+            'Graph Theory',
+            'Topology',
+            'Corrosion',
+            'Nanomaterials',
+            'Inventory Control Theory',
+            'NanoParticles',
+            'Vibrational Spectroscopy',
+            'Semiconductor Nanomaterials and Single Crystals',
+            'Nanomaterials for Energy Storage',
+            'Thin Film Technology',
+            'Graph Theory',
+            'Fuzzy Algebra',
+            'Stochastic Processes, Reliability Theory',
+            'Decision Making using Fuzzy Logic',
+            'Sangam Literature',
+            'Thin Film Technology',
+            'Electrochemistry, Environmental chemistry'
         ]
     }
 
-    const displayAreas = researchAreas[deptName?.toLowerCase()] || []
+    const getDisplayAreas = () => {
+        if (!deptName) return []
+        const decoded = decodeURIComponent(deptName).toLowerCase()
+        const normalized = decoded.replace(/-and-/g, '-&-')
+        return researchAreas[normalized] || researchAreas[decoded] || researchAreas[deptName.toLowerCase()] || []
+    }
+
+    const displayAreas = getDisplayAreas()
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

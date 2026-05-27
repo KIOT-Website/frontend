@@ -26,9 +26,16 @@ const ResearchResourcesPage = () => {
 
     const formatDeptName = (name) => {
         if (!name) return 'Departmentwise'
-        return name
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        return decodeURIComponent(name)
             .split('-')
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .map((word) => {
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
             .join(' ')
     }
 

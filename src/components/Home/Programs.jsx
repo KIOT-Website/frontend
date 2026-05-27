@@ -39,8 +39,8 @@ const programsData = {
     description: 'Advanced specialization and leadership in technology & management.',
     accent: '#224292',
     courses: [
-      { id: 'mba-general', name: "MBA - Master of Business Administration (General)", icon: TrendingUp, code: "MBA-General", duration: "2 Years", phd: true },
-      { id: 'mba-iev', name: "MBA - Master of Business Administration (Innovation, Entrepreneurship and Venture Development)", icon: Rocket, code: "MBA-IEV", duration: "2 Years", phd: true },
+      { id: 'mba-general', name: "MBA - Master of Business Administration (General)", icon: TrendingUp, code: "MBA-General", duration: "2 Years", phd: true, externalUrl: 'https://kbss.kiot.ac.in/' },
+      { id: 'mba-iev', name: "MBA - Master of Business Administration (Innovation, Entrepreneurship and Venture Development)", icon: Rocket, code: "MBA-IEV", duration: "2 Years", phd: true, externalUrl: 'https://kbss.kiot.ac.in/mba-iev/' },
       { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
       { id: 'me-ise', name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
       { id: 'me-ae', name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
@@ -119,8 +119,12 @@ const CourseGrid = ({ activeTab, navigate }) => (
              }}
              whileHover={{ y: -5 }}
              onClick={() => {
-               const base = activeTab === 'UG' ? 'undergraduate' : 'postgraduate'
-               navigate(`/academics/${base}/${course.id}`)
+                if (course.externalUrl) {
+                  window.open(course.externalUrl, '_blank', 'noopener,noreferrer')
+                } else {
+                  const base = activeTab === 'UG' ? 'undergraduate' : 'postgraduate'
+                  navigate(`/academics/${base}/${course.id}`)
+                }
              }}
              className="group bg-black/[0.02] p-3.5 rounded-xl border border-slate-200/60 hover:bg-white transition-all cursor-pointer relative overflow-hidden shadow-sm hover:shadow-lg"
            >

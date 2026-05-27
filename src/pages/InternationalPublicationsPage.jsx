@@ -17,8 +17,18 @@ const InternationalPublicationsPage = () => {
     const [searchTerm, setSearchTerm] = useState('')
 
     const formatDeptName = (name) => {
-        if (!name) return "Departmentwise"
-        return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+        if (!name) return 'Departmentwise'
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        return decodeURIComponent(name)
+            .split('-')
+            .map((word) => {
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
+            .join(' ')
     }
 
     const allPublications = {
@@ -63,7 +73,7 @@ const InternationalPublicationsPage = () => {
             { id: 123, author: "Chairman M, Deepak M, Priyatharsini S, Maragatharaj S", title: "FPGA Based Efficient Detection of Blood Group and Hb-anemic Using Image Processing-VLSI Approach", journal: "International Research Journal of Multidisciplinary Scope", year: "April 2024" },
             { id: 124, author: "A. Gopalakrishnan, S. Kumarganesh, Divya Bharathi G, S. Anthoniraj et al.", title: "Performance Analysis of Health Care Expense Anticipation using Computational Intelligence", journal: "ICIESTR - IEEE", year: "May 2024" },
             { id: 125, author: "Ahmed A Elngar, B Thiyaneswaran, K Anguraj, S Kumarganesh et al.", title: "IOT based smart cold chain temperature monitoring with alert system for vaccination container", journal: "AIP Conference Proceedings", year: "Sept 2023" },
-
+ 
             // 2022-23
             { id: 126, author: "T. Senthilkumar, S. Kumarganesh, P. Sivakumar, K. Periyarselvam", title: "Primitive detection of Alzheimer’s disease using neuroimaging: A progression model", journal: "Journal of Intelligent & Fuzzy Systems", year: "Aug 2022" },
             { id: 127, author: "P Elayaraja, S Kumarganesh, K Martin Sagayam, Hien Dang, Marc Pomplun", title: "An efficient approach for detection and classification of cancer regions in cervical images using optimization-based CNN", journal: "Journal of Intelligent & Fuzzy Systems", year: "Aug 2022" },
@@ -81,12 +91,12 @@ const InternationalPublicationsPage = () => {
             { id: 6, author: "G.Karthikeyan & A. Jagadeeshwaran", title: "Machine Learning-Based PV Prediction and Fault Analysis System for Real-Time Tracking", journal: "Electric Power Components and Systems", year: "Dec 2023" },
             { id: 7, author: "R.Sundar, G.Vijayakumar, R.Raja et al.", title: "Reduced switch cascaded asymmetrical 27 level inverter-STATCOM with fuzzy logic controller", journal: "Indonesian Journal of Electrical Engineering", year: "Dec 2023" },
             { id: 8, author: "V.Prasanna Moorthy, S.Kalpana Devi et al.", title: "Investigation On Dielectric Properties Of Bio-Transol For Transformer Insulation", journal: "Journal Of Environmental Protection And Ecology", year: "Dec 2023" },
-
+ 
             // 2022-23
             { id: 101, author: "P. Gomathi, C. Muniraj, PS.Periasamy", title: "Micro Calcification Detection in Mammogram Images Using Contiguous CNN Algorithm", journal: "Computer Systems Science & Engineering", year: "2023" },
             { id: 102, author: "V. Jamuna, C. Muniraj PS.Periasamy", title: "Fault detection for PV panels by linear iterative fault diagnosis based on thermal imaging", journal: "Journal of Electrical Engineering & Technology", year: "2023" },
             { id: 103, author: "Kalpanadevi Subramaniam, Suganthi Muthusamy et al.", title: "A high-gain multi-input single-output switched quasi-Zsource converter for renewable integration", journal: "International Journal of Circuit Theory", year: "2022" },
-
+ 
             // 2021-22
             { id: 201, author: "P Govindaraju, C Muniraj, PS Periyasamy", title: "Environmental Impact Of High Voltage Insulator Quality Analysis Using Improved Deep Learning", journal: "Journal of environmental protection and ecology", year: "2022" },
             { id: 202, author: "Gunapriya, D, Muniraj, C, Lakshmi, K", title: "Integrated PCA and FIS approach to mechanical fault classification of induction motor", journal: "Journal of Intelligent & Fuzzy Systems", year: "2022" },
@@ -141,10 +151,110 @@ const InternationalPublicationsPage = () => {
             { id: 2, author: "B. Manjubashini, M .Gopikumaran, S. Jayaprakash, R. Ayyappan, P.J .Esther Rani", title: "Wireless Sensor Networks For Environmental Monitoring: Design And Deployment Strategies", journal: "Educational Administration: Theory and Practice", year: "E-ISSN:2148-2403, P-ISSN: 1300-4832" },
             { id: 3, author: "Ruma Maheshwari, S.Kumarganesh, Shree K V M, A.Gopalakrishnan", title: "Advanced Plasmonic Resonance-enhanced Biosensor for Comprehensive Real-time Detection and Analysis of Deepfake Content", journal: "Plasmonics(Springer)", year: "DOI:10.1007/s11468-024-02407-0" },
             { id: 4, author: "S.Kumarganesh, D Jennifer, B.Ramesh, S.Elango, A.Gopalakrishnan", title: "Image Encryption Using Artificial Intelligence Algorithms for Secure Communication", journal: "International Journal of Electronic Security and Digital Forensics", year: "E-ISSN:1751-9128, P-ISSN: 1751-911X" }
+        ],
+        'computer-science-&-business-systems': [
+            {
+                id: 1,
+                author: "Dr.M.Ramkumar",
+                title: "Identifying cancer risks using spectral subset feature selection based on multi layer perception neural network for premature treatment",
+                journal: "Computer Methods in Biomechanics and Biomedical Engineering",
+                year: "Received 16 Mar 2023, Accepted 17 Sep 2023, Published online: 04 Oct 2023"
+            },
+            {
+                id: 2,
+                author: "Dr.M.Ramkumar",
+                title: "A power Prediction for a high speed VLSI adder circuit using deep genetic Mechanisum",
+                journal: "ICTACT Journal on Micro Electronics",
+                year: "APRIL 2023, VOLUME: 09, ISSUE: 01"
+            },
+            {
+                id: 3,
+                author: "Dr.M.Ramkumar",
+                title: "Improved recognition rate of different material category using convolutional neural networks",
+                journal: "Materials Today: Proceedings",
+                year: "Volume 81- pages 947-950 Publisher Elsevier"
+            },
+            {
+                id: 4,
+                author: "Dr.M.Ramkumar",
+                title: "Smart Mining Framework For High Dense Data Clustering Model In Healthcare Networks",
+                journal: "ICTACT Journal On Data Science And Machine Learning",
+                year: "SEPTEMBER 2023, VOLUME: 04, ISSUE: 04"
+            },
+            {
+                id: 5,
+                author: "Mr.Karthick. R",
+                title: "Power consumption dashboard using iot",
+                journal: "Journal of Harbin Engineering University",
+                year: "Vol. 44 No. 10 (2023): Issue 10"
+            },
+            {
+                id: 6,
+                author: "Mr.Karthick. R",
+                title: "Multisensor Data Fusion Calibration in Sensor Networks based on Air Pollution standards",
+                journal: "Journal Of Computing Technologies*",
+                year: "Acceptance received"
+            },
+            {
+                id: 7,
+                author: "R.V.Sudha",
+                title: "IoT framework for smart poultry with intelligent decision making using fuzzy logic",
+                journal: "Gradvia Review journal",
+                year: "DOI:10.37897.GRJ.2023.V10I12.24.5140917"
+            },
+            {
+                id: 8,
+                author: "C.Nithya",
+                title: "Power consumption dashboard using iot",
+                journal: "Journal of Harbin Engineering University",
+                year: "Vol. 44 No. 10 (2023): Issue 10"
+            },
+            {
+                id: 9,
+                author: "C.Nithya",
+                title: "IoT framework for smart poultry with intelligent decision making using fuzzy logic",
+                journal: "Gradvia Review journal",
+                year: "DOI:10.37897.GRJ.2023.V10I12.24.5140917"
+            },
+            {
+                id: 10,
+                author: "M.Ranjithkumar",
+                title: "Power consumption dashboard using iot",
+                journal: "Journal of Harbin Engineering University",
+                year: "Vol. 44 No. 10 (2023): Issue 10"
+            },
+            {
+                id: 11,
+                author: "M.Gopikumaran",
+                title: "IoT framework for smart poultry with intelligent decision making using fuzzy logic",
+                journal: "Gradvia Review journal",
+                year: "DOI:10.37897.GRJ.2023.V10I12.24.5140917"
+            },
+            {
+                id: 12,
+                author: "M.Gopikumaran",
+                title: "Wireless Sensor Networks For Environmental Monitoring: Design And Deployment Strategies",
+                journal: "Educational Administration: Theory",
+                year: "Acceptance received"
+            },
+            {
+                id: 13,
+                author: "K.REENA",
+                title: "DISEASE DIAGNOSIS FROM MEDICAL IMAGES",
+                journal: "YMER",
+                year: "DECEMBER 2024, VOLUME: 23, ISSUE: 12"
+            }
         ]
     }
 
-    const currentPublications = allPublications[deptName?.toLowerCase()] || []
+    const getDisplayPublications = () => {
+        if (!deptName) return []
+        const decoded = decodeURIComponent(deptName).toLowerCase()
+        const normalized = decoded.replace(/-and-/g, '-&-')
+        return allPublications[normalized] || allPublications[decoded] || allPublications[deptName.toLowerCase()] || []
+    }
+
+    const currentPublications = getDisplayPublications()
 
     const filteredPublications = currentPublications.filter(pub => 
         pub.title.toLowerCase().includes(searchTerm.toLowerCase()) || 

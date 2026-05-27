@@ -16,8 +16,18 @@ const PhdHoldersPage = () => {
     const { deptName } = useParams()
 
     const formatDeptName = (name) => {
-        if (!name) return "Departmentwise"
-        return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+        if (!name) return 'Departmentwise'
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        return decodeURIComponent(name)
+            .split('-')
+            .map((word) => {
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
+            .join(' ')
     }
 
     const allPhdHolders = {
@@ -141,7 +151,7 @@ const PhdHoldersPage = () => {
             {
                 id: 1,
                 name: "Dr.N.Santhiyakumari",
-                topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Artery Images using Intima media thickness measurement",
+                topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Carotid Artery Images using Intima media thickness measurement",
                 year: "2008",
                 university: "Anna University, Chennai",
                 publications: { ij: 48, ic: 52, nj: "-", nc: 49 },
@@ -258,10 +268,171 @@ const PhdHoldersPage = () => {
         ],
         'civil-engineering': [
             { id: 1, name: "Dr.P.Prasath", topic: "Fibre Reinforced Concrete.", year: "2020", university: "Anna University", publications: { ij: 10, ic: 0, nj: 0, nc: 0 }, guided: "-", beingGuided: "-" }
+        ],
+        'computer-science-&-business-systems': [
+            {
+                id: 1,
+                name: "Dr.M.Ramkumar",
+                topic: "Performance measure of statistically significant gene expression data using biclustering algorithm",
+                year: "2021",
+                university: "Sri Satya Sai University of Technology & Medical Sciences, Sehore",
+                publications: { ij: 9, ic: 8, nj: 5, nc: 6 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
+        'science-&-humanities': [
+            {
+                id: 1,
+                name: "Dr.G.Venkatesh",
+                topic: "Guest-host inclusion complexation of azo dyes, sulfanilamides, benzophenones and omeprazole with α- and β-cyclodextrins",
+                year: "2014",
+                university: "Annamalai University",
+                publications: { ij: 29, ic: 5, nj: 4, nc: 14 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 2,
+                name: "Dr.T.Madhumathi",
+                topic: "A new approach on orbit and chaotic sets in neutrosophic topological spaces",
+                year: "2024",
+                university: "Bharathiar University",
+                publications: { ij: 9, ic: 5, nj: "-", nc: 1 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 3,
+                name: "Dr.S.Sathiya",
+                topic: "Fabrication and characterization of anodic coatings on aluminium for the evaluation of corrosion resistance",
+                year: "2023",
+                university: "Bharathiar University",
+                publications: { ij: 4, ic: 3, nj: "-", nc: 3 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 4,
+                name: "Dr. K. Priya Mol",
+                topic: "The Brutality of Civilization and the Struggle for Survival: A Study of Jack London's Select Novels",
+                year: "2022",
+                university: "Manonmaniam Sundaranar University",
+                publications: { ij: 2, ic: 3, nj: 1, nc: 2 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 5,
+                name: "Dr.S.Manivel",
+                topic: "Spectroscopic (FTIR and FT-Raman) Investigation, Molecular Electrostatic Potential, NLO, NBO and HOMO - LUMO Analyses of Some Compouds of Biological and Pharmacetical Importance",
+                year: "2018",
+                university: "Bharathidasan University",
+                publications: { ij: 6, ic: "-", nj: 6, nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 6,
+                name: "Dr.S.Sugan",
+                topic: "Synthesis of Chalcopyrite Ternary Semiconductor Nanomaterials by Chemical Methods and Growth of CuGaS2 Single Crystal by CVT Method and Their Characterization",
+                year: "2015",
+                university: "Anna University",
+                publications: { ij: 5, ic: 3, nj: "-", nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 7,
+                name: "Dr.C.Sambathkumar",
+                topic: "Electrochemical Investigations on Semiconducting Metal Sulfides Nanoparticles by Using Single Source Percursor for Energy Storage Application",
+                year: "2024",
+                university: "Kalasalingam University",
+                publications: { ij: 15, ic: 2, nj: 2, nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 8,
+                name: "Dr.M.Sindhu",
+                topic: "A Study on Some Super magic Labellings of Graphs",
+                year: "2022",
+                university: "Manonmaniam Sundaranar University",
+                publications: { ij: 12, ic: 10, nj: 3, nc: 9 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 9,
+                name: "Dr.K.Geetha",
+                topic: "A Study on Anti L -Fuzzy,Intuitionistic L-Fuzzy,(Q,L) -Fuzzy soft Subhemiring of a Hemiring",
+                year: "2023",
+                university: "Periyar University",
+                publications: { ij: 7, ic: 9, nj: 1, nc: 5 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 10,
+                name: "Dr. G. Sathya Priyanka",
+                topic: "Some Contribution to Stochastic Degradataion Process for Failure Time",
+                year: "2024",
+                university: "Periyar University",
+                publications: { ij: 2, ic: 1, nj: 6, nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 11,
+                name: "Dr.T.Aruna Christy",
+                topic: "Structural and Magnetic properties of electrodeposited Cobalt Ferrous Tungsten Phosphorous Magnetic Thin Films",
+                year: "2024",
+                university: "Anna University",
+                publications: { ij: 4, ic: 1, nj: "-", nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 12,
+                name: "Dr. K. Vinodhkumar",
+                topic: "Aatrupadai Ilakkiyankalil Kathaiyadalkal",
+                year: "2013",
+                university: "Bharathiyar University",
+                publications: { ij: 3, ic: 3, nj: 6, nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 13,
+                name: "Dr. T. K. Santhi",
+                topic: "\"Womanism\" in the Select Works of Alice Walker",
+                year: "2014",
+                university: "Mother Teresa Women's University",
+                publications: { ij: 2, ic: 4, nj: "-", nc: 4 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 14,
+                name: "Dr S.Rekha",
+                topic: "Corrosion Analysis of newly synthesised Benzothiazole derivatives on mild steel in acid medium",
+                year: "2018",
+                university: "Anna University",
+                publications: { ij: 7, ic: 3, nj: "-", nc: 1 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            }
         ]
     }
 
-    const displayHolders = allPhdHolders[deptName?.toLowerCase()] || []
+    const getDisplayHolders = () => {
+        if (!deptName) return []
+        const decoded = decodeURIComponent(deptName).toLowerCase()
+        const normalized = decoded.replace(/-and-/g, '-&-')
+        return allPhdHolders[normalized] || allPhdHolders[decoded] || allPhdHolders[deptName.toLowerCase()] || []
+    }
+
+    const displayHolders = getDisplayHolders()
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

@@ -354,6 +354,8 @@ function App() {
 
           <ScrollToTop />
 
+          <ChatBot />
+
           {/* ─── GLOBAL ADMISSIONS POPUP - COMPACT VERSION ─── */}
           <AnimatePresence>
             {showGlobalPopup && (

@@ -16,8 +16,18 @@ const ResearchFacilitiesPage = () => {
     const { deptName } = useParams()
 
     const formatDeptName = (name) => {
-        if (!name) return "Departmentwise"
-        return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+        if (!name) return 'Departmentwise'
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        return decodeURIComponent(name)
+            .split('-')
+            .map((word) => {
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
+            .join(' ')
     }
 
     const allFacilities = {
@@ -107,7 +117,14 @@ const ResearchFacilitiesPage = () => {
         ]
     }
 
-    const displayFacilities = allFacilities[deptName?.toLowerCase()] || []
+    const getDisplayFacilities = () => {
+        if (!deptName) return []
+        const decoded = decodeURIComponent(deptName).toLowerCase()
+        const normalized = decoded.replace(/-and-/g, '-&-')
+        return allFacilities[normalized] || allFacilities[decoded] || allFacilities[deptName.toLowerCase()] || []
+    }
+
+    const displayFacilities = getDisplayFacilities()
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

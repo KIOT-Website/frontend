@@ -144,6 +144,38 @@ import eceDhineshkumarImage from '../assets/Faculity/ECE/Mr. P. Dhineshkumar.png
 import ecePriyaImage from '../assets/Faculity/ECE/Mrs. P. Priya.png'
 import ecePreethiImage from '../assets/Faculity/ECE/Mrs. A. Preethi.png'
 
+// CSE Faculty Imports
+import cseVKumarImage from '../assets/Faculity/cse/Dr.V.KUMAR.png'
+import cseTKarthikeyanImage from '../assets/Faculity/cse/Mr.T.KARTHIKEYAN.png'
+import cseRKumarImage from '../assets/Faculity/cse/Dr.R.KUMAR.png'
+import cseSSakthivelImage from '../assets/Faculity/cse/Dr.S.SAKTHIVEL.png'
+import cseKRavikumarImage from '../assets/Faculity/cse/Mr.K.RAVIKUMAR.png'
+import csePVijayalakshmiImage from '../assets/Faculity/cse/Dr.P.VIJAYALAKSHMI.png'
+import cseASekarImage from '../assets/Faculity/cse/Mr.A.SEKAR.png'
+import cseKSaranyaImage from '../assets/Faculity/cse/Mrs.K.SARANYA.png'
+import csePMalarvizhiImage from '../assets/Faculity/cse/Mrs.P.MALARVIZHI.png'
+import cseRSaranyaImage from '../assets/Faculity/cse/Mrs.R.SARANYA.png'
+import csePSasikumarImage from '../assets/Faculity/cse/Mr.P.SASIKUMAR.png'
+import cseKBoopathiImage from '../assets/Faculity/cse/Mr.K.BOOPATHI.png'
+import cseGBabuImage from '../assets/Faculity/cse/Mr.G.BABU.png'
+import cseNSubhaImage from '../assets/Faculity/cse/Mrs.N.SUBHA.png'
+import cseRSivaguruImage from '../assets/Faculity/cse/Mr.R.SIVAGURU.png'
+import cseKPraveenImage from '../assets/Faculity/cse/Mr.K.PRAVEEN.png'
+import cseDRamyaImage from '../assets/Faculity/cse/Mrs.D RAMYA.png'
+import cseSDeepaImage from '../assets/Faculity/cse/Mrs.S.DEEPA.png'
+import cseVSathiyapriyaImage from '../assets/Faculity/cse/Mrs.V.SATHIYAPRIYA.png'
+import cseMKSampathImage from '../assets/Faculity/cse/Mr.M K SAMPATH.png'
+import cseUKBalajiSaravanaImage from '../assets/Faculity/cse/Mr.U.K.BALAJI SARAVANAN.png'
+import cseKSudhaImage from '../assets/Faculity/cse/Mrs.K.SUDHA.png'
+import cseRShanmugavalliImage from '../assets/Faculity/cse/Mrs.R.SHANMUGAVALLI.png'
+import cseSGeethaImage from '../assets/Faculity/cse/Mrs.S.GEETHA.png'
+import cseTSrinivasarajaImage from '../assets/Faculity/cse/Mr.T.SRINIVASARAJA.png'
+import cseGDivyaImage from '../assets/Faculity/cse/Mrs.G.DIVYA.png'
+import cseDhineshkumarSImage from '../assets/Faculity/cse/Mr. S.DHINESHKUMAR.png'
+import cseTArunaChristryImage from '../assets/Faculity/cse/Dr.T. ARUNA CHRISTY.png'
+import csePGaneshenImage from '../assets/Faculity/cse/Mr.P.GANESHAN.png'
+import csePavithraGImage from '../assets/Faculity/cse/Mrs.G.PAVITHRA.png'
+
 export const courseData = {
   'be-mechanical': {
     name: 'B.E Mechanical Engineering',
@@ -602,7 +634,8 @@ export const courseData = {
         specialization: 'Computer Networks',
         email: 'directorim@kiot.ac.in',
         publications: 'IJ:14, IC:07, NC:03',
-        rating: 4.9
+        rating: 4.9,
+        image: cseVKumarImage
       },
       { 
         name: 'Mr. T. Karthikeyan', 
@@ -614,7 +647,8 @@ export const courseData = {
         specialization: 'Data Mining & Artificial Intelligence',
         email: 'tkcse@kiot.ac.in',
         publications: 'IJ:11, IC:10, NC:11',
-        rating: 4.8
+        rating: 4.8,
+        image: cseTKarthikeyanImage
       },
       { 
         name: 'Dr. R. Kumar', 
@@ -627,7 +661,8 @@ export const courseData = {
         email: 'rkcse@kiot.ac.in',
         publications: 'IJ:15, NJ:1, IC:14, NC:2, BC:2',
         researchSupervision: 'Supervising: 04',
-        rating: 4.9
+        rating: 4.9,
+        image: cseRKumarImage
       },
       { 
         name: 'Dr. M. Sakthivel', 
@@ -651,7 +686,8 @@ export const courseData = {
         specialization: 'Data Mining and Image Mining',
         email: 'sscse@kiot.ac.in',
         publications: 'IJ: 7, P: 2, IC: 6, NC: 3',
-        rating: 4.8
+        rating: 4.8,
+        image: cseSSakthivelImage
       },
       { 
         name: 'Mr. K. Ravikumar', 
@@ -663,7 +699,8 @@ export const courseData = {
         specialization: 'Computer Networks',
         email: 'krkcse@kiot.ac.in',
         publications: 'IJ:3, IC:5, NC:7',
-        rating: 4.7
+        rating: 4.7,
+        image: cseKRavikumarImage
       },
       { 
         name: 'Dr. I. Rajesh', 
@@ -688,7 +725,8 @@ export const courseData = {
         email: 'pvcse@kiot.ac.in',
         publications: 'IJ:16, IC:12, NC:3',
         researchSupervision: 'Supervising: 04',
-        rating: 4.8
+        rating: 4.8,
+        image: csePVijayalakshmiImage
       },
       { 
         name: 'Mr. M. Senthilkumar', 
@@ -712,7 +750,8 @@ export const courseData = {
         specialization: 'Mobile Computing, WSN',
         email: 'ascse@kiot.ac.in',
         publications: 'IJ:1, IC:2, NC:1',
-        rating: 4.7
+        rating: 4.7,
+        image: cseASekarImage
       },
       { 
         name: 'Mrs. K. Saranya', 
@@ -724,7 +763,8 @@ export const courseData = {
         specialization: 'Data Structures, Compiler Design',
         email: 'kscse@kiot.ac.in',
         publications: 'IJ:4, IC:5, NC:1',
-        rating: 4.6
+        rating: 4.6,
+        image: cseKSaranyaImage
       },
       { 
         name: 'Dr. P. Malarvizhi', 
@@ -736,7 +776,8 @@ export const courseData = {
         specialization: 'Wireless Sensor Networks',
         email: 'pmcse@kiot.ac.in',
         publications: 'IJ:8, IC:8, NC:10',
-        rating: 4.7
+        rating: 4.7,
+        image: csePMalarvizhiImage
       },
       { 
         name: 'Mrs. R. Saranya', 
@@ -748,7 +789,8 @@ export const courseData = {
         specialization: 'Data Structure, Network Security',
         email: 'rscse@kiot.ac.in',
         publications: 'IJ:4, IC:4, NC:3',
-        rating: 4.6
+        rating: 4.6,
+        image: cseRSaranyaImage
       },
       { 
         name: 'Mr. P. Nareshkumar', 
@@ -762,20 +804,20 @@ export const courseData = {
         publications: 'IJ:1, NJ:5, IC:3, NC:8',
         rating: 4.7
       },
-      { name: 'Mr. P. Sasikumar', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '13.1 Years', specialization: 'Image Mining', email: 'psacse@kiot.ac.in', publications: 'IJ:2, IC:5, NC:5', rating: 4.6 },
-      { name: 'Mr. K. Boopathi', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '12.8 Years', specialization: 'Networks, Data Structures', email: 'kbcse@kiot.ac.in', publications: 'IJ:1, IC:7, NC:1', rating: 4.6 },
-      { name: 'Mr. G. Babu', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: '9.10 Years', specialization: 'Data Structures', email: 'gbcse@kiot.ac.in', publications: 'IJ:8, NJ:3, IC:7, NC:2', rating: 4.7 },
-      { name: 'Mrs. N. Subha', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E, (Ph.D)', association: 'Regular', experience: '8.11 Years', specialization: 'Data Science', email: 'nscse@kiot.ac.in', publications: 'IJ:5, IC:5, NC:1', rating: 4.6 },
-      { name: 'Mr. R. Sivaguru', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '8.11 Years, Research: 04', specialization: 'Computer Networks, IoT', email: 'rsgcse@kiot.ac.in', publications: 'IJ:15, IC:17, NC:4', rating: 4.7 },
-      { name: 'Mr. K. Praveen', designation: 'Assistant Professor', doj: '29.03.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '4.3 Years', specialization: 'Object Oriented Programming', email: 'kpcse@kiot.ac.in', publications: 'NJ:3, NC:4', rating: 4.5 },
-      { name: 'Mrs. D. Ramya', designation: 'Assistant Professor', doj: '27.06.2022', qualification: 'B.Tech., M.E., (Ph.D)', association: 'Regular', experience: '6.10 Years', specialization: 'Networks', email: 'drcse@kiot.ac.in', publications: 'IJ:4, IC:2, NC:4', rating: 4.6 },
-      { name: 'Mr. P. Ganeshen', designation: 'Assistant Professor', doj: '15.07.2022', qualification: 'B.Tech, M.E', association: 'Regular', experience: '14.10 Years', specialization: 'Networking & Cloud computing', email: 'pgncse@kiot.ac.in', publications: 'IJ:6, NJ:6, IC:4, NC:8', rating: 4.7 },
-      { name: 'Mrs. S. Deepa', designation: 'Assistant Professor', doj: '04.08.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: '2.11 Years', specialization: 'Python, Networks', email: 'sdcse@kiot.ac.in', publications: 'IJ:1, IC:5, NC:1', rating: 4.5 },
+      { name: 'Mr. P. Sasikumar', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '13.1 Years', specialization: 'Image Mining', email: 'psacse@kiot.ac.in', publications: 'IJ:2, IC:5, NC:5', rating: 4.6, image: csePSasikumarImage },
+      { name: 'Mr. K. Boopathi', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '12.8 Years', specialization: 'Networks, Data Structures', email: 'kbcse@kiot.ac.in', publications: 'IJ:1, IC:7, NC:1', rating: 4.6, image: cseKBoopathiImage },
+      { name: 'Mr. G. Babu', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: '9.10 Years', specialization: 'Data Structures', email: 'gbcse@kiot.ac.in', publications: 'IJ:8, NJ:3, IC:7, NC:2', rating: 4.7, image: cseGBabuImage },
+      { name: 'Mrs. N. Subha', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E, (Ph.D)', association: 'Regular', experience: '8.11 Years', specialization: 'Data Science', email: 'nscse@kiot.ac.in', publications: 'IJ:5, IC:5, NC:1', rating: 4.6, image: cseNSubhaImage },
+      { name: 'Mr. R. Sivaguru', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '8.11 Years, Research: 04', specialization: 'Computer Networks, IoT', email: 'rsgcse@kiot.ac.in', publications: 'IJ:15, IC:17, NC:4', rating: 4.7, image: cseRSivaguruImage },
+      { name: 'Mr. K. Praveen', designation: 'Assistant Professor', doj: '29.03.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '4.3 Years', specialization: 'Object Oriented Programming', email: 'kpcse@kiot.ac.in', publications: 'NJ:3, NC:4', rating: 4.5, image: cseKPraveenImage },
+      { name: 'Mrs. D. Ramya', designation: 'Assistant Professor', doj: '27.06.2022', qualification: 'B.Tech., M.E., (Ph.D)', association: 'Regular', experience: '6.10 Years', specialization: 'Networks', email: 'drcse@kiot.ac.in', publications: 'IJ:4, IC:2, NC:4', rating: 4.6, image: cseDRamyaImage },
+      { name: 'Mr. P. Ganeshen', designation: 'Assistant Professor', doj: '15.07.2022', qualification: 'B.Tech, M.E', association: 'Regular', experience: '14.10 Years', specialization: 'Networking & Cloud computing', email: 'pgncse@kiot.ac.in', publications: 'IJ:6, NJ:6, IC:4, NC:8', rating: 4.7, image: csePGaneshenImage },
+      { name: 'Mrs. S. Deepa', designation: 'Assistant Professor', doj: '04.08.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: '2.11 Years', specialization: 'Python, Networks', email: 'sdcse@kiot.ac.in', publications: 'IJ:1, IC:5, NC:1', rating: 4.5, image: cseSDeepaImage },
       { name: 'Dr. M. Lakshaga Jyothi', designation: 'Assistant Professor', doj: '22.08.2022', qualification: 'B.E., M.E., Ph.D', association: 'Regular', experience: '2.10 Years, Research: 5', specialization: 'IoT, Deep Learning', email: 'mljcse@kiot.ac.in', publications: 'IJ:3, NJ:1, IC:5, NC:2', rating: 4.7 },
-      { name: 'Mrs. V. Sathiyapriya', designation: 'Assistant Professor', doj: '29.08.2022', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '7.6 Years', specialization: 'OOPS & Data Structures', email: 'vspcse@kiot.ac.in', publications: 'IJ:6, IC:5, NC:2', rating: 4.6 },
-      { name: 'Mr. M.K. Sampath', designation: 'Assistant Professor', doj: '08.06.2023', qualification: 'B.E., M.E', association: 'Regular', experience: '10.2 Years', specialization: 'Human Computer Interaction', email: 'mkscse@kiot.ac.in', publications: 'IJ:3, IC:1, NC:2', rating: 4.6 },
-      { name: 'Mr. U.K. Balaji Saravana', designation: 'Assistant Professor', doj: '09.11.2024', qualification: 'B.E, M.E', association: 'Regular', experience: '16.8 Years', specialization: 'Data Science, Data Mining', email: 'ukbscse@kiot.ac.in', publications: 'IJ:2, IC:6', rating: 4.7 },
-      { name: 'Mrs. Pavithra G', designation: 'Assistant Professor', doj: '02.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: '11 Years', specialization: 'Networks, OOPS', email: 'gpcse@kiot.ac.in', publications: 'IJ:2, IC:1, NC:3', rating: 4.6 },
+      { name: 'Mrs. V. Sathiyapriya', designation: 'Assistant Professor', doj: '29.08.2022', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '7.6 Years', specialization: 'OOPS & Data Structures', email: 'vspcse@kiot.ac.in', publications: 'IJ:6, IC:5, NC:2', rating: 4.6, image: cseVSathiyapriyaImage },
+      { name: 'Mr. M.K. Sampath', designation: 'Assistant Professor', doj: '08.06.2023', qualification: 'B.E., M.E', association: 'Regular', experience: '10.2 Years', specialization: 'Human Computer Interaction', email: 'mkscse@kiot.ac.in', publications: 'IJ:3, IC:1, NC:2', rating: 4.6, image: cseMKSampathImage },
+      { name: 'Mr. U.K. Balaji Saravana', designation: 'Assistant Professor', doj: '09.11.2024', qualification: 'B.E, M.E', association: 'Regular', experience: '16.8 Years', specialization: 'Data Science, Data Mining', email: 'ukbscse@kiot.ac.in', publications: 'IJ:2, IC:6', rating: 4.7, image: cseUKBalajiSaravanaImage },
+      { name: 'Mrs. Pavithra G', designation: 'Assistant Professor', doj: '02.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: '11 Years', specialization: 'Networks, OOPS', email: 'gpcse@kiot.ac.in', publications: 'IJ:2, IC:1, NC:3', rating: 4.6, image: csePavithraGImage },
       // Professors of Practice
       { name: 'Mr. Ezhilavan B', designation: 'Associate POP', doj: '12.07.2024', qualification: 'B.E. CSE', experience: '14.10 Years', rating: 4.8 },
       { name: 'Mrs. Gayathri Devi M', designation: 'Associate POP', doj: '10.07.2024', qualification: 'B.Tech. M.E. CSE', experience: '11.10 Years', rating: 4.8 },
@@ -784,13 +826,13 @@ export const courseData = {
       { name: 'Mr. SADEESHKUMAR S', designation: 'Associate POP', qualification: 'B.Tech IT, B.E.', experience: '16.10 Years', rating: 4.7 },
       { name: 'Mr. VENKATACHALAM RAMAKRISHNAN', designation: 'Associate POP', doj: '05.07.2024', qualification: 'B.Tech. IT', experience: '21.10 Years', rating: 4.9 },
       // Science & Humanities Faculty
-      { name: 'Prof. K. Sudha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '19.11 Years', specialization: 'Differential Equations', email: 'sudharmsc@gmail.com', rating: 4.8, category: 'S&H' },
-      { name: 'Prof. R. Shanmugavalli', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '11.8 Years', specialization: 'Differential Equations', email: 'sangeesweety26@gmail.com', rating: 4.6, category: 'S&H' },
-      { name: 'Prof. S. Geetha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: '13.02 Years', specialization: 'Differential Equations', email: 'sgeetha.maths@gmail.com', rating: 4.7, category: 'S&H' },
-      { name: 'Prof. T. Srinivasaraja', designation: 'Assistant Professor', qualification: 'M.A., B.Ed., M.Phil', experience: '9.3 Years', specialization: 'British Literature', email: 'tseng@kiot.ac.in', publications: 'IJ:02, IC:03, NC:03', rating: 4.6, category: 'S&H' },
-      { name: 'Prof. G. Divya', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil', experience: '7.2 Years', specialization: 'Physics (Spectroscopy)', email: 'gdphy@kiot.ac.in', rating: 4.6, category: 'S&H' },
-      { name: 'Prof. Dr. T. Aruna Christry', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil., Ph.D', experience: '13 Months', specialization: 'Thin Film Technology', email: 'tacphy@kiot.ac.in', publications: 'IJ:3, IC:1', rating: 4.7, category: 'S&H' },
-      { name: 'Dhineshkumar S', designation: 'Assistant Professor (English)', doj: '02.05.2025', qualification: 'M.A., B.Ed., UGC-NET.', experience: '2 Months', specialization: 'English Literature', email: 'sdkeng@kiot.ac.in', rating: 4.5, category: 'S&H' },
+      { name: 'Prof. K. Sudha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '19.11 Years', specialization: 'Differential Equations', email: 'sudharmsc@gmail.com', rating: 4.8, category: 'S&H', image: cseKSudhaImage },
+      { name: 'Prof. R. Shanmugavalli', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '11.8 Years', specialization: 'Differential Equations', email: 'sangeesweety26@gmail.com', rating: 4.6, category: 'S&H', image: cseRShanmugavalliImage },
+      { name: 'Prof. S. Geetha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: '13.02 Years', specialization: 'Differential Equations', email: 'sgeetha.maths@gmail.com', rating: 4.7, category: 'S&H', image: cseSGeethaImage },
+      { name: 'Prof. T. Srinivasaraja', designation: 'Assistant Professor', qualification: 'M.A., B.Ed., M.Phil', experience: '9.3 Years', specialization: 'British Literature', email: 'tseng@kiot.ac.in', publications: 'IJ:02, IC:03, NC:03', rating: 4.6, category: 'S&H', image: cseTSrinivasarajaImage },
+      { name: 'Prof. G. Divya', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil', experience: '7.2 Years', specialization: 'Physics (Spectroscopy)', email: 'gdphy@kiot.ac.in', rating: 4.6, category: 'S&H', image: cseGDivyaImage },
+      { name: 'Prof. Dr. T. Aruna Christry', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil., Ph.D', experience: '13 Months', specialization: 'Thin Film Technology', email: 'tacphy@kiot.ac.in', publications: 'IJ:3, IC:1', rating: 4.7, category: 'S&H', image: cseTArunaChristryImage },
+      { name: 'Dhineshkumar S', designation: 'Assistant Professor (English)', doj: '02.05.2025', qualification: 'M.A., B.Ed., UGC-NET.', experience: '2 Months', specialization: 'English Literature', email: 'sdkeng@kiot.ac.in', rating: 4.5, category: 'S&H', image: cseDhineshkumarSImage },
       { name: 'P.R. Karthik', designation: 'Assistant Professor (Mathematics)', doj: '26.11.2021', qualification: 'M.Sc., M.Phil.', experience: '8.10 Years', specialization: 'Partial Differential Equations', email: 'prkmat@kiot.ac.in', rating: 4.6, category: 'S&H' }
     ],
     labs: [
@@ -2881,62 +2923,63 @@ export const courseData = {
     ],
     faculty: [
       // ── Mathematics ──
-      { name: 'Prof. C. Palanivelu', designation: 'Professor & Head', qualification: 'M.Sc., M.Phil., B.Ed., (Ph.D)', experience: 'Teaching – 28.3 Years', specialization: 'Graph Theory', email: 'hod.snh@kiot.ac.in', publications: 'NC: 7, IC: 9', rating: 4.9, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Dr. R. Malarvizhi', designation: 'Associate Professor', qualification: 'M.Sc., M.Phil., B.Ed., Ph.D.', experience: 'Teaching – 16.6 Years, Research – 8 Years', specialization: 'Intuitionistic Fuzzy Topology', email: 'malarvizhimaths@gmail.com', publications: 'NC: 01, IC: 05', rating: 4.8, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. M. Prasath', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 13.5 Years', specialization: 'Bitopology Space, Coding Theory', email: 'ram.rp06@gmail.com', publications: '-', rating: 4.6, image: eeePrasathMImage, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. K. Sudha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 14.9 Years', specialization: 'Differential Calculus', email: 'sudha6853@gmail.com', publications: '-', rating: 4.7, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. P. Madheswaran', designation: 'Assistant Professor', qualification: 'MSc., B.Ed., DME, MISTE, (M.Phil.)', experience: 'Teaching – 15.6 Years, Research – 5.4 Years', specialization: 'Differential Equations', email: 'madheswaran72@yahoo.com', publications: '-', rating: 4.7, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. J. Saritha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 9.3 Years', specialization: 'Algebra', email: 'jsmat@kiot.ac.in', publications: 'IC: 01', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. S. Ramesh', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 8.6 Years', specialization: 'Differential Equations', email: 'ramesh_maths@yahoo.com', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. B. Rajeswari', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 6.3 Years', specialization: 'Boolean Algebra', email: 'cuterajii83@gmail.com', publications: '-', rating: 4.6, image: eeeRajeswariImage, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. S. Narmadha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 5.1 Years', specialization: 'Differential Equations', email: 'ssnarmadha@yahoo.co.in', publications: '-', rating: 4.5, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. R. Sathybama', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 3.4 Years', specialization: 'Differential Equations', email: 'rsathyabama88@gmail.com', publications: '-', rating: 4.5, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. S. Geetha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 8.9 Years', specialization: 'Differential Equations', email: 'sgeetha.maths@gmail.com', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. T. Ranjini', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 8.0 Years', specialization: 'Graph Theory', email: 'ranjini.rgp22@gmail.com', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. R. Kavitha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 1.7 Years', specialization: 'Differential Equations, Graph Theory', email: 'kiotkavitha@gmail.com', publications: '-', rating: 4.5, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. R. Shanmugavalli', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: 'Teaching – 6.6 Years', specialization: 'Differential Equations', email: 'sangeesweety26@gmail.com', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. A. Rajalakshmi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 3.9 Years', specialization: 'Differential Equations', email: 'rajalakshmi.gasc89@gmail.com', publications: '-', rating: 4.5, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. V. Nandhini', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 1.4 Years', specialization: 'Differential Equations', email: 'nandhinivmphil@gmail.com', publications: '-', rating: 4.5, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. R. Sudha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: 'Teaching – 6.2 Years', specialization: 'Differential Equations', email: 'sudharmsc@gmail.com', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. T. Raja', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 8.1 Years', specialization: 'Fluid Dynamics', email: 'trjmat@kiot.ac.in', publications: 'IJ: 01, NC: 01', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. D. Abraham Vianny', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: 'Teaching – 3.5 Years', specialization: 'Differential Equations, Difference Equations', email: 'abrahamvianny1988@gmail.com', publications: '-', rating: 4.5, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. N. Neela', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., (Ph.D)', experience: 'Teaching – 4.5 Years, Research – 5 Years', specialization: 'Graph Theory', email: 'nnamaths@gmail.com', publications: 'IJ: 2, IC: 3', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. R. Sathyabama', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., (Ph.D)', experience: 'Teaching – 6.2 Years', specialization: 'Differential Equations', email: 'rsmat@kiot.ac.in', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. U. Balamurugan', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., (Ph.D)', experience: 'Teaching – 5.1 Years', specialization: 'Graph Theory', email: 'ubmat@kiot.ac.in', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. K. Banupriya', designation: 'Assistant Professor', qualification: 'M.Sc., B.Ed., M.Phil.', experience: 'Teaching – 7.2 Years', specialization: 'Graph Theory', email: 'kbmat@kiot.ac.in', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
-      { name: 'Prof. S. Ramkumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed., (Ph.D.)', experience: 'Teaching – 0.1 Months', specialization: 'Fuzzy Algebra', email: 'srkmat@kiot.ac.in', publications: 'IJ: 08, IC: 04, NC: 03', rating: 4.7, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.K Sudha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '19.11 Years', specialization: 'Differential Equations', email: 'sudharmsc@gmail.com', publications: '-', rating: 4.8, image: cseKSudhaImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.S Geetha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: '13.02 Years', specialization: 'Differential Equations', email: 'sgeetha.maths@gmail.com', publications: '-', rating: 4.7, image: cseSGeethaImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.P R Karthi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: '8.10 Years', specialization: 'Partial Differential Equations', email: 'prkmat@kiot.ac.in', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.R Shanmugavalli', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '11.8 Years', specialization: 'Differential Equations', email: 'sangeesweety26@gmail.com', publications: '-', rating: 4.6, image: cseRShanmugavalliImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.J Saravanan', designation: 'Assistant Professor', qualification: 'M.sc., M.Phil., (Maths)', experience: 'Teaching: 9 Yrs', specialization: 'Linear Algebra', email: 'jsamat@kiot.ac.in', publications: 'Nil', rating: 4.5, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.P Madheswaran', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., B.Ed., M.Phil., MISTE., D.M.E.', experience: 'Teaching: 21.5 Years, Industry: 7 Years', specialization: 'Ordinary Differential Equations', email: 'pmmat@kiot.ac.in', publications: '-', rating: 4.8, image: madheswaranImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.S Saranya', designation: 'Assistant Professor', qualification: 'M.sc., M.Phil.', experience: 'Teaching: 12 Years', specialization: 'Differential Equation', email: 'ssmat@kiot.ac.in', publications: 'NIL', rating: 4.6, image: eceSaranyaImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.P.Priya', designation: 'Assistant Professor', qualification: 'M.Sc., M.Ed., M.Phil.', experience: 'Teaching: 10 Years', specialization: 'Topology, Diffrential Equations', email: 'ppmat@kiot.ac.in', publications: 'NIL', rating: 4.6, image: ecePriyaImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.T Raja', designation: 'Assistant Professor', qualification: 'B.Sc (maths)., M.Sc(Maths)', experience: 'Teaching: 13 yrs', specialization: 'Fluid Dynamics, Partial Differential Equation', email: 'trjmat@kiot.ac.in', publications: 'IJ: 01 NC: 01', rating: 4.7, image: eceRajaImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Dr.M.Sindhu', designation: 'Associate Professor', qualification: 'M.Sc., M.Phil.,Ph.D', experience: 'Teaching: 8.5 Research: 4', specialization: 'Graph Theory', email: 'msmat@kiot.ac.in', publications: 'IJ:12,IC:10,NC:08', rating: 4.8, image: sindhuImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.U.Balamurugan', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching - 11.2 Years', specialization: 'Mathematics', email: 'ubmat@kiot.ac.in', publications: 'N/A', rating: 4.5, image: balamuruganImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.B.Ganeshkumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'Mathematics Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.B.Rajeswari', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching: 16.4 Yrs.', specialization: 'Boolean Algebra', email: 'brmat@kiot.ac.in', publications: 'NC: 0', rating: 4.8, image: eeeRajeswariImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.M.Prasath', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching: 17.6 Yrs.', specialization: 'Operation Research', email: 'mpmat@kiot.ac.in', publications: 'NC: 01', rating: 4.8, image: eeePrasathMImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.T.Ranjani', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'Mathematics Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.J.Saritha', designation: 'Assistant Professor', qualification: 'M.sc., M.Phil., (Maths)', experience: 'Teaching: 14 Yrs', specialization: 'Algebra', email: 'jsmat@kiot.ac.in', publications: 'Nil', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mrs.V.Gomathi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: '8 Yrs 4 Months', specialization: 'Differential Equations', email: 'gomathivvs@gmail.com', publications: '-', rating: 4.6, image: aidsGomathiShImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Dr.G.Sathiyapriyanka', designation: 'Assistant Professor', qualification: 'M.Sc., Ph.D.', experience: 'Teaching – 5 Years', specialization: 'Mathematics Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Dr.T.Madhumathi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., Ph.D.', experience: 'Teaching: 1.7 Years', specialization: 'Topology', email: 'tmmat@kiot.ac.in', publications: 'IJ: 9 NJ: - IC: 5 NC:1', rating: 4.8, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Dr.K.Geetha', designation: 'Assistant Professor', qualification: 'M.SC., M.Phil.,Ph.D.', experience: 'Teaching: 12 years. Research:4 years', specialization: 'Fuzzy Algebra', email: 'N/A', publications: 'IJ: 6 , NJ: 2 IC: 9 NC', rating: 4.7, image: geethaImage, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.K.Manikandan', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'Mathematics Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Mathematics', category: 'S&H' },
+      { name: 'Mr.S.Ramesh', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching: 11 Years 09 Months', specialization: 'Differential Equations', email: 'srmat@kiot.ac.in', publications: '-', rating: 4.7, subject: 'Mathematics', category: 'S&H' },
       // ── English ──
-      { name: 'Dr. T.K. Santhi', designation: 'Associate Professor', qualification: 'BA(Eng)., MA(Eng)., M.Phil(Eng), Ph.D(AAL)', experience: 'Teaching – 19.3 Years, Research – 7 Years', specialization: 'Indian Writing in English, Afro-American Literature', email: 'tkseng@kiot.ac.in', publications: 'IJ: 02, IC: 02, NC: 04', rating: 4.9, subject: 'English', category: 'S&H' },
-      { name: 'Prof. K. Anand Kumar', designation: 'Associate Professor', qualification: 'M.A., M.Phil., (Ph.D)', experience: 'Teaching – 13.5 Years, Research – 3 Years', specialization: 'Indian Writing in English', email: 'anand.peaceful@gmail.com', publications: 'IJ: 1, IC: 1, NC: 2', rating: 4.8, subject: 'English', category: 'S&H' },
-      { name: 'Prof. S.S. Uma Sundara Sood', designation: 'Assistant Professor', qualification: 'M.A., M.Phil., B.Ed.', experience: 'Teaching – 8.4 Years', specialization: 'English Language Teaching', email: 'ssumasundarasood@gmail.com', publications: '-', rating: 4.6, subject: 'English', category: 'S&H' },
-      { name: 'Prof. A. Dheepika', designation: 'Assistant Professor', qualification: 'M.A., M.Phil., B.Ed.', experience: 'Teaching – 4.5 Years', specialization: 'English Language Teaching', email: 'adeng@kiot.ac.in', publications: '-', rating: 4.6, subject: 'English', category: 'S&H' },
-      { name: 'Prof. S. Prabakaran', designation: 'Assistant Professor', qualification: 'M.A.', experience: 'Teaching – 3.5 Years', specialization: 'Indian Writing in English', email: 'prabakar.96@gmail.com', publications: '-', rating: 4.5, subject: 'English', category: 'S&H' },
-      { name: 'Prof. K.V. Manjula', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching – 1.3 Years', specialization: 'Feminine Literature', email: 'kvmeng@kiot.ac.in', publications: 'IC: 01, NC: 02', rating: 4.6, image: eeeManjulaImage, subject: 'English', category: 'S&H' },
-      { name: 'Prof. T. Srinivasaraja', designation: 'Assistant Professor', qualification: 'M.A., B.Ed., M.Phil', experience: 'Teaching – 5 Years, Research – 2 Years', specialization: 'British Literature, Post-Colonial Literature', email: 'tseng@kiot.ac.in', publications: 'IJ: 02, IC: 03, NC: 03', rating: 4.7, subject: 'English', category: 'S&H' },
-      { name: 'Prof. Kaalijoothi S.J.', designation: 'Assistant Professor', qualification: 'M.A., M.Phil., B.Ed', experience: 'Teaching – 5 Years', specialization: 'English', email: 'sjkeng@kiot.ac.in', publications: '-', rating: 4.5, subject: 'English', category: 'S&H' },
-      { name: 'Prof. S. Lavanya', designation: 'Assistant Professor', qualification: 'M.A.', experience: 'Teaching – 1.6 Years', specialization: 'Indian Writing in English, British Literature', email: 'lavanyasiddhan04@gmail.com', publications: '-', rating: 4.5, subject: 'English', category: 'S&H' },
-      { name: 'Prof. B. Sowndarya', designation: 'Assistant Professor', qualification: 'M.A.', experience: 'Teaching – 1.6 Years', specialization: 'Indian Writing in English', email: 'kanagaganga@rediffmail.com', publications: '-', rating: 4.5, subject: 'English', category: 'S&H' },
-      { name: 'Prof. E. Dhivya', designation: 'Assistant Professor', qualification: 'M.A.', experience: 'Teaching – 1.6 Years', specialization: 'Afro American Literature, Dalit Literature', email: 'dhivya0804@gmail.com', publications: '-', rating: 4.5, subject: 'English', category: 'S&H' },
+      { name: 'Dr.T.K.Santhi', designation: 'Associate Professor', qualification: 'BA(Eng)., MA(Eng)., M. Phil (Eng) Ph.D(AAL)', experience: 'Teaching: 23 Years Research: 7 Years', specialization: 'Indian writing in English, Afro- American Lit & ELT', email: 'tkseng@kiot.ac.in', publications: 'IJ: 02 IC: 04 NC: 04', rating: 5.0, image: eceSanthiImage, subject: 'English', category: 'S&H' },
+      { name: 'Dr.T.Priya Mol', designation: 'Assistant Professor', qualification: 'M.A., Ph.D.', experience: 'Teaching – 5 Years', specialization: 'English Literature', email: 'N/A', publications: '-', rating: 4.6, subject: 'English', category: 'S&H' },
+      { name: 'Mr.K.Anand Kumar', designation: 'Assistant Professor', qualification: 'M.A., M.PHIL', experience: 'Teaching : 20 years', specialization: 'ELT, Phonetics', email: 'kakeng@kiot.ac.in', publications: 'IJ - 2', rating: 4.8, image: anandKumarImage, subject: 'English', category: 'S&H' },
+      { name: 'Mrs.K.V.Manjula', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching: 7.0 Yrs.', specialization: 'Feminine Literature', email: 'kvmeng@kiot.ac.in', publications: 'NC: 02', rating: 4.7, image: eeeManjulaImage, subject: 'English', category: 'S&H' },
+      { name: 'Mr.T.Srinivasaraja', designation: 'Assistant Professor', qualification: 'M.A., B.Ed., M.Phil', experience: '9.3 Years', specialization: 'British Literature', email: 'tseng@kiot.ac.in', publications: 'IJ:02, IC:03, NC:03', rating: 4.6, image: cseTSrinivasarajaImage, subject: 'English', category: 'S&H' },
+      { name: 'Mrs.A.Dheepika', designation: 'Assistant Professor', qualification: 'B.A., M.A., M.Phil., B.Ed.', experience: '11 Years', specialization: 'English Language Teaching', email: 'adeng@kiot.ac.in', publications: '-', rating: 4.7, image: dheepikaImage, subject: 'English', category: 'S&H' },
+      { name: 'Mr.T.Venkatachalam', designation: 'Assistant Professor', qualification: 'M.A., M.Phil., B.Ed.', experience: '12 Yrs 6 Months', specialization: 'Language and Linguistics', email: 'venkatachalamteng@kiot.ac.in', publications: 'IC:01', rating: 4.7, image: aidsVenkatachalamImage, subject: 'English', category: 'S&H' },
+      { name: 'Mr.K.Karthick', designation: 'Assistant Professor', qualification: 'M.A., B.Ed., M.Phil.(English)', experience: 'Teaching: 9 Yrs', specialization: 'English Literature', email: 'kkit@kiot.ac.in', publications: 'IJ:1, IC:3, NC:1', rating: 4.5, subject: 'English', category: 'S&H' },
+      { name: 'Mr.S.Dineshkumar', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'English Literature', email: 'N/A', publications: '-', rating: 4.6, subject: 'English', category: 'S&H' },
+      { name: 'Mrs.S.J.Kaalijoothi', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching - 9 Years', specialization: 'English', email: 'sjkeng@kiot.ac.in', publications: 'N/A', rating: 4.6, image: kaalijoothiImage, subject: 'English', category: 'S&H' },
+      { name: 'Mrs. Hemalatha Madhu', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'English Literature', email: 'N/A', publications: '-', rating: 4.6, subject: 'English', category: 'S&H' },
       // ── Physics ──
-      { name: 'Prof. S. Sasi Kumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., (Ph.D)', experience: 'Teaching – 11.1 Years', specialization: 'Crystal Growth, Spectroscopy', email: 'ssphy@kiot.ac.in', publications: 'NC: 2', rating: 4.7, subject: 'Physics', category: 'S&H' },
-      { name: 'Prof. B. Indumathi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 10.1 Years', specialization: 'Laser', email: 'biphy@kiot.ac.in', publications: '-', rating: 4.6, subject: 'Physics', category: 'S&H' },
-      { name: 'Prof. P. Shyamala Devi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 8.5 Years', specialization: 'Spectroscopy', email: 'psphy@kiot.ac.in', publications: '-', rating: 4.6, subject: 'Physics', category: 'S&H' },
-      { name: 'Prof. V.S. Saranyaa', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 4.6 Years', specialization: 'Quantum Mechanics', email: 'saranphysics@gmail.com', publications: '-', rating: 4.6, subject: 'Physics', category: 'S&H' },
-      { name: 'Prof. K. Prema', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 9.1 Years', specialization: 'Crystal Growth', email: 'kpphy@kiot.ac.in', publications: '-', rating: 4.6, subject: 'Physics', category: 'S&H' },
-      { name: 'Prof. N. Chithralekha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., (Ph.D)', experience: 'Teaching – 13.2 Years', specialization: 'Ultrasonics and Spectroscopy', email: 'ncphy@kiot.ac.in', publications: 'IJ: 07, NJ: 1, IC: 03, NC: 02', rating: 4.8, subject: 'Physics', category: 'S&H' },
-      { name: 'Dr. M. Shankar', designation: 'Assistant Professor', qualification: 'M.Sc., Ph.D.', experience: 'Teaching – 6 Months, Research – 5 Years', specialization: 'Crystal Growth, Nonlinear Optics', email: 'msphy@kiot.ac.in', publications: 'IJ: 07, IC: 03, NC: 03', rating: 4.7, subject: 'Physics', category: 'S&H' },
+      { name: 'Dr.S.Sugan', designation: 'Associate Professor', qualification: 'M.Sc., Ph.D.', experience: 'Teaching – 5 Years', specialization: 'Physics Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Physics', category: 'S&H' },
+      { name: 'Dr.C.Sambathkumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., Ph.D.', experience: 'Research: 6 Years', specialization: 'Nanomaterials for Energy Storage Application', email: 'sambath7593@gmail.com', publications: 'IJ: 15, IC: 02, NJ: 02', rating: 4.8, image: sambathkumarImage, subject: 'Physics', category: 'S&H' },
+      { name: 'Mr.S.Sasikumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching - 17 Years', specialization: 'Physics', email: 'ssphy@kiot.ac.in', publications: 'N/A', rating: 4.5, image: sasikumarImage, subject: 'Physics', category: 'S&H' },
+      { name: 'Mrs.B.Indumathi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching : 16.10 Years', specialization: 'LASER', email: 'biphy@kiot.ac.in', publications: '-', rating: 4.7, image: indumathiImage, subject: 'Physics', category: 'S&H' },
+      { name: 'Mrs.P.Shyamala Devi', designation: 'Assistant Professor', qualification: 'M.sc., M.Phil., (Physics)', experience: 'Teaching: 14.3 Yrs', specialization: 'Spectroscopy, Ultrasonics', email: 'psphy@kiot.ac.in', publications: 'Nil', rating: 4.6, subject: 'Physics', category: 'S&H' },
+      { name: 'Mrs.G.Divya', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil', experience: '7.2 Years', specialization: 'Physics (Spectroscopy)', email: 'gdphy@kiot.ac.in', publications: '-', rating: 4.6, image: cseGDivyaImage, subject: 'Physics', category: 'S&H' },
+      { name: 'Mr.P.Dhineshkumar', designation: 'Assistant Professor', qualification: 'M.sc., M.Phil., (Physics)', experience: 'Teaching: 2.7 Years', specialization: 'Vibrational Spectroscopy', email: 'pdphy@kiot.ac.in', publications: 'NIL', rating: 4.3, image: eceDhineshkumarImage, subject: 'Physics', category: 'S&H' },
+      { name: 'Dr.S.Manivel', designation: 'Associate Professor', qualification: 'M.sc., Ph.D.', experience: '9 Yrs 10 Months', specialization: 'vibrational spectroscopy', email: 'smvphy@kiot.ac.in', publications: 'IJ:6, NJ:6', rating: 4.7, image: aidsManivelImage, subject: 'Physics', category: 'S&H' },
+      { name: 'Dr.T.Aruna Christy', designation: 'Associate Professor', qualification: 'M.Sc., Ph.D.', experience: 'Teaching – 5 Years', specialization: 'Physics Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Physics', category: 'S&H' },
+      { name: 'Dr.T.Masilamani', designation: 'Professor', qualification: 'M.Sc., Ph.D.', experience: 'Teaching – 5 Years', specialization: 'Physics Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Physics', category: 'S&H' },
       // ── Chemistry ──
-      { name: 'Prof. P. Sumathi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed., (Ph.D)', experience: 'Teaching – 9 Years, Research – 5 Years', specialization: 'Nano Chemistry, Electro Chemistry', email: 'sumathi.murugan25@gmail.com', publications: 'IJ: 03', rating: 4.7, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Prof. S. Rekha', designation: 'Assistant Professor', qualification: 'MSc., M.Phil., (Ph.D.)', experience: 'Teaching – 9.3 Years, Research – 8 Years', specialization: 'Electro Chemistry', email: 'chemist.rekha@gmail.com', publications: 'IJ: 4, NJ: 1, IC: 1, NC: 2', rating: 4.8, image: eeeRekhaSImage, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Prof. J. Noorul Ameen', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 6 Years, Industry – 6 Months', specialization: 'Phyto Chemistry, Nano Chemistry', email: 'jnchem@kiot.ac.in', publications: 'IJ: 1', rating: 4.6, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Prof. P. Amudha', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching – 8 Years', specialization: 'Nano Chemistry, Electro Chemistry', email: 'amudhasofia@gmail.com', publications: '-', rating: 4.6, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Prof. A. Preethi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: 'Teaching – 8.5 Years', specialization: 'Inorganic Chemistry', email: 'newjbabu@gmail.com', publications: '-', rating: 4.6, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Prof. C. Kathiravan', designation: 'Assistant Professor', qualification: 'M.Sc., B.Ed., (M.Phil)', experience: 'Teaching – 6 Years', specialization: 'Electro Chemistry', email: 'ckchem@kiot.ac.in', publications: '-', rating: 4.6, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Prof. P. Elambarathi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: 'Teaching – 9.3 Years', specialization: 'Electro Chemistry', email: 'pechem@kiot.ac.in', publications: 'IJ: 3, IC: 1, NC: 1', rating: 4.7, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Dr. G.S. Sivagurunathan', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., Ph.D.', experience: 'Teaching – 6.0 Years, Research – 7 Years', specialization: 'Organometallics, Nanoparticles', email: 'gsschem@kiot.ac.in', publications: 'IJ: 06, IC: 01, NC: 03', rating: 4.8, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Prof. M. Sivaperumal', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: 'Teaching – 9 Years', specialization: 'Electro Chemistry', email: 'mschem@kiot.ac.in', publications: 'IJ: 02, IC: 01, NC: 01', rating: 4.6, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Mr. S. Naveen Kumar', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil., B.Ed', experience: 'Teaching – 4 Years', specialization: 'Electro Chemistry', email: 'snkchem@kiot.ac.in', publications: '-', rating: 4.5, subject: 'Chemistry', category: 'S&H' },
-      { name: 'Prof. P. Kumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: 'Teaching – 9.4 Years', specialization: 'Organic Chemistry', email: 'pkchem@kiot.ac.in', publications: 'IJ: 02, IC: 01', rating: 4.7, subject: 'Chemistry', category: 'S&H' },
+      { name: 'Dr.S.Rekha', designation: 'Associate Professor', qualification: 'M.Sc., M.Phil., Ph.D.', experience: 'Teaching: 14.10 Yrs.', specialization: 'Electro Chemistry', email: 'srchem@kiot.ac.in', publications: 'IJ: 06 & IC: 01 & NC: 01', rating: 5.0, image: eeeRekhaSImage, subject: 'Chemistry', category: 'S&H' },
+      { name: 'Mr.M.Sivaperumal', designation: 'Assistant Professor', qualification: 'M.Sc.,B. Ed., M.Phil., MISTE.,', experience: 'Teaching :10.8 Years', specialization: 'Organic Chemistry, Nanochemistry', email: 'mschem@kiot.ac.in', publications: 'IJ:02', rating: 4.6, subject: 'Chemistry', category: 'S&H' },
+      { name: 'Mr.S.Naveen Kumar', designation: 'Assistant Professor', qualification: 'B.E., M.E. (Ph.D).', experience: 'Teaching : 10.2 Years', specialization: 'Engineering Design', email: 'snmech@kiot.ac.in', publications: 'IJ: 09; IC:01', rating: 4.6, image: naveenkumarImage, subject: 'Chemistry', category: 'S&H' },
+      { name: 'Dr.G.Venkatesh', designation: 'Associate Professor', qualification: 'M.Sc., M.Phil., Ph.D.', experience: '10.6 years, Research: 14.8 yrs', specialization: 'Supramolecular Nano materials', email: 'gvchem@kiot.ac.in', publications: 'IJ: 24, NJ: 04, IC: 05, NC: 14', rating: 5.0, image: aidsVenkateshImage, subject: 'Chemistry', category: 'S&H' },
+      { name: 'Dr.S.Sathiya', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.,Ph.D', experience: 'Teaching: 4,Research: 4', specialization: 'Electrochemistry', email: 'sschem@kiot.ac.in', publications: 'IJ:4,IC:05,NC:06', rating: 4.6, image: sathiyaImage, subject: 'Chemistry', category: 'S&H' },
+      { name: 'Mr.J.Noorulameen', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil.', experience: '11.9 Years', specialization: 'Natural Products and Nano Technology', email: 'jnchem@kiot.ac.in', publications: 'IJ: 02', rating: 4.7, image: noorulAmeenImage, subject: 'Chemistry', category: 'S&H' },
+      { name: 'Mrs.A.Preethi', designation: 'Assistant Professor', qualification: 'B.sc., M.sc., M.Phil., B.Ed., (PhD).', experience: 'Teaching: 17 Years', specialization: 'Chemistry', email: 'preethiyasini@gmail.com', publications: 'IJ:3', rating: 4.7, image: ecePreethiImage, subject: 'Chemistry', category: 'S&H' },
+      { name: 'Dr.R.Manikandan', designation: 'Associate Professor', qualification: 'M.Sc., Ph.D.', experience: 'Teaching – 5 Years', specialization: 'Chemistry Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Chemistry', category: 'S&H' },
+      // ── Tamil ──
+      { name: 'Dr.K.Vinodhkumar', designation: 'Associate Professor', qualification: 'B.A., M.A., B.Ed., Ph.D., NET', experience: 'Teaching : 13 Years', specialization: 'Sangam Literature', email: 'kvtamil@kiot.ac.in', publications: 'IJ: 03', rating: 4.7, image: vinothkumarKTamilImage, subject: 'Tamil', category: 'S&H' },
+      { name: 'Mr.K.Vasanthakumar', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'Tamil Literature', email: 'N/A', publications: '-', rating: 4.6, subject: 'Tamil', category: 'S&H' },
     ],
     labs: [
       {

@@ -133,8 +133,8 @@ const ugPrograms = [
 const pgPrograms = [
   {
     id: 'mba-general',
-    name: 'MBA - General',
-    short: 'MBA',
+    name: 'Master of Business Administration',
+    short: 'MBA - General',
     duration: '2 Years',
     intake: 120,
     category: 'Management',
@@ -142,6 +142,7 @@ const pgPrograms = [
     color: '#224292',
     accent: '#ffc107',
     placement: '89%',
+    externalUrl: 'https://kbss.kiot.ac.in/',
     description: 'Finance, Marketing, HR, Business Analytics, and Operations specialsations.'
   },
   {
@@ -155,6 +156,7 @@ const pgPrograms = [
     color: '#224292',
     accent: '#ffc107',
     placement: '90%',
+    externalUrl: 'https://kbss.kiot.ac.in/mba-iev/',
     description: 'Innovation, Entrepreneurship and Venture Development program.'
   },
   {
@@ -399,8 +401,12 @@ export default function AcademicsPage() {
                         transition={{ delay: i * 0.03 }}
                         className="group hover:bg-[#224292]/[0.02] transition-all cursor-pointer"
                         onClick={() => {
-                          const base = programTab === 'UG Programs' ? 'undergraduate' : 'postgraduate'
-                          navigate(`/academics/${base}/${prog.id}`)
+                          if (prog.externalUrl) {
+                            window.open(prog.externalUrl, '_blank', 'noopener,noreferrer')
+                          } else {
+                            const base = programTab === 'UG Programs' ? 'undergraduate' : 'postgraduate'
+                            navigate(`/academics/${base}/${prog.id}`)
+                          }
                         }}
                       >
                         {/* Column 1: Program (Icon + Name) */}
@@ -449,8 +455,19 @@ export default function AcademicsPage() {
                               >
                                 <BarChart3 size={14} />
                              </button>
-                             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#224292] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#224292] transition-all transform shadow-md shadow-blue-900/10">
-                                View <ArrowRight size={12} className="hidden lg:block" />
+                             <div
+                               onClick={(e) => {
+                                 e.stopPropagation();
+                                 if (prog.externalUrl) {
+                                   window.open(prog.externalUrl, '_blank', 'noopener,noreferrer')
+                                 } else {
+                                   const base = programTab === 'UG Programs' ? 'undergraduate' : 'postgraduate'
+                                   navigate(`/academics/${base}/${prog.id}`)
+                                 }
+                               }}
+                               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#224292] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#224292] transition-all transform shadow-md shadow-blue-900/10 cursor-pointer"
+                             >
+                               {prog.externalUrl ? <><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Visit</> : <>View <ArrowRight size={12} className="hidden lg:block" /></>}
                              </div>
                           </div>
                         </td>

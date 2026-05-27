@@ -76,7 +76,7 @@ const defaultCourse = (id) => ({
   eligibility: ['10+2 with PCM / relevant subjects', 'Minimum 50% aggregate', 'TNEA rank required'],
 })
 
-const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements']
+const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
 
 // â”€â”€â”€ Accordion Item â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function AccordionItem({ title, children, defaultOpen = false }) {
@@ -549,7 +549,7 @@ export default function CourseDetailPage({ overrides }) {
                 {courseId === 'science-humanities' ? (
                   // ── S&H: Subject-grouped sections ──
                   <div className="space-y-14">
-                    {['Mathematics', 'English', 'Physics', 'Chemistry'].map((subject) => {
+                    {['Mathematics', 'English', 'Physics', 'Chemistry', 'Tamil'].map((subject) => {
                       const subjectFaculty = course.faculty.filter(f => f.subject === subject)
                       if (!subjectFaculty.length) return null
 
@@ -558,6 +558,7 @@ export default function CourseDetailPage({ overrides }) {
                         English:     { emoji: '✍', color: 'from-emerald-600 to-teal-700', light: 'bg-emerald-50 border-emerald-100', badge: 'bg-emerald-100 text-emerald-800' },
                         Physics:     { emoji: '⚛', color: 'from-purple-600 to-violet-700', light: 'bg-purple-50 border-purple-100', badge: 'bg-purple-100 text-purple-800' },
                         Chemistry:   { emoji: '⚗', color: 'from-orange-500 to-amber-600', light: 'bg-orange-50 border-orange-100', badge: 'bg-orange-100 text-orange-800' },
+                        Tamil:       { emoji: '📖', color: 'from-rose-500 to-red-600', light: 'bg-rose-50 border-rose-100', badge: 'bg-rose-100 text-rose-800' },
                       }
                       const cfg = subjectConfig[subject]
 
@@ -1047,6 +1048,10 @@ export default function CourseDetailPage({ overrides }) {
               <AchievementSection courseId={courseId} courseName={course.name} />
             )}
 
+            {activeTab === 'Innovative Practices' && (
+              <InnovativePracticesSection courseId={courseId} courseName={course.name} />
+            )}
+
             {/* --- ADMISSIONS --- */}
             {activeTab === 'Admissions' && (
               <div className="grid md:grid-cols-2 gap-8">
@@ -1111,23 +1116,23 @@ export default function CourseDetailPage({ overrides }) {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               onClick={e => e.stopPropagation()}
-              className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
+              className="bg-white w-full max-w-2xl rounded-lg shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
               <div className="overflow-y-auto scrollbar-hide flex-1 pb-10">
-                <div className="bg-[#224292] p-6 md:p-8 relative overflow-hidden">
+                <div className="bg-[#224292] p-3 md:p-4 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-20 -mt-20 blur-3xl" />
                   
                   {/* Top Right Close Button */}
                   <button 
                     onClick={() => setSelectedFaculty(null)}
-                    className="absolute top-6 right-6 z-20 w-10 h-10 flex items-center justify-center rounded-xl bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-all backdrop-blur-sm border border-white/10"
+                    className="absolute top-3 right-3 z-20 w-7 h-7 flex items-center justify-center rounded-md bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-all backdrop-blur-sm border border-white/10"
                   >
-                    <X size={20} />
+                    <X size={14} />
                   </button>
 
-                  <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                  <div className="relative z-10 flex flex-col md:flex-row items-center gap-4">
                     <div 
-                      className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden"
+                      className="w-14 h-14 md:w-16 md:h-16 rounded-md bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden"
                       style={{ 
                         backgroundImage: `url(${facultyBg})`, 
                         backgroundSize: 'cover', 
@@ -1137,89 +1142,77 @@ export default function CourseDetailPage({ overrides }) {
                       {selectedFaculty.image ? (
                         <img src={selectedFaculty.image} alt={selectedFaculty.name} className="w-full h-full object-cover" />
                       ) : (
-                        <GraduationCap size={64} className="text-[#ffc107]" />
+                        <GraduationCap size={28} className="text-[#ffc107]" />
                       )}
                     </div>
                     <div className="text-center md:text-left">
-                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-white mb-2 leading-tight tracking-tight">
+                      <h2 className="text-lg md:text-xl font-bold font-graphik text-white mb-1 leading-tight tracking-tight">
                         {selectedFaculty.name}
                       </h2>
-                      <p className="text-[#ffc107] font-bold font-graphik text-lg md:text-xl">{selectedFaculty.designation}</p>
+                      <p className="text-[#ffc107] font-bold font-graphik text-xs md:text-sm">{selectedFaculty.designation}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-8 md:p-12">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    <div className="space-y-6">
+                <div className="p-6 md:p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <div className="space-y-4">
                       {selectedFaculty.qualification && (
                         <div>
-                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Academic Credentials</p>
-                          <p className="text-black font-medium font-graphik text-[13.5px]">{selectedFaculty.qualification}</p>
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Academic Credentials</p>
+                          <p className="text-black font-medium font-graphik text-[12.5px]">{selectedFaculty.qualification}</p>
                         </div>
                       )}
                       {selectedFaculty.specialization && selectedFaculty.specialization !== 'N/A' && (
                         <div>
-                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Area of Specialization</p>
-                          <p className="text-black font-medium font-graphik text-[13.5px]">{selectedFaculty.specialization}</p>
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Area of Specialization</p>
+                          <p className="text-black font-medium font-graphik text-[12.5px]">{selectedFaculty.specialization}</p>
                         </div>
                       )}
                       {selectedFaculty.experience && (
                         <div>
-                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Work Experience</p>
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Work Experience</p>
                           <div className="flex items-center gap-2 text-black">
-                            <Clock size={16} className="text-black/80" />
-                            <span className="font-medium font-graphik text-[13.5px]">{selectedFaculty.experience}</span>
+                            <Clock size={14} className="text-black/80" />
+                            <span className="font-medium font-graphik text-[12.5px]">{selectedFaculty.experience}</span>
                           </div>
                         </div>
                       )}
                        {(selectedFaculty.joiningDate || selectedFaculty.doj) && (
                         <div>
-                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Date of Joining</p>
-                          <p className="text-black font-medium font-graphik text-[13.5px]">{selectedFaculty.joiningDate || selectedFaculty.doj}</p>
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Date of Joining</p>
+                          <p className="text-black font-medium font-graphik text-[12.5px]">{selectedFaculty.joiningDate || selectedFaculty.doj}</p>
                         </div>
                       )}
                     </div>
 
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                       {selectedFaculty.email && selectedFaculty.email !== 'N/A' && (
                         <div>
-                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">E-Mail Address</p>
-                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[13.5px] hover:text-[#224292] transition-colors">
-                            <Mail size={16} className="text-black/80" />
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">E-Mail Address</p>
+                          <a href={`mailto:${selectedFaculty.email}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[12.5px] hover:text-[#224292] transition-colors">
+                            <Mail size={14} className="text-black/80" />
                             {selectedFaculty.email}
                           </a>
                         </div>
                       )}
                       {selectedFaculty.phone && (
                         <div>
-                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Contact Number</p>
-                          <a href={`tel:${selectedFaculty.phone}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[13.5px] hover:text-[#224292] transition-colors">
-                            <MapPin size={16} className="text-black/80" />
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Contact Number</p>
+                          <a href={`tel:${selectedFaculty.phone}`} className="flex items-center gap-2 text-black font-medium font-graphik text-[12.5px] hover:text-[#224292] transition-colors">
+                            <MapPin size={14} className="text-black/80" />
                             {selectedFaculty.phone}
                           </a>
                         </div>
                       )}
                       {selectedFaculty.association && (
                         <div>
-                          <p className="text-[15px] font-semibold font-graphik text-[#224292] mb-1">Nature of Association</p>
-                          <span className="inline-block px-3 py-1 rounded-md bg-slate-100 text-black text-xs font-semibold font-graphik tracking-wide">
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Nature of Association</p>
+                          <span className="inline-block px-3 py-1 rounded-md bg-slate-100 text-black text-[11px] font-semibold font-graphik tracking-wide">
                             {selectedFaculty.association}
                           </span>
                         </div>
                       )}
-                      <div className="p-6 bg-[#F8FAFC] border border-[#E5EDF8] rounded-xl">
-                        <div className="flex items-center gap-2 mb-4">
-                          <Award size={18} className="text-[#ffc107]" />
-                          <p className="text-[15px] font-semibold font-graphik text-[#224292]">Member Recognition</p>
-                        </div>
-                        <div className="flex items-center gap-0.5">
-                          {[...Array(5)].map((_, idx) => (
-                            <Star key={idx} size={14} className={idx < Math.floor(selectedFaculty.rating) ? "text-[#ffc107] fill-[#ffc107]" : "text-[#E5EDF8] fill-[#E5EDF8]"} />
-                          ))}
-                          <span className="ml-2 font-bold font-graphik text-black text-sm">{selectedFaculty.rating}</span>
-                        </div>
-                      </div>
                     </div>
                   </div>
 
@@ -1430,7 +1423,242 @@ function AchievementSection({ courseId, courseName }) {
   );
 }
 
-// â”€â”€â”€ Curriculum Section Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Innovative Practices Section Component ──────────────────────────────────
+function InnovativePracticesSection({ courseId, courseName }) {
+  const [records, setRecords] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const finalDept = getAchievementDepartmentName(courseId, courseName);
+        const res = await fetch(`${API_BASE}/curriculum-innovative-practices/?department=${encodeURIComponent(finalDept)}`);
+        if (res.ok) {
+          const data = await res.json();
+          setRecords(data);
+        }
+      } catch (err) {
+        console.error("Error fetching curriculum innovative practices:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [courseId, courseName]);
+
+  const isComputing = ['be-cse', 'btech-it', 'btech-aids', 'btech-csbs', 'mca'].includes(courseId);
+  const isElectronics = ['be-ece', 'be-eee', 'be-ecm', 'me-ae', 'me-ped'].includes(courseId);
+  const isCoreEng = ['be-mechanical', 'be-civil', 'me-ise'].includes(courseId);
+
+  let mockPractices = [];
+  if (isComputing) {
+    mockPractices = [
+      {
+        title: "Project-Based Learning & Hackathons",
+        description: "Students work on real-world software applications and participate in national hackathons (like Smart India Hackathon) as a core part of their learning journey.",
+        details: "Development of fully functional projects, GitHub version control tracking, and mandatory team coding sprints.",
+        icon: Cpu
+      },
+      {
+        title: "ICT Enabled Teaching with Coding Playgrounds",
+        description: "Integration of interactive coding playgrounds (HackerRank, LeetCode) and virtual classrooms (Google Classroom) for real-time assessments and programming challenges.",
+        details: "Virtual coding sandboxes, online quizzes, programming contests, and automated grading systems.",
+        icon: Cpu
+      },
+      {
+        title: "Peer-to-Peer Learning & Technical Coding Clubs",
+        description: "Active student-led programming clubs where senior students mentor juniors in advanced algorithms, competitive programming, and web development.",
+        details: "Weekly coding meetups, group discussions, and bootcamps on full-stack frameworks.",
+        icon: Users
+      },
+      {
+        title: "Flipped Classroom & Interactive Quizzes",
+        description: "Students study core concepts via pre-recorded high-quality video lectures, and classroom sessions are dedicated to problem-solving, debugging, and system design.",
+        details: "Interactive Kahoot quizzes, collaborative system design board sessions, and group presentations.",
+        icon: Star
+      }
+    ];
+  } else if (isElectronics) {
+    mockPractices = [
+      {
+        title: "Simulation-Based Learning",
+        description: "Mandatory design and analysis of circuit diagrams using standard industry software simulation tools (like MATLAB, Multisim, Proteus, Keil) before physical assembly.",
+        details: "Virtual simulation environments, schematic verification, and wave analysis.",
+        icon: FlaskConical
+      },
+      {
+        title: "Hands-on Classroom Demonstrations",
+        description: "Integrating hardware kits (Arduino, Raspberry Pi, FPGA boards) directly into theoretical lecture hours to bridge mathematical models with physical reality.",
+        details: "Live demonstrations of signal waveforms, embedded sensor readings, and real-time debug sessions.",
+        icon: Wrench
+      },
+      {
+        title: "Design Contests & Maker Labs",
+        description: "Fostering prototyping culture via design challenges, IoT product design hackathons, and PCB fabrication workshops in the department's dedicated design spaces.",
+        details: "Product mockup designs, PCB layout fabrication, and micro-controller programming challenges.",
+        icon: Layers
+      },
+      {
+        title: "Collaborative Project Clusters",
+        description: "Interdisciplinary project teams building smart automation, smart grids, and e-mobility solutions under joint guidance of faculty mentors.",
+        details: "Hardware prototype exhibitions, joint research papers, and patents filing support.",
+        icon: Cpu
+      }
+    ];
+  } else if (isCoreEng) {
+    mockPractices = [
+      {
+        title: "Computer-Aided Design (CAD) & Analysis Contests",
+        description: "Fostering computational analysis skill through regular design sprints on AutoCAD, SolidWorks, and ANSYS software packages.",
+        details: "3D part modeling, finite element analysis (FEA) testing, and thermal simulation contests.",
+        icon: Wrench
+      },
+      {
+        title: "Experimental Learning & Model Making",
+        description: "Students design and construct physical scale models and structural prototypes to understand complex mechanisms and building physics.",
+        details: "Prototype bridge building, assembly/disassembly of engine components, and materials testing.",
+        icon: Layers
+      },
+      {
+        title: "Industrial Site Visits & Experiential Learning",
+        description: "Aligning academic coursework with construction sites, manufacturing assembly lines, and thermal power station operations through mandatory field study visits.",
+        details: "On-site documentation, safety audits, and expert interactions during field visits.",
+        icon: Building2
+      },
+      {
+        title: "Sustainable Solution Projects",
+        description: "Encouraging students to build eco-friendly green concrete, energy-efficient mechanical devices, and smart waste management systems.",
+        details: "Bio-degradable material testing, solar-hybrid vehicle prototypes, and waste recycling projects.",
+        icon: Target
+      }
+    ];
+  } else {
+    mockPractices = [
+      {
+        title: "Case-Based Pedagogical Approach",
+        description: "Analyzing actual business case studies from Harvard Business Review, MIT Sloan, and leading business journals to build strategic thinking.",
+        details: "Harvard Case studies, business strategy games, and financial portfolio analysis.",
+        icon: Briefcase
+      },
+      {
+        title: "Business Simulations & Role Plays",
+        description: "Interactive marketing games, mock board meetings, stock market simulations, and organizational behavior role plays.",
+        details: "Virtual stock trading, customer negotiation simulations, and HR conflict resolution role plays.",
+        icon: TrendingUp
+      },
+      {
+        title: "Flipped Classroom & Interactive Quizzes",
+        description: "Students study core concepts via online videos and reference material, using class hours for group discussions, mock pitches, and presentations.",
+        details: "Kahoot quizzes, business plan presentations, and case defense sessions.",
+        icon: Target
+      },
+      {
+        title: "Mentorship & Executive Interactions",
+        description: "Exclusive interactions with entrepreneurs, start-up incubation mentors (iStart), and industry experts to align students with market practices.",
+        details: "Weekly expert lectures, venture capital feedback sessions, and startup incubator access.",
+        icon: Users
+      }
+    ];
+  }
+
+  return (
+    <div className="space-y-12">
+      <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 pb-8 border-b border-[#D5E2F4]/50">
+        <div>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#224292] to-[#224292] flex items-center justify-center shadow-xl shadow-[#224292]/20">
+              <Star size={28} className="text-[#ffc107]" />
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold font-graphik text-[#224292] tracking-tight leading-none mb-1">Innovative Practices</h3>
+              <p className="text-black font-medium font-graphik text-sm tracking-wide">Modern pedagogical methodologies and active learning strategies</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {loading ? (
+        <div className="py-24 flex flex-col items-center justify-center gap-5">
+          <div className="w-16 h-16 rounded-full border-4 border-[#224292]/10 border-t-[#ffc107] animate-spin" />
+          <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#224292]/40">Fetching Innovative Practices...</p>
+        </div>
+      ) : records.length > 0 ? (
+        <div className="max-w-4xl mx-auto overflow-x-auto max-h-[600px] border border-[#E5EDF8] rounded-xl shadow-sm custom-scrollbar bg-white">
+          <table className="w-full text-left border-collapse">
+            <thead className="sticky top-0 bg-[#224292] text-white z-10 shadow-sm">
+              <tr>
+                <th className="px-8 py-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] w-[10%]">S.No</th>
+                <th className="px-8 py-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] w-[25%]">Staff Name</th>
+                <th className="px-8 py-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] w-[15%]">Year</th>
+                <th className="px-8 py-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] w-[50%]">Achievements</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#D5E2F4]/40">
+              {records.map((item, idx) => (
+                <tr key={item.sno || idx} className="hover:bg-slate-50/50 transition-colors">
+                  <td className="px-8 py-2.5 text-sm font-bold text-slate-400">{idx + 1}</td>
+                  <td className="px-8 py-2.5 text-sm font-bold text-[#224292]">{item.staff_name}</td>
+                  <td className="px-8 py-2.5 text-sm font-bold text-black">{item.year}</td>
+                  <td className="px-8 py-2.5 text-sm font-medium text-slate-700 leading-relaxed whitespace-pre-wrap">
+                    <div className="flex items-center justify-between gap-4">
+                      <span>{item.achievements}</span>
+                      {item.pdf_url && (
+                        <a
+                          href={item.pdf_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#ffc107]/20 hover:bg-[#ffc107] text-[#224292] font-bold text-[10px] uppercase tracking-wider rounded-lg transition-all shrink-0"
+                        >
+                          <FileText size={12} /> View PDF
+                        </a>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {mockPractices.map((practice, idx) => {
+            const PracticeIcon = practice.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08 }}
+                className="bg-white rounded-[2rem] p-8 border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#224292]/20 transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="h-12 w-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-[#ffc107] transition-all">
+                      <PracticeIcon size={22} />
+                    </div>
+                    <span className="text-[10px] font-black font-graphik text-[#ffc107] uppercase tracking-widest bg-[#224292] px-3.5 py-1.5 rounded-full">
+                      Practice {idx + 1}
+                    </span>
+                  </div>
+                  <h4 className="text-lg font-bold font-graphik text-[#224292] mb-3 group-hover:text-[#ffc107] transition-colors">{practice.title}</h4>
+                  <p className="text-black font-normal font-graphik text-[15px] leading-relaxed text-justify mb-6">{practice.description}</p>
+                </div>
+                <div className="bg-slate-50/80 p-5 rounded-2xl border border-slate-100 mt-auto">
+                  <p className="text-[10px] font-bold font-graphik text-[#64779F] uppercase tracking-wider mb-1.5">Key Implementation Details</p>
+                  <p className="text-black font-medium font-graphik text-[13.5px] leading-relaxed italic">{practice.details}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Curriculum Section Component ──────────────────────────────────────────
 function CurriculumSection({ courseId, courseName }) {
   const [curriculumTab, setCurriculumTab] = useState('Regulations')
   const [records, setRecords] = useState([])

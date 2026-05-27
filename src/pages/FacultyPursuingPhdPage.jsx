@@ -17,8 +17,18 @@ const FacultyPursuingPhdPage = () => {
     const { deptName } = useParams()
 
     const formatDeptName = (name) => {
-        if (!name) return "Departmentwise"
-        return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+        if (!name) return 'Departmentwise'
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        return decodeURIComponent(name)
+            .split('-')
+            .map((word) => {
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
+            .join(' ')
     }
 
     const allPursuingFaculty = {
@@ -267,10 +277,110 @@ const FacultyPursuingPhdPage = () => {
             { id: 2, name: "Mr. S.Arulkesavan", topic: "Concrete Structures", supervisor: "Dr.S.Ramesh", registration: "Jan & 2025", university: "Anna University" },
             { id: 3, name: "Mr. R.Elavarasan", topic: "Concrete Structures", supervisor: "Dr.P.Mageshkumar", registration: "Jan & 2024", university: "Anna University" },
             { id: 4, name: "Mr.L.M.Nirmal", topic: "Concrete Technology", supervisor: "Dr.P.Mageshkumar", registration: "Jan & 2025", university: "Anna University" }
+        ],
+
+        'computer-science-&-business-systems': [
+            {
+                id: 1,
+                name: "R.V.Sudha",
+                topic: "Wireless sensor Network",
+                supervisor: "Dr.S.Sakthivel, Sona College of Technology, Salem",
+                registration: "2022",
+                university: "Anna University"
+            },
+            {
+                id: 2,
+                name: "R.Karthick",
+                topic: "Machine Learning",
+                supervisor: "Dr.P.VijayaLakshmi, Knowledge Institute Of Technology, Salem",
+                registration: "2023",
+                university: "Anna University"
+            },
+            {
+                id: 3,
+                name: "K.REENA",
+                topic: "Deep learning in health care",
+                supervisor: "Dr. S. Nagendra Prabhu, SRM IST, Kattankulathur Campus",
+                registration: "2023",
+                university: "Anna University"
+            },
+            {
+                id: 4,
+                name: "C.NITHYA",
+                topic: "Data Security",
+                supervisor: "Dr.S. Kumarganesh, Knowledge Institute Of Technology, Salem",
+                registration: "2025",
+                university: "Anna University"
+            }
+        ],
+        'science-&-humanities': [
+            {
+                id: 1,
+                name: "S.Geetha",
+                topic: "Graph Theory",
+                supervisor: "Dr.S.Manimekalai",
+                registration: "June 2024",
+                university: "Bharathiar University"
+            },
+            {
+                id: 2,
+                name: "M.Sivaperumal",
+                topic: "Nanomaterials",
+                supervisor: "Dr.G.Raja",
+                registration: "Jan 2023",
+                university: "Anna University"
+            },
+            {
+                id: 3,
+                name: "M.Prasath",
+                topic: "Inventory Control Theory",
+                supervisor: "Dr.R.Vijaykrishnaraj",
+                registration: "Jan 2025",
+                university: "Bharath University"
+            },
+            {
+                id: 4,
+                name: "A.Preethi",
+                topic: "NanoParticles",
+                supervisor: "Dr.K.Balachandran",
+                registration: "Feb 2021",
+                university: "Anna University"
+            },
+            {
+                id: 5,
+                name: "K.Vasanthakumar",
+                topic: "Eduthuraippiyal Nokkil Natrinai",
+                supervisor: "Dr.V.Ramarajapandian",
+                registration: "Sep/2014",
+                university: "Periyar University"
+            },
+            {
+                id: 6,
+                name: "T.Raja",
+                topic: "Decision Making using Fuzzy Logic",
+                supervisor: "Dr.S.Thilagavathi",
+                registration: "June 2024",
+                university: "Bharathiar University"
+            },
+            {
+                id: 7,
+                name: "S.Sasi Kumar",
+                topic: "Thin Film Technology",
+                supervisor: "Dr.K.S.Mohan",
+                registration: "January 2025",
+                university: "Anna University"
+            }
         ]
     }
 
-    const displayFaculty = allPursuingFaculty[deptName?.toLowerCase()] || []
+    const getDisplayFaculty = () => {
+        if (!deptName) return []
+        const decoded = decodeURIComponent(deptName).toLowerCase()
+        const normalized = decoded.replace(/-and-/g, '-&-')
+        return allPursuingFaculty[normalized] || allPursuingFaculty[decoded] || allPursuingFaculty[deptName.toLowerCase()] || []
+    }
+
+    const displayFaculty = getDisplayFaculty()
 
     return (
         <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">

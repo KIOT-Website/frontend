@@ -24,14 +24,14 @@ import istartImg from '../../assets/main/istart1.png'
 import campusMainImg from '../../assets/main/campus .webp'
 
 const facilities = [
+  { id: 5, title: "Lab", image: labImg, link: "/campus-life/classroom" },
+  { id: 7, title: "Training", image: trainingImg, link: "/placements/training" },
+  { id: 8, title: "iStart", image: istartImg, link: "/research-innovation/istart" },
   { id: 1, title: "Sports", image: sportsImg, link: "/campus-life/sports" },
   { id: 2, title: "Gym", image: gymImg, link: "/campus-life/amenities" },
   { id: 3, title: "Transport", image: transportImg, link: "/campus-life/transport" },
   { id: 4, title: "Cafeteria", image: cafeteriaImg, link: "/campus-life/amenities" },
-  { id: 5, title: "Lab", image: labImg, link: "/campus-life/classroom" },
-  { id: 6, title: "Hostel", image: hostelImg, link: "/campus-life/amenities" },
-  { id: 7, title: "Training", image: trainingImg, link: "/placements/training" },
-  { id: 8, title: "iStart", image: istartImg, link: "/research-innovation/istart" }
+  { id: 6, title: "Hostel", image: hostelImg, link: "/campus-life/amenities" }
 ]
 
 const CampusLife = () => {

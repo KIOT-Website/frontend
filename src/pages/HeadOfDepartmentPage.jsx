@@ -425,12 +425,12 @@ export default function HeadOfDepartmentPage() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 px-2">
             {['all', 'ug', 'pg'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveFilter(tab)}
-                className={`px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 border ${
+                className={`px-4 py-2 md:px-6 md:py-2.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all duration-300 border shrink-0 ${
                   activeFilter === tab
                   ? 'bg-[#224292] text-white border-[#224292] shadow-md shadow-[#224292]/20'
                   : 'bg-white text-[#224292] border-slate-200 hover:border-[#224292] hover:bg-[#224292]/5'

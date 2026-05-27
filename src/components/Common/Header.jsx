@@ -104,6 +104,7 @@ const navLinks = [
     hasDropdown: true,
     subLinks: [
       { name: 'About COE', href: 'exams/about-coe', icon: Building2 },
+      { name: 'Circulars', href: 'exams/circulars', icon: Bell },
       { name: 'Exam Schedules', href: 'exams/schedules', icon: Calendar },
       { name: 'Results', href: 'https://coe.kiot.ac.in/', icon: CheckCircle2 },
       { name: 'Downloads', href: 'exams/downloads', icon: Download }
@@ -173,6 +174,7 @@ const searchableItems = [
   
   // Exams section
   { title: 'About COE (Controller of Examinations)', type: 'Exams', path: '/exams/about-coe' },
+  { title: 'Exams Circulars & Announcements', type: 'Exams', path: '/exams/circulars' },
   { title: 'Exam Schedules & Timetables', type: 'Exams', path: '/exams/schedules' },
   { title: 'Exam Results Portal', type: 'Exams', path: 'https://coe.kiot.ac.in/' },
   { title: 'Exam Downloads & Applications', type: 'Exams', path: '/exams/downloads' },
