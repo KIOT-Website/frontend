@@ -60,7 +60,7 @@ const IdeaLabPage = () => {
         },
         {
             title: "Top 113 Institution",
-            description: "Among India's premier labs",
+            description: "One among 418 Idea Labs",
             icon: Target,
         },
         {
@@ -402,7 +402,7 @@ const IdeaLabPage = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-center gap-4 mb-12">
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
-                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">Wing Tutorials – E-Content</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">E-Content</h2>
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
                     

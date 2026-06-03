@@ -8,7 +8,7 @@ import { Quote, GraduationCap, Sparkles } from 'lucide-react'
 
 // HOD Image Imports
 import prabhakaranImg from '../assets/Faculity/MECH/Dr. K.S. Prabhakaran.png'
-import munirajImg from '../assets/Faculity/eee/muniraj.webp'
+import kamatchiKannanImg from '../assets/Faculity/eee/kamatchi_kannan.webp'
 import saravananImg from '../assets/Faculity/ECE/Dr. V. Saravanan.png'
 import prasathCivilImg from '../assets/Faculity/civil/Dr.P.PRASATH.webp'
 import sasikumarImg from '../assets/Faculity/aids/sasikumar_hod.webp'
@@ -25,12 +25,12 @@ const hods = [
     initials: "KP"
   },
   {
-    name: "Dr. C. Muniraj",
+    name: "Dr. V. Kamatchi Kannan",
     role: "HOD / EEE",
     qualification: "M.E., Ph.D.",
     category: "ug",
-    image: munirajImg,
-    initials: "CM"
+    image: kamatchiKannanImg,
+    initials: "VK"
   },
   {
     name: "Dr. V. Saravanan",

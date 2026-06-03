@@ -35,7 +35,7 @@ const AccreditationPage = () => {
       subtitle: "★ SELF STUDY REPORT ★",
       type: "PDF Document",
       desc: "Self Study Report (SSR) submitted to NAAC as part of the accreditation process, showcasing the institutional performance and quality initiatives.",
-      link: "#",
+      link: "/pdfs/NAAC_SSR.pdf",
       iconColor: "text-blue-600",
       ribbonColor: "bg-blue-600"
     },
@@ -48,16 +48,6 @@ const AccreditationPage = () => {
       link: "/pdfs/NBA-Accreditation-2025.pdf.pdf",
       iconColor: "text-green-600",
       ribbonColor: "bg-green-600"
-    },
-    {
-      id: 4,
-      title: "NBA SAR",
-      subtitle: "★ SELF ASSESSMENT REPORT ★",
-      type: "PDF Document",
-      desc: "Self Assessment Report (SAR) submitted to NBA for accredited programs, detailing the academic and institutional performance.",
-      link: "#",
-      iconColor: "text-purple-600",
-      ribbonColor: "bg-purple-600"
     }
   ];
 
@@ -122,7 +112,7 @@ const AccreditationPage = () => {
       </section>
 
       {/* ─── CARDS GRID ─── */}
-      <section className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <section className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-16">
         {documents.map((doc, idx) => (
           <motion.div
             key={doc.id}
@@ -163,6 +153,56 @@ const AccreditationPage = () => {
             </a>
           </motion.div>
         ))}
+      </section>
+
+      {/* ─── NBA SAR SINGLE COMPACT CARD ─── */}
+      <section className="max-w-[1400px] mx-auto px-6 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.06)] border border-slate-100 p-8 flex flex-col lg:flex-row items-center justify-between gap-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+        >
+          {/* Decorative left accent border */}
+          <div className="absolute top-0 left-0 w-2 h-full bg-purple-600" />
+
+          {/* Left Content Area */}
+          <div className="flex items-center gap-6 flex-1 text-left">
+            <div className="relative shrink-0">
+               <div className="w-16 h-20 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-center relative overflow-hidden">
+                  <FileText size={32} className="text-purple-600" />
+                  <div className="absolute top-1.5 left-1.5 px-1 py-0.5 rounded text-[6px] font-black text-white bg-purple-600">PDF</div>
+               </div>
+            </div>
+            <div>
+              <span className="text-[10px] font-black text-purple-600 uppercase tracking-widest block mb-1">NBA SAR</span>
+              <h3 className="text-[#224292] text-xl font-black mb-2 tracking-tight">Self Assessment Report (SAR)</h3>
+              <p className="text-black/60 text-xs font-medium leading-relaxed max-w-xl">
+                Self Assessment Reports submitted to the National Board of Accreditation (NBA), detailing program performance, quality metrics, and curriculum evaluations.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Side: 3 PDF Department Links */}
+          <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 w-full lg:w-auto justify-end">
+            {[
+              { dept: "CIVIL", file: "/pdfs/CIVIL_DCS-report.pdf" },
+              { dept: "CSBS", file: "/pdfs/CSBS_DCS-report.pdf" },
+              { dept: "IT", file: "/pdfs/IT_DCS-report.pdf" }
+            ].map((item) => (
+              <a
+                key={item.dept}
+                href={item.file}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-5 py-3.5 bg-slate-50 hover:bg-[#224292] hover:text-white text-[#224292] border border-slate-100 rounded-2xl transition-all duration-300 font-black text-[11px] tracking-wider uppercase shadow-sm hover:shadow-lg active:scale-95 group"
+              >
+                <FileText size={16} className="text-purple-500 group-hover:text-white transition-colors" />
+                <span className="group-hover:text-white transition-colors">{item.dept}</span>
+              </a>
+            ))}
+          </div>
+        </motion.div>
       </section>
 
       {/* ─── NIRF REPORTS ─── */}

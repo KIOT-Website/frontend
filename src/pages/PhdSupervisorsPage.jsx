@@ -48,7 +48,7 @@ const PhdSupervisorsPage = () => {
         'electrical-&-electronics-engineering': [
             { id: 1, name: "Dr.C.Muniraj", university: "Anna University", department: "EEE", researchArea: "AC Drives and High Voltage Engineering", supervisorId: "2230136", email: "hod.eee@kiot.ac.in", guided: "4", guiding: "7" },
             { id: 2, name: "Dr.V.Kamatchi Kannan", university: "Anna University", department: "EEE", researchArea: "Power Converters, Power Quality", supervisorId: "2330080", email: "vkkeee@kiot.ac.in", guided: "3", guiding: "6" },
-            { id: 3, name: "Dr.P.A.Gowri Sankar", university: "Anna University", department: "EEE", researchArea: "Control, Nano Materials and Sensors", supervisorId: "2830026", email: "pagseee@kiot.ac.in", guided: "-", guiding: "6" }
+            { id: 3, name: "Dr.P.A.Gowri Shankar", university: "Anna University", department: "EEE", researchArea: "Control, Nano Materials and Sensors", supervisorId: "2830026", email: "pagseee@kiot.ac.in", guided: "-", guiding: "6" }
         ],
         'computer-science-&-engineering': [
             { id: 1, name: "Dr.P.Rajendran", university: "Anna University", department: "CSE", researchArea: "Image Mining, Data Mining", supervisorId: "2340253", email: "peerajendran@gmail.com", guided: "8", guiding: "8" },

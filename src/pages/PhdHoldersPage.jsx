@@ -252,7 +252,7 @@ const PhdHoldersPage = () => {
         'electrical-&-electronics-engineering': [
             { id: 1, name: "Dr.C.Muniraj", topic: "AC Drives and High Voltage Engineering", year: "2012", university: "Anna University", publications: { ij: 28, ic: 30, nj: 0, nc: 11 } },
             { id: 2, name: "Dr.V.Kamatchi Kannan", topic: "Power Quality Improvement using DSTATCOM", year: "2013", university: "Anna University", publications: { ij: 50, ic: 24, nj: 1, nc: 8 } },
-            { id: 3, name: "Dr.P.A.Gowri Sankar", topic: "Control and Instrumentation, Nano Materials and Sensors", year: "2015", university: "Anna University", publications: { ij: 15, ic: 5, nj: 1, nc: 2 } },
+            { id: 3, name: "Dr.P.A.Gowri Shankar", topic: "Control and Instrumentation, Nano Materials and Sensors", year: "2015", university: "Anna University", publications: { ij: 15, ic: 5, nj: 1, nc: 2 } },
             { id: 4, name: "Dr.S.Kalpana Devi", topic: "Renewable Energy Sources and Converter", year: "2024", university: "Anna University", publications: { ij: 4, ic: 4, nj: 35, nc: 5 } }
         ],
         'computer-science-&-engineering': [

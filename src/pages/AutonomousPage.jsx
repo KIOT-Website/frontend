@@ -22,6 +22,19 @@ import mbaBos from '../assets/resources/7.-MBA-BOS-Members-list.pdf'
 import campusImg from '../assets/main/indian_campus_hero.png'
 import sixLegImg from '../assets/academics/Six-Leg.png'
 
+// Import AICTE Approvals PDFs
+import aicte25_26 from '../assets/idea lap/approvels/AICTE-2025-26.pdf'
+import aicte24_25 from '../assets/idea lap/approvels/AICTE-2024-25.pdf'
+import aicte23_24 from '../assets/idea lap/approvels/EOA-Report-2023-24.pdf'
+import aicte22_23 from '../assets/idea lap/approvels/EOA-Report_22-23.pdf'
+import aicte21_22 from '../assets/idea lap/approvels/EOA-Report_21-22.pdf'
+import aicte20_21 from '../assets/idea lap/approvels/AICTE-2020-21.pdf'
+import aicte15_16 from '../assets/idea lap/approvels/AICTE-2015-16.pdf'
+import aicte14_15 from '../assets/idea lap/approvels/AICTE-2014-15.pdf'
+import aicte13_14 from '../assets/idea lap/approvels/AICTE-2013-14.pdf'
+import aicte12_13 from '../assets/idea lap/approvels/AICTE-2012-13.pdf'
+import aicte11_12 from '../assets/idea lap/approvels/AICTE-2011-12.pdf'
+
 const AutonomousPage = () => {
     const [activeTab, setActiveTab] = useState('overview')
     const [schedules, setSchedules] = useState([])
@@ -327,10 +340,9 @@ const AutonomousPage = () => {
                                     <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Formal Approvals</h2>
                                 </div>
 
-                            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                                 {[
                                     { name: 'UGC', full: 'University Grants Commission', file: ugcFile },
-                                    { name: 'AICTE', full: 'All India Council for Technical Education', file: null },
                                     { name: 'Anna University', full: 'Affiliated University', file: auFile }
                                 ].map((app, i) => (
                                     <div key={i} className="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-lg transition-all group flex flex-col items-center text-center">
@@ -354,6 +366,54 @@ const AutonomousPage = () => {
                                         </button>
                                     </div>
                                 ))}
+                            </div>
+
+                            <div className="mt-16 max-w-3xl mx-auto">
+                                <div className="flex items-center justify-center gap-4 mb-8">
+                                    <div className="h-[2px] w-12 bg-[#ffc107] rounded-full" />
+                                    <h3 className="text-2xl font-black text-[#224292] tracking-tight">AICTE Approvals</h3>
+                                    <div className="h-[2px] w-12 bg-[#ffc107] rounded-full" />
+                                </div>
+                                
+                                <div className="bg-white border border-slate-100 rounded-2xl shadow-xl shadow-black/5 overflow-hidden">
+                                    <table className="w-full text-left border-collapse">
+                                        <thead>
+                                            <tr className="bg-[#224292] text-white">
+                                                <th className="py-4 px-6 text-[10px] font-black uppercase text-white tracking-wider">Academic Year</th>
+                                                <th className="py-4 px-6 text-[10px] font-black uppercase text-white tracking-wider">Approval Status</th>
+                                                <th className="py-4 px-6 text-[10px] font-black uppercase text-white tracking-wider text-right">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100">
+                                            {[
+                                                { year: '2025-26', status: 'Extension of Approval (EoA)', file: aicte25_26 },
+                                                { year: '2024-25', status: 'Extension of Approval (EoA)', file: aicte24_25 },
+                                                { year: '2023-24', status: 'Extension of Approval (EoA)', file: aicte23_24 },
+                                                { year: '2022-23', status: 'Extension of Approval (EoA)', file: aicte22_23 },
+                                                { year: '2021-22', status: 'Extension of Approval (EoA)', file: aicte21_22 },
+                                                { year: '2020-21', status: 'Extension of Approval (EoA)', file: aicte20_21 },
+                                                { year: '2015-16', status: 'Extension of Approval (EoA)', file: aicte15_16 },
+                                                { year: '2014-15', status: 'Extension of Approval (EoA)', file: aicte14_15 },
+                                                { year: '2013-14', status: 'Extension of Approval (EoA)', file: aicte13_14 },
+                                                { year: '2012-13', status: 'Extension of Approval (EoA)', file: aicte12_13 },
+                                                { year: '2011-12', status: 'Extension of Approval (EoA)', file: aicte11_12 }
+                                            ].map((row, idx) => (
+                                                <tr key={idx} className="hover:bg-slate-50/50 transition-colors group">
+                                                    <td className="py-4 px-6 text-[13px] font-bold text-black">{row.year}</td>
+                                                    <td className="py-4 px-6 text-[12px] font-bold text-slate-500">{row.status}</td>
+                                                    <td className="py-4 px-6 text-right">
+                                                        <button
+                                                            onClick={() => window.open(row.file, '_blank')}
+                                                            className="inline-flex items-center gap-2 bg-[#224292]/5 text-[#224292] border border-[#224292]/10 px-4 py-2 rounded-xl text-[9px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] hover:border-[#ffc107] transition-all group-hover:shadow-md"
+                                                        >
+                                                            View PDF <ExternalLink size={12} />
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </motion.section>
                     )}

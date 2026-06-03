@@ -124,6 +124,10 @@ export default function CourseDetailPage({ overrides }) {
   const course = courseData[courseId] || defaultCourse(courseId)
   const Icon = course.icon
 
+  const courseTabs = courseId === 'be-eee'
+    ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
+    : TABS;
+
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
   const objectiveData = [
@@ -279,7 +283,7 @@ export default function CourseDetailPage({ overrides }) {
       {/* --- MOBILE TAB NAVIGATION (Pill Style) --- */}
       <div className="md:hidden bg-[#224292] py-8 px-6 border-t border-white/10">
         <div className="flex flex-wrap justify-center gap-3">
-          {TABS.map(tab => (
+          {courseTabs.map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -299,7 +303,7 @@ export default function CourseDetailPage({ overrides }) {
       <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-[#224292] border-b border-white/10 shadow-xl">
         <div className="w-full px-6 lg:px-12 py-5">
           <div className="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-7xl mx-auto">
-            {TABS.map(tab => (
+            {courseTabs.map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -536,6 +540,54 @@ export default function CourseDetailPage({ overrides }) {
                    </div>
                 </div>
               </>
+            )}
+
+            {/* --- KNOWLEDGE AND ATTITUDE PROFILE (be-eee only) --- */}
+            {activeTab === 'Knowledge and Attitude Profile' && (
+              <div className="space-y-12">
+                <div className="text-center max-w-3xl mx-auto mb-8">
+                  <h2 className="text-3xl md:text-4xl font-extrabold text-[#224292] tracking-tight">
+                    Knowledge and <span className="text-[#ffc107]">Attitude Profile</span>
+                  </h2>
+                </div>
+
+                <div className="max-w-4xl mx-auto space-y-6">
+                  {[
+                    { wk: "WK1", title: "Natural Sciences", desc: "A systematic, theory-based understanding of the natural sciences applicable to the discipline and awareness of relevant social sciences.", icon: Globe },
+                    { wk: "WK2", title: "Mathematics", desc: "Conceptually-based mathematics, numerical analysis, data analysis, statistics and formal aspects of computer and information science to support detailed analysis and modelling applicable to the discipline.", icon: BarChart3 },
+                    { wk: "WK3", title: "Engineering Fundamentals", desc: "A systematic, theory-based formulation of engineering fundamentals required in the engineering discipline.", icon: Layers },
+                    { wk: "WK4", title: "Specialist Knowledge", desc: "Engineering specialist knowledge that provides theoretical frameworks and bodies of knowledge for the accepted practice areas in the engineering discipline; much is at the forefront of the discipline.", icon: Cpu },
+                    { wk: "WK5", title: "Sustainable Design & Operations", desc: "Knowledge, including efficient resource use, environmental impacts, whole-life cost, reuse of resources, net zero carbon, and similar concepts, that supports engineering design and operations in a practice area.", icon: Target },
+                    { wk: "WK6", title: "Engineering Practice", desc: "Knowledge of engineering practice (technology) in the practice areas in the engineering discipline.", icon: Wrench },
+                    { wk: "WK7", title: "Role of Engineering in Society", desc: "Knowledge of the role of engineering in society and identified issues in engineering practice in the discipline, such as the professional responsibility of an engineer to public safety and sustainable development.", icon: Building2 },
+                    { wk: "WK8", title: "Research Literature", desc: "Engagement with selected knowledge in the current research literature of the discipline, awareness of the power of critical thinking and creative approaches to evaluate emerging issues.", icon: Microscope },
+                    { wk: "WK9", title: "Ethics, Diversity & Inclusion", desc: "Ethics, inclusive behavior and conduct. Knowledge of professional ethics, responsibilities, and norms of engineering practice. Awareness of the need for diversity by reason of ethnicity, gender, age, physical ability etc. with mutual understanding and respect, and of inclusive attitudes.", icon: ShieldCheck }
+                  ].map((item, idx) => (
+                    <motion.div
+                      key={item.wk}
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                      className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-100 transition-all group"
+                    >
+                      <div className="shrink-0">
+                        <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-colors duration-300 shadow-sm">
+                          <item.icon size={22} />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <span className="inline-block px-2.5 py-0.5 rounded-md bg-[#224292]/5 text-[#224292] text-[10px] font-black tracking-wider uppercase">
+                            {item.wk}
+                          </span>
+                          <h4 className="text-[15px] font-bold text-[#224292]">{item.title}</h4>
+                        </div>
+                        <p className="text-[13.5px] text-slate-600 leading-relaxed text-justify font-normal">{item.desc}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             )}
 
             {/* --- CURRICULUM --- */}
@@ -1621,37 +1673,10 @@ function InnovativePracticesSection({ courseId, courseName }) {
           </table>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {mockPractices.map((practice, idx) => {
-            const PracticeIcon = practice.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.08 }}
-                className="bg-white rounded-[2rem] p-8 border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#224292]/20 transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="h-12 w-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-[#ffc107] transition-all">
-                      <PracticeIcon size={22} />
-                    </div>
-                    <span className="text-[10px] font-black font-graphik text-[#ffc107] uppercase tracking-widest bg-[#224292] px-3.5 py-1.5 rounded-full">
-                      Practice {idx + 1}
-                    </span>
-                  </div>
-                  <h4 className="text-lg font-bold font-graphik text-[#224292] mb-3 group-hover:text-[#ffc107] transition-colors">{practice.title}</h4>
-                  <p className="text-black font-normal font-graphik text-[15px] leading-relaxed text-justify mb-6">{practice.description}</p>
-                </div>
-                <div className="bg-slate-50/80 p-5 rounded-2xl border border-slate-100 mt-auto">
-                  <p className="text-[10px] font-bold font-graphik text-[#64779F] uppercase tracking-wider mb-1.5">Key Implementation Details</p>
-                  <p className="text-black font-medium font-graphik text-[13.5px] leading-relaxed italic">{practice.details}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="text-center py-20 bg-white rounded-[2rem] border border-dashed border-slate-200 max-w-4xl mx-auto shadow-sm">
+          <Star size={40} className="mx-auto text-slate-300 mb-4" />
+          <h3 className="text-lg font-bold text-slate-400 uppercase italic">Innovative Practices Data Pending</h3>
+          <p className="text-slate-400 text-sm font-normal mt-1">We are currently updating our pedagogical records for this department.</p>
         </div>
       )}
     </div>
