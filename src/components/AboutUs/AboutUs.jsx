@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BookOpen, Users, Trophy, Target, CheckCircle2, ArrowRight, ArrowDown } from 'lucide-react'
 import campusImg from '../../assets/main/campus .webp'
@@ -6,6 +6,40 @@ import VisionMission from '../VisionMission/VisionMission'
 
 const AboutUs = () => {
   const [showAcademicStats, setShowAcademicStats] = useState(false);
+  const [enableInteraction, setEnableInteraction] = useState(false);
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Play the video when entering viewport
+          iframe.contentWindow?.postMessage(
+            JSON.stringify({ event: 'command', func: 'playVideo', args: '' }),
+            '*'
+          );
+        } else {
+          // Pause/freeze the video when leaving viewport
+          iframe.contentWindow?.postMessage(
+            JSON.stringify({ event: 'command', func: 'pauseVideo', args: '' }),
+            '*'
+          );
+          setEnableInteraction(false); // Reset interaction when scrolled away
+        }
+      });
+    }, {
+      threshold: 0.2 // Trigger play/pause when 20% of the video is visible
+    });
+
+    observer.observe(iframe);
+
+    return () => {
+      observer.unobserve(iframe);
+    };
+  }, []);
 
   return (
     <div className="relative bg-[#FCFDFD] pt-4 md:pt-6 pb-6 md:pb-10 min-h-screen overflow-hidden">
@@ -139,10 +173,14 @@ const AboutUs = () => {
                  <h2 className="text-xl sm:text-2xl font-graphik font-bold text-[#224292] tracking-normal">Institutional <span className="text-[#224292]">Walkthrough</span></h2>
               </div>
 
-              <div className="relative w-full aspect-video rounded-2xl sm:rounded-[2rem] overflow-hidden border-2 sm:border-4 border-slate-50 shadow-inner group">
+              <div 
+                onClick={() => setEnableInteraction(true)}
+                className="relative w-full aspect-video rounded-2xl sm:rounded-[2rem] overflow-hidden border-2 sm:border-4 border-slate-50 shadow-inner group"
+              >
                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/EaYFykcBtEs"
+                    ref={iframeRef}
+                    className={`absolute inset-0 w-full h-full transition-all ${enableInteraction ? 'pointer-events-auto' : 'pointer-events-none'}`}
+                    src="https://www.youtube.com/embed/EaYFykcBtEs?enablejsapi=1&mute=1"
                     title="KIOT Institutional Video"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

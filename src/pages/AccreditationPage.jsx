@@ -79,28 +79,16 @@ const AccreditationPage = () => {
   return (
     <div className="min-h-screen bg-white font-graphik pt-12 pb-10">
       {/* ─── HEADER SECTION ─── */}
-      <section className="max-w-[1400px] mx-auto px-6 text-center mb-16">
+      <section className="max-w-[1400px] mx-auto px-4 md:px-6 text-center mb-16">
 
         <motion.h1 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-[#224292] text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tighter"
+          className="text-[#224292] text-3xl md:text-4xl lg:text-5xl font-semibold mb-10 tracking-tighter"
         >
           KIOT – <span className="text-[#ffc107]">Committed to Excellence</span>
         </motion.h1>
-        <motion.div 
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-48 h-px bg-[#D4AF37]/30 mx-auto rounded-full mb-12 relative"
-        >
-           <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[#D4AF37]">
-              <div className="rotate-45 border-2 border-[#D4AF37] p-1 rounded-sm">
-                 <div className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full" />
-              </div>
-           </div>
-        </motion.div>
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -112,7 +100,7 @@ const AccreditationPage = () => {
       </section>
 
       {/* ─── CARDS GRID ─── */}
-      <section className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-16">
+      <section className="max-w-[1400px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-16">
         {documents.map((doc, idx) => (
           <motion.div
             key={doc.id}
@@ -156,7 +144,7 @@ const AccreditationPage = () => {
       </section>
 
       {/* ─── NBA SAR SINGLE COMPACT CARD ─── */}
-      <section className="max-w-[1400px] mx-auto px-6 mb-16">
+      <section className="max-w-[1400px] mx-auto px-4 md:px-6 mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -206,7 +194,7 @@ const AccreditationPage = () => {
       </section>
 
       {/* ─── NIRF REPORTS ─── */}
-      <section className="max-w-[1400px] mx-auto px-6 mb-16">
+      <section className="max-w-[1400px] mx-auto px-4 md:px-6 mb-16">
         <div className="flex items-center gap-4 mb-8">
            <div className="w-10 h-10 bg-[#224292] rounded-xl flex items-center justify-center text-[#ffc107]">
               <FileText size={20} />
@@ -214,15 +202,15 @@ const AccreditationPage = () => {
            <h2 className="text-3xl font-black text-[#224292] tracking-tight">NIRF <span className="text-[#ffc107]">Reports</span></h2>
         </div>
         
-        <div className="bg-white rounded-2xl border border-slate-100 shadow-xl overflow-hidden">
-           <table className="w-full text-left border-collapse">
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-xl overflow-x-auto w-full">
+           <table className="w-full min-w-[950px] text-left border-collapse">
               <thead>
                  <tr className="bg-[#224292]">
-                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest">Year</th>
-                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center">Engineering</th>
-                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center">Overall</th>
-                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center">Innovation</th>
-                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center">SDG</th>
+                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest whitespace-nowrap">Year</th>
+                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center whitespace-nowrap">Engineering</th>
+                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center whitespace-nowrap">Overall</th>
+                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center whitespace-nowrap">Innovation</th>
+                    <th className="px-6 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center whitespace-nowrap">SDG</th>
                  </tr>
               </thead>
               <tbody className="divide-y divide-slate-50 font-graphik text-[#224292]">
@@ -264,7 +252,7 @@ const AccreditationPage = () => {
            </table>
         </div>
       </section>      {/* ─── AQAR REPORTS SECTION ─── */}
-      <section className="max-w-[1400px] mx-auto px-6 mb-20">
+      <section className="max-w-[1400px] mx-auto px-4 md:px-6 mb-20">
         <div className="flex items-center gap-4 mb-8">
            <div className="w-10 h-10 bg-[#224292] rounded-xl flex items-center justify-center text-[#ffc107]">
               <Award size={20} />
@@ -274,12 +262,12 @@ const AccreditationPage = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
            {/* LEFT: TABLE (2/3 width) */}
-           <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-100 shadow-xl overflow-hidden">
-              <table className="w-full text-left border-collapse">
+           <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-100 shadow-xl overflow-x-auto w-full">
+              <table className="w-full min-w-[600px] text-left border-collapse">
                  <thead>
                     <tr className="bg-[#224292]">
-                       <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-widest">Academic Year</th>
-                       <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center">Report</th>
+                       <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-widest whitespace-nowrap">Academic Year</th>
+                       <th className="px-8 py-5 text-[11px] font-black text-white uppercase tracking-widest text-center whitespace-nowrap">Report</th>
                     </tr>
                  </thead>
                  <tbody className="divide-y divide-slate-50 font-graphik">

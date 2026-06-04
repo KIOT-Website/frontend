@@ -214,7 +214,9 @@ const Header = () => {
   const location = useLocation()
   const [searchQuery, setSearchQuery] = useState('')
   const [showSuggestions, setShowSuggestions] = useState(false)
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false)
   const searchRef = useRef(null)
+  const inputRef = useRef(null)
 
   const handleSearchSubmit = (e) => {
     e.preventDefault()
@@ -243,6 +245,7 @@ const Header = () => {
     const handleClickOutside = (e) => {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
         setShowSuggestions(false)
+        setIsSearchExpanded(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -440,10 +443,44 @@ const Header = () => {
               </div>
 
               <div className="flex shrink-0 items-center justify-end pr-10">
-                {/* Compact Top-Bar Search */}
-                <form onSubmit={handleSearchSubmit} ref={searchRef} className="relative flex items-center mr-6">
-                  <Search size={10} className="absolute left-2 text-[#224292]/70 pointer-events-none" />
+                {/* Social Icons (on the left side) */}
+                <div className="flex items-center gap-2 mr-4 translate-y-[-0.5px]">
+                    {socialLinks.map((social) => (
+                      <a 
+                        key={social.name} 
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#224292]/10 text-[#224292] transition-all duration-300 hover:bg-white hover:scale-110 active:scale-95 shadow-sm hover:shadow-md"
+                        title={social.name}
+                      >
+                        <social.icon size={11} strokeWidth={2.5} />
+                      </a>
+                    ))}
+                </div>
+
+                {/* Compact Top-Bar Search (on the right side) */}
+                <form onSubmit={handleSearchSubmit} ref={searchRef} className="relative flex items-center">
+                  {/* Search Icon Trigger */}
+                  <button 
+                    type="button"
+                    onClick={() => {
+                      if (!isSearchExpanded) {
+                        setIsSearchExpanded(true);
+                        setTimeout(() => inputRef.current?.focus(), 100);
+                      } else {
+                        setIsSearchExpanded(false);
+                        setShowSuggestions(false);
+                      }
+                    }}
+                    className="flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#224292]/10 text-[#224292] transition-all duration-300 hover:bg-white hover:scale-110 active:scale-95 shadow-sm hover:shadow-md shrink-0"
+                    title="Search"
+                  >
+                    <Search size={11} strokeWidth={2.5} />
+                  </button>
+
                   <input 
+                    ref={inputRef}
                     type="text" 
                     placeholder="Search..." 
                     value={searchQuery}
@@ -451,8 +488,15 @@ const Header = () => {
                       setSearchQuery(e.target.value)
                       setShowSuggestions(true)
                     }}
-                    onFocus={() => setShowSuggestions(true)}
-                    className="h-[20px] w-28 bg-[#ffc107] border border-[#224292] rounded-md pl-6 pr-2 text-[10px] font-bold text-[#224292] placeholder-[#224292]/50 focus:outline-none focus:border-[#224292] focus:ring-1 focus:ring-[#224292]/20 transition-all"
+                    onFocus={() => {
+                      setIsSearchExpanded(true)
+                      setShowSuggestions(true)
+                    }}
+                    className={`h-[20px] bg-transparent border rounded-md text-[10px] font-bold text-[#224292] placeholder-[#224292]/60 focus:outline-none transition-all duration-300 ${
+                      isSearchExpanded 
+                        ? 'w-36 pl-2 pr-2 ml-1.5 border-[#224292] opacity-100' 
+                        : 'w-0 pl-0 pr-0 ml-0 border-transparent opacity-0 pointer-events-none'
+                    }`}
                   />
 
                   {/* Suggestions Dropdown */}
@@ -477,21 +521,6 @@ const Header = () => {
                     </div>
                   )}
                 </form>
-
-                <div className="flex items-center gap-2 ml-4 translate-y-[-0.5px]">
-                    {socialLinks.map((social) => (
-                      <a 
-                        key={social.name} 
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex h-[24px] w-[24px] items-center justify-center rounded-lg bg-[#224292]/10 text-[#224292] transition-all duration-300 hover:bg-white hover:scale-110 active:scale-95 shadow-sm hover:shadow-md"
-                        title={social.name}
-                      >
-                        <social.icon size={11} strokeWidth={2.5} />
-                      </a>
-                    ))}
-                </div>
               </div>
             </div>
 
@@ -644,7 +673,7 @@ const Header = () => {
               className="fixed left-0 top-0 bottom-0 z-[101] w-[85%] max-w-[360px] bg-white shadow-2xl flex flex-col lg:hidden"
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between p-6">
+              <div className="flex items-center justify-between px-6 py-4">
                 <img
                   src={logo}
                   alt="KIOT"
@@ -659,8 +688,8 @@ const Header = () => {
               </div>
               
               {/* Navigation Links */}
-              <div className="flex-1 overflow-y-auto px-6 py-6">
-                <div className="space-y-2">
+              <div className="flex-1 overflow-y-auto px-6 py-2">
+                <div className="space-y-1">
                   {navLinks.map((link, idx) => {
                     const isActive = (link.name === 'Home' && location.pathname === '/') || (link.name === 'Contact' && location.pathname === '/contact')
                     
@@ -682,7 +711,7 @@ const Header = () => {
                                  handleNavClick(e, link.name, link.href);
                                }
                             }}
-                            className={`flex items-center justify-between px-4 py-4 text-[15px] font-semibold transition-all ${
+                            className={`flex items-center justify-between px-4 py-2.5 text-[15px] font-semibold transition-all ${
                               isActive 
                                 ? 'text-[#224292]' 
                                 : 'text-[#64779F] hover:text-[#224292]'
@@ -715,7 +744,7 @@ const Header = () => {
                                              handleNavClick(e, sub.name, sub.href);
                                            }
                                          }} 
-                                         className={`flex items-center justify-between px-6 py-3.5 text-[13px] font-semibold transition-all group/subitem ${
+                                         className={`flex items-center justify-between px-6 py-2 text-[13px] font-semibold transition-all group/subitem ${
                                             activeSubDropdown === sub.name ? 'text-[#224292] bg-[#224292]/5' : 'text-[#64779F] hover:text-[#224292] hover:bg-white/50'
                                          }`}
                                        >
@@ -748,7 +777,7 @@ const Header = () => {
                                                   key={nested.name}
                                                   href={nested.href}
                                                   onClick={(e) => handleNavClick(e, nested.name, nested.href)}
-                                                  className="flex items-center gap-4 pl-16 pr-6 py-3 text-[12.5px] font-semibold text-[#64779F] hover:text-[#224292] transition-all"
+                                                  className="flex items-center gap-4 pl-16 pr-6 py-1.5 text-[12.5px] font-semibold text-[#64779F] hover:text-[#224292] transition-all"
                                                 >
                                                   <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]/40" />
                                                   <span>{nested.name}</span>

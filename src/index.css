@@ -152,6 +152,9 @@ p {
 }
 
 /* Scrollbar Management */
+html {
+  scroll-behavior: smooth;
+}
 html, body {
   overflow-x: hidden;
   height: auto;

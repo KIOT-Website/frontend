@@ -148,27 +148,69 @@ function App() {
   }, [loading])
 
   useEffect(() => {
+    // Force documentElement to visible overflow to prevent scroll-locking issues
+    document.documentElement.style.overflowX = 'visible';
+    document.documentElement.style.height = 'initial';
+  }, [])
+
+  useEffect(() => {
+    // Deactivate Lenis completely to ensure native browser scrolling works on all viewports and avoids scroll-lock bugs
+    return;
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1,
+      wheelMultiplier: 1.1,
       smoothTouch: false,
-      touchMultiplier: 2,
       infinite: false,
     })
 
+    window.lenis = lenis
+
+    let rafId
     function raf(time) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafId = requestAnimationFrame(raf)
     }
 
-    requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf)
+
+    // Globally intercept window.scrollTo and Element.prototype.scrollIntoView when Lenis is running
+    const originalScrollTo = window.scrollTo
+    window.scrollTo = (optionsOrX, y) => {
+      if (typeof optionsOrX === 'object') {
+        const { top = 0, behavior } = optionsOrX
+        if (behavior === 'smooth') {
+          lenis.scrollTo(top, { duration: 0.9 })
+        } else {
+          lenis.scrollTo(top, { immediate: true })
+        }
+      } else {
+        const topVal = y !== undefined ? y : optionsOrX
+        lenis.scrollTo(topVal, { immediate: true })
+      }
+    }
+
+    const originalScrollIntoView = Element.prototype.scrollIntoView
+    Element.prototype.scrollIntoView = function (options) {
+      if (options && typeof options === 'object') {
+        const { behavior } = options
+        if (behavior === 'smooth') {
+          lenis.scrollTo(this, { offset: options.block === 'start' ? -120 : 0 })
+          return
+        }
+      }
+      originalScrollIntoView.call(this, options)
+    }
 
     return () => {
       lenis.destroy()
+      cancelAnimationFrame(rafId)
+      window.scrollTo = originalScrollTo
+      Element.prototype.scrollIntoView = originalScrollIntoView
+      window.lenis = null
     }
   }, [])
 
@@ -363,29 +405,31 @@ function App() {
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -100, opacity: 0 }}
-                className="fixed bottom-6 left-6 z-[3000] w-[260px] bg-white rounded-2xl shadow-[0_20px_70px_rgba(10,26,63,0.25)] overflow-hidden border border-slate-100 flex flex-col font-graphik"
+                className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[3000] w-[190px] sm:w-[260px] bg-white rounded-xl sm:rounded-2xl shadow-[0_20px_70px_rgba(10,26,63,0.25)] overflow-hidden border border-slate-100 flex flex-col font-graphik"
               >
-                <div className="bg-[#224292] p-5 pb-6 flex flex-col items-center text-center relative">
+                <div className="bg-[#224292] p-3 pb-4 sm:p-5 sm:pb-6 flex flex-col items-center text-center relative">
                     <button 
                       onClick={handleClosePopup}
-                      className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-[#224292] transition-all z-20"
+                      className="absolute top-2 right-2 w-6 h-6 sm:top-3 sm:right-3 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-[#224292] transition-all z-20"
                     >
-                      <X size={16} />
+                      <X size={12} className="sm:hidden" />
+                      <X size={16} className="hidden sm:block" />
                     </button>
-                    <div className="w-12 h-12 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#224292] mb-4 shadow-lg relative z-10">
-                        <GraduationCap size={24} />
+                    <div className="w-8 h-8 sm:w-12 sm:h-12 bg-[#ffc107] rounded-lg sm:rounded-xl flex items-center justify-center text-[#224292] mb-2 sm:mb-4 shadow-lg relative z-10">
+                        <GraduationCap size={16} className="sm:hidden" />
+                        <GraduationCap size={24} className="hidden sm:block" />
                     </div>
-                    <h2 className="text-white text-[11px] font-black uppercase tracking-[0.2em] mb-1 relative z-10 opacity-80">Admissions</h2>
-                    <h3 className="text-white text-3xl font-black tracking-tighter leading-none relative z-10">2026-27</h3>
+                    <h2 className="text-white text-[8px] sm:text-[11px] font-black uppercase tracking-[0.2em] mb-0.5 sm:mb-1 relative z-10 opacity-80">Admissions</h2>
+                    <h3 className="text-white text-xl sm:text-3xl font-black tracking-tighter leading-none relative z-10">2026-27</h3>
                 </div>
-                <div className="p-5 pt-0 -mt-4 relative z-20">
-                    <div className="bg-white rounded-2xl p-4 shadow-xl border border-slate-50 flex flex-col items-center text-center">
-                        <p className="text-[#224292] text-[13px] font-black leading-tight mb-3">
+                <div className="p-3 pt-0 -mt-2 sm:p-5 sm:pt-0 sm:-mt-4 relative z-20">
+                    <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl border border-slate-50 flex flex-col items-center text-center">
+                        <p className="text-[#224292] text-[11px] sm:text-[13px] font-black leading-tight mb-2 sm:mb-3">
                             Applications are now open for all departments.
                         </p>
                         <button 
                           onClick={() => { handleClosePopup(); navigate('/admissions'); }}
-                          className="w-full py-3 bg-[#ffc107] text-[#224292] rounded-xl font-black text-[13px] uppercase tracking-[0.1em] hover:bg-[#224292] hover:text-white transition-all shadow-md flex items-center justify-center gap-2"
+                          className="w-full py-2 sm:py-3 bg-[#ffc107] text-[#224292] rounded-lg sm:rounded-xl font-black text-[11px] sm:text-[13px] uppercase tracking-[0.1em] hover:bg-[#224292] hover:text-white transition-all shadow-md flex items-center justify-center gap-1.5 sm:gap-2"
                         >
                           Apply Now
                         </button>

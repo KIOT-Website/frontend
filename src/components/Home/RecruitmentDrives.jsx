@@ -121,10 +121,10 @@ const RecruitmentDrives = () => {
                     >
                         <Link 
                             to="/recruitment"
-                            className="group relative inline-flex items-center gap-6 px-10 py-5 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
+                            className="group relative inline-flex items-center gap-3 px-6 py-3 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
                         >
                             <span className="text-white">View All Drives</span>
-                            <ChevronRight size={18} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
+                            <ChevronRight size={14} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
                         </Link>
                     </motion.div>
                 )}

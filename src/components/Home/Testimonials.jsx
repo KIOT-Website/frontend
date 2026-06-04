@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 // Assets
 import studentImg from '../../assets/main/testi_student.webp'
@@ -184,6 +184,42 @@ const TestimonialCard = ({ testi }) => (
 
 const Testimonials = () => {
   const [activeTab, setActiveTab] = useState("Students")
+  const [activeCardIndex, setActiveCardIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    setActiveCardIndex(0)
+  }, [activeTab])
+
+  useEffect(() => {
+    if (isMobile) {
+      const timer = setTimeout(() => {
+        setActiveCardIndex((prevIndex) => {
+          const listLength = testimonialData[activeTab].length
+          return (prevIndex + 1) % listLength
+        })
+      }, 4000)
+      return () => clearTimeout(timer)
+    } else {
+      const timer = setTimeout(() => {
+        setActiveTab((prevTab) => {
+          const currentIndex = categories.indexOf(prevTab)
+          const nextIndex = (currentIndex + 1) % categories.length
+          return categories[nextIndex]
+        })
+      }, 6000)
+      return () => clearTimeout(timer)
+    }
+  }, [activeTab, activeCardIndex, isMobile])
 
   return (
     <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
@@ -202,50 +238,102 @@ const Testimonials = () => {
 
         {/* CATEGORY TABS */}
         <div className="flex justify-center mb-10 lg:mb-12">
-           <div className="flex bg-[#224292]/5 p-1.5 rounded-2xl border border-[#D5E2F4]/40 w-fit max-w-full overflow-x-auto scrollbar-hide">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveTab(cat)}
-                  className={`relative py-3 px-8 sm:px-12 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] transition-all rounded-xl whitespace-nowrap ${activeTab === cat ? 'text-[#224292]' : 'text-[#64779F] hover:text-[#224292]'}`}
-                >
-                  {cat}
-                  {activeTab === cat && (
-                    <motion.div 
-                      layoutId="activeTestiTab" 
-                      className="absolute inset-0 bg-white shadow-lg -z-10 rounded-xl border border-[#224292]/5" 
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                </button>
-              ))}
+           <div className="flex flex-col md:flex-row bg-[#224292]/5 p-2 md:p-1.5 rounded-2xl border border-[#D5E2F4]/40 w-full max-w-[280px] md:w-fit md:max-w-full space-y-1 md:space-y-0 overflow-x-auto scrollbar-hide">
+              {categories.map((cat) => {
+                const isActive = activeTab === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveTab(cat)}
+                    className={`relative w-full md:w-auto py-3.5 md:py-3 px-8 sm:px-12 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] transition-all rounded-xl whitespace-nowrap text-center ${
+                      isActive 
+                        ? 'bg-[#224292] text-white md:bg-transparent md:text-[#224292] shadow-md md:shadow-none' 
+                        : 'text-[#224292] md:text-[#64779F] hover:text-[#224292] bg-transparent'
+                    }`}
+                  >
+                    {cat}
+                    {isActive && (
+                      <motion.div 
+                        layoutId="activeTestiTab" 
+                        className="hidden md:block absolute inset-0 bg-white shadow-lg -z-10 rounded-xl border border-[#224292]/5" 
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                  </button>
+                )
+              })}
            </div>
         </div>
 
-        {/* TESTIMONIAL RUNNING MARQUEE */}
+        {/* TESTIMONIAL DISPLAY (MARQUEE OR MOBILE SLIDER) */}
         <div className="relative w-full overflow-hidden py-4">
-
-           {/* Infinite Running Track - Tab key triggers restart animation for seamless view */}
-           <div key={activeTab} className="animate-marquee gap-8 py-2">
-              {/* Set 1 */}
-              {testimonialData[activeTab].map((testi) => (
-                <div
-                  key={`set1-${testi.id}`}
-                  className="w-[280px] md:w-[320px] shrink-0"
-                >
-                   <TestimonialCard testi={testi} />
-                </div>
-              ))}
-              {/* Set 2 */}
-              {testimonialData[activeTab].map((testi) => (
-                <div
-                  key={`set2-${testi.id}`}
-                  className="w-[280px] md:w-[320px] shrink-0"
-                >
-                   <TestimonialCard testi={testi} />
-                </div>
-              ))}
-           </div>
+          {isMobile ? (
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative w-full max-w-[280px] mx-auto min-h-[340px] flex items-center justify-center">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={`${activeTab}-${activeCardIndex}`}
+                    initial={{ opacity: 0, x: 80 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -80 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="w-full"
+                  >
+                    <TestimonialCard testi={testimonialData[activeTab][activeCardIndex]} />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+              
+              {/* Pagination Dots */}
+              <div className="flex items-center gap-2 mt-2">
+                {testimonialData[activeTab].map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveCardIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      activeCardIndex === idx 
+                        ? 'w-6 bg-[#224292]' 
+                        : 'w-2 bg-[#224292]/20 hover:bg-[#224292]/40'
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="flex"
+              >
+                 {/* Infinite Running Track */}
+                 <div className="animate-marquee gap-8 py-2">
+                    {/* Set 1 */}
+                    {testimonialData[activeTab].map((testi) => (
+                      <div
+                        key={`set1-${testi.id}`}
+                        className="w-[280px] md:w-[320px] shrink-0"
+                      >
+                         <TestimonialCard testi={testi} />
+                      </div>
+                    ))}
+                    {/* Set 2 */}
+                    {testimonialData[activeTab].map((testi) => (
+                      <div
+                        key={`set2-${testi.id}`}
+                        className="w-[280px] md:w-[320px] shrink-0"
+                      >
+                         <TestimonialCard testi={testi} />
+                      </div>
+                    ))}
+                 </div>
+              </motion.div>
+            </AnimatePresence>
+          )}
         </div>
 
       </div>

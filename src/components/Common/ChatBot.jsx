@@ -154,32 +154,33 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-20 right-6 z-[9998] font-graphik">
+    <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-[9998] font-graphik">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 50, transformOrigin: 'bottom right' }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            className="absolute bottom-16 right-0 w-[320px] sm:w-[380px] h-[480px] bg-white rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.2)] border border-slate-100 overflow-hidden flex flex-col"
+            className="absolute bottom-14 sm:bottom-18 right-0 w-[290px] sm:w-[380px] h-[400px] sm:h-[480px] bg-white rounded-3xl shadow-[0_20px_50px_rgba(34,66,146,0.2)] border border-slate-100 overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="bg-[#224292] p-4 flex items-center justify-between text-white shrink-0">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white overflow-hidden border border-white/20">
+            <div className="bg-[#224292] p-3 sm:p-4 flex items-center justify-between text-white shrink-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white overflow-hidden border border-white/20">
                   <img src={studentAvatar} alt="Avatar" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h3 className="font-black text-sm tracking-tight">KIOT Assistant</h3>
+                  <h3 className="font-black text-xs sm:text-sm tracking-tight">KIOT Assistant</h3>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                <X size={20} />
+              <button onClick={() => setIsOpen(false)} className="p-1.5 sm:p-2 hover:bg-white/10 rounded-full transition-colors">
+                <X size={16} className="sm:hidden" />
+                <X size={20} className="hidden sm:block" />
               </button>
             </div>
 
             {/* Chat Area */}
-            <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 scroll-smooth">
+            <div ref={scrollRef} className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-slate-50/50 scroll-smooth">
               {messages.map((msg) => (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -187,7 +188,7 @@ const ChatBot = () => {
                   key={msg.id}
                   className={`flex ${msg.type === 'bot' ? 'justify-start' : 'justify-end'}`}
                 >
-                  <div className={`max-w-[85%] p-3.5 rounded-2xl text-[13px] font-bold leading-relaxed shadow-sm ${
+                  <div className={`max-w-[85%] p-2.5 sm:p-3.5 rounded-2xl text-[12px] sm:text-[13px] font-bold leading-relaxed shadow-sm ${
                     msg.type === 'bot' 
                     ? 'bg-[#F1F5F9] text-slate-800 rounded-tl-none border border-slate-200' 
                     : 'bg-[#224292] text-white rounded-tr-none'
@@ -201,7 +202,7 @@ const ChatBot = () => {
 
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 flex gap-1 items-center">
+                  <div className="bg-white p-2.5 sm:p-3 rounded-2xl rounded-tl-none border border-slate-200 flex gap-1 items-center">
                     <span className="w-1.5 h-1.5 bg-[#224292]/40 rounded-full animate-bounce" />
                     <span className="w-1.5 h-1.5 bg-[#224292]/40 rounded-full animate-bounce [animation-delay:0.2s]" />
                     <span className="w-1.5 h-1.5 bg-[#224292]/40 rounded-full animate-bounce [animation-delay:0.4s]" />
@@ -211,21 +212,23 @@ const ChatBot = () => {
 
               {/* Questions Area (Only show when a category is selected via search/type) */}
               {currentCategory && (
-                <div className="space-y-2 pt-2">
+                <div className="space-y-1.5 sm:space-y-2 pt-1 sm:pt-2">
                   <button 
                     onClick={() => setCurrentCategory(null)}
-                    className="flex items-center gap-2 text-[10px] font-black text-[#224292] uppercase tracking-widest mb-3 hover:text-[#ffc107] transition-colors"
+                    className="flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] font-black text-[#224292] uppercase tracking-widest mb-2 sm:mb-3 hover:text-[#ffc107] transition-colors"
                   >
-                    <ArrowLeft size={14} /> Back to Search
+                    <ArrowLeft size={12} className="sm:hidden" />
+                    <ArrowLeft size={14} className="hidden sm:block" /> Back to Search
                   </button>
                   {FAQ_DATA.questions[currentCategory].map((item, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleSend(item.q, item.a)}
-                      className="w-full text-left p-3 bg-white border border-slate-200 rounded-xl hover:border-[#224292] transition-all group flex items-center justify-between shadow-sm"
+                      className="w-full text-left p-2.5 sm:p-3 bg-white border border-slate-200 rounded-xl hover:border-[#224292] transition-all group flex items-center justify-between shadow-sm"
                     >
-                      <span className="text-[12px] font-bold text-slate-700">{item.q}</span>
-                      <ChevronRight size={14} className="text-slate-300 group-hover:text-[#224292]" />
+                      <span className="text-[11px] sm:text-[12px] font-bold text-slate-700">{item.q}</span>
+                      <ChevronRight size={12} className="text-slate-300 group-hover:text-[#224292] sm:hidden" />
+                      <ChevronRight size={14} className="text-slate-300 group-hover:text-[#224292] hidden sm:block" />
                     </button>
                   ))}
                 </div>
@@ -239,16 +242,17 @@ const ChatBot = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="px-4 py-2 bg-white border-t border-slate-100 space-y-1.5 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]"
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-white border-t border-slate-100 space-y-1 sm:space-y-1.5 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]"
                 >
-                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest px-1">Suggested Questions</p>
+                  <p className="text-[8px] sm:text-[9px] font-black text-slate-400 uppercase tracking-widest px-1">Suggested Questions</p>
                   {suggestions.map((item, i) => (
                     <button
                       key={i}
                       onClick={() => handleSend(item.q, item.a)}
-                      className="w-full text-left p-2 bg-slate-50 hover:bg-[#ffc107]/10 rounded-lg text-[11px] font-bold text-[#224292] transition-colors flex items-center gap-2"
+                      className="w-full text-left p-1.5 sm:p-2 bg-slate-50 hover:bg-[#ffc107]/10 rounded-lg text-[10px] sm:text-[11px] font-bold text-[#224292] transition-colors flex items-center gap-1.5 sm:gap-2"
                     >
-                      <Search size={12} className="text-[#ffc107]" />
+                      <Search size={10} className="text-[#ffc107] sm:hidden" />
+                      <Search size={12} className="text-[#ffc107] hidden sm:block" />
                       <span className="truncate">{item.q}</span>
                     </button>
                   ))}
@@ -257,24 +261,25 @@ const ChatBot = () => {
             </AnimatePresence>
 
             {/* Input */}
-            <div className="p-4 bg-white border-t border-slate-100 shrink-0">
+            <div className="p-3 sm:p-4 bg-white border-t border-slate-100 shrink-0">
               <form 
                 onSubmit={(e) => { e.preventDefault(); handleSend(inputValue); }}
-                className="flex items-center gap-2 bg-slate-100 p-1 rounded-2xl border border-slate-200"
+                className="flex items-center gap-1.5 sm:gap-2 bg-slate-100 p-0.5 sm:p-1 rounded-2xl border border-slate-200"
               >
                 <input 
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Ask about admissions, fees, hostel..."
-                  className="flex-1 bg-transparent border-none px-4 py-2 text-[13px] font-bold text-[#224292] outline-none placeholder:text-slate-400"
+                  className="flex-1 bg-transparent border-none px-3 py-1.5 sm:px-4 sm:py-2 text-[12px] sm:text-[13px] font-bold text-[#224292] outline-none placeholder:text-slate-400"
                 />
                 <button 
                   type="submit"
                   disabled={!inputValue.trim()}
-                  className="p-3 bg-[#224292] text-white rounded-xl hover:bg-[#224292]/90 disabled:opacity-50 transition-all shadow-lg"
+                  className="p-2 sm:p-3 bg-[#224292] text-white rounded-xl hover:bg-[#224292]/90 disabled:opacity-50 transition-all shadow-lg"
                 >
-                  <Send size={18} />
+                  <Send size={14} className="sm:hidden" />
+                  <Send size={18} className="hidden sm:block" />
                 </button>
               </form>
             </div>
@@ -287,12 +292,12 @@ const ChatBot = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className={`relative w-16 h-16 rounded-full flex items-center justify-center shadow-[0_15px_40px_rgba(34,66,146,0.3)] transition-all duration-500 overflow-hidden ${
+        className={`relative w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-[0_15px_40px_rgba(34,66,146,0.3)] transition-all duration-500 overflow-hidden ${
           isOpen ? 'bg-white border-2 border-[#224292]' : 'bg-[#224292]'
         }`}
       >
         {isOpen ? (
-          <X size={28} className="text-[#224292]" />
+          <X className="w-5 h-5 sm:w-7 sm:h-7 text-[#224292]" />
         ) : (
           <>
             <img src={studentAvatar} alt="Chat" className="w-full h-full object-cover scale-110" />
@@ -300,7 +305,7 @@ const ChatBot = () => {
           </>
         )}
         {!isOpen && (
-          <span className="absolute top-1 right-1 w-4 h-4 bg-[#ffc107] rounded-full border-2 border-white animate-bounce shadow-md" />
+          <span className="absolute top-0.5 right-0.5 w-3 h-3 sm:top-1 sm:right-1 sm:w-4 sm:h-4 bg-[#ffc107] rounded-full border-2 border-white animate-bounce shadow-md" />
         )}
       </motion.button>
     </div>

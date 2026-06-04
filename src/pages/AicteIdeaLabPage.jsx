@@ -48,9 +48,553 @@ import aicteLogo from '../assets/idea lap/aicetelogo.png'
 import govtEmblem from '../assets/idea lap/govt_india_emblem.webp'
 import ideaLabLogo from '../assets/idea lap/aicte_idea_lab_logo.webp'
 
+const activitiesData = [
+  {
+    sNo: 1,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab”',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr.M.Rajkumar, AP/EEE', 'Mr.R.Ayyappan, AP/IT'],
+    dates: '02.07.2025 & 03.07.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '55' },
+    remarks: 'Campus Bridge Course Various School Students'
+  },
+  {
+    sNo: 2,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab”',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Dinesh Kumar, AP/ECE', 'Mr.S.Sasidevi, AP/ECE', 'Mr.S.Rajeshkumar, AP/Civil'],
+    dates: '07.07.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '86' },
+    remarks: 'Campus Bridge Course Various School Students'
+  },
+  {
+    sNo: 3,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab”',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr. M.Gopikumaran, AP/CSBS', 'Mr.R.Rameshkumar, AP/AI&DS'],
+    dates: '08.07.2025 & 09.07.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '81' },
+    remarks: 'Campus Bridge Course Various School Students'
+  },
+  {
+    sNo: 4,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab”',
+    mode: 'Offline',
+    resourcePerson: ['Mr.B.S.T.Ragu, AP/ECE', 'Mr.A. Gajendran, AP/MECH', 'Mr.R.Sivaguru, AP/CSE'],
+    dates: '11.07.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '81' },
+    remarks: 'Campus Bridge Course Various School Students'
+  },
+  {
+    sNo: 5,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Ayyappan, AP/IT', 'Mrs.S.Lalithambikai AP/IT', 'Mr.T.Bhuveneshwaran, AP/IT'],
+    dates: '14.07.2025 to 19.07.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '60', external: '-' },
+    remarks: 'II Year IT A Section'
+  },
+  {
+    sNo: 6,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Ayyappan, AP/IT', 'Mrs.R.Rubiga AP/IT', 'Mrs.T.Priya, AP/IT'],
+    dates: '17.07.2025 to 23.07.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '60', external: '-' },
+    remarks: 'II Year IT B Section'
+  },
+  {
+    sNo: 7,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.S.Rajeshkumar, AP/Civil', 'Mr.L.M.Nirmal, AP/Civil'],
+    dates: '22.07.2025 to 28.07.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '31', external: '-' },
+    remarks: 'II Year CIVIL'
+  },
+  {
+    sNo: 8,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Rameshkumar, AP/AI&DS', 'Mr. B. Gunasekar, AP/AI&DS.', 'Mrs.P.J.Esther Rani, AP/AI&DS'],
+    dates: '25.07.2025 to 31.07.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '60', external: '-' },
+    remarks: 'II Year AI&DS  A Section'
+  },
+  {
+    sNo: 9,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Rameshkumar, AP/AI&DS', 'Mr. B. Gunasekar, AP/AI&DS.', 'Mrs.P.J.Esther Rani, AP/AI&DS'],
+    dates: '30.07.2025 to 05.08.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '60', external: '-' },
+    remarks: 'II Year AI&DS  B Section'
+  },
+  {
+    sNo: 10,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab”',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr.M.Dinesh Kumar, AP/ECE', 'Dr.P.Sanmugasundaram, Dir-Outreach'],
+    dates: '02.08.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '37' },
+    remarks: 'Dhaarus Salaam Matriculation Hr. Sec. School, Salem.'
+  },
+  {
+    sNo: 11,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs. N.Subha, AP/CSE', 'Mrs.R.Saranya,AP/CSE', 'Mrs.A.Kasthuri, AP/CSE'],
+    dates: '04.08.2025 to 09.08.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '58', external: '-' },
+    remarks: 'II Year CSE  A Section'
+  },
+  {
+    sNo: 12,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs. E.Kiruthika, AP/CSE', 'Mrs.R.Vikneswari, AP/CSE', 'Mr.C.Siva, AP/CSE'],
+    dates: '07.08.2025 to 13.08.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '59', external: '-' },
+    remarks: 'II Year CSE  B Section'
+  },
+  {
+    sNo: 13,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs. G.Pavithra, AP/CSE', 'Mrs.S.Sowndarya, AP/CSE'],
+    dates: '13.08.2025 to 20.08.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '57', external: '-' },
+    remarks: 'II Year CSE  C Section'
+  },
+  {
+    sNo: 14,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Gopikumaran, AP/CSBS', 'Mr.B.Venkataramanen, AP/CSBS'],
+    dates: '19.08.2025 to 26.08.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '62', external: '-' },
+    remarks: 'II Year CSBS'
+  },
+  {
+    sNo: 15,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Rajkumar, AP/EEE', 'Ms. P.Srinithi, AP/EEE'],
+    dates: '25.08.2025 to 01.09.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '65', external: '-' },
+    remarks: 'II Year EEE'
+  },
+  {
+    sNo: 16,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.S. Sabarinathan, AP/ECE', 'Mr.M.Chandraman, AP/ECE', 'Mr.B.S.T.Ragu, AP/ECE'],
+    dates: '15.09.2025 to 20.09.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '66', external: '-' },
+    remarks: 'II Year ECE  A Section'
+  },
+  {
+    sNo: 17,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs.S.Sasidevi, AP/ ECE', 'Mrs.L.Chitirappaavai, AP/ECE', 'Mrs.V. Vadivu , AP/ECE'],
+    dates: '18.09.2025 to 24.09.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '66', external: '-' },
+    remarks: 'II Year ECE  B Section'
+  },
+  {
+    sNo: 18,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab”',
+    mode: 'Offline',
+    resourcePerson: ['Dr.P.Sanmugasundaram, Dir-Outreach', 'Mr.M.Jagadeeshraja, AP/EEE', 'Mr.B.S.T.Ragu, AP/ECE'],
+    dates: '20.09.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '43' },
+    remarks: 'Swamy Vivekanandha Matriculation School, KK Nagar, Salem.'
+  },
+  {
+    sNo: 19,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs.S.Sasidevi, AP/ ECE', 'Mrs.T. Devika, AP/ECE', 'Mrs.R. Hemalatha, AP/ECE'],
+    dates: '23.09.2025 to 29.09.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '65', external: '-' },
+    remarks: 'II Year ECE  C Section'
+  },
+  {
+    sNo: 20,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Sivaguru, AP/ CSE', 'Mr.K.Boopathi, AP/CSE', 'Mrs.A.Kasthuri, AP/CSE'],
+    dates: '06.10.2025 to 11.10.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '67', external: '-' },
+    remarks: 'II Year CSE  D Section'
+  },
+  {
+    sNo: 21,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.A. Gajendran, AP/MECH', 'Mr.S. Naveenkumar, AP/MECH', 'Mr.C.Eswaramoorthy, AP/MECH'],
+    dates: '09.10.2025 to 15.10.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '65', external: '-' },
+    remarks: 'II Year MECH  A Section'
+  },
+  {
+    sNo: 22,
+    title: 'Skilling Program on “IoT Design and 3D Printing”  (Engineering Clinic II)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.A. Gajendran, AP/MECH', 'Mr.S. Naveenkumar, AP/MECH', 'Mr.C.Eswaramoorthy, AP/MECH'],
+    dates: '14.10.2025 to 20.10.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '65', external: '-' },
+    remarks: 'II Year MECH  B Section'
+  },
+  {
+    sNo: 23,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab” ”( Vikisit Bharat Buildathon )',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr.B.S.T.Ragu, AP/ECE', 'Dr.P.Sanmugasundaram, Dir-Outreach'],
+    dates: '25.10.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '15' },
+    remarks: 'Jeeva Public School Students (Batch I)'
+  },
+  {
+    sNo: 24,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab” ”( Vikisit Bharat Buildathon )',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr.M.Dinesh Kumar, AP/ECE', 'Dr.P.Sanmugasundaram, Dir-Outreach'],
+    dates: '29.10.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '15' },
+    remarks: 'Jeeva Public School Students (Batch II)'
+  },
+  {
+    sNo: 25,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab” ”( Vikisit Bharat Buildathon )',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Dr.P.Sanmugasundaram, Dir-Outreach'],
+    dates: '30.10.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '12' },
+    remarks: 'Dheeran Academy, Sankagiri.'
+  },
+  {
+    sNo: 26,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab”( Vikisit Bharat Buildathon )',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr.B.S.T.Ragu, AP/ECE', 'Dr.P.Sanmugasundaram, Dir-Outreach'],
+    dates: '31.10.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '52' },
+    remarks: 'Swamy Vivekanandha Matriculation School, KK Nagar, Salem.'
+  },
+  {
+    sNo: 27,
+    title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr.M.Dinesh Kumar, AP/ECE', 'Dr.P.Sanmugasundaram, Dir-Outreach'],
+    dates: '08.11.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '50' },
+    remarks: 'Gv. Hr. Sec. School, Mettur.'
+  },
+  {
+    sNo: 28,
+    title: 'Open Day for School Students “Robotricks”',
+    mode: 'Offline',
+    resourcePerson: ['Dr.P.Sanmugasundaram, Dir-Outreach', 'Mr.B.S.T.Ragu, AP/ECE'],
+    dates: '21.11.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '25' },
+    remarks: 'Various School Students'
+  },
+  {
+    sNo: 29,
+    title: 'Open Day for School Students “Idea Master”',
+    mode: 'Offline',
+    resourcePerson: ['Dr.P.Sanmugasundaram, Dir-Outreach', 'Mr.M.Dinesh Kumar, AP/ECE'],
+    dates: '22.11.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '24' },
+    remarks: 'Various School Students'
+  },
+  {
+    sNo: 30,
+    title: 'Open Day for School Students “PCB Design” (Think. Design. Build for Young Innovators)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr.M.Dinesh Kumar, AP/ECE'],
+    dates: '26.12.2025 to 27.12.2025',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '46' },
+    remarks: 'Royal Park School Students (CBSE), Salem'
+  },
+  {
+    sNo: 31,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Jagadeeshraja, AP/EEE', 'Mr.M.Dinesh Kumar, AP/ECE'],
+    dates: '22.01.2026 to 29.01.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '34', external: '-' },
+    remarks: 'I Year IDEA Lab Student Ambassador'
+  },
+  {
+    sNo: 32,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs.S.Sasidevi, AP/ ECE', 'Mrs. R.Hemalatha, AP/ECE', 'Mr. B.S.T.Ragu, AP/ECE'],
+    dates: '02.02.2026 to 02.02.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '62', external: '-' },
+    remarks: 'I Year ECE  A Section'
+  },
+  {
+    sNo: 33,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs.S.Sasidevi, AP/ ECE', 'Mrs. V.Vadivu, AP/ECE', 'Mr. B.S.T.Ragu, AP/ECE'],
+    dates: '05.02.2026 to 11.02.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '63', external: '-' },
+    remarks: 'I Year ECE  B Section'
+  },
+  {
+    sNo: 34,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr. S.Rajeshkumar, AP/Civil', 'Mr. B.Sathishkumar, AP/Civil'],
+    dates: '09.02.2026 to 14.02.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '30', external: '-' },
+    remarks: 'I Year CIVIL'
+  },
+  {
+    sNo: 35,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs.S.Sasidevi, AP/ ECE', 'Mr. S.Sabarinathan, AP/ECE', 'Mr. B.S.T.Ragu, AP/ECE'],
+    dates: '10.02.2026 to 17.02.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '61', external: '-' },
+    remarks: 'I Year ECE  C Section'
+  },
+  {
+    sNo: 36,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mrs.S.Sasidevi, AP/ ECE', 'Mrs. M.Vasanthi, AP/ECE', 'Ms. C.Sri Kiruthika, AP/ECE'],
+    dates: '13.02.2026 to 20.02.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '61', external: '-' },
+    remarks: 'I Year ECX'
+  },
+  {
+    sNo: 37,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Sivaguru, AP/ CSE', 'Mrs. S.Deepa, AP/CSE', 'Mrs. K.Saranya, AP/CSE'],
+    dates: '18.02.2026 to 24.02.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '61', external: '-' },
+    remarks: 'I Year CSE  A Section'
+  },
+  {
+    sNo: 38,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Sivaguru, AP/ CSE', 'Mrs. E.Kiruthika, AP/CSE', 'Mr. G.Babu, AP/CSE'],
+    dates: '11.03.2026 to 17.03.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '-', external: '-' },
+    remarks: 'I Year CSE  B Section'
+  },
+  {
+    sNo: 39,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Sivaguru, AP/ CSE', 'Mr.K.Boopathi, AP/CSE', 'Mrs.G.Pavithra, AP/CSE'],
+    dates: '17.03.2026 to 25.03.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '62', external: '-' },
+    remarks: 'I Year CSE  C Section'
+  },
+  {
+    sNo: 40,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Sivaguru, AP/ CSE', 'Mrs.K.Gowthami,    AP/CSE', 'Mr.C.Siva, AP/CSE'],
+    dates: '24.03.2026 to 30.03.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '61', external: '-' },
+    remarks: 'I Year CSE  D Section'
+  },
+  {
+    sNo: 41,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr. A. Gajendran, AP/MECH', 'Mr.S. Santhosh, AP/MECH', 'Mr.C.Eswaramoorthy, AP/MECH'],
+    dates: '27.03.2026 to 04.04.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '61', external: '-' },
+    remarks: 'I Year MECH  A Section'
+  },
+  {
+    sNo: 42,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr. A. Gajendran, AP/MECH', 'Mr.S. Santhosh, AP/MECH', 'Mr.C.Eswaramoorthy, AP/MECH'],
+    dates: '01.04.2026 to 08.04.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '61', external: '-' },
+    remarks: 'I Year MECH  B Section'
+  },
+  {
+    sNo: 43,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Rameshkumar, AP/AI&DS', 'Mrs.P.J.Esther Rani, AP/AI&DS', 'Ms. N.M. Ranitha, AP/AI&DS'],
+    dates: '07.04.2026 to 13.04.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '57', external: '-' },
+    remarks: 'I Year AI&DS  A Section'
+  },
+  {
+    sNo: 44,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Rameshkumar, AP/AI&DS', 'Mr. B. Gunasekar, AP/AI&DS', 'Mrs. M. Deepa, AP/AI&DS'],
+    dates: '10.04.2026 to 17.04.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '58', external: '-' },
+    remarks: 'I Year AI&DS  B Section'
+  },
+  {
+    sNo: 45,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I) Batch - I',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Rajkumar, AP/EEE', 'Ms. P.Srinithi, AP/EEE'],
+    dates: '15.04.2026 to 21.04.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '30', external: '-' },
+    remarks: 'I Year EEE (Batch –I)'
+  },
+  {
+    sNo: 46,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I) Batch - II',
+    mode: 'Offline',
+    resourcePerson: ['Mr.M.Rajkumar, AP/EEE', 'Ms. P.Srinithi, AP/EEE'],
+    dates: '15.04.2026 to 21.04.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '31', external: '-' },
+    remarks: 'I Year EEE (Batch –II)'
+  },
+  {
+    sNo: 47,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr. B. Venkata ramanen, AP/CSBS', 'Mr. M.Gopikumaran, AP/CSBS'],
+    dates: '20.04.2026 to 27.04.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '63', external: '-' },
+    remarks: 'I Year CSBS'
+  },
+  {
+    sNo: 48,
+    title: 'Faculty Development  Program on “ Accelerating Innovation with purpose”',
+    mode: 'Offline',
+    resourcePerson: ['Dr. Chockalingam Aravind Vaithilingam, Adjunct Professor, Philippines.'],
+    dates: '04.05.2026 to 09.05.2026',
+    facultyBenefited: { internal: '29', external: '-' },
+    studentsParticipated: { internal: '-', external: '-' },
+    remarks: 'Internal Faculty Members'
+  },
+  {
+    sNo: 49,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Ayyappan, AP/IT', 'Mrs. Rubiga, AP/IT', 'Mrs. Priya, AP/IT'],
+    dates: '08.05.2026 to 14.05.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '31', external: '-' },
+    remarks: 'I Year IT A (Batch –I)'
+  },
+  {
+    sNo: 50,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Ayyappan, AP/IT', 'Mrs. Rubiga, AP/IT', 'Mrs. Priya, AP/IT'],
+    dates: '08.05.2026 to 14.05.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '31', external: '-' },
+    remarks: 'I Year IT A (Batch –II)'
+  },
+  {
+    sNo: 51,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Ayyappan, AP/IT', 'Mrs. Rajapriya,AP/IT', 'Mr.T.Bhuvaneshwaran AP/IT'],
+    dates: '13.05.2026 to 19.05.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '31', external: '-' },
+    remarks: 'I Year IT B (Batch –I)'
+  },
+  {
+    sNo: 52,
+    title: 'Skilling Program on “ PCB Design and Manufacturing Technology”    (Engineering Clinic – I)',
+    mode: 'Offline',
+    resourcePerson: ['Mr.R.Ayyappan, AP/IT', 'Mrs. Rajapriya,AP/IT', 'Mr.T.Bhuvaneshwaran AP/IT'],
+    dates: '13.05.2026 to 19.05.2026',
+    facultyBenefited: { internal: '-', external: '-' },
+    studentsParticipated: { internal: '31', external: '-' },
+    remarks: 'I Year IT B (Batch –II)'
+  }
+];
+
 const IdeaLabPage = () => {
     const navigate = useNavigate()
     const [selectedImage, setSelectedImage] = useState(null)
+    const [searchTerm, setSearchTerm] = useState('')
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 10
+
+    // Filter activities based on search term
+    const filteredActivities = activitiesData.filter(act => {
+        const search = searchTerm.toLowerCase()
+        return (
+            act.title.toLowerCase().includes(search) ||
+            act.remarks.toLowerCase().includes(search) ||
+            act.resourcePerson.some(p => p.toLowerCase().includes(search)) ||
+            act.mode.toLowerCase().includes(search)
+        )
+    })
+
+    // Paginate activities
+    const totalPages = Math.ceil(filteredActivities.length / itemsPerPage)
+    const paginatedActivities = filteredActivities.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    )
 
     const features = [
         {
@@ -559,6 +1103,174 @@ const IdeaLabPage = () => {
                             </motion.div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* ACTIVITIES SECTION */}
+            <section id="activities" className="py-16 bg-[#f8fafc] font-graphik">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
+                        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">Activities</h2>
+                        <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
+                    </div>
+
+                    {/* Search and Filters */}
+                    <div className="mb-6 flex flex-col md:flex-row gap-4 items-center justify-between">
+                        <div className="relative w-full md:w-96">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                            <input
+                                type="text"
+                                placeholder="Search by title, resource person, remarks..."
+                                value={searchTerm}
+                                onChange={(e) => {
+                                    setSearchTerm(e.target.value)
+                                    setCurrentPage(1)
+                                }}
+                                className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#224292] font-semibold text-sm text-black"
+                            />
+                        </div>
+                        <div className="text-slate-500 font-semibold text-sm">
+                            Showing {filteredActivities.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0} - {Math.min(currentPage * itemsPerPage, filteredActivities.length)} of {filteredActivities.length} programs
+                        </div>
+                    </div>
+
+                    {/* Responsive Layout */}
+                    <div className="hidden md:block overflow-x-auto bg-white rounded-3xl border border-slate-100 shadow-sm">
+                        <table className="w-full text-left border-collapse text-black">
+                            <thead>
+                                <tr className="bg-[#224292] text-white border-b border-slate-100">
+                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center" rowSpan={2}>S. No.</th>
+                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider" rowSpan={2}>Title of the Program</th>
+                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center" rowSpan={2}>Online/ Offline</th>
+                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider" rowSpan={2}>Resource Person Details</th>
+                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center" rowSpan={2}>Dates (From-To)</th>
+                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center border-b border-white/20" colSpan={2}>No. of Faculty Benefited</th>
+                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center border-b border-white/20" colSpan={2}>No. of Students Participated</th>
+                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider" rowSpan={2}>Remarks</th>
+                                </tr>
+                                <tr className="bg-[#224292]/95 text-white border-b border-slate-100">
+                                    <th className="py-2 px-2 font-bold text-[10px] uppercase tracking-wider text-center border-r border-slate-100/10">Internal</th>
+                                    <th className="py-2 px-2 font-bold text-[10px] uppercase tracking-wider text-center">External</th>
+                                    <th className="py-2 px-2 font-bold text-[10px] uppercase tracking-wider text-center border-r border-slate-100/10">Internal</th>
+                                    <th className="py-2 px-2 font-bold text-[10px] uppercase tracking-wider text-center">External</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                                {paginatedActivities.map((act) => (
+                                    <tr key={act.sNo} className="hover:bg-slate-50/50 transition-colors">
+                                        <td className="py-2 px-4 text-center font-normal text-xs text-slate-500">{act.sNo}</td>
+                                        <td className="py-2 px-4 font-normal text-xs leading-snug">{act.title}</td>
+                                        <td className="py-2 px-4 text-center font-normal text-xs">
+                                            <span className={`inline-block px-2.5 py-1 rounded-full font-normal text-xs ${act.mode === 'Online' ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}`}>
+                                                {act.mode}
+                                            </span>
+                                        </td>
+                                        <td className="py-2 px-4 text-xs font-normal leading-relaxed">
+                                            <ul className="list-disc pl-4 space-y-1">
+                                                {act.resourcePerson.map((person, index) => (
+                                                    <li key={index}>{person}</li>
+                                                ))}
+                                            </ul>
+                                        </td>
+                                        <td className="py-2 px-4 text-center font-normal text-xs text-slate-600 whitespace-nowrap">{act.dates}</td>
+                                        <td className="py-2 px-4 text-center text-xs font-normal border-r border-slate-100">{act.facultyBenefited.internal}</td>
+                                        <td className="py-2 px-4 text-center text-xs font-normal">{act.facultyBenefited.external}</td>
+                                        <td className="py-2 px-4 text-center text-xs font-normal border-r border-slate-100">{act.studentsParticipated.internal}</td>
+                                        <td className="py-2 px-4 text-center text-xs font-normal">{act.studentsParticipated.external}</td>
+                                        <td className="py-2 px-4 text-xs font-normal text-slate-600">{act.remarks}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {/* Mobile Card Layout */}
+                    <div className="md:hidden space-y-4">
+                        {paginatedActivities.map((act) => (
+                            <div key={act.sNo} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-3 text-black">
+                                <div className="flex items-center justify-between border-b border-slate-100 pb-2">
+                                    <span className="font-bold text-xs text-slate-500">S. No. {act.sNo}</span>
+                                    <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-normal ${act.mode === 'Online' ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}`}>
+                                        {act.mode}
+                                    </span>
+                                </div>
+                                <div>
+                                    <h4 className="font-normal text-xs leading-snug">{act.title}</h4>
+                                </div>
+                                <div className="grid grid-cols-2 gap-2 text-xs">
+                                    <div>
+                                        <span className="text-slate-400 block font-bold">Dates:</span>
+                                        <span className="font-normal text-slate-700">{act.dates}</span>
+                                    </div>
+                                    <div>
+                                        <span className="text-slate-400 block font-bold">Remarks:</span>
+                                        <span className="font-normal text-slate-700">{act.remarks}</span>
+                                    </div>
+                                </div>
+                                <div className="bg-slate-50/50 p-3 rounded-xl border border-slate-100 flex flex-col gap-2">
+                                    <div>
+                                        <span className="text-slate-400 text-[10px] font-bold block mb-1">Resource Persons:</span>
+                                        <ul className="list-disc pl-4 text-xs font-normal text-slate-700 space-y-1">
+                                            {act.resourcePerson.map((person, index) => (
+                                                <li key={index}>{person}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-2 gap-3 text-xs border-t border-slate-100 pt-3">
+                                    <div>
+                                        <span className="text-slate-400 block font-bold mb-0.5">Faculty Benefited:</span>
+                                        <span className="font-normal text-slate-700">Int: {act.facultyBenefited.internal} | Ext: {act.facultyBenefited.external}</span>
+                                    </div>
+                                    <div>
+                                        <span className="text-slate-400 block font-bold mb-0.5">Students Participated:</span>
+                                        <span className="font-normal text-slate-700">Int: {act.studentsParticipated.internal} | Ext: {act.studentsParticipated.external}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Pagination controls */}
+                    {totalPages > 1 && (
+                        <div className="mt-8 flex items-center justify-center gap-2">
+                            <button
+                                onClick={() => {
+                                    setCurrentPage(prev => Math.max(prev - 1, 1));
+                                    document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }}
+                                disabled={currentPage === 1}
+                                className="px-3.5 py-1.5 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:pointer-events-none transition-colors"
+                            >
+                                Prev
+                            </button>
+                            <div className="flex gap-1">
+                                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                                    <button
+                                        key={page}
+                                        onClick={() => {
+                                            setCurrentPage(page);
+                                            document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                        }}
+                                        className={`w-9 h-9 rounded-lg border text-sm font-semibold transition-colors ${currentPage === page ? 'bg-[#224292] border-[#224292] text-white' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+                                    >
+                                        {page}
+                                    </button>
+                                ))}
+                            </div>
+                            <button
+                                onClick={() => {
+                                    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+                                    document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }}
+                                disabled={currentPage === totalPages}
+                                className="px-3.5 py-1.5 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:pointer-events-none transition-colors"
+                            >
+                                Next
+                            </button>
+                        </div>
+                    )}
                 </div>
             </section>
 

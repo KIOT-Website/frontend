@@ -439,8 +439,8 @@ const Footer = () => {
             </div>
 
             {/* Follow us block */}
-            <div className="flex items-center gap-4">
-              <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest">Follow Us</span>
+            <div className="flex items-center gap-4 justify-start w-full xl:w-auto">
+              <span className="hidden sm:inline text-[11px] font-black text-gray-400 uppercase tracking-widest">Follow Us</span>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon
