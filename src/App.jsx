@@ -237,6 +237,476 @@ function App() {
     }
   }, [location])
 
+  useEffect(() => {
+    // Preserves default homepage meta title as requested
+    if (location.pathname === '/') {
+      document.title = "KIOT | Knowledge Institute of Technology";
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute("content", "Knowledge Institute of Technology (KIOT) - An autonomous institution committed to technical excellence, global placements, and innovative engineering education in Salem.");
+      }
+      return;
+    }
+
+    const staticMeta = {
+      "/contact": {
+        title: "Contact Us | KIOT Salem",
+        desc: "Get in touch with Knowledge Institute of Technology (KIOT) in Salem. Find contact details, location map, and enquiry forms for admissions."
+      },
+      "/about/about-us": {
+        title: "About KIOT | Knowledge Institute of Technology",
+        desc: "Learn about KIOT, a leading autonomous engineering college in Salem, Tamil Nadu, committed to technical excellence and placements."
+      },
+      "/about-us": {
+        title: "About KIOT | Knowledge Institute of Technology",
+        desc: "Learn about KIOT, a leading autonomous engineering college in Salem, Tamil Nadu, committed to technical excellence and placements."
+      },
+      "/about/our-values": {
+        title: "Vision, Mission & Values | KIOT",
+        desc: "Explore the core values, vision, and mission that drive Knowledge Institute of Technology towards academic and engineering excellence."
+      },
+      "/our-values": {
+        title: "Vision, Mission & Values | KIOT",
+        desc: "Explore the core values, vision, and mission that drive Knowledge Institute of Technology towards academic and engineering excellence."
+      },
+      "/about/promoters": {
+        title: "Promoters & Founders | KIOT",
+        desc: "Meet the visionary promoters and founders of Knowledge Institute of Technology (KIOT) driving quality education in Salem."
+      },
+      "/promoters": {
+        title: "Promoters & Founders | KIOT",
+        desc: "Meet the visionary promoters and founders of Knowledge Institute of Technology (KIOT) driving quality education in Salem."
+      },
+      "/about/leadership": {
+        title: "Leadership & Administration | KIOT",
+        desc: "Meet the administrative leadership, principal, and heads of departments guiding Knowledge Institute of Technology."
+      },
+      "/leadership": {
+        title: "Leadership & Administration | KIOT",
+        desc: "Meet the administrative leadership, principal, and heads of departments guiding Knowledge Institute of Technology."
+      },
+      "/about/institutional-policies": {
+        title: "Institutional Policies | KIOT",
+        desc: "Read the guidelines, code of conduct, and institutional policies of Knowledge Institute of Technology for students and faculty."
+      },
+      "/institutional-policies": {
+        title: "Institutional Policies | KIOT",
+        desc: "Read the guidelines, code of conduct, and institutional policies of Knowledge Institute of Technology for students and faculty."
+      },
+      "/about/accreditation-ranking": {
+        title: "Accreditations & Rankings | KIOT",
+        desc: "Discover KIOT's NAAC accreditations, NBA status, rankings, and certifications highlighting our commitment to quality education."
+      },
+      "/accreditation-ranking": {
+        title: "Accreditations & Rankings | KIOT",
+        desc: "Discover KIOT's NAAC accreditations, NBA status, rankings, and certifications highlighting our commitment to quality education."
+      },
+      "/about/governing-council": {
+        title: "Governing Council Members | KIOT",
+        desc: "Meet the distinguished academic and industry leaders forming the Governing Council of Knowledge Institute of Technology."
+      },
+      "/governing-council": {
+        title: "Governing Council Members | KIOT",
+        desc: "Meet the distinguished academic and industry leaders forming the Governing Council of Knowledge Institute of Technology."
+      },
+      "/resources/iqac": {
+        title: "IQAC Cell | Internal Quality Assurance",
+        desc: "Internal Quality Assurance Cell (IQAC) at KIOT ensures continuous improvement in academic and administrative performance."
+      },
+      "/placements": {
+        title: "Placement Cell & Overview | KIOT",
+        desc: "Explore placement records, top recruiters, and career development initiatives at Knowledge Institute of Technology, Salem."
+      },
+      "/placements/placement": {
+        title: "Placement Cell & Overview | KIOT",
+        desc: "Explore placement records, top recruiters, and career development initiatives at Knowledge Institute of Technology, Salem."
+      },
+      "/placement-overview": {
+        title: "Placement Cell & Overview | KIOT",
+        desc: "Explore placement records, top recruiters, and career development initiatives at Knowledge Institute of Technology, Salem."
+      },
+      "/placements/training": {
+        title: "Career Development & Training | KIOT",
+        desc: "Learn about training modules, soft skills, aptitude development, and technical coaching for KIOT students."
+      },
+      "/cdt": {
+        title: "Career Development & Training | KIOT",
+        desc: "Learn about training modules, soft skills, aptitude development, and technical coaching for KIOT students."
+      },
+      "/placements/outcomes": {
+        title: "Placement Records & Outcomes | KIOT",
+        desc: "View the placement achievements, packages, list of placed students, and placement statistics of KIOT."
+      },
+      "/records": {
+        title: "Placement Records & Outcomes | KIOT",
+        desc: "View the placement achievements, packages, list of placed students, and placement statistics of KIOT."
+      },
+      "/outcomes": {
+        title: "Placement Records & Outcomes | KIOT",
+        desc: "View the placement achievements, packages, list of placed students, and placement statistics of KIOT."
+      },
+      "/placements/recruitment": {
+        title: "Placement Records & Outcomes | KIOT",
+        desc: "View the placement achievements, packages, list of placed students, and placement statistics of KIOT."
+      },
+      "/placements/records": {
+        title: "Placement Records & Outcomes | KIOT",
+        desc: "View the placement achievements, packages, list of placed students, and placement statistics of KIOT."
+      },
+      "/recruitment": {
+        title: "Recruitment Portal | KIOT Salem",
+        desc: "Apply for careers, faculty positions, and student recruitment programs at Knowledge Institute of Technology."
+      },
+      "/academics/undergraduate": {
+        title: "Undergraduate Engineering Programs | KIOT",
+        desc: "Explore B.E. and B.Tech undergraduate courses offered by Knowledge Institute of Technology in various engineering branches."
+      },
+      "/ug-programs": {
+        title: "Undergraduate Engineering Programs | KIOT",
+        desc: "Explore B.E. and B.Tech undergraduate courses offered by Knowledge Institute of Technology in various engineering branches."
+      },
+      "/academics/postgraduate": {
+        title: "Postgraduate Engineering Programs | KIOT",
+        desc: "Discover M.E. postgraduate engineering courses and MBA programs at Knowledge Institute of Technology."
+      },
+      "/pg-programs": {
+        title: "Postgraduate Engineering Programs | KIOT",
+        desc: "Discover M.E. postgraduate engineering courses and MBA programs at Knowledge Institute of Technology."
+      },
+      "/academics/autonomous": {
+        title: "Autonomous Regulations & Syllabus | KIOT",
+        desc: "View the autonomous academic regulations, curriculum, and course syllabi of Knowledge Institute of Technology."
+      },
+      "/autonomous": {
+        title: "Autonomous Regulations & Syllabus | KIOT",
+        desc: "View the autonomous academic regulations, curriculum, and course syllabi of Knowledge Institute of Technology."
+      },
+      "/admissions": {
+        title: "Admissions 2026-27 | KIOT Salem",
+        desc: "Apply for B.E., B.Tech, M.E., and MBA admissions. Find eligibility criteria, application process, and fee details."
+      },
+      "/admissions/ug-registration": {
+        title: "UG Admission Registration | KIOT",
+        desc: "Register online for B.E. & B.Tech undergraduate admissions at Knowledge Institute of Technology."
+      },
+      "/admissions/pg-registration": {
+        title: "PG Admission Registration | KIOT",
+        desc: "Register online for M.E. and MBA postgraduate admissions at Knowledge Institute of Technology."
+      },
+      "/research-innovation/research": {
+        title: "Research & Development Cell | KIOT",
+        desc: "Discover research projects, patents, supervisor details, and funding received by Knowledge Institute of Technology."
+      },
+      "/research": {
+        title: "Research & Development Cell | KIOT",
+        desc: "Discover research projects, patents, supervisor details, and funding received by Knowledge Institute of Technology."
+      },
+      "/research-innovation/aicte-idea-lab": {
+        title: "AICTE IDEA Lab | Innovation Center",
+        desc: "Explore the state-of-the-art AICTE IDEA Lab at KIOT for hands-on prototyping, design thinking, and product development."
+      },
+      "/aicte-idea-lab": {
+        title: "AICTE IDEA Lab | Innovation Center",
+        desc: "Explore the state-of-the-art AICTE IDEA Lab at KIOT for hands-on prototyping, design thinking, and product development."
+      },
+      "/research-innovation/istart": {
+        title: "iStart Innovation Portal | KIOT",
+        desc: "Learn about entrepreneurship support, start-up incubation, and innovation funding opportunities at KIOT Salem."
+      },
+      "/istart": {
+        title: "iStart Innovation Portal | KIOT",
+        desc: "Learn about entrepreneurship support, start-up incubation, and innovation funding opportunities at KIOT Salem."
+      },
+      "/research-innovation/iic": {
+        title: "Institution's Innovation Council | KIOT",
+        desc: "Explore Innovation activities, entrepreneurship drives, and start-up initiatives managed by IIC at KIOT."
+      },
+      "/research-innovation/startuptn": {
+        title: "StartupTN Hub | Incubation & Ventures",
+        desc: "Discover start-up resources, government schemes, and business incubation support through StartupTN hub at KIOT."
+      },
+      "/research-innovation/msme-bi": {
+        title: "MSME Business Incubator | KIOT",
+        desc: "Support for innovative projects, funding schemes, and technology start-ups at MSME Business Incubator in KIOT."
+      },
+      "/research-innovation/mx-incubator": {
+        title: "MX Incubation Center | KIOT Salem",
+        desc: "Grow your start-up with mentorship, space, and investor access at MX Incubator in Knowledge Institute of Technology."
+      },
+      "/exams": {
+        title: "Controller of Examinations (COE) | KIOT",
+        desc: "Access exams portals, notifications, rules and regulations under the Controller of Examinations at KIOT."
+      },
+      "/coe": {
+        title: "Controller of Examinations (COE) | KIOT",
+        desc: "Access exams portals, notifications, rules and regulations under the Controller of Examinations at KIOT."
+      },
+      "/exams/about-coe": {
+        title: "About COE Office | KIOT Salem",
+        desc: "Learn about the Controller of Examinations office, evaluation policies, and academic calendars at KIOT."
+      },
+      "/exams/schedules": {
+        title: "Exam Schedules & Timetables | KIOT",
+        desc: "View current semester exam schedules, timetables, and seating arrangements for KIOT autonomous examinations."
+      },
+      "/exams/circulars": {
+        title: "Exam Circulars & Notifications | KIOT",
+        desc: "Stay updated with exam circulars, fee deadlines, hall ticket downloads, and results notifications at KIOT."
+      },
+      "/exams/circular": {
+        title: "Exam Circulars & Notifications | KIOT",
+        desc: "Stay updated with exam circulars, fee deadlines, hall ticket downloads, and results notifications at KIOT."
+      },
+      "/exams/downloads": {
+        title: "COE Downloads & Forms | KIOT",
+        desc: "Download application forms for revaluation, transcripts, duplicate marksheets, and COE documents at KIOT."
+      },
+      "/campus-life": {
+        title: "Campus Life & Facilities | KIOT Salem",
+        desc: "Explore campus infrastructure, hostels, smart classrooms, transport, green initiatives, and amenities at KIOT."
+      },
+      "/resources/campus-life": {
+        title: "Campus Life & Facilities | KIOT Salem",
+        desc: "Explore campus infrastructure, hostels, smart classrooms, transport, green initiatives, and amenities at KIOT."
+      },
+      "/campus-life/library": {
+        title: "Central Library & Resources | KIOT",
+        desc: "Access digital library, online journals, books, publications, and study spaces at KIOT Central Library."
+      },
+      "/campus-life/sports": {
+        title: "Sports & Physical Education | KIOT",
+        desc: "Discover sports achievements, indoor/outdoor sports facilities, gymnasiums, and athletic events at KIOT."
+      },
+      "/campus-life/classroom": {
+        title: "Smart Classrooms & Audio-Visuals | KIOT",
+        desc: "Experience smart learning with modern AV equipment, high-speed Wi-Fi, and interactive lecture halls at KIOT."
+      },
+      "/campus-life/tour": {
+        title: "Virtual Campus Tour | KIOT Salem",
+        desc: "Take a virtual tour of the KIOT campus. Explore labs, library, hostel, cafeteria, and engineering blocks."
+      },
+      "/campus-life/transport": {
+        title: "Campus Transport & Bus Routes | KIOT",
+        desc: "Access KIOT transport facilities, bus routes covering Salem and neighboring districts, and schedules."
+      },
+      "/campus-life/amenities": {
+        title: "Student Amenities & Infrastructure | KIOT",
+        desc: "Explore dining halls, cafeteria, medical center, bank ATMs, and daily student amenities at KIOT campus."
+      },
+      "/campus-life/insurance": {
+        title: "Student Insurance Policies | KIOT",
+        desc: "Find details about health insurance, safety coverage, and emergency medical policies for KIOT students."
+      },
+      "/campus-life/media": {
+        title: "Media Center & Press Gallery | KIOT",
+        desc: "Check latest news, media coverage, newsletters, photo galleries, and press releases about KIOT Salem."
+      },
+      "/campus-life/energy": {
+        title: "Energy Initiatives & Solar Power | KIOT",
+        desc: "Explore sustainable energy, rooftop solar plants, waste management, and green campus policies at KIOT."
+      },
+      "/campus-life/internet": {
+        title: "Wi-Fi & IT Infrastructure | KIOT",
+        desc: "Learn about high-speed internet, campus-wide Wi-Fi, digital servers, and computer laboratories at KIOT."
+      },
+      "/campus-life/library/access": {
+        title: "Library Access & Membership | KIOT",
+        desc: "Find library opening hours, borrowing rules, OPAC access, and membership details for KIOT library."
+      },
+      "/campus-life/library/collections": {
+        title: "Library Books Collections | KIOT",
+        desc: "Search titles, reference books, encyclopedias, text-books, and reference lists at KIOT library."
+      },
+      "/campus-life/library/journals": {
+        title: "e-Journals & Publications | KIOT Library",
+        desc: "Browse IEEE, Springer, Elsevier e-journals and standard print periodicals available at KIOT Library."
+      },
+      "/campus-life/library/achievements": {
+        title: "Library Milestones & Highlights | KIOT",
+        desc: "Explore special achievements, NDLI club activities, and digital milestones of KIOT library."
+      },
+      "/campus-life/sports/faculty": {
+        title: "Physical Education Department | KIOT",
+        desc: "Meet the physical directors and sports trainers coaching students at Knowledge Institute of Technology."
+      },
+      "/campus-life/sports/facilities": {
+        title: "Sports Infrastructure & Ground | KIOT",
+        desc: "Explore basketball courts, cricket turf, football ground, and indoor games facilities at KIOT."
+      },
+      "/bus-routes": {
+        title: "Transport Bus Routes & Stops | KIOT",
+        desc: "Find dynamic bus routes, stops, pick-up timings, and transport pass info for KIOT college buses."
+      },
+      "/resources/student-life": {
+        title: "Student Clubs & Activities | KIOT",
+        desc: "Discover technical clubs, cultural societies, NSS, NCC, and student development activities at KIOT."
+      },
+      "/student-life": {
+        title: "Student Clubs & Activities | KIOT",
+        desc: "Discover technical clubs, cultural societies, NSS, NCC, and student development activities at KIOT."
+      },
+      "/student-life/flame": {
+        title: "FLAME Literary & Fine Arts Club | KIOT",
+        desc: "Explore literary activities, debating, public speaking, drawing, and fine arts events by FLAME Club at KIOT."
+      },
+      "/resources/student-life/flame": {
+        title: "FLAME Literary & Fine Arts Club | KIOT",
+        desc: "Explore literary activities, debating, public speaking, drawing, and fine arts events by FLAME Club at KIOT."
+      },
+      "/student-life/intec": {
+        title: "INTEC Information Technology Club | KIOT",
+        desc: "Join hackathons, coding contests, app development drives, and tech talks by INTEC club at KIOT."
+      },
+      "/resources/student-life/intec": {
+        title: "INTEC Information Technology Club | KIOT",
+        desc: "Join hackathons, coding contests, app development drives, and tech talks by INTEC club at KIOT."
+      },
+      "/student-life/vibes": {
+        title: "VIBES Cultural & Dance Club | KIOT",
+        desc: "Discover cultural events, music bands, traditional festivals, and dance achievements by VIBES club."
+      },
+      "/resources/student-life/vibes": {
+        title: "VIBES Cultural & Dance Club | KIOT",
+        desc: "Discover cultural events, music bands, traditional festivals, and dance achievements by VIBES club."
+      },
+      "/student-life/pace": {
+        title: "PACE Professional Association | KIOT",
+        desc: "Participate in leadership summits, business plans, and corporate skills training by PACE association at KIOT."
+      },
+      "/resources/student-life/pace": {
+        title: "PACE Professional Association | KIOT",
+        desc: "Participate in leadership summits, business plans, and corporate skills training by PACE association at KIOT."
+      },
+      "/student-life/amberz": {
+        title: "AMBERZ Science & Innovation Club | KIOT",
+        desc: "Fostering scientific temper with science fairs, innovative projects, and tech quizzes by AMBERZ club at KIOT."
+      },
+      "/resources/student-life/amberz": {
+        title: "AMBERZ Science & Innovation Club | KIOT",
+        desc: "Fostering scientific temper with science fairs, innovative projects, and tech quizzes by AMBERZ club at KIOT."
+      },
+      "/resources/alumni": {
+        title: "Alumni Network & Portal | KIOT Salem",
+        desc: "Connect with global KIOT alumni. Join alumni chapters, mentorship programs, and annual meets."
+      },
+      "/alumni": {
+        title: "Alumni Network & Portal | KIOT Salem",
+        desc: "Connect with global KIOT alumni. Join alumni chapters, mentorship programs, and annual meets."
+      },
+      "/blogs": {
+        title: "KIOT Blogs & Articles Portal",
+        desc: "Read the latest articles, academic insights, technical innovations, and stories written by KIOT faculty & students."
+      },
+      "/resources/blogs": {
+        title: "KIOT Blogs & Articles Portal",
+        desc: "Read the latest articles, academic insights, technical innovations, and stories written by KIOT faculty & students."
+      },
+      "/events": {
+        title: "KIOT Events & Conferences Agenda",
+        desc: "Stay updated with technical symposiums, workshops, guest lectures, and cultural events at KIOT Salem."
+      }
+    };
+
+    let matched = staticMeta[location.pathname];
+
+    // Handle dynamic path matching
+    if (!matched) {
+      const path = location.pathname;
+      if (path.startsWith('/academics/course/') || path.startsWith('/academics/undergraduate/') || path.startsWith('/academics/postgraduate/')) {
+        const parts = path.split('/');
+        const id = parts[parts.length - 1];
+        const courseMap = {
+          'be-cse': 'B.E. Computer Science & Engineering',
+          'be-ece': 'B.E. Electronics & Communication',
+          'be-eee': 'B.E. Electrical & Electronics',
+          'be-mech': 'B.E. Mechanical Engineering',
+          'be-civil': 'B.E. Civil Engineering',
+          'btech-it': 'B.Tech Information Technology',
+          'btech-aids': 'B.Tech AI & Data Science',
+          'btech-csbs': 'B.Tech CS & Business Systems',
+          'science-humanities': 'Science & Humanities'
+        };
+        const courseName = courseMap[id] || id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        matched = {
+          title: `${courseName} Course Info | KIOT`,
+          desc: `Find details about the ${courseName} course at KIOT, including curriculum, syllabus, eligibility, laboratory facilities, and placement stats.`
+        };
+      } else if (path.startsWith('/department/') || path.startsWith('/students-admitted-department/')) {
+        const parts = path.split('/');
+        const id = parts[parts.length - 1].toLowerCase();
+        const deptNames = {
+          'cse': 'Computer Science & Engineering',
+          'ece': 'Electronics & Communication',
+          'eee': 'Electrical & Electronics',
+          'mech': 'Mechanical Engineering',
+          'civil': 'Civil Engineering',
+          'it': 'Information Technology',
+          'aids': 'Artificial Intelligence & Data Science',
+          'csbs': 'Computer Science & Business Systems'
+        };
+        const dept = deptNames[id] || id.toUpperCase();
+        matched = {
+          title: `${dept} Department | KIOT`,
+          desc: `Explore the ${dept} department at Knowledge Institute of Technology. Learn about faculty, laboratory labs, syllabus, and student achievements.`
+        };
+      } else if (path.startsWith('/research/')) {
+        const parts = path.split('/');
+        const sub = parts[parts.length - 1];
+        const subId = parts[2]?.toLowerCase() || '';
+        const deptNames = {
+          'cse': 'Computer Science & Engineering',
+          'ece': 'Electronics & Communication',
+          'eee': 'Electrical & Electronics',
+          'mech': 'Mechanical Engineering',
+          'civil': 'Civil Engineering',
+          'it': 'Information Technology'
+        };
+        const dept = deptNames[subId] || subId.toUpperCase();
+        const type = sub.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        matched = {
+          title: `${dept} ${type} | KIOT`,
+          desc: `Explore the ${type} and innovation projects within the ${dept} department at Knowledge Institute of Technology, Salem.`
+        };
+      } else if (path.startsWith('/blog/')) {
+        matched = {
+          title: "KIOT Blog Post - Read Article",
+          desc: "Read this academic and technical article from the Knowledge Institute of Technology (KIOT) community blogs."
+        };
+      } else if (path.startsWith('/events/')) {
+        matched = {
+          title: "KIOT Event Details",
+          desc: "View details about upcoming and past academic, sports, and cultural events hosted at KIOT Salem."
+        };
+      } else if (path.startsWith('/campus-life/sports/achievements/')) {
+        matched = {
+          title: "Sports Achievements | KIOT",
+          desc: "View dynamic sports awards, championship trophies, and athletic tournament achievements of KIOT students."
+        };
+      }
+    }
+
+    if (!matched) {
+      matched = {
+        title: "Page Not Found | KIOT Salem",
+        desc: "The page you are looking for does not exist on the Knowledge Institute of Technology (KIOT) website. Go back or visit our homepage."
+      };
+    }
+
+    // Apply limits: title < 60 characters, description < 160 characters
+    document.title = matched.title.substring(0, 60);
+    const descriptionElement = document.querySelector('meta[name="description"]');
+    if (descriptionElement) {
+      descriptionElement.setAttribute("content", matched.desc.substring(0, 160));
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", matched.title.substring(0, 60));
+    
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", matched.desc.substring(0, 160));
+
+  }, [location])
+
   return (
     <div className="min-h-screen bg-[#FCFDFD] text-[#224292] font-sans selection:bg-[#ffc107]/20">
       
