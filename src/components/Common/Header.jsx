@@ -341,7 +341,7 @@ const Header = () => {
       <div className="border-b border-[#A9B1C3]/20 bg-white/92 shadow-[0_20px_60px_rgba(34,66,146,0.14)] backdrop-blur">
         <div className="flex items-stretch">
           <div
-            className="z-10 relative hidden shrink-0 overflow-hidden lg:flex lg:w-[280px]"
+            className="z-10 relative hidden shrink-0 overflow-hidden lg:flex lg:w-[320px]"
             style={{ clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0 100%)' }}
           >
             <div className="absolute inset-0 bg-white" />
@@ -359,12 +359,12 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Knowledge Institute of Technology"
-                className="h-[60px] w-auto max-w-[220px] object-contain"
+                className="h-[60px] w-auto max-w-[250px] object-contain"
               />
             </a>
           </div>
 
-          <div className="min-w-0 flex-1 ml-0 lg:-ml-24">
+          <div className="min-w-0 flex-1 ml-0 lg:-ml-[136px]">
             <div className="flex h-[32px] items-center bg-[#224292] md:hidden overflow-hidden">
               <div
                 className="flex items-center gap-10 whitespace-nowrap px-4 text-[12px] font-bold text-white animate-marquee hover:[animation-play-state:paused]"
@@ -533,7 +533,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="Knowledge Institute of Technology"
-                  className="h-[54px] w-auto max-w-[210px] object-contain"
+                  className="h-[44px] sm:h-[54px] w-auto max-w-[160px] sm:max-w-[210px] object-contain"
                 />
               </a>
 
