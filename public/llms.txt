@@ -1,0 +1,81 @@
+# Knowledge Institute of Technology (KIOT)
+
+> Knowledge Institute of Technology (KIOT) is a premier autonomous engineering and management institution located in Salem, Tamil Nadu, India. Approved by AICTE, affiliated to Anna University, Chennai, and accredited by NAAC with an 'A' grade.
+
+## Core Web Pages & Admissions
+
+- [KIOT Home](https://kiot.ac.in/) - Main landing page with campus news, highlights, announcements, and quick access portals.
+- [Contact Us](https://kiot.ac.in/contact) - Contact details, location map, office phone numbers, and email addresses.
+- [Admissions Portal](https://kiot.ac.in/admissions) - Detailed information on admission procedures, eligibility criteria, and courses offered.
+- [Undergraduate (UG) Registration](https://kiot.ac.in/admissions/ug-registration) - Online registration form for prospective B.E. / B.Tech students.
+- [Postgraduate (PG) Registration](https://kiot.ac.in/admissions/pg-registration) - Online registration form for prospective M.E. / MBA / MCA students.
+
+## Institutional Profile & About
+
+- [About KIOT](https://kiot.ac.in/about/about-us) - History, mission, vision, and core milestones of the institution.
+- [Our Values](https://kiot.ac.in/about/our-values) - Core ethics, academic integrity, and organizational values.
+- [Promoters](https://kiot.ac.in/about/promoters) - Board of directors, trustees, and the visionaries behind the institute.
+- [Leadership](https://kiot.ac.in/about/leadership) - Executive committee, principal, and heads of various administrative wings.
+- [Governing Council](https://kiot.ac.in/about/governing-council) - Governing body list, external experts, and university representatives.
+- [Institutional Policies](https://kiot.ac.in/about/institutional-policies) - Code of conduct, rules, and regulatory policies.
+- [Accreditation & Rankings](https://kiot.ac.in/about/accreditation-ranking) - NAAC certifications, NBA accreditation status, NIRF ranking data, and AQAR details.
+
+## Academics & Departments
+
+- [Undergraduate Programs](https://kiot.ac.in/academics/undergraduate) - B.E. / B.Tech departments (CSE, ECE, EEE, Mechanical, IT, CSBS, AI&DS).
+- [Postgraduate Programs](https://kiot.ac.in/academics/postgraduate) - M.E. programs, Master of Business Administration (MBA), and Master of Computer Applications (MCA).
+- [Academic Autonomy](https://kiot.ac.in/academics/autonomous) - Regulations, curriculum design, and evaluation patterns for autonomous batches.
+
+## Career Development & Placements
+
+- [Placement Cell](https://kiot.ac.in/placements/placement) - Recruiting partners, highest packages, and placements committee overview.
+- [Placement Training (CDT)](https://kiot.ac.in/placements/training) - Career Development and Training (CDT) cell activities, training schedules, and skill development programs.
+- [Placement Outcomes](https://kiot.ac.in/placements/outcomes) - Batch-wise placement statistics, list of placed students, and recruiters' testimonials.
+
+## Research & Innovation Ecosystem
+
+- [R&D Division](https://kiot.ac.in/research-innovation/research) - Research centers, publications, patents filed, and research funding records.
+- [AICTE IDEA Lab](https://kiot.ac.in/research-innovation/aicte-idea-lab) - State-of-the-art laboratory for promoting product development, rapid prototyping, and hands-on technical training.
+- [iStart Incubation Cell](https://kiot.ac.in/research-innovation/istart) - Incubation facilities, student startups, and entrepreneurial support framework.
+- [IIC Portal](https://kiot.ac.in/research-innovation/iic) - Institution's Innovation Council initiatives, seminars, and ideation camps.
+- [StartupTN](https://kiot.ac.in/research-innovation/startuptn) - Collaboration with Tamil Nadu Startup and Innovation Mission.
+- [MSME Business Incubator](https://kiot.ac.in/research-innovation/msme-bi) - MSME-recognized host institution initiatives for prototype funding.
+- [MX Incubator](https://kiot.ac.in/research-innovation/mx-incubator) - Specialized incubation resources for early-stage student concepts.
+
+## Controller of Examinations (COE)
+
+- [COE Exams Portal](https://kiot.ac.in/coe) - Main examinations administrative gateway.
+- [About COE Office](https://kiot.ac.in/exams/about-coe) - COE organization chart, staff, and examination regulations.
+- [Exam Schedules](https://kiot.ac.in/exams/schedules) - Semester examination timetables, registration dates, and hall ticket info.
+- [Exams Circulars](https://kiot.ac.in/exams/circulars) - Standard operating guidelines, rules, and announcements for students.
+- [Exam Downloads](https://kiot.ac.in/exams/downloads) - Request forms, transcript applications, and certificate formats.
+
+## Campus & Infrastructure
+
+- [Campus Life](https://kiot.ac.in/campus-life) - Overview of facilities, classrooms, food courts, and utility centers.
+- [Library Services](https://kiot.ac.in/campus-life/library) - Central library book count, digital library access, journals subscribed, and library hours.
+- [Sports Division](https://kiot.ac.in/campus-life/sports) - Outdoor playgrounds, gymnasiums, tournament details, and physical education staff.
+- [Smart Classrooms](https://kiot.ac.in/campus-life/classroom) - ICT-enabled lecture halls, projectors, and digital display classrooms.
+- [Virtual Tour](https://kiot.ac.in/campus-life/tour) - Multimedia visual walkthrough of KIOT campus.
+- [Transport Facility](https://kiot.ac.in/campus-life/transport) - College bus fleet, route details, and safety regulations.
+- [College Bus Routes](https://kiot.ac.in/bus-routes) - Comprehensive details of various bus routes covering Salem, Namakkal, Dharmapuri, and surrounding areas.
+- [Amenities](https://kiot.ac.in/campus-life/amenities) - Hostel lodging, dining, banking, and medical room accessibility.
+- [Student Insurance](https://kiot.ac.in/campus-life/insurance) - Group health insurance details for enrolled students.
+- [Media Center](https://kiot.ac.in/campus-life/media) - Audio-visual production facilities and news broadcast desk.
+- [Green Energy Systems](https://kiot.ac.in/campus-life/energy) - Solar panels, water conservation units, and green policies.
+- [Internet Connectivity](https://kiot.ac.in/campus-life/internet) - High-speed Wi-Fi, LAN bandwidth speeds, and computing labs.
+
+## Student Life, Clubs & Forums
+
+- [Student Development](https://kiot.ac.in/student-life) - Co-curricular activities, technical associations, and student clubs.
+- [FLAME Club](https://kiot.ac.in/student-life/flame) - Fine Arts, Literature, and Music Association for students.
+- [INTEC Club](https://kiot.ac.in/student-life/intec) - Innovation and Technology Club focusing on coding, robotics, and emerging systems.
+- [VIBES Club](https://kiot.ac.in/student-life/vibes) - Student cultural club for celebrating festivals, staging plays, and building team spirit.
+- [PACE Club](https://kiot.ac.in/student-life/pace) - Personality development, public speaking, and communication skills forum.
+- [AMBERZ Club](https://kiot.ac.in/student-life/amberz) - Multi-disciplinary hobbies and photography club.
+
+## Community & Engagement
+
+- [Alumni Association](https://kiot.ac.in/alumni) - Alumni network registry, global chapters, events, and interaction records.
+- [Blogs & Articles](https://kiot.ac.in/blogs) - Thought leadership blogs, student experiences, and faculty articles.
+- [Campus Events](https://kiot.ac.in/events) - Calendar of symposia, workshops, graduation days, and sports events.
