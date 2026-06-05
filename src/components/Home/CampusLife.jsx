@@ -26,15 +26,41 @@ import campusMainImg from '../../assets/main/campus .webp'
 const facilities = [
   { id: 5, title: "Lab", image: labImg, link: "/campus-life/classroom" },
   { id: 7, title: "Training", image: trainingImg, link: "/placements/training" },
-  { id: 8, title: "iStart", image: istartImg, link: "/research-innovation/istart" },
-  { id: 1, title: "Sports", image: sportsImg, link: "/campus-life/sports" },
   { id: 2, title: "Gym", image: gymImg, link: "/campus-life/amenities" },
+  { id: 1, title: "Sports", image: sportsImg, link: "/campus-life/sports" },
+  { id: 8, title: "iStart", image: istartImg, link: "/research-innovation/istart" },
   { id: 3, title: "Transport", image: transportImg, link: "/campus-life/transport" },
   { id: 4, title: "Cafeteria", image: cafeteriaImg, link: "/campus-life/amenities" },
   { id: 6, title: "Hostel", image: hostelImg, link: "/campus-life/amenities" }
 ]
 
 const CampusLife = () => {
+  const renderCard = (fac, idx) => (
+    <Link to={fac.link} key={fac.id} onClick={() => window.scrollTo(0, 0)} className="w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: idx * 0.05 }}
+        className="group bg-white rounded-xl overflow-hidden flex flex-col relative shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_32px_rgba(34,66,146,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100 h-full"
+      >
+        <div className="relative w-full h-32 lg:h-44 overflow-hidden">
+          <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.08]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
+        </div>
+        
+        <div className="p-4 lg:p-5 flex-1 flex flex-col justify-center bg-white transition-colors duration-500 group-hover:bg-[#FCFDFD]">
+          <div className="flex items-center justify-between gap-3">
+            <h3 className="text-sm lg:text-[16px] font-semibold text-[#224292] leading-tight transition-colors duration-300 group-hover:text-[#ffc107]">{fac.title}</h3>
+            <div className="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-sm shrink-0">
+              <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  );
+
   return (
     <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
       
@@ -82,32 +108,27 @@ const CampusLife = () => {
 
       {/* 🔷 AMENITY GRID - 8 Cards Version */}
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
-          {facilities.map((fac, idx) => (
-            <Link to={fac.link} key={fac.id} onClick={() => window.scrollTo(0, 0)}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.05 }}
-                className="group bg-white rounded-xl overflow-hidden flex flex-col relative shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_32px_rgba(34,66,146,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100"
-              >
-                <div className="relative w-full h-32 lg:h-44 overflow-hidden">
-                  <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.08]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
-                </div>
-                
-                <div className="p-4 lg:p-5 flex-1 flex flex-col justify-center bg-white transition-colors duration-500 group-hover:bg-[#FCFDFD]">
-                  <div className="flex items-center justify-between gap-3">
-                    <h3 className="text-sm lg:text-[16px] font-semibold text-[#224292] leading-tight transition-colors duration-300 group-hover:text-[#ffc107]">{fac.title}</h3>
-                    <div className="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-sm shrink-0">
-                      <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
-          ))}
+        {/* Mobile & Tablet grid (under 1024px width) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:hidden gap-4 lg:gap-6">
+          {facilities.map((fac, idx) => renderCard(fac, idx))}
+        </div>
+
+        {/* Desktop grid layout (1024px and up width) */}
+        <div className="hidden lg:flex flex-col gap-6">
+          {/* Row 1: 3 cards */}
+          <div className="grid grid-cols-3 gap-6">
+            {facilities.slice(0, 3).map((fac, idx) => renderCard(fac, idx))}
+          </div>
+          
+          {/* Row 2: 2 cards with increased width */}
+          <div className="grid grid-cols-2 gap-6 w-full">
+            {facilities.slice(3, 5).map((fac, idx) => renderCard(fac, idx + 3))}
+          </div>
+
+          {/* Row 3: 3 cards */}
+          <div className="grid grid-cols-3 gap-6">
+            {facilities.slice(5, 8).map((fac, idx) => renderCard(fac, idx + 5))}
+          </div>
         </div>
 
         {/* Mobile Centered Button - Now at the Bottom */}
