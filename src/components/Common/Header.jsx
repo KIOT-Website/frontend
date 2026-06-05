@@ -341,7 +341,7 @@ const Header = () => {
       <div className="border-b border-[#A9B1C3]/20 bg-white/92 shadow-[0_20px_60px_rgba(34,66,146,0.14)] backdrop-blur">
         <div className="flex items-stretch">
           <div
-            className="z-10 relative hidden shrink-0 overflow-hidden lg:flex lg:w-[320px]"
+            className="z-10 relative hidden shrink-0 overflow-hidden xl:flex xl:w-[320px]"
             style={{ clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0 100%)' }}
           >
             <div className="absolute inset-0 bg-white" />
@@ -364,7 +364,7 @@ const Header = () => {
             </a>
           </div>
 
-          <div className="min-w-0 flex-1 ml-0 lg:-ml-[136px]">
+          <div className="min-w-0 flex-1 ml-0 xl:-ml-[136px]">
             <div className="flex h-[32px] items-center bg-[#224292] md:hidden overflow-hidden">
               <div
                 className="flex items-center gap-10 whitespace-nowrap px-4 text-[12px] font-bold text-white animate-marquee hover:[animation-play-state:paused]"
@@ -393,7 +393,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden h-[28px] items-stretch bg-[#ffc107] lg:flex">
+            <div className="hidden h-[28px] items-stretch bg-[#ffc107] xl:flex">
               <div 
                 className="flex flex-1 items-stretch overflow-hidden bg-[#224292] pl-32 pr-10"
                 style={{ clipPath: 'polygon(0 0, 89% 0, 93% 100%, 0 100%)' }}
@@ -524,11 +524,11 @@ const Header = () => {
               </div>
             </div>
 
-            <nav className="relative flex h-[76px] py-0.5 items-center justify-between bg-white px-2 sm:px-6 lg:pl-28 lg:pr-10">
+            <nav className="relative flex h-[76px] py-0.5 items-center justify-between bg-white px-2 sm:px-6 xl:pl-36 xl:pr-10 lg:pl-6 lg:pr-6">
               <a
                 href="#top"
                 onClick={(e) => handleNavClick(e, 'Home')}
-                className="flex items-center lg:hidden"
+                className="flex items-center xl:hidden"
               >
                 <img
                   src={logo}
@@ -537,7 +537,7 @@ const Header = () => {
                 />
               </a>
 
-              <ul className="hidden lg:flex lg:items-center lg:gap-3 xl:gap-6">
+              <ul className="hidden xl:flex xl:items-center xl:gap-2.5 2xl:gap-5">
                 {navLinks.map((link) => {
                   const isActive = (link.name === 'Home' && location.pathname === '/') || (link.name === 'Contact' && location.pathname === '/contact')
 
@@ -549,7 +549,7 @@ const Header = () => {
                           if (link.subLinks) e.preventDefault();
                           else handleNavClick(e, link.name, link.href);
                         }}
-                        className={`inline-flex items-center gap-1.5 text-[13px] font-semibold transition-colors whitespace-nowrap py-5 ${
+                        className={`inline-flex items-center gap-1.5 text-[12px] xl:text-[12.5px] 2xl:text-[13.5px] font-semibold transition-colors whitespace-nowrap py-5 ${
                             isActive
                               ? 'text-[#224292]'
                               : 'text-[#64779F] hover:text-[#224292]'
@@ -615,29 +615,29 @@ const Header = () => {
                 })}
               </ul>
 
-              <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3 pr-4 lg:pr-0 translate-y-[1.5px]">
-                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block">
+              <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 xl:gap-3 pr-4 lg:pr-0 translate-y-[1.5px]">
+                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block shrink-0">
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="hidden md:block h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="hidden md:block shrink-0 h-10 w-10 md:h-12 md:w-12 xl:h-14 xl:w-14 2xl:h-[72px] 2xl:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
                 <img
                   src={nirfLogo}
                   alt="NIRF Logo"
-                  className="hidden md:block h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                  className="hidden md:block shrink-0 h-10 w-10 md:h-12 md:w-12 xl:h-14 xl:w-14 2xl:h-[72px] 2xl:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                 />
                 <img
                   src={codeLogo}
                   alt="Code Logo"
-                  className="hidden md:block h-14 w-14 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                  className="hidden md:block shrink-0 h-10 w-10 md:h-12 md:w-12 xl:h-14 xl:w-14 2xl:h-[72px] 2xl:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                 />
                 
                 <button
                   type="button"
                   onClick={() => setIsOpen((open) => !open)}
-                  className="ml-1 sm:ml-2 relative flex h-11 w-11 items-center justify-center rounded-full text-[#224292] hover:bg-[#224292]/5 transition-all active:scale-95 lg:hidden"
+                  className="ml-1 sm:ml-2 relative flex h-11 w-11 items-center justify-center rounded-full text-[#224292] hover:bg-[#224292]/5 transition-all active:scale-95 xl:hidden"
                   aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 >
                    <div className="relative flex h-6 w-6 flex-col items-center justify-center">
@@ -661,7 +661,7 @@ const Header = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-[100] bg-[#224292]/40 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-[100] bg-[#224292]/40 backdrop-blur-sm xl:hidden"
             />
             
             {/* Left Side Drawer */}
@@ -670,7 +670,7 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed left-0 top-0 bottom-0 z-[101] w-[85%] max-w-[360px] bg-white shadow-2xl flex flex-col lg:hidden"
+              className="fixed left-0 top-0 bottom-0 z-[101] w-[85%] max-w-[360px] bg-white shadow-2xl flex flex-col xl:hidden"
             >
               {/* Drawer Header */}
               <div className="flex items-center justify-between px-6 py-4">

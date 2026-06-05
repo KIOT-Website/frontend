@@ -405,31 +405,31 @@ function App() {
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -100, opacity: 0 }}
-                className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[3000] w-[190px] sm:w-[260px] bg-white rounded-xl sm:rounded-2xl shadow-[0_20px_70px_rgba(10,26,63,0.25)] overflow-hidden border border-slate-100 flex flex-col font-graphik"
+                className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[3000] w-[180px] sm:w-[220px] bg-white rounded-xl sm:rounded-2xl shadow-[0_20px_70px_rgba(10,26,63,0.25)] overflow-hidden border border-slate-100 flex flex-col font-graphik"
               >
-                <div className="bg-[#224292] p-3 pb-4 sm:p-5 sm:pb-6 flex flex-col items-center text-center relative">
+                <div className="bg-[#224292] p-3 pb-4 sm:p-4 sm:pb-5 flex flex-col items-center text-center relative">
                     <button 
                       onClick={handleClosePopup}
-                      className="absolute top-2 right-2 w-6 h-6 sm:top-3 sm:right-3 sm:w-8 sm:h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-[#224292] transition-all z-20"
+                      className="absolute top-2 right-2 w-6 h-6 sm:top-3 sm:right-3 sm:w-7 sm:h-7 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white hover:text-[#224292] transition-all z-20"
                     >
                       <X size={12} className="sm:hidden" />
-                      <X size={16} className="hidden sm:block" />
+                      <X size={14} className="hidden sm:block" />
                     </button>
-                    <div className="w-8 h-8 sm:w-12 sm:h-12 bg-[#ffc107] rounded-lg sm:rounded-xl flex items-center justify-center text-[#224292] mb-2 sm:mb-4 shadow-lg relative z-10">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#ffc107] rounded-lg sm:rounded-xl flex items-center justify-center text-[#224292] mb-2 sm:mb-3 shadow-lg relative z-10">
                         <GraduationCap size={16} className="sm:hidden" />
-                        <GraduationCap size={24} className="hidden sm:block" />
+                        <GraduationCap size={20} className="hidden sm:block" />
                     </div>
-                    <h2 className="text-white text-[8px] sm:text-[11px] font-black uppercase tracking-[0.2em] mb-0.5 sm:mb-1 relative z-10 opacity-80">Admissions</h2>
-                    <h3 className="text-white text-xl sm:text-3xl font-black tracking-tighter leading-none relative z-10">2026-27</h3>
+                    <h2 className="text-white text-[8px] sm:text-[9.5px] font-black uppercase tracking-[0.2em] mb-0.5 sm:mb-1 relative z-10 opacity-80">Admissions</h2>
+                    <h3 className="text-white text-xl sm:text-2xl font-black tracking-tighter leading-none relative z-10">2026-27</h3>
                 </div>
-                <div className="p-3 pt-0 -mt-2 sm:p-5 sm:pt-0 sm:-mt-4 relative z-20">
-                    <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-4 shadow-xl border border-slate-50 flex flex-col items-center text-center">
-                        <p className="text-[#224292] text-[11px] sm:text-[13px] font-black leading-tight mb-2 sm:mb-3">
+                <div className="p-3 pt-0 -mt-2 sm:p-4 sm:pt-0 sm:-mt-3 relative z-20">
+                    <div className="bg-white rounded-xl sm:rounded-2xl p-2.5 sm:p-3 shadow-xl border border-slate-50 flex flex-col items-center text-center">
+                        <p className="text-[#224292] text-[10px] sm:text-[11.5px] font-black leading-tight mb-2 sm:mb-2.5">
                             Applications are now open for all departments.
                         </p>
                         <button 
                           onClick={() => { handleClosePopup(); navigate('/admissions'); }}
-                          className="w-full py-2 sm:py-3 bg-[#ffc107] text-[#224292] rounded-lg sm:rounded-xl font-black text-[11px] sm:text-[13px] uppercase tracking-[0.1em] hover:bg-[#224292] hover:text-white transition-all shadow-md flex items-center justify-center gap-1.5 sm:gap-2"
+                          className="w-full py-2 sm:py-2.5 bg-[#ffc107] text-[#224292] rounded-lg sm:rounded-xl font-black text-[10px] sm:text-[11px] uppercase tracking-[0.1em] hover:bg-[#224292] hover:text-white transition-all shadow-md flex items-center justify-center gap-1.5 sm:gap-2"
                         >
                           Apply Now
                         </button>
