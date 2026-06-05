@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Compass, Monitor, ShieldCheck, ArrowLeft, Play } from 'lucide-react'
 
 import campusMain from '../assets/main/campus .webp'
-import kiotLab from '../assets/life@kiot/smart classrooms.png'
+import kiotLab from '../assets/life@kiot/smart classrooms.webp'
 
 const TourPage = () => {
     const navigate = useNavigate();

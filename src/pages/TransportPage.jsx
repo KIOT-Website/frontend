@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { Bus, Compass, ArrowLeft, Search, Navigation, X, ShieldCheck, Phone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import busImage from '../assets/life@kiot/collge bus.png'
+import busImage from '../assets/life@kiot/collge bus.webp'
 
 const BUS_ROUTES = [
   { id: 1, from: "KR Thoppur", to: "KIOT", stops: "K.R. Thoppur, Maramangalathu Patti, Steel Plant, Paul Pannai, Pudhu Road, RTO Bye-Pass, KIOT" },

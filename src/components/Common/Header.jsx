@@ -41,7 +41,7 @@ import {
 import logo from '../../assets/main/main-logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
 import nirfLogo from '../../assets/main/nirf.webp'
-import codeLogo from '../../assets/main/2653 code.jpeg'
+import codeLogo from '../../assets/main/2653 code.webp'
 
 const navLinks = [
   { 

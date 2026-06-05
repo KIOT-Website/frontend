@@ -7,13 +7,13 @@ import treasurerImg from '../assets/main/Mr.V.Sureshkumar, Treasurer.webp'
 import { Quote, GraduationCap, Sparkles } from 'lucide-react'
 
 // HOD Image Imports
-import prabhakaranImg from '../assets/Faculity/MECH/Dr. K.S. Prabhakaran.png'
+import prabhakaranImg from '../assets/Faculity/MECH/Dr. K.S. Prabhakaran.webp'
 import kamatchiKannanImg from '../assets/Faculity/eee/kamatchi_kannan.webp'
-import saravananImg from '../assets/Faculity/ECE/Dr. V. Saravanan.png'
+import saravananImg from '../assets/Faculity/ECE/Dr. V. Saravanan.webp'
 import prasathCivilImg from '../assets/Faculity/civil/Dr.P.PRASATH.webp'
 import sasikumarImg from '../assets/Faculity/aids/sasikumar_hod.webp'
 import ramkumarImg from '../assets/Faculity/csbs/ramkumar.webp'
-import maragatharajImg from '../assets/Faculity/ecx/Dr. S. Maragatharaj.png'
+import maragatharajImg from '../assets/Faculity/ecx/Dr. S. Maragatharaj.webp'
 
 const hods = [
   {

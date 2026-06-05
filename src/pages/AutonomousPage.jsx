@@ -19,8 +19,8 @@ import cseBos from '../assets/resources/4.-CSE-BOS-Compositions.pdf'
 import civilBos from '../assets/resources/5.-Civil-BOS-Committee-Members-list.pdf'
 import shBos from '../assets/resources/6.-SH-BOS-Members-list.pdf'
 import mbaBos from '../assets/resources/7.-MBA-BOS-Members-list.pdf'
-import campusImg from '../assets/main/indian_campus_hero.png'
-import sixLegImg from '../assets/academics/Six-Leg.png'
+import campusImg from '../assets/main/indian_campus_hero.webp'
+import sixLegImg from '../assets/academics/Six-Leg.webp'
 
 // Import AICTE Approvals PDFs
 import aicte25_26 from '../assets/idea lap/approvels/AICTE-2025-26.pdf'

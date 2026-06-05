@@ -5,7 +5,7 @@ import {
   ArrowLeft, Search, Phone, Mail, MapPin, GraduationCap,
   Building2, Trophy, Bus, BookOpen, Coffee
 } from 'lucide-react';
-import studentAvatar from '../../assets/main/chatbot_avatar.png';
+import studentAvatar from '../../assets/main/chatbot_avatar.webp';
 
 const FAQ_DATA = {
   categories: [

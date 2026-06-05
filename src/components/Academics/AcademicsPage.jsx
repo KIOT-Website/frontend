@@ -8,7 +8,7 @@ import {
   Briefcase, MessageSquare, Star, LayoutGrid, Building2,
   Zap, ShieldCheck, Car
 } from 'lucide-react'
-import academicHero from '../../assets/Admissions/academic.png'
+import academicHero from '../../assets/Admissions/academic.webp'
 
 const ugPrograms = [
   {

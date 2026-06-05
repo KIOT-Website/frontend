@@ -17,7 +17,7 @@ import logoBlue from '../../assets/main/main-logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
 import nirfLogo from '../../assets/main/nirf.webp'
 import nbaLogo from '../../assets/main/NBA1 (1).webp'
-import codeLogo from '../../assets/main/2653 code.jpeg'
+import codeLogo from '../../assets/main/2653 code.webp'
 
 const Footer = () => {
   const socialLinks = [

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Users, Mail, ShieldCheck, Award } from 'lucide-react'
-import cdeLast from '../../../assets/placements/CDT/cde last.png'
+import cdeLast from '../../../assets/placements/CDT/cde last.webp'
 
 // Image Imports from pteam folder
 import imgThangavel from '../../../assets/placements/pteam/Dr.M.Thangavel B.E., M.E., M.B.A., Ph.D.,.webp'

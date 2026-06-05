@@ -12,15 +12,15 @@ import {
 import React from 'react'
 
 // Asset imports
-import labImg from '../../assets/main/l1.png'
-import cafeteriaImg from '../../assets/life@kiot/caf.png'
-import hostelImg from '../../assets/main/hostel1.png'
-import sportsImg from '../../assets/main/sh-1.png'
+import labImg from '../../assets/main/l1.webp'
+import cafeteriaImg from '../../assets/life@kiot/caf.webp'
+import hostelImg from '../../assets/main/hostel1.webp'
+import sportsImg from '../../assets/main/sh-1.webp'
 import homeLifeImg from '../../assets/main/home-life.webp'
-import trainingImg from '../../assets/life@kiot/smart classrooms.png'
-import transportImg from '../../assets/life@kiot/collge bus.png'
-import gymImg from '../../assets/life@kiot/gym.png'
-import istartImg from '../../assets/main/istart1.png'
+import trainingImg from '../../assets/life@kiot/smart classrooms.webp'
+import transportImg from '../../assets/life@kiot/collge bus.webp'
+import gymImg from '../../assets/life@kiot/gym.webp'
+import istartImg from '../../assets/main/istart1.webp'
 import campusMainImg from '../../assets/main/campus .webp'
 
 const facilities = [

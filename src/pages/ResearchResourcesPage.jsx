@@ -27,13 +27,13 @@ import {
 } from 'lucide-react'
 
 // Import CSE Faculty/Supervisor Images
-import vijayalakshmiImg from '../assets/Faculity/cse/Dr.P.VIJAYALAKSHMI.png'
+import vijayalakshmiImg from '../assets/Faculity/cse/Dr.P.VIJAYALAKSHMI.webp'
 import rajendranImg from '../assets/placements/placement team/Placement-Director.webp'
-import kumarImg from '../assets/Faculity/cse/Dr.R.KUMAR.png'
-import vKumarImg from '../assets/Faculity/cse/Dr.V.KUMAR.png'
+import kumarImg from '../assets/Faculity/cse/Dr.R.KUMAR.webp'
+import vKumarImg from '../assets/Faculity/cse/Dr.V.KUMAR.webp'
 import rajeshImg from '../assets/placements/placement team/Mr.I.Rajesh M.E.,Ph.D.webp'
-import malarvizhiImg from '../assets/Faculity/cse/Mrs.P.MALARVIZHI.png'
-import sakthivelImg from '../assets/Faculity/cse/Dr.S.SAKTHIVEL.png'
+import malarvizhiImg from '../assets/Faculity/cse/Mrs.P.MALARVIZHI.webp'
+import sakthivelImg from '../assets/Faculity/cse/Dr.S.SAKTHIVEL.webp'
 
 // CSE-Specific Unified Datasets
 const cseSupervisors = [
@@ -268,103 +268,32 @@ const cseGuidedScholars = [
     { scholar: "Sathiyapriya V", topic: "Computer Science", supervisor: "Dr. P. Rajendran", university: "Anna University", status: "Course Work" }
 ];
 
-// SVG Donut Chart Helper with built-in margins to prevent label clipping
-const DonutChart = ({ segments, total, label }) => {
-    // Standard internal size guarantees constant dimensions and unclipped safety margins
-    const internalSize = 220;
-    const cx = internalSize / 2;
-    const cy = internalSize / 2;
-    
-    // Core geometry
-    const r = 56;
-    const strokeWidth = 24;
-
-    let cumulative = 0;
-    const paths = segments.map((seg, i) => {
-        const startAngle = (cumulative / 100) * 360 - 90;
-        const endAngle = ((cumulative + seg.percent) / 100) * 360 - 90;
-        const midAngle = (startAngle + endAngle) / 2;
-        const midRad = (midAngle * Math.PI) / 180;
-
-        // Draw label inside the segment if it has a large enough share (>= 12%)
-        const isInside = seg.percent >= 12;
-        // Outside labels are pushed outwards by 8px for beautiful unclipped spacing
-        const labelR = isInside ? r : (r + strokeWidth / 2 + 8);
-        const lx = cx + labelR * Math.cos(midRad);
-        const ly = cy + labelR * Math.sin(midRad);
-
-        const startRad = (startAngle * Math.PI) / 180;
-        const endRad = (endAngle * Math.PI) / 180;
-        const x1 = cx + r * Math.cos(startRad);
-        const y1 = cy + r * Math.sin(startRad);
-        const x2 = cx + r * Math.cos(endRad);
-        const y2 = cy + r * Math.sin(endRad);
-        const largeArc = endAngle - startAngle > 180 ? 1 : 0;
-
-        const path = `M ${x1} ${y1} A ${r} ${r} 0 ${largeArc} 1 ${x2} ${y2}`;
-        cumulative += seg.percent;
-
-        return { 
-            path, 
-            color: seg.color, 
-            percent: seg.percent, 
-            lx, 
-            ly, 
-            label: seg.shortLabel || `${seg.percent.toFixed(1)}%`,
-            textColor: isInside ? '#ffffff' : '#1e3a8a',
-            fontSize: isInside ? '10px' : '9.5px',
-            fontWeight: '900'
-        };
-    });
-
+// Responsive Horizontal Bar Graph component replacing the Donut chart for better fluid layout
+const MiniBarGraph = ({ items, total }) => {
     return (
-        <svg 
-            viewBox={`0 0 ${internalSize} ${internalSize}`} 
-            width="100%" 
-            height="100%" 
-            style={{ 
-                overflow: 'visible', 
-                display: 'block' 
-            }}
-        >
-            <defs>
-                <filter id="dshadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#00000015" />
-                </filter>
-            </defs>
-            {/* Segments */}
-            {paths.map((p, i) => (
-                <path
-                    key={i}
-                    d={p.path}
-                    fill="none"
-                    stroke={p.color}
-                    strokeWidth={strokeWidth}
-                    strokeLinecap="butt"
-                    filter="url(#dshadow)"
-                />
-            ))}
-            {/* White Center Circle */}
-            <circle cx={cx} cy={cy} r={r - strokeWidth / 2} fill="white" />
-            <text x={cx} y={cy - 4} textAnchor="middle" fontSize="26" fontWeight="900" fill="#1e3a8a">{total}</text>
-            <text x={cx} y={cy + 14} textAnchor="middle" fontSize="10" fontWeight="800" fill="#94a3b8" letterSpacing="1">{label}</text>
-            
-            {/* Labels */}
-            {paths.filter(p => p.percent >= 2).map((p, i) => (
-                <text 
-                    key={i} 
-                    x={p.lx} 
-                    y={p.ly} 
-                    textAnchor="middle" 
-                    dominantBaseline="middle" 
-                    fontSize={p.fontSize} 
-                    fontWeight={p.fontWeight} 
-                    fill={p.textColor}
-                >
-                    {p.label}
-                </text>
-            ))}
-        </svg>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '9px', width: '100%' }}>
+            {items.map((item, idx) => {
+                const count = parseInt(item.count, 10);
+                const percent = ((count / total) * 100).toFixed(1);
+                return (
+                    <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '9.5px', fontWeight: 'bold', color: '#1e3a8a' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: item.color, flexShrink: 0 }} />
+                                <span style={{ color: '#475569' }}>{item.name}</span>
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                <span style={{ fontWeight: 800 }}>{item.count}</span>
+                                <span style={{ fontSize: '8.5px', color: '#94a3b8', fontWeight: 600 }}>({percent}%)</span>
+                            </div>
+                        </div>
+                        <div style={{ width: '100%', height: '6px', background: '#f1f5f9', borderRadius: '3px', overflow: 'hidden' }}>
+                            <div style={{ width: `${percent}%`, height: '100%', background: item.color, borderRadius: '3px' }} />
+                        </div>
+                    </div>
+                );
+            })}
+        </div>
     );
 };// Interactive Infographic Component
 const ResearchSummaryDashboard = () => {
@@ -415,9 +344,9 @@ const ResearchSummaryDashboard = () => {
             </div>
 
             {/* ── KPI ROW ── */}
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', borderBottom:'2px solid #1e3a8a', background:'white' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 border-b-2 border-[#1e3a8a] bg-white">
                 {/* Publications */}
-                <div style={{ display:'flex', alignItems:'center', gap:'14px', padding:'14px 20px', borderRight:'1px solid #e2e8f0' }}>
+                <div className="flex items-center gap-14 p-[14px] px-5 border-b md:border-b-0 md:border-r border-[#cbd5e1] md:border-[#e2e8f0]">
                     <div style={{ background:'#1e3a8a', borderRadius:'50%', width:'60px', height:'60px', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
                         <BookOpen color="white" size={28} />
                     </div>
@@ -428,7 +357,7 @@ const ResearchSummaryDashboard = () => {
                     </div>
                 </div>
                 {/* Patents */}
-                <div style={{ display:'flex', alignItems:'center', gap:'14px', padding:'14px 20px', borderRight:'1px solid #e2e8f0' }}>
+                <div className="flex items-center gap-14 p-[14px] px-5 border-b md:border-b-0 md:border-r border-[#cbd5e1] md:border-[#e2e8f0]">
                     <div style={{ background:'#15803d', borderRadius:'50%', width:'60px', height:'60px', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
                         <span style={{ color:'white', fontWeight:900, fontSize:'24px' }}>P</span>
                     </div>
@@ -439,7 +368,7 @@ const ResearchSummaryDashboard = () => {
                     </div>
                 </div>
                 {/* Grants */}
-                <div style={{ display:'flex', alignItems:'center', gap:'14px', padding:'14px 20px' }}>
+                <div className="flex items-center gap-14 p-[14px] px-5">
                     <div style={{ background:'#4c1d95', borderRadius:'50%', width:'60px', height:'60px', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
                         <Handshake color="white" size={28} />
                     </div>
@@ -452,42 +381,15 @@ const ResearchSummaryDashboard = () => {
             </div>
 
             {/* ── DETAIL ROW ── */}
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr' }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 bg-white">
 
                 {/* ── PUBLICATIONS PANEL ── */}
-                <div style={{ borderRight:'1px solid #1e3a8a', display:'flex', flexDirection:'column' }}>
+                <div className="border-b md:border-b-0 md:border-r border-[#1e3a8a] flex flex-col">
                     <div style={{ background:'#1e3a8a', color:'white', fontWeight:800, fontSize:'12px', textTransform:'uppercase', letterSpacing:'2px', textAlign:'center', padding:'7px' }}>
                         Publications
                     </div>
-                    {/* Donut LEFT  |  Table RIGHT */}
-                    <div style={{ display:'flex', alignItems:'center', padding:'12px 8px 10px 18px', gap:'8px', flex:1 }}>
-                        <div style={{ flexShrink:0, width:'145px', height:'145px' }}>
-                            <DonutChart segments={pubSegments} total="221" label="Total" />
-                        </div>
-                        <div style={{ flex:1, minWidth:0, overflow:'hidden' }}>
-                            <table style={{ width:'100%', borderCollapse:'collapse', tableLayout:'fixed' }}>
-                                <colgroup>
-                                    <col style={{ width: 'auto' }} />
-                                    <col style={{ width: '45px' }} />
-                                </colgroup>
-                                <thead>
-                                    <tr><th style={th}>Category</th><th style={thC}>Count</th></tr>
-                                </thead>
-                                <tbody>
-                                    {pubLegend.map((row, i) => (
-                                        <tr key={i} style={{ background: i%2===0 ? 'white' : '#f8fafc' }}>
-                                            <td style={td}>
-                                                <div style={{ display:'flex', alignItems:'flex-start', gap:'5px' }}>
-                                                    <span style={{ width:'8px', height:'8px', borderRadius:'50%', background:row.color, flexShrink:0, marginTop:'2px', display:'inline-block' }} />
-                                                    <span style={{ lineHeight:1.3 }}>{row.name}</span>
-                                                </div>
-                                            </td>
-                                            <td style={tdC}>{row.count}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                    <div style={{ display:'flex', flexDirection:'column', padding: '16px 20px', flex: 1, justifyContent: 'center' }}>
+                        <MiniBarGraph items={pubLegend} total={221} />
                     </div>
                     <div style={{ background:'#dbeafe', borderTop:'1px solid #1e3a8a', padding:'6px 14px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                         <span style={{ color:'#1e3a8a', fontWeight:700, fontSize:'11px' }}>Total Publications:</span>
@@ -496,39 +398,12 @@ const ResearchSummaryDashboard = () => {
                 </div>
 
                 {/* ── PATENTS PANEL ── */}
-                <div style={{ borderRight:'1px solid #1e3a8a', display:'flex', flexDirection:'column' }}>
+                <div className="border-b md:border-b-0 md:border-r border-[#1e3a8a] flex flex-col">
                     <div style={{ background:'#15803d', color:'white', fontWeight:800, fontSize:'12px', textTransform:'uppercase', letterSpacing:'2px', textAlign:'center', padding:'7px' }}>
                         Patents
                     </div>
-                    {/* Donut LEFT  |  Table RIGHT */}
-                    <div style={{ display:'flex', alignItems:'center', padding:'12px 8px 10px 8px', gap:'8px', flex:1 }}>
-                        <div style={{ flexShrink:0, width:'145px', height:'145px' }}>
-                            <DonutChart segments={patentSegments} total="08" label="Total" />
-                        </div>
-                        <div style={{ flex:1, minWidth:0, overflow:'hidden' }}>
-                            <table style={{ width:'100%', borderCollapse:'collapse', tableLayout:'fixed' }}>
-                                <colgroup>
-                                    <col style={{ width: 'auto' }} />
-                                    <col style={{ width: '45px' }} />
-                                </colgroup>
-                                <thead>
-                                    <tr><th style={th}>Category</th><th style={thC}>Count</th></tr>
-                                </thead>
-                                <tbody>
-                                    {patentLegend.map((row, i) => (
-                                        <tr key={i} style={{ background: i%2===0 ? 'white' : '#f8fafc' }}>
-                                            <td style={td}>
-                                                <div style={{ display:'flex', alignItems:'center', gap:'5px' }}>
-                                                    <span style={{ width:'8px', height:'8px', borderRadius:'50%', background:row.color, flexShrink:0, display:'inline-block' }} />
-                                                    <span>{row.name}</span>
-                                                </div>
-                                            </td>
-                                            <td style={{ ...tdC, color: row.color }}>{row.count}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                    <div style={{ display:'flex', flexDirection:'column', padding: '16px 20px', flex: 1, justifyContent: 'center' }}>
+                        <MiniBarGraph items={patentLegend} total={8} />
                     </div>
                     <div style={{ background:'#dcfce7', borderTop:'1px solid #15803d', padding:'6px 14px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                         <span style={{ color:'#15803d', fontWeight:700, fontSize:'11px' }}>Total Patents:</span>

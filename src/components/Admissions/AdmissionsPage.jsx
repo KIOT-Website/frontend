@@ -29,7 +29,7 @@ import {
   Sparkles
 } from 'lucide-react'
 import logo from '../../assets/main/logo.webp'
-import bannerAdmission from '../../assets/Admissions/banner admision.png'
+import bannerAdmission from '../../assets/Admissions/banner admision.webp'
 import admission2 from '../../assets/Admissions/admision-2.webp'
 
 // ─── Data Construction ────────────────────────────────────────────────────────
