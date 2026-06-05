@@ -10,12 +10,55 @@ import {
   HardDrive,
   BarChart3,
   CheckCircle2,
-  Container
+  Container,
+  Sun,
+  Building2,
+  Cpu,
+  Home
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const EnergyPage = () => {
     const navigate = useNavigate();
+
+    const solarPlants = [
+        {
+            sno: 1,
+            block: "IT Block",
+            capacity: 87.5,
+            unit: "kWp",
+            icon: Cpu,
+            percentage: 21.0,
+            color: "from-[#00b4d8] to-[#0077b6]"
+        },
+        {
+            sno: 2,
+            block: "D Block",
+            capacity: 150,
+            unit: "kWp",
+            icon: Building2,
+            percentage: 35.9,
+            color: "from-[#ffc107] to-[#ff9800]"
+        },
+        {
+            sno: 3,
+            block: "C Block",
+            capacity: 130,
+            unit: "kWp",
+            icon: Building2,
+            percentage: 31.1,
+            color: "from-[#224292] to-[#162a5e]"
+        },
+        {
+            sno: 4,
+            block: "Gents Hostel",
+            capacity: 50,
+            unit: "kWp",
+            icon: Home,
+            percentage: 12.0,
+            color: "from-[#e76f51] to-[#f4a261]"
+        }
+    ];
 
     const wasteInitiatives = [
         {
@@ -90,6 +133,78 @@ const EnergyPage = () => {
 
             <div className="max-w-7xl mx-auto px-6 py-16 relative z-20 space-y-24">
                 
+                {/* ☀️ Solar Photovoltaic (SPV) Power Plants Section */}
+                <div className="space-y-12">
+                    <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+                        <div className="space-y-2">
+                            <h2 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tighter">
+                                Solar <span className="text-[#ffc107]">Power Plants</span>
+                            </h2>
+                            <div className="h-1 w-24 bg-[#ffc107]" />
+                        </div>
+                        <p className="max-w-xl text-black text-[15px] font-bold leading-relaxed text-justify">
+                            KIOT have installed Rooftop Solar Power Plants to meet the daily requirements. 
+                            The institution actively generates clean, sustainable energy through high-capacity Solar Photovoltaic (SPV) installations across key academic and hostel blocks.
+                        </p>
+                    </div>
+
+                    {/* Total Stats and Grid */}
+                    <div className="grid lg:grid-cols-3 gap-8">
+                        {/* Huge Stat Card */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="lg:col-span-1 bg-[#224292] rounded-[2.5rem] p-6 md:p-8 text-white relative overflow-hidden shadow-xl flex flex-col justify-between"
+                        >
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3" />
+                            <div className="flex flex-col h-full justify-start">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-[#ffc107] border border-white/10">
+                                        <Sun size={24} className="animate-spin-slow" />
+                                    </div>
+                                    <span className="text-xs font-black text-[#ffc107]/60 uppercase tracking-wider">Total</span>
+                                </div>
+                                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#ffc107] mb-2">Total Capacity</h3>
+                                <div className="text-4xl md:text-5xl font-black tracking-tighter leading-none">
+                                    417.5 <span className="text-lg font-bold uppercase tracking-wider text-[#ffc107]">kWp</span>
+                                </div>
+                            </div>
+                            <div className="mt-8 pt-6 border-t border-white/10 text-xs font-bold text-white/80 leading-relaxed">
+                                Meets daily power requirements efficiently, substantially reducing the carbon footprint of the campus.
+                            </div>
+                        </motion.div>
+
+                        {/* Breakdown Cards Grid */}
+                        <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
+                            {solarPlants.map((plant, idx) => (
+                                <motion.div 
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: idx * 0.1 }}
+                                    whileHover={{ y: -5 }}
+                                    className="bg-white rounded-[2rem] border border-slate-100 shadow-lg p-6 md:p-8 hover:border-[#224292]/10 transition-all flex flex-col justify-between group"
+                                >
+                                    <div className="flex items-center justify-between mb-6">
+                                        <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-300">
+                                            <plant.icon size={24} />
+                                        </div>
+                                        <span className="text-xs font-black text-slate-400">0{plant.sno}</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xs font-black uppercase tracking-[0.2em] text-[#224292]/60 mb-2">{plant.block}</h3>
+                                        <div className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">
+                                            {plant.capacity} <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">kWp</span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
                 {/* ♻️ Waste Management Section */}
                 <div className="space-y-12">
                     <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
