@@ -89,6 +89,7 @@ const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
 const AlumniPage = lazy(() => import('./pages/AlumniPage'))
 const COEDownloadsPage = lazy(() => import('./pages/COEDownloadsPage'))
 const IICPage = lazy(() => import('./pages/IICPage'))
+const IICMembersPage = lazy(() => import('./pages/IICMembersPage'))
 const StartupTNPage = lazy(() => import('./pages/StartupTNPage'))
 const MSMEBIPage = lazy(() => import('./pages/MSMEBIPage'))
 const MXIncubatorPage = lazy(() => import('./pages/MXIncubatorPage'))
@@ -409,6 +410,10 @@ function App() {
         title: "AICTE IDEA Lab | Innovation Center",
         desc: "Explore the state-of-the-art AICTE IDEA Lab at KIOT for hands-on prototyping, design thinking, and product development."
       },
+      "/research-innovation/corporate-contest": {
+        title: "Corporate Contest Cell | KIOT",
+        desc: "Encourages participation in hackathons, innovation challenges, and competitions at Knowledge Institute of Technology."
+      },
       "/research-innovation/istart": {
         title: "iStart Innovation Portal | KIOT",
         desc: "Learn about entrepreneurship support, start-up incubation, and innovation funding opportunities at KIOT Salem."
@@ -420,6 +425,10 @@ function App() {
       "/research-innovation/iic": {
         title: "Institution's Innovation Council | KIOT",
         desc: "Explore Innovation activities, entrepreneurship drives, and start-up initiatives managed by IIC at KIOT."
+      },
+      "/research-innovation/iic/members": {
+        title: "IIC Student Members | KIOT",
+        desc: "Detailed student list of the Institution's Innovation Council (IIC) members at KIOT."
       },
       "/research-innovation/startuptn": {
         title: "StartupTN Hub | Incubation & Ventures",
@@ -785,9 +794,11 @@ function App() {
                    <Route path="/research" element={<ResearchPage />} />
                    <Route path="/research-innovation/aicte-idea-lab" element={<AicteIdeaLabPage />} />
                    <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
+                   <Route path="/research-innovation/corporate-contest" element={<UnderConstruction />} />
                    <Route path="/research-innovation/istart" element={<IStartPage />} />
                    <Route path="/istart" element={<IStartPage />} />
                    <Route path="/research-innovation/iic" element={<IICPage />} />
+                   <Route path="/research-innovation/iic/members" element={<IICMembersPage />} />
                    <Route path="/research-innovation/startuptn" element={<StartupTNPage />} />
                    <Route path="/research-innovation/msme-bi" element={<MSMEBIPage />} />
                    <Route path="/research-innovation/mx-incubator" element={<MXIncubatorPage />} />

@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { Zap, Sprout, Cpu, HeartPulse, Building2, ShieldCheck, Handshake } from 'lucide-react'
+import { Zap, Sprout, Cpu, HeartPulse, Building2, ShieldCheck, Handshake, FileText, Lightbulb } from 'lucide-react'
 
 import ist2Logo from '../assets/iStart/ist2.webp'
 import mxi1 from '../assets/iStart/mxi-1.webp'
@@ -10,6 +11,23 @@ import serviceImg3 from '../assets/iStart/iStart-Hackathon-winner-1.webp'
 
 const MXIncubatorPage = () => {
     const navigate = useNavigate()
+    const [activeIprTab, setActiveIprTab] = useState('YUKTHI')
+
+    const preincubatees = [
+        { id: "ASN 1863", company: "DroneTribes", student: "Guna P", details: "Custom Drone Manufacturing, Identify the defects in Power Plants" },
+        { id: "ASN 1864", company: "Visecure", student: "Viyasan S", details: "Cyber Security Platform" },
+        { id: "ASN 3682", company: "Systematic Squad", student: "Tamilselvan C", details: "Landside Monitoring Robot" },
+        { id: "ASN 3683", company: "Tono_Lite", student: "Govarthanahari N", details: "Portal Device for Glaucoma Patient" },
+        { id: "ASN 3684", company: "Agrixnova", student: "Devisubaa S", details: "Software application for coconut farming and data analysis and prediction" },
+        { id: "ASN 1909", company: "eNowatiX Technologies", student: "Aswika. N", details: "Embedded Technology Solution for Industry and academia" },
+        { id: "ASN 3676", company: "Falcon Fleet", student: "Shahana Sri K S", details: "Eagle eye: Multispectral imaging smart drone for orchard management" },
+        { id: "ASN 3677", company: "Hemotexhh", student: "Dharshini S", details: "Non-Invasive Blood Group Prediction and Health Monitoring System" },
+        { id: "ASN 3678", company: "Automaters", student: "Nisha S", details: "Dynamic wireless power transmission for e-vehicle" },
+        { id: "ASN 3679", company: "Mindmesh", student: "Jayashree N", details: "Rising child anemia cases in rural blocks" },
+        { id: "ASN 3680", company: "Neural Ninjas", student: "Sudharsana K", details: "Let AI speak to your money / AI Monitored Digital Payments" },
+        { id: "ASN 3681", company: "InnovateX", student: "Dhaksana R", details: "Climatic GenAI: An AI-Driven System for Predicting Wildlife Migration" },
+        { id: "ASN 3685", company: "Ryzaq Innovators", student: "Kishore Kumar S", details: "Alternate Medium for Wifi / Bluetooth - Data Transmission" }
+    ]
 
     return (
         <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-6">
@@ -239,6 +257,121 @@ const MXIncubatorPage = () => {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+
+                    {/* IPR Cell Section */}
+                    <div className="space-y-8 py-8 border-t border-slate-200">
+                        <div className="flex flex-col gap-1">
+                            <div className="flex items-center gap-3">
+                                <div className="h-8 w-1.5 bg-[#ffc107] rounded-full" />
+                                <h2 className="text-3xl font-black text-[#224292] tracking-tight">IPR CELL</h2>
+                            </div>
+                            <p className="text-slate-500 font-black text-[10px] uppercase tracking-widest pl-5">Intellectual Property Rights and Innovation Repository</p>
+                        </div>
+
+                        {/* Tab Switcher */}
+                        <div className="flex border-b border-slate-200">
+                            {[
+                                { id: 'YUKTHI', label: 'YUKTHI Innovation Repository', icon: Lightbulb },
+                                { id: 'KAPILA', label: 'KAPILA IP Literacy Program', icon: ShieldCheck }
+                            ].map((tab) => {
+                                const Icon = tab.icon
+                                const isActive = activeIprTab === tab.id
+                                return (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => setActiveIprTab(tab.id)}
+                                        className={`flex items-center gap-2 px-6 py-4 text-sm font-black transition-all border-b-2 -mb-[2px] ${
+                                            isActive
+                                                ? 'border-[#224292] text-[#224292]'
+                                                : 'border-transparent text-slate-400 hover:text-slate-600'
+                                        }`}
+                                    >
+                                        <Icon size={16} />
+                                        {tab.label}
+                                    </button>
+                                )
+                            })}
+                        </div>
+
+                        {/* Tab Content */}
+                        <div className="pt-4">
+                            {activeIprTab === 'YUKTHI' ? (
+                                <div className="space-y-6">
+                                    <p className="text-black/70 text-sm font-bold leading-relaxed text-justify">
+                                        YUKTHI (Youth Undergraduate Kit for Technology Innovation) Innovation Repository is an initiative by the Ministry of Education (MoE) Innovation Cell. It aims to build a robust repository of innovations, student start-ups, and technology solutions developed across higher education institutions to provide mentorship, funding, and growth opportunities.
+                                    </p>
+                                    
+                                    {/* Preincubatees Table */}
+                                    <div className="space-y-4 pt-2">
+                                        <h4 className="text-lg font-black text-[#224292] tracking-tight uppercase">PREINCUBATEES</h4>
+                                        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
+                                            <div className="overflow-x-auto">
+                                                <table className="w-full text-left border-collapse">
+                                                    <thead>
+                                                        <tr className="bg-[#224292] text-white">
+                                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest border-r border-white/10 uppercase">Preincubatee ID</th>
+                                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest border-r border-white/10 uppercase">Company Name</th>
+                                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest border-r border-white/10 uppercase">Student Name</th>
+                                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase">Idea / Product Details</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody className="divide-y divide-slate-100">
+                                                        {preincubatees.map((item, idx) => (
+                                                            <tr key={idx} className="hover:bg-slate-50 transition-colors group">
+                                                                <td className="px-6 py-4 text-sm font-black text-[#224292] border-r border-slate-50">{item.id}</td>
+                                                                <td className="px-6 py-4 text-sm font-bold text-black border-r border-slate-50">{item.company}</td>
+                                                                <td className="px-6 py-4 text-sm font-bold text-black border-r border-slate-50">{item.student}</td>
+                                                                <td className="px-6 py-4 text-xs font-bold text-black/70 leading-relaxed">{item.details}</td>
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="space-y-6">
+                                    <p className="text-black/70 text-sm font-bold leading-relaxed text-justify">
+                                        KAPILA (Kalam Program for IP Literacy and Awareness Campaign) is a flagship scheme of the Government of India designed to promote intellectual property (IP) literacy and awareness in higher educational institutions. It encourages faculty and students to protect their creative inventions and innovations through patent, copyright, and design filings, offering financial support and institutional assistance.
+                                    </p>
+                                    
+                                    {/* KAPILA Highlights Cards */}
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                                        <div className="p-6 bg-white rounded-2xl border border-slate-150 shadow-sm flex flex-col space-y-3">
+                                            <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600">
+                                                <FileText size={20} />
+                                            </div>
+                                            <h4 className="text-sm font-black text-[#224292]">IP Awareness</h4>
+                                            <p className="text-[11px] font-bold text-black/60 leading-relaxed text-justify">
+                                                Regular seminars, workshops, and training programs to educate students and faculty on patent search, draft creation, and filing processes.
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="p-6 bg-white rounded-2xl border border-slate-150 shadow-sm flex flex-col space-y-3">
+                                            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                                <ShieldCheck size={20} />
+                                            </div>
+                                            <h4 className="text-sm font-black text-[#224292]">Patent Filing Support</h4>
+                                            <p className="text-[11px] font-bold text-black/60 leading-relaxed text-justify">
+                                                Financial assistance and institutional guidance for filing national and international patents, protecting novel concepts and products.
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="p-6 bg-white rounded-2xl border border-slate-150 shadow-sm flex flex-col space-y-3">
+                                            <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600">
+                                                <Building2 size={20} />
+                                            </div>
+                                            <h4 className="text-sm font-black text-[#224292]">Commercialization</h4>
+                                            <p className="text-[11px] font-bold text-black/60 leading-relaxed text-justify">
+                                                Assisting researchers and startup founders in licensing patented technologies and bridging the gap from research labs to the industry market.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

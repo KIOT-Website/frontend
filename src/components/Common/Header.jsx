@@ -95,6 +95,7 @@ const navLinks = [
     subLinks: [
       { name: 'Research', href: 'research-innovation/research', icon: Microscope },
       { name: 'AICTE Idea Lab', href: 'research-innovation/aicte-idea-lab', icon: Wrench },
+      { name: 'Corporate Contest Cell', href: 'research-innovation/corporate-contest', icon: Trophy },
       { name: 'iStart', href: 'research-innovation/istart', icon: Cpu },
     ]
   },
@@ -170,6 +171,7 @@ const searchableItems = [
   // Research & Innovations
   { title: 'Research & Development (R&D)', type: 'Research', path: '/research-innovation/research' },
   { title: 'AICTE Idea Lab Facility', type: 'Research', path: '/research-innovation/aicte-idea-lab' },
+  { title: 'Corporate Contest Cell', type: 'Research', path: '/research-innovation/corporate-contest' },
   { title: 'iStart & Innovation Cell', type: 'Research', path: '/research-innovation/istart' },
   
   // Exams section
@@ -218,6 +220,13 @@ const Header = () => {
   const searchRef = useRef(null)
   const inputRef = useRef(null)
 
+  // Mobile search state
+  const [mobileSearchQuery, setMobileSearchQuery] = useState('')
+  const [showMobileSuggestions, setShowMobileSuggestions] = useState(false)
+  const [isMobileSearchExpanded, setIsMobileSearchExpanded] = useState(false)
+  const mobileSearchRef = useRef(null)
+  const mobileInputRef = useRef(null)
+
   const handleSearchSubmit = (e) => {
     e.preventDefault()
     if (!searchQuery.trim()) return
@@ -241,11 +250,39 @@ const Header = () => {
     handleNavClick(e, item.title, item.path.replace(/^\//, ''))
   }
 
+  const handleMobileSearchSubmit = (e) => {
+    e.preventDefault()
+    if (!mobileSearchQuery.trim()) return
+    const matches = searchableItems.filter(item => 
+      item.title.toLowerCase().includes(mobileSearchQuery.toLowerCase()) ||
+      item.type.toLowerCase().includes(mobileSearchQuery.toLowerCase())
+    )
+    if (matches.length > 0) {
+      handleMobileSuggestionClick(e, matches[0])
+    }
+  }
+
+  const handleMobileSuggestionClick = (e, item) => {
+    e.preventDefault()
+    setMobileSearchQuery('')
+    setShowMobileSuggestions(false)
+    setIsMobileSearchExpanded(false)
+    if (item.path.startsWith('http')) {
+      window.open(item.path, '_blank', 'noopener,noreferrer')
+      return
+    }
+    handleNavClick(e, item.title, item.path.replace(/^\//, ''))
+  }
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
         setShowSuggestions(false)
         setIsSearchExpanded(false)
+      }
+      if (mobileSearchRef.current && !mobileSearchRef.current.contains(e.target)) {
+        setShowMobileSuggestions(false)
+        setIsMobileSearchExpanded(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -334,6 +371,13 @@ const Header = () => {
         item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.type.toLowerCase().includes(searchQuery.toLowerCase())
       ).slice(0, 6)
+    : []
+
+  const filteredMobileSuggestions = mobileSearchQuery.trim()
+    ? searchableItems.filter(item => 
+        item.title.toLowerCase().includes(mobileSearchQuery.toLowerCase()) ||
+        item.type.toLowerCase().includes(mobileSearchQuery.toLowerCase())
+      ).slice(0, 5)
     : []
 
   return (
@@ -525,17 +569,97 @@ const Header = () => {
             </div>
 
             <nav className="relative flex h-[76px] py-0.5 items-center justify-between bg-white px-2 sm:px-6 xl:pl-36 xl:pr-10 lg:pl-6 lg:pr-6">
-              <a
-                href="#top"
-                onClick={(e) => handleNavClick(e, 'Home')}
-                className="flex items-center xl:hidden"
-              >
-                <img
-                  src={logo}
-                  alt="Knowledge Institute of Technology"
-                  className="h-[44px] sm:h-[54px] w-auto max-w-[160px] sm:max-w-[210px] object-contain"
-                />
-              </a>
+              <div className="flex items-center gap-2 xl:hidden">
+                <a
+                  href="#top"
+                  onClick={(e) => handleNavClick(e, 'Home')}
+                  className="flex items-center"
+                >
+                  <img
+                    src={logo}
+                    alt="Knowledge Institute of Technology"
+                    className="h-[44px] sm:h-[54px] w-auto max-w-[160px] sm:max-w-[210px] object-contain"
+                  />
+                </a>
+                
+                {/* Mobile Search Trigger */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileSearchExpanded(true)
+                    setTimeout(() => mobileInputRef.current?.focus(), 150)
+                  }}
+                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#224292]/5 text-[#224292] hover:bg-[#224292]/10 active:scale-95 transition-all"
+                  title="Search"
+                >
+                  <Search size={18} strokeWidth={2.5} />
+                </button>
+              </div>
+
+              {/* Mobile Search Overlay */}
+              <AnimatePresence>
+                {isMobileSearchExpanded && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute inset-0 z-50 flex items-center bg-white px-4 xl:hidden"
+                  >
+                    <form 
+                      onSubmit={handleMobileSearchSubmit} 
+                      ref={mobileSearchRef} 
+                      className="flex flex-1 items-center gap-3"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsMobileSearchExpanded(false)
+                          setShowMobileSuggestions(false)
+                        }}
+                        className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#224292]/5 text-[#224292] active:scale-95 transition-transform"
+                      >
+                        <X size={18} strokeWidth={2.5} />
+                      </button>
+                      <div className="relative flex-1">
+                        <input
+                          ref={mobileInputRef}
+                          type="text"
+                          placeholder="Search course, departments, events..."
+                          value={mobileSearchQuery}
+                          onChange={(e) => {
+                            setMobileSearchQuery(e.target.value)
+                            setShowMobileSuggestions(true)
+                          }}
+                          onFocus={() => setShowMobileSuggestions(true)}
+                          className="w-full h-10 px-4 rounded-xl border border-[#224292]/20 bg-[#224292]/5 text-[14px] font-semibold text-[#224292] placeholder-[#224292]/50 focus:outline-none focus:border-[#224292] focus:bg-white transition-all"
+                        />
+                        {/* Mobile Suggestions Dropdown */}
+                        {showMobileSuggestions && mobileSearchQuery.trim() && (
+                          <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-[#224292]/20 rounded-2xl shadow-[0_20px_50px_rgba(34,66,146,0.15)] z-[999] overflow-hidden py-2 max-h-60 overflow-y-auto">
+                            {filteredMobileSuggestions.map((item, idx) => (
+                              <button
+                                key={idx}
+                                type="button"
+                                onClick={(e) => handleMobileSuggestionClick(e, item)}
+                                className="w-full text-left px-5 py-3 hover:bg-[#224292]/5 transition-colors flex flex-col gap-1 border-b border-[#224292]/5 last:border-b-0"
+                              >
+                                <span className="text-[13px] font-bold text-[#224292]">{item.title}</span>
+                                <span className="text-[10px] font-black uppercase tracking-wider text-[#224292]/60">{item.type}</span>
+                              </button>
+                            ))}
+                            {filteredMobileSuggestions.length === 0 && (
+                              <div className="px-5 py-4 text-center">
+                                <span className="text-[11px] font-bold text-[#224292]/50 uppercase tracking-widest">No matching content</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </form>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               <ul className="hidden xl:flex xl:items-center xl:gap-2.5 2xl:gap-5">
                 {navLinks.map((link) => {

@@ -212,7 +212,6 @@ const IStartPage = () => {
                             { name: "Dr.K.Visagavel", role: "Principal", iic: "IIC President - KIOT", icon: Award },
                             { name: "Mr.A.Sekar M.E., (Ph.D)", role: "Head Incubation", iic: "IIC Vice President – KIOT", icon: Users },
                             { name: "Mr.M.Dinesh Kumar", role: "Incubation Lead", iic: "Strategy & Operations", icon: Settings },
-                            { name: "Mrs.P.Geetha", role: "Incubation Manager", iic: "Community Engagement", icon: Users },
                             { name: "Mr.M.M.Barat Kumar", role: "Incubation Associate", iic: "Technical Support", icon: Lightbulb }
                         ].map((m, i) => (
                             <div key={i} className="group relative bg-white rounded-[1.2rem] p-4 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col overflow-hidden transition-all duration-500 hover:shadow-xl">

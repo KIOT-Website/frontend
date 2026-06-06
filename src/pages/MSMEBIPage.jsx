@@ -24,18 +24,6 @@ const MSMEBIPage = () => {
         { label: "Patent Support Institution Contribution (16 Patents Identified filing)", details: "Rs. 4.00 Lakh" }
     ]
 
-    const activities = [
-        { activity: "Incubatee Application, Agreement & Onboarding- Framework finalization", audience: "All Students+Public Startups", date: "28/02/2026", status: "Completed" },
-        { activity: "iStart Hackathon- Innovate India 2047(Academic edition) Idea Selection", audience: "All External Students+Public Startups", date: "March 2nd week", status: "Level 1 Completed" },
-        { activity: "FDP for KIOT faculty members related with Startups Creation and Evaluation", audience: "KIOT-Faculty members", date: "March 2nd week", status: "Planned" },
-        { activity: "KIOT Innovate India 2047- Stage two, Two Days Bootcamp", audience: "KIOT 2nd year UG+MBA students", date: "March 3rd week", status: "Planned" },
-        { activity: "iStart Hackathon- Innovate India 2047(Academic edition) Final Hackathon", audience: "All Students+Public", date: "March 4th week", status: "Planned" },
-        { activity: "KIOT Innovate India 2047- Stage two Final Hackathon", audience: "KIOT 2nd year UG+MBA students", date: "April 1st week", status: "Planned" },
-        { activity: "Two Days Bootcamp for First Year iStart members", audience: "First year iStart Members", date: "April 2nd week", status: "Planned" },
-        { activity: "Identifying 25 Startups ideas using MAP, Internal, External programs", audience: "Students+Public", date: "May", status: "Planned" },
-        { activity: "Entrepreneurship Alumni Meet", audience: "KIOT Alumni Members", date: "May", status: "Planned" },
-        { activity: "Entrepreneurship Conclave", audience: "Startups, Entrepreneurs, Startup enablers, etc", date: "June", status: "Planned" }
-    ]
 
     return (
         <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-20">
@@ -112,45 +100,6 @@ const MSMEBIPage = () => {
                         </div>
                     </div>
 
-                    {/* Table Section: Planned Activities */}
-                    <div className="space-y-8 pt-10">
-                        <div className="flex items-center gap-4">
-                            <h2 className="text-3xl font-black text-[#224292] tracking-tighter uppercase">
-                                Planned Activities
-                            </h2>
-                        </div>
-
-                        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr className="bg-[#224292] text-white">
-                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Planned Activity</th>
-                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Target Audience</th>
-                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Date</th>
-                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest uppercase align-middle">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100">
-                                        {activities.map((item, idx) => (
-                                            <tr key={idx} className="even:bg-[#224292]/[0.04] hover:bg-[#224292]/[0.08] transition-colors group">
-                                                <td className="px-6 py-5 text-sm font-black text-[#224292] align-middle">{item.activity}</td>
-                                                <td className="px-6 py-5 text-sm font-bold text-black align-middle">{item.audience}</td>
-                                                <td className="px-6 py-5 text-sm font-bold text-black align-middle">{item.date}</td>
-                                                <td className="px-6 py-5 align-middle">
-                                                    <span className={`inline-flex px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${
-                                                        item.status.includes("Completed") ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"
-                                                    }`}>
-                                                        {item.status}
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

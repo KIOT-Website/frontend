@@ -17,21 +17,6 @@ import istart1 from '../assets/iStart/istart (1).webp'
 const StartupTNPage = () => {
     const navigate = useNavigate()
 
-    const smartCards = [
-        { id: "ASN 1863", company: "DroneTribes", student: "Guna P", details: "Custom Drone Manufacturing, Identify the defects in Power Plants" },
-        { id: "ASN 1864", company: "Visecure", student: "Viyasan S", details: "Cyber Security Platform" },
-        { id: "ASN 3682", company: "Systematic Squad", student: "Tamilselvan C", details: "Landside Monitoring Robot" },
-        { id: "ASN 3683", company: "Tono_Lite", student: "Govarthanahari N", details: "Portal Device for Glaucoma Patient" },
-        { id: "ASN 3684", company: "Agrixnova", student: "Devisubaa S", details: "Software application for coconut farming and data analysis and prediction" },
-        { id: "ASN 1909", company: "eNowatiX Technologies", student: "Aswika. N", details: "Embedded Technology Solution for Industry and academia" },
-        { id: "ASN 3676", company: "Falcon Fleet", student: "Shahana Sri K S", details: "Eagle eye: Multispectral imaging smart drone for orchard management" },
-        { id: "ASN 3677", company: "Hemotexhh", student: "Dharshini S", details: "Non-Invasive Blood Group Prediction and Health Monitoring System" },
-        { id: "ASN 3678", company: "Automaters", student: "Nisha S", details: "Dynamic wireless power transmission for e-vehicle" },
-        { id: "ASN 3679", company: "Mindmesh", student: "Jayashree N", details: "Rising child anemia cases in rural blocks" },
-        { id: "ASN 3680", company: "Neural Ninjas", student: "Sudharsana K", details: "Let AI speak to your money / AI Monitored Digital Payments" },
-        { id: "ASN 3681", company: "InnovateX", student: "Dhaksana R", details: "Climatic GenAI: An AI-Driven System for Predicting Wildlife Migration" },
-        { id: "ASN 3685", company: "Ryzaq Innovators", student: "Kishore Kumar S", details: "Alternate Medium for Wifi / Bluetooth - Data Transmission" }
-    ]
 
     return (
         <div className="min-h-screen bg-[#F8FAFC] font-graphik pb-12">
@@ -156,40 +141,6 @@ const StartupTNPage = () => {
                         </div>
                     </div>
 
-                    {/* Table Section */}
-                    <div className="space-y-6">
-                        <div className="flex items-center gap-4">
-                            <div className="w-1.5 h-10 bg-[#ffc107] rounded-full"></div>
-                            <h2 className="text-3xl font-black text-[#224292] tracking-tighter">
-                                List of <span className="text-[#ffc107]">Smart Card Holders</span>
-                            </h2>
-                        </div>
-
-                        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr className="bg-[#224292] text-white">
-                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest border-r border-white/10">Smart Card No.</th>
-                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest border-r border-white/10">Company Name</th>
-                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest border-r border-white/10">Student Name</th>
-                                            <th className="px-6 py-5 text-[11px] font-black tracking-widest">Idea / Product Details</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100">
-                                        {smartCards.map((item, idx) => (
-                                            <tr key={idx} className="hover:bg-slate-50 transition-colors group">
-                                                <td className="px-6 py-4 text-sm font-black text-[#224292] border-r border-slate-50">{item.id}</td>
-                                                <td className="px-6 py-4 text-sm font-bold text-black border-r border-slate-50">{item.company}</td>
-                                                <td className="px-6 py-4 text-sm font-bold text-black border-r border-slate-50">{item.student}</td>
-                                                <td className="px-6 py-4 text-xs font-bold text-black/70 leading-relaxed">{item.details}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
 
                     {/* Sanction Order Section */}
                     <div className="pt-8 border-t border-slate-200">

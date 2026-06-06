@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Lightbulb, ArrowLeft, Users, Target, Rocket, Star, ArrowRight, X as CloseIcon } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import iicImg from '../assets/iStart/iic.webp'
 import certImg from '../assets/iStart/IIC-certificate.webp'
 
@@ -121,158 +121,33 @@ const IICPage = () => {
             {/* Student Members Section */}
             <section className="py-24 bg-white border-t border-slate-100">
                 <div className="max-w-7xl mx-auto px-6 lg:px-10">
-                    <div className="mb-16">
-                        <div className="flex items-center gap-4 mb-2">
+                    <div className="max-w-3xl mx-auto text-center space-y-6">
+                        <div className="flex items-center justify-center gap-4 mb-2">
                             <div className="w-1.5 h-10 bg-[#ffc107] rounded-full" />
                             <h2 className="text-4xl font-black text-[#224292] tracking-tighter">
-                                Students Institute Innovate Council Members List <span className="text-[#ffc107]">AY 2025-26</span>
+                                Students Institute Innovation Council Members
                             </h2>
                         </div>
-                    </div>
-
-                    {/* Desktop View (Side by Side) */}
-                    <div className="hidden lg:grid lg:grid-cols-2 gap-12">
-                        {/* Table 1 (1-15) */}
-                        <div className="overflow-hidden rounded-2xl shadow-sm bg-white">
-                            <table className="w-full text-left">
-                                <thead className="bg-[#224292] text-white">
-                                    <tr>
-                                        <th className="px-6 py-4 font-black text-[11px] uppercase tracking-wider h-14">Students Name, Dept./Year</th>
-                                        <th className="px-6 py-4 font-black text-[11px] uppercase tracking-wider h-14">Role</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {[
-                                        ["Haritha O, III/CSBS", "Student Convener"],
-                                        ["Vigneshwaran J.V, II/EEE", "Member"],
-                                        ["Monika S, II/CSBS", "Member"],
-                                        ["Geethi Priyanka R K, II/IT", "Member"],
-                                        ["Risikeash V S, II/Civil", "Member"],
-                                        ["Aswika N, III/ECE", "Startup Coordinator"],
-                                        ["Deepak P S, III/AIDS", "Member"],
-                                        ["Tirisigha.R, II/CSBS", "Member"],
-                                        ["Vinodhini M, II/ECE", "Member"],
-                                        ["Kaarthik Krishnan S, II/EEE", "Member"],
-                                        ["Nagalogesh M.M, III/Civil", "IPR Coordinator"],
-                                        ["Tamizharasi K, III/CSBS", "Member"],
-                                        ["Rithika M, II/CSBS", "Member"],
-                                        ["Lalith Sanjay.S, III/IT", "Member"],
-                                        ["Sachin J P, II/EEE", "Member"]
-                                    ].map(([name, role], i) => (
-                                        <tr key={i} className={`hover:bg-[#ffc107]/10 transition-colors h-14 ${i % 2 === 1 ? 'bg-slate-100/80' : 'bg-white'}`}>
-                                            <td className="px-6 py-3 text-black font-bold text-xs">{name}</td>
-                                            <td className="px-6 py-3">
-                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tight ${
-                                                    role === "Member" ? "bg-white text-slate-500 shadow-sm border border-slate-100" : "bg-[#ffc107]/20 text-[#224292]"
-                                                }`}>
-                                                    {role}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-
-                        {/* Table 2 (16-30) */}
-                        <div className="overflow-hidden rounded-2xl shadow-sm bg-white">
-                            <table className="w-full text-left">
-                                <thead className="bg-[#224292] text-white">
-                                    <tr>
-                                        <th className="px-6 py-4 font-black text-[11px] uppercase tracking-wider h-14">Students Name, Dept./Year</th>
-                                        <th className="px-6 py-4 font-black text-[11px] uppercase tracking-wider h-14">Role</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {[
-                                        ["Haja Mohideen, II/EEE", "Internship Coordinator"],
-                                        ["Anushya PB, III CSBS", "Member"],
-                                        ["Salman Khan S, II/Civil", "Member"],
-                                        ["Sriamirthaa D.G, II/CSE", "Member"],
-                                        ["Diwakar A M, II/CSBS", "Member"],
-                                        ["Karthiga Sree Suresh, II/IT", "Social Media Coordinator"],
-                                        ["Ashiq S, III/CSBS", "Member"],
-                                        ["Vaishanavi M, II/ECE", "Member"],
-                                        ["Mohanavel KS, II/CSBS", "Member"],
-                                        ["Swathy Shree, II/CSE", "Member"],
-                                        ["Sonal M B, II/CSE", "Innovation Coordinator"],
-                                        ["Shalini S, II/ECE", "Member"],
-                                        ["Dharshini T, II/CSBS", "Member"],
-                                        ["Rajvenkadam S, II/IT", "Member"],
-                                        ["Naga Prasad M, II/CSBS", "Member"]
-                                    ].map(([name, role], i) => (
-                                        <tr key={i} className={`hover:bg-[#ffc107]/10 transition-colors h-14 ${i % 2 === 1 ? 'bg-slate-100/80' : 'bg-white'}`}>
-                                            <td className="px-6 py-3 text-black font-bold text-xs">{name}</td>
-                                            <td className="px-6 py-3">
-                                                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tight ${
-                                                    role === "Member" ? "bg-white text-slate-500 shadow-sm border border-slate-100" : "bg-[#ffc107]/20 text-[#224292]"
-                                                }`}>
-                                                    {role}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    {/* Mobile View (Single Table) */}
-                    <div className="lg:hidden">
-                        <div className="overflow-hidden rounded-2xl shadow-sm bg-white">
-                            <table className="w-full text-left">
-                                <thead className="bg-[#224292] text-white">
-                                    <tr>
-                                        <th className="px-4 py-4 font-black text-[10px] uppercase tracking-wider h-14">Students Name, Dept./Year</th>
-                                        <th className="px-4 py-4 font-black text-[10px] uppercase tracking-wider h-14">Role</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {[
-                                        ["Haritha O, III/CSBS", "Student Convener"],
-                                        ["Vigneshwaran J.V, II/EEE", "Member"],
-                                        ["Monika S, II/CSBS", "Member"],
-                                        ["Geethi Priyanka R K, II/IT", "Member"],
-                                        ["Risikeash V S, II/Civil", "Member"],
-                                        ["Aswika N, III/ECE", "Startup Coordinator"],
-                                        ["Deepak P P S, III/AIDS", "Member"],
-                                        ["Tirisigha.R, II/CSBS", "Member"],
-                                        ["Vinodhini M, II/ECE", "Member"],
-                                        ["Kaarthik Krishnan S, II/EEE", "Member"],
-                                        ["Nagalogesh M.M, III/Civil", "IPR Coordinator"],
-                                        ["Tamizharasi K, III/CSBS", "Member"],
-                                        ["Rithika M, II/CSBS", "Member"],
-                                        ["Lalith Sanjay.S, III/IT", "Member"],
-                                        ["Sachin J P, II/EEE", "Member"],
-                                        ["Haja Mohideen, II/EEE", "Internship Coordinator"],
-                                        ["Anushya PB, III CSBS", "Member"],
-                                        ["Salman Khan S, II/Civil", "Member"],
-                                        ["Sriamirthaa D.G, II/CSE", "Member"],
-                                        ["Diwakar A M, II/CSBS", "Member"],
-                                        ["Karthiga Sree Suresh, II/IT", "Social Media Coordinator"],
-                                        ["Ashiq S, III/CSBS", "Member"],
-                                        ["Vaishanavi M, II/ECE", "Member"],
-                                        ["Mohanavel KS, II/CSBS", "Member"],
-                                        ["Swathy Shree, II/CSE", "Member"],
-                                        ["Sonal M B, II/CSE", "Innovation Coordinator"],
-                                        ["Shalini S, II/ECE", "Member"],
-                                        ["Dharshini T, II/CSBS", "Member"],
-                                        ["Rajvenkadam S, II/IT", "Member"],
-                                        ["Naga Prasad M, II/CSBS", "Member"]
-                                    ].map(([name, role], i) => (
-                                        <tr key={i} className={`transition-colors h-14 ${i % 2 === 1 ? 'bg-slate-100/80' : 'bg-white'}`}>
-                                            <td className="px-4 py-3 text-black font-bold text-[10px] leading-tight">{name}</td>
-                                            <td className="px-4 py-3">
-                                                <span className={`px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-tight inline-block ${
-                                                    role === "Member" ? "bg-white text-slate-500 shadow-sm border border-slate-100" : "bg-[#ffc107]/20 text-[#224292]"
-                                                }`}>
-                                                    {role}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                        <p className="text-slate-500 font-bold text-sm">
+                            Click below to view the full list of our active student members for the Academic Year 2025-26.
+                        </p>
+                        <div className="inline-block mt-4">
+                            <Link to="/research-innovation/iic/members" className="group flex items-center gap-6 bg-slate-50 hover:bg-[#224292] p-8 rounded-3xl border border-slate-100 transition-all duration-500 hover:shadow-2xl hover:scale-105">
+                                <div className="w-16 h-16 rounded-2xl bg-[#224292] group-hover:bg-[#ffc107] flex items-center justify-center text-white group-hover:text-[#224292] transition-colors shadow-md">
+                                    <Users size={32} />
+                                </div>
+                                <div className="text-left">
+                                    <span className="block text-4xl font-black text-[#224292] group-hover:text-white leading-none mb-1">
+                                        30
+                                    </span>
+                                    <span className="block text-xs font-bold text-slate-500 group-hover:text-white/80 uppercase tracking-widest">
+                                        Total Active Members
+                                    </span>
+                                </div>
+                                <div className="w-10 h-10 rounded-full bg-[#ffc107]/10 group-hover:bg-white/10 flex items-center justify-center text-[#224292] group-hover:text-white transition-colors">
+                                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

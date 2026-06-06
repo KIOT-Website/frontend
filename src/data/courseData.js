@@ -2263,6 +2263,45 @@ export const courseData = {
       }
     ],
     placementStats: { placed: '93%', avg: '5.5 LPA', top: '22 LPA', companies: '40+' },
+    patents: [
+      {
+        year: '2025',
+        data: [
+          {
+            inventors: 'Mrs.C.Nithya',
+            title: 'Identification of Skin Pathology Using Deep Learning',
+            type: 'Utility Patent',
+            appNo: '202541014109 A',
+            date: '07.03.2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.C.Vanitha',
+            title: 'Artificial Intelligence Based Usb Device For Managing Multiple Smart Devices',
+            type: 'Design Patent',
+            appNo: '458511-001',
+            date: '13.05.2025',
+            status: 'Filed'
+          },
+          {
+            inventors: 'Mrs.R.Yudhayapriya',
+            title: 'Industrial Image Processing Camera For Defect Identification',
+            type: 'Design Patent',
+            appNo: '452062-001',
+            date: '19.03.2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.P.Raga Keerthana',
+            title: 'Industrial Image Processing Camera For Defect Identification',
+            type: 'Design Patent',
+            appNo: '452062-001',
+            date: '19.03.2025',
+            status: 'Granted'
+          }
+        ]
+      }
+    ],
   },
   'be-ecm': {
     name: 'B.E Electronics & Computer Engineering',
