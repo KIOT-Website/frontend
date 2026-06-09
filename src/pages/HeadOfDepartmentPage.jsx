@@ -427,9 +427,12 @@ export default function HeadOfDepartmentPage() {
                 className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:shadow-md hover:border-[#224292]/25 transition-all duration-300 group"
               >
                 {/* Image/Avatar Frame */}
-                <div className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300">
+                <div 
+                  className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden"
+                  style={{ backgroundImage: `url(${bgFacultyImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                >
                   {hod.image ? (
-                    <img src={hod.image} alt={hod.name} className="w-full h-full object-contain" />
+                    <img src={hod.image} alt={hod.name} className="w-full h-full object-contain relative z-10" />
                   ) : (
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-lg select-none shadow-inner">
                       {hod.initials}
