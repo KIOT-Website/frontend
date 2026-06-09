@@ -23,7 +23,8 @@ import mohanapriyaImg from '../assets/dir and hod/Dr. S. Mohanapriya.webp'
 // Director Image Imports
 import thangavelImg from '../assets/dir and hod/Dr. M. Thangavel.webp'
 import stephenImg from '../assets/dir and hod/MAHE2266.webp'
-import rajendranImg from '../assets/placements/placement team/Placement-Director.webp'
+import rajendranImg from '../assets/dir and hod/Dr. P. Rajendran.png'
+import bgFacultyImg from '../assets/Faculity/background faculty.webp'
 import navaneethankrishnanImg from '../assets/dir and hod/Dr.P.Navaneethankrishnan.webp'
 import rkumarImg from '../assets/Faculity/cse/Dr.R.KUMAR.webp'
 import ilangkumaranImg from '../assets/dir and hod/Dr.M.Ilangkumaran.webp'
@@ -362,9 +363,12 @@ export default function HeadOfDepartmentPage() {
                 transition={{ duration: 0.4, delay: (idx % 4) * 0.05 }}
                 className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:shadow-md hover:border-[#224292]/25 transition-all duration-300 group"
               >
-                <div className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300">
+                <div 
+                  className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden"
+                  style={{ backgroundImage: `url(${bgFacultyImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                >
                   {director.image ? (
-                    <img src={director.image} alt={director.name} className="w-full h-full object-contain" />
+                    <img src={director.image} alt={director.name} className="w-full h-full object-contain relative z-10" />
                   ) : (
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-lg select-none shadow-inner">
                       {director.initials}
