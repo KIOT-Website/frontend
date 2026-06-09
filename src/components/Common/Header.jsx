@@ -581,19 +581,6 @@ const Header = () => {
                     className="h-[44px] sm:h-[54px] w-auto max-w-[160px] sm:max-w-[210px] object-contain"
                   />
                 </a>
-                
-                {/* Mobile Search Trigger */}
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsMobileSearchExpanded(true)
-                    setTimeout(() => mobileInputRef.current?.focus(), 150)
-                  }}
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#224292]/5 text-[#224292] hover:bg-[#224292]/10 active:scale-95 transition-all"
-                  title="Search"
-                >
-                  <Search size={18} strokeWidth={2.5} />
-                </button>
               </div>
 
               {/* Mobile Search Overlay */}
@@ -758,6 +745,19 @@ const Header = () => {
                   className="hidden md:block shrink-0 h-10 w-10 md:h-12 md:w-12 xl:h-14 xl:w-14 2xl:h-[72px] 2xl:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
                 />
                 
+                {/* Mobile Search Trigger */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileSearchExpanded(true)
+                    setTimeout(() => mobileInputRef.current?.focus(), 150)
+                  }}
+                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#224292]/5 text-[#224292] hover:bg-[#224292]/10 active:scale-95 transition-all xl:hidden"
+                  title="Search"
+                >
+                  <Search size={18} strokeWidth={2.5} />
+                </button>
+
                 <button
                   type="button"
                   onClick={() => setIsOpen((open) => !open)}
