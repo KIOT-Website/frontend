@@ -289,7 +289,7 @@ export default function HeadOfDepartmentPage() {
               >
                 {/* Image Section */}
                 <div 
-                  className="relative w-full h-[280px] overflow-hidden"
+                  className="relative w-full h-[240px] overflow-hidden"
                   style={{ backgroundImage: `url("${bgFacultyImg}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   {director.image ? (
@@ -308,10 +308,7 @@ export default function HeadOfDepartmentPage() {
                 {/* Content Section */}
                 <div className="p-5 flex flex-col items-start text-left bg-white relative z-20">
                   <h4 className="text-[16px] font-bold text-[#224292] leading-tight mb-1 font-graphik">{director.name}</h4>
-                  <p className="text-[13px] font-medium text-slate-500 mb-5">{director.role}</p>
-                  <span className="px-3 py-1 bg-slate-50 text-slate-600 text-[10px] font-bold tracking-widest uppercase rounded">
-                    VIEW BIO
-                  </span>
+                  <p className="text-[13px] font-medium text-slate-500 mb-2">{director.role}</p>
                 </div>
               </motion.div>
             ))}
@@ -361,7 +358,7 @@ export default function HeadOfDepartmentPage() {
               >
                 {/* Image Section */}
                 <div 
-                  className="relative w-full h-[280px] overflow-hidden"
+                  className="relative w-full h-[240px] overflow-hidden"
                   style={{ backgroundImage: `url("${bgFacultyImg}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   {hod.image ? (
@@ -381,11 +378,7 @@ export default function HeadOfDepartmentPage() {
                 <div className="p-5 flex flex-col items-start text-left bg-white relative z-20">
                   <h4 className="text-[16px] font-bold text-[#224292] leading-tight mb-1 font-graphik">{hod.name}</h4>
                   <p className="text-[13px] font-medium text-slate-500 mb-1">{hod.role}</p>
-                  <p className="text-[11px] text-slate-400 font-bold uppercase tracking-wider mb-5">{hod.qualification}</p>
-                  
-                  <span className="px-3 py-1 bg-slate-50 text-slate-600 text-[10px] font-bold tracking-widest uppercase rounded">
-                    VIEW BIO
-                  </span>
+                  <p className="text-[11px] text-slate-400 font-bold uppercase tracking-wider mb-2">{hod.qualification}</p>
                 </div>
               </motion.div>
             ))}
