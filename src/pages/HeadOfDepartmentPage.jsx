@@ -87,7 +87,7 @@ export default function HeadOfDepartmentPage() {
         }
       `}</style>
 
-      <div className="max-w-5xl mx-auto px-6 lg:px-8 space-y-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-20 relative z-10">
         
         {/* Page Hero Header */}
         <motion.div 
@@ -132,11 +132,11 @@ export default function HeadOfDepartmentPage() {
             
             <div className="relative group/img flex items-center justify-center">
               {/* Outer rotating/dashed rings */}
-              <div className="absolute w-44 h-44 rounded-full border border-dashed border-[#ffc107]/30 group-hover/img:rotate-45 transition-transform duration-[15s] ease-linear pointer-events-none" />
-              <div className="absolute w-38 h-38 rounded-full border border-dashed border-white/10 group-hover/img:-rotate-45 transition-transform duration-[15s] ease-linear pointer-events-none" />
+              <div className="absolute w-56 h-56 rounded-full border border-dashed border-[#ffc107]/30 group-hover/img:rotate-45 transition-transform duration-[15s] ease-linear pointer-events-none" />
+              <div className="absolute w-48 h-48 rounded-full border border-dashed border-white/10 group-hover/img:-rotate-45 transition-transform duration-[15s] ease-linear pointer-events-none" />
               
               {/* Profile Image Frame */}
-              <div className="relative w-32 h-32 md:w-34 md:h-34 rounded-full p-1 bg-gradient-to-tr from-[#ffc107] to-[#e0a800] shadow-[0_12px_28px_rgba(0,0,0,0.25)] z-10 overflow-hidden group-hover/img:scale-[1.02] transition-transform duration-500">
+              <div className="relative w-40 h-40 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-tr from-[#ffc107] to-[#e0a800] shadow-[0_12px_28px_rgba(0,0,0,0.25)] z-10 overflow-hidden group-hover/img:scale-[1.02] transition-transform duration-500">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white border-2 border-white shadow-inner">
                   <img 
                     src={srinivasanImg} 
@@ -203,11 +203,11 @@ export default function HeadOfDepartmentPage() {
             
             <div className="relative group/img flex items-center justify-center">
               {/* Outer rotating/dashed rings */}
-              <div className="absolute w-44 h-44 rounded-full border border-dashed border-[#ffc107]/30 group-hover/img:rotate-45 transition-transform duration-[15s] ease-linear pointer-events-none" />
-              <div className="absolute w-38 h-38 rounded-full border border-dashed border-white/10 group-hover/img:-rotate-45 transition-transform duration-[15s] ease-linear pointer-events-none" />
+              <div className="absolute w-56 h-56 rounded-full border border-dashed border-[#ffc107]/30 group-hover/img:rotate-45 transition-transform duration-[15s] ease-linear pointer-events-none" />
+              <div className="absolute w-48 h-48 rounded-full border border-dashed border-white/10 group-hover/img:-rotate-45 transition-transform duration-[15s] ease-linear pointer-events-none" />
               
               {/* Profile Image Frame */}
-              <div className="relative w-32 h-32 md:w-34 md:h-34 rounded-full p-1 bg-gradient-to-tr from-[#224292] to-[#1e3a8a] shadow-[0_12px_28px_rgba(0,0,0,0.25)] z-10 overflow-hidden group-hover/img:scale-[1.02] transition-transform duration-500">
+              <div className="relative w-40 h-40 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-tr from-[#224292] to-[#1e3a8a] shadow-[0_12px_28px_rgba(0,0,0,0.25)] z-10 overflow-hidden group-hover/img:scale-[1.02] transition-transform duration-500">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white border-2 border-white shadow-inner">
                   <img 
                     src={principalImg} 
