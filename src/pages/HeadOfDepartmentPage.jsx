@@ -281,29 +281,38 @@ export default function HeadOfDepartmentPage() {
             {directors.map((director, idx) => (
               <motion.div
                 key={director.role}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (idx % 4) * 0.05 }}
-                className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:shadow-md hover:border-[#224292]/25 transition-all duration-300 group"
+                className="bg-white rounded-[1.25rem] border border-slate-100 shadow-sm flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
               >
+                {/* Image Section */}
                 <div 
-                  className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden"
+                  className="relative w-full h-[280px] overflow-hidden"
                   style={{ backgroundImage: `url("${bgFacultyImg}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   {director.image ? (
-                    <img src={director.image} alt={director.name} className="w-full h-full object-contain relative z-10" />
+                    <img 
+                      src={director.image} 
+                      alt={director.name} 
+                      className="w-full h-full object-contain object-bottom relative z-10 group-hover:scale-105 transition-transform duration-500" 
+                    />
                   ) : (
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-lg select-none shadow-inner">
+                    <div className="w-full h-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-2xl select-none shadow-inner">
                       {director.initials}
                     </div>
                   )}
                 </div>
 
-                <h4 className="text-[14px] font-bold text-[#224292] leading-tight group-hover:text-[#ffc107] transition-colors font-graphik">{director.name}</h4>
-                <span className="mt-3 px-3 py-1 bg-[#224292]/5 text-[#224292] text-[10px] font-black tracking-wider uppercase rounded-lg font-graphik">
-                  {director.role}
-                </span>
+                {/* Content Section */}
+                <div className="p-5 flex flex-col items-start text-left bg-white relative z-20">
+                  <h4 className="text-[16px] font-bold text-[#224292] leading-tight mb-1 font-graphik">{director.name}</h4>
+                  <p className="text-[13px] font-medium text-slate-500 mb-5">{director.role}</p>
+                  <span className="px-3 py-1 bg-slate-50 text-slate-600 text-[10px] font-bold tracking-widest uppercase rounded">
+                    VIEW BIO
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -345,31 +354,39 @@ export default function HeadOfDepartmentPage() {
               <motion.div
                 key={hod.role}
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:shadow-md hover:border-[#224292]/25 transition-all duration-300 group"
+                className="bg-white rounded-[1.25rem] border border-slate-100 shadow-sm flex flex-col overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
               >
-                {/* Image/Avatar Frame */}
+                {/* Image Section */}
                 <div 
-                  className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden"
+                  className="relative w-full h-[280px] overflow-hidden"
                   style={{ backgroundImage: `url("${bgFacultyImg}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   {hod.image ? (
-                    <img src={hod.image} alt={hod.name} className="w-full h-full object-contain relative z-10" />
+                    <img 
+                      src={hod.image} 
+                      alt={hod.name} 
+                      className="w-full h-full object-contain object-bottom relative z-10 group-hover:scale-105 transition-transform duration-500" 
+                    />
                   ) : (
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-lg select-none shadow-inner">
+                    <div className="w-full h-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-2xl select-none shadow-inner">
                       {hod.initials}
                     </div>
                   )}
                 </div>
 
-                <h4 className="text-[14px] font-bold text-[#224292] leading-tight group-hover:text-[#ffc107] transition-colors">{hod.name}</h4>
-                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-0.5">{hod.qualification}</p>
-                
-                <span className="mt-3 px-3 py-1 bg-[#224292]/5 text-[#224292] text-[10px] font-black tracking-wider uppercase rounded-lg">
-                  {hod.role}
-                </span>
+                {/* Content Section */}
+                <div className="p-5 flex flex-col items-start text-left bg-white relative z-20">
+                  <h4 className="text-[16px] font-bold text-[#224292] leading-tight mb-1 font-graphik">{hod.name}</h4>
+                  <p className="text-[13px] font-medium text-slate-500 mb-1">{hod.role}</p>
+                  <p className="text-[11px] text-slate-400 font-bold uppercase tracking-wider mb-5">{hod.qualification}</p>
+                  
+                  <span className="px-3 py-1 bg-slate-50 text-slate-600 text-[10px] font-bold tracking-widest uppercase rounded">
+                    VIEW BIO
+                  </span>
+                </div>
               </motion.div>
             ))}
           </div>
