@@ -277,7 +277,7 @@ export default function HeadOfDepartmentPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
             {directors.map((director, idx) => (
               <motion.div
                 key={director.role}
@@ -346,7 +346,7 @@ export default function HeadOfDepartmentPage() {
           </div>
 
           {/* HOD Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 min-h-[800px] lg:min-h-[1100px] items-start content-start">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 min-h-[800px] lg:min-h-[1100px] items-start content-start">
             {hods.filter(h => activeFilter === 'all' || h.category === activeFilter).map((hod) => (
               <motion.div
                 key={hod.role}
