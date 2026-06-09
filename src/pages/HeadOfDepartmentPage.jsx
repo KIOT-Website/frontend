@@ -362,10 +362,9 @@ export default function HeadOfDepartmentPage() {
                 transition={{ duration: 0.4, delay: (idx % 4) * 0.05 }}
                 className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:shadow-md hover:border-[#224292]/25 transition-all duration-300 group"
               >
-                {/* Circular Image / Initials display */}
-                <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 p-0.5 bg-gradient-to-tr from-[#224292]/10 to-[#ffc107]/20 group-hover:scale-105 transition-transform duration-300">
+                <div className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300">
                   {director.image ? (
-                    <img src={director.image} alt={director.name} className="w-full h-full object-cover rounded-full" />
+                    <img src={director.image} alt={director.name} className="w-full h-full object-contain" />
                   ) : (
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-lg select-none shadow-inner">
                       {director.initials}
@@ -424,9 +423,9 @@ export default function HeadOfDepartmentPage() {
                 className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:shadow-md hover:border-[#224292]/25 transition-all duration-300 group"
               >
                 {/* Image/Avatar Frame */}
-                <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 p-0.5 bg-gradient-to-tr from-[#224292]/10 to-[#ffc107]/20 group-hover:scale-105 transition-transform duration-300">
+                <div className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300">
                   {hod.image ? (
-                    <img src={hod.image} alt={hod.name} className="w-full h-full object-cover rounded-full" />
+                    <img src={hod.image} alt={hod.name} className="w-full h-full object-contain" />
                   ) : (
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-lg select-none shadow-inner">
                       {hod.initials}
