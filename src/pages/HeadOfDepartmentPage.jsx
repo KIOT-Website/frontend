@@ -262,83 +262,7 @@ export default function HeadOfDepartmentPage() {
           </div>
         </motion.div>
 
-        {/* 3. Board of Directors Section */}
-        <div className="space-y-8 pt-6">
-          <div className="text-center">
-            <h2 className="text-3xl font-semibold text-[#224292] tracking-tighter">
-              Board of <span className="text-[#ffc107]">Directors</span>
-            </h2>
-            <div className="flex items-center justify-center gap-2 mt-2">
-              <div className="w-12 h-[1px] bg-[#ffc107]" />
-              <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
-              <div className="w-12 h-[1px] bg-[#ffc107]" />
-            </div>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Secretary: Dr. J. Kumar */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-[1.5rem] shadow-[0_15px_40px_rgba(34,66,146,0.04)] border border-slate-100 flex flex-col sm:flex-row overflow-hidden group hover:shadow-[0_25px_50px_rgba(34,66,146,0.08)] transition-all duration-500"
-            >
-              {/* Left Panel: Graphic Background and Image */}
-              <div className="w-full sm:w-[40%] bg-gradient-to-b from-[#224292] to-[#122b68] relative flex flex-col items-center justify-center p-6 overflow-hidden shrink-0 min-h-[220px]">
-                <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
-                <div className="relative w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-[#ffc107] to-[#e0a800] shadow-lg overflow-hidden">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white border border-white shadow-inner">
-                    <img src={secretaryImg} alt="Dr. J. Kumar" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-                <div className="mt-4 z-20 bg-gradient-to-r from-[#1e3a8a]/90 to-[#122b68]/95 px-4 py-1 rounded-xl border border-white/10 shadow text-center">
-                  <div className="text-[#ffc107] text-[8px] font-black uppercase tracking-wider">SECRETARY</div>
-                  <div className="text-white/70 text-[7px] font-bold tracking-wider">KIOTT, Salem</div>
-                </div>
-              </div>
-              {/* Right Panel: Content */}
-              <div className="flex-1 p-6 flex flex-col justify-center text-left">
-                <h3 className="text-xl font-bold text-[#224292] leading-tight">Dr. J. Kumar</h3>
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">B.E., M.Tech. (IIT-M), Ph.D., FIE.</p>
-                <p className="text-slate-600 text-[12.5px] leading-relaxed text-justify mt-3 font-normal line-clamp-5">
-                  Greetings! We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Treasurer: Mr. V. Sureshkumar */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-[1.5rem] shadow-[0_15px_40px_rgba(34,66,146,0.04)] border border-slate-100 flex flex-col sm:flex-row overflow-hidden group hover:shadow-[0_25px_50px_rgba(34,66,146,0.08)] transition-all duration-500"
-            >
-              {/* Left Panel: Graphic Background and Image */}
-              <div className="w-full sm:w-[40%] bg-gradient-to-b from-[#224292] to-[#122b68] relative flex flex-col items-center justify-center p-6 overflow-hidden shrink-0 min-h-[220px]">
-                <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
-                <div className="relative w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-[#ffc107] to-[#e0a800] shadow-lg overflow-hidden">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white border border-white shadow-inner">
-                    <img src={treasurerImg} alt="Mr. V. Sureshkumar" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-                <div className="mt-4 z-20 bg-gradient-to-r from-[#1e3a8a]/90 to-[#122b68]/95 px-4 py-1 rounded-xl border border-white/10 shadow text-center">
-                  <div className="text-[#ffc107] text-[8px] font-black uppercase tracking-wider">TREASURER</div>
-                  <div className="text-white/70 text-[7px] font-bold tracking-wider">KIOTT, Salem</div>
-                </div>
-              </div>
-              {/* Right Panel: Content */}
-              <div className="flex-1 p-6 flex flex-col justify-center text-left">
-                <h3 className="text-xl font-bold text-[#224292] leading-tight">Mr. V. Sureshkumar</h3>
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">B.E.</p>
-                <p className="text-slate-600 text-[12.5px] leading-relaxed text-justify mt-3 font-normal line-clamp-5">
-                  Greetings! We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
 
         {/* 4. Institutional Directors Section */}
         <div className="space-y-8 pt-6">
@@ -416,7 +340,7 @@ export default function HeadOfDepartmentPage() {
           </div>
 
           {/* HOD Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 min-h-[800px] lg:min-h-[1100px] items-start content-start">
             {hods.filter(h => activeFilter === 'all' || h.category === activeFilter).map((hod) => (
               <motion.div
                 key={hod.role}
