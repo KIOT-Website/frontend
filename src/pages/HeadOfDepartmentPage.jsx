@@ -365,7 +365,7 @@ export default function HeadOfDepartmentPage() {
               >
                 <div 
                   className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden"
-                  style={{ backgroundImage: `url(${bgFacultyImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  style={{ backgroundImage: `url("${bgFacultyImg}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   {director.image ? (
                     <img src={director.image} alt={director.name} className="w-full h-full object-contain relative z-10" />
@@ -429,7 +429,7 @@ export default function HeadOfDepartmentPage() {
                 {/* Image/Avatar Frame */}
                 <div 
                   className="relative w-44 h-44 mb-4 group-hover:scale-105 transition-transform duration-300 rounded-2xl overflow-hidden"
-                  style={{ backgroundImage: `url(${bgFacultyImg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  style={{ backgroundImage: `url("${bgFacultyImg}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   {hod.image ? (
                     <img src={hod.image} alt={hod.name} className="w-full h-full object-contain relative z-10" />
