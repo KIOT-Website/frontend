@@ -296,7 +296,7 @@ export default function HeadOfDepartmentPage() {
                     <img 
                       src={director.image} 
                       alt={director.name} 
-                      className="w-full h-full object-contain object-bottom relative z-10 scale-[1.15] origin-bottom group-hover:scale-[1.25] transition-transform duration-500" 
+                      className="w-full h-full object-contain object-bottom relative z-10 scale-[1.15] origin-bottom" 
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-2xl select-none shadow-inner">
@@ -365,7 +365,7 @@ export default function HeadOfDepartmentPage() {
                     <img 
                       src={hod.image} 
                       alt={hod.name} 
-                      className="w-full h-full object-contain object-bottom relative z-10 scale-[1.15] origin-bottom group-hover:scale-[1.25] transition-transform duration-500" 
+                      className="w-full h-full object-contain object-bottom relative z-10 scale-[1.15] origin-bottom" 
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-2xl select-none shadow-inner">
