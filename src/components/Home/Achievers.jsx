@@ -60,10 +60,10 @@ const Achievers = () => {
           {achievements.map((achievement, idx) => (
             <motion.div
               key={achievement.id}
-              initial={isMobile ? {} : { opacity: 0, x: idx === 0 ? -50 : 50, y: 30 }}
-              whileInView={isMobile ? {} : { opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={isMobile ? {} : { duration: 1, delay: idx * 0.2, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: idx * 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="group relative h-[400px] lg:h-[500px] rounded-[6rem_1rem_6rem_1rem] overflow-hidden shadow-2xl border-4 border-[#224292]/20 hover:border-[#ffc107]/50 transition-all duration-500"
             >
               {/* Achievement Image */}
