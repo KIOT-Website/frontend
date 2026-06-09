@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import srinivasanImg from '../assets/main/srinivasan.webp'
-import principalImg from '../assets/main/KIOT-Principal-Message-Web-2025.webp'
+import principalImg from '../assets/dir and hod/Principal.png'
 import secretaryImg from '../assets/main/Secretarys-Message-KIOTT.webp'
 import treasurerImg from '../assets/main/Mr.V.Sureshkumar, Treasurer.webp'
 import { Quote, GraduationCap, Sparkles } from 'lucide-react'
