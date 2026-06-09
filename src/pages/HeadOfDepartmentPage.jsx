@@ -150,7 +150,7 @@ export default function HeadOfDepartmentPage() {
             {/* Floating Role Pill */}
             <div className="mt-5 z-20 bg-gradient-to-r from-[#1e3a8a]/90 to-[#122b68]/95 backdrop-blur-sm px-5 py-1.5 rounded-xl border border-white/10 shadow-[0_8px_20px_rgba(0,0,0,0.2)] text-center max-w-[240px]">
               <div className="text-[#ffc107] text-[9px] font-black uppercase tracking-[0.2em] mb-0.5">EXECUTIVE CHAIRMAN</div>
-              <div className="text-white/70 text-[8px] font-bold tracking-wider">KIOT, Salem, Tamil Nadu</div>
+              <div className="text-white text-[8px] font-bold tracking-wider">KIOT, Salem, Tamil Nadu</div>
             </div>
           </div>
 
@@ -222,7 +222,7 @@ export default function HeadOfDepartmentPage() {
             {/* Floating Role Pill */}
             <div className="mt-5 z-20 bg-gradient-to-r from-[#1e3a8a]/90 to-[#122b68]/95 backdrop-blur-sm px-5 py-1.5 rounded-xl border border-white/10 shadow-[0_8px_20px_rgba(0,0,0,0.2)] text-center max-w-[240px]">
               <div className="text-[#ffc107] text-[9px] font-black uppercase tracking-[0.2em] mb-0.5">PRINCIPAL</div>
-              <div className="text-white/70 text-[8px] font-bold tracking-wider">KIOT, Salem, Tamil Nadu</div>
+              <div className="text-white text-[8px] font-bold tracking-wider">KIOT, Salem, Tamil Nadu</div>
             </div>
           </div>
 
