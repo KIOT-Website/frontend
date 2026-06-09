@@ -22,7 +22,7 @@ import mohanapriyaImg from '../assets/dir and hod/Dr. S. Mohanapriya.webp'
 
 // Director Image Imports
 import thangavelImg from '../assets/dir and hod/Dr. M. Thangavel.webp'
-import stephenImg from '../assets/dir and hod/MAHE2266.webp'
+import stephenImg from '../assets/dir and hod/MBA Director.png'
 import rajendranImg from '../assets/dir and hod/Dr. P. Rajendran.png'
 import bgFacultyImg from '../assets/Faculity/background faculty.webp'
 import navaneethankrishnanImg from '../assets/dir and hod/Dr.P.Navaneethankrishnan.webp'
