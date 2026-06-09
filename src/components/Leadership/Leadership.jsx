@@ -289,48 +289,81 @@ const Leadership = () => {
               <div className="w-16 h-1 bg-[#ffc107] mx-auto rounded-full" />
            </div>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                "Dr. PSS. Srinivasan B.E., M.Tech. (IIT-B), Ph.D., MISTE., ISHMT., FMFPI.",
-                "Dr.J.Kumar B.E., M.Tech. (IIT-M), Ph.D., FIE",
-                "Mr. V. Sureshkumar B.E.",
-                "Mr. R. Muthusamy",
-                "Mr.N.P.Sivaprasad B.E.,",
-                "Mr. C. Balakrishnan D.M.E.",
-                "Mr. P. Sengottuvel B.E.",
-                "Mr. P. Rathinam D.P.E.",
-                "Dr. P. Rajendran M.E., Ph.D.",
-                "Dr.P.Navaneetha Krishnan B.E., M.E., Ph.D.",
-                "Dr. M. Thangavel B.E., M.E., Ph.D.",
-                "Dr. V. Kumar B.E., M.E., Ph.D.",
-                "Dr.K.Visagavel B.E., M.E., Ph.D.",
-                "Mr.K.K.Elavarasan M.E., M.S.",
-                "Mrs.K.Indhirani",
-                "Mr.Karuppiah Muthu B.A.",
-                "Mrs.S.Kavitha B.A.",
-                "Mrs.Kokila Tirunavukkarasu B.Sc., MBA",
-                "Mr.E.Krishnamoorthy B.E.",
-                "Mr. R. Mahalingam D.T.T.",
-                "Mrs.R.Pavayee",
-                "Mrs.S.Pavayee",
-                "Mr. S. Prabhakaran B.E.",
-                "Mr. M.P. Prabhu B.E., MBA",
-                "Mr. G.S. Ramakrishnan B.E., Dip.(SAP)",
-                "Prof.D.Sakthivel B.E., M.E., D.B.A., MISTE",
-                "Mrs. V. Sangeetha B.A., M.A. (Eng.Lit.)",
-                "Mr. N. Sezhiyan B.E., M.Tech.",
-                "Dr. A. Velumani B.E., M.E., Ph.D.",
-                "Mr.PSS.Vignesh",
-                "Mrs. S. Vijaya B.Sc.",
-                "Dr.AMJ Md. Zubair Rahman B.E., M.E., Ph.D."
-              ].map((name, i) => (
-                <div 
-                  key={i} 
-                  className="bg-[#F8FAFC] p-5 rounded-2xl border border-slate-100 flex items-start gap-4 hover:border-[#224292]/20 transition-all duration-300 group"
-                >
-                   <span className="text-[13px] font-medium text-black leading-[1.4] font-graphik group-hover:text-[#224292] transition-colors">{name}</span>
-                </div>
-              ))}
+                { name: "Dr. PSS. Srinivasan", degrees: "B.E., M.Tech. (IIT-B), Ph.D., MISTE., ISHMT., FMFPI.", type: "academic" },
+                { name: "Dr. J. Kumar", degrees: "B.E., M.Tech. (IIT-M), Ph.D., FIE", type: "academic" },
+                { name: "Mr. V. Sureshkumar", degrees: "B.E.", type: "business" },
+                { name: "Mr. R. Muthusamy", degrees: "", type: "business" },
+                { name: "Mr. N.P. Sivaprasad", degrees: "B.E.", type: "business" },
+                { name: "Mr. C. Balakrishnan", degrees: "D.M.E.", type: "business" },
+                { name: "Mr. P. Sengottuvel", degrees: "B.E.", type: "business" },
+                { name: "Mr. P. Rathinam", degrees: "D.P.E.", type: "business" },
+                { name: "Dr. P. Rajendran", degrees: "M.E., Ph.D.", type: "academic" },
+                { name: "Dr. P. Navaneetha Krishnan", degrees: "B.E., M.E., Ph.D.", type: "academic" },
+                { name: "Dr. M. Thangavel", degrees: "B.E., M.E., Ph.D.", type: "academic" },
+                { name: "Dr. V. Kumar", degrees: "B.E., M.E., Ph.D.", type: "academic" },
+                { name: "Dr. K. Visagavel", degrees: "B.E., M.E., Ph.D.", type: "academic" },
+                { name: "Mr. K.K. Elavarasan", degrees: "M.E., M.S.", type: "business" },
+                { name: "Mrs. K. Indhirani", degrees: "", type: "business" },
+                { name: "Mr. Karuppiah Muthu", degrees: "B.A.", type: "business" },
+                { name: "Mrs. S. Kavitha", degrees: "B.A.", type: "business" },
+                { name: "Mrs. Kokila Tirunavukkarasu", degrees: "B.Sc., MBA", type: "business" },
+                { name: "Mr. E. Krishnamoorthy", degrees: "B.E.", type: "business" },
+                { name: "Mr. R. Mahalingam", degrees: "D.T.T.", type: "business" },
+                { name: "Mrs. R. Pavayee", degrees: "", type: "business" },
+                { name: "Mrs. S. Pavayee", degrees: "", type: "business" },
+                { name: "Mr. S. Prabhakaran", degrees: "B.E.", type: "business" },
+                { name: "Mr. M.P. Prabhu", degrees: "B.E., MBA", type: "business" },
+                { name: "Mr. G.S. Ramakrishnan", degrees: "B.E., Dip.(SAP)", type: "business" },
+                { name: "Prof. D. Sakthivel", degrees: "B.E., M.E., D.B.A., MISTE", type: "academic" },
+                { name: "Mrs. V. Sangeetha", degrees: "B.A., M.A. (Eng.Lit.)", type: "business" },
+                { name: "Mr. N. Sezhiyan", degrees: "B.E., M.Tech.", type: "business" },
+                { name: "Dr. A. Velumani", degrees: "B.E., M.E., Ph.D.", type: "academic" },
+                { name: "Mr. PSS. Vignesh", degrees: "", type: "business" },
+                { name: "Mrs. S. Vijaya", degrees: "B.Sc.", type: "business" },
+                { name: "Dr. AMJ Md. Zubair Rahman", degrees: "B.E., M.E., Ph.D.", type: "academic" }
+              ].map((member, i) => {
+                const isAcademic = member.type === "academic";
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
+                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                    className="bg-white p-5 rounded-2xl border border-slate-100/80 shadow-md hover:shadow-xl flex items-center gap-4 transition-all duration-300 group hover:border-[#224292]/20 relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-slate-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      isAcademic 
+                        ? 'bg-[#224292]/5 text-[#224292] group-hover:bg-[#224292] group-hover:text-white' 
+                        : 'bg-[#ffc107]/10 text-[#a37c00] group-hover:bg-[#ffc107] group-hover:text-[#224292]'
+                    }`}>
+                      {isAcademic ? <GraduationCap size={20} /> : <Briefcase size={20} />}
+                    </div>
+
+                    <div className="flex-1 min-w-0 z-10">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-[14px] font-bold text-slate-800 leading-[1.3] font-graphik group-hover:text-[#224292] transition-colors truncate">
+                          {member.name}
+                        </span>
+                      </div>
+                      {member.degrees ? (
+                        <p className="text-[11px] text-slate-500 font-medium tracking-tight mt-1 line-clamp-2 leading-relaxed font-graphik">
+                          {member.degrees}
+                        </p>
+                      ) : (
+                        <p className="text-[11px] text-slate-400 font-medium tracking-tight mt-1 italic font-graphik">
+                          Trust Board Member
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
            </div>
         </div>
 

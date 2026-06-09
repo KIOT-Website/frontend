@@ -21,6 +21,7 @@ import {
     Link as LinkIcon
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import openImage from '../assets/iStart/open.JPG'
 
 const ResearchPage = () => {
     const navigate = useNavigate()
@@ -95,77 +96,113 @@ const ResearchPage = () => {
     ]
 
     return (
-        <div className="min-h-screen bg-white font-sans">
-            <div className="max-w-7xl mx-auto px-6 pt-4 md:py-16 lg:py-24 pb-16">
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-                    {/* LEFT COLUMN: INTRO + RECOGNITION */}
-                    <div className="space-y-12">
-                        {/* Block 1: Page Title & Intro */}
-                        <motion.div 
+        <div className="min-h-screen bg-slate-50/30 font-sans">
+            {/* Hero Section */}
+            <div className="relative bg-[#224292] pt-6 md:pt-10 pb-12 overflow-hidden rounded-b-[2rem] md:rounded-b-[3rem] font-graphik mb-8">
+                {/* Background decorative circles */}
+                <div className="absolute top-10 right-10 w-48 h-48 border border-white/5 rounded-full" />
+                <div className="absolute top-20 right-20 w-80 h-80 border border-white/5 rounded-full" />
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                     style={{ backgroundImage: 'radial-gradient(white 0.5px, transparent 0.5px)', backgroundSize: '30px 30px' }} />
+
+                <div className="relative z-10 w-full max-w-[1500px] mx-auto px-6 lg:px-12">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                        {/* Left Column: Heading and Description */}
+                        <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="md:col-span-7 text-left flex flex-col items-start"
                         >
-                            <h1 
-                                className="text-4xl lg:text-5xl font-black text-[#224292] leading-[1.1] mb-8"
-                                style={{ wordSpacing: '0.3rem' }}
-                            >
-                                Departmentwise <br />
-                                <span className="text-[#ffc107]">Research Initiatives</span>
+                            <h1 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-3 tracking-tight text-left">
+                                Research & <span className="text-[#ffc107]">Innovations</span>
                             </h1>
-
-
+                            <div className="h-1 w-16 bg-[#ffc107] mb-6" />
+                            
+                            <p className="text-white/90 text-xs md:text-sm font-medium leading-relaxed max-w-2xl text-justify font-graphik">
+                                At Knowledge Institute of Technology, we foster a rich ecosystem of inquiry and discovery. Our departments drive cutting-edge research, secure government grants, and support innovative projects to build future-ready solutions for industry and society.
+                            </p>
                         </motion.div>
 
-                        {/* Block 2: Recognition Banner (Smaller Size) */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                        {/* Right Column: R&D Centre Card */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="md:col-span-5 flex justify-center md:justify-end w-full"
                         >
-                            <div className="max-w-md w-full bg-[#224292] rounded-[2rem] p-8 md:p-10 flex flex-col items-center md:items-start gap-8 shadow-xl shadow-blue-900/10 border border-white/10 relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -mr-12 -mt-12 blur-2xl" />
-                                
-                                <div className="w-14 h-14 bg-[#ffc107] rounded-2xl flex items-center justify-center shadow-lg transform rotate-3 group-hover:rotate-0 transition-transform">
-                                    <Award className="text-[#224292]" size={28} />
+                            <div className="w-full max-w-sm text-left">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <Award className="text-[#ffc107]" size={18} />
+                                    <span className="text-[#ffc107] font-black text-[11px] tracking-wider uppercase font-graphik">
+                                        Anna University, Chennai
+                                    </span>
                                 </div>
-
-                                <div className="text-center md:text-left">
-                                    <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] animate-pulse" />
-                                        <span className="text-[#ffc107] font-black text-[12px]">Anna University, Chennai</span>
+                                <h2 className="text-2xl font-black text-white mb-3 leading-tight font-graphik">
+                                    Recognized R&D Centre
+                                </h2>
+                                <div className="flex flex-col gap-2.5 text-white/80 text-[11px] font-semibold mb-5 font-graphik">
+                                    <div className="flex items-center gap-1.5">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                                        Recognition No: 4265300
                                     </div>
-                                    <h2 
-                                        className="text-2xl font-black text-white mb-4 leading-tight"
-                                        style={{ wordSpacing: '0.4rem' }}
-                                    >
-                                        Recognized R&D Centre
-                                    </h2>
-                                    <div className="flex flex-col gap-3 text-white text-[11px] font-black mb-8">
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                            Recognition No: 4265300
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                            Valid upto: December 2027
-                                        </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                                        Valid upto: December 2027
                                     </div>
-                                    <a 
-                                        href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.webp"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-3 px-8 py-3 bg-[#ffc107] text-[#224292] rounded-xl font-black text-xs hover:bg-white transition-all shadow-lg active:scale-95"
-                                    >
-                                        View Details <ChevronRight size={16} />
-                                    </a>
                                 </div>
+                                <a 
+                                    href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.webp"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ffc107] text-[#224292] rounded-lg font-black text-xs hover:bg-white transition-all shadow-md active:scale-95 font-graphik"
+                                >
+                                    View Details <ChevronRight size={14} />
+                                </a>
                             </div>
                         </motion.div>
                     </div>
+                </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-6 pb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    {/* LEFT COLUMN: INTRO + RECOGNITION */}
+                    <div className="lg:col-span-7 space-y-12">
+                        {/* Page Title & Intro */}
+                        <motion.div 
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 
+                                className="text-3xl lg:text-4xl font-bold text-[#224292] leading-tight mb-4 tracking-tighter"
+                            >
+                                Departmentwise <span className="text-[#ffc107]">Research Initiatives</span>
+                            </h2>
+                            <p className="text-black font-medium text-sm lg:text-base leading-relaxed text-justify mb-2">
+                                Each academic department at KIOT functions as a hub for innovation, encouraging students and faculty members to engage in industry-relevant investigations, publish research papers in indexed journals, and obtain intellectual property patents.
+                            </p>
+                        </motion.div>
+
+                        {/* Open.JPG Image Section */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="w-full rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-slate-200"
+                        >
+                            <img 
+                                src={openImage} 
+                                alt="Research Initiatives" 
+                                className="w-full h-auto object-cover"
+                            />
+                        </motion.div>
+
+                    </div>
 
                     {/* RIGHT COLUMN: DIRECTORY TABLE (Moved Up) */}
-                    <div>
+                    <div className="lg:col-span-5">
                         <motion.div 
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -175,7 +212,7 @@ const ResearchPage = () => {
                             <table className="w-full border-collapse">
                                 <thead className="bg-[#224292]">
                                     <tr>
-                                        <th className="px-8 py-4 text-center text-[13px] font-black text-white">
+                                        <th className="px-8 py-4 text-center text-[13px] font-semibold text-white font-graphik">
                                             Department Directory
                                         </th>
                                     </tr>
@@ -193,7 +230,7 @@ const ResearchPage = () => {
                                                         <div className={`w-9 h-9 rounded-xl ${dept.color} flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm shrink-0`}>
                                                             <dept.icon size={18} />
                                                         </div>
-                                                        <span className="text-[15px] font-black text-[#224292] transition-colors group-hover:text-[#ffc107] text-left leading-tight">
+                                                        <span className="text-[15px] font-medium text-[#224292] transition-colors group-hover:text-[#ffc107] text-left leading-tight font-graphik">
                                                             {dept.name}
                                                         </span>
                                                     </div>

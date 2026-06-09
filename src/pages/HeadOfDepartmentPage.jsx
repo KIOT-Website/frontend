@@ -7,120 +7,64 @@ import treasurerImg from '../assets/main/Mr.V.Sureshkumar, Treasurer.webp'
 import { Quote, GraduationCap, Sparkles } from 'lucide-react'
 
 // HOD Image Imports
-import prabhakaranImg from '../assets/Faculity/MECH/Dr. K.S. Prabhakaran.webp'
-import kamatchiKannanImg from '../assets/Faculity/eee/kamatchi_kannan.webp'
-import saravananImg from '../assets/Faculity/ECE/Dr. V. Saravanan.webp'
-import prasathCivilImg from '../assets/Faculity/civil/Dr.P.PRASATH.webp'
-import sasikumarImg from '../assets/Faculity/aids/sasikumar_hod.webp'
-import ramkumarImg from '../assets/Faculity/csbs/ramkumar.webp'
-import maragatharajImg from '../assets/Faculity/ecx/Dr. S. Maragatharaj.webp'
+import prabhakaranImg from '../assets/dir and hod/Dr.K.S.Prabhakaran.webp'
+import saravananImg from '../assets/dir and hod/Dr. V. Saravanan.webp'
+import kamatchiKannanImg from '../assets/dir and hod/Dr.Kamatchi Kannan V.webp'
+import prasathCivilImg from '../assets/dir and hod/Dr.P.PRASATH.webp'
+import sachidhanandamImg from '../assets/dir and hod/Dr.P.Sachidhanandam.webp'
+import sasikumarImg from '../assets/dir and hod/Dr. B. Sasikumar AIDS - HOD.webp'
+import ramkumarImg from '../assets/dir and hod/Dr.M.Ramkumar.webp'
+import karthikeyanImg from '../assets/dir and hod/Mr.T.KARTHIKEYAN.webp'
+import maragatharajImg from '../assets/dir and hod/Dr. S. Maragatharaj.webp'
+import venkatesanImg from '../assets/dir and hod/Dr.T.Venkatesan.webp'
+import vijayakumarImg from '../assets/dir and hod/Dr.S.Vijaya Kumar.webp'
+import mohanapriyaImg from '../assets/dir and hod/Dr. S. Mohanapriya.webp'
+
+// Director Image Imports
+import thangavelImg from '../assets/dir and hod/Dr. M. Thangavel.webp'
+import stephenImg from '../assets/dir and hod/MAHE2266.webp'
+import rajendranImg from '../assets/placements/placement team/Placement-Director.webp'
+import navaneethankrishnanImg from '../assets/dir and hod/Dr.P.Navaneethankrishnan.webp'
+import rkumarImg from '../assets/Faculity/cse/Dr.R.KUMAR.webp'
+import ilangkumaranImg from '../assets/dir and hod/Dr.M.Ilangkumaran.webp'
+import kalpanadeviImg from '../assets/dir and hod/Dr.S.Kalpanadevi.webp'
+import shanmugasundaramImg from '../assets/dir and hod/Dr. P. Shanmuga Sundaram.webp'
+import santhiyakumariImg from '../assets/dir and hod/Dr. N. Santhiyakumari.webp'
+import vkumarImg from '../assets/Faculity/cse/Dr.V.KUMAR.webp'
+import sathyanathanImg from '../assets/dir and hod/Dr.M.Sathyanathan.webp'
+import munirajImg from '../assets/dir and hod/Dr.C.Muniraj.webp'
+import sakthivelImg from '../assets/dir and hod/Mr.D.Sakthivel.webp'
+
+const directors = [
+  { name: "Dr. M. Thangavel", role: "Director / CDT, KIOT", image: thangavelImg, initials: "MT" },
+  { name: "Dr. A. Stephen", role: "Director / MBA, KIOT", image: stephenImg, initials: "AS" },
+  { name: "Dr. P. Rajendran", role: "Director / Placement & III, KIOT", image: rajendranImg, initials: "PR" },
+  { name: "Dr. P. Navaneethankrishnan", role: "Director / Student Affairs, KIOT", image: navaneethankrishnanImg, initials: "PN" },
+  { name: "Dr. R. Kumar", role: "Director / CDDA, KIOT", image: rkumarImg, initials: "RK" },
+  { name: "Dr. M. Ilangkumaran", role: "Controller of Examination, KIOT", image: ilangkumaranImg, initials: "MI" },
+  { name: "Dr. S. Kalpanadevi", role: "Director – CDDA, KIOT", image: kalpanadeviImg, initials: "SK" },
+  { name: "Dr. P. Shanmuga Sundaram", role: "Director – Outreach & Admissions, KIOT", image: shanmugasundaramImg, initials: "PS" },
+  { name: "Dr. N. Santhiyakumari", role: "Director – WE, HE & CE", image: santhiyakumariImg, initials: "NS" },
+  { name: "Dr. V. Kumar", role: "Director – Infra. Management", image: vkumarImg, initials: "VK" },
+  { name: "Dr. M. Sathyanathan", role: "Director - IQAC", image: sathyanathanImg, initials: "MS" },
+  { name: "Dr. C. Muniraj", role: "Director - Academics", image: munirajImg, initials: "CM" },
+  { name: "Mr. D. Sakthivel", role: "Administrative Director, KIOT", image: sakthivelImg, initials: "DS" }
+];
 
 const hods = [
-  {
-    name: "Dr. K.S. Prabhakaran",
-    role: "HOD / MECH",
-    qualification: "M.E., Ph.D.",
-    category: "ug",
-    image: prabhakaranImg,
-    initials: "KP"
-  },
-  {
-    name: "Dr. V. Kamatchi Kannan",
-    role: "HOD / EEE",
-    qualification: "M.E., Ph.D.",
-    category: "ug",
-    image: kamatchiKannanImg,
-    initials: "VK"
-  },
-  {
-    name: "Dr. V. Saravanan",
-    role: "HOD / ECE",
-    qualification: "M.E., Ph.D.",
-    category: "ug",
-    image: saravananImg,
-    initials: "VS"
-  },
-  {
-    name: "Dr. P. Prasath",
-    role: "HOD / Civil",
-    qualification: "M.E., Ph.D.",
-    category: "ug",
-    image: prasathCivilImg,
-    initials: "PP"
-  },
-  {
-    name: "Prof. T. Karthikeyan",
-    role: "HOD / CSE",
-    qualification: "M.E., (Ph.D.)",
-    category: "ug",
-    image: null,
-    initials: "TK"
-  },
-  {
-    name: "Dr. P. Sachidhanandam",
-    role: "HOD / IT",
-    qualification: "M.E., Ph.D.",
-    category: "ug",
-    image: null,
-    initials: "PS"
-  },
-  {
-    name: "Prof. B. Sasikumar",
-    role: "HOD / AI & DS",
-    qualification: "M.E., (Ph.D.)",
-    category: "ug",
-    image: sasikumarImg,
-    initials: "BS"
-  },
-  {
-    name: "Dr. M. Ramkumar",
-    role: "HOD / CSBS",
-    qualification: "M.E., Ph.D.",
-    category: "ug",
-    image: ramkumarImg,
-    initials: "MR"
-  },
-  {
-    name: "Dr. S. Maragatharaj",
-    role: "HOD / ECX",
-    qualification: "B.E., M.E., Ph.D.",
-    category: "ug",
-    image: maragatharajImg,
-    initials: "SM"
-  },
-  {
-    name: "Prof. M. Prasath",
-    role: "HOD / S&H",
-    qualification: "M.E., (Ph.D.)",
-    category: "ug",
-    image: null,
-    initials: "MP"
-  },
-  {
-    name: "Dr. T. Venkatesan",
-    role: "HOD / MBA",
-    qualification: "MBA., Ph.D.",
-    category: "pg",
-    image: null,
-    initials: "TV"
-  },
-  {
-    name: "Dr. S. Vijayakumar",
-    role: "HOD-Incharge / MBAIEV",
-    qualification: "MBA., Ph.D.",
-    category: "pg",
-    image: null,
-    initials: "SV"
-  },
-  {
-    name: "Dr. S. Mohanapriya",
-    role: "HOD / MCA",
-    qualification: "MCA., Ph.D.",
-    category: "pg",
-    image: null,
-    initials: "SM"
-  }
-]
+  { name: "Dr. K.S. Prabhakaran", role: "HOD / Mech., KIOT", qualification: "M.E., Ph.D.", category: "ug", image: prabhakaranImg, initials: "KP" },
+  { name: "Dr. V. Saravanan", role: "HOD / ECE, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: saravananImg, initials: "VS" },
+  { name: "Dr. V. Kamatchi Kannan", role: "HOD / EEE, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: kamatchiKannanImg, initials: "VK" },
+  { name: "Dr. P. Prasath", role: "HOD / Civil, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: prasathCivilImg, initials: "PP" },
+  { name: "Dr. P. Sachidhanandam", role: "HOD / IT, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: sachidhanandamImg, initials: "PS" },
+  { name: "Dr. B. Sasikumar", role: "HOD / AI & DS, KIOT", qualification: "M.E., (Ph.D.)", category: "ug", image: sasikumarImg, initials: "BS" },
+  { name: "Dr. M. Ramkumar", role: "HOD / CSBS, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: ramkumarImg, initials: "MR" },
+  { name: "Mr. T. Karthikeyan", role: "HOD / CSE, KIOT", qualification: "M.E., (Ph.D.)", category: "ug", image: karthikeyanImg, initials: "TK" },
+  { name: "Dr. S. Maragatharaj", role: "HOD / ECX, KIOT", qualification: "B.E., M.E., Ph.D.", category: "ug", image: maragatharajImg, initials: "SM" },
+  { name: "Dr. T. Venkatesan", role: "HOD / MBA, KIOT", qualification: "MBA, Ph.D.", category: "pg", image: venkatesanImg, initials: "TV" },
+  { name: "Dr. S. Vijayakumar", role: "HOD – Incharge / MBA- IEV, KIOT", qualification: "MBA, Ph.D.", category: "pg", image: vijayakumarImg, initials: "SV" },
+  { name: "Dr. S. Mohanapriya", role: "HOD / MCA, KIOT", qualification: "MCA, Ph.D.", category: "pg", image: mohanapriyaImg, initials: "SM" }
+];
 
 export default function HeadOfDepartmentPage() {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -222,14 +166,6 @@ export default function HeadOfDepartmentPage() {
               </div>
             </div>
 
-            {/* Quote Card */}
-            <div className="relative bg-[#FCFDFD] border-l-[4px] border-[#ffc107] p-4 rounded-r-xl shadow-[0_4px_20px_rgb(0,0,0,0.01)] border border-slate-100/80 my-3 text-left">
-              <span className="absolute top-1 left-2 text-[4rem] text-[#ffc107]/15 font-serif select-none leading-none">“</span>
-              <p className="text-black font-semibold text-[13px] sm:text-[13.5px] leading-relaxed italic relative z-10 px-4">
-                God has created the earth, you and me create a heaven on it. Every individual has innate talents. It is only our attitude that decides outcome.
-              </p>
-              <span className="absolute bottom-1 right-3 text-[4rem] text-[#ffc107]/15 font-serif select-none leading-none">”</span>
-            </div>
 
             {/* Message Description */}
             <p className="text-slate-600 text-[13px] sm:text-[13.5px] leading-relaxed text-justify font-normal">
@@ -302,14 +238,6 @@ export default function HeadOfDepartmentPage() {
               </div>
             </div>
 
-            {/* Quote Card */}
-            <div className="relative bg-[#FCFDFD] border-l-[4px] border-[#224292] p-4 rounded-r-xl shadow-[0_4px_20px_rgb(0,0,0,0.01)] border border-slate-100/80 my-3 text-left">
-              <span className="absolute top-1 left-2 text-[4rem] text-[#224292]/10 font-serif select-none leading-none">“</span>
-              <p className="text-black font-semibold text-[13px] sm:text-[13.5px] leading-relaxed italic relative z-10 px-4">
-                Your journey at KIOT is not just about earning a degree; it is about transforming your potential into purpose.
-              </p>
-              <span className="absolute bottom-1 right-3 text-[4rem] text-[#224292]/10 font-serif select-none leading-none">”</span>
-            </div>
 
             {/* Message Description */}
             <div className="text-slate-600 text-[13px] sm:text-[13.5px] leading-relaxed text-justify space-y-2 font-normal">
@@ -411,7 +339,50 @@ export default function HeadOfDepartmentPage() {
           </div>
         </div>
 
-        {/* 4. Head of the Departments Section */}
+        {/* 4. Institutional Directors Section */}
+        <div className="space-y-8 pt-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-[#224292] tracking-tighter">
+              Institutional <span className="text-[#ffc107]">Directors</span>
+            </h2>
+            <div className="flex items-center justify-center gap-2 mt-2">
+              <div className="w-12 h-[1px] bg-[#ffc107]" />
+              <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
+              <div className="w-12 h-[1px] bg-[#ffc107]" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {directors.map((director, idx) => (
+              <motion.div
+                key={director.role}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: (idx % 4) * 0.05 }}
+                className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center text-center hover:shadow-md hover:border-[#224292]/25 transition-all duration-300 group"
+              >
+                {/* Circular Image / Initials display */}
+                <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4 p-0.5 bg-gradient-to-tr from-[#224292]/10 to-[#ffc107]/20 group-hover:scale-105 transition-transform duration-300">
+                  {director.image ? (
+                    <img src={director.image} alt={director.name} className="w-full h-full object-cover rounded-full" />
+                  ) : (
+                    <div className="w-full h-full rounded-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-lg select-none shadow-inner">
+                      {director.initials}
+                    </div>
+                  )}
+                </div>
+
+                <h4 className="text-[14px] font-bold text-[#224292] leading-tight group-hover:text-[#ffc107] transition-colors font-graphik">{director.name}</h4>
+                <span className="mt-3 px-3 py-1 bg-[#224292]/5 text-[#224292] text-[10px] font-black tracking-wider uppercase rounded-lg font-graphik">
+                  {director.role}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* 5. Head of the Departments Section */}
         <div className="space-y-8 pt-6">
           <div className="text-center">
             <h2 className="text-3xl font-semibold text-[#224292] tracking-tighter">

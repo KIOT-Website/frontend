@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom'
 import ist2Logo from '../assets/iStart/ist2.webp'
 import istart1 from '../assets/iStart/istart (1).webp'
 import msmiImg from '../assets/iStart/msmi.webp'
+import msmeImg from '../assets/iStart/msme.png'
+import certImg from '../assets/iStart/image.jpg'
 
 const MSMEBIPage = () => {
     const navigate = useNavigate()
@@ -31,11 +33,12 @@ const MSMEBIPage = () => {
                 
                 <div className="space-y-16">
                     {/* Hero Section */}
-                    <div className="grid lg:grid-cols-2 gap-16 items-start">
+                    <div className="grid lg:grid-cols-2 gap-16 items-stretch">
                         {/* Left Content */}
                         <div className="space-y-10">
-                            <div className="space-y-4">
-                                <h1 className="text-5xl lg:text-7xl font-black text-[#224292] leading-[1.1] tracking-tighter">
+                            <div className="space-y-6">
+                                <img src={msmeImg} alt="MSME Logo" className="w-full max-w-sm md:max-w-md object-contain" />
+                                <h1 className="text-5xl lg:text-7xl font-black text-[#224292] leading-[1.1] tracking-tighter hidden">
                                     MSME – <span className="text-[#ffc107]">BI</span>
                                 </h1>
                             </div>
@@ -57,13 +60,13 @@ const MSMEBIPage = () => {
                         </div>
 
                         {/* Right Image */}
-                        <div className="relative group lg:pl-10">
+                        <div className="relative group lg:pl-10 flex flex-col gap-6 h-full">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[#224292]/5 rounded-full blur-3xl -z-10" />
-                            <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-white">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white bg-white h-full min-h-[400px]">
                                 <img 
-                                    src={msmiImg} 
-                                    alt="MSME Lab" 
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                                    src={certImg} 
+                                    alt="Certificate" 
+                                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/10 to-transparent pointer-events-none" />
                             </div>
@@ -90,8 +93,8 @@ const MSMEBIPage = () => {
                                     <tbody className="divide-y divide-slate-100">
                                         {highlights.map((item, idx) => (
                                             <tr key={idx} className="even:bg-[#224292]/[0.04] hover:bg-[#224292]/[0.08] transition-colors group">
-                                                <td className="px-6 py-5 text-sm font-bold text-black align-middle">{item.label}</td>
-                                                <td className="px-6 py-5 text-sm font-black text-[#224292] align-middle">{item.details}</td>
+                                                <td className="px-6 py-5 text-xs font-bold text-black align-middle">{item.label}</td>
+                                                <td className="px-6 py-5 text-xs font-black text-[#224292] align-middle">{item.details}</td>
                                             </tr>
                                         ))}
                                     </tbody>

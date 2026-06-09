@@ -8,6 +8,7 @@ import {
 import { motion } from 'framer-motion'
 
 import heroImg from '../assets/student life/library.webp'
+import libraryImg from '../assets/student life/libary.png'
 
 const LibraryPage = () => {
     const navigate = useNavigate();
@@ -73,17 +74,17 @@ const LibraryPage = () => {
 
 
             {/* Vision & Mission section */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
-                    <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tight">Vision & <span className="text-[#ffc107]">Mission</span></h2>
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+                <div className="lg:col-span-8 space-y-8">
+                    <h2 className="text-4xl md:text-5xl font-bold text-[#224292] tracking-tight">Vision & <span className="text-[#ffc107]">Mission</span></h2>
                     
-                    <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="grid sm:grid-cols-3 gap-6">
                         {/* Vision Card */}
                         <div className="bg-transparent sm:bg-white p-0 sm:p-8 rounded-none sm:rounded-[2rem] shadow-none sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-none sm:border border-slate-100 flex flex-col items-start gap-4 sm:hover:-translate-y-1 transition-transform">
                             <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2">
                                 <Eye size={20} />
                             </div>
-                            <h3 className="text-[#224292] font-bold text-lg">Our Vision</h3>
+                            <h3 className="text-[#224292] font-semibold text-lg">Our Vision</h3>
                             <p className="text-black text-sm leading-relaxed flex-1">
                                 To nurture research scholars and promote knowledge enrichment through world-class learning resources and services.
                             </p>
@@ -95,39 +96,41 @@ const LibraryPage = () => {
                             <div className="w-12 h-12 rounded-full bg-[#ffc107] text-[#224292] flex items-center justify-center mb-2">
                                 <Target size={20} />
                             </div>
-                            <h3 className="text-[#224292] font-bold text-lg">Our Mission</h3>
+                            <h3 className="text-[#224292] font-semibold text-lg">Our Mission</h3>
                             <p className="text-black text-sm leading-relaxed flex-1">
                                 To provide world-class knowledge resources and innovative services for holistic academic growth and lifelong learning.
                             </p>
                             <div className="w-8 h-1 bg-[#ffc107] rounded-full mt-2" />
                         </div>
-                    </div>
-                </div>
 
-                {/* Right Image with OPAC Link */}
-                <div className="relative rounded-[2rem] overflow-hidden h-[400px] shadow-2xl">
-                    <img 
-                        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop" 
-                        className="w-full h-full object-cover" 
-                        alt="Library Interior" 
-                    />
-                    {/* OPAC Link as the Blue Box */}
-                    <div className="absolute bottom-6 left-6 max-w-[300px]">
+                        {/* Web OPAC Access Card */}
                         <a 
                             href="http://115.244.103.83/webopac" 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="block bg-[#224292] p-6 rounded-2xl shadow-xl border border-slate-700/50 hover:bg-[#224292] group transition-all"
+                            className="bg-transparent sm:bg-white p-0 sm:p-8 rounded-none sm:rounded-[2rem] shadow-none sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-none sm:border border-slate-100 flex flex-col items-start gap-4 sm:hover:-translate-y-1 transition-transform group cursor-pointer"
                         >
-                            <div className="flex items-center gap-3 mb-2">
-                                <BookOpen size={24} className="text-[#ffc107]" />
-                                <h4 className="text-white font-bold text-lg">Web OPAC Access</h4>
+                            <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-colors">
+                                <BookOpen size={20} className="text-white group-hover:text-[#224292] transition-colors" />
                             </div>
-                            <p className="text-slate-300 text-xs font-medium flex items-center gap-2">
-                                Explore the Catalog <ExternalLink size={12} className="text-[#ffc107]" />
+                            <h3 className="text-[#224292] font-semibold text-lg flex items-center gap-1.5">
+                                Web OPAC <ExternalLink size={14} className="text-[#ffc107] shrink-0" />
+                            </h3>
+                            <p className="text-black text-sm leading-relaxed flex-1">
+                                Search books, view availability, and manage your library account online from anywhere.
                             </p>
+                            <div className="w-8 h-1 bg-[#224292] rounded-full mt-2 group-hover:bg-[#ffc107] transition-colors" />
                         </a>
                     </div>
+                </div>
+
+                {/* Right Image */}
+                <div className="lg:col-span-4 relative rounded-[2rem] overflow-hidden h-[400px] shadow-2xl">
+                    <img 
+                        src={libraryImg} 
+                        className="w-full h-full object-cover" 
+                        alt="Library Interior" 
+                    />
                 </div>
             </div>
 

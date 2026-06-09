@@ -135,6 +135,115 @@ const IStartPage = () => {
                 </div>
             </section>
 
+            {/* 4. Centre for Innovation & Startups */}
+            <section id="centre" className="py-10 md:py-24 relative overflow-hidden font-graphik bg-[#F8FAFC]">
+                {/* Decorative Background Elements */}
+                <div className="absolute top-10 right-10 opacity-20 pointer-events-none">
+                    <div className="grid grid-cols-6 gap-2">
+                        {[...Array(30)].map((_, i) => (
+                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#224292]" />
+                        ))}
+                    </div>
+                </div>
+                <div className="absolute -left-20 top-[20%] w-64 h-64 bg-[#224292]/5 rounded-full blur-3xl pointer-events-none" />
+
+
+                <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
+                    <div className="flex flex-col items-center text-center mb-16">
+                        <div className="px-6 py-2 rounded-full bg-[#224292] text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6 shadow-xl shadow-blue-900/20">
+                            Empowering Innovation
+                        </div>
+                        <h2 className="text-2xl md:text-4xl font-black text-[#224292] tracking-tighter mb-10 leading-tight">
+                            Centre for <span className="text-[#224292]">Innovation</span> <span className="text-[#ffc107]">&</span> Startups
+                        </h2>
+                        <p className="text-black/60 text-[15px] font-bold max-w-2xl leading-relaxed">
+                            A multi-dimensional ecosystem providing end-to-end support for the next generation of entrepreneurs and innovators.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {[
+                            { 
+                                title: "Institution’s Innovation Council (IIC)", 
+                                desc: "Under the Ministry of Education, fostering a structured approach to creativity and problem-solving.",
+                                icon: Lightbulb,
+                                color: "#ffc107", // Gold (Brand)
+                                points: ["Promotes Innovation Culture", "Structured Framework", "Impactful Collaboration"],
+                                link: "/research-innovation/iic"
+                            },
+                            { 
+                                title: "StartupTN Pre-Incubation Centre", 
+                                desc: "Idea validation and early-stage support for transformative student-led startups.",
+                                icon: Rocket,
+                                color: "#3b82f6",
+                                points: ["Idea Validation", "Mentorship & Guidance", "Pre-Incubation Support"],
+                                link: "/research-innovation/startuptn"
+                            },
+                            { 
+                                title: "MSME Business Incubator", 
+                                desc: "Providing seed funding and industry-aligned incubation for sustainable business growth.",
+                                icon: Building2,
+                                color: "#10b981",
+                                points: ["Seed Funding Access", "Industry Alignment", "Sustainable Growth"],
+                                link: "/research-innovation/msme-bi"
+                            },
+                            { 
+                                title: "iStartKIOT MXincubator Foundation", 
+                                desc: "A Section 8 company dedicated to global-scale startup acceleration and investment readiness.",
+                                icon: Briefcase,
+                                color: "#224292", // Deep Blue (Brand)
+                                points: ["Startup Acceleration", "Investment Readiness", "Global Opportunities"],
+                                link: "/research-innovation/mx-incubator"
+                            }
+                        ].map((item, i) => (
+                            <motion.div 
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                                viewport={{ once: true }}
+                                className="group relative bg-white rounded-xl p-5 shadow-2xl shadow-slate-200/50 flex flex-col h-full overflow-hidden border border-slate-50"
+                            >
+                                {/* Top Accent Bar */}
+                                <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: item.color }} />
+                                
+                                <div className="mb-4 relative">
+                                    <div className="w-12 h-12 rounded-full bg-white shadow-lg border border-slate-50 flex items-center justify-center mb-6">
+                                        <item.icon size={24} style={{ color: item.color }} />
+                                    </div>
+                                    <h3 className="text-[17px] font-black text-[#224292] leading-tight mb-2 min-h-[2.5rem]">
+                                        {item.title}
+                                    </h3>
+                                    <div className="h-0.5 w-8 bg-[#224292] mb-4" />
+                                    <p className="text-black text-[12px] font-bold leading-relaxed mb-4">
+                                        {item.desc}
+                                    </p>
+                                    
+                                    <ul className="space-y-2 mb-6">
+                                        {item.points.map((pt, idx) => (
+                                            <li key={idx} className="flex items-center gap-2">
+                                                <div className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 border border-slate-100" style={{ color: item.color }}>
+                                                    <Check className="w-2.5 h-2.5 stroke-[4]" />
+                                                </div>
+                                                <span className="text-[12px] font-black text-black">{pt}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div 
+                                    onClick={() => item.link && navigate(item.link)}
+                                    className={`flex items-center gap-2 group/btn ${item.link ? 'cursor-pointer' : 'opacity-50 cursor-default'}`}
+                                >
+                                    <span className="text-[13px] font-black tracking-tight transition-colors" style={{ color: item.color }}>View more</span>
+                                    <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" style={{ color: item.color }} />
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* 2. Overview, Vision & Mission */}
             <section id="overview" className="py-12 bg-white border-t border-slate-100">
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -293,115 +402,6 @@ const IStartPage = () => {
                 </div>
             </section>
 
-            {/* 4. Centre for Innovation & Startups */}
-            <section id="centre" className="py-10 md:py-24 relative overflow-hidden font-graphik bg-[#F8FAFC]">
-                {/* Decorative Background Elements */}
-                <div className="absolute top-10 right-10 opacity-20 pointer-events-none">
-                    <div className="grid grid-cols-6 gap-2">
-                        {[...Array(30)].map((_, i) => (
-                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#224292]" />
-                        ))}
-                    </div>
-                </div>
-                <div className="absolute -left-20 top-[20%] w-64 h-64 bg-[#224292]/5 rounded-full blur-3xl pointer-events-none" />
-
-
-                <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
-                    <div className="flex flex-col items-center text-center mb-16">
-                        <div className="px-6 py-2 rounded-full bg-[#224292] text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6 shadow-xl shadow-blue-900/20">
-                            Empowering Innovation
-                        </div>
-                        <h2 className="text-3xl md:text-6xl font-black text-[#224292] tracking-tighter mb-6 leading-tight">
-                            Centre for <span className="text-[#224292]">Innovation</span> <br/>
-                            <span className="text-[#ffc107]">&</span> Startups
-                        </h2>
-                        <p className="text-black/60 text-[15px] font-bold max-w-2xl leading-relaxed">
-                            A multi-dimensional ecosystem providing end-to-end support for the next generation of entrepreneurs and innovators.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {[
-                            { 
-                                title: "Institution’s Innovation Council (IIC)", 
-                                desc: "Under the Ministry of Education, fostering a structured approach to creativity and problem-solving.",
-                                icon: Lightbulb,
-                                color: "#ffc107", // Gold (Brand)
-                                points: ["Promotes Innovation Culture", "Structured Framework", "Impactful Collaboration"],
-                                link: "/research-innovation/iic"
-                            },
-                            { 
-                                title: "StartupTN Pre-Incubation Centre", 
-                                desc: "Idea validation and early-stage support for transformative student-led startups.",
-                                icon: Rocket,
-                                color: "#3b82f6",
-                                points: ["Idea Validation", "Mentorship & Guidance", "Pre-Incubation Support"],
-                                link: "/research-innovation/startuptn"
-                            },
-                            { 
-                                title: "MSME Business Incubator", 
-                                desc: "Providing seed funding and industry-aligned incubation for sustainable business growth.",
-                                icon: Building2,
-                                color: "#10b981",
-                                points: ["Seed Funding Access", "Industry Alignment", "Sustainable Growth"],
-                                link: "/research-innovation/msme-bi"
-                            },
-                            { 
-                                title: "iStartKIOT MXincubator Foundation", 
-                                desc: "A Section 8 company dedicated to global-scale startup acceleration and investment readiness.",
-                                icon: Briefcase,
-                                color: "#224292", // Deep Blue (Brand)
-                                points: ["Startup Acceleration", "Investment Readiness", "Global Opportunities"],
-                                link: "/research-innovation/mx-incubator"
-                            }
-                        ].map((item, i) => (
-                            <motion.div 
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                viewport={{ once: true }}
-                                className="group relative bg-white rounded-xl p-5 shadow-2xl shadow-slate-200/50 flex flex-col h-full overflow-hidden border border-slate-50"
-                            >
-                                {/* Top Accent Bar */}
-                                <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: item.color }} />
-                                
-                                <div className="mb-4 relative">
-                                    <div className="w-12 h-12 rounded-full bg-white shadow-lg border border-slate-50 flex items-center justify-center mb-6">
-                                        <item.icon size={24} style={{ color: item.color }} />
-                                    </div>
-                                    <h3 className="text-[17px] font-black text-[#224292] leading-tight mb-2 min-h-[2.5rem]">
-                                        {item.title}
-                                    </h3>
-                                    <div className="h-0.5 w-8 bg-[#224292] mb-4" />
-                                    <p className="text-black text-[12px] font-bold leading-relaxed mb-4">
-                                        {item.desc}
-                                    </p>
-                                    
-                                    <ul className="space-y-2 mb-6">
-                                        {item.points.map((pt, idx) => (
-                                            <li key={idx} className="flex items-center gap-2">
-                                                <div className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 border border-slate-100" style={{ color: item.color }}>
-                                                    <Check className="w-2.5 h-2.5 stroke-[4]" />
-                                                </div>
-                                                <span className="text-[12px] font-black text-black">{pt}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                <div 
-                                    onClick={() => item.link && navigate(item.link)}
-                                    className={`flex items-center gap-2 group/btn ${item.link ? 'cursor-pointer' : 'opacity-50 cursor-default'}`}
-                                >
-                                    <span className="text-[13px] font-black tracking-tight transition-colors" style={{ color: item.color }}>View more</span>
-                                    <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" style={{ color: item.color }} />
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* 5. Achievements Grid */}
             <section id="achievements" className="py-12 bg-white border-t border-slate-100">

@@ -111,15 +111,7 @@ const CAMPUS_HUBS = [
     link: '/campus-life/library',
     color: '#224292'
   },
-  {
-    id: 'classroom',
-    title: 'Smart Classroom',
-    subtitle: 'Future Ready Learning',
-    icon: null,
-    image: kiotLab,
-    link: '/campus-life/classroom',
-    color: '#ffc107'
-  },
+
   {
     id: 'sports',
     title: 'Sports & Games',

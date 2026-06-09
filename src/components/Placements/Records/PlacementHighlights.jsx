@@ -68,55 +68,60 @@ const PlacementHighlights = () => {
           </motion.p>
         </div>
 
-        {/* Main Cards Grid - Compact Rectangular Design */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        {/* Main Cards Grid - Modern Premium Design */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
           {mainStats.map((stat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative bg-white rounded-2xl border border-slate-100 flex flex-col items-center p-6 py-7 min-h-[170px] justify-center text-center overflow-hidden transition-all duration-300 hover:border-slate-200 hover:-translate-y-1.5 shadow-md shadow-black/10 hover:shadow-xl hover:shadow-black/15"
+              className="group relative bg-white rounded-2xl sm:rounded-3xl border border-slate-100 flex flex-col p-4 sm:p-6 min-h-[190px] sm:min-h-[220px] justify-between transition-all duration-300 hover:border-slate-200 hover:-translate-y-1.5 shadow-md shadow-slate-100/50 hover:shadow-xl hover:shadow-blue-900/5 overflow-hidden"
             >
-              {/* Top Accent Bar */}
-              <div className="absolute top-0 left-0 right-0 h-1 transition-all duration-300" style={{ backgroundColor: stat.color }} />
-
-              {/* Icon Circle */}
-              <div 
-                className="w-11 h-11 rounded-full flex items-center justify-center mb-3.5 shadow-sm transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundColor: stat.color === '#ffc107' ? '#ffc107' : '#224292', color: stat.color === '#ffc107' ? '#224292' : 'white' }}
-              >
-                <stat.icon size={18} />
-              </div>
-
-              {/* Label */}
-              <h3 className="text-[9px] font-black text-[#224292] tracking-[0.15em] uppercase mb-2 opacity-90">{stat.label}</h3>
+              {/* Top/Left Color Accent Line */}
+              <div className="absolute top-0 left-0 right-0 h-1.5 transition-all duration-300" style={{ backgroundColor: stat.color }} />
               
-              {/* Thin Yellow Separator Line */}
-              <div className="w-6 h-[1.5px] bg-[#ffc107] mb-3" />
-
-              {/* Value */}
-              <div className="text-xl lg:text-2xl font-black text-[#224292] tracking-tighter leading-tight">
-                {stat.value.split(' ').map((part, idx) => (
-                  <span key={idx} className={idx > 0 ? "block text-xs lg:text-sm mt-0.5" : ""}>{part} </span>
-                ))}
-              </div>
-
-              {/* Soft Radial Background Glow */}
+              {/* Decorative subtle background gradient */}
               <div 
-                className="absolute -bottom-10 -right-10 w-24 h-24 rounded-full blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none" 
+                className="absolute -top-10 -left-10 w-32 h-32 rounded-full blur-3xl opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" 
                 style={{ backgroundColor: stat.color }} 
               />
 
-              {/* Unique Corner Ring Outlines */}
-              <div 
-                className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full border border-dashed opacity-10 group-hover:opacity-25 group-hover:scale-105 group-hover:rotate-45 transition-all duration-700 pointer-events-none" 
-                style={{ borderColor: stat.color }} 
-              />
-              <div 
-                className="absolute -bottom-10 -right-10 w-20 h-20 rounded-full border opacity-5 group-hover:opacity-15 group-hover:scale-110 group-hover:-rotate-45 transition-all duration-700 pointer-events-none" 
-                style={{ borderColor: stat.color }} 
-              />
+              <div className="flex flex-col items-start w-full">
+                {/* Icon Container */}
+                <div className="flex items-center justify-between w-full mb-3 sm:mb-5">
+                  <div 
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md transform transition-transform duration-500 group-hover:scale-105"
+                    style={{ 
+                      backgroundColor: stat.color === '#ffc107' ? '#fffbeb' : '#f0f3fa', 
+                      color: stat.color 
+                    }}
+                  >
+                    <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
+                  </div>
+                  {/* Subtle Accent Mark */}
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: stat.color }} />
+                </div>
+
+                {/* Label */}
+                <h3 className="text-[8px] sm:text-[10px] font-black text-slate-400 tracking-[0.12em] uppercase mb-2">
+                  {stat.label}
+                </h3>
+                
+                {/* Value */}
+                <div 
+                  className="text-base sm:text-2xl lg:text-3xl font-black tracking-tight leading-none mb-3 font-graphik"
+                  style={{ color: '#224292' }}
+                >
+                  {stat.value}
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-slate-500 text-[10px] sm:text-[11px] font-semibold leading-relaxed text-left border-t border-slate-100 pt-3 mt-1 font-graphik">
+                {stat.desc}
+              </p>
             </motion.div>
           ))}
         </div>

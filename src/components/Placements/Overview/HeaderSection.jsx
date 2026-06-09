@@ -36,10 +36,14 @@ const features = [
 
 const HeaderSection = () => {
   return (
-    <div className="relative w-full bg-slate-50/50 overflow-hidden font-graphik min-h-[450px] lg:min-h-[600px] flex items-center">
-      
+    <div className="relative w-full bg-[#FCFDFD] overflow-hidden font-graphik min-h-[450px] lg:min-h-[600px] flex items-center py-12">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#224292]/5 via-transparent to-transparent rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#ffc107]/5 via-transparent to-transparent rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.015] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#224292 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
 
-      <div className="grid lg:grid-cols-12 w-full h-full items-center relative max-w-[1400px] mx-auto">
+      <div className="grid lg:grid-cols-12 w-full h-full items-center relative max-w-[1400px] mx-auto z-10">
         
         {/* Left Column: Content Area */}
         <div className="lg:col-span-7 relative z-20 flex items-center lg:items-start justify-center flex-col px-6 sm:px-10 lg:pl-16 py-6 lg:py-10 text-center lg:text-left">
@@ -71,57 +75,43 @@ const HeaderSection = () => {
               Key Highlights
             </h3>
 
-            {/* Premium Features List - Horizontal */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 mb-10">
-              {features.map((feature, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="flex flex-row sm:flex-col items-start gap-4"
-                >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 border border-slate-100 ${feature.bgColor} ${feature.iconColor}`}>
-                    <feature.icon size={20} />
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-sm font-semibold text-[#224292] leading-tight mb-1">{feature.title}</h4>
-                    <p className="text-xs text-black font-medium leading-relaxed text-justify">{feature.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+            {/* Premium Features List - Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+              {features.map((feature, idx) => {
+                const isBlue = feature.iconColor === "text-[#224292]";
+                return (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.08 }}
+                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                    className={`bg-white p-5 rounded-2xl border border-slate-100/80 shadow-md hover:shadow-xl flex items-start gap-4 transition-all duration-300 group relative overflow-hidden ${
+                      isBlue ? 'border-l-4 border-l-[#224292] hover:border-[#224292]/30' : 'border-l-4 border-l-[#ffc107] hover:border-[#ffc107]/40'
+                    }`}
+                  >
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${
+                      isBlue ? 'from-white via-white to-blue-50/20' : 'from-white via-white to-amber-50/20'
+                    }`} />
+                    
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 z-10 ${
+                      isBlue 
+                        ? 'bg-[#224292]/5 text-[#224292] group-hover:bg-[#224292] group-hover:text-white' 
+                        : 'bg-[#ffc107]/10 text-[#a37c00] group-hover:bg-[#ffc107] group-hover:text-[#224292]'
+                    }`}>
+                      <feature.icon size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <div className="flex flex-col z-10">
+                      <h4 className="text-[15px] font-bold text-[#224292] leading-tight mb-1.5 transition-colors">{feature.title}</h4>
+                      <p className="text-[12.5px] text-slate-600 font-medium leading-relaxed text-left font-graphik">{feature.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
 
 
-
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-               <button className="flex items-center gap-2 px-8 py-3.5 bg-[#0a2351] hover:bg-[#224292] text-white rounded-full font-semibold text-sm transition-all shadow-lg hover:shadow-xl group">
-                  <Download size={18} className="group-hover:scale-110 transition-transform" /> Placement Brochure <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-               </button>
-               <button className="flex items-center gap-2 px-8 py-3.5 bg-white border-2 border-[#224292] text-[#224292] hover:bg-[#224292] hover:text-white rounded-full font-semibold text-sm transition-all shadow-sm hover:shadow-lg group">
-                  <GraduationCap size={18} className="group-hover:scale-110 transition-transform" /> Placement Training <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-               </button>
-            </div>
-
-            {/* Mobile Stats Grid - Only visible on small screens */}
-            <div className="grid grid-cols-2 gap-4 mt-8 lg:hidden">
-              {[
-                { label: "Placement", value: "95%", icon: TrendingUp, color: "bg-[#1a3673]" },
-                { label: "Highest PKG", value: "25 LPA", icon: IndianRupee, color: "bg-[#ffc107]" },
-                { label: "Recruiters", value: "150+", icon: Users, color: "bg-[#1a3673]" }
-              ].map((stat, i) => (
-                <div key={i} className="bg-white rounded-xl shadow-md p-3 flex items-center gap-3 border border-slate-50">
-                  <div className={`w-8 h-8 rounded-full ${stat.color} flex items-center justify-center text-white shrink-0 shadow-sm`}>
-                    <stat.icon size={14} />
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm text-slate-800">{stat.value}</div>
-                    <div className="text-[9px] text-slate-500 font-bold leading-tight uppercase">{stat.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
 
           </motion.div>
         </div>
