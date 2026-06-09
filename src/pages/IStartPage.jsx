@@ -97,16 +97,7 @@ const IStartPage = () => {
                                 ))}
                             </div>
 
-                            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                                <button className="px-7 py-4 bg-[#224292] text-white rounded-xl font-black text-[12px] tracking-tight flex items-center gap-3 shadow-xl hover:scale-105 transition-all">
-                                    Explore Initiatives
-                                    <ArrowRight size={16} />
-                                </button>
-                                <button className="px-7 py-4 bg-white text-[#224292] border-2 border-[#224292]/10 rounded-xl font-black text-[12px] tracking-tight flex items-center gap-3 hover:bg-[#224292] hover:text-white transition-all">
-                                    View Success Stories
-                                    <ArrowRight size={16} />
-                                </button>
-                            </div>
+
                         </div>
 
                         {/* Right Column: Visual Layout (Premium Leaf Design) */}
