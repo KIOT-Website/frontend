@@ -460,63 +460,7 @@ const AutonomousPage = () => {
                                                 <p className="text-[13px] font-bold text-black leading-relaxed">{c.desc}</p>
                                             </div>
                                             
-                                            <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full lg:w-auto">
-                                                <button className="flex items-center gap-4 px-6 py-4 bg-white border border-blue-100 rounded-2xl shadow-lg transition-all group/btn">
-                                                    <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-[#224292] transition-all">
-                                                        <UserCheck size={20} />
-                                                    </div>
-                                                    <span className="text-[10px] font-black uppercase tracking-widest text-[#224292]">Members List</span>
-                                                    <ChevronRight size={12} className="ml-4 text-[#ffc107]" />
-                                                </button>
-                                                <button 
-                                                    onClick={() => setShowMinutes(showMinutes === i ? null : i)}
-                                                    className={`flex items-center gap-4 px-6 py-4 border rounded-2xl shadow-lg transition-all group/btn ${showMinutes === i ? 'bg-[#224292] text-white border-[#224292]' : 'bg-white text-[#224292] border-blue-100'}`}
-                                                >
-                                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${showMinutes === i ? 'bg-white/10 text-[#ffc107]' : 'bg-blue-50 text-[#224292]'}`}>
-                                                        <FileText size={20} />
-                                                    </div>
-                                                    <span className={`text-[10px] font-black uppercase tracking-widest ${showMinutes === i ? 'text-white' : 'text-[#224292]'}`}>Meeting Minutes</span>
-                                                    <ChevronRight size={12} className={`ml-4 transition-transform ${showMinutes === i ? 'rotate-90 text-[#ffc107]' : 'text-[#ffc107]'}`} />
-                                                </button>
-                                            </div>
                                         </div>
-
-                                        <AnimatePresence>
-                                            {showMinutes === i && (
-                                                <motion.div
-                                                    initial={{ height: 0, opacity: 0 }}
-                                                    animate={{ height: 'auto', opacity: 1 }}
-                                                    exit={{ height: 0, opacity: 0 }}
-                                                    className="overflow-hidden mb-16"
-                                                >
-                                                    <div className="max-w-4xl mx-auto bg-slate-50/50 border border-slate-100 rounded-[2.5rem] p-6 lg:p-8">
-                                                        <div className="grid gap-3">
-                                                            {[
-                                                                { no: '1st', date: '25.07.2023', file: '#' },
-                                                                { no: '2nd', date: '12.12.2023', file: '#' },
-                                                                { no: '3rd', date: '18.04.2024', file: '#' }
-                                                            ].map((m, idx) => (
-                                                                <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 bg-white rounded-2xl border border-slate-200/60 hover:border-[#224292]/30 hover:shadow-xl hover:shadow-[#224292]/5 transition-all group/row">
-                                                                    <div className="flex items-center gap-4">
-                                                                        <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-[#224292] group-hover/row:bg-[#224292] group-hover/row:text-white transition-all">
-                                                                            <Calendar size={18} />
-                                                                        </div>
-                                                                        <div>
-                                                                            <p className="text-[14px] font-black text-black leading-tight">{c.name} Meeting - {m.no}</p>
-                                                                            <p className="text-[10px] font-bold text-slate-400 mt-0.5 uppercase tracking-widest">{m.date}</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <button className="flex items-center justify-center gap-2.5 px-5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-[9px] font-black text-[#224292] uppercase tracking-widest hover:bg-[#224292] hover:text-white hover:border-[#224292] transition-all group/v">
-                                                                        <FileText size={14} className="text-red-500 group-hover/v:text-white transition-colors" />
-                                                                        View PDF
-                                                                    </button>
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
 
                                         <div>
                                             <h4 className="text-[10px] font-black uppercase tracking-widest text-[#224292] mb-8">
