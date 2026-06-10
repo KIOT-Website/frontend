@@ -603,11 +603,6 @@ const IdeaLabPage = () => {
             icon: Lightbulb,
         },
         {
-            title: "Top 113 Institution",
-            description: "One among 418 Idea Labs",
-            icon: Target,
-        },
-        {
             title: "Hands-on STEM Learning",
             description: "Practical skill development",
             icon: Wrench,
@@ -737,7 +732,7 @@ const IdeaLabPage = () => {
 
             {/* FEATURE CARDS - COMPACTED STATS GRID */}
             <div className="relative -mt-12 z-20 w-full max-w-7xl mx-auto px-6 font-graphik">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {features.map((feature, idx) => (
                         <motion.div
                             key={idx}
@@ -858,8 +853,8 @@ const IdeaLabPage = () => {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                                 {[
-                                    { name: "Dr. PSS. Srinivasan", roles: ["Executive Chairman"], initials: "PS" },
-                                    { name: "Dr. K. Visagavel", roles: ["Principal"], initials: "KV" }
+                                    { name: "Dr. PSS. Srinivasan", roles: ["Executive Chairman", "Chief Advisor"], initials: "PS" },
+                                    { name: "Dr. K. Visagavel", roles: ["Principal", "Chief Mentor"], initials: "KV" }
                                 ].map((leader, i) => (
                                     <div key={i} className="bg-[#224292] p-6 rounded-[2rem] flex items-center gap-4 relative overflow-hidden group shadow-xl">
                                         <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white text-[18px] font-black border border-white/20 shrink-0 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all">
