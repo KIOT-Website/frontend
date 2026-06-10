@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import srinivasanImg from '../assets/main/srinivasan.webp'
+import srinivasanImg from '../assets/dir and hod/Dr. PSS. Srinivasan.jpg'
 import principalImg from '../assets/dir and hod/Principal.png'
 import secretaryImg from '../assets/main/Secretarys-Message-KIOTT.webp'
 import treasurerImg from '../assets/main/Mr.V.Sureshkumar, Treasurer.webp'
@@ -17,7 +17,7 @@ import ramkumarImg from '../assets/dir and hod/Dr.M.Ramkumar.webp'
 import karthikeyanImg from '../assets/dir and hod/Mr.T.KARTHIKEYAN.webp'
 import maragatharajImg from '../assets/dir and hod/Dr. S. Maragatharaj.webp'
 import venkatesanImg from '../assets/dir and hod/Dr.T.Venkatesan.webp'
-import vijayakumarImg from '../assets/dir and hod/Dr.S.Vijaya Kumar.webp'
+import vijayakumarImg from '../assets/dir and hod/Dr. S. Vijayakumar.png'
 import mohanapriyaImg from '../assets/dir and hod/Dr. S. Mohanapriya.webp'
 
 // Director Image Imports
@@ -26,12 +26,12 @@ import stephenImg from '../assets/dir and hod/MBA Director.png'
 import rajendranImg from '../assets/dir and hod/Dr. P. Rajendran.png'
 import bgFacultyImg from '../assets/Faculity/background faculty.webp'
 import navaneethankrishnanImg from '../assets/dir and hod/Dr.P.Navaneethankrishnan.webp'
-import rkumarImg from '../assets/Faculity/cse/Dr.R.KUMAR.webp'
+import rkumarImg from '../assets/dir and hod/Dr. R. Kumar.jpg'
 import ilangkumaranImg from '../assets/dir and hod/Dr.M.Ilangkumaran.webp'
 import kalpanadeviImg from '../assets/dir and hod/Dr.S.Kalpanadevi.webp'
 import shanmugasundaramImg from '../assets/dir and hod/Dr. P. Shanmuga Sundaram.webp'
 import santhiyakumariImg from '../assets/dir and hod/Dr. N. Santhiyakumari.webp'
-import vkumarImg from '../assets/Faculity/cse/Dr.V.KUMAR.webp'
+import vkumarImg from '../assets/dir and hod/Dr. V. Kumar.jpg'
 import sathyanathanImg from '../assets/dir and hod/Dr.M.Sathyanathan.webp'
 import munirajImg from '../assets/dir and hod/Dr.C.Muniraj.webp'
 import sakthivelImg from '../assets/dir and hod/Mr.D.Sakthivel.webp'
@@ -290,13 +290,12 @@ export default function HeadOfDepartmentPage() {
                 {/* Image Section */}
                 <div 
                   className="relative w-full h-[170px] sm:h-[200px] md:h-[240px] overflow-hidden"
-                  style={{ backgroundImage: `url("${bgFacultyImg}")`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   {director.image ? (
                     <img 
                       src={director.image} 
                       alt={director.name} 
-                      className="w-full h-full object-contain object-bottom relative z-10 scale-[1.15] origin-bottom" 
+                      className="w-full h-full object-cover object-top relative z-10" 
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-2xl select-none shadow-inner">
@@ -365,7 +364,11 @@ export default function HeadOfDepartmentPage() {
                     <img 
                       src={hod.image} 
                       alt={hod.name} 
-                      className="w-full h-full object-contain object-bottom relative z-10 scale-[1.15] origin-bottom" 
+                      className={`w-full h-full object-contain object-bottom relative z-10 origin-bottom ${
+                        ["Dr. K.S. Prabhakaran", "Dr. B. Sasikumar", "Dr. M. Ramkumar", "Dr. S. Maragatharaj", "Dr. S. Vijayakumar"].includes(hod.name) 
+                          ? "scale-[1.15] translate-y-6" 
+                          : "scale-[1.2]"
+                      }`} 
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#224292] to-[#122b68] flex items-center justify-center text-white font-bold text-2xl select-none shadow-inner">

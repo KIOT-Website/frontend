@@ -30,7 +30,7 @@ const CountUpNumber = ({ value, duration = 2 }) => {
 }
 
 // Asset imports
-import chairmanImg from '../../assets/main/srinivasan.webp'
+import chairmanImg from '../../assets/dir and hod/Dr. PSS. Srinivasan.jpg'
 import secretaryImg from '../../assets/main/Secretarys-Message-KIOTT.webp'
 import treasurerImg from '../../assets/main/Mr.V.Sureshkumar, Treasurer.webp'
 

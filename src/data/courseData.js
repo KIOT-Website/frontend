@@ -32,6 +32,14 @@ import madheswaranImage from '../assets/Faculity/csbs/madheswaran.webp'
 import noorulAmeenImage from '../assets/Faculity/csbs/noorul_ameen.webp'
 import sambathkumarImage from '../assets/Faculity/csbs/sambathkumar.webp'
 
+// MBA Faculty Imports
+import mbaDirectorImg from '../assets/dir and hod/MBA Director.png'
+import venkatesanImg from '../assets/dir and hod/Dr.T.Venkatesan.webp'
+import sasikumarImg from '../assets/dir and hod/Dr. B. Sasikumar AIDS - HOD.webp'
+import immanuelImg from '../assets/placements/placement team/Dr.D.Immanuel, MBA., Ph.D..webp'
+import padmanabanImg from '../assets/placements/placement team/Prof.G.Padmanaban, MBA., (PhD),.webp'
+import musthaffaImg from '../assets/placements/placement team/Mr.A.Musthaffa, MBA., M.Phil..webp'
+
 // AIDS Faculty Imports
 import aidsGomathiImage from '../assets/Faculity/aids/dr_gomathi.webp'
 import aidsSasikumarHodImage from '../assets/Faculity/aids/sasikumar_hod.webp'
@@ -3077,5 +3085,170 @@ export const courseData = {
         ],
       },
     ]
+  },
+  'mba-general': {
+    name: 'Master of Business Administration',
+    short: 'MBA - General',
+    duration: '2 Years (4 Semesters)',
+    intake: 120,
+    affiliation: 'Anna University',
+    accreditation: 'Postgraduate Program',
+    placement: '89%',
+    avgPackage: '5.2 LPA',
+    topPackage: '14 LPA',
+    icon: Award,
+    color: '#224292',
+    tagline: 'Nurturing Global Business Leaders.',
+    overview: [
+      "Master of Business Administration (MBA) was established in the year 2011 by Knowledge Institute of Technology Trust (KIOTT), Kakapalayam (PO), Salem – 637 504, Tamil Nadu, India. The trust consists of 42 Eminent Professors from Leading Engineering Colleges, Management schools and Budding Entrepreneurs with a vision to build our Nation through quality education.",
+      "Master of Business Administration (MBA), a part of Knowledge Institute of Technology (KIOT) and offers Two years MBA programme with an intake of 120 students. MBA@KIOT is known for its Quality Placements, Inspiring Faculty, Project with Stipend, Industrial Consultancy and Joy of Learning. The core strengths of MBA are its faculty team with diverse expertise and vibrant students. Apart from offering quality education to students, MBA@KIOT offers Industrial Consultancy and Management Development Programmes (MDPs) to various industries. As a part of its Corporate Social Responsibility and service to academia, MBA@KIOT organizes Skill Development Programmes for faculty member of different educational institutions in association with Confederation of Indian Industry (CII-Salem). MBA@KIOT is driven with a vision to produce global leaders to manage enterprises in a challenging and highly competitive world through incorporation of domain expertise coupled with high ethical standards. These initiatives have made MBA, a preferred destination for management education in this region with a short span of time."
+    ],
+    vision: "To produce managers and entrepreneurs who are business relevant, innovative and socially responsible.",
+    mission: "M1: To offer state-of-the-art management programs and carry out research and consultancy.\nM2: To nurture students with industry-relevant skills and knowledge with leadership and entrepreneurial capabilities.\nM3: To collaborate with industries and academic for academics and collaborative research and training.",
+    peo: "PEO – 1: Graduates will demonstrate professional competence in core business functions and specializations to solve complex managerial challenges.\n\nPEO – 2: Graduates will apply leadership, communication, and decision-making skills to drive organizational success.\n\nPEO – 3: Graduates will exhibit ethical values, social responsibility, and entrepreneurial mindset in their careers.",
+    po: "PO – 1: Business Knowledge: Apply knowledge of management theories and practices to solve business problems.\n\nPO – 2: Decision Making: Foster analytical and critical thinking abilities for data-driven business decision making.\n\nPO – 3: Leadership: Ability to lead and work collaboratively in diverse, multidisciplinary teams.\n\nPO – 4: Social Responsibility: Value and execute ethical principles and social responsibility in business contexts.\n\nPO – 5: Communication: Communicate effectively on complex business and managerial issues.\n\nPO – 6: Global Awareness: Evaluate business opportunities and threats in a global context.",
+    pso: "PSO – 1: Design and execute marketing, financial, and operational strategies for diverse business models.\n\nPSO – 2: Leverage modern analytical tools and software to interpret market trends and business data.\n\nPSO – 3: Formulate business solutions aligning with ethical practices and environmental sustainability.",
+    whyChoose: [
+      'Dual specialisations in core domains',
+      'Experienced faculty with corporate backgrounds',
+      'Excellent track record of placements',
+      'State-of-the-art Case Study room',
+      'Dedicated business incubator support'
+    ],
+    curriculum: [
+      { year: 'Year 1 – Core Foundations', semesters: ['Management Principles', 'Organizational Behavior', 'Managerial Economics', 'Financial Accounting', 'Marketing Management', 'Human Resource Management', 'Quantitative Techniques'] },
+      { year: 'Year 2 – Specialisation & Strategy', semesters: ['Strategic Management', 'Business Analytics', 'Elective I (Specialisation)', 'Elective II (Specialisation)', 'Elective III (Specialisation)', 'Summer Internship Project', 'Professional Development Seminar'] }
+    ],
+    faculty: [
+      { name: 'Dr. A. Stephen', designation: 'Professor & Director', qualification: 'BA., MA., MBA., M.Phil., PGDHRM, Ph.D.', specialization: 'HR & Marketing', email: 'directorkbs@kiot.ac.in', experience: 'Teaching: 22.11 Years, Industry: 1.7 Years', publications: 'IJ: 17, IC: 05, NC: 02', image: mbaDirectorImg, rating: 5.0 },
+      { name: 'Dr. T. Venkatesan', designation: 'Associate Professor & HOD', qualification: 'B.Com, M.Com, MBA, M.Phil. M.A (Public Admin), Ph.D.', specialization: 'Finance & Marketing', email: 'tvmba@kiot.ac.in', experience: 'Teaching: 16 Years', publications: 'IC: 17, NC: 10, IJ: 19, NJ: 05', image: venkatesanImg, rating: 4.9 },
+      { name: 'Dr. D. Immanuel', designation: 'Professor', qualification: 'B.B.A., M.B.A., Ph.D.', specialization: 'Entrepreneurship Development', email: 'drimmanueld@gmail.com', experience: 'Teaching: 22 Years, Industry: 8 Years', image: immanuelImg, rating: 4.9 },
+      { name: 'Dr. R. Ramesh', designation: 'Associate Professor', qualification: 'M.B.A., M.S.W., M.Phil., Ph.D.', specialization: 'Marketing & HR', email: 'rrmba@kiot.ac.in', experience: 'Teaching: 9.6 Years, Industry: 3.1 Years', publications: 'IJ: 14, NJ: 5, NC: 12', rating: 4.8 },
+      { name: 'Prof. G. Padmanaban', designation: 'Assistant Professor', qualification: 'BE, MBA, UGC-NET, (PhD)', specialization: 'Human Resource Management', email: 'Padybangalore@gmail.com', experience: 'Teaching: 15 Years, Industry: 10 Years', image: padmanabanImg, rating: 4.7 },
+      { name: 'Prof. P. Revathi', designation: 'Assistant Professor', qualification: 'B.Com(CA), MBA, M.Com(Banking), (PhD)', specialization: 'Finance & Marketing', email: 'prmba@kiot.ac.in', experience: 'Teaching: 12.11 Years', publications: 'IC: 03, NC: 04, IJ: 01, NJ: 01', rating: 4.6 },
+      { name: 'Prof. S. Vimala', designation: 'Assistant Professor', qualification: 'B.Com, MBA, M.Phil., (Ph.D)', specialization: 'Finance & HR', email: 'svmba@kiot.ac.in', experience: 'Teaching: 16.7 Years', publications: 'IC: 03, NC: 04, IJ: 02', rating: 4.6 },
+      { name: 'Prof. T. Suganya', designation: 'Assistant Professor', qualification: 'MBA', specialization: 'Marketing and Finance', email: 'tsmba@kiot.ac.in', experience: 'Teaching: 4.11 Years, Industry: 3.3 Years', publications: 'NC: 01', rating: 4.5 },
+      { name: 'Prof. D. Senchulakshmi', designation: 'Assistant Professor', qualification: 'B.Sc. (CS) & MBA', specialization: 'HR & Marketing', email: 'dsmba@kiot.ac.in', experience: 'Teaching: 4.6 Years, Industry: 0.5 Months', rating: 4.5 },
+      { name: 'Prof. A. Musthaffa', designation: 'Assistant Professor', qualification: 'MBA., M.Phil.', specialization: 'Finance & Marketing', email: 'ammba@kiot.ac.in', experience: 'Teaching: 20.2 Years', publications: 'IC: 6, NC: 4, IJ: 1, NJ: 1', image: musthaffaImg, rating: 4.7 },
+      { name: 'Prof. P. Manikandan', designation: 'Assistant Professor', qualification: 'BBA., MBA.', specialization: 'Human Resource & Marketing', email: 'pmmba@kiot.ac.in', experience: 'Teaching: 4.9 Years, Industry: 2 Years', publications: 'IC: 02', rating: 4.5 },
+      { name: 'Dr. R. Ambaliga Bharathi Kavithai', designation: 'Assistant Professor', qualification: 'B.Com, MBA, Ph.D.', specialization: 'Human Resource Management and Organizational Behaviour', email: 'ramba@kiot.ac.in', experience: 'Teaching: 2 Years, Research: 4 Years', publications: 'IC:12, NC:09, IJ:04, NJ:08', rating: 4.6 },
+      { name: 'Prof. Arivazhagan Veerapandiyan', designation: 'Assistant Professor', qualification: 'MBA., PGDCM., PGDHRM, (Ph.D)', specialization: 'Human Resource & Finance', email: 'vamba@kiot.ac.in', experience: 'Teaching: 5.2 Years, Industry: 6 Years', publications: 'IC:01, IJ:04, NJ:01', rating: 4.6 },
+      { name: 'Prof. M. Bharani Eswari', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', rating: 4.7 }
+    ],
+    labs: [
+      {
+        name: "Data Analysis and Business Modeling Lab",
+        icon: Cpu,
+        equipments: [
+          "Area: 149.40 Sq.m",
+          "Capacity: 55 Systems",
+          "Hardware Details: Intel Pentium 3.2 GHz Processor, IPX41-R3 Chipset Motherboard, 8 GB DDR3 SDRAM, 128 GB SATA SSD HDD, 19” LCD Wide Screen Monitor, USB 107 Keys Keyboard, USB Optical Scroll Mouse, ATX Cabinet",
+          "Software: IBM SPSS STATISTICS 19.0 (BASE, ADVANCED, REGRESSION) - 30 Users License",
+          "English Software: Hi - Class Software, Learn to English, Advanced Grammar in Use, Group Discussion - 55 Users License",
+          "Accounting Pack: Tally ERP 9 GOLD (Education Pack)",
+          "Office Suite: MS Office 2019 (Campus Agreement)"
+        ]
+      }
+    ],
+    placementStats: { placed: '89%', avg: '5.2 LPA', top: '14 LPA', companies: '40+' }
+  },
+  'mba-iev': {
+    name: 'MBA in Innovation, Entrepreneurship and Venture Development',
+    short: 'MBA - IEV',
+    duration: '2 Years (4 Semesters)',
+    intake: 60,
+    affiliation: 'Anna University',
+    accreditation: 'Postgraduate Program',
+    placement: '90%',
+    avgPackage: '5.5 LPA',
+    topPackage: '16 LPA',
+    icon: Rocket,
+    color: '#18357a',
+    tagline: 'Empowering Future Founders and Innovators.',
+    overview: [
+      "The MBA in Innovation, Entrepreneurship and Venture Development (IEV) at the Knowledge Institute of Technology (KIOT) is a unique, action-oriented program designed for aspiring entrepreneurs, start-up founders, and innovation leaders. Unlike traditional MBA programs, the IEV curriculum focuses heavily on experiential learning, product development, design thinking, and business incubation.",
+      "Supported by the MSME Business Incubator, iStart, and MX Incubation Center at KIOT, students are encouraged to work on their business ideas, build prototypes, and launch actual startups while pursuing their degree. The department provides direct mentoring, funding support, and investor connect networks."
+    ],
+    vision: "To build a vibrant ecosystem that cultivates startup founders and innovative leaders who drive economic value and social transformation through new venture creation.",
+    mission: "To provide hands-on, venture-centric business education that integrates theoretical knowledge with venture incubation.\nTo guide students through the ideation, prototyping, and scaling phases of startups.\nTo connect student startups with mentors, industry professionals, and investors.\nTo advocate for a culture of innovation, creative problem-solving, and sustainable growth.",
+    peo: "PEO – 1: Graduates will establish and successfully run their own start-ups or business ventures.\n\nPEO – 2: Graduates will design and implement innovative products and services within corporate or social organizations.\n\nPEO – 3: Graduates will lead business innovation initiatives with deep knowledge of venture capital and intellectual property.",
+    po: "PO – 1: Entrepreneurial Mindset: Identify business opportunities and take calculated risks to establish new ventures.\n\nPO – 2: Innovation Management: Design and build prototypes using design thinking and agile methods.\n\nPO – 3: Venture Finance: Manage startup accounts, understand venture capital, angel funding, and financial models.\n\nPO – 4: Legal & IP: Master business registration, regulatory compliance, and patent filing strategies.\n\nPO – 5: Pitching & Communication: Present business models convincingly to investors and stakeholders.\n\nPO – 6: Strategic Growth: Formulate scale-up strategies and marketing tactics for early-stage ventures.",
+    pso: "PSO – 1: Formulate a validated business model canvas and comprehensive business plan for a start-up.\n\nPSO – 2: Leverage business incubator resources to build functional prototypes and minimum viable products (MVPs).\n\nPSO – 3: Navigate early-stage funding rounds, intellectual property management, and product launch marketing.",
+    whyChoose: [
+      'Action-oriented learning with incubation support',
+      'Direct mentorship from successful founders and venture capitalists',
+      'Access to iStart and MSME Business Incubator resources',
+      'Opportunities for seed funding and angel investor pitches',
+      'Hands-on product development focus'
+    ],
+    curriculum: [
+      { year: 'Year 1 – Ideation & Prototype Development', semesters: ['Design Thinking & Innovation', 'Ideation and Customer Validation', 'Financial Accounting for Startups', 'Legal Aspects & IP Management', 'Product Design & Prototyping Laboratory', 'Early Stage Venture Pitching'] },
+      { year: 'Year 2 – Incubation & Scaling', semesters: ['Business Plan Preparation', 'Growth Hacking & Marketing', 'Venture Capital and Funding Options', 'Strategic Venture Management', 'Incubation & Accelerator Residency Program', 'Launch of Minimum Viable Product (MVP)'] }
+    ],
+    faculty: [
+      { name: 'Dr. B. Sasikumar', designation: 'HOD – Incharge / MBA- IEV', qualification: 'B.E., M.E., Ph.D.', specialization: 'Innovation & Venture Development', email: 'hod.iev@kiot.ac.in', experience: '19 Years', image: sasikumarImg, rating: 5.0 },
+      { name: 'Dr. A. Stephen', designation: 'Professor & Director', qualification: 'BA., MA., MBA., M.Phil., PGDHRM, Ph.D.', specialization: 'HR & Marketing', email: 'directorkbs@kiot.ac.in', experience: 'Teaching: 22.11 Years, Industry: 1.7 Years', publications: 'IJ: 17, IC: 05, NC: 02', image: mbaDirectorImg, rating: 5.0 },
+      { name: 'Dr. T. Venkatesan', designation: 'Associate Professor & HOD', qualification: 'B.Com, M.Com, MBA, M.Phil. M.A (Public Admin), Ph.D.', specialization: 'Finance & Marketing', email: 'tvmba@kiot.ac.in', experience: 'Teaching: 16 Years', publications: 'IC: 17, NC: 10, IJ: 19, NJ: 05', image: venkatesanImg, rating: 4.9 },
+      { name: 'Dr. D. Immanuel', designation: 'Professor', qualification: 'B.B.A., M.B.A., Ph.D.', specialization: 'Entrepreneurship Development', email: 'drimmanueld@gmail.com', experience: 'Teaching: 22 Years, Industry: 8 Years', image: immanuelImg, rating: 4.9 }
+    ],
+    labs: [
+      { name: 'IEV Innovation & Prototyping Space', equipment: '3D printers, design software, and brainstorming pods', icon: Rocket },
+      {
+        name: "Data Analysis and Business Modeling Lab",
+        icon: Cpu,
+        equipments: [
+          "Area: 149.40 Sq.m",
+          "Capacity: 55 Systems",
+          "Hardware Details: Intel Pentium 3.2 GHz Processor, IPX41-R3 Chipset Motherboard, 8 GB DDR3 SDRAM, 128 GB SATA SSD HDD, 19” LCD Wide Screen Monitor, USB 107 Keys Keyboard, USB Optical Scroll Mouse, ATX Cabinet",
+          "Software: IBM SPSS STATISTICS 19.0 (BASE, ADVANCED, REGRESSION) - 30 Users License",
+          "English Software: Hi - Class Software, Learn to English, Advanced Grammar in Use, Group Discussion - 55 Users License",
+          "Accounting Pack: Tally ERP 9 GOLD (Education Pack)",
+          "Office Suite: MS Office 2019 (Campus Agreement)"
+        ]
+      }
+    ],
+    placementStats: { placed: '90%', avg: '5.5 LPA', top: '16 LPA', companies: '25+' }
+  },
+  'mca': {
+    name: 'Master of Computer Applications',
+    short: 'MCA',
+    duration: '2 Years (4 Semesters)',
+    intake: 60,
+    affiliation: 'Anna University',
+    accreditation: 'Postgraduate Program',
+    placement: '90%',
+    avgPackage: '4.5 LPA',
+    topPackage: '12 LPA',
+    icon: BookOpen,
+    color: '#224292',
+    tagline: 'Fostering Excellence in Computer Applications.',
+    overview: [
+      "The Department of Computer Applications (MCA) at the Knowledge Institute of Technology (KIOT) was established to prepare next-generation software professionals, developers, and system analysts. The postgraduate curriculum is aligned with contemporary industry needs, covering topics from cloud computing and full-stack development to database management systems and mobile application development.",
+      "Through hands-on projects, industry workshops, and professional training in advanced computing labs, MCA students gain the expertise and confidence required to excel in the global IT sector."
+    ],
+    vision: "To produce competent computer application professionals who excel in software development, innovation, and ethical leadership to serve the global IT industry.",
+    mission: "To provide quality education in computer applications through state-of-the-art labs and interactive teaching.\nTo train students in emerging software technologies and industry practices.\nTo encourage research, project-based learning, and creative problem-solving.\nTo nurture team spirit, ethical standards, and a passion for lifelong learning.",
+    peo: "PEO – 1: Graduates will achieve successful careers in software engineering, cloud computing, and database management.\n\nPEO – 2: Graduates will apply computing skills and modern tools to solve complex, real-world software problems.\n\nPEO – 3: Graduates will work effectively as team members or leaders in software development companies.",
+    po: "PO – 1: Computing Knowledge: Apply software engineering and computing principles to solve complex problems.\n\nPO – 2: System Analysis: Identify and analyze user requirements to design efficient software solutions.\n\nPO – 3: Design & Development: Design, implement, and test software applications for diverse platforms.\n\nPO – 4: Modern Tool Usage: Master and apply modern software tools, IDEs, and frameworks.\n\nPO – 5: Ethics & Professionalism: Commit to professional ethics, security guidelines, and coding standards.\n\nPO – 6: Project Management: Apply software project management principles and agile methodologies.",
+    pso: "PSO – 1: Design and develop full-stack web applications and cloud-hosted database systems.\n\nPSO – 2: Implement secure, scalable mobile applications and data analytics models.\n\nPSO – 3: Build enterprise-level solutions using programming environments such as Java, Python, and JavaScript.",
+    whyChoose: [
+      'Hands-on full-stack development training',
+      'Advanced computing lab with high-speed internet',
+      'Strong internship and placement opportunities',
+      'Mentoring from industry-certified trainers',
+      'Emphasis on mobile application development and cloud computing'
+    ],
+    curriculum: [
+      { year: 'Year 1 – Advanced Software Engineering', semesters: ['Advanced Data Structures', 'Database Management Systems', 'Java Programming', 'Operating Systems', 'Web Application Development Lab', 'Software Architecture'] },
+      { year: 'Year 2 – Emerging Tech & Capstone', semesters: ['Cloud Computing', 'Mobile Application Development', 'Big Data Analytics', 'Information Security', 'Comprehensive Project / Internship', 'Professional Seminar'] }
+    ],
+    faculty: [
+      { name: 'Dr. M. Ilangkumaran', designation: 'Professor & Head', qualification: 'MCA., M.Phil., Ph.D.', specialization: 'Data Mining & Web Security', email: 'hod.mca@kiot.ac.in', experience: '18 Years', rating: 5.0 },
+      { name: 'Mr. R. Kumar', designation: 'Assistant Professor', qualification: 'MCA., M.Phil.', specialization: 'Cloud Computing', email: 'kumarr@kiot.ac.in', experience: '10 Years', rating: 4.7 }
+    ],
+    labs: [
+      { name: 'Advanced Software Development Lab', equipment: 'High-performance workstations with modern development frameworks and servers', icon: Cpu }
+    ],
+    placementStats: { placed: '90%', avg: '4.5 LPA', top: '12 LPA', companies: '30+' }
   },
 };

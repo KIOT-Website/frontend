@@ -142,7 +142,6 @@ const pgPrograms = [
     color: '#224292',
     accent: '#ffc107',
     placement: '89%',
-    externalUrl: 'https://kbss.kiot.ac.in/',
     description: 'Finance, Marketing, HR, Business Analytics, and Operations specialsations.'
   },
   {
@@ -156,7 +155,6 @@ const pgPrograms = [
     color: '#224292',
     accent: '#ffc107',
     placement: '90%',
-    externalUrl: 'https://kbss.kiot.ac.in/mba-iev/',
     description: 'Innovation, Entrepreneurship and Venture Development program.'
   },
   {

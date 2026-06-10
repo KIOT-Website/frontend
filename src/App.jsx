@@ -378,6 +378,10 @@ function App() {
         title: "Autonomous Regulations & Syllabus | KIOT",
         desc: "View the autonomous academic regulations, curriculum, and course syllabi of Knowledge Institute of Technology."
       },
+      "/academics/science-humanities": {
+        title: "Science & Humanities | KIOT Salem",
+        desc: "Explore the Department of Science & Humanities at Knowledge Institute of Technology (KIOT) Salem, offering core foundation courses in engineering."
+      },
       "/autonomous": {
         title: "Autonomous Regulations & Syllabus | KIOT",
         desc: "View the autonomous academic regulations, curriculum, and course syllabi of Knowledge Institute of Technology."
@@ -633,7 +637,10 @@ function App() {
           'btech-it': 'B.Tech Information Technology',
           'btech-aids': 'B.Tech AI & Data Science',
           'btech-csbs': 'B.Tech CS & Business Systems',
-          'science-humanities': 'Science & Humanities'
+          'science-humanities': 'Science & Humanities',
+          'mba-general': 'MBA (General)',
+          'mba-iev': 'MBA (IEV)',
+          'mca': 'MCA'
         };
         const courseName = courseMap[id] || id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
         matched = {
