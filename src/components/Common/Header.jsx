@@ -95,7 +95,7 @@ const navLinks = [
     subLinks: [
       { name: 'Research', href: 'research-innovation/research', icon: Microscope },
       { name: 'AICTE Idea Lab', href: 'research-innovation/aicte-idea-lab', icon: Wrench },
-      { name: 'Corporate Contest Cell', href: 'research-innovation/corporate-contest', icon: Trophy },
+      { name: 'Corporate Contest Cell', href: 'research-innovation/iic', icon: Trophy },
       { name: 'iStart', href: 'research-innovation/istart', icon: Cpu },
     ]
   },
@@ -171,7 +171,7 @@ const searchableItems = [
   // Research & Innovations
   { title: 'Research & Development (R&D)', type: 'Research', path: '/research-innovation/research' },
   { title: 'AICTE Idea Lab Facility', type: 'Research', path: '/research-innovation/aicte-idea-lab' },
-  { title: 'Corporate Contest Cell', type: 'Research', path: '/research-innovation/corporate-contest' },
+  { title: 'Corporate Contest Cell (IIC)', type: 'Research', path: '/research-innovation/iic' },
   { title: 'iStart & Innovation Cell', type: 'Research', path: '/research-innovation/istart' },
   
   // Exams section

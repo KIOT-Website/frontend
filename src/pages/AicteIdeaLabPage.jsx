@@ -44,6 +44,8 @@ import ambassadors25Img from '../assets/idea lap/Student Ambassadors2025-26.webp
 import sublimationImg from '../assets/idea lap/Sublimation Printing unit.webp'
 import run1 from '../assets/idea lap/aicetelogo.png'
 import run2 from '../assets/idea lap/aicte.webp'
+import bal00440 from '../assets/idea lap/BAL00440.JPG'
+import bal00496 from '../assets/idea lap/BAL00496.JPG'
 
 const activitiesData = [
   {
@@ -769,27 +771,31 @@ const IdeaLabPage = () => {
                             </div>
                         </div>
 
-                        <div className="lg:w-1/2 grid grid-cols-2 gap-4 w-full">
-                            {[
-                                { title: "Innovate", desc: "Encouraging creative ideas and solutions", icon: Lightbulb, bg: "bg-[#1e3c8a]/40", ic: "text-white", tc: "text-white/90" },
-                                { title: "Build", desc: "Building prototypes and real-world models", icon: Settings, bg: "bg-[#ffc107]", ic: "text-[#224292]", tc: "text-[#224292]/80" },
-                                { title: "Collaborate", desc: "Working together to grow better", icon: Users, bg: "bg-white", ic: "text-[#224292]", tc: "text-[#224292]/80" },
-                                { title: "Impact", desc: "Creating solutions that make a difference", icon: Zap, bg: "bg-[#224292] border border-white/10", ic: "text-white", tc: "text-white/90" }
-                            ].map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    className={`${item.bg} p-6 rounded-2xl flex flex-col items-center text-center shadow-xl group hover:scale-105 transition-all h-[180px] justify-center`}
-                                >
-                                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 backdrop-blur-md">
-                                        <item.icon className={item.ic} size={24} />
-                                    </div>
-                                    <h3 className={`text-[18px] font-black mb-1 ${item.ic}`}>{item.title}</h3>
-                                    <p className={`text-[13px] font-black leading-tight max-w-[140px] ${item.tc}`}>{item.desc}</p>
-                                </motion.div>
-                            ))}
+                        <div className="lg:w-1/2 grid grid-cols-2 gap-4 w-full h-[350px] md:h-[400px]">
+                            <motion.div
+                                initial={{ opacity: 0, x: 20, y: -20 }}
+                                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                                viewport={{ once: true }}
+                                className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 h-[90%]"
+                            >
+                                <img 
+                                    src={bal00440} 
+                                    alt="AICTE IDEA Lab Facility 1" 
+                                    className="w-full h-full object-cover"
+                                />
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, x: 20, y: 20 }}
+                                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                                viewport={{ once: true }}
+                                className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 h-[90%] mt-8 lg:mt-12"
+                            >
+                                <img 
+                                    src={bal00496} 
+                                    alt="AICTE IDEA Lab Facility 2" 
+                                    className="w-full h-full object-cover"
+                                />
+                            </motion.div>
                         </div>
                     </div>
                 </div>

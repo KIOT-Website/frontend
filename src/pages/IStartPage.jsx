@@ -127,7 +127,7 @@ const IStartPage = () => {
             </section>
 
             {/* 4. Centre for Innovation & Startups */}
-            <section id="centre" className="py-10 md:py-24 relative overflow-hidden font-graphik bg-[#F8FAFC]">
+            <section id="centre" className="py-8 md:py-12 relative overflow-hidden font-graphik bg-[#F8FAFC]">
                 {/* Decorative Background Elements */}
                 <div className="absolute top-10 right-10 opacity-20 pointer-events-none">
                     <div className="grid grid-cols-6 gap-2">
@@ -140,11 +140,11 @@ const IStartPage = () => {
 
 
                 <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
-                    <div className="flex flex-col items-center text-center mb-16">
-                        <div className="px-6 py-2 rounded-full bg-[#224292] text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6 shadow-xl shadow-blue-900/20">
+                    <div className="flex flex-col items-center text-center mb-8">
+                        <div className="px-6 py-2 rounded-full bg-[#224292] text-white text-[10px] font-black uppercase tracking-[0.3em] mb-4 shadow-xl shadow-blue-900/20">
                             Empowering Innovation
                         </div>
-                        <h2 className="text-2xl md:text-4xl font-black text-[#224292] tracking-tighter mb-10 leading-tight">
+                        <h2 className="text-2xl md:text-4xl font-black text-[#224292] tracking-tighter mb-6 leading-tight">
                             Centre for <span className="text-[#224292]">Innovation</span> <span className="text-[#ffc107]">&</span> Startups
                         </h2>
                         <p className="text-black/60 text-[15px] font-bold max-w-2xl leading-relaxed">
@@ -199,10 +199,7 @@ const IStartPage = () => {
                                 <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: item.color }} />
                                 
                                 <div className="mb-4 relative">
-                                    <div className="w-12 h-12 rounded-full bg-white shadow-lg border border-slate-50 flex items-center justify-center mb-6">
-                                        <item.icon size={24} style={{ color: item.color }} />
-                                    </div>
-                                    <h3 className="text-[17px] font-black text-[#224292] leading-tight mb-2 min-h-[2.5rem]">
+                                    <h3 className="text-[17px] font-black text-[#224292] leading-tight mt-2 mb-2 min-h-[2.5rem]">
                                         {item.title}
                                     </h3>
                                     <div className="h-0.5 w-8 bg-[#224292] mb-4" />
@@ -226,7 +223,7 @@ const IStartPage = () => {
                                     onClick={() => item.link && navigate(item.link)}
                                     className={`flex items-center gap-2 group/btn ${item.link ? 'cursor-pointer' : 'opacity-50 cursor-default'}`}
                                 >
-                                    <span className="text-[13px] font-black tracking-tight transition-colors" style={{ color: item.color }}>View more</span>
+                                    <span className="text-[13px] font-bold tracking-tight transition-colors" style={{ color: item.color }}>View more</span>
                                     <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" style={{ color: item.color }} />
                                 </div>
                             </motion.div>
@@ -236,7 +233,7 @@ const IStartPage = () => {
             </section>
 
             {/* 2. Overview, Vision & Mission */}
-            <section id="overview" className="py-12 bg-white border-t border-slate-100">
+            <section id="overview" className="py-8 bg-white border-t border-slate-100">
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                         {/* Vision Card */}
@@ -296,9 +293,9 @@ const IStartPage = () => {
             </section>
 
             {/* 3. Leadership Team */}
-            <section id="team" className="py-12 bg-[#F8FAFC] font-graphik">
+            <section id="team" className="py-8 bg-[#F8FAFC] font-graphik">
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                    <div className="flex flex-col gap-1 mb-10">
+                    <div className="flex flex-col gap-1 mb-6">
                         <div className="flex items-center gap-3">
                             <div className="h-8 w-1.5 bg-[#ffc107] rounded-full" />
                             <h2 className="text-3xl font-black text-[#224292] tracking-tight">Leadership Team</h2>
@@ -306,7 +303,7 @@ const IStartPage = () => {
                         <p className="text-slate-500 font-black text-[10px] uppercase tracking-widest pl-5">Guiding innovation, inspiring excellence.</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
                         {[
                             { name: "Dr.PSS.Srinivasan", role: "Executive Chairman, KIOT", iic: "Managing Director – iStart MXIF", icon: Briefcase },
                             { name: "Dr.K.Visagavel", role: "Principal", iic: "IIC President - KIOT", icon: Award },
@@ -342,10 +339,10 @@ const IStartPage = () => {
                 </div>
 
                 {/* Faculty Coordinators Section (Deep Blue Background) */}
-                <div className="bg-[#224292] py-12 relative overflow-hidden font-graphik">
+                <div className="bg-[#224292] py-8 relative overflow-hidden font-graphik">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,193,7,0.1),transparent)]" />
                     <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
-                        <div className="flex flex-col gap-1 mb-12">
+                        <div className="flex flex-col gap-1 mb-6">
                             <div className="flex items-center gap-3">
                                 <div className="h-8 w-1.5 bg-[#ffc107] rounded-full" />
                                 <h2 className="text-3xl font-black text-white tracking-tight">Faculty Coordinators & IIC Members</h2>
@@ -395,9 +392,9 @@ const IStartPage = () => {
 
 
             {/* 5. Achievements Grid */}
-            <section id="achievements" className="py-12 bg-white border-t border-slate-100">
+            <section id="achievements" className="py-8 bg-white border-t border-slate-100">
                 <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
+                    <div className="text-center max-w-3xl mx-auto mb-8">
                         <h2 className="text-4xl font-black text-[#224292] mb-4 tracking-tight">iStart Achievements</h2>
                         <p className="text-slate-500 font-black text-[10px] uppercase tracking-[0.3em]">Witnessing the innovation journey at <HighlightText>KIOT</HighlightText></p>
                     </div>
