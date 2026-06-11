@@ -801,7 +801,7 @@ function App() {
                    <Route path="/research" element={<ResearchPage />} />
                    <Route path="/research-innovation/aicte-idea-lab" element={<AicteIdeaLabPage />} />
                    <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
-                   <Route path="/research-innovation/corporate-contest" element={<UnderConstruction />} />
+                   <Route path="/research-innovation/corporate-contest" element={<IICPage />} />
                    <Route path="/research-innovation/istart" element={<IStartPage />} />
                    <Route path="/istart" element={<IStartPage />} />
                    <Route path="/research-innovation/iic" element={<IICPage />} />
