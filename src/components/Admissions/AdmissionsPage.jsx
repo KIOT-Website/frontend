@@ -29,8 +29,8 @@ import {
   Sparkles
 } from 'lucide-react'
 import logo from '../../assets/main/logo.webp'
-import bannerAdmission from '../../assets/Admissions/banner admision.webp'
-import admission2 from '../../assets/Admissions/admision-2.webp'
+import bannerAdmission from '../../assets/Admissions/admission1 (2).png'
+import admission2 from '../../assets/Admissions/autonomus3.png'
 
 // ─── Data Construction ────────────────────────────────────────────────────────
 
@@ -279,36 +279,31 @@ const AdmissionsPage = () => {
                   className="relative group lg:mt-0 order-2 lg:order-1"
                 >
                   {/* MAIN DECORATIVE CONTAINER */}
-                  <div className="relative w-full aspect-[4/3] bg-[#0A1D4D] rounded-[2rem] overflow-hidden shadow-2xl p-6 lg:p-8">
+                  <div className="relative w-full aspect-[4/3] bg-[#0A1D4D] rounded-[1.5rem] overflow-hidden shadow-2xl">
                      
                      {/* Background Accents */}
-                     <div className="absolute top-8 right-8 grid grid-cols-4 gap-2 opacity-20">
+                     <div className="absolute top-4 right-4 grid grid-cols-4 gap-1.5 opacity-20">
                         {[...Array(16)].map((_, i) => (
-                           <div key={i} className="w-1.5 h-1.5 rounded-full bg-white" />
+                           <div key={i} className="w-1 h-1 rounded-full bg-white" />
                         ))}
                      </div>
-                     <div className="absolute bottom-8 left-8 grid grid-cols-4 gap-2 opacity-20">
+                     <div className="absolute bottom-4 left-4 grid grid-cols-4 gap-1.5 opacity-20">
                         {[...Array(16)].map((_, i) => (
-                           <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                           <div key={i} className="w-1 h-1 rounded-full bg-[#ffc107]" />
                         ))}
                      </div>
 
-                     {/* Image with Custom Shape */}
-                     <div className="absolute inset-4 lg:inset-6 rounded-[2.5rem_1rem_12rem_1rem] overflow-hidden border-4 border-white/10 group-hover:scale-[1.02] transition-transform duration-700">
+                     {/* Image with Slimmer Inset & Standard Rounded Corners */}
+                     <div className="absolute inset-1.5 lg:inset-2.5 rounded-[1.2rem] overflow-hidden border border-white/10 group-hover:scale-[1.01] transition-transform duration-700">
                         <img 
                            src={admission2} 
                            className="w-full h-full object-cover" 
                            alt="KIOT Admissions" 
                         />
-                        {/* Overlay Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0A1D4D]/40 to-transparent" />
                      </div>
 
-                     {/* Yellow Corner Wave */}
+                     {/* Glow Accent */}
                      <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#ffc107] rounded-full blur-3xl opacity-20" />
-                     <div className="absolute bottom-0 right-0 w-32 h-20 bg-[#ffc107] rounded-tl-[5rem]" />
-
-                     <div className="absolute bottom-0 right-0 w-32 h-20 bg-[#ffc107] rounded-tl-[5rem]" />
                   </div>
                 </motion.div>
 

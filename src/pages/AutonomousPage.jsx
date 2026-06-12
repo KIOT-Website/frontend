@@ -21,6 +21,7 @@ import shBos from '../assets/resources/6.-SH-BOS-Members-list.pdf'
 import mbaBos from '../assets/resources/7.-MBA-BOS-Members-list.pdf'
 import campusImg from '../assets/main/indian_campus_hero.webp'
 import sixLegImg from '../assets/academics/Six-Leg.webp'
+import autonoms5 from '../assets/Admissions/autonoms5.png'
 
 // Import AICTE Approvals PDFs
 import aicte25_26 from '../assets/idea lap/approvels/AICTE-2025-26.pdf'
@@ -168,10 +169,36 @@ const AutonomousPage = () => {
 
     return (
         <div className="min-h-screen bg-[#F8FAFC] font-graphik text-[#1a1a1a]">
-            {/* On Mobile: Header title since we don't have hero section */}
-            <div className="lg:hidden bg-[#224292] text-white py-8 px-6 text-center">
-                <h1 className="text-3xl font-black uppercase tracking-tighter mb-2">Autonomous</h1>
-                <p className="text-sm font-bold text-[#ffc107] italic">Academic Autonomy for Excellence</p>
+            {/* ─── HERO SECTION ─── */}
+            <div className="bg-[#224292] pt-16 pb-24 relative overflow-hidden">
+                {/* Background Image with Natural Colors & Slim Blue Tint */}
+                <div className="absolute inset-0 z-0">
+                    <img 
+                        src={autonoms5} 
+                        className="w-full h-full object-cover object-center opacity-90" 
+                        alt="KIOT Campus Background" 
+                    />
+                    {/* Neutral dark overlay to reduce blue tint while maintaining text contrast */}
+                    <div className="absolute inset-0 bg-black/45" />
+                </div>
+                
+                <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px] opacity-10 z-0" />
+                <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center pt-8">
+                    
+                    <motion.h1 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4 uppercase"
+                    >
+                        Academic <span className="text-[#ffc107]">Autonomy</span>
+                    </motion.h1>
+                    
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute top-1/2 left-0 w-64 h-64 bg-[#ffc107]/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute top-1/2 right-0 w-64 h-64 bg-blue-400/10 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
             </div>
 
             {/* Mobile Tab Navigation - EXACTLY AS IT WAS BEFORE, ONLY SHOWN ON MOBILE */}
