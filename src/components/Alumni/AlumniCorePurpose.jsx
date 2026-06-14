@@ -58,10 +58,10 @@ const AlumniCorePurpose = () => {
               {/* Background Split - Deep Blue and Yellow */}
               <div className="absolute inset-0 bg-[#224292]" />
               
-              {/* The Angled Yellow Accent - inspired by the business card design */}
+              {/* The Angled Yellow Accent - only in the top-right corner */}
               <div 
-                className="absolute top-0 right-0 w-[55%] h-full bg-[#ffc107] transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2 origin-top-right" 
-                style={{ clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)' }}
+                className="absolute top-0 right-0 w-24 h-24 bg-[#ffc107] transition-transform duration-700 group-hover:scale-110 origin-top-right" 
+                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
               />
 
               {/* Card Content */}
@@ -71,10 +71,10 @@ const AlumniCorePurpose = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-black text-white uppercase tracking-tight mb-2">
+                  <h4 className="text-lg font-black text-white tracking-tight mb-2">
                     {item.title}
                   </h4>
-                  <p className="text-xs md:text-[13px] font-bold text-white uppercase tracking-widest leading-tight">
+                  <p className="text-xs md:text-[13px] font-semibold text-white/90 leading-tight">
                     {item.description}
                   </p>
                 </div>

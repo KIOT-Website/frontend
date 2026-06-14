@@ -10,7 +10,8 @@ import {
   ArrowUpRight, 
   Compass, 
   BookOpen, 
-  GraduationCap 
+  GraduationCap,
+  Trophy
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import logoBlue from '../../assets/main/main-logo.webp'
@@ -39,8 +40,8 @@ const Footer = () => {
         { name: 'Programs Offered', href: '/academics/undergraduate' },
       ]
     },
-    'RESOURCES': {
-      icon: BookOpen,
+    'PLACEMENTS': {
+      icon: Trophy,
       links: [
         { name: 'Placement Overview', href: '/placements/placement' },
         { name: 'Training & Skills', href: '/placements/training' },
@@ -64,6 +65,18 @@ const Footer = () => {
         { name: 'Placements', href: '/placements/placement' },
         { name: 'Exams', href: '/coe' },
         { name: 'Research & Innovations', href: '/research-innovation/research' },
+      ]
+    },
+    'RESOURCES': {
+      icon: BookOpen,
+      links: [
+        { name: 'Kaaval Udhavi App', href: 'https://play.google.com/store/apps/details?id=com.amtexsystems.kaavaluthavi' },
+        { name: 'Vidya Lakshmi Portal', href: 'https://www.vidyalakshmi.co.in/student/registration' },
+        { name: 'AICTE - CSS', href: 'https://css.aicte.gov.in/login' },
+        { name: 'UGC feedback Portal', href: 'https://samadhaan.ugc.ac.in/Home/FeedBack' },
+        { name: 'AICTE-Students Development schemes', href: 'https://www.aicte.gov.in/schemes/students-development-schemes' },
+        { name: 'KIOT ERP', href: 'https://kiot.sriss.co.in/CAMPS/CommonJSP/signin.jsp' },
+        { name: 'KIOT Library', href: 'http://115.244.103.83/webopac' },
       ]
     }
   }
@@ -101,7 +114,7 @@ const Footer = () => {
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
         {/* Left Column: Logo & Contact Info */}
-        <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="lg:col-span-3 flex flex-col items-center text-center lg:items-start lg:text-left">
           <img 
             src={logoBlue} 
             alt="KIOT Logo" 
@@ -153,8 +166,8 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Right Columns: Menu items (2 columns on mobile, 4 on desktop) */}
-        <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+        {/* Right Columns: Menu items (2 columns on mobile, 5 on desktop) */}
+        <div className="lg:col-span-9 grid grid-cols-2 md:grid-cols-5 gap-8">
           {Object.entries(menuSections).map(([sectionName, sectionData]) => {
             const Icon = sectionData.icon;
             return (
@@ -172,18 +185,25 @@ const Footer = () => {
                 </div>
 
                 <ul className="space-y-3.5 w-full">
-                  {sectionData.links.map((link) => (
-                    <li key={link.name}>
-                      <Link
-                        to={link.href}
-                        onClick={(e) => handleLinkClick(e, link.href)}
-                        className="text-gray-300 hover:text-[#ffc107] text-[13px] font-normal transition-colors flex items-center gap-2 group/link"
-                      >
-                        <ChevronRight size={14} className="text-[#ffc107] transition-transform duration-300 group-hover/link:translate-x-1 shrink-0" />
-                        <span>{link.name}</span>
-                      </Link>
-                    </li>
-                  ))}
+                  {sectionData.links.map((link) => {
+                    const isExternal = link.href.startsWith('http://') || link.href.startsWith('https://');
+                    const linkProps = isExternal 
+                      ? { href: link.href, target: '_blank', rel: 'noopener noreferrer' }
+                      : { to: link.href, onClick: (e) => handleLinkClick(e, link.href) };
+                    const Component = isExternal ? 'a' : Link;
+
+                    return (
+                      <li key={link.name}>
+                        <Component
+                          {...linkProps}
+                          className="text-gray-300 hover:text-[#ffc107] text-[13px] font-normal transition-colors flex items-center gap-2 group/link"
+                        >
+                          <ChevronRight size={14} className="text-[#ffc107] transition-transform duration-300 group-hover/link:translate-x-1 shrink-0" />
+                          <span>{link.name}</span>
+                        </Component>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             )

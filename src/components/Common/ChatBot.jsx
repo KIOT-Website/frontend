@@ -5,6 +5,9 @@ import {
   ArrowLeft, Search, Phone, Mail, MapPin, GraduationCap,
   Building2, Trophy, Bus, BookOpen, Coffee
 } from 'lucide-react';
+import chatbotMan from '../../assets/main/chatbot_man.webp';
+import chatbotRobot from '../../assets/main/chatbot_robot.webp';
+import chatbotFull from '../../assets/main/chatbot_full.webp';
 import studentAvatar from '../../assets/main/chatbot_avatar.webp';
 
 const FAQ_DATA = {

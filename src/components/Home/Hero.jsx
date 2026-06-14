@@ -110,7 +110,7 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative w-full h-[250px] sm:h-[430px] lg:h-[600px] xl:h-[650px] 2xl:h-[720px] min-[2500px]:h-[800px] overflow-hidden bg-white pt-0 pb-0 group">
+    <section className="relative w-full h-[140px] sm:h-[430px] lg:h-[600px] xl:h-[650px] 2xl:h-[720px] min-[2500px]:h-[800px] overflow-hidden bg-white pt-0 pb-0 group">
       
       {/* BACKGROUND SLIDER */}
       <div className="absolute inset-0 z-0 bg-white">
