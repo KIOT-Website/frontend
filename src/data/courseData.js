@@ -197,7 +197,7 @@ export const courseData = {
     topPackage: '12 LPA',
     icon: Wrench,
     color: '#18357a',
-    bannerImage: '/mech.webp',
+    bannerImage: '/banners/mech_banner.png',
     tagline: 'Design, Build, Innovate',
     overview: [
       'Department of Mechanical Engineering is one of the vibrant departments of KIOT, which offers B.E Mechanical Engineering, M.E Industrial Safety Engineering and Ph.D programs. The Department is NBA accredited and rich in terms of faculty members with an average teaching experience of 14.6 years and research exposure of 10 years. The Department has a team of 30 dedicated members of faculty, 9 with Ph.D and 10 pursuing their research, and the Research Center is approved by Anna University, Chennai. The Department Faculty and students have published more than 300 papers in National and International Conferences/Journals.',
@@ -581,6 +581,7 @@ export const courseData = {
   'be-cse': {
     name: 'B.E Computer Science & Engineering',
     short: 'Computer Science & Engineering',
+    bannerImage: '/banners/cse_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 240,
     affiliation: 'Anna University',
@@ -946,7 +947,7 @@ export const courseData = {
     topPackage: '18 LPA',
     icon: Globe,
     color: '#18357a',
-    bannerImage: eceImage,
+    bannerImage: '/banners/ece_banner.png',
     tagline: 'Connect the World.',
     overview: [
       "The Department of Electronics and Communication Engineering was started in the year 2009 with an intake of 60 students, increased to 120 in the year 2011 and increased to 180 in the year 2024. The Department of ECE is accredited by the NBA. The rapid developments in the field of Automotive, triggered the inception of the PG programme on Automotive Electronics in the year 2025. The Department of ECE is recognized by the Anna University Research Centre. Training on soft skills development, memory enhancement programmes, value added courses, etc., are provided to the students to accelerate confidence and to equip them with the tools to meet the challenges of the competitive world. Seminars, Workshops, symposiums and Guest lectures are conducted to create awareness about the recent trends.",
@@ -1909,6 +1910,7 @@ export const courseData = {
   'btech-it': {
     name: 'B.Tech Information Technology',
     short: 'Information Technology',
+    bannerImage: '/banners/it_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 120,
     affiliation: 'Anna University',
@@ -2216,6 +2218,7 @@ export const courseData = {
   'btech-csbs': {
     name: 'B.Tech Computer Science & Business Systems',
     short: 'CS & Business Systems',
+    bannerImage: '/banners/csbs_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 60,
     affiliation: 'Anna University',
@@ -2314,6 +2317,7 @@ export const courseData = {
   'be-ecm': {
     name: 'B.E Electronics & Computer Engineering',
     short: 'ECM',
+    bannerImage: '/banners/ecx_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 60,
     affiliation: 'Anna University',
@@ -2347,6 +2351,7 @@ export const courseData = {
   'be-civil': {
     name: 'B.E Civil Engineering',
     short: 'Civil Engineering',
+    bannerImage: '/banners/civil_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 30,
     affiliation: 'Anna University',
@@ -2388,6 +2393,7 @@ export const courseData = {
   'btech-aids': {
     name: 'B.Tech Artificial Intelligence & Data Science',
     short: 'AI & DS',
+    bannerImage: '/banners/aids_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 120,
     affiliation: 'Anna University',
@@ -2469,6 +2475,7 @@ export const courseData = {
   'be-eee': {
     name: 'B.E Electrical & Electronics Engineering',
     short: 'Electrical & Electronics',
+    bannerImage: '/banners/eee_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 120,
     affiliation: 'Anna University',

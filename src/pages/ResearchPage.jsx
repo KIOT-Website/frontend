@@ -86,6 +86,12 @@ const ResearchPage = () => {
             focus: ["Operations Research", "Finance Analytics", "HR Tech"],
             icon: LineChart,
             color: "bg-slate-50 text-slate-600"
+        },
+        {
+            name: "Master of Computer Applications",
+            focus: ["Software Development", "Web Technologies", "AI & ML"],
+            icon: Computer,
+            color: "bg-teal-50 text-teal-600"
         }
     ]
 
@@ -166,9 +172,9 @@ const ResearchPage = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-6 pb-16">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                    {/* LEFT COLUMN: INTRO + RECOGNITION */}
-                    <div className="lg:col-span-7 space-y-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                    {/* LEFT COLUMN: INTRO + IMAGE */}
+                    <div className="space-y-8">
                         {/* Page Title & Intro */}
                         <motion.div 
                             initial={{ opacity: 0, x: -30 }}
@@ -195,51 +201,68 @@ const ResearchPage = () => {
                             <img 
                                 src={openImage} 
                                 alt="Research Initiatives" 
-                                className="w-full h-auto object-cover"
+                                className="w-full h-[280px] md:h-[350px] object-cover"
                             />
                         </motion.div>
-
                     </div>
 
-                    {/* RIGHT COLUMN: DIRECTORY TABLE (Moved Up) */}
-                    <div className="lg:col-span-5">
+                    {/* RIGHT COLUMN: DEPARTMENT DIRECTORY */}
+                    <div>
                         <motion.div 
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             className="bg-white rounded-[2rem] border-2 border-slate-100 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-blue-900/5 transition-all"
                         >
-                            <table className="w-full border-collapse">
-                                <thead className="bg-[#224292]">
-                                    <tr>
-                                        <th className="px-8 py-4 text-center text-[13px] font-semibold text-white font-graphik">
-                                            Department Directory
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-slate-100">
-                                    {departments.map((dept, idx) => (
-                                        <tr 
-                                            key={idx} 
-                                            onClick={() => navigate(`/research/${dept.name.split(' (')[0].replace(/ /g, '-').toLowerCase()}`)}
-                                            className="group hover:bg-slate-50 transition-all cursor-pointer"
-                                        >
-                                            <td className="px-8 py-3.5">
-                                                <div className="flex justify-center">
-                                                    <div className="flex items-center gap-6 w-full max-w-sm">
+                            <div className="bg-[#224292] py-4 text-center text-[13px] font-semibold text-white font-graphik">
+                                Department Directory
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                                <table className="w-full border-collapse">
+                                    <tbody className="divide-y divide-slate-100">
+                                        {departments.slice(0, 6).map((dept, idx) => (
+                                            <tr 
+                                                key={idx} 
+                                                onClick={() => navigate(`/research/${dept.name.split(' (')[0].replace(/ /g, '-').toLowerCase()}`)}
+                                                className="group hover:bg-slate-50 transition-all cursor-pointer"
+                                            >
+                                                <td className="px-6 py-3.5">
+                                                    <div className="flex items-center gap-4">
                                                         <div className={`w-9 h-9 rounded-xl ${dept.color} flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm shrink-0`}>
                                                             <dept.icon size={18} />
                                                         </div>
-                                                        <span className="text-[15px] font-medium text-[#224292] transition-colors group-hover:text-[#ffc107] text-left leading-tight font-graphik">
+                                                        <span className="text-[14px] font-medium text-[#224292] transition-colors group-hover:text-[#ffc107] text-left leading-tight font-graphik">
                                                             {dept.name}
                                                         </span>
                                                     </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                                <table className="w-full border-collapse">
+                                    <tbody className="divide-y divide-slate-100">
+                                        {departments.slice(6).map((dept, idx) => (
+                                            <tr 
+                                                key={idx} 
+                                                onClick={() => navigate(`/research/${dept.name.split(' (')[0].replace(/ /g, '-').toLowerCase()}`)}
+                                                className="group hover:bg-slate-50 transition-all cursor-pointer"
+                                            >
+                                                <td className="px-6 py-3.5">
+                                                    <div className="flex items-center gap-4">
+                                                        <div className={`w-9 h-9 rounded-xl ${dept.color} flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm shrink-0`}>
+                                                            <dept.icon size={18} />
+                                                        </div>
+                                                        <span className="text-[14px] font-medium text-[#224292] transition-colors group-hover:text-[#ffc107] text-left leading-tight font-graphik">
+                                                            {dept.name}
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
