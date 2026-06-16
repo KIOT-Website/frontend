@@ -871,15 +871,15 @@ export default function CourseDetailPage({ overrides }) {
                 </div>
 
                 {/* Sub-tab Pill Navigation inside Leadership Message */}
-                <div className="flex flex-wrap justify-center gap-2 md:gap-3 bg-slate-50 border border-slate-100 p-2 rounded-2xl md:rounded-[2rem] max-w-3xl mx-auto mb-10">
+                <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-10">
                   {leadershipData.map(leader => (
                     <button
                       key={leader.id}
                       onClick={() => setSelectedLeaderId(leader.id)}
-                      className={`px-5 py-3 rounded-xl md:rounded-[1.5rem] text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all duration-300 ${
+                      className={`px-5 py-3 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all duration-300 ${
                         selectedLeaderId === leader.id
-                          ? 'bg-[#224292] text-white shadow-lg shadow-blue-900/10 scale-[1.02]'
-                          : 'bg-white text-[#224292] border border-slate-100 hover:bg-slate-50'
+                          ? 'bg-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/25 scale-[1.02] border border-[#ffc107]'
+                          : 'bg-[#224292] text-white border border-[#224292]/10 hover:bg-[#224292]/90'
                       }`}
                     >
                       {leader.id === 'chairman' ? 'Executive Chairman' : leader.id === 'secretary' ? 'Secretary' : leader.id === 'principal' ? 'Principal' : 'Director'}
@@ -897,7 +897,7 @@ export default function CourseDetailPage({ overrides }) {
                       initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 max-w-5xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 relative overflow-hidden group"
+                      className="bg-white rounded-2xl border border-[#DEE7F4] p-8 md:p-12 shadow-2xl shadow-black/10 max-w-5xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 relative overflow-hidden group"
                     >
                       {/* Decorative elements */}
                       <div className="absolute top-0 right-0 w-48 h-48 bg-[#224292]/5 rounded-full -mr-24 -mt-24 blur-3xl group-hover:bg-[#ffc107]/5 transition-colors duration-700 pointer-events-none" />
