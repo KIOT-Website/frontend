@@ -126,9 +126,7 @@ export default function CourseDetailPage({ overrides }) {
 
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
-    : (courseId === 'mba-general' || courseId === 'mba-iev')
-      ? TABS.filter(t => t !== 'Labs')
-      : TABS;
+    : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
