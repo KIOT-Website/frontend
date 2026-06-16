@@ -80,6 +80,85 @@ const defaultCourse = (id) => ({
 
 const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
 
+const leadershipData = [
+  {
+    id: 'chairman',
+    title: "Executive Chairman's Message",
+    name: "Dr. PSS. Srinivasan",
+    designation: "Founder & Executive Chairman, KIOT Trust",
+    credentials: "B.E., M.Tech.(IIT-B), Ph.D., MISTE., ISHMT., FMFPI",
+    image: srinivasanImg,
+    email: "chairman@kiot.ac.in",
+    paragraphs: [
+      "Greetings!",
+      "I believe that there are FIVE BIG PROBLEMS that confront us:\n1. Energy\n2. Water\n3. Food\n4. Healthcare\n5. Environment",
+      "One cannot solve all of them, but everyone has a capacity to solve a bit of them. To solve the above said problem, the role of Technology and Management are 50% – 50%. You as a management graduate has a major role here.",
+      "I strongly believe there are FOUR O’s that will rule the forthcoming two-decades: NanO, BiO, EnvirO, and CEO (the MBAs). The first 3 Os (Nano, Bio, and Environmental) are the technological solutions. The CEOs (the MBAs) have a significant role to play.",
+      "We, at MBA@KIOT, will provide you n-number of opportunities for you to Aware, Associate and Achieve."
+    ],
+    signature: "Dr. PSS. Srinivasan"
+  },
+  {
+    id: 'secretary',
+    title: "Secretary's Message",
+    name: "Dr. J. Kumar",
+    designation: "Secretary, KIOTT",
+    credentials: "B.E., M.Tech. (IIT-M), Ph.D. , FIE.",
+    image: secretaryImg,
+    email: "secretary@kiot.ac.in",
+    paragraphs: [
+      "Greetings!",
+      "We are dedicated to providing our students with a world-class learning experience that prepares them for the challenges ahead, in addition to delivering a superior education. Through our collaborations with universities worldwide, we have come to understand education as a journey that goes beyond just academic achievement.",
+      "The latest curriculum, paired with modern insights into engineering, technology, and research, along with innovative facilities, ensures that each student gains a substantial edge in advanced technical expertise and competencies. I extend a warm welcome to you at KIOT and all the opportunities it presents. Join us and immerse yourself in the KIOT experience!",
+      "With best wishes,"
+    ],
+    signature: "Dr. J. Kumar"
+  },
+  {
+    id: 'principal',
+    title: "Principal's Message",
+    name: "Dr. K. Visagavel",
+    designation: "Principal, KIOT",
+    credentials: "B.E., M.E., Ph.D., FIE.",
+    image: principalImg,
+    email: "principal@kiot.ac.in",
+    paragraphs: [
+      "Greetings!\nDear Students,",
+      "Welcome to the Knowledge Institute of Technology, Salem!",
+      "At KIOT, we aim to provide transformative education that blends academic rigor with practical skills to shape the leaders of tomorrow. Our MBA programs, including the General Management track and the Innovation, Entrepreneurship, and Venture Development (IEV) specialization, are thoughtfully designed to equip you with the expertise and vision to excel in a dynamic global business environment.",
+      "The MBA General Management program lays a solid foundation in critical business disciplines, fostering analytical thinking and decision-making capabilities. With opportunities to learn from experienced faculty, engage in real-world projects, and develop leadership skills, this program prepares you to excel across industries and functions.",
+      "The MBA IEV program caters to aspiring entrepreneurs and innovators, providing a unique platform to turn ideas into impactful ventures. It encourages creativity, critical thinking, and hands-on learning through incubation opportunities and mentorship from industry leaders. This program not only nurtures entrepreneurial potential but also empowers you to contribute to society through sustainable and innovative solutions.",
+      "We at KIOT are committed to fostering a holistic learning environment, enriched by state-of-the-art infrastructure, industry collaborations, and extracurricular opportunities. I encourage you to actively participate in academic and co-curricular activities, network with peers and mentors, and embrace the culture of continuous learning.",
+      "Remember, your journey at KIOT is not just about earning a degree; it is about transforming your potential into purpose. Together, let us strive to make a positive difference in our communities and the world.",
+      "Wishing you a fulfilling and successful academic journey ahead!",
+      "Warm regards,"
+    ],
+    signature: "Dr. K. Visagavel"
+  },
+  {
+    id: 'director',
+    title: "Director's Message",
+    name: "Dr. A. Stephen",
+    designation: "Director – MBA-General & MBA-IEV",
+    credentials: "BA., MA., MBA., M.Phil., PGDHRM, Ph.D.",
+    image: stephenImg,
+    email: "directorkbs@kiot.ac.in",
+    paragraphs: [
+      "Dear Students,",
+      "Welcome to the MBA and MBA IEV programs!",
+      "We are happy to have you on this transformative journey.",
+      "Our carefully designed curriculum will equip you with essential skills in Management, Leadership, and Entrepreneurship.",
+      "The MBA General Management program established in the year 2011, focuses on enhancing your strategic decision-making and leadership abilities through case studies and group projects. Our experienced faculty and visiting faculty from industry, will guide you in applying theory to real-world situations.",
+      "The MBA IEV program emphasizes innovation and entrepreneurial thinking. You’ll work on real start-up projects and collaborate with incubation centres, preparing you to identify opportunities and create successful ventures.",
+      "We encourage you to engage actively with your peers and society. Building relationships and participating in discussions will enrich your experience and contribute to your success.",
+      "Your enthusiasm for learning and willingness to tackle real-world challenges will be key to your growth. Embrace every opportunity to develop personally and professionally. May you find inspiration and forge lasting connections.",
+      "Wishing to Succeed.",
+      "Warm Regards,"
+    ],
+    signature: "Dr. A. Stephen"
+  }
+];
+
 // â”€â”€â”€ Accordion Item â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function AccordionItem({ title, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
@@ -120,6 +199,7 @@ export default function CourseDetailPage({ overrides }) {
   const [outcomeTab, setOutcomeTab] = useState(null)
   const [selectedFaculty, setSelectedFaculty] = useState(null)
   const [openLabIndices, setOpenLabIndices] = useState([0])
+  const [selectedLeaderId, setSelectedLeaderId] = useState('chairman')
   const tabsRef = useRef(null)
   const labsDetailRef = useRef(null)
 
@@ -765,16 +845,17 @@ export default function CourseDetailPage({ overrides }) {
                                 );
                               })()}
                            </div>
-                       </motion.div>
-                    </AnimatePresence>
-                   </div>
-                </div>
-              </>
-            )}
+                        </motion.div>
+                     </AnimatePresence>
+                    </div>
+                 </div>
+               </>
+             )}
 
             {/* --- LEADERSHIP MESSAGE --- */}
             {activeTab === 'Leadership Message' && (
-              <div className="space-y-10 py-8">
+              <div className="space-y-8 py-8">
+                {/* Section Title */}
                 <div className="text-center max-w-3xl mx-auto mb-10">
                   <h2 className="text-3xl md:text-4xl font-extrabold text-[#224292] tracking-tight font-graphik">
                     Leadership <span className="text-[#ffc107]">Message</span>
@@ -786,112 +867,112 @@ export default function CourseDetailPage({ overrides }) {
                   </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                  {/* Director's Message */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-10 shadow-xl shadow-blue-900/5 flex flex-col justify-between relative overflow-hidden group hover:border-[#224292]/30 transition-all duration-300"
-                  >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#224292]/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-[#ffc107]/5 transition-colors duration-500" />
-                    
-                    <div>
-                      {/* Leadership Bio */}
-                      <div className="flex flex-col sm:flex-row items-center gap-5 mb-8 pb-6 border-b border-slate-100">
-                        <div className="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-[#ffc107] to-[#e0a800] shadow-md shrink-0 overflow-hidden">
-                          <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                            <img
-                              src={stephenImg}
-                              alt="Dr. A. Stephen"
-                              className="w-full h-full object-cover object-top"
-                            />
-                          </div>
-                        </div>
-                        <div className="text-center sm:text-left">
-                          <h3 className="text-xl font-bold font-graphik text-[#224292]">Dr. A. Stephen</h3>
-                          <p className="text-[12px] font-extrabold text-slate-500 uppercase tracking-wider mt-0.5">Professor & Director / MBA, KIOT</p>
-                          <p className="text-[11px] font-bold text-slate-400 mt-1">BA., MA., MBA., M.Phil., PGDHRM, Ph.D.</p>
-                          <a href="mailto:directorkbs@kiot.ac.in" className="inline-flex items-center gap-1.5 text-xs text-[#224292] hover:underline font-bold mt-2">
-                            <Mail size={12} className="text-[#ffc107]" /> directorkbs@kiot.ac.in
-                          </a>
-                        </div>
-                      </div>
-
-                      {/* Message Content */}
-                      <div className="relative">
-                        <Quote size={40} className="absolute -top-3 -left-3 text-[#224292]/5 pointer-events-none" />
-                        <div className="text-slate-600 text-[14px] leading-relaxed text-justify space-y-4 font-normal relative z-10 pl-6">
-                          <p>
-                            Welcome to the Department of Management Studies at KIOT. In today’s dynamic global business environment, leadership requires a unique combination of strategic vision, analytical rigor, and an entrepreneurial mindset. Our MBA programs are meticulously designed to transform aspiring professionals into business-ready leaders.
-                          </p>
-                          <p>
-                            We focus on experiential learning, case-study methodologies, industrial consulting, and intensive mentoring to ensure our graduates are equipped to navigate and lead in a challenging world. We invite you to join us on this journey of transformation and leadership excellence.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 pt-4 border-t border-slate-100 flex flex-col items-end self-end">
-                      <span className="signature-font text-2xl text-[#224292] font-semibold border-b border-[#ffc107] pb-0.5 px-3 leading-none">
-                        Dr. A. Stephen
-                      </span>
-                    </div>
-                  </motion.div>
-
-                  {/* HOD's Message */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-10 shadow-xl shadow-blue-900/5 flex flex-col justify-between relative overflow-hidden group hover:border-[#ffc107]/30 transition-all duration-300"
-                  >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-[#224292]/5 transition-colors duration-500" />
-                    
-                    <div>
-                      {/* Leadership Bio */}
-                      <div className="flex flex-col sm:flex-row items-center gap-5 mb-8 pb-6 border-b border-slate-100">
-                        <div className="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-[#224292] to-[#1e3a8a] shadow-md shrink-0 overflow-hidden">
-                          <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                            <img
-                              src={venkatesanImg}
-                              alt="Dr. T. Venkatesan"
-                              className="w-full h-full object-cover object-top"
-                            />
-                          </div>
-                        </div>
-                        <div className="text-center sm:text-left">
-                          <h3 className="text-xl font-bold font-graphik text-[#224292]">Dr. T. Venkatesan</h3>
-                          <p className="text-[12px] font-extrabold text-slate-500 uppercase tracking-wider mt-0.5">Professor & HOD / MBA, KIOT</p>
-                          <p className="text-[11px] font-bold text-slate-400 mt-1">MBA., Ph.D.</p>
-                          <a href="mailto:hodmba@kiot.ac.in" className="inline-flex items-center gap-1.5 text-xs text-[#224292] hover:underline font-bold mt-2">
-                            <Mail size={12} className="text-[#ffc107]" /> hodmba@kiot.ac.in
-                          </a>
-                        </div>
-                      </div>
-
-                      {/* Message Content */}
-                      <div className="relative">
-                        <Quote size={40} className="absolute -top-3 -left-3 text-[#ffc107]/5 pointer-events-none" />
-                        <div className="text-slate-600 text-[14px] leading-relaxed text-justify space-y-4 font-normal relative z-10 pl-6">
-                          <p>
-                            At KIOT MBA, we believe in nurturing talent with social responsibility, high ethical standards, and domain expertise. Our dedicated faculty members bring a wealth of academic and industry experience to the classroom, fostering an interactive and stimulating environment.
-                          </p>
-                          <p>
-                            Through our continuous collaborations with industry bodies like the CII, student associations, and professional development programs, we bridge the gap between theory and practice. We are committed to helping you discover your potential, cultivate leadership capabilities, and achieve your career aspirations.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 pt-4 border-t border-slate-100 flex flex-col items-end self-end">
-                      <span className="signature-font text-2xl text-[#224292] font-semibold border-b border-[#ffc107] pb-0.5 px-3 leading-none">
-                        Dr. T. Venkatesan
-                      </span>
-                    </div>
-                  </motion.div>
+                {/* Sub-tab Pill Navigation inside Leadership Message */}
+                <div className="flex flex-wrap justify-center gap-2 md:gap-3 bg-slate-50 border border-slate-100 p-2 rounded-2xl md:rounded-[2rem] max-w-3xl mx-auto mb-10">
+                  {leadershipData.map(leader => (
+                    <button
+                      key={leader.id}
+                      onClick={() => setSelectedLeaderId(leader.id)}
+                      className={`px-5 py-3 rounded-xl md:rounded-[1.5rem] text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all duration-300 ${
+                        selectedLeaderId === leader.id
+                          ? 'bg-[#224292] text-white shadow-lg shadow-blue-900/10 scale-[1.02]'
+                          : 'bg-white text-[#224292] border border-slate-100 hover:bg-slate-50'
+                      }`}
+                    >
+                      {leader.id === 'chairman' ? 'Executive Chairman' : leader.id === 'secretary' ? 'Secretary' : leader.id === 'principal' ? 'Principal' : 'Director'}
+                    </button>
+                  ))}
                 </div>
+
+                {/* Render Selected Leader Content */}
+                {(() => {
+                  const leader = leadershipData.find(l => l.id === selectedLeaderId);
+                  if (!leader) return null;
+                  return (
+                    <motion.div
+                      key={leader.id}
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="bg-white rounded-[2.5rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 max-w-5xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 relative overflow-hidden group"
+                    >
+                      {/* Decorative elements */}
+                      <div className="absolute top-0 right-0 w-48 h-48 bg-[#224292]/5 rounded-full -mr-24 -mt-24 blur-3xl group-hover:bg-[#ffc107]/5 transition-colors duration-700 pointer-events-none" />
+                      <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -ml-16 -mb-16 blur-2xl pointer-events-none" />
+
+                      {/* Profile / Details Panel */}
+                      <div className="w-full lg:w-[32%] shrink-0 flex flex-col items-center text-center lg:text-left lg:items-start border-b lg:border-b-0 lg:border-r border-slate-100 pb-8 lg:pb-0 lg:pr-8">
+                        <div className="relative group/img flex items-center justify-center mb-6">
+                          {/* Inner gold frame */}
+                          <div className="relative w-36 h-36 rounded-full p-1 bg-gradient-to-tr from-[#ffc107] to-[#e0a800] shadow-md z-10 overflow-hidden group-hover/img:scale-[1.02] transition-transform duration-500">
+                            <div className="w-full h-full rounded-full overflow-hidden bg-white border-2 border-white shadow-inner">
+                              <img 
+                                src={leader.image} 
+                                alt={leader.name} 
+                                className="w-full h-full object-cover object-top"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2">
+                          <h3 className="text-xl md:text-2xl font-bold font-graphik text-[#224292] tracking-tight">{leader.name}</h3>
+                          <p className="text-[12px] font-extrabold text-slate-500 uppercase tracking-widest leading-snug">{leader.designation}</p>
+                          <p className="text-[11px] font-bold text-slate-400 leading-normal">{leader.credentials}</p>
+                          {leader.email && (
+                            <a href={`mailto:${leader.email}`} className="inline-flex items-center gap-1.5 text-[12px] text-[#224292] hover:underline font-bold mt-2">
+                              <Mail size={13} className="text-[#ffc107]" /> {leader.email}
+                            </a>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Message Body Panel */}
+                      <div className="flex-1 text-left relative min-h-[300px]">
+                        <Quote size={60} className="absolute -top-6 -left-4 text-[#224292]/5 pointer-events-none" />
+                        <h4 className="text-lg font-bold font-graphik text-[#224292] mb-6 flex items-center gap-2">
+                          <span className="w-1.5 h-5 bg-[#ffc107] rounded-full inline-block" />
+                          {leader.title}
+                        </h4>
+                        
+                        <div className="text-slate-600 text-[14.5px] leading-relaxed text-justify space-y-5 font-normal relative z-10 pl-6">
+                          {leader.paragraphs.map((para, pIdx) => {
+                            // Format sub-items if paragraphs contain lists (specifically five big problems)
+                            if (para.includes('\n')) {
+                              return (
+                                <div key={pIdx} className="space-y-3 font-normal">
+                                  {para.split('\n').map((subLine, sIdx) => {
+                                    if (subLine.match(/^\d+\./)) {
+                                      return (
+                                        <p key={sIdx} className="pl-6 font-bold text-[#224292] flex items-center gap-2">
+                                          <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107] inline-block" />
+                                          {subLine}
+                                        </p>
+                                      );
+                                    }
+                                    return <p key={sIdx}>{subLine}</p>;
+                                  })}
+                                </div>
+                              );
+                            }
+                            return (
+                              <p key={pIdx}>
+                                {para}
+                              </p>
+                            );
+                          })}
+                        </div>
+
+                        {/* Signature */}
+                        <div className="mt-8 pt-4 border-t border-slate-100 flex flex-col items-end self-end">
+                          <span className="signature-font text-2xl text-[#224292] font-semibold border-b border-[#ffc107] pb-0.5 px-3 leading-none">
+                            {leader.signature}
+                          </span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })()}
               </div>
             )}
 
