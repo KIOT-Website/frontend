@@ -126,7 +126,9 @@ export default function CourseDetailPage({ overrides }) {
 
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
-    : TABS;
+    : (courseId === 'mba-general' || courseId === 'mba-iev')
+      ? TABS.filter(t => t !== 'Labs')
+      : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
@@ -248,12 +250,23 @@ export default function CourseDetailPage({ overrides }) {
 
               {/* Course CTA Buttons */}
               <div className="flex flex-wrap gap-4">
-                <button
-                  onClick={() => navigate('/admissions')}
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
-                >
-                  Quick Apply <ArrowRight size={15} />
-                </button>
+                {course.quickApply ? (
+                  <a
+                    href={course.quickApply}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                  >
+                    Quick Apply <ArrowRight size={15} />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => navigate('/admissions')}
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                  >
+                    Quick Apply <ArrowRight size={15} />
+                  </button>
+                )}
                 {course.brochure && (
                   <a
                     href={course.brochure}
@@ -439,12 +452,23 @@ export default function CourseDetailPage({ overrides }) {
 
                 {/* Enrollment CTA */}
                 <div className="flex justify-center pt-4">
-                  <button
-                    onClick={() => navigate('/admissions')}
-                    className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
-                  >
-                    Enroll Now <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
-                  </button>
+                  {course.quickApply ? (
+                    <a
+                      href={course.quickApply}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
+                    >
+                      Enroll Now <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => navigate('/admissions')}
+                      className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
+                    >
+                      Enroll Now <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
+                    </button>
+                  )}
                 </div>
               </div>
             )}
