@@ -6,9 +6,11 @@ import {
   MapPin, Clock, Calendar, Award, CheckCircle2, ChevronRight,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
   Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase, ExternalLink,
-  Microscope, Star, Globe, ShieldCheck, ArrowRight
+  Microscope, Star, Globe, ShieldCheck, ArrowRight, Quote
 } from 'lucide-react';
 import facultyBg from '../../assets/Faculity/background faculty.webp';
+import stephenImg from '../../assets/dir and hod/MBA Director.png';
+import venkatesanImg from '../../assets/dir and hod/Dr.T.Venkatesan.webp';
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
 import { getDepartmentSchematic } from './DepartmentSchematics'
@@ -127,7 +129,7 @@ export default function CourseDetailPage({ overrides }) {
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
     : (courseId === 'mba-general' || courseId === 'mba-iev')
-      ? [...TABS, 'Contact & Admission']
+      ? ['Overview', 'Vision & Mission', 'Leadership Message', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices', 'Contact & Admission']
       : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
@@ -768,6 +770,129 @@ export default function CourseDetailPage({ overrides }) {
                    </div>
                 </div>
               </>
+            )}
+
+            {/* --- LEADERSHIP MESSAGE --- */}
+            {activeTab === 'Leadership Message' && (
+              <div className="space-y-10 py-8">
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                  <h2 className="text-3xl md:text-4xl font-extrabold text-[#224292] tracking-tight font-graphik">
+                    Leadership <span className="text-[#ffc107]">Message</span>
+                  </h2>
+                  <div className="flex items-center justify-center gap-2 mt-3">
+                    <div className="w-12 h-[1px] bg-[#ffc107]" />
+                    <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                    <div className="w-12 h-[1px] bg-[#ffc107]" />
+                  </div>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                  {/* Director's Message */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-10 shadow-xl shadow-blue-900/5 flex flex-col justify-between relative overflow-hidden group hover:border-[#224292]/30 transition-all duration-300"
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#224292]/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-[#ffc107]/5 transition-colors duration-500" />
+                    
+                    <div>
+                      {/* Leadership Bio */}
+                      <div className="flex flex-col sm:flex-row items-center gap-5 mb-8 pb-6 border-b border-slate-100">
+                        <div className="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-[#ffc107] to-[#e0a800] shadow-md shrink-0 overflow-hidden">
+                          <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                            <img
+                              src={stephenImg}
+                              alt="Dr. A. Stephen"
+                              className="w-full h-full object-cover object-top"
+                            />
+                          </div>
+                        </div>
+                        <div className="text-center sm:text-left">
+                          <h3 className="text-xl font-bold font-graphik text-[#224292]">Dr. A. Stephen</h3>
+                          <p className="text-[12px] font-extrabold text-slate-500 uppercase tracking-wider mt-0.5">Professor & Director / MBA, KIOT</p>
+                          <p className="text-[11px] font-bold text-slate-400 mt-1">BA., MA., MBA., M.Phil., PGDHRM, Ph.D.</p>
+                          <a href="mailto:directorkbs@kiot.ac.in" className="inline-flex items-center gap-1.5 text-xs text-[#224292] hover:underline font-bold mt-2">
+                            <Mail size={12} className="text-[#ffc107]" /> directorkbs@kiot.ac.in
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Message Content */}
+                      <div className="relative">
+                        <Quote size={40} className="absolute -top-3 -left-3 text-[#224292]/5 pointer-events-none" />
+                        <div className="text-slate-600 text-[14px] leading-relaxed text-justify space-y-4 font-normal relative z-10 pl-6">
+                          <p>
+                            Welcome to the Department of Management Studies at KIOT. In today’s dynamic global business environment, leadership requires a unique combination of strategic vision, analytical rigor, and an entrepreneurial mindset. Our MBA programs are meticulously designed to transform aspiring professionals into business-ready leaders.
+                          </p>
+                          <p>
+                            We focus on experiential learning, case-study methodologies, industrial consulting, and intensive mentoring to ensure our graduates are equipped to navigate and lead in a challenging world. We invite you to join us on this journey of transformation and leadership excellence.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 pt-4 border-t border-slate-100 flex flex-col items-end self-end">
+                      <span className="signature-font text-2xl text-[#224292] font-semibold border-b border-[#ffc107] pb-0.5 px-3 leading-none">
+                        Dr. A. Stephen
+                      </span>
+                    </div>
+                  </motion.div>
+
+                  {/* HOD's Message */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-10 shadow-xl shadow-blue-900/5 flex flex-col justify-between relative overflow-hidden group hover:border-[#ffc107]/30 transition-all duration-300"
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-[#224292]/5 transition-colors duration-500" />
+                    
+                    <div>
+                      {/* Leadership Bio */}
+                      <div className="flex flex-col sm:flex-row items-center gap-5 mb-8 pb-6 border-b border-slate-100">
+                        <div className="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-[#224292] to-[#1e3a8a] shadow-md shrink-0 overflow-hidden">
+                          <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                            <img
+                              src={venkatesanImg}
+                              alt="Dr. T. Venkatesan"
+                              className="w-full h-full object-cover object-top"
+                            />
+                          </div>
+                        </div>
+                        <div className="text-center sm:text-left">
+                          <h3 className="text-xl font-bold font-graphik text-[#224292]">Dr. T. Venkatesan</h3>
+                          <p className="text-[12px] font-extrabold text-slate-500 uppercase tracking-wider mt-0.5">Professor & HOD / MBA, KIOT</p>
+                          <p className="text-[11px] font-bold text-slate-400 mt-1">MBA., Ph.D.</p>
+                          <a href="mailto:hodmba@kiot.ac.in" className="inline-flex items-center gap-1.5 text-xs text-[#224292] hover:underline font-bold mt-2">
+                            <Mail size={12} className="text-[#ffc107]" /> hodmba@kiot.ac.in
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Message Content */}
+                      <div className="relative">
+                        <Quote size={40} className="absolute -top-3 -left-3 text-[#ffc107]/5 pointer-events-none" />
+                        <div className="text-slate-600 text-[14px] leading-relaxed text-justify space-y-4 font-normal relative z-10 pl-6">
+                          <p>
+                            At KIOT MBA, we believe in nurturing talent with social responsibility, high ethical standards, and domain expertise. Our dedicated faculty members bring a wealth of academic and industry experience to the classroom, fostering an interactive and stimulating environment.
+                          </p>
+                          <p>
+                            Through our continuous collaborations with industry bodies like the CII, student associations, and professional development programs, we bridge the gap between theory and practice. We are committed to helping you discover your potential, cultivate leadership capabilities, and achieve your career aspirations.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 pt-4 border-t border-slate-100 flex flex-col items-end self-end">
+                      <span className="signature-font text-2xl text-[#224292] font-semibold border-b border-[#ffc107] pb-0.5 px-3 leading-none">
+                        Dr. T. Venkatesan
+                      </span>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             )}
 
             {/* --- KNOWLEDGE AND ATTITUDE PROFILE (be-eee only) --- */}
