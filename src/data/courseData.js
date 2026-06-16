@@ -2728,7 +2728,7 @@ export const courseData = {
     icon: TrendingUp,
     color: '#18357a',
     tagline: 'Lead. Manage. Innovate.',
-    quickApply: 'https://docs.google.com/forms/d/e/1FAIpQLSe_z1Q4QCi9aIkAd3Ie4VaQZhMkYtfuKD4vAg0kqrb9n8lc0w/viewform?pli=1',
+    quickApply: 'https://forms.gle/PdcnrWRN8ZQV6hJV6',
     overview: [
       "Master of Business Administration (MBA) was established in the year 2011 by Knowledge Institute of Technology Trust (KIOTT), Kakapalayam (PO), Salem-637 504, TN, India. The trust consists of 42 Eminent Professors from Leading Engineering Colleges, Management schools and Budding Entrepreneurs with a vision to build our Nation through quality education.",
       "Master of Business Administration (MBA), a part of Knowledge Institute of Technology(KIOT), is one of the prominent B-School in the State of Tamil Nadu. MBA@KIOT offers Two years MBA Programme with an intake of 120 students. MBA@KIOT is Unique for its Quality Placements, Inspiring Faculty, Project with Stipend, Joy of Learning and Industrial Consultancy.",
@@ -2754,7 +2754,7 @@ export const courseData = {
     icon: Rocket,
     color: '#18357a',
     tagline: 'Innovate. Execute. Scale.',
-    quickApply: 'https://docs.google.com/forms/d/e/1FAIpQLSe_z1Q4QCi9aIkAd3Ie4VaQZhMkYtfuKD4vAg0kqrb9n8lc0w/viewform?pli=1',
+    quickApply: 'https://forms.gle/PdcnrWRN8ZQV6hJV6',
     overview: 'This unique program focuses on fostering entrepreneurial spirit and provides a platform for students to convert their ideas into viable business ventures.',
     whyChoose: ['Startup Incubation', 'Venture Capital Connect', 'Experiential Learning'],
     curriculum: [{ year: 'Year 1', semesters: ['Design Thinking', 'Business Modeling', 'Startup Finance'] }],
@@ -3108,7 +3108,7 @@ export const courseData = {
     icon: Award,
     color: '#224292',
     tagline: 'Nurturing Global Business Leaders.',
-    quickApply: 'https://docs.google.com/forms/d/e/1FAIpQLSe_z1Q4QCi9aIkAd3Ie4VaQZhMkYtfuKD4vAg0kqrb9n8lc0w/viewform?pli=1',
+    quickApply: 'https://forms.gle/PdcnrWRN8ZQV6hJV6',
     overview: [
       "Master of Business Administration (MBA) was established in the year 2011 by Knowledge Institute of Technology Trust (KIOTT), Kakapalayam (PO), Salem – 637 504, Tamil Nadu, India. The trust consists of 42 Eminent Professors from Leading Engineering Colleges, Management schools and Budding Entrepreneurs with a vision to build our Nation through quality education.",
       "Master of Business Administration (MBA), a part of Knowledge Institute of Technology (KIOT) and offers Two years MBA programme with an intake of 120 students. MBA@KIOT is known for its Quality Placements, Inspiring Faculty, Project with Stipend, Industrial Consultancy and Joy of Learning. The core strengths of MBA are its faculty team with diverse expertise and vibrant students. Apart from offering quality education to students, MBA@KIOT offers Industrial Consultancy and Management Development Programmes (MDPs) to various industries. As a part of its Corporate Social Responsibility and service to academia, MBA@KIOT organizes Skill Development Programmes for faculty member of different educational institutions in association with Confederation of Indian Industry (CII-Salem). MBA@KIOT is driven with a vision to produce global leaders to manage enterprises in a challenging and highly competitive world through incorporation of domain expertise coupled with high ethical standards. These initiatives have made MBA, a preferred destination for management education in this region with a short span of time."
@@ -3176,7 +3176,7 @@ export const courseData = {
     color: '#18357a',
     tagline: 'Empowering Future Founders and Innovators.',
     brochure: '/pdfs/KIOT-MBA-IEV-2025.pdf',
-    quickApply: 'https://docs.google.com/forms/d/e/1FAIpQLSe_z1Q4QCi9aIkAd3Ie4VaQZhMkYtfuKD4vAg0kqrb9n8lc0w/viewform?pli=1',
+    quickApply: 'https://forms.gle/PdcnrWRN8ZQV6hJV6',
     overview: [
       "The MBA in Innovation, Entrepreneurship & Venture Development (MBA-IEV) is a two-year postgraduate programme offered by the MBA Department at Knowledge Institute of Technology (KIOT). Conducted over four semesters, the programme is governed by the MBA (IEV) Regulations 2024, effective from 05 November 2024. The programme is designed to foster innovation, entrepreneurial thinking, and venture creation among aspiring business leaders.",
       "With a strong focus on self-employment, startup development, and enterprise growth, it equips students with the knowledge, skills, and practical exposure required to identify business opportunities, launch new ventures, and manage sustainable enterprises. The primary objective of the programme is to prepare young minds not only to become successful entrepreneurs but also to create employment opportunities for others through innovative and impactful enterprise development."
