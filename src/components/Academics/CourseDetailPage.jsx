@@ -524,15 +524,28 @@ export default function CourseDetailPage({ overrides }) {
                   </div>
                 </div>
 
-                {/* Key Features — show when whyChoose data exists */}
-                {course.whyChoose && course.whyChoose.length > 0 && (
+                {/* Uniqueness of MBA (for MBA) or Key Features (for other courses) */}
+                {courseId === 'mba-general' || courseId === 'mba-iev' ? (
                   <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5">
                     <h2 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
                       <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
-                      Key Features
+                      Uniqueness of MBA
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {course.whyChoose.map((item, idx) => (
+                      {[
+                        "Course delivery through a unique blend of novel teaching methodologies",
+                        "Emphasis on applied learning through market study and other slew of activities",
+                        "Exposure to contemporary practices in industry through weekly Executive Interaction Programme",
+                        "Project internship with a stipend of Rs.5000 to Rs.15000, for deserving students",
+                        "Key courses handled by experts from relevant industries",
+                        "300 hours of structured training to hone functional and life skills",
+                        "Career Guidance and Counseling through professional counselors and faculty mentors",
+                        "Over 13 associations, forum, cell and club for nurturing individual talents, foster innovativeness and overall self-development",
+                        "Entire afternoon sessions are earmarked for experiential learning",
+                        "Value added certification courses",
+                        "Exclusive placement officer, round the year placement",
+                        "Smart classrooms, Wi-Fi Computer Centre, Exclusive Seminar Hall and Dedicated Digital Library"
+                      ].map((item, idx) => (
                         <motion.div 
                           key={idx} 
                           whileHover={{ x: 6 }} 
@@ -544,6 +557,27 @@ export default function CourseDetailPage({ overrides }) {
                       ))}
                     </div>
                   </div>
+                ) : (
+                  course.whyChoose && course.whyChoose.length > 0 && (
+                    <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5">
+                      <h2 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
+                        <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                        Key Features
+                      </h2>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {course.whyChoose.map((item, idx) => (
+                          <motion.div 
+                            key={idx} 
+                            whileHover={{ x: 6 }} 
+                            className="flex gap-3 items-start p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#ffc107] hover:shadow-md transition-all"
+                          >
+                            <CheckCircle2 size={18} className="text-[#224292] mt-0.5 shrink-0" />
+                            <p className="text-[#333333] font-medium font-graphik text-[14px] leading-relaxed">{item}</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  )
                 )}
 
                 {/* Career Prospects — show when careerProspects data exists */}
@@ -574,14 +608,14 @@ export default function CourseDetailPage({ overrides }) {
                       href={course.quickApply}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
+                      className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] !text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:!text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
                     >
                       Enroll Now <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
                     </a>
                   ) : (
                     <button
                       onClick={() => navigate('/admissions')}
-                      className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
+                      className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] !text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:!text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
                     >
                       Enroll Now <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
                     </button>
