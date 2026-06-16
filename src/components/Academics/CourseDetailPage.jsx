@@ -11,6 +11,9 @@ import {
 import facultyBg from '../../assets/Faculity/background faculty.webp';
 import stephenImg from '../../assets/dir and hod/MBA Director.png';
 import venkatesanImg from '../../assets/dir and hod/Dr.T.Venkatesan.webp';
+import srinivasanImg from '../../assets/dir and hod/Dr. PSS. Srinivasan.jpg';
+import secretaryImg from '../../assets/main/Secretarys-Message-KIOTT.webp';
+import principalImg from '../../assets/dir and hod/Principal.png';
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
 import { getDepartmentSchematic } from './DepartmentSchematics'
