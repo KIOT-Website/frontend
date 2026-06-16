@@ -254,6 +254,16 @@ export default function CourseDetailPage({ overrides }) {
                 >
                   Quick Apply <ArrowRight size={15} />
                 </button>
+                {course.brochure && (
+                  <a
+                    href={course.brochure}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#224292] font-bold font-graphik text-[14px] hover:bg-slate-100 hover:shadow-xl transition-all shadow-lg hover:scale-[1.02]"
+                  >
+                    Brochure <Download size={15} />
+                  </a>
+                )}
               </div>
             </div>
 
@@ -383,6 +393,49 @@ export default function CourseDetailPage({ overrides }) {
                     ))}
                   </div>
                 </div>
+
+                {/* Key Features — show when whyChoose data exists */}
+                {course.whyChoose && course.whyChoose.length > 0 && (
+                  <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5">
+                    <h2 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
+                      <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                      Key Features
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {course.whyChoose.map((item, idx) => (
+                        <motion.div 
+                          key={idx} 
+                          whileHover={{ x: 6 }} 
+                          className="flex gap-3 items-start p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#ffc107] hover:shadow-md transition-all"
+                        >
+                          <CheckCircle2 size={18} className="text-[#224292] mt-0.5 shrink-0" />
+                          <p className="text-[#333333] font-medium font-graphik text-[14px] leading-relaxed">{item}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Career Prospects — show when careerProspects data exists */}
+                {course.careerProspects && course.careerProspects.length > 0 && (
+                  <div className="bg-[#224292] rounded-[2rem] p-8 md:p-12 shadow-xl">
+                    <h2 className="text-2xl font-bold font-graphik text-white mb-6 flex items-center gap-3">
+                      <Briefcase size={22} className="text-[#ffc107]" />
+                      Career Prospects
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {course.careerProspects.map((item, idx) => (
+                        <div 
+                          key={idx} 
+                          className="flex gap-3 items-start p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all"
+                        >
+                          <ArrowRight size={16} className="text-[#ffc107] mt-0.5 shrink-0" />
+                          <p className="text-white font-medium font-graphik text-[14px] leading-relaxed">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Enrollment CTA */}
                 <div className="flex justify-center pt-4">

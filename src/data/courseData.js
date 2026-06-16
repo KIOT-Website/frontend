@@ -3172,6 +3172,7 @@ export const courseData = {
     icon: Rocket,
     color: '#18357a',
     tagline: 'Empowering Future Founders and Innovators.',
+    brochure: '/pdfs/KIOT-MBA-IEV-2025.pdf',
     overview: [
       "The MBA in Innovation, Entrepreneurship & Venture Development (MBA-IEV) is a two-year postgraduate programme offered by the MBA Department at Knowledge Institute of Technology (KIOT). Conducted over four semesters, the programme is governed by the MBA (IEV) Regulations 2024, effective from 05 November 2024. The programme is designed to foster innovation, entrepreneurial thinking, and venture creation among aspiring business leaders.",
       "With a strong focus on self-employment, startup development, and enterprise growth, it equips students with the knowledge, skills, and practical exposure required to identify business opportunities, launch new ventures, and manage sustainable enterprises. The primary objective of the programme is to prepare young minds not only to become successful entrepreneurs but also to create employment opportunities for others through innovative and impactful enterprise development."
