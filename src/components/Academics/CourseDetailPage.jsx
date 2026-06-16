@@ -127,7 +127,7 @@ export default function CourseDetailPage({ overrides }) {
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
     : (courseId === 'mba-general' || courseId === 'mba-iev')
-      ? [...TABS, 'Contact']
+      ? [...TABS, 'Contact & Admission']
       : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
@@ -243,16 +243,17 @@ export default function CourseDetailPage({ overrides }) {
                   </span>
                 )}
               </div>
-              <h1 className={`font-bold font-graphik text-white mb-3 leading-[1.15] ${
+              {(courseId === 'mba-general' || courseId === 'mba-iev') && (
+                <p className="text-[#ffc107] font-semibold font-graphik text-base md:text-lg mb-2">Welcome to MBA</p>
+              )}
+              <h1 className={`font-bold font-graphik text-white leading-[1.15] ${
                 courseId === 'mba-general' || courseId === 'mba-iev'
-                  ? 'text-xl md:text-2xl lg:text-[2.2rem]'
-                  : 'text-2xl md:text-3xl lg:text-[2.6rem]'
+                  ? 'text-xl md:text-2xl lg:text-[2.2rem] mb-6'
+                  : 'text-2xl md:text-3xl lg:text-[2.6rem] mb-3'
               }`}>
                 {course.name}
               </h1>
-              {courseId === 'mba-general' || courseId === 'mba-iev' ? (
-                <p className="text-[#ffc107] font-semibold font-graphik text-base md:text-lg mb-6">Welcome to MBA</p>
-              ) : (
+              {!(courseId === 'mba-general' || courseId === 'mba-iev') && (
                 <p className="text-[#ffc107] font-semibold font-graphik text-base md:text-lg mb-6">{course.tagline}</p>
               )}
 
@@ -1297,25 +1298,25 @@ export default function CourseDetailPage({ overrides }) {
               <InnovativePracticesSection courseId={courseId} courseName={course.name} />
             )}
 
-            {/* --- CONTACT --- */}
-            {activeTab === 'Contact' && (
+            {/* --- CONTACT & ADMISSION --- */}
+            {activeTab === 'Contact & Admission' && (
               <div className="space-y-8 py-8 max-w-4xl mx-auto">
                 <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 overflow-hidden">
                   <h2 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
                     <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
                     Contact & Admission
                   </h2>
-                  <div className="border border-[#dcdcdc] rounded-2xl overflow-hidden shadow-sm">
+                  <div className="border border-[#DEE7F4] rounded-2xl overflow-hidden shadow-sm">
                     <table className="w-full text-left font-graphik text-[14px]">
                       <thead>
-                        <tr className="bg-[#5b8738] text-white">
+                        <tr className="bg-[#224292] text-white">
                           <th className="py-4 px-6 font-bold uppercase tracking-wider text-[14px]" colSpan={2}>
                             Contact & Admission Details
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-[#dcdcdc]">
-                        <tr className="bg-[#f1f6eb] hover:bg-[#ebf2e4] transition-colors">
+                      <tbody className="divide-y divide-[#DEE7F4]">
+                        <tr className="bg-[#E5EDF8]/20 hover:bg-[#E5EDF8]/40 transition-colors">
                           <td className="py-4 px-6 font-bold text-[#333333] w-1/3">Landline</td>
                           <td className="py-4 px-6 text-slate-700 font-medium">0427-2433971, 2433972</td>
                         </tr>
@@ -1323,7 +1324,7 @@ export default function CourseDetailPage({ overrides }) {
                           <td className="py-4 px-6 font-bold text-[#333333]">Mobile</td>
                           <td className="py-4 px-6 text-slate-700 font-medium">+91 96009 91166, +91 97877 35666</td>
                         </tr>
-                        <tr className="bg-[#f1f6eb] hover:bg-[#ebf2e4] transition-colors">
+                        <tr className="bg-[#E5EDF8]/20 hover:bg-[#E5EDF8]/40 transition-colors">
                           <td className="py-4 px-6 font-bold text-[#333333]">Email</td>
                           <td className="py-4 px-6 text-slate-700 font-medium">
                             <a href="mailto:mba@kiot.ac.in" className="text-[#224292] hover:underline font-bold">
