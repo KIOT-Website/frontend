@@ -16,33 +16,33 @@ const LibraryPage = () => {
     return (
       <div className="min-h-screen bg-[#F8FAFF] pb-24 font-graphik">
         {/* Hero Section */}
-        <div className="relative w-full h-[450px] md:h-[500px] bg-black overflow-hidden">
+        <div className="relative w-full h-[320px] sm:h-[400px] md:h-[500px] bg-black overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <img 
                     src={heroImg} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                     alt="Library"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-black/45 md:bg-gradient-to-r md:from-black/80 md:via-black/40 md:to-transparent" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center pb-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center pb-12 md:pb-20">
                 <motion.p 
                     initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                    className="text-[#ffc107] font-bold tracking-widest text-xs md:text-sm mb-4"
+                    className="text-[#ffc107] font-bold tracking-widest text-[10px] md:text-sm mb-2 md:mb-4"
                 >
                     LEARN. RESEARCH. GROW.
                 </motion.p>
                 <motion.h1 
                     initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-black text-white leading-tight mb-4"
+                    className="text-3xl md:text-7xl font-black text-white leading-tight mb-2 md:mb-4"
                 >
                     Library <br className="hidden md:block" />
                     <span className="text-[#ffc107]">Resource Center</span>
                 </motion.h1>
                 <motion.p 
                     initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-                    className="text-slate-200 max-w-xl text-sm md:text-base leading-relaxed mb-4"
+                    className="text-slate-200 max-w-xl text-xs md:text-base leading-relaxed mb-2 md:mb-4"
                 >
                     Your gateway to knowledge, innovation, and academic excellence. Explore a world of resources to fuel your curiosity and research.
                 </motion.p>
@@ -76,28 +76,28 @@ const LibraryPage = () => {
             {/* Vision & Mission section */}
             <div className="grid lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-8 space-y-8">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#224292] tracking-tight">Vision & <span className="text-[#ffc107]">Mission</span></h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#224292] tracking-tight">Vision & <span className="text-[#ffc107]">Mission</span></h2>
                     
                     <div className="grid sm:grid-cols-3 gap-6">
                         {/* Vision Card */}
-                        <div className="bg-transparent sm:bg-white p-0 sm:p-8 rounded-none sm:rounded-[2rem] shadow-none sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-none sm:border border-slate-100 flex flex-col items-start gap-4 sm:hover:-translate-y-1 transition-transform">
+                        <div className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
                             <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2">
                                 <Eye size={20} />
                             </div>
                             <h3 className="text-[#224292] font-semibold text-lg">Our Vision</h3>
-                            <p className="text-black text-sm leading-relaxed flex-1">
+                            <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
                                 To nurture research scholars and promote knowledge enrichment through world-class learning resources and services.
                             </p>
                             <div className="w-8 h-1 bg-[#224292] rounded-full mt-2" />
                         </div>
 
                         {/* Mission Card */}
-                        <div className="bg-transparent sm:bg-white p-0 sm:p-8 rounded-none sm:rounded-[2rem] shadow-none sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-none sm:border border-slate-100 flex flex-col items-start gap-4 sm:hover:-translate-y-1 transition-transform">
+                        <div className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
                             <div className="w-12 h-12 rounded-full bg-[#ffc107] text-[#224292] flex items-center justify-center mb-2">
                                 <Target size={20} />
                             </div>
                             <h3 className="text-[#224292] font-semibold text-lg">Our Mission</h3>
-                            <p className="text-black text-sm leading-relaxed flex-1">
+                            <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
                                 To provide world-class knowledge resources and innovative services for holistic academic growth and lifelong learning.
                             </p>
                             <div className="w-8 h-1 bg-[#ffc107] rounded-full mt-2" />
@@ -108,7 +108,7 @@ const LibraryPage = () => {
                             href="http://115.244.103.83/webopac" 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="bg-transparent sm:bg-white p-0 sm:p-8 rounded-none sm:rounded-[2rem] shadow-none sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border-none sm:border border-slate-100 flex flex-col items-start gap-4 sm:hover:-translate-y-1 transition-transform group cursor-pointer"
+                            className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
                         >
                             <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-colors">
                                 <BookOpen size={20} className="text-white group-hover:text-[#224292] transition-colors" />
@@ -116,7 +116,7 @@ const LibraryPage = () => {
                             <h3 className="text-[#224292] font-semibold text-lg flex items-center gap-1.5">
                                 Web OPAC <ExternalLink size={14} className="text-[#ffc107] shrink-0" />
                             </h3>
-                            <p className="text-black text-sm leading-relaxed flex-1">
+                            <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
                                 Search books, view availability, and manage your library account online from anywhere.
                             </p>
                             <div className="w-8 h-1 bg-[#224292] rounded-full mt-2 group-hover:bg-[#ffc107] transition-colors" />

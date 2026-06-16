@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { Bus, Compass, ArrowLeft, Search, Navigation, X, ShieldCheck, Phone } from 'lucide-react'
+import { Bus, Compass, ArrowLeft, Search, Navigation, X, ShieldCheck, Phone, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import busImage from '../assets/life@kiot/collge bus.webp'
 
@@ -206,7 +206,7 @@ const TransportPage = () => {
                                 <h2 className="text-xl font-black text-[#ffc107] tracking-[2px] uppercase">Campus Transport</h2>
                             </div>
                             
-                            <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter leading-none">
+                            <h2 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tighter leading-none">
                                 Building <span className="text-[#ffc107]">Convenience</span> <br/> 
                                 For Every Student
                             </h2>
@@ -216,14 +216,19 @@ const TransportPage = () => {
                             Knowledge Institute of Technology (KIOT) operates extensive bus services for students and faculty, covering an 80 km radius across Salem, Namakkal, Dharmapuri, and Erode districts. Our fleet is maintained to the highest safety standards to ensure a comfortable commute.
                         </p>
 
-                        <div className="flex flex-wrap gap-4 pt-4">
-                             <div className="flex items-center gap-3 bg-[#224292]/5 px-6 py-3 rounded-2xl border border-[#224292]/10">
-                                <Phone size={18} className="text-[#224292]" />
-                                <div>
-                                    <p className="text-[10px] font-black text-[#224292]/40 uppercase leading-none mb-1">Emergency Help</p>
-                                    <p className="text-sm font-black text-[#224292]">86681 53815</p>
+                        <div className="pt-2">
+                            <a 
+                                href="tel:8668153815"
+                                className="w-full sm:w-auto inline-flex items-center gap-4 bg-white hover:bg-slate-50 px-5 py-4 rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-all duration-300 group"
+                            >
+                                <div className="w-10 h-10 rounded-xl bg-[#224292] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0">
+                                    <Phone size={18} />
                                 </div>
-                             </div>
+                                <div className="text-left">
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Emergency Help</p>
+                                    <p className="text-base font-bold text-[#224292]">+91 86681 53815</p>
+                                </div>
+                            </a>
                         </div>
                     </motion.div>
 
@@ -247,13 +252,13 @@ const TransportPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 mt-16">
-                <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
+            <div className="max-w-7xl mx-auto px-3 md:px-6 mt-16">
+                <div className="bg-white rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
                     {/* Search Bar Section */}
-                    <div className="p-8 bg-[#224292] flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div className="p-6 md:p-8 bg-[#224292] flex flex-col md:flex-row items-center justify-between gap-6">
                         <div className="flex flex-col">
-                            <h3 className="text-2xl font-black text-white tracking-tight leading-none mb-2">Bus Route Directory</h3>
-                            <p className="text-white/50 text-xs font-bold uppercase tracking-widest">31 Active Routes • 4 Districts Covered</p>
+                            <h3 className="text-xl md:text-2xl font-black text-white tracking-tight leading-none mb-2">Bus Route Directory</h3>
+                            <p className="text-white/50 text-[10px] md:text-xs font-bold uppercase tracking-widest">31 Active Routes • 4 Districts Covered</p>
                         </div>
                         <div className="relative w-full md:w-96">
                             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50" size={18} />
@@ -267,16 +272,17 @@ const TransportPage = () => {
                         </div>
                     </div>
 
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left border-collapse">
+                    <div className="w-full overflow-x-hidden">
+                        <table className="w-full text-left table-fixed border-separate border-spacing-0">
                             <thead>
-                                <tr className="bg-slate-50 border-b border-slate-100">
-                                    <th className="px-8 py-5 text-xs font-black text-[#224292] uppercase tracking-[2px] text-center w-24">No.</th>
-                                    <th className="px-8 py-5 text-xs font-black text-[#224292] uppercase tracking-[2px]">From</th>
-                                    <th className="px-8 py-5 text-xs font-black text-[#224292] uppercase tracking-[2px]">Route Stops (Click for Timings)</th>
+                                <tr className="bg-slate-50">
+                                    <th className="hidden sm:table-cell px-3 md:px-8 py-4 md:py-5 text-[10px] md:text-xs font-black text-[#224292] uppercase tracking-[2px] text-center w-24 border-b border-slate-100">No.</th>
+                                    <th className="px-3 md:px-8 py-4 md:py-5 text-[10px] md:text-xs font-black text-[#224292] uppercase tracking-[2px] w-[35%] md:w-auto border-b border-slate-100">From</th>
+                                    <th className="px-3 md:px-8 py-4 md:py-5 text-[10px] md:text-xs font-black text-[#224292] uppercase tracking-[2px] border-b border-slate-100">Route Stops (Click for Timings)</th>
+                                    <th className="px-3 md:px-8 py-4 md:py-5 text-[10px] md:text-xs font-black text-[#224292] uppercase tracking-[2px] w-12 text-right border-b border-slate-100"></th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-slate-50">
+                            <tbody>
                                 {filteredRoutes.map((route, idx) => (
                                     <motion.tr 
                                         key={route.id}
@@ -287,19 +293,24 @@ const TransportPage = () => {
                                         onClick={() => setSelectedRoute(route)}
                                         className="group hover:bg-slate-50 transition-all cursor-pointer active:scale-[0.99]"
                                     >
-                                        <td className="px-8 py-5">
+                                        <td className="hidden sm:table-cell px-3 md:px-8 py-4 md:py-5 border-b border-slate-100/50">
                                             <div className="w-10 h-10 rounded-lg bg-[#ffc107]/10 flex items-center justify-center text-[#224292] font-black group-hover:bg-[#ffc107] transition-all">
                                                 {route.id}
                                             </div>
                                         </td>
-                                        <td className="px-8 py-5">
+                                        <td className="px-3 md:px-8 py-4 md:py-5 border-b border-slate-100/50">
                                             <div className="flex flex-col">
-                                                <span className="text-base font-black text-[#224292] group-hover:text-[#ffc107] transition-colors">{route.from}</span>
+                                                <span className="text-sm md:text-base font-black text-[#224292] group-hover:text-[#ffc107] transition-colors">{route.from}</span>
                                                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">To KIOT</span>
                                             </div>
                                         </td>
-                                        <td className="px-8 py-5">
-                                            <p className="text-sm font-bold text-slate-600 leading-relaxed group-hover:text-[#224292] transition-colors">{route.stops}</p>
+                                        <td className="px-3 md:px-8 py-4 md:py-5 border-b border-slate-100/50">
+                                            <p className="text-xs md:text-sm font-bold text-slate-600 leading-relaxed group-hover:text-[#224292] transition-colors break-words">{route.stops}</p>
+                                        </td>
+                                        <td className="px-3 md:px-8 py-4 md:py-5 border-b border-slate-100/50 text-right w-12">
+                                            <div className="w-8 h-8 rounded-full bg-slate-50 group-hover:bg-[#ffc107] flex items-center justify-center text-[#224292] transition-colors shrink-0 shadow-sm ml-auto">
+                                                <ChevronRight size={16} />
+                                            </div>
                                         </td>
                                     </motion.tr>
                                 ))}
@@ -339,7 +350,7 @@ const TransportPage = () => {
                     initial={{ scale: 0.95, y: 20 }}
                     animate={{ scale: 1, y: 0 }}
                     exit={{ scale: 0.95, y: 20 }}
-                    className="bg-white w-full max-w-4xl max-h-[85vh] rounded-[3rem] shadow-2xl relative flex flex-col border border-slate-100 overflow-hidden"
+                    className="bg-white w-full max-w-4xl max-h-[85vh] rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl relative flex flex-col border border-slate-100 overflow-hidden"
                 >
                     <button 
                         onClick={() => setSelectedRoute(null)}
@@ -348,14 +359,14 @@ const TransportPage = () => {
                         <X size={20} />
                     </button>
 
-                    <div className="p-8 md:p-12 border-b border-slate-100 bg-white shrink-0">
+                    <div className="p-6 md:p-12 border-b border-slate-100 bg-white shrink-0">
                         <div className="flex items-center gap-4 mb-4">
-                            <div className="w-14 h-14 bg-[#ffc107] rounded-2xl flex items-center justify-center text-[#224292] shadow-lg">
+                            <div className="w-14 h-14 bg-[#ffc107] rounded-2xl flex items-center justify-center text-[#224292] shadow-lg shrink-0">
                                 <Bus size={28} />
                             </div>
                             <div>
-                                <h1 className="text-3xl font-black text-[#224292] tracking-tighter leading-none uppercase">{selectedRoute.from} Route</h1>
-                                <p className="text-xs font-black text-[#ffc107] tracking-[3px] uppercase mt-1">Bus Number {selectedRoute.id}</p>
+                                <h1 className="text-xl md:text-3xl font-black text-[#224292] tracking-tighter leading-none uppercase">{selectedRoute.from} Route</h1>
+                                <p className="text-[10px] md:text-xs font-black text-[#ffc107] tracking-[3px] uppercase mt-1">Bus Number {selectedRoute.id}</p>
                             </div>
                         </div>
                         
@@ -371,30 +382,28 @@ const TransportPage = () => {
                         </div>
                     </div>
 
-                    <div className="flex-1 overflow-y-auto p-6 md:p-12 bg-slate-50/50">
+                    <div className="flex-1 overflow-y-auto px-6 md:px-12 pb-8 md:pb-12 bg-white">
                         {ROUTE_DETAILS[selectedRoute.id] ? (
-                            <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
-                                <table className="w-full text-left">
-                                    <thead>
-                                        <tr className="bg-slate-50">
-                                            <th className="px-6 py-4 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-100">S.No</th>
-                                            <th className="px-6 py-4 text-[10px] font-black text-[#224292] uppercase tracking-widest border-b border-slate-100">Stop Point</th>
-                                            <th className="px-6 py-4 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-100">Start (AM)</th>
-                                            <th className="px-6 py-4 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-100">Return (PM)</th>
+                            <table className="w-full text-left table-fixed border-collapse">
+                                <thead>
+                                    <tr>
+                                        <th className="hidden sm:table-cell py-3.5 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-100">S.No</th>
+                                        <th className="py-3.5 text-[10px] font-black text-[#224292] uppercase tracking-widest border-b border-slate-100 w-[45%] md:w-auto">Stop Point</th>
+                                        <th className="py-3.5 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-100">Start (AM)</th>
+                                        <th className="py-3.5 text-[10px] font-black text-[#224292] uppercase tracking-widest text-center border-b border-slate-100">Return (PM)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {ROUTE_DETAILS[selectedRoute.id].map((detail, dIdx) => (
+                                        <tr key={dIdx} className="hover:bg-slate-50/50 transition-colors">
+                                            <td className="hidden sm:table-cell py-3 text-[11px] font-bold text-slate-400 text-center border-b border-slate-100/50">{detail.sno}</td>
+                                            <td className="py-3 text-[11px] md:text-[12px] font-black text-[#224292] uppercase break-words border-b border-slate-100/50">{detail.stop}</td>
+                                            <td className="py-3 text-[11px] md:text-[12px] font-black text-[#224292] text-center border-b border-slate-100/50">{detail.morning}</td>
+                                            <td className="py-3 text-[11px] md:text-[12px] font-black text-[#224292] text-center border-b border-slate-100/50">{detail.evening}</td>
                                         </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-50">
-                                        {ROUTE_DETAILS[selectedRoute.id].map((detail, dIdx) => (
-                                            <tr key={dIdx} className="hover:bg-slate-50/80 transition-colors">
-                                                <td className="px-6 py-4 text-[11px] font-bold text-slate-400 text-center">{detail.sno}</td>
-                                                <td className="px-6 py-4 text-[12px] font-black text-[#224292] uppercase">{detail.stop}</td>
-                                                <td className="px-6 py-4 text-[12px] font-black text-[#224292] text-center">{detail.morning}</td>
-                                                <td className="px-6 py-4 text-[12px] font-black text-[#224292] text-center">{detail.evening}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
+                                    ))}
+                                </tbody>
+                            </table>
                         ) : (
                             <div className="py-20 text-center space-y-4">
                                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto text-slate-200">

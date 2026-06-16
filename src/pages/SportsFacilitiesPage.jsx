@@ -28,7 +28,7 @@ const SportsFacilitiesPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] py-12 md:py-20">
+        <div className="min-h-screen bg-[#FCFDFD] pt-4 pb-12 md:pt-20 md:pb-20">
             <div className="max-w-5xl mx-auto px-6">
                 {/* Minimal Header */}
                 <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -37,7 +37,7 @@ const SportsFacilitiesPage = () => {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             onClick={() => navigate('/campus-life/sports')}
-                            className="inline-flex items-center gap-2 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#224292] transition-colors"
+                            className="hidden sm:inline-flex items-center gap-2 text-xs font-black text-[#64779F] uppercase tracking-widest hover:text-[#224292] transition-colors"
                         >
                             <ArrowLeft size={14} /> Back to Sports
                         </motion.button>

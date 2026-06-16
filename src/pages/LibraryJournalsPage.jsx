@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { 
-  ArrowLeft,
   FileText,
   Bookmark,
   ExternalLink,
@@ -103,33 +102,23 @@ const LibraryJournalsPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] pb-24 font-graphik">
             {/* Minimal Header (Removed Hero) */}
-            <div className="relative pt-10 pb-6 px-6 bg-gradient-to-b from-[#224292]/5 to-transparent overflow-hidden">
+            <div className="relative pt-6 pb-2 px-6 bg-gradient-to-b from-[#224292]/5 to-transparent overflow-hidden">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
                     <motion.h1 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-bold text-[#224292] tracking-tighter leading-none mb-6"
+                        className="text-4xl md:text-6xl font-bold text-[#224292] tracking-tighter leading-none mb-2"
                     >
                         Journals & <span className="text-[#ffc107]">E-Digital</span>
                     </motion.h1>
-                    
-                    <motion.button
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2 }}
-                        onClick={() => navigate('/campus-life/library')}
-                        className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#224292] transition-colors"
-                    >
-                        <ArrowLeft size={14} /> Back to Library Hub
-                    </motion.button>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-6 space-y-12">
-                <div className="flex flex-col md:flex-row md:items-center justify-center gap-8 pt-8 border-t border-slate-100">
-                    <div className="flex flex-wrap bg-slate-100 p-1.5 rounded-[1.5rem] gap-1 shadow-inner">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 py-2">
+                <div className="flex flex-col md:flex-row md:items-center justify-center gap-4 pt-4 border-t border-slate-100">
+                    <div className="flex flex-col md:flex-row bg-slate-100 p-1.5 rounded-[1.5rem] gap-1.5 md:gap-1 shadow-inner w-full md:w-auto">
                         {[
                             { id: 'stats', label: 'Journal Stats', icon: FileText },
                             { id: 'directory', label: 'Journal Hub', icon: Bookmark },
@@ -138,7 +127,7 @@ const LibraryJournalsPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-4 rounded-xl text-xs font-bold tracking-widest transition-all ${
+                                className={`flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-xs font-bold tracking-widest transition-all w-full md:w-auto shrink-0 ${
                                     activeTab === tab.id 
                                     ? 'bg-[#224292] text-white shadow-xl shadow-[#224292]/30' 
                                     : 'text-slate-700 hover:text-[#224292] hover:bg-white'
@@ -152,7 +141,7 @@ const LibraryJournalsPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-12">
+            <div className="max-w-7xl mx-auto px-3 md:px-6 py-6 md:py-12">
                 <AnimatePresence mode="wait">
                     {activeTab === 'stats' && (
                         <motion.div
@@ -160,9 +149,9 @@ const LibraryJournalsPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden"
+                            className="bg-white rounded-[2rem] md:rounded-[3rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden"
                         >
-                            <div className="p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-8 rounded-t-[2.5rem] relative overflow-hidden group">
+                            <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-[1.5rem] md:rounded-t-[2.5rem] relative overflow-hidden group">
                                 <div className="absolute top-0 left-0 w-64 h-64 bg-[#224292]/5 blur-[80px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
                                 
                                 <div className="flex items-center gap-6 relative z-10">
@@ -177,39 +166,39 @@ const LibraryJournalsPage = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-right relative z-10">
+                                <div className="text-left md:text-right relative z-10">
                                     <p className="text-xs font-bold text-slate-500 tracking-[4px] leading-none mb-2">Active Records</p>
                                     <p className="text-4xl font-bold text-[#224292]">428</p>
                                 </div>
-                            </div>
+                             </div>
                             
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left">
+                             <div className="overflow-x-auto">
+                                <table className="w-full min-w-[700px] md:min-w-full text-left">
                                     <thead>
                                         <tr className="bg-[#224292] border-b border-[#224292]/10 shadow-md">
-                                            <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Degree</th>
-                                            <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px]">Department / Specialization</th>
-                                            <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] text-center">National</th>
-                                            <th className="px-8 py-5 text-xs font-bold text-white tracking-[2px] text-center">International</th>
+                                            <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px]">Degree</th>
+                                            <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px]">Department / Specialization</th>
+                                            <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px] text-center">National</th>
+                                            <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px] text-center">International</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-slate-100 transition-all">
                                         {JOURNAL_STATS.map((row, i) => (
                                             <tr key={i} className="hover:bg-[#224292]/5 transition-colors group even:bg-slate-50/50">
-                                                <td className="px-8 py-5 font-bold text-[#224292] text-xs">{row.deg}</td>
-                                                <td className="px-8 py-5 font-bold text-slate-800 text-base group-hover:text-[#224292] transition-colors">{row.c}</td>
-                                                <td className="px-8 py-5 text-center font-bold text-slate-600 text-base">{row.nj}</td>
-                                                <td className="px-8 py-5 text-center font-bold text-[#224292] text-base">{row.ij}</td>
+                                                <td className="px-4 md:px-8 py-4 md:py-5 font-bold text-[#224292] text-xs">{row.deg}</td>
+                                                <td className="px-4 md:px-8 py-4 md:py-5 font-bold text-slate-800 text-base group-hover:text-[#224292] transition-colors">{row.c}</td>
+                                                <td className="px-4 md:px-8 py-4 md:py-5 text-center font-bold text-slate-600 text-base">{row.nj}</td>
+                                                <td className="px-4 md:px-8 py-4 md:py-5 text-center font-bold text-[#224292] text-base">{row.ij}</td>
                                             </tr>
                                         ))}
                                         <tr className="bg-[#224292]/5">
-                                            <td colSpan="2" className="px-8 py-6 font-bold text-[#224292] text-xl tracking-tighter">Aggregated Network Volume</td>
-                                            <td className="px-8 py-6 text-center font-bold text-[#ffc107] text-2xl">114</td>
-                                            <td className="px-8 py-6 text-center font-bold text-[#224292] text-2xl">314</td>
+                                            <td colSpan="2" className="px-4 md:px-8 py-5 md:py-6 font-bold text-[#224292] text-xl tracking-tighter">Aggregated Network Volume</td>
+                                            <td className="px-4 md:px-8 py-5 md:py-6 text-center font-bold text-[#ffc107] text-2xl">114</td>
+                                            <td className="px-4 md:px-8 py-5 md:py-6 text-center font-bold text-[#224292] text-2xl">314</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
+                             </div>
                         </motion.div>
                     )}
 
@@ -219,9 +208,9 @@ const LibraryJournalsPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden"
+                            className="bg-white rounded-[2rem] md:rounded-[3rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden"
                         >
-                            <div className="p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-8 rounded-t-[2.5rem] relative overflow-hidden group">
+                            <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-[1.5rem] md:rounded-t-[2.5rem] relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
                                 
                                 <div className="flex items-center gap-6 relative z-10">
@@ -248,7 +237,7 @@ const LibraryJournalsPage = () => {
                                 </div>
                             </div>
                             
-                            <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[700px] overflow-y-auto custom-scrollbar">
+                            <div className="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[700px] overflow-y-auto custom-scrollbar">
                                 {JOURNAL_LIST.filter(j => j.toLowerCase().includes(searchQuery.toLowerCase())).map((journal, i) => (
                                     <div key={i} className="group flex items-start gap-5 p-5 bg-white hover:bg-[#224292] rounded-2xl border border-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-1">
                                         <div className="w-8 h-8 rounded-lg bg-slate-50 group-hover:bg-[#ffc107] flex items-center justify-center shadow-sm shrink-0 transition-all">
@@ -273,7 +262,7 @@ const LibraryJournalsPage = () => {
                         >
                             {/* Infrastructure Overview */}
                             <div className="grid lg:grid-cols-3 gap-8">
-                                <div className="lg:col-span-1 p-10 bg-[#224292] rounded-[3rem] text-white shadow-2xl relative overflow-hidden flex flex-col justify-between group">
+                                <div className="lg:col-span-1 p-6 md:p-10 bg-[#224292] rounded-[2rem] md:rounded-[3rem] text-white shadow-2xl relative overflow-hidden flex flex-col justify-between group">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-110" />
                                     <div className="relative z-10 space-y-8">
                                         <div className="w-16 h-16 bg-[#ffc107] rounded-3xl flex items-center justify-center shadow-xl shadow-[#ffc107]/20">
@@ -297,10 +286,10 @@ const LibraryJournalsPage = () => {
                                         </div>
                                     </div>
                                 </div>
-
+ 
                                 <div className="lg:col-span-2 space-y-8">
                                     {/* Operational Hours */}
-                                    <div className="p-10 bg-white rounded-[3rem] border border-slate-100 shadow-xl shadow-[#224292]/5 flex flex-col md:flex-row md:items-center justify-between gap-10">
+                                    <div className="p-6 md:p-10 bg-white rounded-[2rem] md:rounded-[3rem] border border-slate-100 shadow-xl shadow-[#224292]/5 flex flex-col md:flex-row md:items-center justify-between gap-10">
                                         <div className="flex items-center gap-6">
                                             <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-[#224292] border border-slate-100 shadow-sm">
                                                 <Clock size={28} />
@@ -321,7 +310,7 @@ const LibraryJournalsPage = () => {
                                             </div>
                                         </div>
                                     </div>
-
+ 
                                     {/* Link Portal */}
                                     <div className="grid md:grid-cols-2 gap-6">
                                         {E_RESOURCES.map((link, i) => (
@@ -330,7 +319,7 @@ const LibraryJournalsPage = () => {
                                                 href={link.u} 
                                                 target="_blank" 
                                                 rel="noreferrer" 
-                                                className="group p-8 bg-white border border-slate-100 hover:border-[#224292] hover:bg-[#224292] rounded-[2.5rem] shadow-lg shadow-black/5 flex flex-col justify-between gap-8 transition-all duration-500 hover:-translate-y-2 overflow-hidden relative"
+                                                className="group p-6 md:p-8 bg-white border border-slate-100 hover:border-[#224292] hover:bg-[#224292] rounded-[2rem] md:rounded-[2.5rem] shadow-lg shadow-black/5 flex flex-col justify-between gap-8 transition-all duration-500 hover:-translate-y-2 overflow-hidden relative"
                                             >
                                                 <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 group-hover:bg-white/5 rounded-bl-[100%] transition-colors" />
                                                 <div className="relative z-10 flex items-center justify-between">

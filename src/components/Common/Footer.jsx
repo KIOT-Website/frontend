@@ -71,7 +71,7 @@ const Footer = () => {
       icon: BookOpen,
       links: [
         { name: 'Kaaval Udhavi App', href: 'https://play.google.com/store/apps/details?id=com.amtexsystems.kaavaluthavi' },
-        { name: 'Vidya Lakshmi Portal', href: 'https://www.vidyalakshmi.co.in/student/registration' },
+        { name: 'Vidya Lakshmi Portal', href: 'https://pmvidyalaxmi.co.in/StudentLogin.aspx' },
         { name: 'AICTE - CSS', href: 'https://css.aicte.gov.in/login' },
         { name: 'UGC feedback Portal', href: 'https://samadhaan.ugc.ac.in/Home/FeedBack' },
         { name: 'AICTE-Students Development schemes', href: 'https://www.aicte.gov.in/schemes/students-development-schemes' },

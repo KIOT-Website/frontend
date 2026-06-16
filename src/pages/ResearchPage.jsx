@@ -171,100 +171,137 @@ const ResearchPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 pb-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                    {/* LEFT COLUMN: INTRO + IMAGE */}
-                    <div className="space-y-8">
-                        {/* Page Title & Intro */}
-                        <motion.div 
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 
-                                className="text-3xl lg:text-4xl font-bold text-[#224292] leading-tight mb-4 tracking-tighter"
-                            >
-                                Departmentwise <span className="text-[#ffc107]">Research Initiatives</span>
-                            </h2>
-                            <p className="text-black font-medium text-sm lg:text-base leading-relaxed text-justify mb-2">
-                                Each academic department at KIOT functions as a hub for innovation, encouraging students and faculty members to engage in industry-relevant investigations, publish research papers in indexed journals, and obtain intellectual property patents.
-                            </p>
-                        </motion.div>
+            {/* ── Departmentwise Research Initiatives Section ── */}
+            <div className="max-w-[1400px] mx-auto px-6 pb-20">
 
-                        {/* Open.JPG Image Section */}
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="w-full rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-slate-200"
-                        >
-                            <img 
-                                src={openImage} 
-                                alt="Research Initiatives" 
-                                className="w-full h-[280px] md:h-[350px] object-cover"
+                {/* Full-width header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-12"
+                >
+                    <h2 className="text-3xl lg:text-4xl font-extrabold text-[#224292] leading-tight mb-4 tracking-tight font-graphik">
+                        Departmentwise{' '}
+                        <span className="text-[#ffc107]">Research Initiatives</span>
+                    </h2>
+                    <div className="mx-auto h-1 w-20 rounded-full bg-[#ffc107] mb-5" />
+                    <p className="max-w-3xl mx-auto text-gray-600 text-sm lg:text-base leading-relaxed text-center font-graphik">
+                        Each academic department at KIOT functions as a hub for innovation, encouraging students
+                        and faculty members to engage in industry-relevant investigations, publish research papers
+                        in indexed journals, and obtain intellectual property patents.
+                    </p>
+                </motion.div>
+
+                {/* Main content: cards grid + sticky image panel */}
+                <div className="flex flex-col lg:flex-row gap-10 items-start">
+
+                    {/* LEFT: masonry-style 2-column department cards */}
+                    <div className="flex-1 columns-1 sm:columns-2 gap-5 space-y-0">
+                        {departments.map((dept, idx) => {
+                            // Extract the colour classes for border accent
+                            const borderColor = dept.color.replace('bg-', 'border-').replace(/\s+text-\S+/, '')
+                            const tall = idx % 3 === 1   // every 3rd card is taller for masonry feel
+                            return (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.45, delay: idx * 0.05 }}
+                                    onClick={() => navigate(`/research/${dept.name.split(' (')[0].replace(/ /g, '-').toLowerCase()}`)}
+                                    className={`break-inside-avoid mb-5 group cursor-pointer bg-white rounded-2xl border-l-4 ${borderColor} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden`}
+                                >
+                                    <div className={`px-5 ${tall ? 'py-7' : 'py-5'}`}>
+                                        {/* Icon + name row */}
+                                        <div className="flex items-start gap-4 mb-3">
+                                            <div className={`w-10 h-10 rounded-xl ${dept.color} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-sm`}>
+                                                <dept.icon size={18} />
+                                            </div>
+                                            <p className="text-[13px] font-bold text-[#224292] leading-snug font-graphik group-hover:text-[#1a3578] transition-colors">
+                                                {dept.name}
+                                            </p>
+                                        </div>
+                                        {/* Focus tags */}
+                                        <div className="flex flex-wrap gap-1.5 mt-1">
+                                            {dept.focus.map((tag, ti) => (
+                                                <span
+                                                    key={ti}
+                                                    className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 text-slate-500 font-graphik"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    {/* Bottom hover bar */}
+                                    <div className={`h-0.5 w-0 group-hover:w-full transition-all duration-500 ${dept.color.replace('bg-', 'bg-').split(' ')[0]}`} />
+                                </motion.div>
+                            )
+                        })}
+                    </div>
+
+                    {/* RIGHT: sticky image panel */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7 }}
+                        className="lg:w-[360px] xl:w-[420px] shrink-0 lg:sticky lg:top-28 self-start"
+                    >
+                        {/* Image */}
+                        <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-200">
+                            <img
+                                src={openImage}
+                                alt="Research Initiatives at KIOT"
+                                className="w-full h-[260px] lg:h-[320px] object-cover"
                             />
-                        </motion.div>
-                    </div>
+                        </div>
 
-                    {/* RIGHT COLUMN: DEPARTMENT DIRECTORY */}
-                    <div>
-                        <motion.div 
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="bg-white rounded-[2rem] border-2 border-slate-100 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-blue-900/5 transition-all"
-                        >
-                            <div className="bg-[#224292] py-4 text-center text-[13px] font-semibold text-white font-graphik">
-                                Department Directory
+                        {/* Info card below image */}
+                        <div className="mt-5 bg-[#224292] rounded-2xl p-6 text-white shadow-lg">
+                            <div className="flex items-center gap-2 mb-3">
+                                <Award className="text-[#ffc107] shrink-0" size={18} />
+                                <span className="text-[#ffc107] font-bold text-[11px] tracking-widest uppercase font-graphik">
+                                    Anna University, Chennai
+                                </span>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-                                <table className="w-full border-collapse">
-                                    <tbody className="divide-y divide-slate-100">
-                                        {departments.slice(0, 6).map((dept, idx) => (
-                                            <tr 
-                                                key={idx} 
-                                                onClick={() => navigate(`/research/${dept.name.split(' (')[0].replace(/ /g, '-').toLowerCase()}`)}
-                                                className="group hover:bg-slate-50 transition-all cursor-pointer"
-                                            >
-                                                <td className="px-6 py-3.5">
-                                                    <div className="flex items-center gap-4">
-                                                        <div className={`w-9 h-9 rounded-xl ${dept.color} flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm shrink-0`}>
-                                                            <dept.icon size={18} />
-                                                        </div>
-                                                        <span className="text-[14px] font-medium text-[#224292] transition-colors group-hover:text-[#ffc107] text-left leading-tight font-graphik">
-                                                            {dept.name}
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                                <table className="w-full border-collapse">
-                                    <tbody className="divide-y divide-slate-100">
-                                        {departments.slice(6).map((dept, idx) => (
-                                            <tr 
-                                                key={idx} 
-                                                onClick={() => navigate(`/research/${dept.name.split(' (')[0].replace(/ /g, '-').toLowerCase()}`)}
-                                                className="group hover:bg-slate-50 transition-all cursor-pointer"
-                                            >
-                                                <td className="px-6 py-3.5">
-                                                    <div className="flex items-center gap-4">
-                                                        <div className={`w-9 h-9 rounded-xl ${dept.color} flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm shrink-0`}>
-                                                            <dept.icon size={18} />
-                                                        </div>
-                                                        <span className="text-[14px] font-medium text-[#224292] transition-colors group-hover:text-[#ffc107] text-left leading-tight font-graphik">
-                                                            {dept.name}
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                            <h3 className="text-xl font-extrabold mb-3 font-graphik">Recognized R&D Centre</h3>
+                            <div className="flex flex-col gap-2 text-white/80 text-xs font-semibold mb-5 font-graphik">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                                    Recognition No: 4265300
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
+                                    Valid upto: December 2027
+                                </div>
                             </div>
-                        </motion.div>
-                    </div>
+                            <a
+                                href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.webp"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ffc107] text-[#224292] rounded-lg font-black text-xs hover:bg-white transition-all shadow-md active:scale-95 font-graphik"
+                            >
+                                View Details <ChevronRight size={14} />
+                            </a>
+                        </div>
+
+                        {/* Stats strip */}
+                        <div className="mt-4 grid grid-cols-3 gap-3">
+                            {[
+                                { label: 'Departments', value: '11+' },
+                                { label: 'Publications', value: '500+' },
+                                { label: 'Patents Filed', value: '80+' },
+                            ].map((s, i) => (
+                                <div key={i} className="bg-white rounded-xl py-4 text-center shadow-sm border border-slate-100">
+                                    <p className="text-[#224292] font-extrabold text-lg font-graphik">{s.value}</p>
+                                    <p className="text-gray-500 text-[10px] font-semibold font-graphik">{s.label}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </div>

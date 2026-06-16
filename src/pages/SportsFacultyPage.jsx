@@ -75,9 +75,9 @@ const SportsFacultyPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-[#FCFDFD] pb-24 pt-16">
+    <div className="min-h-screen bg-[#FCFDFD] pb-24 pt-4 md:pt-16">
       <div className="max-w-7xl mx-auto px-0 md:px-6 relative z-20">
-        <div className="mt-4 mb-8 px-6 md:px-0">
+        <div className="hidden sm:block mt-4 mb-8 px-6 md:px-0">
           <button 
             onClick={() => navigate('/campus-life/sports')}
             className="inline-flex items-center gap-2 text-[#224292] hover:text-[#ffc107] transition-colors group border border-slate-200 px-4 py-2 rounded-full bg-white shadow-sm"

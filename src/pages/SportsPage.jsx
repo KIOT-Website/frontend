@@ -215,7 +215,7 @@ const SportsPage = () => {
                                                 {item.sub && <span className="text-[11px] font-bold text-[#ffc107]">{item.sub}</span>}
                                             </div>
                                         </div>
-                                        <ArrowRight size={18} className={`transition-all ${item.isContact ? 'text-[#ffc107]' : 'text-white/40 group-hover/btn:translate-x-1 group-hover/btn:text-white'}`} />
+                                        <ArrowRight size={18} className={`transition-all ${item.isContact ? 'text-[#ffc107] hidden sm:block' : 'text-white/40 group-hover/btn:translate-x-1 group-hover/btn:text-white'}`} />
                                     </button>
                                 ))}
                             </div>
@@ -231,7 +231,7 @@ const SportsPage = () => {
                         className="relative bg-white p-7 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-6 overflow-hidden group"
                     >
                         <div className="absolute top-0 right-0 w-24 h-24 bg-[#224292]/5 rounded-full -translate-x-[-20%] -translate-y-[20%] group-hover:scale-150 transition-transform duration-700" />
-                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#224292] text-[#ffc107] flex items-center justify-center shadow-lg">
+                        <div className="hidden sm:flex flex-shrink-0 w-12 h-12 rounded-xl bg-[#224292] text-[#ffc107] items-center justify-center shadow-lg">
                             <Eye size={22} />
                         </div>
                         <div className="relative z-10">
@@ -251,7 +251,7 @@ const SportsPage = () => {
                         className="relative bg-white p-7 rounded-2xl shadow-xl border border-slate-100 flex items-start gap-6 overflow-hidden group"
                     >
                         <div className="absolute top-0 right-0 w-24 h-24 bg-[#ffc107]/5 rounded-full -translate-x-[-20%] -translate-y-[20%] group-hover:scale-150 transition-transform duration-700" />
-                        <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#ffc107] text-[#224292] flex items-center justify-center shadow-lg">
+                        <div className="hidden sm:flex flex-shrink-0 w-12 h-12 rounded-xl bg-[#ffc107] text-[#224292] items-center justify-center shadow-lg">
                             <Target size={22} />
                         </div>
                         <div className="relative z-10">
@@ -296,19 +296,19 @@ const SportsPage = () => {
                                 <div className="absolute top-0 right-0 w-20 h-20 bg-[#224292] translate-x-10 -translate-y-10 rotate-45 group-hover:scale-110 transition-transform duration-500" />
                                 <div className="absolute top-0 right-0 w-14 h-14 bg-[#ffc107] translate-x-7 -translate-y-7 rotate-45 group-hover:scale-110 transition-transform duration-700 shadow-xl" />
 
-                                <div className="relative z-10 flex flex-col h-full pr-8">
+                                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
                                     <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-100 text-[#224292] flex items-center justify-center group-hover:bg-[#224292] group-hover:text-[#ffc107] transition-all duration-500 mb-3 shadow-inner">
                                         {item.icon}
                                     </div>
                                     
                                     <div className="space-y-1">
-                                        <h4 className="text-[16px] font-black text-[#224292] tracking-tight leading-tight">
+                                        <h4 className="text-[16px] font-normal text-[#224292] tracking-tight leading-tight">
                                             {item.title}
-                                            <div className="w-8 h-1 bg-[#ffc107] mt-1 rounded-full" />
+                                            <div className="w-8 h-1 bg-[#ffc107] mt-1 mx-auto rounded-full" />
                                         </h4>
                                     </div>
 
-                                    <div className="mt-4 flex items-center">
+                                    <div className="mt-4 flex justify-center">
                                         <div className="w-7 h-7 rounded-full bg-[#224292] flex items-center justify-center text-white group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all shadow-md">
                                             <ArrowUpRight size={12} />
                                         </div>

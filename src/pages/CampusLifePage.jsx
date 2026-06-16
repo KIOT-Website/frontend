@@ -267,7 +267,7 @@ const CampusLifePage = () => {
 
       <div className="bg-[#224292] py-12 md:py-16 relative z-20 overflow-hidden">
         <div className="max-w-6xl mx-auto w-full px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               { v: "12,000+", l: "Active Students", i: Users, d: "Diverse community of learners and achievers." },
               { v: "150+", l: "Student Clubs", i: Landmark, d: "Nurturing talents beyond the classroom walls." },

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  ArrowLeft,
   Trophy,
   BookOpen,
   User,
@@ -9,8 +8,7 @@ import {
   Calendar,
   Grid,
   Search,
-  Award,
-  ChevronRight
+  Award
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
@@ -80,15 +78,9 @@ const LibraryMagazinesPage = () => {
     return (
         <div className="min-h-screen bg-[#FCFDFD] font-graphik">
             {/* Header */}
-            <div className="pt-24 pb-8 px-6 bg-white border-b border-slate-100">
+            <div className="pt-6 pb-6 px-6 bg-white border-b border-slate-100">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <div className="space-y-4">
-                        <motion.button
-                            onClick={() => navigate('/campus-life/library')}
-                            className="flex items-center gap-2 text-xs font-bold text-[#64779F] tracking-widest hover:text-[#224292] transition-colors"
-                        >
-                            <ArrowLeft size={14} /> Back to Library Hub
-                        </motion.button>
+                    <div className="space-y-2">
                         <h1 className="text-4xl font-bold text-[#224292] tracking-tighter leading-none">
                             Magazines & <span className="text-[#ffc107]">Honors</span>
                         </h1>
@@ -116,7 +108,7 @@ const LibraryMagazinesPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 py-12">
+            <div className="max-w-7xl mx-auto px-3 md:px-6 py-6 md:py-12">
                 <AnimatePresence mode="wait">
                     {activeTab === 'magazines' ? (
                         <motion.div
@@ -126,8 +118,8 @@ const LibraryMagazinesPage = () => {
                             exit={{ opacity: 0, scale: 0.98 }}
                             className="space-y-8"
                         >
-                            <div className="bg-white rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
-                                <div className="p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
+                                <div className="p-4 md:p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row md:items-center justify-between gap-6">
                                     <h2 className="text-lg font-bold text-[#224292] tracking-tight">Periodical Repository</h2>
                                     <div className="relative flex-1 max-w-sm">
                                         <Search size={16} className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500" />
@@ -141,7 +133,7 @@ const LibraryMagazinesPage = () => {
                                     </div>
                                 </div>
                                 
-                                <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div className="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                     {MAGAZINES.filter(m => m.toLowerCase().includes(searchQuery.toLowerCase())).map((name, i) => (
                                         <div key={i} className="group p-5 bg-white border border-slate-50 hover:border-[#224292] rounded-2xl transition-all flex items-center justify-between shadow-sm hover:shadow-xl hover:shadow-[#224292]/5">
                                             <div className="flex items-center gap-4">
@@ -180,7 +172,7 @@ const LibraryMagazinesPage = () => {
                             </div>
 
                             {/* Hall of Fame Visuals */}
-                            <div className="bg-[#224292] rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden">
+                            <div className="bg-[#224292] rounded-[2rem] md:rounded-[3rem] p-5 md:p-12 text-white shadow-2xl relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-[0.03] rounded-bl-full pointer-events-none" />
                                 
                                 <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-12 mb-16">
@@ -193,7 +185,7 @@ const LibraryMagazinesPage = () => {
                                             Borrower's <br /><span className="text-[#ffc107]">Hall of Fame</span>
                                         </h2>
                                     </div>
-                                    <div className="p-8 bg-white/5 rounded-3xl border border-white/10 text-right backdrop-blur-md">
+                                    <div className="p-4 md:p-8 bg-white/5 rounded-3xl border border-white/10 text-right backdrop-blur-md">
                                         <Calendar size={32} className="text-[#ffc107] mb-4 ml-auto" />
                                         <p className="text-xs font-bold text-white tracking-[4px]">Academic Cycle</p>
                                         <p className="text-2xl font-bold text-white">{activeYear}</p>
@@ -208,22 +200,19 @@ const LibraryMagazinesPage = () => {
                                             initial={{ opacity: 0, x: -10 }}
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ delay: i * 0.05 }}
-                                            className="group flex items-center justify-between p-6 bg-white/5 hover:bg-white rounded-[2rem] border border-white/5 transition-all duration-500"
+                                            className="group flex items-center p-3 md:p-4 bg-white/5 hover:bg-white rounded-xl md:rounded-[1.5rem] border border-white/5 transition-all duration-500"
                                         >
-                                            <div className="flex items-center gap-6">
-                                                <div className="w-12 h-12 rounded-2xl bg-white/10 group-hover:bg-[#ffc107] flex items-center justify-center text-white group-hover:text-[#224292] transition-all duration-500 shadow-sm">
-                                                    <User size={22} />
+                                            <div className="flex items-center gap-4">
+                                                <div className="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-[#ffc107] flex items-center justify-center text-white group-hover:text-[#224292] transition-all duration-500 shadow-sm shrink-0">
+                                                    <User size={16} />
                                                 </div>
                                                 <div>
-                                                    <p className="text-[14px] font-bold text-white group-hover:text-[#224292] transition-colors">{student.n}</p>
-                                                    <div className="flex items-center gap-2 mt-1">
-                                                        <GraduationCap size={12} className="text-[#ffc107]" />
-                                                        <p className="text-xs font-bold text-white group-hover:text-[#224292] tracking-widest">{student.c}</p>
+                                                    <p className="text-xs md:text-sm font-bold text-white group-hover:text-[#224292] transition-colors">{student.n}</p>
+                                                    <div className="flex items-center gap-1.5 mt-0.5">
+                                                        <GraduationCap size={10} className="text-[#ffc107]" />
+                                                        <p className="text-[10px] font-semibold text-white/80 group-hover:text-[#224292]/80 tracking-wider">{student.c}</p>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div className="w-10 h-10 rounded-full border border-white/10 group-hover:border-[#224292]/10 flex items-center justify-center text-[#ffc107] group-hover:text-[#224292] transition-all">
-                                                <ChevronRight size={18} className="translate-x-0.5" />
                                             </div>
                                         </motion.div>
                                     ))}
