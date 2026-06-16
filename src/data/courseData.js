@@ -3182,11 +3182,26 @@ export const courseData = {
     po: "PO – 1: Understand and apply the concepts of Entrepreneurship, Innovation and New Venture Development.\n\nPO – 2: Ability to find a business idea, build a prototype and launch to early customers in the market.\n\nPO – 3: Ability to choose appropriate business model to raise funds and to scale up the venture.\n\nPO – 4: Understand and apply the management theories & practices to solve business problems and successfully run Startups.\n\nPO – 5: Understand and practice Standards, Compliances (Ethical, Economical, Legal, Environmental, Sustainable Global, etc.).\n\nPO – 6: Ability to lead the team/venture, to be a collaborative team player, to strategically and innovatively take the venture towards growth.",
     pso: "PSO – 1: Formulate a validated business model canvas and comprehensive business plan for a start-up.\n\nPSO – 2: Leverage business incubator resources to build functional prototypes and minimum viable products (MVPs).\n\nPSO – 3: Navigate early-stage funding rounds, intellectual property management, and product launch marketing.",
     whyChoose: [
-      'Action-oriented learning with incubation support',
-      'Direct mentorship from successful founders and venture capitalists',
-      'Access to iStart and MSME Business Incubator resources',
-      'Opportunities for seed funding and angel investor pitches',
-      'Hands-on product development focus'
+      'Startup Ideas + Campus Innovations + Capstone Projects + Incubation Residence + Entrepreneurial Ecosystem',
+      'Discover innovative research and technology',
+      'Make final semester projects into innovative products',
+      'Make use of incubation centres and resources',
+      'Encourage interdisciplinary collaboration',
+      'Conduct pilot tests on campus',
+      'Utilize alumni networks',
+      'Establish partnerships with local companies',
+      'Secure funding and investments',
+      'Seek mentorship and professional advice',
+      'Emphasize scalability and sustainability'
+    ],
+    careerProspects: [
+      'Self-employment / Founder of own startup',
+      'Intrapreneurship leadership roles in corporates',
+      'Lead incubation and pre-incubation centres',
+      'Angel and Venture Capital firms',
+      'Policy design and implementation centres (Govt. & Non-Govt.)',
+      'Innovation management professionals in MNCs',
+      'Social enterprises, NGOs, SMEs, and family enterprises'
     ],
     curriculum: [
       { year: 'Year 1 – Ideation & Prototype Development', semesters: ['Design Thinking & Innovation', 'Ideation and Customer Validation', 'Financial Accounting for Startups', 'Legal Aspects & IP Management', 'Product Design & Prototyping Laboratory', 'Early Stage Venture Pitching'] },
