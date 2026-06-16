@@ -126,7 +126,9 @@ export default function CourseDetailPage({ overrides }) {
 
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
-    : TABS;
+    : (courseId === 'mba-general' || courseId === 'mba-iev')
+      ? [...TABS, 'Contact']
+      : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
@@ -1177,6 +1179,51 @@ export default function CourseDetailPage({ overrides }) {
 
             {activeTab === 'Innovative Practices' && (
               <InnovativePracticesSection courseId={courseId} courseName={course.name} />
+            )}
+
+            {/* --- CONTACT --- */}
+            {activeTab === 'Contact' && (
+              <div className="space-y-8 py-8 max-w-4xl mx-auto">
+                <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 overflow-hidden">
+                  <h2 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                    Contact & Admission
+                  </h2>
+                  <div className="border border-[#dcdcdc] rounded-2xl overflow-hidden shadow-sm">
+                    <table className="w-full text-left font-graphik text-[14px]">
+                      <thead>
+                        <tr className="bg-[#5b8738] text-white">
+                          <th className="py-4 px-6 font-bold uppercase tracking-wider text-[14px]" colSpan={2}>
+                            Contact & Admission Details
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#dcdcdc]">
+                        <tr className="bg-[#f1f6eb] hover:bg-[#ebf2e4] transition-colors">
+                          <td className="py-4 px-6 font-bold text-[#333333] w-1/3">Landline</td>
+                          <td className="py-4 px-6 text-slate-700 font-medium">0427-2433971, 2433972</td>
+                        </tr>
+                        <tr className="bg-white hover:bg-slate-50 transition-colors">
+                          <td className="py-4 px-6 font-bold text-[#333333]">Mobile</td>
+                          <td className="py-4 px-6 text-slate-700 font-medium">+91 96009 91166, +91 97877 35666</td>
+                        </tr>
+                        <tr className="bg-[#f1f6eb] hover:bg-[#ebf2e4] transition-colors">
+                          <td className="py-4 px-6 font-bold text-[#333333]">Email</td>
+                          <td className="py-4 px-6 text-slate-700 font-medium">
+                            <a href="mailto:mba@kiot.ac.in" className="text-[#224292] hover:underline font-bold">
+                              mba@kiot.ac.in
+                            </a>
+                          </td>
+                        </tr>
+                        <tr className="bg-white hover:bg-slate-50 transition-colors">
+                          <td className="py-4 px-6 font-bold text-[#333333]">Counselling Code</td>
+                          <td className="py-4 px-6 text-[#224292] font-black">2653</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             )}
 
             {/* --- ADMISSIONS --- */}
