@@ -1,6 +1,36 @@
-import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+
+const AnimatedCounter = ({ to, duration = 1.5, decimals = 0 }) => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const [count, setCount] = useState(0)
+  const [hasAnimated, setHasAnimated] = useState(false)
+
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true)
+      let startTime = null
+      const end = parseFloat(to)
+      
+      const animate = (timestamp) => {
+        if (!startTime) startTime = timestamp
+        const progress = Math.min((timestamp - startTime) / (duration * 1000), 1)
+        const ease = progress * (2 - progress)
+        setCount(ease * end)
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        } else {
+          setCount(end)
+        }
+      }
+      requestAnimationFrame(animate)
+    }
+  }, [isInView, hasAnimated, to, duration])
+
+  return <span ref={ref}>{count.toFixed(decimals)}</span>
+}
 import { 
   Users,
   CheckCircle2, 
@@ -329,12 +359,12 @@ const AdmissionsPage = () => {
       {/* ─── KEY HIGHLIGHTS BAR ─── */}
       <section className="bg-[#224292] py-10 border-y border-white/10">
          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 divide-y md:divide-y-0 lg:divide-x divide-white/10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-white/10">
                 { [
-                   { value: "₹ 12.00 Lakhs", label: "HIGHEST SALARY" },
-                   { value: "₹ 4.30 Lakhs", label: "AVERAGE SALARY" },
-                   { value: "150+", label: "COMPANIES VISITED" },
-                   { value: "95%", label: "% PLACEMENT" }
+                   { prefix: "₹ ", value: 12.00, suffix: " Lakhs", decimals: 2, label: "HIGHEST SALARY" },
+                   { prefix: "₹ ", value: 4.30, suffix: " Lakhs", decimals: 2, label: "AVERAGE SALARY" },
+                   { prefix: "", value: 150, suffix: "+", decimals: 0, label: "COMPANIES VISITED" },
+                   { prefix: "", value: 95, suffix: "%", decimals: 0, label: "% PLACEMENT" }
                 ].map((stat, i) => (
                    <motion.div 
                      key={i} 
@@ -342,10 +372,14 @@ const AdmissionsPage = () => {
                      whileInView={{ opacity: 1, y: 0 }}
                      viewport={{ once: true }}
                      transition={{ delay: i * 0.1 }}
-                     className="flex flex-col items-center justify-center text-center p-6 lg:px-10 group hover:bg-white/5 transition-all cursor-default"
+                     className="flex flex-col items-center justify-center text-center p-4 sm:p-6 lg:px-10 group hover:bg-white/5 transition-all cursor-default"
                    >
-                      <h3 className="text-3xl lg:text-4xl font-black text-[#ffc107] mb-3 tracking-tighter group-hover:scale-105 transition-transform">{stat.value}</h3>
-                      <p className="text-white font-black text-xs lg:text-sm tracking-[2px] uppercase leading-tight">{stat.label}</p>
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#ffc107] mb-3 tracking-tighter group-hover:scale-105 transition-transform">
+                         {stat.prefix}
+                         <AnimatedCounter to={stat.value} decimals={stat.decimals} />
+                         {stat.suffix}
+                      </h3>
+                      <p className="text-white font-black text-[10px] sm:text-xs lg:text-sm tracking-[2px] uppercase leading-tight">{stat.label}</p>
                    </motion.div>
                 ))}
             </div>
