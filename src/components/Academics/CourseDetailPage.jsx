@@ -243,10 +243,18 @@ export default function CourseDetailPage({ overrides }) {
                   </span>
                 )}
               </div>
-              <h1 className="text-2xl md:text-3xl lg:text-[2.6rem] font-bold font-graphik text-white mb-3 leading-[1.15]">
+              <h1 className={`font-bold font-graphik text-white mb-3 leading-[1.15] ${
+                courseId === 'mba-general' || courseId === 'mba-iev'
+                  ? 'text-xl md:text-2xl lg:text-[2.2rem]'
+                  : 'text-2xl md:text-3xl lg:text-[2.6rem]'
+              }`}>
                 {course.name}
               </h1>
-              <p className="text-[#ffc107] font-semibold font-graphik text-base md:text-lg mb-6">{course.tagline}</p>
+              {courseId === 'mba-general' || courseId === 'mba-iev' ? (
+                <p className="text-[#ffc107] font-semibold font-graphik text-base md:text-lg mb-6">Welcome to MBA</p>
+              ) : (
+                <p className="text-[#ffc107] font-semibold font-graphik text-base md:text-lg mb-6">{course.tagline}</p>
+              )}
 
               {/* Course CTA Buttons */}
               <div className="flex flex-wrap gap-4">
@@ -280,20 +288,120 @@ export default function CourseDetailPage({ overrides }) {
               </div>
             </div>
 
-            {/* Right Column: Rounded Rectangle Image with Gold Border */}
+            {/* Right Column: Rounded Rectangle Image with Gold Border or Stats for MBA */}
             <div className="lg:w-[480px] xl:w-[520px] flex flex-col gap-6 shrink-0 relative">
-              <div className="relative group">
-                {/* Glow effect behind image */}
-                <div className="absolute -inset-3 bg-[#ffc107]/15 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
-                <div className="relative h-[260px] lg:h-[320px] w-full rounded-[1.5rem] overflow-hidden border-[3px] border-[#ffc107]/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] transition-transform duration-700 hover:scale-[1.02]">
-                  <img 
-                    src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"} 
-                    alt={course.name} 
-                    className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a40]/40 via-transparent to-transparent" />
+              {courseId === 'mba-general' || courseId === 'mba-iev' ? (
+                <div className="grid grid-cols-2 gap-4 relative z-10">
+                  {/* Card 1 */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={{ 
+                      opacity: 1, 
+                      y: [0, -10, 0]
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      opacity: { duration: 0.8 },
+                      y: {
+                        repeat: Infinity,
+                        duration: 4,
+                        ease: "easeInOut"
+                      },
+                      scale: { duration: 0.2 }
+                    }}
+                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[140px] md:min-h-[150px] cursor-pointer"
+                  >
+                    <Trophy className="text-[#ffc107] group-hover:text-[#224292] mb-2 group-hover:animate-bounce transition-colors duration-300" size={28} />
+                    <span className="text-white group-hover:text-[#224292] font-extrabold text-2xl lg:text-3xl tracking-tight transition-colors duration-300">1st</span>
+                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[11px] lg:text-[12px] font-bold mt-1 leading-snug transition-colors duration-300">Position Among in Salem – Namakkal Region</span>
+                  </motion.div>
+                  {/* Card 2 */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: -60 }}
+                    animate={{ 
+                      opacity: 1, 
+                      y: [0, -14, 0]
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 0.1 },
+                      y: {
+                        repeat: Infinity,
+                        duration: 4.6,
+                        ease: "easeInOut",
+                        delay: 0.2
+                      },
+                      scale: { duration: 0.2 }
+                    }}
+                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[140px] md:min-h-[150px] cursor-pointer"
+                  >
+                    <Award className="text-[#ffc107] group-hover:text-[#224292] mb-2 group-hover:animate-pulse transition-colors duration-300" size={28} />
+                    <span className="text-white group-hover:text-[#224292] font-extrabold text-2xl lg:text-3xl tracking-tight transition-colors duration-300">24th</span>
+                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[11px] lg:text-[12px] font-bold mt-1 leading-snug transition-colors duration-300">Position in the State of Tamil Nadu</span>
+                  </motion.div>
+                  {/* Card 3 */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={{ 
+                      opacity: 1, 
+                      y: [0, -12, 0]
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 0.2 },
+                      y: {
+                        repeat: Infinity,
+                        duration: 4.3,
+                        ease: "easeInOut",
+                        delay: 0.4
+                      },
+                      scale: { duration: 0.2 }
+                    }}
+                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[140px] md:min-h-[150px] cursor-pointer"
+                  >
+                    <Star className="text-[#ffc107] group-hover:text-[#224292] mb-2 group-hover:rotate-12 transition-transform transition-colors duration-300" size={28} />
+                    <span className="text-white group-hover:text-[#224292] font-extrabold text-2xl lg:text-3xl tracking-tight transition-colors duration-300">6th</span>
+                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[11px] lg:text-[12px] font-bold mt-1 leading-snug transition-colors duration-300">Position in Coimbatore Region</span>
+                  </motion.div>
+                  {/* Card 4 */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: -60 }}
+                    animate={{ 
+                      opacity: 1, 
+                      y: [0, -8, 0]
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      opacity: { duration: 0.8, delay: 0.3 },
+                      y: {
+                        repeat: Infinity,
+                        duration: 3.8,
+                        ease: "easeInOut",
+                        delay: 0.1
+                      },
+                      scale: { duration: 0.2 }
+                    }}
+                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[140px] md:min-h-[150px] cursor-pointer"
+                  >
+                    <TrendingUp className="text-[#ffc107] group-hover:text-[#224292] mb-2 group-hover:translate-y-[-2px] transition-transform transition-colors duration-300" size={28} />
+                    <span className="text-white group-hover:text-[#224292] font-extrabold text-2xl lg:text-3xl tracking-tight transition-colors duration-300">90%</span>
+                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[11px] lg:text-[12px] font-bold mt-1 leading-snug transition-colors duration-300">Placement Consistently</span>
+                  </motion.div>
                 </div>
-              </div>
+              ) : (
+                <div className="relative group">
+                  {/* Glow effect behind image */}
+                  <div className="absolute -inset-3 bg-[#ffc107]/15 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+                  <div className="relative h-[260px] lg:h-[320px] w-full rounded-[1.5rem] overflow-hidden border-[3px] border-[#ffc107]/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] transition-transform duration-700 hover:scale-[1.02]">
+                    <img 
+                      src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"} 
+                      alt={course.name} 
+                      className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a40]/40 via-transparent to-transparent" />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -365,7 +473,15 @@ export default function CourseDetailPage({ overrides }) {
 
 
                   <h2 className="text-2xl md:text-3xl font-bold font-graphik mb-8 flex items-center gap-3 tracking-tighter not-italic normal-case">
-                    <span className="text-[#224292]">About the</span> <span className="text-[#ffc107]">Program</span>
+                    {courseId === 'mba-general' || courseId === 'mba-iev' ? (
+                      <>
+                        <span className="text-[#224292]">Welcome to</span> <span className="text-[#ffc107]">MBA</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-[#224292]">About the</span> <span className="text-[#ffc107]">Program</span>
+                      </>
+                    )}
                   </h2>
 
                   <div className="relative z-10 mb-12">
