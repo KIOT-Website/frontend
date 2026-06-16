@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  ChevronLeft, GraduationCap, Building2, Users, BookOpen, 
+import {
+  ChevronLeft, GraduationCap, Building2, Users, BookOpen,
   MapPin, Clock, Calendar, Award, CheckCircle2, ChevronRight,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
   Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase, ExternalLink,
@@ -14,8 +14,14 @@ import venkatesanImg from '../../assets/dir and hod/Dr.T.Venkatesan.webp';
 import srinivasanImg from '../../assets/dir and hod/Dr. PSS. Srinivasan.jpg';
 import secretaryImg from '../../assets/main/Secretarys-Message-KIOTT.webp';
 import principalImg from '../../assets/dir and hod/Principal.png';
+import placementImmanuelImg from '../../assets/placements/placement team/Dr.D.Immanuel, MBA., Ph.D..webp';
+import placementPadmanabanImg from '../../assets/placements/placement team/Prof.G.Padmanaban, MBA., (PhD),.webp';
+import placementMusthaffaImg from '../../assets/placements/placement team/Mr.A.Musthaffa, MBA., M.Phil..webp';
+import placementRajendranImg from '../../assets/dir and hod/Dr. P. Rajendran.png';
+import placementBalachandranImg from '../../assets/placements/placement team/Balachandran B.Sc.,M.A.,.webp';
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
+import mbaHomeImg from '../../assets/main/mba home.png'
 import { getDepartmentSchematic } from './DepartmentSchematics'
 
 const API_BASE = 'http://127.0.0.1:8000'
@@ -82,6 +88,42 @@ const defaultCourse = (id) => ({
 })
 
 const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
+
+const eventsList = [
+  { name: "CMLR", url: "https://kbss.kiot.ac.in/case-method-of-learning-reflection/", course: "Both" },
+  { name: "Inauguration 2025", url: "https://kbss.kiot.ac.in/mba-iev-inauguration-2025/", course: "Both" },
+  { name: "Inauguration 2024", url: "https://kbss.kiot.ac.in/mba-iev-inauguration-2024/", course: "Both" },
+  { name: "Explore to Evolve 2024", url: "https://kbss.kiot.ac.in/explore-to-evolve-2024/", course: "Both" },
+  { name: "Induction Programme 2025", url: "https://kbss.kiot.ac.in/induction-programme-2025/", course: "Both" },
+  { name: "Induction Programme 2024", url: "https://kbss.kiot.ac.in/induction-programme-2024/", course: "Both" },
+  { name: "Induction Programme 2023", url: "https://kbss.kiot.ac.in/induction-programme-2023/", course: "Both" },
+  { name: "Induction Programme 2022", url: "https://kbss.kiot.ac.in/induction-programme-2022/", course: "Both" },
+  { name: "Outbound Training Yercaud 2025", url: "https://kbss.kiot.ac.in/outbound-training-yercaud-2025/", course: "Both" },
+  { name: "Outbound Training Yercaud 2024", url: "https://kbss.kiot.ac.in/outbound-training-yercaud-2024/", course: "Both" },
+  { name: "Orientation on Digital Marketing", url: "https://kbss.kiot.ac.in/digital-marketing/", course: "Both" },
+  { name: "Orientation Programme 2025", url: "https://kbss.kiot.ac.in/orientation-programme-2025/", course: "Both" },
+  { name: "TN Global Startup Summit 2025", url: "https://kbss.kiot.ac.in/global-startup-summit-2025/", course: "MBA-IEV" },
+  { name: "Newsletter – GLIMPSE", url: "https://kbss.kiot.ac.in/newsletter/", course: "Both" },
+  { name: "International Connect", url: "https://kbss.kiot.ac.in/international-connect/", course: "Both" },
+  { name: "International Conference 2025", url: "https://kbss.kiot.ac.in/international-conference-2025/", course: "Both" },
+  { name: "Frolics", url: "https://kbss.kiot.ac.in/frolics/", course: "MBA" },
+  { name: "Abhiyantri", url: "https://kbss.kiot.ac.in/abhiyantri/", course: "MBA" },
+  { name: "Advik", url: "https://kbss.kiot.ac.in/advik/", course: "MBA" },
+  { name: "Impact i 2026", url: "https://kbss.kiot.ac.in/impacti-2026/", course: "MBA-IEV" },
+  { name: "Fiducia", url: "https://kbss.kiot.ac.in/fiducia/", course: "MBA" },
+  { name: "Market Survey", url: "https://kbss.kiot.ac.in/market-survey/", course: "MBA" },
+  { name: "Freshers Day 2019", url: "https://kbss.kiot.ac.in/freshers-day-2019/", course: "MBA" },
+  { name: "EDC", url: "https://kbss.kiot.ac.in/edc/", course: "MBA-IEV" },
+  { name: "Recast Your Career", url: "https://kbss.kiot.ac.in/recast-your-career/", course: "Both" },
+  { name: "TANCET", url: "https://kbss.kiot.ac.in/tancet/", course: "Both" },
+  { name: "Career Guidance Cell", url: "https://kbss.kiot.ac.in/career-guidance-and-higher-education-cell/", course: "Both" },
+  { name: "Clubs & Forums", url: "https://kbss.kiot.ac.in/clubs-forums/", course: "Both" },
+  { name: "FDP", url: "https://kbss.kiot.ac.in/fdp/", course: "Both" },
+  { name: "Webinar", url: "https://kbss.kiot.ac.in/webinar/", course: "Both" },
+  { name: "News", url: "https://kbss.kiot.ac.in/news-media/", course: "Both" },
+  { name: "Engagement Column", url: "https://kbss.kiot.ac.in/engagement-column/", course: "Both" }
+]
+
 
 const leadershipData = [
   {
@@ -211,9 +253,11 @@ export default function CourseDetailPage({ overrides }) {
 
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
-    : (courseId === 'mba-general' || courseId === 'mba-iev')
-      ? ['Overview', 'Vision & Mission', 'Leadership Message', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices', 'Contact & Admission']
-      : TABS;
+    : courseId === 'mba-iev'
+      ? ['Overview', 'Vision & Mission', 'Leadership Message', 'Teaching Methodology', 'Faculty', 'Placement', 'Labs', 'Industry', 'Events', 'Contact & Admission']
+      : courseId === 'mba-general'
+        ? ['Overview', 'Vision & Mission', 'Leadership Message', 'Teaching Methodology', 'Faculty', 'Placement', 'Labs', 'Industry', 'Events', 'Contact & Admission']
+        : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
@@ -227,7 +271,7 @@ export default function CourseDetailPage({ overrides }) {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
     setActiveTab('Overview'); // Reset to first tab for new departments
-    
+
     // Safety delay to override any browser-native scroll restoration
     const timer = setTimeout(() => {
       window.scrollTo(0, 0);
@@ -249,7 +293,7 @@ export default function CourseDetailPage({ overrides }) {
     }
 
     if (tabsRef.current) {
-      const headerOffset = 150; 
+      const headerOffset = 150;
       const element = tabsRef.current;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -258,11 +302,11 @@ export default function CourseDetailPage({ overrides }) {
         top: offsetPosition,
         behavior: 'smooth'
       });
-      
+
       setTimeout(() => {
         const currentTop = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
         if (Math.abs(window.pageYOffset - currentTop) > 10) {
-            window.scrollTo({ top: currentTop, behavior: 'instant' });
+          window.scrollTo({ top: currentTop, behavior: 'instant' });
         }
       }, 300);
     }
@@ -275,48 +319,52 @@ export default function CourseDetailPage({ overrides }) {
       <section className="relative overflow-hidden bg-[#224292] pt-4 pb-6 md:pt-8 md:pb-10">
         {/* Tech Lining / Circuit Background Layer */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-           <svg width="100%" height="100%" className="absolute inset-0">
-             <defs>
-               <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                 <stop offset="0%" stopColor="#ffffff" stopOpacity="0.05" />
-                 <stop offset="50%" stopColor="#ffc107" stopOpacity="0.25" />
-                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0.05" />
-               </linearGradient>
-               <filter id="glow">
-                  <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-                  <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-               </filter>
-             </defs>
-             
-             {/* Branched Circuit Lines - Bottom Focus */}
-             <g stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="opacity-30">
-                <path d="M-100 280 L200 280 L240 240 L600 240 L640 280 L1400 280" />
-                <path d="M-100 320 L150 320 L200 370 L500 370 L550 320 L1400 320" />
-                <path d="M0 380 L400 380 L440 420 L900 420 L940 380 L1400 380" />
-                <path d="M-100 150 L100 150 L140 110 L400 110" />
-                <path d="M1400 150 L1100 150 L1060 110 L800 110" />
-             </g>
-           </svg>
+          <svg width="100%" height="100%" className="absolute inset-0">
+            <defs>
+              <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.05" />
+                <stop offset="50%" stopColor="#ffc107" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0.05" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            {/* Branched Circuit Lines - Bottom Focus */}
+            <g stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="opacity-30">
+              <path d="M-100 280 L200 280 L240 240 L600 240 L640 280 L1400 280" />
+              <path d="M-100 320 L150 320 L200 370 L500 370 L550 320 L1400 320" />
+              <path d="M0 380 L400 380 L440 420 L900 420 L940 380 L1400 380" />
+              <path d="M-100 150 L100 150 L140 110 L400 110" />
+              <path d="M1400 150 L1100 150 L1060 110 L800 110" />
+            </g>
+          </svg>
         </div>
 
         <div className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full bg-[#ffc107]/5 blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Back button */}
-          <button
-            onClick={() => {
-              const category = (courseId === 'science-humanities') ? 'undergraduate' : ((courseId && (courseId.startsWith('be-') || courseId.startsWith('btech-'))) ? 'undergraduate' : 'postgraduate');
-              navigate(`/academics/${category}`);
-            }}
-            className="mb-4 inline-flex items-center gap-2 text-white/60 hover:text-white text-[13px] font-bold font-graphik transition-colors"
-          >
-            <ArrowLeft size={15} /> Back to Academics
-          </button>
+          {!(courseId === 'mba-general' || courseId === 'mba-iev') && (
+            <button
+              onClick={() => {
+                const category = (courseId === 'science-humanities') ? 'undergraduate' : ((courseId && (courseId.startsWith('be-') || courseId.startsWith('btech-'))) ? 'undergraduate' : 'postgraduate');
+                navigate(`/academics/${category}`);
+              }}
+              className="mb-4 inline-flex items-center gap-2 text-white/60 hover:text-white text-[13px] font-bold font-graphik transition-colors"
+            >
+              <ArrowLeft size={15} /> Back to Academics
+            </button>
+          )}
 
-          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+          <div className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
+            (courseId === 'mba-general' || courseId === 'mba-iev') ? 'lg:items-end' : 'lg:items-center'
+          }`}>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-5 flex-wrap">
                 <span className="px-3.5 py-1.5 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/40 text-[#ffc107] text-xs font-bold font-graphik">
@@ -328,14 +376,10 @@ export default function CourseDetailPage({ overrides }) {
                   </span>
                 )}
               </div>
-              {(courseId === 'mba-general' || courseId === 'mba-iev') && (
-                <p className="text-[#ffc107] font-semibold font-graphik text-base md:text-lg mb-2">Welcome to MBA</p>
-              )}
-              <h1 className={`font-bold font-graphik text-white leading-[1.15] ${
-                courseId === 'mba-general' || courseId === 'mba-iev'
-                  ? 'text-xl md:text-2xl lg:text-[2.2rem] mb-6'
+              <h1 className={`font-bold font-graphik text-white leading-[1.15] ${courseId === 'mba-general' || courseId === 'mba-iev'
+                  ? 'text-xl md:text-xl lg:text-[1.75rem] mb-4 mt-6'
                   : 'text-2xl md:text-3xl lg:text-[2.6rem] mb-3'
-              }`}>
+                }`}>
                 {course.name}
               </h1>
               {!(courseId === 'mba-general' || courseId === 'mba-iev') && (
@@ -343,46 +387,49 @@ export default function CourseDetailPage({ overrides }) {
               )}
 
               {/* Course CTA Buttons */}
-              <div className="flex flex-wrap gap-4">
-                {course.quickApply ? (
-                  <a
-                    href={course.quickApply}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
-                  >
-                    Quick Apply <ArrowRight size={15} />
-                  </a>
-                ) : (
-                  <button
-                    onClick={() => navigate('/admissions')}
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
-                  >
-                    Quick Apply <ArrowRight size={15} />
-                  </button>
-                )}
-                {course.brochure && (
-                  <a
-                    href={course.brochure}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#224292] font-bold font-graphik text-[14px] hover:bg-slate-100 hover:shadow-xl transition-all shadow-lg hover:scale-[1.02]"
-                  >
-                    Brochure <Download size={15} />
-                  </a>
-                )}
-              </div>
+              {!(courseId === 'mba-general' || courseId === 'mba-iev') && (
+                <div className="flex flex-wrap gap-4">
+                  {course.quickApply ? (
+                    <a
+                      href={course.quickApply}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                    >
+                      Quick Apply <ArrowRight size={15} />
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => navigate('/admissions')}
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                    >
+                      Quick Apply <ArrowRight size={15} />
+                    </button>
+                  )}
+                  {course.brochure && (
+                    <a
+                      href={course.brochure}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#224292] font-bold font-graphik text-[14px] hover:bg-slate-100 hover:shadow-xl transition-all shadow-lg hover:scale-[1.02]"
+                    >
+                      Brochure <Download size={15} />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Right Column: Rounded Rectangle Image with Gold Border or Stats for MBA */}
             <div className="lg:w-[480px] xl:w-[520px] flex flex-col gap-6 shrink-0 relative">
               {courseId === 'mba-general' || courseId === 'mba-iev' ? (
-                <div className="grid grid-cols-2 gap-4 relative z-10">
+                <>
+                  <div className="grid grid-cols-2 gap-4 relative z-10">
                   {/* Card 1 */}
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: 60 }}
-                    animate={{ 
-                      opacity: 1, 
+                    animate={{
+                      opacity: 1,
                       y: [0, -10, 0]
                     }}
                     whileHover={{ scale: 1.05 }}
@@ -395,17 +442,17 @@ export default function CourseDetailPage({ overrides }) {
                       },
                       scale: { duration: 0.2 }
                     }}
-                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[140px] md:min-h-[150px] cursor-pointer"
+                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
                   >
-                    <Trophy className="text-[#ffc107] group-hover:text-[#224292] mb-2 group-hover:animate-bounce transition-colors duration-300" size={28} />
-                    <span className="text-white group-hover:text-[#224292] font-extrabold text-2xl lg:text-3xl tracking-tight transition-colors duration-300">1st</span>
-                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[11px] lg:text-[12px] font-bold mt-1 leading-snug transition-colors duration-300">Position Among in Salem – Namakkal Region</span>
+                    <Trophy className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:animate-bounce transition-colors duration-300" />
+                    <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">1st</span>
+                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position Among in Salem – Namakkal Region</span>
                   </motion.div>
                   {/* Card 2 */}
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -60 }}
-                    animate={{ 
-                      opacity: 1, 
+                    animate={{
+                      opacity: 1,
                       y: [0, -14, 0]
                     }}
                     whileHover={{ scale: 1.05 }}
@@ -419,17 +466,17 @@ export default function CourseDetailPage({ overrides }) {
                       },
                       scale: { duration: 0.2 }
                     }}
-                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[140px] md:min-h-[150px] cursor-pointer"
+                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
                   >
-                    <Award className="text-[#ffc107] group-hover:text-[#224292] mb-2 group-hover:animate-pulse transition-colors duration-300" size={28} />
-                    <span className="text-white group-hover:text-[#224292] font-extrabold text-2xl lg:text-3xl tracking-tight transition-colors duration-300">24th</span>
-                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[11px] lg:text-[12px] font-bold mt-1 leading-snug transition-colors duration-300">Position in the State of Tamil Nadu</span>
+                    <Award className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:animate-pulse transition-colors duration-300" />
+                    <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">24th</span>
+                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position in the State of Tamil Nadu</span>
                   </motion.div>
                   {/* Card 3 */}
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: 60 }}
-                    animate={{ 
-                      opacity: 1, 
+                    animate={{
+                      opacity: 1,
                       y: [0, -12, 0]
                     }}
                     whileHover={{ scale: 1.05 }}
@@ -443,17 +490,17 @@ export default function CourseDetailPage({ overrides }) {
                       },
                       scale: { duration: 0.2 }
                     }}
-                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[140px] md:min-h-[150px] cursor-pointer"
+                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
                   >
-                    <Star className="text-[#ffc107] group-hover:text-[#224292] mb-2 group-hover:rotate-12 transition-transform transition-colors duration-300" size={28} />
-                    <span className="text-white group-hover:text-[#224292] font-extrabold text-2xl lg:text-3xl tracking-tight transition-colors duration-300">6th</span>
-                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[11px] lg:text-[12px] font-bold mt-1 leading-snug transition-colors duration-300">Position in Coimbatore Region</span>
+                    <Star className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:rotate-12 transition-transform transition-colors duration-300" />
+                    <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">6th</span>
+                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position in Coimbatore Region</span>
                   </motion.div>
                   {/* Card 4 */}
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -60 }}
-                    animate={{ 
-                      opacity: 1, 
+                    animate={{
+                      opacity: 1,
                       y: [0, -8, 0]
                     }}
                     whileHover={{ scale: 1.05 }}
@@ -467,21 +514,53 @@ export default function CourseDetailPage({ overrides }) {
                       },
                       scale: { duration: 0.2 }
                     }}
-                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[140px] md:min-h-[150px] cursor-pointer"
+                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
                   >
-                    <TrendingUp className="text-[#ffc107] group-hover:text-[#224292] mb-2 group-hover:translate-y-[-2px] transition-transform transition-colors duration-300" size={28} />
-                    <span className="text-white group-hover:text-[#224292] font-extrabold text-2xl lg:text-3xl tracking-tight transition-colors duration-300">90%</span>
-                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[11px] lg:text-[12px] font-bold mt-1 leading-snug transition-colors duration-300">Placement Consistently</span>
+                    <TrendingUp className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:translate-y-[-2px] transition-transform transition-colors duration-300" />
+                    <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">90%</span>
+                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Placement Consistently</span>
                   </motion.div>
                 </div>
-              ) : (
+                
+                {/* MBA CTA Buttons */}
+                <div className="flex flex-wrap gap-4 justify-center relative z-10 mt-2">
+                  {course.quickApply ? (
+                    <a
+                      href={course.quickApply}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                    >
+                      Quick Apply <ArrowRight size={15} />
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => navigate('/admissions')}
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                    >
+                      Quick Apply <ArrowRight size={15} />
+                    </button>
+                  )}
+                  {course.brochure && (
+                    <a
+                      href={course.brochure}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#224292] font-bold font-graphik text-[14px] hover:bg-slate-100 hover:shadow-xl transition-all shadow-lg hover:scale-[1.02]"
+                    >
+                      Brochure <Download size={15} />
+                    </a>
+                  )}
+                </div>
+              </>
+            ) : (
                 <div className="relative group">
                   {/* Glow effect behind image */}
                   <div className="absolute -inset-3 bg-[#ffc107]/15 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
                   <div className="relative h-[260px] lg:h-[320px] w-full rounded-[1.5rem] overflow-hidden border-[3px] border-[#ffc107]/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] transition-transform duration-700 hover:scale-[1.02]">
-                    <img 
-                      src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"} 
-                      alt={course.name} 
+                    <img
+                      src={course.bannerImage || "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"}
+                      alt={course.name}
                       className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a1a40]/40 via-transparent to-transparent" />
@@ -491,10 +570,17 @@ export default function CourseDetailPage({ overrides }) {
             </div>
           </div>
         </div>
-        {/* Hand-drawn department-specific schematic/pencil drawing at the bottom left of the hero */}
-        <div className="absolute bottom-[-10px] left-[18%] w-full lg:w-[60%] max-w-[750px] h-[130px] opacity-[0.24] pointer-events-none z-0">
-          {getDepartmentSchematic(courseId)}
-        </div>
+        {/* Hand-drawn department-specific schematic/pencil drawing at the bottom left of the hero, or MBA background image */}
+        {(courseId === 'mba-general' || courseId === 'mba-iev') ? (
+          <div className="absolute inset-y-0 left-0 w-full lg:w-[60%] opacity-[0.75] pointer-events-none z-0 overflow-hidden hidden lg:block">
+            <img src={mbaHomeImg} className="w-full h-full object-cover object-left" alt="" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#224292]/40 to-[#224292]" />
+          </div>
+        ) : (
+          <div className="absolute bottom-[-10px] left-[18%] w-full lg:w-[60%] max-w-[750px] h-[130px] opacity-[0.24] pointer-events-none z-0">
+            {getDepartmentSchematic(courseId)}
+          </div>
+        )}
       </section>
 
       {/* --- MOBILE TAB NAVIGATION (Pill Style) --- */}
@@ -504,11 +590,10 @@ export default function CourseDetailPage({ overrides }) {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2.5 rounded-full text-[12px] font-bold font-graphik transition-all border-2 ${
-                activeTab === tab
+              className={`px-5 py-2.5 rounded-full text-[12px] font-bold font-graphik transition-all border-2 ${activeTab === tab
                   ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 scale-105'
                   : 'bg-white/5 border-white/20 text-white hover:bg-white/10'
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -524,11 +609,10 @@ export default function CourseDetailPage({ overrides }) {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`whitespace-nowrap px-6 py-2.5 text-[13px] font-black font-graphik transition-all rounded-full border-2 tracking-wide ${
-                  activeTab === tab
+                className={`whitespace-nowrap px-6 py-2.5 text-[13px] font-black font-graphik transition-all rounded-full border-2 tracking-wide ${activeTab === tab
                     ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 scale-105'
                     : 'bg-transparent border-white/20 text-white hover:border-white/50 hover:bg-white/5'
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -574,7 +658,7 @@ export default function CourseDetailPage({ overrides }) {
                     {Array.isArray(course.overview) ? (
                       <div className="space-y-6">
                         {course.overview.map((para, idx) => (
-                         <p key={idx} className="text-black leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
+                          <p key={idx} className="text-black leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
                             {para}
                           </p>
                         ))}
@@ -598,10 +682,10 @@ export default function CourseDetailPage({ overrides }) {
                         <div>
                           <p className="text-black font-black text-[9px] tracking-[0.2em] mb-4 opacity-40 group-hover:opacity-100 transition-opacity">{item.label}</p>
                           <div className="flex items-center gap-4">
-                             <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center ${item.color} group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-500`}>
-                                <item.icon size={20} />
-                             </div>
-                             <span className="text-black font-bold font-graphik text-[14px] leading-tight">{item.value}</span>
+                            <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center ${item.color} group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-500`}>
+                              <item.icon size={20} />
+                            </div>
+                            <span className="text-black font-bold font-graphik text-[14px] leading-tight">{item.value}</span>
                           </div>
                         </div>
                       </div>
@@ -631,9 +715,9 @@ export default function CourseDetailPage({ overrides }) {
                         "Exclusive placement officer, round the year placement",
                         "Smart classrooms, Wi-Fi Computer Centre, Exclusive Seminar Hall and Dedicated Digital Library"
                       ].map((item, idx) => (
-                        <motion.div 
-                          key={idx} 
-                          whileHover={{ x: 6 }} 
+                        <motion.div
+                          key={idx}
+                          whileHover={{ x: 6 }}
                           className="flex gap-3 items-start p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#ffc107] hover:shadow-md transition-all"
                         >
                           <CheckCircle2 size={18} className="text-[#224292] mt-0.5 shrink-0" />
@@ -651,9 +735,9 @@ export default function CourseDetailPage({ overrides }) {
                       </h2>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {course.whyChoose.map((item, idx) => (
-                          <motion.div 
-                            key={idx} 
-                            whileHover={{ x: 6 }} 
+                          <motion.div
+                            key={idx}
+                            whileHover={{ x: 6 }}
                             className="flex gap-3 items-start p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#ffc107] hover:shadow-md transition-all"
                           >
                             <CheckCircle2 size={18} className="text-[#224292] mt-0.5 shrink-0" />
@@ -674,8 +758,8 @@ export default function CourseDetailPage({ overrides }) {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {course.careerProspects.map((item, idx) => (
-                        <div 
-                          key={idx} 
+                        <div
+                          key={idx}
                           className="flex gap-3 items-start p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all"
                         >
                           <ArrowRight size={16} className="text-[#ffc107] mt-0.5 shrink-0" />
@@ -714,146 +798,145 @@ export default function CourseDetailPage({ overrides }) {
               <>
                 <div className="space-y-8 py-8">
                   <div className="grid lg:grid-cols-2 gap-8">
-                      {/* Vision Card */}
-                      <motion.div 
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          className="group relative rounded-[2rem] p-10 bg-white border border-slate-100 shadow-xl shadow-black/5 overflow-hidden transition-all duration-500 hover:border-[#224292]/30"
-                      >
-                          <div className="relative z-10 flex flex-col h-full">
-                              <h3 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
-                                 <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
-                                 Our Vision
-                              </h3>
+                    {/* Vision Card */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="group relative rounded-[2rem] p-10 bg-white border border-slate-100 shadow-xl shadow-black/5 overflow-hidden transition-all duration-500 hover:border-[#224292]/30"
+                    >
+                      <div className="relative z-10 flex flex-col h-full">
+                        <h3 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
+                          <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
+                          Our Vision
+                        </h3>
 
-                              <div className="space-y-6 flex-grow">
-                                  <p className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
-                                      {course.vision || 'To provide a world-class academic environment for creating global leaders.'}
-                                  </p>
+                        <div className="space-y-6 flex-grow">
+                          <p className="text-[#333333] leading-relaxed text-[16px] font-normal font-graphik text-justify not-italic">
+                            {course.vision || 'To provide a world-class academic environment for creating global leaders.'}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Mission Card */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                      className="group relative bg-white rounded-[2rem] p-10 shadow-xl shadow-black/5 border border-slate-100 overflow-hidden transition-all duration-500 hover:border-[#ffc107]/30"
+                    >
+                      <div className="relative z-10 flex flex-col h-full">
+                        <h3 className="text-2xl font-bold font-graphik text-[#ffc107] mb-6 flex items-center gap-3">
+                          <div className="w-1.5 h-6 bg-[#224292] rounded-full" />
+                          Our Mission
+                        </h3>
+
+                        <div className="space-y-6 flex-grow">
+                          {(course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.').split('\n').map((para, idx) => (
+                            <div key={idx} className="flex gap-4 items-start">
+                              <div className="w-6 h-6 rounded-lg bg-[#224292]/5 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#ffc107]/20 transition-colors">
+                                <CheckCircle2 size={14} className="text-[#224292] transition-colors" />
                               </div>
-                          </div>
-                      </motion.div>
-
-                      {/* Mission Card */}
-                      <motion.div 
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.1 }}
-                          className="group relative bg-white rounded-[2rem] p-10 shadow-xl shadow-black/5 border border-slate-100 overflow-hidden transition-all duration-500 hover:border-[#ffc107]/30"
-                      >
-                          <div className="relative z-10 flex flex-col h-full">
-                              <h3 className="text-2xl font-bold font-graphik text-[#ffc107] mb-6 flex items-center gap-3">
-                                  <div className="w-1.5 h-6 bg-[#224292] rounded-full" />
-                                  Our Mission
-                              </h3>
-
-                              <div className="space-y-6 flex-grow">
-                                  {(course.mission || 'To promote institutional excellence by fostering innovation, research, and high-quality teaching methodologies.').split('\n').map((para, idx) => (
-                                      <div key={idx} className="flex gap-4 items-start">
-                                          <div className="w-6 h-6 rounded-lg bg-[#224292]/5 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#ffc107]/20 transition-colors">
-                                              <CheckCircle2 size={14} className="text-[#224292] transition-colors" />
-                                          </div>
-                                          <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify not-italic flex-1">
-                                              {para.trim().replace(/^M\d+:\s*/i, '')}
-                                          </p>
-                                      </div>
-                                  ))}
-                              </div>
-                          </div>
-                      </motion.div>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify not-italic flex-1">
+                                {para.trim().replace(/^M\d+:\s*/i, '')}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
 
                 <div className="px-2 py-8 sm:px-10 md:p-14 overflow-hidden mt-8">
                   <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
-                     <div>
-                        <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] tracking-tighter">Academic Objectives</h2>
-                     </div>
-                     
-                     <div className="grid grid-cols-3 md:flex md:items-center gap-2 md:gap-3 bg-slate-50/50 p-1.5 md:p-2 rounded-2xl md:rounded-[2rem] border border-slate-100">
-                        {objectiveData.map((obj) => (
-                          <button
-                            key={obj.id}
-                            onClick={() => setActiveObjectiveTab(obj.id)}
-                            className={`px-2 md:px-8 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] flex items-center justify-center md:justify-start gap-1.5 md:gap-3 text-[8px] md:text-[10px] font-bold font-graphik uppercase tracking-tight md:tracking-[0.2em] transition-all duration-500 shadow-sm ${
-                              activeObjectiveTab === obj.id
-                                ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
-                                : 'bg-white text-[#224292] hover:bg-white/80'
+                    <div>
+                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] tracking-tighter">Academic Objectives</h2>
+                    </div>
+
+                    <div className="grid grid-cols-3 md:flex md:items-center gap-2 md:gap-3 bg-slate-50/50 p-1.5 md:p-2 rounded-2xl md:rounded-[2rem] border border-slate-100">
+                      {objectiveData.map((obj) => (
+                        <button
+                          key={obj.id}
+                          onClick={() => setActiveObjectiveTab(obj.id)}
+                          className={`px-2 md:px-8 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] flex items-center justify-center md:justify-start gap-1.5 md:gap-3 text-[8px] md:text-[10px] font-bold font-graphik uppercase tracking-tight md:tracking-[0.2em] transition-all duration-500 shadow-sm ${activeObjectiveTab === obj.id
+                              ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
+                              : 'bg-white text-[#224292] hover:bg-white/80'
                             }`}
-                          >
-                             <obj.icon size={14} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#224292]/60'} />
-                             {obj.id}
-                          </button>
-                        ))}
-                     </div>
+                        >
+                          <obj.icon size={14} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#224292]/60'} />
+                          {obj.id}
+                        </button>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="relative min-h-[300px]">
                     <AnimatePresence mode="wait">
-                       <motion.div
-                         key={activeObjectiveTab}
-                         initial={{ opacity: 0, x: 20 }}
-                         animate={{ opacity: 1, x: 0 }}
-                         exit={{ opacity: 0, x: -20 }}
-                         transition={{ duration: 0.4 }}
-                         className="py-4 group"
-                       >
-                          <div className="space-y-4 font-graphik">
-                              {(() => {
-                                const text = activeObj.content || 'Data current being optimized for digital view.';
-                                const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-                                
-                                // Detect if first line is a preamble
-                                const hasPreamble = lines.length > 1 && (lines[0].endsWith(':') || lines[0].includes('will be able to') || lines[0].includes('completion of'));
-                                const preamble = hasPreamble ? lines[0] : null;
-                                const rawPoints = hasPreamble ? lines.slice(1) : lines;
+                      <motion.div
+                        key={activeObjectiveTab}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.4 }}
+                        className="py-4 group"
+                      >
+                        <div className="space-y-4 font-graphik">
+                          {(() => {
+                            const text = activeObj.content || 'Data current being optimized for digital view.';
+                            const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
 
-                                return (
-                                  <div className="space-y-4">
-                                    {preamble && (
-                                      <p className="px-4 text-[#64779F] font-bold text-[13px] mb-6 italic leading-relaxed">{preamble}</p>
-                                    )}
-                                    {rawPoints.map((point, idx) => {
-                                      const match = point.match(/^((?:PEO|PO|PSO|M)\s*[-]?\s*(?:\d+|[IVXLC]+):?)\s*(.*)/i);
-                                      const label = match ? match[1] : '';
-                                      const description = match ? match[2] : point;
+                            // Detect if first line is a preamble
+                            const hasPreamble = lines.length > 1 && (lines[0].endsWith(':') || lines[0].includes('will be able to') || lines[0].includes('completion of'));
+                            const preamble = hasPreamble ? lines[0] : null;
+                            const rawPoints = hasPreamble ? lines.slice(1) : lines;
 
-                                      return (
-                                        <motion.div 
-                                          key={idx} 
-                                          whileHover={{ x: 10 }}
-                                          className="flex gap-3 md:gap-5 px-4 py-5 md:p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
-                                        >
-                                          <div className="flex-shrink-0 mt-1">
-                                              <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
-                                                  <CheckCircle2 size={16} className="text-[#224292] group-hover/point:text-[#ffc107] transition-colors" />
-                                              </div>
-                                          </div>
-                                          <div className="space-y-1 flex-1">
-                                            {label && (
-                                              <span className="block text-[11px] font-black font-graphik text-[#224292] uppercase tracking-[0.2em]">
-                                                {label.replace(':', '')}
-                                              </span>
-                                            )}
-                                            <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[14px] sm:text-[16px] text-justify">
-                                              {description}
-                                            </p>
-                                          </div>
-                                        </motion.div>
-                                      );
-                                    })}
-                                  </div>
-                                );
-                              })()}
-                           </div>
-                        </motion.div>
-                     </AnimatePresence>
-                    </div>
-                 </div>
-               </>
-             )}
+                            return (
+                              <div className="space-y-4">
+                                {preamble && (
+                                  <p className="px-4 text-[#64779F] font-bold text-[13px] mb-6 italic leading-relaxed">{preamble}</p>
+                                )}
+                                {rawPoints.map((point, idx) => {
+                                  const match = point.match(/^((?:PEO|PO|PSO|M)\s*[-]?\s*(?:\d+|[IVXLC]+):?)\s*(.*)/i);
+                                  const label = match ? match[1] : '';
+                                  const description = match ? match[2] : point;
+
+                                  return (
+                                    <motion.div
+                                      key={idx}
+                                      whileHover={{ x: 10 }}
+                                      className="flex gap-3 md:gap-5 px-4 py-5 md:p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
+                                    >
+                                      <div className="flex-shrink-0 mt-1">
+                                        <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
+                                          <CheckCircle2 size={16} className="text-[#224292] group-hover/point:text-[#ffc107] transition-colors" />
+                                        </div>
+                                      </div>
+                                      <div className="space-y-1 flex-1">
+                                        {label && (
+                                          <span className="block text-[11px] font-black font-graphik text-[#224292] uppercase tracking-[0.2em]">
+                                            {label.replace(':', '')}
+                                          </span>
+                                        )}
+                                        <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[14px] sm:text-[16px] text-justify">
+                                          {description}
+                                        </p>
+                                      </div>
+                                    </motion.div>
+                                  );
+                                })}
+                              </div>
+                            );
+                          })()}
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </>
+            )}
 
             {/* --- LEADERSHIP MESSAGE --- */}
             {activeTab === 'Leadership Message' && (
@@ -876,11 +959,10 @@ export default function CourseDetailPage({ overrides }) {
                     <button
                       key={leader.id}
                       onClick={() => setSelectedLeaderId(leader.id)}
-                      className={`px-5 py-3 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all duration-300 ${
-                        selectedLeaderId === leader.id
+                      className={`px-5 py-3 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all duration-300 ${selectedLeaderId === leader.id
                           ? 'bg-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/25 scale-[1.02] border border-[#ffc107]'
                           : 'bg-[#224292] text-white border border-[#224292]/10 hover:bg-[#224292]/90'
-                      }`}
+                        }`}
                     >
                       {leader.id === 'chairman' ? 'Executive Chairman' : leader.id === 'secretary' ? 'Secretary' : leader.id === 'principal' ? 'Principal' : 'Director'}
                     </button>
@@ -909,9 +991,9 @@ export default function CourseDetailPage({ overrides }) {
                           {/* Inner gold frame */}
                           <div className="relative w-36 h-36 rounded-full p-1 bg-gradient-to-tr from-[#ffc107] to-[#e0a800] shadow-md z-10 overflow-hidden group-hover/img:scale-[1.02] transition-transform duration-500">
                             <div className="w-full h-full rounded-full overflow-hidden bg-white border-2 border-white shadow-inner">
-                              <img 
-                                src={leader.image} 
-                                alt={leader.name} 
+                              <img
+                                src={leader.image}
+                                alt={leader.name}
                                 className="w-full h-full object-cover object-top"
                               />
                             </div>
@@ -937,7 +1019,7 @@ export default function CourseDetailPage({ overrides }) {
                           <span className="w-1.5 h-5 bg-[#ffc107] rounded-full inline-block" />
                           {leader.title}
                         </h4>
-                        
+
                         <div className="text-slate-600 text-[14.5px] leading-relaxed text-justify space-y-5 font-normal relative z-10 pl-6">
                           {leader.paragraphs.map((para, pIdx) => {
                             // Format sub-items if paragraphs contain lists (specifically five big problems)
@@ -1032,10 +1114,133 @@ export default function CourseDetailPage({ overrides }) {
               <CurriculumSection courseId={courseId} courseName={course.name} />
             )}
 
+            {/* --- TEACHING METHODOLOGY --- */}
+            {activeTab === 'Teaching Methodology' && (
+              <div className="space-y-8 py-8 max-w-5xl mx-auto">
+                {/* Intro Card */}
+                <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#224292]/5 rounded-full -mr-32 -mt-32 blur-3xl pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -ml-16 -mb-16 blur-2xl pointer-events-none" />
+
+                  <h2 className="text-2xl md:text-3xl font-bold font-graphik mb-6 text-[#224292] flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                    Pedagogy
+                  </h2>
+                  <p className="text-slate-600 leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                    At MBA@KIOT, the teaching and learning process is designed to foster conceptual understanding, innovation, entrepreneurial thinking, and practical business acumen. The programme emphasizes experiential and application-oriented learning, enabling students to connect theoretical concepts with real-world business challenges. Through a blend of classroom instruction, case-based discussions, business simulations, industry interactions, and venture development activities, students gain the confidence and competence required to become successful entrepreneurs and business leaders. The learning environment is supported by a team of experienced faculty members with strong academic and industry backgrounds, ensuring that students develop critical thinking, problem-solving abilities, leadership skills, and a dynamic managerial mindset.
+                  </p>
+                </div>
+
+                {/* Pedagogical Practices Table/List Card */}
+                <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 overflow-hidden">
+                  <h2 className="text-2xl md:text-3xl font-bold font-graphik mb-6 text-[#224292] flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                    Pedagogical Practices
+                  </h2>
+                  <p className="text-slate-500 font-semibold font-graphik text-sm mb-6 leading-relaxed">
+                    The MBA programme adopts a diverse range of teaching-learning methods to create an engaging and outcome-oriented learning experience. These include:
+                  </p>
+
+                  <div className="border border-[#DEE7F4] rounded-2xl overflow-hidden shadow-sm">
+                    <table className="w-full text-left font-graphik text-[14px]">
+                      <thead>
+                        <tr className="bg-[#224292] text-white">
+                          <th className="py-4 px-6 font-bold uppercase tracking-wider text-[13px] md:text-[14px] w-1/3">
+                            Methodology
+                          </th>
+                          <th className="py-4 px-6 font-bold uppercase tracking-wider text-[13px] md:text-[14px]">
+                            Description
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#DEE7F4]">
+                        {[
+                          { title: "Activity-Based Learning", desc: "Learning through exploration, experimentation, and hands-on activities." },
+                          { title: "Group Activities", desc: "Collaborative exercises that enhance teamwork, critical thinking, and decision-making skills." },
+                          { title: "Seminars", desc: "Student presentations that build confidence, communication skills, and domain expertise." },
+                          { title: "Peer Learning", desc: "Knowledge sharing and collaborative learning among students." },
+                          { title: "Experiential Learning", desc: "Learning through real-world exposure, entrepreneurship activities, and practical experiences." },
+                          { title: "Real-Time Projects and Assignments", desc: "Industry-relevant projects that address real business challenges." },
+                          { title: "Case Discussions", desc: "Analysis of business situations to strengthen analytical and strategic thinking." },
+                          { title: "Field Exercises", desc: "First-hand learning experiences outside the classroom environment." },
+                          { title: "Movie Reviews", desc: "Critical evaluation of business themes and managerial concepts through films." },
+                          { title: "Outbound Training", desc: "Activities focused on leadership, team building, communication, and problem-solving." },
+                          { title: "Business Simulations", desc: "Technology-enabled simulations that replicate real business scenarios and decision-making environments." },
+                          { title: "Group Discussions", desc: "Interactive forums for exchanging ideas, enhancing knowledge, and developing communication skills." },
+                          { title: "Industrial Visits", desc: "Exposure to organizational practices, industrial operations, and workplace realities." },
+                          { title: "Simulation Games", desc: "Active learning exercises that provide a risk-free environment for developing managerial and entrepreneurial competencies." }
+                        ].map((practice, idx) => (
+                          <tr key={idx} className={`${idx % 2 === 0 ? 'bg-[#E5EDF8]/20' : 'bg-white'} hover:bg-[#E5EDF8]/40 transition-colors`}>
+                            <td className="py-4 px-6 font-bold text-[#224292] text-[14px] leading-tight">
+                              {practice.title}
+                            </td>
+                            <td className="py-4 px-6 text-slate-700 font-medium text-[13.5px] md:text-[14px] leading-relaxed">
+                              {practice.desc}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p className="mt-8 text-slate-600 leading-relaxed text-[14px] md:text-[15px] font-medium font-graphik text-justify italic">
+                    Together, these pedagogical practices ensure that students are equipped with the knowledge, skills, and entrepreneurial mindset required to create, manage, and scale innovative ventures in a rapidly evolving business landscape.
+                  </p>
+                </div>
+              </div>
+            )}
+
             {/* --- FACULTY --- */}
             {activeTab === 'Faculty' && (
               <div>
-                {courseId === 'science-humanities' ? (
+                {(courseId === 'mba-general' || courseId === 'mba-iev') ? (
+                  <div className="space-y-6 py-8">
+                    <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] flex items-center gap-3">
+                      <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                      Faculty Members & Supporting Staff
+                    </h2>
+                    <p className="text-slate-600 leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik mb-4">
+                      Explore our regular faculty members, visiting faculty profiles, and dedicated supporting staff who contribute to the outstanding academic experience at MBA@KIOT.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                      {[
+                        {
+                          title: "Regular Faculty",
+                          url: "https://kbss.kiot.ac.in/regular-faculty/",
+                          desc: "Meet our permanent academic staff guiding students day-to-day."
+                        },
+                        {
+                          title: "Visiting Faculty",
+                          url: "https://kbss.kiot.ac.in/visiting-faculty/",
+                          desc: "Learn about industry experts and leaders who share their insights."
+                        },
+                        {
+                          title: "Supporting Staff",
+                          url: "https://kbss.kiot.ac.in/supporting-staff/",
+                          desc: "Dedicated personnel managing operations and laboratory facilities."
+                        }
+                      ].map((btn, idx) => (
+                        <a
+                          key={idx}
+                          href={btn.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex flex-col p-6 rounded-2xl bg-white border border-[#ffc107] hover:border-[#224292] hover:shadow-xl transition-all duration-300 group/btn shadow-sm"
+                        >
+                          <div className="w-12 h-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover/btn:bg-[#ffc107] group-hover/btn:text-[#224292] mb-4 transition-colors">
+                            <Users size={22} />
+                          </div>
+                          <h3 className="font-bold text-lg text-[#224292] mb-2 group-hover/btn:text-[#ffc107] transition-colors">{btn.title}</h3>
+                          <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-grow">{btn.desc}</p>
+                          <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#224292] group-hover/btn:underline">
+                            Visit Page <ExternalLink size={12} />
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ) : courseId === 'science-humanities' ? (
                   // ── S&H: Subject-grouped sections ──
                   <div className="space-y-14">
                     {['Mathematics', 'English', 'Physics', 'Chemistry', 'Tamil'].map((subject) => {
@@ -1044,10 +1249,10 @@ export default function CourseDetailPage({ overrides }) {
 
                       const subjectConfig = {
                         Mathematics: { emoji: '∑', color: 'from-blue-600 to-indigo-700', light: 'bg-blue-50 border-blue-100', badge: 'bg-blue-100 text-blue-800' },
-                        English:     { emoji: '✍', color: 'from-emerald-600 to-teal-700', light: 'bg-emerald-50 border-emerald-100', badge: 'bg-emerald-100 text-emerald-800' },
-                        Physics:     { emoji: '⚛', color: 'from-purple-600 to-violet-700', light: 'bg-purple-50 border-purple-100', badge: 'bg-purple-100 text-purple-800' },
-                        Chemistry:   { emoji: '⚗', color: 'from-orange-500 to-amber-600', light: 'bg-orange-50 border-orange-100', badge: 'bg-orange-100 text-orange-800' },
-                        Tamil:       { emoji: '📖', color: 'from-rose-500 to-red-600', light: 'bg-rose-50 border-rose-100', badge: 'bg-rose-100 text-rose-800' },
+                        English: { emoji: '✍', color: 'from-emerald-600 to-teal-700', light: 'bg-emerald-50 border-emerald-100', badge: 'bg-emerald-100 text-emerald-800' },
+                        Physics: { emoji: '⚛', color: 'from-purple-600 to-violet-700', light: 'bg-purple-50 border-purple-100', badge: 'bg-purple-100 text-purple-800' },
+                        Chemistry: { emoji: '⚗', color: 'from-orange-500 to-amber-600', light: 'bg-orange-50 border-orange-100', badge: 'bg-orange-100 text-orange-800' },
+                        Tamil: { emoji: '📖', color: 'from-rose-500 to-red-600', light: 'bg-rose-50 border-rose-100', badge: 'bg-rose-100 text-rose-800' },
                       }
                       const cfg = subjectConfig[subject]
 
@@ -1211,6 +1416,242 @@ export default function CourseDetailPage({ overrides }) {
               </div>
             )}
 
+            {/* --- PLACEMENT --- */}
+            {activeTab === 'Placement' && (
+              <div className="space-y-8 py-8">
+                {/* Placement Philosophy Card */}
+                <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#224292]/5 rounded-full -mr-32 -mt-32 blur-3xl pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ffc107]/5 rounded-full -ml-16 -mb-16 blur-2xl pointer-events-none" />
+
+                  <h2 className="text-2xl md:text-3xl font-bold font-graphik mb-6 text-[#224292] flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                    Placement Philosophy
+                  </h2>
+                  <p className="text-slate-600 leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                    The Placement and Training cell at MBA@KIOT operates with the aim of nurturing industry ready students. MBA@KIOT evolves as a predominant hub in providing students to the industry who have the mental disposition of comprehending requirement of industry and the market reality. They are also well equipped with the required capabilities to manage the market forces and to face the challenge of the corporate world. Adequate and suitable intervention in this regard and student engagement is designed with this framework of mind and training offered to students from the day one of the academic life at MBA@KIOT. In order to attain sustainable capability building process customized attention is given to students taking into consideration their diverse nature to attain formidable progress.
+                  </p>
+                </div>
+
+                {/* Placement Team */}
+                <div className="space-y-6 mt-10">
+                  <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                    Placement Team
+                  </h2>
+
+                  {/* Desktop view table */}
+                  <div className="hidden md:block border border-[#DEE7F4] rounded-2xl overflow-hidden shadow-sm bg-white">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr className="bg-[#224292] text-white">
+                          <th className="px-8 py-5 text-[11px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Name & Qualification</th>
+                          <th className="px-6 py-5 text-[11px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Designation</th>
+                          <th className="px-6 py-5 text-[11px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Mobile</th>
+                          <th className="px-6 py-5 text-[11px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Email</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#DEE7F4]">
+                        {[
+                          {
+                            name: "Dr. D. Immanuel",
+                            qualification: "B.B.A., M.B.A., Ph.D.",
+                            designation: "Senior Manager – Placement & Industry Relations",
+                            mobile: "+91 76392 45777",
+                            email: "placement.kbss@kiot.ac.in",
+                            image: placementImmanuelImg
+                          },
+                          {
+                            name: "Prof. G. Padmanaban",
+                            qualification: "BE, MBA, UGC-NET, (PhD)",
+                            designation: "Manager – Placement & Industry Relations",
+                            mobile: "+91 88256 21808",
+                            email: "padmanaban@kiot.ac.in",
+                            image: placementPadmanabanImg
+                          },
+                          {
+                            name: "Prof. A. Musthaffa",
+                            qualification: "MBA., M.Phil.,",
+                            designation: "Placement Coordinator",
+                            mobile: "+91 81108 90181",
+                            email: "po.kbss@kiot.ac.in",
+                            image: placementMusthaffaImg
+                          },
+                          {
+                            name: "Dr. P. Rajendran",
+                            qualification: "M.E., Ph.D., MISTE.,",
+                            designation: "Director – Placement, KIOT",
+                            mobile: "+91 99941 33333",
+                            email: "pat@kiot.ac.in",
+                            image: placementRajendranImg
+                          },
+                          {
+                            name: "Mr. N. C. Balachandran",
+                            qualification: "B.Sc., M.A.,",
+                            designation: "Senior Placement Consultant",
+                            mobile: "—",
+                            email: "scpat@kiot.ac.in",
+                            image: placementBalachandranImg
+                          }
+                        ].map((member, idx) => (
+                          <tr key={idx} className={`${idx % 2 === 0 ? 'bg-[#E5EDF8]/20' : 'bg-white'} hover:bg-[#E5EDF8]/40 transition-colors`}>
+                            <td className="px-8 py-5">
+                              <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#ffc107] bg-slate-50 shrink-0">
+                                  {member.image ? (
+                                    <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+                                  ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                      <Users size={20} />
+                                    </div>
+                                  )}
+                                </div>
+                                <div>
+                                  <div className="font-bold text-[#224292] text-[15px]">{member.name}</div>
+                                  <div className="text-xs font-semibold text-slate-500">{member.qualification}</div>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="px-6 py-5 text-[#333333] font-semibold text-[14px] leading-snug">
+                              {member.designation}
+                            </td>
+                            <td className="px-6 py-5 text-[#333333] font-bold text-[14px] whitespace-nowrap">
+                              {member.mobile}
+                            </td>
+                            <td className="px-6 py-5">
+                              <a href={`mailto:${member.email}`} className="text-[#224292] hover:underline font-bold text-[14px] flex items-center gap-1.5">
+                                <Mail size={14} className="text-[#ffc107]" /> {member.email}
+                              </a>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Mobile view cards */}
+                  <div className="md:hidden space-y-4">
+                    {[
+                      {
+                        name: "Dr. D. Immanuel",
+                        qualification: "B.B.A., M.B.A., Ph.D.",
+                        designation: "Senior Manager – Placement & Industry Relations",
+                        mobile: "+91 76392 45777",
+                        email: "placement.kbss@kiot.ac.in",
+                        image: placementImmanuelImg
+                      },
+                      {
+                        name: "Prof. G. Padmanaban",
+                        qualification: "BE, MBA, UGC-NET, (PhD)",
+                        designation: "Manager – Placement & Industry Relations",
+                        mobile: "+91 88256 21808",
+                        email: "padmanaban@kiot.ac.in",
+                        image: placementPadmanabanImg
+                      },
+                      {
+                        name: "Prof. A. Musthaffa",
+                        qualification: "MBA., M.Phil.,",
+                        designation: "Placement Coordinator",
+                        mobile: "+91 81108 90181",
+                        email: "po.kbss@kiot.ac.in",
+                        image: placementMusthaffaImg
+                      },
+                      {
+                        name: "Dr. P. Rajendran",
+                        qualification: "M.E., Ph.D., MISTE.,",
+                        designation: "Director – Placement, KIOT",
+                        mobile: "+91 99941 33333",
+                        email: "pat@kiot.ac.in",
+                        image: placementRajendranImg
+                      },
+                      {
+                        name: "Mr. N. C. Balachandran",
+                        qualification: "B.Sc., M.A.,",
+                        designation: "Senior Placement Consultant",
+                        mobile: "—",
+                        email: "scpat@kiot.ac.in",
+                        image: placementBalachandranImg
+                      }
+                    ].map((member, idx) => (
+                      <div key={idx} className="bg-slate-50 rounded-2xl border border-[#DEE7F4] p-5 space-y-4 shadow-sm hover:border-[#ffc107] transition-all">
+                        <div className="flex items-center gap-4 pb-3 border-b border-[#DEE7F4]/60">
+                          <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#ffc107] bg-white shrink-0">
+                            {member.image ? (
+                              <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                <Users size={24} />
+                              </div>
+                            )}
+                          </div>
+                          <div>
+                            <div className="font-bold text-[#224292] text-[15px]">{member.name}</div>
+                            <div className="text-xs font-semibold text-slate-500">{member.qualification}</div>
+                          </div>
+                        </div>
+                        <div className="space-y-2 text-[13px]">
+                          <div>
+                            <span className="font-black text-[10px] tracking-wider text-slate-400 uppercase block">Designation</span>
+                            <span className="font-bold text-slate-700 leading-snug">{member.designation}</span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-4">
+                            <div>
+                              <span className="font-black text-[10px] tracking-wider text-slate-400 uppercase block">Mobile</span>
+                              <span className="font-bold text-slate-700">{member.mobile}</span>
+                            </div>
+                            <div>
+                              <span className="font-black text-[10px] tracking-wider text-slate-400 uppercase block">Email</span>
+                              <a href={`mailto:${member.email}`} className="font-bold text-[#224292] hover:underline block truncate">
+                                {member.email}
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* --- PLACEMENT DIRECTORY LINKS --- */}
+                <div className="space-y-6 mt-12">
+                  <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                    Placements & Career Resources
+                  </h2>
+                  <p className="text-slate-600 leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik mb-4">
+                    Access specialized portals for the Placement Cell, career training modules, recruiter lists, and details regarding internships and campus placements.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    {[
+                      { title: "Placement Cell", url: "https://kbss.kiot.ac.in/placement-cell/", desc: "Overview and activities of our dedicated cell.", icon: Building2 },
+                      { title: "Career Development and Training", url: "https://kbss.kiot.ac.in/placement-training/", desc: "Structured programs to enhance employability skills.", icon: GraduationCap },
+                      { title: "Recruiters", url: "https://kbss.kiot.ac.in/recruiters/", desc: "View our list of premier hiring and placement partners.", icon: Users },
+                      { title: "Placement Details", url: "https://kbss.kiot.ac.in/placement-details/", desc: "Year-on-year placement records and packages.", icon: BarChart3 },
+                      { title: "Internship", url: "https://kbss.kiot.ac.in/internship/", desc: "Opportunities and guidelines for student internships.", icon: Briefcase }
+                    ].map((btn, idx) => (
+                      <a
+                        key={idx}
+                        href={btn.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col p-6 rounded-2xl bg-white border border-[#ffc107] hover:border-[#224292] hover:shadow-xl transition-all duration-300 group/btn shadow-sm"
+                      >
+                        <div className="w-12 h-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover/btn:bg-[#ffc107] group-hover/btn:text-[#224292] mb-4 transition-colors">
+                          <btn.icon size={22} />
+                        </div>
+                        <h3 className="font-bold text-base text-[#224292] mb-2 group-hover/btn:text-[#ffc107] transition-colors leading-tight">{btn.title}</h3>
+                        <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-grow">{btn.desc}</p>
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#224292] group-hover/btn:underline mt-auto">
+                          Visit Page <ExternalLink size={12} />
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* --- LABS --- */}
             {activeTab === 'Labs' && (
               <div className="w-full">
@@ -1219,8 +1660,8 @@ export default function CourseDetailPage({ overrides }) {
                   {/* Left Sidebar: Lab List */}
                   <div className="lg:w-1/3 xl:w-1/4 space-y-3 max-h-[750px] overflow-y-auto px-4 py-2 pr-2">
                     <div className="mb-6 px-1">
-                       <h2 className="text-xl font-bold font-graphik text-[#224292] tracking-tight mb-1">Labs & Facilities</h2>
-                       <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Select a facility to view full technical specifications.</p>
+                      <h2 className="text-xl font-bold font-graphik text-[#224292] tracking-tight mb-1">Labs & Facilities</h2>
+                      <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Select a facility to view full technical specifications.</p>
                     </div>
                     {course.labs.map((lab, i) => {
                       const LabIcon = lab.icon;
@@ -1229,19 +1670,17 @@ export default function CourseDetailPage({ overrides }) {
                         <button
                           key={lab.name}
                           onClick={() => setOpenLabIndices([i])}
-                          className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left group ${
-                            isDesktopSelected 
-                              ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20' 
+                          className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left group ${isDesktopSelected
+                              ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20'
                               : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
-                          }`}
+                            }`}
                         >
-                           <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                              isDesktopSelected ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292]/5 text-[#224292] group-hover:bg-[#224292] group-hover:text-white'
-                           }`}>
-                             {LabIcon && <LabIcon size={20} />}
-                           </div>
-                           <span className="text-[14px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
-                           <ChevronRight size={14} className={isDesktopSelected ? 'text-[#ffc107]' : 'text-[#64779F] opacity-40'} />
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${isDesktopSelected ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292]/5 text-[#224292] group-hover:bg-[#224292] group-hover:text-white'
+                            }`}>
+                            {LabIcon && <LabIcon size={20} />}
+                          </div>
+                          <span className="text-[14px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
+                          <ChevronRight size={14} className={isDesktopSelected ? 'text-[#ffc107]' : 'text-[#64779F] opacity-40'} />
                         </button>
                       );
                     })}
@@ -1253,66 +1692,66 @@ export default function CourseDetailPage({ overrides }) {
                       {openLabIndices[0] !== null && course.labs[openLabIndices[0]] && (() => {
                         const activeLab = course.labs[openLabIndices[0]];
                         return (
-                        <motion.div
-                          key={openLabIndices[0]}
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: -20 }}
-                          className="bg-white rounded-2xl border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 overflow-hidden flex flex-col"
-                        >
-                           {/* Lab Header */}
-                           <div className="bg-[#224292] p-3 md:p-4 relative overflow-hidden shrink-0">
+                          <motion.div
+                            key={openLabIndices[0]}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            className="bg-white rounded-2xl border border-[#DEE7F4] shadow-2xl shadow-blue-900/5 overflow-hidden flex flex-col"
+                          >
+                            {/* Lab Header */}
+                            <div className="bg-[#224292] p-3 md:p-4 relative overflow-hidden shrink-0">
                               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 blur-3xl" />
                               <div className="relative z-10 flex flex-col md:flex-row items-center gap-5">
-                                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
-                                    {activeLab.icon && (
-                                       (() => {
-                                          const LargeIcon = activeLab.icon;
-                                          return <LargeIcon size={22} className="text-[#ffc107]" />;
-                                       })()
-                                    )}
-                                 </div>
-                                 <div className="text-center md:text-left">
-                                    <h3 className="text-lg md:text-xl font-bold font-graphik text-white tracking-tight mb-0.5">{activeLab.name}</h3>
-                                 </div>
+                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
+                                  {activeLab.icon && (
+                                    (() => {
+                                      const LargeIcon = activeLab.icon;
+                                      return <LargeIcon size={22} className="text-[#ffc107]" />;
+                                    })()
+                                  )}
+                                </div>
+                                <div className="text-center md:text-left">
+                                  <h3 className="text-lg md:text-xl font-bold font-graphik text-white tracking-tight mb-0.5">{activeLab.name}</h3>
+                                </div>
                               </div>
-                           </div>
+                            </div>
 
-                           {/* Lab Content Scrollable Area */}
-                           <div className="p-8 md:p-12 space-y-10 overflow-y-auto custom-scrollbar">
+                            {/* Lab Content Scrollable Area */}
+                            <div className="p-8 md:p-12 space-y-10 overflow-y-auto custom-scrollbar">
                               {/* Inventory / Equipment */}
                               <div>
-                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
-                                    <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-[0.1em]">Technical Inventory & Tools</h4>
-                                 </div>
-                                 <div className="grid sm:grid-cols-2 gap-3">
-                                    {activeLab.equipments?.map((item, idx) => (
-                                      <div key={idx} className="flex gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 items-start group hover:bg-white hover:border-[#ffc107]/20 transition-all">
-                                         <div className="w-2 h-2 rounded-full bg-[#ffc107] mt-1.5 shrink-0 group-hover:scale-125 transition-all" />
-                                         <span className="text-[14px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
-                                      </div>
-                                    )) || (
+                                <div className="flex items-center gap-3 mb-6">
+                                  <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
+                                  <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-[0.1em]">Technical Inventory & Tools</h4>
+                                </div>
+                                <div className="grid sm:grid-cols-2 gap-3">
+                                  {activeLab.equipments?.map((item, idx) => (
+                                    <div key={idx} className="flex gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 items-start group hover:bg-white hover:border-[#ffc107]/20 transition-all">
+                                      <div className="w-2 h-2 rounded-full bg-[#ffc107] mt-1.5 shrink-0 group-hover:scale-125 transition-all" />
+                                      <span className="text-[14px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
+                                    </div>
+                                  )) || (
                                       <p className="text-[#64779F] italic text-sm">Main specialized equipment list is being updated.</p>
                                     )}
-                                 </div>
+                                </div>
                               </div>
 
                               {/* Personnel / Staff */}
                               {courseId !== 'be-cse' && (
                                 <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
-                                   <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
-                                      <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
-                                      <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.incharge || 'Department HOD'}</p>
-                                   </div>
-                                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                      <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
-                                      <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.technician || 'Engineering Technician'}</p>
-                                   </div>
+                                  <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
+                                    <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
+                                    <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.incharge || 'Department HOD'}</p>
+                                  </div>
+                                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                                    <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
+                                    <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.technician || 'Engineering Technician'}</p>
+                                  </div>
                                 </div>
                               )}
-                           </div>
-                        </motion.div>
+                            </div>
+                          </motion.div>
                         );
                       })()}
                     </AnimatePresence>
@@ -1321,93 +1760,91 @@ export default function CourseDetailPage({ overrides }) {
 
                 {/* MOBILE VIEW: Multi-Expandable Accordion List (Visible only below lg) */}
                 <div className="lg:hidden space-y-4 px-2 pb-10">
-                   <div className="mb-6 px-1">
-                      <h2 className="text-xl font-bold font-graphik text-[#224292] tracking-tight mb-1">Labs & Facilities</h2>
-                      <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Expand Multiple facilities to compare inventory.</p>
-                   </div>
-                   {course.labs.map((lab, i) => {
-                      const LabIcon = lab.icon;
-                      const isOpen = openLabIndices.includes(i);
-                      return (
-                        <div key={lab.name} className="flex flex-col">
-                           <button
-                             onClick={(e) => {
-                               if (isOpen) {
-                                  // Close it
-                                  setOpenLabIndices(prev => prev.filter(idx => idx !== i));
-                               } else {
-                                  // Open it (Add to set, so others don't close)
-                                  setOpenLabIndices(prev => [...prev, i].sort());
-                                  // Also scroll it into view after a tiny moment
-                                  setTimeout(() => {
-                                     e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                  }, 100);
-                               }
-                             }}
-                             className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left ${
-                               isOpen 
-                                 ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20 rounded-b-none' 
-                                 : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
-                             }`}
-                           >
-                              <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
-                                 isOpen ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292]/5 text-[#224292]'
-                              }`}>
-                                {LabIcon && <LabIcon size={20} />}
+                  <div className="mb-6 px-1">
+                    <h2 className="text-xl font-bold font-graphik text-[#224292] tracking-tight mb-1">Labs & Facilities</h2>
+                    <p className="text-[#64779F] text-xs font-bold font-graphik leading-relaxed">Expand Multiple facilities to compare inventory.</p>
+                  </div>
+                  {course.labs.map((lab, i) => {
+                    const LabIcon = lab.icon;
+                    const isOpen = openLabIndices.includes(i);
+                    return (
+                      <div key={lab.name} className="flex flex-col">
+                        <button
+                          onClick={(e) => {
+                            if (isOpen) {
+                              // Close it
+                              setOpenLabIndices(prev => prev.filter(idx => idx !== i));
+                            } else {
+                              // Open it (Add to set, so others don't close)
+                              setOpenLabIndices(prev => [...prev, i].sort());
+                              // Also scroll it into view after a tiny moment
+                              setTimeout(() => {
+                                e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              }, 100);
+                            }
+                          }}
+                          className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left ${isOpen
+                              ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20 rounded-b-none'
+                              : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
+                            }`}
+                        >
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${isOpen ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292]/5 text-[#224292]'
+                            }`}>
+                            {LabIcon && <LabIcon size={20} />}
+                          </div>
+                          <span className="text-[14px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
+                          <ChevronDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#ffc107]' : 'text-[#64779F] opacity-40'}`} />
+                        </button>
+
+                        <AnimatePresence>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="bg-white border-2 border-t-0 border-[#224292] rounded-b-2xl overflow-hidden"
+                            >
+                              <div className="p-6 space-y-8">
+                                {/* Mobile Content Display */}
+                                <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
+                                  <Building2 size={14} className="text-[#ffc107]" />
+                                  <p className="text-[#64779F] text-[14px] font-bold font-graphik tracking-widest">{course.name}</p>
+                                </div>
+
+                                <div>
+                                  <div className="flex items-center gap-2 mb-4">
+                                    <div className="w-1 h-4 bg-[#ffc107] rounded-full" />
+                                    <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-wider">Inventory & Tools</h4>
+                                  </div>
+                                  <div className="grid gap-2">
+                                    {lab.equipments?.map((item, idx) => (
+                                      <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
+                                        <span className="text-[14px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                {courseId !== 'be-cse' && (
+                                  <div className="grid gap-3 pt-4 border-t border-slate-100">
+                                    <div className="bg-[#224292]/5 p-4 rounded-xl border border-[#224292]/10">
+                                      <p className="text-[14px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
+                                      <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.incharge}</p>
+                                    </div>
+                                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                      <p className="text-[14px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
+                                      <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.technician}</p>
+                                    </div>
+                                  </div>
+                                )}
                               </div>
-                              <span className="text-[14px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
-                              <ChevronDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#ffc107]' : 'text-[#64779F] opacity-40'}`} />
-                           </button>
-
-                           <AnimatePresence>
-                              {isOpen && (
-                                <motion.div
-                                  initial={{ height: 0, opacity: 0 }}
-                                  animate={{ height: "auto", opacity: 1 }}
-                                  exit={{ height: 0, opacity: 0 }}
-                                  className="bg-white border-2 border-t-0 border-[#224292] rounded-b-2xl overflow-hidden"
-                                >
-                                   <div className="p-6 space-y-8">
-                                      {/* Mobile Content Display */}
-                                      <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-                                         <Building2 size={14} className="text-[#ffc107]" />
-                                         <p className="text-[#64779F] text-[14px] font-bold font-graphik tracking-widest">{course.name}</p>
-                                      </div>
-
-                                      <div>
-                                         <div className="flex items-center gap-2 mb-4">
-                                            <div className="w-1 h-4 bg-[#ffc107] rounded-full" />
-                                            <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-wider">Inventory & Tools</h4>
-                                         </div>
-                                         <div className="grid gap-2">
-                                            {lab.equipments?.map((item, idx) => (
-                                              <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
-                                                 <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                                                 <span className="text-[14px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
-                                              </div>
-                                            ))}
-                                         </div>
-                                      </div>
-
-                                      {courseId !== 'be-cse' && (
-                                        <div className="grid gap-3 pt-4 border-t border-slate-100">
-                                           <div className="bg-[#224292]/5 p-4 rounded-xl border border-[#224292]/10">
-                                              <p className="text-[14px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
-                                              <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.incharge}</p>
-                                           </div>
-                                           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                                              <p className="text-[14px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
-                                              <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.technician}</p>
-                                           </div>
-                                        </div>
-                                      )}
-                                   </div>
-                                </motion.div>
-                              )}
-                           </AnimatePresence>
-                        </div>
-                      );
-                   })}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -1418,123 +1855,265 @@ export default function CourseDetailPage({ overrides }) {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
                   <div>
                     <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
-                       Department <span className="text-[#ffc107]">Patents</span>
+                      Department <span className="text-[#ffc107]">Patents</span>
                     </h2>
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-[#224292] text-[10px] font-bold font-graphik uppercase tracking-widest">
-                     <ShieldCheck size={14} /> Registered Assets
+                    <ShieldCheck size={14} /> Registered Assets
                   </div>
                 </div>
 
                 {course.patents && course.patents.length > 0 ? (
                   <div className="space-y-12">
-                      <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden"
-                      >
-                        <div className="bg-[#224292] px-8 py-5 flex items-center justify-between">
-                          <h3 className="text-white font-bold font-graphik text-lg tracking-tight">Official Department Patents</h3>
-                        </div>
-                        
-                        <div className="overflow-x-auto">
-                          <table className="w-full text-left border-collapse">
-                            <thead>
-                              <tr className="bg-slate-50 border-b border-slate-100">
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Applicant & Inventor</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Patent Title</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Type</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Application/Design No</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Date</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Status</th>
-                              </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                              {course.patents.map((yearGroup) => (
-                                yearGroup.data.map((patent, pIdx) => (
-                                  <tr key={`${yearGroup.year}-${pIdx}`} className="hover:bg-blue-50/30 transition-colors group">
-                                    <td className="px-6 py-5">
-                                      <p className="text-[13px] font-bold text-black leading-tight mb-1">{patent.inventors}</p>
-                                    </td>
-                                    <td className="px-6 py-5">
-                                      <p className="text-[13px] font-medium text-black leading-snug max-w-md">{patent.title}</p>
-                                    </td>
-                                    <td className="px-6 py-5">
-                                      <span className="text-[11px] font-bold text-[#64779F]">{patent.type}</span>
-                                    </td>
-                                    <td className="px-6 py-5">
-                                      <code className="text-[12px] font-bold text-[#224292] bg-slate-100 px-2 py-1 rounded">{patent.appNo}</code>
-                                    </td>
-                                    <td className="px-6 py-5 text-sm font-medium text-slate-600 whitespace-nowrap">{patent.date}</td>
-                                    <td className="px-6 py-5">
-                                      <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${
-                                        patent.status === 'Granted' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700'
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden"
+                    >
+                      <div className="bg-[#224292] px-8 py-5 flex items-center justify-between">
+                        <h3 className="text-white font-bold font-graphik text-lg tracking-tight">Official Department Patents</h3>
+                      </div>
+
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left border-collapse">
+                          <thead>
+                            <tr className="bg-slate-50 border-b border-slate-100">
+                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Applicant & Inventor</th>
+                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Patent Title</th>
+                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Type</th>
+                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Application/Design No</th>
+                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Date</th>
+                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-100">
+                            {course.patents.map((yearGroup) => (
+                              yearGroup.data.map((patent, pIdx) => (
+                                <tr key={`${yearGroup.year}-${pIdx}`} className="hover:bg-blue-50/30 transition-colors group">
+                                  <td className="px-6 py-5">
+                                    <p className="text-[13px] font-bold text-black leading-tight mb-1">{patent.inventors}</p>
+                                  </td>
+                                  <td className="px-6 py-5">
+                                    <p className="text-[13px] font-medium text-black leading-snug max-w-md">{patent.title}</p>
+                                  </td>
+                                  <td className="px-6 py-5">
+                                    <span className="text-[11px] font-bold text-[#64779F]">{patent.type}</span>
+                                  </td>
+                                  <td className="px-6 py-5">
+                                    <code className="text-[12px] font-bold text-[#224292] bg-slate-100 px-2 py-1 rounded">{patent.appNo}</code>
+                                  </td>
+                                  <td className="px-6 py-5 text-sm font-medium text-slate-600 whitespace-nowrap">{patent.date}</td>
+                                  <td className="px-6 py-5">
+                                    <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${patent.status === 'Granted' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700'
                                       }`}>
-                                        {patent.status}
-                                      </span>
-                                    </td>
-                                  </tr>
-                                ))
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      </motion.div>
+                                      {patent.status}
+                                    </span>
+                                  </td>
+                                </tr>
+                              ))
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </motion.div>
                   </div>
                 ) : (
                   <div className="grid lg:grid-cols-2 gap-8">
-                      <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        whileHover={{ y: -10, scale: 1.01 }}
-                        viewport={{ once: true }}
-                        className="group relative bg-white p-7 rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center transition-all duration-500"
-                      >
-                         <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#224292]/20 rounded-tl-2xl" />
-                         <div className="w-16 h-16 rounded-2xl bg-[#224292]/5 border border-[#224292]/10 flex items-center justify-center mb-6 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
-                            <FileText size={32} className="text-[#224292] group-hover:text-white transition-colors" />
-                         </div>
-                         <h3 className="text-lg font-bold font-graphik text-[#224292] mb-3">Official Patents</h3>
-                         <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
-                            Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
-                         </p>
-                         <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase tracking-[0.2em]">
-                            Academic Year 2024-25
-                         </div>
-                      </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -10, scale: 1.01 }}
+                      viewport={{ once: true }}
+                      className="group relative bg-white p-7 rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center transition-all duration-500"
+                    >
+                      <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#224292]/20 rounded-tl-2xl" />
+                      <div className="w-16 h-16 rounded-2xl bg-[#224292]/5 border border-[#224292]/10 flex items-center justify-center mb-6 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
+                        <FileText size={32} className="text-[#224292] group-hover:text-white transition-colors" />
+                      </div>
+                      <h3 className="text-lg font-bold font-graphik text-[#224292] mb-3">Official Patents</h3>
+                      <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
+                        Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
+                      </p>
+                      <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase tracking-[0.2em]">
+                        Academic Year 2024-25
+                      </div>
+                    </motion.div>
 
-                      <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        whileHover={{ y: -10, scale: 1.01 }}
-                        transition={{ delay: 0.1 }}
-                        viewport={{ once: true }}
-                        className="group bg-gradient-to-br from-[#224292] to-[#224292] rounded-2xl p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
-                      >
-                         <div className="absolute -bottom-1 -right-1 w-12 h-12 border-b-4 border-r-4 border-dashed border-[#ffc107]/30 rounded-br-2xl" />
-                         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
-                         <div className="relative z-10">
-                           <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
-                              <Award size={28} className="text-[#ffc107]" />
-                           </div>
-                           <h3 className="text-lg font-bold font-graphik mb-3 tracking-tight">Research Excellence</h3>
-                           <p className="text-white/70 text-sm font-medium font-graphik leading-relaxed mb-6">
-                              We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
-                           </p>
-                           <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-bold font-graphik uppercase tracking-widest transition-all">
-                              Contact R&D <ArrowRight size={14} />
-                           </button>
-                         </div>
-                      </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -10, scale: 1.01 }}
+                      transition={{ delay: 0.1 }}
+                      viewport={{ once: true }}
+                      className="group bg-gradient-to-br from-[#224292] to-[#224292] rounded-2xl p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
+                    >
+                      <div className="absolute -bottom-1 -right-1 w-12 h-12 border-b-4 border-r-4 border-dashed border-[#ffc107]/30 rounded-br-2xl" />
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
+                      <div className="relative z-10">
+                        <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
+                          <Award size={28} className="text-[#ffc107]" />
+                        </div>
+                        <h3 className="text-lg font-bold font-graphik mb-3 tracking-tight">Research Excellence</h3>
+                        <p className="text-white/70 text-sm font-medium font-graphik leading-relaxed mb-6">
+                          We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
+                        </p>
+                        <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-bold font-graphik uppercase tracking-widest transition-all">
+                          Contact R&D <ArrowRight size={14} />
+                        </button>
+                      </div>
+                    </motion.div>
                   </div>
                 )}
+              </div>
+            )}
+
+            {/* --- INDUSTRY CONNECT (MBA & MBA-IEV ONLY) --- */}
+            {activeTab === 'Industry' && (
+              <div className="space-y-10 py-8">
+                {/* Header Section */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
+                  <div>
+                    <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
+                      Industry <span className="text-[#ffc107]">Connect</span>
+                    </h2>
+                    <p className="text-slate-600 leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik max-w-2xl">
+                      Explore our active collaborations, executive leadership programs, professional society affiliations, and corporate connect initiatives at MBA@KIOT.
+                    </p>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-[#224292] text-[10px] font-bold font-graphik uppercase tracking-widest shrink-0">
+                    <ShieldCheck size={14} /> Corporate Linkages
+                  </div>
+                </div>
+
+                {/* Main Industry Links (MoUs, Leadership, Alumni, etc.) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    { title: "MoU(s)", url: "https://kbss.kiot.ac.in/signing-of-mou/", desc: "Strategic partnerships and agreements of understanding with leading industries.", icon: FileText },
+                    { title: "Leadership Forum", url: "https://kbss.kiot.ac.in/executive-interaction-programme/", desc: "Executive interaction programmes and expert forums.", icon: Users },
+                    { title: "Alumni Retrospection", url: "https://kbss.kiot.ac.in/alumni-retrospection/", desc: "Networking and sharing sessions with our accomplished alumni network.", icon: GraduationCap },
+                    { title: "CEO of the Month", url: "https://kbss.kiot.ac.in/ceo-of-the-month/", desc: "Regular interactive interactions with industry chief executive officers.", icon: Trophy },
+                    { title: "Corporate Scholarship", url: "https://kbss.kiot.ac.in/corporate-scholarship/", desc: "Sponsorship and scholarship programs funded by our corporate partners.", icon: Award },
+                    { title: "Industrial Visit", url: "https://kbss.kiot.ac.in/industrial-visit/", desc: "Experiential learning trips and observational visits to premier organizations.", icon: MapPin }
+                  ].map((btn, idx) => (
+                    <a
+                      key={idx}
+                      href={btn.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col p-6 rounded-2xl bg-white border border-[#ffc107] hover:border-[#224292] hover:shadow-xl transition-all duration-300 group/btn shadow-sm"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover/btn:bg-[#ffc107] group-hover/btn:text-[#224292] mb-4 transition-colors">
+                        <btn.icon size={22} />
+                      </div>
+                      <h3 className="font-bold text-lg text-[#224292] mb-2 group-hover/btn:text-[#ffc107] transition-colors leading-tight">{btn.title}</h3>
+                      <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-grow">{btn.desc}</p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#224292] group-hover/btn:underline mt-auto">
+                        Visit Page <ExternalLink size={12} />
+                      </span>
+                    </a>
+                  ))}
+                </div>
+
+                {/* Subcategory: Professional Societies */}
+                <div className="pt-10 border-t border-slate-100 space-y-6">
+                  <h3 className="text-2xl font-bold font-graphik text-[#224292] flex items-center gap-3">
+                    <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                    Professional Societies
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik mb-4">
+                    Active student chapters and memberships in premier professional management and industry bodies.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[
+                      { title: "Madras Management Association (MMA)", url: "https://kbss.kiot.ac.in/madras-management-association/", desc: "Access to MMA learning networks and management programs.", icon: Building2 },
+                      { title: "CII", url: "https://kbss.kiot.ac.in/cii/", desc: "Confederation of Indian Industry association activities.", icon: Briefcase },
+                      { title: "Rotaract Club", url: "https://kbss.kiot.ac.in/rotaract-club/", desc: "Community leadership and youth service engagement club.", icon: Globe },
+                      { title: "NIPM", url: "https://kbss.kiot.ac.in/national-institute-of-personnel-management/", desc: "National Institute of Personnel Management chapter relations.", icon: ShieldCheck }
+                    ].map((btn, idx) => (
+                      <a
+                        key={idx}
+                        href={btn.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col p-6 rounded-2xl bg-white border border-[#ffc107] hover:border-[#224292] hover:shadow-xl transition-all duration-300 group/btn shadow-sm"
+                      >
+                        <div className="w-12 h-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover/btn:bg-[#ffc107] group-hover/btn:text-[#224292] mb-4 transition-colors">
+                          <btn.icon size={22} />
+                        </div>
+                        <h3 className="font-bold text-base text-[#224292] mb-2 group-hover/btn:text-[#ffc107] transition-colors leading-tight">{btn.title}</h3>
+                        <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-grow">{btn.desc}</p>
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#224292] group-hover/btn:underline mt-auto">
+                          Visit Page <ExternalLink size={12} />
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
 
 
             {activeTab === 'Achievements' && (
               <AchievementSection courseId={courseId} courseName={course.name} />
+            )}
+
+            {/* --- EVENTS --- */}
+            {activeTab === 'Events' && (
+              <div className="space-y-8 py-8 max-w-3xl mx-auto">
+                {/* Table Header */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                    <h2 className="text-3xl font-bold font-graphik text-[#224292] flex items-center gap-3">
+                      <span className="w-1.5 h-8 bg-[#ffc107] rounded-full inline-block" />
+                      Events & Student Activities
+                    </h2>
+                    <p className="text-slate-500 text-sm mt-1">
+                      A list of events, workshops, guest lectures, and student activities.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Events Table */}
+                <div className="border border-[#DEE7F4] rounded-2xl overflow-hidden shadow-sm bg-white">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-[#224292] text-white">
+                        <th className="px-6 py-4 text-[11px] font-bold font-graphik uppercase tracking-[0.2em] text-white w-[15%]">S.No</th>
+                        <th className="px-6 py-4 text-[11px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Event / Activity Name</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-[#DEE7F4]">
+                      {eventsList
+                        .filter(event => {
+                          if (event.course === 'Both') return true;
+                          if (courseId === 'mba-general' && event.course === 'MBA') return true;
+                          if (courseId === 'mba-iev' && event.course === 'MBA-IEV') return true;
+                          return false;
+                        })
+                        .map((event, idx) => (
+                          <tr key={idx} className={`${idx % 2 === 0 ? 'bg-[#E5EDF8]/10' : 'bg-white'} hover:bg-[#E5EDF8]/30 transition-colors text-[14px]`}>
+                            <td className="px-6 py-4 font-bold text-slate-500 w-[15%]">
+                              {idx + 1}
+                            </td>
+                            <td className="px-6 py-4 pr-8">
+                              <a
+                                href={event.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-between w-full font-bold text-[#224292] hover:text-[#ffc107] hover:underline transition-colors leading-tight group"
+                              >
+                                <span>{event.name}</span>
+                                <ArrowRight size={14} className="shrink-0 text-[#224292] group-hover:text-[#ffc107] group-hover:translate-x-1 transition-all ml-4" />
+                              </a>
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             )}
 
             {activeTab === 'Innovative Practices' && (
@@ -1551,13 +2130,6 @@ export default function CourseDetailPage({ overrides }) {
                   </h2>
                   <div className="border border-[#DEE7F4] rounded-2xl overflow-hidden shadow-sm">
                     <table className="w-full text-left font-graphik text-[14px]">
-                      <thead>
-                        <tr className="bg-[#224292] text-white">
-                          <th className="py-4 px-6 font-bold uppercase tracking-wider text-[14px]" colSpan={2}>
-                            Contact & Admission Details
-                          </th>
-                        </tr>
-                      </thead>
                       <tbody className="divide-y divide-[#DEE7F4]">
                         <tr className="bg-[#E5EDF8]/20 hover:bg-[#E5EDF8]/40 transition-colors">
                           <td className="py-4 px-6 font-bold text-[#333333] w-1/3">Landline</td>
@@ -1589,7 +2161,7 @@ export default function CourseDetailPage({ overrides }) {
             {/* --- ADMISSIONS --- */}
             {activeTab === 'Admissions' && (
               <div className="grid md:grid-cols-2 gap-8">
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -1598,7 +2170,7 @@ export default function CourseDetailPage({ overrides }) {
                   <div className="absolute inset-0 border-2 border-[#224292]/10 rotate-[4deg] rounded-[2rem] pointer-events-none" />
                   <div className="relative bg-white rounded-2xl border border-[#E5EDF8] p-8 shadow-xl shadow-blue-900/5 z-10">
                     <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/2 px-6 py-2 bg-[#224292] text-white rounded-full text-[9px] font-bold font-graphik uppercase tracking-widest shadow-lg">
-                       Eligibility
+                      Eligibility
                     </div>
                     <ul className="space-y-4 mt-4">
                       {course.eligibility.map(item => (
@@ -1655,9 +2227,9 @@ export default function CourseDetailPage({ overrides }) {
               <div className="overflow-y-auto scrollbar-hide flex-1 pb-10">
                 <div className="bg-[#224292] p-3 md:p-4 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-20 -mt-20 blur-3xl" />
-                  
+
                   {/* Top Right Close Button */}
-                  <button 
+                  <button
                     onClick={() => setSelectedFaculty(null)}
                     className="absolute top-3 right-3 z-20 w-7 h-7 flex items-center justify-center rounded-md bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-all backdrop-blur-sm border border-white/10"
                   >
@@ -1665,12 +2237,12 @@ export default function CourseDetailPage({ overrides }) {
                   </button>
 
                   <div className="relative z-10 flex flex-col md:flex-row items-center gap-4">
-                    <div 
+                    <div
                       className="w-14 h-14 md:w-16 md:h-16 rounded-md bg-white/10 flex items-center justify-center shrink-0 border border-white/20 overflow-hidden"
-                      style={{ 
-                        backgroundImage: `url(${facultyBg})`, 
-                        backgroundSize: 'cover', 
-                        backgroundPosition: 'center' 
+                      style={{
+                        backgroundImage: `url(${facultyBg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
                       }}
                     >
                       {selectedFaculty.image ? (
@@ -1712,7 +2284,7 @@ export default function CourseDetailPage({ overrides }) {
                           </div>
                         </div>
                       )}
-                       {(selectedFaculty.joiningDate || selectedFaculty.doj) && (
+                      {(selectedFaculty.joiningDate || selectedFaculty.doj) && (
                         <div>
                           <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Date of Joining</p>
                           <p className="text-black font-medium font-graphik text-[12.5px]">{selectedFaculty.joiningDate || selectedFaculty.doj}</p>
@@ -1930,12 +2502,12 @@ function AchievementSection({ courseId, courseName }) {
                       {isRank && (
                         <div className="grid grid-cols-2 gap-3 mb-6">
                           <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                             <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">Rank</p>
-                             <p className="text-sm font-bold font-graphik text-[#224292]">{item.university_rank}</p>
+                            <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">Rank</p>
+                            <p className="text-sm font-bold font-graphik text-[#224292]">{item.university_rank}</p>
                           </div>
                           <div className="bg-teal-50 p-3 rounded-xl border border-teal-100">
-                             <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">CGPA</p>
-                             <p className="text-sm font-bold font-graphik text-teal-600">{item.cgpa}</p>
+                            <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">CGPA</p>
+                            <p className="text-sm font-bold font-graphik text-teal-600">{item.cgpa}</p>
                           </div>
                         </div>
                       )}
@@ -2197,12 +2769,12 @@ function CurriculumSection({ courseId, courseName }) {
     <div className="max-w-6xl mx-auto px-4 md:px-0">
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-8 pb-8 border-b border-[#D5E2F4]/50">
         <div>
-           <div className="flex items-center gap-4 mb-2">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#224292] to-[#224292] flex items-center justify-center shadow-lg shadow-[#224292]/20">
-                 <BookOpen size={24} className="text-[#ffc107]" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#224292] tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
-           </div>
+          <div className="flex items-center gap-4 mb-2">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#224292] to-[#224292] flex items-center justify-center shadow-lg shadow-[#224292]/20">
+              <BookOpen size={24} className="text-[#ffc107]" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#224292] tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
+          </div>
         </div>
 
         <div className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200 self-start md:self-center">
@@ -2210,11 +2782,10 @@ function CurriculumSection({ courseId, courseName }) {
             <button
               key={t}
               onClick={() => setCurriculumTab(t)}
-              className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${
-                curriculumTab === t
+              className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${curriculumTab === t
                   ? 'bg-white text-[#224292] shadow-xl shadow-blue-900/10 scale-[1.02] translate-y-[-1px]'
                   : 'text-[#64779F] hover:text-[#224292]'
-              }`}
+                }`}
             >
               {t}
             </button>
@@ -2224,149 +2795,147 @@ function CurriculumSection({ courseId, courseName }) {
 
       {loading ? (
         <div className="py-24 flex flex-col items-center justify-center gap-5">
-           <div className="w-16 h-16 rounded-full border-4 border-[#224292]/10 border-t-[#ffc107] animate-spin" />
-           <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#224292]/40">Indexing Academic Files...</p>
+          <div className="w-16 h-16 rounded-full border-4 border-[#224292]/10 border-t-[#ffc107] animate-spin" />
+          <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#224292]/40">Indexing Academic Files...</p>
         </div>
       ) : records.length === 0 ? (
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-20 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center">
-           <div className="w-20 h-20 rounded-[2rem] bg-[#F8FAFC] flex items-center justify-center mb-8">
-              <FileText size={40} className="text-[#A9B1C3]/30" />
-           </div>
-           <h4 className="text-xl font-bold font-graphik text-[#224292] uppercase mb-2">No {curriculumTab} Found</h4>
-           <p className="text-[#64779F] font-bold font-graphik text-sm">Official documentation for this department is being updated.</p>
+          <div className="w-20 h-20 rounded-[2rem] bg-[#F8FAFC] flex items-center justify-center mb-8">
+            <FileText size={40} className="text-[#A9B1C3]/30" />
+          </div>
+          <h4 className="text-xl font-bold font-graphik text-[#224292] uppercase mb-2">No {curriculumTab} Found</h4>
+          <p className="text-[#64779F] font-bold font-graphik text-sm">Official documentation for this department is being updated.</p>
         </motion.div>
       ) : (
         <div className="space-y-6">
-           {/* Desktop Table View (Visible on Medium screens and above) */}
-           <div className="hidden md:block bg-white border border-[#D5E2F4]/80 rounded-xl overflow-hidden shadow-sm">
-              <table className="w-full text-left border-collapse">
-                 <thead>
-                    <tr className="bg-[#224292] border-b border-[#224292]">
-                       <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Document Info</th>
-                       <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
-                       {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Semester</th>}
-                       <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white text-right">Actions</th>
-                    </tr>
-                 </thead>
-                 <tbody className="divide-y divide-[#D5E2F4]/40">
-                   {records.map((item, i) => (
-                     <motion.tr 
-                       key={item.id}
-                       initial={{ opacity: 0, x: -10 }}
-                       animate={{ opacity: 1, x: 0 }}
-                       transition={{ delay: i * 0.05 }}
-                       className="hover:bg-[#ffc107]/5 transition-colors group"
-                     >
-                       <td className="px-5 py-3.5">
-                          <div className="flex items-center gap-3">
-                             <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                                curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#224292]' : 'bg-[#ffc107]/10 text-[#224292]'
-                             }`}>
-                               {curriculumTab === 'Regulations' ? <ShieldCheck size={18} /> : <BookOpen size={18} />}
-                             </div>
-                             <span className="text-sm font-bold font-graphik text-black transition-colors">{item.title}</span>
-                          </div>
-                       </td>
-                       <td className="px-3 py-3.5">
-                          <div className="flex items-center gap-2">
-                             <Calendar size={12} className="text-[#ffc107]" />
-                             <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black">{item.year_or_version}</span>
-                          </div>
-                       </td>
-                       {curriculumTab === 'Syllabus' && (
-                          <td className="px-3 py-3.5">
-                             <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-bold font-graphik text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all">
-                                SEM - {item.semester}
-                             </span>
-                          </td>
-                       )}
-                       <td className="px-5 py-3.5 text-right">
-                          <div className="flex items-center justify-end gap-3">
-                             <a 
-                               href={item.pdf_url} 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               className="p-2.5 rounded-xl bg-blue-50 text-[#224292] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95"
-                               title="View Document"
-                             >
-                                <ExternalLink size={16} />
-                             </a>
-                             <button 
-                               onClick={() => {
-                                  const downloadUrl = item.pdf_url.includes('/upload/') 
-                                    ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/')
-                                    : item.pdf_url;
-                                  window.open(downloadUrl, '_blank');
-                                }}
-                               className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#224292] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
-                               title="Download Document"
-                             >
-                                <Download size={16} />
-                             </button>
-                          </div>
-                       </td>
-                     </motion.tr>
-                   ))}
-                 </tbody>
-              </table>
-           </div>
-
-           {/* Mobile List View (Visible only on mobile) */}
-           <div className="md:hidden space-y-4">
-              {records.map((item, i) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className="bg-white border border-[#D5E2F4] rounded-2xl p-5 shadow-sm active:scale-[0.98] transition-transform"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
-                         curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#224292]' : 'bg-[#ffc107]/10 text-[#224292]'
-                      }`}>
-                        {curriculumTab === 'Regulations' ? <ShieldCheck size={20} /> : <BookOpen size={20} />}
-                      </div>
-                      <div className="space-y-1">
-                        <h4 className="text-[14px] font-bold font-graphik text-black leading-tight">{item.title}</h4>
-                        <div className="flex items-center gap-2">
-                          <Calendar size={11} className="text-[#ffc107]" />
-                          <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black/50">{item.year_or_version}</span>
+          {/* Desktop Table View (Visible on Medium screens and above) */}
+          <div className="hidden md:block bg-white border border-[#D5E2F4]/80 rounded-xl overflow-hidden shadow-sm">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-[#224292] border-b border-[#224292]">
+                  <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Document Info</th>
+                  <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
+                  {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Semester</th>}
+                  <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#D5E2F4]/40">
+                {records.map((item, i) => (
+                  <motion.tr
+                    key={item.id}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    className="hover:bg-[#ffc107]/5 transition-colors group"
+                  >
+                    <td className="px-5 py-3.5">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#224292]' : 'bg-[#ffc107]/10 text-[#224292]'
+                          }`}>
+                          {curriculumTab === 'Regulations' ? <ShieldCheck size={18} /> : <BookOpen size={18} />}
                         </div>
+                        <span className="text-sm font-bold font-graphik text-black transition-colors">{item.title}</span>
+                      </div>
+                    </td>
+                    <td className="px-3 py-3.5">
+                      <div className="flex items-center gap-2">
+                        <Calendar size={12} className="text-[#ffc107]" />
+                        <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black">{item.year_or_version}</span>
+                      </div>
+                    </td>
+                    {curriculumTab === 'Syllabus' && (
+                      <td className="px-3 py-3.5">
+                        <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-bold font-graphik text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all">
+                          SEM - {item.semester}
+                        </span>
+                      </td>
+                    )}
+                    <td className="px-5 py-3.5 text-right">
+                      <div className="flex items-center justify-end gap-3">
+                        <a
+                          href={item.pdf_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2.5 rounded-xl bg-blue-50 text-[#224292] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95"
+                          title="View Document"
+                        >
+                          <ExternalLink size={16} />
+                        </a>
+                        <button
+                          onClick={() => {
+                            const downloadUrl = item.pdf_url.includes('/upload/')
+                              ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/')
+                              : item.pdf_url;
+                            window.open(downloadUrl, '_blank');
+                          }}
+                          className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#224292] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
+                          title="Download Document"
+                        >
+                          <Download size={16} />
+                        </button>
+                      </div>
+                    </td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile List View (Visible only on mobile) */}
+          <div className="md:hidden space-y-4">
+            {records.map((item, i) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className="bg-white border border-[#D5E2F4] rounded-2xl p-5 shadow-sm active:scale-[0.98] transition-transform"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#224292]' : 'bg-[#ffc107]/10 text-[#224292]'
+                      }`}>
+                      {curriculumTab === 'Regulations' ? <ShieldCheck size={20} /> : <BookOpen size={20} />}
+                    </div>
+                    <div className="space-y-1">
+                      <h4 className="text-[14px] font-bold font-graphik text-black leading-tight">{item.title}</h4>
+                      <div className="flex items-center gap-2">
+                        <Calendar size={11} className="text-[#ffc107]" />
+                        <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black/50">{item.year_or_version}</span>
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="flex items-center pt-4 border-t border-slate-50 gap-4">
-                    {curriculumTab === 'Syllabus' && (
-                      <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold font-graphik text-[#224292]">
-                         SEM - {item.semester}
-                      </span>
-                    )}
-                    <div className="flex items-center gap-3">
-                      <a 
-                        href={item.pdf_url} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="flex items-center gap-2 px-4 py-2.5 bg-blue-50 text-[#224292] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider"
-                      >
-                         View <ExternalLink size={14} />
-                      </a>
-                      <button 
-                        onClick={() => {
-                          const downloadUrl = item.pdf_url.includes('/upload/') ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/') : item.pdf_url;
-                          window.open(downloadUrl, '_blank');
-                        }}
-                        className="flex items-center gap-2 px-4 py-2.5 bg-[#ffc107] text-[#224292] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider shadow-sm shadow-[#ffc107]/20"
-                      >
-                         Download <Download size={14} />
-                      </button>
-                    </div>
+                </div>
+
+                <div className="flex items-center pt-4 border-t border-slate-50 gap-4">
+                  {curriculumTab === 'Syllabus' && (
+                    <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold font-graphik text-[#224292]">
+                      SEM - {item.semester}
+                    </span>
+                  )}
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={item.pdf_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 px-4 py-2.5 bg-blue-50 text-[#224292] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider"
+                    >
+                      View <ExternalLink size={14} />
+                    </a>
+                    <button
+                      onClick={() => {
+                        const downloadUrl = item.pdf_url.includes('/upload/') ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/') : item.pdf_url;
+                        window.open(downloadUrl, '_blank');
+                      }}
+                      className="flex items-center gap-2 px-4 py-2.5 bg-[#ffc107] text-[#224292] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider shadow-sm shadow-[#ffc107]/20"
+                    >
+                      Download <Download size={14} />
+                    </button>
                   </div>
-                </motion.div>
-              ))}
-           </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       )}
     </div>

@@ -934,6 +934,215 @@ export const courseData = {
       'TNEA rank / Valid TANCET score',
       'No upper age limit',
     ],
+    patents: [
+      {
+        year: '2024-25',
+        data: [
+          {
+            inventors: 'Dr.P.Rajendran',
+            title: 'Artificial Intelligence (AI) based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '27-01-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Dr.P.Vijayalakshmi',
+            title: 'Artificial Intelligence (AI) based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '27-01-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.N.Subha',
+            title: 'Artificial Intelligence (AI) based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '27-01-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. D. Ramya',
+            title: 'Artificial Intelligence (AI) based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '27-01-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.B.Ashwini',
+            title: 'Artificial Intelligence (AI) based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '27-01-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.K.Gowdhami',
+            title: 'Artificial Intelligence (AI) based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '27-01-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr. P. Sasikumar',
+            title: 'Artificial Intelligence (AI) based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '27-01-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr.G.Babu',
+            title: 'Artificial Intelligence (AI) based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '27-01-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. K. Saranya',
+            title: 'Biometric encrypted portable storage drive',
+            type: 'Design Patent',
+            appNo: '443548-001',
+            date: '28-03-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. R. Kamali',
+            title: 'Real time credit card fraud identification and prevention using adaptive machine learning method',
+            type: 'Design Patent',
+            appNo: '202541032280 A',
+            date: '18-04-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr.P.Ganeshan',
+            title: 'Identification of Skin Pathology Using Deep Learning',
+            type: 'Design Patent',
+            appNo: '202541014109 A',
+            date: '07-03-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr.M.K.Sampath',
+            title: 'Identification of Skin Pathology Using Deep Learning',
+            type: 'Design Patent',
+            appNo: '202541014109 A',
+            date: '07-03-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr.T.Palani Raja',
+            title: 'Identification of Skin Pathology Using Deep Learning',
+            type: 'Design Patent',
+            appNo: '202541014109 A',
+            date: '07-03-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. R. Pushpalatha',
+            title: 'Identification of Skin Pathology Using Deep Learning',
+            type: 'Design Patent',
+            appNo: '202541014109 A',
+            date: '07-03-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. M. Saranya',
+            title: 'Identification of Skin Pathology Using Deep Learning',
+            type: 'Design Patent',
+            appNo: '202541014109 A',
+            date: '07-03-2025',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.G. Eswari @ Petchiammal',
+            title: 'Smart IoMT-Based Anomaly Detection System for Real-Time Health Monitoring',
+            type: 'Design Patent',
+            appNo: '202441090366 A',
+            date: '07-03-2025',
+            status: 'Published'
+          }
+        ]
+      },
+      {
+        year: '2023-24',
+        data: [
+          {
+            inventors: 'Dr.P.Vijayalakshmi',
+            title: 'IOT Based Street Cleaning Vehicle',
+            type: 'Design Patent',
+            appNo: '387-875-001',
+            date: 'Aug-23',
+            status: 'Published'
+          },
+          {
+            inventors: 'Ms.A.Anitha',
+            title: 'Smart Device for Logistics and Fleet Management',
+            type: 'Design Patent',
+            appNo: '6351808',
+            date: 'Mar-24',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. B.Ashwini',
+            title: 'IOT Based Robotic Waste Bin',
+            type: 'Design Patent',
+            appNo: '400-582-001',
+            date: 'Nov-23',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.K.Gowdhami',
+            title: 'AI Enabled unmanned Arial Systems (UAV) in wildfire management and wildlife protection',
+            type: 'Utility Patent',
+            appNo: '202411014403 A',
+            date: 'Mar-24',
+            status: 'Published'
+          }
+        ]
+      },
+      {
+        year: '2022-23',
+        data: [
+          {
+            inventors: 'Mrs.R.Sathyapriya',
+            title: 'Blockchain Based Techniques along with Techniques of internet of things to monitor and analyse the bank account of a particular banking organization',
+            type: 'Design Patent',
+            appNo: '202211048390',
+            date: 'Aug-22',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.N.Subha',
+            title: 'Design of a smarter and automated delivery systems for E-commerce sites for safer and tracked delivery of ordered products',
+            type: 'Design Patent',
+            appNo: '202241049723',
+            date: 'Aug-22',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.M.Jeeva',
+            title: 'An Automated Artificial Intelligence Based Approach to Handle to servicing of Electric Vehicles',
+            type: 'Design Patent',
+            appNo: '202241048683',
+            date: 'Aug-22',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs.D.Ramya',
+            title: 'Deep Learning based techniques to analyse the process of preparing chemically modified',
+            type: 'Utility Patent',
+            appNo: '202241049074',
+            date: 'Aug-22',
+            status: 'Published'
+          }
+        ]
+      }
+    ],
   },
   'be-ece': {
     name: 'B.E Electronics & Communication Engineering',
@@ -2742,8 +2951,8 @@ export const courseData = {
     labs: [{ name: 'Management Lab', equipment: 'Financial Terminals', icon: BarChart3 }],
   },
   'mba-iev': {
-    name: 'MBA - Innovation, Entrepreneurship and Venture Development',
-    short: 'MBA IEV',
+    name: 'MBA in Innovation, Entrepreneurship & Venture Development (MBA-IEV)',
+    short: 'MBA - IEV',
     duration: '2 Years (4 Semesters)',
     intake: 60,
     affiliation: 'Anna University',
@@ -2753,10 +2962,29 @@ export const courseData = {
     topPackage: '15 LPA',
     icon: Rocket,
     color: '#18357a',
-    tagline: 'Innovate. Execute. Scale.',
+    tagline: 'Startup Ideas + Campus Innovations + Capstone Projects + Incubation Residence + Entrepreneurial Ecosystem',
     quickApply: 'https://forms.gle/PdcnrWRN8ZQV6hJV6',
-    overview: 'This unique program focuses on fostering entrepreneurial spirit and provides a platform for students to convert their ideas into viable business ventures.',
-    whyChoose: ['Startup Incubation', 'Venture Capital Connect', 'Experiential Learning'],
+    overview: [
+      "The objective of the MBA-IEV program is to prepare young minds towards self-employment and create employment opportunities for others through enterprise development. It is expected to make more job creators, and launch their own startups during the completion of the course.",
+      "Even if these entrepreneurs fail to take startup to success, at any stage they have every opportunity to get back to intrapreneurship life because youths with entrepreneurial mind-set and enterprise skill sets are high in demand and offered with leadership positions to lead.",
+      "Graduates with entrepreneurial and intrapreneurship abilities with experience will be preferred by many employers specifically to lead incubation, pre-incubation and innovation centres, angel and Venture Capital firms, policy design and implementation centres in both govt. and non-govt. agencies, as innovation management professionals in multi-national corporations, also, to take challenging role in social enterprises, NGOs, SMEs, and family enterprises."
+    ],
+    vision: "To produce global leaders in innovation and entrepreneurship who can manage and grow enterprises in a challenging and highly competitive world, through the integration of domain expertise, entrepreneurial acumen, and high ethical standards.",
+    mission: "M1: Developing analytical, problem-solving, and decision-making skills specifically tailored for managing entrepreneurial ventures and driving innovative change.\nM2: Nurturing entrepreneurial leadership traits through continuous industry interaction, industry-sponsored centres of excellence, and hands-on experiential learning.\nM3: Providing top-tier entrepreneurial education through domestic and international collaborations, enhancing cross-cultural competencies and global business perspectives.\nM4: Facilitating learning and innovation by engaging faculty who are thought leaders, actively involved in intensive research, and industrial consultancy focused on entrepreneurship and venture development.",
+    peo: "PEO – 1: To make the graduates as Entrepreneurs and successfully run Ventures / Startups.\n\nPEO – 2: To make the graduates to be a Leading Player in Innovation Management.\n\nPEO – 3: To successfully contribute to Entrepreneurial Development or Play a Leading Role in Innovation / New Product Development in Corporates.",
+    po: "PO – 1: Understand and apply the concepts of Entrepreneurship, Innovation and New Venture Development.\n\nPO – 2: Ability to find a business idea, build a prototype and launch to early customers in the market.\n\nPO – 3: Ability to choose appropriate business model to raise funds and to scale up the venture.\n\nPO – 4: Understand and apply the management theories & practices to solve business problems and successfully run Startups.\n\nPO – 5: Understand and practice Standards, Compliances (Ethical, Economical, Legal, Environmental, Sustainable Global, etc.).\n\nPO – 6: Ability to lead the team/venture, to be a collaborative team player, to strategically and innovatively take the venture towards growth.",
+    whyChoose: [
+      "Discover innovative research and technology",
+      "Make final semester projects into innovative products",
+      "Make use of incubation centres and resources",
+      "Encourage interdisciplinary collaboration",
+      "Conduct pilot tests on campus",
+      "Utilize alumni networks",
+      "Establish partnerships with local companies",
+      "Secure funding and investments",
+      "Seek mentorship and professional advice",
+      "Emphasize scalability and sustainability"
+    ],
     curriculum: [{ year: 'Year 1', semesters: ['Design Thinking', 'Business Modeling', 'Startup Finance'] }],
     faculty: [{ name: 'Dr. P. Rajendran', designation: 'Director', experience: '18 Years', specialization: 'Entrepreneurship', rating: 4.9 }],
     labs: [{ name: 'Innovation Hub', equipment: 'Productivity Tools', icon: Zap }],
@@ -3116,8 +3344,8 @@ export const courseData = {
     ],
     vision: "To produce managers and entrepreneurs who are business relevant, innovative and socially responsible.",
     mission: "M1: To offer state-of-the-art management programs and carry out research and consultancy.\nM2: To nurture students with industry-relevant skills and knowledge with leadership and entrepreneurial capabilities.\nM3: To collaborate with industries and academic for academics and collaborative research and training.",
-    peo: "PEO – 1: Graduates will demonstrate professional competence in core business functions and specializations to solve complex managerial challenges.\n\nPEO – 2: Graduates will apply leadership, communication, and decision-making skills to drive organizational success.\n\nPEO – 3: Graduates will exhibit ethical values, social responsibility, and entrepreneurial mindset in their careers.",
-    po: "PO – 1: Business Knowledge: Apply knowledge of management theories and practices to solve business problems.\n\nPO – 2: Decision Making: Foster analytical and critical thinking abilities for data-driven business decision making.\n\nPO – 3: Leadership: Ability to lead and work collaboratively in diverse, multidisciplinary teams.\n\nPO – 4: Social Responsibility: Value and execute ethical principles and social responsibility in business contexts.\n\nPO – 5: Communication: Communicate effectively on complex business and managerial issues.\n\nPO – 6: Global Awareness: Evaluate business opportunities and threats in a global context.",
+    peo: "PEO 1: Graduates to be imparted with fundamental and specialized skills, in order to manage enterprises that operate in an arena of complexity.\n\nPEO 2: Graduates to be nurtured with good leadership and learning, through faculty who are thought leaders and being exposed to the scope of continuous industry interactions.\n\nPEO 3: Graduates to be equipped to pursue the opportunities beyond the level of resources available, to explore new ventures in entrepreneurship and sustainable innovation.",
+    po: "PO 1: Apply knowledge of management theories and practices to solve business problems.\n\nPO 2: Foster analytical and critical thinking abilities for data-based decision making.\n\nPO 3: Ability to develop value based leadership ability.\n\nPO 4: Ability to understand, analyze and communicate global, economic, legal, and ethical aspects of business.\n\nPO 5: Ability to lead themselves and others in the achievement of organizational goals, contributing effectively to a team environment.\n\nPO 6: Ability to apply professional ethics and enhance business quality through lifelong learning.",
     pso: "PSO – 1: Design and execute marketing, financial, and operational strategies for diverse business models.\n\nPSO – 2: Leverage modern analytical tools and software to interpret market trends and business data.\n\nPSO – 3: Formulate business solutions aligning with ethical practices and environmental sustainability.",
     whyChoose: [
       'Dual specialisations in core domains',
@@ -3164,7 +3392,7 @@ export const courseData = {
     placementStats: { placed: '89%', avg: '5.2 LPA', top: '14 LPA', companies: '40+' }
   },
   'mba-iev': {
-    name: 'MBA in Innovation, Entrepreneurship and Venture Development',
+    name: 'MBA in Innovation, Entrepreneurship & Venture Development (MBA-IEV)',
     short: 'MBA - IEV',
     duration: '2 Years (4 Semesters)',
     intake: 60,
@@ -3175,30 +3403,30 @@ export const courseData = {
     topPackage: '16 LPA',
     icon: Rocket,
     color: '#18357a',
-    tagline: 'Empowering Future Founders and Innovators.',
+    tagline: 'Startup Ideas + Campus Innovations + Capstone Projects + Incubation Residence + Entrepreneurial Ecosystem',
     brochure: '/pdfs/KIOT-MBA-IEV-2025.pdf',
     quickApply: 'https://forms.gle/PdcnrWRN8ZQV6hJV6',
     overview: [
-      "The MBA in Innovation, Entrepreneurship & Venture Development (MBA-IEV) is a two-year postgraduate programme offered by the MBA Department at Knowledge Institute of Technology (KIOT). Conducted over four semesters, the programme is governed by the MBA (IEV) Regulations 2024, effective from 05 November 2024. The programme is designed to foster innovation, entrepreneurial thinking, and venture creation among aspiring business leaders.",
-      "With a strong focus on self-employment, startup development, and enterprise growth, it equips students with the knowledge, skills, and practical exposure required to identify business opportunities, launch new ventures, and manage sustainable enterprises. The primary objective of the programme is to prepare young minds not only to become successful entrepreneurs but also to create employment opportunities for others through innovative and impactful enterprise development."
+      "The objective of the MBA-IEV program is to prepare young minds towards self-employment and create employment opportunities for others through enterprise development. It is expected to make more job creators, and launch their own startups during the completion of the course.",
+      "Even if these entrepreneurs fail to take startup to success, at any stage they have every opportunity to get back to intrapreneurship life because youths with entrepreneurial mind-set and enterprise skill sets are high in demand and offered with leadership positions to lead.",
+      "Graduates with entrepreneurial and intrapreneurship abilities with experience will be preferred by many employers specifically to lead incubation, pre-incubation and innovation centres, angel and Venture Capital firms, policy design and implementation centres in both govt. and non-govt. agencies, as innovation management professionals in multi-national corporations, also, to take challenging role in social enterprises, NGOs, SMEs, and family enterprises."
     ],
     vision: "To produce global leaders in innovation and entrepreneurship who can manage and grow enterprises in a challenging and highly competitive world, through the integration of domain expertise, entrepreneurial acumen, and high ethical standards.",
-    mission: "M1: Developing analytical, problem-solving, and decision-making skills specifically tailored for managing entrepreneurial ventures and driving innovative change.\nM2: Nurturing entrepreneurial leadership traits through continuous industry interaction, industry-sponsored centers of excellence, and hands-on experiential learning.\nM3: Providing top-tier entrepreneurial education through domestic and international collaborations, enhancing cross-cultural competencies and global business perspectives.\nM4: Facilitating learning and innovation by engaging faculty who are thought leaders, actively involved in intensive research, and industrial consultancy focused on entrepreneurship and venture development.",
+    mission: "M1: Developing analytical, problem-solving, and decision-making skills specifically tailored for managing entrepreneurial ventures and driving innovative change.\nM2: Nurturing entrepreneurial leadership traits through continuous industry interaction, industry-sponsored centres of excellence, and hands-on experiential learning.\nM3: Providing top-tier entrepreneurial education through domestic and international collaborations, enhancing cross-cultural competencies and global business perspectives.\nM4: Facilitating learning and innovation by engaging faculty who are thought leaders, actively involved in intensive research, and industrial consultancy focused on entrepreneurship and venture development.",
     peo: "PEO – 1: To make the graduates as Entrepreneurs and successfully run Ventures / Startups.\n\nPEO – 2: To make the graduates to be a Leading Player in Innovation Management.\n\nPEO – 3: To successfully contribute to Entrepreneurial Development or Play a Leading Role in Innovation / New Product Development in Corporates.",
     po: "PO – 1: Understand and apply the concepts of Entrepreneurship, Innovation and New Venture Development.\n\nPO – 2: Ability to find a business idea, build a prototype and launch to early customers in the market.\n\nPO – 3: Ability to choose appropriate business model to raise funds and to scale up the venture.\n\nPO – 4: Understand and apply the management theories & practices to solve business problems and successfully run Startups.\n\nPO – 5: Understand and practice Standards, Compliances (Ethical, Economical, Legal, Environmental, Sustainable Global, etc.).\n\nPO – 6: Ability to lead the team/venture, to be a collaborative team player, to strategically and innovatively take the venture towards growth.",
     pso: "PSO – 1: Formulate a validated business model canvas and comprehensive business plan for a start-up.\n\nPSO – 2: Leverage business incubator resources to build functional prototypes and minimum viable products (MVPs).\n\nPSO – 3: Navigate early-stage funding rounds, intellectual property management, and product launch marketing.",
     whyChoose: [
-      'Startup Ideas + Campus Innovations + Capstone Projects + Incubation Residence + Entrepreneurial Ecosystem',
-      'Discover innovative research and technology',
-      'Make final semester projects into innovative products',
-      'Make use of incubation centres and resources',
-      'Encourage interdisciplinary collaboration',
-      'Conduct pilot tests on campus',
-      'Utilize alumni networks',
-      'Establish partnerships with local companies',
-      'Secure funding and investments',
-      'Seek mentorship and professional advice',
-      'Emphasize scalability and sustainability'
+      "Discover innovative research and technology",
+      "Make final semester projects into innovative products",
+      "Make use of incubation centres and resources",
+      "Encourage interdisciplinary collaboration",
+      "Conduct pilot tests on campus",
+      "Utilize alumni networks",
+      "Establish partnerships with local companies",
+      "Secure funding and investments",
+      "Seek mentorship and professional advice",
+      "Emphasize scalability and sustainability"
     ],
     careerProspects: [
       'Self-employment / Founder of own startup',
