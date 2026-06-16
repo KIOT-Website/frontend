@@ -622,7 +622,7 @@ export default function CourseDetailPage({ overrides }) {
       </div>
 
       {/* Tab Content */}
-      <div className="w-full px-6 lg:px-12 py-10">
+      <div className="w-full px-4 md:px-12 py-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -1132,23 +1132,23 @@ export default function CourseDetailPage({ overrides }) {
                 </div>
 
                 {/* Pedagogical Practices Table/List Card */}
-                <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 overflow-hidden">
-                  <h2 className="text-2xl md:text-3xl font-bold font-graphik mb-6 text-[#224292] flex items-center gap-3">
+                <div className="space-y-6">
+                  <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] flex items-center gap-3">
                     <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
                     Pedagogical Practices
                   </h2>
-                  <p className="text-slate-500 font-semibold font-graphik text-sm mb-6 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
                     The MBA programme adopts a diverse range of teaching-learning methods to create an engaging and outcome-oriented learning experience. These include:
                   </p>
 
-                  <div className="border border-[#DEE7F4] rounded-2xl overflow-hidden shadow-sm">
+                  <div className="border border-[#DEE7F4] rounded-2xl overflow-hidden shadow-sm bg-white">
                     <table className="w-full text-left font-graphik text-[14px]">
                       <thead>
                         <tr className="bg-[#224292] text-white">
-                          <th className="py-4 px-6 font-bold uppercase tracking-wider text-[13px] md:text-[14px] w-1/3">
+                          <th className="py-4 px-4 md:px-6 font-bold uppercase tracking-wider text-[13px] md:text-[14px] w-1/3">
                             Methodology
                           </th>
-                          <th className="py-4 px-6 font-bold uppercase tracking-wider text-[13px] md:text-[14px]">
+                          <th className="py-4 px-4 md:px-6 font-bold uppercase tracking-wider text-[13px] md:text-[14px]">
                             Description
                           </th>
                         </tr>
@@ -1171,10 +1171,10 @@ export default function CourseDetailPage({ overrides }) {
                           { title: "Simulation Games", desc: "Active learning exercises that provide a risk-free environment for developing managerial and entrepreneurial competencies." }
                         ].map((practice, idx) => (
                           <tr key={idx} className={`${idx % 2 === 0 ? 'bg-[#E5EDF8]/20' : 'bg-white'} hover:bg-[#E5EDF8]/40 transition-colors`}>
-                            <td className="py-4 px-6 font-bold text-[#224292] text-[14px] leading-tight">
+                            <td className="py-4 px-4 md:px-6 font-bold text-[#224292] text-[14px] leading-tight">
                               {practice.title}
                             </td>
-                            <td className="py-4 px-6 text-slate-700 font-medium text-[13.5px] md:text-[14px] leading-relaxed">
+                            <td className="py-4 px-4 md:px-6 text-slate-700 font-medium text-[13.5px] md:text-[14px] leading-relaxed">
                               {practice.desc}
                             </td>
                           </tr>
@@ -1183,7 +1183,7 @@ export default function CourseDetailPage({ overrides }) {
                     </table>
                   </div>
 
-                  <p className="mt-8 text-slate-600 leading-relaxed text-[14px] md:text-[15px] font-medium font-graphik text-justify italic">
+                  <p className="mt-6 text-slate-600 leading-relaxed text-[14px] md:text-[15px] font-medium font-graphik text-justify italic">
                     Together, these pedagogical practices ensure that students are equipped with the knowledge, skills, and entrepreneurial mindset required to create, manage, and scale innovative ventures in a rapidly evolving business landscape.
                   </p>
                 </div>
