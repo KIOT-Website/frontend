@@ -4,7 +4,7 @@ import { Calendar, ArrowLeft, Mic2, Brain, Megaphone, CheckCircle2, Trophy, Moni
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-const API_BASE_URL = 'http://localhost:8000'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const EventsPage = () => {
   const [dbEvents, setDbEvents] = useState([])

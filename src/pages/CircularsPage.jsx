@@ -4,7 +4,7 @@ import {
     Bell, FileText, ExternalLink, Calendar, Loader2 
 } from 'lucide-react'
 
-const API_BASE_URL = 'http://localhost:8000'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const CircularsPage = () => {
     const [circulars, setCirculars] = useState([])

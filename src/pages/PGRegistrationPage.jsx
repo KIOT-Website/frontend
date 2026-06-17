@@ -172,7 +172,7 @@ const PGRegistrationPage = () => {
                 board: formData.plus2Board,
                 created_at: new Date().toISOString()
             }
-            const res = await fetch('http://localhost:8000/admission/pg-registrations/', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/admission/pg-registrations/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)

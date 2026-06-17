@@ -4,7 +4,7 @@ import { Briefcase, Loader2, Image as ImageIcon, X, ArrowLeft } from 'lucide-rea
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-const API_BASE_URL = 'http://localhost:8000'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const Recruitment = () => {
     const [drives, setDrives] = useState([])

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, Users, FileText, Download, Loader2, AlertCircle } from 'lucide-react'
 
-const API_BASE = 'http://localhost:8000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const StudentsAdmittedDepartmentPage = () => {
   const { deptName } = useParams()

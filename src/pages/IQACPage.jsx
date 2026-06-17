@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 
 export default function IQACPage() {
+  const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
   const [activeReport, setActiveReport] = useState('aaa')
   const [aaaRecords, setAaaRecords] = useState([])
   const [financialRecords, setFinancialRecords] = useState([])
@@ -19,9 +20,9 @@ export default function IQACPage() {
     const fetchData = async () => {
       try {
         const [aaaRes, finRes, momRes] = await Promise.all([
-          axios.get('http://localhost:8000/api/iqac/aaa'),
-          axios.get('http://localhost:8000/api/iqac/financial'),
-          axios.get('http://localhost:8000/api/iqac/mom')
+          axios.get(`${API_BASE}/api/iqac/aaa`),
+          axios.get(`${API_BASE}/api/iqac/financial`),
+          axios.get(`${API_BASE}/api/iqac/mom`)
         ])
         setAaaRecords(aaaRes.data)
         setFinancialRecords(finRes.data)

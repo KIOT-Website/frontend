@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, FileText, Download, Building2, AlertCircle, ArrowRight } from 'lucide-react'
 import { courseData } from '../data/courseData'
 
-const API_BASE = 'http://localhost:8000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const DepartmentPage = () => {
   const { deptName: departmentName } = useParams()

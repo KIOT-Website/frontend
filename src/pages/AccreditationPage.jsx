@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 
 const AccreditationPage = () => {
+  const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
   const documents = [
     {
       id: 1,
@@ -60,8 +61,8 @@ const AccreditationPage = () => {
     const fetchData = async () => {
       try {
         const [nirfRes, aqarRes] = await Promise.all([
-          axios.get('http://localhost:8000/api/iqac/nirf'),
-          axios.get('http://localhost:8000/api/iqac/aqar')
+          axios.get(`${API_BASE}/api/iqac/nirf`),
+          axios.get(`${API_BASE}/api/iqac/aqar`)
         ]);
         
         setNirfRecords(nirfRes.data.sort((a, b) => b.academic_year.localeCompare(a.academic_year)));

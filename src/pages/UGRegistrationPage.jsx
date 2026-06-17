@@ -168,7 +168,7 @@ const UGRegistrationPage = () => {
                 annual_income: '',
                 created_at: new Date().toISOString()
             }
-            const res = await fetch('http://localhost:8000/admission/ug-registrations/', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/admission/ug-registrations/`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
