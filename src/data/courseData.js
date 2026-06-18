@@ -281,9 +281,9 @@ export const courseData = {
       { name: 'Dr.K.Geetha', designation: 'Assistant Professor', experience: 'Teaching: 12 years. Research:4 years', specialization: 'Fuzzy Algebra', rating: 4.7, qualification: 'M.SC., M.Phil.,Ph.D.', email: 'N/A', joiningDate: '30.06.2025', association: 'Regular', publications: 'IJ: 6 , NJ: 2 IC: 9 NC', image: geethaImage },
     ],
     labs: [
-      { 
-        name: 'Engineering Practices Laboratory', 
-        equipment: 'Arc welding, Gas Welding, Power Tools, Pump sets', 
+      {
+        name: 'Engineering Practices Laboratory',
+        equipment: 'Arc welding, Gas Welding, Power Tools, Pump sets',
         icon: Wrench,
         equipments: [
           'Arc welding machine set', 'Gas Welding', 'Angle Grinder', 'Rotary Hammer', 'Demolition Hammer',
@@ -293,9 +293,9 @@ export const courseData = {
         incharge: 'Prof. M.Vinoth, AP/MECH',
         technician: 'Mr.G.Arulkumar'
       },
-      { 
-        name: 'MANUFACTURING TECHNOLOGY LABORATORY - I', 
-        equipment: 'Centre Lathes, Milling Machines, Shapers, Grinding Machines', 
+      {
+        name: 'MANUFACTURING TECHNOLOGY LABORATORY - I',
+        equipment: 'Centre Lathes, Milling Machines, Shapers, Grinding Machines',
         icon: Settings,
         equipments: [
           'Centre Lathes', 'Horizontal Milling Machines', 'Vertical Milling Machines', 'Shapers',
@@ -305,9 +305,9 @@ export const courseData = {
         incharge: 'Mr.R.Venkatraman, AP/MECH & Mr.S.Dheepak, AP/MECH',
         technician: 'Mr.R.Ganesan'
       },
-      { 
-        name: 'THERMAL ENGINEERING LABORATORY', 
-        equipment: 'Cut-Models, I.C Engine, Steam Boiler, Heat Transfer setup', 
+      {
+        name: 'THERMAL ENGINEERING LABORATORY',
+        equipment: 'Cut-Models, I.C Engine, Steam Boiler, Heat Transfer setup',
         icon: Flame,
         equipments: [
           'I.C Engine (2 Stroke Petrol Cut-Model)', 'I.C Engine (4 Stroke Diesel Cut-Model)', 'Redwood Viscometer', 'Flash Point Apparatus Closed Type',
@@ -323,9 +323,9 @@ export const courseData = {
         incharge: 'Mr. V.Karthikeyan, AP/MECH',
         technician: 'Mr.V.Palanisamy'
       },
-      { 
-        name: 'DYNAMICS LABORATORY', 
-        equipment: 'Cam follower setup, Gyroscope, Vibrations, Governors', 
+      {
+        name: 'DYNAMICS LABORATORY',
+        equipment: 'Cam follower setup, Gyroscope, Vibrations, Governors',
         icon: Wind,
         equipments: [
           'Cam follower setup', 'Motorized gyroscope', 'Governor apparatus (Watt, Porter, Proell, Hartnell)',
@@ -336,9 +336,9 @@ export const courseData = {
         incharge: 'Mr. K.Mugundhan, AP/MECH',
         technician: 'Mr.G.Arulkumar'
       },
-      { 
-        name: 'SIMULATION AND ANALYSIS LABORATORY (SAL)', 
-        equipment: 'Work Stations, Ansys 13.0, MATLAB, Mechanism simulation', 
+      {
+        name: 'SIMULATION AND ANALYSIS LABORATORY (SAL)',
+        equipment: 'Work Stations, Ansys 13.0, MATLAB, Mechanism simulation',
         icon: MonitorDot,
         equipments: [
           'Computer Work Station', 'Colour Desk Jet Printer', 'Ansys 13.0 Multibody Dynamic Software', 'C / MATLAB'
@@ -346,10 +346,10 @@ export const courseData = {
         incharge: 'Mr. J.Prakash AP/MECH',
         technician: 'Mr.R.Sekar'
       },
-      { 
-        name: 'CAD/CAM LABORATORY', 
+      {
+        name: 'CAD/CAM LABORATORY',
         short: 'CAD/CAM',
-        equipment: 'CNC Lathe, milling machine, High-end Workstations, Edge CAM', 
+        equipment: 'CNC Lathe, milling machine, High-end Workstations, Edge CAM',
         icon: Cpu,
         equipments: [
           'Computer Server', 'High-end Computer Nodes (1GB+ RAM)', 'A3 Size Plotter', 'Laser Printer',
@@ -359,9 +359,9 @@ export const courseData = {
         incharge: 'Mr. J.Prakash AP/MECH',
         technician: 'Mr.R.Sekar'
       },
-      { 
-        name: 'MECHATRONICS LABORATORY', 
-        equipment: 'Pneumatic/Hydraulic Trainer Kits, Image processing system, 8051-Microcontroller', 
+      {
+        name: 'MECHATRONICS LABORATORY',
+        equipment: 'Pneumatic/Hydraulic Trainer Kits, Image processing system, 8051-Microcontroller',
         icon: CircuitBoard,
         equipments: [
           'Basic Pneumatic Trainer Kit (PLC Control)', 'Basic Hydraulic Trainer Kit', 'Systems Simulation Software',
@@ -370,10 +370,10 @@ export const courseData = {
         incharge: 'Mrs.A.Elavarasi, AP/MECH',
         technician: 'Mr.T.Mohan'
       },
-      { 
-        name: 'METROLOGY AND MEASUREMENTS LABORATORY', 
+      {
+        name: 'METROLOGY AND MEASUREMENTS LABORATORY',
         short: 'M&ML',
-        equipment: 'Carriage Micrometer, Profile Projector, Autocollimator, Torque measuring setup', 
+        equipment: 'Carriage Micrometer, Profile Projector, Autocollimator, Torque measuring setup',
         icon: Ruler,
         equipments: [
           'Floating Carriage Micrometer', 'Profile Projector', 'Autocollimator', 'Surface Finish Measuring Equipment',
@@ -383,9 +383,9 @@ export const courseData = {
         incharge: 'Mr.R.Vinothkumar, AP/MECH',
         technician: 'Mr. R. Ganesan'
       },
-      { 
-        name: 'Computer Aided Drafting and Modeling Laboratory (R2013)', 
-        equipment: 'Computer Nodes (1GB+ RAM), A3 Plotter, CREO 4.0 Software', 
+      {
+        name: 'Computer Aided Drafting and Modeling Laboratory (R2013)',
+        equipment: 'Computer Nodes (1GB+ RAM), A3 Plotter, CREO 4.0 Software',
         icon: PenTool,
         equipments: [
           'Computer Server', 'High-end Systems (1GB+ RAM)', 'A3 Size Plotter', 'Laser Printer', 'Software: CREO 4.0'
@@ -393,9 +393,9 @@ export const courseData = {
         incharge: 'Mr. J. Prakash, AP/ MECH',
         technician: 'Mr. R. Sekar'
       },
-      { 
-        name: 'STRENGTH OF MATERIALS LABORATORY', 
-        equipment: 'Electronic UTM (60t), Torsion Testing Machine (100N.m), Rockwell & Brinell Hardness testing', 
+      {
+        name: 'STRENGTH OF MATERIALS LABORATORY',
+        equipment: 'Electronic UTM (60t), Torsion Testing Machine (100N.m), Rockwell & Brinell Hardness testing',
         icon: Layers,
         equipments: [
           'Electronic Universal Testing Machine (60t)', 'Torsion Testing Machine (100N.M)', 'Rockwell & Brinell Hardness testing Machine',
@@ -404,9 +404,9 @@ export const courseData = {
         incharge: 'Mr. L.M. Nirmal ,AP/ Civil',
         technician: 'Mr.C.Pradeep Kumar, LT/Civil'
       },
-      { 
-        name: 'FLUID MECHANICS AND MACHINERY LABORATORY', 
-        equipment: 'Kaplan/Pelton/Francis Turbines, Orificemeter, Centrifugal & Reciprocating Pumps', 
+      {
+        name: 'FLUID MECHANICS AND MACHINERY LABORATORY',
+        equipment: 'Kaplan/Pelton/Francis Turbines, Orificemeter, Centrifugal & Reciprocating Pumps',
         icon: Droplets,
         equipments: [
           'Kaplan Turbine & Pelton Wheel', 'Gear Oil Pump', 'Francis Turbine', 'Orificemeter & Venturimeter',
@@ -620,9 +620,9 @@ export const courseData = {
       // ... more curriculum
     ],
     faculty: [
-      { 
-        name: 'Dr. P. Rajendran', 
-        designation: 'Professor & HOD', 
+      {
+        name: 'Dr. P. Rajendran',
+        designation: 'Professor & HOD',
         doj: '03.05.2010',
         qualification: 'M.E., Ph.D., MISTE.',
         association: 'Regular',
@@ -633,9 +633,9 @@ export const courseData = {
         researchSupervision: 'Supervised: 08, Supervising: 08',
         rating: 5.0
       },
-      { 
-        name: 'Dr. V. Kumar', 
-        designation: 'Professor & Director IM', 
+      {
+        name: 'Dr. V. Kumar',
+        designation: 'Professor & Director IM',
         doj: '04.06.2010',
         qualification: 'B.E., M.E., Ph.D., MISTE., MIEEE.',
         association: 'Regular',
@@ -646,9 +646,9 @@ export const courseData = {
         rating: 4.9,
         image: cseVKumarImage
       },
-      { 
-        name: 'Mr. T. Karthikeyan', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Mr. T. Karthikeyan',
+        designation: 'Assistant Professor',
         doj: '01.06.2012',
         qualification: 'B.Tech., M.S(IT)., (Ph.D)',
         association: 'Regular',
@@ -659,9 +659,9 @@ export const courseData = {
         rating: 4.8,
         image: cseTKarthikeyanImage
       },
-      { 
-        name: 'Dr. R. Kumar', 
-        designation: 'Professor', 
+      {
+        name: 'Dr. R. Kumar',
+        designation: 'Professor',
         doj: '13.03.2023',
         qualification: 'M.Tech, Ph.D.',
         association: 'Regular',
@@ -673,9 +673,9 @@ export const courseData = {
         rating: 4.9,
         image: cseRKumarImage
       },
-      { 
-        name: 'Dr. M. Sakthivel', 
-        designation: 'Associate Professor', 
+      {
+        name: 'Dr. M. Sakthivel',
+        designation: 'Associate Professor',
         doj: '02.08.2021',
         qualification: 'B.E., M.E., Ph.D.',
         association: 'Regular',
@@ -685,9 +685,9 @@ export const courseData = {
         publications: 'IJ:7, IC:6, NC:6, P:2',
         rating: 4.8
       },
-      { 
-        name: 'Dr. S. Sakthivel', 
-        designation: 'Associate Professor', 
+      {
+        name: 'Dr. S. Sakthivel',
+        designation: 'Associate Professor',
         doj: '30.04.2025',
         qualification: 'B.E., M.E., Ph.D.',
         association: 'Regular',
@@ -698,9 +698,9 @@ export const courseData = {
         rating: 4.8,
         image: cseSSakthivelImage
       },
-      { 
-        name: 'Mr. K. Ravikumar', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Mr. K. Ravikumar',
+        designation: 'Assistant Professor',
         doj: '20.05.2011',
         qualification: 'B.E., M.E., MISTE.',
         association: 'Regular',
@@ -711,9 +711,9 @@ export const courseData = {
         rating: 4.7,
         image: cseKRavikumarImage
       },
-      { 
-        name: 'Dr. I. Rajesh', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Dr. I. Rajesh',
+        designation: 'Assistant Professor',
         doj: '02.06.2010',
         qualification: 'B.E., M.E., Ph.D., MISTE.',
         association: 'Regular',
@@ -723,9 +723,9 @@ export const courseData = {
         publications: 'IJ:1, NJ:2, IC:4, NC:5',
         rating: 4.7
       },
-      { 
-        name: 'Dr. P. Vijayalakshmi', 
-        designation: 'Associate Professor', 
+      {
+        name: 'Dr. P. Vijayalakshmi',
+        designation: 'Associate Professor',
         doj: '22.10.2021',
         qualification: 'B.E., M.E., Ph.D.',
         association: 'Regular',
@@ -737,9 +737,9 @@ export const courseData = {
         rating: 4.8,
         image: csePVijayalakshmiImage
       },
-      { 
-        name: 'Mr. M. Senthilkumar', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Mr. M. Senthilkumar',
+        designation: 'Assistant Professor',
         doj: '14.06.2012',
         qualification: 'B.E., M.E.',
         association: 'Regular',
@@ -749,9 +749,9 @@ export const courseData = {
         publications: 'IJ:2, IC:4, NC:6',
         rating: 4.7
       },
-      { 
-        name: 'Mr. A. Sekar', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Mr. A. Sekar',
+        designation: 'Assistant Professor',
         doj: '11.07.2016',
         qualification: 'B.E., M.E.',
         association: 'Regular',
@@ -762,9 +762,9 @@ export const courseData = {
         rating: 4.7,
         image: cseASekarImage
       },
-      { 
-        name: 'Mrs. K. Saranya', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Mrs. K. Saranya',
+        designation: 'Assistant Professor',
         doj: '01.06.2012',
         qualification: 'B.E., M.E.',
         association: 'Regular',
@@ -775,9 +775,9 @@ export const courseData = {
         rating: 4.6,
         image: cseKSaranyaImage
       },
-      { 
-        name: 'Dr. P. Malarvizhi', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Dr. P. Malarvizhi',
+        designation: 'Assistant Professor',
         doj: '01.06.2012',
         qualification: 'B.E., M.E. Ph.D.',
         association: 'Regular',
@@ -788,9 +788,9 @@ export const courseData = {
         rating: 4.7,
         image: csePMalarvizhiImage
       },
-      { 
-        name: 'Mrs. R. Saranya', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Mrs. R. Saranya',
+        designation: 'Assistant Professor',
         doj: '01.06.2016',
         qualification: 'B.E., M.E.',
         association: 'Regular',
@@ -801,9 +801,9 @@ export const courseData = {
         rating: 4.6,
         image: cseRSaranyaImage
       },
-      { 
-        name: 'Mr. P. Nareshkumar', 
-        designation: 'Assistant Professor', 
+      {
+        name: 'Mr. P. Nareshkumar',
+        designation: 'Assistant Professor',
         doj: '03.08.2020',
         qualification: 'B.Tech., M.E., (Ph.D)',
         association: 'Regular',
@@ -845,79 +845,79 @@ export const courseData = {
       { name: 'P.R. Karthik', designation: 'Assistant Professor (Mathematics)', doj: '26.11.2021', qualification: 'M.Sc., M.Phil.', experience: '8.10 Years', specialization: 'Partial Differential Equations', email: 'prkmat@kiot.ac.in', rating: 4.6, category: 'S&H' }
     ],
     labs: [
-      { 
-        name: 'Networks Laboratory', 
-        equipments: ['Area: 74.76 Sq.m', 'Workstations: 40 Systems', 'Cisco Packet Tracer', 'Wireshark', 'NS2 Network Simulator'], 
+      {
+        name: 'Networks Laboratory',
+        equipments: ['Area: 74.76 Sq.m', 'Workstations: 40 Systems', 'Cisco Packet Tracer', 'Wireshark', 'NS2 Network Simulator'],
         icon: Globe,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Database Management System Laboratory', 
-        equipments: ['Area: 93.59 Sq.m', 'Workstations: 40 Systems', 'Oracle 11g DBMS', 'MySQL', 'MongoDB'], 
+      {
+        name: 'Database Management System Laboratory',
+        equipments: ['Area: 93.59 Sq.m', 'Workstations: 40 Systems', 'Oracle 11g DBMS', 'MySQL', 'MongoDB'],
         icon: Layers,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Mobile Application Development Laboratory', 
-        equipments: ['Area: 95.43 Sq.m', 'Workstations: 40 Systems', 'Android Studio', 'Flutter SDK', 'React Native'], 
+      {
+        name: 'Mobile Application Development Laboratory',
+        equipments: ['Area: 95.43 Sq.m', 'Workstations: 40 Systems', 'Android Studio', 'Flutter SDK', 'React Native'],
         icon: Zap,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Software Development Laboratory', 
-        equipments: ['Area: 75.49 Sq.m', 'Workstations: 40 Systems', 'IBM Rational Rose', 'Visual Studio', 'Netbeans IDE'], 
+      {
+        name: 'Software Development Laboratory',
+        equipments: ['Area: 75.49 Sq.m', 'Workstations: 40 Systems', 'IBM Rational Rose', 'Visual Studio', 'Netbeans IDE'],
         icon: Code,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Computer Practices Laboratory', 
-        equipments: ['Area: 65.91 Sq.m', 'Workstations: 40 Systems', 'Turbo C', 'Code Blocks', 'MS Office Suite'], 
+      {
+        name: 'Computer Practices Laboratory',
+        equipments: ['Area: 65.91 Sq.m', 'Workstations: 40 Systems', 'Turbo C', 'Code Blocks', 'MS Office Suite'],
         icon: Monitor,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Data Structures Laboratory', 
-        equipments: ['Area: 65.91 Sq.m', 'Workstations: 40 Systems', 'C/C++ Libraries', 'Jupyter Notebook', 'Python IDLE'], 
+      {
+        name: 'Data Structures Laboratory',
+        equipments: ['Area: 65.91 Sq.m', 'Workstations: 40 Systems', 'C/C++ Libraries', 'Jupyter Notebook', 'Python IDLE'],
         icon: Cpu,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'PG - CSE Laboratory', 
-        equipments: ['Area: 42.20 Sq.m', 'Workstations: 24 Systems', 'Advanced Research Tools', 'High-Performance Computing Nodes'], 
+      {
+        name: 'PG - CSE Laboratory',
+        equipments: ['Area: 42.20 Sq.m', 'Workstations: 24 Systems', 'Advanced Research Tools', 'High-Performance Computing Nodes'],
         icon: Microscope,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'IOT Laboratory', 
-        equipments: ['Area: 76.58 Sq.m', 'Workstations: 30 Systems', 'Arduino / Raspberry Pi Kits', 'Sensor Modules', 'Blynk IoT / Thingspeak'], 
+      {
+        name: 'IOT Laboratory',
+        equipments: ['Area: 76.58 Sq.m', 'Workstations: 30 Systems', 'Arduino / Raspberry Pi Kits', 'Sensor Modules', 'Blynk IoT / Thingspeak'],
         icon: Cpu,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Python Laboratory', 
-        equipments: ['Area: 107.34 Sq.m', 'Workstations: 72 Systems', 'Anaconda Distribution', 'R Studio', 'TensorFlow / PyTorch'], 
+      {
+        name: 'Python Laboratory',
+        equipments: ['Area: 107.34 Sq.m', 'Workstations: 72 Systems', 'Anaconda Distribution', 'R Studio', 'TensorFlow / PyTorch'],
         icon: Terminal,
         incharge: 'Faculty In-Charge',
         technician: 'Technical Support Staff'
       },
-      { 
-        name: 'Software Infrastructure & Licenses', 
+      {
+        name: 'Software Infrastructure & Licenses',
         equipments: [
-          'Oracle 11g Database (Perpetual)', 
-          'IBM Rational Rose (Perpetual)', 
-          'Microsoft Campus License (Annual)', 
+          'Oracle 11g Database (Perpetual)',
+          'IBM Rational Rose (Perpetual)',
+          'Microsoft Campus License (Annual)',
           'Open Source: Python, MySQL, Hadoop',
           'IDE: Netbeans, Android Studio, Visual Studio',
           'Tools: Wireshark, Virtual Box, Jupyter'
-        ], 
+        ],
         icon: ShieldCheck,
         incharge: 'System Administrator',
         technician: 'Lab Technician'
@@ -2468,15 +2468,15 @@ export const courseData = {
       { name: 'Dr. C. Sambathkumar', designation: 'Assistant Professor', joiningDate: '16.04.2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Research: 6 Years', specialization: 'Nanomaterials for Energy Storage Application', email: 'sambath7593@gmail.com', publications: 'IJ: 15, IC: 02, NJ: 02', rating: 4.8, image: sambathkumarImage }
     ],
     labs: [
-      { 
-        name: 'DBMS Laboratory', 
+      {
+        name: 'DBMS Laboratory',
         equipments: [
-          'Area: 74.76 Sq.m', 
-          'Workstations: 40 Systems', 
-          'Oracle 11g Database (Perpetual License)', 
+          'Area: 74.76 Sq.m',
+          'Workstations: 40 Systems',
+          'Oracle 11g Database (Perpetual License)',
           'IBM Rational Rose Software (Perpetual License)',
           'Modeling and Analytics Tools'
-        ], 
+        ],
         icon: Terminal,
         incharge: 'Faculty In-Charge / CSBS',
         technician: 'System Administrator'
@@ -2648,35 +2648,35 @@ export const courseData = {
       { name: 'Dr. G. Sathya Priyanka', designation: 'Assistant Professor / Maths', doj: '09-05-2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Research: 6 Yrs Teaching: 3 Months', specialization: 'Stochastic Processes, Reliability', email: 'gspmat@kiot.ac.in', publications: 'IJ:3, NJ:6', rating: 4.7, image: aidsSathyaPriyankaImage, category: 'S&H' }
     ],
     labs: [
-      { 
-        name: 'AI LAB', 
+      {
+        name: 'AI LAB',
         equipments: [
-          'Area: 768 Sq.ft', 
-          'Systems: 38 High-performance computers', 
+          'Area: 768 Sq.ft',
+          'Systems: 38 High-performance computers',
           'Software: Python, Java, MySQL, Power BI, Visual Studio',
           'Focus: AI & ML Algorithms, Data Analytics'
-        ], 
-        icon: Cpu 
+        ],
+        icon: Cpu
       },
-      { 
-        name: 'Data Science and Analytics Laboratory', 
+      {
+        name: 'Data Science and Analytics Laboratory',
         equipments: [
-          'Area: 103.05 Sq.m', 
-          'Systems: 40 Workstations', 
+          'Area: 103.05 Sq.m',
+          'Systems: 40 Workstations',
           'Software: Turbo C, C++, JDK 1.9, Python, PostgreSQL, Visual Studio',
           'Focus: Programming, Data Handling, and Analytical Skills'
-        ], 
-        icon: Terminal 
+        ],
+        icon: Terminal
       },
-      { 
-        name: 'COE LAB', 
+      {
+        name: 'COE LAB',
         equipments: [
-          'Area: 546 Sq.ft', 
-          'Systems: 20 Systems', 
+          'Area: 546 Sq.ft',
+          'Systems: 20 Systems',
           'Software: OpenCV, TensorFlow, PyTorch, Flask, MySQL, JDE',
           'Focus: Deep Learning, Business Analytics, Enterprise Applications'
-        ], 
-        icon: Activity 
+        ],
+        icon: Activity
       }
     ],
     placementStats: { placed: '95%', avg: '5.5 LPA', top: '22 LPA', companies: '70+' },
@@ -2734,169 +2734,169 @@ export const courseData = {
       { name: 'Dr. N. Chithralekha', designation: 'Professor / Physics', qualification: 'M.Sc, M.Phil, Ph.D. (Physics), M.Ed, M.Phil. (Education), SET (Physical Science)', experience: 'Teaching: 16.5 Yrs.', specialization: 'Ultrasonic and Spectroscopy', email: 'ncphy@kiot.ac.in', rating: 4.9, association: 'Regular', joiningDate: '01.08.2018', publications: 'IJ: 07, NJ: 01, IC: 05, NC: 02', category: 'S&H' },
     ],
     labs: [
-      { 
-        name: 'Engineering Practices Laboratory', 
+      {
+        name: 'Engineering Practices Laboratory',
         incharge: 'Mrs. N. Divya, AP / EEE',
         technician: 'Mr. P. Munusamy, LT / EEE',
         equipments: [
-          'Assorted Electronic Components', 
-          'Electrical measuring instruments', 
-          'Study purpose items: Iron box, fan with regulator, emergency lamp and Induction stove', 
-          'Arduino Microcontroller Board', 
-          'Megger (250V/500V)', 
+          'Assorted Electronic Components',
+          'Electrical measuring instruments',
+          'Study purpose items: Iron box, fan with regulator, emergency lamp and Induction stove',
+          'Arduino Microcontroller Board',
+          'Megger (250V/500V)',
           'Power Tools: Range Finder, Digital Live-wire detector'
-        ], 
-        icon: Wrench 
+        ],
+        icon: Wrench
       },
-      { 
-        name: 'Circuits Theory Laboratory', 
+      {
+        name: 'Circuits Theory Laboratory',
         incharge: 'Mr. M. Rajkumar, AP / EEE',
         technician: 'Mr. P. Munusamy, LT / EEE',
         equipments: [
-          'Regulated Power Supply : (0–15)V DC', 
-          'Function Generator : 1 MHz', 
-          'Single Phase Energy Meter', 
-          'Oscilloscope : 20 MHz', 
-          'Digital Storage Oscilloscope : 20 MHz', 
-          'Circuit Simulation Software', 
-          'AC/DC – Voltmeters', 
+          'Regulated Power Supply : (0–15)V DC',
+          'Function Generator : 1 MHz',
+          'Single Phase Energy Meter',
+          'Oscilloscope : 20 MHz',
+          'Digital Storage Oscilloscope : 20 MHz',
+          'Circuit Simulation Software',
+          'AC/DC – Voltmeters',
           'Intel dual core Desktop PC with 8GB RAM 500GB HDD'
-        ], 
-        icon: Zap 
+        ],
+        icon: Zap
       },
-      { 
-        name: 'Electrical Machines Laboratory - I', 
+      {
+        name: 'Electrical Machines Laboratory - I',
         incharge: 'Mr. G. Karthikeyan, AP / EEE',
         technician: 'Mr. P. Munusamy, LT / EEE',
         equipments: [
-          'DC Series Motor / Generator', 
-          'DC Shunt Motor / Generator', 
-          'DC Compound Motor / Generator', 
-          'Three Phase Slip Ring Induction Motor', 
-          'Three Phase Synchronous Induction Motor', 
-          'Three Phase Alternator', 
-          'Three Phase Squirrel Cage Induction Motor', 
-          'Single Phase Induction Motor', 
-          'Tachometer', 
+          'DC Series Motor / Generator',
+          'DC Shunt Motor / Generator',
+          'DC Compound Motor / Generator',
+          'Three Phase Slip Ring Induction Motor',
+          'Three Phase Synchronous Induction Motor',
+          'Three Phase Alternator',
+          'Three Phase Squirrel Cage Induction Motor',
+          'Single Phase Induction Motor',
+          'Tachometer',
           'Rectifier Unit'
-        ], 
-        icon: Settings 
+        ],
+        icon: Settings
       },
-      { 
-        name: 'Electrical Machines Laboratory - II', 
+      {
+        name: 'Electrical Machines Laboratory - II',
         incharge: 'Mr. R. Kathiresan, AP / EEE',
         technician: 'Mr. P. Munusamy, LT / EEE',
         equipments: [
-          'Three Phase Slip Ring Induction Motor', 
-          'Single / Three Phase Loading Rheostat', 
-          'Single / Three Phase Auto Transformer', 
-          'Three Phase Loading Inductor', 
-          'Single / Three Phase Transformer', 
-          'Three Phase Synchronous Induction Motor', 
-          'BLDC Motor', 
-          'Three Phase Alternator', 
-          'Three Phase Synchronous Motor', 
-          'Capacitance Loading', 
+          'Three Phase Slip Ring Induction Motor',
+          'Single / Three Phase Loading Rheostat',
+          'Single / Three Phase Auto Transformer',
+          'Three Phase Loading Inductor',
+          'Single / Three Phase Transformer',
+          'Three Phase Synchronous Induction Motor',
+          'BLDC Motor',
+          'Three Phase Alternator',
+          'Three Phase Synchronous Motor',
+          'Capacitance Loading',
           'Three Phase Inductive Loading'
-        ], 
-        icon: Zap 
+        ],
+        icon: Zap
       },
-      { 
-        name: 'Analog and Digital Electronics Laboratory', 
+      {
+        name: 'Analog and Digital Electronics Laboratory',
         incharge: 'Mr. R. Madhan Raj & Mrs. P. Rekha, AP / EEE',
         technician: 'Mr. S. Ayyanar, LT / EEE',
         equipments: [
-          'Cathode Ray Oscilloscope', 
-          'Function Generator', 
-          'Single Power Supply', 
-          'Dual Power Supply', 
-          'Decade Resistance Box', 
-          'Decade Capacitance Box', 
-          'Decade Inductance Box', 
-          'Rheostats', 
-          'EDC type DC Ammeter & Voltmeter', 
-          'Digital Multimeter', 
-          'Dual (0-30V) Power Supply', 
-          'Cathode Ray Oscilloscope : 30MHz', 
-          'IC Tester', 
-          'Computer with PSPICE Software', 
-          'Transformers / Auto Transformers', 
+          'Cathode Ray Oscilloscope',
+          'Function Generator',
+          'Single Power Supply',
+          'Dual Power Supply',
+          'Decade Resistance Box',
+          'Decade Capacitance Box',
+          'Decade Inductance Box',
+          'Rheostats',
+          'EDC type DC Ammeter & Voltmeter',
+          'Digital Multimeter',
+          'Dual (0-30V) Power Supply',
+          'Cathode Ray Oscilloscope : 30MHz',
+          'IC Tester',
+          'Computer with PSPICE Software',
+          'Transformers / Auto Transformers',
           'Digital IC Trainer Kit'
-        ], 
-        icon: CircuitBoard 
+        ],
+        icon: CircuitBoard
       },
-      { 
-        name: 'Control Systems Laboratory', 
+      {
+        name: 'Control Systems Laboratory',
         incharge: 'Dr. P.A. Gowri Shankar, ASP / EEE',
         technician: 'Mr. P. Sakthivel, LT / EEE',
         equipments: [
-          'HP Intel Core i7 3.00GHZ Processor, 16 GB SSD RAM, 512 GB SSD HDD', 
-          'ACER Veriton Series Intel Core i3 3.60GHZ Processor, 4 GB DDR3 RAM, 500GB HDD', 
-          'Keyboard & wired Mouse USB', 
+          'HP Intel Core i7 3.00GHZ Processor, 16 GB SSD RAM, 512 GB SSD HDD',
+          'ACER Veriton Series Intel Core i3 3.60GHZ Processor, 4 GB DDR3 RAM, 500GB HDD',
+          'Keyboard & wired Mouse USB',
           '19.5" / 18.5" Monitors'
-        ], 
-        icon: Settings 
+        ],
+        icon: Settings
       },
-      { 
-        name: 'Microcontroller and Interfacing Laboratory', 
+      {
+        name: 'Microcontroller and Interfacing Laboratory',
         incharge: 'Mr. R. Madhan Raj & Mrs. P. Rekha, AP / EEE',
         technician: 'Mr. S. Ayyanar, LT / EEE',
         equipments: [
-          '8085 Microprocessor Trainer', 
-          '8051 Micro Controller Trainer Kit', 
-          '8255 / 8251 / 8259 Interface boards', 
-          '8279 Keyboard / Display Interface board', 
-          '8254 Timer Counter', 
-          'ADC and DAC Card', 
-          'AC & DC Motor with Controller', 
-          'Traffic Light Control System', 
+          '8085 Microprocessor Trainer',
+          '8051 Micro Controller Trainer Kit',
+          '8255 / 8251 / 8259 Interface boards',
+          '8279 Keyboard / Display Interface board',
+          '8254 Timer Counter',
+          'ADC and DAC Card',
+          'AC & DC Motor with Controller',
+          'Traffic Light Control System',
           'Stepper Motor'
-        ], 
-        icon: Cpu 
+        ],
+        icon: Cpu
       },
-      { 
-        name: 'Power Electronics Laboratory', 
+      {
+        name: 'Power Electronics Laboratory',
         incharge: 'Mr. S.E. Murthy, AP / EEE',
         technician: 'Mr. S. Ayyanar, LT / EEE',
         equipments: [
-          'SCR, MOSFET, IGBT And TRIAC Trainer Kit', 
-          'Single Phase SCR based Half / Fully Controlled Converter', 
-          'MOSFET based Step Up / Down Choppers', 
-          'IGBT based Single / Three Phase PWM Inverter Module', 
-          'Switched Mode Power Converter Module', 
-          'SCR & TRIAC based Single Phase AC Controller', 
-          'Cyclo Converter Trainer Kit', 
-          'Single Phase Auto Transformer', 
+          'SCR, MOSFET, IGBT And TRIAC Trainer Kit',
+          'Single Phase SCR based Half / Fully Controlled Converter',
+          'MOSFET based Step Up / Down Choppers',
+          'IGBT based Single / Three Phase PWM Inverter Module',
+          'Switched Mode Power Converter Module',
+          'SCR & TRIAC based Single Phase AC Controller',
+          'Cyclo Converter Trainer Kit',
+          'Single Phase Auto Transformer',
           'LCR Meter, Isolation Transformer and Rheostats'
-        ], 
-        icon: Zap 
+        ],
+        icon: Zap
       },
-      { 
-        name: 'Power System Analysis Laboratory', 
+      {
+        name: 'Power System Analysis Laboratory',
         incharge: 'Dr. P.A. Gowri Shankar, ASP / EEE',
         technician: 'Mr. P. Sakthivel, LT / EEE',
         equipments: [
-          'HP Intel Core i7 3.00GHZ Processor, 16 GB SSD RAM, 512 GB SSD HDD', 
-          'ACER Veriton Series Intel Core i3 3.60GHZ Processor, 4 GB DDR3 RAM, 500GB HDD', 
-          'Keyboard & wired Mouse USB', 
+          'HP Intel Core i7 3.00GHZ Processor, 16 GB SSD RAM, 512 GB SSD HDD',
+          'ACER Veriton Series Intel Core i3 3.60GHZ Processor, 4 GB DDR3 RAM, 500GB HDD',
+          'Keyboard & wired Mouse USB',
           '19.5" / 18.5" Monitors'
-        ], 
-        icon: Terminal 
+        ],
+        icon: Terminal
       },
-      { 
-        name: 'Renewable Energy Systems Laboratory', 
+      {
+        name: 'Renewable Energy Systems Laboratory',
         incharge: 'Mr. G. Karthikeyan, AP / EEE',
         technician: 'Mr. P. Sakthivel, LT / EEE',
         equipments: [
-          '1 kW Solar PV training system with On grid and OFF grid Inverter', 
-          'Hybrid 100 W PV solar and 200W Micro wind Generator System', 
-          '1 kW Solar Emulator Hardware Trainer Kit', 
-          'Multimeter', 
-          'Wind Anemometer', 
-          'Digital Tachometer', 
+          '1 kW Solar PV training system with On grid and OFF grid Inverter',
+          'Hybrid 100 W PV solar and 200W Micro wind Generator System',
+          '1 kW Solar Emulator Hardware Trainer Kit',
+          'Multimeter',
+          'Wind Anemometer',
+          'Digital Tachometer',
           'Exide Battery'
-        ], 
-        icon: FlaskConical 
+        ],
+        icon: FlaskConical
       }
     ],
     patents: [
@@ -3008,35 +3008,35 @@ export const courseData = {
     whyChoose: ['Advanced coding labs', 'Industry projects', 'HackerRank certifications'],
     curriculum: [{ year: 'Year 1', semesters: ['Advanced Data Structures', 'OS', 'DBMS'] }],
     faculty: [
-      { 
-        name: 'Dr. S. Mohanapriya', 
-        designation: 'Professor & Head', 
-        qualification: 'M.C.A. , M. Phil., Ph.D. SET', 
-        experience: 'Teaching - 23 Years', 
-        specialization: 'Mobile Adhoc Networks', 
-        email: 'hod.mca@kiot.ac.in', 
+      {
+        name: 'Dr. S. Mohanapriya',
+        designation: 'Professor & Head',
+        qualification: 'M.C.A. , M. Phil., Ph.D. SET',
+        experience: 'Teaching - 23 Years',
+        specialization: 'Mobile Adhoc Networks',
+        email: 'hod.mca@kiot.ac.in',
         publications: 'IJ: 22, IC: 22, NJ : 2 NC: 24',
-        rating: 5.0 
+        rating: 5.0
       },
-      { 
-        name: 'Dr. V. Nethaji', 
-        designation: 'Associate professor', 
-        qualification: 'MCA., M.Phil., PhD', 
-        experience: 'Teaching: 7 months, IT field - 17 yrs 05 months', 
-        specialization: 'Cloud computing, Network', 
-        email: 'vnmca@kiot.ac.in', 
+      {
+        name: 'Dr. V. Nethaji',
+        designation: 'Associate professor',
+        qualification: 'MCA., M.Phil., PhD',
+        experience: 'Teaching: 7 months, IT field - 17 yrs 05 months',
+        specialization: 'Cloud computing, Network',
+        email: 'vnmca@kiot.ac.in',
         publications: 'IJ - 6, NJ - 1, IC - 3, NC - 3',
-        rating: 4.8 
+        rating: 4.8
       },
-      { 
-        name: 'Mrs. G. Sowndarya', 
-        designation: 'Assistant professor', 
-        qualification: 'MCA', 
-        experience: 'Industrial – 04 Years', 
-        specialization: 'Operating Systems', 
-        email: 'sowndthi1411@gmail.com', 
+      {
+        name: 'Mrs. G. Sowndarya',
+        designation: 'Assistant professor',
+        qualification: 'MCA',
+        experience: 'Industrial – 04 Years',
+        specialization: 'Operating Systems',
+        email: 'sowndthi1411@gmail.com',
         publications: '-',
-        rating: 4.5 
+        rating: 4.5
       }
     ],
     labs: [{ name: 'Advanced App Lab', equipment: 'High-end Servers', icon: Terminal }],
@@ -3080,42 +3080,42 @@ export const courseData = {
     whyChoose: ['High industry demand', 'Safety audit specialization', 'Expert faculty'],
     curriculum: [{ year: 'Year 1', semesters: ['Safety Management', 'Occupational Health', 'Industrial Hygiene'] }],
     faculty: [
-      { 
-        name: 'Dr. PSS. Srinivasan', 
-        designation: 'Senior Professor, Founder and Executive Chairman', 
-        joiningDate: '27.04.2009', 
-        qualification: 'B.E., M.Tech. (IIT-B), Ph.D.', 
-        association: 'Regular', 
-        experience: 'Teaching: 35 Years, Research : 24 Years', 
-        specialization: 'Thermal Engineering', 
-        email: 'chairman@kiot.ac.in', 
-        publications: 'IJ: 63, NJ: 52, IC: 65, NC: 134, Books: 03', 
+      {
+        name: 'Dr. PSS. Srinivasan',
+        designation: 'Senior Professor, Founder and Executive Chairman',
+        joiningDate: '27.04.2009',
+        qualification: 'B.E., M.Tech. (IIT-B), Ph.D.',
+        association: 'Regular',
+        experience: 'Teaching: 35 Years, Research : 24 Years',
+        specialization: 'Thermal Engineering',
+        email: 'chairman@kiot.ac.in',
+        publications: 'IJ: 63, NJ: 52, IC: 65, NC: 134, Books: 03',
         researchSupervision: 'Ph.D. (Supervised): 16; Ph.D. (Supervising): 01',
-        rating: 5.0 
+        rating: 5.0
       },
-      { 
-        name: 'Dr. M. Ilangkumaran', 
-        designation: 'Professor', 
-        joiningDate: '31.12.2021', 
-        qualification: 'B.E., M.E., Ph.D.', 
-        association: 'Regular', 
-        experience: 'Teaching: 20.1 Years, Research: 12 Years', 
-        specialization: 'Industrial Engineering', 
-        email: 'mikmech@kiot.ac.in', 
-        publications: 'IJ: 65, NJ: 03, IC: 07, NC: 01', 
+      {
+        name: 'Dr. M. Ilangkumaran',
+        designation: 'Professor',
+        joiningDate: '31.12.2021',
+        qualification: 'B.E., M.E., Ph.D.',
+        association: 'Regular',
+        experience: 'Teaching: 20.1 Years, Research: 12 Years',
+        specialization: 'Industrial Engineering',
+        email: 'mikmech@kiot.ac.in',
+        publications: 'IJ: 65, NJ: 03, IC: 07, NC: 01',
         researchSupervision: 'Ph.D. (Supervised): 6; Ph.D. (Supervising): 5',
-        rating: 4.9 
+        rating: 4.9
       },
-      { 
-        name: 'Prof. G. Sureshkrishna', 
-        designation: 'Assistant Professor', 
-        joiningDate: '21.03.2025', 
-        qualification: 'B.E., M.E.', 
-        association: 'Regular', 
-        experience: 'Teaching : 7.4 Years', 
-        specialization: 'Industrial Safety Engineering', 
+      {
+        name: 'Prof. G. Sureshkrishna',
+        designation: 'Assistant Professor',
+        joiningDate: '21.03.2025',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: 'Teaching : 7.4 Years',
+        specialization: 'Industrial Safety Engineering',
         email: 'sureshkpr13@gmail.com',
-        rating: 4.5 
+        rating: 4.5
       }
     ],
     labs: [{ name: 'Safety Engineering Lab', equipment: 'Fire Safety Setup, PPE Inventory', icon: ShieldCheck }],
@@ -3361,7 +3361,6 @@ export const courseData = {
     faculty: [
       { name: 'Dr. A. Stephen', designation: 'Professor & Director', qualification: 'BA., MA., MBA., M.Phil., PGDHRM, Ph.D.', specialization: 'HR & Marketing', email: 'directorkbs@kiot.ac.in', experience: 'Teaching: 22.11 Years, Industry: 1.7 Years', publications: 'IJ: 17, IC: 05, NC: 02', image: mbaDirectorImg, rating: 5.0 },
       { name: 'Dr. T. Venkatesan', designation: 'Associate Professor & HOD', qualification: 'B.Com, M.Com, MBA, M.Phil. M.A (Public Admin), Ph.D.', specialization: 'Finance & Marketing', email: 'tvmba@kiot.ac.in', experience: 'Teaching: 16 Years', publications: 'IC: 17, NC: 10, IJ: 19, NJ: 05', image: venkatesanImg, rating: 4.9 },
-      { name: 'Dr. D. Immanuel', designation: 'Professor', qualification: 'B.B.A., M.B.A., Ph.D.', specialization: 'Entrepreneurship Development', email: 'drimmanueld@gmail.com', experience: 'Teaching: 22 Years, Industry: 8 Years', image: immanuelImg, rating: 4.9 },
       { name: 'Dr. R. Ramesh', designation: 'Associate Professor', qualification: 'M.B.A., M.S.W., M.Phil., Ph.D.', specialization: 'Marketing & HR', email: 'rrmba@kiot.ac.in', experience: 'Teaching: 9.6 Years, Industry: 3.1 Years', publications: 'IJ: 14, NJ: 5, NC: 12', rating: 4.8 },
       { name: 'Prof. G. Padmanaban', designation: 'Assistant Professor', qualification: 'BE, MBA, UGC-NET, (PhD)', specialization: 'Human Resource Management', email: 'Padybangalore@gmail.com', experience: 'Teaching: 15 Years, Industry: 10 Years', image: padmanabanImg, rating: 4.7 },
       { name: 'Prof. P. Revathi', designation: 'Assistant Professor', qualification: 'B.Com(CA), MBA, M.Com(Banking), (PhD)', specialization: 'Finance & Marketing', email: 'prmba@kiot.ac.in', experience: 'Teaching: 12.11 Years', publications: 'IC: 03, NC: 04, IJ: 01, NJ: 01', rating: 4.6 },
@@ -3371,8 +3370,7 @@ export const courseData = {
       { name: 'Prof. A. Musthaffa', designation: 'Assistant Professor', qualification: 'MBA., M.Phil.', specialization: 'Finance & Marketing', email: 'ammba@kiot.ac.in', experience: 'Teaching: 20.2 Years', publications: 'IC: 6, NC: 4, IJ: 1, NJ: 1', image: musthaffaImg, rating: 4.7 },
       { name: 'Prof. P. Manikandan', designation: 'Assistant Professor', qualification: 'BBA., MBA.', specialization: 'Human Resource & Marketing', email: 'pmmba@kiot.ac.in', experience: 'Teaching: 4.9 Years, Industry: 2 Years', publications: 'IC: 02', rating: 4.5 },
       { name: 'Dr. R. Ambaliga Bharathi Kavithai', designation: 'Assistant Professor', qualification: 'B.Com, MBA, Ph.D.', specialization: 'Human Resource Management and Organizational Behaviour', email: 'ramba@kiot.ac.in', experience: 'Teaching: 2 Years, Research: 4 Years', publications: 'IC:12, NC:09, IJ:04, NJ:08', rating: 4.6 },
-      { name: 'Prof. Arivazhagan Veerapandiyan', designation: 'Assistant Professor', qualification: 'MBA., PGDCM., PGDHRM, (Ph.D)', specialization: 'Human Resource & Finance', email: 'vamba@kiot.ac.in', experience: 'Teaching: 5.2 Years, Industry: 6 Years', publications: 'IC:01, IJ:04, NJ:01', rating: 4.6 },
-      { name: 'Prof. M. Bharani Eswari', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', rating: 4.7 }
+      { name: 'Prof. Arivazhagan Veerapandiyan', designation: 'Assistant Professor', qualification: 'MBA., PGDCM., PGDHRM, (Ph.D)', specialization: 'Human Resource & Finance', email: 'vamba@kiot.ac.in', experience: 'Teaching: 5.2 Years, Industry: 6 Years', publications: 'IC:01, IJ:04, NJ:01', rating: 4.6 }
     ],
     labs: [
       {
@@ -3407,9 +3405,9 @@ export const courseData = {
     brochure: '/pdfs/KIOT-MBA-IEV-2025.pdf',
     quickApply: 'https://forms.gle/PdcnrWRN8ZQV6hJV6',
     overview: [
-      "The objective of the MBA-IEV program is to prepare young minds towards self-employment and create employment opportunities for others through enterprise development. It is expected to make more job creators, and launch their own startups during the completion of the course.",
-      "Even if these entrepreneurs fail to take startup to success, at any stage they have every opportunity to get back to intrapreneurship life because youths with entrepreneurial mind-set and enterprise skill sets are high in demand and offered with leadership positions to lead.",
-      "Graduates with entrepreneurial and intrapreneurship abilities with experience will be preferred by many employers specifically to lead incubation, pre-incubation and innovation centres, angel and Venture Capital firms, policy design and implementation centres in both govt. and non-govt. agencies, as innovation management professionals in multi-national corporations, also, to take challenging role in social enterprises, NGOs, SMEs, and family enterprises."
+      "The MBA-IEV program is to prepare young minds towards self-employment and create employment opportunities for others through enterprise development. It is expected to make more job creators, and launch their own startups during the completion of the course",
+      "Even if these entrepreneurs fail to take startup to success, at any stage they have every oppounity to get back to intrapreneurship life because youths with entrepreneurial mind-set and enterprise skill sets are high in demand and offered with leadership positions to lead.",
+      "Graduates with entrepreneurial and intrapreneurship abilities with experience will be preferred by many employers specific to lead incubation, pre-incubation and innovation centres, angel and Venture Capital firms, policy design and implementation centres in both govt. and non-govt. agencies, as innovation managements professional in multi-national corporations, also, to take challenging role in social enterprises, NGOs, SMEs, and family enterprises."
     ],
     vision: "To produce global leaders in innovation and entrepreneurship who can manage and grow enterprises in a challenging and highly competitive world, through the integration of domain expertise, entrepreneurial acumen, and high ethical standards.",
     mission: "M1: Developing analytical, problem-solving, and decision-making skills specifically tailored for managing entrepreneurial ventures and driving innovative change.\nM2: Nurturing entrepreneurial leadership traits through continuous industry interaction, industry-sponsored centres of excellence, and hands-on experiential learning.\nM3: Providing top-tier entrepreneurial education through domestic and international collaborations, enhancing cross-cultural competencies and global business perspectives.\nM4: Facilitating learning and innovation by engaging faculty who are thought leaders, actively involved in intensive research, and industrial consultancy focused on entrepreneurship and venture development.",
@@ -3442,10 +3440,12 @@ export const courseData = {
       { year: 'Year 2 – Incubation & Scaling', semesters: ['Business Plan Preparation', 'Growth Hacking & Marketing', 'Venture Capital and Funding Options', 'Strategic Venture Management', 'Incubation & Accelerator Residency Program', 'Launch of Minimum Viable Product (MVP)'] }
     ],
     faculty: [
-      { name: 'Dr. B. Sasikumar', designation: 'HOD – Incharge / MBA- IEV', qualification: 'B.E., M.E., Ph.D.', specialization: 'Innovation & Venture Development', email: 'hod.iev@kiot.ac.in', experience: '19 Years', image: sasikumarImg, rating: 5.0 },
-      { name: 'Dr. A. Stephen', designation: 'Professor & Director', qualification: 'BA., MA., MBA., M.Phil., PGDHRM, Ph.D.', specialization: 'HR & Marketing', email: 'directorkbs@kiot.ac.in', experience: 'Teaching: 22.11 Years, Industry: 1.7 Years', publications: 'IJ: 17, IC: 05, NC: 02', image: mbaDirectorImg, rating: 5.0 },
-      { name: 'Dr. T. Venkatesan', designation: 'Associate Professor & HOD', qualification: 'B.Com, M.Com, MBA, M.Phil. M.A (Public Admin), Ph.D.', specialization: 'Finance & Marketing', email: 'tvmba@kiot.ac.in', experience: 'Teaching: 16 Years', publications: 'IC: 17, NC: 10, IJ: 19, NJ: 05', image: venkatesanImg, rating: 4.9 },
-      { name: 'Dr. D. Immanuel', designation: 'Professor', qualification: 'B.B.A., M.B.A., Ph.D.', specialization: 'Entrepreneurship Development', email: 'drimmanueld@gmail.com', experience: 'Teaching: 22 Years, Industry: 8 Years', image: immanuelImg, rating: 4.9 }
+      { name: 'Dr. D. Immanuel', designation: 'Professor', qualification: 'B.B.A., M.B.A., Ph.D.', specialization: 'Entrepreneurship Development', email: 'drimmanueld@gmail.com', experience: 'Teaching: 22 Years, Industry: 8 Years', rating: 5.0 },
+      { name: 'Dr. S. Vijayakumar', designation: 'Assistant Professor', qualification: 'B.Com., D.Co-Op., M.Sc(ITM)., MBA., MLM., M.Phil., MISTE., Ph.D.', specialization: 'Entrepreneurship Development', email: 'svkmba@kiot.ac.in', experience: 'Teaching: 16 Years, Industry: 5 Years', publications: 'IJ:08, NJ:04, NC:12, IC:06', rating: 5.0 },
+      { name: 'Prof. S. Saravanan', designation: 'Assistant Professor (Sr. Grade)', qualification: 'MBA., M.Phil., UGC (NET-JRF), FDP (IIMA)', specialization: 'Marketing, Strategy and Entrepreneurship', email: 'ssvmba@kiot.ac.in', experience: 'Teaching: 17.4 Years, Research: 4.8 Years', rating: 4.8 },
+      { name: 'Prof. M. Bharani Eswari', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', rating: 4.7 },
+      { name: 'Prof. M. Rubini', designation: 'Assistant Professor', qualification: 'BBA, MBA, DLSW, M.Phil', specialization: 'Human Resource Management and Systems', email: 'rubinimariappan@gmail.com', experience: 'Teaching: 2.5 Years, Research: 1 Year', publications: 'IC:04, NC:07, IJ:01', rating: 4.6 },
+      { name: 'Prof. M. Gowrishankar', designation: 'Assistant Professor', qualification: 'B.Tech(IT)., MBA.', specialization: 'HRM, Entrepreneurship Development', email: 'mgmba@kiot.ac.in', experience: 'Teaching: 5 Years, Research: 4 Years', publications: 'IJ:12, NJ:08, NC:04, IC:14', rating: 4.6 }
     ],
     labs: [
       { name: 'IEV Innovation & Prototyping Space', equipment: '3D printers, design software, and brainstorming pods', icon: Rocket },

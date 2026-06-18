@@ -24,6 +24,8 @@ import imgPadmanaban from '../../../assets/placements/placement team/Prof.G.Padm
 import imgSumathi from '../../../assets/placements/placement team/Mrs. P.Sumathi B.A.,.webp'
 import imgRuthrakumar from '../../../assets/placements/placement team/Mr. S. RUTHRAKUMAR B.E.,.webp'
 import imgMonisha from '../../../assets/placements/placement team/Ms. D.Monisha, M.Sc.,.webp'
+import imgSenchulakshmi from '../../../assets/Faculity/mba/Prof.D.Senchulakshmi.png'
+import imgAmbaliga from '../../../assets/Faculity/mba/Dr.R.Ambaliga Bharathi Kavithai.png'
 
 const teamMembers = [
   { name: "Dr. P. Rajendran M.E., Ph.D.", desig: "Professor / CSE", resp: "Director – Placement & III", email: "pat@kiot.ac.in", phone: "+91 99941 33333", image: imgRajendran },
@@ -46,7 +48,9 @@ const teamMembers = [
   { name: "Prof. G. Padmanaban M.B.A., Ph.D.", desig: "Assistant Professor / MBA", resp: "Manager - Placement & IR", email: "kbssplacement@kiot.ac.in", phone: "88256 21808", image: imgPadmanaban },
   { name: "Mrs. P. Sumathi B.A.", desig: "Junior Assistant", resp: "Administration", email: "patoa@kiot.ac.in", phone: "", image: imgSumathi },
   { name: "Mr. S. Ruthrakumar B.E.", desig: "Placement Executive", resp: "Executive", email: "campus1@kiot.ac.in", phone: "", image: imgRuthrakumar },
-  { name: "Ms. D. Monisha M.Sc.", desig: "Junior Assistant", resp: "Administration", email: "patoa@kiot.ac.in", phone: "", image: imgMonisha }
+  { name: "Ms. D. Monisha M.Sc.", desig: "Junior Assistant", resp: "Administration", email: "patoa@kiot.ac.in", phone: "", image: imgMonisha },
+  { name: "Prof. D. Senchulakshmi", desig: "Assistant Professor / MBA", resp: "Training Coordinator / MBA", email: "dsmba@kiot.ac.in", phone: "", image: imgSenchulakshmi },
+  { name: "Dr. R. Ambaliga Bharathi Kavithai", desig: "Assistant Professor / MBA", resp: "Training Coordinator / MBA-IEV", email: "ramba@kiot.ac.in", phone: "", image: imgAmbaliga }
 ];
 
 const TeamSection = () => {

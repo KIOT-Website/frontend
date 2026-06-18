@@ -22,6 +22,36 @@ import placementBalachandranImg from '../../assets/placements/placement team/Bal
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
 import mbaHomeImg from '../../assets/main/mba home.png'
+import mbaPicture1 from '../../assets/Mba/Picture1.png'
+import mbaPicture2 from '../../assets/Mba/Picture2.png'
+import mbaPicture3 from '../../assets/Mba/Picture3.png'
+import mbaPicture4 from '../../assets/Mba/Picture4.png'
+import mbaPicture5 from '../../assets/Mba/Picture5.png'
+import mbaPicture6 from '../../assets/Mba/Picture6.png'
+import mbaPicture7 from '../../assets/Mba/Picture7.png'
+import mbaPicture8 from '../../assets/Mba/Picture8.png'
+import mbaPicture9 from '../../assets/Mba/Picture9.png'
+import mbaPicture10 from '../../assets/Mba/Picture10.png'
+import mbaPicture11 from '../../assets/Mba/Picture11.png'
+import mbaPicture12 from '../../assets/Mba/Picture12.png'
+import mbaPicture13 from '../../assets/Mba/Picture13.png'
+import mbaDirectorImgNew from '../../assets/Faculity/mba/MBA Director.jpg.png'
+import mbaVenkatesanImgNew from '../../assets/Faculity/mba/Dr.T.Venkatesan.png'
+import mbaRameshImgNew from '../../assets/Faculity/mba/Dr.R.Ramesh.png'
+import mbaPadmanabanImgNew from '../../assets/Faculity/mba/Prof.G.Padmanaban.png'
+import mbaRevathiImgNew from '../../assets/Faculity/mba/Prof.P.Revathi.png'
+import mbaVimalaImgNew from '../../assets/Faculity/mba/Vimala S - AP MBA.png'
+import mbaSuganyaImgNew from '../../assets/Faculity/mba/Prof.T.Suganya.png'
+import mbaSenchulakshmiImgNew from '../../assets/Faculity/mba/Prof.D.Senchulakshmi.png'
+import mbaMusthaffaImgNew from '../../assets/Faculity/mba/Prof.A.Musthaffa.png'
+import mbaManikandanImgNew from '../../assets/Faculity/mba/Prof.P.Manikandan.png'
+import mbaAmbaligaImgNew from '../../assets/Faculity/mba/Dr.R.Ambaliga Bharathi Kavithai.png'
+import mbaArivazhaganImgNew from '../../assets/Faculity/mba/Prof.V.Arivazhagan.png'
+import ievVijayakumarImg from '../../assets/Faculity/mba iev/dr.s vijayakuamar.png'
+import ievBharaniImg from '../../assets/Faculity/mba iev/Prof.M. Bharani Eswari.png'
+import ievRubiniImg from '../../assets/Faculity/mba iev/Prof.M. Rubini.png'
+import ievGowrishankarImg from '../../assets/Faculity/mba iev/Prof.M.Gowrishankar.png'
+import ievSaravananImg from '../../assets/Faculity/mba iev/Prof.S.Saravanan.png'
 import { getDepartmentSchematic } from './DepartmentSchematics'
 
 const API_BASE = 'http://127.0.0.1:8000'
@@ -204,6 +234,29 @@ const leadershipData = [
   }
 ];
 
+const mbaFacultyImages = {
+  'Dr. A. Stephen': mbaDirectorImgNew,
+  'Dr. T. Venkatesan': mbaVenkatesanImgNew,
+  'Dr. R. Ramesh': mbaRameshImgNew,
+  'Prof. G. Padmanaban': mbaPadmanabanImgNew,
+  'Prof. P. Revathi': mbaRevathiImgNew,
+  'Prof. S. Vimala': mbaVimalaImgNew,
+  'Prof. T. Suganya': mbaSuganyaImgNew,
+  'Prof. D. Senchulakshmi': mbaSenchulakshmiImgNew,
+  'Prof. A. Musthaffa': mbaMusthaffaImgNew,
+  'Prof. P. Manikandan': mbaManikandanImgNew,
+  'Dr. R. Ambaliga Bharathi Kavithai': mbaAmbaligaImgNew,
+  'Prof. Arivazhagan Veerapandiyan': mbaArivazhaganImgNew
+};
+
+const mbaIevFacultyImages = {
+  'Dr. S. Vijayakumar': ievVijayakumarImg,
+  'Prof. M. Bharani Eswari': ievBharaniImg,
+  'Prof. M. Rubini': ievRubiniImg,
+  'Prof. M. Gowrishankar': ievGowrishankarImg,
+  'Prof. S. Saravanan': ievSaravananImg
+};
+
 // â”€â”€â”€ Accordion Item â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function AccordionItem({ title, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
@@ -243,6 +296,13 @@ export default function CourseDetailPage({ overrides }) {
   const [activeTab, setActiveTab] = useState('Overview')
   const [outcomeTab, setOutcomeTab] = useState(null)
   const [selectedFaculty, setSelectedFaculty] = useState(null)
+  const selectedFacultyImage = selectedFaculty
+    ? (courseId === 'mba-general'
+        ? (mbaFacultyImages[selectedFaculty.name] || selectedFaculty.image)
+        : courseId === 'mba-iev'
+          ? (mbaIevFacultyImages[selectedFaculty.name] || selectedFaculty.image)
+          : selectedFaculty.image)
+    : null;
   const [openLabIndices, setOpenLabIndices] = useState([0])
   const [selectedLeaderId, setSelectedLeaderId] = useState('chairman')
   const tabsRef = useRef(null)
@@ -253,11 +313,7 @@ export default function CourseDetailPage({ overrides }) {
 
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
-    : courseId === 'mba-iev'
-      ? ['Overview', 'Vision & Mission', 'Leadership Message', 'Teaching Methodology', 'Faculty', 'Placement', 'Labs', 'Industry', 'Events', 'Contact & Admission']
-      : courseId === 'mba-general'
-        ? ['Overview', 'Vision & Mission', 'Leadership Message', 'Teaching Methodology', 'Faculty', 'Placement', 'Labs', 'Industry', 'Events', 'Contact & Admission']
-        : TABS;
+    : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
@@ -362,9 +418,8 @@ export default function CourseDetailPage({ overrides }) {
             </button>
           )}
 
-          <div className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${
-            (courseId === 'mba-general' || courseId === 'mba-iev') ? 'lg:items-end' : 'lg:items-center'
-          }`}>
+          <div className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${(courseId === 'mba-general' || courseId === 'mba-iev') ? 'lg:items-end' : 'lg:items-center'
+            }`}>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-5 flex-wrap">
                 <span className="px-3.5 py-1.5 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/40 text-[#ffc107] text-xs font-bold font-graphik">
@@ -377,8 +432,8 @@ export default function CourseDetailPage({ overrides }) {
                 )}
               </div>
               <h1 className={`font-bold font-graphik text-white leading-[1.15] ${courseId === 'mba-general' || courseId === 'mba-iev'
-                  ? 'text-xl md:text-xl lg:text-[1.75rem] mb-4 mt-6'
-                  : 'text-2xl md:text-3xl lg:text-[2.6rem] mb-3'
+                ? 'text-xl md:text-xl lg:text-[1.75rem] mb-4 mt-6'
+                : 'text-2xl md:text-3xl lg:text-[2.6rem] mb-3'
                 }`}>
                 {course.name}
               </h1>
@@ -425,135 +480,135 @@ export default function CourseDetailPage({ overrides }) {
               {courseId === 'mba-general' || courseId === 'mba-iev' ? (
                 <>
                   <div className="grid grid-cols-2 gap-4 relative z-10">
-                  {/* Card 1 */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 60 }}
-                    animate={{
-                      opacity: 1,
-                      y: [0, -10, 0]
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{
-                      opacity: { duration: 0.8 },
-                      y: {
-                        repeat: Infinity,
-                        duration: 4,
-                        ease: "easeInOut"
-                      },
-                      scale: { duration: 0.2 }
-                    }}
-                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
-                  >
-                    <Trophy className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:animate-bounce transition-colors duration-300" />
-                    <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">1st</span>
-                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position Among in Salem – Namakkal Region</span>
-                  </motion.div>
-                  {/* Card 2 */}
-                  <motion.div
-                    initial={{ opacity: 0, y: -60 }}
-                    animate={{
-                      opacity: 1,
-                      y: [0, -14, 0]
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{
-                      opacity: { duration: 0.8, delay: 0.1 },
-                      y: {
-                        repeat: Infinity,
-                        duration: 4.6,
-                        ease: "easeInOut",
-                        delay: 0.2
-                      },
-                      scale: { duration: 0.2 }
-                    }}
-                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
-                  >
-                    <Award className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:animate-pulse transition-colors duration-300" />
-                    <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">24th</span>
-                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position in the State of Tamil Nadu</span>
-                  </motion.div>
-                  {/* Card 3 */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 60 }}
-                    animate={{
-                      opacity: 1,
-                      y: [0, -12, 0]
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{
-                      opacity: { duration: 0.8, delay: 0.2 },
-                      y: {
-                        repeat: Infinity,
-                        duration: 4.3,
-                        ease: "easeInOut",
-                        delay: 0.4
-                      },
-                      scale: { duration: 0.2 }
-                    }}
-                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
-                  >
-                    <Star className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:rotate-12 transition-transform transition-colors duration-300" />
-                    <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">6th</span>
-                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position in Coimbatore Region</span>
-                  </motion.div>
-                  {/* Card 4 */}
-                  <motion.div
-                    initial={{ opacity: 0, y: -60 }}
-                    animate={{
-                      opacity: 1,
-                      y: [0, -8, 0]
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{
-                      opacity: { duration: 0.8, delay: 0.3 },
-                      y: {
-                        repeat: Infinity,
-                        duration: 3.8,
-                        ease: "easeInOut",
-                        delay: 0.1
-                      },
-                      scale: { duration: 0.2 }
-                    }}
-                    className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
-                  >
-                    <TrendingUp className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:translate-y-[-2px] transition-transform transition-colors duration-300" />
-                    <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">90%</span>
-                    <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Placement Consistently</span>
-                  </motion.div>
-                </div>
-                
-                {/* MBA CTA Buttons */}
-                <div className="flex flex-wrap gap-4 justify-center relative z-10 mt-2">
-                  {course.quickApply ? (
-                    <a
-                      href={course.quickApply}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                    {/* Card 1 */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 60 }}
+                      animate={{
+                        opacity: 1,
+                        y: [0, -10, 0]
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        opacity: { duration: 0.8 },
+                        y: {
+                          repeat: Infinity,
+                          duration: 4,
+                          ease: "easeInOut"
+                        },
+                        scale: { duration: 0.2 }
+                      }}
+                      className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
                     >
-                      Quick Apply <ArrowRight size={15} />
-                    </a>
-                  ) : (
-                    <button
-                      onClick={() => navigate('/admissions')}
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                      <Trophy className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:animate-bounce transition-colors duration-300" />
+                      <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">1st</span>
+                      <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position Among in Salem – Namakkal Region</span>
+                    </motion.div>
+                    {/* Card 2 */}
+                    <motion.div
+                      initial={{ opacity: 0, y: -60 }}
+                      animate={{
+                        opacity: 1,
+                        y: [0, -14, 0]
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        opacity: { duration: 0.8, delay: 0.1 },
+                        y: {
+                          repeat: Infinity,
+                          duration: 4.6,
+                          ease: "easeInOut",
+                          delay: 0.2
+                        },
+                        scale: { duration: 0.2 }
+                      }}
+                      className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
                     >
-                      Quick Apply <ArrowRight size={15} />
-                    </button>
-                  )}
-                  {course.brochure && (
-                    <a
-                      href={course.brochure}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#224292] font-bold font-graphik text-[14px] hover:bg-slate-100 hover:shadow-xl transition-all shadow-lg hover:scale-[1.02]"
+                      <Award className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:animate-pulse transition-colors duration-300" />
+                      <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">24th</span>
+                      <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position in the State of Tamil Nadu</span>
+                    </motion.div>
+                    {/* Card 3 */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 60 }}
+                      animate={{
+                        opacity: 1,
+                        y: [0, -12, 0]
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        opacity: { duration: 0.8, delay: 0.2 },
+                        y: {
+                          repeat: Infinity,
+                          duration: 4.3,
+                          ease: "easeInOut",
+                          delay: 0.4
+                        },
+                        scale: { duration: 0.2 }
+                      }}
+                      className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
                     >
-                      Brochure <Download size={15} />
-                    </a>
-                  )}
-                </div>
-              </>
-            ) : (
+                      <Star className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:rotate-12 transition-transform transition-colors duration-300" />
+                      <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">6th</span>
+                      <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Position in Coimbatore Region</span>
+                    </motion.div>
+                    {/* Card 4 */}
+                    <motion.div
+                      initial={{ opacity: 0, y: -60 }}
+                      animate={{
+                        opacity: 1,
+                        y: [0, -8, 0]
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        opacity: { duration: 0.8, delay: 0.3 },
+                        y: {
+                          repeat: Infinity,
+                          duration: 3.8,
+                          ease: "easeInOut",
+                          delay: 0.1
+                        },
+                        scale: { duration: 0.2 }
+                      }}
+                      className="bg-white/10 backdrop-blur-md border-2 border-[#ffc107]/80 text-white hover:bg-[#ffc107] hover:text-[#224292] rounded-2xl p-3 md:p-5 flex flex-col items-center text-center justify-center transition-all duration-300 hover:shadow-[0_0_35px_rgba(255,193,7,0.35)] group min-h-[110px] md:min-h-[150px] cursor-pointer"
+                    >
+                      <TrendingUp className="text-[#ffc107] group-hover:text-[#224292] mb-1.5 md:mb-2 w-5 h-5 md:w-7 md:h-7 group-hover:translate-y-[-2px] transition-transform transition-colors duration-300" />
+                      <span className="text-white group-hover:text-[#224292] font-extrabold text-lg md:text-2xl lg:text-3xl tracking-tight transition-colors duration-300">90%</span>
+                      <span className="text-white/95 group-hover:text-[#224292]/90 text-[9px] md:text-[11px] lg:text-[12px] font-bold mt-0.5 md:mt-1 leading-snug transition-colors duration-300">Placement Consistently</span>
+                    </motion.div>
+                  </div>
+
+                  {/* MBA CTA Buttons */}
+                  <div className="flex flex-wrap gap-4 justify-center relative z-10 mt-2">
+                    {course.quickApply ? (
+                      <a
+                        href={course.quickApply}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                      >
+                        Quick Apply <ArrowRight size={15} />
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => navigate('/admissions')}
+                        className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#224292] font-bold font-graphik text-[14px] hover:bg-[#ffca2c] hover:shadow-xl transition-all shadow-lg shadow-[#ffc107]/25 hover:scale-[1.02]"
+                      >
+                        Quick Apply <ArrowRight size={15} />
+                      </button>
+                    )}
+                    {course.brochure && (
+                      <a
+                        href={course.brochure}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#224292] font-bold font-graphik text-[14px] hover:bg-slate-100 hover:shadow-xl transition-all shadow-lg hover:scale-[1.02]"
+                      >
+                        Brochure <Download size={15} />
+                      </a>
+                    )}
+                  </div>
+                </>
+              ) : (
                 <div className="relative group">
                   {/* Glow effect behind image */}
                   <div className="absolute -inset-3 bg-[#ffc107]/15 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
@@ -591,8 +646,8 @@ export default function CourseDetailPage({ overrides }) {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`px-5 py-2.5 rounded-full text-[12px] font-bold font-graphik transition-all border-2 ${activeTab === tab
-                  ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 scale-105'
-                  : 'bg-white/5 border-white/20 text-white hover:bg-white/10'
+                ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 scale-105'
+                : 'bg-white/5 border-white/20 text-white hover:bg-white/10'
                 }`}
             >
               {tab}
@@ -610,8 +665,8 @@ export default function CourseDetailPage({ overrides }) {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`whitespace-nowrap px-6 py-2.5 text-[13px] font-black font-graphik transition-all rounded-full border-2 tracking-wide ${activeTab === tab
-                    ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 scale-105'
-                    : 'bg-transparent border-white/20 text-white hover:border-white/50 hover:bg-white/5'
+                  ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 scale-105'
+                  : 'bg-transparent border-white/20 text-white hover:border-white/50 hover:bg-white/5'
                   }`}
               >
                 {tab}
@@ -700,7 +755,7 @@ export default function CourseDetailPage({ overrides }) {
                       <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
                       Uniqueness of MBA
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {[
                         "Course delivery through a unique blend of novel teaching methodologies",
                         "Emphasis on applied learning through market study and other slew of activities",
@@ -717,11 +772,22 @@ export default function CourseDetailPage({ overrides }) {
                       ].map((item, idx) => (
                         <motion.div
                           key={idx}
-                          whileHover={{ x: 6 }}
-                          className="flex gap-3 items-start p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#ffc107] hover:shadow-md transition-all"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="relative group bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-xl transition-all duration-500 overflow-hidden text-center flex flex-col items-center justify-center h-full hover:scale-[1.02]"
                         >
-                          <CheckCircle2 size={18} className="text-[#224292] mt-0.5 shrink-0" />
-                          <p className="text-[#333333] font-medium font-graphik text-[14px] leading-relaxed">{item}</p>
+                          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#224292] to-[#ffc107]" />
+                          <div className="relative z-10 flex flex-col items-center">
+                            <div className="w-10 h-10 rounded-full bg-[#224292]/5 flex items-center justify-center text-[#224292] mb-3 group-hover:bg-[#224292] group-hover:text-white transition-colors duration-300">
+                              <CheckCircle2 size={20} />
+                            </div>
+                            <div className="w-10 h-1 bg-[#ffc107] mb-4 rounded-full group-hover:w-16 transition-all duration-500" />
+                            <p className="text-[#1a1a1a] text-[13.5px] leading-relaxed font-semibold font-graphik text-center">
+                              {item}
+                            </p>
+                          </div>
                         </motion.div>
                       ))}
                     </div>
@@ -749,8 +815,511 @@ export default function CourseDetailPage({ overrides }) {
                   )
                 )}
 
+                {courseId === 'mba-general' && (
+                  <div className="space-y-8">
+                    {/* General Teaching Methodology Description */}
+                    <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5">
+                      <h2 className="text-2xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-3">
+                        <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                        Teaching Methodology
+                      </h2>
+                      <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                        The term teaching method refers to the general principles, pedagogy and management strategies used for classroom instruction. Teaching methodology can be organized into two major parameters: a teacher-centered approach and a student-centered approach. At MBA@KIOT we focus on conceptual clarity, experiential learning and the ability to apply the concepts learnt in real time situations through case studies and Business simulations. This paves way for students to be nurtured as an efficient manager. The teaching learning process is carried out by resourceful faculty team with varied expertise that has imbibed rich cumulative academic and industrial experience. The persistent and enduring academic rigor is inculcated in each student which elevates them to be a dynamic manager.
+                      </p>
+                    </div>
+
+                    {/* Methodologies Adopted Section */}
+                    <div className="bg-white rounded-[2rem] border border-[#DEE7F4] p-8 md:p-12 shadow-xl shadow-blue-900/5 space-y-12">
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold font-graphik text-[#224292] mb-8 flex items-center gap-3">
+                          <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
+                          Some of the methodologies adopted by us are listed
+                        </h3>
+
+                        {/* Methodology 1: Activity-based learning */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                          {/* Picture Column */}
+                          <div className="lg:col-span-6 flex flex-col">
+                            <div className="relative group w-full h-full flex flex-col">
+                              <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                              <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                                <img
+                                  src={mbaPicture1}
+                                  alt="Methodologies Adopted - Activity-Based Learning"
+                                  className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Content Column (Wrapped in matching card) */}
+                          <div className="lg:col-span-6 flex flex-col">
+                            <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                              <div className="space-y-4">
+                                <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                  <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                  Activity-based learning:
+                                </h4>
+                                <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                  Activity-based learning is the process of learning by doing. As opposed to asking students to simply listen and take notes, activity-based learning encourages students to actively participate in their own learning experience through practical activities such as problem-solving and independent investigation.
+                                </p>
+                                <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                  By encouraging students to explore experiment and learn independently through activity-based techniques, KBSS equip students with skills in problem-solving, critical analysis and creativity.
+                                </p>
+                              </div>
+
+                              <div className="pt-4 border-t border-slate-100 mt-4">
+                                <p className="font-bold text-[#224292] text-[15px] mb-3">We offer interactive learning forums based around:</p>
+                                <ul className="space-y-3">
+                                  {[
+                                    { title: "Exploration", desc: "gathering knowledge and acquiring skills through active investigation." },
+                                    { title: "Experimentation", desc: "gathering knowledge through experience." },
+                                    { title: "Expression", desc: "encouraging to express their views through presentation." }
+                                  ].map((item, idx) => (
+                                    <li key={idx} className="flex items-start gap-3">
+                                      <div className="w-6 h-6 rounded-full bg-[#ffc107]/20 flex items-center justify-center text-[#224292] shrink-0 mt-0.5 font-bold text-xs">
+                                        {idx + 1}
+                                      </div>
+                                      <p className="text-[#333333] text-[14px] md:text-[15px] leading-relaxed font-graphik">
+                                        <strong className="text-[#224292]">{item.title}</strong> – {item.desc}
+                                      </p>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 2: Group Activities */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col order-2 lg:order-1">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                  <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                  Group Activities:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Student’s interactions and discussions with fellow classmates allow the group to construct new knowledge, place it within a conceptual framework of existing knowledge, and then refine and assess what they know and do not know. Group activities create more opportunities for critical thinking and can promote student learning and achievement.
+                              </p>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Group activities gives students the opportunity to engage in processing information, evaluating and solving problems, as well as management skills through the use of roles within groups, and assessment skills involved in assessing options to make decisions about their group’s final answer.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture2}
+                                alt="Methodologies Adopted - Group Activities"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 3: Seminar */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture3}
+                                alt="Methodologies Adopted - Seminar"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Seminar:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                A seminar presentation brings out the inner confidence within the student which results in the outcomes including improving communication skills, gaining expert knowledge, and renewing motivation.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 4: Peer Learning */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col order-2 lg:order-1">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Peer Learning:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Peer learning refers to students learning with and from each other as fellow learners without any implied authority to any individual, based on the principle that Students learn a great deal by explaining their ideas to others and by participating in activities in which they can learn from their peers.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture4}
+                                alt="Methodologies Adopted - Peer Learning"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 5: Experiential Learning */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture5}
+                                alt="Methodologies Adopted - Experiential Learning"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Experiential Learning:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                One of the more truly immersive teaching methods is experiential learning. This method allows students to operate within a specific topical area as real time market survey and entrepreneurship classes. Also, many internship programs fall into this category. This method is all about learning while doing, At KBSS this trend that continues to grow.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 6: Real Time Projects & Assignments */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col order-2 lg:order-1">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Real Time Projects & Assignments:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Real time projects & assignments type of learning is an instructional approach designed to give students the opportunity to develop knowledge and skills through engaging projects set around challenges and problems they may face in the real world.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture6}
+                                alt="Methodologies Adopted - Real Time Projects & Assignments"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 7: Case Discussion */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture7}
+                                alt="Methodologies Adopted - Case Discussion"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Case Discussion:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Case studies are used as a tool to facilitate learning on the part of the student by the faculty in the session. Case studies portray real life situations involving decision making by participantson either a set of questions or through an open-ended discussion in the classroom.Usually case studies are presented in a session by dividing the Participants into groups. Thisenables the Participants to have a thorough analysis and understanding of the case.The case study format involves a professor leading students through a historical analysis of a business situation. Cases are commonly used as the driver for interactive classroom discussions and there is an expectation of strong class participation from all students.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 8: Field Exercise */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col order-2 lg:order-1">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Field Exercise:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Field exercise refers to any component of the curriculum that involves leaving the classroom and learning through firsthand experience. Most instructors incorporate fieldwork to help students understand theory, develop skills, integrate knowledge, build implied knowledge, develop meaning in places, and work with peers.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture8}
+                                alt="Methodologies Adopted - Field Exercise"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 9: Movie Review */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture9}
+                                alt="Methodologies Adopted - Movie Review"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Movie Review:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                The objective of this movie review activity for MBA graduates is to enhance their critical thinking, analytical, and communication skills by evaluating a movie from a business perspective. This activity will also encourage teamwork and collaboration as participants discuss and debate their views.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 10: Outbound Training */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col order-2 lg:order-1">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Outbound Training:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Outbound training focuses on team building, leadership development, and effective communication. It aims to enhance problem-solving, decision-making, and time management skills. Additionally, it emphasizes conflict resolution and trust building among peers. The outcomes include increased self-awareness, improved interpersonal relationships, heightened confidence, and a sense of accomplishment. These experiences offer valuable insights applicable in their future managerial roles and professional settings.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture10}
+                                alt="Methodologies Adopted - Outbound Training"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 11: Business Simulation */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture11}
+                                alt="Methodologies Adopted - Business Simulation"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Business Simulation:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Simulations are probably one of the least common, but still prevalent, teaching methods. This teaching method primarily uses technology recreations of common business scenarios. One of the most popular is the simulation used in marketing strategy courses. The teaching methods at KBSS are as diverse as the programs.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 12: Group Discussion */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col order-2 lg:order-1">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Group Discussion:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                Group discussion (GD), by asset of the term, means exchange of views by participants on a given subject. The whole idea is to bring together a set of people on a common platform to share their ideas, thereby giving an opportunity to exhibit not only their knowledge, but also to understand and enhance their learning by absorbing the thoughts of other people.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col order-1 lg:order-2">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture12}
+                                alt="Methodologies Adopted - Group Discussion"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Divider line between methodologies */}
+                      <div className="h-px bg-slate-100 w-full" />
+
+                      {/* Methodology 13: Industrial visits */}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                        {/* Picture Column */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-2 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={mbaPicture13}
+                                alt="Methodologies Adopted - Industrial visits"
+                                className="w-full h-full rounded-xl object-cover shadow-sm min-h-[200px] lg:min-h-0 lg:h-full flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content Column (Wrapped in matching card) */}
+                        <div className="lg:col-span-6 flex flex-col">
+                          <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-4">
+                              <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Industrial visits:
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
+                                The objective of an industrial visit is to provide an insight regarding internal working of companies. We understand that theoretical knowledge is not enough for a successful professional career. With an aim to go beyond academics, industrial visit provides students a practical perspective of the work place. It provides an opportunity to learn practically through interaction, working methods and employment practices. It gives an exposure to current work practices being taught at college. Industrial visits provide an excellent opportunity to interact with industries and know more about industrial environment.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Career Prospects — show when careerProspects data exists */}
-                {course.careerProspects && course.careerProspects.length > 0 && (
+                {course.careerProspects && course.careerProspects.length > 0 && courseId !== 'mba-iev' && (
                   <div className="bg-[#224292] rounded-[2rem] p-8 md:p-12 shadow-xl">
                     <h2 className="text-2xl font-bold font-graphik text-white mb-6 flex items-center gap-3">
                       <Briefcase size={22} className="text-[#ffc107]" />
@@ -862,8 +1431,8 @@ export default function CourseDetailPage({ overrides }) {
                           key={obj.id}
                           onClick={() => setActiveObjectiveTab(obj.id)}
                           className={`px-2 md:px-8 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] flex items-center justify-center md:justify-start gap-1.5 md:gap-3 text-[8px] md:text-[10px] font-bold font-graphik uppercase tracking-tight md:tracking-[0.2em] transition-all duration-500 shadow-sm ${activeObjectiveTab === obj.id
-                              ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
-                              : 'bg-white text-[#224292] hover:bg-white/80'
+                            ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
+                            : 'bg-white text-[#224292] hover:bg-white/80'
                             }`}
                         >
                           <obj.icon size={14} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#224292]/60'} />
@@ -960,8 +1529,8 @@ export default function CourseDetailPage({ overrides }) {
                       key={leader.id}
                       onClick={() => setSelectedLeaderId(leader.id)}
                       className={`px-5 py-3 rounded-xl text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all duration-300 ${selectedLeaderId === leader.id
-                          ? 'bg-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/25 scale-[1.02] border border-[#ffc107]'
-                          : 'bg-[#224292] text-white border border-[#224292]/10 hover:bg-[#224292]/90'
+                        ? 'bg-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/25 scale-[1.02] border border-[#ffc107]'
+                        : 'bg-[#224292] text-white border border-[#224292]/10 hover:bg-[#224292]/90'
                         }`}
                     >
                       {leader.id === 'chairman' ? 'Executive Chairman' : leader.id === 'secretary' ? 'Secretary' : leader.id === 'principal' ? 'Principal' : 'Director'}
@@ -1193,51 +1762,58 @@ export default function CourseDetailPage({ overrides }) {
             {/* --- FACULTY --- */}
             {activeTab === 'Faculty' && (
               <div>
-                {(courseId === 'mba-general' || courseId === 'mba-iev') ? (
-                  <div className="space-y-6 py-8">
-                    <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] flex items-center gap-3">
-                      <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block" />
-                      Faculty Members & Supporting Staff
-                    </h2>
-                    <p className="text-slate-600 leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik mb-4">
-                      Explore our regular faculty members, visiting faculty profiles, and dedicated supporting staff who contribute to the outstanding academic experience at MBA@KIOT.
-                    </p>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                      {[
-                        {
-                          title: "Regular Faculty",
-                          url: "https://kbss.kiot.ac.in/regular-faculty/",
-                          desc: "Meet our permanent academic staff guiding students day-to-day."
-                        },
-                        {
-                          title: "Visiting Faculty",
-                          url: "https://kbss.kiot.ac.in/visiting-faculty/",
-                          desc: "Learn about industry experts and leaders who share their insights."
-                        },
-                        {
-                          title: "Supporting Staff",
-                          url: "https://kbss.kiot.ac.in/supporting-staff/",
-                          desc: "Dedicated personnel managing operations and laboratory facilities."
-                        }
-                      ].map((btn, idx) => (
-                        <a
-                          key={idx}
-                          href={btn.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex flex-col p-6 rounded-2xl bg-white border border-[#ffc107] hover:border-[#224292] hover:shadow-xl transition-all duration-300 group/btn shadow-sm"
-                        >
-                          <div className="w-12 h-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover/btn:bg-[#ffc107] group-hover/btn:text-[#224292] mb-4 transition-colors">
-                            <Users size={22} />
-                          </div>
-                          <h3 className="font-bold text-lg text-[#224292] mb-2 group-hover/btn:text-[#ffc107] transition-colors">{btn.title}</h3>
-                          <p className="text-xs text-slate-500 leading-relaxed mb-4 flex-grow">{btn.desc}</p>
-                          <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#224292] group-hover/btn:underline">
-                            Visit Page <ExternalLink size={12} />
-                          </span>
-                        </a>
-                      ))}
+                {courseId === 'mba-general' || courseId === 'mba-iev' ? (
+                  <div className="py-8 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                      {course.faculty.map((f, i) => {
+                        const customImage = courseId === 'mba-general'
+                          ? (mbaFacultyImages[f.name] || f.image)
+                          : (mbaIevFacultyImages[f.name] || f.image);
+                        return (
+                          <motion.div
+                            key={f.name + i}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: i * 0.04 }}
+                            onClick={() => setSelectedFaculty(f)}
+                            className="bg-white group cursor-pointer border border-[#E5EDF8] shadow-md hover:shadow-xl transition-all flex flex-col h-full overflow-hidden rounded-[20px] font-graphik"
+                          >
+                            <div
+                              className="w-full aspect-[3/4] bg-slate-100 overflow-hidden relative flex items-center justify-center animate-fadeIn"
+                              style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                            >
+                              {customImage ? (
+                                <img
+                                  src={customImage}
+                                  alt={f.name}
+                                  className={`w-full h-full object-cover transition-transform duration-500 ${
+                                    f.name === 'Prof. S. Vimala'
+                                      ? 'scale-[0.85] group-hover:scale-[0.9]'
+                                      : 'group-hover:scale-105'
+                                  }`}
+                                />
+                              ) : (
+                                <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                  <GraduationCap size={60} />
+                                </div>
+                              )}
+                            </div>
+                            <div className="p-4 sm:p-5 flex flex-col flex-1">
+                              <h3 className="font-extrabold font-graphik text-[#224292] text-[14px] sm:text-[15px] mb-1 leading-tight transition-colors line-clamp-1">
+                                {f.name}
+                              </h3>
+                              <p className="text-slate-500 text-[11px] sm:text-[12px] font-semibold font-graphik leading-snug mb-4 flex-grow line-clamp-2">
+                                {f.designation}
+                              </p>
+                              <div className="mt-auto">
+                                <span className="inline-block text-[9px] font-extrabold font-graphik uppercase tracking-widest text-[#224292] bg-[#F1F5F9] px-3.5 py-1.5 rounded-[6px] group-hover:bg-[#224292] group-hover:text-white transition-colors duration-300">
+                                  VIEW BIO
+                                </span>
+                              </div>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
                     </div>
                   </div>
                 ) : courseId === 'science-humanities' ? (
@@ -1671,8 +2247,8 @@ export default function CourseDetailPage({ overrides }) {
                           key={lab.name}
                           onClick={() => setOpenLabIndices([i])}
                           className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left group ${isDesktopSelected
-                              ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20'
-                              : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
+                            ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20'
+                            : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
                             }`}
                         >
                           <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${isDesktopSelected ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292]/5 text-[#224292] group-hover:bg-[#224292] group-hover:text-white'
@@ -1784,8 +2360,8 @@ export default function CourseDetailPage({ overrides }) {
                             }
                           }}
                           className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 text-left ${isOpen
-                              ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20 rounded-b-none'
-                              : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
+                            ? 'bg-[#224292] border-[#224292] text-white shadow-xl shadow-[#224292]/20 rounded-b-none'
+                            : 'bg-white border-[#E5EDF8] text-[#224292] hover:border-[#224292]/30'
                             }`}
                         >
                           <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${isOpen ? 'bg-[#ffc107] text-[#224292]' : 'bg-[#224292]/5 text-[#224292]'
@@ -2245,8 +2821,8 @@ export default function CourseDetailPage({ overrides }) {
                         backgroundPosition: 'center'
                       }}
                     >
-                      {selectedFaculty.image ? (
-                        <img src={selectedFaculty.image} alt={selectedFaculty.name} className="w-full h-full object-cover" />
+                      {selectedFacultyImage ? (
+                        <img src={selectedFacultyImage} alt={selectedFaculty.name} className="w-full h-full object-cover" />
                       ) : (
                         <GraduationCap size={28} className="text-[#ffc107]" />
                       )}
@@ -2783,8 +3359,8 @@ function CurriculumSection({ courseId, courseName }) {
               key={t}
               onClick={() => setCurriculumTab(t)}
               className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${curriculumTab === t
-                  ? 'bg-white text-[#224292] shadow-xl shadow-blue-900/10 scale-[1.02] translate-y-[-1px]'
-                  : 'text-[#64779F] hover:text-[#224292]'
+                ? 'bg-white text-[#224292] shadow-xl shadow-blue-900/10 scale-[1.02] translate-y-[-1px]'
+                : 'text-[#64779F] hover:text-[#224292]'
                 }`}
             >
               {t}
