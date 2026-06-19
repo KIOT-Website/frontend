@@ -2651,8 +2651,8 @@ export const courseData = {
       {
         name: 'AI LAB',
         equipments: [
-          'Area: 768 Sq.ft',
-          'Systems: 38 High-performance computers',
+          'Area: 748 Sq. ft',
+          'Systems: 30 High Performing Systems',
           'Software: Python, Java, MySQL, Power BI, Visual Studio',
           'Focus: AI & ML Algorithms, Data Analytics'
         ],
@@ -2673,7 +2673,7 @@ export const courseData = {
         equipments: [
           'Area: 546 Sq.ft',
           'Systems: 20 Systems',
-          'Software: OpenCV, TensorFlow, PyTorch, Flask, MySQL, JDE',
+          'Software: Python, OpenCV, TensorFlow, PyTorch, Flask, MySQL, Turbo C, C++, JDE',
           'Focus: Deep Learning, Business Analytics, Enterprise Applications'
         ],
         icon: Activity
@@ -3178,7 +3178,10 @@ export const courseData = {
     icon: Cpu,
     color: '#18357a',
     tagline: 'Architecting Scalable Software Solutions.',
-    overview: 'The M.E. Software Engineering program provides an in-depth understanding of large-scale software development, quality assurance, and project management.',
+    overview: [
+      "The M.E. Software Engineering programme is a postgraduate course that provides advanced knowledge and skills in software development and engineering. The programme focuses on the design, development, testing, deployment, and maintenance of software systems to meet the demands of modern industries. Students gain expertise in software architecture, software testing and quality assurance, database technologies, advanced data structures and algorithms, and research methodologies. The curriculum combines theoretical concepts with practical learning through laboratory sessions, seminars, case studies, and project-based activities.",
+      "The programme encourages innovation, critical thinking, problem-solving, teamwork, and professional ethics. Students are introduced to emerging technologies and modern software development practices, enabling them to adapt to the evolving technological landscape. Graduates are well prepared for careers as Software Engineers, Software Architects, Quality Assurance Engineers, Project Managers, Researchers, and Academicians. The programme also provides a strong foundation for higher studies and research, supporting the department’s vision of developing skilled professionals who contribute effectively to industry, academia, and society."
+    ],
     whyChoose: ['Advanced software architecture', 'DevOps & Cloud focus', 'Industry-aligned projects'],
     curriculum: [{ year: 'Year 1', semesters: ['Software Architecture', 'Agile Methodologies', 'Advanced Databases'] }],
     faculty: [{ name: 'Dr. M. Sakthivel', designation: 'Associate Professor', experience: '20.1 Years', specialization: 'Software Engineering', rating: 4.8 }],

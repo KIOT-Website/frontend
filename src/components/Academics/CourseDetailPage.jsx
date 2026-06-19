@@ -117,7 +117,7 @@ const defaultCourse = (id) => ({
   eligibility: ['10+2 with PCM / relevant subjects', 'Minimum 50% aggregate', 'TNEA rank required'],
 })
 
-const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
+const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
 
 const eventsList = [
   { name: "CMLR", url: "https://kbss.kiot.ac.in/case-method-of-learning-reflection/", course: "Both" },
@@ -312,7 +312,7 @@ export default function CourseDetailPage({ overrides }) {
   const Icon = course.icon
 
   const courseTabs = courseId === 'be-eee'
-    ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Innovative Practices']
+    ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
     : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
@@ -2631,8 +2631,12 @@ export default function CourseDetailPage({ overrides }) {
             )}
 
 
-            {activeTab === 'Achievements' && (
+            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee') && (
               <AchievementSection courseId={courseId} courseName={course.name} />
+            )}
+
+            {activeTab === 'Awards' && courseId === 'be-cse' && (
+              <AwardsSection courseId={courseId} courseName={course.name} />
             )}
 
             {/* --- EVENTS --- */}
@@ -2919,64 +2923,344 @@ export default function CourseDetailPage({ overrides }) {
 }
 
 // â”€â”€â”€ Achievement Section Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-function AchievementSection({ courseId, courseName }) {
-  const [activeSubTab, setActiveSubTab] = useState('AWARD')
+// ─── Awards Section Component ───────────────────────────────────────────────
+function AwardsSection({ courseId, courseName }) {
   const [activeAudience, setActiveAudience] = useState('STUDENT')
-  const [selectedYear, setSelectedYear] = useState(null)
-  const [years, setYears] = useState([])
-  const [records, setRecords] = useState({ STUDENT: [], FACULTY: [] })
-  const [loading, setLoading] = useState(false)
 
-  const audienceTabs = [
-    { id: 'STUDENT', label: 'Student' },
-    { id: 'FACULTY', label: 'Faculty' },
+  const studentAwards = [
+    { sno: 1,  name: 'P. Praveen\nIV Year CSE',             event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
+    { sno: 2,  name: 'M. Ramesh\nIV Year CSE',              event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
+    { sno: 3,  name: 'Vigneshwaran V\nIV Year CSE',         event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
+    { sno: 4,  name: 'Pramoth R\nIV Year CSE',              event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
+    { sno: 5,  name: 'Srinithi E\nIII Year CSE',            event: 'Dr. Kalam Young Achiever Award',                      level: 'National', award: 'Award',                                                     title: 'World Youth Federation' },
+    { sno: 6,  name: 'Yuganthika P\nIII Year CSE',          event: 'Dr. Kalam Young Achiever Award',                      level: 'National', award: 'Award',                                                     title: 'World Youth Federation' },
+    { sno: 7,  name: 'K. Vaishnavi\nIII Year CSE',          event: 'Designathon & Hackathon',                             level: 'National', award: 'Special Award',                                             title: "Aarvam'25, Cybernaut Edtech Pvt Ltd" },
+    { sno: 8,  name: 'K. Atshaya\nIII Year CSE',            event: 'Designathon & Hackathon',                             level: 'National', award: 'Special Award',                                             title: "Aarvam'25, Cybernaut Edtech Pvt Ltd" },
+    { sno: 9,  name: 'Abdul Ameer\nIII Year CSE',           event: 'Designathon & Hackathon',                             level: 'National', award: 'Special Award',                                             title: "Aarvam'25, Cybernaut Edtech Pvt Ltd" },
+    { sno: 10, name: 'V.A. Vinodhan\nIII Year CSE',         event: 'Designathon & Hackathon',                             level: 'National', award: 'Special Award',                                             title: "Aarvam'25, Cybernaut Edtech Pvt Ltd" },
+    { sno: 11, name: 'Karthick V\nII Year CSE',             event: 'Tholkappiyar Award \u2013 Dr. A.P.J. Abdul Kalam',         level: 'State',    award: 'Prestigious Award',                                         title: 'Vaagai Tamil Sangam' },
+    { sno: 12, name: 'Balasubramaiyam S\nII Year CSE',      event: 'Tholkappiyar Award \u2013 Dr. A.P.J. Abdul Kalam Award',   level: 'State',    award: 'Prestigious Award',                                         title: 'Vaagai Tamil Sangam' },
   ]
+  const facultyAwards = []
 
-  const visibleData = records[activeAudience] || []
+  const visibleData = activeAudience === 'STUDENT' ? studentAwards : facultyAwards
 
-  const fetchYears = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/placement-achievements/years?category=${activeSubTab}`)
-      const json = await res.json()
-      setYears(json.years || [])
-    } catch (err) {
-      console.error(err)
-    }
+  const levelColor = (level) => {
+    if (!level) return 'bg-slate-100 text-slate-600'
+    const l = level.toLowerCase()
+    if (l.includes('national'))      return 'bg-blue-50 text-blue-700'
+    if (l.includes('international')) return 'bg-purple-50 text-purple-700'
+    if (l.includes('state'))         return 'bg-green-50 text-green-700'
+    if (l.includes('regional'))      return 'bg-orange-50 text-orange-700'
+    if (l.includes('district'))      return 'bg-yellow-50 text-yellow-700'
+    return 'bg-slate-100 text-slate-600'
   }
 
-  useEffect(() => {
-    fetchYears()
-    setSelectedYear(null)
-  }, [activeSubTab])
+  return (
+    <div className="space-y-10">
+      {/* Header */}
+      <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 pb-8 border-b border-[#D5E2F4]/50">
+        <div>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#ffc107] to-[#e0a800] flex items-center justify-center shadow-xl shadow-[#ffc107]/20">
+              <Award size={28} className="text-[#224292]" />
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold font-graphik text-[#224292] tracking-tight leading-none mb-1">Department Awards</h3>
+              <p className="text-black font-medium font-graphik text-sm tracking-wide">Recognising outstanding contributions and excellence</p>
+            </div>
+          </div>
+          <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik tracking-[0.2em]">Department of {courseName.replace(/^B\.?E\.?\s*/i, '')}</p>
+        </div>
+        {/* Student / Faculty toggle */}
+        <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
+          {[{ id: 'STUDENT', label: 'Student' }, { id: 'FACULTY', label: 'Faculty' }].map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveAudience(tab.id)}
+              className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#224292]'}`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
 
-  useEffect(() => {
-    if (!selectedYear) return
-    const fetchAchievementsData = async () => {
-      try {
-        setLoading(true)
-        const finalDept = getAchievementDepartmentName(courseId, courseName)
-        const [studentRes, facultyRes] = await Promise.all([
-          fetch(`${API_BASE}/placement-achievements/?category=${activeSubTab}&sub_category=STUDENT&department=${encodeURIComponent(finalDept)}&year=${selectedYear}`),
-          fetch(`${API_BASE}/placement-achievements/?category=${activeSubTab}&sub_category=FACULTY&department=${encodeURIComponent(finalDept)}&year=${selectedYear}`)
-        ])
-        const studentData = studentRes.ok ? await studentRes.json() : []
-        const facultyData = facultyRes.ok ? await facultyRes.json() : []
-        setRecords({
-          STUDENT: studentData.sort((a, b) => (a.serial_number || 999) - (b.serial_number || 999)),
-          FACULTY: facultyData.sort((a, b) => (a.serial_number || 999) - (b.serial_number || 999)),
-        })
-      } catch (err) {
-        console.error('FETCH ERROR:', err)
-        setRecords({ STUDENT: [], FACULTY: [] })
-      } finally {
-        setLoading(false)
-      }
+      {visibleData.length > 0 ? (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
+        >
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-[#ffc107]">
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">S.No</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Student</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Event</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">Level</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Distinction / Award</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleData.map((item, idx) => (
+                <tr
+                  key={idx}
+                  className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
+                >
+                  <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                  <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
+                  <td className="px-4 py-3 text-sm text-slate-700">{item.event}</td>
+                  <td className="px-4 py-3 text-center">
+                    <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                      {item.level}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-sm text-slate-700">{item.award}</td>
+                  <td className="px-4 py-3 text-sm text-slate-600">{item.title}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="py-24 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center"
+        >
+          <div className="w-24 h-24 rounded-3xl bg-[#F8FAFC] border border-[#E5EDF8] flex items-center justify-center mb-8">
+            <Award size={48} className="text-[#A9B1C3]/40" />
+          </div>
+          <h4 className="text-xl font-bold font-graphik text-[#224292] mb-3">No {activeAudience === 'STUDENT' ? 'Student' : 'Faculty'} Awards Yet</h4>
+          <p className="text-[#64779F] font-bold font-graphik text-sm">Awards will be updated soon.</p>
+        </motion.div>
+      )}
+    </div>
+  )
+}
+
+function AchievementSection({ courseId, courseName }) {
+  const [activeAudience, setActiveAudience] = useState('STUDENT')
+
+  const eeeStudentAchievements = [
+    { sno: 1,  name: 'Nirmal Kumar K\nII Year\nB.E. - EEE',     event: 'Hackathon',                                                                                                          level: 'National',                    award: 'Won 1st Place with the cash prize of Rs.5000/-',                                                     title: 'Animal Detection using ML' },
+    { sno: 2,  name: 'Mathavaa Krishna S\nII Year\nB.E. - EEE', event: 'Hackathon',                                                                                                          level: 'National',                    award: 'Won 1st Place with the cash prize of Rs.5000/-',                                                     title: 'Animal Detection using ML' },
+    { sno: 3,  name: 'Naveenkumar R\nIII Year\nB.E. - EEE',    event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
+    { sno: 4,  name: 'Srinath K\nIII Year\nB.E. - EEE',        event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
+    { sno: 5,  name: 'Shivasurya K A\nIII Year\nB.E. - EEE',   event: '1. SAE INDIA Electric Four Wheeler Design Challenge 2025\n2. SAE Embedded system 2025\n3. Nptel Topper and Winter Internship', level: 'National',             award: '1. Won 3rd place with cash prize 25000/-\n2. Won 3rd place with cash prize 3000/-\n3. Three months paid Internship', title: '1. SAE EFWDC 2025\n2. SAE Embedded system\n3. NPTEL – Introduction to Industry 4.0 and Industrial IoT' },
+    { sno: 6,  name: 'Anuvarshan M\nIII Year\nB.E. - EEE',     event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
+    { sno: 7,  name: 'Nithish Kumar R\nIII Year\nB.E. - EEE',  event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
+    { sno: 8,  name: 'Manikandan M\nIII Year\nB.E. - EEE',     event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
+    { sno: 9,  name: 'Gowtham S S\nIII Year\nB.E. - EEE',      event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
+    { sno: 10, name: 'Diwakar P\nIII Year\nB.E. - EEE',        event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National & International',    award: 'Won team cash price of Rs. 15000/-',                                                                 title: 'Four Wheeler Design' },
+    { sno: 11, name: 'Vikram S\nIII Year\nB.E. - EEE',         event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
+    { sno: 12, name: 'Sureshraj M R\nIII Year\nB.E. - EEE',    event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
+    { sno: 13, name: 'Megavarnan V K\nIII Year\nB.E. - EEE',   event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
+    { sno: 14, name: 'Gokulraj G\nIII Year\nB.E. - EEE',       event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
+    { sno: 15, name: 'Gopinath S\nIII Year\nB.E. - EEE',       event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
+    { sno: 16, name: 'Adhithiyaa G J\nIII Year\nB.E. - EEE',   event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
+    { sno: 17, name: 'Sachin S\nIII Year\nB.E. - EEE',         event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
+    { sno: 18, name: 'Mahalakshmi D\nIII Year\nB.E. - EEE',    event: '24-hrs. Non-Stop Hackathon organized by KIOT Institution Council, AICTE Idea Lab & iStart in association with Startup TN', level: 'National',               award: 'Secured Third prize with cash prize of Rs.5000/-',                                                   title: 'Wireless Power Transmission for Electric Vehicle' },
+    { sno: 19, name: 'Nisha S\nIII Year\nB.E. - EEE',          event: '24-hrs. Non-Stop Hackathon organized by KIOT Institution Council, AICTE Idea Lab & iStart in association with Startup TN', level: 'National',               award: 'Secured Third prize with cash prize of Rs.5000/-',                                                   title: 'Wireless Power Transmission for Electric Vehicle' },
+    { sno: 20, name: 'Ashwin Sivakumar\nIII Year\nB.E. - EEE', event: 'SAE Embedded system 2025 – 3rd Edition National Level Competition on Embedded Systems 2025',                          level: 'National',                    award: 'Won Best Hardware Design Award and 3rd place with cash prize 1500/-',                                 title: 'Smart Energy Meter' },
+    { sno: 21, name: 'Varsha V\nIII Year\nB.E. - EEE',         event: '24 hrs. Hackathon in association with IEEE – Information Theory Society',                                              level: 'National',                    award: 'Won 2nd Prize with a Cash Award of Rs. 4000',                                                        title: 'Wireless Power Transmission for Electric Vehicle' },
+    { sno: 22, name: 'Tharuneswaran S R\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Secured 2nd runner up with the cash prize of Rs.3000/-', title: 'Weather monitoring station' },
+    { sno: 23, name: 'Pradheeba C\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Won Best Hardware Design Award and 3rd place with cash prize 1500/-', title: 'Smart Energy Meter' },
+    { sno: 24, name: 'Kamalesh S K\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Secured 2nd runner up with the cash prize of Rs.3000/-', title: 'Weather monitoring station' },
+    { sno: 25, name: 'Kavin E\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Secured 2nd runner up with the cash prize of Rs.3000/-', title: 'Weather monitoring station' },
+    { sno: 26, name: 'Roopika S\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Won Best Hardware Design Award and 3rd place with cash prize 1500/-', title: 'Smart Energy Meter' },
+    { sno: 27, name: 'Sangeetha H\nIV Year\nB.E. - EEE', event: 'L&T ideation challenge season 2', level: 'National', award: 'Selected among top 15 teams in national level with paid internship', title: 'AI based SLD design automation' },
+    { sno: 28, name: 'Lenin John Paul A\nIV Year\nB.E. - EEE', event: '1. Design and innovation clinic 2025 CMTI\n2. L&T ideation challenge season 2\n3. SAE electric four wheeler design challenge season 2025', level: 'National', award: '1. Secured 3rd runner up with cash prize of ₹10,000\n2. Selected among top 15 teams in national level with Paid internship\n3. Secured 3rd prize with cash prize of ₹25,000', title: '1. Smart rover for precision agriculture\n2. AI based SLD design automation\n3. Electric four wheeler' },
+    { sno: 29, name: 'Deenathayal V\nIV Year\nB.E. - EEE', event: 'SAE Electric four wheeler design challenge season 2025', level: 'National', award: 'Secured 3rd prize with cash prize of ₹25,000', title: 'Electric four wheeler' },
+    { sno: 30, name: 'Naveen C\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Won Best Hardware Design Award and 3rd place with cash prize 1500/-', title: 'Smart Energy Meter' },
+    { sno: 31, name: 'Heema Gouri T\nIV Year\nB.E. - EEE', event: 'NCIIPC-AICTE Pentathon', level: 'National', award: 'Secured AIR 47 among national-level participants and won Internship for 6 Months.', title: 'Cybersecurity' },
+    { sno: 32, name: 'Nagakeerthiga R\nIV Year\nB.E. - EEE', event: '1. Patent Filed\n2. Design and innovation clinic 2025 CMTI', level: 'National', award: '1. Patent Filed\n2. Awarded First Runner-Up and received a ₹20,000 cash prize.', title: '1. Design and Development of a Terracotta Tube-Based Eco-Friendly Air Cooler.\n2. Green Breeze Cooler – An innovative eco-friendly air cooling solution.' }
+  ]
+
+  const studentAchievements = courseId === 'be-eee' ? eeeStudentAchievements : [
+    // Page 1 – Rows 1–15 (previously 13–27)
+    { sno: 1,  name: 'Ashvant Narayan\nIV Year CSE',        event: 'IEEE Paper Presentation Contest 2026',                 level: 'National',       award: 'III Prize',                                                                                               title: 'IEEE Computer Society-Anna University' },
+    { sno: 2,  name: 'Dhivesh Y S\nIV Year CSE',            event: 'IEEE Paper Presentation Contest 2026',                 level: 'National',       award: 'III Prize',                                                                                               title: 'IEEE Computer Society-Anna University' },
+    { sno: 3,  name: 'Homeashwaraa Parvathan P\nIII Year CSE', event: 'Hackathon 2025',                                   level: 'District',       award: 'Secured II Prize with a cash award of ₹5,000',                                                      title: 'GEN AI - IBM Hackathon 2025' },
+    { sno: 4,  name: 'NaveenPrasath\nIII Year CSE',         event: 'Hackathon 2025',                                       level: 'District',       award: 'Secured II Prize with a cash award of ₹5,000',                                                      title: 'GEN AI - IBM Hackathon 2025' },
+    { sno: 5,  name: 'Pranesh S\nIII Year CSE',             event: 'Hackathon 2025',                                       level: 'District',       award: 'Secured II Prize with a cash award of ₹5,000',                                                      title: 'GEN AI - IBM Hackathon 2025' },
+    { sno: 6,  name: 'Sivaranjan S\nIII Year CSE',          event: 'Hackathon 2025',                                       level: 'District',       award: 'Secured II Prize with a cash award of ₹5,000',                                                      title: 'GEN AI - IBM Hackathon 2025' },
+    { sno: 7,  name: 'Vinodhan V A\nIII Year CSE',          event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
+    { sno: 8,  name: 'Sudharsana K\nIII Year CSE',          event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
+    { sno: 9,  name: 'Thamarai Selvan S\nIII Year CSE',     event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
+    { sno: 10, name: 'Danusa Sri M S\nIII Year CSE',        event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
+    { sno: 11, name: 'Gowri R\nIII Year CSE',               event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
+    { sno: 12, name: 'Badri Narayanan B R\nIII Year CSE',   event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
+    { sno: 13, name: 'Damodharan Prakash P\nIII Year CSE',  event: 'Hackathon',                                            level: 'College Level',  award: 'Got special Prize with 2000',                                                                             title: 'GEN AI' },
+    { sno: 14, name: 'Harini M\nIII Year CSE',              event: 'Hackathon',                                            level: 'College Level',  award: 'Got special Prize with 2000',                                                                             title: 'GEN AI' },
+    { sno: 15, name: 'Brindha S\nIII Year CSE',             event: 'Hackathon',                                            level: 'College Level',  award: 'Got special Prize with 2000',                                                                             title: 'GEN AI' },
+    // Page 2 – Rows 16–25 (previously 28–37)
+    { sno: 16, name: 'Navashree R K\nIII Year CSE',         event: 'Hackathon',                                            level: 'National',       award: 'I Prize',                                                                                                 title: "KIOT, Institution's Innovation Council" },
+    { sno: 17, name: 'Shailashree S\nIII Year CSE',         event: 'IEEE Conference Paper Presentation',                   level: 'National',       award: 'III Prize',                                                                                               title: 'ICSCDS-2025, Adaptive Multimodel Emotion Recognition using Contextual Attention and Task Gated Learning, Sengunthar Engineering college' },
+    { sno: 18, name: 'Suganya K A\nIII Year CSE',           event: 'IEEE Conference Paper Presentation',                   level: 'National',       award: 'III Prize',                                                                                               title: 'ICSCDS-2025, Adaptive Multimodel Emotion Recognition using Contextual Attention and Task Gated Learning, Sengunthar Engineering college' },
+    { sno: 19, name: 'Vaishnavi K\nIII Year CSE',           event: 'IEEE Conference Paper Presentation',                   level: 'National',       award: 'III Prize',                                                                                               title: 'ICSCDS-2025, Adaptive Multimodel Emotion Recognition using Contextual Attention and Task Gated Learning, Sengunthar Engineering college' },
+    { sno: 20, name: 'Vinodhan V A\nIII Year CSE',          event: 'IEEE Conference Paper Presentation',                   level: 'National',       award: 'III Prize',                                                                                               title: 'ICSCDS-2025, Adaptive Multimodel Emotion Recognition using Contextual Attention and Task Gated Learning, Sengunthar Engineering college' },
+    { sno: 21, name: 'Jaganathan V\nII Year CSE',           event: 'TN Skills 2025 / INDIA Skills Regional Competition 2025-26', level: 'State / Regional', award: 'II Place, Silver Medal, ₹10,000 cash / III Place, Bronze Medal, ₹25,000 cash',     title: 'TN Skills 2025, State Government / Skill India' },
+    { sno: 22, name: 'Akshaya P\nII Year CSE',              event: 'Engineers Day Contest',                                level: 'District Level', award: 'Received a cash award of ₹15,000',                                                                  title: 'Engineers Day' },
+    { sno: 23, name: 'JayaVighnesh B K\nII Year CSE',       event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won I Prize with cash award of 5,000',                                                                    title: 'IBM Gen AI' },
+    { sno: 24, name: 'Jeevadharshini V\nII Year CSE',       event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won I Prize with cash award of 5,000',                                                                    title: 'IBM Gen AI' },
+    { sno: 25, name: 'Kathir S\nII Year CSE',               event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won I Prize with cash award of 5,000',                                                                    title: 'IBM Gen AI' },
+    // Page 3 – Rows 26–44 (previously 38–56)
+    { sno: 26, name: 'Haasini R\nII Year CSE',              event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won II Prize with cash award of 3000',                                                                    title: 'IBM Gen AI' },
+    { sno: 27, name: 'Eniya V G\nII Year CSE',              event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won II Prize with cash award of 3000',                                                                    title: 'IBM Gen AI' },
+    { sno: 28, name: 'Gunavathi K L\nII Year CSE',          event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won II Prize with cash award of 3000',                                                                    title: 'IBM Gen AI' },
+    { sno: 29, name: 'Dhaksana R\nII Year CSE',             event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
+    { sno: 30, name: 'Desika S\nII Year CSE',               event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
+    { sno: 31, name: 'Akshaya P\nII Year CSE',              event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
+    { sno: 32, name: 'Dharanya M\nII Year CSE',             event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
+    { sno: 33, name: 'Dharshini T K\nII Year CSE',          event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
+    { sno: 34, name: 'Jaganathan V\nII Year CSE',           event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 35, name: 'Kowshick R\nII Year CSE',             event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 36, name: 'Mosika N\nII Year CSE',               event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 37, name: 'Jhanani S R\nII Year CSE',            event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 38, name: 'Meenatchi K\nII Year CSE',            event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 39, name: 'Kawsika S\nII Year CSE',              event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 40, name: 'Ramya S\nII Year CSE',                event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 41, name: 'Prabhuram B\nII Year CSE',            event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 42, name: 'Naveen Adhithya S\nII Year CSE',      event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 43, name: 'Dharanya M\nII Year CSE',             event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    { sno: 44, name: 'Dharshini T K\nII Year CSE',          event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
+    // Page 4 – Rows 45–66 (previously 57–78)
+    { sno: 45, name: 'Bhavana J\nII Year CSE',              event: 'Hackathon',                                            level: 'College Level',  award: 'Secured I Prize with a cash award of ₹25,000',                                                      title: 'Team stratz' },
+    { sno: 46, name: 'Inbhatamizhan V\nII Year CSE',        event: 'Hackathon',                                            level: 'College Level',  award: 'Poster Presentation I Prize cash award 1500, Paper Presentation III Prize cash award 500',                title: "Q'QUEST 2026" },
+    { sno: 47, name: 'Jeeva P\nII Year CSE',                event: 'Hackathon',                                            level: 'College Level',  award: 'Poster Presentation I Prize cash award 1500, Paper Presentation III Prize cash award 500',                title: "Q'QUEST 2026" },
+    { sno: 48, name: 'Vasantharaj G\nII Year CSE',          event: 'Hackathon',                                            level: 'College Level',  award: 'Poster Presentation I Prize cash award 1500, Paper Presentation III Prize cash award 500',                title: "Q'QUEST 2026" },
+    { sno: 49, name: 'Kiruthiga M\nII Year CSE',            event: 'Sports / Chess',                                       level: 'District',       award: 'Gold',                                                                                                    title: 'Sports Development Authority of Tamil Nadu' },
+    { sno: 50, name: 'Ijaz Ahamed A\nII Year CSE',          event: 'UI/UX Design Challenge',                               level: 'National',       award: 'I Prize',                                                                                                 title: 'SPRING FEST 2K25' },
+    { sno: 51, name: 'Jayavighnesh B K\nII Year CSE',       event: 'Code Debugging',                                       level: 'National',       award: 'I Prize',                                                                                                 title: 'SPRING FEST 2K25' },
+    { sno: 52, name: 'Karthick Raja S\nII Year CSE',        event: 'Code Debugging',                                       level: 'National',       award: 'I Prize',                                                                                                 title: 'SPRING FEST 2K25' },
+    { sno: 53, name: 'Harini E\nII Year CSE',               event: 'Symposium',                                            level: 'National',       award: 'I Prize',                                                                                                 title: 'AUXESIS 2K26' },
+    { sno: 54, name: 'Naveen S\nII Year CSE',               event: 'Sports / Ball Badminton',                              level: 'National',       award: 'I Prize',                                                                                                 title: 'Knowledge Institute of Technology' },
+    { sno: 55, name: 'Vijay Sai Sree S\nII Year CSE',       event: 'Symposium',                                            level: 'National',       award: 'I Prize',                                                                                                 title: 'NOVITAS 2K26' },
+    { sno: 56, name: 'Dilipkumar S\nII Year CSE',           event: 'Pictowords',                                           level: 'National',       award: 'I Prize',                                                                                                 title: 'NOVITAS 2K26' },
+    { sno: 57, name: 'Chandru K\nII Year CSE',              event: 'Hack Fusion',                                          level: 'National',       award: 'I Prize',                                                                                                 title: "CYPHORIA'26" },
+    { sno: 58, name: 'Karthick V\nII Year CSE',             event: 'Cyber Canvas',                                         level: 'National',       award: 'I Prize',                                                                                                 title: "CYPHORIA'26" },
+    { sno: 59, name: 'Boobalan L\nII Year CSE',             event: 'Beyond Belief',                                        level: 'National',       award: 'II Prize',                                                                                                title: 'NOVITAS 2K26' },
+    { sno: 60, name: 'Kiruthiga M\nII Year CSE',            event: 'Bug Buster',                                           level: 'National',       award: 'III Prize',                                                                                               title: "SYMTRON'25 & SILIZIUM'25" },
+    { sno: 61, name: 'Mosika N\nII Year CSE',               event: 'Bug Buster',                                           level: 'National',       award: 'III Prize',                                                                                               title: "SYMTRON'25 & SILIZIUM'25" },
+    { sno: 62, name: 'Sowmiya J\nII Year CSE',              event: 'Paper Presentation',                                   level: 'National',       award: 'III Prize',                                                                                               title: "TECHFINIX'25" },
+    { sno: 63, name: 'Suriyakala B\nII Year CSE',           event: 'Paper Presentation',                                   level: 'National',       award: 'III Prize',                                                                                               title: "TECHFINIX'25" },
+    { sno: 64, name: 'Yamuna R\nII Year CSE',               event: 'Paper Presentation',                                   level: 'National',       award: 'III Prize',                                                                                               title: "TECHFINIX'25" },
+    { sno: 65, name: 'Barathkumar S\nII Year CSE',          event: 'Bug Hunt',                                             level: 'National',       award: 'III Prize',                                                                                               title: 'Dhirajlal Gandhi College of Technology' },
+    { sno: 66, name: 'Avishsharan S A\nII Year CSE',        event: 'Sports, Techno & Cultural Fest',                       level: 'National',       award: 'III Prize',                                                                                               title: "VARNAM'26" },
+
+    // Additional entries (Rows 67–76 from upload)
+    { sno: 67, name: 'Priyadharshan S\nII Year CSE',      event: 'Sports / Boxing',                    level: 'International', award: 'III Prize', title: 'Anna University Sports Board' },
+    { sno: 68, name: 'Siva Shree K V S\nII Year CSE',    event: 'Technical Thesis Paper Presentation', level: 'National',      award: 'III Prize', title: 'INNOVATIX' },
+    { sno: 69, name: 'Vishnu S M\nII Year CSE',           event: 'Technical Thesis Paper Presentation', level: 'National',      award: 'III Prize', title: 'INNOVATIX' },
+    { sno: 70, name: 'Rithik Aswin A J\nII Year CSE',    event: 'Paper Presentation',                  level: 'National',      award: 'III Prize', title: "CRENNOVA'25" },
+    { sno: 71, name: 'Madhurithan M\nI Year CSE',         event: 'Sports / Team KATA',                  level: 'International', award: 'I Prize',   title: 'Rising Goju Karate School' },
+    { sno: 72, name: 'Syedabrar R\nI Year CSE',           event: 'Paper Presentation',                  level: 'National',      award: 'I Prize',   title: 'TENET 2K26' },
+    { sno: 73, name: 'Bharanidharan P\nI Year CSE',       event: 'Paper Presentation',                  level: 'National',      award: 'I Prize',   title: 'ELECTRIC INTELLIGENZ' },
+    { sno: 74, name: 'Sivamanikandan R\nI Year CSE',      event: 'Paper Presentation',                  level: 'National',      award: 'I Prize',   title: 'ELECTRIC INTELLIGENZ' },
+    { sno: 75, name: 'Keerthana T\nI Year CSE',           event: 'Paper Presentation',                  level: 'National',      award: 'II Prize',  title: "INNOTECH'26" },
+    { sno: 76, name: 'Nitharsana R\nI Year CSE',          event: 'Paper Presentation',                  level: 'National',      award: 'II Prize',  title: "INNOTECH'26" },
+  ]
+
+  const eeeFacultyAchievements = [
+    {
+      sno: 1,
+      name: 'Dr.C.Muniraj\nHOD – EEE',
+      event: '1. IEEE MDI Fund & IEEE PES Award\n2. L&T ideation challenge season 2\n3. Journal Publications',
+      award: '1. IEEE PES MDI Fund 1240 USD from USA\nIEEE PES Best Student Chapter Award 2025\n2. Best Project Guide\n3. Published article in Scopus Indexed Journal\nPaper got Accepted in SCI',
+      title: '1. Received “IEEE PES MDI Fund 1240 USD” from USA for organizing two days workshop.\nReceived “IEEE PES Best Student Chapter Award 2025” from IEEE PES Madras Chapter\n2. AI Based SLD Design Automation - Students team was selected one among top 15 teams in national level with paid internship.\n3. Paper Published in Scopus indexed Journal in the title:\n- Design and FPGA Based Realization of an SMC-ESO Enhanced Nonlinear Fractional Order PID Controller for BLDC Motor Speed Control.\n- Electric Vehicle Induction Motor Fault Classifications Using Thermal Image Temperature Matrix Index and Machine Learning.\nPaper got accepted in SCI Journal in the title:\nArtificial Intelligence-Driven Optimal Charging Strategy for EV with Integrated Power Quality Enhancement in Electric Power Grids'
+    },
+    {
+      sno: 2,
+      name: 'Dr.V.Kamatchi Kannan\nProf. – EEE',
+      event: '1. Patent Granted\n2. Journal Publication',
+      award: '1. Indian Patent Office\n2. Scopus indexed Journal and Conferences',
+      title: '1. Automatic System For Electrolyte Level Detection And Corrosion Prevention In Lead-Acid Batteries\n2. African Buffalo Optimized Generative Mamdani Fuzzy Controller Based Deep Belief Network for Efficient Speed Control in Permanent Magnet Synchronous Motor\nPresented three Scopus indexed IEEE Conference papers'
+    },
+    {
+      sno: 3,
+      name: 'Dr.S.Kalpana Devi\nAssoc. Prof. – EEE',
+      event: '1. Best Faculty Award\n2. Journal Publication',
+      award: '1. Best Faculty Award\n2. SCI journal and Scopus Conferences',
+      title: '1. Ananta Acharya Award\n2. Robust Energy Management Strategy for Fuel Cell Hybrid Electric Vehicles Based on the RPO-DTRN Framework'
+    },
+    {
+      sno: 4,
+      name: 'Dr.P.A.Gowri Sankar\nAssoc. Prof. – EEE',
+      event: '1. Journal Publication\n2. NPTEL Course',
+      award: '1. Scopus Indexed Journal\n2. Elite + Silver',
+      title: '1. Published Scopus indexed Journal on Recent Advances of Artificial Intelligence Techniques for Wind Energy Operation and Control Problems\nPublished Scopus indexed Journal on Electric Vehicle Battery Management System: A Comprehensive Review\n2. Teaching and Learning in Engineering (TALE)'
+    },
+    {
+      sno: 5,
+      name: 'Mrs.N.Divya\nAsst. Prof. – EEE',
+      event: '1. Best Faculty Award\n2. Journal Publications',
+      award: '1. Received Best Faculty Award\n2. Published article in Scopus Indexed Journal and Scopus Indexed IEEE International Conferences',
+      title: '1. Received Best Faculty Award from National Scientific Research Forum\n2. 1. Published Scopus indexed Journal in the title of Design and FPGA Based Realization of an SMC-ESO Enhanced Nonlinear Fractional Order PID Controller for BLDC Motor Speed Control\n2. Electric Vehicle Induction Motor Fault Classifications Using Thermal Image Temperature Matrix Index and Machine Learning.\n3. Published Scopus indexed IEEE International Conference in the titles:\n- Four Port Isolated PV based EV Charger supports AC and DC Charging\n- A Robust Fuzzy based SOC Estimation and charging method optimization of Lithium Ion battery\n- Design and Implementation of single phase five level Multilevel inverter for EV applications.'
+    },
+    {
+      sno: 6,
+      name: 'Mr.M.Jagedeesh raja\nAsst. Prof. – EEE',
+      event: '1. Techfest Event\n2. IEEE Conference',
+      award: '1. Shortlisted for the final round and presented the best projects developed at IDEA Lab.\n2. Two Scopus-indexed IEEE Conference papers',
+      title: '1. AICTE - IDEA Lab Tech Fest event at AICTE HQ, New Delhi\n2. Presented and published the International Conference with the title:\n- Design and Implementation of Cotton Fiber Collector System for Textile Industry.\n- Modelling and Simulation of Five-Level H-Bridge Multilevel Inverter for Grid Connected System.'
+    },
+    {
+      sno: 7,
+      name: 'Mrs.P.Rekha\nAsst. Prof. – EEE',
+      event: '1. Award IE(I) Engineers Day Celebration\n2. IEEE MDI Fund & IEEE PES Award\n3. Journal Publication\n4. NPTEL',
+      award: '1. Best Woman Engineer Award\n2. IEEE PES MDI Fund 1240 USD from USA & IEEE PES Best Student Chapter Award 2025\n3. Paper Published in international Journal and Conferences\n4. NPTEL - Elite+Silver',
+      title: '1. Received "Best Woman Engineer Award" from The Institution of Engineers (India) on Sep.2025\n2. Received "IEEE PES MDI Fund 1240 USD" from USA for organizing two days workshop & Received "IEEE PES Best Student Chapter Award 2025" from IEEE PES Madras Chapter.\n3. - Paper Published in Scopus indexed international Journal in the title "Design and FPGA Based Realization of an SMC-ESO Enhanced Nonlinear Fractional Order PID Controller for BLDC Motor Speed Control" in the year 2025.\n- Paper Published in Scopus indexed IEEE international Conference on "An IoT Based hybrid Electric vehicle with wireless charging Technology" in the year 2025.\n4. Completed NPTEL course "Introduction to IoT" and secured 86% - Elite + Silver'
+    },
+    {
+      sno: 8,
+      name: 'Mr.P.Balaji\nAsst. Prof. – EEE',
+      event: '1. Award IE(I) Engineers Day Celebration\n2. NPTEL\n3. Journal Publication',
+      award: '1. Best Engineer Award & Scopus indexed Journal\n2. Elite + Silver\n3. Paper Published in Scopus indexed international Journal',
+      title: '1. Best Engineer Award from The Institution of Engineers (India)\n2. Faculty Domain-Advanced Certification from NPTEL\n3. Paper Published in Scopus indexed international Journal in the title "Design and FPGA Based Realization of an SMC-ESO Enhanced Nonlinear Fractional Order PID Controller for BLDC Motor Speed Control" in the year 2025.'
+    },
+    {
+      sno: 9,
+      name: 'Mr.G.Karthikeyan\nAsst. Prof. – EEE',
+      event: '1. Journal Publication\n2. NPTEL',
+      award: '1. Published article in Scopus Indexed Journal and Scopus Indexed IEEE International Conferences\n2. Elite with Silver',
+      title: '1. - Published Scopus indexed Journal on Environmental investigation of operating parameters affecting biogas yield- a lab-scale study.\n- Published Scopus indexed IEEE International Conference on the titles:\n  - Automated Dust detection in Solar Panel using Deep learning Architecture.\n  - Variable frequency carrier based modulation scheme.\n2. Design Thinking a Primer'
+    },
+    {
+      sno: 10,
+      name: 'Ms.P.Srinithi\nAsst. Prof. – EEE',
+      event: '1. NPTEL',
+      award: '1. Elite+ Silver (3 courses)\nElite + Gold',
+      title: '1. Embedded System with ARM (80%)\n2. Foundation of Cloud IoT Edge ML (77%)\n3. Sensors and Actuators (81%)\n4. Electronic Systems for Cancer Diagnosis (91%-Topper 5%)'
+    },
+    {
+      sno: 11,
+      name: 'Mr.M.Rajkumar\nAsst. Prof. – EEE',
+      event: '1. Journal Publication\n2. NPTEL',
+      award: '1. Scopus indexed international journal papers\n2. Elite With Silver',
+      title: '1. - Published Scopus indexed international Journal paper on Environmental investigation of operating parameters affecting biogas yield- a lab-scale study\n- Published Scopus indexed international Journal paper on Recent Advances of Artificial Intelligence Techniques for Wind Energy Operation and Control Problems\n2. Completed NPTEL Course Teaching and Learning in Engineering (TALE) with 75%'
     }
-    fetchAchievementsData()
-  }, [activeSubTab, selectedYear, courseId, courseName])
+  ]
+
+  const facultyAchievements = courseId === 'be-eee' ? eeeFacultyAchievements : []
+
+  const visibleData = activeAudience === 'STUDENT' ? studentAchievements : facultyAchievements
+
+  const levelColor = (level) => {
+    if (!level) return 'bg-slate-100 text-slate-600'
+    const l = level.toLowerCase()
+    if (l.includes('national')) return 'bg-blue-50 text-blue-700'
+    if (l.includes('international')) return 'bg-purple-50 text-purple-700'
+    if (l.includes('state')) return 'bg-green-50 text-green-700'
+    if (l.includes('regional')) return 'bg-orange-50 text-orange-700'
+    return 'bg-slate-100 text-slate-600'
+  }
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-10">
+      {/* Header */}
       <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 pb-8 border-b border-[#D5E2F4]/50">
         <div>
           <div className="flex items-center gap-4 mb-4">
@@ -2988,122 +3272,111 @@ function AchievementSection({ courseId, courseName }) {
               <p className="text-black font-medium font-graphik text-sm tracking-wide">Celebrating academic and professional milestones</p>
             </div>
           </div>
-          <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik tracking-[0.2em]">Department of {courseName.split('Engineering')[0]}</p>
+          <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik tracking-[0.2em]">Department of {courseName.replace(/^B\.?E\.?\s*/i, '')}</p>
         </div>
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-          <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
-            {['AWARD', 'ACHIEVEMENT'].map(tab => (
-              <button key={tab} onClick={() => setActiveSubTab(tab)} className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeSubTab === tab ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#224292]'}`}>
-                {tab === 'AWARD' ? 'Awards' : 'Achievements'}
-              </button>
-            ))}
-          </div>
-          {selectedYear && (
-            <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
-              {audienceTabs.map(tab => (
-                <button key={tab.id} onClick={() => setActiveAudience(tab.id)} className={`px-6 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#ffc107] text-[#224292] shadow-lg shadow-[#ffc107]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#224292]'}`}>
-                  {tab.id === 'STUDENT' ? 'Student' : 'Faculty'}
-                </button>
-              ))}
-            </div>
-          )}
+
+        {/* Student / Faculty toggle */}
+        <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
+          {[{ id: 'STUDENT', label: 'Student' }, { id: 'FACULTY', label: 'Faculty' }].map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveAudience(tab.id)}
+              className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik tracking-[0.2em] transition-all duration-300 ${activeAudience === tab.id ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20 translate-y-[-1px]' : 'text-[#64779F] hover:bg-slate-50 hover:text-[#224292]'}`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      {!selectedYear ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pt-6">
-          {years.length === 0 ? (
-            <div className="col-span-full py-12 text-center text-[#64779F]">No academic folders found for this category.</div>
-          ) : (
-            years.map(yr => (
-              <button key={yr} onClick={() => setSelectedYear(yr)} className="bg-white p-8 rounded-[2rem] border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#224292]/20 transition-all flex flex-col items-center group">
-                <div className="h-12 w-12 bg-slate-50 flex items-center justify-center rounded-xl mb-3 group-hover:scale-110 transition-transform">
-                  <Star size={24} className="text-[#ffc107]" />
-                </div>
-                <span className="text-xl font-bold font-graphik text-[#224292]">{yr}</span>
-                <span className="text-[10px] font-bold font-graphik tracking-[0.1em] text-[#A9B1C3] mt-1 opacity-60">View Folders</span>
-              </button>
-            ))
-          )}
-        </div>
-      ) : (
-        <>
-          <div className="flex items-center gap-4 -mt-4">
-            <button onClick={() => setSelectedYear(null)} className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl text-[10px] font-bold font-graphik tracking-widest text-[#224292] border-2 border-[#E2E8F0] hover:bg-slate-50 hover:translate-x-[-4px] transition-all">
-              <ArrowLeft size={14} /> Back to Years
-            </button>
-            <span className="px-4 py-2 bg-[#ffc107] text-[#224292] text-[10px] font-bold font-graphik uppercase rounded-xl tracking-widest">Selected: {selectedYear}</span>
+      {/* Table */}
+      {activeAudience === 'STUDENT' && visibleData.length > 0 ? (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
+        >
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-[#224292] text-white">
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Student</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleData.map((item, idx) => (
+                <tr
+                  key={idx}
+                  className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
+                >
+                  <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                  <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
+                  <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
+                  <td className="px-4 py-3 text-center">
+                    <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                      {item.level}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-sm text-slate-700">{item.award}</td>
+                  <td className="px-4 py-3 text-sm text-slate-600">{item.title}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
+      ) : activeAudience === 'FACULTY' && visibleData.length > 0 ? (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
+        >
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-[#224292] text-white">
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Achiever Name and Designation</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event / Achievement</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleData.map((item, idx) => (
+                <tr
+                  key={idx}
+                  className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
+                >
+                  <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                  <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
+                  <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
+                  <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
+                  <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
+      ) : activeAudience === 'FACULTY' ? (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="py-24 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center"
+        >
+          <div className="w-24 h-24 rounded-3xl bg-[#F8FAFC] border border-[#E5EDF8] flex items-center justify-center mb-8">
+            <Users size={48} className="text-[#A9B1C3]/40" />
           </div>
-
-          {loading ? (
-            <div className="py-24 flex flex-col items-center justify-center gap-5">
-              <div className="w-16 h-16 rounded-full border-4 border-[#224292]/10 border-t-[#ffc107] animate-spin" />
-              <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#224292]/40">Fetching Records...</p>
-            </div>
-          ) : visibleData.length === 0 ? (
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-24 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center group">
-              <div className="w-24 h-24 rounded-3xl bg-[#F8FAFC] border border-[#E5EDF8] flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                <div className="relative">
-                  <Users size={48} className="text-[#A9B1C3]/40" />
-                  <Star size={20} className="absolute -top-1 -right-1 text-[#ffc107] animate-bounce" />
-                </div>
-              </div>
-              <h4 className="text-xl font-bold font-graphik text-[#224292] mb-3">No records found</h4>
-              <p className="text-[#64779F] font-bold font-graphik text-sm">Nothing recorded for this folder yet.</p>
-            </motion.div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <AnimatePresence mode="popLayout">
-                {visibleData.map((item, idx) => {
-                  const isAward = activeSubTab === 'AWARD';
-                  const isStudent = activeAudience === 'STUDENT';
-                  const isRank = !isAward && isStudent && item.type === 'RANK';
-                  const isContest = !isAward && isStudent && item.type === 'CONTEST';
-                  const fileUrl = item.pdf_url || item.image_url;
-
-                  return (
-                    <motion.div key={`${activeAudience}-${item.id}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }} className="bg-white rounded-[2rem] p-7 border border-[#E5EDF8] shadow-sm hover:shadow-xl hover:border-[#224292]/20 transition-all group">
-                      <div className="flex items-start justify-between mb-6 gap-4">
-                        <div className="h-12 w-12 rounded-xl bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-[#ffc107] transition-all shrink-0">
-                          {isAward ? <Award size={22} /> : (activeAudience === 'FACULTY' ? <Users size={22} /> : <Trophy size={22} />)}
-                        </div>
-                        <span className="text-[10px] font-bold font-graphik text-[#64779F] uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-lg">
-                          {item.year || item.academic_year || item.batch || 'Record'}
-                        </span>
-                      </div>
-
-                      <h4 className="text-lg font-bold font-graphik text-[#224292] mb-2 leading-tight">{isAward ? item.award_name : item.description}</h4>
-                      <p className="text-[#64779F] text-sm font-semibold font-graphik italic mb-6 opacity-80">{isStudent ? (isAward ? item.student_name : item.name) : item.faculty_name}</p>
-
-                      {isRank && (
-                        <div className="grid grid-cols-2 gap-3 mb-6">
-                          <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                            <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">Rank</p>
-                            <p className="text-sm font-bold font-graphik text-[#224292]">{item.university_rank}</p>
-                          </div>
-                          <div className="bg-teal-50 p-3 rounded-xl border border-teal-100">
-                            <p className="text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase mb-1">CGPA</p>
-                            <p className="text-sm font-bold font-graphik text-teal-600">{item.cgpa}</p>
-                          </div>
-                        </div>
-                      )}
-
-                      {fileUrl && (
-                        <a href={fileUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-3 bg-[#F8FAFC] border border-[#E5EDF8] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-widest text-[#224292] hover:bg-[#224292] hover:text-white transition-all">
-                          View PDF <ExternalLink size={12} />
-                        </a>
-                      )}
-                    </motion.div>
-                  );
-                })}
-              </AnimatePresence>
-            </div>
-          )}
-        </>
-      )}
+          <h4 className="text-xl font-bold font-graphik text-[#224292] mb-3">No Faculty Records Yet</h4>
+          <p className="text-[#64779F] font-bold font-graphik text-sm">Faculty achievements will be updated soon.</p>
+        </motion.div>
+      ) : null}
     </div>
   );
 }
+
 
 // ─── Innovative Practices Section Component ──────────────────────────────────
 function InnovativePracticesSection({ courseId, courseName }) {
