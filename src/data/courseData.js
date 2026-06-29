@@ -184,6 +184,25 @@ import cseTArunaChristryImage from '../assets/Faculity/cse/Dr.T. ARUNA CHRISTY.w
 import csePGaneshenImage from '../assets/Faculity/cse/Mr.P.GANESHAN.webp'
 import csePavithraGImage from '../assets/Faculity/cse/Mrs.G.PAVITHRA.webp'
 
+// IT Faculty Imports
+import itSachidhanandamImage from '../assets/Faculity/IT/Dr.P.Sachidhanandam, IT.png'
+import itKarthickImage from '../assets/Faculity/IT/Mr. K.Karthick.png'
+import itAyyappanImage from '../assets/Faculity/IT/Mr.R.Ayyappan.png'
+import itDhamodaranImage from '../assets/Faculity/IT/Mr.S.Dhamodaran.png'
+import itBhuvaneshwaranImage from '../assets/Faculity/IT/Mr.T.Bhuvaneshwaran.png'
+import itNandhakumarImage from '../assets/Faculity/IT/Mr.T.Nandhakumar.png'
+import itKalaiselviImage from '../assets/Faculity/IT/Mrs. S Kalaiselvi.png'
+import itArthipriyadharshiniImage from '../assets/Faculity/IT/Mrs.J. Arthipriyadharshini.png'
+import itSarithaImage from '../assets/Faculity/IT/Mrs.J.Saritha.png'
+import itRubighaImage from '../assets/Faculity/IT/Mrs.M.Rubigha.png'
+import itPriyaImage from '../assets/Faculity/IT/Mrs.P.Priya.png'
+import itShyamalaDeviImage from '../assets/Faculity/IT/Mrs.P.Shyamala Devi.png'
+import itSudhaImage from '../assets/Faculity/IT/Mrs.R.V Sudha.png'
+import itLalithambikaiImage from '../assets/Faculity/IT/Mrs.S.Lalithambikai.png'
+import itRajapriyaImage from '../assets/Faculity/IT/Mrs.V.Rajapriya.png'
+import itManjubashiniImage from '../assets/Faculity/IT/Ms.B.Manjubashini.png'
+import itVasanthaKumarImage from '../assets/Faculity/IT/Mr.K.Vasantha kumar.png'
+
 export const courseData = {
   'be-mechanical': {
     name: 'B.E Mechanical Engineering',
@@ -2151,7 +2170,8 @@ export const courseData = {
         specialization: "Computer Networks",
         email: "hod.it@kiot.ac.in",
         publications: "IJ:03, NJ:01, IC:02, NC:04",
-        rating: 5.0
+        rating: 5.0,
+        image: itSachidhanandamImage
       },
       {
         name: "Mrs.R.V.Sudha",
@@ -2163,7 +2183,8 @@ export const courseData = {
         specialization: "Wireless Sensor Network",
         email: "rvscsbs@kiot.ac.in",
         publications: "IJ:02 NJ:07, IC:3",
-        rating: 4.6
+        rating: 4.6,
+        image: itSudhaImage
       },
       {
         name: "Mrs.S.Lalithambikai",
@@ -2175,7 +2196,8 @@ export const courseData = {
         specialization: "Networks",
         email: "slit@kiot.ac.in",
         publications: "IC:1, IJ:1",
-        rating: 4.5
+        rating: 4.5,
+        image: itLalithambikaiImage
       },
       {
         name: "Mr.R.Ayyappan",
@@ -2187,7 +2209,8 @@ export const courseData = {
         specialization: "Computer Networks, Data Structure",
         email: "rait@kiot.ac.in",
         publications: "IJ:00 IC: 01 NC: 00",
-        rating: 4.4
+        rating: 4.4,
+        image: itAyyappanImage
       },
       {
         name: "Mr.S.Dhamodaran",
@@ -2199,7 +2222,8 @@ export const courseData = {
         specialization: "Networks and Cyber Security",
         email: "sdit@kiot.ac.in",
         publications: "NC-1, IJ-2",
-        rating: 4.5
+        rating: 4.5,
+        image: itDhamodaranImage
       },
       {
         name: "B.Manjubashini",
@@ -2211,7 +2235,8 @@ export const courseData = {
         specialization: "Networks",
         email: "bmit@kiot.ac.in",
         publications: "IJ:08 IC: 05 NC: 04",
-        rating: 4.6
+        rating: 4.6,
+        image: itManjubashiniImage
       },
       {
         name: "Mrs.S.Kalaiselvi",
@@ -2223,7 +2248,8 @@ export const courseData = {
         specialization: "Computer Networks",
         email: "skit@kiot.ac.in",
         publications: "IJ:02, NC:02",
-        rating: 4.5
+        rating: 4.5,
+        image: itKalaiselviImage
       },
       {
         name: "Ms.M.Priya",
@@ -2247,7 +2273,8 @@ export const courseData = {
         specialization: "Wireless Networks",
         email: "tbit@kiot.ac.in",
         publications: "IC: 1",
-        rating: 4.3
+        rating: 4.3,
+        image: itBhuvaneshwaranImage
       },
       {
         name: "Mrs.M.Rubigha",
@@ -2259,7 +2286,8 @@ export const courseData = {
         specialization: "DBMS, ML",
         email: "mrit@kiot.ac.in",
         publications: "Nil",
-        rating: 4.2
+        rating: 4.2,
+        image: itRubighaImage
       },
       {
         name: "V.RAJAPRIYA",
@@ -2271,7 +2299,8 @@ export const courseData = {
         specialization: "Networking",
         email: "rvit@kiot.ac.in",
         publications: "Priya",
-        rating: 4.2
+        rating: 4.2,
+        image: itRajapriyaImage
       },
       {
         name: "Mrs.P.Priya",
@@ -2283,7 +2312,8 @@ export const courseData = {
         specialization: "AI",
         email: "ppit@kiot.ac.in",
         publications: "IC: 01 NC: Nil",
-        rating: 4.3
+        rating: 4.3,
+        image: itPriyaImage
       },
       {
         name: "Mrs.J.Arthipriyadharshini",
@@ -2295,7 +2325,8 @@ export const courseData = {
         specialization: "Software Engineering",
         email: "japit@kiot.ac.in",
         publications: "Nil",
-        rating: 4.2
+        rating: 4.2,
+        image: itArthipriyadharshiniImage
       },
       {
         name: "Mr.T.Nandhakumar",
@@ -2307,7 +2338,8 @@ export const courseData = {
         specialization: "IOT, Deep Learning",
         email: "tnit@kiot.ac.in",
         publications: "IJ:04, NJ:00, IC:06, NC:01",
-        rating: 4.8
+        rating: 4.8,
+        image: itNandhakumarImage
       },
       {
         name: "Ms.S.Shobana",
@@ -2379,7 +2411,8 @@ export const courseData = {
         specialization: "Spectroscopy, Ultrasonics",
         email: "psphy@kiot.ac.in",
         publications: "Nil",
-        rating: 4.6
+        rating: 4.6,
+        image: itShyamalaDeviImage
       },
       {
         name: "Mrs.J.Saritha",
@@ -2391,7 +2424,8 @@ export const courseData = {
         specialization: "Algebra",
         email: "jsmat@kiot.ac.in",
         publications: "Nil",
-        rating: 4.6
+        rating: 4.6,
+        image: itSarithaImage
       },
       {
         name: "Mr.J.Saravanan",
@@ -2415,7 +2449,20 @@ export const courseData = {
         specialization: "English Literature",
         email: "kkit@kiot.ac.in",
         publications: "IJ:1, IC:3, NC:1",
-        rating: 4.5
+        rating: 4.5,
+        image: itKarthickImage
+      },
+      {
+        name: "Mr.K.Vasantha kumar",
+        designation: "Assistant Professor",
+        qualification: "M.A., M.Phil.",
+        association: "Regular",
+        experience: "Teaching \u2013 5 Years",
+        specialization: "Tamil Literature",
+        email: "N/A",
+        publications: "-",
+        rating: 4.6,
+        image: itVasanthaKumarImage
       }
     ],
     labs: [{ name: 'Networks Lab', equipment: 'Configurable Routers', icon: Layers }],

@@ -1913,11 +1913,11 @@ export default function CourseDetailPage({ overrides }) {
                           className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
                         >
                           <div
-                            className="w-full aspect-square bg-slate-100 overflow-hidden relative"
+                            className="w-full aspect-[4/5] bg-slate-100 overflow-hidden relative"
                             style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                           >
                             {f.image ? (
-                              <img src={f.image} alt={f.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                              <img src={f.image} alt={f.name} className="w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105" />
                             ) : (
                               <div className="w-full h-full flex items-center justify-center text-slate-300">
                                 <GraduationCap size={44} />
@@ -1958,7 +1958,7 @@ export default function CourseDetailPage({ overrides }) {
                               className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
                             >
                               <div
-                                className="w-full aspect-square bg-slate-100 overflow-hidden relative"
+                                className="w-full aspect-[4/5] bg-slate-100 overflow-hidden relative"
                                 style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                               >
                                 {f.image ? (
