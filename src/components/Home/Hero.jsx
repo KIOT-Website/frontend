@@ -66,45 +66,42 @@ const slides = [
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
-  const [dbBanners, setDbBanners] = useState([])
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+  const [activeSlides, setActiveSlides] = useState(slides)
 
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const res = await fetch(`${API_BASE_URL}/banners/`)
-        if (res.ok) {
-          const data = await res.json()
-          // Only use banners that have a valid media_url loaded
-          const validBanners = data.filter(b => b.media_url)
-          if (validBanners.length > 0) {
-            setDbBanners(validBanners)
+        const apiBaseUrl = import.meta.env.VITE_API_URL || 'https://api.kiot.ac.in'
+        const response = await fetch(`${apiBaseUrl}/banners/`)
+        if (response.ok) {
+          const data = await response.json()
+          if (data && data.length > 0) {
+            const formatted = data.map(banner => ({
+              image: banner.media_url,
+              title: banner.banner_name || "Banner",
+              highlight: "",
+              desc: banner.banner_date || ""
+            }))
+            setActiveSlides(formatted)
           }
         }
-      } catch (e) {
-        console.error("Error fetching homepage banners:", e)
+      } catch (err) {
+        console.error("Failed to fetch homepage banners:", err)
       }
     }
     fetchBanners()
-  }, [API_BASE_URL])
-
-  const activeSlides = dbBanners.length > 0 
-    ? dbBanners.map((b) => ({
-        image: b.media_url,
-        title: b.banner_name || "Institutional Banner",
-        highlight: "",
-        desc: ""
-      }))
-    : slides
+  }, [])
 
   useEffect(() => {
+    if (activeSlides.length <= 1) return
     const timer = setInterval(() => {
       move(1)
     }, 4000)
     return () => clearInterval(timer)
-  }, [current, activeSlides.length])
+  }, [current, activeSlides])
 
   const move = (step) => {
+    if (activeSlides.length === 0) return
     setDirection(step)
     setCurrent((prev) => (prev + step + activeSlides.length) % activeSlides.length)
   }
