@@ -487,7 +487,7 @@ const Footer = () => {
             <div>
               © 2026 Knowledge Institute of Technology. All Rights Reserved.
             </div>
-            <div>
+            <div className="text-white font-medium">
               Powered by <a href="https://tech.kanavu.org/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-white transition-colors">Kanavu Technologies</a> and KIOT
             </div>
           </div>
