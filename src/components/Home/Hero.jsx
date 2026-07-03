@@ -66,7 +66,8 @@ const slides = [
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
-  const [activeSlides, setActiveSlides] = useState(slides)
+  const [activeSlides, setActiveSlides] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchBanners = async () => {
@@ -87,6 +88,8 @@ const Hero = () => {
         }
       } catch (err) {
         console.error("Failed to fetch homepage banners:", err)
+      } finally {
+        setIsLoading(false)
       }
     }
     fetchBanners()
@@ -134,6 +137,14 @@ const Hero = () => {
         opacity: { duration: 0.6 }
       }
     })
+  }
+
+  if (isLoading) {
+    return <div className="w-full h-[140px] sm:h-[430px] lg:h-[600px] xl:h-[650px] bg-slate-50 animate-pulse" />
+  }
+
+  if (activeSlides.length === 0) {
+    return null
   }
 
   return (
