@@ -54,7 +54,7 @@ import ievGowrishankarImg from '../../assets/Faculity/mba iev/Prof.M.Gowrishanka
 import ievSaravananImg from '../../assets/Faculity/mba iev/Prof.S.Saravanan.png'
 import { getDepartmentSchematic } from './DepartmentSchematics'
 
-const API_BASE = 'http://127.0.0.1:8000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const ACHIEVEMENT_DEPARTMENT_OVERRIDES = {
   'be-mechanical': 'B.E. MECHANICAL ENGINEERING',

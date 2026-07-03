@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Trophy, Medal, Award, Clock, FileText, ExternalLink, Loader2, Sparkles, Star, ArrowLeft, Users, ChevronRight } from 'lucide-react'
 
-const API_BASE = 'http://127.0.0.1:8000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const DEPARTMENTS = [
   'B.E. COMPUTER SCIENCE AND ENGINEERING',

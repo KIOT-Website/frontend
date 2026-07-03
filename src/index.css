@@ -402,3 +402,24 @@ html, body {
 .animate-chatbot-pulse {
   animation: chatbotPulse 3s infinite ease-in-out;
 }
+
+/* Table styling inside blog content */
+.prose table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1.5rem 0 !important;
+  table-layout: fixed !important;
+}
+.prose th, .prose td {
+  border: 1px solid #cbd5e1 !important;
+  padding: 0.75rem 1rem !important;
+  text-align: left !important;
+  min-width: 50px !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+.prose th {
+  background-color: #f8fafc !important;
+  font-weight: 700 !important;
+  color: black !important;
+}

@@ -61,7 +61,8 @@ const AutonomousPage = () => {
     useEffect(() => {
         const fetchSchedules = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/curriculum-records/?category=Academic Schedule&department=INSTITUTIONAL')
+                const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+                const response = await fetch(`${apiBase}/curriculum-records/?category=Academic Schedule&department=INSTITUTIONAL`)
                 if (response.ok) {
                     const data = await response.json()
                     setSchedules(data)
