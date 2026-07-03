@@ -121,7 +121,7 @@ const ExamSchedulesPage = () => {
                                                             <FileText size={16} />
                                                         </div>
                                                         <span className="font-semibold text-[#333333] text-[14px] tracking-wide uppercase leading-[28.8px] max-w-sm">
-                                                            {item.batch || (item.title && item.title.includes(' - ') ? item.title.split(' - ')[1] : item.title)}
+                                                            {item.batch || (item.title && item.title.includes(' - ') ? item.title.substring(item.title.indexOf(' - ') + 3) : item.title)}
                                                         </span>
                                                     </div>
                                                 </td>
@@ -195,7 +195,7 @@ const ExamSchedulesPage = () => {
                                                             <FileText size={16} />
                                                         </div>
                                                         <span className="font-semibold text-[#333333] text-[14px] tracking-wide uppercase leading-[28.8px] max-w-sm">
-                                                            {item.batch || (item.title && item.title.includes(' - ') ? item.title.split(' - ')[1] : item.title)}
+                                                            {item.batch || (item.title && item.title.includes(' - ') ? item.title.substring(item.title.indexOf(' - ') + 3) : item.title)}
                                                         </span>
                                                     </div>
                                                 </td>
