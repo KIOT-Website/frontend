@@ -53,7 +53,6 @@ export default function IQACPage() {
              <thead>
                 <tr className="border-b border-white/10">
                    <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Academic Year</th>
-                   <th className="py-4 text-[13px] font-black uppercase text-[#ffc107]">Report Title</th>
                    <th className="py-4 text-[13px] font-black uppercase text-[#ffc107] text-right">Action</th>
                 </tr>
              </thead>
@@ -61,7 +60,6 @@ export default function IQACPage() {
                 {aaaRecords.map((row) => (
                   <tr key={row.id} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
                      <td className="py-4 text-[14px] font-bold">{row.academic_year}</td>
-                     <td className="py-4 text-[14px] text-white">{row.report_title}</td>
                      <td className="py-4 text-right">
                         <a 
                           href={row.pdf_url} 
@@ -76,7 +74,7 @@ export default function IQACPage() {
                 ))}
                 {!loading && aaaRecords.length === 0 && (
                   <tr>
-                    <td colSpan="3" className="py-8 text-center text-white text-xs uppercase font-bold tracking-widest">No AAA reports found</td>
+                    <td colSpan="2" className="py-8 text-center text-white text-xs uppercase font-bold tracking-widest">No AAA reports found</td>
                   </tr>
                 )}
              </tbody>
