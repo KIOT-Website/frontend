@@ -114,6 +114,7 @@ const PageLoader = () => (
 
 function App() {
   const [loading, setLoading] = useState(true)
+  const [layoutMounted, setLayoutMounted] = useState(false)
   const location = useLocation()
   
   const { scrollYProgress } = useScroll()
@@ -140,13 +141,22 @@ function App() {
   }
 
   useEffect(() => {
-    if (loading) {
+    if (!loading) {
+      const timer = setTimeout(() => {
+        setLayoutMounted(true)
+      }, 800) // Match the 0.8s preloader exit transition
+      return () => clearTimeout(timer)
+    }
+  }, [loading])
+
+  useEffect(() => {
+    if (!layoutMounted) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
     }
     return () => { document.body.style.overflow = '' }
-  }, [loading])
+  }, [layoutMounted])
 
   useEffect(() => {
     // Force documentElement to visible overflow to prevent scroll-locking issues
@@ -730,7 +740,7 @@ function App() {
         {loading && <Preloader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
 
-      {!loading && (
+      {layoutMounted && (
         <motion.div
            initial={{ opacity: 0 }}
            animate={{ opacity: 1 }}
