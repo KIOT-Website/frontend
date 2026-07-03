@@ -57,11 +57,11 @@ Because PM2 will serve the frontend panel on Port 3001 internally, Nginx must be
    sudo nano /etc/nginx/sites-available/kiot-frontend
    ```
 
-2. **Add the following configuration** (replace `kiot.ac.in` and `www.kiot.ac.in` with your domains):
+2. **Add the following configuration** (replace `beta.kiot.ac.in` with your domain):
    ```nginx
    server {
        listen 80;
-       server_name kiot.ac.in www.kiot.ac.in;
+       server_name beta.kiot.ac.in;
 
        location / {
            proxy_pass http://127.0.0.1:3001;
@@ -88,14 +88,13 @@ Because PM2 will serve the frontend panel on Port 3001 internally, Nginx must be
 ## Step 5: Configure DNS and SSL (HTTPS) with Let's Encrypt
 
 1. **DNS Setup**:
-   Go to your DNS provider (e.g., Cloudflare, Route 53, GoDaddy) and add **A Records**:
-   - **Name**: `@` (or `kiot.ac.in`) pointing to your EC2 Public IP.
-   - **Name**: `www` (or `www.kiot.ac.in`) pointing to your EC2 Public IP.
+   Go to your DNS provider (e.g., Cloudflare, Route 53, GoDaddy) and add an **A Record**:
+   - **Name**: `beta` (or `beta.kiot.ac.in`) pointing to your EC2 Public IP.
 
 2. **Generate SSL Certificate**:
    On your EC2 instance, request and install the SSL certificate:
    ```bash
-   sudo certbot --nginx -d kiot.ac.in -d www.kiot.ac.in
+   sudo certbot --nginx -d beta.kiot.ac.in
    ```
    - Agree to the terms and enter your email.
    - When asked to redirect HTTP traffic to HTTPS, select **Redirect** (option `2`).
