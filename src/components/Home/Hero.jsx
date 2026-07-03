@@ -66,17 +66,47 @@ const slides = [
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
+  const [dbBanners, setDbBanners] = useState([])
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+
+  useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/banners/`)
+        if (res.ok) {
+          const data = await res.json()
+          // Only use banners that have a valid media_url loaded
+          const validBanners = data.filter(b => b.media_url)
+          if (validBanners.length > 0) {
+            setDbBanners(validBanners)
+          }
+        }
+      } catch (e) {
+        console.error("Error fetching homepage banners:", e)
+      }
+    }
+    fetchBanners()
+  }, [API_BASE_URL])
+
+  const activeSlides = dbBanners.length > 0 
+    ? dbBanners.map((b) => ({
+        image: b.media_url,
+        title: b.banner_name || "Institutional Banner",
+        highlight: "",
+        desc: ""
+      }))
+    : slides
 
   useEffect(() => {
     const timer = setInterval(() => {
       move(1)
     }, 4000)
     return () => clearInterval(timer)
-  }, [current])
+  }, [current, activeSlides.length])
 
   const move = (step) => {
     setDirection(step)
-    setCurrent((prev) => (prev + step + slides.length) % slides.length)
+    setCurrent((prev) => (prev + step + activeSlides.length) % activeSlides.length)
   }
 
   const variants = {
@@ -126,8 +156,8 @@ const Hero = () => {
           >
             {/* Using object-fill to ensure all text/content in banner images is visible at any resolution */}
             <img 
-              src={slides[current].image} 
-              alt={slides[current].title + " - " + slides[current].highlight} 
+              src={activeSlides[current].image} 
+              alt={activeSlides[current].title + " - " + activeSlides[current].highlight} 
               className="w-full h-full object-fill"
               loading="eager"
             />
