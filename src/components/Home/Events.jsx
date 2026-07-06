@@ -1,32 +1,267 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Calendar, Mic2, Brain, Megaphone, ArrowRight, Timer, Loader2, ChevronRight, MapPin } from 'lucide-react'
+import { Calendar, Clock, MapPin, Award, ArrowRight, X, Loader2 } from 'lucide-react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
-const Events = ({ onEventsClick }) => {
+// ─── Config ───────────────────────────────────────────────────────────────────
+
+const STATUS_CONFIG = {
+  upcoming:  { label: "Upcoming",  color: "text-sky-600",    border: "border-sky-200",     bg: "bg-sky-50",    dotColor: "bg-sky-500"    },
+  ongoing:   { label: "Live Now",  color: "text-green-600",  border: "border-green-200",   bg: "bg-green-50",  dotColor: "bg-green-500"  },
+  completed: { label: "Completed", color: "text-slate-500",  border: "border-slate-200",   bg: "bg-slate-50",  dotColor: "bg-slate-400"  },
+};
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
+
+function formatDate(d) {
+  try {
+    return new Date(d).toLocaleDateString("en-IN", {
+      day: "numeric", month: "long", year: "numeric",
+    });
+  } catch (e) {
+    return d;
+  }
+}
+
+function formatDateShort(d) {
+  try {
+    return new Date(d).toLocaleDateString("en-IN", {
+      day: "numeric", month: "short",
+    });
+  } catch (e) {
+    return d;
+  }
+}
+
+// ─── Badges ──────────────────────────────────────────────────
+
+function StatusBadge({ status }) {
+  const c = STATUS_CONFIG[status];
+  return (
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-black border ${c.bg} ${c.border} ${c.color} tracking-wide`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${c.dotColor} ${status === 'ongoing' ? 'animate-pulse' : ''}`} />
+      {c.label}
+    </span>
+  );
+}
+
+// ─── EventCard ────────────────────────────────────────────────────────────────
+
+function EventCard({ event, onOpen }) {
+  const isPast = event.status === "completed";
+
+  return (
+    <motion.article
+      layout
+      initial={{ opacity: 0, scale: 0.97 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.96 }}
+      whileHover={!isPast ? { y: -5 } : {}}
+      transition={{ duration: 0.25 }}
+      onClick={onOpen}
+      className={`group relative bg-white border border-[#ffc107]/30 hover:border-[#ffc107]/60 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${!isPast ? 'hover:shadow-xl' : ''}`}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && onOpen()}
+    >
+      {/* Black fade overlay for past events */}
+      {isPast && (
+        <div className="absolute inset-0 bg-black/50 z-20 pointer-events-none flex items-center justify-center transition-all duration-300 group-hover:bg-black/45">
+          <span className="bg-black/60 text-white border border-white/20 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
+            Completed
+          </span>
+        </div>
+      )}
+
+      {/* Image */}
+      <div className="relative h-48 overflow-hidden bg-slate-100">
+        <img
+          src={event.image || 'https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800'}
+          alt={event.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+
+        {/* Date Overlay */}
+        <div className="absolute bottom-3 left-3 z-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#224292] text-white text-[10px] font-black uppercase tracking-wider rounded-lg shadow-md border border-white/10">
+            <Calendar size={12} />
+            {formatDateShort(event.date)}
+          </div>
+        </div>
+
+        {/* Status Badge - only displayed if NOT past */}
+        {!isPast && (
+          <div className="absolute top-3 right-3 z-10">
+            <StatusBadge status={event.status} />
+          </div>
+        )}
+      </div>
+
+      {/* Body */}
+      <div className="p-5 flex flex-col min-h-[150px]">
+        <h3
+          className="text-[#224292] font-semibold text-[15px] leading-snug mb-4 group-hover:text-[#ffc107] transition-colors line-clamp-2"
+        >
+          {event.title}
+        </h3>
+        
+        {/* Bottom Location and View More */}
+        <div className="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
+          <div className="flex items-center gap-1.5 text-slate-500 font-medium truncate max-w-[180px]">
+            <MapPin size={12} className="text-[#224292]/70 flex-shrink-0" />
+            <span className="text-xs font-semibold truncate">{event.venue || 'Main Campus'}</span>
+          </div>
+          <button
+            onClick={(e) => { e.stopPropagation(); onOpen(); }}
+            className="text-[10px] font-black text-[#224292] uppercase tracking-widest hover:text-[#ffc107] transition-colors flex items-center gap-1 group/btn flex-shrink-0"
+          >
+            View More
+            <ArrowRight size={10} className="group-hover/btn:translate-x-0.5 transition-transform" />
+          </button>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
+// ─── EventModal ───────────────────────────────────────────────────────────────
+
+function EventModal({ event, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[1000] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.94, y: 16 }}
+        transition={{ duration: 0.3 }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative bg-white border border-slate-100 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl"
+        role="dialog"
+        aria-modal="true"
+        style={{ scrollbarWidth: "none" }}
+      >
+        {/* Hero image */}
+        <div className="relative h-56 overflow-hidden rounded-t-2xl bg-slate-100">
+          <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+            <StatusBadge status={event.status} />
+          </div>
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 border border-white/20 flex items-center justify-center text-white transition-all backdrop-blur-sm"
+          >
+            <X size={14} />
+          </button>
+        </div>
+
+        <div className="p-6 space-y-6">
+          {/* Title */}
+          <div>
+            <h2 className="text-2xl font-semibold text-[#224292] mb-2 leading-snug">
+              {event.title}
+            </h2>
+            <p className="text-slate-600 text-sm leading-relaxed whitespace-pre-wrap">{event.description}</p>
+          </div>
+
+          {/* Details grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { Icon: Calendar, label: "Date", val: formatDate(event.date) + (event.endDate ? ` – ${formatDate(event.endDate)}` : "") },
+              { Icon: MapPin,   label: "Venue", val: event.venue || 'Main Campus Auditorium' },
+            ].map(({ Icon, label, val }) => (
+              <div key={label} className="bg-slate-50 border border-slate-100/50 rounded-xl p-3 flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#224292]/5 flex items-center justify-center flex-shrink-0 text-[#224292]">
+                  <Icon size={14} />
+                </div>
+                <div>
+                  <span className="text-[9px] text-slate-400 uppercase tracking-widest font-black block mb-0.5">{label}</span>
+                  <span className="text-xs text-[#224292] font-semibold">{val}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+// ─── Main Component ────────────────────────────────────────────────────────────
+
+const Events = () => {
   const [dbEvents, setDbEvents] = useState([])
   const [loading, setLoading] = useState(true)
+  const [selectedEvent, setSelectedEvent] = useState(null)
+
+  const getEventStatus = (eventDate, endDate) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const start = new Date(eventDate);
+    start.setHours(0, 0, 0, 0);
+    
+    const end = endDate ? new Date(endDate) : start;
+    end.setHours(0, 0, 0, 0);
+    
+    if (today >= start && today <= end) {
+      return "ongoing";
+    } else if (today > end) {
+      return "completed";
+    } else {
+      return "upcoming";
+    }
+  }
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const res = await axios.get(`${API_BASE_URL}/events/`)
-        const today = new Date()
-        today.setHours(0, 0, 0, 0)
-        
         const items = Array.isArray(res.data) ? res.data : []
-        const activeEvents = items.filter(e => {
-          if (!e.event_date) return false
-          const eDate = new Date(e.event_date)
-          eDate.setHours(0, 0, 0, 0)
-          return eDate >= today
+        const mapped = items.map(e => {
+          const status = getEventStatus(e.event_date, e.end_date);
+          return {
+            id: e.id,
+            title: e.event_name,
+            subtitle: e.short_description || "",
+            date: e.event_date,
+            endDate: e.end_date || undefined,
+            time: e.event_time || "09:00 AM",
+            venue: e.venue || "Main Campus",
+            status: status,
+            image: e.media_url || "",
+            description: e.short_description || "",
+          }
         })
+
+        // Sort: upcoming & ongoing first (ascending by date), then completed (descending by date)
+        const upcoming = mapped.filter(e => e.status !== "completed").sort((a, b) => new Date(a.date) - new Date(b.date));
+        const completed = mapped.filter(e => e.status === "completed").sort((a, b) => new Date(b.date) - new Date(a.date));
         
-        const sorted = activeEvents.sort((a, b) => new Date(a.event_date) - new Date(b.event_date))
-        setDbEvents(sorted.slice(0, 3))
+        const sorted = [...upcoming, ...completed];
+        setDbEvents(sorted.slice(0, 3)); // Display top 3 events on homepage
       } catch (err) {
         console.error("Failed to fetch events:", err)
       } finally {
@@ -36,40 +271,19 @@ const Events = ({ onEventsClick }) => {
     fetchEvents()
   }, [])
 
-  const formatDate = (dateStr) => {
-    try {
-      const date = new Date(dateStr)
-      return date.toLocaleDateString('en-US', {
-        month: 'short',
-        day: '2-digit',
-        year: 'numeric'
-      })
-    } catch (e) {
-      return dateStr
-    }
-  }
+  // Check if there are any active (upcoming/ongoing) events at all
+  const activeEventsCount = useMemo(() => {
+    return dbEvents.filter(e => e.status === "upcoming" || e.status === "ongoing").length;
+  }, [dbEvents]);
 
-
-
-  const records = dbEvents
-
-  const slugify = (text) => {
-    return text.toString().toLowerCase()
-      .replace(/\s+/g, '-')           // Replace spaces with -
-      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-      .replace(/^-+/, '')             // Trim - from start of text
-      .replace(/-+$/, '');            // Trim - from end of text
-  }
-
-  if (!loading && records.length === 0) return null;
+  // Hide the section completely from the homepage if no upcoming/ongoing events exist
+  if (!loading && activeEventsCount === 0) return null;
 
   return (
-    <section id="events" className="relative py-2 lg:py-4 bg-[#FCFDFD] overflow-hidden">
-      
+    <section id="events" className="relative pt-6 pb-2 bg-[#FCFDFD] overflow-hidden font-sans">
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
-        {/* Centered Header Section */}
+        {/* Centered Header */}
         <div className="text-center mb-8 lg:mb-10 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,99 +292,56 @@ const Events = ({ onEventsClick }) => {
             className="flex flex-col items-center"
           >
             <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
-              Recent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] to-[#e0a800]">Events</span>
+              What's <span className="text-[#ffc107]">Happening</span> on Campus
             </h2>
-            
             <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mt-4 rounded-full" />
           </motion.div>
         </div>
 
-        {/* CARD GRID LAYOUT */}
+        {/* Events Grid */}
         <div className="max-w-7xl mx-auto">
-           {loading ? (
-             <div className="flex flex-col items-center justify-center py-16 opacity-30">
-                <Loader2 size={48} className="animate-spin text-[#224292] mb-6" />
-                <p className="text-xs font-black uppercase tracking-[0.4em] text-[#224292]">Fetching Latest Buzz...</p>
-             </div>
-           ) : (
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {records.map((event, idx) => (
-                  <motion.div
-                    key={event.id}
-                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link 
-                      to={`/events/${slugify(event.event_name)}`} 
-                      state={{ from: 'home', eventId: event.id }}
-                      className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-[0_15px_40px_rgba(34,66,146,0.04)] hover:shadow-[0_40px_80px_rgba(34,66,146,0.12)] hover:border-[#ffc107]/20 transition-all duration-700 h-full active:scale-[0.98]"
-                    >
-                       {/* Image with Integrated Date Badge */}
-                       <div className="relative overflow-hidden" style={{aspectRatio: '16/8'}}>
-                          <img 
-                            src={event.media_url || 'https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800'} 
-                            alt={event.event_name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity" />
-                          
-                          {/* Kongu-Style Date Badge (Bottom Left) */}
-                          <div className="absolute bottom-6 left-6 z-20">
-                             <div className="inline-flex items-center gap-3 px-5 py-2 bg-[#ffc107] rounded-full shadow-[0_10px_30px_rgba(255,193,7,0.3)] border-2 border-white/20">
-                                <span className="text-[10px] font-black text-[#224292] uppercase tracking-widest">
-                                  {formatDate(event.event_date).split(' ')[0]} {formatDate(event.event_date).split(' ')[1].replace(',', '')}, {formatDate(event.event_date).split(' ')[2]}
-                                </span>
-                             </div>
-                          </div>
-                       </div>
+          {loading ? (
+            <div className="flex flex-col items-center justify-center py-20 opacity-30">
+              <Loader2 size={40} className="animate-spin text-[#224292] mb-4" />
+              <p className="text-xs font-black uppercase tracking-widest text-[#224292]">Fetching Latest Buzz...</p>
+            </div>
+          ) : (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <AnimatePresence mode="popLayout">
+                  {dbEvents.map((event) => (
+                    <EventCard key={event.id} event={event} onOpen={() => setSelectedEvent(event)} />
+                  ))}
+                </AnimatePresence>
+              </div>
 
-                        {/* Event Details and Venue - Premium Design */}
-                        <div className="p-6 flex flex-col flex-grow">
-                           <div className="flex items-center gap-2 mb-3">
-                              <span className="inline-block px-3 py-1 bg-green-500/10 text-green-600 text-[9px] font-black uppercase tracking-wider rounded-full">
-                                 Upcoming Event
-                              </span>
-                              {event.venue && (
-                                 <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate max-w-[180px]">
-                                    <MapPin size={10} /> {event.venue}
-                                 </span>
-                              )}
-                           </div>
-                           <h3 className="text-lg lg:text-xl font-semibold text-[#224292] group-hover:text-[#ffc107] transition-colors duration-500 leading-snug mb-3">
-                             {event.event_name}
-                           </h3>
-                           <p className="text-[12px] text-slate-500 line-clamp-2 mt-auto font-medium">
-                              {event.short_description}
-                           </p>
-                        </div>
-                    </Link>
-                  </motion.div>
-                ))}
-             </div>
-           )}
-        </div>
-
-        {/* View All Button - Centered at Bottom */}
-        {!loading && records.length > 0 && (
-           <motion.div 
-             initial={{ opacity: 0, y: 30 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ delay: 0.3 }}
-             className="text-center mt-8"
-           >
-              <Link 
-                to="/events"
-                className="group relative inline-flex items-center gap-3 px-6 py-3 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
+              {/* View All Button */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-center mt-10"
               >
-                 <span className="text-white">View All Events</span>
-                 <ArrowRight size={14} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
-              </Link>
-           </motion.div>
-        )}
+                <Link 
+                  to="/events"
+                  className="group relative inline-flex items-center gap-3 px-6 py-3 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
+                >
+                  <span className="text-white">View All Events</span>
+                  <ArrowRight size={14} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
+                </Link>
+              </motion.div>
+            </>
+          )}
+        </div>
       </div>
+
+      {/* Pop-up Modal */}
+      <AnimatePresence>
+        {selectedEvent && (
+          <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+        )}
+      </AnimatePresence>
     </section>
   )
 }
