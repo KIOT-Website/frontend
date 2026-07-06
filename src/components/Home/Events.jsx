@@ -14,8 +14,18 @@ const Events = ({ onEventsClick }) => {
     const fetchEvents = async () => {
       try {
         const res = await axios.get(`${API_BASE_URL}/events/`)
-        // Sort by date descending and take top 3 for home page
-        const sorted = res.data.sort((a, b) => new Date(b.event_date) - new Date(a.event_date))
+        const today = new Date()
+        today.setHours(0, 0, 0, 0)
+        
+        const items = Array.isArray(res.data) ? res.data : []
+        const activeEvents = items.filter(e => {
+          if (!e.event_date) return false
+          const eDate = new Date(e.event_date)
+          eDate.setHours(0, 0, 0, 0)
+          return eDate >= today
+        })
+        
+        const sorted = activeEvents.sort((a, b) => new Date(a.event_date) - new Date(b.event_date))
         setDbEvents(sorted.slice(0, 3))
       } catch (err) {
         console.error("Failed to fetch events:", err)
@@ -55,7 +65,7 @@ const Events = ({ onEventsClick }) => {
   if (!loading && records.length === 0) return null;
 
   return (
-    <section id="events" className="relative py-6 lg:py-10 bg-[#FCFDFD] overflow-hidden">
+    <section id="events" className="relative py-2 lg:py-4 bg-[#FCFDFD] overflow-hidden">
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
@@ -116,12 +126,25 @@ const Events = ({ onEventsClick }) => {
                           </div>
                        </div>
 
-                       {/* Event Title Below Image - Reduced Padding */}
-                       <div className="p-4 flex flex-grow items-center">
-                          <h3 className="text-lg lg:text-xl font-semibold text-[#224292] group-hover:text-[#ffc107] transition-colors duration-500 leading-tight">
-                            {event.event_name}
-                          </h3>
-                       </div>
+                        {/* Event Details and Venue - Premium Design */}
+                        <div className="p-6 flex flex-col flex-grow">
+                           <div className="flex items-center gap-2 mb-3">
+                              <span className="inline-block px-3 py-1 bg-green-500/10 text-green-600 text-[9px] font-black uppercase tracking-wider rounded-full">
+                                 Upcoming Event
+                              </span>
+                              {event.venue && (
+                                 <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate max-w-[180px]">
+                                    <MapPin size={10} /> {event.venue}
+                                 </span>
+                              )}
+                           </div>
+                           <h3 className="text-lg lg:text-xl font-semibold text-[#224292] group-hover:text-[#ffc107] transition-colors duration-500 leading-snug mb-3">
+                             {event.event_name}
+                           </h3>
+                           <p className="text-[12px] text-slate-500 line-clamp-2 mt-auto font-medium">
+                              {event.short_description}
+                           </p>
+                        </div>
                     </Link>
                   </motion.div>
                 ))}

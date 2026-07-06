@@ -142,53 +142,20 @@ const EventDetailPage = () => {
                 </div>
 
                 {/* Description */}
-                <div className="space-y-8 mb-20">
+                <div className="space-y-8 mb-16">
                     <div className="flex items-center gap-4">
                         <h3 className="text-sm font-black text-[#224292] uppercase tracking-[0.3em]">Brief Description</h3>
                         <div className="flex-1 h-px bg-slate-100" />
                     </div>
                     <div className="prose prose-slate max-w-none">
-                        <p className="text-lg lg:text-xl font-medium text-black leading-relaxed italic border-l-4 border-[#ffc107] pl-8 py-2 bg-slate-50/50 pr-4 rounded-r-2xl">
+                        <p className="text-lg lg:text-xl font-medium text-black leading-relaxed italic border-l-4 border-[#ffc107] pl-8 py-4 bg-slate-50/50 pr-4 rounded-r-2xl">
                             {event.short_description}
                         </p>
                     </div>
                 </div>
 
-                {/* Contact Section - Removed Register Now */}
-                <div className="p-10 lg:p-14 bg-[#224292] rounded-[3rem] text-white relative overflow-hidden group shadow-2xl">
-                    <div className="absolute top-0 right-0 w-48 h-48 bg-white/[0.03] rounded-bl-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-700" />
-                    
-                    <h4 className="text-2xl font-black font-display mb-8 tracking-tight flex items-center gap-3">
-                        Reach Out <span className="text-[#ffc107]">For Details</span>
-                    </h4>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-                        <div className="flex items-center gap-5 group/item">
-                            <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#ffc107] group-hover/item:bg-[#ffc107] group-hover/item:text-[#224292] transition-all">
-                                <Phone size={20} />
-                            </div>
-                            <div>
-                                <span className="text-[8px] font-black uppercase tracking-widest text-white/50 block mb-1">Helpline</span>
-                                <p className="text-sm font-black tracking-widest">+91 427 243 3900</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-5 group/item">
-                            <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#ffc107] group-hover/item:bg-[#ffc107] group-hover/item:text-[#224292] transition-all">
-                                <Mail size={20} />
-                            </div>
-                            <div>
-                                <span className="text-[8px] font-black uppercase tracking-widest text-white/50 block mb-1">Inquiry</span>
-                                <p className="text-sm font-black tracking-widest lowercase">info@kiot.ac.in</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="mt-12 pt-8 border-t border-white/10">
-                        <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] text-center md:text-left">
-                            Please contact the event coordinator for specific registration requirements and guidelines.
-                        </p>
-                    </div>
-                </div>
+                {/* Nice Bottom Accent Divider */}
+                <div className="w-full h-px bg-slate-100 mt-16 mb-8" />
 
             </div>
         </motion.div>

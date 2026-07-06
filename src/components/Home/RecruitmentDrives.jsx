@@ -26,8 +26,19 @@ const RecruitmentDrives = () => {
                     serial_number: p.serial_number || 999
                 }))
                 
-                const sorted = mapped.sort((a, b) => a.serial_number - b.serial_number)
-                setDrives(sorted.slice(0, 2)) // Limit to 2 posters as requested
+                const sorted = mapped.sort((a, b) => b.id - a.id)
+                
+                const today = new Date()
+                today.setHours(0, 0, 0, 0)
+                
+                const activeDrives = sorted.filter(drive => {
+                    if (!drive.drive_date) return true
+                    const driveDate = new Date(drive.drive_date)
+                    driveDate.setHours(0, 0, 0, 0)
+                    return driveDate >= today
+                })
+                
+                setDrives(activeDrives.slice(0, 3)) // Limit to 3 posters as requested
             } catch (err) {
                 console.error("Failed to fetch recruitment drives from posters:", err)
                 setDrives([]) 
@@ -45,7 +56,7 @@ const RecruitmentDrives = () => {
     if (!loading && displayDrives.length === 0) return null;
 
     return (
-        <section id="recruitment-drives" className="relative py-4 lg:py-6 bg-white overflow-hidden font-sans">
+        <section id="recruitment-drives" className="relative py-2 lg:py-4 bg-white overflow-hidden font-sans">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-[#224292]/[0.02] rounded-full blur-[100px]" />
                 <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-[#ffc107]/[0.03] rounded-full blur-[100px]" />
@@ -72,7 +83,7 @@ const RecruitmentDrives = () => {
                         <p className="text-[10px] font-black uppercase tracking-widest">Loading Opportunities...</p>
                     </div>
                 ) : (
-                    <div className="flex flex-wrap lg:flex-nowrap justify-center gap-8 lg:gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 justify-items-center">
                         {displayDrives.map((drive, idx) => (
                             <motion.div
                                 key={drive.id}
@@ -81,7 +92,7 @@ const RecruitmentDrives = () => {
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.7, delay: idx * 0.2, ease: [0.22, 1, 0.36, 1] }}
                                 onClick={() => setSelectedPoster(drive)}
-                                className="w-full md:w-[450px] group relative bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                                className="w-full max-w-[380px] group relative bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 cursor-pointer"
                             >
                                 <div className="aspect-[3/4] relative overflow-hidden bg-slate-50 flex items-center justify-center">
                                     {drive.media_url ? (
