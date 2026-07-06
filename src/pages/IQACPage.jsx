@@ -38,6 +38,7 @@ export default function IQACPage() {
 
   // Helper to group MoM by year
   const groupedMom = momRecords.reduce((acc, curr) => {
+    if (!curr.pdf_url) return acc
     if (!acc[curr.academic_year]) {
       acc[curr.academic_year] = []
     }
@@ -57,7 +58,7 @@ export default function IQACPage() {
                 </tr>
              </thead>
              <tbody>
-                {aaaRecords.map((row) => (
+                {aaaRecords.filter(row => row.pdf_url).map((row) => (
                   <tr key={row.id} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
                      <td className="py-4 text-[14px] font-bold">{row.academic_year}</td>
                      <td className="py-4 text-right">
@@ -65,9 +66,9 @@ export default function IQACPage() {
                           href={row.pdf_url} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className={`inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all ${!row.pdf_url && 'opacity-50 pointer-events-none'}`}
+                          className="inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all"
                         >
-                           {row.pdf_url ? 'View' : 'Processing'} <ExternalLink size={14} />
+                           View <ExternalLink size={14} />
                         </a>
                      </td>
                   </tr>
@@ -91,7 +92,7 @@ export default function IQACPage() {
                 </tr>
              </thead>
              <tbody>
-                {financialRecords.map((row) => (
+                {financialRecords.filter(row => row.pdf_url).map((row) => (
                   <tr key={row.id} className="border-b border-white/5 group hover:bg-white/5 transition-colors">
                      <td className="py-4 text-[14px] font-bold">{row.academic_year}</td>
                      <td className="py-4 text-[14px] text-white">{row.particulars}</td>
@@ -100,9 +101,9 @@ export default function IQACPage() {
                           href={row.pdf_url} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          className={`inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all ${!row.pdf_url && 'opacity-50 pointer-events-none'}`}
+                          className="inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all"
                         >
-                           {row.pdf_url ? 'View' : 'Processing'} <ExternalLink size={14} />
+                           View <ExternalLink size={14} />
                         </a>
                      </td>
                   </tr>
@@ -139,9 +140,9 @@ export default function IQACPage() {
                             href={meeting.pdf_url} 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className={`inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all ${!meeting.pdf_url && 'opacity-50 pointer-events-none'}`}
+                            className="inline-flex items-center gap-2 bg-[#ffc107]/10 text-white border border-[#ffc107]/30 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] transition-all"
                           >
-                            {meeting.pdf_url ? 'View' : 'Processing'} <ExternalLink size={14} />
+                            View <ExternalLink size={14} />
                           </a>
                         </td>
                       </tr>

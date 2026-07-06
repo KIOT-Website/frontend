@@ -5,7 +5,7 @@ import {
   ChevronLeft, GraduationCap, Building2, Users, BookOpen,
   MapPin, Clock, Calendar, Award, CheckCircle2, ChevronRight,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
-  Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase, ExternalLink,
+  Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase,
   Microscope, Star, Globe, ShieldCheck, ArrowRight, Quote
 } from 'lucide-react';
 import facultyBg from '../../assets/Faculity/background faculty.webp';
@@ -3700,16 +3700,7 @@ function CurriculumSection({ courseId, courseName }) {
                       </td>
                     )}
                     <td className="px-5 py-3.5 text-right">
-                      <div className="flex items-center justify-end gap-3">
-                        <a
-                          href={item.pdf_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2.5 rounded-xl bg-blue-50 text-[#224292] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95"
-                          title="View Document"
-                        >
-                          <ExternalLink size={16} />
-                        </a>
+                      <div className="flex items-center justify-end">
                         <button
                           onClick={() => {
                             const downloadUrl = item.pdf_url.includes('/upload/')
@@ -3762,15 +3753,7 @@ function CurriculumSection({ courseId, courseName }) {
                       SEM - {item.semester}
                     </span>
                   )}
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={item.pdf_url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 bg-blue-50 text-[#224292] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider"
-                    >
-                      View <ExternalLink size={14} />
-                    </a>
+                  <div className="flex items-center">
                     <button
                       onClick={() => {
                         const downloadUrl = item.pdf_url.includes('/upload/') ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/') : item.pdf_url;

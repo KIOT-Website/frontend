@@ -83,24 +83,15 @@ const PlacementDetailsYearSection = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="flex items-center gap-2">
-                  <a
-                    href={record.pdf_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ backgroundColor: '#ffc107', color: '#224292' }}
-                    onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#224292'; e.currentTarget.style.color = '#ffc107' }}
-                    onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#ffc107'; e.currentTarget.style.color = '#224292' }}
-                    className="flex items-center gap-2 px-5 py-2.5 text-[10px] font-medium uppercase tracking-widest rounded-xl transition-all active:scale-95 shadow-sm"
-                  >
-                    View
-                  </a>
+                <div className="flex items-center">
                   <a
                     href={record.pdf_url?.replace('/upload/', '/upload/fl_attachment/')}
-                    className="p-2.5 bg-slate-50 border border-slate-100 text-slate-400 hover:text-[#224292] hover:border-[#224292]/20 rounded-xl transition-all"
-                    title="Download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#224292] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95 shadow-sm"
+                    title="Download Report"
                   >
-                    <Download size={15} />
+                    <Download size={16} />
                   </a>
                 </div>
               </motion.div>

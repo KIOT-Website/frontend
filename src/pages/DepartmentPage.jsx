@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, FileText, Download, Building2, AlertCircle, ArrowRight } from 'lucide-react'
+import { ArrowLeft, FileText, Download, Building2, AlertCircle } from 'lucide-react'
 import { courseData } from '../data/courseData'
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
@@ -152,24 +152,15 @@ const DepartmentPage = () => {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center">
                       <a
-                        href={record.pdf_url}
+                        href={record.pdf_url?.replace('/upload/', '/upload/fl_attachment/')}
                         target="_blank"
                         rel="noreferrer"
-                        style={{ backgroundColor: '#ffc107', color: '#224292' }}
-                        onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#224292'; e.currentTarget.style.color = '#ffc107' }}
-                        onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#ffc107'; e.currentTarget.style.color = '#224292' }}
-                        className="flex items-center gap-2 px-5 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-xl transition-all active:scale-95 shadow-sm"
+                        className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#224292] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95 shadow-sm"
+                        title="Download Report"
                       >
-                        View <ArrowRight size={13} />
-                      </a>
-                      <a
-                        href={record.pdf_url.replace('/upload/', '/upload/fl_attachment/')}
-                        className="p-2.5 bg-slate-50 border border-slate-100 text-slate-400 hover:text-[#224292] hover:border-[#224292]/20 rounded-xl transition-all"
-                        title="Download"
-                      >
-                        <Download size={15} />
+                        <Download size={16} />
                       </a>
                     </div>
                   </motion.div>
