@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import brochurePdf from '../../assets/KIOT Brochure 2026 copy.pdf'
+import prospectsPdf from '../../assets/KIOT Prospects MAY 2026 .pdf'
 
 const AnimatedCounter = ({ to, duration = 1.5, decimals = 0 }) => {
   const ref = useRef(null)
@@ -245,6 +247,28 @@ const AdmissionsPage = () => {
                </motion.div>
             </div>
 
+            {/* Download Buttons for Hero (mobile view only) */}
+            <div className="flex gap-3 max-w-lg mt-4 lg:hidden">
+                <a 
+                    href={brochurePdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 px-4 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-black text-[10px] sm:text-xs uppercase tracking-widest hover:scale-102 transition-all flex items-center justify-center gap-2"
+                    style={{ color: 'white' }}
+                >
+                    <Download size={14} /> Brochure
+                </a>
+                <a 
+                    href={prospectsPdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 px-4 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-black text-[10px] sm:text-xs uppercase tracking-widest hover:scale-102 transition-all flex items-center justify-center gap-2"
+                    style={{ color: 'white' }}
+                >
+                    <Download size={14} /> Prospects
+                </a>
+            </div>
+
           </motion.div>
         </div>
 
@@ -285,13 +309,25 @@ const AdmissionsPage = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-4 lg:gap-6">
-                    <button 
-                        onClick={() => navigate('/admissions/ug-registration')}
-                        className="px-6 lg:px-8 py-3 lg:py-3.5 bg-[#ffc107] text-[#224292] rounded-xl font-black text-[11px] lg:text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center gap-2"
+                <div className="flex items-center gap-4">
+                    <a 
+                        href={brochurePdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/25 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center justify-center gap-2 w-48"
+                        style={{ color: 'white' }}
                     >
-                        <FileText size={16} /> APPLY NOW
-                    </button>
+                        <Download size={16} /> Brochure
+                    </a>
+                    <a 
+                        href={prospectsPdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/25 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center justify-center gap-2 w-48"
+                        style={{ color: 'white' }}
+                    >
+                        <Download size={16} /> Prospects
+                    </a>
                 </div>
             </div>
         </div>

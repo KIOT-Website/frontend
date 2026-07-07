@@ -25,6 +25,8 @@ import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 import PlacementOverviewPage from './pages/PlacementOverviewPage'
 import { GraduationCap, X } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import brochurePdf from './assets/KIOT Brochure 2026 copy.pdf'
+import prospectsPdf from './assets/KIOT Prospects MAY 2026 .pdf'
 import TrainingOverviewPage from './pages/TrainingOverviewPage'
 import RecruitmentProcessPage from './pages/RecruitmentProcessPage'
 import OutcomesOverviewPage from './pages/OutcomesOverviewPage'
@@ -931,6 +933,24 @@ function App() {
                         >
                           Apply Now
                         </button>
+                        <div className="flex gap-2 w-full mt-2">
+                            <a 
+                              href={brochurePdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 py-1.5 sm:py-2 bg-slate-50 hover:bg-[#224292] text-[#224292] hover:text-white border border-slate-200 rounded-lg sm:rounded-xl font-black text-[9px] sm:text-[10px] uppercase tracking-wider flex items-center justify-center gap-1 transition-all duration-300"
+                            >
+                              Brochure
+                            </a>
+                            <a 
+                              href={prospectsPdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 py-1.5 sm:py-2 bg-slate-50 hover:bg-[#224292] text-[#224292] hover:text-white border border-slate-200 rounded-lg sm:rounded-xl font-black text-[9px] sm:text-[10px] uppercase tracking-wider flex items-center justify-center gap-1 transition-all duration-300"
+                            >
+                              Prospects
+                            </a>
+                        </div>
                     </div>
                 </div>
               </motion.div>
