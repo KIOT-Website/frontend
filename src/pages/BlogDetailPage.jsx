@@ -144,7 +144,7 @@ const BlogDetailPage = () => {
                     <span className="text-[10px] font-black uppercase tracking-widest">{blog.publish_date}</span>
                 </div>
 
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-0 leading-[1.15] tracking-tight">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-black mb-0 leading-[1.2] tracking-tight">
                     {blog.title}
                 </h1>
             </div>
