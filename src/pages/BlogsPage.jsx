@@ -116,12 +116,12 @@ const BlogsPage = () => {
                                     onClick={() => navigate(`/blog/${blog.slug}`)}
                                 >
                                     {/* Image Container */}
-                                    <div className="relative aspect-[16/9] overflow-hidden bg-[#f8fafc] flex items-center justify-center border-b border-slate-100">
+                                    <div className="relative aspect-[1732/974] overflow-hidden bg-[#f8fafc] flex items-center justify-center border-b border-slate-100">
                                         {blog.featured_image || blog.image ? (
                                             <img 
                                                 src={blog.featured_image || blog.image} 
                                                 alt={blog.title}
-                                                className="w-full h-full object-contain transition-transform duration-500 p-2"
+                                                className="w-full h-full object-cover transition-transform duration-500"
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-[#224292]/5 flex items-center justify-center">

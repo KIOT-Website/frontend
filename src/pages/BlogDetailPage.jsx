@@ -127,17 +127,11 @@ const BlogDetailPage = () => {
             {/* ─── Featured Image ─── */}
             {(blog.featured_image || blog.image) && (
                 <div className="max-w-4xl mx-auto px-6 lg:px-10 mb-16">
-                    <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/15 border border-slate-100 bg-white" style={{ width: `${blog.featured_image_width || 100}%` }}>
+                    <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/15 border border-slate-100 bg-white aspect-[1732/974]" style={{ width: `${blog.featured_image_width || 100}%` }}>
                         <img 
                             src={blog.featured_image || blog.image} 
                             alt={blog.featured_image_alt || blog.title} 
-                            className="w-full block"
-                            style={{ 
-                                height: blog.featured_image_height && blog.featured_image_height !== 'auto' 
-                                    ? (blog.featured_image_height.includes('px') ? blog.featured_image_height : `${blog.featured_image_height}px`) 
-                                    : 'auto',
-                                objectFit: 'contain'
-                            }}
+                            className="w-full h-full object-cover block"
                         />
                     </div>
                 </div>
