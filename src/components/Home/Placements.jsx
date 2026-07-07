@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { TrendingUp, GraduationCap, Building2, UserCheck, Briefcase } from 'lucide-react'
+import { TrendingUp, GraduationCap, Building2, UserCheck, Briefcase, Download } from 'lucide-react'
+import brochurePdf from '../../assets/KIOT Brochure 2026 copy.pdf'
+import prospectsPdf from '../../assets/KIOT Prospects MAY 2026 .pdf'
 
 // Recruiter Logos
 import techMahindraLogo from '../../assets/main/tech mahendra.webp'
@@ -102,16 +104,16 @@ const Placements = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 justify-center text-center sm:text-left">
+              <div className="h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 justify-center text-center px-4">
                 <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292] shrink-0">
-                   <UserCheck size={16} />
+                    <UserCheck size={16} />
                 </div>
                 <p className="text-[10px] font-black text-white uppercase tracking-widest leading-tight">Quality Placements <br className="hidden sm:block" /> Are Our Motto</p>
               </div>
 
               <button 
                 onClick={() => navigate('/placement-overview')}
-                className="group relative px-6 py-4 bg-[#ffc107] text-[#224292] rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center justify-center gap-3"
+                className="group relative h-14 bg-[#ffc107] text-[#224292] rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center justify-center gap-3"
               >
                  Explore Placements
                  <TrendingUp size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -179,6 +181,28 @@ const Placements = () => {
                 <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#224292] to-transparent z-10" />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#224292] to-transparent z-10" />
              </div>
+
+              {/* Brochure & Prospects Buttons */}
+              <div className="grid sm:grid-cols-2 gap-4 mt-6">
+                  <a 
+                      href={brochurePdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-14 bg-[#ffc107] text-[#224292] hover:bg-white rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-2xl transition-all flex items-center justify-center gap-3 w-full"
+                      style={{ color: '#224292' }}
+                  >
+                      <Download size={16} /> Brochure
+                  </a>
+                  <a 
+                      href={prospectsPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-14 bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-2xl transition-all flex items-center justify-center gap-3 w-full"
+                      style={{ color: 'white' }}
+                  >
+                      <Download size={16} /> Prospects
+                  </a>
+              </div>
           </div>
 
         </div>
