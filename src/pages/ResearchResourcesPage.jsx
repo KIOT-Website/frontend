@@ -520,7 +520,7 @@ const mechSupervisors = [
         researchArea: "Design, Composite Materials",
         supervisorId: "2220288",
         email: "pnkmech@kiot.ac.in",
-        guided: "-",
+        guided: "08",
         guiding: "06",
         irins: "https://kiot.irins.org",
         image: navaneethakrishnanMechImg,
