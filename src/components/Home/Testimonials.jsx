@@ -58,50 +58,50 @@ const testimonialData = {
   Alumni: [
     {
       id: 5,
-      name: "1",
-      dept: "Software Engineer",
+      name: "Software Engineer",
+      dept: "",
       quote: "KIOT transformed my journey from a student to a professional. The continuous technical training, coding practice, aptitude sessions, and placement support gave me the confidence to secure my dream career."
     },
     {
       id: 6,
-      name: "2",
-      dept: "Embedded Systems Engineer",
+      name: "Embedded Systems Engineer",
+      dept: "",
       quote: "The industry-linked laboratories and practical learning environment at KIOT provided me with real-world exposure that significantly helped during interviews and in my professional career."
     },
     {
       id: 7,
-      name: "3",
-      dept: "Senior Software Developer",
+      name: "Senior Software Developer",
+      dept: "",
       quote: "Beyond academics, KIOT helped me build communication skills, leadership qualities, and problem-solving abilities. These experiences continue to help me grow in the corporate world."
     },
     {
       id: 8,
-      name: "4",
-      dept: "Design Engineer",
-      quote: "Faculty members always encouraged innovation and project-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career."
+      name: "Design Engineer",
+      dept: "",
+      quote: "Faculty members always encouraged innovation and innovation-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career."
     },
     {
       id: 17,
-      name: "5",
-      dept: "Project Engineer",
-      quote: "KIOT's placement training is one of its biggest strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment."
+      name: "Project Engineer",
+      dept: "",
+      quote: "KIOT's placement training is one of its strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment."
     },
     {
       id: 18,
-      name: "6",
-      dept: "Business Analyst",
+      name: "Business Analyst",
+      dept: "",
       quote: "The multidisciplinary curriculum and exposure to emerging technologies prepared me to adapt quickly to industry requirements. KIOT gave me both knowledge and confidence."
     },
     {
       id: 19,
-      name: "7",
-      dept: "Entrepreneur",
+      name: "Entrepreneur",
+      dept: "",
       quote: "The innovation ecosystem, incubation support, and entrepreneurial mindset encouraged at KIOT inspired me to build my own startup. The institution nurtures creativity and practical thinking."
     },
     {
       id: 20,
-      name: "8",
-      dept: "Systems Engineer",
+      name: "Systems Engineer",
+      dept: "",
       quote: "The opportunities to interact with industry experts, participate in technical clubs, and work on live projects made learning enjoyable and career-focused."
     }
   ],
@@ -157,37 +157,49 @@ const testimonialData = {
   ]
 }
 
-const TestimonialCard = ({ testi }) => (
-  <div className="relative w-full max-w-[280px] mx-auto bg-white rounded-[1.2rem] shadow-[0_20px_50px_rgba(34,66,146,0.1)] border border-slate-200 overflow-hidden flex flex-col h-full transition-all duration-500 hover:scale-[1.02]">
-    
-    {/* Top Header */}
-    <div className="relative h-24 bg-[#224292] overflow-hidden shrink-0">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-24" />
-    </div>
-
-    {/* Profile Image */}
-    {testi.image ? (
-      <div className="flex justify-center -mt-16 relative z-10 shrink-0">
-          <div className="w-24 h-24 rounded-full p-1 bg-white shadow-2xl">
-            <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white shadow-inner">
-                <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
-            </div>
-          </div>
+const TestimonialCard = ({ testi }) => {
+  const isTextOnly = !testi.image;
+  return (
+    <div className="relative w-full max-w-[280px] mx-auto bg-white rounded-[1.2rem] shadow-[0_20px_50px_rgba(34,66,146,0.1)] border border-slate-200 overflow-hidden flex flex-col h-full transition-all duration-500 hover:scale-[1.02]">
+      
+      {/* Top Header */}
+      <div className="relative h-24 bg-[#224292] overflow-hidden shrink-0">
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
+          {!isTextOnly && (
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-24" />
+          )}
       </div>
-    ) : (
-      <div className="h-4 shrink-0" />
-    )}
 
-    {/* Name & Designation */}
-    <div className={`text-center px-4 shrink-0 ${testi.image ? 'mt-4' : 'mt-2'}`}>
-        <h4 className="text-lg lg:text-xl font-semibold font-graphik text-[#224292] leading-tight">
-          {testi.name.split(' ').slice(0, -1).join(' ')} <span className="text-[#ffc107]">{testi.name.split(' ').slice(-1)}</span>
-        </h4>
-        <p className="text-[10px] lg:text-[11px] font-bold text-[#224292] uppercase tracking-[0.05em] mt-1 mb-4">
-          {testi.dept}
-        </p>
-    </div>
+      {/* Profile Image */}
+      {testi.image ? (
+        <div className="flex justify-center -mt-16 relative z-10 shrink-0">
+            <div className="w-24 h-24 rounded-full p-1 bg-white shadow-2xl">
+              <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white shadow-inner">
+                  <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
+              </div>
+            </div>
+        </div>
+      ) : (
+        <div className="h-4 shrink-0" />
+      )}
+
+      {/* Name & Designation */}
+      <div className={`text-center px-4 shrink-0 ${testi.image ? 'mt-4' : 'mt-2'}`}>
+          {isTextOnly ? (
+            <h4 className="text-[13px] lg:text-[14px] font-black font-graphik text-[#224292] leading-tight mb-2">
+              {testi.name}
+            </h4>
+          ) : (
+            <h4 className="text-lg lg:text-xl font-semibold font-graphik text-[#224292] leading-tight">
+              {testi.name.split(' ').slice(0, -1).join(' ')} <span className="text-[#ffc107]">{testi.name.split(' ').slice(-1)}</span>
+            </h4>
+          )}
+          {testi.dept ? (
+            <p className="text-[10px] lg:text-[11px] font-bold text-[#224292] uppercase tracking-[0.05em] mt-1 mb-4">
+              {testi.dept}
+            </p>
+          ) : null}
+      </div>
 
     <div className="flex-1 flex flex-col px-4 mb-4">
         <div className="p-3 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-center h-full flex items-center justify-center relative">
@@ -200,7 +212,8 @@ const TestimonialCard = ({ testi }) => (
     {/* Bottom Triangle Decor */}
     <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#224292] skew-x-[-45deg] translate-x-10 translate-y-10 z-0 shrink-0" />
   </div>
-)
+  );
+};
 
 const Testimonials = () => {
   const [activeTab, setActiveTab] = useState("Students")

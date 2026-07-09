@@ -5,43 +5,43 @@ import { Quote } from 'lucide-react'
 const testimonials = [
   {
     quote: "KIOT transformed my journey from a student to a professional. The continuous technical training, coding practice, aptitude sessions, and placement support gave me the confidence to secure my dream career.",
-    name: "1",
-    role: "Software Engineer"
+    name: "Software Engineer",
+    role: ""
   },
   {
     quote: "The industry-linked laboratories and practical learning environment at KIOT provided me with real-world exposure that significantly helped during interviews and in my professional career.",
-    name: "2",
-    role: "Embedded Systems Engineer"
+    name: "Embedded Systems Engineer",
+    role: ""
   },
   {
     quote: "Beyond academics, KIOT helped me build communication skills, leadership qualities, and problem-solving abilities. These experiences continue to help me grow in the corporate world.",
-    name: "3",
-    role: "Senior Software Developer"
+    name: "Senior Software Developer",
+    role: ""
   },
   {
-    quote: "Faculty members always encouraged innovation and project-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career.",
-    name: "4",
-    role: "Design Engineer"
+    quote: "Faculty members always encouraged innovation and innovation-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career.",
+    name: "Design Engineer",
+    role: ""
   },
   {
-    quote: "KIOT's placement training is one of its biggest strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment.",
-    name: "5",
-    role: "Project Engineer"
+    quote: "KIOT's placement training is one of its strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment.",
+    name: "Project Engineer",
+    role: ""
   },
   {
     quote: "The multidisciplinary curriculum and exposure to emerging technologies prepared me to adapt quickly to industry requirements. KIOT gave me both knowledge and confidence.",
-    name: "6",
-    role: "Business Analyst"
+    name: "Business Analyst",
+    role: ""
   },
   {
     quote: "The innovation ecosystem, incubation support, and entrepreneurial mindset encouraged at KIOT inspired me to build my own startup. The institution nurtures creativity and practical thinking.",
-    name: "7",
-    role: "Entrepreneur"
+    name: "Entrepreneur",
+    role: ""
   },
   {
     quote: "The opportunities to interact with industry experts, participate in technical clubs, and work on live projects made learning enjoyable and career-focused.",
-    name: "8",
-    role: "Systems Engineer"
+    name: "Systems Engineer",
+    role: ""
   }
 ]
 
