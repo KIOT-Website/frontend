@@ -291,7 +291,7 @@ const AccreditationPage = () => {
                                   href={record.pdf_url} 
                                   target="_blank" 
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 px-6 py-2 bg-slate-50 text-[#224292] border border-slate-100 rounded-full font-black text-[10px] uppercase tracking-wider hover:bg-[#224292] hover:!text-white transition-all group"
+                                  className="inline-flex items-center gap-2 px-6 py-2 bg-slate-50 text-[#224292] border border-slate-100 rounded-full font-black text-[10px] uppercase tracking-wider transition-all group"
                                 >
                                    VIEW <ExternalLink size={12} className="group-hover:translate-x-1 transition-transform" />
                                 </a>
