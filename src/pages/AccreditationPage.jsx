@@ -135,10 +135,10 @@ const AccreditationPage = () => {
               href={doc.link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="mt-auto w-full py-2.5 bg-[#ffc107] text-[#224292] rounded-2xl font-black text-[11px] uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-[#224292] hover:text-white transition-all shadow-lg active:scale-95 group/btn"
+              className="mt-auto w-full py-2.5 bg-[#ffc107] text-[#224292] rounded-2xl font-black text-[11px] uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-[#224292] hover:!text-white transition-all shadow-lg active:scale-95 group/btn"
             >
-              <Download size={14} className="group-hover/btn:text-white transition-colors" />
-              <span className="group-hover/btn:text-white transition-colors">Download PDF</span>
+              <Download size={14} className="group-hover/btn:!text-white transition-colors" />
+              <span className="group-hover/btn:!text-white transition-colors">Download PDF</span>
             </a>
           </motion.div>
         ))}
@@ -184,9 +184,9 @@ const AccreditationPage = () => {
                 href={item.file}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-5 py-3.5 bg-slate-50 hover:bg-[#224292] hover:text-white text-[#224292] border border-slate-100 rounded-2xl transition-all duration-300 font-black text-[11px] tracking-wider uppercase shadow-sm hover:shadow-lg active:scale-95 group"
+                className="flex items-center gap-3 px-5 py-3.5 bg-slate-50 hover:bg-[#224292] hover:!text-white text-[#224292] border border-slate-100 rounded-2xl transition-all duration-300 font-black text-[11px] tracking-wider uppercase shadow-sm hover:shadow-lg active:scale-95 group"
               >
-                <FileText size={16} className="text-purple-500 group-hover:text-white transition-colors" />
+                <FileText size={16} className="text-purple-500 group-hover:!text-white transition-colors" />
                 <span className="group-hover:text-white transition-colors">{item.dept}</span>
               </a>
             ))}
@@ -291,7 +291,7 @@ const AccreditationPage = () => {
                                   href={record.pdf_url} 
                                   target="_blank" 
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-2 px-6 py-2 bg-slate-50 text-[#224292] border border-slate-100 rounded-full font-black text-[10px] uppercase tracking-wider hover:bg-[#224292] hover:text-white transition-all group"
+                                  className="inline-flex items-center gap-2 px-6 py-2 bg-slate-50 text-[#224292] border border-slate-100 rounded-full font-black text-[10px] uppercase tracking-wider hover:bg-[#224292] hover:!text-white transition-all group"
                                 >
                                    VIEW <ExternalLink size={12} className="group-hover:translate-x-1 transition-transform" />
                                 </a>
