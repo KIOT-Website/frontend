@@ -5,42 +5,42 @@ import { Quote } from 'lucide-react'
 const testimonials = [
   {
     quote: "KIOT transformed my journey from a student to a professional. The continuous technical training, coding practice, aptitude sessions, and placement support gave me the confidence to secure my dream career.",
-    name: "Alumni Testimonial – 1",
+    name: "1",
     role: "Software Engineer"
   },
   {
     quote: "The industry-linked laboratories and practical learning environment at KIOT provided me with real-world exposure that significantly helped during interviews and in my professional career.",
-    name: "Alumni Testimonial – 2",
+    name: "2",
     role: "Embedded Systems Engineer"
   },
   {
     quote: "Beyond academics, KIOT helped me build communication skills, leadership qualities, and problem-solving abilities. These experiences continue to help me grow in the corporate world.",
-    name: "Alumni Testimonial – 3",
+    name: "3",
     role: "Senior Software Developer"
   },
   {
     quote: "Faculty members always encouraged innovation and project-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career.",
-    name: "Alumni Testimonial – 4",
+    name: "4",
     role: "Design Engineer"
   },
   {
     quote: "KIOT's placement training is one of its biggest strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment.",
-    name: "Alumni Testimonial – 5",
+    name: "5",
     role: "Project Engineer"
   },
   {
     quote: "The multidisciplinary curriculum and exposure to emerging technologies prepared me to adapt quickly to industry requirements. KIOT gave me both knowledge and confidence.",
-    name: "Alumni Testimonial – 6",
+    name: "6",
     role: "Business Analyst"
   },
   {
     quote: "The innovation ecosystem, incubation support, and entrepreneurial mindset encouraged at KIOT inspired me to build my own startup. The institution nurtures creativity and practical thinking.",
-    name: "Alumni Testimonial – 7",
+    name: "7",
     role: "Entrepreneur"
   },
   {
     quote: "The opportunities to interact with industry experts, participate in technical clubs, and work on live projects made learning enjoyable and career-focused.",
-    name: "Alumni Testimonial – 8",
+    name: "8",
     role: "Systems Engineer"
   }
 ]

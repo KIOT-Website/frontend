@@ -58,59 +58,51 @@ const testimonialData = {
   Alumni: [
     {
       id: 5,
-      name: "Alumni Testimonial – 1",
+      name: "1",
       dept: "Software Engineer",
-      quote: "KIOT transformed my journey from a student to a professional. The continuous technical training, coding practice, aptitude sessions, and placement support gave me the confidence to secure my dream career.",
-      image: alumniImg
+      quote: "KIOT transformed my journey from a student to a professional. The continuous technical training, coding practice, aptitude sessions, and placement support gave me the confidence to secure my dream career."
     },
     {
       id: 6,
-      name: "Alumni Testimonial – 2",
+      name: "2",
       dept: "Embedded Systems Engineer",
-      quote: "The industry-linked laboratories and practical learning environment at KIOT provided me with real-world exposure that significantly helped during interviews and in my professional career.",
-      image: alumniImg
+      quote: "The industry-linked laboratories and practical learning environment at KIOT provided me with real-world exposure that significantly helped during interviews and in my professional career."
     },
     {
       id: 7,
-      name: "Alumni Testimonial – 3",
+      name: "3",
       dept: "Senior Software Developer",
-      quote: "Beyond academics, KIOT helped me build communication skills, leadership qualities, and problem-solving abilities. These experiences continue to help me grow in the corporate world.",
-      image: alumniImg
+      quote: "Beyond academics, KIOT helped me build communication skills, leadership qualities, and problem-solving abilities. These experiences continue to help me grow in the corporate world."
     },
     {
       id: 8,
-      name: "Alumni Testimonial – 4",
+      name: "4",
       dept: "Design Engineer",
-      quote: "Faculty members always encouraged innovation and project-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career.",
-      image: alumniImg
+      quote: "Faculty members always encouraged innovation and project-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career."
     },
     {
       id: 17,
-      name: "Alumni Testimonial – 5",
+      name: "5",
       dept: "Project Engineer",
-      quote: "KIOT's placement training is one of its biggest strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment.",
-      image: alumniImg
+      quote: "KIOT's placement training is one of its biggest strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment."
     },
     {
       id: 18,
-      name: "Alumni Testimonial – 6",
+      name: "6",
       dept: "Business Analyst",
-      quote: "The multidisciplinary curriculum and exposure to emerging technologies prepared me to adapt quickly to industry requirements. KIOT gave me both knowledge and confidence.",
-      image: alumniImg
+      quote: "The multidisciplinary curriculum and exposure to emerging technologies prepared me to adapt quickly to industry requirements. KIOT gave me both knowledge and confidence."
     },
     {
       id: 19,
-      name: "Alumni Testimonial – 7",
+      name: "7",
       dept: "Entrepreneur",
-      quote: "The innovation ecosystem, incubation support, and entrepreneurial mindset encouraged at KIOT inspired me to build my own startup. The institution nurtures creativity and practical thinking.",
-      image: alumniImg
+      quote: "The innovation ecosystem, incubation support, and entrepreneurial mindset encouraged at KIOT inspired me to build my own startup. The institution nurtures creativity and practical thinking."
     },
     {
       id: 20,
-      name: "Alumni Testimonial – 8",
+      name: "8",
       dept: "Systems Engineer",
-      quote: "The opportunities to interact with industry experts, participate in technical clubs, and work on live projects made learning enjoyable and career-focused.",
-      image: alumniImg
+      quote: "The opportunities to interact with industry experts, participate in technical clubs, and work on live projects made learning enjoyable and career-focused."
     }
   ],
   Recruiters: [
