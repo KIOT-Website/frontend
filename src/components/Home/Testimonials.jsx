@@ -58,43 +58,59 @@ const testimonialData = {
   Alumni: [
     {
       id: 5,
-      name: "Arun Kumar",
-      dept: "CSE Class of 2024",
-      quote: "The fundamentals I built during my final year projects at KIOT were crucial for my entry into Amazon as an SDE.",
-      email: "arun.k@alumni.kiot.ac.in",
-      image: alumniImg,
-      joined: "2020",
-      expires: "2024"
+      name: "Alumni Testimonial – 1",
+      dept: "Software Engineer",
+      quote: "KIOT transformed my journey from a student to a professional. The continuous technical training, coding practice, aptitude sessions, and placement support gave me the confidence to secure my dream career.",
+      image: alumniImg
     },
     {
       id: 6,
-      name: "Deepika S",
-      dept: "ECE Class of 2023",
-      quote: "KIOT's placement cell works tirelessly. Their guidance was instrumental in securing my position at Texas Instruments.",
-      email: "deepika.s@alumni.kiot.ac.in",
-      image: studentImg,
-      joined: "2019",
-      expires: "2023"
+      name: "Alumni Testimonial – 2",
+      dept: "Embedded Systems Engineer",
+      quote: "The industry-linked laboratories and practical learning environment at KIOT provided me with real-world exposure that significantly helped during interviews and in my professional career.",
+      image: alumniImg
     },
     {
       id: 7,
-      name: "Rajesh Kannan",
-      dept: "Civil Class of 2022",
-      quote: "The industry visits and site training provided at KIOT were far ahead of the standard curriculum, helping me land a top role.",
-      email: "rajesh.k@alumni.kiot.ac.in",
-      image: alumniImg,
-      joined: "2018",
-      expires: "2022"
+      name: "Alumni Testimonial – 3",
+      dept: "Senior Software Developer",
+      quote: "Beyond academics, KIOT helped me build communication skills, leadership qualities, and problem-solving abilities. These experiences continue to help me grow in the corporate world.",
+      image: alumniImg
     },
     {
       id: 8,
-      name: "Meera Jasmine",
-      dept: "BME Class of 2024",
-      quote: "The interdisciplinary research culture at KIOT allowed me to work on innovative healthcare solutions that got published.",
-      email: "meera.j@alumni.kiot.ac.in",
-      image: studentImg,
-      joined: "2020",
-      expires: "2024"
+      name: "Alumni Testimonial – 4",
+      dept: "Design Engineer",
+      quote: "Faculty members always encouraged innovation and project-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career.",
+      image: alumniImg
+    },
+    {
+      id: 17,
+      name: "Alumni Testimonial – 5",
+      dept: "Project Engineer",
+      quote: "KIOT's placement training is one of its biggest strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment.",
+      image: alumniImg
+    },
+    {
+      id: 18,
+      name: "Alumni Testimonial – 6",
+      dept: "Business Analyst",
+      quote: "The multidisciplinary curriculum and exposure to emerging technologies prepared me to adapt quickly to industry requirements. KIOT gave me both knowledge and confidence.",
+      image: alumniImg
+    },
+    {
+      id: 19,
+      name: "Alumni Testimonial – 7",
+      dept: "Entrepreneur",
+      quote: "The innovation ecosystem, incubation support, and entrepreneurial mindset encouraged at KIOT inspired me to build my own startup. The institution nurtures creativity and practical thinking.",
+      image: alumniImg
+    },
+    {
+      id: 20,
+      name: "Alumni Testimonial – 8",
+      dept: "Systems Engineer",
+      quote: "The opportunities to interact with industry experts, participate in technical clubs, and work on live projects made learning enjoyable and career-focused.",
+      image: alumniImg
     }
   ],
   Recruiters: [

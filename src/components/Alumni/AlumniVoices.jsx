@@ -4,22 +4,44 @@ import { Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    quote: "KIOT provided the foundation for my career as a Lead Engineer at Google. The faculty and community remain family.",
-    name: "Rajesh Kumar",
-    batch: "Class of 2015",
-    role: "Senior Software Engineer"
+    quote: "KIOT transformed my journey from a student to a professional. The continuous technical training, coding practice, aptitude sessions, and placement support gave me the confidence to secure my dream career.",
+    name: "Alumni Testimonial – 1",
+    role: "Software Engineer"
   },
   {
-    quote: "The Alumni network helped me secure my first internship at Microsoft. Once KIOT, Always KIOT is not just a slogan, it's a reality.",
-    name: "Sneha S.",
-    batch: "Class of 2018",
-    role: "Product Manager"
+    quote: "The industry-linked laboratories and practical learning environment at KIOT provided me with real-world exposure that significantly helped during interviews and in my professional career.",
+    name: "Alumni Testimonial – 2",
+    role: "Embedded Systems Engineer"
   },
   {
-    quote: "Leading a startup wouldn't be possible without the mentorship I received here. Grateful to be part of this legacy.",
-    name: "Arun Vignesh",
-    batch: "Class of 2014",
-    role: "Founder, TechFlow"
+    quote: "Beyond academics, KIOT helped me build communication skills, leadership qualities, and problem-solving abilities. These experiences continue to help me grow in the corporate world.",
+    name: "Alumni Testimonial – 3",
+    role: "Senior Software Developer"
+  },
+  {
+    quote: "Faculty members always encouraged innovation and project-based learning. The guidance received during internships and final-year projects played a crucial role in shaping my career.",
+    name: "Alumni Testimonial – 4",
+    role: "Design Engineer"
+  },
+  {
+    quote: "KIOT's placement training is one of its biggest strengths. The structured preparation in aptitude, programming, communication, and mock interviews helped me confidently face campus recruitment.",
+    name: "Alumni Testimonial – 5",
+    role: "Project Engineer"
+  },
+  {
+    quote: "The multidisciplinary curriculum and exposure to emerging technologies prepared me to adapt quickly to industry requirements. KIOT gave me both knowledge and confidence.",
+    name: "Alumni Testimonial – 6",
+    role: "Business Analyst"
+  },
+  {
+    quote: "The innovation ecosystem, incubation support, and entrepreneurial mindset encouraged at KIOT inspired me to build my own startup. The institution nurtures creativity and practical thinking.",
+    name: "Alumni Testimonial – 7",
+    role: "Entrepreneur"
+  },
+  {
+    quote: "The opportunities to interact with industry experts, participate in technical clubs, and work on live projects made learning enjoyable and career-focused.",
+    name: "Alumni Testimonial – 8",
+    role: "Systems Engineer"
   }
 ]
 
@@ -61,9 +83,14 @@ const AlumniVoices = () => {
               </div>
 
               {/* Footer Name with Line */}
-              <div className="mt-5 flex items-center gap-3">
-                <div className="w-8 h-[2px] bg-[#ffc107]" />
-                <span className="text-[#224292] font-black text-[11px] tracking-tight">{item.name}</span>
+              <div className="mt-5 flex flex-col gap-0.5">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-[2px] bg-[#ffc107]" />
+                  <span className="text-[#224292] font-black text-[11px] tracking-tight">{item.name}</span>
+                </div>
+                {item.role && (
+                  <span className="text-slate-400 font-bold text-[9px] uppercase tracking-wide pl-11">{item.role}</span>
+                )}
               </div>
 
               {/* Closing Quote Icon - bottom right */}
