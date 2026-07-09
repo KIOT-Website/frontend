@@ -163,12 +163,17 @@ const TestimonialCard = ({ testi }) => {
     <div className="relative w-full max-w-[280px] mx-auto bg-white rounded-[1.2rem] shadow-[0_20px_50px_rgba(34,66,146,0.1)] border border-slate-200 overflow-hidden flex flex-col h-full transition-all duration-500 hover:scale-[1.02]">
       
       {/* Top Header */}
-      <div className="relative h-24 bg-[#224292] overflow-hidden shrink-0">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
-          {!isTextOnly && (
+      {isTextOnly ? (
+        <div className="relative h-2 bg-[#224292] overflow-hidden shrink-0">
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
+            <div className="absolute top-0 right-0 w-8 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-4" />
+        </div>
+      ) : (
+        <div className="relative h-24 bg-[#224292] overflow-hidden shrink-0">
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
             <div className="absolute top-0 right-0 w-1/2 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-24" />
-          )}
-      </div>
+        </div>
+      )}
 
       {/* Profile Image */}
       {testi.image ? (
@@ -180,7 +185,7 @@ const TestimonialCard = ({ testi }) => {
             </div>
         </div>
       ) : (
-        <div className="h-4 shrink-0" />
+        <div className="h-6 shrink-0" />
       )}
 
       {/* Name & Designation */}
@@ -201,17 +206,19 @@ const TestimonialCard = ({ testi }) => {
           ) : null}
       </div>
 
-    <div className="flex-1 flex flex-col px-4 mb-4">
-        <div className="p-3 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-center h-full flex items-center justify-center relative">
-          <p className="text-[12px] font-black text-black italic leading-relaxed">
-              "{testi.quote}"
-          </p>
-        </div>
-    </div>
+      <div className="flex-1 flex flex-col px-4 mb-4">
+          <div className="p-3 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-center h-full flex items-center justify-center relative">
+            <p className="text-[12px] font-black text-black italic leading-relaxed">
+                "{testi.quote}"
+            </p>
+          </div>
+      </div>
 
-    {/* Bottom Triangle Decor */}
-    <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#224292] skew-x-[-45deg] translate-x-10 translate-y-10 z-0 shrink-0" />
-  </div>
+      {/* Bottom Triangle Decor */}
+      {!isTextOnly && (
+        <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#224292] skew-x-[-45deg] translate-x-10 translate-y-10 z-0 shrink-0" />
+      )}
+    </div>
   );
 };
 
