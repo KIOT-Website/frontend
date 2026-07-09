@@ -100,43 +100,59 @@ const testimonialData = {
   Recruiters: [
     {
       id: 9,
-      name: "Suresh Menon",
-      dept: "HR Manager, TCS",
-      quote: "Highly skilled and industry-ready graduates. We consistently find that KIOT students adapt faster to professional environments.",
-      email: "suresh.m@tcs.com",
-      image: recruiterImg,
-      joined: "Partner Since 2018",
-      expires: "Active"
+      name: "Puritha Nagarajan",
+      dept: "Head – Talent Acquisition, Zuci Systems, Chennai",
+      quote: "KIOT students consistently demonstrate excellent professionalism, a positive attitude, and strong industry readiness. The Placement & Industry Relations team ensures seamless coordination throughout the recruitment process, making KIOT a reliable and preferred academic partner for campus hiring.",
+      image: recruiterImg
     },
     {
       id: 10,
-      name: "Lakshmi Narayanan",
-      dept: "Talent Acquisition, ITC",
-      quote: "The technical depth and problem-solving mindset of the candidates here is truly commendable year after year.",
-      email: "lakshmi.n@itc.in",
-      image: recruiterImg,
-      joined: "Partner Since 2020",
-      expires: "Active"
+      name: "Ramji Murthy",
+      dept: "Regional Head – Academic Alliances, Tata Consultancy Services (TCS)",
+      quote: "KIOT stands apart through its strong institutional values, visionary leadership, and unwavering commitment to nurturing future-ready professionals. The institution provides an excellent ecosystem that bridges academic excellence with industry expectations.",
+      image: recruiterImg
     },
     {
       id: 11,
-      name: "Ramesh Babu",
-      dept: "Tech Lead, Zoho",
-      quote: "We've been recruiting from KIOT for years. The students possess a unique blend of technical curiosity and humility.",
-      email: "ramesh.b@zoho.com",
-      image: recruiterImg,
-      joined: "Partner Since 2015",
-      expires: "Active"
+      name: "K. Balaji",
+      dept: "Vice President – Talent Acquisition, Creative Synergies Group",
+      quote: "The visionary leadership, industry-driven Centres of Excellence, state-of-the-art infrastructure, and strong emphasis on communication and employability skills together create a vibrant learning ecosystem. KIOT is preparing graduates who are truly ready for the future of engineering and technology.",
+      image: recruiterImg
     },
     {
       id: 12,
-      name: "Anjali Devi",
-      dept: "Principal, Cognizant",
-      quote: "The soft skills and communication abilities of KIOT graduates set them apart during our rigorous selection process.",
-      email: "anjali.d@cts.com",
-      image: recruiterImg,
-      joined: "Partner Since 2019",
-      expires: "Active"
+      name: "Saravana Manikandan S.",
+      dept: "Senior Program Manager, Intelsat",
+      quote: "KIOT is an inspiring institution built upon strong core values, academic excellence, and visionary leadership. Its focus on innovation, discipline, and holistic student development equips graduates to excel in the global technology landscape.",
+      image: recruiterImg
+    },
+    {
+      id: 13,
+      name: "Prof. Dr. Goh Khang Wen",
+      dept: "Pro Vice Chancellor, INTI International University, Malaysia",
+      quote: "KIOT demonstrates excellence through its outstanding placement achievements, experienced faculty, student-centric curriculum, and strong industry engagement. The institution is creating globally competent graduates equipped for lifelong success.",
+      image: recruiterImg
+    },
+    {
+      id: 14,
+      name: "S. Venkatachalam Ramakrishnan",
+      dept: "Head – Services, Prodapt",
+      quote: "The enthusiasm, commitment, and engagement demonstrated by both students and faculty members are truly commendable. KIOT has cultivated a collaborative academic environment that encourages continuous learning, innovation, and professional growth.",
+      image: recruiterImg
+    },
+    {
+      id: 15,
+      name: "S. Shaneshkumar",
+      dept: "Vice President – Engineering, HCLTech",
+      quote: "KIOT reflects energetic leadership, strategic vision, and a strong commitment to continuous improvement. The institution's industry-focused approach and emphasis on emerging technologies prepare students to thrive in a rapidly evolving global workforce.",
+      image: recruiterImg
+    },
+    {
+      id: 16,
+      name: "Dinesh Kumar T.K.",
+      dept: "Head – Human Resources, Aspire Systems",
+      quote: "KIOT students possess sound technical knowledge, practical problem-solving abilities, and a strong willingness to learn. Their industry exposure, professional attitude, and adaptability enable them to contribute effectively from the very beginning of their careers.",
+      image: recruiterImg
     }
   ]
 }
