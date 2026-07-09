@@ -102,57 +102,49 @@ const testimonialData = {
       id: 9,
       name: "Puritha Nagarajan",
       dept: "Head – Talent Acquisition, Zuci Systems, Chennai",
-      quote: "KIOT students consistently demonstrate excellent professionalism, a positive attitude, and strong industry readiness. The Placement & Industry Relations team ensures seamless coordination throughout the recruitment process, making KIOT a reliable and preferred academic partner for campus hiring.",
-      image: recruiterImg
+      quote: "KIOT students consistently demonstrate excellent professionalism, a positive attitude, and strong industry readiness. The Placement & Industry Relations team ensures seamless coordination throughout the recruitment process, making KIOT a reliable and preferred academic partner for campus hiring."
     },
     {
       id: 10,
       name: "Ramji Murthy",
       dept: "Regional Head – Academic Alliances, Tata Consultancy Services (TCS)",
-      quote: "KIOT stands apart through its strong institutional values, visionary leadership, and unwavering commitment to nurturing future-ready professionals. The institution provides an excellent ecosystem that bridges academic excellence with industry expectations.",
-      image: recruiterImg
+      quote: "KIOT stands apart through its strong institutional values, visionary leadership, and unwavering commitment to nurturing future-ready professionals. The institution provides an excellent ecosystem that bridges academic excellence with industry expectations."
     },
     {
       id: 11,
       name: "K. Balaji",
       dept: "Vice President – Talent Acquisition, Creative Synergies Group",
-      quote: "The visionary leadership, industry-driven Centres of Excellence, state-of-the-art infrastructure, and strong emphasis on communication and employability skills together create a vibrant learning ecosystem. KIOT is preparing graduates who are truly ready for the future of engineering and technology.",
-      image: recruiterImg
+      quote: "The visionary leadership, industry-driven Centres of Excellence, state-of-the-art infrastructure, and strong emphasis on communication and employability skills together create a vibrant learning ecosystem. KIOT is preparing graduates who are truly ready for the future of engineering and technology."
     },
     {
       id: 12,
       name: "Saravana Manikandan S.",
       dept: "Senior Program Manager, Intelsat",
-      quote: "KIOT is an inspiring institution built upon strong core values, academic excellence, and visionary leadership. Its focus on innovation, discipline, and holistic student development equips graduates to excel in the global technology landscape.",
-      image: recruiterImg
+      quote: "KIOT is an inspiring institution built upon strong core values, academic excellence, and visionary leadership. Its focus on innovation, discipline, and holistic student development equips graduates to excel in the global technology landscape."
     },
     {
       id: 13,
       name: "Prof. Dr. Goh Khang Wen",
       dept: "Pro Vice Chancellor, INTI International University, Malaysia",
-      quote: "KIOT demonstrates excellence through its outstanding placement achievements, experienced faculty, student-centric curriculum, and strong industry engagement. The institution is creating globally competent graduates equipped for lifelong success.",
-      image: recruiterImg
+      quote: "KIOT demonstrates excellence through its outstanding placement achievements, experienced faculty, student-centric curriculum, and strong industry engagement. The institution is creating globally competent graduates equipped for lifelong success."
     },
     {
       id: 14,
       name: "S. Venkatachalam Ramakrishnan",
       dept: "Head – Services, Prodapt",
-      quote: "The enthusiasm, commitment, and engagement demonstrated by both students and faculty members are truly commendable. KIOT has cultivated a collaborative academic environment that encourages continuous learning, innovation, and professional growth.",
-      image: recruiterImg
+      quote: "The enthusiasm, commitment, and engagement demonstrated by both students and faculty members are truly commendable. KIOT has cultivated a collaborative academic environment that encourages continuous learning, innovation, and professional growth."
     },
     {
       id: 15,
       name: "S. Shaneshkumar",
       dept: "Vice President – Engineering, HCLTech",
-      quote: "KIOT reflects energetic leadership, strategic vision, and a strong commitment to continuous improvement. The institution's industry-focused approach and emphasis on emerging technologies prepare students to thrive in a rapidly evolving global workforce.",
-      image: recruiterImg
+      quote: "KIOT reflects energetic leadership, strategic vision, and a strong commitment to continuous improvement. The institution's industry-focused approach and emphasis on emerging technologies prepare students to thrive in a rapidly evolving global workforce."
     },
     {
       id: 16,
       name: "Dinesh Kumar T.K.",
       dept: "Head – Human Resources, Aspire Systems",
-      quote: "KIOT students possess sound technical knowledge, practical problem-solving abilities, and a strong willingness to learn. Their industry exposure, professional attitude, and adaptability enable them to contribute effectively from the very beginning of their careers.",
-      image: recruiterImg
+      quote: "KIOT students possess sound technical knowledge, practical problem-solving abilities, and a strong willingness to learn. Their industry exposure, professional attitude, and adaptability enable them to contribute effectively from the very beginning of their careers."
     }
   ]
 }
@@ -167,16 +159,20 @@ const TestimonialCard = ({ testi }) => (
     </div>
 
     {/* Profile Image */}
-    <div className="flex justify-center -mt-16 relative z-10 shrink-0">
-        <div className="w-24 h-24 rounded-full p-1 bg-white shadow-2xl">
-          <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white shadow-inner">
-              <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
+    {testi.image ? (
+      <div className="flex justify-center -mt-16 relative z-10 shrink-0">
+          <div className="w-24 h-24 rounded-full p-1 bg-white shadow-2xl">
+            <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white shadow-inner">
+                <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
+            </div>
           </div>
-        </div>
-    </div>
+      </div>
+    ) : (
+      <div className="h-4 shrink-0" />
+    )}
 
     {/* Name & Designation */}
-    <div className="text-center mt-4 px-4 shrink-0">
+    <div className={`text-center px-4 shrink-0 ${testi.image ? 'mt-4' : 'mt-2'}`}>
         <h4 className="text-lg lg:text-xl font-semibold font-graphik text-[#224292] leading-tight">
           {testi.name.split(' ').slice(0, -1).join(' ')} <span className="text-[#ffc107]">{testi.name.split(' ').slice(-1)}</span>
         </h4>
