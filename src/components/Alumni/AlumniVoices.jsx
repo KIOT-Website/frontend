@@ -45,70 +45,88 @@ const testimonials = [
   }
 ]
 
+const marqueeStyle = `
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+`;
+
 const AlumniVoices = () => {
+  const doubleTestimonials = [...testimonials, ...testimonials];
+
   return (
     <section className="py-8 md:py-10 bg-white overflow-hidden">
+      <style>{marqueeStyle}</style>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Heading */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <h2 className="text-sm font-black text-[#ffc107] tracking-[0.4em] mb-4">Community Feedback</h2>
           <h3 className="text-4xl lg:text-5xl font-black text-[#224292] tracking-tighter">Alumni Voices</h3>
           <div className="mt-4 w-12 h-1.5 bg-[#ffc107] mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-          {testimonials.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="relative p-5 md:p-6 bg-white border-[3px] border-[#224292] rounded-[2rem] rounded-bl-sm shadow-[10px_10px_0px_#ffc107] group transition-all hover:-translate-y-1 hover:shadow-[15px_15px_0px_#ffc107]"
-            >
-              {/* Top Quote Icon */}
-              <div className="text-[#224292] mb-3">
-                <Quote size={32} fill="currentColor" stroke="none" />
-              </div>
+        {/* Marquee Wrapper */}
+        <div className="relative w-full overflow-hidden py-4">
+          {/* Fading gradient edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-              {/* Title */}
-              <h4 className="text-lg font-black text-[#224292] mb-3 font-graphik">Testimonial</h4>
-
-              {/* Content */}
-              <div className="min-h-[80px]">
-                <p className="text-black font-bold leading-relaxed font-graphik text-[13px]">
-                  {item.quote}
-                </p>
-              </div>
-
-              {/* Footer Name with Line */}
-              <div className="mt-5 flex flex-col gap-0.5">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-[2px] bg-[#ffc107]" />
-                  <span className="text-[#224292] font-black text-[11px] tracking-tight">{item.name}</span>
+          <div className="animate-marquee gap-8 md:gap-12 flex">
+            {doubleTestimonials.map((item, idx) => (
+              <div
+                key={idx}
+                className="relative w-[300px] md:w-[350px] p-5 md:p-6 bg-white border-[3px] border-[#224292] rounded-[2rem] rounded-bl-sm shadow-[10px_10px_0px_#ffc107] group flex-shrink-0"
+              >
+                {/* Top Quote Icon */}
+                <div className="text-[#224292] mb-3">
+                  <Quote size={32} fill="currentColor" stroke="none" />
                 </div>
-                {item.role && (
-                  <span className="text-slate-400 font-bold text-[9px] uppercase tracking-wide pl-11">{item.role}</span>
-                )}
-              </div>
 
-              {/* Closing Quote Icon - bottom right */}
-              <div className="absolute bottom-4 right-8 text-[#ffc107]">
-                <Quote size={60} fill="currentColor" stroke="none" className="opacity-40" />
-              </div>
+                {/* Content */}
+                <div className="min-h-[100px] flex items-center mb-4">
+                  <p className="text-black font-bold leading-relaxed font-graphik text-[13px]">
+                    "{item.quote}"
+                  </p>
+                </div>
 
-              {/* The Tail - speech bubble effect */}
-              <div className="absolute -bottom-[28px] left-0 w-12 h-8">
-                <svg viewBox="0 0 100 100" className="w-full h-full text-[#224292]" preserveAspectRatio="none">
-                  <path 
-                    d="M0 0 L0 100 L100 0 Z" 
-                    fill="#224292" 
-                  />
-                </svg>
+                {/* Footer Name with Line */}
+                <div className="mt-5 flex flex-col gap-0.5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-[2px] bg-[#ffc107]" />
+                    <span className="text-[#224292] font-black text-[11px] tracking-tight">{item.name}</span>
+                  </div>
+                  {item.role && (
+                    <span className="text-slate-400 font-bold text-[9px] uppercase tracking-wide pl-11">{item.role}</span>
+                  )}
+                </div>
+
+                {/* Closing Quote Icon - bottom right */}
+                <div className="absolute bottom-4 right-8 text-[#ffc107]">
+                  <Quote size={60} fill="currentColor" stroke="none" className="opacity-40" />
+                </div>
+
+                {/* The Tail - speech bubble effect */}
+                <div className="absolute -bottom-[28px] left-0 w-12 h-8">
+                  <svg viewBox="0 0 100 100" className="w-full h-full text-[#224292]" preserveAspectRatio="none">
+                    <path 
+                      d="M0 0 L0 100 L100 0 Z" 
+                      fill="#224292" 
+                    />
+                  </svg>
+                </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>
