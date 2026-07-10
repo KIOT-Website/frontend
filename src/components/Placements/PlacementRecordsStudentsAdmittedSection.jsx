@@ -67,7 +67,7 @@ const PlacementRecordsStudentsAdmittedSection = () => {
               {/* Table Header */}
               <div className="grid grid-cols-5 bg-[#224292] text-white px-8 py-4 text-[10px] font-medium uppercase tracking-widest">
                 <span className="text-left">Academic Year</span>
-                <span className="text-center">Students Opted</span>
+                <span className="text-center">Total No.of Students</span>
                 <span className="text-center">Students Placed</span>
                 <span className="text-center">Companies</span>
                 <span className="text-center">Percentage</span>

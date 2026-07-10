@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FileText, ExternalLink } from 'lucide-react'
 
-import structureImg from '../assets/main/Strcutre .webp'
+import structureImg from '../assets/main/strcutre1.jpg'
 import governanceImg from '../assets/main/governance_meeting.webp'
 
 // Import all 27 PDF policy documents
@@ -67,13 +67,13 @@ const GuidelinesPage = () => {
 
   return (
     <div className="bg-[#FCFDFD] min-h-screen font-graphik selection:bg-[#ffc107]/20">
-      
+
       {/* 🔷 1. TOP SECTION (IMAGE + INTRO) */}
       <section className="relative pt-12 lg:pt-20 pb-6 border-b border-slate-100 font-graphik">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-12 font-graphik">
           <div className="grid lg:grid-cols-2 gap-8 items-center font-graphik">
-            <motion.div 
-               initial={{ opacity: 0, x: -30 }}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               className="space-y-6 font-graphik"
             >
@@ -86,19 +86,19 @@ const GuidelinesPage = () => {
                 </p>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
               className="relative aspect-video rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 shadow-2xl shadow-[#224292]/10"
             >
-               <img 
-                 src={governanceImg} 
-                 alt="Institutional Governance Meeting" 
-                 className="w-full h-full object-cover"
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/20 to-transparent" />
+              <img
+                src={governanceImg}
+                alt="Institutional Governance Meeting"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/20 to-transparent" />
             </motion.div>
           </div>
         </div>
@@ -148,18 +148,18 @@ const GuidelinesPage = () => {
               Organizational <span className="text-[#ffc107]">Structure</span>
             </h2>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative rounded-2xl overflow-hidden shadow-[0_40px_100px_rgba(24,53,122,0.08)] border border-slate-100 bg-white"
           >
-             <img 
-               src={structureImg} 
-               alt="KIOT Organizational Structure" 
-               className="w-full h-auto object-contain"
-             />
+            <img
+              src={structureImg}
+              alt="KIOT Organizational Structure"
+              className="w-full h-auto object-contain"
+            />
           </motion.div>
         </section>
       </section>

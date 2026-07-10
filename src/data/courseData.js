@@ -31,6 +31,7 @@ import dheepikaImage from '../assets/Faculity/csbs/dheepika.webp'
 import madheswaranImage from '../assets/Faculity/csbs/madheswaran.webp'
 import noorulAmeenImage from '../assets/Faculity/csbs/noorul_ameen.webp'
 import sambathkumarImage from '../assets/Faculity/csbs/sambathkumar.webp'
+import sabariImage from '../assets/Faculity/csbs/M.Sabari.png'
 
 // MBA Faculty Imports
 import mbaDirectorImg from '../assets/dir and hod/MBA Director.png'
@@ -39,6 +40,7 @@ import sasikumarImg from '../assets/dir and hod/Dr. B. Sasikumar AIDS - HOD.webp
 import immanuelImg from '../assets/placements/placement team/Dr.D.Immanuel, MBA., Ph.D..webp'
 import padmanabanImg from '../assets/placements/placement team/Prof.G.Padmanaban, MBA., (PhD),.webp'
 import musthaffaImg from '../assets/placements/placement team/Mr.A.Musthaffa, MBA., M.Phil..webp'
+import mbaIevImmanuelImg from '../assets/Faculity/mba iev/Dr D Immanuel (1).png'
 
 // AIDS Faculty Imports
 import aidsGomathiImage from '../assets/Faculity/aids/dr_gomathi.webp'
@@ -107,6 +109,9 @@ import karthickKNImage from '../assets/Faculity/MECH/Mr.K.N. Karthick.webp'
 import divagaranImage from '../assets/Faculity/MECH/Mr.P.Divagaran.webp'
 import dheepakImage from '../assets/Faculity/MECH/Mr.S. Dheepak.webp'
 import shanmugamImage from '../assets/Faculity/MECH/Mr.S.Shanmugam.webp'
+import krishnanAsImage from '../assets/Faculity/MECH/Dr.A.S.Krishnan.png'
+import vickramKImage from '../assets/Faculity/MECH/Dr.K.Vickram.png'
+import anbarasuRImage from '../assets/Faculity/MECH/Mr.R.Anbarasu.png'
 import elavarasiImage from '../assets/Faculity/MECH/Mrs. A. Elavarasi.webp'
 import geethaImage from '../assets/Faculity/MECH/Dr.K.Geetha.webp'
 import vinothkumarKTamilImage from '../assets/Faculity/MECH/Dr.K.Vinothkumar.webp'
@@ -266,6 +271,8 @@ export const courseData = {
       { name: 'Dr. N. PANNEERSELVAM', designation: 'Associate Professor & Deputy COE', experience: 'Teaching: 16 Years, Research: 15 Years', specialization: 'IC Engines', rating: 4.8, qualification: 'B.E., M.E., Ph.D.', email: 'npmech@kiot.ac.in', joiningDate: '06.08.2018', association: 'Regular', publications: 'IJ: 10, IC: 01 NC: 05', image: panneerselvamImage },
       { name: 'Dr. K.S. Prabhakaran', designation: 'Associate Professor & HOD', experience: 'Teaching : 16 Years, Research : 14 Years', specialization: 'Evaporative Cooling', rating: 4.9, qualification: 'B.E., M.E., Ph.D., MISTE.', email: 'kspmech@kiot.ac.in', joiningDate: '24.06.2009', association: 'Regular', publications: 'IJ: 01, NJ: 03, IC: 01, NC: 07', image: prabhakaranImage },
       { name: 'Dr. V. Sivakumar', designation: 'Assistant Professor', experience: 'Teaching: 19.6 Years, Research: 13 Years', specialization: 'Engineering Design', rating: 4.8, qualification: 'B.E., M.E., Ph.D.', email: 'vskmech@kiot.ac.in', joiningDate: '16.07.2021', association: 'Regular', publications: 'IJ: 05, IC: 04 NC: 12', image: sivakumarImage },
+      { name: 'Dr. A. S. Krishnan', designation: 'Professor', experience: 'Teaching: 20 Years, Industry: 3 Years 5 Months', specialization: 'Heat Transfer and Thermal Sciences', rating: 4.8, qualification: 'B. E., M. E., Ph. D (IIT Madras)', email: 'askmech@kiot.ac.in', joiningDate: '01.06.2026', association: 'Regular', publications: 'IJ: 23, IC: 13', bookChapters: 2, patentsGranted: 2, phdGuided: 4, sponsoredProjectCompleted: 1, image: krishnanAsImage },
+      { name: 'Dr. K. Vickram', designation: 'Assistant Professor', experience: 'Teaching: 8 Years, Research: 5.6 Years', specialization: 'Production Engineering', rating: 4.8, qualification: 'DPE., BE., ME., Ph. D', email: 'kvimech@kiot.ac.in', joiningDate: '04.06.2026', association: 'Regular', publications: 'IJ: 5, IC: 3', image: vickramKImage },
       { name: 'Prof. D. Sakthivel', designation: 'Associate Professor & Director - Administration', experience: 'Teaching : 19 Years, Industry : 18.1 Years', specialization: 'Manufacturing Technology', rating: 4.8, qualification: 'B.E., M.E., D.B.A., MISTE', email: 'sakthiero@gmail.com', joiningDate: '01.07.2013', association: 'Regular', publications: 'IC: 02, NC: 02' },
       { name: 'Dr. M. Sathyanathan', designation: 'Associate Professor & Director - IQAC', experience: 'Teaching : 20 Years, Research : 8Years', specialization: 'Manufacturing Engineering', rating: 4.8, qualification: 'B.E., M.E., Ph.D., MISTE., MIWS', email: 'msnmech@kiot.ac.in', joiningDate: '07.06.2012', association: 'Regular', publications: 'IJ: 10, IC: 03, NC: 04', image: sathyanathanImage },
       { name: 'Prof. K. Mugundhan', designation: 'Assistant Professor', experience: 'Teaching : 13.7 Years, Industry : 4.2 Years', specialization: 'Composite Materials', rating: 4.7, qualification: 'B.E., M.E., (Ph.D.), MISTE', email: 'kmmech@kiot.ac.in', joiningDate: '08.06.2011', association: 'Regular', publications: 'IJ: 09, NC: 09' },
@@ -289,6 +296,7 @@ export const courseData = {
       { name: 'Prof. G. Sureshkrishna', designation: 'Assistant Professor', experience: 'Teaching : 7.4 Years', specialization: 'Industrial Safety Engineering', rating: 4.5, qualification: 'B.E., M.E.', email: 'sureshkpr13@gmail.com', joiningDate: '21.03.2025', association: 'Regular', image: sureshkrishnaImage },
       { name: 'Prof. K.N. Karthick', designation: 'Assistant Professor', experience: 'Teaching-13 & Industry-1', specialization: 'Manufacturing system and Management', rating: 4.6, qualification: 'B.E., M.E.,(Ph.D)', email: 'karthickmech007@gmail.com', joiningDate: '15.05.2025', association: 'Regular', publications: '10', image: karthickKNImage },
       { name: 'Prof. Divagaran P', designation: 'Assistant Professor', experience: 'Teaching- 6 Month', specialization: 'Thermal Engineering', rating: 4.5, qualification: 'B.E., M.E.', email: 'divagaranslm2017@gmail.com', joiningDate: '16.05.2025', association: 'Regular', publications: '03', image: divagaranImage },
+      { name: 'Mr. R. ANBARASU', designation: 'Assistant Professor', experience: 'Industry: 3 Years', specialization: 'Composite materials', rating: 4.8, qualification: 'DME., BE., ME., MISTE., IFERP., (Ph. D)', email: 'ramech@kiot.ac.in', joiningDate: '22.06.2026', association: 'Regular', publications: 'IJ: 2, IC: 2', image: anbarasuRImage },
       { name: 'Mr.S.Shanmugam', designation: 'Professor of Practice', experience: '31.01 Years', specialization: 'N/A', rating: 4.8, qualification: 'M.E.', email: 'N/A', joiningDate: '15.03.2024', image: shanmugamImage },
       { name: 'Mr.M.Krishnamoorthy', designation: 'Associate Professor of Practice', experience: '38.10 Years', specialization: 'N/A', rating: 4.8, qualification: 'M.E.', email: 'N/A', joiningDate: '05.07.2024' },
       { name: 'Prof. K.Anand Kumar', designation: 'Assistant Professor', experience: 'Teaching : 20 years', specialization: 'ELT, Phonetics', rating: 4.8, qualification: 'M.A., M.PHIL', email: 'kakeng@kiot.ac.in', joiningDate: '01.06.2011', association: 'Regular', publications: 'IJ - 2', image: anandKumarImage },
@@ -2498,6 +2506,7 @@ export const courseData = {
     curriculum: [{ year: 'Year 1', semesters: ['Maths', 'Business Systems'] }],
     faculty: [
       { name: 'Dr. M. Ramkumar', designation: 'Associate Professor & Head', joiningDate: '01.08.2022', qualification: 'B.E., M.E., Ph.D', association: 'Regular', experience: 'Teaching: 14 Years', specialization: 'Data Mining, Cloud Computing and Data Science', email: 'hod.csbs@kiot.ac.in', publications: 'IJ: 34, NJ: 01, IC: 14, NC: 04', rating: 5.0, image: ramkumarImage },
+      { name: 'Mr. SABARI M S', designation: 'Assistant Professor', joiningDate: '17.06.2026', qualification: 'M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 10.1 Years', specialization: 'Wireless Adhoc Networks', email: 'msscsbs@kiot.ac.in', publications: 'IJ: 14, IC: 8, NC: 2', rating: 4.8, image: sabariImage },
       { name: 'Mrs. C. Vanitha', designation: 'Assistant Professor', joiningDate: '09.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 14 Years, Industry: 1.4 Years', specialization: 'Data Mining', email: 'cvcsbs@kiot.ac.in', publications: 'IJ: 02, IC: 01', rating: 4.8, image: vanithaImage },
       { name: 'Mr. R. Karthick', designation: 'Assistant Professor', joiningDate: '01.06.2016', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 11.2 Years', specialization: 'Information Security, Big Data Analytics, Data Science', email: 'rkcsbs@kiot.ac.in', publications: 'IJ: 04, IC: 04, NC: 02', rating: 4.8, image: karthickImage },
       { name: 'Mr. M. Ranjithkumar', designation: 'Assistant Professor', joiningDate: '18.07.2022', qualification: 'B.Tech. - IT, M.E.', association: 'Regular', experience: 'Teaching: 7.4 Years', specialization: 'Networking', email: 'mrcsbs@kiot.ac.in', publications: 'IJ: 02', rating: 4.7, image: ranjithkumarImage },
@@ -2540,7 +2549,7 @@ export const courseData = {
             type: 'Utility Patent',
             appNo: '202541014109 A',
             date: '07.03.2025',
-            status: 'Published'
+            status: 'Patent Published'
           },
           {
             inventors: 'Mrs.C.Vanitha',
@@ -2548,7 +2557,7 @@ export const courseData = {
             type: 'Design Patent',
             appNo: '458511-001',
             date: '13.05.2025',
-            status: 'Filed'
+            status: 'Patent Filled'
           },
           {
             inventors: 'Mrs.R.Yudhayapriya',
@@ -3490,7 +3499,7 @@ export const courseData = {
       { year: 'Year 2 – Incubation & Scaling', semesters: ['Business Plan Preparation', 'Growth Hacking & Marketing', 'Venture Capital and Funding Options', 'Strategic Venture Management', 'Incubation & Accelerator Residency Program', 'Launch of Minimum Viable Product (MVP)'] }
     ],
     faculty: [
-      { name: 'Dr. D. Immanuel', designation: 'Professor', qualification: 'B.B.A., M.B.A., Ph.D.', specialization: 'Entrepreneurship Development', email: 'drimmanueld@gmail.com', experience: 'Teaching: 22 Years, Industry: 8 Years', rating: 5.0 },
+      { name: 'Dr. D. Immanuel', designation: 'Professor', qualification: 'B.B.A., M.B.A., Ph.D.', specialization: 'Entrepreneurship Development', email: 'drimmanueld@gmail.com', experience: 'Teaching: 22 Years, Industry: 8 Years', rating: 5.0, image: mbaIevImmanuelImg },
       { name: 'Dr. S. Vijayakumar', designation: 'Assistant Professor', qualification: 'B.Com., D.Co-Op., M.Sc(ITM)., MBA., MLM., M.Phil., MISTE., Ph.D.', specialization: 'Entrepreneurship Development', email: 'svkmba@kiot.ac.in', experience: 'Teaching: 16 Years, Industry: 5 Years', publications: 'IJ:08, NJ:04, NC:12, IC:06', rating: 5.0 },
       { name: 'Prof. S. Saravanan', designation: 'Assistant Professor (Sr. Grade)', qualification: 'MBA., M.Phil., UGC (NET-JRF), FDP (IIMA)', specialization: 'Marketing, Strategy and Entrepreneurship', email: 'ssvmba@kiot.ac.in', experience: 'Teaching: 17.4 Years, Research: 4.8 Years', rating: 4.8 },
       { name: 'Prof. M. Bharani Eswari', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', rating: 4.7 },

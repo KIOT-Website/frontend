@@ -648,7 +648,7 @@ const Header = () => {
                 )}
               </AnimatePresence>
 
-              <ul className="hidden xl:flex xl:items-center xl:gap-2.5 2xl:gap-5">
+              <ul className="hidden xl:flex xl:items-center xl:gap-3 2xl:gap-6">
                 {navLinks.map((link) => {
                   const isActive = (link.name === 'Home' && location.pathname === '/') || (link.name === 'Contact' && location.pathname === '/contact')
 

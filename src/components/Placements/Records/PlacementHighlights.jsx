@@ -14,7 +14,7 @@ const PlacementHighlights = () => {
     },
     {
       label: "TOTAL STUDENTS PLACED",
-      value: "1383",
+      value: "679",
       desc: "Empowering students to build careers.",
       icon: Users,
       color: "#ffc107",
@@ -22,7 +22,7 @@ const PlacementHighlights = () => {
     },
     {
       label: "HIGHEST SALARY",
-      value: "₹ 12.00 Lakhs",
+      value: "13.00 LPA",
       desc: "Outstanding packages from organizations.",
       icon: Trophy,
       color: "#224292",
@@ -30,7 +30,7 @@ const PlacementHighlights = () => {
     },
     {
       label: "AVERAGE SALARY",
-      value: "₹ 4.30 Lakhs",
+      value: "4.10 LPA",
       desc: "Strong career growth for all students.",
       icon: IndianRupee,
       color: "#ffc107",

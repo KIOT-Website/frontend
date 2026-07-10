@@ -67,15 +67,15 @@ const ImpactDistribution = () => {
              <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
                  <AnimatedDonut radius={40} circumference={251.2} strokeWidth={12} centerLabel="100%" dark={false}
                     segments={[
-                      { pct: 0.52, color: '#224292', start: 0 },
-                      { pct: 0.34, color: '#ffc107', start: 0.52 },
-                      { pct: 0.14, color: '#64779F', start: 0.86 }
+                      { pct: 0.44, color: '#224292', start: 0 },
+                      { pct: 0.40, color: '#ffc107', start: 0.44 },
+                      { pct: 0.16, color: '#64779F', start: 0.84 }
                     ]} />
                 <div className="flex flex-col gap-5">
                    {[
-                      { label: "IT Sector", val: "52%", color: "#224292", icon: Activity },
-                      { label: "Core Sector", val: "34%", color: "#ffc107", icon: Target },
-                      { label: "Management", val: "14%", color: "#64779F", icon: Users }
+                      { label: "IT Sector", val: "44%", color: "#224292", icon: Activity },
+                      { label: "Core Sector", val: "40%", color: "#ffc107", icon: Target },
+                      { label: "Management", val: "16%", color: "#64779F", icon: Users }
                    ].map((item, i) => (
                       <div key={i} className="flex items-center gap-4">
                          <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm shrink-0" style={{ backgroundColor: `${item.color}15`, color: item.color }}> 
@@ -104,19 +104,19 @@ const ImpactDistribution = () => {
              <div className="flex flex-col sm:flex-row items-center justify-center gap-10 relative z-10">
                  <AnimatedDonut radius={38} circumference={238.76} strokeWidth={10} centerLabel="2026" dark={true}
                     segments={[
-                      { pct: 0.35, color: '#ffc107', start: 0 },
-                      { pct: 0.25, color: '#60A5FA', start: 0.35 },
-                      { pct: 0.15, color: '#FFFFFF', start: 0.60 },
-                      { pct: 0.14, color: '#A78BFA', start: 0.75 },
-                      { pct: 0.11, color: '#3B82F6', start: 0.89 }
+                      { pct: 0.69, color: '#ffc107', start: 0 },
+                      { pct: 0.12, color: '#60A5FA', start: 0.69 },
+                      { pct: 0.04, color: '#FFFFFF', start: 0.81 },
+                      { pct: 0.13, color: '#A78BFA', start: 0.85 },
+                      { pct: 0.02, color: '#3B82F6', start: 0.98 }
                     ]} />
                 <div className="grid grid-cols-2 gap-x-8 gap-y-5">
                    {[
-                      { label: "On-Campus", val: "35%", color: "#ffc107" },
-                      { label: "COE Hiring", val: "25%", color: "#60A5FA" },
-                      { label: "Internship", val: "15%", color: "#FFFFFF" },
-                      { label: "Off-Campus", val: "14%", color: "#A78BFA" },
-                      { label: "Corporate Contest", val: "11%", color: "#3B82F6" }
+                      { label: "On-Campus", val: "69%", color: "#ffc107" },
+                      { label: "COE Hiring", val: "12%", color: "#60A5FA" },
+                      { label: "Internship", val: "4%", color: "#FFFFFF" },
+                      { label: "Off-Campus", val: "13%", color: "#A78BFA" },
+                      { label: "Corporate Contest", val: "2%", color: "#3B82F6" }
                    ].map((item, i) => (
                       <div key={i} className="flex items-center gap-2.5">
                          <div className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />

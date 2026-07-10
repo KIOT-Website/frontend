@@ -1,6 +1,7 @@
 import React from 'react'
 import ImpactDistribution from './ImpactDistribution'
 import PlacementRecordsStudentsAdmittedSection from '../PlacementRecordsStudentsAdmittedSection'
+import PlacementRecordsStudentsOptedSection from '../PlacementRecordsStudentsOptedSection'
 import PlacementDetailsYearSection from '../PlacementDetailsYearSection'
 
 
@@ -12,6 +13,7 @@ const OutcomesOverview = () => {
           <PlacementDetailsYearSection />
         </div>
         <PlacementRecordsStudentsAdmittedSection />
+        <PlacementRecordsStudentsOptedSection />
       </section>
 
 
