@@ -40,7 +40,7 @@ import mbaVenkatesanImgNew from '../../assets/Faculity/mba/Dr.T.Venkatesan.png'
 import mbaRameshImgNew from '../../assets/Faculity/mba/Dr.R.Ramesh.png'
 import mbaPadmanabanImgNew from '../../assets/Faculity/mba/Prof.G.Padmanaban.png'
 import mbaRevathiImgNew from '../../assets/Faculity/mba/Prof.P.Revathi.png'
-import mbaVimalaImgNew from '../../assets/Faculity/mba/Vimala S - AP MBA.png'
+import mbaVimalaImgNew from "../../assets/Faculity/mba/Prof.S.Vimala.png"
 import mbaSuganyaImgNew from '../../assets/Faculity/mba/Prof.T.Suganya.png'
 import mbaSenchulakshmiImgNew from '../../assets/Faculity/mba/Prof.D.Senchulakshmi.png'
 import mbaMusthaffaImgNew from '../../assets/Faculity/mba/Prof.A.Musthaffa.png'
@@ -1788,7 +1788,7 @@ export default function CourseDetailPage({ overrides }) {
                                   alt={f.name}
                                   className={`w-full h-full object-cover transition-transform duration-500 ${
                                     f.name === 'Prof. S. Vimala'
-                                      ? 'scale-[0.85] group-hover:scale-[0.9]'
+                                      ? 'scale-[1.05] group-hover:scale-[1.1]'
                                       : 'group-hover:scale-105'
                                   }`}
                                 />
@@ -2314,18 +2314,16 @@ export default function CourseDetailPage({ overrides }) {
                               </div>
 
                               {/* Personnel / Staff */}
-                              {courseId !== 'be-cse' && (
-                                <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
-                                  <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
-                                    <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
-                                    <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.incharge || 'Department HOD'}</p>
-                                  </div>
-                                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                    <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
-                                    <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.technician || 'Engineering Technician'}</p>
-                                  </div>
+                              <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
+                                <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
+                                  <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
+                                  <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.incharge || 'Department HOD'}</p>
                                 </div>
-                              )}
+                                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                                  <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
+                                  <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.technician || 'Engineering Technician'}</p>
+                                </div>
+                              </div>
                             </div>
                           </motion.div>
                         );
@@ -2975,7 +2973,14 @@ function AwardsSection({ courseId, courseName }) {
     { sno: 4,  name: 'Mrs.R.Yudhayapriya\nAP/CSBS',   event: 'Design Patent',     level: 'National',      award: 'Patent Granted', title: 'Industrial Image Processing Camera For Defect Identification' },
     { sno: 5,  name: 'Mrs.P.Raga Keerthana\nAP/CSBS', event: 'Design Patent',     level: 'National',      award: 'Patent Granted', title: 'Industrial Image Processing Camera For Defect Identification' },
   ]
-  const facultyAwards = courseId === 'btech-csbs' ? csbsFacultyAwards : []
+
+  const cseFacultyAwards = [
+    { sno: 1,  name: 'Mrs.R.Saranya', event: '-', level: '-', award: 'Best Faculty', title: '-' },
+    { sno: 2,  name: 'Mrs.K.Saranya', event: '-', level: '-', award: 'Best Faculty', title: '-' },
+    { sno: 3,  name: 'Mrs.D.Ramya',   event: '-', level: '-', award: 'Best Faculty', title: '-' },
+  ]
+
+  const facultyAwards = courseId === 'btech-csbs' ? csbsFacultyAwards : (courseId === 'be-cse' ? cseFacultyAwards : [])
 
   const visibleData = activeAudience === 'STUDENT' ? studentAwards : facultyAwards
 
@@ -3007,7 +3012,7 @@ function AwardsSection({ courseId, courseName }) {
           <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik tracking-[0.2em]">Department of {courseName.replace(/^B\.?E\.?\s*/i, '')}</p>
         </div>
         {/* Student / Faculty toggle */}
-        <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
+        <div className="bg-white p-1 rounded-2xl flex self-start w-fit border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
           {[{ id: 'STUDENT', label: 'Student' }, { id: 'FACULTY', label: 'Faculty' }].map(tab => (
             <button
               key={tab.id}
@@ -3030,11 +3035,17 @@ function AwardsSection({ courseId, courseName }) {
             <thead>
               <tr className="bg-[#ffc107]">
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">S.No</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Student</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Event</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">Level</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">{activeAudience === 'STUDENT' ? 'Name of the Student' : 'Name of the Faculty'}</th>
+                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                  <>
+                    <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Event</th>
+                    <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">Level</th>
+                  </>
+                )}
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Distinction / Award</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Title</th>
+                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Title</th>
+                )}
               </tr>
             </thead>
             <tbody>
@@ -3045,14 +3056,20 @@ function AwardsSection({ courseId, courseName }) {
                 >
                   <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
                   <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
-                  <td className="px-4 py-3 text-sm text-slate-700">{item.event}</td>
-                  <td className="px-4 py-3 text-center">
-                    <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
-                      {item.level}
-                    </span>
-                  </td>
+                  {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                    <>
+                      <td className="px-4 py-3 text-sm text-slate-700">{item.event}</td>
+                      <td className="px-4 py-3 text-center">
+                        <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                          {item.level}
+                        </span>
+                      </td>
+                    </>
+                  )}
                   <td className="px-4 py-3 text-sm text-slate-700">{item.award}</td>
-                  <td className="px-4 py-3 text-sm text-slate-600">{item.title}</td>
+                  {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                    <td className="px-4 py-3 text-sm text-slate-600">{item.title}</td>
+                  )}
                 </tr>
               ))}
             </tbody>
@@ -3310,7 +3327,7 @@ function AchievementSection({ courseId, courseName }) {
         </div>
 
         {/* Student / Faculty toggle */}
-        <div className="bg-white p-1 rounded-2xl flex border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
+        <div className="bg-white p-1 rounded-2xl flex self-start w-fit border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
           {[{ id: 'STUDENT', label: 'Student' }, { id: 'FACULTY', label: 'Faculty' }].map(tab => (
             <button
               key={tab.id}
