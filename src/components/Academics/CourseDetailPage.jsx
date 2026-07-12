@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import { useState, useRef, useEffect, useLayoutEffect, Fragment } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -2492,7 +2492,7 @@ export default function CourseDetailPage({ overrides }) {
                       </div>
                     </motion.div>
                   </div>
-                ) : (
+                ) : courseId === 'be-civil' ? null : (
                   <div className="grid lg:grid-cols-2 gap-8">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -2633,7 +2633,7 @@ export default function CourseDetailPage({ overrides }) {
               <AchievementSection courseId={courseId} courseName={course.name} />
             )}
 
-            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs') && (
+            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil') && (
               <AwardsSection courseId={courseId} courseName={course.name} />
             )}
 
@@ -2963,7 +2963,19 @@ function AwardsSection({ courseId, courseName }) {
     { sno: 16, name: 'Vaishnavi V\nB.Tech-IV Year CSBS',        event: 'Oracle Fusion Cloud Applications', level: 'International', award: 'Certified',            title: 'Participated in Oracle Fusion Cloud Applications HCM' },
   ]
 
-  const studentAwards = courseId === 'be-cse' ? cseStudentAwards : (courseId === 'btech-csbs' ? csbsStudentAwards : [])
+  const civilStudentAwards = [
+    { year: '2025-2026', sno: 1, name: 'V.SivaSanjay -IV Year CIVIL', event: 'BUILD EXPO 2025-26', level: 'State', award: 'FIRST PRIZE & CASH PRIZE OF Rs.15000/-', title: '"EMERGING ENGINEERS"' },
+    { year: '2025-2026', sno: 2, name: 'S.Vijay Sarathy -III Year CIVIL\nK.Prem kumar -III Year CIVIL\nV.Boominathan Narasimman -III Year CIVIL\nP.Ashon -III Year CIVIL', event: 'L&T EDUTECH', level: 'National', award: 'CERTIFICATION OF MERIT TEAM & CASH PRIZE OF Rs.15000/-', title: 'BIM CONTEST2025' },
+    { year: '2025-2026', sno: 3, name: 'P.Srinivasa Perumal-III Year CIVIL\nC.Premalatha-III Year CIVIL\nP.Pradeep-II Year CIVIL\nK.Prem kumar-III Year CIVIL\nM.M.Nagaloges-III Year CIVIL\nK.Priyadharshini-II Year CIVIL', event: 'ADANI CEMENTS', level: 'National', award: 'CASH PRIZE OF Rs.7500/-& CASH PRIZE OF Rs.5000/-', title: 'FIBRE REINFORCED CONCRETE BOWLING' },
+    { year: '2024-2025', sno: 1, name: 'SanthoshRaj.R\nJayasuryaprakash V,\nSandeep R\nSrinivasan Perumal.P\nPravin.K\nB.E. IIInd & IInd Year CIVIL', event: '"EMERGING ENGINEERS" Contest in BUILD EXPO 2024-25', level: 'State', award: 'THIRD PRIZE & CASH PRIZE OF Rs.5000/-', title: 'CAUVERY CONFLUENCE' },
+    { year: '2024-2025', sno: 2, name: 'V.Siva sanjay (Team Lead)\nB.E. IIInd Year CIVIL', event: 'HACKXELERATE\'25( KPR Institute of Engineering and Technology)', level: 'State', award: 'PRESTIGIOUS PROJECT AWARD & CASH PRIZE OF Rs.2000/-', title: 'SAVIOURZ' },
+    { year: '2023-2024', sno: 1, name: 'C.Dharshini\nJ.B.Dheeshith\nS.K.Sujan\nP.C.Nithish Kannan\nB.E. II Year CIVIL', event: '"EMERGING ENGINEERS" Contest in BUILD EXPO 2023-24', level: 'State', award: 'THIRD PRIZE & CASH PRIZE OF Rs.5000/-', title: 'Thirumanimutharu Regeneration Process' },
+    { year: '2023-2024', sno: 2, name: 'Thiruselvam B\nNijanthan S\nManoj A\nSandeep R\nB.E. IInd Year CIVIL', event: 'XTURCTURA 1.0 miniature Model Making Contest "HERITAGE AND CULTURE"', level: 'State', award: 'SECOND PRIZE & CASH PRIZE OF Rs.2000/-', title: 'Heritage and Culture' },
+    { year: '2022-2023', sno: 1, name: 'C.Dharshini\nJ.B.Dheeshith\nS.K.Sujan\nB.Thiruselvam\nP.C.Nithish Kannan\nG.Bharath\nB.E. Ist Year CIVIL', event: '"EMERGING ENGINEERS" Contest in BUILD EXPO 2022-23', level: 'State', award: 'FIRST PRIZE & CASH PRIZE OF Rs.10000/-', title: 'Traffic Free Salem' },
+    { year: '2022-2023', sno: 2, name: 'S.Naveen kumar\nV.Keerthi vasan\nV.Sugumar\nS.M.Sanjay\nR.Rishikesevan\nV.G.Arvinth\nP.Guruganapathi\nS.Kowshick\nB.E. IIIrd Year CIVIL', event: 'IITB-FOSSEE MAPATHON', level: 'National', award: '2 TEAMS RECEIVED NOTABLE PARTICIPANTS AWARD', title: 'TRANSPORT & CASE STUDY WITH POLICY MPACTS' },
+  ]
+
+  const studentAwards = courseId === 'be-cse' ? cseStudentAwards : (courseId === 'btech-csbs' ? csbsStudentAwards : (courseId === 'be-civil' ? civilStudentAwards : []))
 
   const csbsFacultyAwards = [
     { sno: 1,  name: 'Dr.M.Ram kumar,\nHOD/CSBS',     event: 'Paper Publication', level: 'International', award: 'SCI', title: 'Enhancing Healthcare Monitoring through Wearable Computing and Massive MIMO Technology in 5G IoT Networks' },
@@ -2980,7 +2992,18 @@ function AwardsSection({ courseId, courseName }) {
     { sno: 3,  name: 'Mrs.D.Ramya',   event: '-', level: '-', award: 'Best Faculty', title: '-' },
   ]
 
-  const facultyAwards = courseId === 'btech-csbs' ? csbsFacultyAwards : (courseId === 'be-cse' ? cseFacultyAwards : [])
+  const civilFacultyAwards = [
+    { sno: 1, name: 'Dr.P.Prasath', event: 'ECO Journey Award', level: '-', award: 'Second/B+ Brilliant Perfomance', title: 'Greenvio Solutions (GVSN),Maharashtra ,India' },
+    { sno: 2, name: 'Mr.P.Selvakumar', event: 'ECO Journey Award', level: '-', award: 'Second/B+ Brilliant Perfomance', title: 'Greenvio Solutions (GVSN),Maharashtra ,India' },
+    { sno: 3, name: 'Mr.S.Arulkesavan', event: 'Best Engineer Award', level: '-', award: 'Junior Level', title: 'Institute of Engineers India' },
+    { sno: '', name: 'Mr.S.Arulkesavan', event: 'NPTEL – Topper Award', level: '-', award: 'Topper 1%', title: 'Indian Institute of Technology, Indore' },
+    { sno: 4, name: 'Mr.B.Sathish kumar', event: 'BIM Contest 2025', level: '-', award: 'Top 10', title: 'L&T EDUTECH,Chennai' },
+    { sno: 5, name: 'Mr. R.Elavarasan', event: 'BIM Contest 2025', level: '-', award: 'Expert Guidance and Mentor', title: 'L&T EDUTECH,Chennai' },
+    { sno: 6, name: 'Mr. L.M.Nirmal', event: 'BIM Contest 2025', level: '-', award: 'Expert Guidance and Mentor', title: 'L&T EDUTECH,Chennai' },
+    { sno: 7, name: 'Mr. S.Senthil Kumar', event: 'NEXUS Catalyst Award', level: '-', award: 'Token of Appreciation', title: 'L&T EDUTECH,Chennai' },
+  ]
+
+  const facultyAwards = courseId === 'btech-csbs' ? csbsFacultyAwards : (courseId === 'be-cse' ? cseFacultyAwards : (courseId === 'be-civil' ? civilFacultyAwards : []))
 
   const visibleData = activeAudience === 'STUDENT' ? studentAwards : facultyAwards
 
@@ -3037,10 +3060,10 @@ function AwardsSection({ courseId, courseName }) {
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">S.No</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">{activeAudience === 'STUDENT' ? 'Name of the Student' : 'Name of the Faculty'}</th>
                 {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
-                  <>
-                    <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Event</th>
-                    <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">Level</th>
-                  </>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Event</th>
+                )}
+                {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && (
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">Level</th>
                 )}
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Distinction / Award</th>
                 {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
@@ -3049,29 +3072,40 @@ function AwardsSection({ courseId, courseName }) {
               </tr>
             </thead>
             <tbody>
-              {visibleData.map((item, idx) => (
-                <tr
-                  key={idx}
-                  className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
-                >
-                  <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
-                  <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
-                  {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
-                    <>
-                      <td className="px-4 py-3 text-sm text-slate-700">{item.event}</td>
-                      <td className="px-4 py-3 text-center">
-                        <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
-                          {item.level}
-                        </span>
-                      </td>
-                    </>
-                  )}
-                  <td className="px-4 py-3 text-sm text-slate-700">{item.award}</td>
-                  {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
-                    <td className="px-4 py-3 text-sm text-slate-600">{item.title}</td>
-                  )}
-                </tr>
-              ))}
+              {visibleData.map((item, idx) => {
+                const showYearHeader = activeAudience === 'STUDENT' && item.year && (idx === 0 || item.year !== visibleData[idx - 1].year);
+                return (
+                  <Fragment key={idx}>
+                    {showYearHeader && (
+                      <tr className="bg-slate-100">
+                        <td colSpan="6" className="px-4 py-3 text-center text-sm font-bold text-slate-800 border-y border-slate-200">
+                          STUDENTS AWARDS {item.year}
+                        </td>
+                      </tr>
+                    )}
+                    <tr
+                      className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
+                    >
+                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                      <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
+                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                        <td className="px-4 py-3 text-sm text-slate-700">{item.event}</td>
+                      )}
+                      {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && (
+                        <td className="px-4 py-3 text-center">
+                          <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                            {item.level}
+                          </span>
+                        </td>
+                      )}
+                      <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
+                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
+                      )}
+                    </tr>
+                  </Fragment>
+                );
+              })}
             </tbody>
           </table>
         </motion.div>
@@ -3359,23 +3393,34 @@ function AchievementSection({ courseId, courseName }) {
               </tr>
             </thead>
             <tbody>
-              {visibleData.map((item, idx) => (
-                <tr
-                  key={idx}
-                  className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
-                >
-                  <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
-                  <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
-                  <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
-                  <td className="px-4 py-3 text-center">
-                    <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
-                      {item.level}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-sm text-slate-700">{item.award}</td>
-                  <td className="px-4 py-3 text-sm text-slate-600">{item.title}</td>
-                </tr>
-              ))}
+              {visibleData.map((item, idx) => {
+                const showYearHeader = item.year && (idx === 0 || item.year !== visibleData[idx - 1].year);
+                return (
+                  <Fragment key={idx}>
+                    {showYearHeader && (
+                      <tr className="bg-slate-100">
+                        <td colSpan="6" className="px-4 py-3 text-center text-sm font-bold text-slate-800 border-y border-slate-200">
+                          STUDENTS AWARDS {item.year}
+                        </td>
+                      </tr>
+                    )}
+                    <tr
+                      className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
+                    >
+                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                      <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
+                      <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
+                      <td className="px-4 py-3 text-center">
+                        <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                          {item.level}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
+                      <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
+                    </tr>
+                  </Fragment>
+                );
+              })}
             </tbody>
           </table>
         </motion.div>
