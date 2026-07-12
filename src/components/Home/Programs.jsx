@@ -188,7 +188,7 @@ const Programs = () => {
                 AI embedded <span className="text-[#ffc107]">Engineering <br className="hidden xl:block" /> & Management courses.</span>
               </h2>
               
-              <p className="text-base lg:text-lg font-medium text-black leading-relaxed max-w-xl">
+              <p className="text-sm lg:text-base font-medium text-black leading-relaxed max-w-xl">
                  Discover a spectrum of industry-leading programmes designed to cultivate next-gen engineers and leaders.
               </p>
            </div>

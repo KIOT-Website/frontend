@@ -285,7 +285,7 @@ const Testimonials = () => {
                   <button
                     key={cat}
                     onClick={() => setActiveTab(cat)}
-                    className={`relative w-full md:w-auto py-3.5 md:py-3 px-8 sm:px-12 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] transition-all rounded-xl whitespace-nowrap text-center ${
+                    className={`relative w-full md:w-auto py-3.5 md:py-3 px-8 sm:px-12 text-xs sm:text-sm font-extrabold normal-case tracking-wider transition-all rounded-xl whitespace-nowrap text-center ${
                       isActive 
                         ? 'bg-[#224292] text-white md:bg-transparent md:text-[#224292] shadow-md md:shadow-none' 
                         : 'text-[#224292] md:text-[#64779F] hover:text-[#224292] bg-transparent'

@@ -65,27 +65,27 @@ const VisionMission = ({ hideHeader = false }) => {
     {
       title: "Our Vision",
       icon: Eye,
-      content: "To be a world class institution to impart value and need based professional education to the aspiring youth and carving them into disciplined world class professionals who have quest for excellence, achievement orientation and social responsibilities."
+      content: "To be a world class institution imparting value-based education to aspiring youth and shaping them into disciplined world class professionals."
     },
     {
       title: "Our Mission",
       icon: Target,
-      content: "To promote academic growth by offering state-of-the-art undergraduate, postgraduate and doctoral programs and to generate new knowledge by engaging in cutting-edge research."
+      content: "To promote academic growth by offering state-of-the-art undergraduate, postgraduate and doctoral programs."
     },
     {
       title: "Our Promise",
       icon: Sparkles,
-      content: "100% Placement | Ethics & Value Based Education"
+      content: "100% Placement | Ethics & Value Based Education."
     },
     {
       title: "Our Values",
       icon: Heart,
-      content: "To pursue global standards of excellence in all our endeavors namely teaching, research, consultancy, continuing education and support functions."
+      content: "To pursue global standards of excellence in all our endeavors."
     },
     {
       title: "Our Commitment",
       icon: ShieldCheck,
-      content: "World Class Education | Culture of Innovation & Creativity | Degree On Time 100% Placement | 360′ Personality Development | Ethics & Values Based Education"
+      content: "World Class Education | Culture of Innovation & Creativity | Degree On Time."
     }
   ]
 
@@ -130,15 +130,23 @@ const VisionMission = ({ hideHeader = false }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.8 }}
-                  className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[280px] flex justify-center ${isEven ? 'lg:mt-16' : 'lg:mb-16'}`}
+                  className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[280px] flex flex-col items-center pt-7 ${isEven ? 'lg:mt-16' : 'lg:mb-16'}`}
                 >
                   {/* Connecting Line - Only on Large Screens */}
                   {i < valuesData.length - 1 && (
                     <div className={`hidden lg:block absolute top-1/2 left-full w-full h-[2px] bg-[#ffc107]/30 z-0 origin-left ${isEven ? '-rotate-[30deg] translate-y-[-100%] translate-x-[-10%]' : 'rotate-[30deg] translate-y-[100%] translate-x-[-10%]'}`} style={{ width: 'calc(100% + 4rem)' }} />
                   )}
 
-                  {/* The Diamond Container with New Stylish Border */}
-                  <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border-2 border-[#ffc107] transform rotate-45 flex items-center justify-center group transition-all duration-500 mx-auto overflow-hidden shadow-sm z-10">
+                  {/* Floating Number Badge – outside overflow container so it's always visible */}
+                  <div
+                    className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-graphik font-bold text-white text-[10px] sm:text-sm z-30 shadow-md"
+                    style={{ backgroundColor: i % 2 === 0 ? '#224292' : '#ffc107' }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+
+                  {/* The Diamond Container – overflow-hidden keeps shape uniform */}
+                  <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border-2 border-[#ffc107] transform rotate-45 flex items-center justify-center group transition-all duration-500 mx-auto shadow-sm z-10 overflow-hidden">
                     
                     {/* Stylish Inner Border Line */}
                     <div className="absolute inset-2 border border-dashed border-[#224292]/10 rounded-[1.5rem] group-hover:border-[#ffc107]/20 transition-colors duration-500 pointer-events-none" />
@@ -149,26 +157,15 @@ const VisionMission = ({ hideHeader = false }) => {
                     {/* Background Shine */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white via-[#224292]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     
-                    {/* Inner content (Counter-rotated back to normal) */}
-                    <div className="transform -rotate-45 p-6 text-center flex flex-col items-center">
-                       {/* Floating Number Circle */}
-                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[85%] w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-graphik font-bold text-white text-[10px] sm:text-sm z-20"
-                            style={{ backgroundColor: i % 2 === 0 ? '#224292' : '#ffc107' }}>
-                         {String(i + 1).padStart(2, '0')}
-                       </div>
-
-                       <h3 className="text-[#224292] font-graphik font-bold text-[14px] sm:text-[16px] tracking-wide mb-3 leading-tight px-2">
+                    {/* Inner content – wider width and no line-clamp to ensure full text visibility */}
+                    <div className="transform -rotate-45 w-[82%] text-center flex flex-col items-center gap-1 px-1">
+                       <h3 className="text-[#224292] font-graphik font-bold text-[13px] sm:text-[14px] tracking-wide leading-tight">
                          {val.title}
                        </h3>
-                       
-                       <p className="text-black text-[11px] sm:text-[12px] font-bold leading-relaxed mb-4">
-                         {val.content.length > 80 ? val.content.substring(0, 80) + "..." : val.content}
+                       <p className="text-black text-[10px] sm:text-[11px] font-semibold leading-snug">
+                         {val.content}
                        </p>
-
-                       {/* Icon at Bottom */}
-                       <div className="mt-auto pt-2">
-                         <val.icon size={20} className={i % 2 === 0 ? 'text-[#224292]' : 'text-[#224292]'} />
-                       </div>
+                       <val.icon size={18} className="text-[#224292] mt-1 shrink-0" />
                     </div>
                   </div>
                 </motion.div>

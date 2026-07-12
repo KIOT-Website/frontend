@@ -19,12 +19,12 @@ import tessolveLogo from '../../assets/main/tessolve.webp'
 const stats = [
   {
     label: "Highest Salary",
-    value: "12.00 Lakhs",
+    value: "13.00 Lakhs",
     icon: TrendingUp
   },
   {
     label: "Average Salary",
-    value: "4.30 Lakhs",
+    value: "4.10 Lakhs",
     icon: Building2
   },
   {
@@ -124,7 +124,7 @@ const Placements = () => {
           {/* RIGHT SIDE: Recruiter Slide (Infinite Loop) */}
           <div className="relative">
              <div className="mb-6 text-center lg:text-left">
-                <h3 className="text-xl lg:text-2xl font-semibold font-graphik mb-1 text-white tracking-tight">Our Top Hiring Partners</h3>
+                <h3 className="text-lg lg:text-xl font-semibold font-graphik mb-1 text-white tracking-tight">Our Top Hiring Partners</h3>
                 <div className="h-1 w-12 bg-[#ffc107] mb-4 mx-auto lg:mx-0 rounded-full" />
              </div>
 

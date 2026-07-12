@@ -6,6 +6,7 @@ import CampusLife from '../components/Home/CampusLife'
 import Achievers from '../components/Home/Achievers'
 import Events from '../components/Home/Events'
 import RecruitmentDrives from '../components/Home/RecruitmentDrives'
+import IndustryCollaboration from '../components/Home/IndustryCollaboration'
 import Testimonials from '../components/Home/Testimonials'
 import AboutKIOT from '../components/Home/AboutKIOT'
 import { motion } from 'framer-motion'
@@ -30,6 +31,7 @@ const Home = () => {
         { Comp: Achievers },
         { Comp: Events },
         { Comp: RecruitmentDrives },
+        { Comp: IndustryCollaboration },
         { Comp: Testimonials }
       ].map(({ Comp }, i) => (
         <motion.div

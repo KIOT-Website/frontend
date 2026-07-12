@@ -313,7 +313,9 @@ export default function CourseDetailPage({ overrides }) {
 
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
-    : TABS;
+    : (courseId === 'btech-csbs'
+        ? ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Awards', 'Clubs', 'Innovative Practices']
+        : TABS);
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
@@ -2637,6 +2639,10 @@ export default function CourseDetailPage({ overrides }) {
               <AwardsSection courseId={courseId} courseName={course.name} />
             )}
 
+            {activeTab === 'Clubs' && courseId === 'btech-csbs' && (
+              <ClubsSection />
+            )}
+
             {/* --- EVENTS --- */}
             {activeTab === 'Events' && (
               <div className="space-y-8 py-8 max-w-3xl mx-auto">
@@ -3469,6 +3475,154 @@ function AchievementSection({ courseId, courseName }) {
           <p className="text-[#64779F] font-bold font-graphik text-sm">Faculty achievements will be updated soon.</p>
         </motion.div>
       ) : null}
+    </div>
+  );
+}
+
+// ─── Clubs Section Component ───────────────────────────────────────────────
+function ClubsSection() {
+  const members = [
+    { sno: 1, name: 'Mrs. P. Raga Keerthana', affiliation: 'Assistant Professor', position: 'Technical Club In-charge' },
+    { sno: 2, name: 'P. Divya', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
+    { sno: 3, name: 'R. Keerthi', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
+    { sno: 4, name: 'R. Kowshika', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
+    { sno: 5, name: 'M. Hasini', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
+    { sno: 6, name: 'R. S. Madhumithaa', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
+  ];
+
+  const objectives = [
+    "Ensure real-time monitoring of environmental conditions in cold chain systems.",
+    "Ensure regulatory compliance.",
+    "Manage environmental risks effectively.",
+    "Optimize energy usage through continuous monitoring."
+  ];
+
+  const responsibilities = [
+    {
+      title: "Planning & Coordination",
+      icon: Calendar,
+      items: [
+        "Plan club activities related to pollutant monitoring.",
+        "Organize awareness programmes and technical sessions."
+      ]
+    },
+    {
+      title: "Monitoring",
+      icon: Target,
+      items: [
+        "Monitor pollutants using sensors and modern technologies.",
+        "Maintain monitoring records and reports."
+      ]
+    },
+    {
+      title: "Technical Activities",
+      icon: Wrench,
+      items: [
+        "Encourage innovative monitoring solutions.",
+        "Promote practical learning in cold chain technology."
+      ]
+    }
+  ];
+
+  return (
+    <div className="space-y-12 py-6">
+      {/* Club Overview Card */}
+      <div className="bg-[#224292] text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+        <div className="absolute right-0 bottom-0 translate-x-12 translate-y-12 opacity-10">
+          <Cpu size={250} />
+        </div>
+        <div className="relative z-10">
+          <div className="inline-block bg-[#ffc107] text-[#224292] font-black text-[10px] uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+            Technical Club
+          </div>
+          <h4 className="text-2xl md:text-3xl font-bold font-graphik mb-2">
+            Technology for Continuous Monitoring (For Pollutants Cold Chain)
+          </h4>
+          <p className="text-white/80 font-medium font-graphik text-sm">
+            Academic Period: <span className="text-[#ffc107] font-bold">June 2024 – May 2025</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Objectives Section */}
+      <div className="bg-slate-50 border border-slate-200/60 rounded-3xl p-8">
+        <h5 className="text-xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-2">
+          <span className="w-1 h-5 bg-[#ffc107] rounded-full inline-block" />
+          Club Objectives
+        </h5>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {objectives.map((obj, i) => (
+            <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+              <CheckCircle2 size={18} className="text-[#224292] shrink-0 mt-0.5" />
+              <p className="text-slate-700 text-sm font-medium leading-relaxed">{obj}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Roles & Responsibilities Section */}
+      <div>
+        <h5 className="text-xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-2">
+          <span className="w-1 h-5 bg-[#ffc107] rounded-full inline-block" />
+          Roles & Responsibilities
+        </h5>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {responsibilities.map((resp, i) => {
+            const Icon = resp.icon;
+            return (
+              <div key={i} className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-center mb-4 text-[#224292]">
+                  <Icon size={20} />
+                </div>
+                <h6 className="text-[15px] font-bold font-graphik text-[#224292] mb-3">{resp.title}</h6>
+                <ul className="space-y-2.5">
+                  {resp.items.map((item, idx) => (
+                    <li key={idx} className="text-xs text-slate-600 font-medium leading-relaxed flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 bg-[#ffc107] rounded-full shrink-0 mt-1.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Committee Members Table */}
+      <div>
+        <h5 className="text-xl font-bold font-graphik text-[#224292] mb-6 flex items-center gap-2">
+          <span className="w-1 h-5 bg-[#ffc107] rounded-full inline-block" />
+          Committee Members
+        </h5>
+        <div className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.03] border border-slate-200">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-[#224292] text-white">
+                  <th className="px-6 py-4 text-[11px] font-semibold uppercase tracking-widest text-center w-[10%]">S.No</th>
+                  <th className="px-6 py-4 text-[11px] font-semibold uppercase tracking-widest">Member Name</th>
+                  <th className="px-6 py-4 text-[11px] font-semibold uppercase tracking-widest">Affiliation</th>
+                  <th className="px-6 py-4 text-[11px] font-semibold uppercase tracking-widest">Position</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {members.map((member, idx) => (
+                  <tr
+                    key={idx}
+                    className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.01]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
+                  >
+                    <td className="px-6 py-3.5 text-center text-sm font-bold text-[#224292]">{member.sno}</td>
+                    <td className="px-6 py-3.5 text-sm font-semibold text-slate-800">{member.name}</td>
+                    <td className="px-6 py-3.5 text-sm text-slate-600 font-medium">{member.affiliation}</td>
+                    <td className="px-6 py-3.5 text-sm font-bold text-[#224292]">{member.position}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

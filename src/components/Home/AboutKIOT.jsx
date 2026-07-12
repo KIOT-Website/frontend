@@ -37,7 +37,7 @@ const AboutKIOT = () => {
             className="space-y-6"
           >
             <div>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[#224292]/5 text-[#224292] text-[11px] font-black uppercase tracking-widest mb-3">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[#224292]/5 text-[#224292] text-[10px] font-black uppercase tracking-widest mb-3">
                 About the Institution
               </span>
               <h2 className="text-2xl lg:text-4xl font-semibold text-[#224292] font-graphik leading-tight mb-4">

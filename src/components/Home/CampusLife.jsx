@@ -73,13 +73,26 @@ const CampusLife = () => {
             viewport={{ once: true }}
             className="lg:col-span-5 space-y-6 lg:space-y-8"
           >
-            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: 'backOut' }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10 mb-2"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107] animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#224292]">
+                Life @ KIOT
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#224292] animate-pulse" />
+            </motion.div>
+
             <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
               A Vibrant <span className="text-[#ffc107]">Ecosystem</span> <br className="hidden lg:block" />
               for Holistic Growth.
             </h2>
             
-            <p className="text-sm lg:text-[15px] text-black font-medium leading-relaxed max-w-xl text-justify">
+            <p className="text-xs lg:text-sm text-black font-medium leading-relaxed max-w-xl text-justify">
               Beyond academics, KIOT creates a vibrant campus experience that shapes confident, creative, and future-ready individuals. From modern infrastructure and student clubs to sports, innovation spaces, and cultural activities, every corner of campus is designed to support growth beyond the classroom. Experience a dynamic environment where learning, leadership, and everyday life come together seamlessly.
             </p>
  
