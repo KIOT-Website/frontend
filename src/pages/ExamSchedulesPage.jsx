@@ -96,8 +96,7 @@ const ExamSchedulesPage = () => {
                                 <table className="w-full text-left border-collapse">
                                     <thead>
                                         <tr className="bg-[#224292] text-white font-black text-[10px] uppercase tracking-[0.2em]">
-                                            <th className="px-10 py-5 border-r border-white/5">REGULATION</th>
-                                            <th className="px-10 py-5 border-r border-white/5">EXAMINATION NAME</th>
+                                            <th className="px-10 py-5 border-r border-white/5">Examination</th>
                                             <th className="px-10 py-5 text-right">DOCUMENT</th>
                                         </tr>
                                     </thead>
@@ -110,11 +109,6 @@ const ExamSchedulesPage = () => {
                                                 onClick={() => window.open(item.pdf_url, '_blank')}
                                                 className="group hover:bg-[#ffc107]/5 transition-colors border-b border-slate-50 last:border-0 cursor-pointer"
                                             >
-                                                <td className="px-10 py-4">
-                                                    <span className="font-bold text-[#333333] text-[13px] uppercase tracking-wider">
-                                                        {item.regulation || (item.title && item.title.includes(' - ') ? item.title.split(' - ')[0] : 'OFFICIAL')}
-                                                    </span>
-                                                </td>
                                                 <td className="px-10 py-4">
                                                     <div className="flex items-center gap-4">
                                                         <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-600 group-hover:bg-[#224292] group-hover:text-white transition-all border border-red-100/50">
@@ -170,8 +164,7 @@ const ExamSchedulesPage = () => {
                                 <table className="w-full text-left border-collapse">
                                     <thead>
                                         <tr className="bg-[#224292] text-white font-black text-[10px] uppercase tracking-[0.2em]">
-                                            <th className="px-10 py-5 border-r border-white/5">REGULATION</th>
-                                            <th className="px-10 py-5 border-r border-white/5">EXAMINATION NAME</th>
+                                            <th className="px-10 py-5 border-r border-white/5">Examination</th>
                                             <th className="px-10 py-5 text-right">DOCUMENT</th>
                                         </tr>
                                     </thead>
@@ -184,11 +177,6 @@ const ExamSchedulesPage = () => {
                                                 onClick={() => window.open(item.pdf_url, '_blank')}
                                                 className="group hover:bg-[#ffc107]/5 transition-colors border-b border-slate-50 last:border-0 cursor-pointer"
                                             >
-                                                <td className="px-10 py-4">
-                                                    <span className="font-bold text-[#333333] text-[13px] uppercase tracking-wider">
-                                                        {item.regulation || (item.title && item.title.includes(' - ') ? item.title.split(' - ')[0] : 'OFFICIAL')}
-                                                    </span>
-                                                </td>
                                                 <td className="px-10 py-4">
                                                     <div className="flex items-center gap-4">
                                                         <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-red-600 group-hover:bg-[#224292] group-hover:text-white transition-all border border-red-100/50">
