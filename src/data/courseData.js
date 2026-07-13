@@ -189,11 +189,12 @@ import cseDhineshkumarSImage from '../assets/Faculity/cse/Mr. S.DHINESHKUMAR.web
 import cseTArunaChristryImage from '../assets/Faculity/cse/Dr.T. ARUNA CHRISTY.webp'
 import csePGaneshenImage from '../assets/Faculity/cse/Mr.P.GANESHAN.webp'
 import csePavithraGImage from '../assets/Faculity/cse/Mrs.G.PAVITHRA.webp'
-import cseVAnithaImage from '../assets/Faculity/cse/Anitha V.png'
-import cseAPrabhaImage from '../assets/Faculity/cse/Prabha A.png'
-import cseRKrishnakumarImage from '../assets/Faculity/cse/Krishnakumar R.png'
-import cseCAravindanImage from '../assets/Faculity/cse/Aravindan C.png'
-import csePNareshkumarImage from '../assets/Faculity/cse/Nareshkumar P.png'
+import cseVAnithaImage from '../assets/Faculity/cse/Anitha V.webp'
+import cseAPrabhaImage from '../assets/Faculity/cse/Prabha A.webp'
+import cseRKrishnakumarImage from '../assets/Faculity/cse/Krishnakumar R.webp'
+import cseCAravindanImage from '../assets/Faculity/cse/Aravindan C.webp'
+import csePNareshkumarImage from '../assets/Faculity/cse/Nareshkumar P.webp'
+import cseSowndharyaImage from '../assets/Faculity/cse/Sowndharya T.webp'
 
 // IT Faculty Imports
 import itSachidhanandamImage from '../assets/Faculity/IT/Dr.P.Sachidhanandam, IT.png'
@@ -866,6 +867,7 @@ export const courseData = {
       { name: 'A. Prabha', designation: 'Assistant Professor', doj: '25.06.2026', qualification: 'B.E., M.E.,', association: 'Regular', experience: 'Teaching - 6.7 (Polytechnic-5.7 yrs & Engineering -10 months), Industry - 10', specialization: 'Machine Learning', email: 'aprcse@kiot.ac.in', publications: 'NJ:1, IC:1, Book/BC - 1/1', rating: 4.7, image: cseAPrabhaImage },
       { name: 'R. Krishnakumar', designation: 'Assistant Professor', doj: '11.06.2026', qualification: 'B.E., M.E., (Ph.D).,', association: 'Regular', experience: 'Teaching - 11.4, Research - 3', specialization: 'Wireless Sensor Networks', email: 'rkkcse@kiot.ac.in', publications: 'IJ:14, NJ:4, IC:23, NC:2', rating: 4.7, image: cseRKrishnakumarImage },
       { name: 'C. Aravindan', designation: 'Assistant Professor', doj: '01.07.2026', qualification: 'B.E., M.E.,', association: 'Regular', experience: 'Teaching - 10 months, Industry – 5.6', specialization: 'C Programming, Data Structures', email: 'cacse@kiot.ac.in', publications: 'Nil', rating: 4.5, image: cseCAravindanImage },
+      { name: 'Sowndharya T', designation: 'Assistant Professor', image: cseSowndharyaImage },
       // Professors of Practice
       { name: 'Mr. Ezhilavan B', designation: 'Associate POP', doj: '12.07.2024', qualification: 'B.E. CSE', experience: '14.10 Years', rating: 4.8 },
       { name: 'Mrs. Gayathri Devi M', designation: 'Associate POP', doj: '10.07.2024', qualification: 'B.Tech. M.E. CSE', experience: '11.10 Years', rating: 4.8 },
