@@ -300,7 +300,7 @@ export const courseData = {
       { name: 'Prof. R. Venkatraman', designation: 'Assistant Professor', experience: 'Teaching : 14.0 Years', specialization: 'Production Engineering', rating: 4.7, qualification: 'B.E., M.E.', email: 'rvmech@kiot.ac.in', joiningDate: '03.06.2016', association: 'Regular', publications: 'IJ: 01, NJ: 02, IC: 03, NC: 04', image: venkatramanImage },
       { name: 'Prof. S. Dheepak', designation: 'Assistant Professor', experience: 'Teaching : 12.11 Years', specialization: 'Product Design and Development', rating: 4.7, qualification: 'B.E., M.E., (Ph.D).', email: 'sdmech@kiot.ac.in', joiningDate: '01.06.2017', association: 'Regular', publications: 'IJ:03, IC:01, NC:04', image: dheepakImage },
       { name: 'Prof. A. Gajendran', designation: 'Assistant Professor', experience: 'Teaching :8.4 Years', specialization: 'Thermal Engineering', rating: 4.6, qualification: 'B.E., M.E.(Ph.D)', email: 'agmech@kiot.ac.in', joiningDate: '23.08.2021', association: 'Regular', publications: 'IJ: 03, IC: 03, NC: 02', image: gajendranImage },
-      { name: 'Prof. G. Sureshkrishna', designation: 'Assistant Professor', experience: 'Teaching : 7.4 Years', specialization: 'Industrial Safety Engineering', rating: 4.5, qualification: 'B.E., M.E.', email: 'sureshkpr13@gmail.com', joiningDate: '21.03.2025', association: 'Regular', image: sureshkrishnaImage },
+      { name: 'Prof. G. Sureshkrishna', designation: 'Assistant Professor', experience: 'Teaching : 7.4 Years', specialization: 'Industrial Safety Engineering', rating: 4.5, qualification: 'B.E., M.E.', email: 'gskmech@kiot.ac.in', joiningDate: '21.03.2025', association: 'Regular', image: sureshkrishnaImage },
       { name: 'Prof. K.N. Karthick', designation: 'Assistant Professor', experience: 'Teaching-13 & Industry-1', specialization: 'Manufacturing system and Management', rating: 4.6, qualification: 'B.E., M.E.,(Ph.D)', email: 'karthickmech007@gmail.com', joiningDate: '15.05.2025', association: 'Regular', publications: '10', image: karthickKNImage },
       { name: 'Prof. Divagaran P', designation: 'Assistant Professor', experience: 'Teaching- 6 Month', specialization: 'Thermal Engineering', rating: 4.5, qualification: 'B.E., M.E.', email: 'divagaranslm2017@gmail.com', joiningDate: '16.05.2025', association: 'Regular', publications: '03', image: divagaranImage },
       { name: 'Mr. R. ANBARASU', designation: 'Assistant Professor', experience: 'Industry: 3 Years', specialization: 'Composite materials', rating: 4.8, qualification: 'DME., BE., ME., MISTE., IFERP., (Ph. D)', email: 'ramech@kiot.ac.in', joiningDate: '22.06.2026', association: 'Regular', publications: 'IJ: 2, IC: 2', image: anbarasuRImage },
@@ -3390,7 +3390,7 @@ export const courseData = {
         association: 'Regular',
         experience: 'Teaching : 7.4 Years',
         specialization: 'Industrial Safety Engineering',
-        email: 'sureshkpr13@gmail.com',
+        email: 'gskmech@kiot.ac.in',
         rating: 4.5
       }
     ],

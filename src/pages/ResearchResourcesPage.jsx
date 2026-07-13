@@ -521,7 +521,7 @@ const mechSupervisors = [
         supervisorId: "2220288",
         email: "pnkmech@kiot.ac.in",
         guided: "08",
-        guiding: "06",
+        guiding: "0",
         irins: "https://kiot.irins.org",
         image: navaneethakrishnanMechImg,
         publications: []

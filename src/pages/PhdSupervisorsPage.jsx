@@ -38,7 +38,7 @@ const PhdSupervisorsPage = () => {
         'mechanical-engineering': [
             { id: 1, name: "Dr.PSS.Srinivasan", university: "Anna University", department: "MECH", researchArea: "Heat transfer, CFD", supervisorId: "9920479", email: "chairman@kiot.ac.in", guided: "16", guiding: "1" },
             { id: 2, name: "Dr.K.Visagavel", university: "Anna University", department: "MECH", researchArea: "Thermal Engineering, Solar Energy", supervisorId: "2420553", email: "principal@kiot.ac.in", guided: "5", guiding: "7" },
-            { id: 3, name: "Dr.P.Navaneethakrishnan", university: "Anna University", department: "MECH", researchArea: "Design, CAD/CAM, FEA", supervisorId: "2220288", email: "pnkmech@kiot.ac.in", guided: "8", guiding: "6" },
+            { id: 3, name: "Dr.P.Navaneethakrishnan", university: "Anna University", department: "MECH", researchArea: "Design, CAD/CAM, FEA", supervisorId: "2220288", email: "pnkmech@kiot.ac.in", guided: "8", guiding: "0" },
             { id: 4, name: "Dr.M. Ilangkumaran", university: "Anna University", department: "MECH", researchArea: "Maintenance Engineering, MCDM", supervisorId: "2120119", email: "mikmech@kiot.ac.in", guided: "6", guiding: "4" }
         ],
         'electronics-&-communication-engineering': [
