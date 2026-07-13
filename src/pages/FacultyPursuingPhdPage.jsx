@@ -247,18 +247,26 @@ const FacultyPursuingPhdPage = () => {
         'information-technology': [
             {
                 id: 1,
-                name: "Ms.B.Manjubashini, AP/IT",
-                topic: "Wireless Sensor Networks",
-                supervisor: "Dr.K.R.Kavitha, Department of ECE, Sona college of technology.",
-                registration: "2022",
+                name: "Mrs.R.V.Sudha",
+                topic: "Wireless sensor Network",
+                supervisor: "Dr.S.Saktivel, ASP/CSE, Sona college of technology, Salem",
+                registration: "24121691132",
                 university: "Anna University"
             },
             {
                 id: 2,
-                name: "Mrs.S.Lalithambikai, AP/IT",
-                topic: "Wireless Sensor Networks",
-                supervisor: "RAJENDRAN P / 2340253, Professor, Department of Computer Science and Engineering, Knowledge Institute of Technology (Autonomous), KIOT Campus, Kakapalayam (PO), Salem - 637 504",
-                registration: "2024",
+                name: "Mrs.S.Lalithambikai",
+                topic: "Wireless sensor Network",
+                supervisor: "Dr.P.Rajendran, Professor & Director PAT(III) / CSE, Knowledge Institute of Technology, Salem",
+                registration: "24234691278",
+                university: "Anna University"
+            },
+            {
+                id: 3,
+                name: "Ms.B.Manjubashini",
+                topic: "Wireless Sensor Network",
+                supervisor: "Dr. Murali babu, Department of ECE, Paavai Engineering College, Namakkal",
+                registration: "22244697187",
                 university: "Anna University"
             }
         ],
@@ -417,11 +425,11 @@ const FacultyPursuingPhdPage = () => {
                         <table className="w-full border-collapse text-left">
                             <thead>
                                 <tr className="text-white">
-                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] w-16 border-r border-white/5">S.No.</th>
-                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] border-r border-white/5">Supervision Detail</th>
-                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] border-r border-white/5">Research Scholar & Topic</th>
-                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[10px] font-black tracking-[2px] border-r border-white/5">Supervisor Affiliate</th>
-                                    <th className="bg-[#0f172a] px-6 py-5 text-right text-[10px] font-black text-[#ffc107] tracking-[2px] pr-8">Year</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[13px] font-semibold font-graphik tracking-wider w-16 border-r border-white/5">S.No.</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[13px] font-semibold font-graphik tracking-wider border-r border-white/5">Name of the Scholar</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[13px] font-semibold font-graphik tracking-wider border-r border-white/5">Research Domain</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[13px] font-semibold font-graphik tracking-wider border-r border-white/5">Supervisor</th>
+                                    <th className="bg-[#0f172a] px-6 py-5 text-left text-[13px] font-semibold font-graphik text-[#ffc107] tracking-wider pr-8">Registration No. & Affiliation</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
@@ -439,15 +447,12 @@ const FacultyPursuingPhdPage = () => {
                                             <td className="px-6 py-5">
                                                 <div className="flex items-center gap-3">
                                                     <div className="text-[#0f172a] group-hover:text-[#ffc107] transition-colors"><Users size={18} /></div>
-                                                    <div>
-                                                        <div className="text-[13px] font-bold text-[#0f172a] tracking-tight">{faculty.name}</div>
-                                                        <div className="text-[10px] font-bold text-[#334155]">{faculty.university}</div>
-                                                    </div>
+                                                    <span className="text-[13px] font-bold text-[#0f172a] tracking-tight">{faculty.name}</span>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5">
                                                 <div className="max-w-[280px]">
-                                                    <p className="text-[12px] font-semibold text-[#1e293b] leading-relaxed line-clamp-2 italic">
+                                                    <p className="text-[12px] font-semibold text-[#1e293b] leading-relaxed italic">
                                                         "{faculty.topic}"
                                                     </p>
                                                 </div>
@@ -460,9 +465,10 @@ const FacultyPursuingPhdPage = () => {
                                                     <span className="text-[12px] font-bold text-[#0f172a] tracking-tight">{faculty.supervisor}</span>
                                                 </div>
                                             </td>
-                                            <td className="px-6 py-5">
-                                                <div className="flex items-center justify-end gap-1.5 text-[#0f172a] text-[13px] font-bold uppercase transition-colors group-hover:text-[#ffc107]">
-                                                    <Calendar size={14} className="text-[#ffc107] group-hover:text-[#0f172a] transition-colors" /> {faculty.registration.split(' & ')[1] || faculty.registration}
+                                            <td className="px-6 py-5 pr-8">
+                                                <div className="flex flex-col gap-1">
+                                                    <span className="text-[12px] font-bold text-[#0f172a]">{faculty.registration}</span>
+                                                    <span className="text-[10px] font-semibold text-[#475569]">{faculty.university}</span>
                                                 </div>
                                             </td>
                                         </tr>

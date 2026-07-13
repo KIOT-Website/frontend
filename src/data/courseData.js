@@ -2771,16 +2771,126 @@ export const courseData = {
     color: '#18357a',
     tagline: 'Intelligence Made Simple.',
     overview: [
-      "Department of Artificial Intelligence and Data Science at the Knowledge Institute of Technology (KIOT), established in 2021, is designed to meet the demands of today’s digital era. This undergraduate programme equips students with a strong foundation in core areas such as artificial intelligence, data mining, and data modeling, while also providing advanced exposure to machine learning and big data analytics. With a focus on academic excellence and research-driven learning, the department enables students to explore real-world applications and build industry-relevant skills.",
-      "Supported by a team of experienced and dedicated faculty, the department fosters an engaging learning environment through innovative teaching methodologies, well-equipped laboratories with high-end systems, and essential software tools. Regular industrial visits, guest lectures, workshops, and technical events enhance both technical and professional development. The programme prepares students with interdisciplinary expertise across statistics, computer science, and AI domains, opening diverse career opportunities in industries such as IT, healthcare, banking, e-commerce, and intelligent systems."
+      "The Department of Artificial Intelligence & Data Science (AI&DS) was established in the Academic Year 2021-2022 with an initial intake of 60 students. In recognition of the growing demand for AI professionals and the department’s academic excellence, the intake was increased to 120 students from the Academic Year 2024-2025.",
+      "The department is committed to nurturing future-ready AI professionals through an industry-oriented curriculum that integrates the latest advancements in Artificial Intelligence, Data Science, Machine Learning, Deep Learning, Computer Vision, Generative AI and Intelligent Automation. The curriculum is designed to bridge the gap between academia and industry, enabling students to become highly employable and innovation-driven graduates.",
+      "Our academic ecosystem is built on the principles of Outcome-Based Education (OBE), experiential learning, project-based learning, problem-solving and continuous improvement. Students gain practical exposure through industry internships, live projects, hackathons, product development, research activities, technical clubs, professional certifications and interdisciplinary collaborations. Strong industry partnerships, modern laboratories, dedicated faculty mentors and a vibrant innovation culture empower students to develop technical expertise, entrepreneurial mindset, leadership qualities and lifelong learning skills. The department strives to produce globally competent AI engineers who can contribute effectively to industry, research and society."
     ],
     vision: "To be a world class institution to impart value and need based professional education to the aspiring youth and carving them into disciplined world class professional who have the quest for excellence, achievement orientation and social responsibilities.",
     mission: "To promote academic growth by offering state-of-art undergraduate, postgraduate, and doctoral PROGRAMs and to generate new knowledge by engaging in cutting – edge research.\nTo nurture talent, innovation, entrepreneurship, all-round personality, and value system among the students and to foster competitiveness among students.\nTo undertake collaborative projects which offer opportunities for long-term interaction with academia and industry.\nTo pursue global standards of excellence in all our endeavors namely teaching, research, consultancy, continuing education and support functions.",
     peo: "The program Educational Objectives (PEOs) of the Department represent major accomplishments that the graduates are expected to achieve after three to five years of graduation.\nPEO – 1: Perform data processing, analysis and visualization in real time applications for better prediction and data-driven decision making.\nPEO – 2: Enable multitasking for existing resources and execute complex tasks using Artificial Intelligence.\nPEO – 3: Carry out fundamental research to cater the critical needs of the society through cutting edge technologies of AI.",
     po: "The graduates of Artificial Intelligence and Data Science will be able to:\nPO – 1: Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\nPO – 2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\nPO – 3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\nPO – 4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\nPO – 5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\nPO – 6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\nPO – 7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\nPO – 8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\nPO – 9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\nPO – 10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\nPO – 11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\nPO – 12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
     pso: "After the successful completion of B.Tech. PROGRAMme in Artificial Intelligence and Data Science, the graduates will able to\nPSO – 1: Apply the concepts of Machine Learning and Data Science to solve the real time business problems. \nPSO – 2: Exhibit their professional skills in team building, leadership, communication, values and ethics. \nPSO – 3: Build a suitable model to assist business analytics and helps solving business problems.",
-    whyChoose: ['AI focus', 'Data engineering specialisation'],
+    whyChoose: [
+      'Outcome-Based & Experiential Learning',
+      'Industry Oriented Curriculum aligned with current and future technologies',
+      'AI Based Product Development and Innovation Culture',
+      'Industry Collaborations and Centers of Excellence',
+      'Entrepreneurship and Startup Support'
+    ],
     curriculum: [{ year: 'Year 1', semesters: ['Data Science Fundamentals', 'Probability'] }],
+    patents: [
+      {
+        year: '2026',
+        data: [
+          {
+            inventors: 'Dr. B. Sasikumar',
+            title: 'Artificial Intelligence-Based Cash Dispensing System for Automatic Teller Machines',
+            type: 'Design Patent',
+            appNo: '202441093027 A',
+            date: '11/28/2024',
+            status: 'Published'
+          },
+          {
+            inventors: 'Dr. B. Sasikumar',
+            title: 'Differential Privacy Gradient Compression Algorithm for Distributed Machine Learning Optimization',
+            type: 'Utility Patent',
+            appNo: '202641043056 A',
+            date: '03/04/2026',
+            status: 'Published'
+          },
+          {
+            inventors: 'Dr. A. Gomathi',
+            title: 'Eye Tracking System Using Internet of Things (IoT)',
+            type: 'Utility Patent',
+            appNo: '202041008052',
+            date: '26/02/2020',
+            status: 'Granted'
+          },
+          {
+            inventors: 'Dr. A. Gomathi',
+            title: 'Differential Privacy Gradient Compression Algorithm for Distributed Machine Learning Optimization',
+            type: 'Utility Patent',
+            appNo: '202641043056 A',
+            date: '03/04/2026',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr. A. Gopalakrishnan',
+            title: 'Artificial Intelligence-Based Cash Dispensing System for Automatic Teller Machines',
+            type: 'Design Patent',
+            appNo: '202441093027 A',
+            date: '11/28/2024',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr. A. Gopalakrishnan',
+            title: 'Preventing Attacks on Cyber Automation Systems Based on Artificial Intelligence',
+            type: 'Design Patent',
+            appNo: '202241042636 A',
+            date: '26/07/2022',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mr. A. Gopalakrishnan',
+            title: 'A System and Method for an Optimization Technique for the Detection of Blind Spots in an Eye Using Deep Learning',
+            type: 'Design Patent',
+            appNo: '202241032642 A',
+            date: '08/06/2022',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. V. Brindha',
+            title: 'Artificial Intelligence-Based Cash Dispensing System for Automatic Teller Machines',
+            type: 'Design Patent',
+            appNo: '202441093027 A',
+            date: '11/28/2024',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. P.J. Esther Rani',
+            title: 'Artificial Intelligence-Based Cash Dispensing System for Automatic Teller Machines',
+            type: 'Design Patent',
+            appNo: '202441093027 A',
+            date: '11/28/2024',
+            status: 'Published'
+          },
+          {
+            inventors: 'Mrs. B. Bhuvaneswari',
+            title: 'Artificial Intelligence (Ai) Based Cloud Security Detecting Device',
+            type: 'Design Patent',
+            appNo: '6418470',
+            date: '21/1/2025',
+            status: 'Granted'
+          },
+          {
+            inventors: 'Mrs. B. Bhuvaneswari',
+            title: 'An IoT-Driven Cloud-Based Ai System for Early Breast Cancer Detection With Automated Image Analysis and Performance Enhancement',
+            type: 'Design Patent',
+            appNo: '202641024464 A',
+            date: '02/03/2026',
+            status: 'Published'
+          },
+          {
+            inventors: 'Dr. G. Venkatesh',
+            title: 'Patented Techniques for Improving the Performance of Nanostructured CdS Thin Films in Optoelectronic Applications',
+            type: 'Utility Patent',
+            appNo: '202441070049 A',
+            date: '19.06.2024',
+            status: 'Published'
+          }
+        ]
+      }
+    ],
     faculty: [
       { name: 'Dr. B. Sasikumar', designation: 'Associate Professor & Head', doj: '01.07.2009', qualification: 'B.E., M.E(CSE)., (Ph.D.).', association: 'Regular', experience: '19 Yrs 10 Months', specialization: 'Digital Image Processing, AI, Data Science, ML', email: 'hod.aids@kiot.ac.in', publications: 'IJ:05, NJ:03, IC:05, NC:02', rating: 5.0, image: aidsSasikumarHodImage },
       { name: 'Mr. A. Gopalakrishnan', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '13 Yrs 9 Months', specialization: 'Operating System, Cloud Computing', email: 'agaids@kiot.ac.in', publications: 'IJ:03,IC:05,NC:03', rating: 4.8, image: aidsGopalakrishnanImage },
@@ -2796,6 +2906,9 @@ export const courseData = {
       { name: 'Mr. Gunasekar B', designation: 'Assistant professor', doj: '01.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '2 Industry and 2.5 Teaching', specialization: 'Cryptography', email: 'bgaids@kiot.ac.in', publications: 'NJ:2', rating: 4.5, image: aidsGunasekarImage },
       { name: 'Dr. S. Manivel', designation: 'Assistant professor', doj: '20.06.2024', qualification: 'M.sc., Ph.D.', association: 'Regular', experience: '9 Yrs 10 Months', specialization: 'vibrational spectroscopy', email: 'smvphy@kiot.ac.in', publications: 'IJ:6, NJ:6', rating: 4.7, image: aidsManivelImage },
       { name: 'Ms. Ranitha N.M', designation: 'Assistant professor', doj: '30.04.2025', qualification: 'B.E(CSE), M.E(CSE)', association: 'Regular', experience: '3 Months', specialization: 'Machine Learning', email: 'nmraids@kiot.ac.in', rating: 4.5, image: aidsRanithaImage },
+      { name: 'Mrs. M. Rupa Devi', designation: 'Assistant Professor', doj: '04.05.2026', qualification: 'M.E.(CSE)', association: 'Regular', experience: 'Teaching – 6 Months', specialization: 'Machine Learning', email: 'mraids@kiot.ac.in', publications: 'SIJ: 2', rating: 4.6 },
+      { name: 'Mrs. S Mugambigai', designation: 'Assistant Professor', doj: '13.05.2026', qualification: 'M.E.(CSE)', association: 'Regular', experience: '-', specialization: 'Image Processing', email: 'smaids@kiot.ac.in', publications: 'SIJ: 1', rating: 4.5 },
+      { name: 'Mrs. N. Savitha', designation: 'Assistant Professor', doj: '19.05.2026', qualification: 'MCA., ME', association: 'Regular', experience: 'Teaching – 10 Years', specialization: 'AI with IOT', email: 'nsaids@kiot.ac.in', publications: 'SIJ: 2', rating: 4.7 },
       { name: 'Mr. S. Iyyappan', designation: 'Associate POP', doj: '05.07.2024', qualification: 'B.E.', experience: '18.10 Years', rating: 4.8 },
       { name: 'Mr. V. Dhanaraj', designation: 'Associate POP', doj: '15.07.2024', qualification: 'B.E. ECE', experience: '20.10 Years', rating: 4.9 },
       { name: 'Mr. S. Vigneswaran', designation: 'Associate POP', doj: '15.07.2024', qualification: 'B.E.', experience: '14.10 Years', rating: 4.7 },
@@ -2806,33 +2919,39 @@ export const courseData = {
     ],
     labs: [
       {
-        name: 'AI LAB',
+        name: 'AI LAB (D BLOCK)',
         equipments: [
           'Area: 748 Sq. ft',
-          'Systems: 30 High Performing Systems',
-          'Software: Python, Java, MySQL, Power BI, Visual Studio',
-          'Focus: AI & ML Algorithms, Data Analytics'
+          'Systems: 30 Systems',
+          'License: Open-Source Software',
+          'Software: Python, JDK - JAVA, MySQL, Power BI, Visual Studio'
         ],
+        incharge: 'Mrs. P. J. Esther Rani',
+        technician: 'Mrs. P. Menaka',
         icon: Cpu
       },
       {
         name: 'Data Science and Analytics Laboratory',
         equipments: [
-          'Area: 103.05 Sq.m',
-          'Systems: 40 Workstations',
-          'Software: Turbo C, C++, JDK 1.9, Python, PostgreSQL, Visual Studio',
-          'Focus: Programming, Data Handling, and Analytical Skills'
+          'Area: 103.05 Sq. m',
+          'Systems: 40 Systems',
+          'License: Open-Source Software',
+          'Software: Turbo c, C++, JDK1.9, Python, PostgreSQL, Visual Studio'
         ],
+        incharge: 'Mr. A. Gopalakrishnan',
+        technician: 'Mr. K. Bharathiyar',
         icon: Terminal
       },
       {
-        name: 'COE LAB',
+        name: 'COE (Punch BIZ) LAB',
         equipments: [
-          'Area: 546 Sq.ft',
+          'Area: 546 Sq. ft',
           'Systems: 20 Systems',
-          'Software: Python, OpenCV, TensorFlow, PyTorch, Flask, MySQL, Turbo C, C++, JDE',
-          'Focus: Deep Learning, Business Analytics, Enterprise Applications'
+          'License: Open-Source Software',
+          'Software: Python, OpenCV, Tensor flow, Py torch, flask, MySQL, JDE, Turbo C++'
         ],
+        incharge: 'Mrs. V. Brindha',
+        technician: 'Mr. K. Bharathiyar',
         icon: Activity
       }
     ],
@@ -3547,7 +3666,78 @@ export const courseData = {
         ]
       }
     ],
-    placementStats: { placed: '89%', avg: '5.2 LPA', top: '14 LPA', companies: '40+' }
+    placementStats: { placed: '89%', avg: '5.2 LPA', top: '14 LPA', companies: '40+' },
+    patents: [
+      {
+        year: "Department Patents",
+        data: [
+          {
+            inventors: "Prof. M. Bharani Eswari",
+            title: "A Personalized Customer Experience System using Machine Learning (ML) and Natural Language Processing (NLP)",
+            type: "Design",
+            appNo: "-",
+            date: "3/14/2026",
+            status: "APPLIED"
+          },
+          {
+            inventors: "Prof. M. Bharani Eswari",
+            title: "Financial Risk Assessment Device",
+            type: "Design",
+            appNo: "469755-001",
+            date: "11/6/2025",
+            status: "Published"
+          },
+          {
+            inventors: "Prof. M. Bharani Eswari",
+            title: "Micro Fluidic Hemo Analyser Using Biosensor",
+            type: "Design",
+            appNo: "202441017675",
+            date: "3/13/2024",
+            status: "Applied"
+          },
+          {
+            inventors: "Mrs. D. Senchulakshmi",
+            title: "Device to Identify Financial Loan Eligibility of a Person",
+            type: "Design",
+            appNo: "393345-001",
+            date: "8/22/2023",
+            status: "Published"
+          },
+          {
+            inventors: "Prof. P. Manikandan",
+            title: "Financial Risk Assessment Device",
+            type: "Design",
+            appNo: "469755-001",
+            date: "11/6/2025",
+            status: "Published"
+          },
+          {
+            inventors: "Mrs. S. Vimala",
+            title: "Impact of Capital Marketing in Economic Development Country",
+            type: "Utility Patent",
+            appNo: "202521045360",
+            date: "5/10/2025",
+            status: "Published"
+          },
+          {
+            inventors: "Dr. R. Ambaliga Bharathi Kavithai",
+            title: "The Role of Performance-Based Budgeting in Financial Planning Management",
+            type: "Utility Patent",
+            appNo: "1243184",
+            date: "3/16/2026",
+            status: "Applied"
+          },
+          {
+            inventors: "Dr. R. Ambaliga Bharathi Kavithai",
+            title: "Impact of Advantages of Performance- Based Budgeting in Optimizing Financial Planning and Management",
+            type: "Utility Patent",
+            appNo: "E-12/1636/2026/CHE",
+            date: "2/6/2026",
+            status: "Published"
+          }
+        ]
+      }
+    ]
   },
   'mba-iev': {
     name: 'MBA in Innovation, Entrepreneurship & Venture Development (MBA-IEV)',
@@ -3623,7 +3813,78 @@ export const courseData = {
         ]
       }
     ],
-    placementStats: { placed: '90%', avg: '5.5 LPA', top: '16 LPA', companies: '25+' }
+    placementStats: { placed: '90%', avg: '5.5 LPA', top: '16 LPA', companies: '25+' },
+    patents: [
+      {
+        year: "Department Patents",
+        data: [
+          {
+            inventors: "Prof. M. Bharani Eswari",
+            title: "A Personalized Customer Experience System using Machine Learning (ML) and Natural Language Processing (NLP)",
+            type: "Design",
+            appNo: "-",
+            date: "3/14/2026",
+            status: "APPLIED"
+          },
+          {
+            inventors: "Prof. M. Bharani Eswari",
+            title: "Financial Risk Assessment Device",
+            type: "Design",
+            appNo: "469755-001",
+            date: "11/6/2025",
+            status: "Published"
+          },
+          {
+            inventors: "Prof. M. Bharani Eswari",
+            title: "Micro Fluidic Hemo Analyser Using Biosensor",
+            type: "Design",
+            appNo: "202441017675",
+            date: "3/13/2024",
+            status: "Applied"
+          },
+          {
+            inventors: "Mrs. D. Senchulakshmi",
+            title: "Device to Identify Financial Loan Eligibility of a Person",
+            type: "Design",
+            appNo: "393345-001",
+            date: "8/22/2023",
+            status: "Published"
+          },
+          {
+            inventors: "Prof. P. Manikandan",
+            title: "Financial Risk Assessment Device",
+            type: "Design",
+            appNo: "469755-001",
+            date: "11/6/2025",
+            status: "Published"
+          },
+          {
+            inventors: "Mrs. S. Vimala",
+            title: "Impact of Capital Marketing in Economic Development Country",
+            type: "Utility Patent",
+            appNo: "202521045360",
+            date: "5/10/2025",
+            status: "Published"
+          },
+          {
+            inventors: "Dr. R. Ambaliga Bharathi Kavithai",
+            title: "The Role of Performance-Based Budgeting in Financial Planning Management",
+            type: "Utility Patent",
+            appNo: "1243184",
+            date: "3/16/2026",
+            status: "Applied"
+          },
+          {
+            inventors: "Dr. R. Ambaliga Bharathi Kavithai",
+            title: "Impact of Advantages of Performance- Based Budgeting in Optimizing Financial Planning and Management",
+            type: "Utility Patent",
+            appNo: "E-12/1636/2026/CHE",
+            date: "2/6/2026",
+            status: "Published"
+          }
+        ]
+      }
+    ]
   },
   'mca': {
     name: 'Master of Computer Applications',

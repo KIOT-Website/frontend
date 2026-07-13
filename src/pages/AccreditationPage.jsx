@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+
+// Import QS-I-GAUGE PDF
+import qsGaugePdf from '../assets/QS-I-GAUG/QS-I-GAUGE-Certificateet.pdf';
 import { 
   FileText, 
   Download, 
@@ -49,6 +52,16 @@ const AccreditationPage = () => {
       link: "/pdfs/NBA-Accreditation-2025.pdf.pdf",
       iconColor: "text-green-600",
       ribbonColor: "bg-green-600"
+    },
+    {
+      id: 4,
+      title: "QS-I-GAUGE RATING",
+      subtitle: "★ QS-I-GAUGE CERTIFICATE ★",
+      type: "PDF Document",
+      desc: "QS-I-GAUGE rating certificate recognizing the institution's excellence across teaching, employability, infrastructure, and academic performance.",
+      link: qsGaugePdf,
+      iconColor: "text-yellow-600",
+      ribbonColor: "bg-yellow-600"
     }
   ];
 
@@ -101,7 +114,7 @@ const AccreditationPage = () => {
       </section>
 
       {/* ─── CARDS GRID ─── */}
-      <section className="max-w-[1400px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-16">
+      <section className="max-w-[1400px] mx-auto px-4 md:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         {documents.map((doc, idx) => (
           <motion.div
             key={doc.id}
@@ -109,7 +122,7 @@ const AccreditationPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="bg-white rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.06)] border border-slate-100 p-5 flex flex-col items-center text-center group hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+            className="bg-white rounded-[2rem] shadow-[0_15px_45px_rgba(0,0,0,0.15)] border border-slate-100 p-5 flex flex-col items-center text-center group hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] hover:border-[#ffc107]/30 hover:-translate-y-1 transition-all duration-300"
           >
             {/* Document Icon Placeholder */}
             <div className="relative mb-4">
@@ -121,8 +134,6 @@ const AccreditationPage = () => {
                      <CheckCircle size={12} />
                   </div>
                </div>
-               {/* Background shadow circles */}
-               <div className="absolute -z-10 -top-2 -left-2 w-24 h-24 bg-slate-50/50 rounded-full blur-2xl group-hover:bg-slate-100/50 transition-colors" />
             </div>
 
             <h3 className="text-[#224292] text-[16px] font-black mb-3 tracking-tight leading-none">{doc.title}</h3>

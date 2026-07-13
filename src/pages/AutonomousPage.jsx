@@ -20,7 +20,7 @@ import civilBos from '../assets/resources/5.-Civil-BOS-Committee-Members-list.pd
 import shBos from '../assets/resources/6.-SH-BOS-Members-list.pdf'
 import mbaBos from '../assets/resources/7.-MBA-BOS-Members-list.pdf'
 import campusImg from '../assets/main/indian_campus_hero.webp'
-import sixLegImg from '../assets/academics/Six-Leg.webp'
+import sixLegImg from '../assets/Academic Regulations/kiot.png'
 import autonoms5 from '../assets/Admissions/autonoms5.png'
 
 // Import AICTE Approvals PDFs
@@ -35,6 +35,12 @@ import aicte14_15 from '../assets/idea lap/approvels/AICTE-2014-15.pdf'
 import aicte13_14 from '../assets/idea lap/approvels/AICTE-2013-14.pdf'
 import aicte12_13 from '../assets/idea lap/approvels/AICTE-2012-13.pdf'
 import aicte11_12 from '../assets/idea lap/approvels/AICTE-2011-12.pdf'
+
+// Import Academic Regulations
+import beBtechReg from '../assets/Academic Regulations/BE_BTech_R2023_V5.pdf'
+import meMtechMcaReg from '../assets/Academic Regulations/ME_MTech_MCA_R2023_V4.pdf'
+import mbaReg from '../assets/Academic Regulations/MBA_R2023_V4.pdf'
+import mbaIevReg from '../assets/Academic Regulations/MBA_IEV_R2024_V3.pdf'
 
 const AutonomousPage = () => {
     const [activeTab, setActiveTab] = useState('overview')
@@ -539,8 +545,8 @@ const AutonomousPage = () => {
                                                 <Building2 size={20} />
                                             </div>
                                             <div>
-                                                <p className="text-[8px] font-black uppercase tracking-widest text-[#ffc107] mb-0.5">Academic Director</p>
-                                                <span className="text-[10px] font-black uppercase tracking-widest text-[#224292]">Dr. V. Karthikeyan</span>
+                                                <p className="text-[8px] font-black uppercase tracking-widest text-[#ffc107] mb-0.5">Director – CDDA</p>
+                                                <span className="text-[10px] font-black uppercase tracking-widest text-[#224292]">Dr. S. Kalpana Devi</span>
                                             </div>
                                         </div>
                                     </div>
@@ -600,18 +606,23 @@ const AutonomousPage = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
                                 {[
-                                    { title: 'B.E. / B.Tech' },
-                                    { title: 'M.E. / M.Tech / M.C.A' },
-                                    { title: 'MBA' },
-                                    { title: 'MBA (IEV)' }
+                                    { title: 'B.E. / B.Tech', file: beBtechReg },
+                                    { title: 'M.E. / M.Tech / M.C.A', file: meMtechMcaReg },
+                                    { title: 'MBA', file: mbaReg },
+                                    { title: 'MBA (IEV)', file: mbaIevReg }
                                 ].map((reg, i) => (
-                                    <button key={i} className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-left">
+                                    <button 
+                                        key={i} 
+                                        onClick={() => window.open(reg.file, '_blank')}
+                                        className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-left"
+                                    >
                                         <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-red-500 shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all">
                                             <FileText size={20} />
                                         </div>
                                         <div className="flex-1 min-w-0">
                                             <p className="text-[14px] font-black text-[#224292] leading-tight">{reg.title}</p>
                                         </div>
+                                        <ExternalLink size={14} className="text-slate-300 group-hover:text-[#224292] transition-colors shrink-0" />
                                     </button>
                                 ))}
                             </div>

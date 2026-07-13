@@ -45,10 +45,13 @@ const PhdGuidedPage = () => {
             { id: 20, supervisor: "Dr.K.Visagavel", scholar: "Dr.V.Sivakumar", topic: "Analysis of ventilation system for urban building with various position and pattern of openings", university: "Anna University, Chennai", status: "Completed" }
         ],
         'electronics-&-communication-engineering': [
-            { id: 101, supervisor: "Dr.N.Santhiyakumari", scholar: "Scholars Guided: 06", topic: "Biomedical Image Processing", university: "Anna University", status: "Completed" },
-            { id: 102, supervisor: "Dr.N.Santhiyakumari", scholar: "Scholars Pursuing: 06", topic: "Medical Imaging & Signal Processing", university: "Anna University", status: "In Progress" },
-            { id: 201, supervisor: "Dr.S. Kumarganesh", scholar: "Scholars Guided: -", topic: "Signal Processing and Communication", university: "Anna University", status: "None" },
-            { id: 202, supervisor: "Dr.S. Kumarganesh", scholar: "Scholars Pursuing: 06", topic: "Biomedical, AI & Signal Processing", university: "Anna University", status: "In Progress" }
+            { id: 1, supervisor: "Dr.N.Santhiyakumari", scholar: "S.Madhukumar", topic: "Improving Target Delineation of Tumor Edema Complex through Modified Enhancement, Restoration and Segmentation Schemes", university: "Anna University", status: "Completed" },
+            { id: 2, supervisor: "Dr.N.Santhiyakumari", scholar: "P.Nithyadharshini", topic: "Analysis of hybrid approaches for efficient routing in vehicular ad hoc networks", university: "Anna University", status: "Completed" },
+            { id: 3, supervisor: "Dr.N.Santhiyakumari", scholar: "S.Aruljothi", topic: "Certain investigations on VLSI architectures for image scaling and impulse denoising", university: "Anna University", status: "Completed" },
+            { id: 4, supervisor: "Dr.N.Santhiyakumari", scholar: "N.Sudha", topic: "Computer-Aided Diagnosis for Bowel Images in Wireless Capsule Endoscopy", university: "Anna University", status: "Completed" },
+            { id: 5, supervisor: "Dr.N.Santhiyakumari", scholar: "P.Shanmugasundaram", topic: "Certain Investigations on Computer-Aided Colon Cancer Detection in Wireless Capsule Endoscopy Images", university: "Anna University", status: "Completed" },
+            { id: 6, supervisor: "Dr.N.Santhiyakumari", scholar: "V.Saravanan", topic: "Certain investigations on active noise control systems for domestic applications by developing the step size of the FxLMS algorithm", university: "Anna University", status: "Completed" },
+            { id: 7, supervisor: "Dr.N.Santhiyakumari", scholar: "K.M.Majidha Fathima", topic: "Certain Investigations on Routing Optimization in Wireless Sensor Network by Improving the Quality of Service Parameters Using Modified Splay Tree Algorithm", university: "Anna University", status: "Completed" }
         ],
         'electrical-&-electronics-engineering': [
             { id: 1, supervisor: "Dr.C.Muniraj", scholar: "Mr.P.Govindaraju", topic: "High Voltage Engineering", university: "Anna University", status: "Awarded (2024)" },
@@ -125,10 +128,11 @@ const PhdGuidedPage = () => {
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="text-white">
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold tracking-[2px] w-16">S.No.</th>
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold tracking-[2px]">Supervision Detail</th>
-                                    <th className="bg-black px-6 py-5 text-left text-[11px] font-bold tracking-[2px]">Research Scholar & Topic</th>
-                                    <th className="bg-black px-6 py-5 text-right text-[11px] font-bold text-[#ffc107] tracking-[2px] pr-8">Affiliation & Status</th>
+                                    <th className="bg-black px-6 py-5 text-left text-[13px] font-semibold font-graphik tracking-wider w-16">S.No.</th>
+                                    <th className="bg-black px-6 py-5 text-left text-[13px] font-semibold font-graphik tracking-wider">Name of the Scholar</th>
+                                    <th className="bg-black px-6 py-5 text-left text-[13px] font-semibold font-graphik tracking-wider">Title of the Thesis</th>
+                                    <th className="bg-black px-6 py-5 text-left text-[13px] font-semibold font-graphik tracking-wider">Guide / Supervisor</th>
+                                    <th className="bg-black px-6 py-5 text-left text-[13px] font-semibold font-graphik text-[#ffc107] tracking-wider pr-8">Affiliation</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
@@ -144,24 +148,23 @@ const PhdGuidedPage = () => {
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5">
-                                                <div className="flex flex-col gap-1">
-                                                    <span className="text-[10px] font-bold text-[#ffc107] uppercase tracking-wider leading-none">Supervisor</span>
-                                                    <span className="text-[14px] font-bold text-[#0f172a] tracking-tight">{item.supervisor}</span>
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-[#0f172a] shrink-0"><GraduationCap size={16} /></div>
+                                                    <span className="text-[14px] font-bold text-[#0f172a] tracking-tight">{item.scholar}</span>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-5">
-                                                <div className="flex items-center gap-4">
-                                                    <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#0f172a] shrink-0"><GraduationCap size={18} /></div>
-                                                    <div>
-                                                        <div className="text-[13px] font-bold text-[#0f172a] tracking-tight mb-1">{item.scholar}</div>
-                                                        <p className="text-[12px] font-semibold text-[#1e293b] leading-tight italic max-w-[400px]">"{item.topic}"</p>
-                                                    </div>
-                                                </div>
+                                                <p className="text-[13px] font-semibold text-[#1e293b] leading-relaxed max-w-[450px]">
+                                                    {item.topic}
+                                                </p>
                                             </td>
-                                            <td className="px-6 py-5 text-right pr-8">
-                                                <div className="flex flex-col items-end gap-1.5">
-                                                    <span className="text-[10px] font-bold text-[#334155]">{item.university}</span>
-                                                    <div className="flex items-center gap-1.5 px-3 py-1 bg-green-50 rounded-full text-green-700 text-[9px] font-bold uppercase tracking-widest border border-green-100">
+                                            <td className="px-6 py-5">
+                                                <span className="text-[14px] font-bold text-[#0f172a] tracking-tight">{item.supervisor}</span>
+                                            </td>
+                                            <td className="px-6 py-5 pr-8">
+                                                <div className="flex flex-col gap-1.5">
+                                                    <span className="text-[13px] font-bold text-[#334155]">{item.university}</span>
+                                                    <div className="flex items-center gap-1.5 px-3 py-1 bg-green-50 rounded-full text-green-700 text-[9px] font-bold uppercase tracking-widest border border-green-100 w-fit">
                                                         <CheckCircle2 size={12} /> {item.status}
                                                     </div>
                                                 </div>
@@ -170,7 +173,7 @@ const PhdGuidedPage = () => {
                                     ))
                                 ) : (
                                     <tr>
-                                        <td colSpan="4" className="px-6 py-20 text-center text-slate-400 font-bold uppercase text-xs">No records found for this department.</td>
+                                        <td colSpan="5" className="px-6 py-20 text-center text-slate-400 font-bold uppercase text-xs">No records found for this department.</td>
                                     </tr>
                                 )}
                             </tbody>

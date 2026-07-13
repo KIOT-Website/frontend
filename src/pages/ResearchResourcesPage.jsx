@@ -437,22 +437,22 @@ const eeePhdHolders = [
 ];
 
 const eeeResearchAreas = [
-    "AC Drives & High Voltage Engineering",
-    "Power Quality & Renewable Energy Sources",
-    "DC-DC Converters & Intelligent Techniques",
-    "Control & Instrumentation"
+    "High Voltage Engineering",
+    "Image Processing",
+    "Power Electronics and Drives",
+    "Electrical Machines"
 ];
 
 const eeeFacilities = [
     {
-        name: "Power Electronics & Drives Laboratory",
-        description: "Equipped with advanced power electronic systems, variable frequency drives, motor test benches and digital storage oscilloscopes for research in AC drives, power conversion, and high-voltage engineering.",
-        infrastructure: "VFD Test Rigs, DSO, Power Analyzers, Motor Control Panels"
+        name: "E-Mobility Design and Development",
+        description: "• BLDC Motor Driver spring balance load setup with Hall Sensor (1500W, 48V)\n• SRM Motor Drive with spring balance load setup\n• 1 HP Axial Flux SRM Motor\n• Three Phase IGBT based power study module\n• Lithium Iron Battery Charger setup with BMS 2 KWh / 60V\n• FPGA (VPE Spartan 6 board)\n• Battery Hi-Tester with Test Probes & Temperature Probe\n• Digital Storage Oscilloscope 400MHZ, 4 Channel\n• Electric Test Bench Model Research and Development Work\n• Fluke Energy Meter - 1773 Digital Meter",
+        infrastructure: "BLDC Driver, SRM Motor, IGBT module, Battery Charger with BMS, FPGA, DSO, Test Bench, Fluke Energy Meter"
     },
     {
         name: "Renewable Energy Laboratory",
-        description: "Dedicated facility for research in solar PV systems, wind energy conversion, smart grid integration, and energy storage technologies including battery management systems.",
-        infrastructure: "Solar PV Panels, Wind Emulator, Grid-tie Inverter, Battery Storage Systems"
+        description: "• 1kWp Solar PV System\n• Micro Wind Energy Generator\n• Hybrid (Solar-Wind) Power System\n• Solar PV Emulator",
+        infrastructure: "Solar PV, Wind Generator, Hybrid Power System, PV Emulator"
     }
 ];
 
@@ -1629,7 +1629,7 @@ const ResearchResourcesPage = () => {
                                                         <div className="w-10 h-10 bg-[#eef2ff] rounded-xl flex items-center justify-center text-[#224292] shrink-0 shadow-inner font-black text-xs">
                                                             0{idx + 1}
                                                         </div>
-                                                        <h3 className="text-xs font-black text-[#224292] uppercase leading-tight tracking-tight">{area}</h3>
+                                                        <h3 className="text-xs font-semibold text-[#224292] leading-tight tracking-tight">{area}</h3>
                                                     </div>
                                                 ))}
                                             </div>
@@ -1655,7 +1655,7 @@ const ResearchResourcesPage = () => {
                                                                     <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
                                                                     {fac.name}
                                                                 </h3>
-                                                                <p className="text-xs font-medium text-[#4a627a] leading-relaxed">{fac.description}</p>
+                                                                <p className="text-xs font-medium text-[#4a627a] leading-relaxed whitespace-pre-line">{fac.description}</p>
                                                                 <div className="px-3.5 py-2.5 bg-slate-50 border border-slate-100 rounded-xl flex items-center gap-3">
                                                                     <Database size={14} className="text-[#ffc107]" />
                                                                     <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Specs: {fac.infrastructure}</span>

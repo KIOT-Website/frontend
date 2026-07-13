@@ -54,6 +54,75 @@ import ievGowrishankarImg from '../../assets/Faculity/mba iev/Prof.M.Gowrishanka
 import ievSaravananImg from '../../assets/Faculity/mba iev/Prof.S.Saravanan.png'
 import { getDepartmentSchematic } from './DepartmentSchematics'
 
+// Syllabus PDF Imports
+import mechUgPdf from '../../assets/Curriculum Syllabus/1. MECH/UG - MECH R23 - I - VI SEM - Syllabus.pdf'
+import mechPgPdf from '../../assets/Curriculum Syllabus/1. MECH/PG - M.E.-ISE I-IV SEM (New).pdf'
+import eceUgPdf from '../../assets/Curriculum Syllabus/2. ECE/UG - ECE - I - VI SEM- Syllabus.pdf'
+import ecePgPdf from '../../assets/Curriculum Syllabus/2. ECE/PG - AE SYLLABUS (I - IV SEM).pdf'
+import eeeUgPdf from '../../assets/Curriculum Syllabus/3. EEE/UG - EEE - I - VI SEM Syllabus.pdf'
+import eeePgPdf from '../../assets/Curriculum Syllabus/3. EEE/PG - PED - I - IV SEM SYLLABUS.pdf'
+import cseUgPdf from '../../assets/Curriculum Syllabus/4. CSE/UG - CSE - I - VI SEM Syllabus.pdf'
+import sePgPdf from '../../assets/Curriculum Syllabus/4. CSE/PG- SE - I - IV SEM SYLLABUS.pdf'
+import civilUgPdf from '../../assets/Curriculum Syllabus/5. CIVIL/CIVIL - I - VI SEM SYLLABUS.pdf'
+import itUgPdf from '../../assets/Curriculum Syllabus/6. IT/IT - I - VI SEM SYLLABUS.pdf'
+import csbsUgPdf from '../../assets/Curriculum Syllabus/7. CSBS/CSBS - I - VI SEM SYLLABUS.pdf'
+import aidsUgPdf from '../../assets/Curriculum Syllabus/8. AI&DS/AI&DS I - VI SEM SYLLABUS.pdf'
+import mbaIevPdf from '../../assets/Curriculum Syllabus/9. MBA (IEV)/MBA (IEV) - I - IV SEM SYLLABUS.pdf'
+import ecxPdf from '../../assets/Curriculum Syllabus/10. ECX/ECX - I- II SEM SYLLABUS.pdf'
+import mbaGenPdf from '../../assets/Curriculum Syllabus/11. MBA(General)/MBA (General ) - I - IV SEM SYLLABUS.pdf'
+import mcaPdf from '../../assets/Curriculum Syllabus/12. M.C.A/MCA - I - II SEM SYLLABUS.pdf'
+
+const SYLLABUS_PDF_MAP = {
+  'be-mechanical': [
+    { title: 'B.E. Mechanical Engineering (I - VI SEM) Syllabus', file: mechUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+  ],
+  'me-ise': [
+    { title: 'M.E. Industrial Safety Engineering (I - IV SEM) Syllabus', file: mechPgPdf, year: 'Regulation 2023', sem: 'I - IV' }
+  ],
+  'be-ece': [
+    { title: 'B.E. Electronics and Communication Engineering (I - VI SEM) Syllabus', file: eceUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+  ],
+  'me-ae': [
+    { title: 'M.E. Applied Electronics (I - IV SEM) Syllabus', file: ecePgPdf, year: 'Regulation 2023', sem: 'I - IV' }
+  ],
+  'be-eee': [
+    { title: 'B.E. Electrical and Electronics Engineering (I - VI SEM) Syllabus', file: eeeUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+  ],
+  'me-ped': [
+    { title: 'M.E. Power Electronics and Drives (I - IV SEM) Syllabus', file: eeePgPdf, year: 'Regulation 2023', sem: 'I - IV' }
+  ],
+  'be-cse': [
+    { title: 'B.E. Computer Science and Engineering (I - VI SEM) Syllabus', file: cseUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+  ],
+  'me-se': [
+    { title: 'M.E. Software Engineering (I - IV SEM) Syllabus', file: sePgPdf, year: 'Regulation 2023', sem: 'I - IV' }
+  ],
+  'be-civil': [
+    { title: 'B.E. Civil Engineering (I - VI SEM) Syllabus', file: civilUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+  ],
+  'btech-it': [
+    { title: 'B.Tech Information Technology (I - VI SEM) Syllabus', file: itUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+  ],
+  'btech-csbs': [
+    { title: 'B.Tech Computer Science and Business Systems (I - VI SEM) Syllabus', file: csbsUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+  ],
+  'btech-aids': [
+    { title: 'B.Tech Artificial Intelligence and Data Science (I - VI SEM) Syllabus', file: aidsUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+  ],
+  'mba-iev': [
+    { title: 'MBA Innovation, Entrepreneurship and Venture Development (IEV) (I - IV SEM) Syllabus', file: mbaIevPdf, year: 'Regulation 2023', sem: 'I - IV' }
+  ],
+  'be-ecm': [
+    { title: 'B.E. Electronics and Computer Engineering (I - II SEM) Syllabus', file: ecxPdf, year: 'Regulation 2025', sem: 'I - II' }
+  ],
+  'mba-general': [
+    { title: 'MBA General (I - IV SEM) Syllabus', file: mbaGenPdf, year: 'Regulation 2023', sem: 'I - IV' }
+  ],
+  'mca': [
+    { title: 'MCA (I - II SEM) Syllabus', file: mcaPdf, year: 'Regulation 2023', sem: 'I - II' }
+  ]
+}
+
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const ACHIEVEMENT_DEPARTMENT_OVERRIDES = {
@@ -117,7 +186,7 @@ const defaultCourse = (id) => ({
   eligibility: ['10+2 with PCM / relevant subjects', 'Minimum 50% aggregate', 'TNEA rank required'],
 })
 
-const TABS = ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
+const TABS = ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
 
 const eventsList = [
   { name: "CMLR", url: "https://kbss.kiot.ac.in/case-method-of-learning-reflection/", course: "Both" },
@@ -312,9 +381,9 @@ export default function CourseDetailPage({ overrides }) {
   const Icon = course.icon
 
   const courseTabs = courseId === 'be-eee'
-    ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
+    ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
     : (courseId === 'btech-csbs'
-        ? ['Overview', 'Vision & Mission', 'Curriculum', 'Faculty', 'Labs', 'Patents', 'Awards', 'Clubs', 'Innovative Practices']
+        ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Awards', 'Clubs', 'Innovative Practices']
         : TABS);
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
@@ -1680,9 +1749,9 @@ export default function CourseDetailPage({ overrides }) {
               </div>
             )}
 
-            {/* --- CURRICULUM --- */}
-            {activeTab === 'Curriculum' && (
-              <CurriculumSection courseId={courseId} courseName={course.name} />
+            {/* --- SYLLABUS --- */}
+            {activeTab === 'Syllabus' && (
+              <CurriculumSection courseId={courseId} />
             )}
 
             {/* --- TEACHING METHODOLOGY --- */}
@@ -2631,11 +2700,11 @@ export default function CourseDetailPage({ overrides }) {
             )}
 
 
-            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee') && (
+            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee' || courseId === 'btech-aids') && (
               <AchievementSection courseId={courseId} courseName={course.name} />
             )}
 
-            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil') && (
+            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil' || courseId === 'btech-aids') && (
               <AwardsSection courseId={courseId} courseName={course.name} />
             )}
 
@@ -2928,7 +2997,7 @@ export default function CourseDetailPage({ overrides }) {
 
 // ─── Awards Section Component ───────────────────────────────────────────────
 function AwardsSection({ courseId, courseName }) {
-  const [activeAudience, setActiveAudience] = useState('STUDENT')
+  const [activeAudience, setActiveAudience] = useState(courseId === 'btech-aids' ? 'FACULTY' : 'STUDENT')
 
   const cseStudentAwards = [
     { sno: 1,  name: 'P. Praveen\nIV Year CSE',             event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
@@ -2981,7 +3050,7 @@ function AwardsSection({ courseId, courseName }) {
     { year: '2022-2023', sno: 2, name: 'S.Naveen kumar\nV.Keerthi vasan\nV.Sugumar\nS.M.Sanjay\nR.Rishikesevan\nV.G.Arvinth\nP.Guruganapathi\nS.Kowshick\nB.E. IIIrd Year CIVIL', event: 'IITB-FOSSEE MAPATHON', level: 'National', award: '2 TEAMS RECEIVED NOTABLE PARTICIPANTS AWARD', title: 'TRANSPORT & CASE STUDY WITH POLICY MPACTS' },
   ]
 
-  const studentAwards = courseId === 'be-cse' ? cseStudentAwards : (courseId === 'btech-csbs' ? csbsStudentAwards : (courseId === 'be-civil' ? civilStudentAwards : []))
+  const studentAwards = courseId === 'be-cse' ? cseStudentAwards : (courseId === 'btech-csbs' ? csbsStudentAwards : (courseId === 'be-civil' ? civilStudentAwards : (courseId === 'btech-aids' ? [] : [])))
 
   const csbsFacultyAwards = [
     { sno: 1,  name: 'Dr.M.Ram kumar,\nHOD/CSBS',     event: 'Paper Publication', level: 'International', award: 'SCI', title: 'Enhancing Healthcare Monitoring through Wearable Computing and Massive MIMO Technology in 5G IoT Networks' },
@@ -3009,7 +3078,40 @@ function AwardsSection({ courseId, courseName }) {
     { sno: 7, name: 'Mr. S.Senthil Kumar', event: 'NEXUS Catalyst Award', level: '-', award: 'Token of Appreciation', title: 'L&T EDUTECH,Chennai' },
   ]
 
-  const facultyAwards = courseId === 'btech-csbs' ? csbsFacultyAwards : (courseId === 'be-cse' ? cseFacultyAwards : (courseId === 'be-civil' ? civilFacultyAwards : []))
+  const aidsFacultyAwards = [
+    {
+      sno: 1,
+      name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
+      event: 'International Journal (SCIE)',
+      level: 'International',
+      award: 'Best Faculty',
+      title: 'Deep sight: Transformer‐based prediction of diabetic retinopathy using Py-Torch'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'NPTEL',
+      level: 'National',
+      award: 'Star Award',
+      title: 'NPTL DISCIPLINE STAR'
+    },
+    {
+      sno: 3,
+      name: 'Dr. B. Sasikumar\nAssociate Professor & Head',
+      event: 'National Award Ceremony',
+      level: 'National',
+      award: 'Best Research Grant Award',
+      title: 'National Technology Day Higher Education Award 2026'
+    }
+  ]
+
+  const facultyAwards = courseId === 'btech-csbs'
+    ? csbsFacultyAwards
+    : (courseId === 'be-cse'
+        ? cseFacultyAwards
+        : (courseId === 'be-civil'
+            ? civilFacultyAwards
+            : (courseId === 'btech-aids' ? aidsFacultyAwards : [])))
 
   const visibleData = activeAudience === 'STUDENT' ? studentAwards : facultyAwards
 
@@ -3092,7 +3194,7 @@ function AwardsSection({ courseId, courseName }) {
                     <tr
                       className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
                     >
-                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{activeAudience === 'FACULTY' ? (idx + 1) : (item.sno || (idx + 1))}</td>
                       <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
                       {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
                         <td className="px-4 py-3 text-sm text-slate-700">{item.event}</td>
@@ -3133,7 +3235,7 @@ function AwardsSection({ courseId, courseName }) {
 }
 
 function AchievementSection({ courseId, courseName }) {
-  const [activeAudience, setActiveAudience] = useState('STUDENT')
+  const [activeAudience, setActiveAudience] = useState(courseId === 'btech-aids' ? 'FACULTY' : 'STUDENT')
 
   const eeeStudentAchievements = [
     { sno: 1,  name: 'Nirmal Kumar K\nII Year\nB.E. - EEE',     event: 'Hackathon',                                                                                                          level: 'National',                    award: 'Won 1st Place with the cash prize of Rs.5000/-',                                                     title: 'Animal Detection using ML' },
@@ -3170,7 +3272,98 @@ function AchievementSection({ courseId, courseName }) {
     { sno: 32, name: 'Nagakeerthiga R\nIV Year\nB.E. - EEE', event: '1. Patent Filed\n2. Design and innovation clinic 2025 CMTI', level: 'National', award: '1. Patent Filed\n2. Awarded First Runner-Up and received a ₹20,000 cash prize.', title: '1. Design and Development of a Terracotta Tube-Based Eco-Friendly Air Cooler.\n2. Green Breeze Cooler – An innovative eco-friendly air cooling solution.' }
   ]
 
-  const studentAchievements = courseId === 'be-eee' ? eeeStudentAchievements : [
+  const aidsStudentAchievements = [
+    { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'National Level Hackathon', level: 'National', award: 'Received the Appreciation Prize of Rs. 10000 Cash award', title: 'AI-Assisted Smart Electric Fence System' },
+    { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'Nxtwave openAI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot' },
+    { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'Zonal-level basketball Tournament', level: 'Zonal', award: 'Winner', title: 'Zonal-level basketball' },
+    { name: 'Kannadhasan. V\nB. Tech-II year - A\nAI&DS', event: 'Electric Bike Design Challenge', level: 'National', award: 'Won the overall champions award', title: 'National-level Electric Bike Design Challenge' },
+    { name: 'Balaji V\nB. Tech-II year - A\nAI&DS', event: 'Paper presentation , Project Expo', level: 'National', award: '3rd Prize', title: 'Threads 25 Sona College of Engineering, Vyugam 26 AVS college of Engineering' },
+    { name: 'Karthik V\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
+    { name: 'Mohammed Armaan M S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
+    { name: 'Jitheeshwaran S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
+    { name: 'Deva Dharshini S\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'Programming, Data Structures and Algorithms Using Python' },
+    { name: 'Laksshitha Sri T E\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'Programming in Java' },
+    { name: 'Devasena K\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'E-Business' },
+    { name: 'Kavinaya R\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
+    { name: 'Harshini K\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
+    { name: 'Aarthi S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
+    { name: 'Hariram K V\nB. Tech-II year\nAI & DS', event: 'Paper Presentation', level: 'National', award: '2nd prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
+    { name: 'Bharath A\nB. Tech-II year\nAI & DS', event: 'Paper Presentation', level: 'National', award: '2nd prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
+    { name: 'Geetha M\nB. Tech-II year\nAI & DS', event: 'NPTEL', level: 'National', award: 'Elite', title: 'E-Business' },
+    { name: 'Bharathi V\nB.Tech-II Year\nAI & DS - A', event: 'paper presentation', level: 'National', award: '2nd Prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
+    { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'National Hackathon on wildlife coexistence', level: 'National', award: 'Top 12 finalists across India with an Appreciation prize and a cash prize', title: 'Smart Automated electric fence system for wildlife and human safety (Wildlife Institute of India, Dehradun)' },
+    { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'Next Wave Open AI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot' },
+    { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'Hackathon', level: 'National', award: 'Top 25 finalist for the 24-hour hackathon', title: 'Smart Automated electric fence system for wildlife and human safety (K. Ramakrishnan College of Technology, Trichy)' },
+    { name: 'Tharshini A\nB. Tech-II year - B\nAI&DS', event: 'Hackathon', level: 'National', award: 'Top 25 finalists for the 24-hour hackathon', title: 'Smart Automated electric fence system for wildlife and human safety (K. Ramakrishnan College of Technology, Trichy)' },
+    { name: 'Yukesh Kumar T\nB. Tech-II year - B\nAI&DS', event: 'THREADS’25 Symposium', level: 'National', award: '1st Place in Paper Presentation with cash prize', title: 'Gas Leakage detection at IOT (Sona College of Technology)' },
+    { name: 'Suseel P S\nB. Tech-II year - B\nAI&DS', event: 'THREADS’25 Symposium', level: 'National', award: '1st Place in Paper Presentation with cash prize', title: 'Gas Leakage detection at IOT (Sona College of Technology)' },
+    { name: 'Suseel P S\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
+    { name: 'Yashvanth Suriya M\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
+    { name: 'Sri Sanchive Kumar\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
+    { name: 'Poomiha M\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
+    { name: 'Jayashree N\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with case prize', title: 'Rising Child Anemia in rural blocks' },
+    { name: 'Jayashree N\nB. Tech - III year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Finalist', title: 'Multi-Tenant Task Tracker' },
+    { name: 'Madhu Shree. M\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with case prize', title: 'Rising Child Anemia in rural blocks' },
+    { name: 'Madhu Shree. M\nB. Tech - III year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Finalist', title: 'Multi-Tenant Task Tracker' },
+    { name: 'Rajamurugan MA\nB.Tech – III year\nAI&DS', event: 'Football Tournament', level: 'Zonal', award: 'Second Prize', title: 'Anna University Zonal Football Tournament held at Adhiyamaan College of Engineering, Hosur' },
+    { name: 'Karthickraja G\nB.Tech – III year\nAI & DS', event: 'Hockey Tournament', level: 'Zonal', award: 'Third Prize', title: 'Anna University zonal level tournament at Adiyamaan College of Engineering, Hosur' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Handball', level: 'Zonal', award: 'Third Prize', title: 'Anna University Zonal Handball Tournament held at Adhiyamaan College of Engineering, Hosur' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Hockey', level: 'Zonal', award: 'Third Prize', title: 'Anna University Zonal Hockey Tournament held at Adhiyamaan College of Engineering, Hosur' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Tennis', level: 'Zonal', award: 'Fourth prize', title: 'Anna University Zonal Tennis Tournament held at Adhiyamaan College of Engineering, Hosur' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Symposium', level: 'National', award: 'First Prize', title: 'IPL Auction' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Discuss Throw', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Cricket', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Kabadi', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Sports', level: 'Inter College', award: 'best vice caption of the college', title: 'Sports Day' },
+    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Football', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
+    { name: 'V.Ramya\nB. Tech - III year\nAI&DS', event: 'CCL 12-hrs Coding Challenge', level: 'National', award: '2nd Place with case prize', title: 'Campus Coders League' },
+    { name: 'Deepak PS\nB. Tech - III year\nAI&DS', event: 'Innovative idea contest', level: 'Zonal', award: 'First prize with Award', title: 'Maximizing productivity in MSMEs (Salem Zonal)' },
+    { name: 'Deepak PS\nB. Tech - III year\nAI&DS', event: '12 hrs Coding Challenge', level: 'Internal College', award: 'Special prize for achieving highest individual score percentage', title: 'CAMPUS CODERS LEAGUE (12 HRS)' },
+    { name: 'Kaviya. A\nB. Tech - III year\nAI&DS', event: 'CCL 12-hrs Coding Challenge', level: 'National', award: '2nd Place with case prize', title: 'Campus Coders League' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'UI/UX Designathon', level: 'National', award: 'Special Prize with case prize', title: 'Government police website recreation' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Odoo X SNS Hackathon', level: 'National', award: 'Finalist', title: 'E-Learning Platform' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: 'Finalist', title: 'BananaMart' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'Zonal', award: 'First Prize', title: 'Anna University Zonal Table Tennis Tournament held at Govt. College of Bargur' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'State', award: 'Third Prize', title: 'SKJ Table Tennis Academy State Level Match' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Hand Ball', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Throw Ball', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table Tennis', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Tennis', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Shotput', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Badminton', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Kho Kho', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table Tennis', level: 'District', award: 'Third Prize', title: 'District level at Coimbatore Institute of Technology' },
+    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'Zonal', award: 'First Prize', title: 'Anna University Zonal Table Tennis Tournament held at Govt. College of Bargur' },
+    { name: 'Umamaheswari. A\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with cash prize', title: 'Wireless Power Charging for EV vehicles' },
+    { name: 'Padma Sree R\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with cash prize', title: 'Wireless Power Charging for EV vehicles' },
+    { name: 'Padma Sree R\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'National', award: 'Best event organizer certification', title: 'NextGen Talks Paper Presentation' },
+    { name: 'Midhun Haridharan\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'District', award: 'First Prize', title: 'BUILD EXPO 2025-2026' },
+    { name: 'Arun Prakash A\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'District', award: 'First Prize', title: 'BUILD EXPO 2025-2026' },
+    { name: 'Vishveswar M\nB. Tech - III year\nAI&DS', event: 'International Conference', level: 'International', award: 'Best Paper Award', title: 'RAG-Based AI for Accurate, Explainable, and Safe Legal Judgement Prediction in the Indian Constitution' },
+    { name: 'K. Haris Kumar\nB. Tech - IV year\nAI&DS', event: 'L&T Ideation Challenge 2025', level: 'International', award: 'Secured a stipend internship', title: 'AI-Enabled Data Interpretation & Validation System for SLD Creation.' },
+    { name: 'Varsini. S\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
+    { name: 'Sudarsan. K\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
+    { name: 'Prasanna. B\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
+    { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
+    { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Winner', title: 'Multi-Tenant Task Tracker' },
+    { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'Code-zap hackathon 2025', level: 'National', award: 'Finalist', title: 'AI-Assisted Travel Planning System.' },
+    { name: 'Maharaj. P. S\nB. Tech - IV year\nAI&DS', event: 'Code-zap hackathon 2025', level: 'National', award: 'Won an educational trip to Singapore', title: 'AI-Based Resume Screener' },
+    { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'DigiTechCon25', level: 'National', award: 'Best Paper Award', title: 'Smart Traffic Management System using AI and IOT' },
+    { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'Engineers Build Expo 2025-2026', level: 'National', award: 'Won first place with a cash prize of Rs:15,000', title: 'Disaster Management System using AI' },
+    { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'Hack-Xelerator', level: 'National', award: 'Special prize with a cash prize of Rs. 2000', title: 'Building Collapse and Disaster Prediction System Using AI and IoT' },
+    { name: 'Guna Sree R\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'State', award: 'Winner with cash prize Rs. 25000', title: 'Multi-Tenant Task Tracker' },
+    { name: 'Methun. M\nB. Tech - IV year\nAI&DS', event: 'Gen Brainiacs\'25 hackathon', level: 'National', award: '2nd price', title: 'Gamified Tutor' },
+    { name: 'Krishna. J\nB. Tech - IV year\nAI&DS', event: 'IIT Kharagpur Summer Internship', level: 'National', award: 'Completed Summer Internship 25', title: 'Summer Internship at IIT Kharagpur' },
+    { name: 'Divyadharshini. Y\nB. Tech - IV year\nAI&DS', event: 'Japanese Exam', level: 'National', award: 'Completed Japanese JLPT N5', title: 'Japanese JLPT N5 / N4' },
+    { name: 'Murali Prasath. K\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'NPTEL Believer award and NPTEL Discipline Star award', title: 'NPTEL' },
+    { name: 'Vasudevan. M\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'NPTEL Discipline Star Award', title: 'NPTEL' },
+    { name: 'Vijay Vignesh K U\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Winner with a cash prize of 25000 rupees', title: 'Multi-Tenant Task Tracker' },
+    { name: 'Ranjith Kumar. A\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Achieved Top 5% (Silver category)', title: 'Programming in Java' }
+  ]
+
+  const studentAchievements = courseId === 'be-eee'
+    ? eeeStudentAchievements
+    : (courseId === 'btech-aids' ? aidsStudentAchievements : [
     // Page 1 – Rows 1–15 (previously 13–27)
     { sno: 1,  name: 'Ashvant Narayan\nIV Year CSE',        event: 'IEEE Paper Presentation Contest 2026',                 level: 'National',       award: 'III Prize',                                                                                               title: 'IEEE Computer Society-Anna University' },
     { sno: 2,  name: 'Dhivesh Y S\nIV Year CSE',            event: 'IEEE Paper Presentation Contest 2026',                 level: 'National',       award: 'III Prize',                                                                                               title: 'IEEE Computer Society-Anna University' },
@@ -3253,7 +3446,7 @@ function AchievementSection({ courseId, courseName }) {
     { sno: 74, name: 'Sivamanikandan R\nI Year CSE',      event: 'Paper Presentation',                  level: 'National',      award: 'I Prize',   title: 'ELECTRIC INTELLIGENZ' },
     { sno: 75, name: 'Keerthana T\nI Year CSE',           event: 'Paper Presentation',                  level: 'National',      award: 'II Prize',  title: "INNOTECH'26" },
     { sno: 76, name: 'Nitharsana R\nI Year CSE',          event: 'Paper Presentation',                  level: 'National',      award: 'II Prize',  title: "INNOTECH'26" },
-  ]
+  ])
 
   const eeeFacultyAchievements = [
     {
@@ -3335,7 +3528,492 @@ function AchievementSection({ courseId, courseName }) {
     }
   ]
 
-  const facultyAchievements = courseId === 'be-eee' ? eeeFacultyAchievements : []
+  const aidsFacultyAchievements = [
+    {
+      sno: 1,
+      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Digital Twin Framework with XAI-Explainable AI for Lifestyle-Based Type 2 Diabetes Reversal Prediction'
+    },
+    {
+      sno: 1,
+      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
+      event: 'Scopus',
+      level: 'Scopus',
+      award: '-',
+      title: 'ICESSM - AI-driven adaptive market learning indicator for automated stock prediction and trading using machine learning'
+    },
+    {
+      sno: 1,
+      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
+      event: 'Reviewer for IEEE International Conference',
+      level: 'Reviewer',
+      award: 'Reviewer for IEEE',
+      title: 'Reviewer for IEEE International Conference: organized by K J College of Engineering and Management Research, Pune'
+    },
+    {
+      sno: 1,
+      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
+      event: 'TIDCO\n(Sponsored Research Project) Granted',
+      level: 'Govt.',
+      award: 'Fund',
+      title: 'Automated Tyre Wear and Damage Detection System\n(Rs.24,00,000/-)'
+    },
+    {
+      sno: 1,
+      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
+      event: 'AICTE – RPS\n(Sponsored Research Project) Granted',
+      level: 'Govt.',
+      award: 'Fund',
+      title: 'Early Fall Risk Prediction System for Elderly People using\nAI and ML Tools\n(Rs.44,00,000/-)'
+    },
+    {
+      sno: 1,
+      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
+      event: 'Membership',
+      level: 'International',
+      award: 'Lifetime',
+      title: 'Achieved lifetime memberships in MISTE and AMIEE'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Enhanced Handwritten Digit Classification Accuracy with CNNs: A Study using MNIST Dataset'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Intelligent Digitization of Heterogeneous Handwritten Documents using Deep Learning Models'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'International Journal (UGC Care I)',
+      level: 'International',
+      award: '-',
+      title: 'Cluster-Aware Multimodal Transformer System'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'NPTEL',
+      level: 'National',
+      award: '-',
+      title: 'NPTEL DISCIPLINE STAR'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'AICTE – RPS\n(Sponsored Research Project) Granted',
+      level: 'Govt.',
+      award: 'Fund',
+      title: 'Early Fall Risk Prediction System for Elderly People using\nAI and ML Tools\n(Rs.44,00,000/-)'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'AICTE-AQIS-GOC\n(Sponsored Research Project) Granted',
+      level: 'Govt.',
+      award: 'Fund',
+      title: 'International Conference on Computing Business Intelligence and Engineering Technologies\n(Rs.3,00,000/-)'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'NC Publishers',
+      level: 'National',
+      award: 'Book Chapter',
+      title: 'Using Deep Learning for Forecasting in Operations and Logistics'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'Protek Publications, Chennai',
+      level: 'National',
+      award: 'Book',
+      title: 'Smart Systems Engineering: Design and Development in the Internet of Things Era'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'Reviewer for IEEE International Conference',
+      level: 'International',
+      award: 'Reviewer for IEEE',
+      title: 'Reviewer for IEEE International Conference: organized by K J College of Engineering and Management Research, Pune'
+    },
+    {
+      sno: 2,
+      name: 'Dr. A. Gomathi\nAssociate Professor',
+      event: 'Membership',
+      level: 'National',
+      award: 'Lifetime',
+      title: 'Lifetime membership in ISTE'
+    },
+    {
+      sno: 3,
+      name: 'Mr. A. Gopalakrishnan\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'High-Performance Multi-Class Brain Tumor Classification and Analysis Using Optimized Convolutional Neural Networks'
+    },
+    {
+      sno: 3,
+      name: 'Mr. A. Gopalakrishnan\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Enhancing Optical Sensor Image Classification Through Deep Learning with Convolutional Neural Network'
+    },
+    {
+      sno: 3,
+      name: 'Mr. A. Gopalakrishnan\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Design and Development of Sympto Medai: A Symptom-Based Disease Prediction System Using Machine Learning'
+    },
+    {
+      sno: 4,
+      name: 'Mrs. V. Brindha\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Unified AI-Driven complaint communication Dashboard for real-time resolution of omnichannel customer complaints'
+    },
+    {
+      sno: 4,
+      name: 'Mrs. V. Brindha\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'AI-Powered faculty Assistant'
+    },
+    {
+      sno: 5,
+      name: 'Mr. S. Jayaprakash\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Chatbot for Supporting Small-Scale farmers (icraisetm-2026)'
+    },
+    {
+      sno: 6,
+      name: 'Mrs. P.J. Esther Rani\nAssistant Professor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'Cognifed Framework for Recovery Guided Federated Intelligence in Academic Cognitive Computing'
+    },
+    {
+      sno: 6,
+      name: 'Mrs. P.J. Esther Rani\nAssistant Professor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'Ethi core AI: Trust Driven Cognitive Intelligence with Emotion Awareness and Transparent Decision making'
+    },
+    {
+      sno: 6,
+      name: 'Mrs. P.J. Esther Rani\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Physionet-x: a lightweight, secure WSN protocol for privacy-preserving patient monitoring'
+    },
+    {
+      sno: 6,
+      name: 'Mrs. P.J. Esther Rani\nAssistant Professor',
+      event: 'National Conference',
+      level: 'National',
+      award: '-',
+      title: 'Early Risk Detection of Silent Hypothyroidism using Smart Health AI (Hardware-free), National Conference on Innovations in Management, Anna University, Chennai'
+    },
+    {
+      sno: 7,
+      name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
+      event: 'International Journal (SCIE)',
+      level: 'International',
+      award: 'SCIE',
+      title: 'Deep sight: Transformer‐based prediction of diabetic retinopathy using Py-Torch'
+    },
+    {
+      sno: 7,
+      name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
+      event: 'International Conference (IEEE)',
+      level: 'International',
+      award: '-',
+      title: 'Enhanced Network Performance in WSNs through the Improved PSO-MBO Coverage Algorithm'
+    },
+    {
+      sno: 7,
+      name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
+      event: 'National Conference',
+      level: 'National',
+      award: '-',
+      title: 'AI One Step Personalized Career and Education Advisor'
+    },
+    {
+      sno: 8,
+      name: 'Mrs. S. Sudha\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: 'IEEE',
+      title: 'A Multi-Layer Edge-Cloud Intelligence Framework for Predictive Zoonotic Risk Modeling in Smart Farming Ecosystems'
+    },
+    {
+      sno: 8,
+      name: 'Mrs. S. Sudha\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'AI, Robotics, and Quantum Computing in Special Needs Education and Diagnosis: A Survey'
+    },
+    {
+      sno: 8,
+      name: 'Mrs. S. Sudha\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Bone Fracture detection using the yolov8 Algorithm: An automated Deep Learning approach'
+    },
+    {
+      sno: 8,
+      name: 'Mrs. S. Sudha\nAssistant Professor',
+      event: 'Membership',
+      level: 'International',
+      award: 'Lifetime',
+      title: 'Membership of AMIEE (Artificial Intelligence, Machine Learning, Innovative Entrepreneurs, and Engineers Association)'
+    },
+    {
+      sno: 9,
+      name: 'Ms. Selvi M\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'A Digital Learning Twin (DLT) Framework For Predictive And Personalized Student Learning'
+    },
+    {
+      sno: 9,
+      name: 'Ms. Selvi M\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Sense bridge: An offline multimodal mobile application for accessibility using Artificial Intelligence'
+    },
+    {
+      sno: 9,
+      name: 'Ms. Selvi M\nAssistant Professor',
+      event: 'NPTEL',
+      level: 'National',
+      award: 'Elite',
+      title: 'Introduction to Internet of Things'
+    },
+    {
+      sno: 9,
+      name: 'Ms. Selvi M\nAssistant Professor',
+      event: 'Membership',
+      level: 'International',
+      award: 'Lifetime',
+      title: 'Membership of AMIEE (Artificial Intelligence, Machine Learning, Innovative Entrepreneurs, and Engineers Association)'
+    },
+    {
+      sno: 10,
+      name: 'Mr. Gunasekar B\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Skillsync Intelligent Resume Builder and Skill Gap Analyzer'
+    },
+    {
+      sno: 10,
+      name: 'Mr. Gunasekar B\nAssistant Professor',
+      event: 'NPTEL',
+      level: 'National',
+      award: 'Elite',
+      title: 'E - Business'
+    },
+    {
+      sno: 10,
+      name: 'Mr. Gunasekar B\nAssistant Professor',
+      event: 'NPTEL',
+      level: 'National',
+      award: 'Elite',
+      title: 'Artificial Intelligence (AI) for Management'
+    },
+    {
+      sno: 11,
+      name: 'Mr. R. Rameshkumar\nAssistant Professor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'An AI-powered smart travel companion APP with AR Navigation and real-time itinerary planning'
+    },
+    {
+      sno: 11,
+      name: 'Mr. R. Rameshkumar\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'Wandermate: An AI-Powered Smart Travel Companion APP with AR Navigation and Real-time Itinerary Planning'
+    },
+    {
+      sno: 12,
+      name: 'Mrs. M. Deepa\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: 'IEEE',
+      title: 'Twin Aware Predictive Carbon-Efficient Scheduling for Workload Intelligence Routing in Multi-Region Computing Ecosystem'
+    },
+    {
+      sno: 12,
+      name: 'Mrs. M. Deepa\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'An Intelligent System for Bean Leaf Disease Detection In Smart Agriculture'
+    },
+    {
+      sno: 12,
+      name: 'Mrs. M. Deepa\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'AI-Powered Low-Code/No-Code Development Platform'
+    },
+    {
+      sno: 12,
+      name: 'Mrs. M. Deepa\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: 'IEEE',
+      title: 'A Multi-Layer Edge-Cloud Intelligence Framework for Predictive Zoonotic Risk Modeling in Smartfarming Ecosystems'
+    },
+    {
+      sno: 12,
+      name: 'Mrs. M. Deepa\nAssistant Professor',
+      event: 'Membership',
+      level: 'International',
+      award: 'Lifetime',
+      title: 'Membership of AMIEE (Artificial Intelligence, Machine Learning, Innovative Entrepreneurs, and Engineers Association)'
+    },
+    {
+      sno: 13,
+      name: 'Ms. Ranitha N.M\nAssistant Professor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'AI-driven smart energy scheduling for telecom microgrids using demand forecasting and outage prediction'
+    },
+    {
+      sno: 13,
+      name: 'Ms. Ranitha N.M\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'AI-driven adaptive market learning indicator for automated stock prediction and trading using machine learning'
+    },
+    {
+      sno: 14,
+      name: 'Mrs. V. Gomathi\nAssistant Professor',
+      event: 'International Conference',
+      level: 'International',
+      award: '-',
+      title: 'AI-driven graph-theoretic approaches for disease detection and healthcare analytics on building a sustainable future with recent trends in science and technology'
+    },
+    {
+      sno: 15,
+      name: 'Dr. S. Manivel\nAssistant Professor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'Synthesis, Absorption and Emission Behaviour, Solvation, AIM, Topology, and Docking Studies on 4-(((perfluorophenyl) methylene) amino)-N-(thiazol-2-yl) Benzene Sulfonamide'
+    },
+    {
+      sno: 15,
+      name: 'Dr. S. Manivel\nAssistant Professor',
+      event: 'National Conference',
+      level: 'International',
+      award: '-',
+      title: 'FTIR and FT-Raman Spectroscopic, NLO Properties, NBO and HOMO-LUMO analyses of 3-methyl Pyrazole'
+    },
+    {
+      sno: 16,
+      name: 'Dr. G. Venkatesh\nProfessor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'PICT Effects and Anticancer Potential on Rosaniline and Spectral Characterisation of Rosaniline/ Cyclodextrin Covered ZnO/ Nanocrystals'
+    },
+    {
+      sno: 16,
+      name: 'Dr. G. Venkatesh\nProfessor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'Azo-Imino Tautomerism in Sudan Red 7B/Cyclodextrin Coated ZnO Nanocomposites: Evidence by Spectral and Microscopic Perspectives'
+    },
+    {
+      sno: 16,
+      name: 'Dr. G. Venkatesh\nProfessor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'Synthesis and Characterisation of Methyl Violet/Cyclodextrin Doped ZnO Nanocrystals'
+    },
+    {
+      sno: 16,
+      name: 'Dr. G. Venkatesh\nProfessor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'Synthesis and Characterisation of Sudan Red-G/Cyclodextrin Doped ZnO Nanocrystals'
+    },
+    {
+      sno: 16,
+      name: 'Dr. G. Venkatesh\nProfessor',
+      event: 'International Journal',
+      level: 'International',
+      award: 'SCI',
+      title: 'Supramolecular self-assembly and theoretical studies of α-cyclodextrin with 3,5-dihydroxybenzoic acid host: guest inclusion complexes'
+    },
+    {
+      sno: 16,
+      name: 'Dr. G. Venkatesh\nProfessor',
+      event: 'National Conference',
+      level: 'International',
+      award: '-',
+      title: 'National conference on Energy materials and AI-enabled sustainability solutions'
+    },
+    {
+      sno: 16,
+      name: 'Dr. G. Venkatesh\nProfessor',
+      event: 'National Conference',
+      level: 'National',
+      award: '-',
+      title: 'National conference on Atom-by-Atom Engineering in clusters'
+    },
+    {
+      sno: 16,
+      name: 'Dr. G. Venkatesh\nProfessor',
+      event: 'Membership',
+      level: 'International',
+      award: 'Lifetime',
+      title: 'Life membership National Institute for Technical Training & Skill Development'
+    }
+  ]
+
+  const facultyAchievements = courseId === 'be-eee'
+    ? eeeFacultyAchievements
+    : (courseId === 'btech-aids' ? aidsFacultyAchievements : [])
 
   const visibleData = activeAudience === 'STUDENT' ? studentAchievements : facultyAchievements
 
@@ -3346,6 +4024,9 @@ function AchievementSection({ courseId, courseName }) {
     if (l.includes('international')) return 'bg-purple-50 text-purple-700'
     if (l.includes('state')) return 'bg-green-50 text-green-700'
     if (l.includes('regional')) return 'bg-orange-50 text-orange-700'
+    if (l.includes('scopus')) return 'bg-amber-50 text-amber-700'
+    if (l.includes('reviewer')) return 'bg-teal-50 text-teal-700'
+    if (l.includes('govt')) return 'bg-rose-50 text-rose-700'
     return 'bg-slate-100 text-slate-600'
   }
 
@@ -3413,7 +4094,7 @@ function AchievementSection({ courseId, courseName }) {
                     <tr
                       className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
                     >
-                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{idx + 1}</td>
                       <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
                       <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
                       <td className="px-4 py-3 text-center">
@@ -3442,6 +4123,9 @@ function AchievementSection({ courseId, courseName }) {
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Achiever Name and Designation</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event / Achievement</th>
+                {courseId === 'btech-aids' && (
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
+                )}
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Title</th>
               </tr>
@@ -3450,11 +4134,18 @@ function AchievementSection({ courseId, courseName }) {
               {visibleData.map((item, idx) => (
                 <tr
                   key={idx}
-                  className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
+                  className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5 border-t border-slate-100`}
                 >
-                  <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                  <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{idx + 1}</td>
                   <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
                   <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
+                  {courseId === 'btech-aids' && (
+                    <td className="px-4 py-3 text-center">
+                      <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                        {item.level}
+                      </span>
+                    </td>
+                  )}
                   <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
                   <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
                 </tr>
@@ -3629,144 +4320,7 @@ function ClubsSection() {
 
 
 // ─── Innovative Practices Section Component ──────────────────────────────────
-function InnovativePracticesSection({ courseId, courseName }) {
-  const [records, setRecords] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const finalDept = getAchievementDepartmentName(courseId, courseName);
-        const res = await fetch(`${API_BASE}/curriculum-innovative-practices/?department=${encodeURIComponent(finalDept)}`);
-        if (res.ok) {
-          const data = await res.json();
-          setRecords(data);
-        }
-      } catch (err) {
-        console.error("Error fetching curriculum innovative practices:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, [courseId, courseName]);
-
-  const isComputing = ['be-cse', 'btech-it', 'btech-aids', 'btech-csbs', 'mca'].includes(courseId);
-  const isElectronics = ['be-ece', 'be-eee', 'be-ecm', 'me-ae', 'me-ped'].includes(courseId);
-  const isCoreEng = ['be-mechanical', 'be-civil', 'me-ise'].includes(courseId);
-
-  let mockPractices = [];
-  if (isComputing) {
-    mockPractices = [
-      {
-        title: "Project-Based Learning & Hackathons",
-        description: "Students work on real-world software applications and participate in national hackathons (like Smart India Hackathon) as a core part of their learning journey.",
-        details: "Development of fully functional projects, GitHub version control tracking, and mandatory team coding sprints.",
-        icon: Cpu
-      },
-      {
-        title: "ICT Enabled Teaching with Coding Playgrounds",
-        description: "Integration of interactive coding playgrounds (HackerRank, LeetCode) and virtual classrooms (Google Classroom) for real-time assessments and programming challenges.",
-        details: "Virtual coding sandboxes, online quizzes, programming contests, and automated grading systems.",
-        icon: Cpu
-      },
-      {
-        title: "Peer-to-Peer Learning & Technical Coding Clubs",
-        description: "Active student-led programming clubs where senior students mentor juniors in advanced algorithms, competitive programming, and web development.",
-        details: "Weekly coding meetups, group discussions, and bootcamps on full-stack frameworks.",
-        icon: Users
-      },
-      {
-        title: "Flipped Classroom & Interactive Quizzes",
-        description: "Students study core concepts via pre-recorded high-quality video lectures, and classroom sessions are dedicated to problem-solving, debugging, and system design.",
-        details: "Interactive Kahoot quizzes, collaborative system design board sessions, and group presentations.",
-        icon: Star
-      }
-    ];
-  } else if (isElectronics) {
-    mockPractices = [
-      {
-        title: "Simulation-Based Learning",
-        description: "Mandatory design and analysis of circuit diagrams using standard industry software simulation tools (like MATLAB, Multisim, Proteus, Keil) before physical assembly.",
-        details: "Virtual simulation environments, schematic verification, and wave analysis.",
-        icon: FlaskConical
-      },
-      {
-        title: "Hands-on Classroom Demonstrations",
-        description: "Integrating hardware kits (Arduino, Raspberry Pi, FPGA boards) directly into theoretical lecture hours to bridge mathematical models with physical reality.",
-        details: "Live demonstrations of signal waveforms, embedded sensor readings, and real-time debug sessions.",
-        icon: Wrench
-      },
-      {
-        title: "Design Contests & Maker Labs",
-        description: "Fostering prototyping culture via design challenges, IoT product design hackathons, and PCB fabrication workshops in the department's dedicated design spaces.",
-        details: "Product mockup designs, PCB layout fabrication, and micro-controller programming challenges.",
-        icon: Layers
-      },
-      {
-        title: "Collaborative Project Clusters",
-        description: "Interdisciplinary project teams building smart automation, smart grids, and e-mobility solutions under joint guidance of faculty mentors.",
-        details: "Hardware prototype exhibitions, joint research papers, and patents filing support.",
-        icon: Cpu
-      }
-    ];
-  } else if (isCoreEng) {
-    mockPractices = [
-      {
-        title: "Computer-Aided Design (CAD) & Analysis Contests",
-        description: "Fostering computational analysis skill through regular design sprints on AutoCAD, SolidWorks, and ANSYS software packages.",
-        details: "3D part modeling, finite element analysis (FEA) testing, and thermal simulation contests.",
-        icon: Wrench
-      },
-      {
-        title: "Experimental Learning & Model Making",
-        description: "Students design and construct physical scale models and structural prototypes to understand complex mechanisms and building physics.",
-        details: "Prototype bridge building, assembly/disassembly of engine components, and materials testing.",
-        icon: Layers
-      },
-      {
-        title: "Industrial Site Visits & Experiential Learning",
-        description: "Aligning academic coursework with construction sites, manufacturing assembly lines, and thermal power station operations through mandatory field study visits.",
-        details: "On-site documentation, safety audits, and expert interactions during field visits.",
-        icon: Building2
-      },
-      {
-        title: "Sustainable Solution Projects",
-        description: "Encouraging students to build eco-friendly green concrete, energy-efficient mechanical devices, and smart waste management systems.",
-        details: "Bio-degradable material testing, solar-hybrid vehicle prototypes, and waste recycling projects.",
-        icon: Target
-      }
-    ];
-  } else {
-    mockPractices = [
-      {
-        title: "Case-Based Pedagogical Approach",
-        description: "Analyzing actual business case studies from Harvard Business Review, MIT Sloan, and leading business journals to build strategic thinking.",
-        details: "Harvard Case studies, business strategy games, and financial portfolio analysis.",
-        icon: Briefcase
-      },
-      {
-        title: "Business Simulations & Role Plays",
-        description: "Interactive marketing games, mock board meetings, stock market simulations, and organizational behavior role plays.",
-        details: "Virtual stock trading, customer negotiation simulations, and HR conflict resolution role plays.",
-        icon: TrendingUp
-      },
-      {
-        title: "Flipped Classroom & Interactive Quizzes",
-        description: "Students study core concepts via online videos and reference material, using class hours for group discussions, mock pitches, and presentations.",
-        details: "Kahoot quizzes, business plan presentations, and case defense sessions.",
-        icon: Target
-      },
-      {
-        title: "Mentorship & Executive Interactions",
-        description: "Exclusive interactions with entrepreneurs, start-up incubation mentors (iStart), and industry experts to align students with market practices.",
-        details: "Weekly expert lectures, venture capital feedback sessions, and startup incubator access.",
-        icon: Users
-      }
-    ];
-  }
-
+function InnovativePracticesSection() {
   return (
     <div className="space-y-12">
       <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 pb-8 border-b border-[#D5E2F4]/50">
@@ -3782,87 +4336,12 @@ function InnovativePracticesSection({ courseId, courseName }) {
           </div>
         </div>
       </div>
-
-      {loading ? (
-        <div className="py-24 flex flex-col items-center justify-center gap-5">
-          <div className="w-16 h-16 rounded-full border-4 border-[#224292]/10 border-t-[#ffc107] animate-spin" />
-          <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#224292]/40">Fetching Innovative Practices...</p>
-        </div>
-      ) : records.length > 0 ? (
-        <div className="max-w-4xl mx-auto overflow-x-auto max-h-[600px] border border-[#E5EDF8] rounded-xl shadow-sm custom-scrollbar bg-white">
-          <table className="w-full text-left border-collapse">
-            <thead className="sticky top-0 bg-[#224292] text-white z-10 shadow-sm">
-              <tr>
-                <th className="px-8 py-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] w-[10%]">S.No</th>
-                <th className="px-8 py-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] w-[25%]">Staff Name</th>
-                <th className="px-8 py-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] w-[15%]">Year</th>
-                <th className="px-8 py-3 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] w-[50%]">Achievements</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[#D5E2F4]/40">
-              {records.map((item, idx) => (
-                <tr key={item.sno || idx} className="hover:bg-slate-50/50 transition-colors">
-                  <td className="px-8 py-2.5 text-sm font-bold text-slate-400">{idx + 1}</td>
-                  <td className="px-8 py-2.5 text-sm font-bold text-[#224292]">{item.staff_name}</td>
-                  <td className="px-8 py-2.5 text-sm font-bold text-black">{item.year}</td>
-                  <td className="px-8 py-2.5 text-sm font-medium text-slate-700 leading-relaxed whitespace-pre-wrap">
-                    <div className="flex items-center justify-between gap-4">
-                      <span>{item.achievements}</span>
-                      {item.pdf_url && (
-                        <a
-                          href={item.pdf_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#ffc107]/20 hover:bg-[#ffc107] text-[#224292] font-bold text-[10px] uppercase tracking-wider rounded-lg transition-all shrink-0"
-                        >
-                          <FileText size={12} /> View PDF
-                        </a>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : (
-        <div className="text-center py-20 bg-white rounded-[2rem] border border-dashed border-slate-200 max-w-4xl mx-auto shadow-sm">
-          <Star size={40} className="mx-auto text-slate-300 mb-4" />
-          <h3 className="text-lg font-bold text-slate-400 uppercase italic">Innovative Practices Data Pending</h3>
-          <p className="text-slate-400 text-sm font-normal mt-1">We are currently updating our pedagogical records for this department.</p>
-        </div>
-      )}
     </div>
   );
 }
 
-// ─── Curriculum Section Component ──────────────────────────────────────────
-function CurriculumSection({ courseId, courseName }) {
-  const [curriculumTab, setCurriculumTab] = useState('Regulations')
-  const [records, setRecords] = useState([])
-  const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    const fetchCurriculumData = async () => {
-      try {
-        setLoading(true)
-        const finalDept = getAchievementDepartmentName(courseId, courseName)
-        const res = await fetch(`${API_BASE}/curriculum-records/?category=${curriculumTab}&department=${encodeURIComponent(finalDept)}`)
-        if (res.ok) {
-          const data = await res.json()
-          setRecords(data)
-        } else {
-          setRecords([])
-        }
-      } catch (err) {
-        console.error('FETCH ERROR:', err)
-        setRecords([])
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchCurriculumData()
-  }, [curriculumTab, courseId, courseName])
+function CurriculumSection({ courseId }) {
+  const records = SYLLABUS_PDF_MAP[courseId] || []
 
   return (
     <div className="max-w-6xl mx-auto px-4 md:px-0">
@@ -3872,38 +4351,18 @@ function CurriculumSection({ courseId, courseName }) {
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#224292] to-[#224292] flex items-center justify-center shadow-lg shadow-[#224292]/20">
               <BookOpen size={24} className="text-[#ffc107]" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#224292] tracking-tight">Academic <span className="text-[#ffc107]">Curriculum</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-graphik text-[#224292] tracking-tight">Academic <span className="text-[#ffc107]">Syllabus</span></h2>
           </div>
-        </div>
-
-        <div className="flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200 self-start md:self-center">
-          {['Regulations', 'Syllabus'].map((t) => (
-            <button
-              key={t}
-              onClick={() => setCurriculumTab(t)}
-              className={`px-8 py-3 rounded-xl text-[10px] font-bold font-graphik uppercase tracking-[0.2em] transition-all duration-300 ${curriculumTab === t
-                ? 'bg-white text-[#224292] shadow-xl shadow-blue-900/10 scale-[1.02] translate-y-[-1px]'
-                : 'text-[#64779F] hover:text-[#224292]'
-                }`}
-            >
-              {t}
-            </button>
-          ))}
         </div>
       </div>
 
-      {loading ? (
-        <div className="py-24 flex flex-col items-center justify-center gap-5">
-          <div className="w-16 h-16 rounded-full border-4 border-[#224292]/10 border-t-[#ffc107] animate-spin" />
-          <p className="text-[11px] font-bold font-graphik uppercase tracking-[0.3em] text-[#224292]/40">Indexing Academic Files...</p>
-        </div>
-      ) : records.length === 0 ? (
+      {records.length === 0 ? (
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="py-20 px-8 rounded-[3rem] bg-white border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center">
           <div className="w-20 h-20 rounded-[2rem] bg-[#F8FAFC] flex items-center justify-center mb-8">
             <FileText size={40} className="text-[#A9B1C3]/30" />
           </div>
-          <h4 className="text-xl font-bold font-graphik text-[#224292] uppercase mb-2">No {curriculumTab} Found</h4>
-          <p className="text-[#64779F] font-bold font-graphik text-sm">Official documentation for this department is being updated.</p>
+          <h4 className="text-xl font-bold font-graphik text-[#224292] uppercase mb-2">No Syllabus Found</h4>
+          <p className="text-[#64779F] font-bold font-graphik text-sm">Official syllabus documentation is being updated.</p>
         </motion.div>
       ) : (
         <div className="space-y-6">
@@ -3913,15 +4372,15 @@ function CurriculumSection({ courseId, courseName }) {
               <thead>
                 <tr className="bg-[#224292] border-b border-[#224292]">
                   <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Document Info</th>
-                  <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Ref Year/Batch</th>
-                  {curriculumTab === 'Syllabus' && <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Semester</th>}
+                  <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Regulation</th>
+                  <th className="px-6 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white">Semesters Covered</th>
                   <th className="px-8 py-5 text-[10px] font-bold font-graphik uppercase tracking-[0.2em] text-white text-right">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#D5E2F4]/40">
                 {records.map((item, i) => (
                   <motion.tr
-                    key={item.id}
+                    key={i}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
@@ -3929,9 +4388,8 @@ function CurriculumSection({ courseId, courseName }) {
                   >
                     <td className="px-5 py-3.5">
                       <div className="flex items-center gap-3">
-                        <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#224292]' : 'bg-[#ffc107]/10 text-[#224292]'
-                          }`}>
-                          {curriculumTab === 'Regulations' ? <ShieldCheck size={18} /> : <BookOpen size={18} />}
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 bg-blue-50 text-[#224292]">
+                          <FileText size={18} />
                         </div>
                         <span className="text-sm font-bold font-graphik text-black transition-colors">{item.title}</span>
                       </div>
@@ -3939,27 +4397,22 @@ function CurriculumSection({ courseId, courseName }) {
                     <td className="px-3 py-3.5">
                       <div className="flex items-center gap-2">
                         <Calendar size={12} className="text-[#ffc107]" />
-                        <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black">{item.year_or_version}</span>
+                        <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black">{item.year}</span>
                       </div>
                     </td>
-                    {curriculumTab === 'Syllabus' && (
-                      <td className="px-3 py-3.5">
-                        <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-[9px] font-bold font-graphik text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all">
-                          SEM - {item.semester}
-                        </span>
-                      </td>
-                    )}
+                    <td className="px-3 py-3.5">
+                      <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-sm font-bold font-graphik text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all">
+                        Semesters {item.sem}
+                      </span>
+                    </td>
                     <td className="px-5 py-3.5 text-right">
                       <div className="flex items-center justify-end">
                         <button
                           onClick={() => {
-                            const downloadUrl = item.pdf_url.includes('/upload/')
-                              ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/')
-                              : item.pdf_url;
-                            window.open(downloadUrl, '_blank');
+                            window.open(item.file, '_blank');
                           }}
                           className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#224292] hover:bg-[#ffc107] transition-all transform active:scale-95 shadow-sm"
-                          title="Download Document"
+                          title="View Syllabus"
                         >
                           <Download size={16} />
                         </button>
@@ -3975,7 +4428,7 @@ function CurriculumSection({ courseId, courseName }) {
           <div className="md:hidden space-y-4">
             {records.map((item, i) => (
               <motion.div
-                key={item.id}
+                key={i}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
@@ -3983,35 +4436,31 @@ function CurriculumSection({ courseId, courseName }) {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${curriculumTab === 'Regulations' ? 'bg-blue-50 text-[#224292]' : 'bg-[#ffc107]/10 text-[#224292]'
-                      }`}>
-                      {curriculumTab === 'Regulations' ? <ShieldCheck size={20} /> : <BookOpen size={20} />}
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-blue-50 text-[#224292]">
+                      <FileText size={20} />
                     </div>
                     <div className="space-y-1">
                       <h4 className="text-[14px] font-bold font-graphik text-black leading-tight">{item.title}</h4>
                       <div className="flex items-center gap-2">
                         <Calendar size={11} className="text-[#ffc107]" />
-                        <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black/50">{item.year_or_version}</span>
+                        <span className="text-[10px] font-bold font-graphik uppercase tracking-widest text-black/50">{item.year}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-center pt-4 border-t border-slate-50 gap-4">
-                  {curriculumTab === 'Syllabus' && (
-                    <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-[10px] font-bold font-graphik text-[#224292]">
-                      SEM - {item.semester}
-                    </span>
-                  )}
-                  <div className="flex items-center">
+                  <span className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-100 text-sm font-bold font-graphik text-[#224292]">
+                    Semesters {item.sem}
+                  </span>
+                  <div className="flex items-center ml-auto">
                     <button
                       onClick={() => {
-                        const downloadUrl = item.pdf_url.includes('/upload/') ? item.pdf_url.replace('/upload/', '/upload/fl_attachment/') : item.pdf_url;
-                        window.open(downloadUrl, '_blank');
+                        window.open(item.file, '_blank');
                       }}
                       className="flex items-center gap-2 px-4 py-2.5 bg-[#ffc107] text-[#224292] rounded-xl text-[10px] font-bold font-graphik uppercase tracking-wider shadow-sm shadow-[#ffc107]/20"
                     >
-                      Download <Download size={14} />
+                      View Syllabus <Download size={14} />
                     </button>
                   </div>
                 </div>
