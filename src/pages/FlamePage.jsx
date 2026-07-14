@@ -205,12 +205,15 @@ export default function FlamePage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-3xl text-center mx-auto"
           >
-            <h1 className="font-black tracking-tight leading-none mb-6" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: '#ffc107' }}>
+            <h1 className="font-black tracking-tight leading-none mb-3" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#ffc107' }}>
               FLAME
             </h1>
 
-            <p className="font-bold tracking-wide uppercase" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: '#ffffff', letterSpacing: '0.05em' }}>
+            <p className="font-bold tracking-wide uppercase mb-3 text-white/90" style={{ fontSize: 'clamp(0.85rem, 1.8vw, 1.1rem)', letterSpacing: '0.05em' }}>
               Fruition Lore Association of Mechanical Engineers
+            </p>
+            <p className="font-semibold text-white/70 text-xs sm:text-sm">
+              (An Autonomous Institution)
             </p>
           </motion.div>
         </div>

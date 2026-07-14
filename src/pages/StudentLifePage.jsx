@@ -28,8 +28,7 @@ export default function StudentLifePage() {
     "Professional Society Linked Clubs",
     "Social Clubs",
     "Extra-Curricular / Cultural Clubs",
-    "College Level / Common Centers & Forums",
-    "i-Can Club"
+    "College Level / Common Centers & Forums"
   ];
 
   const galleryImages = [
@@ -113,6 +112,7 @@ export default function StudentLifePage() {
     { category: "Professional Society Linked Clubs", name: "IEEE Circuits and Systems Society", dept: "IEEE", desc: "Promotes circuit design, system innovation, and advanced electronics learning" },
     { category: "Professional Society Linked Clubs", name: "IEEE Computer Society", dept: "IEEE", desc: "Enhances computing knowledge, software skills, and technology-driven innovation" },
     { category: "Professional Society Linked Clubs", name: "IEEE Power and Energy Society", dept: "IEEE", desc: "Focuses on power systems, energy solutions, and electrical engineering advancements" },
+    { category: "Professional Society Linked Clubs", name: "Association for Computing Machinery (ACM)", dept: "ACM", desc: "Fosters advanced coding thinking, Raspberry Pi workshops, database contests, and IoT hardware seminars" },
     { category: "Professional Society Linked Clubs", name: "ICT Academy (ICTACT)", dept: "ICTACT", desc: "Provides industry-focused skill development and technology-based professional training" },
     { category: "Professional Society Linked Clubs", name: "Madras Management Association (MMA)", dept: "MMA", desc: "Enhances management knowledge, leadership skills, and professional business exposure" },
 
@@ -129,6 +129,7 @@ export default function StudentLifePage() {
     // Extra-Curricular / Cultural Clubs
     { category: "Extra-Curricular / Cultural Clubs", name: "KIOT Fine Arts Club", dept: "Arts", desc: "Encourages creativity and talent in music, dance, and fine arts" },
     { category: "Extra-Curricular / Cultural Clubs", name: "Tamil Mandram", dept: "Tamil", desc: "Promotes Tamil language, literature, culture, and traditional values" },
+    { category: "Extra-Curricular / Cultural Clubs", name: "i-Can Club for Slow Learners", dept: "i-Can", desc: "Supports slow learners through mentoring, confidence building, and academic success" },
 
     // College Level / Common Centers & Forums
     { category: "College Level / Common Centers & Forums", name: "Centre for Foreign Languages (CFL)", dept: "CFL", desc: "Enhances foreign language skills for global communication and career opportunities" },
@@ -137,191 +138,310 @@ export default function StudentLifePage() {
     { category: "College Level / Common Centers & Forums", name: "Higher Education Cell (India)", dept: "HEC", desc: "Guides students for higher studies opportunities within India" },
     { category: "College Level / Common Centers & Forums", name: "Higher Education Cell (Abroad)", dept: "HEC", desc: "Supports students in pursuing international education and global career pathways" },
     { category: "College Level / Common Centers & Forums", name: "Competitive Examinations Guidance Cell", dept: "Exam", desc: "Provides training and guidance for competitive exams and career advancement" },
-    { category: "College Level / Common Centers & Forums", name: "Corporate Contest Cell", dept: "Contest", desc: "Encourages participation in hackathons, innovation challenges, and competitions" },
-
-    // i-Can Club
-    { category: "i-Can Club", name: "i-Can Club for Slow Learners", dept: "i-Can", desc: "Supports slow learners through mentoring, confidence building, and academic success" }
+    { category: "College Level / Common Centers & Forums", name: "Corporate Contest Cell", dept: "Contest", desc: "Encourages participation in hackathons, innovation challenges, and competitions" }
   ];
 
   const filteredOrgs = organizations.filter(org => org.category === activeTab);
 
   return (
     <>
-    <section className="student-life">
-      <div className="container-custom">
-        
-        {/* LEFT CONTENT */}
-        <div className="left-content">
-          <h1 className="title-custom">
-            <span className="title-main-custom">Student</span>
-            <span className="title-accent-custom"> Life</span>
-          </h1>
+      <section className="student-life">
+        <div className="container-custom">
 
-          <p className="desc-custom">
-            Explore a dynamic network of over 70+ Clubs and Forums that inspire students interests 
-            and enhance the abilities in Technical, Professional and Research focused activities 
-            beyond the classroom.
-          </p>
+          {/* LEFT CONTENT */}
+          <div className="left-content">
+            <h1 className="title-custom">
+              <span className="title-main-custom">Student</span>
+              <span className="title-accent-custom"> Life</span>
+            </h1>
 
-          {/* FEATURES */}
-          <div className="features-custom">
-            <div className="feature-custom">
-              <div className="icon-custom">👥</div>
-              <div>
-                <h4>Connect</h4>
-                <p>Build strong networks</p>
-              </div>
-            </div>
+            <p className="desc-custom">
+              Explore a dynamic network of over 70+ Clubs and Forums that inspire students interests
+              and enhance the abilities in Technical, Professional and Research focused activities
+              beyond the classroom.
+            </p>
 
-            <div className="feature-custom">
-              <div className="icon-custom">🎓</div>
-              <div>
-                <h4>Grow</h4>
-                <p>Learn new skills</p>
-              </div>
-            </div>
-
-            <div className="feature-custom">
-              <div className="icon-custom">✨</div>
-              <div>
-                <h4>Explore</h4>
-                <p>Join clubs & events</p>
-              </div>
-            </div>
-
-            <div className="feature-custom">
-              <div className="icon-custom">❤️</div>
-              <div>
-                <h4>Belong</h4>
-                <p>Be part of community</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT IMAGES */}
-        <div className="right-content">
-          <div className="grid-wrapper">
-            <div className="decor-blue"></div>
-            <div className="decor-yellow"></div>
-            <div className="grid-custom">
-              <img src={asset14} alt="Student Life 1" />
-              <img src={asset5} alt="Student Life 2" />
-              <img src={asset12} alt="Student Life 3" />
-              <img src={asset13} alt="Student Life 4" />
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    {/* FILTERABLE CLUBS & ASSOCIATIONS */}
-    <section className="filter-section">
-      <div className="filter-tabs">
-        {tabs.map((tab, i) => (
-          <button 
-            key={i} 
-            className={`filter-tab ${activeTab === tab ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-      
-      {(activeTab === "Technical Clubs / Co-Curricular Clubs" || 
-        activeTab === "Professional Society Linked Clubs" || 
-        activeTab === "Social Clubs") ? (
-        <div className="clubs-table-container">
-          <table className="clubs-table">
-            <thead>
-              <tr>
-                <th style={{width: '15%'}}>Department</th>
-                <th style={{width: '35%'}}>Clubs</th>
-                <th style={{width: '50%'}}>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredOrgs.map((org, i) => (
-                <tr key={i}>
-                  <td className="dept-cell">{org.dept}</td>
-                  <td className="name-cell">{org.name}</td>
-                  <td>{org.desc}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : (
-        <div className="associations-grid">
-          {filteredOrgs.length > 0 ? (
-            filteredOrgs.map((org, i) => (
-              <div 
-                key={i} 
-                className={`association-card ${(org.name === 'FLAME' || org.name === 'INTEC' || org.name === 'VIBES' || org.name === 'PACE' || org.name === "AMBER'Z") ? 'cursor-pointer hover:border-[#ffc107] transition-all duration-300' : ''}`}
-                onClick={() => {
-                  if (org.name === 'FLAME') {
-                    navigate('/resources/student-life/flame');
-                  } else if (org.name === 'INTEC') {
-                    navigate('/resources/student-life/intec');
-                  } else if (org.name === 'VIBES') {
-                    navigate('/resources/student-life/vibes');
-                  } else if (org.name === 'PACE') {
-                    navigate('/resources/student-life/pace');
-                  } else if (org.name === "AMBER'Z") {
-                    navigate('/resources/student-life/amberz');
-                  }
-                }}
-              >
-                {activeTab === "Department Associations" && (
-                  <div className="assoc-arrow">
-                    <ArrowUpRight size={18} />
-                  </div>
-                )}
-                <span className="assoc-tag">{org.dept}</span>
+            {/* FEATURES */}
+            <div className="features-custom">
+              <div className="feature-custom">
+                <div className="icon-custom">👥</div>
                 <div>
-                  <h3 className="assoc-name">{org.name}</h3>
+                  <h4>Connect</h4>
+                  <p>Build strong networks</p>
                 </div>
-                <p className="assoc-desc">{org.desc}</p>
               </div>
-            ))
-          ) : (
-            <div className="col-span-full py-20 text-center">
-               <p className="text-slate-400 font-bold">Content for this category is coming soon...</p>
+
+              <div className="feature-custom">
+                <div className="icon-custom">🎓</div>
+                <div>
+                  <h4>Grow</h4>
+                  <p>Learn new skills</p>
+                </div>
+              </div>
+
+              <div className="feature-custom">
+                <div className="icon-custom">✨</div>
+                <div>
+                  <h4>Explore</h4>
+                  <p>Join clubs & events</p>
+                </div>
+              </div>
+
+              <div className="feature-custom">
+                <div className="icon-custom">❤️</div>
+                <div>
+                  <h4>Belong</h4>
+                  <p>Be part of community</p>
+                </div>
+              </div>
             </div>
-          )}
+          </div>
+
+          {/* RIGHT IMAGES */}
+          <div className="right-content">
+            <div className="grid-wrapper">
+              <div className="decor-blue"></div>
+              <div className="decor-yellow"></div>
+              <div className="grid-custom">
+                <img src={asset14} alt="Student Life 1" />
+                <img src={asset5} alt="Student Life 2" />
+                <img src={asset12} alt="Student Life 3" />
+                <img src={asset13} alt="Student Life 4" />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* FILTERABLE CLUBS & ASSOCIATIONS */}
+      <section className="filter-section">
+        <div className="filter-tabs">
+          {tabs.map((tab, i) => (
+            <button
+              key={i}
+              className={`filter-tab ${activeTab === tab ? 'active' : ''}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/bdbi')}
+          >
+            Big Data Big Insights Club
+          </button>
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/cegc')}
+          >
+            Competitive Examinations Guidance Cell
+          </button>
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/oracle-academy')}
+          >
+            KIOT- Oracle Academy
+          </button>
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/ieee')}
+          >
+            IEEE Student Branch
+          </button>
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/ieee-pes')}
+          >
+            IEEE PES
+          </button>
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/sae')}
+          >
+            SAE
+          </button>
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/soc-club')}
+          >
+            SoC Club
+          </button>
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/elderly-childcare')}
+          >
+            Technology for Elderlycare and Childcare Club
+          </button>
+          <button
+            className="filter-tab transition-all duration-300 hover:bg-[#224292] hover:text-white hover:border-[#224292] cursor-pointer"
+            onClick={() => navigate('/resources/student-life/acm')}
+          >
+            ACF (ACM)
+          </button>
+        </div>
+
+        {(activeTab === "Technical Clubs / Co-Curricular Clubs" ||
+          activeTab === "Professional Society Linked Clubs" ||
+          activeTab === "Social Clubs") ? (
+          <div className="clubs-table-container">
+            <table className="clubs-table">
+              <thead>
+                <tr>
+                  <th style={{ width: '15%' }}>Department</th>
+                  <th style={{ width: '35%' }}>Clubs</th>
+                  <th style={{ width: '50%' }}>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredOrgs.map((org, i) => (
+                  <tr key={i}>
+                    <td className="dept-cell">{org.dept}</td>
+                    <td className="name-cell">
+                      {org.name === "Big Data Big Insights (BDBI) Club" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/bdbi')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : org.name === "KIOT Oracle Academy" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/oracle-academy')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : org.name === "IEEE Student Branch" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/ieee')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : org.name === "IEEE Power and Energy Society" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/ieee-pes')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : org.name === "Society of Automotive Engineers (SAE)" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/sae')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : org.name === "Systems on Chip (SoC) Club" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/soc-club')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : org.name === "Technology for Elderly Care and Child Care" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/elderly-childcare')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : org.name === "Association for Computing Machinery (ACM)" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/acm')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : (
+                        org.name
+                      )}
+                    </td>
+                    <td>{org.desc}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div className="associations-grid">
+            {filteredOrgs.length > 0 ? (
+              filteredOrgs.map((org, i) => (
+                <div
+                  key={i}
+                  className={`association-card ${(org.name === 'FLAME' || org.name === 'INTEC' || org.name === 'VIBES' || org.name === 'PACE' || org.name === "AMBER'Z") ? 'cursor-pointer hover:border-[#ffc107] transition-all duration-300' : ''}`}
+                  onClick={() => {
+                    if (org.name === 'FLAME') {
+                      navigate('/resources/student-life/flame');
+                    } else if (org.name === 'INTEC') {
+                      navigate('/resources/student-life/intec');
+                    } else if (org.name === 'VIBES') {
+                      navigate('/resources/student-life/vibes');
+                    } else if (org.name === 'PACE') {
+                      navigate('/resources/student-life/pace');
+                    } else if (org.name === "AMBER'Z") {
+                      navigate('/resources/student-life/amberz');
+                    }
+                  }}
+                >
+                  {activeTab === "Department Associations" && (
+                    <div className="assoc-arrow">
+                      <ArrowUpRight size={18} />
+                    </div>
+                  )}
+                  <span className="assoc-tag">{org.dept}</span>
+                  <div>
+                    <h3 className="assoc-name">{org.name}</h3>
+                  </div>
+                  <p className="assoc-desc">{org.desc}</p>
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full py-20 text-center">
+                <p className="text-slate-400 font-bold">Content for this category is coming soon...</p>
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* GALLERY SECTION (LAST SECTION) */}
+      <section className="gallery-section">
+        <div className="gallery-header">
+          <h2>Campus Moments</h2>
+          <p>Glimpses of the vibrant life, events, and memories at Knowledge Institute of Technology.</p>
+        </div>
+
+        <div className="gallery-grid">
+          {galleryImages.map((img, i) => (
+            <div key={i} className="gallery-item" onClick={() => setSelectedImage(img.src)}>
+              <img src={img.src} alt={img.title} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* LIGHTBOX POPUP */}
+      {selectedImage && (
+        <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
+              <X size={24} />
+            </button>
+            <img src={selectedImage} alt="Full View" className="lightbox-img" />
+          </div>
         </div>
       )}
-    </section>
-
-    {/* GALLERY SECTION (LAST SECTION) */}
-    <section className="gallery-section">
-      <div className="gallery-header">
-        <h2>Campus Moments</h2>
-        <p>Glimpses of the vibrant life, events, and memories at Knowledge Institute of Technology.</p>
-      </div>
-
-      <div className="gallery-grid">
-        {galleryImages.map((img, i) => (
-          <div key={i} className="gallery-item" onClick={() => setSelectedImage(img.src)}>
-            <img src={img.src} alt={img.title} />
-          </div>
-        ))}
-      </div>
-    </section>
-
-    {/* LIGHTBOX POPUP */}
-    {selectedImage && (
-      <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
-        <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-          <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
-            <X size={24} />
-          </button>
-          <img src={selectedImage} alt="Full View" className="lightbox-img" />
-        </div>
-      </div>
-    )}
     </>
   );
 }

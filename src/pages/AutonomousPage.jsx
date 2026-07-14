@@ -42,6 +42,25 @@ import meMtechMcaReg from '../assets/Academic Regulations/ME_MTech_MCA_R2023_V4.
 import mbaReg from '../assets/Academic Regulations/MBA_R2023_V4.pdf'
 import mbaIevReg from '../assets/Academic Regulations/MBA_IEV_R2024_V3.pdf'
 
+
+// Import Curriculum & Syllabus PDFs
+import mechPgSyllabus from '../assets/Curriculum Syllabus/1. MECH/PG - M.E.-ISE I-IV SEM (New).pdf'
+import mechUgSyllabus from '../assets/Curriculum Syllabus/1. MECH/UG - MECH R23 - I - VI SEM - Syllabus.pdf'
+import ecxSyllabus from '../assets/Curriculum Syllabus/10. ECX/ECX - I- II SEM SYLLABUS.pdf'
+import mbaGenSyllabus from '../assets/Curriculum Syllabus/11. MBA(General)/MBA (General ) - I - IV SEM SYLLABUS.pdf'
+import mcaSyllabus from '../assets/Curriculum Syllabus/12. M.C.A/MCA - I - II SEM SYLLABUS.pdf'
+import ecePgSyllabus from '../assets/Curriculum Syllabus/2. ECE/PG - AE SYLLABUS (I - IV SEM).pdf'
+import eceUgSyllabus from '../assets/Curriculum Syllabus/2. ECE/UG - ECE - I - VI SEM- Syllabus.pdf'
+import eeePgSyllabus from '../assets/Curriculum Syllabus/3. EEE/PG - PED - I - IV SEM SYLLABUS.pdf'
+import eeeUgSyllabus from '../assets/Curriculum Syllabus/3. EEE/UG - EEE - I - VI SEM Syllabus.pdf'
+import csePgSyllabus from '../assets/Curriculum Syllabus/4. CSE/PG- SE - I - IV SEM SYLLABUS.pdf'
+import cseUgSyllabus from '../assets/Curriculum Syllabus/4. CSE/UG - CSE - I - VI SEM Syllabus.pdf'
+import civilSyllabus from '../assets/Curriculum Syllabus/5. CIVIL/CIVIL - I - VI SEM SYLLABUS.pdf'
+import itSyllabus from '../assets/Curriculum Syllabus/6. IT/IT - I - VI SEM SYLLABUS.pdf'
+import csbsSyllabus from '../assets/Curriculum Syllabus/7. CSBS/CSBS - I - VI SEM SYLLABUS.pdf'
+import aidsSyllabus from '../assets/Curriculum Syllabus/8. AI&DS/AI&DS I - VI SEM SYLLABUS.pdf'
+import mbaIevSyllabus from '../assets/Curriculum Syllabus/9. MBA (IEV)/MBA (IEV) - I - IV SEM SYLLABUS.pdf'
+
 const AutonomousPage = () => {
     const [activeTab, setActiveTab] = useState('overview')
     const [schedules, setSchedules] = useState([])
@@ -88,6 +107,7 @@ const AutonomousPage = () => {
         { name: 'Statutory Committees', id: 'committees', icon: Users },
         { name: 'CDDA', id: 'cdda', icon: Building2 },
         { name: 'Regulations', id: 'regulations', icon: FileText },
+        { name: 'Curriculum', id: 'curriculum', icon: BookOpen },
         { name: 'Academic Schedule', id: 'schedule', icon: Calendar },
         { name: 'Credits Equivalence Committee', id: 'cec', icon: UserCheck },
         { name: 'Honours/Minor Degree', id: 'honours', icon: Trophy },
@@ -629,7 +649,155 @@ const AutonomousPage = () => {
                         </motion.section>
                       )}
 
-                    {activeTab === 'schedule' && (
+                    
+                    {activeTab === 'curriculum' && (
+                        <motion.section 
+                            key="curriculum"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            id="curriculum" 
+                            className="scroll-mt-32"
+                        >
+                            <div className="mb-12">
+                                <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                                    <div className="w-10 h-10 sm:w-14 sm:h-14 bg-blue-50 rounded-xl sm:rounded-[1.5rem] flex items-center justify-center text-blue-600 shrink-0">
+                                        <BookOpen size={20} className="sm:w-7 sm:h-7" />
+                                    </div>
+                                    <h2 className="text-2xl sm:text-4xl font-black text-[#224292] tracking-tighter whitespace-nowrap">Curriculum & Syllabi</h2>
+                                </div>
+                                <p className="text-black text-[13px] font-bold">Department-wise curriculum design and syllabus structure for all autonomous degree programmes.</p>
+                            </div>
+
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
+                                {[
+                                    {
+                                        name: 'Computer Science and Engineering',
+                                        code: 'CSE',
+                                        deptLink: '/academics/undergraduate/be-cse',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - VI Sem)', file: cseUgSyllabus },
+                                            { title: 'PG Syllabus (I - IV Sem)', file: csePgSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Electronics and Communication Engineering',
+                                        code: 'ECE',
+                                        deptLink: '/academics/undergraduate/be-ece',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - VI Sem)', file: eceUgSyllabus },
+                                            { title: 'PG Syllabus (I - IV Sem)', file: ecePgSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Electrical and Electronics Engineering',
+                                        code: 'EEE',
+                                        deptLink: '/academics/undergraduate/be-eee',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - VI Sem)', file: eeeUgSyllabus },
+                                            { title: 'PG Syllabus (I - IV Sem)', file: eeePgSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Mechanical Engineering',
+                                        code: 'MECH',
+                                        deptLink: '/academics/undergraduate/be-mechanical',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - VI Sem)', file: mechUgSyllabus },
+                                            { title: 'PG Syllabus (I - IV Sem)', file: mechPgSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Information Technology',
+                                        code: 'IT',
+                                        deptLink: '/academics/undergraduate/btech-it',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - VI Sem)', file: itSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Civil Engineering',
+                                        code: 'CIVIL',
+                                        deptLink: '/academics/undergraduate/be-civil',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - VI Sem)', file: civilSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Artificial Intelligence & Data Science',
+                                        code: 'AI&DS',
+                                        deptLink: '/academics/undergraduate/btech-aids',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - VI Sem)', file: aidsSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Computer Science & Business Systems',
+                                        code: 'CSBS',
+                                        deptLink: '/academics/undergraduate/btech-csbs',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - VI Sem)', file: csbsSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Electronics and Computer Engineering',
+                                        code: 'ECX',
+                                        deptLink: '/academics/undergraduate/be-ece',
+                                        syllabus: [
+                                            { title: 'UG Syllabus (I - II Sem)', file: ecxSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Master of Business Administration (General)',
+                                        code: 'MBA',
+                                        deptLink: '/academics/postgraduate/mba-general',
+                                        syllabus: [
+                                            { title: 'PG Syllabus (I - IV Sem)', file: mbaGenSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Master of Business Administration (IEV)',
+                                        code: 'MBA (IEV)',
+                                        deptLink: '/academics/postgraduate/mba-iev',
+                                        syllabus: [
+                                            { title: 'PG Syllabus (I - IV Sem)', file: mbaIevSyllabus }
+                                        ]
+                                    },
+                                    {
+                                        name: 'Master of Computer Applications',
+                                        code: 'MCA',
+                                        deptLink: '/academics/postgraduate/mca-general',
+                                        syllabus: [
+                                            { title: 'PG Syllabus (I - II Sem)', file: mcaSyllabus }
+                                        ]
+                                    }
+                                ].map((dept, i) => (
+                                    <div key={i} className="bg-white border border-slate-100/80 rounded-2xl p-6 shadow-xl shadow-black/[0.12] hover:translate-y-[-2px] transition-all flex flex-col justify-between font-graphik h-full">
+                                        <div>
+                                            <div className="flex items-start justify-between gap-4 mb-5 border-b border-slate-100 pb-4">
+                                                <h3 className="text-[15px] font-extrabold text-[#224292] leading-snug whitespace-nowrap overflow-hidden text-ellipsis" title={dept.name}>{dept.name}</h3>
+                                            </div>
+                                            <div className="space-y-2.5">
+                                                {dept.syllabus.map((syl, idx) => (
+                                                    <button 
+                                                        key={idx} 
+                                                        onClick={() => window.open(syl.file, '_blank')}
+                                                        className="flex items-center gap-3.5 w-full p-3 bg-slate-50/70 hover:bg-red-50/50 hover:text-red-600 rounded-xl text-slate-600 text-xs font-medium transition-all group border border-slate-100/50 hover:border-red-100/60"
+                                                    >
+                                                        <FileText size={18} className="text-red-500 shrink-0 group-hover:scale-105 transition-transform" />
+                                                        <span className="flex-1 text-left whitespace-normal leading-relaxed">{syl.title}</span>
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.section>
+                    )}
+
+{activeTab === 'schedule' && (
                         <motion.section 
                             key="schedule"
                             initial={{ opacity: 0 }}

@@ -98,6 +98,15 @@ const IntecPage = lazy(() => import('./pages/IntecPage'))
 const VibesPage = lazy(() => import('./pages/VibesPage'))
 const PacePage = lazy(() => import('./pages/PacePage'))
 const AmberzPage = lazy(() => import('./pages/AmberzPage'))
+const BdbiPage = lazy(() => import('./pages/BdbiPage'))
+const CegcPage = lazy(() => import('./pages/CegcPage'))
+const OracleAcademyPage = lazy(() => import('./pages/OracleAcademyPage'))
+const IeeePage = lazy(() => import('./pages/IeeePage'))
+const IeeePesPage = lazy(() => import('./pages/IeeePesPage'))
+const SaePage = lazy(() => import('./pages/SaePage'))
+const SocClubPage = lazy(() => import('./pages/SocClubPage'))
+const ElderlyChildcarePage = lazy(() => import('./pages/ElderlyChildcarePage'))
+const AcmPage = lazy(() => import('./pages/AcmPage'))
 
 
 
@@ -576,6 +585,78 @@ function App() {
         title: "FLAME Literary & Fine Arts Club | KIOT",
         desc: "Explore literary activities, debating, public speaking, drawing, and fine arts events by FLAME Club at KIOT."
       },
+      "/student-life/bdbi": {
+        title: "BDBI Big Data Big Insights Club | KIOT",
+        desc: "Explore big data analytics, workshops, hackathons, and intelligence events by BDBI Club at KIOT."
+      },
+      "/resources/student-life/bdbi": {
+        title: "BDBI Big Data Big Insights Club | KIOT",
+        desc: "Explore big data analytics, workshops, hackathons, and intelligence events by BDBI Club at KIOT."
+      },
+      "/student-life/cegc": {
+        title: "CEGC Competitive Examinations Guidance Cell | KIOT",
+        desc: "Support and coaching for competitive examinations including GATE, UPSC, TNPSC, Banking, and SSC at KIOT."
+      },
+      "/resources/student-life/cegc": {
+        title: "CEGC Competitive Examinations Guidance Cell | KIOT",
+        desc: "Support and coaching for competitive examinations including GATE, UPSC, TNPSC, Banking, and SSC at KIOT."
+      },
+      "/student-life/oracle-academy": {
+        title: "KIOT- Oracle Academy | KIOT",
+        desc: "Learn database management, Java programming, SQL, and cloud computing certifications at KIOT Oracle Academy."
+      },
+      "/resources/student-life/oracle-academy": {
+        title: "KIOT- Oracle Academy | KIOT",
+        desc: "Learn database management, Java programming, SQL, and cloud computing certifications at KIOT Oracle Academy."
+      },
+      "/student-life/ieee": {
+        title: "IEEE Student Branch | KIOT",
+        desc: "Explore ECE and electrical engineering projects, Spectrum talks, Robotricks knowledge fests and workshops at IEEE SB KIOT."
+      },
+      "/resources/student-life/ieee": {
+        title: "IEEE Student Branch | KIOT",
+        desc: "Explore ECE and electrical engineering projects, Spectrum talks, Robotricks knowledge fests and workshops at IEEE SB KIOT."
+      },
+      "/student-life/ieee-pes": {
+        title: "IEEE PES Power & Energy Society Student Chapter | KIOT",
+        desc: "Explore power systems, smart grids, sustainable energy challenges, and energy auditing workshops at IEEE PES KIOT."
+      },
+      "/resources/student-life/ieee-pes": {
+        title: "IEEE PES Power & Energy Society Student Chapter | KIOT",
+        desc: "Explore power systems, smart grids, sustainable energy challenges, and energy auditing workshops at IEEE PES KIOT."
+      },
+      "/student-life/sae": {
+        title: "SAE Collegiate Club | KIOT",
+        desc: "Explore vehicle design challenges, electric karts, mini-bike fabrications, and drone modeling under SAE Collegiate Club at KIOT."
+      },
+      "/resources/student-life/sae": {
+        title: "SAE Collegiate Club | KIOT",
+        desc: "Explore vehicle design challenges, electric karts, mini-bike fabrications, and drone modeling under SAE Collegiate Club at KIOT."
+      },
+      "/student-life/soc-club": {
+        title: "System on Chip (SoC) Club | KIOT",
+        desc: "Learn semiconductor design, CMOS VLSI, FPGA boards programming, and digital circuits simulation at SoC Club KIOT."
+      },
+      "/resources/student-life/soc-club": {
+        title: "System on Chip (SoC) Club | KIOT",
+        desc: "Learn semiconductor design, CMOS VLSI, FPGA boards programming, and digital circuits simulation at SoC Club KIOT."
+      },
+      "/student-life/elderly-childcare": {
+        title: "Technology for Elderlycare and Childcare Club | KIOT",
+        desc: "Explore IoT based elderly fall detection systems, smart child safety alerts, and pediatric autism assistant systems at KIOT."
+      },
+      "/resources/student-life/elderly-childcare": {
+        title: "Technology for Elderlycare and Childcare Club | KIOT",
+        desc: "Explore IoT based elderly fall detection systems, smart child safety alerts, and pediatric autism assistant systems at KIOT."
+      },
+      "/student-life/acm": {
+        title: "ACF (ACM) Student Chapter | KIOT",
+        desc: "Fostering advanced coding thinking, Raspberry Pi workshops, database contests, and IoT hardware seminars under ACM Student Chapter at KIOT."
+      },
+      "/resources/student-life/acm": {
+        title: "ACF (ACM) Student Chapter | KIOT",
+        desc: "Fostering advanced coding thinking, Raspberry Pi workshops, database contests, and IoT hardware seminars under ACM Student Chapter at KIOT."
+      },
       "/student-life/intec": {
         title: "INTEC Information Technology Club | KIOT",
         desc: "Join hackathons, coding contests, app development drives, and tech talks by INTEC club at KIOT."
@@ -878,6 +959,24 @@ function App() {
                   <Route path="/resources/student-life/pace" element={<PacePage />} />
                   <Route path="/student-life/amberz" element={<AmberzPage />} />
                   <Route path="/resources/student-life/amberz" element={<AmberzPage />} />
+                  <Route path="/student-life/bdbi" element={<BdbiPage />} />
+                  <Route path="/resources/student-life/bdbi" element={<BdbiPage />} />
+                  <Route path="/student-life/cegc" element={<CegcPage />} />
+                  <Route path="/resources/student-life/cegc" element={<CegcPage />} />
+                  <Route path="/student-life/oracle-academy" element={<OracleAcademyPage />} />
+                  <Route path="/resources/student-life/oracle-academy" element={<OracleAcademyPage />} />
+                  <Route path="/student-life/ieee" element={<IeeePage />} />
+                  <Route path="/resources/student-life/ieee" element={<IeeePage />} />
+                  <Route path="/student-life/ieee-pes" element={<IeeePesPage />} />
+                  <Route path="/resources/student-life/ieee-pes" element={<IeeePesPage />} />
+                  <Route path="/student-life/sae" element={<SaePage />} />
+                  <Route path="/resources/student-life/sae" element={<SaePage />} />
+                  <Route path="/student-life/soc-club" element={<SocClubPage />} />
+                  <Route path="/resources/student-life/soc-club" element={<SocClubPage />} />
+                  <Route path="/student-life/elderly-childcare" element={<ElderlyChildcarePage />} />
+                  <Route path="/resources/student-life/elderly-childcare" element={<ElderlyChildcarePage />} />
+                  <Route path="/student-life/acm" element={<AcmPage />} />
+                  <Route path="/resources/student-life/acm" element={<AcmPage />} />
                   <Route path="/alumni" element={<AlumniPage />} />
                   <Route path="/blogs" element={<BlogsPage />} />
                   <Route path="/blog/:slug" element={<BlogDetailPage />} />

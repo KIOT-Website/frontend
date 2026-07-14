@@ -13,7 +13,7 @@ const SportsFacultyPage = () => {
   const facultyData = [
     {
       id: "pd-devi",
-      name: "R. Devi",
+      name: "Devi R",
       image: devi,
       designation: "Physical Directress",
       qualification: "B.Com., M.P.Ed., M.Sc Yoga.,",
@@ -54,7 +54,7 @@ const SportsFacultyPage = () => {
     },
     {
       id: "pd-manikandan",
-      name: "P. Manikandan",
+      name: "Manikandan P",
       image: manikandan,
       designation: "Physical Director",
       qualification: "M.Com., M.P.Ed., PG Dip. in Yoga",

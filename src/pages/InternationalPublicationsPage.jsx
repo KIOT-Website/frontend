@@ -33,8 +33,8 @@ const InternationalPublicationsPage = () => {
 
     const allPublications = {
         'mechanical-engineering': [
-            { id: 1, author: "Dr.PSS.Srinivasan", title: "Kirloskar TV – I Engine performance and emission characteristicsof methyl ester Mahua (Madhuca Indica) & Red Mud transesterified Mahua oil/diesel blends", journal: "International Journal of Applied Engineering Research, ISSN 0973-4562", year: "2015" },
-            { id: 2, author: "Dr.PSS.Srinivasan", title: "Reduction of Filling Time in Injection Moulding Machine by Using Hydraulic System", journal: "International Journal of Applied Engineering Research, ISSN 0973-4562", year: "2015" },
+            { id: 1, author: "Dr. PSS.Srinivasan", title: "Kirloskar TV – I Engine performance and emission characteristicsof methyl ester Mahua (Madhuca Indica) & Red Mud transesterified Mahua oil/diesel blends", journal: "International Journal of Applied Engineering Research, ISSN 0973-4562", year: "2015" },
+            { id: 2, author: "Dr. PSS.Srinivasan", title: "Reduction of Filling Time in Injection Moulding Machine by Using Hydraulic System", journal: "International Journal of Applied Engineering Research, ISSN 0973-4562", year: "2015" },
             { id: 3, author: "P.Murugesan, K.Mayilsamy, S.Suresh, PSS.Srinivasan", title: "Heat transfer and pressure drop characteristics in a circular tube fitted with and without V-cut twisted tape insert", journal: "International Communications in Heat and Mass Transfer", year: "2011" },
             { id: 4, author: "P.Murugesan, K.Mayilsamy, S.Suresh, PSS.Srinivasan", title: "Heat transfer and pressure drop characteristics of Turbulent flow in a tube fitted with trapezoidalcut Twisted tape insert", journal: "International journal of academic research", year: "2009" },
             { id: 5, author: "M.Ravikumar, PSS.Srinivasan", title: "Phase change material as a thermal energy storage Material for cooling of building", journal: "Journal of Theoretical & Applied Information Technology", year: "2008" },
@@ -79,72 +79,72 @@ const InternationalPublicationsPage = () => {
             { id: 127, author: "P Elayaraja, S Kumarganesh, K Martin Sagayam, Hien Dang, Marc Pomplun", title: "An efficient approach for detection and classification of cancer regions in cervical images using optimization-based CNN", journal: "Journal of Intelligent & Fuzzy Systems", year: "Aug 2022" },
             { id: 128, author: "S Kumarganesh, S Anthoniraj, T Senthil Kumar, P Elayaraja et al.", title: "A Novel Analytical Framework is Developed for Wireless Heterogeneous Networks for Video Streaming Applications", journal: "Journal of Mathematics", year: "Sept 2022" },
             { id: 129, author: "B. Thiyaneswaran, K. Anguraj, S. Kumarganesh, K. Martin Sagayam et al.", title: "IOT based smart cold chain temperature monitoring and alert system for vaccination container", journal: "Przegląd Elektrotechniczny", year: "2022" },
-            { id: 130, author: "G Rajamanickam, G Ravi", title: "Evaluation of Codebook Design Using SCMA Scheme Based on An and Dn Lattices", journal: "Intelligent Automation and Soft Computing", year: "Jan 2023" }
+            { id: 130, author: "Rajamanickam G, Ravi G", title: "Evaluation of Codebook Design Using SCMA Scheme Based on An and Dn Lattices", journal: "Intelligent Automation and Soft Computing", year: "Jan 2023" }
         ],
         'electrical-&-electronics-engineering': [
             // 2023-24
-            { id: 1, author: "P. Gomathi, C. Muniraj, P.S. Periasamy", title: "Digital infrared thermal imaging system based breast cancer diagnosis using 4D U-Net segmentation", journal: "Biomedical Signal Processing and Control (Elsevier)", year: "2023" },
+            { id: 1, author: "Gomathi P, Muniraj C, Periasamy P S", title: "Digital infrared thermal imaging system based breast cancer diagnosis using 4D U-Net segmentation", journal: "Biomedical Signal Processing and Control (Elsevier)", year: "2023" },
             { id: 2, author: "N Rajasekaran, C Muniraj, T Venkatesan, A Kumaravel", title: "Analysis of electrical behavior in LDPE/BaTiO3 ceramic filler nanocomposites for cable insulation", journal: "Journal of Ceramic Processing Research", year: "2023" },
             { id: 3, author: "S. Sathishkumar, V. Kamatchi Kannan et al.", title: "High gain novel two input two output buck-boost converter for EV applications", journal: "International Journal of Electronics (Taylor & Francis)", year: "2023" },
-            { id: 4, author: "P.A. Gowrisankar", title: "Analysis and Controlling of Uncertainty in BLDC Motor Using Optimal Hybrid Algorithm in State Space", journal: "Electric Power Components and Systems", year: "2023" },
+            { id: 4, author: "Gowrisankar P A", title: "Analysis and Controlling of Uncertainty in BLDC Motor Using Optimal Hybrid Algorithm in State Space", journal: "Electric Power Components and Systems", year: "2023" },
             { id: 5, author: "P.A.Gowri Sankar", title: "Simulation and Electrification of a Conventional Vehicle Into A Battery Electric Vehicle", journal: "Energy Sources (Taylor & Francis)", year: "May-24" },
             { id: 6, author: "G.Karthikeyan & A. Jagadeeshwaran", title: "Machine Learning-Based PV Prediction and Fault Analysis System for Real-Time Tracking", journal: "Electric Power Components and Systems", year: "Dec 2023" },
             { id: 7, author: "R.Sundar, G.Vijayakumar, R.Raja et al.", title: "Reduced switch cascaded asymmetrical 27 level inverter-STATCOM with fuzzy logic controller", journal: "Indonesian Journal of Electrical Engineering", year: "Dec 2023" },
             { id: 8, author: "V.Prasanna Moorthy, S.Kalpana Devi et al.", title: "Investigation On Dielectric Properties Of Bio-Transol For Transformer Insulation", journal: "Journal Of Environmental Protection And Ecology", year: "Dec 2023" },
  
             // 2022-23
-            { id: 101, author: "P. Gomathi, C. Muniraj, PS.Periasamy", title: "Micro Calcification Detection in Mammogram Images Using Contiguous CNN Algorithm", journal: "Computer Systems Science & Engineering", year: "2023" },
-            { id: 102, author: "V. Jamuna, C. Muniraj PS.Periasamy", title: "Fault detection for PV panels by linear iterative fault diagnosis based on thermal imaging", journal: "Journal of Electrical Engineering & Technology", year: "2023" },
+            { id: 101, author: "Gomathi P, Muniraj C, PS.Periasamy", title: "Micro Calcification Detection in Mammogram Images Using Contiguous CNN Algorithm", journal: "Computer Systems Science & Engineering", year: "2023" },
+            { id: 102, author: "Jamuna V, Muniraj PS.Periasamy C", title: "Fault detection for PV panels by linear iterative fault diagnosis based on thermal imaging", journal: "Journal of Electrical Engineering & Technology", year: "2023" },
             { id: 103, author: "Kalpanadevi Subramaniam, Suganthi Muthusamy et al.", title: "A high-gain multi-input single-output switched quasi-Zsource converter for renewable integration", journal: "International Journal of Circuit Theory", year: "2022" },
  
             // 2021-22
-            { id: 201, author: "P Govindaraju, C Muniraj, PS Periyasamy", title: "Environmental Impact Of High Voltage Insulator Quality Analysis Using Improved Deep Learning", journal: "Journal of environmental protection and ecology", year: "2022" },
+            { id: 201, author: "Govindaraju P, Muniraj C, Periyasamy P S", title: "Environmental Impact Of High Voltage Insulator Quality Analysis Using Improved Deep Learning", journal: "Journal of environmental protection and ecology", year: "2022" },
             { id: 202, author: "Gunapriya, D, Muniraj, C, Lakshmi, K", title: "Integrated PCA and FIS approach to mechanical fault classification of induction motor", journal: "Journal of Intelligent & Fuzzy Systems", year: "2022" },
             { id: 203, author: "Gunapriya D, Muniraj C & Lakshmi K", title: "Detection and classification of mechanical faults via thermal image pixels analysis and ANFIS", journal: "Journal of Ambient Intelligence and Humanized Computing", year: "2021" }
         ],
         'civil-engineering': [
-            { id: 1, author: "Dr.P.M.Shanmugavadivu", title: "Effects of chloride attack on concrete with the replacement of natural sand by manufactured sand as fine aggregate", journal: "Journal of structural Engineering", year: "Dec 2012-Jan 2013" },
-            { id: 2, author: "Dr.P.M.Shanmugavadivu", title: "Effect of physical properties of manufactured sand as fine aggregate in elastic and shrinkage properties of concrete and mortar", journal: "International Journal of Advanced Materials Research", year: "2012" },
-            { id: 3, author: "Dr.P.M.Shanmugavadivu", title: "Effect of Fineness modulus and Specific gravity of manufactured sand as fine aggregate in Mix Proportioning of Concrete", journal: "International Journal of Earth Science & Engineering", year: "2010" },
-            { id: 4, author: "Dr.P.M.Shanmugavadivu", title: "The relationship between the Mechanical properties of Concrete with Manufactured sand is used as fine aggregate", journal: "International Journal of Emerging Technologies and Applications", year: "2010" },
-            { id: 5, author: "Dr.P.M.Shanmugavadivu", title: "The Durability Properties of Concrete with Manufactured Sand", journal: "International Journal of Earth Science & Engineering", year: "2010" },
-            { id: 6, author: "Dr.P.M.Shanmugavadivu", title: "A comparative study on Mechanical Properties of Concrete with Manufactured sand", journal: "International Journal, The Technology World, Malaysia", year: "2009" },
-            { id: 7, author: "Dr.P.M.Shanmugavadivu", title: "An Experimental Investigation On Energy Efficient Light Transmitting Concrete", journal: "Research in Civil and Environmental Engineering", year: "2014" },
-            { id: 8, author: "Dr.P.M.Shanmugavadivu", title: "Corrosion Behavior of Concrete with Partial Replacement of Cement with Rice Husk Ash", journal: "Advances in Materials and Corrosion", year: "2014" },
-            { id: 9, author: "K. Uma shankar", title: "Experimental Study on Compressive Strength of Self Compacting Concrete", journal: "BEST: IJMITE", year: "2013" },
-            { id: 10, author: "K. Uma shankar", title: "Durability Study of Structural Elements Using Fly Ash Aggregates", journal: "BEST: IJMITE", year: "2014" },
-            { id: 11, author: "K. Uma shankar", title: "Experimental Analysis on Effective Utilization of Industrial Waste Materials of Egg Shell, GGBS and Saw Dust Ash", journal: "BEST: IJMITE", year: "2014" },
-            { id: 12, author: "K. Uma shankar", title: "Rehabilitation and Retrofitting of Building Structures", journal: "BEST: IJMITE", year: "2015" },
-            { id: 13, author: "K. Uma shankar", title: "Experimental study on Jute fibre and Banana fibre in Fly ash bricks", journal: "International Journal of Research (IJR)", year: "2015" },
-            { id: 14, author: "K. Uma shankar", title: "Hazardous of waste water disposal", journal: "International Journal of Research (IJR)", year: "2015" },
-            { id: 15, author: "K. Uma shankar", title: "Utilization of textile cloth waste in clay brick", journal: "International Journal of Research (IJR)", year: "2015" },
-            { id: 16, author: "K. Uma shankar", title: "Expansive soil stabilization using waste from sugarcane industry", journal: "International Journal of Futuristic trends in Engineering and Technology", year: "2015" },
-            { id: 17, author: "K. Uma shankar", title: "Feasibility studies of acid resistant bricks using raw and waste materials", journal: "International Journal of Research (IJR)", year: "2015" },
-            { id: 18, author: "K. Arunprakash", title: "Experimental Study on Compressive Strength of Self Compacting Concrete", journal: "BEST: IJMITE", year: "2013" },
-            { id: 19, author: "T. Sarathivelan", title: "INNOVATIVE BRICK MATERIAL", journal: "IJRASET", year: "2015" },
-            { id: 20, author: "V. Scindhuja", title: "An Experimental Study on Granite Dust", journal: "IJAER journal", year: "2015" },
-            { id: 21, author: "G. Siva Natarajan", title: "Two-dimensional Modelling of Flood Inundation in Parts of Kundah River", journal: "International Journal of Research (IJR)", year: "2014" },
+            { id: 1, author: "Dr. P.M.Shanmugavadivu", title: "Effects of chloride attack on concrete with the replacement of natural sand by manufactured sand as fine aggregate", journal: "Journal of structural Engineering", year: "Dec 2012-Jan 2013" },
+            { id: 2, author: "Dr. P.M.Shanmugavadivu", title: "Effect of physical properties of manufactured sand as fine aggregate in elastic and shrinkage properties of concrete and mortar", journal: "International Journal of Advanced Materials Research", year: "2012" },
+            { id: 3, author: "Dr. P.M.Shanmugavadivu", title: "Effect of Fineness modulus and Specific gravity of manufactured sand as fine aggregate in Mix Proportioning of Concrete", journal: "International Journal of Earth Science & Engineering", year: "2010" },
+            { id: 4, author: "Dr. P.M.Shanmugavadivu", title: "The relationship between the Mechanical properties of Concrete with Manufactured sand is used as fine aggregate", journal: "International Journal of Emerging Technologies and Applications", year: "2010" },
+            { id: 5, author: "Dr. P.M.Shanmugavadivu", title: "The Durability Properties of Concrete with Manufactured Sand", journal: "International Journal of Earth Science & Engineering", year: "2010" },
+            { id: 6, author: "Dr. P.M.Shanmugavadivu", title: "A comparative study on Mechanical Properties of Concrete with Manufactured sand", journal: "International Journal, The Technology World, Malaysia", year: "2009" },
+            { id: 7, author: "Dr. P.M.Shanmugavadivu", title: "An Experimental Investigation On Energy Efficient Light Transmitting Concrete", journal: "Research in Civil and Environmental Engineering", year: "2014" },
+            { id: 8, author: "Dr. P.M.Shanmugavadivu", title: "Corrosion Behavior of Concrete with Partial Replacement of Cement with Rice Husk Ash", journal: "Advances in Materials and Corrosion", year: "2014" },
+            { id: 9, author: "Uma shankar K", title: "Experimental Study on Compressive Strength of Self Compacting Concrete", journal: "BEST: IJMITE", year: "2013" },
+            { id: 10, author: "Uma shankar K", title: "Durability Study of Structural Elements Using Fly Ash Aggregates", journal: "BEST: IJMITE", year: "2014" },
+            { id: 11, author: "Uma shankar K", title: "Experimental Analysis on Effective Utilization of Industrial Waste Materials of Egg Shell, GGBS and Saw Dust Ash", journal: "BEST: IJMITE", year: "2014" },
+            { id: 12, author: "Uma shankar K", title: "Rehabilitation and Retrofitting of Building Structures", journal: "BEST: IJMITE", year: "2015" },
+            { id: 13, author: "Uma shankar K", title: "Experimental study on Jute fibre and Banana fibre in Fly ash bricks", journal: "International Journal of Research (IJR)", year: "2015" },
+            { id: 14, author: "Uma shankar K", title: "Hazardous of waste water disposal", journal: "International Journal of Research (IJR)", year: "2015" },
+            { id: 15, author: "Uma shankar K", title: "Utilization of textile cloth waste in clay brick", journal: "International Journal of Research (IJR)", year: "2015" },
+            { id: 16, author: "Uma shankar K", title: "Expansive soil stabilization using waste from sugarcane industry", journal: "International Journal of Futuristic trends in Engineering and Technology", year: "2015" },
+            { id: 17, author: "Uma shankar K", title: "Feasibility studies of acid resistant bricks using raw and waste materials", journal: "International Journal of Research (IJR)", year: "2015" },
+            { id: 18, author: "Arunprakash K", title: "Experimental Study on Compressive Strength of Self Compacting Concrete", journal: "BEST: IJMITE", year: "2013" },
+            { id: 19, author: "Sarathivelan T", title: "INNOVATIVE BRICK MATERIAL", journal: "IJRASET", year: "2015" },
+            { id: 20, author: "Scindhuja V", title: "An Experimental Study on Granite Dust", journal: "IJAER journal", year: "2015" },
+            { id: 21, author: "Siva Natarajan G", title: "Two-dimensional Modelling of Flood Inundation in Parts of Kundah River", journal: "International Journal of Research (IJR)", year: "2014" },
             { id: 22, author: "J.Vidya Nandhini", title: "An experimental investigations on Replacement of sand by Bottom Ash from Mettur and Neyveli thermal power stations", journal: "IJAER journal", year: "2015" },
-            { id: 23, author: "S. Pradeep Kumar", title: "Self closing flood barrier a preventive system to defense extreme high flood events", journal: "IJERT", year: "2015" }
+            { id: 23, author: "Pradeep Kumar S", title: "Self closing flood barrier a preventive system to defense extreme high flood events", journal: "IJERT", year: "2015" }
         ],
         'information-technology': [
-            { id: 1, author: "Dr.P.Sachidhanandam", title: "Energy-Efficient Routing In Wireless Networks Using Deep Belief Networks and LSTM for Mobile Sink Path Optimization and Cluster Head Selection", journal: "ICTACT Journal On Communication Technology", year: "2024, 15, 33, 3308-3313" },
-            { id: 2, author: "Dr.P.Sachidhanandam", title: "Medico-Bot", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
-            { id: 3, author: "Dr.P.Sachidhanandam", title: "Improved Resource Allocation in 5G using Deep Learning", journal: "ICTACT Journal on Communication Technology", year: "2022, Volume: 13, Issue: 4, Pages: 2826 – 2829" },
-            { id: 4, author: "Dr.P.Sachidhanandam", title: "Elevated Ensemble Dynamic Energy-Aware Routing Optimization Based Energy Management and Network Lifetime Improvement in WSN", journal: "Wireless Personal Communications", year: "2021, 127:2501–2513" },
-            { id: 5, author: "Mr.J.Murugesan", title: "A comprehensive survey on artificial intelligence techniques and applications", journal: "Journal of Propulsion Technology(JPT)", year: "44, 3,1170-1177, 2023" },
-            { id: 6, author: "Mr.J.Murugesan", title: "PC Chatbot: A chatbot for Indian Penal Code", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
-            { id: 7, author: "Mr.J.Murugesan", title: "Medvista - A Companion for Medication Insight", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, a526 - a530 & 2024" },
-            { id: 8, author: "Ms.B.Manjubashini", title: "Annoyed Turn out ability Transmittal using Heap - Structure", journal: "International Journal of Innovative Research in computer and communication engineering", year: "2021, Volume9, Issue 5, May 2021, pg no: 6034 – 6038" },
-            { id: 9, author: "Ms.B.Manjubashini", title: "New security authentication with graphical passwords for multi images", journal: "International Journal of Innovative Research in computer and communication engineering", year: "Volume9, Issue 5, May 2021, pg no: 6039 – 6043" },
-            { id: 10, author: "Ms.B.Manjubashini", title: "Intrusion Detection of Imbalanced Network Based on Machine Learning", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "Volume 10, Issue 6, March 2022, pg no: 5043 – 5047" },
-            { id: 11, author: "Ms.B.Manjubashini", title: "Detection of Cyberbullying on social media", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "Volume 10, Issue 5, March 2022" },
-            { id: 12, author: "Ms.B.Manjubashini", title: "Prevent Vulnerability from Intruder Using IoT", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "pg no: 5055 – 5059" },
-            { id: 13, author: "Ms.B.Manjubashini", title: "User Interface of Blockchain Based Agri Food Traceability Applications", journal: "International Journal of Multidisciplinary Research in Science, Engineering and Technology", year: "Volume 6, Issue 3, March 2023, pg no: 5074 - 5078" },
-            { id: 14, author: "Ms.B.Manjubashini", title: "Machine Learning Techniques for 5G and Beyond", journal: "International Journal of Multidisciplinary Research in Science, Engineering and Technology", year: "Volume 6, Issue 3, March 2023, pg no: 7077 - 7080" },
-            { id: 15, author: "Mrs.G.Usha", title: "Energy-Efficient Routing In Wireless Networks Using Deep Belief Networks and LSTM for Mobile Sink Path Optimization and Cluster Head Selection", journal: "ICTACT Journal On Communication Technology", year: "2024, 15, 33, 3308-3313" },
-            { id: 16, author: "Mrs.G.Usha", title: "Nutrition Analyzer Using AI", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
-            { id: 17, author: "Mrs.M.Priya", title: "Agriculture Loan Recommender Sysrem", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" }
+            { id: 1, author: "Dr. P.Sachidhanandam", title: "Energy-Efficient Routing In Wireless Networks Using Deep Belief Networks and LSTM for Mobile Sink Path Optimization and Cluster Head Selection", journal: "ICTACT Journal On Communication Technology", year: "2024, 15, 33, 3308-3313" },
+            { id: 2, author: "Dr. P.Sachidhanandam", title: "Medico-Bot", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
+            { id: 3, author: "Dr. P.Sachidhanandam", title: "Improved Resource Allocation in 5G using Deep Learning", journal: "ICTACT Journal on Communication Technology", year: "2022, Volume: 13, Issue: 4, Pages: 2826 – 2829" },
+            { id: 4, author: "Dr. P.Sachidhanandam", title: "Elevated Ensemble Dynamic Energy-Aware Routing Optimization Based Energy Management and Network Lifetime Improvement in WSN", journal: "Wireless Personal Communications", year: "2021, 127:2501–2513" },
+            { id: 5, author: "Mr. J.Murugesan", title: "A comprehensive survey on artificial intelligence techniques and applications", journal: "Journal of Propulsion Technology(JPT)", year: "44, 3,1170-1177, 2023" },
+            { id: 6, author: "Mr. J.Murugesan", title: "PC Chatbot: A chatbot for Indian Penal Code", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
+            { id: 7, author: "Mr. J.Murugesan", title: "Medvista - A Companion for Medication Insight", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, a526 - a530 & 2024" },
+            { id: 8, author: "Ms. B.Manjubashini", title: "Annoyed Turn out ability Transmittal using Heap - Structure", journal: "International Journal of Innovative Research in computer and communication engineering", year: "2021, Volume9, Issue 5, May 2021, pg no: 6034 – 6038" },
+            { id: 9, author: "Ms. B.Manjubashini", title: "New security authentication with graphical passwords for multi images", journal: "International Journal of Innovative Research in computer and communication engineering", year: "Volume9, Issue 5, May 2021, pg no: 6039 – 6043" },
+            { id: 10, author: "Ms. B.Manjubashini", title: "Intrusion Detection of Imbalanced Network Based on Machine Learning", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "Volume 10, Issue 6, March 2022, pg no: 5043 – 5047" },
+            { id: 11, author: "Ms. B.Manjubashini", title: "Detection of Cyberbullying on social media", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "Volume 10, Issue 5, March 2022" },
+            { id: 12, author: "Ms. B.Manjubashini", title: "Prevent Vulnerability from Intruder Using IoT", journal: "International Journal of Innovative Research in Science, Engineering and Technology", year: "pg no: 5055 – 5059" },
+            { id: 13, author: "Ms. B.Manjubashini", title: "User Interface of Blockchain Based Agri Food Traceability Applications", journal: "International Journal of Multidisciplinary Research in Science, Engineering and Technology", year: "Volume 6, Issue 3, March 2023, pg no: 5074 - 5078" },
+            { id: 14, author: "Ms. B.Manjubashini", title: "Machine Learning Techniques for 5G and Beyond", journal: "International Journal of Multidisciplinary Research in Science, Engineering and Technology", year: "Volume 6, Issue 3, March 2023, pg no: 7077 - 7080" },
+            { id: 15, author: "Ms. G.Usha", title: "Energy-Efficient Routing In Wireless Networks Using Deep Belief Networks and LSTM for Mobile Sink Path Optimization and Cluster Head Selection", journal: "ICTACT Journal On Communication Technology", year: "2024, 15, 33, 3308-3313" },
+            { id: 16, author: "Ms. G.Usha", title: "Nutrition Analyzer Using AI", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" },
+            { id: 17, author: "Ms. M.Priya", title: "Agriculture Loan Recommender Sysrem", journal: "International Journal of Creative Research Thoughts (IJCRT)", year: "12, 4, b832 - b835 & 2024" }
         ],
         'artificial-intelligence-&-data-science': [
             { id: 1, author: "B. Sasikumar, K. Venkatasalam, P. Rajendran", title: "Machine Learning Techniques for Comparing Time-Frequency of P-QRS-T Signal Wave for Diagnosing Induction Motor Fault Under Environmental Impact", journal: "Scientific Bulgarian Communication", year: "Vol. 24, No 7 (2023) / ISSN 1311-5065" },
@@ -155,42 +155,42 @@ const InternationalPublicationsPage = () => {
         'computer-science-&-business-systems': [
             {
                 id: 1,
-                author: "Dr.M.Ramkumar",
+                author: "Dr. M.Ramkumar",
                 title: "Identifying cancer risks using spectral subset feature selection based on multi layer perception neural network for premature treatment",
                 journal: "Computer Methods in Biomechanics and Biomedical Engineering",
                 year: "Received 16 Mar 2023, Accepted 17 Sep 2023, Published online: 04 Oct 2023"
             },
             {
                 id: 2,
-                author: "Dr.M.Ramkumar",
+                author: "Dr. M.Ramkumar",
                 title: "A power Prediction for a high speed VLSI adder circuit using deep genetic Mechanisum",
                 journal: "ICTACT Journal on Micro Electronics",
                 year: "APRIL 2023, VOLUME: 09, ISSUE: 01"
             },
             {
                 id: 3,
-                author: "Dr.M.Ramkumar",
+                author: "Dr. M.Ramkumar",
                 title: "Improved recognition rate of different material category using convolutional neural networks",
                 journal: "Materials Today: Proceedings",
                 year: "Volume 81- pages 947-950 Publisher Elsevier"
             },
             {
                 id: 4,
-                author: "Dr.M.Ramkumar",
+                author: "Dr. M.Ramkumar",
                 title: "Smart Mining Framework For High Dense Data Clustering Model In Healthcare Networks",
                 journal: "ICTACT Journal On Data Science And Machine Learning",
                 year: "SEPTEMBER 2023, VOLUME: 04, ISSUE: 04"
             },
             {
                 id: 5,
-                author: "Mr.Karthick. R",
+                author: "Mr. Karthick. R",
                 title: "Power consumption dashboard using iot",
                 journal: "Journal of Harbin Engineering University",
                 year: "Vol. 44 No. 10 (2023): Issue 10"
             },
             {
                 id: 6,
-                author: "Mr.Karthick. R",
+                author: "Mr. Karthick. R",
                 title: "Multisensor Data Fusion Calibration in Sensor Networks based on Air Pollution standards",
                 journal: "Journal Of Computing Technologies*",
                 year: "Acceptance received"
@@ -239,7 +239,7 @@ const InternationalPublicationsPage = () => {
             },
             {
                 id: 13,
-                author: "K.REENA",
+                author: "Ms. Reena K",
                 title: "DISEASE DIAGNOSIS FROM MEDICAL IMAGES",
                 journal: "YMER",
                 year: "DECEMBER 2024, VOLUME: 23, ISSUE: 12"

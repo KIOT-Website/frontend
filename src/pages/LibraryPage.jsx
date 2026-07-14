@@ -35,7 +35,7 @@ const LibraryPage = () => {
                 </motion.p>
                 <motion.h1 
                     initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-                    className="text-3xl md:text-7xl font-black text-white leading-tight mb-2 md:mb-4"
+                    className="text-3xl md:text-5xl font-bold text-white leading-tight mb-2 md:mb-4"
                 >
                     Library <br className="hidden md:block" />
                     <span className="text-[#ffc107]">Resource Center</span>
@@ -50,7 +50,7 @@ const LibraryPage = () => {
 
             {/* Stats Bar */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6 hidden md:block">
-                <div className="bg-[#224292] border border-slate-700/50 rounded-t-3xl backdrop-blur-md p-6 flex items-center justify-between gap-6 shadow-[0_-10px_40px_rgba(0,0,0,0.2)]">
+                <div className="bg-[#224292] border border-slate-700/50 rounded-t-2xl backdrop-blur-md p-6 flex items-center justify-between gap-6 shadow-[0_-10px_40px_rgba(0,0,0,0.2)]">
                     {[
                         { count: "50,000+", label: "Books", icon: BookOpen },
                         { count: "10,000+", label: "E-Journals", icon: FileText },
@@ -76,11 +76,11 @@ const LibraryPage = () => {
             {/* Vision & Mission section */}
             <div className="grid lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-8 space-y-8">
-                    <h2 className="text-3xl md:text-5xl font-bold text-[#224292] tracking-tight">Vision & <span className="text-[#ffc107]">Mission</span></h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#224292] tracking-tight">Vision & <span className="text-[#ffc107]">Mission</span></h2>
                     
                     <div className="grid sm:grid-cols-3 gap-6">
                         {/* Vision Card */}
-                        <div className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
+                        <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
                             <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2">
                                 <Eye size={20} />
                             </div>
@@ -92,7 +92,7 @@ const LibraryPage = () => {
                         </div>
 
                         {/* Mission Card */}
-                        <div className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
+                        <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
                             <div className="w-12 h-12 rounded-full bg-[#ffc107] text-[#224292] flex items-center justify-center mb-2">
                                 <Target size={20} />
                             </div>
@@ -108,7 +108,7 @@ const LibraryPage = () => {
                             href="http://115.244.103.83/webopac" 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
                         >
                             <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-colors">
                                 <BookOpen size={20} className="text-white group-hover:text-[#224292] transition-colors" />
@@ -125,7 +125,7 @@ const LibraryPage = () => {
                 </div>
 
                 {/* Right Image */}
-                <div className="lg:col-span-4 relative rounded-[2rem] overflow-hidden h-[400px] shadow-2xl">
+                <div className="lg:col-span-4 relative rounded-2xl overflow-hidden h-[400px] shadow-2xl">
                     <img 
                         src={libraryImg} 
                         className="w-full h-full object-cover" 
@@ -137,7 +137,7 @@ const LibraryPage = () => {
             {/* Library Services */}
             <div className="space-y-8 pt-6">
                 <div className="flex items-center justify-between">
-                    <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tight">Library <span className="text-[#ffc107]">Services</span></h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#224292] tracking-tight">Library <span className="text-[#ffc107]">Services</span></h2>
                     <button className="hidden sm:flex border border-slate-200 bg-white px-6 py-2.5 rounded-full text-sm font-bold text-[#224292] hover:border-[#224292] transition-colors items-center gap-2">
                         View All Services <ArrowRight size={16} />
                     </button>
@@ -153,7 +153,7 @@ const LibraryPage = () => {
                         <div 
                             key={idx} 
                             onClick={() => navigate(item.p)}
-                            className="group bg-white rounded-[1.5rem] border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all cursor-pointer overflow-hidden flex relative min-h-[160px]"
+                            className="group bg-white rounded-xl border border-slate-100 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all cursor-pointer overflow-hidden flex relative min-h-[160px]"
                         >
                             <div className="p-6 md:p-8 flex-1 relative z-10 w-[60%] bg-gradient-to-r from-white via-white to-transparent">
                                 <div className="flex items-center gap-3 mb-3">
@@ -179,7 +179,7 @@ const LibraryPage = () => {
             {/* Bottom Grid: Team and Regulations (Retained Original Content) */}
             <div className="grid lg:grid-cols-2 gap-10 pt-6">
                 {/* Expert Team Card */}
-                <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-[0_15px_40px_rgba(10,25,47,0.04)] border border-slate-100 relative overflow-hidden">
+                <div className="bg-white p-8 md:p-10 rounded-2xl shadow-[0_15px_40px_rgba(10,25,47,0.04)] border border-slate-100 relative overflow-hidden">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 rounded-2xl bg-[#224292] flex items-center justify-center text-white">
                             <Users size={24} />
@@ -196,7 +196,7 @@ const LibraryPage = () => {
                             { n: 'Mr. C. Ramesh', d: 'Assistant Librarian' },
                             { n: 'Mrs. N. Indumathi', d: 'Library Assistant' },
                             { n: 'Mrs. T. Banumathi', d: 'Library Assistant' },
-                            { n: 'Mr. P. Sakthivel', d: 'Library Assistant' }
+                            { n: 'Mr. R.J. Vinoth', d: 'Library Assistant' }
                         ].map((member, i) => (
                             <div key={i} className="flex items-center justify-between group cursor-default py-3 border-b border-slate-100 last:border-0">
                                 <div className="flex items-center gap-4">
@@ -214,7 +214,7 @@ const LibraryPage = () => {
                 </div>
 
                 {/* Library Regulations Card */}
-                <div className="bg-[#224292] p-8 md:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
+                <div className="bg-[#224292] p-8 md:p-10 rounded-2xl shadow-2xl relative overflow-hidden">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-[#ffc107]">
                             <ShieldCheck size={24} />

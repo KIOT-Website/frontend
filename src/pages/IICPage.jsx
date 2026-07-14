@@ -172,20 +172,20 @@ const IICPage = () => {
                     {/* Faculty Namelist Grid */}
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4">
                         {[
-                            { name: "Ms. P. Vikneshwary", dept: "AP/CSE" },
-                            { name: "Mrs. Vasanthi", dept: "AP/ECE" },
-                            { name: "Mrs. V. Vadivu", dept: "AP/ECE" },
-                            { name: "Mrs. Sasidevi", dept: "AP/ECE" },
-                            { name: "Mrs. S. Sowndarya", dept: "AP/CSE" },
-                            { name: "Mrs. R. Saranya", dept: "AP/CSE" },
-                            { name: "Mrs. P. Raga Keerthana", dept: "AP/CSBS" },
-                            { name: "Mr. S. Surendar", dept: "AP/MECH" },
-                            { name: "Mr. S. Senthilkumar", dept: "AP/CIVIL" },
-                            { name: "Mr. S. Rajeshkanna", dept: "AP/CIVIL" },
-                            { name: "Mr. S. E. Murthy", dept: "AP/EEE" },
-                            { name: "Mr. R. Kathiresan", dept: "AP/EEE" },
-                            { name: "Mr. P. Balaji", dept: "AP/EEE" },
-                            { name: "Dr. P. Malarvizhi", dept: "AP/CSE" }
+                            { name: "Ms. Vikneshwary P", dept: "AP/CSE" },
+                            { name: "Ms. Vasanthi", dept: "AP/ECE" },
+                            { name: "Ms. Vadivu V", dept: "AP/ECE" },
+                            { name: "Ms. Sasidevi", dept: "AP/ECE" },
+                            { name: "Ms. Sowndarya S", dept: "AP/CSE" },
+                            { name: "Ms. Saranya R", dept: "AP/CSE" },
+                            { name: "Ms. Raga Keerthana P", dept: "AP/CSBS" },
+                            { name: "Mr. Surendar S", dept: "AP/MECH" },
+                            { name: "Mr. Senthilkumar S", dept: "AP/CIVIL" },
+                            { name: "Mr. Rajeshkanna S", dept: "AP/CIVIL" },
+                            { name: "Mr. Murthy S E", dept: "AP/EEE" },
+                            { name: "Mr. Kathiresan R", dept: "AP/EEE" },
+                            { name: "Mr. Balaji P", dept: "AP/EEE" },
+                            { name: "Dr. Malarvizhi P", dept: "AP/CSE" }
                         ].map((faculty, i) => (
                             <motion.div 
                                 key={i}

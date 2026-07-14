@@ -1,109 +1,92 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Eye, Target, Sparkles, Heart, ShieldCheck } from 'lucide-react'
-
-const ValueCard = ({ title, content, icon: Icon, idx }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.95 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ delay: idx * 0.1, duration: 0.6 }}
-    className="relative group bg-white pt-8 pb-10 px-10 flex flex-col items-center text-center lg:items-start lg:text-left transition-all duration-500 rounded-xl h-full border border-slate-100 shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.15)] overflow-hidden"
-  >
-    {/* Top Right Folded Corner Effect */}
-    <div className="absolute top-0 right-0 w-0 h-0 border-t-[30px] border-t-[#ffc107]/20 border-l-[30px] border-l-transparent group-hover:border-t-[#ffc107] transition-all duration-500" />
-    
-    {/* New Geometric Accent - Golden "Status" Notch instead of Blue Line */}
-    <div className="absolute top-10 left-0 w-1.5 h-12 bg-gradient-to-b from-[#D4AF37] to-[#FFD700] rounded-r-full shadow-[0_0_10px_rgba(212,175,55,0.4)] group-hover:h-20 transition-all duration-500" />
-    
-    {/* Side "Wings" - Enhanced presence */}
-    <div className="absolute top-[30%] bottom-[30%] left-0 w-6 bg-[#ffc107] opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-500 pointer-events-none" 
-         style={{ clipPath: 'polygon(0 0, 100% 50%, 0 100%)' }} />
-    <div className="absolute top-[30%] bottom-[30%] right-0 w-6 bg-[#ffc107] opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-500 pointer-events-none" 
-         style={{ clipPath: 'polygon(100% 0, 0 50%, 100% 100%)' }} />
-
-    {/* Background Decorative Lines */}
-    <div className="absolute inset-0 opacity-[0.015] pointer-events-none" 
-         style={{ backgroundImage: 'repeating-linear-gradient(90deg, #224292 0, #224292 1px, transparent 0, transparent 40px)' }} />
-
-    {/* Content */}
-    <div className="relative z-10 w-full flex flex-col">
-      {/* Icon Box - Reduced Spacing to decrease height */}
-      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#224292] to-[#224292] text-[#224292] flex items-center justify-center mb-6 shadow-lg shadow-[#224292]/20 border-4 border-white group-hover:border-[#ffc107]/50 transition-all duration-500 mx-auto lg:mx-0">
-         <Icon size={26} />
-      </div>
-      
-      <h3 className="text-xl lg:text-2xl font-graphik font-bold text-[#224292] tracking-normal mb-3">
-        {title}
-      </h3>
-      
-      {/* Metallic Gold Divider */}
-      <div className="h-[2px] w-12 bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-transparent mb-6 rounded-full group-hover:w-24 transition-all duration-1000 shadow-[0_0_8px_rgba(212,175,55,0.3)]" />
-      
-      <p className="text-[#444444] font-medium text-[14px] lg:text-[15px] leading-[24px] lg:leading-[28px] text-justify lg:text-left">
-        {content}
-      </p>
-    </div>
-
-    {/* Metallic Shine Animation */}
-    <div className="absolute -inset-[100%] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transform rotate-[35deg] pointer-events-none animate-[shine_2s_infinite]" />
-    
-    <style dangerouslySetInnerHTML={{ __html: `
-      @keyframes shine {
-        0% { transform: translate(-100%, -100%) rotate(35deg); }
-        100% { transform: translate(100%, 100%) rotate(35deg); }
-      }
-    `}} />
-  </motion.div>
-)
-
-
-
+import { 
+  Eye, Target, Sparkles, Heart, ShieldCheck, 
+  Presentation, GraduationCap, Briefcase, Users, Mountain, Lightbulb, 
+  Feather 
+} from 'lucide-react'
 
 const VisionMission = ({ hideHeader = false }) => {
   const valuesData = [
     {
       title: "Our Vision",
       icon: Eye,
-      content: "To be a world class institution imparting value-based education to aspiring youth and shaping them into disciplined world class professionals."
+      type: "paragraph",
+      content: "To be a world-Class institution to impart value and need based professional education to the aspiring youth and carving them into disciplined world-class professionals who have the quest for excellence, achievement orientation and social responsibilities."
     },
     {
       title: "Our Mission",
       icon: Target,
-      content: "To promote academic growth by offering state-of-the-art undergraduate, postgraduate and doctoral programs."
+      type: "list",
+      content: [
+        "To promote academic growth by offering state-of-the-art undergraduate, postgraduate and doctoral programmes and to generate new knowledge by engaging in cutting – edge research.",
+        "To nurture talent, innovation, entrepreneurship, all-round personality and value system among the students and to foster global competitiveness among students.",
+        "To pursue global standards of excellence in all our endeavours namely teaching, research, consultancy, continuing education and support functions.",
+        "To undertake collaborative projects which offer opportunities for long-term interaction with academia and industry for creating a sustainable world."
+      ]
     },
     {
       title: "Our Promise",
       icon: Sparkles,
-      content: "100% Placement | Ethics & Value Based Education."
+      type: "list",
+      content: [
+        "100% Placement",
+        "Ethics & Value Based Education"
+      ]
     },
     {
       title: "Our Values",
       icon: Heart,
-      content: "To pursue global standards of excellence in all our endeavors."
+      type: "list",
+      content: [
+        "Stakeholder Friendly",
+        "Value for Money",
+        "Quality Centred",
+        "Open to Innovation",
+        "Ethics Driven"
+      ]
     },
     {
       title: "Our Commitment",
       icon: ShieldCheck,
-      content: "World Class Education | Culture of Innovation & Creativity | Degree On Time."
+      type: "list",
+      content: [
+        "World Class Education",
+        "Culture of Innovation & Creativity",
+        "Degree On Time",
+        "100% Placement",
+        "360° Personality Development",
+        "Ethics & Values Based Education"
+      ]
     }
   ]
 
+  const cardSpans = [
+    "md:col-span-1 lg:col-span-1", // Vision
+    "md:col-span-1 lg:col-span-2", // Mission
+    "md:col-span-1 lg:col-span-1", // Promise
+    "md:col-span-1 lg:col-span-1", // Values
+    "md:col-span-2 lg:col-span-1"  // Commitment
+  ]
+
   return (
-    <div id="values" className="relative bg-white pt-2 md:pt-4 pb-4 md:pb-6 border-t border-slate-100 mt-4 md:mt-6">
+    <div id="values" className="relative bg-[#fafbfe] pt-2 md:pt-4 pb-6 md:pb-8 border-t border-slate-100 mt-1 md:mt-2 overflow-hidden">
       
-      {/* Background Graphic Decoration - Removed to ensure pure white experience */}
+      {/* Subtle decorative background glow */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#224292]/5 rounded-full filter blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#ffc107]/5 rounded-full filter blur-[100px] pointer-events-none" />
+
       <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto">
         
-        {/* Header Section - Sub Heading Style */}
+        {/* Header Section */}
         {!hideHeader && (
-          <div className="text-center mb-10 lg:mb-14 px-4 overflow-hidden">
+          <div className="text-center mb-4 lg:mb-6 px-4">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="flex flex-col items-center"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight break-words">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-2 tracking-tighter leading-tight break-words">
                 Our Institutional <span className="text-[#ffc107]">Values</span>
               </h2>
             </motion.div>
@@ -111,70 +94,152 @@ const VisionMission = ({ hideHeader = false }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-[#333333] text-[14px] sm:text-[15px] leading-relaxed font-normal max-w-2xl mx-auto"
+              className="text-[#555555] text-[14px] sm:text-[15px] leading-relaxed font-normal max-w-2xl mx-auto"
             >
               The core principles and aspirations that drive our commitment to academic excellence, innovative research, and student success.
             </motion.p>
           </div>
         )}
 
-        {/* ─── NEW DIAMOND ZIG-ZAG INFOGRAPHIC ─── */}
-        <div className="relative w-full mx-auto px-4 py-4 lg:py-8">
-          <div className="flex flex-wrap lg:flex-nowrap justify-center gap-28 lg:gap-16 relative z-10 px-4">
+        {/* Institutional Values Cards (Reduced Spacings, Inline Heading, Modern Bullet Points, Gradient bg/shadow) */}
+        <div className="w-full mx-auto py-1 lg:py-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {valuesData.map((val, i) => {
-              const isEven = i % 2 !== 0; // 0, 2, 4 are top | 1, 3 are bottom
+              const Icon = val.icon
+              const cardSpan = cardSpans[i]
+
               return (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: isEven ? 50 : -50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.8 }}
-                  className={`relative flex-shrink-0 w-full lg:w-48 xl:w-56 max-w-[280px] flex flex-col items-center pt-7 ${isEven ? 'lg:mt-16' : 'lg:mb-16'}`}
+                  className={`relative bg-white p-5 md:p-6 rounded-[2rem] border border-slate-100/80 shadow-xl shadow-black/[0.12] overflow-hidden flex flex-col justify-between ${cardSpan}`}
                 >
-                  {/* Connecting Line - Only on Large Screens */}
-                  {i < valuesData.length - 1 && (
-                    <div className={`hidden lg:block absolute top-1/2 left-full w-full h-[2px] bg-[#ffc107]/30 z-0 origin-left ${isEven ? '-rotate-[30deg] translate-y-[-100%] translate-x-[-10%]' : 'rotate-[30deg] translate-y-[100%] translate-x-[-10%]'}`} style={{ width: 'calc(100% + 4rem)' }} />
-                  )}
+                  {/* Glowing Gold side accent bar */}
+                  <div className="absolute top-10 left-0 w-1.5 h-12 bg-gradient-to-b from-[#ffc107] to-[#D4AF37] rounded-r-full" />
 
-                  {/* Floating Number Badge – outside overflow container so it's always visible */}
-                  <div
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-graphik font-bold text-white text-[10px] sm:text-sm z-30 shadow-md"
-                    style={{ backgroundColor: i % 2 === 0 ? '#224292' : '#ffc107' }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-
-                  {/* The Diamond Container – overflow-hidden keeps shape uniform */}
-                  <div className="relative bg-white aspect-square w-56 sm:w-56 lg:w-48 xl:w-56 rounded-[2rem] border-2 border-[#ffc107] transform rotate-45 flex items-center justify-center group transition-all duration-500 mx-auto shadow-sm z-10 overflow-hidden">
-                    
-                    {/* Stylish Inner Border Line */}
-                    <div className="absolute inset-2 border border-dashed border-[#224292]/10 rounded-[1.5rem] group-hover:border-[#ffc107]/20 transition-colors duration-500 pointer-events-none" />
-                    
-                    {/* Corner Accent Detail */}
-                    <div className="absolute top-0 right-0 w-8 h-8 bg-gradient-to-br from-[#ffc107]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
-                    {/* Background Shine */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white via-[#224292]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    
-                    {/* Inner content – wider width and no line-clamp to ensure full text visibility */}
-                    <div className="transform -rotate-45 w-[82%] text-center flex flex-col items-center gap-1 px-1">
-                       <h3 className="text-[#224292] font-graphik font-bold text-[13px] sm:text-[14px] tracking-wide leading-tight">
-                         {val.title}
-                       </h3>
-                       <p className="text-black text-[10px] sm:text-[11px] font-semibold leading-snug">
-                         {val.content}
-                       </p>
-                       <val.icon size={18} className="text-[#224292] mt-1 shrink-0" />
+                  <div>
+                    {/* Inline Header Layout: Icon and Title inline, no large 01.02.03 background numbers */}
+                    <div className="flex items-center gap-3.5 mb-4">
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#224292] to-[#18357a] text-white flex items-center justify-center shadow-md shrink-0">
+                        <Icon size={20} className="text-[#ffc107]" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-graphik font-bold text-[#224292] tracking-tight">
+                        {val.title}
+                      </h3>
                     </div>
+
+                    {/* Golden Divider */}
+                    <div className="h-[2.5px] w-12 bg-gradient-to-r from-[#ffc107] via-[#ffc107]/70 to-transparent mb-4 rounded-full" />
+
+                    {/* Card Content Renderers (Normal weight with modern bullet points) */}
+                    {val.type === "paragraph" ? (
+                      <p className="text-[#555555] font-graphik font-normal text-[13.5px] lg:text-[14.5px] leading-[25px] text-justify">
+                        {val.content}
+                      </p>
+                    ) : (
+                      <div className="space-y-2.5">
+                        {val.content.map((item, idx) => (
+                          <div key={idx} className="flex items-start gap-2.5">
+                            <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-2" />
+                            <p className="text-[#555555] font-graphik font-normal text-[13.5px] lg:text-[14.5px] leading-relaxed">
+                              {item}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                </motion.div>
-              );
+                </div>
+              )
             })}
           </div>
         </div>
-        
-        {/* Centering the last two cards on desktop if needed, or just let them wrap */}
+
+        {/* ─── PRIME MOTTOES BANNER SECTION ─── */}
+        <div className="w-full mt-4 md:mt-6">
+          <div className="bg-[#224292] rounded-3xl overflow-hidden shadow-lg flex flex-col lg:flex-row items-stretch">
+            
+            {/* Left Block: WHITE card with Feather logo */}
+            <div className="w-full lg:w-1/4 bg-white p-6 flex flex-col items-center justify-center text-center relative min-h-[180px]">
+              <div className="w-14 h-14 rounded-full bg-[#224292]/10 flex items-center justify-center text-[#224292] mb-3 shadow-inner">
+                <Feather size={28} className="stroke-[2.5]" />
+              </div>
+              <h4 className="text-xl font-extrabold text-[#224292] tracking-widest leading-tight font-graphik">
+                PRIME<br />MOTTOES
+              </h4>
+              {/* Pointing triangle arrow to the right */}
+              <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 w-0 h-0 border-y-[10px] border-y-transparent border-l-[10px] border-l-white z-20" />
+            </div>
+
+            {/* Middle Block: 2 Columns of Mottoes with Icons */}
+            <div className="w-full lg:w-3/4 p-6 md:p-8 flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 w-full">
+                
+                {/* Col 1 */}
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-white mr-3 shrink-0 mt-0.5">
+                      <Presentation size={16} />
+                    </div>
+                    <span className="text-white font-graphik font-normal text-[15px] sm:text-[16px] leading-snug">
+                      World-Class Education
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-white mr-3 shrink-0 mt-0.5">
+                      <GraduationCap size={16} />
+                    </div>
+                    <span className="text-white font-graphik font-normal text-[15px] sm:text-[16px] leading-snug">
+                      Degree on Time
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-white mr-3 shrink-0 mt-0.5">
+                      <Briefcase size={16} />
+                    </div>
+                    <span className="text-white font-graphik font-normal text-[15px] sm:text-[16px] leading-snug">
+                      100% Career Success
+                    </span>
+                  </div>
+                </div>
+
+                {/* Col 2 */}
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-white mr-3 shrink-0 mt-0.5">
+                      <Users size={16} />
+                    </div>
+                    <span className="text-white font-graphik font-normal text-[15px] sm:text-[16px] leading-snug">
+                      Ethics and Values Based Education
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-white mr-3 shrink-0 mt-0.5">
+                      <Mountain size={16} />
+                    </div>
+                    <span className="text-white font-graphik font-normal text-[15px] sm:text-[16px] leading-snug">
+                      Overall Personality Development
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-white mr-3 shrink-0 mt-0.5">
+                      <Lightbulb size={16} />
+                    </div>
+                    <span className="text-white font-graphik font-normal text-[15px] sm:text-[16px] leading-snug">
+                      Culture of Innovation and Creativity
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
 
       </section>
     </div>

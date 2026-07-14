@@ -37,34 +37,34 @@ import munirajImg from '../assets/dir and hod/Dr.C.Muniraj.webp'
 import sakthivelImg from '../assets/dir and hod/Mr.D.Sakthivel.webp'
 
 const directors = [
-  { name: "Dr. M. Thangavel", role: "Director / CDT, KIOT", image: thangavelImg, initials: "MT" },
-  { name: "Dr. A. Stephen", role: "Director / MBA, KIOT", image: stephenImg, initials: "AS" },
-  { name: "Dr. P. Rajendran", role: "Director / Placement & III, KIOT", image: rajendranImg, initials: "PR" },
-  { name: "Dr. P. Navaneethankrishnan", role: "Director / Student Affairs, KIOT", image: navaneethankrishnanImg, initials: "PN" },
-  { name: "Dr. R. Kumar", role: "Director / CDDA, KIOT", image: rkumarImg, initials: "RK" },
-  { name: "Dr. M. Ilangkumaran", role: "Controller of Examination, KIOT", image: ilangkumaranImg, initials: "MI" },
-  { name: "Dr. S. Kalpanadevi", role: "Director – CDDA, KIOT", image: kalpanadeviImg, initials: "SK" },
-  { name: "Dr. P. Shanmuga Sundaram", role: "Director – Outreach & Admissions, KIOT", image: shanmugasundaramImg, initials: "PS" },
-  { name: "Dr. N. Santhiyakumari", role: "Director – WE, HE & CE", image: santhiyakumariImg, initials: "NS" },
-  { name: "Dr. V. Kumar", role: "Director – Infra. Management", image: vkumarImg, initials: "VK" },
-  { name: "Dr. M. Sathyanathan", role: "Director - IQAC", image: sathyanathanImg, initials: "MS" },
-  { name: "Dr. C. Muniraj", role: "Director - Academics", image: munirajImg, initials: "CM" },
-  { name: "Mr. D. Sakthivel", role: "Administrative Director, KIOT", image: sakthivelImg, initials: "DS" }
+  { name: "Dr. Thangavel M", role: "Director / CDT, KIOT", image: thangavelImg, initials: "MT" },
+  { name: "Dr. Stephen A", role: "Director / MBA, KIOT", image: stephenImg, initials: "AS" },
+  { name: "Dr. Rajendran P", role: "Director / Placement & III, KIOT", image: rajendranImg, initials: "PR" },
+  { name: "Dr. Navaneethankrishnan P", role: "Director / Student Affairs, KIOT", image: navaneethankrishnanImg, initials: "PN" },
+  { name: "Dr. Kumar R", role: "Director / CDDA, KIOT", image: rkumarImg, initials: "RK" },
+  { name: "Dr. Ilangkumaran M", role: "Controller of Examination, KIOT", image: ilangkumaranImg, initials: "MI" },
+  { name: "Dr. Kalpanadevi S", role: "Director – CDDA, KIOT", image: kalpanadeviImg, initials: "SK" },
+  { name: "Dr. Shanmuga Sundaram P", role: "Director – Outreach & Admissions, KIOT", image: shanmugasundaramImg, initials: "PS" },
+  { name: "Dr. Santhiyakumari N", role: "Director – WE, HE & CE", image: santhiyakumariImg, initials: "NS" },
+  { name: "Dr. Kumar V", role: "Director – Infra. Management", image: vkumarImg, initials: "VK" },
+  { name: "Dr. Sathyanathan M", role: "Director - IQAC", image: sathyanathanImg, initials: "MS" },
+  { name: "Dr. Muniraj C", role: "Director - Academics", image: munirajImg, initials: "CM" },
+  { name: "Mr. Sakthivel D", role: "Administrative Director, KIOT", image: sakthivelImg, initials: "DS" }
 ];
 
 const hods = [
-  { name: "Dr. K.S. Prabhakaran", role: "HOD / Mech., KIOT", qualification: "M.E., Ph.D.", category: "ug", image: prabhakaranImg, initials: "KP" },
-  { name: "Dr. V. Saravanan", role: "HOD / ECE, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: saravananImg, initials: "VS" },
-  { name: "Dr. V. Kamatchi Kannan", role: "HOD / EEE, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: kamatchiKannanImg, initials: "VK" },
-  { name: "Dr. P. Prasath", role: "HOD / Civil, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: prasathCivilImg, initials: "PP" },
-  { name: "Dr. P. Sachidhanandam", role: "HOD / IT, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: sachidhanandamImg, initials: "PS" },
-  { name: "Dr. B. Sasikumar", role: "HOD / AI & DS, KIOT", qualification: "M.E., (Ph.D.)", category: "ug", image: sasikumarImg, initials: "BS" },
-  { name: "Dr. M. Ramkumar", role: "HOD / CSBS, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: ramkumarImg, initials: "MR" },
-  { name: "Mr. T. Karthikeyan", role: "HOD / CSE, KIOT", qualification: "M.E., (Ph.D.)", category: "ug", image: karthikeyanImg, initials: "TK" },
-  { name: "Dr. S. Maragatharaj", role: "HOD / ECX, KIOT", qualification: "B.E., M.E., Ph.D.", category: "ug", image: maragatharajImg, initials: "SM" },
-  { name: "Dr. T. Venkatesan", role: "HOD / MBA, KIOT", qualification: "MBA, Ph.D.", category: "pg", image: venkatesanImg, initials: "TV" },
-  { name: "Dr. S. Vijayakumar", role: "HOD – Incharge / MBA- IEV, KIOT", qualification: "MBA, Ph.D.", category: "pg", image: vijayakumarImg, initials: "SV" },
-  { name: "Dr. S. Mohanapriya", role: "HOD / MCA, KIOT", qualification: "MCA, Ph.D.", category: "pg", image: mohanapriyaImg, initials: "SM" }
+  { name: "Dr. Prabhakaran K S", role: "HOD / Mech., KIOT", qualification: "M.E., Ph.D.", category: "ug", image: prabhakaranImg, initials: "KP" },
+  { name: "Dr. Saravanan V", role: "HOD / ECE, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: saravananImg, initials: "VS" },
+  { name: "Dr. Kamatchi Kannan V", role: "HOD / EEE, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: kamatchiKannanImg, initials: "VK" },
+  { name: "Dr. Prasath P", role: "HOD / Civil, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: prasathCivilImg, initials: "PP" },
+  { name: "Dr. Sachidhanandam P", role: "HOD / IT, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: sachidhanandamImg, initials: "PS" },
+  { name: "Dr. Sasikumar B", role: "HOD / AI & DS, KIOT", qualification: "M.E., (Ph.D.)", category: "ug", image: sasikumarImg, initials: "BS" },
+  { name: "Dr. Ramkumar M", role: "HOD / CSBS, KIOT", qualification: "M.E., Ph.D.", category: "ug", image: ramkumarImg, initials: "MR" },
+  { name: "Mr. Karthikeyan T", role: "HOD / CSE, KIOT", qualification: "M.E., (Ph.D.)", category: "ug", image: karthikeyanImg, initials: "TK" },
+  { name: "Dr. Maragatharaj S", role: "HOD / ECX, KIOT", qualification: "B.E., M.E., Ph.D.", category: "ug", image: maragatharajImg, initials: "SM" },
+  { name: "Dr. Venkatesan T", role: "HOD / MBA, KIOT", qualification: "MBA, Ph.D.", category: "pg", image: venkatesanImg, initials: "TV" },
+  { name: "Dr. Vijayakumar S", role: "HOD – Incharge / MBA- IEV, KIOT", qualification: "MBA, Ph.D.", category: "pg", image: vijayakumarImg, initials: "SV" },
+  { name: "Dr. Mohanapriya S", role: "HOD / MCA, KIOT", qualification: "MCA, Ph.D.", category: "pg", image: mohanapriyaImg, initials: "SM" }
 ];
 
 export default function HeadOfDepartmentPage() {
@@ -365,7 +365,7 @@ export default function HeadOfDepartmentPage() {
                       src={hod.image} 
                       alt={hod.name} 
                       className={`w-full h-full object-contain object-bottom relative z-10 origin-bottom ${
-                        ["Dr. K.S. Prabhakaran", "Dr. B. Sasikumar", "Dr. M. Ramkumar", "Dr. S. Maragatharaj", "Dr. S. Vijayakumar"].includes(hod.name) 
+                        ["Dr. Prabhakaran K S", "Dr. Sasikumar B", "Dr. Ramkumar M", "Dr. Maragatharaj S", "Dr. Vijayakumar S"].includes(hod.name) 
                           ? "scale-[1.15] translate-y-6" 
                           : "scale-[1.2]"
                       }`} 

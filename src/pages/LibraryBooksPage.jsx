@@ -285,12 +285,12 @@ const LibraryBooksPage = () => {
             <div className="pt-6 pb-6 px-6 bg-white border-b border-slate-100">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="space-y-2">
-                        <h1 className="text-4xl font-bold text-[#224292] tracking-tighter leading-none">
+                        <h1 className="text-3xl font-bold text-[#224292] tracking-normal leading-none">
                             Books & <span className="text-[#ffc107]">Collections</span>
                         </h1>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1.5 rounded-2xl">
+                    <div className="flex bg-slate-100 p-1.5 rounded-xl">
                         {[
                             { id: 'stats', label: 'Department Stats', icon: Bookmark },
                             { id: 'rare', label: 'Rare Repository', icon: History }
@@ -298,10 +298,10 @@ const LibraryBooksPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-bold tracking-widest transition-all ${
+                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-bold tracking-normal transition-all ${
                                     activeTab === tab.id 
                                     ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20' 
-                                    : 'text-slate-500 hover:bg-[#ffc107] hover:text-[#224292]'
+                                    : 'text-slate-505 hover:bg-[#ffc107] hover:text-[#224292]'
                                 }`}
                             >
                                 <tab.icon size={14} />
@@ -322,43 +322,43 @@ const LibraryBooksPage = () => {
                             exit={{ opacity: 0, y: -20 }}
                             className="space-y-8"
                         >
-                            <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
-                                <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-[2rem] md:rounded-t-[2.5rem] relative overflow-hidden group">
+                             <div className="bg-white rounded-2xl border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
+                                <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-2xl relative overflow-hidden group">
                                      <div className="absolute top-0 left-0 w-64 h-64 bg-[#224292]/5 blur-[80px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
                                      
                                      <div className="flex items-center gap-6 relative z-10">
-                                         <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#224292] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
+                                         <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#224292] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
                                              <ShieldCheck size={28} />
                                          </div>
                                          <div>
-                                             <h2 className="text-2xl font-bold text-[#224292] tracking-tight leading-none mb-2">Accession Statistics</h2>
+                                             <h2 className="text-lg font-bold text-[#224292] tracking-tight leading-none mb-2">Accession Statistics</h2>
                                              <div className="flex items-center gap-2">
                                                  <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                                 <p className="text-xs font-bold text-slate-400 tracking-[4px]">Verified Library Network</p>
+                                                 <p className="text-xs font-bold text-slate-400 tracking-normal">Verified Library Network</p>
                                              </div>
                                          </div>
                                      </div>
                                      <div className="text-left md:text-right relative z-10">
-                                         <p className="text-xs font-bold text-[#ffc107] tracking-[4px] leading-none mb-2">Total Volumes</p>
-                                         <p className="text-4xl font-bold text-[#224292]">36,600</p>
+                                         <p className="text-xs font-bold text-[#ffc107] tracking-normal leading-none mb-2">Total Volumes</p>
+                                         <p className="text-3xl font-bold text-[#224292]">36,600</p>
                                      </div>
                                 </div>
 
                                 <div className="overflow-x-auto">
                                     <table className="w-full min-w-[600px] md:min-w-full text-left">
                                         <thead>
-                                            <tr className="bg-[#224292] border-b border-[#224292]/10 shadow-md">
-                                                <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px]">Course / Department</th>
-                                                <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px] text-center">Titles</th>
-                                                <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px] text-center">Volumes</th>
+                                            <tr className="bg-slate-100 border-b border-slate-200">
+                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal">Course / Department</th>
+                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal text-center">Titles</th>
+                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal text-center">Volumes</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-50">
                                             {DEPT_STATS.map((row, i) => (
                                                 <tr key={i} className="hover:bg-[#224292]/5 transition-colors group even:bg-slate-50/50">
-                                                    <td className="px-4 md:px-8 py-4 font-bold text-[#224292] text-sm group-hover:text-[#ffc107] transition-colors">{row.c}</td>
-                                                    <td className="px-4 md:px-8 py-4 text-center font-bold text-slate-500 text-sm whitespace-nowrap">{row.t.toLocaleString()}</td>
-                                                    <td className="px-4 md:px-8 py-4 text-center font-bold text-[#224292] text-sm whitespace-nowrap">{row.v.toLocaleString()}</td>
+                                                    <td className="px-4 md:px-8 py-4 font-normal text-[#224292] text-sm group-hover:text-[#ffc107] transition-colors">{row.c}</td>
+                                                    <td className="px-4 md:px-8 py-4 text-center font-normal text-slate-500 text-sm whitespace-nowrap">{row.t.toLocaleString()}</td>
+                                                    <td className="px-4 md:px-8 py-4 text-center font-normal text-[#224292] text-sm whitespace-nowrap">{row.v.toLocaleString()}</td>
                                                 </tr>
                                             ))}
                                             <tr className="bg-[#224292]/5">
@@ -380,20 +380,20 @@ const LibraryBooksPage = () => {
                             className="space-y-8"
                         >
                             {/* Rare Repository Section */}
-                            <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
-                                <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-[2rem] md:rounded-t-[2.5rem] relative overflow-hidden group">
+                             <div className="bg-white rounded-2xl border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
+                                <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-2xl relative overflow-hidden group">
                                      {/* Background Decor */}
                                      <div className="absolute top-0 right-0 w-64 h-64 bg-[#224292]/5 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:bg-[#ffc107]/10 transition-all duration-1000" />
                                      
                                      <div className="flex items-center gap-6 relative z-10">
-                                         <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#ffc107] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
+                                         <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#ffc107] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
                                              <History size={28} />
                                          </div>
                                          <div>
-                                             <h2 className="text-2xl font-bold text-[#224292] tracking-tight leading-none mb-2">Rare Book List</h2>
+                                             <h2 className="text-lg font-bold text-[#224292] tracking-tight leading-none mb-2">Rare Book List</h2>
                                              <div className="flex items-center gap-2">
                                                  <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                                 <p className="text-xs font-bold text-slate-400 tracking-[4px]">Historical Archives</p>
+                                                 <p className="text-xs font-bold text-slate-400 tracking-normal">Historical Archives</p>
                                              </div>
                                          </div>
                                      </div>
@@ -405,7 +405,7 @@ const LibraryBooksPage = () => {
                                              value={searchQuery}
                                              onChange={(e) => setSearchQuery(e.target.value)}
                                              placeholder="Search by title, author or publisher..."
-                                             className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-[1.5rem] text-xs font-bold tracking-widest focus:outline-none focus:ring-4 focus:ring-[#224292]/5 focus:border-[#224292] transition-all shadow-sm"
+                                             className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-xl text-xs font-bold tracking-normal focus:outline-none focus:ring-4 focus:ring-[#224292]/5 focus:border-[#224292] transition-all shadow-sm"
                                          />
                                      </div>
                                 </div>
@@ -413,21 +413,21 @@ const LibraryBooksPage = () => {
                                 <div className="overflow-x-auto max-h-[600px]">
                                     <table className="w-full min-w-[800px] md:min-w-full text-left">
                                         <thead className="sticky top-0 z-10">
-                                            <tr className="bg-[#224292]">
-                                                <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px] w-20">S.No</th>
-                                                <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px]">Book Specification</th>
-                                                <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px]">Institutional Publication</th>
-                                                <th className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-white tracking-[2px] text-center">Year</th>
+                                            <tr className="bg-slate-100 border-b border-slate-200">
+                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal w-20">S.No</th>
+                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal">Book Specification</th>
+                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal">Institutional Publication</th>
+                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal text-center">Year</th>
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-50">
                                             {filteredRareBooks.map((book, idx) => (
                                                 <tr key={idx} className="hover:bg-[#224292]/5 transition-colors group even:bg-slate-50/50">
-                                                    <td className="px-4 md:px-8 py-4 md:py-5 text-xs font-bold text-[#224292] opacity-40">{book.s}</td>
+                                                    <td className="px-4 md:px-8 py-4 md:py-5 text-xs font-normal text-[#224292] opacity-40">{book.s}</td>
                                                     <td className="px-4 md:px-8 py-4 md:py-5">
                                                         <div className="space-y-1">
-                                                            <p className="font-bold text-[#224292] text-sm group-hover:text-[#ffc107] transition-colors">{book.t}</p>
-                                                            <p className="text-xs font-bold text-slate-500 tracking-wider italic flex items-center gap-2">
+                                                            <p className="font-normal text-[#224292] text-sm group-hover:text-[#ffc107] transition-colors">{book.t}</p>
+                                                            <p className="text-xs font-normal text-slate-500 tracking-normal italic flex items-center gap-2">
                                                                 <FileText size={10} className="text-[#ffc107]" /> {book.a}
                                                             </p>
                                                         </div>
@@ -437,11 +437,11 @@ const LibraryBooksPage = () => {
                                                             <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-[#224292]/5 group-hover:text-[#224292] transition-all">
                                                                 <BookOpen size={14} />
                                                             </div>
-                                                            <p className="text-xs font-bold text-slate-500 leading-relaxed max-w-xs">{book.p}</p>
+                                                            <p className="text-xs font-normal text-slate-500 leading-relaxed max-w-xs">{book.p}</p>
                                                         </div>
                                                     </td>
                                                     <td className="px-4 md:px-8 py-4 md:py-5 text-center">
-                                                        <span className="px-4 py-1.5 bg-[#224292]/5 text-[#224292] rounded-full text-xs font-bold tracking-widest">{book.y}</span>
+                                                        <span className="px-4 py-1.5 bg-[#224292]/5 text-[#224292] rounded-full text-xs font-normal tracking-normal">{book.y}</span>
                                                     </td>
                                                 </tr>
                                             ))}

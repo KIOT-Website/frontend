@@ -65,6 +65,8 @@ const Footer = () => {
         { name: 'Placements', href: '/placements/placement' },
         { name: 'Exams', href: '/coe' },
         { name: 'Research & Innovations', href: '/research-innovation/research' },
+        { name: 'Campus Essentials', href: '/resources/campus-life' },
+        { name: 'Clubs', href: '/resources/student-life' },
       ]
     },
     'RESOURCES': {

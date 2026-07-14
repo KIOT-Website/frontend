@@ -45,19 +45,19 @@ const InternetPage = () => {
     ];
 
     const configs = [
-        { id: 'A', name: 'ACER DUAL CORE', ram: '2GB RAM' },
+        { id: 'A', name: 'CORE ACERDUAL', ram: '2GB RAM' },
         { id: 'B', name: 'ACER I3', ram: '4GB RAM', hdd: '500GB HDD' },
         { id: 'C', name: 'ACER I3', ram: '2GB RAM', hdd: '500GB HDD' },
         { id: 'D', name: 'HCL INTEL CORE I3', ram: '2GB DDR3 RAM', hdd: '320GB HDD' },
-        { id: 'E', name: 'ZENITH INTEL DUAL CORE', ram: '2GB RAM', hdd: '500GB HDD' },
-        { id: 'F', name: 'HCL INTEL DUAL CORE', ram: '2GB RAM', hdd: '320GB HDD' },
+        { id: 'E', name: 'CORE ZENITHINTELDUAL', ram: '2GB RAM', hdd: '500GB HDD' },
+        { id: 'F', name: 'CORE HCLINTELDUAL', ram: '2GB RAM', hdd: '320GB HDD' },
         { id: 'G', name: 'ACER I5', ram: '8GB RAM', hdd: '500GB HDD' },
-        { id: 'H', name: 'ZENITH INTEL DUAL CORE', ram: '2GB RAM', hdd: '250GB HDD' }
+        { id: 'H', name: 'CORE ZENITHINTELDUAL', ram: '2GB RAM', hdd: '250GB HDD' }
     ];
 
     const isps = [
         { name: 'RAILTEL', speed: '300Mbps' },
-        { name: 'READYLINK INTERNET SERVICES LIMITED', speed: '150Mbps' },
+        { name: 'LIMITED READYLINKINTERNETSERVICES', speed: '150Mbps' },
         { name: 'MINNAL', speed: '50Mbps' }
     ];
 

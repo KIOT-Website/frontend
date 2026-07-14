@@ -157,7 +157,7 @@ const Leadership = () => {
                    { label: "Professionals", value: "07", icon: Briefcase, desc: "Industry professionals contributing expertise and practical insights.", color: "#ffc107" },
                    { label: "Entrepreneurs", value: "15", icon: Microscope, desc: "Visionary entrepreneurs inspiring innovation and leadership.", color: "#224292" }
                  ].map((stat, i) => (
-                   <div key={i} className="bg-white rounded-[2rem] p-8 pt-12 shadow-[0_15px_40px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col items-center text-center relative group hover:-translate-y-2 transition-all duration-500">
+                   <div key={i} className="bg-white rounded-[2rem] p-8 pt-12 shadow-xl shadow-black/[0.12] border border-slate-100/80 flex flex-col items-center text-center relative group hover:-translate-y-2 transition-all duration-500">
                       {/* Top Icon Box - Always Blue in the image */}
                       <div className="absolute top-0 -translate-y-1/2 w-16 h-16 bg-[#1e3a8a] text-white rounded-2xl flex items-center justify-center shadow-[0_10px_30px_rgba(30,58,138,0.3)] z-20">
                          <stat.icon size={28} />

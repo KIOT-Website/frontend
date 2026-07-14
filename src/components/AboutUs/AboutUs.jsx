@@ -103,24 +103,24 @@ const AboutUs = () => {
                       Knowledge Institute of Technology (KIOT) is an Autonomous Institution, Affiliated to Anna University, Chennai and Approved by AICTE, New Delhi and UGC, New Delhi. The college offers nine B.E. / B.Tech. programs, four M.E. / M.Tech. programs in Engineering and Technology, MBA - Regular, MBA - IEV, MCA programs and Ph.D. programs in all the departments.
                     </p>
                     <p className="mt-4 text-[#333333] text-[14px] md:text-[16px] leading-[1.8] font-normal font-graphik">
-                      B.E. / B.Tech. programs are of 4 years duration with a total intake of 990. M.E., MBA and MCA programs are of 2 years duration with a total intake of 78 in M.E., 180 in MBA and 60 in MCA.
+                      B.E. / B.Tech. programs are of 4 years duration with a total intake of 1,080. M.E., MBA and MCA programs are of 2 years duration with a total intake of 78 in M.E., 180 in MBA and 60 in MCA.
                     </p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
                 {[
-                  { label: "1308 Intake / Year", icon: CheckCircle2, color: "#224292" },
+                  {label: "1,080 Intake / Year", icon: CheckCircle2, color: "#224292" },
                   { label: "3500+ UG Students", icon: Users, color: "#224292" },
                   { label: "350+ PG Students", icon: Trophy, color: "#224292" },
                   { label: "50+ Ph.D. Scholars", icon: Target, color: "#224292" },
-                  { label: "230+ Faculty", icon: BookOpen, color: "#224292" },
+                  { label: "250+ Faculty", icon: BookOpen, color: "#224292" },
                   { label: "200+ Staff", icon: Users, color: "#224292" },
                 ].map((stat, idx) => (
                   <motion.div 
                     key={idx} 
                     whileHover={{ y: -5 }}
-                    className="relative group bg-[#FCFDFD] rounded-2xl p-6 border border-[#224292]/5 hover:border-[#224292]/20 transition-all duration-300 min-h-[120px] flex items-center shadow-sm hover:shadow-xl hover:shadow-[#224292]/5"
+                    className="relative group bg-white rounded-2xl p-6 border border-slate-100/80 transition-all duration-300 min-h-[120px] flex items-center shadow-xl shadow-black/[0.12] hover:translate-y-[-2px]"
                   >
                      {/* Clean minimalist design - No background pattern */}
                       <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 w-full text-center sm:text-left">

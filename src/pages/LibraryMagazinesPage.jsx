@@ -16,15 +16,30 @@ const MAGAZINES = [
     "Corporate Citizen", "Down to Earth", "Sportstar", "Frontline", "Thannambikkai", "Civil Services Chronicle", 
     "Digit", "Data Quest", "PC Quest", "Voice & Data", "Electronics For You", "Open Source For You", 
     "Stuff India", "Auto Car India", "Industrial Automation", "Industrial Safety Review", 
-    "Industrial Safety Chronicle", "Motor Vikatan", "Industrial Product Finder", "Motor India", 
+    "Industrial Safety Chronicle", "Nanayam Vikatan (Tamil)", "Industrial Product Finder", "Motor India", 
     "Builders Voice", "Builders Line", "Forbes India", "Overdrive", "Business Manager", 
     "India Today", "Business Today", "Reader’s Digest", "The Week", "Entrepreneur", 
-    "Retailer", "Employment Service", "Electrical India", "Electronics World", "Shaastra", 
-    "Tamil Computer", "CSIR News", "Science Reporter", "Competition Success Review", 
+    "The Franchising World", "Employment Service (Tamil Weekly)", "Electrical India", "Electronics World", "Shaastra", 
+    "Tamil Computer", "CSIR News", "Science Reporter", "Kalanjium", "Competition Success Review", 
     "General Knowledge Today", "Engineering Success Review", "Employment News"
 ]
 
 const AWARDS = {
+    "2025-2026": [
+        { n: "T.Heema Gouri", c: "IV B.E EEE" },
+        { n: "S.Janani", c: "III B.E ECE - A" },
+        { n: "G.S.Subasree", c: "IV B.E CSE - C" },
+        { n: "S.Naveenkumar", c: "III B.E Mech. - B" },
+        { n: "S.Sathya", c: "II B.E Civil" },
+        { n: "U.Pavithra", c: "IV B.Tech. IT" },
+        { n: "V.Poojashree", c: "IV B.Tech. CSBS" },
+        { n: "A.Mohammed Riyaz", c: "II B.Tech. AI&DS - A" },
+        { n: "N.Girija", c: "I B.E ECX" },
+        { n: "P.M.Prasannamohan", c: "II M.E ISE" },
+        { n: "M.Priyanka", c: "I M.E SE" },
+        { n: "V.Dhanush", c: "II MBA" },
+        { n: "S.K.Raghulkumar", c: "II MBA-IEV" }
+    ],
     "2024-2025": [
         { n: "T.Heema Gouri", c: "III B.E EEE" },
         { n: "S.Gokulraj", c: "IV B.E ECE - A" },
@@ -72,21 +87,21 @@ const AWARDS = {
 const LibraryMagazinesPage = () => {
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('magazines')
-    const [activeYear, setActiveYear] = useState('2024-2025')
+    const [activeYear, setActiveYear] = useState('2025-2026')
     const [searchQuery, setSearchQuery] = useState('')
 
     return (
         <div className="min-h-screen bg-[#FCFDFD] font-graphik">
             {/* Header */}
             <div className="pt-6 pb-6 px-6 bg-white border-b border-slate-100">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <div className="space-y-2">
-                        <h1 className="text-4xl font-bold text-[#224292] tracking-tighter leading-none">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                    <div className="space-y-2 w-full md:w-auto">
+                        <h1 className="text-3xl font-bold text-[#224292] tracking-normal leading-none">
                             Magazines & <span className="text-[#ffc107]">Honors</span>
                         </h1>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1.5 rounded-2xl">
+                    <div className="flex bg-slate-100 p-1.5 rounded-xl mx-auto md:mx-0">
                         {[
                             { id: 'magazines', label: 'Magazines', icon: Grid },
                             { id: 'awards', label: 'Borrower Awards', icon: Trophy }
@@ -94,7 +109,7 @@ const LibraryMagazinesPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-bold tracking-widest transition-all ${
+                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-bold tracking-normal transition-all ${
                                     activeTab === tab.id 
                                     ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20' 
                                     : 'text-slate-700 hover:bg-[#ffc107] hover:text-[#224292]'
@@ -118,27 +133,27 @@ const LibraryMagazinesPage = () => {
                             exit={{ opacity: 0, scale: 0.98 }}
                             className="space-y-8"
                         >
-                            <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
-                                <div className="p-4 md:p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                                    <h2 className="text-lg font-bold text-[#224292] tracking-tight">Periodical Repository</h2>
-                                    <div className="relative flex-1 max-w-sm">
+                            <div className="bg-white rounded-2xl border border-slate-100 shadow-2xl shadow-black/5 overflow-hidden">
+                                <div className="p-4 md:p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                                    <h2 className="text-base font-bold text-[#224292] tracking-tight">Periodical Repository</h2>
+                                    <div className="relative w-full md:w-auto md:flex-1 max-w-sm mx-auto md:mx-0">
                                         <Search size={16} className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500" />
                                         <input 
                                             type="text" 
                                             placeholder="Search magazines..."
                                             value={searchQuery}
                                             onChange={(e) => setSearchQuery(e.target.value)}
-                                            className="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-2xl text-xs font-bold tracking-widest focus:ring-4 focus:ring-[#224292]/5 transition-all"
+                                            className="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-xl text-xs font-normal tracking-normal focus:ring-4 focus:ring-[#224292]/5 transition-all"
                                         />
                                     </div>
                                 </div>
                                 
                                 <div className="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                     {MAGAZINES.filter(m => m.toLowerCase().includes(searchQuery.toLowerCase())).map((name, i) => (
-                                        <div key={i} className="group p-5 bg-white border border-slate-50 hover:border-[#224292] rounded-2xl transition-all flex items-center justify-between shadow-sm hover:shadow-xl hover:shadow-[#224292]/5">
+                                        <div key={i} className="group p-5 bg-white border border-slate-50 hover:border-[#224292] rounded-xl transition-all flex items-center justify-between shadow-sm hover:shadow-xl hover:shadow-black/5">
                                             <div className="flex items-center gap-4">
                                                 <div className="w-2 h-2 rounded-full bg-[#ffc107] group-hover:scale-150 transition-all" />
-                                                <span className="text-[13px] font-bold text-[#224292] leading-none tracking-wide">{name}</span>
+                                                <span className="text-[13px] font-normal text-[#224292] leading-none tracking-normal">{name}</span>
                                             </div>
                                             <BookOpen size={14} className="text-slate-300 group-hover:text-[#224292] transition-colors" />
                                         </div>
@@ -160,7 +175,7 @@ const LibraryMagazinesPage = () => {
                                     <button
                                         key={year}
                                         onClick={() => setActiveYear(year)}
-                                        className={`px-8 py-4 rounded-3xl text-xs font-bold tracking-widest transition-all ${
+                                        className={`px-8 py-4 rounded-xl text-xs font-bold tracking-normal transition-all ${
                                             activeYear === year 
                                             ? 'bg-[#ffc107] text-[#224292] shadow-[0_15px_40px_rgba(255,193,7,0.3)]' 
                                             : 'bg-white border border-slate-100 text-slate-700 hover:text-[#224292]'
@@ -172,23 +187,23 @@ const LibraryMagazinesPage = () => {
                             </div>
 
                             {/* Hall of Fame Visuals */}
-                            <div className="bg-[#224292] rounded-[2rem] md:rounded-[3rem] p-5 md:p-12 text-white shadow-2xl relative overflow-hidden">
+                            <div className="bg-[#224292] rounded-2xl p-5 md:p-10 text-white shadow-2xl relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-[0.03] rounded-bl-full pointer-events-none" />
                                 
                                 <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-12 mb-16">
                                     <div className="space-y-6">
                                         <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/10 rounded-full border border-white/10">
                                             <Award size={14} className="text-[#ffc107]" />
-                                            <span className="text-xs font-bold tracking-[3px]">Institutional Honor</span>
+                                            <span className="text-xs font-bold tracking-normal">Institutional Honor</span>
                                         </div>
-                                        <h2 className="text-4xl md:text-5xl font-bold tracking-tighter leading-none">
+                                        <h2 className="text-2xl md:text-3xl font-bold tracking-normal leading-none">
                                             Borrower's <br /><span className="text-[#ffc107]">Hall of Fame</span>
                                         </h2>
                                     </div>
-                                    <div className="p-4 md:p-8 bg-white/5 rounded-3xl border border-white/10 text-right backdrop-blur-md">
+                                    <div className="p-4 md:p-8 bg-white/5 rounded-xl border border-white/10 text-right backdrop-blur-md">
                                         <Calendar size={32} className="text-[#ffc107] mb-4 ml-auto" />
-                                        <p className="text-xs font-bold text-white tracking-[4px]">Academic Cycle</p>
-                                        <p className="text-2xl font-bold text-white">{activeYear}</p>
+                                        <p className="text-xs font-bold text-white tracking-normal">Academic Cycle</p>
+                                        <p className="text-xl font-bold text-white">{activeYear}</p>
                                     </div>
                                 </div>
 
@@ -200,17 +215,17 @@ const LibraryMagazinesPage = () => {
                                             initial={{ opacity: 0, x: -10 }}
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ delay: i * 0.05 }}
-                                            className="group flex items-center p-3 md:p-4 bg-white/5 hover:bg-white rounded-xl md:rounded-[1.5rem] border border-white/5 transition-all duration-500"
+                                            className="group flex items-center p-3 md:p-4 bg-white/5 hover:bg-white rounded-xl border border-white/5 transition-all duration-500"
                                         >
                                             <div className="flex items-center gap-4">
                                                 <div className="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-[#ffc107] flex items-center justify-center text-white group-hover:text-[#224292] transition-all duration-500 shadow-sm shrink-0">
                                                     <User size={16} />
                                                 </div>
                                                 <div>
-                                                    <p className="text-xs md:text-sm font-bold text-white group-hover:text-[#224292] transition-colors">{student.n}</p>
+                                                    <p className="text-xs md:text-sm font-normal text-white group-hover:text-[#224292] transition-colors">{student.n}</p>
                                                     <div className="flex items-center gap-1.5 mt-0.5">
                                                         <GraduationCap size={10} className="text-[#ffc107]" />
-                                                        <p className="text-[10px] font-semibold text-white/80 group-hover:text-[#224292]/80 tracking-wider">{student.c}</p>
+                                                        <p className="text-[10px] font-semibold text-white/80 group-hover:text-[#224292]/80 tracking-normal">{student.c}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -219,7 +234,7 @@ const LibraryMagazinesPage = () => {
                                 </div>
 
                                 <div className="mt-16 pt-8 border-t border-white/10 text-center relative z-10">
-                                    <p className="text-xs font-bold text-white tracking-[5px]">Recognizing Academic Excellence & Library Engagement</p>
+                                    <p className="text-xs font-bold text-white tracking-normal">Recognizing Academic Excellence & Library Engagement</p>
                                 </div>
                             </div>
                         </motion.div>

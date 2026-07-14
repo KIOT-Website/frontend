@@ -1870,7 +1870,7 @@ export default function CourseDetailPage({ overrides }) {
                               )}
                             </div>
                             <div className="p-4 sm:p-5 flex flex-col flex-1">
-                              <h3 className="font-extrabold font-graphik text-[#224292] text-[14px] sm:text-[15px] mb-1 leading-tight transition-colors line-clamp-1">
+                              <h3 className="font-extrabold font-graphik text-[#224292] text-[14px] sm:text-[15px] mb-1 leading-tight transition-colors">
                                 {f.name}
                               </h3>
                               <p className="text-slate-500 text-[11px] sm:text-[12px] font-semibold font-graphik leading-snug mb-4 flex-grow line-clamp-2">
@@ -1947,7 +1947,7 @@ export default function CourseDetailPage({ overrides }) {
                                   )}
                                 </div>
                                 <div className="p-[13px] flex flex-col flex-1">
-                                  <h3 className="font-bold font-graphik text-[#224292] text-[13px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-2">
+                                  <h3 className="font-bold font-graphik text-[#224292] text-[13px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
                                     {f.name}
                                   </h3>
                                   <p className="text-slate-500 text-[11.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
@@ -1996,7 +1996,7 @@ export default function CourseDetailPage({ overrides }) {
                             )}
                           </div>
                           <div className="p-[13px] flex flex-col flex-1">
-                            <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
+                            <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
                               {f.name}
                             </h3>
                             <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
@@ -2041,7 +2041,7 @@ export default function CourseDetailPage({ overrides }) {
                                 )}
                               </div>
                               <div className="p-[13px] flex flex-col flex-1">
-                                <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors line-clamp-1">
+                                <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
                                   {f.name}
                                 </h3>
                                 <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">

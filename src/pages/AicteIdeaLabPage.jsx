@@ -856,8 +856,8 @@ const IdeaLabPage = () => {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                                 {[
-                                    { name: "Dr. PSS. Srinivasan", roles: ["Executive Chairman", "Chief Advisor"], initials: "PS" },
-                                    { name: "Dr. K. Visagavel", roles: ["Principal", "Chief Mentor"], initials: "KV" }
+                                    { name: "Dr. Srinivasan PSS", roles: ["Executive Chairman", "Chief Advisor"], initials: "PS" },
+                                    { name: "Dr. Visagavel K", roles: ["Principal", "Chief Mentor"], initials: "KV" }
                                 ].map((leader, i) => (
                                     <div key={i} className="bg-[#224292] p-6 rounded-[2rem] flex items-center gap-4 relative overflow-hidden group shadow-xl">
                                         <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white text-[18px] font-black border border-white/20 shrink-0 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all">
@@ -885,8 +885,8 @@ const IdeaLabPage = () => {
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                                 {[
-                                    { name: "Mr. M. Jagadeeshraja", roles: ["Assistant Professor / EEE", "Coordinator"], initials: "MJ" },
-                                    { name: "Mr. M. Dineshkumar", roles: ["Assistant Professor / ECE", "Co-Coordinator"], initials: "MD" }
+                                    { name: "Mr. Jagadeeshraja M", roles: ["Assistant Professor / EEE", "Coordinator"], initials: "MJ" },
+                                    { name: "Mr. Dineshkumar M", roles: ["Assistant Professor / ECE", "Co-Coordinator"], initials: "MD" }
                                 ].map((coord, i) => (
                                     <div key={i} className="bg-white p-6 rounded-[2rem] flex items-center gap-4 border border-slate-100 shadow-sm group hover:shadow-xl transition-all">
                                         <div className="w-12 h-12 bg-[#224292]/5 rounded-full flex items-center justify-center text-[#224292] text-[18px] font-black border border-[#224292]/10 shrink-0 group-hover:bg-[#224292] group-hover:text-white transition-all">

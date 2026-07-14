@@ -633,10 +633,10 @@ const TransportPage = () => {
                                 <div className="w-10 h-10 bg-[#224292] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
                                     <Bus size={20} />
                                 </div>
-                                <h2 className="text-xl font-black text-[#ffc107] tracking-[2px] uppercase">Campus Transport</h2>
+                                <h2 className="text-lg font-semibold text-[#ffc107] tracking-[2px] uppercase">Campus Transport</h2>
                             </div>
 
-                            <h2 className="text-3xl md:text-5xl font-black text-[#224292] tracking-tighter leading-none">
+                            <h2 className="text-3xl md:text-5xl font-bold text-[#224292] tracking-tighter leading-none">
                                 Building <span className="text-[#ffc107]">Convenience</span> <br />
                                 For Every Student
                             </h2>
@@ -646,17 +646,32 @@ const TransportPage = () => {
                             Knowledge Institute of Technology (KIOT) operates extensive bus services for students and faculty, covering an 80 km radius across Salem, Namakkal, Dharmapuri, and Erode districts. Our fleet is maintained to the highest safety standards to ensure a comfortable commute.
                         </p>
 
-                        <div className="pt-2">
+                        <div className="flex flex-col sm:flex-row gap-4 pt-2">
                             <a
-                                href="tel:8668153815"
-                                className="w-full sm:w-auto inline-flex items-center gap-4 bg-white hover:bg-slate-50 px-5 py-4 rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-all duration-300 group"
+                                href="tel:9790019191"
+                                className="inline-flex items-center gap-4 bg-[#224292] hover:bg-[#1a3475] px-5 py-3.5 rounded-2xl border border-transparent shadow-lg shadow-black/10 transition-all duration-300 group"
                             >
-                                <div className="w-10 h-10 rounded-xl bg-[#224292] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform shrink-0">
-                                    <Phone size={18} />
+                                <div className="w-9 h-9 rounded-xl bg-[#ffc107] text-[#224292] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform shrink-0">
+                                    <Phone size={16} />
                                 </div>
                                 <div className="text-left">
-                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Emergency Help</p>
-                                    <p className="text-base font-bold text-[#224292]">+91 86681 53815</p>
+                                    <p className="text-[9px] font-bold text-white/60 uppercase tracking-widest leading-none mb-1">Transport Manager</p>
+                                    <p className="text-sm font-bold text-white mb-0.5">Sekar S</p>
+                                    <p className="text-xs font-medium text-white/80 leading-none">9790019191</p>
+                                </div>
+                            </a>
+
+                            <a
+                                href="tel:9750917595"
+                                className="inline-flex items-center gap-4 bg-[#ffc107] hover:bg-[#e0a800] px-5 py-3.5 rounded-2xl border border-transparent shadow-lg shadow-black/10 transition-all duration-300 group"
+                            >
+                                <div className="w-9 h-9 rounded-xl bg-[#224292] text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform shrink-0">
+                                    <Phone size={16} />
+                                </div>
+                                <div className="text-left">
+                                    <p className="text-[9px] font-bold text-[#224292]/70 uppercase tracking-widest leading-none mb-1">Asst. Transport Manager</p>
+                                    <p className="text-sm font-bold text-[#224292] mb-0.5">Shankarkumar N</p>
+                                    <p className="text-xs font-medium text-[#224292]/90 leading-none">9750917595</p>
                                 </div>
                             </a>
                         </div>
@@ -707,8 +722,8 @@ const TransportPage = () => {
                             <thead>
                                 <tr className="bg-slate-50 relative z-[999]">
                                     <th className="hidden sm:table-cell px-4 py-4 text-[10px] md:text-xs font-semibold text-slate-700 uppercase tracking-wider text-center w-[8%] border-b border-slate-200 bg-slate-50 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)] relative">No.</th>
-                                    <th className="px-4 py-4 text-[10px] md:text-xs font-semibold text-slate-700 uppercase tracking-wider w-[24%] border-b border-slate-200 bg-slate-50 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)] relative">From</th>
-                                    <th className="px-4 py-4 text-[10px] md:text-xs font-semibold text-slate-700 uppercase tracking-wider w-[63%] border-b border-slate-200 bg-slate-50 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)] relative">Route Stops (Click for Timings)</th>
+                                    <th className="px-4 py-4 text-[10px] md:text-xs font-semibold text-slate-700 uppercase tracking-wider w-[36%] sm:w-[24%] border-b border-slate-200 bg-slate-50 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)] relative">From</th>
+                                    <th className="px-4 py-4 text-[10px] md:text-xs font-semibold text-slate-700 uppercase tracking-wider w-[59%] sm:w-[63%] border-b border-slate-200 bg-slate-50 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)] relative">Route Stops (Click for Timings)</th>
                                     <th className="px-4 py-4 text-[10px] md:text-xs font-semibold text-slate-700 uppercase tracking-wider w-[5%] text-right border-b border-slate-200 bg-slate-50 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)] relative"></th>
                                 </tr>
                             </thead>

@@ -36,29 +36,29 @@ const PhdSupervisorsPage = () => {
 
     const allSupervisors = {
         'mechanical-engineering': [
-            { id: 1, name: "Dr.PSS.Srinivasan", university: "Anna University", department: "MECH", researchArea: "Heat transfer, CFD", supervisorId: "9920479", email: "chairman@kiot.ac.in", guided: "16", guiding: "1" },
-            { id: 2, name: "Dr.K.Visagavel", university: "Anna University", department: "MECH", researchArea: "Thermal Engineering, Solar Energy", supervisorId: "2420553", email: "principal@kiot.ac.in", guided: "5", guiding: "7" },
-            { id: 3, name: "Dr.P.Navaneethakrishnan", university: "Anna University", department: "MECH", researchArea: "Design, CAD/CAM, FEA", supervisorId: "2220288", email: "pnkmech@kiot.ac.in", guided: "8", guiding: "0" },
-            { id: 4, name: "Dr.M. Ilangkumaran", university: "Anna University", department: "MECH", researchArea: "Maintenance Engineering, MCDM", supervisorId: "2120119", email: "mikmech@kiot.ac.in", guided: "6", guiding: "4" }
+            { id: 1, name: "Dr. PSS.Srinivasan", university: "Anna University", department: "MECH", researchArea: "Heat transfer, CFD", supervisorId: "9920479", email: "chairman@kiot.ac.in", guided: "16", guiding: "1" },
+            { id: 2, name: "Dr. K.Visagavel", university: "Anna University", department: "MECH", researchArea: "Thermal Engineering, Solar Energy", supervisorId: "2420553", email: "principal@kiot.ac.in", guided: "5", guiding: "7" },
+            { id: 3, name: "Dr. P.Navaneethakrishnan", university: "Anna University", department: "MECH", researchArea: "Design, CAD/CAM, FEA", supervisorId: "2220288", email: "pnkmech@kiot.ac.in", guided: "8", guiding: "0" },
+            { id: 4, name: "Dr. Ilangkumaran M", university: "Anna University", department: "MECH", researchArea: "Maintenance Engineering, MCDM", supervisorId: "2120119", email: "mikmech@kiot.ac.in", guided: "6", guiding: "4" }
         ],
         'electronics-&-communication-engineering': [
-            { id: 1, name: "Dr.N.Santhiyakumari", university: "Anna University", department: "ECE", researchArea: "Biomedical Image Processing", supervisorId: "2340297", email: "dirrd@kiot.ac.in", guided: "6", guiding: "6" },
-            { id: 2, name: "Dr.S. Kumarganesh", university: "Anna University", department: "ECE", researchArea: "Signal Processing and Communication", supervisorId: "3340060", email: "skgece@kiot.ac.in", guided: "-", guiding: "6" }
+            { id: 1, name: "Dr. N.Santhiyakumari", university: "Anna University", department: "ECE", researchArea: "Biomedical Image Processing", supervisorId: "2340297", email: "dirrd@kiot.ac.in", guided: "6", guiding: "6" },
+            { id: 2, name: "Dr. Kumarganesh S", university: "Anna University", department: "ECE", researchArea: "Signal Processing and Communication", supervisorId: "3340060", email: "skgece@kiot.ac.in", guided: "-", guiding: "6" }
         ],
         'electrical-&-electronics-engineering': [
-            { id: 1, name: "Dr.C.Muniraj", university: "Anna University", department: "EEE", researchArea: "AC Drives and High Voltage Engineering", supervisorId: "2230136", email: "hod.eee@kiot.ac.in", guided: "4", guiding: "7" },
-            { id: 2, name: "Dr.V.Kamatchi Kannan", university: "Anna University", department: "EEE", researchArea: "Power Converters, Power Quality", supervisorId: "2330080", email: "vkkeee@kiot.ac.in", guided: "3", guiding: "6" },
-            { id: 3, name: "Dr.P.A.Gowri Shankar", university: "Anna University", department: "EEE", researchArea: "Control, Nano Materials and Sensors", supervisorId: "2830026", email: "pagseee@kiot.ac.in", guided: "-", guiding: "6" }
+            { id: 1, name: "Dr. C.Muniraj", university: "Anna University", department: "EEE", researchArea: "AC Drives and High Voltage Engineering", supervisorId: "2230136", email: "hod.eee@kiot.ac.in", guided: "4", guiding: "7" },
+            { id: 2, name: "Dr. V.Kamatchi Kannan", university: "Anna University", department: "EEE", researchArea: "Power Converters, Power Quality", supervisorId: "2330080", email: "vkkeee@kiot.ac.in", guided: "3", guiding: "6" },
+            { id: 3, name: "Dr. P.A.Gowri Shankar", university: "Anna University", department: "EEE", researchArea: "Control, Nano Materials and Sensors", supervisorId: "2830026", email: "pagseee@kiot.ac.in", guided: "-", guiding: "6" }
         ],
         'computer-science-&-engineering': [
-            { id: 1, name: "Dr.P.Rajendran", university: "Anna University", department: "CSE", researchArea: "Image Mining, Data Mining", supervisorId: "2340253", email: "peerajendran@gmail.com", guided: "8", guiding: "8" },
-            { id: 2, name: "Dr.R.Kumar", university: "Anna University", department: "CSE", researchArea: "E-Learning, Knowledge Engineering", supervisorId: "2840019", email: "rkumarnkl@gmail.com", guided: "-", guiding: "3" },
-            { id: 3, name: "Dr.P.Vijayalakshmi", university: "Anna University", department: "CSE", researchArea: "Wireless Sensor Networks", supervisorId: "4140063", email: "vijii_s@yahoo.co.in", guided: "-", guiding: "4" }
+            { id: 1, name: "Dr. P.Rajendran", university: "Anna University", department: "CSE", researchArea: "Image Mining, Data Mining", supervisorId: "2340253", email: "peerajendran@gmail.com", guided: "8", guiding: "8" },
+            { id: 2, name: "Dr. R.Kumar", university: "Anna University", department: "CSE", researchArea: "E-Learning, Knowledge Engineering", supervisorId: "2840019", email: "rkumarnkl@gmail.com", guided: "-", guiding: "3" },
+            { id: 3, name: "Dr. P.Vijayalakshmi", university: "Anna University", department: "CSE", researchArea: "Wireless Sensor Networks", supervisorId: "4140063", email: "vijii_s@yahoo.co.in", guided: "-", guiding: "4" }
         ],
         'science-&-humanities': [
             {
                 id: 1,
-                name: "Dr.G.Venkatesh",
+                name: "Dr. G.Venkatesh",
                 university: "Anna University",
                 department: "Chemistry",
                 researchArea: "Supramolecular Nano materials",

@@ -23,22 +23,22 @@ const AboutCOEPage = () => {
     const navigate = useNavigate()
 
     const officials = [
-        { name: "Dr. K. Visagavel", qualification: "M.E., Ph.D.", designation: "Principal & Chief Controller of Examinations" },
-        { name: "Dr. M. Ilangkumaran", qualification: "M.E., Ph.D.", designation: "Controller of Examinations" },
-        { name: "Dr. N. Panneerselvam", qualification: "M.E., Ph.D.", designation: "Controller of Examinations" },
-        { name: "Mr. T. Raja", qualification: "M.Sc., M.Phil., SET", designation: "Deputy Controller of Examinations" },
-        { name: "Mr. U. Balamurugan", qualification: "M.Sc., M.Phil.", designation: "Assistant Controller of Examinations" },
-        { name: "Mr. B. Ganeshkumar", qualification: "M.Sc., M.Phil., SET", designation: "Assistant Controller of Examinations" },
-        { name: "Mr. P. Dhineshkumar", qualification: "M.Sc., M.Phil.", designation: "Assistant Controller of Examinations" },
-        { name: "Mr. K. Dhamodharan", qualification: "MCA, M.E.", designation: "Assistant Controller of Examinations" }
+        { name: "Dr. Visagavel K", qualification: "M.E., Ph.D.", designation: "Principal & Chief Controller of Examinations" },
+        { name: "Dr. Ilangkumaran M", qualification: "M.E., Ph.D.", designation: "Controller of Examinations" },
+        { name: "Dr. Panneerselvam N", qualification: "M.E., Ph.D.", designation: "Controller of Examinations" },
+        { name: "Mr. Raja T", qualification: "M.Sc., M.Phil., SET", designation: "Deputy Controller of Examinations" },
+        { name: "Mr. Balamurugan U", qualification: "M.Sc., M.Phil.", designation: "Assistant Controller of Examinations" },
+        { name: "Mr. Ganeshkumar B", qualification: "M.Sc., M.Phil., SET", designation: "Assistant Controller of Examinations" },
+        { name: "Mr. Dhineshkumar P", qualification: "M.Sc., M.Phil.", designation: "Assistant Controller of Examinations" },
+        { name: "Mr. Dhamodharan K", qualification: "MCA, M.E.", designation: "Assistant Controller of Examinations" }
     ]
 
     const staffDetails = [
-        { name: "Mr. L. Venkatesan", qualification: "M.Sc., M.Phil.", designation: "Junior Assistant" },
-        { name: "Mrs. P. Rathinam", qualification: "B.Com., D. Co.Op.", designation: "Programmer" },
-        { name: "Mr. P. Varadharajuperumal", qualification: "M.Sc.", designation: "Programmer" },
-        { name: "Mr. G. Prabu", qualification: "M.Sc., M.Phil., B.Ed.", designation: "Programmer" },
-        { name: "Mrs. S. Banu", qualification: "B. Com (CA) ", designation: "Office Assistant" }
+        { name: "Mr. Venkatesan L", qualification: "M.Sc., M.Phil.", designation: "Junior Assistant" },
+        { name: "Ms. Rathinam P", qualification: "B.Com., D. Co.Op.", designation: "Programmer" },
+        { name: "Mr. Varadharajuperumal P", qualification: "M.Sc.", designation: "Programmer" },
+        { name: "Mr. Prabu G", qualification: "M.Sc., M.Phil., B.Ed.", designation: "Programmer" },
+        { name: "Ms. Banu S", qualification: "B. Com (CA) ", designation: "Office Assistant" }
     ]
 
     const visionPoints = [

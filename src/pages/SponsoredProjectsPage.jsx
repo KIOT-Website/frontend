@@ -79,38 +79,38 @@ const SponsoredProjectsPage = () => {
             { id: 26, title: "FDTP on ME8391- Engineering Thermodynamics", agency: "Anna University", duration: "12.07.2021-17.07.2021", fund: "30,000" }
         ],
         'electronics-&-communication-engineering': [
-            { id: 1, year: "2024-2025", faculty: "Mr. K. Rajesh", agency: "MSME Idea Hackathon 4.0", title: "Landslide Monitoring and Warning System", date: "27.06.2025", amount: "9,00,000" },
-            { id: 2, year: "2024-2025", faculty: "Mr. A. Silambarasan", agency: "MSME Idea Hackathon 4.0", title: "TonoLITE", date: "27.06.2025", amount: "8,50,000" },
-            { id: 3, year: "2024-2025", faculty: "Mrs. V. Vadivu", agency: "TNSCST", title: "Air and Water quality index and Environment monitoring system", date: "13.05.2025", amount: "7,500" },
-            { id: 4, year: "2024-2025", faculty: "Mr.M.Chandraman", agency: "TNSDC NIRAL THIRUVIZHA 2.0", title: "IoT-Based Public Toilets Monitoring System", date: "05.03.2025", amount: "10,000" },
-            { id: 5, year: "2024-2025", faculty: "Mr.S.Premkumar", agency: "TNSDC NIRAL THIRUVIZHA 2.0", title: "Medicine Supply Management System", date: "05.03.2025", amount: "10,000" },
-            { id: 6, year: "2023-2024", faculty: "Mr.T.Praveen Kumar", agency: "TNSCST", title: "Login to windows computer using RFID tag and arduino", date: "01.10.2024", amount: "7,500" },
-            { id: 7, year: "2018-2019", faculty: "Dr.N.Santhiyakumari", agency: "AICTE", title: "Modernization of Embedded Lab using IoT", date: "16.05.2019", amount: "12,93,210" },
-            { id: 8, year: "2018-2019", faculty: "Mr.M.CHANDRAMAN", agency: "TNSCST", title: "Remote monitoring system for wildlife using IoT", date: "18.02.2019", amount: "7,500" },
-            { id: 10, year: "2012-2013", faculty: "Dr.N.Santhiyakumari", agency: "AICTE", title: "Implementation of medical Decision System for CV & CB Disease", date: "21.03.2013", amount: "10,63,650" }
+            { id: 1, year: "2024-2025", faculty: "Mr. Rajesh K", agency: "MSME Idea Hackathon 4.0", title: "Landslide Monitoring and Warning System", date: "27.06.2025", amount: "9,00,000" },
+            { id: 2, year: "2024-2025", faculty: "Mr. Silambarasan A", agency: "MSME Idea Hackathon 4.0", title: "TonoLITE", date: "27.06.2025", amount: "8,50,000" },
+            { id: 3, year: "2024-2025", faculty: "Ms. Vadivu V", agency: "TNSCST", title: "Air and Water quality index and Environment monitoring system", date: "13.05.2025", amount: "7,500" },
+            { id: 4, year: "2024-2025", faculty: "Mr. M.Chandraman", agency: "TNSDC NIRAL THIRUVIZHA 2.0", title: "IoT-Based Public Toilets Monitoring System", date: "05.03.2025", amount: "10,000" },
+            { id: 5, year: "2024-2025", faculty: "Mr. S.Premkumar", agency: "TNSDC NIRAL THIRUVIZHA 2.0", title: "Medicine Supply Management System", date: "05.03.2025", amount: "10,000" },
+            { id: 6, year: "2023-2024", faculty: "Mr. T.Praveen Kumar", agency: "TNSCST", title: "Login to windows computer using RFID tag and arduino", date: "01.10.2024", amount: "7,500" },
+            { id: 7, year: "2018-2019", faculty: "Dr. N.Santhiyakumari", agency: "AICTE", title: "Modernization of Embedded Lab using IoT", date: "16.05.2019", amount: "12,93,210" },
+            { id: 8, year: "2018-2019", faculty: "Mr. Chandraman M", agency: "TNSCST", title: "Remote monitoring system for wildlife using IoT", date: "18.02.2019", amount: "7,500" },
+            { id: 10, year: "2012-2013", faculty: "Dr. N.Santhiyakumari", agency: "AICTE", title: "Implementation of medical Decision System for CV & CB Disease", date: "21.03.2013", amount: "10,63,650" }
         ]
     }
 
     const allSponsoredProjects = {
         'mechanical-engineering': [
-            { id: 1, faculty: "Mr.K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "08.03.2013 to 09.03.2013" },
-            { id: 2, faculty: "Mr.T.Dheenathayalan", title: "Environmental Health and safety in Organisation", agency: "CSIR", amount: "30,000", period: "14.03.2013 to 15.03.2013" },
-            { id: 3, faculty: "Mr.S.Sathyanathan & Mr.N.Kamalakkannan", title: "Seminar on Sustainable Composites", agency: "IET", amount: "6,000", period: "20.01.2018" },
-            { id: 4, faculty: "Dr.K.Visagavel & Mr.N.Kamalakkannan", title: "Seminar on Industrial Internet of Things in manufacturing", agency: "IET", amount: "10,000", period: "19.07.2018" },
+            { id: 1, faculty: "Mr. K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "08.03.2013 to 09.03.2013" },
+            { id: 2, faculty: "Mr. T.Dheenathayalan", title: "Environmental Health and safety in Organisation", agency: "CSIR", amount: "30,000", period: "14.03.2013 to 15.03.2013" },
+            { id: 3, faculty: "Mr. S.Sathyanathan & Mr.N.Kamalakkannan", title: "Seminar on Sustainable Composites", agency: "IET", amount: "6,000", period: "20.01.2018" },
+            { id: 4, faculty: "Dr. K.Visagavel & Mr.N.Kamalakkannan", title: "Seminar on Industrial Internet of Things in manufacturing", agency: "IET", amount: "10,000", period: "19.07.2018" },
             { id: 5, faculty: "Dr.M. Ilangkumaran, Dr. V. Sivakumar, Dr.N.Panneerselvam", title: "Current Trends in Recycling of Textile / Apparel Waste in Eco - Sustainable Aspects", agency: "CSIR", amount: "20,000", period: "05.08.2022 to 06.08.2022" }
         ],
         'artificial-intelligence-&-data-science': [
-            { id: 1, faculty: "Mr.K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "08.03.2013 to 09.03.2013" },
-            { id: 2, faculty: "Mr.T.Dheenathayalan", title: "Environmental Health and safety in Organisation", agency: "CSIR", amount: "30,000", period: "14.03.2013 to 15.03.2013" },
-            { id: 3, faculty: "Mr.S.Sathyanathan & Mr.N.Kamalakkannan", title: "Seminar on Sustainable Composites", agency: "IET", amount: "6,000", period: "20.01.2018" },
-            { id: 4, faculty: "Dr.K.Visagavel & Mr.N.Kamalakkannan", title: "Seminar on Industrial Internet of Things in manufacturing", agency: "IET", amount: "10,000", period: "19.07.2018" },
+            { id: 1, faculty: "Mr. K.Mugundhan", title: "Commercialicing Sustainable Bio-Energy Technologies", agency: "CSIR", amount: "30,000", period: "08.03.2013 to 09.03.2013" },
+            { id: 2, faculty: "Mr. T.Dheenathayalan", title: "Environmental Health and safety in Organisation", agency: "CSIR", amount: "30,000", period: "14.03.2013 to 15.03.2013" },
+            { id: 3, faculty: "Mr. S.Sathyanathan & Mr.N.Kamalakkannan", title: "Seminar on Sustainable Composites", agency: "IET", amount: "6,000", period: "20.01.2018" },
+            { id: 4, faculty: "Dr. K.Visagavel & Mr.N.Kamalakkannan", title: "Seminar on Industrial Internet of Things in manufacturing", agency: "IET", amount: "10,000", period: "19.07.2018" },
             { id: 5, faculty: "Dr.M. Ilangkumaran, Dr. V. Sivakumar, Dr.N.Panneerselvam", title: "Current Trends in Recycling of Textile / Apparel Waste in Eco - Sustainable Aspects", agency: "CSIR", amount: "20,000", period: "05.08.2022 to 06.08.2022" }
         ],
         'electronics-&-communication-engineering': [
-            { id: 101, faculty: "Dr.N.Santhiyakumari", title: "Advanced Medical Imaging and Signal Processing Initiative", agency: "Institutional", amount: "In-Progress", period: "2024" }
+            { id: 101, faculty: "Dr. N.Santhiyakumari", title: "Advanced Medical Imaging and Signal Processing Initiative", agency: "Institutional", amount: "In-Progress", period: "2024" }
         ],
         'civil-engineering': [
-            { id: 1, faculty: "Dr.P.M.Shanmugavadivu", title: "Application of Geo spatial technology on impact of Climate changes in water resources", agency: "Ministry of Earth sciences", amount: "1,00,000", period: "Feb-15" }
+            { id: 1, faculty: "Dr. P.M.Shanmugavadivu", title: "Application of Geo spatial technology on impact of Climate changes in water resources", agency: "Ministry of Earth sciences", amount: "1,00,000", period: "Feb-15" }
         ]
     }
 
@@ -144,22 +144,22 @@ const SponsoredProjectsPage = () => {
 
     const allConsultancyWork = {
         'mechanical-engineering': [
-            { id: 1, title: "Implementation of Total Quality Management", client: "Spintec Enterprises Private Limited, Coimbatore", faculty: "Dr.V.Sivakumar, Mr.A.Selvakumar", amount: "25,000", period: "Nov-21" },
-            { id: 2, title: "Implementation of Total Quality Management", client: "Fluid Engineering Works, Coimbatore", faculty: "Dr.M.Ilangkumaran, Mr.S.Nandha Kumar", amount: "25,000", period: "Jan-22" },
-            { id: 3, title: "Training on Total Quality Management and 5S System", client: "Sri Pone Arasalamman Battery Works, Dharmapuri", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "25,000", period: "Apr-22" },
-            { id: 4, title: "Training on Total Quality Management and 5S System", client: "RnGn Batteries Private Limited, Dharmapuri", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "25,000", period: "Apr-22" },
-            { id: 5, title: "Safety Audit", client: "Vijay Blue Metal, Salem", faculty: "Dr.K.S.Prabhakaran, Mr.G.Thangaraj", amount: "25,000", period: "Oct-22" },
-            { id: 6, title: "Safety Audit", client: "Senthil Blue Metals, Salem", faculty: "Dr.N.Panneerselvam, Mr.G.Thangaraj", amount: "25,000", period: "Nov-22" },
-            { id: 7, title: "Design and Fabrication of Pick and Place Robot Arm", client: "Kaapi Stop, Salem", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "1,47,950", period: "Ongoing" }
+            { id: 1, title: "Implementation of Total Quality Management", client: "Spintec Enterprises Private Limited, Coimbatore", faculty: "Dr. V.Sivakumar, Mr. A.Selvakumar", amount: "25,000", period: "Nov-21" },
+            { id: 2, title: "Implementation of Total Quality Management", client: "Fluid Engineering Works, Coimbatore", faculty: "Dr. M.Ilangkumaran, Mr. S.Nandha Kumar", amount: "25,000", period: "Jan-22" },
+            { id: 3, title: "Training on Total Quality Management and 5S System", client: "Sri Pone Arasalamman Battery Works, Dharmapuri", faculty: "Mr. A.Selvakumar, Mr. J.Prakash", amount: "25,000", period: "Apr-22" },
+            { id: 4, title: "Training on Total Quality Management and 5S System", client: "RnGn Batteries Private Limited, Dharmapuri", faculty: "Mr. A.Selvakumar, Mr. J.Prakash", amount: "25,000", period: "Apr-22" },
+            { id: 5, title: "Safety Audit", client: "Vijay Blue Metal, Salem", faculty: "Dr. K.S.Prabhakaran, Mr. G.Thangaraj", amount: "25,000", period: "Oct-22" },
+            { id: 6, title: "Safety Audit", client: "Senthil Blue Metals, Salem", faculty: "Dr. N.Panneerselvam, Mr. G.Thangaraj", amount: "25,000", period: "Nov-22" },
+            { id: 7, title: "Design and Fabrication of Pick and Place Robot Arm", client: "Kaapi Stop, Salem", faculty: "Mr. A.Selvakumar, Mr. J.Prakash", amount: "1,47,950", period: "Ongoing" }
         ],
         'artificial-intelligence-&-data-science': [
-            { id: 1, title: "Implementation of Total Quality Management", client: "Spintec Enterprises Private Limited, Coimbatore", faculty: "Dr.V.Sivakumar, Mr.A.Selvakumar", amount: "25,000", period: "Nov-21" },
-            { id: 2, title: "Implementation of Total Quality Management", client: "Fluid Engineering Works, Coimbatore", faculty: "Dr.M.Ilangkumaran, Mr.S.Nandha Kumar", amount: "25,000", period: "Jan-22" },
-            { id: 3, title: "Training on Total Quality Management and 5S System", client: "Sri Pone Arasalamman Battery Works, Dharmapuri", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "25,000", period: "Apr-22" },
-            { id: 4, title: "Training on Total Quality Management and 5S System", client: "RnGn Batteries Private Limited, Dharmapuri", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "25,000", period: "Apr-22" },
-            { id: 5, title: "Safety Audit", client: "Vijay Blue Metal, Salem", faculty: "Dr.K.S.Prabhakaran, Mr.G.Thangaraj", amount: "25,000", period: "Oct-22" },
-            { id: 6, title: "Safety Audit", client: "Senthil Blue Metals, Salem", faculty: "Dr.N.Panneerselvam, Mr.G.Thangaraj", amount: "25,000", period: "Nov-22" },
-            { id: 7, title: "Design and Fabrication of Pick and Place Robot Arm", client: "Kaapi Stop, Salem", faculty: "Mr.A.Selvakumar, Mr.J.Prakash", amount: "1,47,950", period: "Ongoing" }
+            { id: 1, title: "Implementation of Total Quality Management", client: "Spintec Enterprises Private Limited, Coimbatore", faculty: "Dr. V.Sivakumar, Mr. A.Selvakumar", amount: "25,000", period: "Nov-21" },
+            { id: 2, title: "Implementation of Total Quality Management", client: "Fluid Engineering Works, Coimbatore", faculty: "Dr. M.Ilangkumaran, Mr. S.Nandha Kumar", amount: "25,000", period: "Jan-22" },
+            { id: 3, title: "Training on Total Quality Management and 5S System", client: "Sri Pone Arasalamman Battery Works, Dharmapuri", faculty: "Mr. A.Selvakumar, Mr. J.Prakash", amount: "25,000", period: "Apr-22" },
+            { id: 4, title: "Training on Total Quality Management and 5S System", client: "RnGn Batteries Private Limited, Dharmapuri", faculty: "Mr. A.Selvakumar, Mr. J.Prakash", amount: "25,000", period: "Apr-22" },
+            { id: 5, title: "Safety Audit", client: "Vijay Blue Metal, Salem", faculty: "Dr. K.S.Prabhakaran, Mr. G.Thangaraj", amount: "25,000", period: "Oct-22" },
+            { id: 6, title: "Safety Audit", client: "Senthil Blue Metals, Salem", faculty: "Dr. N.Panneerselvam, Mr. G.Thangaraj", amount: "25,000", period: "Nov-22" },
+            { id: 7, title: "Design and Fabrication of Pick and Place Robot Arm", client: "Kaapi Stop, Salem", faculty: "Mr. A.Selvakumar, Mr. J.Prakash", amount: "1,47,950", period: "Ongoing" }
         ]
     }
 

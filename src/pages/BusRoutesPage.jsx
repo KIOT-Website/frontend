@@ -538,14 +538,26 @@ const BusRoutesPage = () => {
               </p>
             </div>
 
-            <div className="flex flex-col items-end gap-3">
-              <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+            <div className="flex flex-col sm:flex-row items-stretch gap-4">
+              <div className="flex items-center gap-4 bg-white/5 px-5 py-3 rounded-2xl border border-white/10 shrink-0">
                 <div className="text-right">
-                    <p className="text-[9px] font-black text-white/40 uppercase tracking-widest leading-none mb-1">Emergency / Inquiry</p>
-                    <p className="text-lg font-black text-white tracking-wider leading-none">86681 53815</p>
+                    <p className="text-[9px] font-black text-white/40 uppercase tracking-widest leading-none mb-1">Transport Manager</p>
+                    <p className="text-sm font-black text-white mb-0.5">Sekar S</p>
+                    <a href="tel:9790019191" className="text-xs font-medium text-white/70 hover:text-white transition-colors">9790019191</a>
                 </div>
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white shadow-lg shadow-black/20">
-                    <Phone size={18} />
+                <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white shadow-lg shadow-black/20 shrink-0">
+                    <Phone size={16} />
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 bg-white/5 px-5 py-3 rounded-2xl border border-white/10 shrink-0">
+                <div className="text-right">
+                    <p className="text-[9px] font-black text-white/40 uppercase tracking-widest leading-none mb-1">Asst. Transport Manager</p>
+                    <p className="text-sm font-black text-white mb-0.5">Shankarkumar N</p>
+                    <a href="tel:9750917595" className="text-xs font-medium text-white/70 hover:text-white transition-colors">9750917595</a>
+                </div>
+                <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white shadow-lg shadow-black/20 shrink-0">
+                    <Phone size={16} />
                 </div>
               </div>
             </div>

@@ -35,97 +35,97 @@ const FacultyPursuingPhdPage = () => {
         'mechanical-engineering': [
             {
                 id: 1,
-                name: "Mr.J.Prakash",
+                name: "Mr. J.Prakash",
                 topic: "Design and Development of Intelligent gripper through grasping stability analysis",
-                supervisor: "Dr.M.Ilangkumaran",
+                supervisor: "Dr. M.Ilangkumaran",
                 registration: "Jan & 2011",
                 university: "Anna University"
             },
             {
                 id: 2,
-                name: "Mr.K.Mugundan",
+                name: "Mr. K.Mugundan",
                 topic: "Investigation and Process Optimization of Aluminium Alloy 2024 / TiB2 in Stir Casting Composite",
-                supervisor: "Dr.P.Sureshkumar",
+                supervisor: "Dr. P.Sureshkumar",
                 registration: "Jul & 2017",
                 university: "Anna University"
             },
             {
                 id: 3,
-                name: "Mr.A.Selvakumar",
+                name: "Mr. A.Selvakumar",
                 topic: "Investigation of Natural Convection and Thermal Diffusion in an Indoor Environment",
-                supervisor: "Dr.K.Visagavel",
+                supervisor: "Dr. K.Visagavel",
                 registration: "Jul & 2017",
                 university: "Anna University"
             },
             {
                 id: 4,
-                name: "Mr.A.Gajendran",
+                name: "Mr. A.Gajendran",
                 topic: "Investigation on the effects of Biofduel-Diesel Emulsions in A DI Diesel Engine",
-                supervisor: "Dr.S.M.Sivagami",
+                supervisor: "Dr. S.M.Sivagami",
                 registration: "Jan & 2019",
                 university: "Anna University"
             },
             {
                 id: 5,
-                name: "Mr.M.Vinoth",
+                name: "Mr. M.Vinoth",
                 topic: "Battery Management System",
-                supervisor: "Dr.K.Visagavel",
+                supervisor: "Dr. K.Visagavel",
                 registration: "Jul & 2023",
                 university: "Anna University"
             },
             {
                 id: 6,
-                name: "Mr.P.Karthikeyan",
+                name: "Mr. P.Karthikeyan",
                 topic: "Material Science",
-                supervisor: "Dr.K.Visagavel",
+                supervisor: "Dr. K.Visagavel",
                 registration: "Jul & 2023",
                 university: "Anna University"
             },
             {
                 id: 7,
-                name: "Mr.S.Naveenkumar",
+                name: "Mr. S.Naveenkumar",
                 topic: "Indoor Air Quality",
-                supervisor: "Dr.K.Visagavel",
+                supervisor: "Dr. K.Visagavel",
                 registration: "Jul & 2023",
                 university: "Anna University"
             },
             {
                 id: 8,
-                name: "Ms.A.Elavarasi",
+                name: "Ms. A.Elavarasi",
                 topic: "Composite Materials",
-                supervisor: "Dr.M.Ilangkumaran",
+                supervisor: "Dr. M.Ilangkumaran",
                 registration: "Jan & 2024",
                 university: "Anna University"
             },
             {
                 id: 9,
-                name: "Mr.S.Dheepak",
+                name: "Mr. S.Dheepak",
                 topic: "Bio Materials",
-                supervisor: "Dr.N.Panneerselvam",
+                supervisor: "Dr. N.Panneerselvam",
                 registration: "Jul & 2024",
                 university: "Anna University"
             },
             {
                 id: 10,
-                name: "Mr.A.Kamalakkannan",
+                name: "Mr. A.Kamalakkannan",
                 topic: "Composite Materials",
-                supervisor: "Dr.M.Ilangkumaran",
+                supervisor: "Dr. M.Ilangkumaran",
                 registration: "Jul & 2024",
                 university: "Anna University"
             },
             {
                 id: 11,
-                name: "Mr.S.Rajeshkanna",
+                name: "Mr. S.Rajeshkanna",
                 topic: "Composite Materials",
-                supervisor: "Dr.M.Ilangkumaran",
+                supervisor: "Dr. M.Ilangkumaran",
                 registration: "Jul & 2024",
                 university: "Anna University"
             },
             {
                 id: 12,
-                name: "Mr.K.N.Karthick",
+                name: "Mr. K.N.Karthick",
                 topic: "Composite Materials",
-                supervisor: "Dr.M.Bharathiraja",
+                supervisor: "Dr. M.Bharathiraja",
                 registration: "Jan & 2021",
                 university: "Anna University"
             }
@@ -133,41 +133,41 @@ const FacultyPursuingPhdPage = () => {
         'electronics-&-communication-engineering': [
             {
                 id: 1,
-                name: "Mr.S.Premkumar",
+                name: "Mr. S.Premkumar",
                 topic: "Medical Image Processing",
-                supervisor: "Dr.N.Santhiyakumari",
+                supervisor: "Dr. N.Santhiyakumari",
                 registration: "Jul & 2023",
                 university: "Anna University"
             },
             {
                 id: 2,
-                name: "Mr.M.Dineshkumar",
+                name: "Mr. M.Dineshkumar",
                 topic: "Data Security",
-                supervisor: "Dr.N.Santhiyakumari",
+                supervisor: "Dr. N.Santhiyakumari",
                 registration: "Jul & 2023",
                 university: "Anna University"
             },
             {
                 id: 3,
-                name: "Mrs.T.Devika",
+                name: "Ms. T.Devika",
                 topic: "Internet of Things",
-                supervisor: "Dr.N.Santhiyakumari",
+                supervisor: "Dr. N.Santhiyakumari",
                 registration: "Jul & 2023",
                 university: "Anna University"
             },
             {
                 id: 4,
-                name: "Mr.S.Veerakumar",
+                name: "Mr. S.Veerakumar",
                 topic: "Internet of Things",
-                supervisor: "Dr.N.Santhiyakumari",
+                supervisor: "Dr. N.Santhiyakumari",
                 registration: "Jul & 2023",
                 university: "Anna University"
             },
             {
                 id: 5,
-                name: "Mr.M.Chandraman",
+                name: "Mr. M.Chandraman",
                 topic: "Medical Image Processing",
-                supervisor: "Dr.N.Santhiyakumari",
+                supervisor: "Dr. N.Santhiyakumari",
                 registration: "Jul & 2023",
                 university: "Anna University"
             },
@@ -175,79 +175,79 @@ const FacultyPursuingPhdPage = () => {
                 id: 6,
                 name: "Mr. A.Arun",
                 topic: "Image Retrieval Algorithms",
-                supervisor: "Dr. P. Nirmala Devi",
+                supervisor: "Dr. Nirmala Devi P",
                 registration: "Jan & 2018",
                 university: "Anna University"
             },
             {
                 id: 7,
-                name: "Mr.T.Raja",
+                name: "Mr. T.Raja",
                 topic: "Intuitionistic Fuzzy Sets",
-                supervisor: "Dr.S.Thilagavathy",
+                supervisor: "Dr. S.Thilagavathy",
                 registration: "Jan & 2024",
                 university: "Bharathiar University"
             },
             {
                 id: 8,
-                name: "Mr.A.Tamilselvan",
+                name: "Mr. A.Tamilselvan",
                 topic: "Configuration of SOC in IoT Industry",
-                supervisor: "Dr.J.Samson Immanuel",
+                supervisor: "Dr. J.Samson Immanuel",
                 registration: "Jan & 2024",
                 university: "Karunya University"
             },
             {
                 id: 9,
-                name: "Mr.K. Rajesh",
+                name: "Mr. Rajesh K",
                 topic: "Low Power VLSI Design",
-                supervisor: "Dr.H.Victor Du John",
+                supervisor: "Dr. H.Victor Du John",
                 registration: "Jan & 2024",
                 university: "Karunya University"
             },
             {
                 id: 10,
-                name: "Mr.S.Elarmathi",
+                name: "Mr. S.Elarmathi",
                 topic: "Image Processing",
-                supervisor: "Dr.S.Kumarganesh",
+                supervisor: "Dr. S.Kumarganesh",
                 registration: "Jan & 2025",
                 university: "Anna University"
             },
             {
                 id: 11,
-                name: "Mrs. A. Preethi",
+                name: "Ms. Preethi A",
                 topic: "Nanoparticles -Supercapacitor application",
-                supervisor: "Dr.K.Balachandran",
+                supervisor: "Dr. K.Balachandran",
                 registration: "Jan & 2021",
                 university: "Anna University"
             }
         ],
         'electrical-&-electronics-engineering': [
-            { id: 1, name: "Mr.B.Dhinesh", topic: "Electric Vehicle", supervisor: "Dr.C.Muniraj", registration: "2022", university: "Anna University" },
-            { id: 2, name: "Mr.S.E.Murthy", topic: "Electric Vehicle", supervisor: "Dr.C.Muniraj", registration: "2022", university: "Anna University" },
-            { id: 3, name: "Mr.M.Jagadeeshraja", topic: "Embedded Systems", supervisor: "Dr.C.Muniraj", registration: "2023", university: "Anna University" },
-            { id: 4, name: "Mr.M.Rajkumar", topic: "Power Systems", supervisor: "Dr.C.Muniraj", registration: "2023", university: "Anna University" },
-            { id: 5, name: "Mr.G.Karthikeyan", topic: "Power Electronics", supervisor: "Dr.A.Jagadeeshwaran", registration: "2019", university: "Anna University" },
-            { id: 6, name: "Mr.R.Kathiresan", topic: "Electric Vehicle", supervisor: "Dr.C.Govindaraju", registration: "2022", university: "Anna University" },
-            { id: 7, name: "Mr.P.Balaji", topic: "Power Electronics", supervisor: "Dr.P.Rajalakshmy", registration: "2023", university: "Karunya University" },
-            { id: 8, name: "Mr.R.Madhanraj", topic: "Control & Instrumentation", supervisor: "Dr.P.Anantha Christu Raj", registration: "2023", university: "Karunya University" },
-            { id: 9, name: "Mrs.N.Divya", topic: "Power Electronics", supervisor: "Dr.V.Kamatchi Kannan", registration: "2024", university: "Anna University" },
-            { id: 10, name: "Mrs.P.Rekha", topic: "Embedded Systems", supervisor: "Dr.V.Kamatchi Kannan", registration: "2024", university: "Anna University" }
+            { id: 1, name: "Mr. B.Dhinesh", topic: "Electric Vehicle", supervisor: "Dr. C.Muniraj", registration: "2022", university: "Anna University" },
+            { id: 2, name: "Mr. S.E.Murthy", topic: "Electric Vehicle", supervisor: "Dr. C.Muniraj", registration: "2022", university: "Anna University" },
+            { id: 3, name: "Mr. M.Jagadeeshraja", topic: "Embedded Systems", supervisor: "Dr. C.Muniraj", registration: "2023", university: "Anna University" },
+            { id: 4, name: "Mr. M.Rajkumar", topic: "Power Systems", supervisor: "Dr. C.Muniraj", registration: "2023", university: "Anna University" },
+            { id: 5, name: "Mr. G.Karthikeyan", topic: "Power Electronics", supervisor: "Dr. A.Jagadeeshwaran", registration: "2019", university: "Anna University" },
+            { id: 6, name: "Mr. R.Kathiresan", topic: "Electric Vehicle", supervisor: "Dr. C.Govindaraju", registration: "2022", university: "Anna University" },
+            { id: 7, name: "Mr. P.Balaji", topic: "Power Electronics", supervisor: "Dr. P.Rajalakshmy", registration: "2023", university: "Karunya University" },
+            { id: 8, name: "Mr. R.Madhanraj", topic: "Control & Instrumentation", supervisor: "Dr. P.Anantha Christu Raj", registration: "2023", university: "Karunya University" },
+            { id: 9, name: "Ms. N.Divya", topic: "Power Electronics", supervisor: "Dr. V.Kamatchi Kannan", registration: "2024", university: "Anna University" },
+            { id: 10, name: "Ms. P.Rekha", topic: "Embedded Systems", supervisor: "Dr. V.Kamatchi Kannan", registration: "2024", university: "Anna University" }
         ],
         'computer-science-&-engineering': [
-            { id: 1, name: "Prof.T.Karthikeyan", topic: "Computer Science", supervisor: "Dr.T.Sitamahalakshmi", registration: "23244697170", university: "GITAM University", status: "Thesis Submitted" },
-            { id: 2, name: "Mrs.V.Sathyapriya", topic: "Computer Science", supervisor: "Dr.P.Rajendran", registration: "23244697170", university: "Anna University", status: "Course work Pursuing" },
-            { id: 3, name: "Mr.Sivaguru", topic: "Computer Science", supervisor: "Dr.R.Thangarajan", registration: "21144697479", university: "Anna University", status: "Course Work Completed" },
-            { id: 4, name: "Mrs.N. Subha", topic: "Computer Science", supervisor: "Dr.P.Rajendran", registration: "24244691328", university: "Anna University", status: "Course work Pursuing" },
-            { id: 5, name: "Mrs.R.Pushpalatha", topic: "Computer Science", supervisor: "Dr.P.Rajendran", registration: "24234691437", university: "Anna University", status: "Course work Pursuing" },
-            { id: 6, name: "Mr.A.Sekar", topic: "Computer Science", supervisor: "Dr.P.Vijayalakshmi", registration: "24144691403", university: "Anna University", status: "Course work Pursuing" },
-            { id: 7, name: "Mrs.D.Ramya", topic: "Computer Science", supervisor: "Dr.P.Vijayalakshmi", registration: "24244697415", university: "Anna University", status: "Course work Pursuing" },
-            { id: 8, name: "Mrs.G.Eswari @ Pechiammal", topic: "Computer Science", supervisor: "Dr.P Pabitha", registration: "23244397295", university: "Anna University", status: "Course work completed" },
-            { id: 9, name: "Mr.P.Nareshkumar", topic: "Computer Science", supervisor: "Dr.M.Kumaresan", registration: "JU2025RPHD10492", university: "Jain University", status: "Course work Pursuing" },
-            { id: 10, name: "Mrs.A.Kasthuri", topic: "Computer Science", supervisor: "Dr.J.Gowrishankar", registration: "23PHREN043", university: "Jain University", status: "Course work Pursuing" }
+            { id: 1, name: "Prof. T.Karthikeyan", topic: "Computer Science", supervisor: "Dr. T.Sitamahalakshmi", registration: "23244697170", university: "GITAM University", status: "Thesis Submitted" },
+            { id: 2, name: "Ms. V.Sathyapriya", topic: "Computer Science", supervisor: "Dr. P.Rajendran", registration: "23244697170", university: "Anna University", status: "Course work Pursuing" },
+            { id: 3, name: "Mr. Sivaguru", topic: "Computer Science", supervisor: "Dr. R.Thangarajan", registration: "21144697479", university: "Anna University", status: "Course Work Completed" },
+            { id: 4, name: "Ms. Subha N", topic: "Computer Science", supervisor: "Dr. P.Rajendran", registration: "24244691328", university: "Anna University", status: "Course work Pursuing" },
+            { id: 5, name: "Ms. R.Pushpalatha", topic: "Computer Science", supervisor: "Dr. P.Rajendran", registration: "24234691437", university: "Anna University", status: "Course work Pursuing" },
+            { id: 6, name: "Mr. A.Sekar", topic: "Computer Science", supervisor: "Dr. P.Vijayalakshmi", registration: "24144691403", university: "Anna University", status: "Course work Pursuing" },
+            { id: 7, name: "Ms. D.Ramya", topic: "Computer Science", supervisor: "Dr. P.Vijayalakshmi", registration: "24244697415", university: "Anna University", status: "Course work Pursuing" },
+            { id: 8, name: "Ms. G.Eswari @ Pechiammal", topic: "Computer Science", supervisor: "Dr. Pabitha P", registration: "23244397295", university: "Anna University", status: "Course work completed" },
+            { id: 9, name: "Mr. P.Nareshkumar", topic: "Computer Science", supervisor: "Dr. M.Kumaresan", registration: "JU2025RPHD10492", university: "Jain University", status: "Course work Pursuing" },
+            { id: 10, name: "Ms. A.Kasthuri", topic: "Computer Science", supervisor: "Dr. J.Gowrishankar", registration: "23PHREN043", university: "Jain University", status: "Course work Pursuing" }
         ],
         'information-technology': [
             {
                 id: 1,
-                name: "Mrs.R.V.Sudha",
+                name: "Ms. R.V.Sudha",
                 topic: "Wireless sensor Network",
                 supervisor: "Dr.S.Saktivel, ASP/CSE, Sona college of technology, Salem",
                 registration: "24121691132",
@@ -255,7 +255,7 @@ const FacultyPursuingPhdPage = () => {
             },
             {
                 id: 2,
-                name: "Mrs.S.Lalithambikai",
+                name: "Ms. S.Lalithambikai",
                 topic: "Wireless sensor Network",
                 supervisor: "Dr.P.Rajendran, Professor & Director PAT(III) / CSE, Knowledge Institute of Technology, Salem",
                 registration: "24234691278",
@@ -263,7 +263,7 @@ const FacultyPursuingPhdPage = () => {
             },
             {
                 id: 3,
-                name: "Ms.B.Manjubashini",
+                name: "Ms. B.Manjubashini",
                 topic: "Wireless Sensor Network",
                 supervisor: "Dr. Murali babu, Department of ECE, Paavai Engineering College, Namakkal",
                 registration: "22244697187",
@@ -271,20 +271,20 @@ const FacultyPursuingPhdPage = () => {
             }
         ],
         'artificial-intelligence-&-data-science': [
-            { id: 1, name: "B. SASIKUMAR", topic: "Image Processing", supervisor: "Dr.P.Rajendran", registration: "-", university: "Anna University" },
-            { id: 2, name: "A.GOPALAKRISHNAN", topic: "Medical Image Processing", supervisor: "Dr. S. Kumarganesh", registration: "-", university: "Anna University" },
-            { id: 3, name: "V.BRINDHA", topic: "Medical Image Processing", supervisor: "Dr.P.Rajendran", registration: "-", university: "Anna University" },
-            { id: 4, name: "B.BHUVANESWARI", topic: "Image Processing", supervisor: "Dr.R.Kumar", registration: "-", university: "Anna University" },
-            { id: 5, name: "M.DEEPA", topic: "Network Security", supervisor: "Dr.E.Sathish Kumar", registration: "-", university: "Anna University" },
-            { id: 6, name: "P. J. ESTHER RANI", topic: "Wireless Sensor Network", supervisor: "Dr.P.Rajendran", registration: "-", university: "Anna University" },
-            { id: 7, name: "S.SUDHA", topic: "AI in Special Education", supervisor: "Dr.R.Kumar", registration: "-", university: "Anna University" }
+            { id: 1, name: "Dr. Sasikumar B", topic: "Image Processing", supervisor: "Dr. P.Rajendran", registration: "-", university: "Anna University" },
+            { id: 2, name: "Mr. Gopalakrishnan A", topic: "Medical Image Processing", supervisor: "Dr. Kumarganesh S", registration: "-", university: "Anna University" },
+            { id: 3, name: "Ms. Brindha V", topic: "Medical Image Processing", supervisor: "Dr. P.Rajendran", registration: "-", university: "Anna University" },
+            { id: 4, name: "Ms. Bhuvaneswari B", topic: "Image Processing", supervisor: "Dr. R.Kumar", registration: "-", university: "Anna University" },
+            { id: 5, name: "Ms. Deepa M", topic: "Network Security", supervisor: "Dr. E.Sathish Kumar", registration: "-", university: "Anna University" },
+            { id: 6, name: "Ms. Esther Rani P J", topic: "Wireless Sensor Network", supervisor: "Dr. P.Rajendran", registration: "-", university: "Anna University" },
+            { id: 7, name: "Ms. Sudha S", topic: "AI in Special Education", supervisor: "Dr. R.Kumar", registration: "-", university: "Anna University" }
         ],
         'civil-engineering': [
-            { id: 10, name: "Mr.S.Pradeep Kumar", topic: "Civil Engineering", supervisor: "Dr.P.M.Shanmugavadivu", registration: "July 2024", university: "Anna University" },
-            { id: 1, name: "Mr.L.Krishnan", topic: "Structural Engineering", supervisor: "Dr.Gulshan Taj M N A", registration: "Jan & 2020", university: "Anna University" },
-            { id: 2, name: "Mr. S.Arulkesavan", topic: "Concrete Structures", supervisor: "Dr.S.Ramesh", registration: "Jan & 2025", university: "Anna University" },
-            { id: 3, name: "Mr. R.Elavarasan", topic: "Concrete Structures", supervisor: "Dr.P.Mageshkumar", registration: "Jan & 2024", university: "Anna University" },
-            { id: 4, name: "Mr.L.M.Nirmal", topic: "Concrete Technology", supervisor: "Dr.P.Mageshkumar", registration: "Jan & 2025", university: "Anna University" }
+            { id: 10, name: "Mr. S.Pradeep Kumar", topic: "Civil Engineering", supervisor: "Dr. P.M.Shanmugavadivu", registration: "July 2024", university: "Anna University" },
+            { id: 1, name: "Mr. L.Krishnan", topic: "Structural Engineering", supervisor: "Dr. Gulshan Taj M N A", registration: "Jan & 2020", university: "Anna University" },
+            { id: 2, name: "Mr. S.Arulkesavan", topic: "Concrete Structures", supervisor: "Dr. S.Ramesh", registration: "Jan & 2025", university: "Anna University" },
+            { id: 3, name: "Mr. R.Elavarasan", topic: "Concrete Structures", supervisor: "Dr. P.Mageshkumar", registration: "Jan & 2024", university: "Anna University" },
+            { id: 4, name: "Mr. L.M.Nirmal", topic: "Concrete Technology", supervisor: "Dr. P.Mageshkumar", registration: "Jan & 2025", university: "Anna University" }
         ],
 
         'computer-science-&-business-systems': [
@@ -306,7 +306,7 @@ const FacultyPursuingPhdPage = () => {
             },
             {
                 id: 3,
-                name: "K.REENA",
+                name: "Ms. Reena K",
                 topic: "Deep learning in health care",
                 supervisor: "Dr. S. Nagendra Prabhu, SRM IST, Kattankulathur Campus",
                 registration: "2023",
@@ -314,7 +314,7 @@ const FacultyPursuingPhdPage = () => {
             },
             {
                 id: 4,
-                name: "C.NITHYA",
+                name: "Ms. Nithya C",
                 topic: "Data Security",
                 supervisor: "Dr.S. Kumarganesh, Knowledge Institute Of Technology, Salem",
                 registration: "2025",
@@ -326,7 +326,7 @@ const FacultyPursuingPhdPage = () => {
                 id: 1,
                 name: "S.Geetha",
                 topic: "Graph Theory",
-                supervisor: "Dr.S.Manimekalai",
+                supervisor: "Dr. S.Manimekalai",
                 registration: "June 2024",
                 university: "Bharathiar University"
             },
@@ -334,7 +334,7 @@ const FacultyPursuingPhdPage = () => {
                 id: 2,
                 name: "M.Sivaperumal",
                 topic: "Nanomaterials",
-                supervisor: "Dr.G.Raja",
+                supervisor: "Dr. G.Raja",
                 registration: "Jan 2023",
                 university: "Anna University"
             },
@@ -342,7 +342,7 @@ const FacultyPursuingPhdPage = () => {
                 id: 3,
                 name: "M.Prasath",
                 topic: "Inventory Control Theory",
-                supervisor: "Dr.R.Vijaykrishnaraj",
+                supervisor: "Dr. R.Vijaykrishnaraj",
                 registration: "Jan 2025",
                 university: "Bharath University"
             },
@@ -350,7 +350,7 @@ const FacultyPursuingPhdPage = () => {
                 id: 4,
                 name: "A.Preethi",
                 topic: "NanoParticles",
-                supervisor: "Dr.K.Balachandran",
+                supervisor: "Dr. K.Balachandran",
                 registration: "Feb 2021",
                 university: "Anna University"
             },
@@ -358,7 +358,7 @@ const FacultyPursuingPhdPage = () => {
                 id: 5,
                 name: "K.Vasanthakumar",
                 topic: "Eduthuraippiyal Nokkil Natrinai",
-                supervisor: "Dr.V.Ramarajapandian",
+                supervisor: "Dr. V.Ramarajapandian",
                 registration: "Sep/2014",
                 university: "Periyar University"
             },
@@ -366,7 +366,7 @@ const FacultyPursuingPhdPage = () => {
                 id: 6,
                 name: "T.Raja",
                 topic: "Decision Making using Fuzzy Logic",
-                supervisor: "Dr.S.Thilagavathi",
+                supervisor: "Dr. S.Thilagavathi",
                 registration: "June 2024",
                 university: "Bharathiar University"
             },
@@ -374,7 +374,7 @@ const FacultyPursuingPhdPage = () => {
                 id: 7,
                 name: "S.Sasi Kumar",
                 topic: "Thin Film Technology",
-                supervisor: "Dr.K.S.Mohan",
+                supervisor: "Dr. K.S.Mohan",
                 registration: "January 2025",
                 university: "Anna University"
             }

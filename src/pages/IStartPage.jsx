@@ -305,11 +305,11 @@ const IStartPage = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
                         {[
-                            { name: "Dr.PSS.Srinivasan", role: "Executive Chairman, KIOT", iic: "Managing Director – iStart MXIF", icon: Briefcase },
-                            { name: "Dr.K.Visagavel", role: "Principal", iic: "IIC President - KIOT", icon: Award },
-                            { name: "Mr.A.Sekar M.E., (Ph.D)", role: "Head Incubation", iic: "IIC Vice President – KIOT", icon: Users },
-                            { name: "Mr.M.Dinesh Kumar", role: "Incubation Lead", iic: "Strategy & Operations", icon: Settings },
-                            { name: "Mr.M.M.Barat Kumar", role: "Incubation Associate", iic: "Technical Support", icon: Lightbulb }
+                            { name: "Dr. PSS.Srinivasan", role: "Executive Chairman, KIOT", iic: "Managing Director – iStart MXIF", icon: Briefcase },
+                            { name: "Dr. K.Visagavel", role: "Principal", iic: "IIC President - KIOT", icon: Award },
+                            { name: "Mr. A.Sekar M.E., (Ph.D)", role: "Head Incubation", iic: "IIC Vice President – KIOT", icon: Users },
+                            { name: "Mr. M.Dinesh Kumar", role: "Incubation Lead", iic: "Strategy & Operations", icon: Settings },
+                            { name: "Mr. M.M.Barat Kumar", role: "Incubation Associate", iic: "Technical Support", icon: Lightbulb }
                         ].map((m, i) => (
                             <div key={i} className="group relative bg-white rounded-[1.2rem] p-4 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col overflow-hidden transition-all duration-500 hover:shadow-xl">
                                 <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#224292]" />
@@ -352,15 +352,15 @@ const IStartPage = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                             {[
-                                { name: "Mr.S.Santhosh", dept: "AP/MECH", role: "IPR Activity Coordinator", icon: Star },
-                                { name: "Mr.M.K.Sampath", dept: "AP/CSE", role: "YUKTI Coordinator", icon: Trophy },
-                                { name: "Mr.A.Silambarasan", dept: "AP/ECE", role: "IIC Convenor", icon: Award },
-                                { name: "Mr.R.Madhan Raj", dept: "AP/EEE", role: "Innovation Activity Coordinator", icon: Zap },
-                                { name: "Mr.S.Arulkesavan", dept: "AP/CIVIL", role: "Internship Activity Coordinator", icon: Building2 },
-                                { name: "Mr.R.Ayyappan", dept: "AP/IT", role: "Social Media Coordinator", icon: Users },
-                                { name: "Mrs. P. Raga Keerthana", dept: "AP/CSBS", role: "Member", icon: Users },
-                                { name: "Mr.R.Rameshkumar", dept: "AP/AIDS", role: "NIRF – IR Coordinator", icon: Target },
-                                { name: "Mr.M.Gowrishankar", dept: "AP/MBA-IEV", role: "Member", icon: Users }
+                                { name: "Mr. S.Santhosh", dept: "AP/MECH", role: "IPR Activity Coordinator", icon: Star },
+                                { name: "Mr. M.K.Sampath", dept: "AP/CSE", role: "YUKTI Coordinator", icon: Trophy },
+                                { name: "Mr. A.Silambarasan", dept: "AP/ECE", role: "IIC Convenor", icon: Award },
+                                { name: "Mr. R.Madhan Raj", dept: "AP/EEE", role: "Innovation Activity Coordinator", icon: Zap },
+                                { name: "Mr. S.Arulkesavan", dept: "AP/CIVIL", role: "Internship Activity Coordinator", icon: Building2 },
+                                { name: "Mr. R.Ayyappan", dept: "AP/IT", role: "Social Media Coordinator", icon: Users },
+                                { name: "Ms. Raga Keerthana P", dept: "AP/CSBS", role: "Member", icon: Users },
+                                { name: "Mr. R.Rameshkumar", dept: "AP/AIDS", role: "NIRF – IR Coordinator", icon: Target },
+                                { name: "Mr. M.Gowrishankar", dept: "AP/MBA-IEV", role: "Member", icon: Users }
                             ].map((m, i) => (
                                 <motion.div 
                                     key={i}

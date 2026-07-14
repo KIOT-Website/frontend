@@ -16,7 +16,8 @@ const PlacementDetailsYearSection = () => {
         const res = await fetch(`${API_BASE}/placement-details-year/`)
         if (!res.ok) throw new Error('Failed to load placement details (year)')
         const result = await res.json()
-        setData(result)
+        const sortedResult = [...result].sort((a, b) => b.batch_year.localeCompare(a.batch_year))
+        setData(sortedResult)
       } catch (err) {
         setError(err.message)
       } finally {
@@ -58,9 +59,9 @@ const PlacementDetailsYearSection = () => {
             <p>Annual placement reports are currently being updated.</p>
           </div>
         ) : (
-          <div className="bg-white border border-[#D5E2F4]/50 rounded-2xl overflow-hidden shadow-sm">
+          <div className="space-y-2.5">
             {/* Header */}
-            <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-4 bg-[#224292]">
+            <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-3 bg-[#224292] rounded-xl shadow-sm">
               <span className="text-[10px] font-semibold text-white/70 uppercase tracking-widest">Batch Year</span>
               <span className="text-[10px] font-semibold text-white/70 uppercase tracking-widest">Report</span>
             </div>
@@ -72,7 +73,7 @@ const PlacementDetailsYearSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-5 border-b border-[#F1F5FB] last:border-b-0 hover:bg-[#F8FAFC] transition-colors group"
+                className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-3.5 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-md hover:border-[#224292]/10 transition-all group"
               >
                 {/* Info */}
                 <div>

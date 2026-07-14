@@ -34,7 +34,7 @@ const PhdHoldersPage = () => {
         'mechanical-engineering': [
             {
                 id: 1,
-                name: "Dr.PSS.Srinivasan",
+                name: "Dr. PSS.Srinivasan",
                 topic: "Thermal Engineering, Heattransfer & CFD",
                 year: "2002",
                 university: "Bharathiyar University",
@@ -44,7 +44,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 2,
-                name: "Dr.K.Visagavel",
+                name: "Dr. K.Visagavel",
                 topic: "Thermal Engineering, Heat Transfer, CFD and Solar Energy",
                 year: "2010",
                 university: "Anna University, Chennai",
@@ -54,7 +54,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 3,
-                name: "Dr.P.Navaneethakrishnan",
+                name: "Dr. P.Navaneethakrishnan",
                 topic: "Design, CAD/CAM, Finite Element Analysis, Computational Fluid Dynamics",
                 year: "2009",
                 university: "Bharathiyar University",
@@ -64,7 +64,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 4,
-                name: "Dr.M.Ilangkumaran",
+                name: "Dr. M.Ilangkumaran",
                 topic: "Maintenance Engineering, Multi Criteria Decision Making Application",
                 year: "2010",
                 university: "Anna University, Chennai",
@@ -74,7 +74,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 5,
-                name: "Dr.N.Panneerselvam",
+                name: "Dr. N.Panneerselvam",
                 topic: "IC Engine, Composite Materials",
                 year: "2018",
                 university: "Anna University, Chennai",
@@ -94,7 +94,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 7,
-                name: "Dr.V. Sivakumar",
+                name: "Dr. Sivakumar V",
                 topic: "Energy & CFD",
                 year: "2020",
                 university: "Anna University, Chennai",
@@ -104,7 +104,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 8,
-                name: "Dr.S.Sureshbalaji",
+                name: "Dr. S.Sureshbalaji",
                 topic: "Design, Optimization Techniques",
                 year: "2023",
                 university: "Anna University, Chennai",
@@ -126,7 +126,7 @@ const PhdHoldersPage = () => {
         'information-technology': [
             {
                 id: 1,
-                name: "Dr.P.Sachidhanandam",
+                name: "Dr. P.Sachidhanandam",
                 topic: "Energy Efficient Routing in Wireless Sensor Neworks through Linear Motion of Mobile Sink",
                 year: "2018",
                 university: "Anna University, Chennai",
@@ -138,7 +138,7 @@ const PhdHoldersPage = () => {
         'artificial-intelligence-&-data-science': [
             {
                 id: 1,
-                name: "Dr.A. Gomathi",
+                name: "Dr. Gomathi A",
                 topic: "Enhanced Information Extraction On Multiple Search Engines Using Hybrid Algorithms",
                 year: "2019",
                 university: "Anna University, Chennai",
@@ -150,7 +150,7 @@ const PhdHoldersPage = () => {
         'electronics-&-communication-engineering': [
             {
                 id: 1,
-                name: "Dr.N.Santhiyakumari",
+                name: "Dr. N.Santhiyakumari",
                 topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Carotid Artery Images using Intima media thickness measurement",
                 year: "2008",
                 university: "Anna University, Chennai",
@@ -160,7 +160,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 2,
-                name: "Dr.M.Thangavel",
+                name: "Dr. M.Thangavel",
                 topic: "Investigation on Carotid Wall Motion and Texture Classification of Plaques Using Multi-resolution Features",
                 year: "2016",
                 university: "Anna University, Chennai",
@@ -170,7 +170,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 3,
-                name: "Dr. R. Vijayaraghavan",
+                name: "Dr. Vijayaraghavan R",
                 topic: "Temporal Analysis of Remote Sensing Data for Identification of Some Tree and Shrub Species in Semiarid Region",
                 year: "2008",
                 university: "Jai Narain Vyas University Jodhpur",
@@ -180,7 +180,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 4,
-                name: "Dr. S. Kumarganesh",
+                name: "Dr. Kumarganesh S",
                 topic: "Certain Investigations on Segmentation and Compression of Brain Tumor Image",
                 year: "2018",
                 university: "Anna University, Chennai",
@@ -190,7 +190,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 5,
-                name: "Dr.P. Shanmugasundaram",
+                name: "Dr. Shanmugasundaram P",
                 topic: "Certain Investigations on Computer Aided Colon Cancer Detection in Wireless Capsule Endoscopy Images",
                 year: "2021",
                 university: "Anna University, Chennai",
@@ -200,7 +200,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 6,
-                name: "Dr.V.Saravanan",
+                name: "Dr. V.Saravanan",
                 topic: "Certain investigations on active noise control systems for domestic applications by developing the step size of the FxLMS algorithm",
                 year: "2022",
                 university: "Anna University, Chennai",
@@ -210,7 +210,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 7,
-                name: "Dr.G.Rajamanickam",
+                name: "Dr. G.Rajamanickam",
                 topic: "Wireless Communication",
                 year: "2024",
                 university: "Anna University, Chennai",
@@ -220,7 +220,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 8,
-                name: "Dr.S.Maragatharaj",
+                name: "Dr. S.Maragatharaj",
                 topic: "Low Power VLSI",
                 year: "2024",
                 university: "Anna University, Chennai",
@@ -230,7 +230,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 9,
-                name: "Dr. T. K. Santhi",
+                name: "Dr. Santhi T K",
                 topic: "Womanism in the Select Works of Alice Walker",
                 year: "2014",
                 university: "Mother Teresa Women's University, Kodaikanal",
@@ -240,7 +240,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 10,
-                name: "Dr. K. Priya Mol",
+                name: "Dr. Priya Mol K",
                 topic: "The Brutality of Civilization and the Struggle for Survival: A Study of Jack London’s Select Novels.",
                 year: "2022",
                 university: "Manonmaniam Sundaranar University",
@@ -250,29 +250,29 @@ const PhdHoldersPage = () => {
             }
         ],
         'electrical-&-electronics-engineering': [
-            { id: 1, name: "Dr.C.Muniraj", topic: "AC Drives and High Voltage Engineering", year: "2012", university: "Anna University", publications: { ij: 28, ic: 30, nj: 0, nc: 11 } },
-            { id: 2, name: "Dr.V.Kamatchi Kannan", topic: "Power Quality Improvement using DSTATCOM", year: "2013", university: "Anna University", publications: { ij: 50, ic: 24, nj: 1, nc: 8 } },
-            { id: 3, name: "Dr.P.A.Gowri Shankar", topic: "Control and Instrumentation, Nano Materials and Sensors", year: "2015", university: "Anna University", publications: { ij: 15, ic: 5, nj: 1, nc: 2 } },
-            { id: 4, name: "Dr.S.Kalpana Devi", topic: "Renewable Energy Sources and Converter", year: "2024", university: "Anna University", publications: { ij: 4, ic: 4, nj: 35, nc: 5 } }
+            { id: 1, name: "Dr. C.Muniraj", topic: "AC Drives and High Voltage Engineering", year: "2012", university: "Anna University", publications: { ij: 28, ic: 30, nj: 0, nc: 11 } },
+            { id: 2, name: "Dr. V.Kamatchi Kannan", topic: "Power Quality Improvement using DSTATCOM", year: "2013", university: "Anna University", publications: { ij: 50, ic: 24, nj: 1, nc: 8 } },
+            { id: 3, name: "Dr. P.A.Gowri Shankar", topic: "Control and Instrumentation, Nano Materials and Sensors", year: "2015", university: "Anna University", publications: { ij: 15, ic: 5, nj: 1, nc: 2 } },
+            { id: 4, name: "Dr. S.Kalpana Devi", topic: "Renewable Energy Sources and Converter", year: "2024", university: "Anna University", publications: { ij: 4, ic: 4, nj: 35, nc: 5 } }
         ],
         'computer-science-&-engineering': [
-            { id: 1, name: "Dr.V.Kumar", topic: "Design Of An Efficient MAC Protocol For Wireless Networks", year: "2011", university: "Anna University, Coimbatore", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
-            { id: 2, name: "Dr.P.Rajendran", topic: "Decision Support System For Brain Tumor using Image Mining", year: "2011", university: "Anna University, Coimbatore", publications: { ij: 48, ic: 52, nj: 0, nc: 49 }, guided: 8, beingGuided: 8 },
-            { id: 3, name: "Dr.R.Kumar", topic: "Concept Map Based Formative Knowledge Assessment", year: "2014", university: "Anna University, Chennai", publications: { ij: 4, ic: 4, nj: 0, nc: 0 }, guided: 0, beingGuided: 3 },
-            { id: 4, name: "Dr.M.Sakthivel", topic: "Agile Principles for Risk Reduction in Software Development", year: "2018", university: "Anna University, Chennai", publications: { ij: 5, ic: 5, nj: 0, nc: 0 } },
-            { id: 5, name: "Dr.P.Vijayalakshmi", topic: "Topologically Adaptive Authorized Routing in WSN", year: "2018", university: "Anna University, Chennai", publications: { ij: 34, ic: 28, nj: 8, nc: 18 }, guided: 0, beingGuided: 4 },
-            { id: 6, name: "Dr.S.Sakthivel", topic: "Diagnosis of Adenomyosis using Automated MRI Diagnosis Model", year: "2020", university: "Anna University, Chennai", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
-            { id: 7, name: "Dr.I.Rajesh", topic: "Poultry Meat Quality Assessment using Image Mining", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
-            { id: 8, name: "Dr.P.Malarvizhi", topic: "Energy Efficient Routing for Lifetime Maximization in WSN", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
-            { id: 9, name: "Dr.M.Lakshaga jyothi", topic: "Performance Evaluation on Enabling Intelligence using Deep Learning in IoT", year: "2025", university: "Vinayaka Mission's Research Foundation", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } }
+            { id: 1, name: "Dr. V.Kumar", topic: "Design Of An Efficient MAC Protocol For Wireless Networks", year: "2011", university: "Anna University, Coimbatore", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 2, name: "Dr. P.Rajendran", topic: "Decision Support System For Brain Tumor using Image Mining", year: "2011", university: "Anna University, Coimbatore", publications: { ij: 48, ic: 52, nj: 0, nc: 49 }, guided: 8, beingGuided: 8 },
+            { id: 3, name: "Dr. R.Kumar", topic: "Concept Map Based Formative Knowledge Assessment", year: "2014", university: "Anna University, Chennai", publications: { ij: 4, ic: 4, nj: 0, nc: 0 }, guided: 0, beingGuided: 3 },
+            { id: 4, name: "Dr. M.Sakthivel", topic: "Agile Principles for Risk Reduction in Software Development", year: "2018", university: "Anna University, Chennai", publications: { ij: 5, ic: 5, nj: 0, nc: 0 } },
+            { id: 5, name: "Dr. P.Vijayalakshmi", topic: "Topologically Adaptive Authorized Routing in WSN", year: "2018", university: "Anna University, Chennai", publications: { ij: 34, ic: 28, nj: 8, nc: 18 }, guided: 0, beingGuided: 4 },
+            { id: 6, name: "Dr. S.Sakthivel", topic: "Diagnosis of Adenomyosis using Automated MRI Diagnosis Model", year: "2020", university: "Anna University, Chennai", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 7, name: "Dr. I.Rajesh", topic: "Poultry Meat Quality Assessment using Image Mining", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 8, name: "Dr. P.Malarvizhi", topic: "Energy Efficient Routing for Lifetime Maximization in WSN", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 9, name: "Dr. M.Lakshaga jyothi", topic: "Performance Evaluation on Enabling Intelligence using Deep Learning in IoT", year: "2025", university: "Vinayaka Mission's Research Foundation", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } }
         ],
         'civil-engineering': [
-            { id: 1, name: "Dr.P.Prasath", topic: "Fibre Reinforced Concrete.", year: "2020", university: "Anna University", publications: { ij: 10, ic: 0, nj: 0, nc: 0 }, guided: "-", beingGuided: "-" }
+            { id: 1, name: "Dr. P.Prasath", topic: "Fibre Reinforced Concrete.", year: "2020", university: "Anna University", publications: { ij: 10, ic: 0, nj: 0, nc: 0 }, guided: "-", beingGuided: "-" }
         ],
         'computer-science-&-business-systems': [
             {
                 id: 1,
-                name: "Dr.M.Ramkumar",
+                name: "Dr. M.Ramkumar",
                 topic: "Performance measure of statistically significant gene expression data using biclustering algorithm",
                 year: "2021",
                 university: "Sri Satya Sai University of Technology & Medical Sciences, Sehore",
@@ -284,7 +284,7 @@ const PhdHoldersPage = () => {
         'science-&-humanities': [
             {
                 id: 1,
-                name: "Dr.G.Venkatesh",
+                name: "Dr. G.Venkatesh",
                 topic: "Guest-host inclusion complexation of azo dyes, sulfanilamides, benzophenones and omeprazole with α- and β-cyclodextrins",
                 year: "2014",
                 university: "Annamalai University",
@@ -294,7 +294,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 2,
-                name: "Dr.T.Madhumathi",
+                name: "Dr. T.Madhumathi",
                 topic: "A new approach on orbit and chaotic sets in neutrosophic topological spaces",
                 year: "2024",
                 university: "Bharathiar University",
@@ -304,7 +304,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 3,
-                name: "Dr.S.Sathiya",
+                name: "Dr. S.Sathiya",
                 topic: "Fabrication and characterization of anodic coatings on aluminium for the evaluation of corrosion resistance",
                 year: "2023",
                 university: "Bharathiar University",
@@ -314,7 +314,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 4,
-                name: "Dr. K. Priya Mol",
+                name: "Dr. Priya Mol K",
                 topic: "The Brutality of Civilization and the Struggle for Survival: A Study of Jack London's Select Novels",
                 year: "2022",
                 university: "Manonmaniam Sundaranar University",
@@ -324,7 +324,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 5,
-                name: "Dr.S.Manivel",
+                name: "Dr. S.Manivel",
                 topic: "Spectroscopic (FTIR and FT-Raman) Investigation, Molecular Electrostatic Potential, NLO, NBO and HOMO - LUMO Analyses of Some Compouds of Biological and Pharmacetical Importance",
                 year: "2018",
                 university: "Bharathidasan University",
@@ -334,7 +334,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 6,
-                name: "Dr.S.Sugan",
+                name: "Dr. S.Sugan",
                 topic: "Synthesis of Chalcopyrite Ternary Semiconductor Nanomaterials by Chemical Methods and Growth of CuGaS2 Single Crystal by CVT Method and Their Characterization",
                 year: "2015",
                 university: "Anna University",
@@ -344,7 +344,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 7,
-                name: "Dr.C.Sambathkumar",
+                name: "Dr. C.Sambathkumar",
                 topic: "Electrochemical Investigations on Semiconducting Metal Sulfides Nanoparticles by Using Single Source Percursor for Energy Storage Application",
                 year: "2024",
                 university: "Kalasalingam University",
@@ -354,7 +354,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 8,
-                name: "Dr.M.Sindhu",
+                name: "Dr. M.Sindhu",
                 topic: "A Study on Some Super magic Labellings of Graphs",
                 year: "2022",
                 university: "Manonmaniam Sundaranar University",
@@ -364,7 +364,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 9,
-                name: "Dr.K.Geetha",
+                name: "Dr. K.Geetha",
                 topic: "A Study on Anti L -Fuzzy,Intuitionistic L-Fuzzy,(Q,L) -Fuzzy soft Subhemiring of a Hemiring",
                 year: "2023",
                 university: "Periyar University",
@@ -374,7 +374,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 10,
-                name: "Dr. G. Sathya Priyanka",
+                name: "Dr. Sathya Priyanka G",
                 topic: "Some Contribution to Stochastic Degradataion Process for Failure Time",
                 year: "2024",
                 university: "Periyar University",
@@ -384,7 +384,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 11,
-                name: "Dr.T.Aruna Christy",
+                name: "Dr. T.Aruna Christy",
                 topic: "Structural and Magnetic properties of electrodeposited Cobalt Ferrous Tungsten Phosphorous Magnetic Thin Films",
                 year: "2024",
                 university: "Anna University",
@@ -394,7 +394,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 12,
-                name: "Dr. K. Vinodhkumar",
+                name: "Dr. Vinodhkumar K",
                 topic: "Aatrupadai Ilakkiyankalil Kathaiyadalkal",
                 year: "2013",
                 university: "Bharathiyar University",
@@ -404,7 +404,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 13,
-                name: "Dr. T. K. Santhi",
+                name: "Dr. Santhi T K",
                 topic: "\"Womanism\" in the Select Works of Alice Walker",
                 year: "2014",
                 university: "Mother Teresa Women's University",
@@ -414,7 +414,7 @@ const PhdHoldersPage = () => {
             },
             {
                 id: 14,
-                name: "Dr S.Rekha",
+                name: "Dr. S.Rekha",
                 topic: "Corrosion Analysis of newly synthesised Benzothiazole derivatives on mild steel in acid medium",
                 year: "2018",
                 university: "Anna University",
