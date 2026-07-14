@@ -107,6 +107,8 @@ const SaePage = lazy(() => import('./pages/SaePage'))
 const SocClubPage = lazy(() => import('./pages/SocClubPage'))
 const ElderlyChildcarePage = lazy(() => import('./pages/ElderlyChildcarePage'))
 const AcmPage = lazy(() => import('./pages/AcmPage'))
+const ScintelPage = lazy(() => import('./pages/ScintelPage'))
+const HigherEducationAbroadPage = lazy(() => import('./pages/HigherEducationAbroadPage'))
 
 
 
@@ -657,6 +659,14 @@ function App() {
         title: "ACF (ACM) Student Chapter | KIOT",
         desc: "Fostering advanced coding thinking, Raspberry Pi workshops, database contests, and IoT hardware seminars under ACM Student Chapter at KIOT."
       },
+      "/student-life/higher-education-abroad": {
+        title: "Higher Education Cell (Abroad) | KIOT",
+        desc: "Find information on foreign university admissions, scholarships, IELTS/TOEFL/GRE prep, and counseling services at KIOT."
+      },
+      "/resources/student-life/higher-education-abroad": {
+        title: "Higher Education Cell (Abroad) | KIOT",
+        desc: "Find information on foreign university admissions, scholarships, IELTS/TOEFL/GRE prep, and counseling services at KIOT."
+      },
       "/student-life/intec": {
         title: "INTEC Information Technology Club | KIOT",
         desc: "Join hackathons, coding contests, app development drives, and tech talks by INTEC club at KIOT."
@@ -977,6 +987,10 @@ function App() {
                   <Route path="/resources/student-life/elderly-childcare" element={<ElderlyChildcarePage />} />
                   <Route path="/student-life/acm" element={<AcmPage />} />
                   <Route path="/resources/student-life/acm" element={<AcmPage />} />
+                  <Route path="/student-life/scintel" element={<ScintelPage />} />
+                  <Route path="/resources/student-life/scintel" element={<ScintelPage />} />
+                  <Route path="/student-life/higher-education-abroad" element={<HigherEducationAbroadPage />} />
+                  <Route path="/resources/student-life/higher-education-abroad" element={<HigherEducationAbroadPage />} />
                   <Route path="/alumni" element={<AlumniPage />} />
                   <Route path="/blogs" element={<BlogsPage />} />
                   <Route path="/blog/:slug" element={<BlogDetailPage />} />

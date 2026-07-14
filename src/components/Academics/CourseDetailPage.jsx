@@ -54,6 +54,111 @@ import ievGowrishankarImg from '../../assets/Faculity/mba iev/Prof.M.Gowrishanka
 import ievSaravananImg from '../../assets/Faculity/mba iev/Prof.S.Saravanan.png'
 import { getDepartmentSchematic } from './DepartmentSchematics'
 
+// Department Data Imports
+import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFacultyAwards } from './departments/cse/cseData.jsx'
+import { eeeStudentAchievements, eeeFacultyAchievements } from './departments/eee/eeeData.jsx'
+import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards } from './departments/aids/aidsData.jsx'
+import { csbsStudentAwards, csbsFacultyAwards, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities } from './departments/csbs/csbsData.jsx'
+import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements } from './departments/civil/civilData.jsx'
+import { mechanicalStudentAchievements, mechanicalFacultyAchievements, mechanicalStudentAwards, mechanicalFacultyAwards } from './departments/mechanical/mechanicalData.jsx'
+import { eceStudentAchievements, eceFacultyAchievements, eceStudentAwards, eceFacultyAwards } from './departments/ece/eceData.jsx'
+import { itStudentAchievements, itFacultyAchievements, itStudentAwards, itFacultyAwards } from './departments/it/itData.jsx'
+import { ecmStudentAchievements, ecmFacultyAchievements, ecmStudentAwards, ecmFacultyAwards } from './departments/ecm/ecmData.jsx'
+import { mbaGeneralStudentAchievements, mbaGeneralFacultyAchievements, mbaGeneralStudentAwards, mbaGeneralFacultyAwards } from './departments/mba-general/mbaGeneralData.jsx'
+import { mbaIevStudentAchievements, mbaIevFacultyAchievements, mbaIevStudentAwards, mbaIevFacultyAwards } from './departments/mba-iev/mbaIevData.jsx'
+import { mcaStudentAchievements, mcaFacultyAchievements, mcaStudentAwards, mcaFacultyAwards } from './departments/mca/mcaData.jsx'
+import { phdStudentAchievements, phdFacultyAchievements, phdStudentAwards, phdFacultyAwards } from './departments/phd/phdData.jsx'
+import { meIseStudentAchievements, meIseFacultyAchievements, meIseStudentAwards, meIseFacultyAwards } from './departments/me-ise/meIseData.jsx'
+import { meAeStudentAchievements, meAeFacultyAchievements, meAeStudentAwards, meAeFacultyAwards } from './departments/me-ae/meAeData.jsx'
+import { mePedStudentAchievements, mePedFacultyAchievements, mePedStudentAwards, mePedFacultyAwards } from './departments/me-ped/mePedData.jsx'
+import { meSeStudentAchievements, meSeFacultyAchievements, meSeStudentAwards, meSeFacultyAwards } from './departments/me-se/meSeData.jsx'
+import { scienceHumanitiesStudentAchievements, scienceHumanitiesFacultyAchievements, scienceHumanitiesStudentAwards, scienceHumanitiesFacultyAwards } from './departments/science-humanities/scienceHumanitiesData.jsx'
+
+// Department Data Mapping Collections
+const studentAwardsMap = {
+  'be-cse': cseStudentAwards,
+  'btech-csbs': csbsStudentAwards,
+  'be-civil': civilStudentAwards,
+  'btech-aids': [],
+  'be-eee': [],
+  'be-mechanical': mechanicalStudentAwards,
+  'be-ece': eceStudentAwards,
+  'btech-it': itStudentAwards,
+  'be-ecm': ecmStudentAwards,
+  'mba-general': mbaGeneralStudentAwards,
+  'mba-iev': mbaIevStudentAwards,
+  'mca': mcaStudentAwards,
+  'phd': phdStudentAwards,
+  'me-ise': meIseStudentAwards,
+  'me-ae': meAeStudentAwards,
+  'me-ped': mePedStudentAwards,
+  'me-se': meSeStudentAwards,
+  'science-humanities': scienceHumanitiesStudentAwards
+};
+
+const facultyAwardsMap = {
+  'be-cse': cseFacultyAwards,
+  'btech-csbs': csbsFacultyAwards,
+  'be-civil': civilFacultyAwards,
+  'btech-aids': aidsFacultyAwards,
+  'be-eee': [],
+  'be-mechanical': mechanicalFacultyAwards,
+  'be-ece': eceFacultyAwards,
+  'btech-it': itFacultyAwards,
+  'be-ecm': ecmFacultyAwards,
+  'mba-general': mbaGeneralFacultyAwards,
+  'mba-iev': mbaIevFacultyAwards,
+  'mca': mcaFacultyAwards,
+  'phd': phdFacultyAwards,
+  'me-ise': meIseFacultyAwards,
+  'me-ae': meAeFacultyAwards,
+  'me-ped': mePedFacultyAwards,
+  'me-se': meSeFacultyAwards,
+  'science-humanities': scienceHumanitiesFacultyAwards
+};
+
+const studentAchievementsMap = {
+  'be-cse': cseStudentAchievements,
+  'be-eee': eeeStudentAchievements,
+  'btech-aids': aidsStudentAchievements,
+  'be-mechanical': mechanicalStudentAchievements,
+  'be-ece': eceStudentAchievements,
+  'btech-it': itStudentAchievements,
+  'be-ecm': ecmStudentAchievements,
+  'btech-csbs': [],
+  'be-civil': civilStudentAchievements,
+  'mba-general': mbaGeneralStudentAchievements,
+  'mba-iev': mbaIevStudentAchievements,
+  'mca': mcaStudentAchievements,
+  'phd': phdStudentAchievements,
+  'me-ise': meIseStudentAchievements,
+  'me-ae': meAeStudentAchievements,
+  'me-ped': mePedStudentAchievements,
+  'me-se': meSeStudentAchievements,
+  'science-humanities': scienceHumanitiesStudentAchievements
+};
+
+const facultyAchievementsMap = {
+  'be-cse': cseFacultyAchievements,
+  'be-eee': eeeFacultyAchievements,
+  'btech-aids': aidsFacultyAchievements,
+  'be-mechanical': mechanicalFacultyAchievements,
+  'be-ece': eceFacultyAchievements,
+  'btech-it': itFacultyAchievements,
+  'be-ecm': ecmFacultyAchievements,
+  'btech-csbs': [],
+  'be-civil': civilFacultyAchievements,
+  'mba-general': mbaGeneralFacultyAchievements,
+  'mba-iev': mbaIevFacultyAchievements,
+  'mca': mcaFacultyAchievements,
+  'phd': phdFacultyAchievements,
+  'me-ise': meIseFacultyAchievements,
+  'me-ae': meAeFacultyAchievements,
+  'me-ped': mePedFacultyAchievements,
+  'me-se': meSeFacultyAchievements,
+  'science-humanities': scienceHumanitiesFacultyAchievements
+};
+
 // Syllabus PDF Imports
 import mechUgPdf from '../../assets/Curriculum Syllabus/1. MECH/UG - MECH R23 - I - VI SEM - Syllabus.pdf'
 import mechPgPdf from '../../assets/Curriculum Syllabus/1. MECH/PG - M.E.-ISE I-IV SEM (New).pdf'
@@ -2999,119 +3104,9 @@ export default function CourseDetailPage({ overrides }) {
 function AwardsSection({ courseId, courseName }) {
   const [activeAudience, setActiveAudience] = useState(courseId === 'btech-aids' ? 'FACULTY' : 'STUDENT')
 
-  const cseStudentAwards = [
-    { sno: 1,  name: 'P. Praveen\nIV Year CSE',             event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
-    { sno: 2,  name: 'M. Ramesh\nIV Year CSE',              event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
-    { sno: 3,  name: 'Vigneshwaran V\nIV Year CSE',         event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
-    { sno: 4,  name: 'Pramoth R\nIV Year CSE',              event: 'ISTE Tamilnadu Section',                              level: 'State',    award: 'Best Student Award',                                        title: 'ISTE' },
-    { sno: 5,  name: 'Srinithi E\nIII Year CSE',            event: 'Dr. Kalam Young Achiever Award',                      level: 'National', award: 'Award',                                                     title: 'World Youth Federation' },
-    { sno: 6,  name: 'Yuganthika P\nIII Year CSE',          event: 'Dr. Kalam Young Achiever Award',                      level: 'National', award: 'Award',                                                     title: 'World Youth Federation' },
-    { sno: 7,  name: 'K. Vaishnavi\nIII Year CSE',          event: 'Designathon & Hackathon',                             level: 'National', award: 'Special Award',                                             title: "Aarvam'25, Cybernaut Edtech Pvt Ltd" },
-    { sno: 8,  name: 'K. Atshaya\nIII Year CSE',            event: 'Designathon & Hackathon',                             level: 'National', award: 'Special Award',                                             title: "Aarvam'25, Cybernaut Edtech Pvt Ltd" },
-    { sno: 9,  name: 'Abdul Ameer\nIII Year CSE',           event: 'Designathon & Hackathon',                             level: 'National', award: 'Special Award',                                             title: "Aarvam'25, Cybernaut Edtech Pvt Ltd" },
-    { sno: 10, name: 'V.A. Vinodhan\nIII Year CSE',         event: 'Designathon & Hackathon',                             level: 'National', award: 'Special Award',                                             title: "Aarvam'25, Cybernaut Edtech Pvt Ltd" },
-    { sno: 11, name: 'Karthick V\nII Year CSE',             event: 'Tholkappiyar Award \u2013 Dr. A.P.J. Abdul Kalam',         level: 'State',    award: 'Prestigious Award',                                         title: 'Vaagai Tamil Sangam' },
-    { sno: 12, name: 'Balasubramaiyam S\nII Year CSE',      event: 'Tholkappiyar Award \u2013 Dr. A.P.J. Abdul Kalam Award',   level: 'State',    award: 'Prestigious Award',                                         title: 'Vaagai Tamil Sangam' },
-  ]
+  const studentAwards = studentAwardsMap[courseId] || []
+  const facultyAwards = facultyAwardsMap[courseId] || []
 
-  const csbsStudentAwards = [
-    { sno: 1,  name: 'Bavishri M\nB.Tech-II year CSBS',         event: 'Hackathon',                  level: 'National',    award: 'Selected for Final Round', title: 'TechSpirint Hackathon by Google' },
-    { sno: 2,  name: 'Tirisigha R\nB.Tech-II year CSBS',        event: 'ICT ACADEMY YouthTalk 2025', level: 'State Level', award: 'Selected for Final Round', title: 'Youth Talk 2025' },
-    { sno: 3,  name: 'Akash V\nB.Tech-III year CSBS',           event: 'Hackathon',                  level: 'National',    award: 'First Prize',              title: 'INNOVATIVE-X 2K25 for the project "Deepfake Detection Using AI"' },
-    { sno: '', name: 'Akash V\nB.Tech-III year CSBS',           event: 'Hackathon',                  level: 'National',    award: 'Man of the series',        title: "Cyber T20 V5 - India's Premier Cybersecurity Series" },
-    { sno: 4,  name: 'Anusuya P B\nB.Tech-III year CSBS',       event: '24 Hours Hackathon',         level: 'State Level', award: '2nd Prize',                title: "Hack IT on'25" },
-    { sno: 5,  name: 'Deepak Kumar G S\nB.Tech-III year CSBS',  event: 'Ideathon',                   level: 'National',    award: '2nd prize',                title: "Spring fest'25" },
-    { sno: '', name: 'Deepak Kumar G S\nB.Tech-III year CSBS',  event: 'Hackathon',                  level: 'National',    award: 'Selected for Final Round', title: 'Shine Healthcare Hackathon 2025' },
-    { sno: '', name: 'Deepak Kumar G S\nB.Tech-III year CSBS',  event: 'Hackathon',                  level: 'National',    award: 'Selected for Final Round', title: 'Sakthi Hackathon - Fintech' },
-    { sno: 6,  name: 'Dhivisha S\nB.Tech-III year CSBS',        event: 'Design Patent',              level: 'National',    award: 'Granted',                  title: 'Industrial Image Processing Camera for Defect Identification' },
-    { sno: 7,  name: 'Janani T\nB.Tech-III year CSBS',          event: 'Design Patent',              level: 'National',    award: 'Granted',                  title: 'Industrial Image Processing Camera for Defect Identification' },
-    { sno: 8,  name: 'Madhumita R\nB.Tech-III year CSBS',       event: 'Design Patent',              level: 'National',    award: 'Granted',                  title: 'Industrial Image Processing Camera for Defect Identification' },
-    { sno: 9,  name: 'Samyuktha sri H M\nB.Tech-III year CSBS', event: 'Ideathon',                   level: 'National',    award: '2nd prize',                title: "Spring fest' 25" },
-    { sno: 10, name: 'Shobana B\nB.Tech-III year CSBS',         event: 'Design Patent',              level: 'National',    award: 'Granted',                  title: 'Industrial Image Processing Camera for Defect Identification' },
-    { sno: 11, name: 'Gayathri R\nB.Tech-IV year CSBS',         event: 'Oracle Fusion Cloud Applications', level: 'International', award: 'Domain Certification', title: 'Participated in Oracle Fusion Cloud Applications HCM' },
-    { sno: 12, name: 'Nithyashree S\nB.Tech-IV Year CSBS',      event: 'Oracle Fusion Cloud Applications', level: 'International', award: 'Certified',            title: 'Participated in Oracle Fusion Cloud Applications HCM' },
-    { sno: 13, name: 'Sumitha S\nB.Tech-IV year CSBS',          event: 'Japanese Exam N4',                 level: 'International', award: 'Completed with Elite', title: 'N4 level Japanese certificated/NPTEL business Japanese certificated' },
-    { sno: 14, name: 'Shobika S\nB.Tech-IV year CSBS',          event: 'Design & Innovation Clinic 2025',  level: 'National',      award: '3rd Runner-up',        title: 'AGROSENSE : A Smart Rover For Precision Agriculture' },
-    { sno: '', name: 'Shobika S\nB.Tech-IV year CSBS',          event: 'Hackathon',                        level: 'National',      award: 'Selected for Final Round', title: 'Shine Healthcare Hackathon 2025' },
-    { sno: '', name: 'Shobika S\nB.Tech-IV year CSBS',          event: 'Hackathon',                        level: 'National',      award: 'Selected for Final Round', title: "'AI to Glow' Hackathon" },
-    { sno: 15, name: 'Surendar R V\nB.Tech-IV Year CSBS',       event: 'Completion of DBMS final exam Conducted by ORACLE Certification', level: 'International', award: 'Domain Certification', title: 'Database Foundations at Oracle academy' },
-    { sno: 16, name: 'Vaishnavi V\nB.Tech-IV Year CSBS',        event: 'Oracle Fusion Cloud Applications', level: 'International', award: 'Certified',            title: 'Participated in Oracle Fusion Cloud Applications HCM' },
-  ]
-
-  const civilStudentAwards = [
-    { year: '2025-2026', sno: 1, name: 'V.SivaSanjay -IV Year CIVIL', event: 'BUILD EXPO 2025-26', level: 'State', award: 'FIRST PRIZE & CASH PRIZE OF Rs.15000/-', title: '"EMERGING ENGINEERS"' },
-    { year: '2025-2026', sno: 2, name: 'S.Vijay Sarathy -III Year CIVIL\nK.Prem kumar -III Year CIVIL\nV.Boominathan Narasimman -III Year CIVIL\nP.Ashon -III Year CIVIL', event: 'L&T EDUTECH', level: 'National', award: 'CERTIFICATION OF MERIT TEAM & CASH PRIZE OF Rs.15000/-', title: 'BIM CONTEST2025' },
-    { year: '2025-2026', sno: 3, name: 'P.Srinivasa Perumal-III Year CIVIL\nC.Premalatha-III Year CIVIL\nP.Pradeep-II Year CIVIL\nK.Prem kumar-III Year CIVIL\nM.M.Nagaloges-III Year CIVIL\nK.Priyadharshini-II Year CIVIL', event: 'ADANI CEMENTS', level: 'National', award: 'CASH PRIZE OF Rs.7500/-& CASH PRIZE OF Rs.5000/-', title: 'FIBRE REINFORCED CONCRETE BOWLING' },
-    { year: '2024-2025', sno: 1, name: 'SanthoshRaj.R\nJayasuryaprakash V,\nSandeep R\nSrinivasan Perumal.P\nPravin.K\nB.E. IIInd & IInd Year CIVIL', event: '"EMERGING ENGINEERS" Contest in BUILD EXPO 2024-25', level: 'State', award: 'THIRD PRIZE & CASH PRIZE OF Rs.5000/-', title: 'CAUVERY CONFLUENCE' },
-    { year: '2024-2025', sno: 2, name: 'V.Siva sanjay (Team Lead)\nB.E. IIInd Year CIVIL', event: 'HACKXELERATE\'25( KPR Institute of Engineering and Technology)', level: 'State', award: 'PRESTIGIOUS PROJECT AWARD & CASH PRIZE OF Rs.2000/-', title: 'SAVIOURZ' },
-    { year: '2023-2024', sno: 1, name: 'C.Dharshini\nJ.B.Dheeshith\nS.K.Sujan\nP.C.Nithish Kannan\nB.E. II Year CIVIL', event: '"EMERGING ENGINEERS" Contest in BUILD EXPO 2023-24', level: 'State', award: 'THIRD PRIZE & CASH PRIZE OF Rs.5000/-', title: 'Thirumanimutharu Regeneration Process' },
-    { year: '2023-2024', sno: 2, name: 'Thiruselvam B\nNijanthan S\nManoj A\nSandeep R\nB.E. IInd Year CIVIL', event: 'XTURCTURA 1.0 miniature Model Making Contest "HERITAGE AND CULTURE"', level: 'State', award: 'SECOND PRIZE & CASH PRIZE OF Rs.2000/-', title: 'Heritage and Culture' },
-    { year: '2022-2023', sno: 1, name: 'C.Dharshini\nJ.B.Dheeshith\nS.K.Sujan\nB.Thiruselvam\nP.C.Nithish Kannan\nG.Bharath\nB.E. Ist Year CIVIL', event: '"EMERGING ENGINEERS" Contest in BUILD EXPO 2022-23', level: 'State', award: 'FIRST PRIZE & CASH PRIZE OF Rs.10000/-', title: 'Traffic Free Salem' },
-    { year: '2022-2023', sno: 2, name: 'S.Naveen kumar\nV.Keerthi vasan\nV.Sugumar\nS.M.Sanjay\nR.Rishikesevan\nV.G.Arvinth\nP.Guruganapathi\nS.Kowshick\nB.E. IIIrd Year CIVIL', event: 'IITB-FOSSEE MAPATHON', level: 'National', award: '2 TEAMS RECEIVED NOTABLE PARTICIPANTS AWARD', title: 'TRANSPORT & CASE STUDY WITH POLICY MPACTS' },
-  ]
-
-  const studentAwards = courseId === 'be-cse' ? cseStudentAwards : (courseId === 'btech-csbs' ? csbsStudentAwards : (courseId === 'be-civil' ? civilStudentAwards : (courseId === 'btech-aids' ? [] : [])))
-
-  const csbsFacultyAwards = [
-    { sno: 1,  name: 'Dr.M.Ram kumar,\nHOD/CSBS',     event: 'Paper Publication', level: 'International', award: 'SCI', title: 'Enhancing Healthcare Monitoring through Wearable Computing and Massive MIMO Technology in 5G IoT Networks' },
-    { sno: '', name: 'Dr.M.Ram kumar,\nHOD/CSBS',     event: 'Paper Publication', level: 'International', award: 'SCOPUS', title: 'Enhancing Brain Tumor Diagnosis With Hybrid Transfer Learning: A High-Precision Mri-Based Segmentation Model Using Mask R-Cnn' },
-    { sno: 2,  name: 'Mrs.C.Nithya\nAP/CSBS',         event: 'Utility Patent',    level: 'National',      award: 'Patent Published', title: 'Identification of Skin Pathology Using Deep Learning' },
-    { sno: 3,  name: 'Mrs.C.Vanitha,\nAP/CSBS',       event: 'Design Patent',     level: 'National',      award: 'Patent Published Patent Filled', title: 'Artificial Intelligence Based Usb Device For Managing Multiple Smart Devices' },
-    { sno: 4,  name: 'Mrs.R.Yudhayapriya\nAP/CSBS',   event: 'Design Patent',     level: 'National',      award: 'Patent Granted', title: 'Industrial Image Processing Camera For Defect Identification' },
-    { sno: 5,  name: 'Mrs.P.Raga Keerthana\nAP/CSBS', event: 'Design Patent',     level: 'National',      award: 'Patent Granted', title: 'Industrial Image Processing Camera For Defect Identification' },
-  ]
-
-  const cseFacultyAwards = [
-    { sno: 1,  name: 'Mrs.R.Saranya', event: '-', level: '-', award: 'Best Faculty', title: '-' },
-    { sno: 2,  name: 'Mrs.K.Saranya', event: '-', level: '-', award: 'Best Faculty', title: '-' },
-    { sno: 3,  name: 'Mrs.D.Ramya',   event: '-', level: '-', award: 'Best Faculty', title: '-' },
-  ]
-
-  const civilFacultyAwards = [
-    { sno: 1, name: 'Dr.P.Prasath', event: 'ECO Journey Award', level: '-', award: 'Second/B+ Brilliant Perfomance', title: 'Greenvio Solutions (GVSN),Maharashtra ,India' },
-    { sno: 2, name: 'Mr.P.Selvakumar', event: 'ECO Journey Award', level: '-', award: 'Second/B+ Brilliant Perfomance', title: 'Greenvio Solutions (GVSN),Maharashtra ,India' },
-    { sno: 3, name: 'Mr.S.Arulkesavan', event: 'Best Engineer Award', level: '-', award: 'Junior Level', title: 'Institute of Engineers India' },
-    { sno: '', name: 'Mr.S.Arulkesavan', event: 'NPTEL – Topper Award', level: '-', award: 'Topper 1%', title: 'Indian Institute of Technology, Indore' },
-    { sno: 4, name: 'Mr.B.Sathish kumar', event: 'BIM Contest 2025', level: '-', award: 'Top 10', title: 'L&T EDUTECH,Chennai' },
-    { sno: 5, name: 'Mr. R.Elavarasan', event: 'BIM Contest 2025', level: '-', award: 'Expert Guidance and Mentor', title: 'L&T EDUTECH,Chennai' },
-    { sno: 6, name: 'Mr. L.M.Nirmal', event: 'BIM Contest 2025', level: '-', award: 'Expert Guidance and Mentor', title: 'L&T EDUTECH,Chennai' },
-    { sno: 7, name: 'Mr. S.Senthil Kumar', event: 'NEXUS Catalyst Award', level: '-', award: 'Token of Appreciation', title: 'L&T EDUTECH,Chennai' },
-  ]
-
-  const aidsFacultyAwards = [
-    {
-      sno: 1,
-      name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
-      event: 'International Journal (SCIE)',
-      level: 'International',
-      award: 'Best Faculty',
-      title: 'Deep sight: Transformer‐based prediction of diabetic retinopathy using Py-Torch'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'NPTEL',
-      level: 'National',
-      award: 'Star Award',
-      title: 'NPTL DISCIPLINE STAR'
-    },
-    {
-      sno: 3,
-      name: 'Dr. B. Sasikumar\nAssociate Professor & Head',
-      event: 'National Award Ceremony',
-      level: 'National',
-      award: 'Best Research Grant Award',
-      title: 'National Technology Day Higher Education Award 2026'
-    }
-  ]
-
-  const facultyAwards = courseId === 'btech-csbs'
-    ? csbsFacultyAwards
-    : (courseId === 'be-cse'
-        ? cseFacultyAwards
-        : (courseId === 'be-civil'
-            ? civilFacultyAwards
-            : (courseId === 'btech-aids' ? aidsFacultyAwards : [])))
 
   const visibleData = activeAudience === 'STUDENT' ? studentAwards : facultyAwards
 
@@ -3237,783 +3232,9 @@ function AwardsSection({ courseId, courseName }) {
 function AchievementSection({ courseId, courseName }) {
   const [activeAudience, setActiveAudience] = useState(courseId === 'btech-aids' ? 'FACULTY' : 'STUDENT')
 
-  const eeeStudentAchievements = [
-    { sno: 1,  name: 'Nirmal Kumar K\nII Year\nB.E. - EEE',     event: 'Hackathon',                                                                                                          level: 'National',                    award: 'Won 1st Place with the cash prize of Rs.5000/-',                                                     title: 'Animal Detection using ML' },
-    { sno: 2,  name: 'Mathavaa Krishna S\nII Year\nB.E. - EEE', event: 'Hackathon',                                                                                                          level: 'National',                    award: 'Won 1st Place with the cash prize of Rs.5000/-',                                                     title: 'Animal Detection using ML' },
-    { sno: 3,  name: 'Naveenkumar R\nIII Year\nB.E. - EEE',    event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
-    { sno: 4,  name: 'Srinath K\nIII Year\nB.E. - EEE',        event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
-    { sno: 5,  name: 'Shivasurya K A\nIII Year\nB.E. - EEE',   event: '1. SAE INDIA Electric Four Wheeler Design Challenge 2025\n2. SAE Embedded system 2025\n3. Nptel Topper and Winter Internship', level: 'National',             award: '1. Won 3rd place with cash prize 25000/-\n2. Won 3rd place with cash prize 3000/-\n3. Three months paid Internship', title: '1. SAE EFWDC 2025\n2. SAE Embedded system\n3. NPTEL – Introduction to Industry 4.0 and Industrial IoT' },
-    { sno: 6,  name: 'Anuvarshan M\nIII Year\nB.E. - EEE',     event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
-    { sno: 7,  name: 'Nithish Kumar R\nIII Year\nB.E. - EEE',  event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
-    { sno: 8,  name: 'Manikandan M\nIII Year\nB.E. - EEE',     event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
-    { sno: 9,  name: 'Gowtham S S\nIII Year\nB.E. - EEE',      event: 'SAE INDIA Electric Four Wheeler Design Challenge 2025',                                                               level: 'National',                    award: 'Won 3rd place with cash prize 25000/-',                                                              title: 'SAE EFWDC 2025' },
-    { sno: 10, name: 'Diwakar P\nIII Year\nB.E. - EEE',        event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National & International',    award: 'Won team cash price of Rs. 15000/-',                                                                 title: 'Four Wheeler Design' },
-    { sno: 11, name: 'Vikram S\nIII Year\nB.E. - EEE',         event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
-    { sno: 12, name: 'Sureshraj M R\nIII Year\nB.E. - EEE',    event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
-    { sno: 13, name: 'Megavarnan V K\nIII Year\nB.E. - EEE',   event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
-    { sno: 14, name: 'Gokulraj G\nIII Year\nB.E. - EEE',       event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
-    { sno: 15, name: 'Gopinath S\nIII Year\nB.E. - EEE',       event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
-    { sno: 16, name: 'Adhithiyaa G J\nIII Year\nB.E. - EEE',   event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
-    { sno: 17, name: 'Sachin S\nIII Year\nB.E. - EEE',         event: 'Indian E-Bike Championship, Bhopal',                                                                                 level: 'National',                    award: 'Won team cash price of Rs.15000/-',                                                                  title: 'E-Bike Design' },
-    { sno: 18, name: 'Mahalakshmi D\nIII Year\nB.E. - EEE',    event: '24-hrs. Non-Stop Hackathon organized by KIOT Institution Council, AICTE Idea Lab & iStart in association with Startup TN', level: 'National',               award: 'Secured Third prize with cash prize of Rs.5000/-',                                                   title: 'Wireless Power Transmission for Electric Vehicle' },
-    { sno: 19, name: 'Nisha S\nIII Year\nB.E. - EEE',          event: '24-hrs. Non-Stop Hackathon organized by KIOT Institution Council, AICTE Idea Lab & iStart in association with Startup TN', level: 'National',               award: 'Secured Third prize with cash prize of Rs.5000/-',                                                   title: 'Wireless Power Transmission for Electric Vehicle' },
-    { sno: 20, name: 'Ashwin Sivakumar\nIII Year\nB.E. - EEE', event: 'SAE Embedded system 2025 – 3rd Edition National Level Competition on Embedded Systems 2025',                          level: 'National',                    award: 'Won Best Hardware Design Award and 3rd place with cash prize 1500/-',                                 title: 'Smart Energy Meter' },
-    { sno: 21, name: 'Varsha V\nIII Year\nB.E. - EEE',         event: '24 hrs. Hackathon in association with IEEE – Information Theory Society',                                              level: 'National',                    award: 'Won 2nd Prize with a Cash Award of Rs. 4000',                                                        title: 'Wireless Power Transmission for Electric Vehicle' },
-    { sno: 22, name: 'Tharuneswaran S R\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Secured 2nd runner up with the cash prize of Rs.3000/-', title: 'Weather monitoring station' },
-    { sno: 23, name: 'Pradheeba C\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Won Best Hardware Design Award and 3rd place with cash prize 1500/-', title: 'Smart Energy Meter' },
-    { sno: 24, name: 'Kamalesh S K\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Secured 2nd runner up with the cash prize of Rs.3000/-', title: 'Weather monitoring station' },
-    { sno: 25, name: 'Kavin E\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Secured 2nd runner up with the cash prize of Rs.3000/-', title: 'Weather monitoring station' },
-    { sno: 26, name: 'Roopika S\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Won Best Hardware Design Award and 3rd place with cash prize 1500/-', title: 'Smart Energy Meter' },
-    { sno: 27, name: 'Sangeetha H\nIV Year\nB.E. - EEE', event: 'L&T ideation challenge season 2', level: 'National', award: 'Selected among top 15 teams in national level with paid internship', title: 'AI based SLD design automation' },
-    { sno: 28, name: 'Lenin John Paul A\nIV Year\nB.E. - EEE', event: '1. Design and innovation clinic 2025 CMTI\n2. L&T ideation challenge season 2\n3. SAE electric four wheeler design challenge season 2025', level: 'National', award: '1. Secured 3rd runner up with cash prize of ₹10,000\n2. Selected among top 15 teams in national level with Paid internship\n3. Secured 3rd prize with cash prize of ₹25,000', title: '1. Smart rover for precision agriculture\n2. AI based SLD design automation\n3. Electric four wheeler' },
-    { sno: 29, name: 'Deenathayal V\nIV Year\nB.E. - EEE', event: 'SAE Electric four wheeler design challenge season 2025', level: 'National', award: 'Secured 3rd prize with cash prize of ₹25,000', title: 'Electric four wheeler' },
-    { sno: 30, name: 'Naveen C\nIV Year\nB.E. - EEE', event: 'SAE Embedded system 2025- 3rd Edition National Level Competition on Embedded Systems 2025', level: 'National', award: 'Won Best Hardware Design Award and 3rd place with cash prize 1500/-', title: 'Smart Energy Meter' },
-    { sno: 31, name: 'Heema Gouri T\nIV Year\nB.E. - EEE', event: 'NCIIPC-AICTE Pentathon', level: 'National', award: 'Secured AIR 47 among national-level participants and won Internship for 6 Months.', title: 'Cybersecurity' },
-    { sno: 32, name: 'Nagakeerthiga R\nIV Year\nB.E. - EEE', event: '1. Patent Filed\n2. Design and innovation clinic 2025 CMTI', level: 'National', award: '1. Patent Filed\n2. Awarded First Runner-Up and received a ₹20,000 cash prize.', title: '1. Design and Development of a Terracotta Tube-Based Eco-Friendly Air Cooler.\n2. Green Breeze Cooler – An innovative eco-friendly air cooling solution.' }
-  ]
+  const studentAchievements = studentAchievementsMap[courseId] || []
+  const facultyAchievements = facultyAchievementsMap[courseId] || []
 
-  const aidsStudentAchievements = [
-    { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'National Level Hackathon', level: 'National', award: 'Received the Appreciation Prize of Rs. 10000 Cash award', title: 'AI-Assisted Smart Electric Fence System' },
-    { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'Nxtwave openAI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot' },
-    { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'Zonal-level basketball Tournament', level: 'Zonal', award: 'Winner', title: 'Zonal-level basketball' },
-    { name: 'Kannadhasan. V\nB. Tech-II year - A\nAI&DS', event: 'Electric Bike Design Challenge', level: 'National', award: 'Won the overall champions award', title: 'National-level Electric Bike Design Challenge' },
-    { name: 'Balaji V\nB. Tech-II year - A\nAI&DS', event: 'Paper presentation , Project Expo', level: 'National', award: '3rd Prize', title: 'Threads 25 Sona College of Engineering, Vyugam 26 AVS college of Engineering' },
-    { name: 'Karthik V\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
-    { name: 'Mohammed Armaan M S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
-    { name: 'Jitheeshwaran S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
-    { name: 'Deva Dharshini S\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'Programming, Data Structures and Algorithms Using Python' },
-    { name: 'Laksshitha Sri T E\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'Programming in Java' },
-    { name: 'Devasena K\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'E-Business' },
-    { name: 'Kavinaya R\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
-    { name: 'Harshini K\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
-    { name: 'Aarthi S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
-    { name: 'Hariram K V\nB. Tech-II year\nAI & DS', event: 'Paper Presentation', level: 'National', award: '2nd prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
-    { name: 'Bharath A\nB. Tech-II year\nAI & DS', event: 'Paper Presentation', level: 'National', award: '2nd prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
-    { name: 'Geetha M\nB. Tech-II year\nAI & DS', event: 'NPTEL', level: 'National', award: 'Elite', title: 'E-Business' },
-    { name: 'Bharathi V\nB.Tech-II Year\nAI & DS - A', event: 'paper presentation', level: 'National', award: '2nd Prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
-    { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'National Hackathon on wildlife coexistence', level: 'National', award: 'Top 12 finalists across India with an Appreciation prize and a cash prize', title: 'Smart Automated electric fence system for wildlife and human safety (Wildlife Institute of India, Dehradun)' },
-    { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'Next Wave Open AI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot' },
-    { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'Hackathon', level: 'National', award: 'Top 25 finalist for the 24-hour hackathon', title: 'Smart Automated electric fence system for wildlife and human safety (K. Ramakrishnan College of Technology, Trichy)' },
-    { name: 'Tharshini A\nB. Tech-II year - B\nAI&DS', event: 'Hackathon', level: 'National', award: 'Top 25 finalists for the 24-hour hackathon', title: 'Smart Automated electric fence system for wildlife and human safety (K. Ramakrishnan College of Technology, Trichy)' },
-    { name: 'Yukesh Kumar T\nB. Tech-II year - B\nAI&DS', event: 'THREADS’25 Symposium', level: 'National', award: '1st Place in Paper Presentation with cash prize', title: 'Gas Leakage detection at IOT (Sona College of Technology)' },
-    { name: 'Suseel P S\nB. Tech-II year - B\nAI&DS', event: 'THREADS’25 Symposium', level: 'National', award: '1st Place in Paper Presentation with cash prize', title: 'Gas Leakage detection at IOT (Sona College of Technology)' },
-    { name: 'Suseel P S\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
-    { name: 'Yashvanth Suriya M\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
-    { name: 'Sri Sanchive Kumar\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
-    { name: 'Poomiha M\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
-    { name: 'Jayashree N\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with case prize', title: 'Rising Child Anemia in rural blocks' },
-    { name: 'Jayashree N\nB. Tech - III year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Finalist', title: 'Multi-Tenant Task Tracker' },
-    { name: 'Madhu Shree. M\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with case prize', title: 'Rising Child Anemia in rural blocks' },
-    { name: 'Madhu Shree. M\nB. Tech - III year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Finalist', title: 'Multi-Tenant Task Tracker' },
-    { name: 'Rajamurugan MA\nB.Tech – III year\nAI&DS', event: 'Football Tournament', level: 'Zonal', award: 'Second Prize', title: 'Anna University Zonal Football Tournament held at Adhiyamaan College of Engineering, Hosur' },
-    { name: 'Karthickraja G\nB.Tech – III year\nAI & DS', event: 'Hockey Tournament', level: 'Zonal', award: 'Third Prize', title: 'Anna University zonal level tournament at Adiyamaan College of Engineering, Hosur' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Handball', level: 'Zonal', award: 'Third Prize', title: 'Anna University Zonal Handball Tournament held at Adhiyamaan College of Engineering, Hosur' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Hockey', level: 'Zonal', award: 'Third Prize', title: 'Anna University Zonal Hockey Tournament held at Adhiyamaan College of Engineering, Hosur' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Tennis', level: 'Zonal', award: 'Fourth prize', title: 'Anna University Zonal Tennis Tournament held at Adhiyamaan College of Engineering, Hosur' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Symposium', level: 'National', award: 'First Prize', title: 'IPL Auction' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Discuss Throw', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Cricket', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Kabadi', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Sports', level: 'Inter College', award: 'best vice caption of the college', title: 'Sports Day' },
-    { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Football', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
-    { name: 'V.Ramya\nB. Tech - III year\nAI&DS', event: 'CCL 12-hrs Coding Challenge', level: 'National', award: '2nd Place with case prize', title: 'Campus Coders League' },
-    { name: 'Deepak PS\nB. Tech - III year\nAI&DS', event: 'Innovative idea contest', level: 'Zonal', award: 'First prize with Award', title: 'Maximizing productivity in MSMEs (Salem Zonal)' },
-    { name: 'Deepak PS\nB. Tech - III year\nAI&DS', event: '12 hrs Coding Challenge', level: 'Internal College', award: 'Special prize for achieving highest individual score percentage', title: 'CAMPUS CODERS LEAGUE (12 HRS)' },
-    { name: 'Kaviya. A\nB. Tech - III year\nAI&DS', event: 'CCL 12-hrs Coding Challenge', level: 'National', award: '2nd Place with case prize', title: 'Campus Coders League' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'UI/UX Designathon', level: 'National', award: 'Special Prize with case prize', title: 'Government police website recreation' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Odoo X SNS Hackathon', level: 'National', award: 'Finalist', title: 'E-Learning Platform' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: 'Finalist', title: 'BananaMart' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'Zonal', award: 'First Prize', title: 'Anna University Zonal Table Tennis Tournament held at Govt. College of Bargur' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'State', award: 'Third Prize', title: 'SKJ Table Tennis Academy State Level Match' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Hand Ball', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Throw Ball', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table Tennis', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Tennis', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Shotput', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Badminton', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Kho Kho', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table Tennis', level: 'District', award: 'Third Prize', title: 'District level at Coimbatore Institute of Technology' },
-    { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'Zonal', award: 'First Prize', title: 'Anna University Zonal Table Tennis Tournament held at Govt. College of Bargur' },
-    { name: 'Umamaheswari. A\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with cash prize', title: 'Wireless Power Charging for EV vehicles' },
-    { name: 'Padma Sree R\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with cash prize', title: 'Wireless Power Charging for EV vehicles' },
-    { name: 'Padma Sree R\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'National', award: 'Best event organizer certification', title: 'NextGen Talks Paper Presentation' },
-    { name: 'Midhun Haridharan\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'District', award: 'First Prize', title: 'BUILD EXPO 2025-2026' },
-    { name: 'Arun Prakash A\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'District', award: 'First Prize', title: 'BUILD EXPO 2025-2026' },
-    { name: 'Vishveswar M\nB. Tech - III year\nAI&DS', event: 'International Conference', level: 'International', award: 'Best Paper Award', title: 'RAG-Based AI for Accurate, Explainable, and Safe Legal Judgement Prediction in the Indian Constitution' },
-    { name: 'K. Haris Kumar\nB. Tech - IV year\nAI&DS', event: 'L&T Ideation Challenge 2025', level: 'International', award: 'Secured a stipend internship', title: 'AI-Enabled Data Interpretation & Validation System for SLD Creation.' },
-    { name: 'Varsini. S\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
-    { name: 'Sudarsan. K\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
-    { name: 'Prasanna. B\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
-    { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
-    { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Winner', title: 'Multi-Tenant Task Tracker' },
-    { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'Code-zap hackathon 2025', level: 'National', award: 'Finalist', title: 'AI-Assisted Travel Planning System.' },
-    { name: 'Maharaj. P. S\nB. Tech - IV year\nAI&DS', event: 'Code-zap hackathon 2025', level: 'National', award: 'Won an educational trip to Singapore', title: 'AI-Based Resume Screener' },
-    { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'DigiTechCon25', level: 'National', award: 'Best Paper Award', title: 'Smart Traffic Management System using AI and IOT' },
-    { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'Engineers Build Expo 2025-2026', level: 'National', award: 'Won first place with a cash prize of Rs:15,000', title: 'Disaster Management System using AI' },
-    { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'Hack-Xelerator', level: 'National', award: 'Special prize with a cash prize of Rs. 2000', title: 'Building Collapse and Disaster Prediction System Using AI and IoT' },
-    { name: 'Guna Sree R\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'State', award: 'Winner with cash prize Rs. 25000', title: 'Multi-Tenant Task Tracker' },
-    { name: 'Methun. M\nB. Tech - IV year\nAI&DS', event: 'Gen Brainiacs\'25 hackathon', level: 'National', award: '2nd price', title: 'Gamified Tutor' },
-    { name: 'Krishna. J\nB. Tech - IV year\nAI&DS', event: 'IIT Kharagpur Summer Internship', level: 'National', award: 'Completed Summer Internship 25', title: 'Summer Internship at IIT Kharagpur' },
-    { name: 'Divyadharshini. Y\nB. Tech - IV year\nAI&DS', event: 'Japanese Exam', level: 'National', award: 'Completed Japanese JLPT N5', title: 'Japanese JLPT N5 / N4' },
-    { name: 'Murali Prasath. K\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'NPTEL Believer award and NPTEL Discipline Star award', title: 'NPTEL' },
-    { name: 'Vasudevan. M\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'NPTEL Discipline Star Award', title: 'NPTEL' },
-    { name: 'Vijay Vignesh K U\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Winner with a cash prize of 25000 rupees', title: 'Multi-Tenant Task Tracker' },
-    { name: 'Ranjith Kumar. A\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Achieved Top 5% (Silver category)', title: 'Programming in Java' }
-  ]
-
-  const studentAchievements = courseId === 'be-eee'
-    ? eeeStudentAchievements
-    : (courseId === 'btech-aids' ? aidsStudentAchievements : [
-    // Page 1 – Rows 1–15 (previously 13–27)
-    { sno: 1,  name: 'Ashvant Narayan\nIV Year CSE',        event: 'IEEE Paper Presentation Contest 2026',                 level: 'National',       award: 'III Prize',                                                                                               title: 'IEEE Computer Society-Anna University' },
-    { sno: 2,  name: 'Dhivesh Y S\nIV Year CSE',            event: 'IEEE Paper Presentation Contest 2026',                 level: 'National',       award: 'III Prize',                                                                                               title: 'IEEE Computer Society-Anna University' },
-    { sno: 3,  name: 'Homeashwaraa Parvathan P\nIII Year CSE', event: 'Hackathon 2025',                                   level: 'District',       award: 'Secured II Prize with a cash award of ₹5,000',                                                      title: 'GEN AI - IBM Hackathon 2025' },
-    { sno: 4,  name: 'NaveenPrasath\nIII Year CSE',         event: 'Hackathon 2025',                                       level: 'District',       award: 'Secured II Prize with a cash award of ₹5,000',                                                      title: 'GEN AI - IBM Hackathon 2025' },
-    { sno: 5,  name: 'Pranesh S\nIII Year CSE',             event: 'Hackathon 2025',                                       level: 'District',       award: 'Secured II Prize with a cash award of ₹5,000',                                                      title: 'GEN AI - IBM Hackathon 2025' },
-    { sno: 6,  name: 'Sivaranjan S\nIII Year CSE',          event: 'Hackathon 2025',                                       level: 'District',       award: 'Secured II Prize with a cash award of ₹5,000',                                                      title: 'GEN AI - IBM Hackathon 2025' },
-    { sno: 7,  name: 'Vinodhan V A\nIII Year CSE',          event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
-    { sno: 8,  name: 'Sudharsana K\nIII Year CSE',          event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
-    { sno: 9,  name: 'Thamarai Selvan S\nIII Year CSE',     event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
-    { sno: 10, name: 'Danusa Sri M S\nIII Year CSE',        event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
-    { sno: 11, name: 'Gowri R\nIII Year CSE',               event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
-    { sno: 12, name: 'Badri Narayanan B R\nIII Year CSE',   event: 'Code Sangam Hackathon',                                level: 'State Level',    award: 'Got Second Runner Up with Cash prize 30000 and Ethical Hacking Essentials Ebook and Recorded Training Videos', title: 'Alliance University - Code Sangam Hackathon' },
-    { sno: 13, name: 'Damodharan Prakash P\nIII Year CSE',  event: 'Hackathon',                                            level: 'College Level',  award: 'Got special Prize with 2000',                                                                             title: 'GEN AI' },
-    { sno: 14, name: 'Harini M\nIII Year CSE',              event: 'Hackathon',                                            level: 'College Level',  award: 'Got special Prize with 2000',                                                                             title: 'GEN AI' },
-    { sno: 15, name: 'Brindha S\nIII Year CSE',             event: 'Hackathon',                                            level: 'College Level',  award: 'Got special Prize with 2000',                                                                             title: 'GEN AI' },
-    // Page 2 – Rows 16–25 (previously 28–37)
-    { sno: 16, name: 'Navashree R K\nIII Year CSE',         event: 'Hackathon',                                            level: 'National',       award: 'I Prize',                                                                                                 title: "KIOT, Institution's Innovation Council" },
-    { sno: 17, name: 'Shailashree S\nIII Year CSE',         event: 'IEEE Conference Paper Presentation',                   level: 'National',       award: 'III Prize',                                                                                               title: 'ICSCDS-2025, Adaptive Multimodel Emotion Recognition using Contextual Attention and Task Gated Learning, Sengunthar Engineering college' },
-    { sno: 18, name: 'Suganya K A\nIII Year CSE',           event: 'IEEE Conference Paper Presentation',                   level: 'National',       award: 'III Prize',                                                                                               title: 'ICSCDS-2025, Adaptive Multimodel Emotion Recognition using Contextual Attention and Task Gated Learning, Sengunthar Engineering college' },
-    { sno: 19, name: 'Vaishnavi K\nIII Year CSE',           event: 'IEEE Conference Paper Presentation',                   level: 'National',       award: 'III Prize',                                                                                               title: 'ICSCDS-2025, Adaptive Multimodel Emotion Recognition using Contextual Attention and Task Gated Learning, Sengunthar Engineering college' },
-    { sno: 20, name: 'Vinodhan V A\nIII Year CSE',          event: 'IEEE Conference Paper Presentation',                   level: 'National',       award: 'III Prize',                                                                                               title: 'ICSCDS-2025, Adaptive Multimodel Emotion Recognition using Contextual Attention and Task Gated Learning, Sengunthar Engineering college' },
-    { sno: 21, name: 'Jaganathan V\nII Year CSE',           event: 'TN Skills 2025 / INDIA Skills Regional Competition 2025-26', level: 'State / Regional', award: 'II Place, Silver Medal, ₹10,000 cash / III Place, Bronze Medal, ₹25,000 cash',     title: 'TN Skills 2025, State Government / Skill India' },
-    { sno: 22, name: 'Akshaya P\nII Year CSE',              event: 'Engineers Day Contest',                                level: 'District Level', award: 'Received a cash award of ₹15,000',                                                                  title: 'Engineers Day' },
-    { sno: 23, name: 'JayaVighnesh B K\nII Year CSE',       event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won I Prize with cash award of 5,000',                                                                    title: 'IBM Gen AI' },
-    { sno: 24, name: 'Jeevadharshini V\nII Year CSE',       event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won I Prize with cash award of 5,000',                                                                    title: 'IBM Gen AI' },
-    { sno: 25, name: 'Kathir S\nII Year CSE',               event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won I Prize with cash award of 5,000',                                                                    title: 'IBM Gen AI' },
-    // Page 3 – Rows 26–44 (previously 38–56)
-    { sno: 26, name: 'Haasini R\nII Year CSE',              event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won II Prize with cash award of 3000',                                                                    title: 'IBM Gen AI' },
-    { sno: 27, name: 'Eniya V G\nII Year CSE',              event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won II Prize with cash award of 3000',                                                                    title: 'IBM Gen AI' },
-    { sno: 28, name: 'Gunavathi K L\nII Year CSE',          event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won II Prize with cash award of 3000',                                                                    title: 'IBM Gen AI' },
-    { sno: 29, name: 'Dhaksana R\nII Year CSE',             event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
-    { sno: 30, name: 'Desika S\nII Year CSE',               event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
-    { sno: 31, name: 'Akshaya P\nII Year CSE',              event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
-    { sno: 32, name: 'Dharanya M\nII Year CSE',             event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
-    { sno: 33, name: 'Dharshini T K\nII Year CSE',          event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won III Prize with cash award of 2500',                                                                   title: 'IBM Gen AI' },
-    { sno: 34, name: 'Jaganathan V\nII Year CSE',           event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 35, name: 'Kowshick R\nII Year CSE',             event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 36, name: 'Mosika N\nII Year CSE',               event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 37, name: 'Jhanani S R\nII Year CSE',            event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 38, name: 'Meenatchi K\nII Year CSE',            event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 39, name: 'Kawsika S\nII Year CSE',              event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 40, name: 'Ramya S\nII Year CSE',                event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 41, name: 'Prabhuram B\nII Year CSE',            event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 42, name: 'Naveen Adhithya S\nII Year CSE',      event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 43, name: 'Dharanya M\nII Year CSE',             event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    { sno: 44, name: 'Dharshini T K\nII Year CSE',          event: 'Smart Bridge (Internal Hackathon)',                    level: 'College Level',  award: 'Won Special Prize',                                                                                       title: 'IBM Gen AI' },
-    // Page 4 – Rows 45–66 (previously 57–78)
-    { sno: 45, name: 'Bhavana J\nII Year CSE',              event: 'Hackathon',                                            level: 'College Level',  award: 'Secured I Prize with a cash award of ₹25,000',                                                      title: 'Team stratz' },
-    { sno: 46, name: 'Inbhatamizhan V\nII Year CSE',        event: 'Hackathon',                                            level: 'College Level',  award: 'Poster Presentation I Prize cash award 1500, Paper Presentation III Prize cash award 500',                title: "Q'QUEST 2026" },
-    { sno: 47, name: 'Jeeva P\nII Year CSE',                event: 'Hackathon',                                            level: 'College Level',  award: 'Poster Presentation I Prize cash award 1500, Paper Presentation III Prize cash award 500',                title: "Q'QUEST 2026" },
-    { sno: 48, name: 'Vasantharaj G\nII Year CSE',          event: 'Hackathon',                                            level: 'College Level',  award: 'Poster Presentation I Prize cash award 1500, Paper Presentation III Prize cash award 500',                title: "Q'QUEST 2026" },
-    { sno: 49, name: 'Kiruthiga M\nII Year CSE',            event: 'Sports / Chess',                                       level: 'District',       award: 'Gold',                                                                                                    title: 'Sports Development Authority of Tamil Nadu' },
-    { sno: 50, name: 'Ijaz Ahamed A\nII Year CSE',          event: 'UI/UX Design Challenge',                               level: 'National',       award: 'I Prize',                                                                                                 title: 'SPRING FEST 2K25' },
-    { sno: 51, name: 'Jayavighnesh B K\nII Year CSE',       event: 'Code Debugging',                                       level: 'National',       award: 'I Prize',                                                                                                 title: 'SPRING FEST 2K25' },
-    { sno: 52, name: 'Karthick Raja S\nII Year CSE',        event: 'Code Debugging',                                       level: 'National',       award: 'I Prize',                                                                                                 title: 'SPRING FEST 2K25' },
-    { sno: 53, name: 'Harini E\nII Year CSE',               event: 'Symposium',                                            level: 'National',       award: 'I Prize',                                                                                                 title: 'AUXESIS 2K26' },
-    { sno: 54, name: 'Naveen S\nII Year CSE',               event: 'Sports / Ball Badminton',                              level: 'National',       award: 'I Prize',                                                                                                 title: 'Knowledge Institute of Technology' },
-    { sno: 55, name: 'Vijay Sai Sree S\nII Year CSE',       event: 'Symposium',                                            level: 'National',       award: 'I Prize',                                                                                                 title: 'NOVITAS 2K26' },
-    { sno: 56, name: 'Dilipkumar S\nII Year CSE',           event: 'Pictowords',                                           level: 'National',       award: 'I Prize',                                                                                                 title: 'NOVITAS 2K26' },
-    { sno: 57, name: 'Chandru K\nII Year CSE',              event: 'Hack Fusion',                                          level: 'National',       award: 'I Prize',                                                                                                 title: "CYPHORIA'26" },
-    { sno: 58, name: 'Karthick V\nII Year CSE',             event: 'Cyber Canvas',                                         level: 'National',       award: 'I Prize',                                                                                                 title: "CYPHORIA'26" },
-    { sno: 59, name: 'Boobalan L\nII Year CSE',             event: 'Beyond Belief',                                        level: 'National',       award: 'II Prize',                                                                                                title: 'NOVITAS 2K26' },
-    { sno: 60, name: 'Kiruthiga M\nII Year CSE',            event: 'Bug Buster',                                           level: 'National',       award: 'III Prize',                                                                                               title: "SYMTRON'25 & SILIZIUM'25" },
-    { sno: 61, name: 'Mosika N\nII Year CSE',               event: 'Bug Buster',                                           level: 'National',       award: 'III Prize',                                                                                               title: "SYMTRON'25 & SILIZIUM'25" },
-    { sno: 62, name: 'Sowmiya J\nII Year CSE',              event: 'Paper Presentation',                                   level: 'National',       award: 'III Prize',                                                                                               title: "TECHFINIX'25" },
-    { sno: 63, name: 'Suriyakala B\nII Year CSE',           event: 'Paper Presentation',                                   level: 'National',       award: 'III Prize',                                                                                               title: "TECHFINIX'25" },
-    { sno: 64, name: 'Yamuna R\nII Year CSE',               event: 'Paper Presentation',                                   level: 'National',       award: 'III Prize',                                                                                               title: "TECHFINIX'25" },
-    { sno: 65, name: 'Barathkumar S\nII Year CSE',          event: 'Bug Hunt',                                             level: 'National',       award: 'III Prize',                                                                                               title: 'Dhirajlal Gandhi College of Technology' },
-    { sno: 66, name: 'Avishsharan S A\nII Year CSE',        event: 'Sports, Techno & Cultural Fest',                       level: 'National',       award: 'III Prize',                                                                                               title: "VARNAM'26" },
-
-    // Additional entries (Rows 67–76 from upload)
-    { sno: 67, name: 'Priyadharshan S\nII Year CSE',      event: 'Sports / Boxing',                    level: 'International', award: 'III Prize', title: 'Anna University Sports Board' },
-    { sno: 68, name: 'Siva Shree K V S\nII Year CSE',    event: 'Technical Thesis Paper Presentation', level: 'National',      award: 'III Prize', title: 'INNOVATIX' },
-    { sno: 69, name: 'Vishnu S M\nII Year CSE',           event: 'Technical Thesis Paper Presentation', level: 'National',      award: 'III Prize', title: 'INNOVATIX' },
-    { sno: 70, name: 'Rithik Aswin A J\nII Year CSE',    event: 'Paper Presentation',                  level: 'National',      award: 'III Prize', title: "CRENNOVA'25" },
-    { sno: 71, name: 'Madhurithan M\nI Year CSE',         event: 'Sports / Team KATA',                  level: 'International', award: 'I Prize',   title: 'Rising Goju Karate School' },
-    { sno: 72, name: 'Syedabrar R\nI Year CSE',           event: 'Paper Presentation',                  level: 'National',      award: 'I Prize',   title: 'TENET 2K26' },
-    { sno: 73, name: 'Bharanidharan P\nI Year CSE',       event: 'Paper Presentation',                  level: 'National',      award: 'I Prize',   title: 'ELECTRIC INTELLIGENZ' },
-    { sno: 74, name: 'Sivamanikandan R\nI Year CSE',      event: 'Paper Presentation',                  level: 'National',      award: 'I Prize',   title: 'ELECTRIC INTELLIGENZ' },
-    { sno: 75, name: 'Keerthana T\nI Year CSE',           event: 'Paper Presentation',                  level: 'National',      award: 'II Prize',  title: "INNOTECH'26" },
-    { sno: 76, name: 'Nitharsana R\nI Year CSE',          event: 'Paper Presentation',                  level: 'National',      award: 'II Prize',  title: "INNOTECH'26" },
-  ])
-
-  const eeeFacultyAchievements = [
-    {
-      sno: 1,
-      name: 'Dr.C.Muniraj\nHOD – EEE',
-      event: '1. IEEE MDI Fund & IEEE PES Award\n2. L&T ideation challenge season 2\n3. Journal Publications',
-      award: '1. IEEE PES MDI Fund 1240 USD from USA\nIEEE PES Best Student Chapter Award 2025\n2. Best Project Guide\n3. Published article in Scopus Indexed Journal\nPaper got Accepted in SCI',
-      title: '1. Received “IEEE PES MDI Fund 1240 USD” from USA for organizing two days workshop.\nReceived “IEEE PES Best Student Chapter Award 2025” from IEEE PES Madras Chapter\n2. AI Based SLD Design Automation - Students team was selected one among top 15 teams in national level with paid internship.\n3. Paper Published in Scopus indexed Journal in the title:\n- Design and FPGA Based Realization of an SMC-ESO Enhanced Nonlinear Fractional Order PID Controller for BLDC Motor Speed Control.\n- Electric Vehicle Induction Motor Fault Classifications Using Thermal Image Temperature Matrix Index and Machine Learning.\nPaper got accepted in SCI Journal in the title:\nArtificial Intelligence-Driven Optimal Charging Strategy for EV with Integrated Power Quality Enhancement in Electric Power Grids'
-    },
-    {
-      sno: 2,
-      name: 'Dr.V.Kamatchi Kannan\nProf. – EEE',
-      event: '1. Patent Granted\n2. Journal Publication',
-      award: '1. Indian Patent Office\n2. Scopus indexed Journal and Conferences',
-      title: '1. Automatic System For Electrolyte Level Detection And Corrosion Prevention In Lead-Acid Batteries\n2. African Buffalo Optimized Generative Mamdani Fuzzy Controller Based Deep Belief Network for Efficient Speed Control in Permanent Magnet Synchronous Motor\nPresented three Scopus indexed IEEE Conference papers'
-    },
-    {
-      sno: 3,
-      name: 'Dr.S.Kalpana Devi\nAssoc. Prof. – EEE',
-      event: '1. Best Faculty Award\n2. Journal Publication',
-      award: '1. Best Faculty Award\n2. SCI journal and Scopus Conferences',
-      title: '1. Ananta Acharya Award\n2. Robust Energy Management Strategy for Fuel Cell Hybrid Electric Vehicles Based on the RPO-DTRN Framework'
-    },
-    {
-      sno: 4,
-      name: 'Dr.P.A.Gowri Sankar\nAssoc. Prof. – EEE',
-      event: '1. Journal Publication\n2. NPTEL Course',
-      award: '1. Scopus Indexed Journal\n2. Elite + Silver',
-      title: '1. Published Scopus indexed Journal on Recent Advances of Artificial Intelligence Techniques for Wind Energy Operation and Control Problems\nPublished Scopus indexed Journal on Electric Vehicle Battery Management System: A Comprehensive Review\n2. Teaching and Learning in Engineering (TALE)'
-    },
-    {
-      sno: 5,
-      name: 'Mrs.N.Divya\nAsst. Prof. – EEE',
-      event: '1. Best Faculty Award\n2. Journal Publications',
-      award: '1. Received Best Faculty Award\n2. Published article in Scopus Indexed Journal and Scopus Indexed IEEE International Conferences',
-      title: '1. Received Best Faculty Award from National Scientific Research Forum\n2. 1. Published Scopus indexed Journal in the title of Design and FPGA Based Realization of an SMC-ESO Enhanced Nonlinear Fractional Order PID Controller for BLDC Motor Speed Control\n2. Electric Vehicle Induction Motor Fault Classifications Using Thermal Image Temperature Matrix Index and Machine Learning.\n3. Published Scopus indexed IEEE International Conference in the titles:\n- Four Port Isolated PV based EV Charger supports AC and DC Charging\n- A Robust Fuzzy based SOC Estimation and charging method optimization of Lithium Ion battery\n- Design and Implementation of single phase five level Multilevel inverter for EV applications.'
-    },
-    {
-      sno: 6,
-      name: 'Mr.M.Jagedeesh raja\nAsst. Prof. – EEE',
-      event: '1. Techfest Event\n2. IEEE Conference',
-      award: '1. Shortlisted for the final round and presented the best projects developed at IDEA Lab.\n2. Two Scopus-indexed IEEE Conference papers',
-      title: '1. AICTE - IDEA Lab Tech Fest event at AICTE HQ, New Delhi\n2. Presented and published the International Conference with the title:\n- Design and Implementation of Cotton Fiber Collector System for Textile Industry.\n- Modelling and Simulation of Five-Level H-Bridge Multilevel Inverter for Grid Connected System.'
-    },
-    {
-      sno: 7,
-      name: 'Mrs.P.Rekha\nAsst. Prof. – EEE',
-      event: '1. Award IE(I) Engineers Day Celebration\n2. IEEE MDI Fund & IEEE PES Award\n3. Journal Publication\n4. NPTEL',
-      award: '1. Best Woman Engineer Award\n2. IEEE PES MDI Fund 1240 USD from USA & IEEE PES Best Student Chapter Award 2025\n3. Paper Published in international Journal and Conferences\n4. NPTEL - Elite+Silver',
-      title: '1. Received "Best Woman Engineer Award" from The Institution of Engineers (India) on Sep.2025\n2. Received "IEEE PES MDI Fund 1240 USD" from USA for organizing two days workshop & Received "IEEE PES Best Student Chapter Award 2025" from IEEE PES Madras Chapter.\n3. - Paper Published in Scopus indexed international Journal in the title "Design and FPGA Based Realization of an SMC-ESO Enhanced Nonlinear Fractional Order PID Controller for BLDC Motor Speed Control" in the year 2025.\n- Paper Published in Scopus indexed IEEE international Conference on "An IoT Based hybrid Electric vehicle with wireless charging Technology" in the year 2025.\n4. Completed NPTEL course "Introduction to IoT" and secured 86% - Elite + Silver'
-    },
-    {
-      sno: 8,
-      name: 'Mr.P.Balaji\nAsst. Prof. – EEE',
-      event: '1. Award IE(I) Engineers Day Celebration\n2. NPTEL\n3. Journal Publication',
-      award: '1. Best Engineer Award & Scopus indexed Journal\n2. Elite + Silver\n3. Paper Published in Scopus indexed international Journal',
-      title: '1. Best Engineer Award from The Institution of Engineers (India)\n2. Faculty Domain-Advanced Certification from NPTEL\n3. Paper Published in Scopus indexed international Journal in the title "Design and FPGA Based Realization of an SMC-ESO Enhanced Nonlinear Fractional Order PID Controller for BLDC Motor Speed Control" in the year 2025.'
-    },
-    {
-      sno: 9,
-      name: 'Mr.G.Karthikeyan\nAsst. Prof. – EEE',
-      event: '1. Journal Publication\n2. NPTEL',
-      award: '1. Published article in Scopus Indexed Journal and Scopus Indexed IEEE International Conferences\n2. Elite with Silver',
-      title: '1. - Published Scopus indexed Journal on Environmental investigation of operating parameters affecting biogas yield- a lab-scale study.\n- Published Scopus indexed IEEE International Conference on the titles:\n  - Automated Dust detection in Solar Panel using Deep learning Architecture.\n  - Variable frequency carrier based modulation scheme.\n2. Design Thinking a Primer'
-    },
-    {
-      sno: 10,
-      name: 'Ms.P.Srinithi\nAsst. Prof. – EEE',
-      event: '1. NPTEL',
-      award: '1. Elite+ Silver (3 courses)\nElite + Gold',
-      title: '1. Embedded System with ARM (80%)\n2. Foundation of Cloud IoT Edge ML (77%)\n3. Sensors and Actuators (81%)\n4. Electronic Systems for Cancer Diagnosis (91%-Topper 5%)'
-    },
-    {
-      sno: 11,
-      name: 'Mr.M.Rajkumar\nAsst. Prof. – EEE',
-      event: '1. Journal Publication\n2. NPTEL',
-      award: '1. Scopus indexed international journal papers\n2. Elite With Silver',
-      title: '1. - Published Scopus indexed international Journal paper on Environmental investigation of operating parameters affecting biogas yield- a lab-scale study\n- Published Scopus indexed international Journal paper on Recent Advances of Artificial Intelligence Techniques for Wind Energy Operation and Control Problems\n2. Completed NPTEL Course Teaching and Learning in Engineering (TALE) with 75%'
-    }
-  ]
-
-  const aidsFacultyAchievements = [
-    {
-      sno: 1,
-      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Digital Twin Framework with XAI-Explainable AI for Lifestyle-Based Type 2 Diabetes Reversal Prediction'
-    },
-    {
-      sno: 1,
-      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
-      event: 'Scopus',
-      level: 'Scopus',
-      award: '-',
-      title: 'ICESSM - AI-driven adaptive market learning indicator for automated stock prediction and trading using machine learning'
-    },
-    {
-      sno: 1,
-      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
-      event: 'Reviewer for IEEE International Conference',
-      level: 'Reviewer',
-      award: 'Reviewer for IEEE',
-      title: 'Reviewer for IEEE International Conference: organized by K J College of Engineering and Management Research, Pune'
-    },
-    {
-      sno: 1,
-      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
-      event: 'TIDCO\n(Sponsored Research Project) Granted',
-      level: 'Govt.',
-      award: 'Fund',
-      title: 'Automated Tyre Wear and Damage Detection System\n(Rs.24,00,000/-)'
-    },
-    {
-      sno: 1,
-      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
-      event: 'AICTE – RPS\n(Sponsored Research Project) Granted',
-      level: 'Govt.',
-      award: 'Fund',
-      title: 'Early Fall Risk Prediction System for Elderly People using\nAI and ML Tools\n(Rs.44,00,000/-)'
-    },
-    {
-      sno: 1,
-      name: 'Dr. B. Sasikumar\nAssoc. Prof. & Head',
-      event: 'Membership',
-      level: 'International',
-      award: 'Lifetime',
-      title: 'Achieved lifetime memberships in MISTE and AMIEE'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Enhanced Handwritten Digit Classification Accuracy with CNNs: A Study using MNIST Dataset'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Intelligent Digitization of Heterogeneous Handwritten Documents using Deep Learning Models'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'International Journal (UGC Care I)',
-      level: 'International',
-      award: '-',
-      title: 'Cluster-Aware Multimodal Transformer System'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'NPTEL',
-      level: 'National',
-      award: '-',
-      title: 'NPTEL DISCIPLINE STAR'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'AICTE – RPS\n(Sponsored Research Project) Granted',
-      level: 'Govt.',
-      award: 'Fund',
-      title: 'Early Fall Risk Prediction System for Elderly People using\nAI and ML Tools\n(Rs.44,00,000/-)'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'AICTE-AQIS-GOC\n(Sponsored Research Project) Granted',
-      level: 'Govt.',
-      award: 'Fund',
-      title: 'International Conference on Computing Business Intelligence and Engineering Technologies\n(Rs.3,00,000/-)'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'NC Publishers',
-      level: 'National',
-      award: 'Book Chapter',
-      title: 'Using Deep Learning for Forecasting in Operations and Logistics'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'Protek Publications, Chennai',
-      level: 'National',
-      award: 'Book',
-      title: 'Smart Systems Engineering: Design and Development in the Internet of Things Era'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'Reviewer for IEEE International Conference',
-      level: 'International',
-      award: 'Reviewer for IEEE',
-      title: 'Reviewer for IEEE International Conference: organized by K J College of Engineering and Management Research, Pune'
-    },
-    {
-      sno: 2,
-      name: 'Dr. A. Gomathi\nAssociate Professor',
-      event: 'Membership',
-      level: 'National',
-      award: 'Lifetime',
-      title: 'Lifetime membership in ISTE'
-    },
-    {
-      sno: 3,
-      name: 'Mr. A. Gopalakrishnan\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'High-Performance Multi-Class Brain Tumor Classification and Analysis Using Optimized Convolutional Neural Networks'
-    },
-    {
-      sno: 3,
-      name: 'Mr. A. Gopalakrishnan\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Enhancing Optical Sensor Image Classification Through Deep Learning with Convolutional Neural Network'
-    },
-    {
-      sno: 3,
-      name: 'Mr. A. Gopalakrishnan\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Design and Development of Sympto Medai: A Symptom-Based Disease Prediction System Using Machine Learning'
-    },
-    {
-      sno: 4,
-      name: 'Mrs. V. Brindha\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Unified AI-Driven complaint communication Dashboard for real-time resolution of omnichannel customer complaints'
-    },
-    {
-      sno: 4,
-      name: 'Mrs. V. Brindha\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'AI-Powered faculty Assistant'
-    },
-    {
-      sno: 5,
-      name: 'Mr. S. Jayaprakash\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Chatbot for Supporting Small-Scale farmers (icraisetm-2026)'
-    },
-    {
-      sno: 6,
-      name: 'Mrs. P.J. Esther Rani\nAssistant Professor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'Cognifed Framework for Recovery Guided Federated Intelligence in Academic Cognitive Computing'
-    },
-    {
-      sno: 6,
-      name: 'Mrs. P.J. Esther Rani\nAssistant Professor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'Ethi core AI: Trust Driven Cognitive Intelligence with Emotion Awareness and Transparent Decision making'
-    },
-    {
-      sno: 6,
-      name: 'Mrs. P.J. Esther Rani\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Physionet-x: a lightweight, secure WSN protocol for privacy-preserving patient monitoring'
-    },
-    {
-      sno: 6,
-      name: 'Mrs. P.J. Esther Rani\nAssistant Professor',
-      event: 'National Conference',
-      level: 'National',
-      award: '-',
-      title: 'Early Risk Detection of Silent Hypothyroidism using Smart Health AI (Hardware-free), National Conference on Innovations in Management, Anna University, Chennai'
-    },
-    {
-      sno: 7,
-      name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
-      event: 'International Journal (SCIE)',
-      level: 'International',
-      award: 'SCIE',
-      title: 'Deep sight: Transformer‐based prediction of diabetic retinopathy using Py-Torch'
-    },
-    {
-      sno: 7,
-      name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
-      event: 'International Conference (IEEE)',
-      level: 'International',
-      award: '-',
-      title: 'Enhanced Network Performance in WSNs through the Improved PSO-MBO Coverage Algorithm'
-    },
-    {
-      sno: 7,
-      name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
-      event: 'National Conference',
-      level: 'National',
-      award: '-',
-      title: 'AI One Step Personalized Career and Education Advisor'
-    },
-    {
-      sno: 8,
-      name: 'Mrs. S. Sudha\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: 'IEEE',
-      title: 'A Multi-Layer Edge-Cloud Intelligence Framework for Predictive Zoonotic Risk Modeling in Smart Farming Ecosystems'
-    },
-    {
-      sno: 8,
-      name: 'Mrs. S. Sudha\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'AI, Robotics, and Quantum Computing in Special Needs Education and Diagnosis: A Survey'
-    },
-    {
-      sno: 8,
-      name: 'Mrs. S. Sudha\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Bone Fracture detection using the yolov8 Algorithm: An automated Deep Learning approach'
-    },
-    {
-      sno: 8,
-      name: 'Mrs. S. Sudha\nAssistant Professor',
-      event: 'Membership',
-      level: 'International',
-      award: 'Lifetime',
-      title: 'Membership of AMIEE (Artificial Intelligence, Machine Learning, Innovative Entrepreneurs, and Engineers Association)'
-    },
-    {
-      sno: 9,
-      name: 'Ms. Selvi M\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'A Digital Learning Twin (DLT) Framework For Predictive And Personalized Student Learning'
-    },
-    {
-      sno: 9,
-      name: 'Ms. Selvi M\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Sense bridge: An offline multimodal mobile application for accessibility using Artificial Intelligence'
-    },
-    {
-      sno: 9,
-      name: 'Ms. Selvi M\nAssistant Professor',
-      event: 'NPTEL',
-      level: 'National',
-      award: 'Elite',
-      title: 'Introduction to Internet of Things'
-    },
-    {
-      sno: 9,
-      name: 'Ms. Selvi M\nAssistant Professor',
-      event: 'Membership',
-      level: 'International',
-      award: 'Lifetime',
-      title: 'Membership of AMIEE (Artificial Intelligence, Machine Learning, Innovative Entrepreneurs, and Engineers Association)'
-    },
-    {
-      sno: 10,
-      name: 'Mr. Gunasekar B\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Skillsync Intelligent Resume Builder and Skill Gap Analyzer'
-    },
-    {
-      sno: 10,
-      name: 'Mr. Gunasekar B\nAssistant Professor',
-      event: 'NPTEL',
-      level: 'National',
-      award: 'Elite',
-      title: 'E - Business'
-    },
-    {
-      sno: 10,
-      name: 'Mr. Gunasekar B\nAssistant Professor',
-      event: 'NPTEL',
-      level: 'National',
-      award: 'Elite',
-      title: 'Artificial Intelligence (AI) for Management'
-    },
-    {
-      sno: 11,
-      name: 'Mr. R. Rameshkumar\nAssistant Professor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'An AI-powered smart travel companion APP with AR Navigation and real-time itinerary planning'
-    },
-    {
-      sno: 11,
-      name: 'Mr. R. Rameshkumar\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'Wandermate: An AI-Powered Smart Travel Companion APP with AR Navigation and Real-time Itinerary Planning'
-    },
-    {
-      sno: 12,
-      name: 'Mrs. M. Deepa\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: 'IEEE',
-      title: 'Twin Aware Predictive Carbon-Efficient Scheduling for Workload Intelligence Routing in Multi-Region Computing Ecosystem'
-    },
-    {
-      sno: 12,
-      name: 'Mrs. M. Deepa\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'An Intelligent System for Bean Leaf Disease Detection In Smart Agriculture'
-    },
-    {
-      sno: 12,
-      name: 'Mrs. M. Deepa\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'AI-Powered Low-Code/No-Code Development Platform'
-    },
-    {
-      sno: 12,
-      name: 'Mrs. M. Deepa\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: 'IEEE',
-      title: 'A Multi-Layer Edge-Cloud Intelligence Framework for Predictive Zoonotic Risk Modeling in Smartfarming Ecosystems'
-    },
-    {
-      sno: 12,
-      name: 'Mrs. M. Deepa\nAssistant Professor',
-      event: 'Membership',
-      level: 'International',
-      award: 'Lifetime',
-      title: 'Membership of AMIEE (Artificial Intelligence, Machine Learning, Innovative Entrepreneurs, and Engineers Association)'
-    },
-    {
-      sno: 13,
-      name: 'Ms. Ranitha N.M\nAssistant Professor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'AI-driven smart energy scheduling for telecom microgrids using demand forecasting and outage prediction'
-    },
-    {
-      sno: 13,
-      name: 'Ms. Ranitha N.M\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'AI-driven adaptive market learning indicator for automated stock prediction and trading using machine learning'
-    },
-    {
-      sno: 14,
-      name: 'Mrs. V. Gomathi\nAssistant Professor',
-      event: 'International Conference',
-      level: 'International',
-      award: '-',
-      title: 'AI-driven graph-theoretic approaches for disease detection and healthcare analytics on building a sustainable future with recent trends in science and technology'
-    },
-    {
-      sno: 15,
-      name: 'Dr. S. Manivel\nAssistant Professor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'Synthesis, Absorption and Emission Behaviour, Solvation, AIM, Topology, and Docking Studies on 4-(((perfluorophenyl) methylene) amino)-N-(thiazol-2-yl) Benzene Sulfonamide'
-    },
-    {
-      sno: 15,
-      name: 'Dr. S. Manivel\nAssistant Professor',
-      event: 'National Conference',
-      level: 'International',
-      award: '-',
-      title: 'FTIR and FT-Raman Spectroscopic, NLO Properties, NBO and HOMO-LUMO analyses of 3-methyl Pyrazole'
-    },
-    {
-      sno: 16,
-      name: 'Dr. G. Venkatesh\nProfessor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'PICT Effects and Anticancer Potential on Rosaniline and Spectral Characterisation of Rosaniline/ Cyclodextrin Covered ZnO/ Nanocrystals'
-    },
-    {
-      sno: 16,
-      name: 'Dr. G. Venkatesh\nProfessor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'Azo-Imino Tautomerism in Sudan Red 7B/Cyclodextrin Coated ZnO Nanocomposites: Evidence by Spectral and Microscopic Perspectives'
-    },
-    {
-      sno: 16,
-      name: 'Dr. G. Venkatesh\nProfessor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'Synthesis and Characterisation of Methyl Violet/Cyclodextrin Doped ZnO Nanocrystals'
-    },
-    {
-      sno: 16,
-      name: 'Dr. G. Venkatesh\nProfessor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'Synthesis and Characterisation of Sudan Red-G/Cyclodextrin Doped ZnO Nanocrystals'
-    },
-    {
-      sno: 16,
-      name: 'Dr. G. Venkatesh\nProfessor',
-      event: 'International Journal',
-      level: 'International',
-      award: 'SCI',
-      title: 'Supramolecular self-assembly and theoretical studies of α-cyclodextrin with 3,5-dihydroxybenzoic acid host: guest inclusion complexes'
-    },
-    {
-      sno: 16,
-      name: 'Dr. G. Venkatesh\nProfessor',
-      event: 'National Conference',
-      level: 'International',
-      award: '-',
-      title: 'National conference on Energy materials and AI-enabled sustainability solutions'
-    },
-    {
-      sno: 16,
-      name: 'Dr. G. Venkatesh\nProfessor',
-      event: 'National Conference',
-      level: 'National',
-      award: '-',
-      title: 'National conference on Atom-by-Atom Engineering in clusters'
-    },
-    {
-      sno: 16,
-      name: 'Dr. G. Venkatesh\nProfessor',
-      event: 'Membership',
-      level: 'International',
-      award: 'Lifetime',
-      title: 'Life membership National Institute for Technical Training & Skill Development'
-    }
-  ]
-
-  const facultyAchievements = courseId === 'be-eee'
-    ? eeeFacultyAchievements
-    : (courseId === 'btech-aids' ? aidsFacultyAchievements : [])
 
   const visibleData = activeAudience === 'STUDENT' ? studentAchievements : facultyAchievements
 
@@ -4123,7 +3344,7 @@ function AchievementSection({ courseId, courseName }) {
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Achiever Name and Designation</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event / Achievement</th>
-                {courseId === 'btech-aids' && (
+                {(courseId === 'btech-aids' || courseId === 'be-cse') && (
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
                 )}
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
@@ -4139,7 +3360,7 @@ function AchievementSection({ courseId, courseName }) {
                   <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{idx + 1}</td>
                   <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
                   <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
-                  {courseId === 'btech-aids' && (
+                  {(courseId === 'btech-aids' || courseId === 'be-cse') && (
                     <td className="px-4 py-3 text-center">
                       <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
                         {item.level}
@@ -4172,48 +3393,9 @@ function AchievementSection({ courseId, courseName }) {
 
 // ─── Clubs Section Component ───────────────────────────────────────────────
 function ClubsSection() {
-  const members = [
-    { sno: 1, name: 'Mrs. P. Raga Keerthana', affiliation: 'Assistant Professor', position: 'Technical Club In-charge' },
-    { sno: 2, name: 'P. Divya', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
-    { sno: 3, name: 'R. Keerthi', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
-    { sno: 4, name: 'R. Kowshika', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
-    { sno: 5, name: 'M. Hasini', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
-    { sno: 6, name: 'R. S. Madhumithaa', affiliation: 'II CSBS Student', position: 'Student Ambassador' },
-  ];
-
-  const objectives = [
-    "Ensure real-time monitoring of environmental conditions in cold chain systems.",
-    "Ensure regulatory compliance.",
-    "Manage environmental risks effectively.",
-    "Optimize energy usage through continuous monitoring."
-  ];
-
-  const responsibilities = [
-    {
-      title: "Planning & Coordination",
-      icon: Calendar,
-      items: [
-        "Plan club activities related to pollutant monitoring.",
-        "Organize awareness programmes and technical sessions."
-      ]
-    },
-    {
-      title: "Monitoring",
-      icon: Target,
-      items: [
-        "Monitor pollutants using sensors and modern technologies.",
-        "Maintain monitoring records and reports."
-      ]
-    },
-    {
-      title: "Technical Activities",
-      icon: Wrench,
-      items: [
-        "Encourage innovative monitoring solutions.",
-        "Promote practical learning in cold chain technology."
-      ]
-    }
-  ];
+  const members = csbsClubsMembers;
+  const objectives = csbsClubsObjectives;
+  const responsibilities = csbsClubsResponsibilities;
 
   return (
     <div className="space-y-12 py-6">

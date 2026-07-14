@@ -76,7 +76,7 @@ const VisionMission = ({ hideHeader = false }) => {
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#224292]/5 rounded-full filter blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#ffc107]/5 rounded-full filter blur-[100px] pointer-events-none" />
 
-      <section className="relative px-4 lg:px-12 z-10 w-full max-w-[1600px] mx-auto">
+      <section className="relative px-4 lg:px-12 z-10 w-full max-w-7xl mx-auto">
         
         {/* Header Section */}
         {!hideHeader && (
@@ -138,9 +138,9 @@ const VisionMission = ({ hideHeader = false }) => {
                     ) : (
                       <div className="space-y-2.5">
                         {val.content.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2.5">
+                          <div key={idx} className="flex items-start gap-2.5 w-full">
                             <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-2" />
-                            <p className="text-[#555555] font-graphik font-normal text-[13.5px] lg:text-[14.5px] leading-relaxed">
+                            <p className="text-[#555555] font-graphik font-normal text-[13.5px] lg:text-[14.5px] leading-relaxed text-justify w-full">
                               {item}
                             </p>
                           </div>

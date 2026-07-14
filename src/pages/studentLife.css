@@ -340,43 +340,146 @@
 
 /* FILTER TABS */
 .filter-section {
-  padding: 40px 40px 80px;
-  background: #fff;
+  padding: 60px 40px 80px;
+  background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
   font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
-.filter-tabs {
+.filter-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(34,66,146,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* SLC HEADER */
+.slc-header {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 12px;
-  max-width: 1500px;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.slc-header-decor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slc-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #224292;
+  border-radius: 2px;
+}
+
+.slc-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #ffc107;
+  border-radius: 50%;
+}
+
+.slc-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a1a2e;
+  letter-spacing: -0.5px;
+}
+
+.slc-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 15px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+/* SLC GRID */
+.slc-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1200px;
   margin: 0 auto 50px;
 }
 
-.filter-tab {
-  padding: 12px 28px;
-  border-radius: 100px;
-  border: 1px solid #f1f5f9;
-  background: #f8fafc;
-  color: #000000;
-  font-size: 14px;
-  font-weight: 800;
+/* SLC CARD */
+.slc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 14px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #224292;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  min-height: 100px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.filter-tab:hover {
-  background: #f1f5f9;
-  color: #224292;
+.slc-card:hover {
+  border-color: #224292;
+  box-shadow: 0 8px 24px rgba(34, 66, 146, 0.12);
+  transform: translateY(-2px);
 }
 
-.filter-tab.active {
+.slc-card-active {
   background: #224292;
   color: #fff;
   border-color: #224292;
-  box-shadow: 0 10px 20px rgba(34, 66, 146, 0.15);
+  box-shadow: 0 10px 30px rgba(34, 66, 146, 0.25);
+}
+
+.slc-card-active:hover {
+  background: #1a3578;
+  border-color: #1a3578;
+}
+
+.slc-card-active .slc-card-icon {
+  color: #fff;
+}
+
+.slc-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #224292;
+}
+
+.slc-card-label {
+  line-height: 1.3;
+}
+
+.slc-card-underline {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #ffc107;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .associations-grid {
@@ -479,16 +582,37 @@
   }
 
   .filter-section {
-    padding: 40px 20px 60px;
+    padding: 40px 16px 60px;
   }
 
-  .filter-tabs {
-    gap: 8px;
+  .slc-title {
+    font-size: 22px;
   }
 
-  .filter-tab {
-    padding: 10px 20px;
-    font-size: 12px;
+  .slc-line {
+    width: 24px;
+  }
+
+  .slc-subtitle {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .slc-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .slc-card {
+    padding: 16px 10px;
+    font-size: 11px;
+    min-height: 80px;
+    border-radius: 12px;
+  }
+
+  .slc-card-icon svg {
+    width: 22px;
+    height: 22px;
   }
 
   .clubs-table th, .clubs-table td {

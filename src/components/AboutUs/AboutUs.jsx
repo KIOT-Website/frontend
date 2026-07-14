@@ -69,7 +69,7 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto mb-6 md:mb-10 px-4 md:px-0"
+          className="max-w-7xl mx-auto mb-6 md:mb-10 px-4 md:px-0"
         >
           <div className="relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-2xl border-0 md:border-4 border-white h-[320px] md:h-auto md:aspect-[3/1]">
             <img src={campusImg} alt="KIOT Campus" className="w-full h-full object-cover object-[70%_center] md:object-center" />
@@ -81,7 +81,7 @@ const AboutUs = () => {
         </motion.div>
 
         {/* Full Width Paragraph Section */}
-        <div className="max-w-5xl mx-auto mb-6 md:mb-10 bg-transparent md:bg-white p-0 md:p-12 rounded-none md:rounded-[3rem] border-none md:border border-slate-100 shadow-none md:shadow-xl shadow-black/5">
+        <div className="max-w-7xl mx-auto mb-6 md:mb-10 bg-transparent md:bg-white p-0 md:p-12 rounded-none md:rounded-[3rem] border-none md:border border-slate-100 shadow-none md:shadow-xl shadow-black/5">
            <motion.div 
              initial={{ opacity: 0, y: 30 }}
              whileInView={{ opacity: 1, y: 0 }}
@@ -97,20 +97,20 @@ const AboutUs = () => {
               </p>
 
               <div className="pt-6 border-t border-slate-100">
-                <div className="p-8 rounded-[2rem] bg-[#f0f9f6] border border-[#d1e7dd]">
-                  <h3 className="text-[#198754] text-lg md:text-xl font-graphik font-bold mb-4 tracking-wider">Academic Excellence</h3>
+                <div className="-mx-5 rounded-none border-l-4 border-l-[#ffc107] border-y border-slate-100 bg-gradient-to-br from-[#224292]/5 via-white to-[#ffc107]/5 p-6 sm:mx-0 sm:rounded-[2rem] sm:border-y-0 sm:border-r-0 sm:border-l-4 sm:p-8 shadow-sm">
+                  <h3 className="text-[#224292] text-lg md:text-xl font-graphik font-bold mb-4 tracking-wider">Academic Excellence</h3>
                     <p className="text-[#333333] text-[14px] md:text-[16px] leading-[1.8] font-normal font-graphik">
-                      Knowledge Institute of Technology (KIOT) is an Autonomous Institution, Affiliated to Anna University, Chennai and Approved by AICTE, New Delhi and UGC, New Delhi. The college offers nine B.E. / B.Tech. programs, four M.E. / M.Tech. programs in Engineering and Technology, MBA - Regular, MBA - IEV, MCA programs and Ph.D. programs in all the departments.
+                       Knowledge Institute of Technology (KIOT) is an Autonomous Institution, Affiliated to Anna University, Chennai and Approved by AICTE, New Delhi and UGC, New Delhi. The college offers nine B.E. / B.Tech. programs, four M.E. / M.Tech. programs in Engineering and Technology, MBA - Regular, MBA - IEV, MCA programs and Ph.D. programs in all the departments.
                     </p>
                     <p className="mt-4 text-[#333333] text-[14px] md:text-[16px] leading-[1.8] font-normal font-graphik">
-                      B.E. / B.Tech. programs are of 4 years duration with a total intake of 1,080. M.E., MBA and MCA programs are of 2 years duration with a total intake of 78 in M.E., 180 in MBA and 60 in MCA.
+                       B.E. / B.Tech. programs are of 4 years duration with a total intake of 1,398. M.E., MBA and MCA programs are of 2 years duration with a total intake of 78 in M.E., 180 in MBA and 60 in MCA.
                     </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pt-10">
                 {[
-                  {label: "1,080 Intake / Year", icon: CheckCircle2, color: "#224292" },
+                  { label: "1,398 Intake / Year", icon: CheckCircle2, color: "#224292" },
                   { label: "3500+ UG Students", icon: Users, color: "#224292" },
                   { label: "350+ PG Students", icon: Trophy, color: "#224292" },
                   { label: "50+ Ph.D. Scholars", icon: Target, color: "#224292" },
@@ -120,26 +120,32 @@ const AboutUs = () => {
                   <motion.div 
                     key={idx} 
                     whileHover={{ y: -5 }}
-                    className="relative group bg-white rounded-2xl p-6 border border-slate-100/80 transition-all duration-300 min-h-[120px] flex items-center shadow-xl shadow-black/[0.12] hover:translate-y-[-2px]"
+                    className="relative group bg-white rounded-[1.5rem] sm:rounded-[2rem] p-4 sm:p-6 border border-slate-100 transition-all duration-300 min-h-[140px] sm:min-h-[170px] flex flex-col items-center justify-center text-center shadow-xl shadow-black/[0.08] hover:translate-y-[-2px]"
                   >
-                     {/* Clean minimalist design - No background pattern */}
-                      <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-5 w-full text-center sm:text-left">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white border border-[#224292]/10 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-500 flex-shrink-0 shadow-sm">
-                           <stat.icon size={22} className="sm:size-[26px]" strokeWidth={1.5} />
-                        </div>
+                     {/* Circular Icon with golden arc design */}
+                     <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4 shrink-0">
+                        {/* Outer light dashed ring */}
+                        <div className="absolute inset-0 rounded-full border border-dashed border-slate-200" />
                         
-                        <div className="flex flex-col items-center sm:items-start">
-                           <span className="text-[22px] sm:text-[28px] font-graphik font-semibold text-black leading-tight">
-                              {stat.label.split(' ')[0]}
-                           </span>
-                           <span className="text-[10px] sm:text-[12px] font-graphik font-semibold text-[#64779F] tracking-wider leading-tight">
-                              {stat.label.split(' ').slice(1).join(' ')}
-                           </span>
+                        {/* Golden arc overlay */}
+                        <div className="absolute inset-[-3px] rounded-full border-[2.5px] border-transparent border-t-[#ffc107] border-r-[#ffc107] rotate-[25deg]" />
+                        
+                        {/* Inner icon wrapper */}
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-[#224292]">
+                           <stat.icon size={18} className="sm:size-[20px]" strokeWidth={1.5} />
                         </div>
                      </div>
 
-                     {/* Subtle corner accent */}
-                     <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-[#ffc107]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-tr-2xl" />
+                     <div className="flex flex-col items-center">
+                        <span className="text-[20px] sm:text-[26px] font-graphik font-extrabold text-[#224292] leading-tight">
+                           {stat.label.split(' ')[0]}
+                        </span>
+                        <span className="text-[10px] sm:text-[12px] font-graphik font-semibold text-slate-500 tracking-tight leading-tight mt-0.5">
+                           {stat.label.split(' ').slice(1).join(' ')}
+                        </span>
+                        {/* Small Yellow Horizontal Bar */}
+                        <div className="w-6 h-0.5 bg-[#ffc107] mt-2 rounded-full" />
+                     </div>
                   </motion.div>
                 ))}
               </div>
@@ -148,12 +154,7 @@ const AboutUs = () => {
 
         {/* Vision Mission (Institutional Values) Section - Merged */}
         <div className="mb-6 md:mb-8 -mx-5 sm:-mx-10 lg:-mx-20">
-           <div className="text-center mb-10">
-              <h2 className="text-xl md:text-3xl lg:text-[32px] font-graphik font-semibold text-[#224292] tracking-tight">
-                Our Institutional <span className="text-[#ffc107]">Values</span>
-              </h2>
-           </div>
-           <VisionMission hideHeader={true} />
+           <VisionMission hideHeader={false} />
         </div>
 
         {/* YouTube Video Section - Moved to Last */}

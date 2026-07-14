@@ -42,7 +42,7 @@ const CampusLife = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: idx * 0.05 }}
-        className="group bg-white rounded-xl overflow-hidden flex flex-col relative shadow-[0_4px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_32px_rgba(34,66,146,0.08)] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100 h-full"
+        className="group bg-white rounded-xl overflow-hidden flex flex-col relative shadow-xl shadow-black/[0.12] hover:shadow-2xl hover:shadow-black/[0.18] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100/80 h-full"
       >
         <div className="relative w-full h-32 lg:h-44 overflow-hidden">
           <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.08]" />

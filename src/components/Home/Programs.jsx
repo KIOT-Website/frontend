@@ -126,7 +126,7 @@ const CourseGrid = ({ activeTab, navigate }) => (
                   navigate(`/academics/${base}/${course.id}`)
                 }
              }}
-             className="group bg-black/[0.02] p-3.5 rounded-xl border border-slate-200/60 hover:bg-white transition-all cursor-pointer relative overflow-hidden shadow-sm hover:shadow-lg"
+             className="group bg-white p-3.5 rounded-xl border border-slate-200/60 transition-all cursor-pointer relative overflow-hidden shadow-xl shadow-black/[0.12] hover:shadow-2xl hover:shadow-black/[0.18]"
            >
               <div className="absolute inset-0 bg-gradient-to-br-white via-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
@@ -257,35 +257,33 @@ const Programs = () => {
               </div>
 
               {/* Features (Order 3 Mobile / Column 1 Desktop) */}
-              <div className="order-3 flex flex-col space-y-2">
-                 {/* Highlights List */}
-                  <div className="space-y-0 w-full px-4 mb-8">
-                    {[
-                       { text: 'Industry Ready AI Enabled Curriculum', icon: Brain },
-                       { text: '360 Degree Career Development Program', icon: Rocket },
-                       { text: '30+ Centres of Excellence (COEs)', icon: Building2 },
-                       { text: 'Industry Linked Advanced Labs', icon: Beaker },
-                       { text: 'Culture of Innovation & Creativity', icon: Zap }
-                    ].map((item, i) => (
-                       <motion.div 
-                         key={i}
-                         initial={{ opacity: 0, x: -10 }}
-                         whileInView={{ opacity: 1, x: 0 }}
-                         transition={{ delay: i * 0.1 }}
-                         className="flex items-center gap-4 py-4 border-b border-slate-100 last:border-0 group/item cursor-default"
-                       >
-                          <div className="h-10 w-10 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292] shadow-sm group-hover/item:scale-110 transition-transform shrink-0">
-                             <item.icon size={18} />
-                          </div>
-                          <span className="text-[15px] font-semibold text-black tracking-tight leading-tight">
-                             {item.text}
-                          </span>
-                       </motion.div>
-                    ))}
-                 </div>
-
-
-              </div>
+              <div className="order-3 flex flex-col space-y-4">
+                  {/* Highlights List */}
+                   <div className="space-y-4 w-full mb-8">
+                     {[
+                        { text: 'Industry Ready AI Enabled Curriculum', icon: Brain },
+                        { text: '360 Degree Career Development Program', icon: Rocket },
+                        { text: '30+ Centres of Excellence (COEs)', icon: Building2 },
+                        { text: 'Industry Linked Advanced Labs', icon: Beaker },
+                        { text: 'Culture of Innovation & Creativity', icon: Zap }
+                     ].map((item, i) => (
+                        <motion.div 
+                          key={i}
+                          initial={{ opacity: 0, y: 15 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.08 }}
+                          className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-100/80 shadow-xl shadow-black/[0.12] hover:shadow-2xl hover:shadow-black/[0.18] hover:-translate-y-1 transition-all duration-300 group/item cursor-default"
+                        >
+                           <div className="h-10 w-10 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292] shadow-sm group-hover/item:scale-110 transition-transform shrink-0">
+                              <item.icon size={18} />
+                           </div>
+                           <span className="text-[14px] sm:text-[15px] font-bold text-black tracking-tight leading-tight">
+                              {item.text}
+                           </span>
+                        </motion.div>
+                     ))}
+                  </div></div>
            </div>
 
            {/* Column 2: The Full Grid (Desktop Only Container) */}
