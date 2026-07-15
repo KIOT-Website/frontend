@@ -14,8 +14,8 @@ const ACHIEVEMENTS_DATA = {
                 type: 'table',
                 headers: ['S.NO.', 'NAME OF THE GAME', 'DATE', 'VENUE', 'STUDENTS DETAILS'],
                 rows: [
-                    ['1', 'WUSHU', '04.05.2026-09.05.2026', 'UNIVERSITY OF KASHMIR, SRINAGAR', 'A. PARTHIPAN, I-MBA'],
-                    ['2', 'NETBALL', '09.03.2026-13.03.2026', 'SANJEEV AGARWAL GLOBAL EDUCATIONAL UNIVERSITY, BHOPAL', 'V. HARISH, I-BE-IT']
+                    ['1', 'Wushu', '04.05.2026-09.05.2026', 'University of Kashmir, Srinagar', 'A. Parthipan, I-MBA'],
+                    ['2', 'Netball', '09.03.2026-13.03.2026', 'Sanjeev Agarwal Global Educational University, Bhopal', 'V. Harish, I-BE-IT']
                 ]
             },
             {
@@ -23,7 +23,7 @@ const ACHIEVEMENTS_DATA = {
                 type: 'table',
                 headers: ['S.NO.', 'NAME OF THE GAME', 'DATE', 'VENUE', 'STUDENTS DETAILS', 'POSITION'],
                 rows: [
-                    ['1', 'BOXING (MEN)', '10.11.2025', 'GOVERNMENT ENGINEERING COLLEGE, BARGUR', '1. A. LOKESH, I-MBA-IEV\n2. S. PRIYADHARSAN, II-CSE\n3. A.R. GOWTHAM PRIYAN, III-CSE', 'III']
+                    ['1', 'Boxing (Men)', '10.11.2025', 'Government Engineering College, Bargur', '1. A. Lokesh, I-MBA-IEV\n2. S. Priyadharsan, II-CSE\n3. A.R. Gowtham Priyan, III-CSE', 'III']
                 ]
             },
             {
@@ -31,18 +31,18 @@ const ACHIEVEMENTS_DATA = {
                 type: 'table',
                 headers: ['S.NO', 'NAME OF THE SPORTS & GAMES', 'DATE', 'VENUE', 'PARTICIPATION', 'POSITION'],
                 rows: [
-                    ['1', 'CHESS (M)', '02.09.2025 - 03.09.2025', 'R.P. SARATHY INSTITUTE OF TECHNOLOGY, SALEM', '6', '2nd Place'],
-                    ['2', 'CHESS (W)', '-', '-', '6', '2nd Place'],
-                    ['3', 'HOCKEY (M)', '14.09.2025-15.09.2025', 'ADHIYAMAAN COLLEGE OF ENGINEERING, HOSUR', '18', '3rd Place'],
-                    ['4', 'FOOTBALL (M)', '16.09.2025-17.09.2025', 'ADHIYAMAAN COLLEGE OF ENGINEERING, HOSUR', '22', '2nd Place'],
-                    ['5', 'TABLE TENNIS (M)', '19.09.2025-20.09.2025', 'DHIRAJLAL GANDHI COLLEGE TECHNOLOGY, SALEM', '5', '1st Place'],
-                    ['6', 'BADMINTON (M)', '22.09.2025-23.09.2025', 'MAHENDRA ENGINEERING COLLEGE, MALLASAMUDRAM', '7', '1st Place'],
-                    ['7', 'BADMINTON (w)', '-', '-', '5', '3rd Place'],
-                    ['8', 'TABLE TENNIS (W)', '10.10.2025-11.10.2025', 'GOVERNMENT COLLEGE OF ENGINEERING, BARGUR', '5', '1st Place'],
-                    ['9', 'HANDBALL (M)', '15.10.2025-16.10.2025', 'DHIRAJLAL GANDHI COLLEGE TECHNOLOGY, SALEM', '16', '3rd Place'],
-                    ['10', 'ATHLETICS (M)', '31.10.2025-01.11.2025', 'ADHIYAMAAN COLLEGE OF ENGINEERING, HOSUR', 'MEN:\ni. Hammer Throw (1st Place)\nii. Half Marathon (2nd Place)\niii. 20 Km. Walk (3rd Place)\niv. 400 mts. Hurdles (3rd Place)\nv. 5000 mts. (3rd Place)', 'Multiple'],
-                    ['11', 'ATHLETICS (W)', '-', '-', 'WOMEN:\ni. Shot Put (1st Place)\nii. Hammer Throw (3rd Place)', 'Multiple'],
-                    ['12', 'BASKETBALL (W)', '06.11.2025-07.11.2025', 'GOVERNMENT COLLEGE OF ENGINEERING, BARGUR', '12', '1st Place']
+                    ['1', 'Chess (M)', '02.09.2025 - 03.09.2025', 'R.P. Sarathy Institute of Technology, Salem', '6', '2nd Place'],
+                    ['2', 'Chess (W)', '-', '-', '6', '2nd Place'],
+                    ['3', 'Hockey (M)', '14.09.2025-15.09.2025', 'Adhiyamaan College of Engineering, Hosur', '18', '3rd Place'],
+                    ['4', 'Football (M)', '16.09.2025-17.09.2025', 'Adhiyamaan College of Engineering, Hosur', '22', '2nd Place'],
+                    ['5', 'Table Tennis (M)', '19.09.2025-20.09.2025', 'Dhirajlal Gandhi College of Technology, Salem', '5', '1st Place'],
+                    ['6', 'Badminton (M)', '22.09.2025-23.09.2025', 'Mahendra Engineering College, Mallasamudram', '7', '1st Place'],
+                    ['7', 'Badminton (W)', '-', '-', '5', '3rd Place'],
+                    ['8', 'Table Tennis (W)', '10.10.2025-11.10.2025', 'Government College of Engineering, Bargur', '5', '1st Place'],
+                    ['9', 'Handball (M)', '15.10.2025-16.10.2025', 'Dhirajlal Gandhi College of Technology, Salem', '16', '3rd Place'],
+                    ['10', 'Athletics (M)', '31.10.2025-01.11.2025', 'Adhiyamaan College of Engineering, Hosur', 'Men:\ni. Hammer Throw (1st Place)\nii. Half Marathon (2nd Place)\niii. 20 Km. Walk (3rd Place)\niv. 400 mts. Hurdles (3rd Place)\nv. 5000 mts. (3rd Place)', 'Multiple'],
+                    ['11', 'Athletics (W)', '-', '-', 'Women:\ni. Shot Put (1st Place)\nii. Hammer Throw (3rd Place)', 'Multiple'],
+                    ['12', 'Basketball (W)', '06.11.2025-07.11.2025', 'Government College of Engineering, Bargur', '12', '1st Place']
                 ]
             },
             {
@@ -50,9 +50,9 @@ const ACHIEVEMENTS_DATA = {
                 type: 'table',
                 headers: ['S.NO.', 'NAME OF THE GAME', 'DATE', 'VENUE', 'STUDENTS DETAILS', 'POSITION'],
                 rows: [
-                    ['1', 'KICK BOXING (MEN) - 5th WAKO INDIA OPEN', '04.02.2026-08.02.2026', 'KD JADHAV INDOOR STADIUM, NEW DELHI', 'A. PARTHIPAN, I-MBA', 'I-PLACE'],
-                    ['2', 'HANDBALL (MEN) - INDO NEPAL CHAMPIONSHIP', '04.11.2025-07.11.2025', 'RANGASHALA STADIUM, POKHARA, NEPAL', 'M. TAMILARASAN, III-MECH', 'I-PLACE'],
-                    ['3', 'CHESS (MEN) - 23rd RCC INTERNATIONAL', '27.09.2025-28.09.2025', 'SHARADA VIDHYALAIYA, MANGALURU', 'G. MATHAN, I-IT', '4th PLACE']
+                    ['1', 'Kick Boxing (Men) - 5th WAKO India Open', '04.02.2026-08.02.2026', 'KD Jadhav Indoor Stadium, New Delhi', 'A. Parthipan, I-MBA', 'I-Place'],
+                    ['2', 'Handball (Men) - Indo Nepal Championship', '04.11.2025-07.11.2025', 'Rangashala Stadium, Pokhara, Nepal', 'M. Tamilarasan, III-Mech', 'I-Place'],
+                    ['3', 'Chess (Men) - 23rd RCC International', '27.09.2025-28.09.2025', 'Sharada Vidhyalaiya, Mangaluru', 'G. Mathan, I-IT', '4th Place']
                 ]
             },
             {
@@ -60,9 +60,9 @@ const ACHIEVEMENTS_DATA = {
                 type: 'table',
                 headers: ['S.NO.', 'NAME OF THE GAME', 'DATE', 'VENUE', 'STUDENTS DETAILS', 'POSITION'],
                 rows: [
-                    ['1', 'HANDBALL (MEN) - 7th ISA NATIONAL GAME', '15.01.2026-18.01.2026', 'TATYA TOPE STADIUM, BHOPAL', 'M. TAMILARASAN, III-MECH', 'I-PLACE'],
-                    ['2', 'HANDBALL (MEN) - SCHOOL GAMES FOUNDATION', '04.10.2025-06.10.2025', 'PRATAP SPORTS SCHOOL, HARYANA', 'M. TAMILARASAN, III-MECH', 'I-PLACE'],
-                    ['3', 'CHESS (MEN) - 4th CHECK MATE ALL INDIA', '21.09.2025', 'LOTUS CONENTION CENTRE, BENGALORE', 'G. MATHAN, I-IT', 'I-PLACE']
+                    ['1', 'Handball (Men) - 7th ISA National Game', '15.01.2026-18.01.2026', 'Tatya Tope Stadium, Bhopal', 'M. Tamilarasan, III-Mech', 'I-Place'],
+                    ['2', 'Handball (Men) - School Games Foundation', '04.10.2025-06.10.2025', 'Pratap Sports School, Haryana', 'M. Tamilarasan, III-Mech', 'I-Place'],
+                    ['3', 'Chess (Men) - 4th Check Mate All India', '21.09.2025', 'Lotus Convention Centre, Bangalore', 'G. Mathan, I-IT', 'I-Place']
                 ]
             },
             {
@@ -70,11 +70,11 @@ const ACHIEVEMENTS_DATA = {
                 type: 'table',
                 headers: ['S.NO.', 'NAME OF THE GAME', 'DATE', 'VENUE', 'STUDENTS DETAILS', 'POSITION'],
                 rows: [
-                    ['1', 'CHESS (WOMEN) - 7th BATTLE FIELD', '21.12.2025', 'AVS COLLEGE, SALEM', 'M. KIRUTHIGA, II-CSE', 'III-PLACE'],
-                    ['2', 'CHESS (MEN) - 1st TAMILNADU STATE LEVEL', '02.11.2025', 'SRI VIDYA MANDIR SCHOOL, SALEM', 'G. MATHAN, IT', 'I-PLACE'],
-                    ['3', 'POWER LIFTING (MEN) - STATE CLASSIC', '26.09.2025-28.09.2025', 'SUGUNA AUDITORIUM, COIMBATORE', 'V. MADHAVAN, II-MECH', 'II-PLACE'],
-                    ['4', 'CHESS (MEN) - 2nd BATTLE FIELD INTERNATIONAL', '14.09.2025', 'AVS COLLEGE, SALEM', 'G. MATHAN, I-IT', 'III-PLACE'],
-                    ['5', 'POWERLIFTING (MEN) - STATE EQUIPPED', '26.04.2025-27.04.2025', 'KPRIET, COIMBATORE', 'V. MADHAVAN, II-MECH', 'II-PLACE']
+                    ['1', 'Chess (Women) - 7th Battle Field', '21.12.2025', 'AVS College, Salem', 'M. Kiruthiga, II-CSE', 'III-Place'],
+                    ['2', 'Chess (Men) - 1st Tamilnadu State Level', '02.11.2025', 'Sri Vidya Mandir School, Salem', 'G. Mathan, IT', 'I-Place'],
+                    ['3', 'Power Lifting (Men) - State Classic', '26.09.2025-28.09.2025', 'Suguna Auditorium, Coimbatore', 'V. Madhavan, II-Mech', 'II-Place'],
+                    ['4', 'Chess (Men) - 2nd Battle Field International', '14.09.2025', 'AVS College, Salem', 'G. Mathan, I-IT', 'III-Place'],
+                    ['5', 'Powerlifting (Men) - State Equipped', '26.04.2025-27.04.2025', 'KPRIET, Coimbatore', 'V. Madhavan, II-Mech', 'II-Place']
                 ]
             },
             {
@@ -82,15 +82,15 @@ const ACHIEVEMENTS_DATA = {
                 type: 'table',
                 headers: ['S.NO.', 'NAME OF THE GAME', 'DATE', 'VENUE', 'STUDENTS DETAILS', 'POSITION'],
                 rows: [
-                    ['1', 'BOXING (MEN) - NAMAKKAL DISTRICT', '22.02.2026', 'SHINE HILL ACADEMY, VALAYAPATTI', '1. JERICK, I-CSE\n2. M. KARTHIKEYAN, I-IT\n3. G. HARIHARAN, I-CSE\n4. K. VISHNU, II-CSE\n5. S. SESHATHRI, II-CSE\n6. V.G. GIRIVASAN, I-ECE', 'Multiple 1st & 2nd Places'],
-                    ['2', 'BADMINTON (MEN) DOUBLES - SALEM DISTRICT', '14.01.2026', 'BAY BADMINTON ACADEMY, SALEM', 'NATHAN SHIEH, III-CSE\nM NAGAPRASAD, II-CSBS', 'II-PLACE'],
-                    ['3', 'JUDO (MEN) - SALEM DISTRICT', '14.12.2025', 'DHIRAJLAL GANDHI COLLEGE OF TECHNOLOGY, SALEM', 'M. MAGINAV, I-CSBS', 'I-PLACE'],
-                    ['4', 'BOXING (MEN) - TIRUPUR DISTRICT', '14.12.2025', 'A.V.P COLLEGE, TIRUPUR', 'A. PARTHIPAN, I-MBA (I-PLACE)\nG. HARIRAM, I-CSE (III-PLACE)', 'Multiple'],
-                    ['5', 'TABLE TENNIS (SALEM DISTRICT)', '06.09.2025-07.09.2025', 'SKJ ACADEMY, SALEM', 'N. MOULIKA, III-CSE\nV.P. SUBHASHREE, III-CSE\nV. SOUNDARYA, III-AI&DS\nVASUNDRARAJI R, II-AI&DS', 'Multiple II & III Places'],
-                    ['6', 'POWERLIFTING (SALEM WEST DISTRICT)', '17.08.2025', 'JAYARANI COLLEGE, SALEM', 'S. GOWTHAM, III-AI&DS', 'Dead Lift II, Bench Press II'],
-                    ['7', 'POWERLIFTING (SALEM DISTRICT BENCH PRESS)', '15.06.2025', 'SALEM', 'S. GOWTHAM, III-AI&DS\nV. MADHAVAN, II-MECH', 'II & III Places'],
-                    ['8', 'BADMINTON (SALEM DISTRICT CHAMPIONSHIP)', '08.05.2025', 'PIONEER CLUB, SALEM', 'NATHAN SHIEH, II-CSE', 'III PLACE'],
-                    ['9', 'BADMINTON (1st GCE TROPHY)', '08.05.2025', 'GCE SALEM', 'Multiple Students', 'II-PLACE']
+                    ['1', 'Boxing (Men) - Namakkal District', '22.02.2026', 'Shine Hill Academy, Valayapatti', '1. Jerick, I-CSE\n2. M. Karthikeyan, I-IT\n3. G. Hariharan, I-CSE\n4. K. Vishnu, II-CSE\n5. S. Seshathri, II-CSE\n6. V.G. Girivasan, I-ECE', 'Multiple 1st & 2nd Places'],
+                    ['2', 'Badminton (Men) Doubles - Salem District', '14.01.2026', 'Bay Badminton Academy, Salem', 'Nathan Shieh, III-CSE\nM Nagaprasad, II-CSBS', 'II-Place'],
+                    ['3', 'Judo (Men) - Salem District', '14.12.2025', 'Dhirajlal Gandhi College of Technology, Salem', 'M. Maginav, I-CSBS', 'I-Place'],
+                    ['4', 'Boxing (Men) - Tirupur District', '14.12.2025', 'A.V.P College, Tirupur', 'A. Parthipan, I-MBA (I-Place)\nG. Hariram, I-CSE (III-Place)', 'Multiple'],
+                    ['5', 'Table Tennis (Salem District)', '06.09.2025-07.09.2025', 'SKJ Academy, Salem', 'N. Moulika, III-CSE\nV.P. Subhashree, III-CSE\nV. Soundarya, III-AI&DS\nVasundraraji R, II-AI&DS', 'Multiple II & III Places'],
+                    ['6', 'Powerlifting (Salem West District)', '17.08.2025', 'Jayarani College, Salem', 'S. Gowtham, III-AI&DS', 'Dead Lift II, Bench Press II'],
+                    ['7', 'Powerlifting (Salem District Bench Press)', '15.06.2025', 'Salem', 'S. Gowtham, III-AI&DS\nV. Madhavan, II-Mech', 'II & III Places'],
+                    ['8', 'Badminton (Salem District Championship)', '08.05.2025', 'Pioneer Club, Salem', 'Nathan Shieh, II-CSE', 'III Place'],
+                    ['9', 'Badminton (1st GCE Trophy)', '08.05.2025', 'GCE Salem', 'Multiple Students', 'II-Place']
                 ]
             },
             {
@@ -98,11 +98,11 @@ const ACHIEVEMENTS_DATA = {
                 type: 'table',
                 headers: ['S.NO.', 'NAME OF THE GAME', 'DATE', 'VENUE', 'STUDENTS DETAILS', 'POSITION'],
                 rows: [
-                    ['1', 'BADMINTON (MEN) DOUBLES', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', 'NATHAN SHIEH, III-CSE\nM NAGAPRASAD, II-CSBS', 'II-PLACE'],
-                    ['2', 'BADMINTON (MEN) SINGLES', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', 'NATHAN SHIEH, III-CSE', 'I-PLACE'],
-                    ['3', 'BADMINTON (WOMEN) DOUBLES', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', 'N. MOSIKA, II-CSE\nM. KAIYALVIZHI, II-CSE', 'II-PLACE'],
-                    ['4', 'CHESS (WOMEN)', '28.08.2025-29.08.2025', 'ST. JOHNS SCHOOL, SALEM', 'M. KIRUTHIGA, II-CSE (I-PLACE)\nP.S. AATHMIKA, I-CSBS (II-PLACE)', 'Multiple'],
-                    ['5', 'TABLE TENNIS (WOMEN)', '28.08.2025-29.08.2025', 'SKJ TABLE TENNIS ACADMY, SALEM', 'N. MOULIKA, III-CSE\nV.P. SUBHASHREE, III-CSE', 'III-PLACE']
+                    ['1', 'Badminton (Men) Doubles', '28.08.2025-29.08.2025', 'Bay Badminton Academy, Salem', 'Nathan Shieh, III-CSE\nM Nagaprasad, II-CSBS', 'II-Place'],
+                    ['2', 'Badminton (Men) Singles', '28.08.2025-29.08.2025', 'Bay Badminton Academy, Salem', 'Nathan Shieh, III-CSE', 'I-Place'],
+                    ['3', 'Badminton (Women) Doubles', '28.08.2025-29.08.2025', 'Bay Badminton Academy, Salem', 'N. Mosika, II-CSE\nM. Kaiyalvizhi, II-CSE', 'II-Place'],
+                    ['4', 'Chess (Women)', '28.08.2025-29.08.2025', 'St. Johns School, Salem', 'M. Kiruthiga, II-CSE (I-Place)\nP.S. Aathmika, I-CSBS (II-Place)', 'Multiple'],
+                    ['5', 'Table Tennis (Women)', '28.08.2025-29.08.2025', 'SKJ Table Tennis Academy, Salem', 'N. Moulika, III-CSE\nV.P. Subhashree, III-CSE', 'III-Place']
                 ]
             }
         ]
@@ -148,7 +148,7 @@ const ACHIEVEMENTS_DATA = {
             }
         ]
     },
-    'open-tournaments': {
+    'open-tournaments-faculty': {
         title: 'Open Tournaments (Faculty)',
         subtitle: 'Official Records (2025-26)',
         icon: <Users className="text-[#ffc107]" size={32} />,
@@ -175,6 +175,48 @@ const ACHIEVEMENTS_DATA = {
                     ['5', 'TABLE TENNIS (MEN - 3 MEMBERS)', '04.04.2026', 'NANDHA ENGINEERING COLLEGE, ERODE', 'P.MANIKANDAN-PD, B.DINESH-AP/EEE, KARTHIKEYAN-AP/EEE', 'Participation'],
                     ['6', 'BADMINTON (MEN DOUBLES)', '04.04.2026', 'NANDHA ENGINEERING COLLEGE, ERODE', 'M.K.SAMPATH-AP, B.DINESH-AP/EEE, MOHANRAJ-LT/CSE, V.KRISHNAN-LT/EEE', 'Participation'],
                     ['7', 'CRICKET (MEN - 15 MEMBERS)', '04.04.2026', 'NANDHA ENGINEERING COLLEGE, ERODE', 'P.MANIKANDAN-PD, K.N.KARTHICK, T.VENKATACHALAM, S.NAVEENKUMAR, T.RAJA, P.MANIKANDAN-MBA, P.DINESH, KARTHICK, KARTHICK-IDEA, ARUL KUMAR, GANESH, R.GOPI, S.SELVARAJ, MOHAN-LT/CSE', 'Participation']
+                ]
+            }
+        ]
+    },
+    'open-tournaments-students': {
+        title: 'Open Tournaments (Students)',
+        subtitle: 'Official Records (2025-26)',
+        icon: <Users className="text-[#ffc107]" size={32} />,
+        sections: [
+            {
+                title: 'NATIONAL LEVEL PARTICIPATION (2025-26)',
+                type: 'table',
+                headers: ['S.NO.', 'NAME OF THE GAME', 'DATE OF THE TOURNAMENT', 'VENUE', 'NO OF STUDENTS'],
+                rows: [
+                    ['1', 'SHOOTING BALL (MEN) - 5th SOUTH ZONE SHOOTING BALL CHAMPIONSHIP 2026', '07.02.2026-08.02.2026', 'NILGIRIS BADMINTON ACADEMY, ERODE', '1'],
+                    ['2', 'BADMINTON (MEN) - SKM BEST OPEN BADMINTON TOURNAMENT 2026', '13.02.2026-15.02.2026', 'BANGALORE', '1'],
+                    ['3', 'BADMINTON (MEN) - YONEX SUNRISE ALL INDIA SENIOR RANKING BADMINTON TOURNAMENT 2026', '30.08.2025', 'SPORTS ACTIVITY CENTRE, COIMBATORE', '1'],
+                    ['4', 'TABLE TENNIS (MEN) - 24th KONGU TROPHY 2025-26', '26.09.2025-28.09.2025', 'KONGU ENGINEERING COLLEGE, PERUNDURAI, ERODE', '3']
+                ]
+            },
+            {
+                title: 'STATE LEVEL PARTICIPATION (2025-26)',
+                type: 'table',
+                headers: ['S.NO.', 'NAME OF THE GAME', 'DATE OF THE TOURNAMENT', 'VENUE', 'NO OF STUDENTS'],
+                rows: [
+                    ['1', 'BADMINTON (MEN) - TAMILNADU STATE SENIOR RANKING BADMINTON TOURNAMENT', '17.01.2026', 'SDAT INDOOR STADIUM, NAMAKKAL', '1'],
+                    ['2', 'POWERLIFTING (MEN) - TAMILNADU STATE EQUIPPED AND CLASSIC BENCHPRESS CHAMPIONSHIP 2025', '06.11.2025-07.11.2025', 'SUGUNA AUDITORIUM, COIMBATORE', '1'],
+                    ['3', 'CHESS (MEN) - 2nd STATE LEVEL CHILDREN\'S OPEN CATEGORY 2025', '05.10.2025', 'VELSAMY MUTHALIYAR CINNAMMAL KALYANA MANDABAM, THIRUCHENGODE', '1'],
+                    ['4', 'CHESS (MEN & WOMEN) - TAMILNADU STATE LEVEL CHESS TOURNAMENT 2025', '29.09.2025', 'AVS ARTS & SCIENCE COLLEGE, SALEM', '3+1'],
+                    ['5', 'CHESS (WOMEN) - WOMEN\'S STATE LEVEL CHESS CHAMPIONSHIP 2026', '07.09.2025', 'AVS ENGINEERING COLLEGE, SALEM', '1'],
+                    ['6', 'BADMINTON (MEN) - OPEN BADMINTON CHAMPIONSHIP FOR JUNIORS & SENIORS 2025', '30.08.2025', 'SPORTS ACTIVITY CENTRE, COIMBATORE', '1'],
+                    ['7', 'BADMINTON (MEN) - CM TROPHY TAMILNADU STATE LEVEL 2025', '08.10.2025-11.10.2025', 'TAMILNADU PHYSICAL EDUCATION SPORTS UNIVERSITY, CHENNAI', '1']
+                ]
+            },
+            {
+                title: 'DISTRICT LEVEL PARTICIPATION (2025-26)',
+                type: 'table',
+                headers: ['S.NO.', 'NAME OF THE GAME', 'DATE OF THE TOURNAMENT', 'VENUE', 'NO OF STUDENTS'],
+                rows: [
+                    ['1', 'TABLE TENNIS (MEN & WOMEN) - 2nd SALEM DISTRICT RANKING & OPEN STATE TABLE TENNIS TOURNAMENT 2025', '04.10.2025-05.10.2025', 'SKJ TABLE TENNIS ACADEMY, SALEM', '4+5'],
+                    ['2', 'TABLE TENNIS (MEN & WOMEN) - 1st SALEM DISTRICT RANKING & OPEN STATE TABLE TENNIS TOURNAMENT 2025', '06.09.2025-07.09.2025', 'SKJ TABLE TENNIS ACADEMY, SALEM', '3+5'],
+                    ['3', 'CRICKET (MEN) - 3rd GCE CRICKET TROPHY 2025', '21.04.2025-29.04.2025', 'GOVERNMENT COLLEGE OF ENGINEERING, KARUPUR, SALEM', '15']
                 ]
             }
         ]
@@ -212,19 +254,90 @@ const ACHIEVEMENTS_DATA = {
     },
     'cm-trophy': {
         title: 'CM Trophy',
-        subtitle: 'Salem District Level (2025-26)',
+        subtitle: 'State & District Participation (2025-26)',
         icon: <Award className="text-[#ffc107]" size={32} />,
         sections: [
             {
-                title: 'CM TROPHY SALEM DISTRICT LEVEL RECORDS',
+                title: 'CM TROPHY TAMILNADU STATE LEVEL PARTICIPATION (2025-26)',
                 type: 'table',
-                headers: ['S.NO.', 'NAME OF THE GAME', 'DATE', 'VENUE', 'STUDENTS DETAILS', 'POSITION'],
+                headers: ['S.NO.', 'NAME OF THE GAME', 'DATE OF THE TOURNAMENT', 'VENUE', 'STUDENTS DETAILS'],
                 rows: [
-                    ['1', 'BADMINTON (MEN) DOUBLES', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', 'NATHAN SHIEH, III-CSE\nM NAGAPRASAD, II-CSBS', 'II-PLACE'],
-                    ['2', 'BADMINTON (MEN) SINGLES', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', 'NATHAN SHIEH, III-CSE', 'I-PLACE'],
-                    ['3', 'BADMINTON (WOMEN) DOUBLES', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', 'N. MOSIKA, II-CSE\nM. KAIYALVIZHI, II-CSE', 'II-PLACE'],
-                    ['4', 'CHESS (WOMEN)', '28.08.2025-29.08.2025', 'ST. JOHNS MATRIUCLATION SCHOOL, SALEM', 'M. KIRUTHIGA, II-CSE (I-PLACE)\nP.S. AATHMIKA, I-CSBS (II-PLACE)', 'Multiple'],
-                    ['5', 'TABLE TENNIS (WOMEN)', '28.08.2025-29.08.2025', 'SKJ TABLE TENNIS ACADMY, SALEM', 'N. MOULIKA, III-CSE\nV.P. SUBHASHREE, III-CSE', 'III-PLACE']
+                    ['1', 'BADMINTON (MEN) SINGLES', '08.10.2025-11.10.2025', 'TAMILNADU PHYSICAL EDUCATION SPORTS UNIVERSITY, CHENNAI', 'NATHAN SHIEH, III-CSE\nM NAGAPRASAD, II-CSBS'],
+                    ['2', 'CHESS (WOMEN)', '08.10.2025-11.10.2025', 'NEHRU KALAIARANGAM, SALEM', 'M. KIRUTHIGA, II-CSE']
+                ]
+            },
+            {
+                title: 'CM TROPHY SALEM DISTRICT LEVEL PARTICIPATION (2025-26)',
+                type: 'table',
+                headers: ['S.NO.', 'NAME OF THE GAME', 'DATE OF THE TOURNAMENT', 'VENUE', 'NO OF STUDENTS'],
+                rows: [
+                    ['1', 'CHESS (MEN)', '28.08.2025-29.08.2025', 'ST. JOHNS MATRICULATION HR. SEC. SCHOOL, SALEM', '8'],
+                    ['2', 'CHESS (WOMEN)', '28.08.2025-29.08.2025', 'ST. JOHNS MATRICULATION HR. SEC. SCHOOL, SALEM', '6'],
+                    ['3', 'BADMINTON (MEN SINGLES)', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', '7'],
+                    ['4', 'BADMINTON (MEN DOUBLES)', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', '6'],
+                    ['5', 'BADMINTON (WOMEN SINGLES)', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', '4'],
+                    ['6', 'BADMINTON (WOMEN DOUBLES)', '28.08.2025-29.08.2025', 'BAY BADMINTON ACADEMY, SALEM', '4'],
+                    ['7', 'TABLE TENNIS (MEN SINGLES)', '28.08.2025-29.08.2025', 'SKJ TABLE TENNIS, SALEM', '5'],
+                    ['8', 'TABLE TENNIS (MEN DOUBLES)', '28.08.2025-29.08.2025', 'SKJ TABLE TENNIS, SALEM', '4'],
+                    ['9', 'TABLE TENNIS (WOMEN SINGLES)', '28.08.2025-29.08.2025', 'SKJ TABLE TENNIS, SALEM', '5'],
+                    ['10', 'TABLE TENNIS (WOMEN DOUBLES)', '28.08.2025-29.08.2025', 'SKJ TABLE TENNIS, SALEM', '4'],
+                    ['11', 'BASKETBALL (MEN)', '28.08.2025-29.08.2025', 'GANDHI STADIUM, SALEM', '12'],
+                    ['12', 'BASKETBALL (WOMEN)', '28.08.2025-29.08.2025', 'GANDHI STADIUM, SALEM', '12'],
+                    ['13', 'VOLLEYBALL (MEN)', '28.08.2025-29.08.2025', 'GANDHI STADIUM, SALEM', '14'],
+                    ['14', 'FOOTBALL (MEN)', '28.08.2025-29.08.2025', 'ST. PAULS MATRICULATION HR. SEC. SCHOOL, SALEM', '22'],
+                    ['15', 'ATHLETICS (MEN & WOMEN)', '28.08.2025-29.08.2025', 'GANDHI STADIUM, SALEM', '3+2'],
+                    ['16', 'CRICKET (MEN)', '28.08.2025-29.08.2025', 'GOVERNMENT COLLEGE OF ENGINEERING, KARUPUR, SALEM', '16'],
+                    ['17', 'HANDBALL (MEN)', '28.08.2025-29.08.2025', 'JAIRANI MATRICULATION HR. SEC. SCHOOL, SALEM', '14'],
+                    ['18', 'KABADDI (MEN)', '28.08.2025-29.08.2025', 'GANDHI STADIUM, SALEM', '12']
+                ]
+            }
+        ]
+    },
+    'sports-day': {
+        title: 'Sports Day',
+        subtitle: 'Students & Faculty / Staff Events (2025-26)',
+        icon: <Calendar className="text-[#ffc107]" size={32} />,
+        sections: [
+            {
+                title: 'SPORTS DAY STUDENTS BOYS EVENTS (2025-26)',
+                type: 'table',
+                headers: ['S.NO', 'NAME OF THE GAME', 'S.NO', 'NAME OF THE GAME'],
+                rows: [
+                    ['1', 'Kho-Kho', '7', 'Chess, Tennis'],
+                    ['2', 'Handball', '8', 'Ball Badminton'],
+                    ['3', 'Carrom', '9', 'Kabaddi'],
+                    ['4', 'Football', '10', 'Badminton'],
+                    ['5', 'Volley Ball', '11', 'Table Tennis'],
+                    ['6', 'Basket Ball', '12', 'Cricket'],
+                    ['13-22', 'ATHLETICS: 100M, 200M, Shot Put, Javelin, 1500M, 400M, 4 X 100M Relay, Hammer Throw, 800M, Discuss throw', '', '']
+                ]
+            },
+            {
+                title: 'SPORTS DAY STUDENTS GIRLS EVENTS (2025-26)',
+                type: 'table',
+                headers: ['S.NO', 'NAME OF THE GAME', 'S.NO', 'NAME OF THE GAME'],
+                rows: [
+                    ['1', 'Handball', '7', 'Volley Ball'],
+                    ['2', 'Kho-Kho', '8', 'Throw Ball'],
+                    ['3', 'Table Tennis', '9', 'Badminton'],
+                    ['4', 'Chess', '10', 'Ball Badminton'],
+                    ['5', 'Tennis', '11', 'Basket Ball'],
+                    ['6', 'Cricket', '12', 'Carrom'],
+                    ['13-22', 'ATHLETICS: 100M, 200M, Shot Put, Javelin, 1500M, 400M, 4 X 100M Relay, Hammer Throw, 800M, Discuss throw', '', '']
+                ]
+            },
+            {
+                title: 'SPORTS DAY FACULTY & STAFF EVENTS (2025-26)',
+                type: 'table',
+                headers: ['S.NO', 'MEN FACULTY & STAFF EVENTS', 'WOMEN FACULTY & STAFF EVENTS'],
+                rows: [
+                    ['1', 'Cricket', 'Table Tennis'],
+                    ['2', 'Volleyball', 'Chess'],
+                    ['3', 'Basketball', 'Carrom'],
+                    ['4', 'Badminton', 'Tenni Coit'],
+                    ['5', 'Chess', 'Badminton'],
+                    ['6', 'Table tennis', 'Throw Ball'],
+                    ['7', 'Carrom', '']
                 ]
             }
         ]
@@ -237,10 +350,20 @@ const SportsDetailPage = () => {
     
     // Select data based on category
     const categoryKey = category ? category.toLowerCase() : 'achievements';
-    const data = ACHIEVEMENTS_DATA[categoryKey] || ACHIEVEMENTS_DATA['achievements'];
+    const resolvedKey = categoryKey === 'open-tournaments' ? 'open-tournaments-faculty' : categoryKey;
+    const data = ACHIEVEMENTS_DATA[resolvedKey] || ACHIEVEMENTS_DATA['achievements'];
 
     // Categories that have their own data sets
-    const validCategories = ['achievements', 'zone-level', 'open-tournaments', 'organized-tournaments', 'cm-trophy'];
+    const validCategories = [
+        'achievements', 
+        'zone-level', 
+        'open-tournaments', 
+        'open-tournaments-faculty', 
+        'open-tournaments-students', 
+        'organized-tournaments', 
+        'cm-trophy',
+        'sports-day'
+    ];
     const filteredSections = validCategories.includes(categoryKey) 
         ? data.sections 
         : [];
@@ -256,7 +379,7 @@ const SportsDetailPage = () => {
                         className="flex items-center gap-2 text-white/70 hover:text-[#ffc107] transition-colors mb-4 group"
                     >
                         <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-                        <span className="text-[9px] font-black uppercase tracking-[0.2em]">Back to Sports</span>
+                        <span className="text-[9px] font-black tracking-[0.2em]">Back to Sports</span>
                     </button>
                     
                     <div className="flex items-center gap-5">
@@ -264,10 +387,10 @@ const SportsDetailPage = () => {
                             {data.icon}
                         </div>
                         <div>
-                            <h1 className="text-2xl md:text-3xl font-black text-white uppercase mb-0.5">
-                                {category ? category.replace(/-/g, ' ') : data.title}
+                            <h1 className="text-2xl md:text-3xl font-black text-white mb-0.5">
+                                {data.title}
                             </h1>
-                            <p className="text-[#ffc107] font-black uppercase text-[11px] tracking-wider">
+                            <p className="text-[#ffc107] font-black text-[11px] tracking-wider">
                                 {data.subtitle}
                             </p>
                         </div>
@@ -288,7 +411,7 @@ const SportsDetailPage = () => {
                         >
                             {section.title && (
                                 <div className="mb-6 text-center">
-                                    <h3 className="text-xl md:text-2xl font-black text-[#224292] uppercase relative inline-block">
+                                    <h3 className="text-xl md:text-2xl font-black text-[#224292] relative inline-block">
                                         {section.title}
                                         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#ffc107] rounded-full" />
                                     </h3>
@@ -301,7 +424,7 @@ const SportsDetailPage = () => {
                                     <thead>
                                         <tr className="bg-[#224292]">
                                             {section.headers.map((header, hIdx) => (
-                                                <th key={hIdx} className="px-6 py-5 text-[10px] font-black text-white uppercase text-center border-r border-white/10 last:border-0">
+                                                <th key={hIdx} className="px-6 py-5 text-[10px] font-black text-white text-center border-r border-white/10 last:border-0">
                                                     {header}
                                                 </th>
                                             ))}
@@ -315,7 +438,7 @@ const SportsDetailPage = () => {
                                             >
                                                 {row.map((cell, cIdx) => (
                                                     <td key={cIdx} className="px-6 py-4 border-b border-slate-100 last:border-b-0">
-                                                        <span className={`text-[13px] text-slate-800 font-bold uppercase leading-relaxed whitespace-pre-line ${cIdx === 0 ? 'text-center block' : ''}`}>
+                                                        <span className={`text-[13px] text-slate-800 font-bold leading-relaxed whitespace-pre-line ${cIdx === 0 ? 'text-center block' : ''}`}>
                                                             {cell}
                                                         </span>
                                                     </td>

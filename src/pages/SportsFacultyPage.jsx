@@ -6,11 +6,21 @@ import { useNavigate } from 'react-router-dom'
 // Import Images
 import devi from '../assets/sports/devi.webp'
 import manikandan from '../assets/sports/manikandan.webp'
+import navaneethakrishnan from '../assets/Faculity/MECH/Dr. P. Navaneethakrishnan.webp'
 
 const SportsFacultyPage = () => {
   const navigate = useNavigate()
 
   const facultyData = [
+    {
+      id: "pd-navaneethakrishnan",
+      name: "Dr. P. Navaneethakrishnan",
+      image: navaneethakrishnan,
+      designation: "Professor Incharge",
+      qualification: "B.E., M.E., Ph.D.",
+      specialization: "Sports Administration",
+      sections: []
+    },
     {
       id: "pd-devi",
       name: "Devi R",
@@ -75,19 +85,9 @@ const SportsFacultyPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-[#FCFDFD] pb-24 pt-4 md:pt-16">
-      <div className="max-w-7xl mx-auto px-0 md:px-6 relative z-20">
-        <div className="hidden sm:block mt-4 mb-8 px-6 md:px-0">
-          <button 
-            onClick={() => navigate('/campus-life/sports')}
-            className="inline-flex items-center gap-2 text-[#224292] hover:text-[#ffc107] transition-colors group border border-slate-200 px-4 py-2 rounded-full bg-white shadow-sm"
-          >
-            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-            <span className="text-xs font-black tracking-[2px]">Back to Sports & Games</span>
-          </button>
-        </div>
-
-        <div className="space-y-8 md:space-y-16">
+    <div className="min-h-screen bg-[#FCFDFD] pb-24 pt-0 md:pt-6">
+      <div className="max-w-7xl mx-auto px-0 md:px-6 relative z-20 pt-4 md:pt-6">
+        <div className="space-y-6 md:space-y-10">
           <div className="flex items-center gap-4 border-b border-slate-100 pb-6 px-6 md:px-0">
             <div className="w-12 h-12 bg-[#224292] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
               <Star size={24} />
@@ -110,7 +110,9 @@ const SportsFacultyPage = () => {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#224292]/5 rounded-full -translate-x-[-30%] -translate-y-[30%] group-hover:scale-110 transition-transform duration-700" />
                 
                 {/* Header Section */}
-                <div className="flex flex-col md:flex-row items-center md:items-end gap-10 border-b border-slate-100 pb-12 px-6 md:px-0">
+                <div className={`flex flex-col md:flex-row items-center md:items-end gap-10 px-6 md:px-0 ${
+                    faculty.sections && faculty.sections.length > 0 ? 'border-b border-slate-100 pb-12' : ''
+                }`}>
                     <div className="w-48 h-48 rounded-[2.5rem] bg-[#224292] overflow-hidden shadow-2xl border-4 border-white flex items-center justify-center shrink-0">
                         {faculty.image ? (
                             <img src={faculty.image} className="w-full h-full object-cover" alt={faculty.name} />
@@ -120,12 +122,17 @@ const SportsFacultyPage = () => {
                     </div>
                     
                     <div className="text-center md:text-left flex-1 space-y-4">
-                        <h3 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tight leading-none">{faculty.name}</h3>
+                        {faculty.designation && (
+                            <span className="inline-block px-4 py-1.5 bg-[#224292]/10 text-[#224292] rounded-full text-xs font-black tracking-wider uppercase mb-1">
+                                {faculty.designation}
+                            </span>
+                        )}
+                        <h3 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight leading-tight">{faculty.name}</h3>
                         
-                            <div className="flex items-center justify-center md:justify-start gap-3 text-slate-800 text-sm md:text-base font-bold">
-                                <GraduationCap size={20} className="text-[#224292]" />
-                                {faculty.qualification}
-                            </div>
+                        <div className="flex items-center justify-center md:justify-start gap-3 text-slate-800 text-sm md:text-base font-bold">
+                            <GraduationCap size={20} className="text-[#224292]" />
+                            {faculty.qualification}
+                        </div>
                     </div>
 
                     <div className="w-full md:w-80 bg-slate-50 px-8 py-6 rounded-3xl border border-slate-100 shadow-sm">
@@ -138,29 +145,31 @@ const SportsFacultyPage = () => {
                 </div>
 
                 {/* Achievements Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {faculty.sections.map((section, sidx) => (
-                        <div key={sidx} className="space-y-6">
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-[#224292]/10 flex items-center justify-center text-[#224292]">
-                                    <Trophy size={16} />
+                {faculty.sections && faculty.sections.length > 0 && (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {faculty.sections.map((section, sidx) => (
+                            <div key={sidx} className="space-y-6">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-[#224292]/10 flex items-center justify-center text-[#224292]">
+                                        <Trophy size={16} />
+                                    </div>
+                                    <h4 className="text-xs font-black text-[#224292] tracking-[2px]">
+                                        {section.title}
+                                        <div className="w-6 h-0.5 bg-[#ffc107] mt-1" />
+                                    </h4>
                                 </div>
-                                <h4 className="text-xs font-black text-[#224292] tracking-[2px]">
-                                    {section.title}
-                                    <div className="w-6 h-0.5 bg-[#ffc107] mt-1" />
-                                </h4>
+                                <ul className="space-y-4">
+                                    {section.items.map((item, iidx) => (
+                                        <li key={iidx} className="text-[13px] leading-relaxed font-bold text-slate-700 flex gap-4 group/item">
+                                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0 group-hover/item:scale-150 transition-transform" />
+                                            <span dangerouslySetInnerHTML={{ __html: item }} />
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                            <ul className="space-y-4">
-                                {section.items.map((item, iidx) => (
-                                    <li key={iidx} className="text-[13px] leading-relaxed font-bold text-slate-700 flex gap-4 group/item">
-                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0 group-hover/item:scale-150 transition-transform" />
-                                        <span dangerouslySetInnerHTML={{ __html: item }} />
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
               </motion.div>
             ))}
           </div>

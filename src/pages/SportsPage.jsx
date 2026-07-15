@@ -278,18 +278,20 @@ const SportsPage = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             { title: 'Achievements', icon: <Trophy size={20} /> },
                             { title: 'Zone Level', icon: <Medal size={20} /> },
-                            { title: 'Open Tournaments', icon: <Users size={20} /> },
+                            { title: 'Open Tournaments (Faculty)', icon: <Users size={20} />, path: 'open-tournaments-faculty' },
+                            { title: 'Open Tournaments (Students)', icon: <Users size={20} />, path: 'open-tournaments-students' },
                             { title: 'CM Trophy', icon: <Award size={20} /> },
-                            { title: 'Organized Tournaments', icon: <Calendar size={20} /> }
+                            { title: 'Organized Tournaments', icon: <Calendar size={20} /> },
+                            { title: 'Sports Day', icon: <Calendar size={20} />, path: 'sports-day' }
                         ].map((item, idx) => (
                             <motion.div
                                 key={idx}
                                 whileHover={{ y: -5, x: 5 }}
-                                onClick={() => navigate(`/campus-life/sports/achievements/${item.title.toLowerCase().replace(/ /g, '-')}`)} // Pass category to detail page
+                                onClick={() => navigate(`/campus-life/sports/achievements/${item.path || item.title.toLowerCase().replace(/ /g, '-')}`)} // Pass category to detail page
                                 className="group relative bg-white py-4 px-6 rounded-xl border border-slate-100 shadow-xl hover:shadow-slate-300/50 transition-all duration-500 overflow-hidden h-full cursor-pointer"
                             >
                                 {/* Corner Accents */}
@@ -371,7 +373,7 @@ const SportsPage = () => {
                             if (activeTab.trim() === 'NATIONAL LEVEL PHOTOS') return nationalLevelImages;
                             if (activeTab.trim() === 'OPEN TOURNAMENT FACULTY') return facultyOpenImages;
                             if (activeTab.trim() === 'OPEN TOURNAMENT INTERNATIONAL') return internationalOpenImages;
-                            if (activeTab.trim() === 'SPORTS DAY 2025-26') return sportsDayImages;
+                            if (activeTab.trim() === 'SPORTS DAY 2025-26') return [...sportsDayImages].reverse();
                             return sportsImages;
                         })().map((img, idx) => (
                             <motion.div

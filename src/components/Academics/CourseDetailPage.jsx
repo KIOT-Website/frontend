@@ -3138,7 +3138,7 @@ function AwardsSection({ courseId, courseName }) {
           <p className="text-[#A9B1C3] text-[11px] font-bold font-graphik tracking-[0.2em]">Department of {courseName.replace(/^B\.?E\.?\s*/i, '')}</p>
         </div>
         {/* Student / Faculty toggle */}
-        <div className="bg-white p-1 rounded-2xl flex self-start w-fit border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
+        <div className="bg-white p-1 rounded-2xl flex self-center xl:self-start w-fit border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
           {[{ id: 'STUDENT', label: 'Student' }, { id: 'FACULTY', label: 'Faculty' }].map(tab => (
             <button
               key={tab.id}
@@ -3269,7 +3269,7 @@ function AchievementSection({ courseId, courseName }) {
         </div>
 
         {/* Student / Faculty toggle */}
-        <div className="bg-white p-1 rounded-2xl flex self-start w-fit border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
+        <div className="bg-white p-1 rounded-2xl flex self-center xl:self-start w-fit border border-[#D5E2F4] shadow-xl shadow-blue-900/5">
           {[{ id: 'STUDENT', label: 'Student' }, { id: 'FACULTY', label: 'Faculty' }].map(tab => (
             <button
               key={tab.id}
