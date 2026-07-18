@@ -1,5 +1,10 @@
 import { Cpu, Monitor, Rocket } from 'lucide-react'
 import mbaIevImmanuelImg from '../../assets/Faculity/mba iev/Dr D Immanuel (1).png'
+import ievVijayakumarImg from '../../assets/Faculity/mba iev/Dr.S.Vijaya Kumar.png'
+import ievSaravananImg from '../../assets/Faculity/mba iev/Prof.S.Saravanan.png'
+import ievBharaniImg from '../../assets/Faculity/mba iev/Prof.M.Bharani Eswari.jpg'
+import ievRubiniImg from '../../assets/Faculity/mba iev/Prof.M.Rubini.png'
+import ievGowrishankarImg from '../../assets/Faculity/mba iev/Prof.M.Gowrishankar.png'
 
 export const mbaIevData = {
   name: 'MBA in Innovation, Entrepreneurship & Venture Development (MBA-IEV)',
@@ -53,11 +58,11 @@ export const mbaIevData = {
     ],
     faculty: [
       { name: 'Dr. Immanuel D', designation: 'Professor', qualification: 'B.B.A., M.B.A., Ph.D.', specialization: 'Entrepreneurship Development', email: 'drimmanueld@gmail.com', experience: 'Teaching: 22 Years, Industry: 8 Years', rating: 5.0, image: mbaIevImmanuelImg },
-      { name: 'Dr. Vijayakumar S', designation: 'Assistant Professor', qualification: 'B.Com., D.Co-Op., M.Sc(ITM)., MBA., MLM., M.Phil., MISTE., Ph.D.', specialization: 'Entrepreneurship Development', email: 'svkmba@kiot.ac.in', experience: 'Teaching: 16 Years, Industry: 5 Years', publications: 'IJ:08, NJ:04, NC:12, IC:06', rating: 5.0 },
-      { name: 'Prof. Saravanan S', designation: 'Assistant Professor (Sr. Grade)', qualification: 'MBA., M.Phil., UGC (NET-JRF), FDP (IIMA)', specialization: 'Marketing, Strategy and Entrepreneurship', email: 'ssvmba@kiot.ac.in', experience: 'Teaching: 17.4 Years, Research: 4.8 Years', rating: 4.8 },
-      { name: 'Prof. Bharani Eswari M', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', rating: 4.7 },
-      { name: 'Prof. Rubini M', designation: 'Assistant Professor', qualification: 'BBA, MBA, DLSW, M.Phil', specialization: 'Human Resource Management and Systems', email: 'rubinimariappan@gmail.com', experience: 'Teaching: 2.5 Years, Research: 1 Year', publications: 'IC:04, NC:07, IJ:01', rating: 4.6 },
-      { name: 'Prof. Gowrishankar M', designation: 'Assistant Professor', qualification: 'B.Tech(IT)., MBA.', specialization: 'HRM, Entrepreneurship Development', email: 'mgmba@kiot.ac.in', experience: 'Teaching: 5 Years, Research: 4 Years', publications: 'IJ:12, NJ:08, NC:04, IC:14', rating: 4.6 }
+      { name: 'Dr. Vijayakumar S', designation: 'Assistant Professor', qualification: 'B.Com., D.Co-Op., M.Sc(ITM)., MBA., MLM., M.Phil., MISTE., Ph.D.', specialization: 'Entrepreneurship Development', email: 'svkmba@kiot.ac.in', experience: 'Teaching: 16 Years, Industry: 5 Years', publications: 'IJ:08, NJ:04, NC:12, IC:06', rating: 5.0, image: ievVijayakumarImg },
+      { name: 'Prof. Saravanan S', designation: 'Assistant Professor (Sr. Grade)', qualification: 'MBA., M.Phil., UGC (NET-JRF), FDP (IIMA)', specialization: 'Marketing, Strategy and Entrepreneurship', email: 'ssvmba@kiot.ac.in', experience: 'Teaching: 17.4 Years, Research: 4.8 Years', rating: 4.8, image: ievSaravananImg },
+      { name: 'Prof. Bharani Eswari M', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', rating: 4.7, image: ievBharaniImg },
+      { name: 'Prof. Rubini M', designation: 'Assistant Professor', qualification: 'BBA, MBA, DLSW, M.Phil', specialization: 'Human Resource Management and Systems', email: 'rubinimariappan@gmail.com', experience: 'Teaching: 2.5 Years, Research: 1 Year', publications: 'IC:04, NC:07, IJ:01', rating: 4.6, image: ievRubiniImg },
+      { name: 'Prof. Gowrishankar M', designation: 'Assistant Professor', qualification: 'B.Tech(IT)., MBA.', specialization: 'HRM, Entrepreneurship Development', email: 'mgmba@kiot.ac.in', experience: 'Teaching: 5 Years, Research: 4 Years', publications: 'IJ:12, NJ:08, NC:04, IC:14', rating: 4.6, image: ievGowrishankarImg }
     ],
     labs: [
       { name: 'IEV Innovation & Prototyping Space', equipment: '3D printers, design software, and brainstorming pods', icon: Rocket },

@@ -47,12 +47,38 @@ import mbaMusthaffaImgNew from '../../assets/Faculity/mba/Prof.A.Musthaffa.png'
 import mbaManikandanImgNew from '../../assets/Faculity/mba/Prof.P.Manikandan.png'
 import mbaAmbaligaImgNew from '../../assets/Faculity/mba/Dr.R.Ambaliga Bharathi Kavithai.png'
 import mbaArivazhaganImgNew from '../../assets/Faculity/mba/Prof.V.Arivazhagan.png'
-import ievVijayakumarImg from '../../assets/Faculity/mba iev/dr.s vijayakuamar.png'
-import ievBharaniImg from '../../assets/Faculity/mba iev/Prof.M. Bharani Eswari.png'
-import ievRubiniImg from '../../assets/Faculity/mba iev/Prof.M. Rubini.png'
+import ievVijayakumarImg from '../../assets/Faculity/mba iev/Dr.S.Vijaya Kumar.png'
+import ievBharaniImg from '../../assets/Faculity/mba iev/Prof.M.Bharani Eswari.jpg'
+import ievRubiniImg from '../../assets/Faculity/mba iev/Prof.M.Rubini.png'
 import ievGowrishankarImg from '../../assets/Faculity/mba iev/Prof.M.Gowrishankar.png'
 import ievSaravananImg from '../../assets/Faculity/mba iev/Prof.S.Saravanan.png'
 import { getDepartmentSchematic } from './DepartmentSchematics'
+
+import mechTeachCollab from '../../assets/mech_teachmethod/Collaborative_Learning.png'
+import mechTeachCrossword from '../../assets/mech_teachmethod/Crossword_Puzzle.jpg'
+import mechTeachFlipped from '../../assets/mech_teachmethod/Flipped_Classroom.png'
+import mechTeachHandsOn from '../../assets/mech_teachmethod/Hands_on_training.jpg'
+import mechTeachModel from '../../assets/mech_teachmethod/Model_Based_Learning.png'
+import mechTeachOnline from '../../assets/mech_teachmethod/Online_Presentation.png'
+import mechTeachQuiz from '../../assets/mech_teachmethod/Quiz.png'
+import mechTeachRolePlay from '../../assets/mech_teachmethod/ROLE_PLAY.png'
+import mechTeachSeminar from '../../assets/mech_teachmethod/SEMINAR.jpg'
+import mechTeachVoiceOver from '../../assets/mech_teachmethod/VOICE_OVER_PPT.jpg'
+import mechTeachVideo from '../../assets/mech_teachmethod/Video_Based_Learning.png'
+
+const mechanicalTeachingMethods = [
+  { name: 'Flipped Classroom', image: mechTeachFlipped },
+  { name: 'Quiz', image: mechTeachQuiz },
+  { name: 'Online Presentation', image: mechTeachOnline },
+  { name: 'SEMINAR', image: mechTeachSeminar },
+  { name: 'Video Based Learning', image: mechTeachVideo },
+  { name: 'Crossword Puzzle', image: mechTeachCrossword },
+  { name: 'VOICE OVER PPT', image: mechTeachVoiceOver },
+  { name: 'Hands on training', image: mechTeachHandsOn },
+  { name: 'ROLE PLAY', image: mechTeachRolePlay },
+  { name: 'Collaborative Learning', image: mechTeachCollab },
+  { name: 'Model Based Learning', image: mechTeachModel }
+]
 
 // Department Data Imports
 import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFacultyAwards } from './departments/cse/cseData.jsx'
@@ -472,10 +498,10 @@ export default function CourseDetailPage({ overrides }) {
   const [selectedFaculty, setSelectedFaculty] = useState(null)
   const selectedFacultyImage = selectedFaculty
     ? (courseId === 'mba-general'
-        ? (mbaFacultyImages[selectedFaculty.name] || selectedFaculty.image)
-        : courseId === 'mba-iev'
-          ? (mbaIevFacultyImages[selectedFaculty.name] || selectedFaculty.image)
-          : selectedFaculty.image)
+      ? (mbaFacultyImages[selectedFaculty.name] || selectedFaculty.image)
+      : courseId === 'mba-iev'
+        ? (mbaIevFacultyImages[selectedFaculty.name] || selectedFaculty.image)
+        : selectedFaculty.image)
     : null;
   const [openLabIndices, setOpenLabIndices] = useState([0])
   const [selectedLeaderId, setSelectedLeaderId] = useState('chairman')
@@ -487,9 +513,11 @@ export default function CourseDetailPage({ overrides }) {
 
   const courseTabs = courseId === 'be-eee'
     ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
-    : (courseId === 'btech-csbs'
+    : (courseId === 'be-mechanical'
+      ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices', 'Teaching Method']
+      : (courseId === 'btech-csbs'
         ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Awards', 'Clubs', 'Innovative Practices']
-        : TABS);
+        : TABS));
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
 
@@ -816,7 +844,7 @@ export default function CourseDetailPage({ overrides }) {
 
       {/* --- MOBILE TAB NAVIGATION (Pill Style) --- */}
       <div className="md:hidden bg-[#224292] py-8 px-6 border-t border-white/10">
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-start gap-3 w-fit mx-auto">
           {courseTabs.map(tab => (
             <button
               key={tab}
@@ -835,7 +863,7 @@ export default function CourseDetailPage({ overrides }) {
       {/* --- DESKTOP TAB NAVIGATION (Pill Design) --- */}
       <div ref={tabsRef} className="hidden md:block sticky top-[104px] z-30 bg-[#224292] border-b border-white/10 shadow-xl">
         <div className="w-full px-6 lg:px-12 py-5">
-          <div className="flex flex-wrap justify-center gap-3 lg:gap-4 max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-start gap-3 lg:gap-4 w-fit max-w-7xl mx-auto">
             {courseTabs.map(tab => (
               <button
                 key={tab}
@@ -1078,8 +1106,8 @@ export default function CourseDetailPage({ overrides }) {
                           <div className="relative bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
                             <div className="space-y-4">
                               <h4 className="text-lg font-bold font-graphik text-[#224292] flex items-center gap-2">
-                                  <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
-                                  Group Activities:
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                Group Activities:
                               </h4>
                               <p className="text-[#333333] leading-relaxed text-[15px] md:text-[16px] font-normal font-graphik text-justify">
                                 Student’s interactions and discussions with fellow classmates allow the group to construct new knowledge, place it within a conceptual framework of existing knowledge, and then refine and assess what they know and do not know. Group activities create more opportunities for critical thinking and can promote student learning and achievement.
@@ -1962,11 +1990,10 @@ export default function CourseDetailPage({ overrides }) {
                                 <img
                                   src={customImage}
                                   alt={f.name}
-                                  className={`w-full h-full object-cover transition-transform duration-500 ${
-                                    f.name === 'Prof. S. Vimala'
+                                  className={`w-full h-full object-cover transition-transform duration-500 ${f.name === 'Prof. S. Vimala'
                                       ? 'scale-[1.05] group-hover:scale-[1.1]'
                                       : 'group-hover:scale-105'
-                                  }`}
+                                    }`}
                                 />
                               ) : (
                                 <div className="w-full h-full flex items-center justify-center text-slate-300">
@@ -2805,16 +2832,57 @@ export default function CourseDetailPage({ overrides }) {
             )}
 
 
-            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee' || courseId === 'btech-aids') && (
+            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee' || courseId === 'btech-aids' || courseId === 'be-ece') && (
               <AchievementSection courseId={courseId} courseName={course.name} />
             )}
 
-            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil' || courseId === 'btech-aids') && (
+            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil' || courseId === 'btech-aids' || courseId === 'mba-general') && (
               <AwardsSection courseId={courseId} courseName={course.name} />
             )}
 
             {activeTab === 'Clubs' && courseId === 'btech-csbs' && (
               <ClubsSection />
+            )}
+
+            {/* --- TEACHING METHOD (BE-MECHANICAL) --- */}
+            {activeTab === 'Teaching Method' && courseId === 'be-mechanical' && (
+              <div className="space-y-8 py-8">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                    <h2 className="text-3xl font-bold font-graphik text-[#224292] flex items-center gap-3">
+                      <span className="w-1.5 h-8 bg-[#ffc107] rounded-full inline-block" />
+                      Teaching Methods Adopted
+                    </h2>
+                    <p className="text-slate-500 text-sm mt-1">
+                      Innovative approaches and methodologies to enhance learning experiences.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {mechanicalTeachingMethods.map((method, idx) => (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                      key={idx}
+                      className="bg-white border border-[#DEE7F4] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group"
+                    >
+                      <div className="p-4 md:p-5 text-center border-b border-[#DEE7F4]">
+                        <h3 className="font-bold text-[#224292] text-[15px] group-hover:text-[#ffc107] transition-colors uppercase tracking-wide">{method.name}</h3>
+                      </div>
+                      <div className="aspect-video w-full overflow-hidden bg-slate-50 relative">
+                        <img
+                          src={method.image}
+                          alt={method.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             )}
 
             {/* --- EVENTS --- */}
@@ -3113,11 +3181,11 @@ function AwardsSection({ courseId, courseName }) {
   const levelColor = (level) => {
     if (!level) return 'bg-slate-100 text-slate-600'
     const l = level.toLowerCase()
-    if (l.includes('national'))      return 'bg-blue-50 text-blue-700'
+    if (l.includes('national')) return 'bg-blue-50 text-blue-700'
     if (l.includes('international')) return 'bg-purple-50 text-purple-700'
-    if (l.includes('state'))         return 'bg-green-50 text-green-700'
-    if (l.includes('regional'))      return 'bg-orange-50 text-orange-700'
-    if (l.includes('district'))      return 'bg-yellow-50 text-yellow-700'
+    if (l.includes('state')) return 'bg-green-50 text-green-700'
+    if (l.includes('regional')) return 'bg-orange-50 text-orange-700'
+    if (l.includes('district')) return 'bg-yellow-50 text-yellow-700'
     return 'bg-slate-100 text-slate-600'
   }
 
@@ -3344,7 +3412,7 @@ function AchievementSection({ courseId, courseName }) {
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Achiever Name and Designation</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event / Achievement</th>
-                {(courseId === 'btech-aids' || courseId === 'be-cse') && (
+                {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece') && (
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
                 )}
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
@@ -3360,7 +3428,7 @@ function AchievementSection({ courseId, courseName }) {
                   <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{idx + 1}</td>
                   <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
                   <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
-                  {(courseId === 'btech-aids' || courseId === 'be-cse') && (
+                  {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece') && (
                     <td className="px-4 py-3 text-center">
                       <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
                         {item.level}

@@ -101,6 +101,90 @@ const ResearchPage = () => {
         "Data Science & Analytics", "Composite Materials"
     ]
 
+    const researchPrograms = [
+        {
+            sno: 1,
+            title: "Discussion on Improving Research work at KIOT",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.PSS.Srinivasan, Executive Chairman, KIOT",
+            dates: "24.09.2025",
+            facultyBenefited: 45,
+            studentsParticipated: "-"
+        },
+        {
+            sno: 2,
+            title: "Research Skill Development Series-1",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.N.Santhiyakumari, Professor, ECE & Director-R&D",
+            dates: "27.09.2025",
+            facultyBenefited: 40,
+            studentsParticipated: "10"
+        },
+        {
+            sno: 3,
+            title: "Research Skill Development Series-2",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.N.Santhiyakumari, Professor, ECE & Director-R&D",
+            dates: "11.10.2025",
+            facultyBenefited: 30,
+            studentsParticipated: "10"
+        },
+        {
+            sno: 4,
+            title: "Research Skill Development Series-3",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.N.Santhiyakumari, Professor, ECE & Director-R&D",
+            dates: "11.10.2025",
+            facultyBenefited: 30,
+            studentsParticipated: "10"
+        },
+        {
+            sno: 5,
+            title: "Research Skill Development Series-4",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.N.Santhiyakumari, Professor, ECE & Director-R&D",
+            dates: "14.10.2025",
+            facultyBenefited: 30,
+            studentsParticipated: "10"
+        },
+        {
+            sno: 6,
+            title: "Exploring Collaborative opportunities - Online Interactive",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.B.Vinodhkumar, CEO of CDIIC, Coimbatore for",
+            dates: "23.10.2025",
+            facultyBenefited: 40,
+            studentsParticipated: "-"
+        },
+        {
+            sno: 8,
+            title: "Best Practices for fostering R&D in Engineering Institutions",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.Senthilkumar Arumugam, Professor, School of Mechanical Engineering, VIT, Chennai",
+            dates: "13.11.2025",
+            facultyBenefited: 50,
+            studentsParticipated: "35"
+        },
+        {
+            sno: 9,
+            title: "Ongoing Schemes for Anusandhan and Upcoming Schemes for Anusandhan",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.R.Vijayaraghavan, Professor, ECE, DRDO-Rtd Scientist KIOT.",
+            dates: "14.11.2025",
+            facultyBenefited: 45,
+            studentsParticipated: "-"
+        },
+        {
+            sno: 10,
+            title: "Discussion on Improving Research work at KIOT",
+            mode: "OFFLINE",
+            resourcePerson: "Dr.PSS.Srinivasan, Executive Chairman, KIOT",
+            dates: "24.01.2026",
+            facultyBenefited: 45,
+            studentsParticipated: "-"
+        }
+    ]
+
     return (
         <div className="min-h-screen bg-slate-50/30 font-sans">
             {/* Hero Section */}
@@ -303,6 +387,52 @@ const ResearchPage = () => {
                         </div>
                     </motion.div>
                 </div>
+                
+                {/* Research Programs Table Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="mt-16 w-full"
+                >
+                    <h3 className="text-2xl font-extrabold text-[#224292] mb-6 font-graphik text-center md:text-left">
+                        Recent Research <span className="text-[#ffc107]">Programs & Workshops</span>
+                    </h3>
+                    
+                    <div className="overflow-x-auto rounded-2xl shadow-sm border border-slate-200">
+                        <table className="w-full text-left border-collapse min-w-[800px]">
+                            <thead>
+                                <tr className="bg-[#224292] text-white">
+                                    <th className="p-4 font-bold text-sm text-center">S.NO.</th>
+                                    <th className="p-4 font-bold text-sm">TITLE OF THE PROGRAM</th>
+                                    <th className="p-4 font-bold text-sm text-center">MODE</th>
+                                    <th className="p-4 font-bold text-sm">RESOURCE PERSON DETAILS</th>
+                                    <th className="p-4 font-bold text-sm text-center">DATES</th>
+                                    <th className="p-4 font-bold text-sm text-center">FACULTY BENEFITED</th>
+                                    <th className="p-4 font-bold text-sm text-center">STUDENTS PARTICIPATED</th>
+                                </tr>
+                            </thead>
+                            <tbody className="bg-white divide-y divide-slate-100">
+                                {researchPrograms.map((program, idx) => (
+                                    <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                                        <td className="p-4 text-sm text-slate-600 text-center font-medium">{program.sno}</td>
+                                        <td className="p-4 text-sm text-[#224292] font-semibold">{program.title}</td>
+                                        <td className="p-4 text-sm text-slate-600 text-center">
+                                            <span className="px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-bold tracking-wider">
+                                                {program.mode}
+                                            </span>
+                                        </td>
+                                        <td className="p-4 text-sm text-slate-600 leading-relaxed max-w-[250px]">{program.resourcePerson}</td>
+                                        <td className="p-4 text-sm text-slate-600 text-center whitespace-nowrap">{program.dates}</td>
+                                        <td className="p-4 text-sm text-slate-600 text-center font-medium">{program.facultyBenefited}</td>
+                                        <td className="p-4 text-sm text-slate-600 text-center font-medium">{program.studentsParticipated}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </motion.div>
             </div>
         </div>
     )
