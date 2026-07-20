@@ -309,6 +309,10 @@ export default function StudentLifePage() {
             <span className="slc-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
             <span className="slc-card-label">Technology for Elderlycare and Childcare Club</span>
           </button>
+          <button className="slc-card" onClick={() => navigate('/resources/student-life/continuous-monitoring')}>
+            <span className="slc-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            <span className="slc-card-label">Technology for Continuous Monitoring</span>
+          </button>
           <button className="slc-card" onClick={() => navigate('/resources/student-life/acm')}>
             <span className="slc-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
             <span className="slc-card-label">ACF (ACM)</span>
@@ -390,6 +394,14 @@ export default function StudentLifePage() {
                       ) : org.name === "Technology for Elderly Care and Child Care" ? (
                         <button
                           onClick={() => navigate('/resources/student-life/elderly-childcare')}
+                          className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
+                        >
+                          {org.name}
+                          <ArrowUpRight size={14} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                      ) : org.name === "Technology for continuous Monitoring" ? (
+                        <button
+                          onClick={() => navigate('/resources/student-life/continuous-monitoring')}
                           className="text-[#224292] hover:text-[#ffc107] font-bold text-left flex items-center gap-1.5 transition-colors cursor-pointer group"
                         >
                           {org.name}

@@ -202,7 +202,7 @@ const ResearchPage = () => {
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="md:col-span-7 text-left flex flex-col items-start"
+                            className="md:col-span-12 text-left flex flex-col items-start"
                         >
                             <h1 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-3 tracking-tight text-left">
                                 Research & <span className="text-[#ffc107]">Innovations</span>
@@ -212,44 +212,6 @@ const ResearchPage = () => {
                             <p className="text-white/90 text-xs md:text-sm font-medium leading-relaxed max-w-2xl text-justify font-graphik">
                                 At Knowledge Institute of Technology, we foster a rich ecosystem of inquiry and discovery. Our departments drive cutting-edge research, secure government grants, and support innovative projects to build future-ready solutions for industry and society.
                             </p>
-                        </motion.div>
-
-                        {/* Right Column: R&D Centre Card */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="md:col-span-5 flex justify-center md:justify-end w-full"
-                        >
-                            <div className="w-full max-w-sm text-left">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <Award className="text-[#ffc107]" size={18} />
-                                    <span className="text-[#ffc107] font-black text-[11px] tracking-wider uppercase font-graphik">
-                                        Anna University, Chennai
-                                    </span>
-                                </div>
-                                <h2 className="text-2xl font-black text-white mb-3 leading-tight font-graphik">
-                                    Recognized R&D Centre
-                                </h2>
-                                <div className="flex flex-col gap-2.5 text-white/80 text-[11px] font-semibold mb-5 font-graphik">
-                                    <div className="flex items-center gap-1.5">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                        Recognition No: 4265300
-                                    </div>
-                                    <div className="flex items-center gap-1.5">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                        Valid upto: December 2027
-                                    </div>
-                                </div>
-                                <a 
-                                    href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.webp"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ffc107] text-[#224292] rounded-lg font-black text-xs hover:bg-white transition-all shadow-md active:scale-95 font-graphik"
-                                >
-                                    View Details <ChevronRight size={14} />
-                                </a>
-                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -295,7 +257,7 @@ const ResearchPage = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.45, delay: idx * 0.05 }}
                                     onClick={() => navigate(`/research/${dept.name.split(' (')[0].replace(/ /g, '-').toLowerCase()}`)}
-                                    className={`break-inside-avoid mb-5 group cursor-pointer bg-white rounded-2xl border-l-4 ${borderColor} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden`}
+                                    className={`break-inside-avoid mb-5 group cursor-pointer bg-white rounded-2xl border-l-4 border-[#ffc107] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden`}
                                 >
                                     <div className={`px-5 ${tall ? 'py-7' : 'py-5'}`}>
                                         {/* Icon + name row */}
@@ -341,35 +303,6 @@ const ResearchPage = () => {
                                 alt="Research Initiatives at KIOT"
                                 className="w-full h-[260px] lg:h-[320px] object-cover"
                             />
-                        </div>
-
-                        {/* Info card below image */}
-                        <div className="mt-5 bg-[#224292] rounded-2xl p-6 text-white shadow-lg">
-                            <div className="flex items-center gap-2 mb-3">
-                                <Award className="text-[#ffc107] shrink-0" size={18} />
-                                <span className="text-[#ffc107] font-bold text-[11px] tracking-widest uppercase font-graphik">
-                                    Anna University, Chennai
-                                </span>
-                            </div>
-                            <h3 className="text-xl font-extrabold mb-3 font-graphik">Recognized R&D Centre</h3>
-                            <div className="flex flex-col gap-2 text-white/80 text-xs font-semibold mb-5 font-graphik">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                    Recognition No: 4265300
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                    Valid upto: December 2027
-                                </div>
-                            </div>
-                            <a
-                                href="https://res.cloudinary.com/dlk8yp5fv/image/upload/v1775728566/KIOT_RIR_rieaxk.webp"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ffc107] text-[#224292] rounded-lg font-black text-xs hover:bg-white transition-all shadow-md active:scale-95 font-graphik"
-                            >
-                                View Details <ChevronRight size={14} />
-                            </a>
                         </div>
 
                         {/* Stats strip */}

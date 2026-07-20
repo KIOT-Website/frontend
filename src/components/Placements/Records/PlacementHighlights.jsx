@@ -1,133 +1,193 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Building2, Users, Trophy, IndianRupee, TrendingUp, Briefcase, Star, Sparkles } from 'lucide-react'
+import React from "react";
+import {
+  Building2,
+  UsersRound,
+  Trophy,
+  IndianRupee,
+  TrendingUp,
+} from "lucide-react";
+
+const placementStats = [
+  {
+    title: "COMPANIES VISITED",
+    value: "150+",
+    description: "Top recruiters across diverse industries.",
+    icon: Building2,
+    theme: "blue",
+  },
+  {
+    title: "TOTAL STUDENTS PLACED",
+    value: "679",
+    description: "Empowering students to build careers.",
+    icon: UsersRound,
+    theme: "yellow",
+  },
+  {
+    title: "HIGHEST SALARY",
+    value: "13.00 LPA",
+    description: "Outstanding packages from organizations.",
+    icon: Trophy,
+    theme: "blue",
+  },
+  {
+    title: "AVERAGE SALARY",
+    value: "4.10 LPA",
+    description: "Strong career growth for all students.",
+    icon: IndianRupee,
+    theme: "yellow",
+  },
+];
 
 const PlacementHighlights = () => {
-  const mainStats = [
-    {
-      label: "COMPANIES VISITED",
-      value: "150+",
-      desc: "Top recruiters across diverse industries.",
-      icon: Building2,
-      color: "#224292",
-      cornerColor: "bg-[#224292]"
-    },
-    {
-      label: "TOTAL STUDENTS PLACED",
-      value: "679",
-      desc: "Empowering students to build careers.",
-      icon: Users,
-      color: "#ffc107",
-      cornerColor: "bg-[#ffc107]"
-    },
-    {
-      label: "HIGHEST SALARY",
-      value: "13.00 LPA",
-      desc: "Outstanding packages from organizations.",
-      icon: Trophy,
-      color: "#224292",
-      cornerColor: "bg-[#224292]"
-    },
-    {
-      label: "AVERAGE SALARY",
-      value: "4.10 LPA",
-      desc: "Strong career growth for all students.",
-      icon: IndianRupee,
-      color: "#ffc107",
-      cornerColor: "bg-[#ffc107]"
-    }
-  ]
-
-
   return (
-    <section className="py-12 bg-white font-graphik relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-10 left-10 opacity-10">
-        <div className="grid grid-cols-5 gap-2">
-          {[...Array(25)].map((_, i) => <div key={i} className="w-1 h-1 bg-[#224292] rounded-full" />)}
-        </div>
+    <section className="relative overflow-hidden bg-[#f8faff] py-10 lg:py-14">
+      {/* Background decoration */}
+      <div className="absolute left-0 top-16 grid grid-cols-4 gap-4 opacity-20">
+        {Array.from({ length: 24 }).map((_, index) => (
+          <span
+            key={index}
+            className="h-2 w-2 rounded-full bg-[#17439b]"
+          />
+        ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl lg:text-4xl font-black text-[#224292] tracking-tighter mb-4"
-          >
-            Driving Careers. <span className="text-[#ffc107]">Delivering Success.</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="max-w-2xl mx-auto text-slate-600 font-bold text-base leading-relaxed"
-          >
-            Strong industry connections and career-focused training continue to open doors to exceptional opportunities.
-          </motion.p>
-        </div>
 
-        {/* Main Cards Grid - Modern Premium Design */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-          {mainStats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative bg-white rounded-2xl sm:rounded-3xl border border-slate-100 flex flex-col p-4 sm:p-6 min-h-[190px] sm:min-h-[220px] justify-between transition-all duration-300 hover:border-slate-200 hover:-translate-y-1.5 shadow-md shadow-slate-100/50 hover:shadow-xl hover:shadow-blue-900/5 overflow-hidden"
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Heading */}
+        <div className="mx-auto mb-10 max-w-4xl text-center">
+          <h2 className="text-2xl font-black tracking-tight md:text-3xl lg:text-4xl">
+            <span
+              className="text-[#123d91]"
+              style={{
+                textShadow: "0 4px 0 rgba(8,45,115,.12)",
+              }}
             >
-              {/* Top/Left Color Accent Line */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 transition-all duration-300" style={{ backgroundColor: stat.color }} />
-              
-              {/* Decorative subtle background gradient */}
-              <div 
-                className="absolute -top-10 -left-10 w-32 h-32 rounded-full blur-3xl opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" 
-                style={{ backgroundColor: stat.color }} 
-              />
+              Driving Careers.
+            </span>
 
-              <div className="flex flex-col items-start w-full">
-                {/* Icon Container */}
-                <div className="flex items-center justify-between w-full mb-3 sm:mb-5">
-                  <div 
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-md transform transition-transform duration-500 group-hover:scale-105"
-                    style={{ 
-                      backgroundColor: stat.color === '#ffc107' ? '#fffbeb' : '#f0f3fa', 
-                      color: stat.color 
-                    }}
-                  >
-                    <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.5]" />
-                  </div>
-                  {/* Subtle Accent Mark */}
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: stat.color }} />
-                </div>
+            <span
+              className="ml-3 text-[#ffbd00]"
+              style={{
+                textShadow: "0 4px 0 rgba(200,140,0,.12)",
+              }}
+            >
+              Delivering Success.
+            </span>
+          </h2>
 
-                {/* Label */}
-                <h3 className="text-[8px] sm:text-[10px] font-black text-slate-400 tracking-[0.12em] uppercase mb-2">
-                  {stat.label}
-                </h3>
-                
-                {/* Value */}
-                <div 
-                  className="text-base sm:text-2xl lg:text-3xl font-black tracking-tight leading-none mb-3 font-graphik"
-                  style={{ color: '#224292' }}
-                >
-                  {stat.value}
-                </div>
-              </div>
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-600 md:text-base">
+            Strong industry connections and career-focused training continue to
+            open doors to exceptional opportunities.
+          </p>
 
-              {/* Description */}
-              <p className="text-slate-500 text-[10px] sm:text-[11px] font-semibold leading-relaxed text-left border-t border-slate-100 pt-3 mt-1 font-graphik">
-                {stat.desc}
-              </p>
-            </motion.div>
-          ))}
+          <div className="mt-7 flex items-center justify-center gap-2">
+            <span className="h-1.5 w-16 rounded-full bg-[#123d91]" />
+            <span className="h-1.5 w-16 rounded-full bg-[#ffbd00]" />
+          </div>
         </div>
+
+        {/* Background growth chart */}
+        <div className="pointer-events-none absolute right-12 top-36 hidden items-end gap-4 opacity-[0.12] lg:flex">
+          {[80, 130, 190, 270].map((height, index) => (
+            <div
+              key={index}
+              className="w-16 rounded-t-2xl border border-white bg-[#123d91]"
+              style={{ height }}
+            />
+          ))}
+
+          <TrendingUp
+            size={180}
+            strokeWidth={1.5}
+            className="absolute -left-10 top-4 text-[#123d91]"
+          />
+        </div>
+
+        {/* Cards */}
+        <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {placementStats.map((item, index) => {
+            const Icon = item.icon;
+            const isBlue = item.theme === "blue";
+
+            return (
+              <article
+                key={index}
+                className="group relative min-h-[390px] rounded-[30px]"
+              >
+                {/* 3D depth layer */}
+                <div
+                  className={`absolute inset-0 translate-x-3 translate-y-3 rounded-[30px] ${
+                    isBlue ? "bg-[#123d91]" : "bg-[#ffbd00]"
+                  }`}
+                />
+
+                {/* Card */}
+                <div className="relative flex h-full min-h-[390px] flex-col overflow-hidden rounded-[30px] border border-white/80 bg-white px-7 py-8 shadow-[0_20px_45px_rgba(15,45,100,0.18)] transition-all duration-300 group-hover:-translate-y-2">
+                  {/* Subtle gradient */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${
+                      isBlue
+                        ? "from-[#eef4ff] via-white to-white"
+                        : "from-[#fff9e5] via-white to-white"
+                    }`}
+                  />
+
+                  {/* Bottom folded corner */}
+                  <div
+                    className={`absolute -bottom-12 -right-12 h-40 w-40 rotate-45 ${
+                      isBlue ? "bg-[#174eb2]" : "bg-[#ffc20e]"
+                    }`}
+                  />
+
+                  <div className="relative z-10 flex h-full flex-col">
+                    {/* Icon */}
+                    <div
+                      className={`mb-8 flex h-16 w-16 items-center justify-center rounded-full border-4 border-white shadow-[0_8px_18px_rgba(0,0,0,0.18)] ${
+                        isBlue
+                          ? "bg-gradient-to-br from-[#2867d8] to-[#082e80]"
+                          : "bg-gradient-to-br from-[#ffd94f] to-[#ffb400]"
+                      }`}
+                    >
+                      <Icon className="h-8 w-8 text-white" strokeWidth={2.3} />
+                    </div>
+
+                    <p className="mb-3 text-sm font-extrabold tracking-wide text-[#123d91]">
+                      {item.title}
+                    </p>
+
+                    <h3
+                      className="text-4xl font-black text-[#123d91] lg:text-[42px]"
+                      style={{
+                        textShadow: "0 3px 4px rgba(18,61,145,.18)",
+                      }}
+                    >
+                      {item.value}
+                    </h3>
+
+                    <div className="my-6 h-px w-full bg-slate-300" />
+
+                    <p className="max-w-[210px] text-base leading-7 text-slate-700">
+                      {item.description}
+                    </p>
+
+                    {/* Decorative watermark */}
+                    <Icon
+                      className={`absolute -bottom-2 -right-1 h-14 w-14 ${
+                        isBlue ? "text-blue-300/40" : "text-yellow-700/30"
+                      }`}
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PlacementHighlights
+export default PlacementHighlights;

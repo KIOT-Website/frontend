@@ -109,6 +109,8 @@ const ElderlyChildcarePage = lazy(() => import('./pages/ElderlyChildcarePage'))
 const AcmPage = lazy(() => import('./pages/AcmPage'))
 const ScintelPage = lazy(() => import('./pages/ScintelPage'))
 const HigherEducationAbroadPage = lazy(() => import('./pages/HigherEducationAbroadPage'))
+const ContinuousMonitoringPage = lazy(() => import('./pages/ContinuousMonitoringPage'))
+
 
 
 
@@ -651,6 +653,14 @@ function App() {
         title: "Technology for Elderlycare and Childcare Club | KIOT",
         desc: "Explore IoT based elderly fall detection systems, smart child safety alerts, and pediatric autism assistant systems at KIOT."
       },
+      "/student-life/continuous-monitoring": {
+        title: "Technology for Continuous Monitoring Club | KIOT",
+        desc: "Explore smart environment analytics, pollutant tracking, and cold chain monitoring using smart technologies under CSBS at KIOT."
+      },
+      "/resources/student-life/continuous-monitoring": {
+        title: "Technology for Continuous Monitoring Club | KIOT",
+        desc: "Explore smart environment analytics, pollutant tracking, and cold chain monitoring using smart technologies under CSBS at KIOT."
+      },
       "/student-life/acm": {
         title: "ACF (ACM) Student Chapter | KIOT",
         desc: "Fostering advanced coding thinking, Raspberry Pi workshops, database contests, and IoT hardware seminars under ACM Student Chapter at KIOT."
@@ -985,6 +995,8 @@ function App() {
                   <Route path="/resources/student-life/soc-club" element={<SocClubPage />} />
                   <Route path="/student-life/elderly-childcare" element={<ElderlyChildcarePage />} />
                   <Route path="/resources/student-life/elderly-childcare" element={<ElderlyChildcarePage />} />
+                  <Route path="/student-life/continuous-monitoring" element={<ContinuousMonitoringPage />} />
+                  <Route path="/resources/student-life/continuous-monitoring" element={<ContinuousMonitoringPage />} />
                   <Route path="/student-life/acm" element={<AcmPage />} />
                   <Route path="/resources/student-life/acm" element={<AcmPage />} />
                   <Route path="/student-life/scintel" element={<ScintelPage />} />

@@ -64,108 +64,6 @@ const sportsDayImages = Object.values(import.meta.glob('../assets/sports/sports_
 
 
 
-const getGalleryItemDetails = (tab, idx) => {
-    const cleanTab = tab.trim().toUpperCase();
-    
-    // Icon SVGs
-    const chessIcon = (
-        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-            <path d="M19 22H5a1 1 0 0 1-1-1v-1.5a2.5 2.5 0 0 1 2.5-2.5h11a2.5 2.5 0 0 1 2.5 2.5V21a1 1 0 0 1-1 1zm-4.75-6a4.5 4.5 0 0 0 1.25-3c0-2-1.5-3.5-3.5-3.5S8.5 11 8.5 13a4.5 4.5 0 0 0 1.25 3h4.5zM12 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
-        </svg>
-    );
-    const volleyballIcon = (
-        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current" strokeWidth="2">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10M2 12h20" />
-        </svg>
-    );
-    const runnerIcon = (
-        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="18" cy="5" r="1.5" fill="currentColor" />
-            <path d="M14 7a2 2 0 0 0-2-2H9c-1.1 0-2 .9-2 2v3M11 18v-4l-3-2V9l6 3 2-2M15 14v4l3 2" />
-        </svg>
-    );
-    const tennisIcon = (
-        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-            <path d="M14.5 2A5.5 5.5 0 0 0 9 7.5c0 1.94.99 3.65 2.5 4.67v3.33a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-3.33a5.5 5.5 0 0 0-3-10.17zM14.5 11c-1.93 0-3.5-1.57-3.5-3.5S12.57 4 14.5 4 18 5.57 18 7.5 16.43 11 14.5 11zM6.5 16a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
-        </svg>
-    );
-    const cricketIcon = (
-        <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-            <path d="M18.5 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 14.5l8-8 3 3-8 8-3-3zm1.5 5.5L2 22l2-4 2 2z" />
-        </svg>
-    );
-
-    if (cleanTab === 'STATE LEVEL CHESS TOURNAMENT 2026') {
-        return { label: 'CHESS TOURNAMENT', icon: chessIcon };
-    }
-
-    if (cleanTab === '6TH KIOT TROPHY 2025-26') {
-        const items = [
-            { label: 'VOLLEYBALL MATCH', icon: volleyballIcon },
-            { label: 'KABADDI MATCH', icon: runnerIcon },
-            { label: 'ATHLETICS', icon: runnerIcon },
-            { label: 'TABLE TENNIS', icon: tennisIcon }
-        ];
-        return items[idx % items.length];
-    }
-
-    if (cleanTab === 'CM TROPHY PHOTOS') {
-        const items = [
-            { label: 'BADMINTON MATCH', icon: tennisIcon },
-            { label: 'CHESS TOURNAMENT', icon: chessIcon },
-            { label: 'VOLLEYBALL MATCH', icon: volleyballIcon },
-            { label: 'ATHLETICS', icon: runnerIcon }
-        ];
-        return items[idx % items.length];
-    }
-
-    if (cleanTab === 'DISTRICT LEVEL PHOTOS') {
-        const items = [
-            { label: 'BOXING TOURNAMENT', icon: runnerIcon },
-            { label: 'BADMINTON MATCH', icon: tennisIcon },
-            { label: 'JUDO MATCH', icon: runnerIcon },
-            { label: 'TABLE TENNIS', icon: tennisIcon }
-        ];
-        return items[idx % items.length];
-    }
-
-    if (cleanTab === 'NATIONAL LEVEL PHOTOS') {
-        const items = [
-            { label: 'SHOOTING BALL', icon: volleyballIcon },
-            { label: 'BADMINTON MATCH', icon: tennisIcon },
-            { label: 'TABLE TENNIS', icon: tennisIcon }
-        ];
-        return items[idx % items.length];
-    }
-
-    if (cleanTab === 'OPEN TOURNAMENT FACULTY') {
-        const items = [
-            { label: 'BADMINTON MATCH', icon: tennisIcon },
-            { label: 'CRICKET TOURNAMENT', icon: cricketIcon }
-        ];
-        return items[idx % items.length];
-    }
-
-    if (cleanTab === 'OPEN TOURNAMENT INTERNATIONAL') {
-        const items = [
-            { label: 'KICK BOXING', icon: runnerIcon },
-            { label: 'HANDBALL MATCH', icon: volleyballIcon },
-            { label: 'CHESS TOURNAMENT', icon: chessIcon }
-        ];
-        return items[idx % items.length];
-    }
-
-    // Default or SPORTS DAY 2025-26
-    const items = [
-        { label: 'CHESS TOURNAMENT', icon: chessIcon },
-        { label: 'VOLLEYBALL MATCH', icon: volleyballIcon },
-        { label: 'ATHLETICS', icon: runnerIcon },
-        { label: 'TABLE TENNIS', icon: tennisIcon }
-    ];
-    return items[idx % items.length];
-};
-
 const SportsPage = () => {
     const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -425,19 +323,17 @@ const SportsPage = () => {
 
                 {/* Sports Gallery (5th) */}
                 <div className="space-y-12">
-                    <div className="text-center space-y-4">
-                        <div className="w-14 h-14 bg-[#ffc107] text-[#224292] rounded-2xl flex items-center justify-center shadow-xl shadow-[#ffc107]/20 mx-auto mb-4">
-                            <LayoutGrid size={28} />
-                        </div>
-                        <h2 className="text-4xl font-black text-[#224292] tracking-tight mb-2">Sports Gallery</h2>
-                        <div className="flex justify-center items-center gap-1.5">
-                            <div className="w-6 h-1 bg-[#224292] rounded-full" />
-                            <div className="w-16 h-1.5 bg-[#ffc107] rounded-full" />
-                            <div className="w-6 h-1 bg-[#224292] rounded-full" />
-                        </div>
-                    </div>
-
                     <div className="space-y-8">
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 bg-[#224292] text-[#ffc107] rounded-xl flex items-center justify-center shadow-lg">
+                                <LayoutGrid size={20} />
+                            </div>
+                            <div>
+                                <h2 className="text-2xl font-black text-[#224292] tracking-tight">Sports Gallery</h2>
+
+                            </div>
+                        </div>
+
                         {/* Category Tabs - Wrapped and Centered */}
                         <div className="flex flex-wrap gap-2 justify-center">
                             {[
@@ -479,40 +375,29 @@ const SportsPage = () => {
                             if (activeTab.trim() === 'OPEN TOURNAMENT INTERNATIONAL') return internationalOpenImages;
                             if (activeTab.trim() === 'SPORTS DAY 2025-26') return [...sportsDayImages].reverse();
                             return sportsImages;
-                        })().map((img, idx) => {
-                            const details = getGalleryItemDetails(activeTab, idx);
-                            return (
-                                <motion.div
-                                    layout
-                                    key={`${activeTab}-${idx}`}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.4 }}
-                                    whileHover={{ scale: 1.02, y: -5 }}
-                                    className="flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-300"
-                                >
-                                    <div 
-                                        onClick={() => setSelectedImage(img)}
-                                        className="relative aspect-[4/3] w-full overflow-hidden cursor-pointer group border-b border-slate-100"
-                                    >
-                                        <img src={img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt={`${details.label} ${idx + 1}`} />
-                                        <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                            <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
-                                                <Eye size={16} />
-                                            </div>
-                                        </div>
+                        })().map((img, idx) => (
+                            <motion.div
+                                layout
+                                key={`${activeTab}-${idx}`}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.4 }}
+                                whileHover={{ scale: 1.02, y: -5 }}
+                                onClick={() => setSelectedImage(img)}
+                                className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] aspect-[4/3] cursor-pointer group border-2 border-white transition-all duration-300"
+                            >
+                                <img src={img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={`Gallery ${idx + 1}`} />
+                                
+                                {/* Permanent Bottom Shadow Gradient */}
+                                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent z-10" />
+
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-end p-4">
+                                    <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+                                        <Eye size={16} />
                                     </div>
-                                    <div className="bg-[#224292] px-4 py-3 flex items-center gap-3 border-t border-[#224292]">
-                                        <div className="w-8 h-8 rounded-full bg-[#ffc107] text-[#224292] flex items-center justify-center shrink-0 shadow-md">
-                                            {details.icon}
-                                        </div>
-                                        <span className="text-white font-bold font-graphik text-[12px] tracking-wider truncate uppercase">
-                                            {details.label}
-                                        </span>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
+                                </div>
+                            </motion.div>
+                        ))}
                     </motion.div>
                 </div>
             </div>

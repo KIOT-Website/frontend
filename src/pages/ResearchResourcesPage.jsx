@@ -681,6 +681,73 @@ const shFacultyPursuing = [
 
 const shGuidedScholars = [];
 
+// ─── ECE (Electronics & Communication Engineering) Data ───
+const eceSupervisors = [
+    { id: 1, name: "Dr. N.Santhiyakumari", role: "Professor & Director - R&D", university: "Anna University", department: "ECE", researchArea: "Biomedical Image Processing", supervisorId: "2340297", email: "dirrd@kiot.ac.in", guided: "6", guiding: "6", irins: "https://kiot.irins.org", publications: [] },
+    { id: 2, name: "Dr. Kumarganesh S", role: "Professor / ECE", university: "Anna University", department: "ECE", researchArea: "Signal Processing and Communication", supervisorId: "3340060", email: "skgece@kiot.ac.in", guided: "-", guiding: "6", irins: "https://kiot.irins.org", publications: [] }
+];
+const ecePhdHolders = [
+    { id: 1, name: "Dr. N.Santhiyakumari", topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Carotid Artery Images using Intima media thickness measurement", year: "2008", university: "Anna University, Chennai", publications: { ij: 48, ic: 52, nj: "-", nc: 49 }, guided: "6", beingGuided: "6" },
+    { id: 2, name: "Dr. M.Thangavel", topic: "Investigation on Carotid Wall Motion and Texture Classification of Plaques Using Multi-resolution Features", year: "2016", university: "Anna University, Chennai", publications: { ij: 8, ic: 3, nj: "-", nc: 15 }, guided: "-", beingGuided: "-" },
+    { id: 3, name: "Dr. Vijayaraghavan R", topic: "Temporal Analysis of Remote Sensing Data for Identification of Some Tree and Shrub Species in Semiarid Region", year: "2008", university: "Jai Narain Vyas University Jodhpur", publications: { ij: 1, ic: "-", nj: "-", nc: 6 }, guided: "-", beingGuided: "-" },
+    { id: 4, name: "Dr. Kumarganesh S", topic: "Certain Investigations on Segmentation and Compression of Brain Tumor Image", year: "2018", university: "Anna University, Chennai", publications: { ij: 41, ic: 19, nj: "-", nc: 5 }, guided: "-", beingGuided: "6" },
+    { id: 5, name: "Dr. Shanmugasundaram P", topic: "Certain Investigations on Computer Aided Colon Cancer Detection in Wireless Capsule Endoscopy Images", year: "2021", university: "Anna University, Chennai", publications: { ij: 9, ic: 8, nj: 1, nc: 19 }, guided: "-", beingGuided: "-" },
+    { id: 6, name: "Dr. V.Saravanan", topic: "Certain investigations on active noise control systems for domestic applications by developing the step size of the FxLMS algorithm", year: "2022", university: "Anna University, Chennai", publications: { ij: 8, ic: 6, nj: "-", nc: 11 }, guided: "-", beingGuided: "-" },
+    { id: 7, name: "Dr. G.Rajamanickam", topic: "Wireless Communication", year: "2024", university: "Anna University, Chennai", publications: { ij: 4, ic: 2, nj: 1, nc: 2 }, guided: "-", beingGuided: "-" },
+    { id: 8, name: "Dr. S.Maragatharaj", topic: "Low Power VLSI", year: "2024", university: "Anna University, Chennai", publications: { ij: 11, ic: "-", nj: "-", nc: 9 }, guided: "-", beingGuided: "-" },
+    { id: 9, name: "Dr. Santhi T K", topic: "Womanism in the Select Works of Alice Walker", year: "2014", university: "Mother Teresa Women's University, Kodaikanal", publications: { ij: 2, ic: 4, nj: "-", nc: 6 }, guided: "-", beingGuided: "-" },
+    { id: 10, name: "Dr. Priya Mol K", topic: "The Brutality of Civilization and the Struggle for Survival: A Study of Jack London’s Select Novels.", year: "2022", university: "Manonmaniam Sundaranar University", publications: { ij: 2, ic: 3, nj: 1, nc: 2 }, guided: "-", beingGuided: "-" }
+];
+const eceResearchAreas = [ "Signal & Image Processing", "VLSI & Circuit design", "Biomedical Imaging and Sensing", "Wireless Sensor Networks", "Artificial Intelligence" ];
+const eceFacilities = [
+    { name: "Centre for Medical Imaging", description: "Advanced Signal Processing Kits, Medical Image Analysis Software, Virtual Reality Simulation for Medical Diagnostics", infrastructure: "Virtual Reality headsets, Medical imaging toolkits" },
+    { name: "Signal Processing & Communication Lab", description: "Digital Storage Oscilloscopes, Spectrum Analyzers, FPGA Kits, MATLAB with Toolbox", infrastructure: "Oscilloscopes, Spectrum Analyzers, MATLAB licences" },
+    { name: "Embedded Systems & VLSI Design Lab", description: "Xilinx Vivado, Cadence Tools, Microcontroller Development Boards (ARM, AVR, PIC)", infrastructure: "Vivado software, Cadence licenses, MCU development boards" }
+];
+const eceFacultyPursuing = [
+    { name: "Mr. S.Premkumar", topic: "Medical Image Processing", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
+    { name: "Mr. M.Dineshkumar", topic: "Data Security", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
+    { name: "Ms. T.Devika", topic: "Internet of Things", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
+    { name: "Mr. S.Veerakumar", topic: "Internet of Things", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
+    { name: "Mr. M.Chandraman", topic: "Medical Image Processing", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
+    { name: "Mr. A.Arun", topic: "Image Retrieval Algorithms", supervisor: "Dr. Nirmala Devi P", university: "Anna University", registration: "Jan & 2018", status: "Pursuing" },
+    { name: "Mr. T.Raja", topic: "Intuitionistic Fuzzy Sets", supervisor: "Dr. S.Thilagavathy", university: "Bharathiar University", registration: "Jan & 2024", status: "Pursuing" },
+    { name: "Mr. A.Tamilselvan", topic: "Configuration of SOC in IoT Industry", supervisor: "Dr. J.Samson Immanuel", university: "Karunya University", registration: "Jan & 2024", status: "Pursuing" },
+    { name: "Mr. K.Rajesh", topic: "Low Power VLSI Design", supervisor: "Dr. H.Victor Du John", university: "Karunya University", registration: "Jan & 2024", status: "Pursuing" },
+    { name: "Mr. S.Elarmathi", topic: "Image Processing", supervisor: "Dr. S.Kumarganesh", university: "Anna University", registration: "Jan & 2025", status: "Pursuing" },
+    { name: "Ms. Preethi A", topic: "Nanoparticles -Supercapacitor application", supervisor: "Dr. K.Balachandran", university: "Anna University", registration: "Jan & 2021", status: "Pursuing" }
+];
+const eceGuidedScholars = [
+    { scholar: "S.Madhukumar", topic: "Improving Target Delineation of Tumor Edema Complex through Modified Enhancement, Restoration and Segmentation Schemes", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", status: "Completed" },
+    { scholar: "P.Nithyadharshini", topic: "Analysis of hybrid approaches for efficient routing in vehicular ad hoc networks", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", status: "Completed" },
+    { scholar: "S.Aruljothi", topic: "Certain investigations on VLSI architectures for image scaling and impulse denoising", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", status: "Completed" },
+    { scholar: "N.Sudha", topic: "Computer-Aided Diagnosis for Bowel Images in Wireless Capsule Endoscopy", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", status: "Completed" },
+    { scholar: "P.Shanmugasundaram", topic: "Certain Investigations on Computer-Aided Colon Cancer Detection in Wireless Capsule Endoscopy Images", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", status: "Completed" },
+    { scholar: "V.Saravanan", topic: "Certain investigations on active noise control systems for domestic applications by developing the step size of the FxLMS algorithm", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", status: "Completed" },
+    { scholar: "K.M.Majidha Fathima", topic: "Certain Investigations on Routing Optimization in Wireless Sensor Network by Improving the Quality of Service Parameters Using Modified Splay Tree Algorithm", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", status: "Completed" }
+];
+
+// ─── IT (Information Technology) Data ───
+const itSupervisors = [];
+const itPhdHolders = [];
+const itResearchAreas = [ "Wireless Sensor Networks", "Machine Learning", "Information Retrieval", "Data Science and Analytics" ];
+const itFacilities = [];
+const itFacultyPursuing = [
+    { name: "Ms. R.V.Sudha", topic: "Wireless sensor Network", supervisor: "Dr. S.Sakthivel", university: "Anna University", registration: "24121691132", status: "Pursuing" },
+    { name: "Ms. S.Lalithambikai", topic: "Wireless sensor Network", supervisor: "Dr. P.Rajendran", university: "Anna University", registration: "24234691278", status: "Pursuing" },
+    { name: "Ms. B.Manjubashini", topic: "Wireless Sensor Network", supervisor: "Dr. Murali babu", university: "Anna University", registration: "22244697187", status: "Pursuing" }
+];
+const itGuidedScholars = [];
+
+// ─── MBA (Management Sciences) Data ───
+const mbaSupervisors = [];
+const mbaPhdHolders = [];
+const mbaResearchAreas = [ "Operations Research", "Finance Analytics", "HR Tech" ];
+const mbaFacilities = [];
+const mbaFacultyPursuing = [];
+const mbaGuidedScholars = [];
+
+
 
 // Responsive Horizontal Bar Graph component replacing the Donut chart for better fluid layout
 const MiniBarGraph = ({ items, total }) => {
@@ -724,11 +791,14 @@ const ResearchSummaryDashboard = ({ deptName }) => {
     const isMCA = deptName?.toLowerCase() === 'master-of-computer-applications' || deptName?.toLowerCase() === 'mca';
     const isMech = deptName?.toLowerCase() === 'mechanical-engineering';
     const isSH = deptName?.toLowerCase() === 'science-&-humanities' || deptName?.toLowerCase() === 'science-and-humanities';
+    const isECE = deptName?.toLowerCase() === 'electronics-&-communication-engineering' || deptName?.toLowerCase() === 'electronics-and-communication-engineering';
+    const isIT = deptName?.toLowerCase() === 'information-technology';
+    const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev';
 
     const periodText = '01.06.2023 to 31.05.2026';
-    const totalPubs = isCivil ? 56 : (isAIDS ? 51 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : 221)))))));
-    const totalPatentsText = isCivil ? '08' : (isAIDS ? '04' : (isCSBS ? '05' : (isCSE ? '11' : (isEEE ? '15' : (isMCA ? '00' : (isMech ? '10' : (isSH ? '03' : '08')))))));
-    const totalGrantsText = isCivil ? '11' : (isAIDS ? '03' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : '12')))))));
+    const totalPubs = isCivil ? 56 : (isAIDS ? 51 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : (isECE ? 134 : (isIT ? 13 : (isMBA ? '-' : 221))))))))));
+    const totalPatentsText = isCivil ? '08' : (isAIDS ? '04' : (isCSBS ? '05' : (isCSE ? '11' : (isEEE ? '15' : (isMCA ? '00' : (isMech ? '10' : (isSH ? '03' : (isECE ? '08' : (isIT ? '-' : (isMBA ? '-' : '08'))))))))));
+    const totalGrantsText = isCivil ? '11' : (isAIDS ? '03' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '-' : '12'))))))))));
     const totalGrantsLabel = 'Projects / Consultancy Completed';
 
     const pubLegend = isCivil ? [
@@ -745,6 +815,27 @@ const ResearchSummaryDashboard = ({ deptName }) => {
         { color: '#7c3aed', name: 'Patents Published / Granted',  count: 3 },
         { color: '#ea580c', name: 'Book / Book Chapters',         count: 4 },
         { color: '#8b5cf6', name: 'Student Publications',         count: 0 },
+    ] : (isECE ? [
+        { color: '#1e3a8a', name: 'Journal Publications',        count: 48 },
+        { color: '#3b82f6', name: 'Other Journal Publications',   count: 8 },
+        { color: '#15803d', name: 'Conference Proceedings',       count: 52 },
+        { color: '#7c3aed', name: 'Patents Published / Granted',  count: 8 },
+        { color: '#ea580c', name: 'Book / Book Chapters',         count: '-' },
+        { color: '#8b5cf6', name: 'Student Publications',         count: 18 },
+    ] : (isIT ? [
+        { color: '#1e3a8a', name: 'Journal Publications',        count: '-' },
+        { color: '#3b82f6', name: 'Other Journal Publications',   count: '-' },
+        { color: '#15803d', name: 'Conference Proceedings',       count: '-' },
+        { color: '#7c3aed', name: 'Patents Published / Granted',  count: '-' },
+        { color: '#ea580c', name: 'Book / Book Chapters',         count: '-' },
+        { color: '#8b5cf6', name: 'Student Publications',         count: '-' },
+    ] : (isMBA ? [
+        { color: '#1e3a8a', name: 'Journal Publications',        count: '-' },
+        { color: '#3b82f6', name: 'Other Journal Publications',   count: '-' },
+        { color: '#15803d', name: 'Conference Proceedings',       count: '-' },
+        { color: '#7c3aed', name: 'Patents Published / Granted',  count: '-' },
+        { color: '#ea580c', name: 'Book / Book Chapters',         count: '-' },
+        { color: '#8b5cf6', name: 'Student Publications',         count: '-' },
     ] : (isAIDS ? [
         { color: '#1e3a8a', name: 'Journal Publications',        count: 9 },
         { color: '#3b82f6', name: 'Other Journal Publications',   count: 13 },
@@ -787,7 +878,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
         { color: '#7c3aed', name: 'Patents Published / Granted',  count: 11 },
         { color: '#ea580c', name: 'Book / Book Chapters',         count: 20 },
         { color: '#8b5cf6', name: 'Student Publications',         count: 91 },
-    ]))))))
+    ])))))))));
 
     const patentLegend = isCivil ? [
         { color: '#15803d', name: 'Patents Filed',     count: '01' },
@@ -796,6 +887,18 @@ const ResearchSummaryDashboard = ({ deptName }) => {
     ] : (isSH ? [
         { color: '#15803d', name: 'Patents Filed',     count: '-' },
         { color: '#3b82f6', name: 'Patents Published', count: '03' },
+        { color: '#ea580c', name: 'Patents Granted',   count: '-' },
+    ] : (isECE ? [
+        { color: '#15803d', name: 'Patents Filed',     count: '08' },
+        { color: '#3b82f6', name: 'Patents Published', count: '08' },
+        { color: '#ea580c', name: 'Patents Granted',   count: '-' },
+    ] : (isIT ? [
+        { color: '#15803d', name: 'Patents Filed',     count: '-' },
+        { color: '#3b82f6', name: 'Patents Published', count: '-' },
+        { color: '#ea580c', name: 'Patents Granted',   count: '-' },
+    ] : (isMBA ? [
+        { color: '#15803d', name: 'Patents Filed',     count: '-' },
+        { color: '#3b82f6', name: 'Patents Published', count: '-' },
         { color: '#ea580c', name: 'Patents Granted',   count: '-' },
     ] : (isAIDS ? [
         { color: '#15803d', name: 'Patents Filed',     count: '01' },
@@ -821,7 +924,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
         { color: '#15803d', name: 'Patents Filed',     count: '11' },
         { color: '#3b82f6', name: 'Patents Published', count: '11' },
         { color: '#ea580c', name: 'Patents Granted',   count: '-' },
-    ]))))));
+    ])))))))));
     // shared inline style shortcuts
     const th  = { color:'#1e3a8a', fontWeight:700, fontSize:'9px', padding:'4px 6px', borderBottom:'1px solid #cbd5e1', textAlign:'left',   whiteSpace:'nowrap' };
     const thC = { ...th, textAlign:'center' };
@@ -836,10 +939,12 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                 <h2 style={{ color:'white', fontWeight:900, fontSize:'15px', letterSpacing:'2px', textTransform:'uppercase', margin:0, lineHeight:1.2 }}>
                     Summary of Research and Consultancy Activities
                 </h2>
-                <div style={{ display:'flex', alignItems:'center', gap:'6px', background:'white', padding:'4px 12px', borderRadius:'5px', fontSize:'11px', fontWeight:700, color:'#1e3a8a', whiteSpace:'nowrap', border:'1px solid #1e3a8a' }}>
-                    <span>📅</span>
-                    <span>PERIOD: {periodText}</span>
-                </div>
+                {false && (
+                    <div style={{ display:'flex', alignItems:'center', gap:'6px', background:'white', padding:'4px 12px', borderRadius:'5px', fontSize:'11px', fontWeight:700, color:'#1e3a8a', whiteSpace:'nowrap', border:'1px solid #1e3a8a' }}>
+                        <span>📅</span>
+                        <span>PERIOD: {periodText}</span>
+                    </div>
+                )}
             </div>
 
             {/* ── KPI ROW ── */}
@@ -1059,6 +1164,25 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                                     <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                             </>
+                                        ) : (isIT || isMBA) ? (
+                                            <>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '75%' }}>AICTE</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>-</td>
+                                                </tr>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>SERB</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                </tr>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>National Mission</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>Institutional Grants</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                </tr>
+                                            </>
                                         ) : (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
@@ -1086,7 +1210,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                             {/* Table 2: By Department or Detail */}
                             <div style={{ flex:1, border:'1px solid #cbd5e1', borderRadius:'6px', overflow:'hidden', display: 'flex', flexDirection: 'column' }}>
                                 <div style={{ background:'#ede9fe', color:'#4c1d95', fontSize:'9px', fontWeight:800, textTransform:'uppercase', textAlign:'center', padding:'4px 2px', borderBottom:'1px solid #cbd5e1', whiteSpace:'nowrap' }}>
-                                    {isCivil || isAIDS || isCSBS || isCSE || isEEE || isMCA || isSH ? "Project Detail" : "By Department / Section"}
+                                    {isCivil || isAIDS || isCSBS || isCSE || isEEE || isMCA || isSH || isECE || isIT || isMBA ? "Project Detail" : "By Department / Section"}
                                 </div>
                                 <table style={{ width:'100%', borderCollapse:'collapse', fontSize:'8px', flex:1, tableLayout:'fixed' }}>
                                     <tbody>
@@ -1195,6 +1319,21 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                                     <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                             </>
+                                        ) : (isIT || isMBA) ? (
+                                            <>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '75%', lineHeight: 1.1 }}>Sponsored Projects</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>-</td>
+                                                </tr>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Consultancy</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Collaborative</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                </tr>
+                                            </>
                                         ) : (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
@@ -1225,11 +1364,11 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                 <tbody>
                                     <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
                                         <td style={{ padding:'3px 0', color:'#475569', fontWeight:700 }}>Consultancy</td>
-                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "11" : (isAIDS ? "-" : (isCSBS ? "01" : (isEEE ? "₹5,43,045" : (isMCA ? "-" : (isMech ? "₹9,00,000" : (isSH ? "-" : "1.5 Lakhs (2)"))))))}</td>
+                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "11" : (isAIDS ? "-" : (isCSBS ? "01" : (isEEE ? "₹5,43,045" : (isMCA ? "-" : (isMech ? "₹9,00,000" : (isSH ? "-" : (isECE ? "1.5 Lakhs (2)" : (isIT || isMBA ? "-" : "1.5 Lakhs (2)"))))))))}</td>
                                     </tr>
                                     <tr>
                                         <td style={{ padding:'3px 0', color:'#475569', fontWeight:700 }}>Sponsored Research</td>
-                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "-" : (isAIDS ? "2" : (isCSBS ? "-" : (isEEE ? "₹1,00,000" : (isMCA ? "-" : (isMech ? "-" : (isSH ? "-" : "6.5 Lakhs (1)"))))))}</td>
+                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "-" : (isAIDS ? "2" : (isCSBS ? "-" : (isEEE ? "₹1,00,000" : (isMCA ? "-" : (isMech ? "-" : (isSH ? "-" : (isECE ? "6.5 Lakhs (1)" : (isIT || isMBA ? "-" : "6.5 Lakhs (1)"))))))))}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1239,8 +1378,9 @@ const ResearchSummaryDashboard = ({ deptName }) => {
 
                     <div style={{ background:'#ede9fe', borderTop:'1px solid #4c1d95', padding:'6px 14px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                         <span style={{ color:'#4c1d95', fontWeight:700, fontSize:'10px' }}>Total Projects / Consultancy Completed:</span>
-                        <span style={{ color:'#4c1d95', fontWeight:900, fontSize:'16px' }}>{isCivil ? "11" : (isAIDS ? "Nil" : (isCSBS ? "01" : (isEEE ? "08" : (isMCA ? "Nil" : (isMech ? "02" : (isSH ? "Nil" : "2"))))))}</span>
+                        <span style={{ color:'#4c1d95', fontWeight:900, fontSize:'16px' }}>{isCivil ? "11" : (isAIDS ? "Nil" : (isCSBS ? "01" : (isEEE ? "08" : (isMCA ? "Nil" : (isMech ? "02" : (isSH ? "Nil" : (isECE ? "2" : (isIT || isMBA ? "-" : "2"))))))))}</span>
                     </div>
+
                 </div>
 
             </div>
@@ -1273,17 +1413,20 @@ const ResearchResourcesPage = () => {
     const isMCA = deptName?.toLowerCase() === 'master-of-computer-applications' || deptName?.toLowerCase() === 'mca'
     const isMech = deptName?.toLowerCase() === 'mechanical-engineering'
     const isSH = deptName?.toLowerCase() === 'science-&-humanities' || deptName?.toLowerCase() === 'science-and-humanities'
-    const isSinglePageDashboard = isCSE || isAIDS || isCivil || isCSBS || isEEE || isMCA || isMech || isSH
+    const isECE = deptName?.toLowerCase() === 'electronics-&-communication-engineering' || deptName?.toLowerCase() === 'electronics-and-communication-engineering'
+    const isIT = deptName?.toLowerCase() === 'information-technology'
+    const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev'
+    const isSinglePageDashboard = true
 
-    const supervisors = isCivil ? civilSupervisors : (isAIDS ? aidsSupervisors : (isCSBS ? csbsSupervisors : (isEEE ? eeeSupervisors : (isMCA ? mcaSupervisors : (isMech ? mechSupervisors : (isSH ? shSupervisors : cseSupervisors))))))
-    const phdHolders = isCivil ? civilPhdHolders : (isAIDS ? aidsPhdHolders : (isCSBS ? csbsPhdHolders : (isEEE ? eeePhdHolders : (isMCA ? mcaPhdHolders : (isMech ? mechPhdHolders : (isSH ? shPhdHolders : csePhdHolders))))))
-    const researchAreas = isCivil ? civilResearchAreas : (isAIDS ? aidsResearchAreas : (isCSBS ? csbsResearchAreas : (isEEE ? eeeResearchAreas : (isMCA ? mcaResearchAreas : (isMech ? mechResearchAreas : (isSH ? shResearchAreas : cseResearchAreas))))))
-    const facilities = isCivil ? civilFacilities : (isAIDS ? aidsFacilities : (isCSBS ? csbsFacilities : (isEEE ? eeeFacilities : (isMCA ? mcaFacilities : (isMech ? mechFacilities : (isSH ? shFacilities : cseFacilities))))))
-    const facultyPursuing = isCivil ? civilFacultyPursuing : (isAIDS ? aidsFacultyPursuing : (isCSBS ? csbsFacultyPursuing : (isEEE ? eeeFacultyPursuing : (isMCA ? mcaFacultyPursuing : (isMech ? mechFacultyPursuing : (isSH ? shFacultyPursuing : cseFacultyPursuing))))))
-    const guidedScholars = isCivil ? civilGuidedScholars : (isAIDS ? aidsGuidedScholars : (isCSBS ? csbsGuidedScholars : (isEEE ? eeeGuidedScholars : (isMCA ? mcaGuidedScholars : (isMech ? mechGuidedScholars : (isSH ? shGuidedScholars : cseGuidedScholars))))))
+    const supervisors = isCivil ? civilSupervisors : (isAIDS ? aidsSupervisors : (isCSBS ? csbsSupervisors : (isEEE ? eeeSupervisors : (isMCA ? mcaSupervisors : (isMech ? mechSupervisors : (isSH ? shSupervisors : (isECE ? eceSupervisors : (isIT ? itSupervisors : (isMBA ? mbaSupervisors : cseSupervisors)))))))))
+    const phdHolders = isCivil ? civilPhdHolders : (isAIDS ? aidsPhdHolders : (isCSBS ? csbsPhdHolders : (isEEE ? eeePhdHolders : (isMCA ? mcaPhdHolders : (isMech ? mechPhdHolders : (isSH ? shPhdHolders : (isECE ? ecePhdHolders : (isIT ? itPhdHolders : (isMBA ? mbaPhdHolders : csePhdHolders)))))))))
+    const researchAreas = isCivil ? civilResearchAreas : (isAIDS ? aidsResearchAreas : (isCSBS ? csbsResearchAreas : (isEEE ? eeeResearchAreas : (isMCA ? mcaResearchAreas : (isMech ? mechResearchAreas : (isSH ? shResearchAreas : (isECE ? eceResearchAreas : (isIT ? itResearchAreas : (isMBA ? mbaResearchAreas : cseResearchAreas)))))))))
+    const facilities = isCivil ? civilFacilities : (isAIDS ? aidsFacilities : (isCSBS ? csbsFacilities : (isEEE ? eeeFacilities : (isMCA ? mcaFacilities : (isMech ? mechFacilities : (isSH ? shFacilities : (isECE ? eceFacilities : (isIT ? itFacilities : (isMBA ? mbaFacilities : cseFacilities)))))))))
+    const facultyPursuing = isCivil ? civilFacultyPursuing : (isAIDS ? aidsFacultyPursuing : (isCSBS ? csbsFacultyPursuing : (isEEE ? eeeFacultyPursuing : (isMCA ? mcaFacultyPursuing : (isMech ? mechFacultyPursuing : (isSH ? shFacultyPursuing : (isECE ? eceFacultyPursuing : (isIT ? itFacultyPursuing : (isMBA ? mbaFacultyPursuing : cseFacultyPursuing)))))))))
+    const guidedScholars = isCivil ? civilGuidedScholars : (isAIDS ? aidsGuidedScholars : (isCSBS ? csbsGuidedScholars : (isEEE ? eeeGuidedScholars : (isMCA ? mcaGuidedScholars : (isMech ? mechGuidedScholars : (isSH ? shGuidedScholars : (isECE ? eceGuidedScholars : (isIT ? itGuidedScholars : (isMBA ? mbaGuidedScholars : cseGuidedScholars)))))))))
 
     // Interactive States for CSE Single Page view
-    const [activeTab, setActiveTab] = useState(isAIDS || isCivil || isCSBS || isMCA ? 'areasFacilities' : 'supervisors')
+    const [activeTab, setActiveTab] = useState(isAIDS || isCivil || isCSBS || isMCA || isIT || isMBA ? 'areasFacilities' : 'supervisors')
     const [selectedSuper, setSelectedSuper] = useState(null)
 
     const formatDeptName = (name) => {
@@ -1395,10 +1538,12 @@ const ResearchResourcesPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-6"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#eef2ff] rounded-full text-[#1e4a76] text-[11px] font-black tracking-wider mb-3">
-                        <Search size={14} />
-                        <span>Research & Doctoral Initiatives</span>
-                    </div>
+                    {false && (
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#eef2ff] rounded-full text-[#1e4a76] text-[11px] font-black tracking-wider mb-3">
+                            <Search size={14} />
+                            <span>Research & Doctoral Initiatives</span>
+                        </div>
+                    )}
 
                     <h1 className="text-2xl lg:text-3xl font-bold text-[#224292] leading-tight mb-3">
                         <span className="text-[#ffc107]">Research in</span> {formatDeptName(deptName)}

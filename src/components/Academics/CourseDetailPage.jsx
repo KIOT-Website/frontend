@@ -516,7 +516,7 @@ export default function CourseDetailPage({ overrides }) {
     : (courseId === 'be-mechanical'
       ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices', 'Teaching Method']
       : (courseId === 'btech-csbs'
-        ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Awards', 'Clubs', 'Innovative Practices']
+        ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Awards', 'Innovative Practices']
         : TABS));
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
