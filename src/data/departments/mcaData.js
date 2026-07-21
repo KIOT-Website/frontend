@@ -1,4 +1,8 @@
 import { Cpu, BookOpen } from 'lucide-react'
+import mcaMohanapriyaImage from '../../assets/Faculity/mca/Dr. S. Mohanapriya.webp';
+import mcaNethajiImage from '../../assets/Faculity/mca/Dr.V.Nethaji.webp';
+import mcaKarimullaImage from '../../assets/Faculity/mca/Mr.K.Karimulla Sheriff.webp';
+import mcaSowndaryaImage from '../../assets/Faculity/mca/Mrs.G.Sowndarya.webp';
 
 export const mcaData = {
   name: 'Master of Computer Applications',
@@ -34,8 +38,46 @@ export const mcaData = {
       { year: 'Year 2 – Emerging Tech & Capstone', semesters: ['Cloud Computing', 'Mobile Application Development', 'Big Data Analytics', 'Information Security', 'Comprehensive Project / Internship', 'Professional Seminar'] }
     ],
     faculty: [
-      { name: 'Dr. Ilangkumaran M', designation: 'Professor & Head', qualification: 'MCA., M.Phil., Ph.D.', specialization: 'Data Mining & Web Security', email: 'hod.mca@kiot.ac.in', experience: '18 Years', rating: 5.0 },
-      { name: 'Mr. Kumar R', designation: 'Assistant Professor', qualification: 'MCA., M.Phil.', specialization: 'Cloud Computing', email: 'kumarr@kiot.ac.in', experience: '10 Years', rating: 4.7 }
+      { 
+        name: 'Dr. S. Mohanapriya', 
+        designation: 'Professor & Head', 
+        qualification: 'MCA., Ph.D.', 
+        specialization: 'Computer Applications', 
+        email: 'hod.mca@kiot.ac.in', 
+        experience: '18 Years', 
+        rating: 5.0,
+        image: mcaMohanapriyaImage
+      },
+      { 
+        name: 'Dr. V. Nethaji', 
+        designation: 'Assistant Professor', 
+        qualification: 'MCA., Ph.D.', 
+        specialization: 'Computer Applications', 
+        email: 'vne.mca@kiot.ac.in', 
+        experience: '10 Years', 
+        rating: 4.8,
+        image: mcaNethajiImage
+      },
+      { 
+        name: 'Mr. K. Karimulla Sheriff', 
+        designation: 'Assistant Professor', 
+        qualification: 'MCA.', 
+        specialization: 'Computer Applications', 
+        email: 'kks.mca@kiot.ac.in', 
+        experience: '8 Years', 
+        rating: 4.7,
+        image: mcaKarimullaImage
+      },
+      { 
+        name: 'Mrs. G. Sowndarya', 
+        designation: 'Assistant Professor', 
+        qualification: 'MCA.', 
+        specialization: 'Computer Applications', 
+        email: 'gso.mca@kiot.ac.in', 
+        experience: '6 Years', 
+        rating: 4.6,
+        image: mcaSowndaryaImage
+      }
     ],
     labs: [
       { name: 'Advanced Software Development Lab', equipment: 'High-performance workstations with modern development frameworks and servers', icon: Cpu }

@@ -53,7 +53,7 @@ const PlacementDetailsYearSection = () => {
           Placement Details <span className="text-[#ffc107]">(Batch Year)</span>
         </h2>
       </div>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {data.length === 0 ? (
           <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-black font-semibold min-h-[200px] flex items-center justify-center">
             <p>Annual placement reports are currently being updated.</p>

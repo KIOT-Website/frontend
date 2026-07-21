@@ -141,7 +141,7 @@ const PlacementRecordsStudentsOptedSection = () => {
           Placement Records <span className="text-[#ffc107]">(Students Opted for Placement)</span>
         </h2>
       </div>
-      <div className="w-full">
+      <div className="max-w-7xl mx-auto">
         <div className="overflow-x-auto">
           <div className="min-w-[800px] bg-white border border-[#D5E2F4]/50 rounded-2xl overflow-hidden shadow-sm">
             {/* Table Header */}
@@ -182,7 +182,7 @@ const PlacementRecordsStudentsOptedSection = () => {
       </div>
 
       {/* 2026 Batch Placement Details Section */}
-      <div className="w-full mt-20 pt-10 border-t border-slate-200">
+      <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-slate-200">
         <div className="text-center mb-8">
           <h3 className="text-xl md:text-2xl font-bold text-[#224292] tracking-tight uppercase">
             2026 Batch Placement Record
