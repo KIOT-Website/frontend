@@ -457,15 +457,35 @@ const eeeFacilities = [
 ];
 
 const eeeFacultyPursuing = [
-    { name: "Mrs. S. Kalpana Devi", topic: "Power Electronics", supervisor: "Dr. C. Muniraj (Director Academics / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
     { name: "Mrs. K. Manjula", topic: "Renewable Energy Sources", supervisor: "Dr. V. Kamatchi Kannan (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
     { name: "Mrs. R. Rajeswari", topic: "Power Quality", supervisor: "Dr. V. Kamatchi Kannan (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
     { name: "Mrs. P. Rekha", topic: "Intelligent Techniques", supervisor: "Dr. P. A. Gowrisankar (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
     { name: "Mr. M. Sugan", topic: "Control Systems", supervisor: "Dr. P. A. Gowrisankar (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
-    { name: "Mr. T. Karthikeyan", topic: "High Voltage Engineering", supervisor: "Dr. C. Muniraj (Director Academics / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" }
+    { name: "Mr. T. Karthikeyan", topic: "High Voltage Engineering", supervisor: "Dr. C. Muniraj (Director Academics / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
+    { name: "Mr. G. Karthikeyan", topic: "Power Electronics", supervisor: "Dr. A. Jagadeeshwaran, Associate Professor / EEE, Sona College of Technology, Salem", university: "Anna University", registration: "202012123", status: "Pursuing" },
+    { name: "Mr. R. Kathiresan", topic: "Electric Vehicle", supervisor: "Dr. C. Govindaraju, Associate Professor / EEE, Government College of Engineering, Salem", university: "Anna University", registration: "2214707145", status: "Pursuing" },
+    { name: "Mr. B. Dhinesh", topic: "Electric Vehicle", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "22143697123", status: "Pursuing" },
+    { name: "Mr. S. E. Murthy", topic: "Electric Vehicle", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "2317511425", status: "Pursuing" },
+    { name: "Mr. M. Jagadeeshraja", topic: "Embedded Systems", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "23133697118", status: "Pursuing" },
+    { name: "Mr. M. Rajkumar", topic: "Power Systems", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "23133697123", status: "Pursuing" },
+    { name: "Mr. P. Balaji", topic: "Power Electronics", supervisor: "Dr. P. Rajalakshmy, Associate Professor, Robotics Engineering, Karunya University, Coimbatore", university: "Karunya University", registration: "236000168", status: "Pursuing" },
+    { name: "Mr. R. Madhanraj", topic: "Control & Instrumentation", supervisor: "Dr. P. Anantha Christu Raj, Research Supervisor, Assistant Professor (SG), Robotics Engineering, Karunya University, Coimbatore", university: "Karunya University", registration: "236000087", status: "Pursuing" },
+    { name: "Mrs. N. Divya", topic: "Power Electronics", supervisor: "Dr. V. Kamatchi Kannan, Professor / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "24233691184", status: "Pursuing" },
+    { name: "Mrs. P. Rekha", topic: "Embedded Systems", supervisor: "Dr. V. Kamatchi Kannan, Professor / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "24239691279", status: "Pursuing" },
+    { name: "Mr. Andril Alagusabai", topic: "Power Systems", supervisor: "Dr. J. Senthil Kumar, Bannari Amman Institute of Technology, Salem", university: "Anna University", registration: "20233691153", status: "Pursuing" }
 ];
 
-const eeeGuidedScholars = [];
+const eeeGuidedScholars = [
+    { scholar: "Mr. P. Govindaraju", topic: "High Voltage Engineering", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded (2024)" },
+    { scholar: "Ms. P. Gomathi", topic: "Image Processing", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded (2023)" },
+    { scholar: "Ms. N. Selvarani", topic: "Power Electronics and Drives", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded (2021)" },
+    { scholar: "Ms. D. Gunapriya", topic: "Electrical Machines", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded (2021)" },
+    { scholar: "Mrs. V. Jamuna", topic: "Electrical Machines", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Guided" },
+    { scholar: "Mr. S. Sathiskumar", topic: "DC-DC Converter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded (2024)" },
+    { scholar: "Mr. S. Selvakumar", topic: "Quasi Z-Source Inverter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded (2022)" },
+    { scholar: "Mr. F. Vijay Amirtha Raj", topic: "Permanent Magnet Synchronous Motor", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded (2022)" },
+    { scholar: "Mr. P. Selvabharathi", topic: "DC - DC Converter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Thesis Submitted (2025)" }
+];
 
 // ─── MCA (Master of Computer Applications) Data ───
 const mcaSupervisors = [];
@@ -1574,7 +1594,7 @@ const ResearchResourcesPage = () => {
                                 { id: 'supervisors', label: 'Ph.D Supervisors', icon: Users, show: supervisors.length > 0 },
                                 { id: 'phdCompleted', label: 'Our Wings', icon: Award, show: phdHolders.length > 0 },
                                 { id: 'areasFacilities', label: 'Infrastructure & Areas', icon: Microscope, show: researchAreas.length > 0 || facilities.length > 0 },
-                                { id: 'scholars', label: isAIDS || isCivil || isCSBS || isEEE || isMCA || isSH ? 'Faculty Pursuing Ph.D' : 'Scholars & Pursuing', icon: GraduationCap, show: facultyPursuing.length > 0 || guidedScholars.length > 0 }
+                                { id: 'scholars', label: isAIDS || isCivil || isCSBS || isMCA || isSH ? 'Faculty Pursuing Ph.D' : 'Scholars & Pursuing', icon: GraduationCap, show: facultyPursuing.length > 0 || guidedScholars.length > 0 }
                             ]
                             .filter(tab => tab.show)
                             .map((tab) => (

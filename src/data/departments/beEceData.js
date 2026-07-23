@@ -36,8 +36,8 @@ import ecePriyaImage from '../../assets/Faculity/ECE/Mrs. P. Priya.webp'
 import ecePreethiImage from '../../assets/Faculity/ECE/Mrs. A. Preethi.webp'
 
 export const beEceData = {
-  name: 'B.E Electronics & Communication Engineering',
-    short: 'Electronics & Communication',
+  name: 'B.E Electronics and Communication Engineering',
+    short: 'Electronics and Communication',
     duration: '4 Years (8 Semesters)',
     intake: 180,
     affiliation: 'Anna University',
@@ -58,7 +58,12 @@ export const beEceData = {
     peo: "The Program Educational Objectives(PEOs) for the Electronics and Communication Engineering program describe accomplishments that graduates are expected to attain within five to seven years after graduation\n\nPEO – 1: To enable graduates to pursue research, or have a successful career in academia or industries associated with Electronics and Communication Engineering, or as entrepreneurs\n\nPEO – 2: To provide students with strong foundational concepts and also advanced techniques and tools in order to enable them to build solutions or systems of varying complexity\n\nPEO – 3: To prepare students to critically analyze existing literature in an area of specialization and ethically develop innovative and research oriented methodologies to solve the problems identified",
     po: "The graduates of Electronics and Communication Engineering will be able to:\n\nPO – 1: Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\n\nPO – 2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\n\nPO – 3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\n\nPO – 4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\n\nPO – 5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\n\nPO – 6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\n\nPO – 7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\n\nPO – 8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\n\nPO – 9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\n\nPO – 10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\n\nPO – 11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\n\nPO – 12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
     pso: "After the successful completion of B.E programme in Electronic and Communication Engineering, the graduates will be able to\n\nPSO – 1: Use signal processing concepts and tools to provide solutions to real time problems\n\nPSO – 2: Use embedded system concepts for developing IoT applications\n\nPSO – 3: Use the concepts of analog and digital electronics to design and implement VLSI circuits",
-    whyChoose: ['High-tech VLSI labs', 'Communication focus', 'Expert faculty'],
+    whyChoose: [
+      'System-on-Chip (SoC) Design Laboratory with industry-standard hardware and software.',
+      'Embedded Systems and Internet of Things (IoT) Laboratory with modern development boards.',
+      'Software-Defined Vehicle Laboratory.',
+      'Experienced and Dedicated Faculty Members.'
+    ],
     curriculum: [{ year: 'Year 1', semesters: ['Maths', 'Physics', 'Circuits'] }],
     faculty: [
       {
@@ -438,6 +443,61 @@ export const beEceData = {
         publications: 'IJ:01 IC:03',
         rating: 4.0,
         image: eceSriKiruthikaImage
+      },
+      {
+        name: 'Mrs. A. Vijayalakshmi',
+        designation: 'Assistant Professor',
+        joiningDate: '19-06-2026',
+        qualification: 'M.E.,',
+        association: 'Regular',
+        experience: '9 Years 28 Months',
+        specialization: 'Communication System',
+        email: 'avece@kiot.ac.in',
+        publications: 'IJ: 3 IC: 4 NC: 0'
+      },
+      {
+        name: 'Ms. S. Narmatha',
+        designation: 'Assistant Professor',
+        joiningDate: '19.06.2026',
+        qualification: 'M.E',
+        association: 'Regular',
+        experience: 'Fresher',
+        specialization: 'Applied Electronics',
+        email: 'snece@kiot.ac.in',
+        publications: 'IJ: 2 IC: 1'
+      },
+      {
+        name: 'Dr. P.S.Maheswari',
+        designation: 'Assistant Professor',
+        joiningDate: '19.06.2026',
+        qualification: 'Ph.D',
+        association: 'Regular',
+        experience: '8.5 Years',
+        specialization: 'Power Electronics and Drives',
+        email: 'psmece@kiot.ac.in',
+        publications: 'IJ: 5 IC: 3 NC: 2'
+      },
+      {
+        name: 'Mrs. T. Ranjini',
+        designation: 'Assistant Professor',
+        joiningDate: '04.06.2014',
+        qualification: 'B.Sc., M.Sc., M.Phil., (Ph.D)',
+        association: 'Regular',
+        experience: '15 Years',
+        specialization: 'Graph Theory',
+        email: 'trmat@kiot.ac.in',
+        category: 'S&H'
+      },
+      {
+        name: 'Mrs. P. Pushparani',
+        designation: 'Assistant Professor',
+        joiningDate: '19.06.2026',
+        qualification: 'M.E.,(Ph.D)',
+        association: 'Regular',
+        experience: '12 Years',
+        specialization: 'VLSI Design',
+        email: 'ppece@kiot.ac.in',
+        publications: 'IJ: 16 IC: 3 NC: 4'
       },
       {
         name: 'Mr. Chinnadurai P',

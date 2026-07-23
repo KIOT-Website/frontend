@@ -2458,7 +2458,7 @@ export default function CourseDetailPage({ overrides }) {
                             }`}>
                             {LabIcon && <LabIcon size={20} />}
                           </div>
-                          <span className="text-[14px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
+                          <span className="text-[13px] font-semibold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
                           <ChevronRight size={14} className={isDesktopSelected ? 'text-[#ffc107]' : 'text-[#64779F] opacity-40'} />
                         </button>
                       );
@@ -2569,7 +2569,7 @@ export default function CourseDetailPage({ overrides }) {
                             }`}>
                             {LabIcon && <LabIcon size={20} />}
                           </div>
-                          <span className="text-[14px] font-bold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
+                          <span className="text-[13px] font-semibold font-graphik tracking-tight leading-tight flex-1">{lab.name}</span>
                           <ChevronDown size={18} className={`transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#ffc107]' : 'text-[#64779F] opacity-40'}`} />
                         </button>
 
@@ -2832,11 +2832,11 @@ export default function CourseDetailPage({ overrides }) {
             )}
 
 
-            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee' || courseId === 'btech-aids' || courseId === 'be-ece') && (
+            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee' || courseId === 'btech-aids' || courseId === 'be-ece' || courseId === 'mba-general' || courseId === 'mba-iev' || courseId === 'btech-it') && (
               <AchievementSection courseId={courseId} courseName={course.name} />
             )}
 
-            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil' || courseId === 'btech-aids' || courseId === 'mba-general') && (
+            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil' || courseId === 'btech-aids' || courseId === 'mba-general' || courseId === 'mba-iev' || courseId === 'btech-it') && (
               <AwardsSection courseId={courseId} courseName={course.name} />
             )}
 
@@ -3371,6 +3371,7 @@ function AchievementSection({ courseId, courseName }) {
             <tbody>
               {visibleData.map((item, idx) => {
                 const showYearHeader = item.year && (idx === 0 || item.year !== visibleData[idx - 1].year);
+                const displayIndex = item.year ? visibleData.slice(0, idx + 1).filter(d => d.year === item.year).length : idx + 1;
                 return (
                   <Fragment key={idx}>
                     {showYearHeader && (
@@ -3383,7 +3384,7 @@ function AchievementSection({ courseId, courseName }) {
                     <tr
                       className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
                     >
-                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{idx + 1}</td>
+                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{displayIndex}</td>
                       <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
                       <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
                       <td className="px-4 py-3 text-center">
@@ -3404,41 +3405,77 @@ function AchievementSection({ courseId, courseName }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
+          className="bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200"
         >
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-[#224292] text-white">
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Achiever Name and Designation</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event / Achievement</th>
-                {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece') && (
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
-                )}
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Title</th>
-              </tr>
+              {courseId === 'mba-iev' || courseId === 'mba-general' ? (
+                <tr className="bg-[#224292] text-white">
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center whitespace-nowrap">S.No</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Name of the Faculty</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Designation</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Name of the Acheivements / Award</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Date of receiving the award</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Issued by</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">District/ Other State/ National</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">With State/ Outside State</th>
+                </tr>
+              ) : (
+                <tr className="bg-[#224292] text-white">
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Achiever Name and Designation</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event / Achievement</th>
+                  {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece') && (
+                    <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
+                  )}
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Title</th>
+                </tr>
+              )}
             </thead>
             <tbody>
-              {visibleData.map((item, idx) => (
-                <tr
-                  key={idx}
-                  className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5 border-t border-slate-100`}
-                >
-                  <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{idx + 1}</td>
-                  <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
-                  <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
-                  {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece') && (
-                    <td className="px-4 py-3 text-center">
-                      <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
-                        {item.level}
-                      </span>
-                    </td>
-                  )}
-                  <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
-                  <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
-                </tr>
-              ))}
+              {visibleData.map((item, idx) => {
+                const showYearHeader = item.year && (idx === 0 || item.year !== visibleData[idx - 1].year);
+                const displayIndex = item.year ? visibleData.slice(0, idx + 1).filter(d => d.year === item.year).length : idx + 1;
+                return (
+                  <Fragment key={idx}>
+                    {showYearHeader && (
+                      <tr className="bg-slate-100">
+                        <td colSpan={(courseId === 'mba-iev' || courseId === 'mba-general') ? "8" : "6"} className="px-4 py-3 text-center text-sm font-bold text-slate-800 border-y border-slate-200">
+                          FACULTY ACHIEVEMENTS {item.year}
+                        </td>
+                      </tr>
+                    )}
+                    {courseId === 'mba-iev' || courseId === 'mba-general' ? (
+                      <tr className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5 border-t border-slate-100`}>
+                        <td className="px-4 py-3 text-center text-sm font-bold text-[#224292] whitespace-nowrap">{displayIndex}</td>
+                        <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-nowrap">{item.name}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-nowrap">{item.designation}</td>
+                        <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.achievement}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-nowrap">{item.date}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.issuedBy}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-nowrap">{item.districtOrNational}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-nowrap">{item.stateStatus}</td>
+                      </tr>
+                    ) : (
+                      <tr className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5 border-t border-slate-100`}>
+                        <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{displayIndex}</td>
+                        <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
+                        {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece') && (
+                          <td className="px-4 py-3 text-center">
+                            <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                              {item.level}
+                            </span>
+                          </td>
+                        )}
+                        <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
+                      </tr>
+                    )}
+                  </Fragment>
+                );
+              })}
             </tbody>
           </table>
         </motion.div>

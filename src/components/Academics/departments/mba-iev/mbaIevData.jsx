@@ -1,4 +1,33 @@
 export const mbaIevStudentAchievements = [];
-export const mbaIevFacultyAchievements = [];
-export const mbaIevStudentAwards = [];
-export const mbaIevFacultyAwards = [];
+export const mbaIevFacultyAchievements = [
+  { sno: 1, year: "2026-2027", name: "Dr.R.Ramesh", designation: "ASP/ MBA", achievement: "Malaysia International Research Excellence Award 2026", date: "04-06-2026 to 07-06-2026", issuedBy: "International Conference on Arts and Science, Management Studies, Medical Sciences, Engineering and Law held at the University of Malaya, Malaysia", districtOrNational: "International", stateStatus: "Outside State" },
+  { sno: 1, year: "2025-2026", name: "Mr.S.Saravanan", designation: "AP/ MBA-IEV", achievement: "Certified Entrepreneurship Award from Wadhwani Foundation", date: "02.09.2025", issuedBy: "Wadhwani Foundation", districtOrNational: "National", stateStatus: "With State" },
+  { sno: 2, year: "2025-2026", name: "Mr.S.Saravanan", designation: "AP/ MBA-IEV", achievement: "கணியன் பூங்குன்றனார் விருது", date: "30.03.2026", issuedBy: "வகை தமிழ்ச் சங்கம்", districtOrNational: "National", stateStatus: "With State" },
+  { sno: 3, year: "2025-2026", name: "Mr.S.Saravanan", designation: "AP/ MBA-IEV", achievement: "உ.வே.சா. விருது", date: "30.03.2026", issuedBy: "வகை தமிழ்ச் சங்கம்", districtOrNational: "National", stateStatus: "With State" },
+  { sno: 4, year: "2025-2026", name: "Dr.R.Ramesh", designation: "ASP/ MBA", achievement: "Outstanding Researcher Award in Sri Lanka", date: "15.06.2025", issuedBy: "The Academy College of Architectural Engineering Technology and Save for Next Generation, Srilanka", districtOrNational: "International", stateStatus: "Outside State" },
+  { sno: 5, year: "2025-2026", name: "Dr.R.Ramesh", designation: "ASP/ MBA", achievement: "Certificate of Recognition for the Award-Excellence in Promoting Entrepreneurship and Innovation", date: "12-03.2026 to 13.03.2026", issuedBy: "Periyar Univesity University Business Collaboration Center & Department of Management Studies and South Eastern University of Srilanka and Faculty of Management and Commerce", districtOrNational: "International", stateStatus: "With State" },
+  { sno: 6, year: "2025-2026", name: "S. Vimala", designation: "AP/ MBA", achievement: "Best Women Faculty Award", date: "08.03.2026", issuedBy: "National Foundation for Innovative Scientific Research and Technology", districtOrNational: "National", stateStatus: "With State" },
+  { sno: 7, year: "2025-2026", name: "T.Suganya", designation: "AP/ MBA", achievement: "Best Women Faculty Award", date: "08.03.2026", issuedBy: "National Foundation for Innovative Scientific Research and Technology", districtOrNational: "National", stateStatus: "With State" },
+  { sno: 8, year: "2025-2026", name: "Dr.R.Ambaliga Bharathi Kavithai", designation: "AP/ MBA", achievement: "Board of Study Member at Periyar University Affiliated Colleges for Department of BBA", date: "14.02.2026", issuedBy: "Periyar University", districtOrNational: "Distric", stateStatus: "With State" },
+  { sno: 9, year: "2025-2026", name: "Dr.R.Ambaliga Bharathi Kavithai", designation: "AP/ MBA", achievement: "invited as the Guest of Honour for the prestigious ICSSR Sponsored Ten-Day Advanced Research Methodology Course (10.05.2026 to 20.05.2026) at Periyar University, Salem.", date: "20.05.2026", issuedBy: "Periyar University", districtOrNational: "Distric", stateStatus: "With State" },
+  { sno: 10, year: "2025-2026", name: "Dr.R.Ambaliga Bharathi Kavithai", designation: "AP/ MBA", achievement: "Reviewer for the scopus Indexed Journal \"Psychology, Society & Education \", ISSN : 1989-709X", date: "14.01.2026", issuedBy: "Editor of the Journal", districtOrNational: "International", stateStatus: "Spain" },
+  { sno: 11, year: "2025-2026", name: "Dr.R.Ambaliga Bharathi Kavithai", designation: "AP/ MBA", achievement: "Reviewer for the Peer Review Journal \"Journal on Innovations in Teaching and Learning\", ISSN: 2583-6188.", date: "11.02.2026", issuedBy: "Chief Editor of the Journal", districtOrNational: "National", stateStatus: "With State" },
+  { sno: 12, year: "2025-2026", name: "Dr.R.Ambaliga Bharathi Kavithai", designation: "AP/ MBA", achievement: "Reviewer for the Open Access Journal \"Journal of Human Resource Management\", ISSN: 2331-0715", date: "05.04.2026", issuedBy: "Chief Editor of the Journal", districtOrNational: "International", stateStatus: "USA" },
+  { sno: 13, year: "2025-2026", name: "Dr.R.Ambaliga Bharathi Kavithai", designation: "AP/ MBA", achievement: "Appointed as Associate Editor for the \"Journal of Human Resource Management\", ISSN: 2331-0715", date: "15.11.2025", issuedBy: "Editorial Board of the Journal", districtOrNational: "International", stateStatus: "USA" },
+  { sno: 14, year: "2025-2026", name: "Dr.R.Ambaliga Bharathi Kavithai", designation: "AP/ MBA", achievement: "Reviewer for the Taylor and Francis Routledge Open Access Business Journal \"COGENT BUSINESS & MANAGEMENT\", ISSN: 2331-1975", date: "24.03.2026", issuedBy: "Deputy Academic Editor", districtOrNational: "International", stateStatus: "USA" },
+  { sno: 15, year: "2025-2026", name: "Dr.R.Ambaliga Bharathi Kavithai", designation: "AP/ MBA", achievement: "Reviewer for the Refreed Journal \"Nilgiri Journal for Research and Innovation (NJRI)\", ISSN: 2485-5656", date: "26.02.2026", issuedBy: "Editor of the Journal", districtOrNational: "National", stateStatus: "With State" }
+];
+export const mbaIevStudentAwards = [
+  { sno: 1, name: "T.Gopalakrishnan\\n(II MBA IEV)", event: "Annual Day", level: "College", award: "Award", title: "Internship - Market Research and Social Media International Level - Project Fund Received Received Rs.15,000." },
+  { sno: 2, name: "S.Mathan\\n(II MBA IEV)", event: "Achiever Award", level: "College", award: "Award", title: "The future of performance appraisal: Transitioning to continuous feedback system National Level Journal Paper Published" },
+  { sno: 3, name: "VIDHYA G\\n(II MBA IEV)", event: "Annual Day", level: "College", award: "Award", title: "Best Outgoing Student" },
+  { sno: 4, name: "VIDHYA G\\n(II MBA IEV)", event: "Annual Day", level: "College", award: "Award", title: "Overall Academic Topper" },
+  { sno: 5, name: "VAANMAATHI S\\n(II MBA IEV)", event: "Annual Day", level: "College", award: "Award", title: "Best Students In Co-Curricular Activities" },
+  { sno: 6, name: "SWEGA N\\n(I MBA IEV)", event: "Annual Day", level: "College", award: "Award", title: "Best Students In Co-Curricular Activities" },
+  { sno: 7, name: "AUGUSTIAN S V\\n(II MBA IEV)", event: "Annual Day", level: "College", award: "Award", title: "Best Students In Extra Curricular Activities" },
+  { sno: 8, name: "PARTHIBAN A\\n(I MBA IEV)", event: "Annual Day", level: "College", award: "Award", title: "Best Students In Extra Curricular Activities" },
+  { sno: 9, name: "RAGHULKUMAR S K\\n(II MBA IEV)", event: "Annual Day", level: "College", award: "Award", title: "Most Book Borrowed Award" }
+];
+export const mbaIevFacultyAwards = [
+  { sno: 1, name: "Dr.R.Ambaliga Bharathi Kavithai", event: "Anuual Day", level: "College", award: "Best Faculty Award", title: "Best Faculty Award - Department of MBA(IEV) for the AY:25-26" }
+];
