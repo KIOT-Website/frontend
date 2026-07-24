@@ -5,6 +5,35 @@ import { Calendar, ArrowLeft, Timer, MapPin, Loader2, Phone, Mail } from 'lucide
 import axios from 'axios'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const DEFAULT_EVENT_IMAGE = 'https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800';
+
+function getMediaUrl(url) {
+  if (!url || typeof url !== 'string' || !url.trim()) return DEFAULT_EVENT_IMAGE;
+  let cleanUrl = url.trim();
+
+  if (cleanUrl.startsWith('http://')) {
+    cleanUrl = cleanUrl.replace(/^http:\/\//i, 'https://');
+  }
+
+  if (cleanUrl.startsWith('//')) {
+    cleanUrl = 'https:' + cleanUrl;
+  }
+
+  if (cleanUrl.includes('localhost:8000') || cleanUrl.includes('127.0.0.1:8000') || cleanUrl.includes('localhost:5000')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = cleanUrl.replace(/^https?:\/\/(localhost|127\.0\.0\.1):(8000|5000)/i, apiHost);
+  }
+
+  if (cleanUrl.startsWith('/')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = `${apiHost}${cleanUrl}`;
+  } else if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://') && !cleanUrl.startsWith('data:')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = `${apiHost}/${cleanUrl}`;
+  }
+
+  return cleanUrl;
+}
 
 const EventDetailPage = () => {
     const { eventSlug } = useParams()
@@ -97,9 +126,17 @@ const EventDetailPage = () => {
                         className="w-full rounded-2xl overflow-hidden shadow-2xl mb-12 bg-slate-100"
                     >
                         {event.media_type === 'video' ? (
-                            <video src={event.media_url} controls autoPlay loop muted playsInline className="w-full h-auto" />
+                            <video src={getMediaUrl(event.media_url)} controls autoPlay loop muted playsInline className="w-full h-auto" />
                         ) : (
-                            <img src={event.media_url} alt={event.event_name} className="w-full h-auto shadow-inner" />
+                            <img
+                              src={getMediaUrl(event.media_url)}
+                              alt={event.event_name}
+                              className="w-full h-auto shadow-inner"
+                              onError={(e) => {
+                                e.currentTarget.onerror = null;
+                                e.currentTarget.src = DEFAULT_EVENT_IMAGE;
+                              }}
+                            />
                         )}
                     </motion.div>
                 )}

@@ -14,6 +14,36 @@ const STATUS_CONFIG = {
   completed: { label: "Completed", color: "text-slate-500",  border: "border-slate-200",   bg: "bg-slate-50",  dotColor: "bg-slate-400"  },
 };
 
+const DEFAULT_EVENT_IMAGE = 'https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800';
+
+function getMediaUrl(url) {
+  if (!url || typeof url !== 'string' || !url.trim()) return DEFAULT_EVENT_IMAGE;
+  let cleanUrl = url.trim();
+
+  if (cleanUrl.startsWith('http://')) {
+    cleanUrl = cleanUrl.replace(/^http:\/\//i, 'https://');
+  }
+
+  if (cleanUrl.startsWith('//')) {
+    cleanUrl = 'https:' + cleanUrl;
+  }
+
+  if (cleanUrl.includes('localhost:8000') || cleanUrl.includes('127.0.0.1:8000') || cleanUrl.includes('localhost:5000')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = cleanUrl.replace(/^https?:\/\/(localhost|127\.0\.0\.1):(8000|5000)/i, apiHost);
+  }
+
+  if (cleanUrl.startsWith('/')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = `${apiHost}${cleanUrl}`;
+  } else if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://') && !cleanUrl.startsWith('data:')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = `${apiHost}/${cleanUrl}`;
+  }
+
+  return cleanUrl;
+}
+
 // ─── Utilities ────────────────────────────────────────────────────────────────
 
 function formatDate(d) {
@@ -79,10 +109,14 @@ function EventCard({ event, onOpen }) {
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-slate-100">
         <img
-          src={event.image || 'https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800'}
+          src={getMediaUrl(event.image)}
           alt={event.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
           loading="lazy"
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = DEFAULT_EVENT_IMAGE;
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
