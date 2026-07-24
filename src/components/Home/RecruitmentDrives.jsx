@@ -6,6 +6,36 @@ import { Link } from 'react-router-dom'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
+const DEFAULT_POSTER_IMAGE = 'https://images.unsplash.com/photo-1540575861501-7ad0582371f3?auto=format&fit=crop&q=80&w=800';
+
+function getMediaUrl(url) {
+  if (!url || typeof url !== 'string' || !url.trim()) return DEFAULT_POSTER_IMAGE;
+  let cleanUrl = url.trim();
+
+  if (cleanUrl.startsWith('http://')) {
+    cleanUrl = cleanUrl.replace(/^http:\/\//i, 'https://');
+  }
+
+  if (cleanUrl.startsWith('//')) {
+    cleanUrl = 'https:' + cleanUrl;
+  }
+
+  if (cleanUrl.includes('localhost:8000') || cleanUrl.includes('127.0.0.1:8000') || cleanUrl.includes('localhost:5000')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = cleanUrl.replace(/^https?:\/\/(localhost|127\.0\.0\.1):(8000|5000)/i, apiHost);
+  }
+
+  if (cleanUrl.startsWith('/')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = `${apiHost}${cleanUrl}`;
+  } else if (!cleanUrl.startsWith('http://') && !cleanUrl.startsWith('https://') && !cleanUrl.startsWith('data:')) {
+    const apiHost = API_BASE_URL.replace(/\/$/, '');
+    cleanUrl = `${apiHost}/${cleanUrl}`;
+  }
+
+  return cleanUrl;
+}
+
 function formatDate(d) {
   try {
     return new Date(d).toLocaleDateString("en-IN", {
@@ -81,7 +111,7 @@ const RecruitmentDrives = () => {
                         className="flex flex-col items-center"
                     >
                         <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
-                            Recruitment <span className="text-[#ffc107]">Drives</span>
+                            Institutional <span className="text-[#ffc107]">Posters</span>
                         </h2>
                         <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#ffc107] to-transparent mt-4 rounded-full" />
                     </motion.div>
@@ -90,10 +120,10 @@ const RecruitmentDrives = () => {
                 {loading ? (
                     <div className="py-20 flex flex-col items-center justify-center opacity-30">
                         <Loader2 size={40} className="animate-spin text-[#224292] mb-4" />
-                        <p className="text-[10px] font-black uppercase tracking-widest text-[#224292]">Loading Opportunities...</p>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-[#224292]">Loading Posters...</p>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 justify-items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 justify-items-center">
                         {displayDrives.map((drive, idx) => (
                             <motion.div
                                 key={drive.id}
@@ -102,41 +132,31 @@ const RecruitmentDrives = () => {
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.7, delay: idx * 0.2, ease: [0.22, 1, 0.36, 1] }}
                                 onClick={() => setSelectedPoster(drive)}
-                                className="w-full max-w-[380px] group relative bg-white rounded-2xl overflow-hidden border border-[#ffc107]/30 hover:border-[#ffc107]/60 hover:shadow-xl transition-all duration-300 cursor-pointer"
+                                className="w-full max-w-[360px] group relative bg-white rounded-2xl overflow-hidden border border-[#ffc107]/30 hover:border-[#ffc107]/60 hover:shadow-xl transition-all duration-300 cursor-pointer"
                             >
-                                <div className="aspect-[3/4] relative overflow-hidden bg-slate-50 flex items-center justify-center">
+                                <div className="h-[360px] relative overflow-hidden bg-slate-50 flex items-center justify-center">
                                     {drive.media_url ? (
                                         drive.media_type === 'video' ? (
                                             <video 
-                                                src={drive.media_url} 
+                                                src={getMediaUrl(drive.media_url)} 
                                                 className="w-full h-full object-cover"
                                                 autoPlay muted loop playsInline
                                             />
                                         ) : (
                                             <img 
-                                                src={drive.media_url} 
+                                                src={getMediaUrl(drive.media_url)} 
                                                 alt={drive.company_name}
-                                                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                                                className="w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-[1.03]"
+                                                onError={(e) => {
+                                                    e.currentTarget.onerror = null;
+                                                    e.currentTarget.src = DEFAULT_POSTER_IMAGE;
+                                                }}
                                             />
                                         )
                                     ) : (
                                         <div className="flex flex-col items-center gap-3 opacity-20">
                                             <ImageIcon size={48} />
                                             <span className="text-[10px] font-black uppercase tracking-widest">No Poster Image</span>
-                                        </div>
-                                    )}
-                                </div>
-                                <div className="p-5 flex flex-col border-t border-slate-50">
-                                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[9px] font-black bg-[#224292]/5 border border-[#224292]/10 text-[#224292] w-fit mb-2">
-                                        Active Drive
-                                    </span>
-                                    <h3 className="text-[#224292] font-semibold text-[15px] leading-snug mb-2 group-hover:text-[#ffc107] transition-colors line-clamp-1">
-                                        {drive.company_name}
-                                    </h3>
-                                    {drive.drive_date && (
-                                        <div className="flex items-center gap-2 text-[11px] text-slate-500 font-medium">
-                                            <Calendar size={11} className="text-[#224292]/70 flex-shrink-0" />
-                                            <span>{formatDate(drive.drive_date)}</span>
                                         </div>
                                     )}
                                 </div>
@@ -152,13 +172,13 @@ const RecruitmentDrives = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="text-center mt-12 md:mt-16"
+                        className="text-center mt-10 md:mt-12"
                     >
                         <Link 
                             to="/recruitment"
                             className="group relative inline-flex items-center gap-3 px-6 py-3 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
                         >
-                            <span className="text-white">View All Drives</span>
+                            <span className="text-white">View All Posters</span>
                             <ChevronRight size={14} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
                         </Link>
                     </motion.div>
@@ -192,15 +212,19 @@ const RecruitmentDrives = () => {
                             <div className="w-full h-full rounded-2xl overflow-hidden bg-black/20 flex items-center justify-center">
                                 {selectedPoster.media_type === 'video' ? (
                                     <video 
-                                        src={selectedPoster.media_url} 
+                                        src={getMediaUrl(selectedPoster.media_url)} 
                                         controls autoPlay
                                         className="max-w-full max-h-full"
                                     />
                                 ) : (
                                     <img 
-                                        src={selectedPoster.media_url} 
+                                        src={getMediaUrl(selectedPoster.media_url)} 
                                         alt=""
                                         className="max-w-full max-h-full object-contain"
+                                        onError={(e) => {
+                                            e.currentTarget.onerror = null;
+                                            e.currentTarget.src = DEFAULT_POSTER_IMAGE;
+                                        }}
                                     />
                                 )}
                             </div>
