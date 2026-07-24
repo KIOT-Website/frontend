@@ -54,13 +54,62 @@ function formatDate(d) {
   }
 }
 
-function formatDateShort(d) {
+function formatEventDateRangeShort(startDateStr, endDateStr) {
+  if (!startDateStr) return '';
   try {
-    return new Date(d).toLocaleDateString("en-IN", {
-      day: "numeric", month: "short",
-    });
+    const start = new Date(startDateStr);
+    if (isNaN(start.getTime())) return startDateStr;
+
+    const startDay = start.getDate();
+    const startMonth = start.toLocaleDateString("en-IN", { month: "short" }).toUpperCase();
+
+    if (!endDateStr) {
+      return `${startDay} ${startMonth}`;
+    }
+
+    const end = new Date(endDateStr);
+    if (isNaN(end.getTime()) || start.toDateString() === end.toDateString()) {
+      return `${startDay} ${startMonth}`;
+    }
+
+    const endDay = end.getDate();
+    const endMonth = end.toLocaleDateString("en-IN", { month: "short" }).toUpperCase();
+
+    if (start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear()) {
+      return `${startDay} - ${endDay} ${startMonth}`;
+    }
+
+    return `${startDay} ${startMonth} - ${endDay} ${endMonth}`;
   } catch (e) {
-    return d;
+    return startDateStr;
+  }
+}
+
+function formatEventDateRangeLong(startDateStr, endDateStr) {
+  if (!startDateStr) return '';
+  try {
+    const start = new Date(startDateStr);
+    if (isNaN(start.getTime())) return startDateStr;
+
+    const startFormatted = start.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+
+    if (!endDateStr) return startFormatted;
+
+    const end = new Date(endDateStr);
+    if (isNaN(end.getTime()) || start.toDateString() === end.toDateString()) {
+      return startFormatted;
+    }
+
+    const endFormatted = end.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+
+    if (start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear()) {
+      const monthYear = start.toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+      return `${start.getDate()} – ${end.getDate()} ${monthYear}`;
+    }
+
+    return `${startFormatted} – ${endFormatted}`;
+  } catch (e) {
+    return startDateStr;
   }
 }
 
@@ -122,7 +171,7 @@ function EventCard({ event, onOpen }) {
         <div className="absolute bottom-3 left-3 z-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#224292] text-white text-[10px] font-black uppercase tracking-wider rounded-lg shadow-md border border-white/10">
             <Calendar size={12} />
-            {formatDateShort(event.date)}
+            {formatEventDateRangeShort(event.date, event.endDate)}
           </div>
         </div>
 
@@ -229,7 +278,7 @@ function EventModal({ event, onClose }) {
           {/* Details grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { Icon: Calendar, label: "Date", val: formatDate(event.date) + (event.endDate ? ` – ${formatDate(event.endDate)}` : "") },
+              { Icon: Calendar, label: "Date", val: formatEventDateRangeLong(event.date, event.endDate) },
               { Icon: MapPin,   label: "Venue", val: event.venue || 'Main Campus Auditorium' },
             ].map(({ Icon, label, val }) => (
               <div key={label} className="bg-slate-50 border border-slate-100/50 rounded-xl p-3 flex items-start gap-3">
