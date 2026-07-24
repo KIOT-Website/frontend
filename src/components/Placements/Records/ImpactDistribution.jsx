@@ -33,10 +33,10 @@ const AnimatedDonut = ({ segments, circumference, radius, strokeWidth, centerLab
         })}
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-        <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={visible ? { opacity: 1, scale: 1 } : {}} className={`text-3xl font-black ${dark ? 'text-white' : 'text-[#18357a]'}`}>
+        <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={visible ? { opacity: 1, scale: 1 } : {}} className={`text-3xl font-semibold ${dark ? 'text-white' : 'text-[#224292]'}`}>
           {centerLabel}
         </motion.span>
-        {dark && <div className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mt-1">Batch</div>}
+        {dark && <div className="text-[10px] font-semibold text-white/30 uppercase tracking-[0.2em] mt-1">Batch</div>}
       </div>
     </div>
   )
@@ -44,35 +44,46 @@ const AnimatedDonut = ({ segments, circumference, radius, strokeWidth, centerLab
 
 const ImpactDistribution = () => {
   return (
-    <div className="max-w-7xl mx-auto mb-40">
-       <div className="text-center mb-20">
-          <div className="flex items-center justify-center gap-3 text-[#ffc107] font-black text-[10px] uppercase tracking-[0.4em] mb-4">
+    <div className="max-w-6xl mx-auto mb-40 px-6">
+       <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 text-[#ffc107] font-semibold text-[10px] uppercase tracking-[0.4em] mb-4">
              <span className="w-10 h-[1px] bg-[#ffc107]/30" /> Distribution Matrix <span className="w-10 h-[1px] bg-[#ffc107]/30" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#18357a] tracking-tighter uppercase mb-2">Placement <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18357a] to-[#ffc107]">Impact</span> 2024-25</h2>
+          <h2 className="text-2xl md:text-4xl font-bold text-[#224292] tracking-tight mb-2">
+             Placement Impact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#224292] to-[#ffc107]">2025-26</span>
+          </h2>
        </div>
 
-       <div className="grid md:grid-cols-2 gap-12">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className="bg-white/40 backdrop-blur-xl p-12 rounded-[5rem] shadow-2xl border border-white/60 relative group overflow-hidden">
-             <h3 className="text-sm font-black text-[#18357a]/40 uppercase tracking-[0.3em] text-center mb-12">Sectoral Allocation</h3>
-             <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {/* Sectoral Allocation (Solid White Card) */}
+          <motion.div 
+             initial={{ opacity: 0, y: 30 }} 
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             className="bg-white border border-slate-100 p-8 md:p-10 rounded-[2.5rem] shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-300 relative group overflow-hidden"
+          >
+             <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-full -mr-16 -mt-16 -z-10 group-hover:bg-blue-50/20 transition-colors" />
+             <h3 className="text-xs font-semibold text-[#224292]/60 uppercase tracking-[0.3em] text-center mb-10">Sectoral Allocation</h3>
+             <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
                  <AnimatedDonut radius={40} circumference={251.2} strokeWidth={12} centerLabel="100%" dark={false}
                     segments={[
-                      { pct: 0.52, color: '#18357a', start: 0 },
-                      { pct: 0.34, color: '#ffc107', start: 0.52 },
-                      { pct: 0.14, color: '#64779F', start: 0.86 }
+                      { pct: 0.44, color: '#224292', start: 0 },
+                      { pct: 0.40, color: '#ffc107', start: 0.44 },
+                      { pct: 0.16, color: '#64779F', start: 0.84 }
                     ]} />
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-5">
                    {[
-                      { label: "IT Sector", val: "52%", color: "#18357a", icon: Activity },
-                      { label: "Core Sector", val: "34%", color: "#ffc107", icon: Target },
-                      { label: "Management", val: "14%", color: "#64779F", icon: Users }
+                      { label: "IT Sector", val: "44%", color: "#224292", icon: Activity },
+                      { label: "Core Sector", val: "40%", color: "#ffc107", icon: Target },
+                      { label: "Management", val: "16%", color: "#64779F", icon: Users }
                    ].map((item, i) => (
                       <div key={i} className="flex items-center gap-4">
-                         <div className="w-10 h-10 rounded-xl shadow-md flex items-center justify-center" style={{ backgroundColor: `${item.color}15`, color: item.color }}> <item.icon size={20} /> </div>
+                         <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-sm shrink-0" style={{ backgroundColor: `${item.color}15`, color: item.color }}> 
+                            <item.icon size={18} /> 
+                         </div>
                          <div>
-                            <div className="text-xl font-black text-[#18357a] leading-none mb-1">{item.val}</div>
-                            <div className="text-[9px] font-black text-[#64779F] uppercase tracking-widest">{item.label}</div>
+                            <div className="text-xl font-bold text-[#224292] leading-none mb-1">{item.val}</div>
+                            <div className="text-[9px] font-semibold text-[#64779F] uppercase tracking-widest">{item.label}</div>
                          </div>
                       </div>
                    ))}
@@ -80,30 +91,38 @@ const ImpactDistribution = () => {
              </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#18357a] p-12 rounded-[5rem] shadow-2xl relative overflow-hidden group">
-             <h3 className="text-sm font-black text-white/20 uppercase tracking-[0.3em] text-center mb-12 relative z-10">Recruitment Influx</h3>
-             <div className="flex flex-col md:flex-row items-center justify-center gap-10 relative z-10">
-                 <AnimatedDonut radius={38} circumference={238.76} strokeWidth={10} centerLabel="2025" dark={true}
+          {/* Recruitment Influx (Solid Dark Blue Card) */}
+          <motion.div 
+             initial={{ opacity: 0, y: 30 }} 
+             whileInView={{ opacity: 1, y: 0 }} 
+             viewport={{ once: true }}
+             transition={{ delay: 0.1 }} 
+             className="bg-[#224292] border border-[#1a3575] p-8 md:p-10 rounded-[2.5rem] shadow-lg shadow-blue-900/10 hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 relative overflow-hidden group"
+          >
+             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
+             <h3 className="text-xs font-semibold text-white/50 uppercase tracking-[0.3em] text-center mb-10 relative z-10">Recruitment Influx</h3>
+             <div className="flex flex-col sm:flex-row items-center justify-center gap-10 relative z-10">
+                 <AnimatedDonut radius={38} circumference={238.76} strokeWidth={10} centerLabel="2026" dark={true}
                     segments={[
-                      { pct: 0.35, color: '#ffc107', start: 0 },
-                      { pct: 0.25, color: '#60A5FA', start: 0.35 },
-                      { pct: 0.15, color: '#FFFFFF', start: 0.60 },
-                      { pct: 0.14, color: '#A78BFA', start: 0.75 },
-                      { pct: 0.11, color: '#3B82F6', start: 0.89 }
+                      { pct: 0.69, color: '#ffc107', start: 0 },
+                      { pct: 0.12, color: '#60A5FA', start: 0.69 },
+                      { pct: 0.04, color: '#FFFFFF', start: 0.81 },
+                      { pct: 0.13, color: '#A78BFA', start: 0.85 },
+                      { pct: 0.02, color: '#3B82F6', start: 0.98 }
                     ]} />
-                <div className="grid grid-cols-2 gap-x-12 gap-y-6">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-5">
                    {[
-                      { label: "On-Campus", val: "35%", color: "#ffc107" },
-                      { label: "COE Hiring", val: "25%", color: "#60A5FA" },
-                      { label: "Internship", val: "15%", color: "#FFFFFF" },
-                      { label: "Off-Campus", val: "14%", color: "#A78BFA" },
-                      { label: "Corporate Contest", val: "11%", color: "#3B82F6" }
+                      { label: "On-Campus", val: "69%", color: "#ffc107" },
+                      { label: "COE Hiring", val: "12%", color: "#60A5FA" },
+                      { label: "Internship", val: "4%", color: "#FFFFFF" },
+                      { label: "Off-Campus", val: "13%", color: "#A78BFA" },
+                      { label: "Corporate Contest", val: "2%", color: "#3B82F6" }
                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                         <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: item.color }} />
+                      <div key={i} className="flex items-center gap-2.5">
+                         <div className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
                          <div>
-                            <div className="text-base font-black text-white leading-none mb-1">{item.val}</div>
-                            <div className="text-[8px] font-black text-white/30 uppercase tracking-widest">{item.label}</div>
+                            <div className="text-base font-bold text-white leading-none mb-1">{item.val}</div>
+                            <div className="text-[8px] font-semibold text-white/40 uppercase tracking-widest">{item.label}</div>
                          </div>
                       </div>
                    ))}

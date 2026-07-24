@@ -1,36 +1,144 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Trophy, TrendingUp as TrendIcon, Users } from 'lucide-react'
+import React, { useRef } from 'react'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { 
+  Trophy, TrendingUp, Briefcase, GraduationCap, 
+  Calendar, Users, UserCheck, Landmark, ArrowUpRight
+} from 'lucide-react'
 
 const statsData = [
-  { title: "Highest Package", val: "₹18.5 LPA", icon: Trophy, desc: "Outsourcing Technologies, Japan", color: "#ffc107" },
-  { title: "Success Rate", val: "95%+", icon: TrendIcon, desc: "Consistent annual excellence", color: "#ffc107" },
-  { title: "Global Network", val: "2500+", icon: Users, desc: "Alumni in top multinationals", color: "#18357a" }
+  { text: "Within Top 50 Position In Admission", sub: "TNEA 2025", icon: Trophy, accent: "#224292", metric: "50", unit: "th", size: "small" },
+  { text: "95% Placements In every Year", sub: "Strategic Growth", icon: TrendingUp, accent: "#ffc107", metric: "95", unit: "%", size: "large" },
+  { text: "150+ Companies for placements", sub: "Global Partners", icon: Briefcase, accent: "#224292", metric: "150", unit: "+", size: "small" },
+  { text: "Career Development Training", sub: "1200 Hours Skill-up", icon: GraduationCap, accent: "#ffc107", metric: "1.2", unit: "k", size: "medium" },
+  { text: "Academic Excellence", sub: "Since 2009", icon: Calendar, accent: "#224292", metric: "17", unit: "+", size: "medium" },
+  { text: "Dedicated Faculty", sub: "Ratio 1:15", icon: Users, accent: "#ffc107", metric: "250", unit: "+", size: "medium" },
+  { text: "Alumni across the globe", sub: "Global Network", icon: UserCheck, accent: "#224292", metric: "8000", unit: "+", size: "large" },
+  { text: "Top 10% Colleges in TN", sub: "Elite Standing", icon: Landmark, accent: "#ffc107", metric: "10", unit: "%", size: "small" }
 ];
+
+const StatCard = ({ item, index }) => {
+  const isLarge = item.size === 'large';
+  const cardRef = useRef(null);
+  
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+  
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["8deg", "-8deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-8deg", "8deg"]);
+
+  const spotlightX = useSpring(useMotionValue(0));
+  const spotlightY = useSpring(useMotionValue(0));
+
+  const handleMouseMove = (e) => {
+    const rect = cardRef.current.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    x.set((mouseX / rect.width) - 0.5);
+    y.set((mouseY / rect.height) - 0.5);
+    spotlightX.set(mouseX);
+    spotlightY.set(mouseY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0); y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true }}
+      className={`relative group ${isLarge ? 'md:col-span-2' : 'col-span-1'}`}
+      style={{ perspective: "1200px" }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <motion.div
+        style={{ rotateX, rotateY }}
+        className="relative h-full w-full rounded-[2rem] p-[1.5px] overflow-hidden transition-all duration-700 bg-white shadow-[0_20px_50px_rgba(24,53,122,0.06)]"
+      >
+        {/* Prismatic Border */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+             style={{ background: `conic-gradient(from 0deg at 50% 50%, #224292 0deg, #ffc107 180deg, #224292 360deg)`, animation: 'spin 3s linear infinite' }} />
+
+        <div className={`relative h-full w-full rounded-[1.9rem] p-6 lg:p-8 flex flex-col z-10 
+          ${item.accent === '#224292' ? 'bg-gradient-to-br from-[#224292] to-[#224292]' : 'bg-white'}
+        `}>
+          {/* Spotlight */}
+          <motion.div className="absolute inset-0 pointer-events-none transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+            style={{ background: useTransform([spotlightX, spotlightY], ([lx, ly]) => `radial-gradient(400px circle at ${lx}px ${ly}px, ${item.accent === '#224292' ? 'rgba(255,193,7,0.12)' : 'rgba(24,53,122,0.06)'}, transparent 40%)`) }} />
+
+          {/* Header */}
+          <div className="flex justify-between items-start mb-10">
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-xl
+              ${item.accent === '#224292' ? 'bg-white/10 text-[#ffc107]' : 'bg-[#224292]/5 text-[#224292]'}
+            `}>
+              <item.icon size={22} strokeWidth={2} />
+            </div>
+            <div className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all opacity-20 group-hover:opacity-100
+              ${item.accent === '#224292' ? 'border-white text-white' : 'border-[#224292] text-[#224292]'}
+            `}>
+               <ArrowUpRight size={14} />
+            </div>
+          </div>
+
+          {/* Metric */}
+          <div className="flex flex-col mb-2">
+            <div className="flex items-baseline gap-1.5">
+              <span className={`font-display font-black tracking-tighter leading-none transition-all duration-500
+                ${isLarge ? 'text-5xl md:text-7xl' : 'text-4xl md:text-5xl'}
+                ${item.accent === '#224292' ? 'text-white' : 'text-[#224292]'}
+              `}>
+                {item.metric}
+              </span>
+              <span className="font-display font-black text-lg md:text-xl text-[#ffc107] uppercase">
+                {item.unit}
+              </span>
+            </div>
+            <div className={`mt-4 inline-flex self-start px-2 py-0.5 rounded-full text-[8px] font-black tracking-widest uppercase
+              ${item.accent === '#224292' ? 'bg-white/10 text-[#ffc107]' : 'bg-[#224292]/5 text-[#224292]'}
+            `}>
+              {item.sub}
+            </div>
+          </div>
+
+          <p className={`mt-auto text-sm md:text-base font-black leading-tight transition-all duration-300
+            ${item.accent === '#224292' ? 'text-white' : 'text-[#224292]'}
+          `}>
+            {item.text}
+          </p>
+        </div>
+
+        <div className={`absolute -bottom-6 -right-6 w-24 h-24 opacity-[0.03] group-hover:opacity-[0.06] transition-all duration-700 pointer-events-none rotate-[-15deg] group-hover:rotate-0
+          ${item.accent === '#224292' ? 'text-white' : 'text-[#224292]'}
+        `}>
+           <item.icon className="w-full h-full" />
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const GlobalStats = () => {
   return (
-    <div className="grid md:grid-cols-3 gap-8 mb-20">
-       {statsData.map((stat, i) => (
-         <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1 }}
-            viewport={{ once: true }}
-            className="bg-white/60 backdrop-blur-lg p-10 rounded-[3rem] shadow-2xl shadow-[#18357a]/5 border border-white group hover:border-[#18357a]/20 transition-all text-center relative overflow-hidden"
-         >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-transparent to-[#18357a]/5 rounded-bl-[5rem]" />
-            <div className="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-[#18357a] group-hover:scale-110 transition-transform mx-auto mb-6 relative z-10 border border-[#D5E2F4]/30">
-               <stat.icon size={28} />
-            </div>
-            <div className="text-4xl font-black text-[#18357a] mb-2 tracking-tight">{stat.val}</div>
-            <div className="text-[10px] font-black uppercase tracking-widest mb-4 opacity-50">{stat.title}</div>
-            <p className="text-[#64779F] text-xs font-semibold leading-relaxed">{stat.desc}</p>
-         </motion.div>
-       ))}
-    </div>
+    <section className="relative py-16 px-4 md:px-8 bg-[#FCFDFD]">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {statsData.map((item, index) => (
+            <StatCard key={index} item={item} index={index} />
+          ))}
+        </div>
+      </div>
+      <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
+    </section>
   )
 }
 
 export default GlobalStats
+
+

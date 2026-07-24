@@ -1,92 +1,112 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, ChevronLeft, ChevronRight, Award, Trophy, Users, Star } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-// Slide images
-import slide1 from '../../assets/slide1.webp'
-import slide2 from '../../assets/slide2.webp'
-import slide3 from '../../assets/slide3.webp'
-import slide4 from '../../assets/slide4.webp'
-import slide5 from '../../assets/slide5.webp'
-import slide6 from '../../assets/slide6.webp'
+// Slide images from main folder
+import slide1 from '../../assets/banner/update-home.webp'
+import slide2 from '../../assets/banner/web-02.webp'
+import slide3 from '../../assets/banner/web-03.webp'
+import slide4 from '../../assets/banner/web-04.webp'
+import slide5 from '../../assets/banner/web-05.webp'
+import slide6 from '../../assets/banner/web-06.webp'
+import slide7 from '../../assets/banner/web-07.webp'
+import slide8 from '../../assets/banner/web-08.webp'
 
 const slides = [
   {
     image: slide1,
-    title: "Shape Your Future at",
+    title: "Shape Your Future",
     highlight: "KIOT Salem",
-    desc: "A Premier Autonomous Institution committed to excellence in engineering and management education.",
-    stats: [
-      { icon: Award, label: "NAAC A+ accredited" },
-      { icon: Trophy, label: "95% Placement Rate" }
-    ]
+    desc: "A Premier Autonomous Institution committed to excellence in engineering and management education."
   },
   {
     image: slide2,
     title: "Innovative Learning",
     highlight: "Advanced Labs",
-    desc: "Experience world-class infrastructure and industry-standard research facilities designed for practical mastery.",
-    stats: [
-      { icon: Star, label: "Top-Tier Faculty" },
-      { icon: Users, label: "100+ Hiring Partners" }
-    ]
+    desc: "Experience world-class infrastructure and industry-standard research facilities."
   },
   {
     image: slide3,
     title: "Gateway to Your",
     highlight: "Dream Career",
-    desc: "We bridge the gap between academia and industry with intensive placement training and placement records.",
-    stats: [
-      { icon: Award, label: "Highest Package 12.5 LPA" },
-      { icon: Trophy, label: "ISO Certified Excellence" }
-    ]
+    desc: "We bridge the gap between academia and industry with intensive placement training."
   },
   {
     image: slide4,
     title: "Vibrant Campus",
     highlight: "Student Life",
-    desc: "Beyond academics, we nurture talent through cultural events, symposiums, and a wide array of student clubs.",
-    stats: [
-      { icon: Star, label: "Active Student Community" },
-      { icon: Users, label: "50+ Student Clubs" }
-    ]
+    desc: "Beyond academics, we nurture talent through cultural events and symposiums."
   },
   {
     image: slide5,
     title: "Research & Development",
-    highlight: "Center of Excellence",
-    desc: "Empowering innovation through dedicated R&D centers and patent development support for all departments.",
-    stats: [
-      { icon: Award, label: "R&D Focused Environment" },
-      { icon: Star, label: "Industry Collaboration" }
-    ]
+    highlight: "Innovation",
+    desc: "Empowering innovation through dedicated R&D centers and patent development."
   },
   {
     image: slide6,
     title: "Global Reach",
-    highlight: "Limitless Success",
-    desc: "Where your potential finds wings through international collaborations and global placement opportunities.",
-    stats: [
-      { icon: Trophy, label: "Globally Recognized" },
-      { icon: Star, label: "Alumni Success" }
-    ]
+    highlight: "Success",
+    desc: "Where your potential finds wings through international collaborations."
+  },
+  {
+    image: slide7,
+    title: "Academic Excellence",
+    highlight: "Education",
+    desc: "Comprehensive curriculum designed for future-ready engineers."
+  },
+  {
+    image: slide8,
+    title: "Industry Partnerships",
+    highlight: "Placements",
+    desc: "Top-tier recruiters and extensive industry-ready training programs."
   }
 ]
 
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
+  const [activeSlides, setActiveSlides] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const apiBaseUrl = import.meta.env.VITE_API_URL || 'https://api.kiot.ac.in'
+        const response = await fetch(`${apiBaseUrl}/banners/`)
+        if (response.ok) {
+          const data = await response.json()
+          if (data && data.length > 0) {
+            const formatted = data.map(banner => ({
+              image: banner.media_url,
+              title: banner.banner_name || "Banner",
+              highlight: "",
+              desc: banner.banner_date || ""
+            }))
+            setActiveSlides(formatted)
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch homepage banners:", err)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    fetchBanners()
+  }, [])
+
+  useEffect(() => {
+    if (activeSlides.length <= 1) return
     const timer = setInterval(() => {
       move(1)
     }, 4000)
     return () => clearInterval(timer)
-  }, [current])
+  }, [current, activeSlides])
 
   const move = (step) => {
+    if (activeSlides.length === 0) return
     setDirection(step)
-    setCurrent((prev) => (prev + step + slides.length) % slides.length)
+    setCurrent((prev) => (prev + step + activeSlides.length) % activeSlides.length)
   }
 
   const variants = {
@@ -119,8 +139,16 @@ const Hero = () => {
     })
   }
 
+  if (isLoading) {
+    return <div className="w-full h-[140px] sm:h-[430px] lg:h-[600px] xl:h-[650px] bg-slate-50 animate-pulse" />
+  }
+
+  if (activeSlides.length === 0) {
+    return null
+  }
+
   return (
-    <section className="relative w-full h-[200px] sm:h-[450px] lg:h-[620px] overflow-hidden bg-white pt-0 pb-0">
+    <section className="relative w-full h-[140px] sm:h-[430px] lg:h-[600px] xl:h-[650px] 2xl:h-[720px] min-[2500px]:h-[800px] overflow-hidden bg-white pt-0 pb-0 group">
       
       {/* BACKGROUND SLIDER */}
       <div className="absolute inset-0 z-0 bg-white">
@@ -134,28 +162,29 @@ const Hero = () => {
             exit="exit"
             className="absolute inset-0 w-full h-full bg-white flex items-center justify-center shadow-inner"
           >
+            {/* Using object-fill to ensure all text/content in banner images is visible at any resolution */}
             <img 
-              src={slides[current].image} 
-              alt={slides[current].title + " - " + slides[current].highlight} 
+              src={activeSlides[current].image} 
+              alt={activeSlides[current].title + " - " + activeSlides[current].highlight} 
               className="w-full h-full object-fill"
-              loading="eager" // Keep hero eager for LCP
+              loading="eager"
             />
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* NAVIGATION ARROWS */}
-      <div className="absolute inset-0 z-10 hidden items-center justify-between px-4 sm:flex pointer-events-none">
+      <div className="absolute inset-0 z-10 flex items-center justify-between px-4 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <button
           onClick={() => move(-1)}
-          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#18357a] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#224292] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
           aria-label="Previous slide"
         >
           <ChevronLeft size={28} strokeWidth={2.5} className="group-hover/btn:-translate-x-0.5 transition-transform" />
         </button>
         <button
           onClick={() => move(1)}
-          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#18357a] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
+          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-[#224292] backdrop-blur-md transition-all hover:bg-white/90 hover:scale-110 active:scale-95 shadow-md group/btn"
           aria-label="Next slide"
         >
           <ChevronRight size={28} strokeWidth={2.5} className="group-hover/btn:translate-x-0.5 transition-transform" />

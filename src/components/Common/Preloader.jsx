@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import logo from '../../assets/logo.webp'
+import logo from '../../assets/main/main-logo.webp'
 
 const Preloader = ({ onComplete }) => {
   const text = "KNOWLEDGE INSTITUTE OF TECHNOLOGY"
@@ -60,7 +60,7 @@ const Preloader = ({ onComplete }) => {
                 variants={letterVariants}
                 initial="initial"
                 animate="animate"
-                className="text-2xl md:text-5xl font-black text-[#18357a] font-display"
+                className="text-2xl md:text-5xl font-black text-[#224292] font-display"
               >
                 {letter}
               </motion.span>

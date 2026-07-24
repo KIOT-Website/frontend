@@ -1,0 +1,549 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+import { useParams, Link } from 'react-router-dom'
+import { 
+    ChevronRight, 
+    Home as HomeIcon,
+    Award,
+    BookOpen,
+    GraduationCap,
+    ArrowLeft,
+    BarChart,
+    Search
+} from 'lucide-react'
+
+const PhdHoldersPage = () => {
+    const { deptName } = useParams()
+
+    const formatDeptName = (name) => {
+        if (!name) return 'Departmentwise'
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        return decodeURIComponent(name)
+            .split('-')
+            .map((word) => {
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
+            .join(' ')
+    }
+
+    const allPhdHolders = {
+        'mechanical-engineering': [
+            {
+                id: 1,
+                name: "Dr. PSS.Srinivasan",
+                topic: "Thermal Engineering, Heattransfer & CFD",
+                year: "2002",
+                university: "Bharathiyar University",
+                publications: { ij: 60, ic: 65, nj: 52, nc: 134 },
+                guided: 16,
+                beingGuided: 1
+            },
+            {
+                id: 2,
+                name: "Dr. K.Visagavel",
+                topic: "Thermal Engineering, Heat Transfer, CFD and Solar Energy",
+                year: "2010",
+                university: "Anna University, Chennai",
+                publications: { ij: 47, ic: 2, nj: 11, nc: 80 },
+                guided: 5,
+                beingGuided: 7
+            },
+            {
+                id: 3,
+                name: "Dr. P.Navaneethakrishnan",
+                topic: "Design, CAD/CAM, Finite Element Analysis, Computational Fluid Dynamics",
+                year: "2009",
+                university: "Bharathiyar University",
+                publications: { ij: 41, ic: 10, nj: 15, nc: 50 },
+                guided: 9,
+                beingGuided: 5
+            },
+            {
+                id: 4,
+                name: "Dr. M.Ilangkumaran",
+                topic: "Maintenance Engineering, Multi Criteria Decision Making Application",
+                year: "2010",
+                university: "Anna University, Chennai",
+                publications: { ij: 55, ic: 15, nj: 5, nc: 3 },
+                guided: 6,
+                beingGuided: 5
+            },
+            {
+                id: 5,
+                name: "Dr. N.Panneerselvam",
+                topic: "IC Engine, Composite Materials",
+                year: "2018",
+                university: "Anna University, Chennai",
+                publications: { ij: 7, ic: "-", nj: "-", nc: 5 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 6,
+                name: "Dr. K.S.Prabhakaran",
+                topic: "Evaporative cooling ; Ergonomics",
+                year: "2021",
+                university: "Anna University, Chennai",
+                publications: { ij: 2, ic: 1, nj: 3, nc: 6 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 7,
+                name: "Dr. Sivakumar V",
+                topic: "Energy & CFD",
+                year: "2020",
+                university: "Anna University, Chennai",
+                publications: { ij: 5, ic: 4, nj: 2, nc: 20 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 8,
+                name: "Dr. S.Sureshbalaji",
+                topic: "Design, Optimization Techniques",
+                year: "2023",
+                university: "Anna University, Chennai",
+                publications: { ij: 19, ic: 1, nj: "-", nc: 5 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 9,
+                name: "Dr. M.Sathyanathan",
+                topic: "Composite Materials",
+                year: "2025",
+                university: "Anna University, Chennai",
+                publications: { ij: 10, ic: 3, nj: "-", nc: 4 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
+        'information-technology': [
+            {
+                id: 1,
+                name: "Dr. P.Sachidhanandam",
+                topic: "Energy Efficient Routing in Wireless Sensor Neworks through Linear Motion of Mobile Sink",
+                year: "2018",
+                university: "Anna University, Chennai",
+                publications: { ij: 10, ic: 65, nj: 6, nc: 2 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
+        'artificial-intelligence-&-data-science': [
+            {
+                id: 1,
+                name: "Dr. Gomathi A",
+                topic: "Enhanced Information Extraction On Multiple Search Engines Using Hybrid Algorithms",
+                year: "2019",
+                university: "Anna University, Chennai",
+                publications: { ij: 8, ic: 13, nj: 2, nc: 7 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
+        'electronics-&-communication-engineering': [
+            {
+                id: 1,
+                name: "Dr. N.Santhiyakumari",
+                topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Carotid Artery Images using Intima media thickness measurement",
+                year: "2008",
+                university: "Anna University, Chennai",
+                publications: { ij: 48, ic: 52, nj: "-", nc: 49 },
+                guided: "6",
+                beingGuided: "6"
+            },
+            {
+                id: 2,
+                name: "Dr. M.Thangavel",
+                topic: "Investigation on Carotid Wall Motion and Texture Classification of Plaques Using Multi-resolution Features",
+                year: "2016",
+                university: "Anna University, Chennai",
+                publications: { ij: 8, ic: 3, nj: "-", nc: 15 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 3,
+                name: "Dr. Vijayaraghavan R",
+                topic: "Temporal Analysis of Remote Sensing Data for Identification of Some Tree and Shrub Species in Semiarid Region",
+                year: "2008",
+                university: "Jai Narain Vyas University Jodhpur",
+                publications: { ij: 1, ic: "-", nj: "-", nc: 6 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 4,
+                name: "Dr. Kumarganesh S",
+                topic: "Certain Investigations on Segmentation and Compression of Brain Tumor Image",
+                year: "2018",
+                university: "Anna University, Chennai",
+                publications: { ij: 41, ic: 19, nj: "-", nc: 5 },
+                guided: "-",
+                beingGuided: "6"
+            },
+            {
+                id: 5,
+                name: "Dr. Shanmugasundaram P",
+                topic: "Certain Investigations on Computer Aided Colon Cancer Detection in Wireless Capsule Endoscopy Images",
+                year: "2021",
+                university: "Anna University, Chennai",
+                publications: { ij: 9, ic: 8, nj: 1, nc: 19 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 6,
+                name: "Dr. V.Saravanan",
+                topic: "Certain investigations on active noise control systems for domestic applications by developing the step size of the FxLMS algorithm",
+                year: "2022",
+                university: "Anna University, Chennai",
+                publications: { ij: 8, ic: 6, nj: "-", nc: 11 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 7,
+                name: "Dr. G.Rajamanickam",
+                topic: "Wireless Communication",
+                year: "2024",
+                university: "Anna University, Chennai",
+                publications: { ij: 4, ic: 2, nj: 1, nc: 2 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 8,
+                name: "Dr. S.Maragatharaj",
+                topic: "Low Power VLSI",
+                year: "2024",
+                university: "Anna University, Chennai",
+                publications: { ij: 11, ic: "-", nj: "-", nc: 9 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 9,
+                name: "Dr. Santhi T K",
+                topic: "Womanism in the Select Works of Alice Walker",
+                year: "2014",
+                university: "Mother Teresa Women's University, Kodaikanal",
+                publications: { ij: 2, ic: 4, nj: "-", nc: 6 },
+                guided: "-",
+                beingGuided: "-"
+            },
+            {
+                id: 10,
+                name: "Dr. Priya Mol K",
+                topic: "The Brutality of Civilization and the Struggle for Survival: A Study of Jack London’s Select Novels.",
+                year: "2022",
+                university: "Manonmaniam Sundaranar University",
+                publications: { ij: 2, ic: 3, nj: 1, nc: 2 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
+        'electrical-&-electronics-engineering': [
+            { id: 1, name: "Dr. C.Muniraj", topic: "AC Drives and High Voltage Engineering", year: "2012", university: "Anna University", publications: { ij: 28, ic: 30, nj: 0, nc: 11 } },
+            { id: 2, name: "Dr. V.Kamatchi Kannan", topic: "Power Quality Improvement using DSTATCOM", year: "2013", university: "Anna University", publications: { ij: 50, ic: 24, nj: 1, nc: 8 } },
+            { id: 3, name: "Dr. P.A.Gowri Shankar", topic: "Control and Instrumentation, Nano Materials and Sensors", year: "2015", university: "Anna University", publications: { ij: 15, ic: 5, nj: 1, nc: 2 } },
+            { id: 4, name: "Dr. S.Kalpana Devi", topic: "Renewable Energy Sources and Converter", year: "2024", university: "Anna University", publications: { ij: 4, ic: 4, nj: 35, nc: 5 } }
+        ],
+        'computer-science-&-engineering': [
+            { id: 1, name: "Dr. V.Kumar", topic: "Design Of An Efficient MAC Protocol For Wireless Networks", year: "2011", university: "Anna University, Coimbatore", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 2, name: "Dr. P.Rajendran", topic: "Decision Support System For Brain Tumor using Image Mining", year: "2011", university: "Anna University, Coimbatore", publications: { ij: 48, ic: 52, nj: 0, nc: 49 }, guided: 8, beingGuided: 8 },
+            { id: 3, name: "Dr. R.Kumar", topic: "Concept Map Based Formative Knowledge Assessment", year: "2014", university: "Anna University, Chennai", publications: { ij: 4, ic: 4, nj: 0, nc: 0 }, guided: 0, beingGuided: 3 },
+            { id: 4, name: "Dr. M.Sakthivel", topic: "Agile Principles for Risk Reduction in Software Development", year: "2018", university: "Anna University, Chennai", publications: { ij: 5, ic: 5, nj: 0, nc: 0 } },
+            { id: 5, name: "Dr. P.Vijayalakshmi", topic: "Topologically Adaptive Authorized Routing in WSN", year: "2018", university: "Anna University, Chennai", publications: { ij: 34, ic: 28, nj: 8, nc: 18 }, guided: 0, beingGuided: 4 },
+            { id: 6, name: "Dr. S.Sakthivel", topic: "Diagnosis of Adenomyosis using Automated MRI Diagnosis Model", year: "2020", university: "Anna University, Chennai", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 7, name: "Dr. I.Rajesh", topic: "Poultry Meat Quality Assessment using Image Mining", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 8, name: "Dr. P.Malarvizhi", topic: "Energy Efficient Routing for Lifetime Maximization in WSN", year: "2025", university: "Anna University", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } },
+            { id: 9, name: "Dr. M.Lakshaga jyothi", topic: "Performance Evaluation on Enabling Intelligence using Deep Learning in IoT", year: "2025", university: "Vinayaka Mission's Research Foundation", publications: { ij: 0, ic: 0, nj: 0, nc: 0 } }
+        ],
+        'civil-engineering': [
+            { id: 1, name: "Dr. P.Prasath", topic: "Fibre Reinforced Concrete.", year: "2020", university: "Anna University", publications: { ij: 10, ic: 0, nj: 0, nc: 0 }, guided: "-", beingGuided: "-" }
+        ],
+        'computer-science-&-business-systems': [
+            {
+                id: 1,
+                name: "Dr. M.Ramkumar",
+                topic: "Performance measure of statistically significant gene expression data using biclustering algorithm",
+                year: "2021",
+                university: "Sri Satya Sai University of Technology & Medical Sciences, Sehore",
+                publications: { ij: 9, ic: 8, nj: 5, nc: 6 },
+                guided: "-",
+                beingGuided: "-"
+            }
+        ],
+        'science-&-humanities': [
+            {
+                id: 1,
+                name: "Dr. G.Venkatesh",
+                topic: "Guest-host inclusion complexation of azo dyes, sulfanilamides, benzophenones and omeprazole with α- and β-cyclodextrins",
+                year: "2014",
+                university: "Annamalai University",
+                publications: { ij: 29, ic: 5, nj: 4, nc: 14 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 2,
+                name: "Dr. T.Madhumathi",
+                topic: "A new approach on orbit and chaotic sets in neutrosophic topological spaces",
+                year: "2024",
+                university: "Bharathiar University",
+                publications: { ij: 9, ic: 5, nj: "-", nc: 1 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 3,
+                name: "Dr. S.Sathiya",
+                topic: "Fabrication and characterization of anodic coatings on aluminium for the evaluation of corrosion resistance",
+                year: "2023",
+                university: "Bharathiar University",
+                publications: { ij: 4, ic: 3, nj: "-", nc: 3 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 4,
+                name: "Dr. Priya Mol K",
+                topic: "The Brutality of Civilization and the Struggle for Survival: A Study of Jack London's Select Novels",
+                year: "2022",
+                university: "Manonmaniam Sundaranar University",
+                publications: { ij: 2, ic: 3, nj: 1, nc: 2 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 5,
+                name: "Dr. S.Manivel",
+                topic: "Spectroscopic (FTIR and FT-Raman) Investigation, Molecular Electrostatic Potential, NLO, NBO and HOMO - LUMO Analyses of Some Compouds of Biological and Pharmacetical Importance",
+                year: "2018",
+                university: "Bharathidasan University",
+                publications: { ij: 6, ic: "-", nj: 6, nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 6,
+                name: "Dr. S.Sugan",
+                topic: "Synthesis of Chalcopyrite Ternary Semiconductor Nanomaterials by Chemical Methods and Growth of CuGaS2 Single Crystal by CVT Method and Their Characterization",
+                year: "2015",
+                university: "Anna University",
+                publications: { ij: 5, ic: 3, nj: "-", nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 7,
+                name: "Dr. C.Sambathkumar",
+                topic: "Electrochemical Investigations on Semiconducting Metal Sulfides Nanoparticles by Using Single Source Percursor for Energy Storage Application",
+                year: "2024",
+                university: "Kalasalingam University",
+                publications: { ij: 15, ic: 2, nj: 2, nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 8,
+                name: "Dr. M.Sindhu",
+                topic: "A Study on Some Super magic Labellings of Graphs",
+                year: "2022",
+                university: "Manonmaniam Sundaranar University",
+                publications: { ij: 12, ic: 10, nj: 3, nc: 9 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 9,
+                name: "Dr. K.Geetha",
+                topic: "A Study on Anti L -Fuzzy,Intuitionistic L-Fuzzy,(Q,L) -Fuzzy soft Subhemiring of a Hemiring",
+                year: "2023",
+                university: "Periyar University",
+                publications: { ij: 7, ic: 9, nj: 1, nc: 5 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 10,
+                name: "Dr. Sathya Priyanka G",
+                topic: "Some Contribution to Stochastic Degradataion Process for Failure Time",
+                year: "2024",
+                university: "Periyar University",
+                publications: { ij: 2, ic: 1, nj: 6, nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 11,
+                name: "Dr. T.Aruna Christy",
+                topic: "Structural and Magnetic properties of electrodeposited Cobalt Ferrous Tungsten Phosphorous Magnetic Thin Films",
+                year: "2024",
+                university: "Anna University",
+                publications: { ij: 4, ic: 1, nj: "-", nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 12,
+                name: "Dr. Vinodhkumar K",
+                topic: "Aatrupadai Ilakkiyankalil Kathaiyadalkal",
+                year: "2013",
+                university: "Bharathiyar University",
+                publications: { ij: 3, ic: 3, nj: 6, nc: "-" },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 13,
+                name: "Dr. Santhi T K",
+                topic: "\"Womanism\" in the Select Works of Alice Walker",
+                year: "2014",
+                university: "Mother Teresa Women's University",
+                publications: { ij: 2, ic: 4, nj: "-", nc: 4 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            },
+            {
+                id: 14,
+                name: "Dr. S.Rekha",
+                topic: "Corrosion Analysis of newly synthesised Benzothiazole derivatives on mild steel in acid medium",
+                year: "2018",
+                university: "Anna University",
+                publications: { ij: 7, ic: 3, nj: "-", nc: 1 },
+                guided: "Nil",
+                beingGuided: "Nil"
+            }
+        ]
+    }
+
+    const getDisplayHolders = () => {
+        if (!deptName) return []
+        const decoded = decodeURIComponent(deptName).toLowerCase()
+        const normalized = decoded.replace(/-and-/g, '-&-')
+        return allPhdHolders[normalized] || allPhdHolders[decoded] || allPhdHolders[deptName.toLowerCase()] || []
+    }
+
+    const displayHolders = getDisplayHolders()
+
+    return (
+        <div className="min-h-screen bg-[#f6f9fc] font-sans pb-20">
+
+
+            <div className="max-w-[95rem] mx-auto px-6 py-12 lg:py-16">
+                
+                {/* Header Section */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-12"
+                >
+
+
+                    <h1 className="text-3xl lg:text-5xl font-bold text-[#224292] leading-tight mb-6">
+                        List of <span className="text-[#ffc107]">Doctorate Holders</span>
+                    </h1>
+
+                    <div className="max-w-3xl border-l-4 border-[#ffc107] pl-8 py-1">
+                        <p className="text-[#1e293b] text-base font-semibold leading-relaxed">
+                            A directory of faculty members at {formatDeptName(deptName)} who have achieved scholarly excellence through Ph.D programs. Featuring research metrics, publications, and supervision records.
+                        </p>
+                    </div>
+                </motion.div>
+
+                {/* Dense Data Table */}
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-white rounded-2xl shadow-2xl shadow-blue-900/5 border border-slate-200/60 overflow-hidden"
+                >
+                    <div className="overflow-x-auto">
+                        <table className="w-full border-collapse text-left">
+                            <thead>
+                                <tr className="text-white">
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black tracking-[2px] w-16 border-r border-white/5">S.No.</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black tracking-[2px] border-r border-white/5">Faculty Details</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black tracking-[2px] border-r border-white/5">Research Topic</th>
+                                    <th rowSpan="2" className="bg-[#0f172a] px-6 py-5 text-[10px] font-black tracking-[2px] border-r border-white/5">Year / University</th>
+                                    <th colSpan="4" className="bg-[#0f172a] px-6 py-2 text-center text-[10px] font-black text-[#ffc107] tracking-[2px] border-b border-white/5 border-r border-white/5">Scholar Publications</th>
+                                    <th colSpan="2" className="bg-[#0f172a] px-6 py-2 text-center text-[10px] font-black text-[#ffc107] tracking-[2px]">Supervision</th>
+                                </tr>
+                                <tr>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">IJ</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">IC</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">NJ</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">NC</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60 border-r border-white/5">Guided</th>
+                                    <th className="bg-[#0f172a] px-4 py-3 text-center text-[9px] font-black text-white/60">Being Guided</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                                {displayHolders.length > 0 ? (
+                                    displayHolders.map((holder, idx) => (
+                                        <tr 
+                                            key={holder.id}
+                                            className="group hover:bg-[#fafcff] transition-all duration-300"
+                                        >
+                                            <td className="px-6 py-5 border-r border-slate-50">
+                                                <div className="w-10 h-10 bg-[#224292]/5 rounded-xl flex items-center justify-center text-[#224292] font-black text-xs group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-inner">
+                                                    {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-4 border-r border-slate-50">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-[#0f172a] group-hover:bg-[#0f172a] group-hover:text-white transition-all">
+                                                        <Award size={14} />
+                                                    </div>
+                                                    <span className="text-[13px] font-bold text-[#0f172a] tracking-tight">{holder.name}</span>
+                                                </div>
+                                            </td>
+                                            <td className="px-6 py-4 border-r border-slate-50">
+                                                <p className="text-[12px] font-semibold text-[#1e293b] italic leading-snug max-w-[200px]">
+                                                    {holder.topic}
+                                                </p>
+                                            </td>
+                                            <td className="px-6 py-4 border-r border-slate-50">
+                                                <div>
+                                                    <div className="text-[11px] font-bold text-[#0f172a] leading-none mb-1">{holder.year}</div>
+                                                    <div className="text-[10px] font-bold text-[#334155]">{holder.university}</div>
+                                                </div>
+                                            </td>
+                                            <td className="px-4 py-4 text-center border-r border-slate-50 bg-[#fafcff]/50 font-bold text-[#0f172a] text-xs">{holder.publications.ij}</td>
+                                            <td className="px-4 py-4 text-center border-r border-slate-50 bg-[#fafcff]/50 font-bold text-[#0f172a] text-xs">{holder.publications.ic}</td>
+                                            <td className="px-4 py-4 text-center border-r border-slate-50 bg-[#fafcff]/50 font-bold text-[#0f172a] text-xs">{holder.publications.nj}</td>
+                                            <td className="px-4 py-4 text-center border-r border-slate-50 bg-[#fafcff]/50 font-bold text-[#0f172a] text-xs">{holder.publications.nc}</td>
+                                            <td className="px-4 py-4 text-center border-r border-slate-50 bg-[#fffbeb]/30 font-bold text-[#ffc107] text-xs leading-none">{holder.guided}</td>
+                                            <td className="px-4 py-4 text-center bg-[#fffbeb]/30 font-bold text-[#ffc107] text-xs leading-none">{holder.beingGuided}</td>
+                                        </tr>
+                                    ))
+                                ) : (
+                                    <tr>
+                                        <td colSpan="10" className="px-6 py-20 text-center">
+                                            <div className="flex flex-col items-center gap-4">
+                                                <Search size={40} className="text-[#224292]/10" />
+                                                <p className="text-[#224292] font-black uppercase text-xs tracking-wider">No Data Available for {formatDeptName(deptName)}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </motion.div>
+
+
+
+            </div>
+        </div>
+    )
+}
+
+export default PhdHoldersPage

@@ -2,47 +2,47 @@ import React from 'react'
 import { Building2 } from 'lucide-react'
 
 // Company Logos
-import codingmartLogo from '../../../assets/codingmart.webp'
-import ecpleoLogo from '../../../assets/ecpleo.webp'
-import haritaLogo from '../../../assets/harita.webp'
-import hexawareLogo from '../../../assets/hexaware.webp'
-import raplLogo from '../../../assets/rapl.webp'
-import techMahindraLogo from '../../../assets/tech mahendra.webp'
-import tessolveLogo from '../../../assets/tessolve.webp'
+import codingmartLogo from '../../../assets/main/codingmart.webp'
+import ecpleoLogo from '../../../assets/main/ecpleo.webp'
+import haritaLogo from '../../../assets/main/harita.webp'
+import hexawareLogo from '../../../assets/main/hexaware.webp'
+import raplLogo from '../../../assets/main/rapl.webp'
+import techMahindraLogo from '../../../assets/main/tech mahendra.webp'
+import tessolveLogo from '../../../assets/main/tessolve.webp'
 
 // New Section Logos
-import tcsLogo from '../../../assets/company logo/tcs.png'
-import zohoLogo from '../../../assets/company logo/zoho.png'
-import virtusaLogo from '../../../assets/company logo/virtusa.png'
-import cognizantLogo from '../../../assets/company logo/cognizant.png'
-import accentureLogo from '../../../assets/company logo/accenture.png'
-import ibmLogo from '../../../assets/company logo/ibm.png'
-import lumenLogo from '../../../assets/company logo/lumen.png'
-import amiLogo from '../../../assets/company logo/ami.png'
-import aspireLogo from '../../../assets/company logo/aspire.png'
-import softsquareLogo from '../../../assets/company logo/softsquare.png'
-import embedurLogo from '../../../assets/company logo/embedur.png'
-import brakesindiaLogo from '../../../assets/company logo/brakesindia.png'
-import fujitecLogo from '../../../assets/company logo/fujitec.png'
-import montbleuLogo from '../../../assets/company logo/montbleu.png'
-import edveonLogo from '../../../assets/company logo/edveon.png'
-import hirotecLogo from '../../../assets/company logo/hirotec.png'
-import spicLogo from '../../../assets/company logo/spic.png'
-import infoedgeLogo from '../../../assets/company logo/infoedge.png'
-import danaLogo from '../../../assets/company logo/dana.png'
-import arunexcelloLogo from '../../../assets/company logo/arunexcello.png'
-import ujjivanbankLogo from '../../../assets/company logo/ujjivanbank.png'
-import veritasfinanceLogo from '../../../assets/company logo/veritasfinance.png'
-import viLogo from '../../../assets/company logo/vi.png'
-import koneLogo from '../../../assets/company logo/kone.png'
-import aggregateintelLogo from '../../../assets/company logo/aggregateintel.png'
+import tcsLogo from '../../../assets/company logo/tcs.webp'
+import zohoLogo from '../../../assets/company logo/zoho.webp'
+import virtusaLogo from '../../../assets/company logo/virtusa.webp'
+import cognizantLogo from '../../../assets/company logo/cognizant.webp'
+import accentureLogo from '../../../assets/company logo/accenture.webp'
+import ibmLogo from '../../../assets/company logo/ibm.webp'
+import lumenLogo from '../../../assets/company logo/lumen.webp'
+import amiLogo from '../../../assets/company logo/ami.webp'
+import aspireLogo from '../../../assets/company logo/aspire.webp'
+import softsquareLogo from '../../../assets/company logo/softsquare.webp'
+import embedurLogo from '../../../assets/company logo/embedur.webp'
+import brakesindiaLogo from '../../../assets/company logo/brakesindia.webp'
+import fujitecLogo from '../../../assets/company logo/fujitec.webp'
+import montbleuLogo from '../../../assets/company logo/montbleu.webp'
+import edveonLogo from '../../../assets/company logo/edveon.webp'
+import hirotecLogo from '../../../assets/company logo/hirotec.webp'
+import spicLogo from '../../../assets/company logo/spic.webp'
+import infoedgeLogo from '../../../assets/company logo/infoedge.webp'
+import danaLogo from '../../../assets/company logo/dana.webp'
+import arunexcelloLogo from '../../../assets/company logo/arunexcello.webp'
+import ujjivanbankLogo from '../../../assets/company logo/ujjivanbank.webp'
+import veritasfinanceLogo from '../../../assets/company logo/veritasfinance.webp'
+import viLogo from '../../../assets/company logo/vi.webp'
+import koneLogo from '../../../assets/company logo/kone.webp'
+import aggregateintelLogo from '../../../assets/company logo/aggregateintel.webp'
 
 const MarqueeItem = ({ item }) => (
     <div className="group bg-white h-24 w-44 rounded-2xl border border-[#D5E2F4]/60 hover:border-[#ffc107]/50 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col items-center justify-center p-6 shrink-0 transform hover:-translate-y-1">
        {item.logo ? (
           <img src={item.logo} alt={item.name} className="max-h-12 w-full object-contain transition-all duration-500 transform group-hover:scale-110" />
        ) : (
-          <span className="text-[#18357a] font-black text-xs uppercase tracking-tighter text-center leading-tight">
+          <span className="text-[#224292] font-black text-xs uppercase tracking-tighter text-center leading-tight">
              {item.name}
           </span>
        )}
@@ -51,20 +51,20 @@ const MarqueeItem = ({ item }) => (
 
 const RecruitersMarquee = () => {
   return (
-    <div className="space-y-24 md:space-y-40 max-w-full overflow-hidden pt-10 md:pt-20 border-t border-[#D5E2F4]/40 pb-32 bg-white md:bg-[#f8fafc]/20 transition-colors">
+    <div className="space-y-24 md:space-y-32 max-w-full overflow-hidden pt-10 md:pt-16 border-t border-[#D5E2F4]/40 pb-10 bg-white md:bg-[#f8fafc]/20 transition-colors">
       {/* IT Recruiters */}
       <div className="space-y-8">
         <div className="max-w-7xl mx-auto px-6 mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <div className="flex items-center gap-3 text-[#18357a] font-black text-[10px] uppercase tracking-[0.3em] mb-3">
-                <span className="w-10 h-[2px] bg-[#18357a]" /> Technology Sector
+              <div className="flex items-center gap-3 text-[#224292] font-black text-[10px] uppercase tracking-[0.3em] mb-3">
+                <span className="w-10 h-[2px] bg-[#224292]" /> Technology Sector
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-[#18357a] text-white rounded-xl inline-block mt-2">IT</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-[#224292] text-white rounded-xl inline-block mt-2">IT</span></h2>
             </div>
             <div className="px-6 py-4 bg-white rounded-2xl border border-[#D5E2F4]/50 shadow-sm backdrop-blur-md">
               <span className="text-[#64779F] text-[10px] uppercase font-black tracking-widest block mb-1">Salary Range</span>
-              <span className="text-[#18357a] font-extrabold text-lg md:text-xl tracking-tight">₹3.75 to ₹12.75 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
+              <span className="text-[#224292] font-extrabold text-lg md:text-xl tracking-tight">₹3.75 to ₹12.75 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
             </div>
           </div>
         </div>
@@ -119,11 +119,11 @@ const RecruitersMarquee = () => {
               <div className="flex items-center gap-3 text-[#4666B4] font-black text-[10px] uppercase tracking-[0.3em] mb-3">
                 <span className="w-10 h-[2px] bg-[#4666B4]" /> Engineering Services
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-[#4666B4] text-white rounded-xl inline-block mt-2">Core</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-[#4666B4] text-white rounded-xl inline-block mt-2">Core</span></h2>
             </div>
             <div className="px-6 py-4 bg-white rounded-2xl border border-[#D5E2F4]/50 shadow-sm backdrop-blur-md">
               <span className="text-[#64779F] text-[10px] uppercase font-black tracking-widest block mb-1">Salary Range</span>
-              <span className="text-[#18357a] font-extrabold text-lg md:text-xl tracking-tight">₹3.00 to ₹8.50 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
+              <span className="text-[#224292] font-extrabold text-lg md:text-xl tracking-tight">₹3.00 to ₹8.50 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
             </div>
           </div>
         </div>
@@ -173,11 +173,11 @@ const RecruitersMarquee = () => {
               <div className="flex items-center gap-3 text-emerald-600 font-black text-[10px] uppercase tracking-[0.3em] mb-3">
                 <span className="w-10 h-[2px] bg-emerald-600" /> Management Sector
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-emerald-600 text-white rounded-xl inline-block mt-2">MBA</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter uppercase leading-none">Key Recruiters <br /><span className="px-5 py-1.5 bg-emerald-600 text-white rounded-xl inline-block mt-2">MBA</span></h2>
             </div>
             <div className="px-6 py-4 bg-white rounded-2xl border border-[#D5E2F4]/50 shadow-sm backdrop-blur-md">
               <span className="text-[#64779F] text-[10px] uppercase font-black tracking-widest block mb-1">Salary Range</span>
-              <span className="text-[#18357a] font-extrabold text-lg md:text-xl tracking-tight">₹3.00 to ₹10.00 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
+              <span className="text-[#224292] font-extrabold text-lg md:text-xl tracking-tight">₹3.00 to ₹10.00 <span className="text-xs uppercase font-bold text-[#64779F]">LPA</span></span>
             </div>
           </div>
         </div>
@@ -227,11 +227,11 @@ const RecruitersMarquee = () => {
               <div className="flex items-center gap-3 text-indigo-600 font-black text-[10px] uppercase tracking-[0.3em] mb-3">
                 <span className="w-10 h-[2px] bg-indigo-600" /> Industry Training
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-[#18357a] tracking-tighter uppercase leading-none">Companies Offered <br /><span className="px-5 py-1.5 bg-indigo-600 text-white rounded-xl inline-block mt-2">Internships</span></h2>
+              <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tighter uppercase leading-none">Companies Offered <br /><span className="px-5 py-1.5 bg-indigo-600 text-white rounded-xl inline-block mt-2">Internships</span></h2>
             </div>
             <div className="px-6 py-4 bg-white rounded-2xl border border-[#D5E2F4]/50 shadow-sm backdrop-blur-md">
               <span className="text-[#64779F] text-[10px] uppercase font-black tracking-widest block mb-1">Impact Record</span>
-              <span className="text-[#18357a] font-extrabold text-lg md:text-xl tracking-tight">50+ Global <span className="text-xs uppercase font-bold text-[#64779F]">Partners</span></span>
+              <span className="text-[#224292] font-extrabold text-lg md:text-xl tracking-tight">50+ Global <span className="text-xs uppercase font-bold text-[#64779F]">Partners</span></span>
             </div>
           </div>
         </div>

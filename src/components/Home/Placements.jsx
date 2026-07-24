@@ -1,36 +1,41 @@
 import { motion } from 'framer-motion'
-import { TrendingUp, GraduationCap, Building2, UserCheck, Briefcase } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { TrendingUp, GraduationCap, Building2, UserCheck, Briefcase, Download } from 'lucide-react'
+import brochurePdf from '../../assets/KIOT Brochure 2026 copy.pdf'
+import prospectsPdf from '../../assets/KIOT Prospects MAY 2026 .pdf'
 
 // Recruiter Logos
-import techMahindraLogo from '../../assets/tech mahendra.webp'
-import expleoLogo from '../../assets/ecpleo.webp'
-import codingmartLogo from '../../assets/codingmart.webp'
-import haritaLogo from '../../assets/harita.webp'
-import hexawareLogo from '../../assets/hexaware.webp'
-import itcLogo from '../../assets/itc.webp'
-import neyesLogo from '../../assets/neyes.webp'
-import raplLogo from '../../assets/rapl.webp'
-import tefologicLogo from '../../assets/tefologic.webp'
-import tessolveLogo from '../../assets/tessolve.webp'
+import techMahindraLogo from '../../assets/main/tech mahendra.webp'
+import expleoLogo from '../../assets/main/ecpleo.webp'
+import codingmartLogo from '../../assets/main/codingmart.webp'
+import haritaLogo from '../../assets/main/harita.webp'
+import hexawareLogo from '../../assets/main/hexaware.webp'
+import itcLogo from '../../assets/main/itc.webp'
+import neyesLogo from '../../assets/main/neyes.webp'
+import raplLogo from '../../assets/main/rapl.webp'
+import tefologicLogo from '../../assets/main/tefologic.webp'
+import tessolveLogo from '../../assets/main/tessolve.webp'
 
 const stats = [
   {
-    label: "Highest Package",
-    value: "12.50 LPA",
-    sub: "By Tefologic",
+    label: "Highest Salary",
+    value: "13.00 Lakhs",
     icon: TrendingUp
   },
   {
-    label: "Placement Rate",
-    value: "95%",
-    sub: "Across all streams",
-    icon: GraduationCap
+    label: "Average Salary",
+    value: "4.10 Lakhs",
+    icon: Building2
   },
   {
-    label: "Average Salary",
-    value: "4.50 LPA",
-    sub: "Industry competitive",
-    icon: Building2
+    label: "Companies Visited",
+    value: "150+",
+    icon: Briefcase
+  },
+  {
+    label: "% Placement",
+    value: "95%",
+    icon: GraduationCap
   }
 ]
 
@@ -48,8 +53,9 @@ const recruiterData = [
 ]
 
 const Placements = () => {
+  const navigate = useNavigate()
   return (
-    <section className="relative py-10 lg:py-16 bg-[#18357a] overflow-hidden text-white" id="placements">
+    <section className="relative py-6 lg:py-8 bg-[#224292] overflow-hidden text-white" id="placements">
       
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-[10%] left-[-5%] w-[500px] h-[500px] bg-white rounded-full blur-[120px]" />
@@ -66,55 +72,49 @@ const Placements = () => {
         <div className="grid lg:grid-cols-[0.45fr_0.55fr] gap-12 lg:gap-20 items-center">
           
           {/* LEFT SIDE: Big Numbers */}
-          <div className="space-y-10 lg:pl-4">
-            <div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="inline-flex items-center gap-3 mb-4"
-              >
-                <div className="h-0.5 w-10 bg-[#ffc107] rounded-full" />
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-[#ffc107]">Placement Power</span>
-              </motion.div>
-              <h2 className="text-3xl lg:text-5xl font-black font-display leading-[1.1]">
+          <div className="space-y-6 lg:pl-4">
+            <div className="text-center lg:text-left">
+              <h2 className="text-3xl lg:text-4xl font-semibold font-graphik leading-[1.1] text-white">
                 Where Talent <br />
                 <span className="text-[#ffc107]">Meets Opportunity</span>
               </h2>
             </div>
 
-            <div className="space-y-8">
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-y-8 lg:gap-y-4">
               {stats.map((stat, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="flex items-start gap-4"
+                  className="flex flex-col items-center lg:flex-row lg:items-start gap-2 lg:gap-4 text-center lg:text-left"
                 >
                    <div className="h-10 w-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#ffc107]">
                       <stat.icon className="w-5 h-5 lg:w-6 lg:h-6" />
                    </div>
                    <div>
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="text-white/40 text-[10px] font-black uppercase -mt-0.5">₹</span>
-                        <p className="text-3xl lg:text-4xl font-black font-display tracking-tight text-white">{stat.value}</p>
-                      </div>
-                      <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#A9B1C3]">{stat.label}</p>
-                      <p className="text-[9px] font-bold text-[#ffc107]/60 mt-0.5">{stat.sub}</p>
+                      <div className="flex items-baseline justify-center lg:justify-start gap-1.5">
+                        {stat.label.includes('Salary') && <span className="text-white/40 text-[10px] font-black uppercase -mt-0.5">₹</span>}
+                      <p className="text-2xl lg:text-3xl font-bold font-graphik tracking-tight text-white">{stat.value}</p>
+                    </div>
+                    <p className="text-[10px] lg:text-[12px] font-semibold text-white uppercase tracking-wider opacity-80">{stat.label}</p>
                    </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
-              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 w-fit">
-                <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#18357a]">
-                   <UserCheck size={16} />
+            <div className="grid sm:grid-cols-2 gap-4 pt-2">
+              <div className="h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center gap-3 justify-center text-center px-4">
+                <div className="h-8 w-8 rounded-full bg-[#ffc107] flex items-center justify-center text-[#224292] shrink-0">
+                    <UserCheck size={16} />
                 </div>
-                <p className="text-[10px] font-black text-white/70 uppercase tracking-widest leading-none">1000+ Placements <br/> in last 3 years</p>
+                <p className="text-[10px] font-black text-white uppercase tracking-widest leading-tight">Quality Placements <br className="hidden sm:block" /> Are Our Motto</p>
               </div>
 
-              <button className="group relative px-10 py-5 bg-[#ffc107] text-[#18357a] rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center gap-3">
+              <button 
+                onClick={() => navigate('/placement-overview')}
+                className="group relative h-14 bg-[#ffc107] text-[#224292] rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] overflow-hidden shadow-2xl hover:bg-white transition-all flex items-center justify-center gap-3"
+              >
                  Explore Placements
                  <TrendingUp size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -123,12 +123,12 @@ const Placements = () => {
 
           {/* RIGHT SIDE: Recruiter Slide (Infinite Loop) */}
           <div className="relative">
-             <div className="mb-10 text-center lg:text-left">
-                <h3 className="text-2xl lg:text-3xl font-black font-display mb-1 text-white uppercase tracking-[0.1em]">Our Top Hiring Partners</h3>
+             <div className="mb-6 text-center lg:text-left">
+                <h3 className="text-lg lg:text-xl font-semibold font-graphik mb-1 text-white tracking-tight">Our Top Hiring Partners</h3>
                 <div className="h-1 w-12 bg-[#ffc107] mb-4 mx-auto lg:mx-0 rounded-full" />
              </div>
 
-             <div className="relative h-[440px] w-full overflow-hidden mask-fade-vertical group/marquee">
+             <div className="relative h-[380px] w-full overflow-hidden mask-fade-vertical group/marquee">
                 {/* Vertical Infinite Marquee - CSS Based for Pause on Hover */}
                 <div className="flex flex-col gap-4 animate-marquee-vertical hover:[animation-play-state:paused]">
                     {[...recruiterData, ...recruiterData, ...recruiterData].map((rec, i) => (
@@ -142,7 +142,7 @@ const Placements = () => {
                               {rec.logo ? (
                                 <img src={rec.logo} alt={rec.name + " corporate hiring partner logo"} className="max-h-full max-w-full object-contain" loading="lazy" />
                               ) : (
-                                <div className="text-[#18357a]/20 font-black text-[9px] text-center leading-none uppercase pr-1 italic">Logo Req.</div>
+                                <div className="text-[#224292]/20 font-black text-[9px] text-center leading-none uppercase pr-1 italic">Logo Req.</div>
                               )}
                            </div>
                            
@@ -150,7 +150,7 @@ const Placements = () => {
                               <span className="font-display font-black text-sm lg:text-base text-white/90 group-hover:text-white transition-colors mb-1">
                                 {rec.name}
                               </span>
-                              <div className="flex items-center gap-4 text-white/40 text-[9px] uppercase font-black tracking-widest">
+                              <div className="flex items-center gap-4 text-white text-[11px] uppercase font-black tracking-widest">
                                  <span className="flex items-center gap-1.5"><TrendingUp size={12} className="text-[#ffc107]" /> {rec.lpa}</span>
                                  <span className="flex items-center gap-1.5"><UserCheck size={12} className="text-[#ffc107]/50" /> {rec.count} Placed</span>
                               </div>
@@ -178,9 +178,31 @@ const Placements = () => {
                 `}</style>
 
                 {/* Vertical Fade Effect Overlay */}
-                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#18357a] to-transparent z-10" />
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#18357a] to-transparent z-10" />
+                <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#224292] to-transparent z-10" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#224292] to-transparent z-10" />
              </div>
+
+              {/* Brochure & Prospects Buttons */}
+              <div className="grid sm:grid-cols-2 gap-4 mt-6">
+                  <a 
+                      href={brochurePdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-14 bg-[#ffc107] text-[#224292] hover:bg-white rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-2xl transition-all flex items-center justify-center gap-3 w-full"
+                      style={{ color: '#224292' }}
+                  >
+                      <Download size={16} /> Brochure
+                  </a>
+                  <a 
+                      href={prospectsPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-14 bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-2xl transition-all flex items-center justify-center gap-3 w-full"
+                      style={{ color: 'white' }}
+                  >
+                      <Download size={16} /> Prospects
+                  </a>
+              </div>
           </div>
 
         </div>

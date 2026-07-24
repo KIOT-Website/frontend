@@ -1,6 +1,9 @@
 import React, { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BarChart3, Target } from 'lucide-react'
+import { 
+  BarChart3, Target, TrendingUp, Star, Award, Zap, 
+  GraduationCap, BookOpen, Building2, Briefcase, Users, Trophy 
+} from 'lucide-react'
 
 // Animated Trend Line Chart
 const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
@@ -21,43 +24,47 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
   }, [pathD, points]);
 
   return (
-    <div className="relative h-80 w-full group/chart">
-      <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
-        {[0, 1, 2, 3, 4].map((v) => <div key={v} className="w-full h-px bg-[#18357a]/20 border-t border-dashed border-[#18357a]/40" />)}
+    <div className="relative h-64 w-full group/chart font-graphik">
+      <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
+        {[0, 1, 2, 3, 4, 5].map((v) => (
+          <div key={v} className="flex items-center gap-4">
+             <div className="flex-1 h-[1px] bg-slate-100" />
+          </div>
+        ))}
       </div>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full overflow-visible">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute left-6 sm:left-10 right-0 inset-y-0 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] h-full overflow-visible">
         <defs>
           <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#18357a" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#18357a" stopOpacity="0.01" />
+            <stop offset="0%" stopColor="#224292" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#224292" stopOpacity="0.01" />
           </linearGradient>
           <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#18357a" />
-            <stop offset="50%" stopColor="#224292" />
+            <stop offset="0%" stopColor="#224292" />
             <stop offset="100%" stopColor="#ffc107" />
           </linearGradient>
         </defs>
-        <motion.path d={areaD} fill="url(#areaGradient)" initial={{ opacity: 0, d: `M 0,100 L 100,100 L 100,100 L 0,100 Z` }} whileInView={{ opacity: 1, d: areaD }} transition={{ duration: 1.5 }} viewport={{ once: true }} />
-        <motion.path d={pathD} fill="none" stroke="url(#lineGradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2 }} viewport={{ once: true }} />
+        <motion.path d={areaD} fill="url(#areaGradient)" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1.5 }} viewport={{ once: true }} />
+        <motion.path d={pathD} fill="none" stroke="url(#lineGradient)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 2 }} viewport={{ once: true }} />
         {points.map((p, i) => (
           <motion.g key={i} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 + i * 0.05 }} viewport={{ once: true }}>
-            <circle cx={p.x} cy={p.y} r="1.2" fill={data[i].lpa === 4.05 ? "#ffc107" : "#18357a"} onMouseEnter={() => setIsHovered(i)} onMouseLeave={() => setIsHovered(null)} />
+            <circle cx={p.x} cy={p.y} r="1.5" fill={data[i].lpa > 3.5 ? "#ffc107" : "#224292"} stroke="white" strokeWidth="0.5" onMouseEnter={() => setIsHovered(i)} onMouseLeave={() => setIsHovered(null)} className="cursor-pointer transition-all hover:r-2 shadow-sm" />
           </motion.g>
         ))}
       </svg>
-      <div className="absolute inset-0 flex justify-between items-end px-1 overflow-visible">
+      <div className="absolute left-6 sm:left-10 right-0 bottom-[-2.5rem] flex justify-between px-1 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)]">
+        {data.map((d, i) => (
+          <div key={i} className="text-[8px] sm:text-[10px] font-black text-black uppercase tracking-tight -rotate-45 sm:rotate-0 origin-top-right mt-2 sm:mt-0">{d.year.replace('20', "'")}</div>
+        ))}
+      </div>
+      <div className="absolute left-6 sm:left-10 right-0 inset-y-0 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] flex justify-between overflow-visible">
         {data.map((d, i) => (
           <div key={i} className="flex-1 h-full relative group/data-point" onMouseEnter={() => setIsHovered(i)} onMouseLeave={() => setIsHovered(null)}>
-            <div className={`absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 text-[8px] font-bold uppercase transition-all duration-300 ${isHovered === i ? 'text-[#18357a] scale-110' : 'text-[#18357a]/60'}`}>
-              {d.year}
-            </div>
             <AnimatePresence>
               {isHovered === i && (
-                <motion.div initial={{ opacity: 0, y: 10, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 10, scale: 0.9 }} className="absolute z-50 pointer-events-none whitespace-nowrap" style={{ left: '50%', bottom: `${(d.lpa / maxVal) * 100}%`, transform: 'translateX(-50%) translateY(-20px)' }}>
-                  <div className="bg-[#18357a] text-white px-3 py-1.5 rounded-xl shadow-2xl border border-white/10 flex flex-col items-center">
-                    <span className="text-[10px] font-black">{d.lpa} LPA</span>
-                    <span className="text-[7px] font-bold text-white/50 uppercase">{d.year}</span>
-                    <div className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 bg-[#18357a] rotate-45" />
+                <motion.div initial={{ opacity: 0, y: 10, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 10, scale: 0.9 }} className="absolute z-50 pointer-events-none" style={{ left: '50%', bottom: `${(d.lpa / maxVal) * 100}%`, transform: 'translateX(-50%) translateY(-25px)' }}>
+                  <div className="bg-[#224292] text-white px-4 py-2.5 rounded-2xl shadow-2xl border border-white/10 flex flex-col items-center">
+                    <span className="text-[14px] font-black tracking-tight">{d.lpa} LPA</span>
+                    <div className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-3 h-3 bg-[#224292] rotate-45" />
                   </div>
                 </motion.div>
               )}
@@ -72,99 +79,136 @@ const SleekTrendChart = ({ data, maxVal = 4.5 }) => {
 // Premium Grouped Capsule Chart
 const EliteEfficiencyChart = ({ data }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
+  const icons = [GraduationCap, BookOpen, Building2, Briefcase, Users, Trophy];
+  
   return (
-    <div className="relative h-80 w-full flex items-end justify-between px-2 gap-4">
-      {data.map((d, i) => (
-        <div key={i} className="flex-1 flex flex-col items-center h-full group/col relative" onMouseEnter={() => setHoverIndex(i)} onMouseLeave={() => setHoverIndex(null)}>
-          <div className="flex items-end gap-2 h-full w-full justify-center">
-            <div className="relative flex-1 flex flex-col items-center justify-end h-full">
-              <motion.div initial={{ height: 0 }} whileInView={{ height: `${(d.opted / 800) * 100}%` }} transition={{ duration: 1, delay: i * 0.1 }} viewport={{ once: true }} className="w-full bg-white/10 border border-white/20 rounded-full relative overflow-hidden" />
-            </div>
-            <div className="relative flex-1 flex flex-col items-center justify-end h-full">
-              <motion.div initial={{ height: 0 }} whileInView={{ height: `${(d.placed / 800) * 100}%` }} transition={{ duration: 1, delay: i * 0.1 + 0.1 }} viewport={{ once: true }} className="w-full bg-[#ffc107]/20 border border-[#ffc107]/30 rounded-full relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#ffc107] to-[#ffd54f]" />
-              </motion.div>
-            </div>
+    <div className="relative h-64 w-full flex items-end justify-between px-4 sm:px-8 gap-4 sm:gap-8 font-graphik">
+      <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
+        {[0, 25, 50, 75, 100].map((v) => (
+          <div key={v} className="flex items-center gap-6">
+             <div className="flex-1 h-[1px] bg-white/10" />
           </div>
-          <div className="mt-6">
-            <span className={`text-[8px] font-black uppercase transition-all duration-300 ${hoverIndex === i ? 'text-white scale-110' : 'text-white/40'}`}>
+        ))}
+      </div>
+      
+      {data.map((d, i) => {
+        const Icon = icons[i % icons.length];
+        const optedPercent = (d.opted / 800) * 100;
+        const placedPercent = (d.placed / 800) * 100;
+        
+        return (
+          <div key={i} className="flex-1 flex flex-col items-center h-full group/col relative z-10" onMouseEnter={() => setHoverIndex(i)} onMouseLeave={() => setHoverIndex(null)}>
+            <div className="flex items-end gap-1.5 h-full w-full justify-center pb-2">
+              <div className="relative w-4 sm:w-6 flex flex-col items-center justify-end h-full">
+                <span className="absolute top-[-25px] text-[10px] font-semibold text-white/70">{Math.round(optedPercent)}%</span>
+                <motion.div initial={{ height: 0 }} whileInView={{ height: `${optedPercent}%` }} transition={{ duration: 1, delay: i * 0.1 }} viewport={{ once: true }} className="w-full bg-white/20 rounded-t-sm relative" />
+              </div>
+              <div className="relative w-4 sm:w-6 flex flex-col items-center justify-end h-full">
+                <span className="absolute top-[-25px] text-[10px] font-semibold text-[#ffc107]">{Math.round(placedPercent)}%</span>
+                <motion.div initial={{ height: 0 }} whileInView={{ height: `${placedPercent}%` }} transition={{ duration: 1, delay: i * 0.1 + 0.1 }} viewport={{ once: true }} className="w-full bg-[#ffc107] rounded-t-sm relative shadow-[0_0_20px_rgba(255,193,7,0.2)]" />
+              </div>
+            </div>
+            
+            <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center mb-2 mt-4 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-500">
+               <Icon size={14} />
+            </div>
+            <span className={`text-[10px] font-semibold uppercase tracking-widest transition-all duration-300 text-white/70 group-hover:text-white`}>
               {d.year}
             </span>
           </div>
-          <AnimatePresence>
-            {hoverIndex === i && (
-              <motion.div initial={{ opacity: 0, y: 10, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 10, scale: 0.95 }} className="absolute -top-12 z-50 bg-white p-3 rounded-2xl shadow-xl border border-[#D5E2F4] min-w-[120px]">
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="text-[9px] font-bold text-[#64779F]">OPTED</span>
-                    <span className="text-[11px] font-black text-[#18357a]">{d.opted}</span>
-                  </div>
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="text-[9px] font-bold text-[#64779F]">PLACED</span>
-                    <span className="text-[11px] font-black text-[#ffc107]">{d.placed}</span>
-                  </div>
-                </div>
-                <div className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 border-r border-b border-[#D5E2F4]" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
 
 const AnalyticsCharts = ({ statsData, efficiencyData }) => {
   return (
-    <div className="grid lg:grid-cols-2 gap-10 mb-40">
-       <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex flex-col bg-white p-1 rounded-[4rem] border border-[#18357a]/10">
-          <div className="p-8 md:p-12 flex flex-col h-full">
-            <div className="flex items-start justify-between mb-12">
-               <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <BarChart3 size={18} className="text-[#ffc107]" />
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#18357a]">Growth Matrix</span>
-                  </div>
-                  <h2 className="text-3xl font-black text-[#18357a] uppercase tracking-tighter">Placement <span className="text-[#ffc107]">Statistics</span></h2>
-               </div>
-               <div className="flex flex-col items-end gap-2">
-                  <div className="px-5 py-2 rounded-2xl bg-[#18357a] text-white font-black text-xs">MAX 4.05</div>
-                  <span className="text-[10px] font-black text-[#ffc107]">AVG 2.92 LPA</span>
-               </div>
-            </div>
-            <div className="flex-1 min-h-[320px] pb-10">
-               <SleekTrendChart data={statsData} />
-            </div>
-          </div>
-       </motion.div>
+    <div className="w-full font-graphik py-12 bg-[#F8FAFC]">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 gap-12">
+           {/* Left Card: Statistics */}
+           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-transparent md:bg-white p-0 md:p-2 rounded-none md:rounded-[3rem] border-none md:border border-slate-100 shadow-none md:shadow-2xl">
+              <div className="p-6 md:p-10 flex flex-col h-full">
+                <div className="flex items-start justify-between mb-8">
+                   <div>
+                      <h2 className="text-2xl md:text-3xl font-bold text-[#224292] tracking-tighter leading-none">Placement <span className="text-[#ffc107]">Statistics</span></h2>
+                   </div>
+                </div>
 
-       <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex flex-col bg-[#18357a] p-1 rounded-[4rem] shadow-2xl shadow-[#18357a]/20 overflow-hidden relative">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,193,7,0.1),transparent)]" />
-          <div className="p-8 md:p-12 flex flex-col h-full relative z-10">
-            <div className="flex items-start justify-between mb-12">
-               <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Target size={18} className="text-[#ffc107]" />
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/50">Engagement Ratio</span>
-                  </div>
-                  <h2 className="text-3xl font-black text-white uppercase tracking-tighter">Placement <span className="text-[#ffc107]">Efficiency</span></h2>
-               </div>
-               <div className="flex gap-4">
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20 border border-white/40" />
-                    <span className="text-[10px] font-black text-white/60">OPTED</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffc107]" />
-                    <span className="text-[10px] font-black text-white/60">PLACED</span>
-                  </div>
-               </div>
-            </div>
-            <div className="flex-1 min-h-[320px] pb-10">
-               <EliteEfficiencyChart data={efficiencyData} />
-            </div>
-          </div>
-       </motion.div>
+                {/* Statistics Highlights */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                   {[
+                     { label: "Consistent Growth", sub: "Year over Year", icon: TrendingUp, color: "#224292" },
+                     { label: "Max Package", sub: "4.05 LPA", icon: Star, color: "#ffc107" },
+                     { label: "Strong Placement Rise", sub: "2021 onwards", icon: Award, color: "#224292" },
+                     { label: "Industry Aligned", sub: "Career Ready", icon: Zap, color: "#ffc107" }
+                   ].map((item, i) => (
+                     <div key={i} className="flex flex-col gap-2 group">
+                        <div className="w-8 h-8 flex items-center justify-center transition-transform duration-500" style={{ color: item.color }}>
+                          <item.icon size={18} />
+                        </div>
+                        <div>
+                          <p className="text-[11px] font-bold text-[#224292] leading-tight mb-0.5">{item.label}</p>
+                          <p className="text-[10px] font-medium text-[#64779F] tracking-tight">{item.sub}</p>
+                        </div>
+                     </div>
+                   ))}
+                </div>
+
+                <div className="flex-1 min-h-[300px] pb-6">
+                   <SleekTrendChart data={statsData} />
+                </div>
+              </div>
+           </motion.div>
+
+           {/* Right Card: Efficiency */}
+           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col bg-[#224292] p-0 md:p-2 rounded-none md:rounded-[3rem] shadow-none md:shadow-2xl shadow-[#224292]/30 overflow-hidden relative text-white">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,193,7,0.15),transparent)]" />
+              <div className="p-6 md:p-10 flex flex-col h-full relative z-10">
+                <div className="flex items-start justify-between mb-8">
+                   <div>
+                      <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tighter leading-none">Placement <span className="text-[#ffc107]">Efficiency</span></h2>
+                   </div>
+                    <div className="flex gap-4 pt-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full border border-white/50" />
+                        <span className="text-[9px] font-semibold text-white/50 uppercase tracking-widest">OPTED</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                        <span className="text-[9px] font-semibold text-white/50 uppercase tracking-widest">PLACED</span>
+                      </div>
+                    </div>
+                </div>
+                
+                <p className="text-white font-medium text-sm mb-10 max-w-md leading-relaxed">
+                   A steady rise in student participation and successful placements over the years.
+                </p>
+
+                <div className="flex-1 min-h-[300px] pb-6 mb-10">
+                   <EliteEfficiencyChart data={efficiencyData} />
+                </div>
+
+                {/* Footer Section */}
+                <div className="mt-auto border-t border-white/20 pt-8 flex items-center justify-between">
+                   <div className="flex items-center gap-6 group">
+                      <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#224292] shadow-[0_20px_50px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-transform duration-700">
+                        <TrendingUp size={32} />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-black text-white leading-tight tracking-tighter uppercase">Growing Engagement.<br/><span className="text-[#ffc107]">Stronger Outcomes.</span></h4>
+                      </div>
+                   </div>
+                   <div className="w-px h-12 bg-white/20 hidden xl:block" />
+                   <p className="text-xs font-black text-white/70 max-w-[150px] leading-tight hidden xl:block uppercase tracking-tight">
+                     More students opting in, more achieving success.
+                   </p>
+                </div>
+              </div>
+           </motion.div>
+        </div>
+      </div>
     </div>
   )
 }

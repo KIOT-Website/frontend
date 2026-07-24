@@ -1,0 +1,67 @@
+name: Deploy Frontend to EC2
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+    environment: EC2_HOST # Reuse the same environment containing server credentials
+
+    steps:
+      - name: Execute Remote SSH Commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: ${{ secrets.EC2_PORT || 22 }}
+          script: |
+            set -e
+
+            echo "Starting frontend panel deployment..."
+            
+            # Navigate to the project directory
+            cd "/var/www/kiot-frontend"
+            
+            # Check if it is a git repository
+            if [ ! -d ".git" ]; then
+              echo "Initializing git repository for the first time..."
+              # Backup .env if present
+              if [ -f ".env" ]; then
+                cp .env ../.env.frontend.backup
+              fi
+              
+              # Initialize git
+              git init
+              git remote add origin https://github.com/KIOT-Website/frontend.git
+              
+              # Fetch using ephemeral GitHub Actions token for authentication
+              git fetch https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/KIOT-Website/frontend.git production
+              git checkout -f -B production FETCH_HEAD
+              
+              # Restore .env
+              if [ -f "../.env.frontend.backup" ]; then
+                mv ../.env.frontend.backup .env
+              fi
+            else
+              echo "Fetching latest changes from branch production..."
+              git fetch https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/KIOT-Website/frontend.git production
+              git reset --hard FETCH_HEAD
+            fi
+            
+            echo "Installing dependencies..."
+            npm install
+            
+            echo "Building application..."
+            # Inject the production API base URL during build
+            VITE_API_URL=https://api.kiot.ac.in npm run build
+            
+            echo "Restarting application service via PM2..."
+            # Restarts the static server or starts it if not running yet on port 3001
+            pm2 restart kiot-frontend || pm2 serve dist 3001 --spa --name kiot-frontend
+            
+            echo "Deployment finished successfully!"

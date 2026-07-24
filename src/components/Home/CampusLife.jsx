@@ -1,175 +1,159 @@
 import { motion } from 'framer-motion'
-import { BookOpen, FlaskConical, Home, Trophy, Utensils, Bus, ArrowUpRight, Quote } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { 
+  Trophy, Home, Utensils, Bus, ArrowUpRight, 
+  Sparkles, Dumbbell, Zap, GraduationCap, FlaskConical,
+  Microscope,
+  Cpu,
+  Coffee,
+  Building,
+  Activity
+} from 'lucide-react'
+import React from 'react'
 
 // Asset imports
-import libraryImg from '../../assets/kiot_library.webp'
-import labImg from '../../assets/kiot_lab.webp'
-import hostelImg from '../../assets/kiot_hostel.webp'
-import sportsImg from '../../assets/kiot_sports.webp'
-import cafeteriaImg from '../../assets/kiot_cafeteria.webp'
-import transportImg from '../../assets/kiot_transport.webp'
+import labImg from '../../assets/main/l1.webp'
+import cafeteriaImg from '../../assets/life@kiot/caf.webp'
+import hostelImg from '../../assets/main/hostel1.webp'
+import sportsImg from '../../assets/main/sh-1.webp'
+import homeLifeImg from '../../assets/main/home-life.webp'
+import trainingImg from '../../assets/life@kiot/smart classrooms.webp'
+import transportImg from '../../assets/life@kiot/collge bus.webp'
+import gymImg from '../../assets/life@kiot/gym.webp'
+import istartImg from '../../assets/main/istart1.webp'
+import campusMainImg from '../../assets/main/campus .webp'
 
 const facilities = [
-  {
-    id: 1,
-    title: "Smart Library",
-    desc: "Digital and physical archives for deep learning.",
-    image: libraryImg,
-    icon: BookOpen,
-    tag: "Learning Hub"
-  },
-  {
-    id: 2,
-    title: "Advanced Labs",
-    desc: "Hands-on experience with modern equipment.",
-    image: labImg,
-    icon: FlaskConical,
-    tag: "R&D Center"
-  },
-  {
-    id: 3,
-    title: "Safe Hostel",
-    desc: "Comfortable and safe student-focused living.",
-    image: hostelImg,
-    icon: Home,
-    tag: "Home Away"
-  },
-  {
-    id: 4,
-    title: "Sports & Fitness",
-    desc: "Indoor and outdoor arenas for holistic health.",
-    image: sportsImg,
-    icon: Trophy,
-    tag: "Active Campus"
-  },
-  {
-    id: 5,
-    title: "Hygienic Cafeteria",
-    desc: "Healthy meals in a spacious, social setting.",
-    image: cafeteriaImg,
-    icon: Utensils,
-    tag: "Food & Social"
-  },
-  {
-    id: 6,
-    title: "Seamless Transport",
-    desc: "Well-connected fleet for easy daily commute.",
-    image: transportImg,
-    icon: Bus,
-    tag: "Swift Access"
-  }
+  { id: 5, title: "Lab", image: labImg, link: "/campus-life/classroom" },
+  { id: 7, title: "Training", image: trainingImg, link: "/placements/training" },
+  { id: 2, title: "Gym", image: gymImg, link: "/campus-life/amenities" },
+  { id: 1, title: "Sports", image: sportsImg, link: "/campus-life/sports" },
+  { id: 8, title: "iStart", image: istartImg, link: "/research-innovation/istart" },
+  { id: 3, title: "Transport", image: transportImg, link: "/campus-life/transport" },
+  { id: 4, title: "Cafeteria", image: cafeteriaImg, link: "/campus-life/amenities" },
+  { id: 6, title: "Hostel", image: hostelImg, link: "/campus-life/amenities" }
 ]
 
 const CampusLife = () => {
-  return (
-    <section className="relative py-10 lg:py-16 bg-white overflow-hidden">
-      
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+  const renderCard = (fac, idx) => (
+    <Link to={fac.link} key={fac.id} onClick={() => window.scrollTo(0, 0)} className="w-full">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: idx * 0.05 }}
+        className="group bg-white rounded-xl overflow-hidden flex flex-col relative shadow-xl shadow-black/[0.12] hover:shadow-2xl hover:shadow-black/[0.18] hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100/80 h-full"
+      >
+        <div className="relative w-full h-32 lg:h-44 overflow-hidden">
+          <img src={fac.image} alt={fac.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-[1.08]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
+        </div>
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 lg:mb-24">
-           <div className="max-w-2xl">
-              <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="inline-flex items-center gap-2 mb-4 bg-[#18357a]/5 px-3 py-1 rounded-full border border-[#18357a]/10"
-              >
-                <div className="h-1 w-4 bg-[#ffc107] rounded-full" />
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#18357a]">Life At KIOT</span>
-              </motion.div>
-              <h2 className="text-3xl lg:text-5xl font-black text-[#18357a] font-display leading-[1.1]">
-                Everything You Need, <br />
-                <span className="text-[#ffc107]">All in One Campus</span>
-              </h2>
-           </div>
-           <p className="text-[#64779F] max-w-sm text-sm lg:text-base font-medium opacity-80 leading-relaxed">
-             Beyond classrooms, we provide a vibrant ecosystem designed to nurture your academic growth and personal well-being.
-           </p>
+        <div className="p-4 lg:p-5 flex-1 flex flex-col justify-center bg-white transition-colors duration-500 group-hover:bg-[#FCFDFD]">
+          <div className="flex items-center justify-between gap-3">
+            <h3 className="text-sm lg:text-[16px] font-semibold text-[#224292] leading-tight transition-colors duration-300 group-hover:text-[#ffc107]">{fac.title}</h3>
+            <div className="w-6 h-6 lg:w-7 lg:h-7 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300 shadow-sm shrink-0">
+              <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  );
+
+  return (
+    <section className="relative py-8 lg:py-12 bg-[#FCFDFD] overflow-hidden">
+      
+      {/* 🔷 SECTION HERO: "Life@KIOT" */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 mb-10 lg:mb-12">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 space-y-6 lg:space-y-8"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: 'backOut' }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#224292]/5 border border-[#224292]/10 mb-2"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107] animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-[#224292]">
+                Life @ KIOT
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#224292] animate-pulse" />
+            </motion.div>
+
+            <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik leading-tight tracking-tight">
+              A Vibrant <span className="text-[#ffc107]">Ecosystem</span> <br className="hidden lg:block" />
+              for Holistic Growth.
+            </h2>
+            
+            <p className="text-xs lg:text-sm text-black font-medium leading-relaxed max-w-xl text-justify">
+              Beyond academics, KIOT creates a vibrant campus experience that shapes confident, creative, and future-ready individuals. From modern infrastructure and student clubs to sports, innovation spaces, and cultural activities, every corner of campus is designed to support growth beyond the classroom. Experience a dynamic environment where learning, leadership, and everyday life come together seamlessly.
+            </p>
+ 
+            <Link 
+              to="/campus-life"
+              className="hidden lg:inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
+            >
+              Explore Full Campus
+              <ArrowUpRight size={18} />
+            </Link>
+          </motion.div>
+ 
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7 relative lg:mt-0 lg:-mr-10 xl:-mr-24 flex justify-end items-center"
+          >
+            <div className="w-full">
+              <img src={homeLifeImg} alt="Life@KIOT" className="w-full h-auto object-contain drop-shadow-2xl" />
+            </div>
+          </motion.div>
         </div>
 
-        {/* FACILITY GRID — Premium Image-Top Card Design */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-           {facilities.map((fac, idx) => (
-             <motion.div
-               key={fac.id}
-               initial={{ opacity: 0, y: 30 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: idx * 0.1, duration: 0.5 }}
-               className="group flex flex-col rounded-[28px] cursor-pointer bg-white border border-[#e8eef7] shadow-[0_8px_32px_rgba(24,53,122,0.07)] hover:shadow-[0_24px_64px_rgba(24,53,122,0.16)] hover:-translate-y-2 transition-all duration-500"
-             >
-                {/* Image Area */}
-                 <div className="relative h-52 lg:h-60 overflow-hidden rounded-t-[28px]">
-                   <img
-                     src={fac.image}
-                     alt={fac.title + " - campus facility at KIOT"}
-                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
-                     style={{ transformOrigin: 'center center' }}
-                     loading="lazy"
-                   />
-                   {/* Gradient overlay */}
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#18357a]/60 via-transparent to-transparent" />
+      </div>
 
-                   {/* Tag pill (top-left) */}
-                   <div className="absolute top-4 left-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white text-[10px] font-bold uppercase tracking-widest">
-                        {fac.tag}
-                      </span>
-                   </div>
-                </div>
-
-                {/* Icon badge — outside overflow-hidden, overlapping image/content boundary */}
-                <div className="relative">
-                   <div className="absolute -top-6 right-6 z-10">
-                      <div className="h-12 w-12 rounded-2xl bg-[#18357a] text-white flex items-center justify-center shadow-[0_8px_24px_rgba(24,53,122,0.35)] group-hover:bg-[#ffc107] group-hover:text-[#18357a] transition-colors duration-500 border-2 border-white">
-                         <fac.icon size={20} />
-                      </div>
-                   </div>
-                </div>
-
-                {/* Content Area */}
-                <div className="flex flex-col flex-1 px-6 pt-8 pb-6">
-                   {/* Accent line */}
-                   <div className="w-8 h-1 rounded-full bg-[#ffc107] mb-4 group-hover:w-14 transition-all duration-400" />
-
-                   <h3 className="text-xl font-black text-[#18357a] font-display mb-2 leading-tight">
-                     {fac.title}
-                   </h3>
-                   <p className="text-sm font-medium text-[#64779F] leading-relaxed flex-1">
-                     {fac.desc}
-                   </p>
-
-                   {/* Explore link */}
-                   <div className="mt-5 flex items-center gap-2 text-[#18357a] text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-400">
-                      <span>Explore</span>
-                      <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-                   </div>
-                </div>
-             </motion.div>
-           ))}
+      {/* 🔷 AMENITY GRID - 8 Cards Version */}
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+        {/* Mobile & Tablet grid (under 1024px width) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:hidden gap-4 lg:gap-6">
+          {facilities.map((fac, idx) => renderCard(fac, idx))}
         </div>
 
-        {/* Redesigned Experience Bar */}
-        <div className="mt-20 lg:mt-32 p-10 lg:p-14 rounded-[32px] bg-white border border-[#D5E2F4]/40 shadow-[0_30px_60px_rgba(34,66,146,0.05)] relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
-           {/* Subtle corner accent */}
-           <div className="absolute top-0 right-0 w-32 h-32 bg-[#18357a]/5 rounded-bl-[100px] -z-10" />
-           
-           <div className="flex-1 flex gap-6 italic">
-              <Quote className="text-[#ffc107]/20 h-10 w-10 shrink-0" strokeWidth={3} />
-              <p className="text-base lg:text-xl font-bold text-[#18357a] leading-relaxed max-w-xl">
-                "We don't just provide infrastructure; we build environments where potential turns into achievement."
-              </p>
-           </div>
-           
-           <div className="flex flex-col items-center lg:items-end lg:pl-10 lg:border-l border-[#D5E2F4]/60">
-              <div className="flex items-center gap-3 mb-2">
-                 <div className="h-2 w-2 rounded-full bg-[#ffc107]" />
-                 <p className="text-2xl lg:text-3xl font-black font-display text-[#18357a] tracking-tight">ISO Certified</p>
-              </div>
-              <p className="text-[10px] uppercase font-black tracking-[0.3em] text-[#64779F]">Global Excellence Standard</p>
-           </div>
+        {/* Desktop grid layout (1024px and up width) */}
+        <div className="hidden lg:flex flex-col gap-6">
+          {/* Row 1: 3 cards */}
+          <div className="grid grid-cols-3 gap-6">
+            {facilities.slice(0, 3).map((fac, idx) => renderCard(fac, idx))}
+          </div>
+          
+          {/* Row 2: 2 cards with increased width */}
+          <div className="grid grid-cols-2 gap-6 w-full">
+            {facilities.slice(3, 5).map((fac, idx) => renderCard(fac, idx + 3))}
+          </div>
+
+          {/* Row 3: 3 cards */}
+          <div className="grid grid-cols-3 gap-6">
+            {facilities.slice(5, 8).map((fac, idx) => renderCard(fac, idx + 5))}
+          </div>
         </div>
 
+        {/* Mobile Centered Button - Now at the Bottom */}
+        <div className="mt-10 flex justify-center lg:hidden">
+          <Link 
+            to="/campus-life"
+            className="inline-flex items-center gap-4 px-8 py-4 bg-[#224292] !text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#ffc107] hover:!text-[#224292] transition-all shadow-xl shadow-[#224292]/20"
+          >
+            Explore Full Campus
+            <ArrowUpRight size={18} />
+          </Link>
+        </div>
       </div>
 
     </section>

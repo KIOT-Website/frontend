@@ -8,121 +8,122 @@ import {
   Briefcase, MessageSquare, Star, LayoutGrid, Building2,
   Zap, ShieldCheck, Car
 } from 'lucide-react'
+import academicHero from '../../assets/Admissions/academic.webp'
 
 const ugPrograms = [
   {
     id: 'be-cse',
-    name: 'B.E Computer Science & Engineering',
+    name: 'B.E. Computer Science & Engineering',
     short: 'CSE',
     duration: '4 Years',
     intake: 240,
     category: 'Engineering',
     icon: Cpu,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '96%',
     description: 'Core computing, algorithms, data structures, and software systems.'
   },
   {
-    id: 'be-ece',
-    name: 'B.E Electronics & Communication Engineering',
-    short: 'ECE',
-    duration: '4 Years',
-    intake: 180,
-    category: 'Engineering',
-    icon: Globe,
-    color: '#18357a',
-    accent: '#ffc107',
-    placement: '90%',
-    description: 'Electronics, embedded systems, VLSI, and communication technologies.'
-  },
-  {
-    id: 'be-mechanical',
-    name: 'B.E Mechanical Engineering',
-    short: 'Mechanical',
-    duration: '4 Years',
-    intake: 120,
-    category: 'Engineering',
-    icon: Wrench,
-    color: '#18357a',
-    accent: '#ffc107',
-    placement: '92%',
-    description: 'Design, analysis, and manufacturing of mechanical systems and machines.'
-  },
-  {
     id: 'btech-it',
-    name: 'B.Tech Information Technology',
+    name: 'B.Tech. Information Technology',
     short: 'IT',
     duration: '4 Years',
     intake: 120,
     category: 'Technology',
     icon: BookOpen,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '94%',
     description: 'Software development, networking, cloud computing, and cyber security.'
   },
   {
     id: 'btech-aids',
-    name: 'B.Tech AI & Data Science',
-    short: 'AI & DS',
+    name: 'B.Tech. Artificial Intelligence and Data Science',
+    short: 'AI&DS',
     duration: '4 Years',
     intake: 120,
     category: 'Technology',
     icon: FlaskConical,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '95%',
     description: 'Machine learning, data analytics, and intelligent systems engineering.'
   },
   {
-    id: 'be-eee',
-    name: 'B.E Electrical & Electronics Engineering',
-    short: 'EEE',
-    duration: '4 Years',
-    intake: 60,
-    category: 'Engineering',
-    icon: Zap,
-    color: '#18357a',
-    accent: '#ffc107',
-    placement: '89%',
-    description: 'Power systems, electrical machines, control systems and power electronics.'
-  },
-  {
     id: 'btech-csbs',
-    name: 'B.Tech CS & Business Systems',
+    name: 'B.Tech. Computer Science and Business Systems',
     short: 'CSBS',
     duration: '4 Years',
     intake: 60,
     category: 'Technology',
     icon: BarChart3,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '93%',
     description: 'Bridging computer science with business analytics and systems thinking.'
   },
   {
+    id: 'be-ece',
+    name: 'B.E. Electronics & Communication Engineering',
+    short: 'ECE',
+    duration: '4 Years',
+    intake: 180,
+    category: 'Engineering',
+    icon: Globe,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '90%',
+    description: 'Electronics, embedded systems, VLSI, and communication technologies.'
+  },
+  {
+    id: 'be-eee',
+    name: 'B.E. Electrical & Electronics Engineering',
+    short: 'EEE',
+    duration: '4 Years',
+    intake: 120,
+    category: 'Engineering',
+    icon: Zap,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '89%',
+    description: 'Power systems, electrical machines, control systems and power electronics.'
+  },
+  {
     id: 'be-ecm',
-    name: 'B.E Electronics & Computer Engineering',
-    short: 'ECM',
+    name: 'B.E. Electronics & Computer Engineering',
+    short: 'ECX',
     duration: '4 Years',
     intake: 60,
     category: 'Engineering',
     icon: Cpu,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '90%',
     description: 'Integration of electronics engineering with computer science fundamentals.'
   },
   {
-    id: 'be-civil',
-    name: 'B.E Civil Engineering',
-    short: 'Civil',
+    id: 'be-mechanical',
+    name: 'B.E. Mechanical Engineering',
+    short: 'MECH',
     duration: '4 Years',
-    intake: 30,
+    intake: 120,
+    category: 'Engineering',
+    icon: Wrench,
+    color: '#224292',
+    accent: '#ffc107',
+    placement: '92%',
+    description: 'Design, analysis, and manufacturing of mechanical systems and machines.'
+  },
+  {
+    id: 'be-civil',
+    name: 'B.E. Civil Engineering',
+    short: 'CIVIL',
+    duration: '4 Years',
+    intake: 60,
     category: 'Engineering',
     icon: Layers,
-    color: '#18357a',
+    color: '#224292',
     accent: '#ffc107',
     placement: '88%',
     description: 'Infrastructure planning, structural design, and sustainable construction.'
@@ -132,8 +133,8 @@ const ugPrograms = [
 const pgPrograms = [
   {
     id: 'mba-general',
-    name: 'MBA - General',
-    short: 'MBA',
+    name: 'Master of Business Administration',
+    short: 'MBA - General',
     duration: '2 Years',
     intake: 120,
     category: 'Management',
@@ -145,7 +146,7 @@ const pgPrograms = [
   },
   {
     id: 'mba-iev',
-    name: 'MBA (IEV)',
+    name: 'MBA - Innovation, Entrepreneurship and Venture Development',
     short: 'MBA IEV',
     duration: '2 Years',
     intake: 60,
@@ -171,11 +172,11 @@ const pgPrograms = [
   },
   {
     id: 'me-ise',
-    name: 'M.E Industrial Safety Engineering',
-    short: 'M.E ISE',
+    name: 'M.E. Industrial Safety Engineering',
+    short: 'M.E. ISE',
     duration: '2 Years',
     intake: 24,
-    category: 'M.E Engineering',
+    category: 'M.E. Engineering',
     icon: ShieldCheck,
     color: '#224292',
     accent: '#ffc107',
@@ -184,11 +185,11 @@ const pgPrograms = [
   },
   {
     id: 'me-ae',
-    name: 'M.E Automotive Electronics',
-    short: 'M.E AE',
+    name: 'M.E. Automotive Electronics',
+    short: 'M.E. AE',
     duration: '2 Years',
     intake: 18,
-    category: 'M.E Engineering',
+    category: 'M.E. Engineering',
     icon: Car,
     color: '#224292',
     accent: '#ffc107',
@@ -197,11 +198,11 @@ const pgPrograms = [
   },
   {
     id: 'me-ped',
-    name: 'M.E Power Electronics and Drives',
-    short: 'M.E PED',
+    name: 'M.E. Power Electronics and Drives',
+    short: 'M.E. PED',
     duration: '2 Years',
     intake: 18,
-    category: 'M.E Engineering',
+    category: 'M.E. Engineering',
     icon: Zap,
     color: '#224292',
     accent: '#ffc107',
@@ -210,11 +211,11 @@ const pgPrograms = [
   },
   {
     id: 'me-se',
-    name: 'M.E Software Engineering',
-    short: 'M.E SE',
+    name: 'M.E. Software Engineering',
+    short: 'M.E. SE',
     duration: '2 Years',
     intake: 18,
-    category: 'M.E Engineering',
+    category: 'M.E. Engineering',
     icon: Cpu,
     color: '#224292',
     accent: '#ffc107',
@@ -226,7 +227,7 @@ const pgPrograms = [
     name: 'Ph.D. ALL Departments',
     short: 'Ph.D.',
     duration: 'Part-Time / Full Time',
-    intake: 'As per Norms',
+    intake: '',
     category: 'Research',
     icon: Microscope,
     color: '#224292',
@@ -244,13 +245,16 @@ export default function AcademicsPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const program = searchParams.get('program') || searchParams.get('type')
+    const path = window.location.pathname
+    const program = searchParams.get('program') || searchParams.get('type') || 
+                    (path.includes('undergraduate') || path.includes('ug-programs') ? 'ug' : 
+                     path.includes('postgraduate') || path.includes('pg-programs') ? 'pg' : null)
     
     if (program?.toLowerCase() === 'ug') setProgramTab('UG Programs')
     if (program?.toLowerCase() === 'pg') setProgramTab('PG Programs')
 
-    if (program) {
-      document.getElementById('academics-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (program || path.includes('programs') || path.includes('undergraduate') || path.includes('postgraduate')) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [searchParams])
 
@@ -267,153 +271,210 @@ export default function AcademicsPage() {
   const currentPrograms = programTab === 'UG Programs' ? ugPrograms : pgPrograms
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC]" style={{ fontFamily: "'Inter', 'Outfit', sans-serif" }}>
+    <div className="min-h-screen bg-[#F8FAFC] font-graphik">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#18357a] py-20 md:py-28">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle at 20% 50%, #ffc107 1px, transparent 1px), radial-gradient(circle at 80% 20%, #ffc107 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
+      <section className="relative overflow-hidden bg-[#224292] py-8 md:py-14">
+        {/* Background Image with Overlay - Hidden on Mobile */}
+        <div className="absolute inset-0 hidden md:block">
+          <img 
+            src={academicHero} 
+            alt="KIOT Academics" 
+            className="w-full h-full object-contain md:object-cover object-right md:object-center"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+
+        {/* Geometric Patterns */}
+        <div className="absolute inset-0 opacity-[0.08]" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, #ffc107 1px, transparent 0)',
+          backgroundSize: '48px 48px'
         }} />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#ffc107]/5 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Abstract Floating Circle */}
+
+        <div className="w-full px-6 lg:pl-64 lg:pr-12 relative z-10 flex justify-center lg:justify-start">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center lg:text-left max-w-2xl flex flex-col items-center lg:items-start"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ffc107]/15 border border-[#ffc107]/30 text-[#ffc107] text-sm font-semibold mb-6">
-              <GraduationCap size={15} /> Academics at KIOT
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Shape Your Future with<br />
-              <span className="text-[#ffc107]">
-                {searchParams.get('program') || searchParams.get('type') 
-                  ? (programTab === 'UG Programs' ? 'UG Engineering Programs' : 'PG Specialization Programs') 
-                  : 'World-Class Education'}
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-[#ffc107] text-[11px] font-bold tracking-widest uppercase mb-5"
+            >
+              <GraduationCap size={14} className="animate-bounce" /> Academic Excellence
+            </motion.span>
+            
+            <h1 className="text-xl md:text-3xl lg:text-4xl font-black text-white leading-[1.1] mb-6 tracking-tight">
+              {programTab === 'PG Programs' ? 'Driven by Knowledge.' : 'Shape Your Future with'}
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffc107] via-[#fff1cc] to-[#ffc107] animate-gradient">
+                {programTab === 'PG Programs' 
+                  ? 'Defined by Excellence.' 
+                  : (searchParams.get('program') || searchParams.get('type') 
+                      ? (programTab === 'UG Programs' ? 'UG Engineering' : 'PG Specializations') 
+                      : 'World-Class Education')}
               </span>
             </h1>
-            <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-              Explore our diverse range of undergraduate and postgraduate programs designed to ignite innovation and career excellence.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <button
+
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-8">
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => navigate('/admissions')}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#ffc107] text-[#18357a] font-bold text-[15px] hover:bg-[#ffca2c] transition-all hover:scale-105 shadow-lg shadow-[#ffc107]/20"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#ffc107] text-black font-medium font-graphik text-sm uppercase tracking-widest hover:bg-[#ffca2c] transition-all shadow-[0_10px_40px_-10px_rgba(255,193,7,0.4)]"
               >
-                Apply Now <ArrowRight size={16} />
-              </button>
-              <button
-                onClick={() => document.getElementById('programs-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 text-white font-semibold text-[15px] hover:bg-white/10 transition-all"
+                Apply Now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05, bg: "rgba(255,255,255,0.1)" }}
+                onClick={() => document.getElementById('academics-content')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-6 py-3 rounded-xl border border-white/20 text-white font-bold text-xs uppercase tracking-widest backdrop-blur-sm transition-all"
               >
                 Explore Programs
-              </button>
+              </motion.button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="academics-content">
+      <div className="w-full px-6 lg:px-12 py-20" id="academics-content">
         <motion.div
            key="programs"
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.4 }}
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ duration: 0.5 }}
         >
-          {/* Program Type Tabs - Only show if not specifically requested via URL */}
-          {(!searchParams.get('program') && !searchParams.get('type')) && (
-            <div className="flex gap-3 mb-8 flex-wrap">
-              {['UG Programs', 'PG Programs'].map(t => (
-                <button
-                  key={t}
-                  onClick={() => setProgramTab(t)}
-                  className={`px-5 py-2.5 rounded-xl text-[14px] font-bold transition-all ${
-                    programTab === t
-                      ? 'bg-[#18357a] text-white shadow-lg shadow-[#18357a]/20'
-                      : 'bg-white text-[#64779F] border border-[#E5EDF8] hover:border-[#18357a]/30 hover:text-[#18357a]'
-                  }`}
-                >
-                  {t}
-                </button>
-              ))}
+          {/* Modern Tab Selector */}
+          {(!searchParams.get('program') && !searchParams.get('type') && !window.location.pathname.includes('undergraduate') && !window.location.pathname.includes('postgraduate')) && (
+            <div className="flex justify-center mb-16">
+              <div className="bg-white p-2 rounded-[2rem] flex gap-2 border border-[#D5E2F4]/50 shadow-2xl shadow-blue-900/5">
+                {['UG Programs', 'PG Programs'].map(t => (
+                  <button
+                    key={t}
+                    onClick={() => setProgramTab(t)}
+                    className={`px-10 py-4 rounded-[1.5rem] text-sm font-black uppercase tracking-widest transition-all duration-300 ${
+                      programTab === t
+                        ? 'bg-[#224292] text-white shadow-xl shadow-[#224292]/20 scale-105'
+                        : 'text-[#64779F] hover:bg-slate-50 hover:text-[#224292]'
+                    }`}
+                  >
+                    {t}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
 
-          {/* Program Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {currentPrograms.map((prog, i) => {
-              const inCompare = compareList.find(p => p.id === prog.id)
-              return (
-                <motion.div
-                  key={prog.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.07 }}
-                  className="group bg-white rounded-2xl border border-[#E5EDF8] hover:border-[#18357a]/30 hover:shadow-xl hover:shadow-[#18357a]/8 transition-all duration-300 overflow-hidden flex flex-col"
-                >
-                  {/* Card Top */}
-                  <div className="relative p-6 pb-4">
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="inline-block px-3 py-1 rounded-lg bg-[#18357a]/8 text-[#18357a] text-xs font-bold">
-                        {prog.category}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg">
-                        <CheckCircle size={11} /> {prog.placement} Placed
-                      </span>
-                    </div>
-                    <div 
-                      className="flex items-center gap-4 mb-3 cursor-pointer group/title"
-                      onClick={() => navigate(`/academics/course/${prog.id}`)}
-                    >
-                      <div className="w-12 h-12 rounded-xl bg-[#18357a]/8 flex items-center justify-center shrink-0 group-hover/title:bg-[#18357a] transition-colors">
-                        <prog.icon size={22} className="text-[#18357a] group-hover/title:text-white transition-colors" />
-                      </div>
-                      <h3 className="text-[16px] font-extrabold text-[#18357a] leading-tight group-hover/title:text-[#ffc107] transition-colors">
-                        {prog.name}
-                      </h3>
-                    </div>
-                    <p className="text-sm text-[#64779F] leading-relaxed">{prog.description}</p>
-                  </div>
+          {/* Modern Row and Column Based (Table) Layout */}
+          <div className="max-w-5xl mx-auto bg-transparent md:bg-white rounded-none md:rounded-[2rem] border-none md:border border-[#D5E2F4]/50 shadow-none md:shadow-2xl shadow-blue-900/5 overflow-hidden">
+            <div className="px-5 sm:px-8 pt-6 md:pt-10 pb-6 border-b border-slate-50">
+                <h2 className="text-xl md:text-2xl font-black text-[#224292] uppercase tracking-normal mb-1">
+                   {programTab === 'UG Programs' ? 'B.E. / B.Tech.' : 'Postgraduate'} <span className="block md:inline text-[#ffc107] md:ml-4">Programmes</span>
+                </h2>
 
-                  {/* Divider */}
-                  <div className="h-px bg-[#E5EDF8] mx-6" />
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-[#224292] border-b border-[#224292]/10">
+                    <th className="px-5 sm:px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em]">Program</th>
+                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] text-center hidden md:table-cell">Category</th>
+                    <th className="px-5 sm:px-8 py-6 text-[10px] font-black text-[#ffc107] uppercase tracking-[0.2em] text-center">Intake</th>
+                    <th className="px-8 py-6 text-[10px] font-black text-white uppercase tracking-[0.2em] text-right hidden sm:table-cell"></th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-50">
+                  {currentPrograms.map((prog, i) => {
+                    const inCompare = compareList.find(p => p.id === prog.id)
+                    return (
+                       <motion.tr
+                        key={prog.id}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.03 }}
+                        className="group hover:bg-[#224292]/[0.02] transition-all cursor-pointer"
+                        onClick={() => {
+                          if (prog.externalUrl) {
+                            window.open(prog.externalUrl, '_blank', 'noopener,noreferrer')
+                          } else {
+                            const base = programTab === 'UG Programs' ? 'undergraduate' : 'postgraduate'
+                            navigate(`/academics/${base}/${prog.id}`)
+                          }
+                        }}
+                      >
+                        {/* Column 1: Program (Icon + Name) */}
+                        <td className="px-5 sm:px-8 py-4">
+                          <div className="flex items-center gap-3 sm:gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-[#224292]/5 flex items-center justify-center group-hover:bg-[#224292] transition-all duration-300 shrink-0">
+                              <prog.icon size={18} className="text-[#224292] group-hover:text-white transition-colors" />
+                            </div>
+                             <div>
+                              <h3 className="text-[#224292] group-hover:text-[#ffc107] text-[12px] sm:text-[13px] font-medium font-graphik leading-tight transition-colors duration-300">
+                                 {prog.name}
+                               </h3>
+                               <p className="text-[#ffc107] group-hover:text-[#224292] text-[10px] font-semibold font-graphik tracking-widest tracking-wider transition-colors duration-300">{prog.short}</p>
+                            </div>
+                          </div>
+                        </td>
+ 
+                        {/* Column 2: Category (Hidden on Mobile) */}
+                        <td className="px-8 py-4 text-center hidden md:table-cell">
+                          <span className="inline-block whitespace-nowrap px-3 py-1 rounded-full bg-[#224292]/5 text-[#224292] text-[9px] font-black uppercase tracking-widest">
+                            {prog.category}
+                          </span>
+                        </td>
 
-                  {/* Meta Details */}
-                  <div className="px-6 py-4 flex gap-6">
-                    <div>
-                      <p className="text-[11px] text-[#A9B1C3] font-semibold uppercase tracking-wide">Duration</p>
-                      <p className="text-[14px] font-bold text-[#18357a]">{prog.duration}</p>
-                    </div>
-                    <div>
-                      <p className="text-[11px] text-[#A9B1C3] font-semibold uppercase tracking-wide">Intake</p>
-                      <p className="text-[14px] font-bold text-[#18357a]">{prog.intake} Seats</p>
-                    </div>
-                  </div>
+                        {/* Column 3: Intake */}
+                        <td className="px-5 sm:px-8 py-4 text-center">
+                          {prog.id !== 'phd' && (
+                            <>
+                               <span className="text-black font-medium font-graphik text-sm text-[13px]">{prog.intake}</span>
+                               <span className="ml-1 text-[#224292] font-medium font-graphik text-[10px] tracking-wide uppercase tracking-widest hidden lg:inline font-graphik">Seats</span>
+                            </>
+                          )}
+                        </td>
 
-                  {/* Actions */}
-                  <div className="px-6 pb-6 mt-auto flex gap-2">
-                    <button
-                      onClick={() => navigate(`/academics/course/${prog.id}`)}
-                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#18357a] text-white text-[13px] font-bold hover:bg-[#1e42a0] transition-all"
-                    >
-                      View Details & Faculty <ChevronRight size={14} />
-                    </button>
-                    <button
-                      onClick={() => toggleCompare(prog)}
-                      className={`w-11 h-11 flex items-center justify-center rounded-xl border transition-all ${
-                        inCompare
-                          ? 'bg-[#ffc107]/10 border-[#ffc107] text-[#18357a]'
-                          : 'bg-white border-[#E5EDF8] text-[#A9B1C3] hover:border-[#18357a]/30 hover:text-[#18357a]'
-                      }`}
-                      title={inCompare ? 'Remove from Compare' : 'Add to Compare'}
-                    >
-                      <BarChart3 size={18} />
-                    </button>
-                  </div>
-                </motion.div>
-              )
-            })}
+                        {/* Column 4: Actions (Hidden on Mobile/Small screens) */}
+                        <td className="px-8 py-4 hidden sm:table-cell">
+                          <div className="flex items-center justify-end gap-3">
+                             <button
+                                onClick={(e) => { e.stopPropagation(); toggleCompare(prog); }}
+                                className={`w-9 h-9 flex items-center justify-center rounded-lg border transition-all ${
+                                  inCompare
+                                    ? 'bg-[#ffc107] border-[#ffc107] text-[#224292] shadow-md shadow-[#ffc107]/20'
+                                    : 'bg-white border-[#E5EDF8] text-[#A9B1C3] hover:border-[#224292]/30 hover:text-[#224292]'
+                                }`}
+                                title={inCompare ? 'Remove' : 'Compare'}
+                              >
+                                <BarChart3 size={14} />
+                             </button>
+                             <div
+                               onClick={(e) => {
+                                 e.stopPropagation();
+                                 if (prog.externalUrl) {
+                                   window.open(prog.externalUrl, '_blank', 'noopener,noreferrer')
+                                 } else {
+                                   const base = programTab === 'UG Programs' ? 'undergraduate' : 'postgraduate'
+                                   navigate(`/academics/${base}/${prog.id}`)
+                                 }
+                               }}
+                               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#224292] text-white text-[10px] font-black uppercase tracking-widest hover:bg-[#ffc107] hover:text-[#224292] transition-all transform shadow-md shadow-blue-900/10 cursor-pointer"
+                             >
+                               {prog.externalUrl ? <><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Visit</> : <>View <ArrowRight size={12} className="hidden lg:block" /></>}
+                             </div>
+                          </div>
+                        </td>
+                      </motion.tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           {/* Floating Compare Button */}
@@ -421,12 +482,12 @@ export default function AcademicsPage() {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-6 py-4 rounded-3xl bg-[#18357a] text-white shadow-2xl flex items-center gap-6"
+              className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-6 py-4 rounded-3xl bg-[#224292] text-white shadow-2xl flex items-center gap-6"
             >
               <div className="flex -space-x-3">
                 {compareList.map(p => (
-                  <div key={p.id} className="w-10 h-10 rounded-full bg-white border-2 border-[#18357a] flex items-center justify-center">
-                    <p.icon size={16} className="text-[#18357a]" />
+                  <div key={p.id} className="w-10 h-10 rounded-full bg-white border-2 border-[#224292] flex items-center justify-center">
+                    <p.icon size={16} className="text-[#224292]" />
                   </div>
                 ))}
               </div>
@@ -441,7 +502,7 @@ export default function AcademicsPage() {
                 <button
                   disabled={compareList.length < 2}
                   onClick={() => setShowCompare(true)}
-                  className={`px-5 py-2 rounded-xl bg-[#ffc107] text-[#18357a] text-xs font-bold transition-all ${
+                  className={`px-5 py-2 rounded-xl bg-[#ffc107] text-[#224292] text-xs font-bold transition-all ${
                     compareList.length < 2 ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'
                   }`}
                 >
@@ -470,7 +531,7 @@ export default function AcademicsPage() {
               onClick={e => e.stopPropagation()}
               className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full overflow-hidden"
             >
-              <div className="bg-[#18357a] p-6">
+              <div className="bg-[#224292] p-6">
                 <h2 className="text-white font-extrabold text-xl">Course Comparison</h2>
                 <p className="text-white/60 text-sm">Side-by-side comparison to help you choose</p>
               </div>
@@ -478,10 +539,10 @@ export default function AcademicsPage() {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-[#F8FAFC] border-b border-[#E5EDF8]">
-                      <th className="text-left p-4 text-[#64779F] font-bold text-[13px] uppercase tracking-wide">Feature</th>
+                      <th className="text-left p-4 text-[#224292] font-medium font-graphik text-[10px] tracking-wide uppercase tracking-wide">Feature</th>
                       {compareList.map(p => (
                         <th key={p.id} className="p-4 text-center">
-                          <div className="font-extrabold text-[#18357a] text-[14px]">{p.short}</div>
+                          <div className="font-extrabold text-[#224292] text-[14px]">{p.short}</div>
                         </th>
                       ))}
                     </tr>
@@ -497,7 +558,7 @@ export default function AcademicsPage() {
                       <tr key={row.label} className="hover:bg-[#F8FAFC]">
                         <td className="p-4 text-[13px] font-bold text-[#64779F]">{row.label}</td>
                         {compareList.map(p => (
-                          <td key={p.id} className="p-4 text-center text-[14px] font-semibold text-[#18357a]">
+                          <td key={p.id} className="p-4 text-center text-[14px] font-semibold text-[#224292]">
                             {p[row.key]}{row.suffix || ''}
                           </td>
                         ))}
@@ -515,7 +576,7 @@ export default function AcademicsPage() {
                 </button>
                 <button
                   onClick={() => navigate('/admissions')}
-                  className="px-5 py-2.5 rounded-xl bg-[#18357a] text-white font-bold text-[14px] hover:bg-[#1e42a0]"
+                  className="px-5 py-2.5 rounded-xl bg-[#224292] text-white font-bold text-[14px] hover:bg-[#1e42a0]"
                 >
                   Apply Now
                 </button>

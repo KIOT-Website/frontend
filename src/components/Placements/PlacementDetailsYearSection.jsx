@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { FileText, Download, Loader2, AlertCircle, Calendar } from 'lucide-react'
 
-const API_BASE = 'http://localhost:8000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const PlacementDetailsYearSection = () => {
   const [data, setData] = useState([])
@@ -16,7 +16,8 @@ const PlacementDetailsYearSection = () => {
         const res = await fetch(`${API_BASE}/placement-details-year/`)
         if (!res.ok) throw new Error('Failed to load placement details (year)')
         const result = await res.json()
-        setData(result)
+        const sortedResult = [...result].sort((a, b) => b.batch_year.localeCompare(a.batch_year))
+        setData(sortedResult)
       } catch (err) {
         setError(err.message)
       } finally {
@@ -29,7 +30,7 @@ const PlacementDetailsYearSection = () => {
   if (loading) {
     return (
       <section className="py-24 flex items-center justify-center min-h-[30vh]">
-        <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-12 h-12 border-4 border-[#18357a] border-t-[#ffc107] rounded-full" />
+        <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-12 h-12 border-4 border-[#224292] border-t-[#ffc107] rounded-full" />
       </section>
     )
   }
@@ -46,40 +47,55 @@ const PlacementDetailsYearSection = () => {
   }
 
   return (
-    <div className="mb-20">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-black text-[#18357a] uppercase tracking-tighter">
-          Placement detailes (year)
+    <div className="">
+      <div className="text-center mb-10 h-24 flex items-center justify-center">
+        <h2 className="text-xl md:text-3xl font-semibold text-[#224292] flex flex-wrap items-center justify-center gap-2 tracking-tighter">
+          Placement Details <span className="text-[#ffc107]">(Batch Year)</span>
         </h2>
       </div>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {data.length === 0 ? (
-          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-[#64779F] font-bold">
+          <div className="bg-white rounded-[2rem] border border-[#D5E2F4]/50 shadow-sm p-12 text-center text-black font-semibold min-h-[200px] flex items-center justify-center">
             <p>Annual placement reports are currently being updated.</p>
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {data.map((record) => (
-              <a
+          <div className="space-y-2.5">
+            {/* Header */}
+            <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-3 bg-[#224292] rounded-xl shadow-sm">
+              <span className="text-[10px] font-semibold text-white/70 uppercase tracking-widest">Batch Year</span>
+              <span className="text-[10px] font-semibold text-white/70 uppercase tracking-widest">Report</span>
+            </div>
+
+            {data.map((record, idx) => (
+              <motion.div
                 key={record.id}
-                href={record.pdf_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-8 bg-white border border-[#D5E2F4]/50 rounded-[2rem] hover:border-[#ffc107] hover:shadow-2xl transition-all group relative overflow-hidden"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-3.5 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-md hover:border-[#224292]/10 transition-all group"
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-[#ffc107]/5 rounded-bl-full group-hover:bg-[#ffc107]/10 transition-colors" />
-                
-                <div className="h-16 w-16 mb-6 rounded-2xl bg-[#18357a]/5 text-[#18357a] flex items-center justify-center group-hover:bg-[#ffc107] transition-all duration-500">
-                  <Calendar size={32} />
+                {/* Info */}
+                <div>
+                  <p className="text-base font-medium text-[#224292] tracking-tight group-hover:text-[#ffc107] transition-colors">
+                    {record.batch_year}
+                  </p>
+                  <p className="text-[10px] font-medium text-black uppercase tracking-widest mt-0.5">Placement Report</p>
                 </div>
-                
-                <p className="text-xl font-black text-[#18357a] mb-2">{record.batch_year}</p>
-                <p className="text-xs font-bold text-[#64779F] uppercase tracking-widest text-center">Placement Report</p>
-                
-                <div className="mt-8 h-10 w-10 rounded-full bg-[#18357a]/5 flex items-center justify-center group-hover:bg-[#18357a] group-hover:text-white transition-all transform group-hover:scale-110">
-                  <Download size={20} />
+
+                {/* Actions */}
+                <div className="flex items-center">
+                  <a
+                    href={record.pdf_url?.replace('/upload/', '/upload/fl_attachment/')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#224292] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95 shadow-sm"
+                    title="Download Report"
+                  >
+                    <Download size={16} />
+                  </a>
                 </div>
-              </a>
+              </motion.div>
             ))}
           </div>
         )}
