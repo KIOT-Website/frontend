@@ -113,6 +113,17 @@ const AcmPage = lazy(() => import('./pages/AcmPage'))
 const ScintelPage = lazy(() => import('./pages/ScintelPage'))
 const HigherEducationAbroadPage = lazy(() => import('./pages/HigherEducationAbroadPage'))
 const ContinuousMonitoringPage = lazy(() => import('./pages/ContinuousMonitoringPage'))
+const DepartmentAssociationsPage = lazy(() => import('./pages/DepartmentAssociationsPage'))
+const CommonCentersPage = lazy(() => import('./pages/CommonCentersPage'))
+const ProfessionalSocietyPage = lazy(() => import('./pages/ProfessionalSocietyPage'))
+const TechnicalClubsPage = lazy(() => import('./pages/TechnicalClubsPage'))
+const ExtraCurricularPage = lazy(() => import('./pages/ExtraCurricularPage'))
+const IctactPage = lazy(() => import('./pages/IctactPage'))
+const HigherEducationIndiaPage = lazy(() => import('./pages/HigherEducationIndiaPage'))
+const CorporateContestCellPage = lazy(() => import('./pages/CorporateContestCellPage'))
+const SdvClubPage = lazy(() => import('./pages/SdvClubPage'))
+const CodewarePage = lazy(() => import('./pages/CodewarePage'))
+const CiscoAcademyPage = lazy(() => import('./pages/CiscoAcademyPage'))
 
 
 
@@ -596,6 +607,94 @@ function App() {
         title: "Student Clubs & Activities | KIOT",
         desc: "Discover technical clubs, cultural societies, NSS, NCC, and student development activities at KIOT."
       },
+      "/student-life/department-associations": {
+        title: "Department Associations | KIOT",
+        desc: "Explore student department associations including FLAME, INTEC, AMBER'Z, SCINTEL, PACE, VIBES, and more at KIOT."
+      },
+      "/resources/student-life/department-associations": {
+        title: "Department Associations | KIOT",
+        desc: "Explore student department associations including FLAME, INTEC, AMBER'Z, SCINTEL, PACE, VIBES, and more at KIOT."
+      },
+      "/student-life/common-centers": {
+        title: "College Level Centers & Forums | KIOT",
+        desc: "Explore college level centers, competitive exams guidance cell, higher education cells, and forums at KIOT."
+      },
+      "/resources/student-life/common-centers": {
+        title: "College Level Centers & Forums | KIOT",
+        desc: "Explore college level centers, competitive exams guidance cell, higher education cells, and forums at KIOT."
+      },
+      "/student-life/professional-societies": {
+        title: "Professional Society Linked Clubs | KIOT",
+        desc: "Explore professional society chapters including IEEE, ACM, SAE, CII, ICTACT, ISTE, and more at KIOT."
+      },
+      "/resources/student-life/professional-societies": {
+        title: "Professional Society Linked Clubs | KIOT",
+        desc: "Explore professional society chapters including IEEE, ACM, SAE, CII, ICTACT, ISTE, and more at KIOT."
+      },
+      "/student-life/technical-clubs": {
+        title: "Technical & Co-Curricular Clubs | KIOT",
+        desc: "Explore technical clubs, robotics, EV, AI, cloud computing, big data, and domain innovation clubs at KIOT."
+      },
+      "/resources/student-life/technical-clubs": {
+        title: "Technical & Co-Curricular Clubs | KIOT",
+        desc: "Explore technical clubs, robotics, EV, AI, cloud computing, big data, and domain innovation clubs at KIOT."
+      },
+      "/student-life/extra-curricular": {
+        title: "Extra-Curricular & Social Clubs | KIOT",
+        desc: "Explore NSS, YRC, RRC, UBA, Fine Arts, Tamil Mandram, EDC, WEC, and social service clubs at KIOT."
+      },
+      "/resources/student-life/extra-curricular": {
+        title: "Extra-Curricular & Social Clubs | KIOT",
+        desc: "Explore NSS, YRC, RRC, UBA, Fine Arts, Tamil Mandram, EDC, WEC, and social service clubs at KIOT."
+      },
+      "/student-life/ictact": {
+        title: "ICT Academy (ICTACT) | KIOT",
+        desc: "Explore ICT Academy training, learnathons, youth talks, FDPs, and industry-academia collaborations at KIOT."
+      },
+      "/resources/student-life/ictact": {
+        title: "ICT Academy (ICTACT) | KIOT",
+        desc: "Explore ICT Academy training, learnathons, youth talks, FDPs, and industry-academia collaborations at KIOT."
+      },
+      "/student-life/higher-education-india": {
+        title: "Higher Education Cell (India) | KIOT",
+        desc: "Explore postgraduate opportunities, GATE/JAM coaching, entrance exam guidance, and higher studies mentorship at KIOT."
+      },
+      "/resources/student-life/higher-education-india": {
+        title: "Higher Education Cell (India) | KIOT",
+        desc: "Explore postgraduate opportunities, GATE/JAM coaching, entrance exam guidance, and higher studies mentorship at KIOT."
+      },
+      "/student-life/corporate-contest-cell": {
+        title: "Corporate Contest Cell (CCC) | KIOT",
+        desc: "Explore state and national level hackathons, coding contests, corporate competitions, and major achievements by KIOT students."
+      },
+      "/resources/student-life/corporate-contest-cell": {
+        title: "Corporate Contest Cell (CCC) | KIOT",
+        desc: "Explore state and national level hackathons, coding contests, corporate competitions, and major achievements by KIOT students."
+      },
+      "/student-life/sdv-club": {
+        title: "Software Defined Vehicles (SDV) Club | KIOT",
+        desc: "Explore next-generation automotive technologies, embedded systems, ECU design, CAN/LIN protocols, and ADAS projects at KIOT ECE."
+      },
+      "/resources/student-life/sdv-club": {
+        title: "Software Defined Vehicles (SDV) Club | KIOT",
+        desc: "Explore next-generation automotive technologies, embedded systems, ECU design, CAN/LIN protocols, and ADAS projects at KIOT ECE."
+      },
+      "/student-life/codeware": {
+        title: "Codeware Development Club | KIOT",
+        desc: "Enhance programming, logical thinking, data structures, algorithms, TechGig coding arenas, and DevOps workshops at KIOT CSE."
+      },
+      "/resources/student-life/codeware": {
+        title: "Codeware Development Club | KIOT",
+        desc: "Enhance programming, logical thinking, data structures, algorithms, TechGig coding arenas, and DevOps workshops at KIOT CSE."
+      },
+      "/student-life/cisco-academy": {
+        title: "KIOT CISCO Network Academy | KIOT",
+        desc: "Explore CCNA certifications, networking workshops, SD-WAN seminars, virtual internships, and Cisco career guidance at KIOT CSE."
+      },
+      "/resources/student-life/cisco-academy": {
+        title: "KIOT CISCO Network Academy | KIOT",
+        desc: "Explore CCNA certifications, networking workshops, SD-WAN seminars, virtual internships, and Cisco career guidance at KIOT CSE."
+      },
       "/student-life/flame": {
         title: "FLAME Literary & Fine Arts Club | KIOT",
         desc: "Explore literary activities, debating, public speaking, drawing, and fine arts events by FLAME Club at KIOT."
@@ -987,6 +1086,28 @@ function App() {
                   <Route path="/campus-life/sports/facilities" element={<SportsFacilitiesPage />} />
                   <Route path="/bus-routes" element={<BusRoutesPage />} />
                   <Route path="/student-life" element={<StudentLifePage />} />
+                  <Route path="/student-life/department-associations" element={<DepartmentAssociationsPage />} />
+                  <Route path="/resources/student-life/department-associations" element={<DepartmentAssociationsPage />} />
+                  <Route path="/student-life/common-centers" element={<CommonCentersPage />} />
+                  <Route path="/resources/student-life/common-centers" element={<CommonCentersPage />} />
+                  <Route path="/student-life/professional-societies" element={<ProfessionalSocietyPage />} />
+                  <Route path="/resources/student-life/professional-societies" element={<ProfessionalSocietyPage />} />
+                  <Route path="/student-life/technical-clubs" element={<TechnicalClubsPage />} />
+                  <Route path="/resources/student-life/technical-clubs" element={<TechnicalClubsPage />} />
+                  <Route path="/student-life/extra-curricular" element={<ExtraCurricularPage />} />
+                  <Route path="/resources/student-life/extra-curricular" element={<ExtraCurricularPage />} />
+                  <Route path="/student-life/ictact" element={<IctactPage />} />
+                  <Route path="/resources/student-life/ictact" element={<IctactPage />} />
+                  <Route path="/student-life/higher-education-india" element={<HigherEducationIndiaPage />} />
+                  <Route path="/resources/student-life/higher-education-india" element={<HigherEducationIndiaPage />} />
+                  <Route path="/student-life/corporate-contest-cell" element={<CorporateContestCellPage />} />
+                  <Route path="/resources/student-life/corporate-contest-cell" element={<CorporateContestCellPage />} />
+                  <Route path="/student-life/sdv-club" element={<SdvClubPage />} />
+                  <Route path="/resources/student-life/sdv-club" element={<SdvClubPage />} />
+                  <Route path="/student-life/codeware" element={<CodewarePage />} />
+                  <Route path="/resources/student-life/codeware" element={<CodewarePage />} />
+                  <Route path="/student-life/cisco-academy" element={<CiscoAcademyPage />} />
+                  <Route path="/resources/student-life/cisco-academy" element={<CiscoAcademyPage />} />
                   <Route path="/student-life/flame" element={<FlamePage />} />
                   <Route path="/resources/student-life/flame" element={<FlamePage />} />
                   <Route path="/student-life/intec" element={<IntecPage />} />

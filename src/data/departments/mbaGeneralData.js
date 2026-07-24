@@ -6,12 +6,14 @@ import mbaPadmanabanImg from '../../assets/Faculity/mba/Prof.G.Padmanaban.png'
 import mbaRevathiImg from '../../assets/Faculity/mba/Prof.P.Revathi.png'
 import mbaVimalaImg from '../../assets/Faculity/mba/Prof.S.Vimala.png'
 import mbaSuganyaImg from '../../assets/Faculity/mba/Prof.T.Suganya.png'
+import mbaDrSuganyaImg from '../../assets/Faculity/mba/Dr.S.SUGANYA.png'
 import mbaSenchulakshmiImg from '../../assets/Faculity/mba/Prof.D.Senchulakshmi.png'
 import mbaMusthaffaImg from '../../assets/Faculity/mba/Prof.A.Musthaffa.png'
 import mbaManikandanImg from '../../assets/Faculity/mba/Prof.P.Manikandan.png'
 import mbaAmbaligaImg from '../../assets/Faculity/mba/Dr.R.Ambaliga Bharathi Kavithai.png'
 import mbaArivazhaganImg from '../../assets/Faculity/mba/Prof.V.Arivazhagan.png'
 import mbaBharaniEswariImg from '../../assets/Faculity/mba/Prof.M.Bharani Eswari.jpg'
+import mbaBrochurePdf from '../../assets/Mba/MBA (GENERAL) - E BROCHURE 2026.pdf'
 
 export const mbaGeneralData = {
   name: 'Master of Business Administration',
@@ -27,6 +29,8 @@ export const mbaGeneralData = {
     color: '#224292',
     tagline: 'Nurturing Global Business Leaders.',
     quickApply: 'https://forms.gle/PdcnrWRN8ZQV6hJV6',
+    brochure: mbaBrochurePdf,
+    brochureLabel: 'MBA Brochure',
     overview: [
       "Master of Business Administration (MBA) was established in the year 2011 by Knowledge Institute of Technology Trust (KIOTT), Kakapalayam (PO), Salem – 637 504, Tamilnadu, India. The trust consists of 42 Eminent Professors from Leading Engineering Colleges, Management schools and Budding Entrepreneurs with a vision to build our Nation through quality education.",
       "Master of Business Administration (MBA), a part of Knowledge Institute of Technology (KIOT) and offers Two years MBA programme with an intake of 120 students. MBA@KIOT is known for its Quality Placements, Inspiring Faculty, Project with Stipend, Industrial Consultancy and Joy of Learning. The core strengths of MBA are its faculty team with diverse expertise and vibrant students.",
@@ -52,16 +56,17 @@ export const mbaGeneralData = {
       { name: 'Dr. Stephen A', designation: 'Professor & Director', qualification: 'BA., MA., MBA., M.Phil., PGDHRM, Ph.D.', specialization: 'HR & Marketing', email: 'directorkbs@kiot.ac.in', experience: 'Teaching: 22.11 Years, Industry: 1.7 Years', publications: 'IJ: 17, IC: 05, NC: 02', image: mbaDirectorImg, rating: 5.0 },
       { name: 'Dr. Venkatesan T', designation: 'Associate Professor & HOD', qualification: 'B.Com, M.Com, MBA, M.Phil. M.A (Public Admin), Ph.D.', specialization: 'Finance & Marketing', email: 'tvmba@kiot.ac.in', experience: 'Teaching: 16 Years', publications: 'IC: 17, NC: 10, IJ: 19, NJ: 05', image: mbaVenkatesanImg, rating: 4.9 },
       { name: 'Dr. Ramesh R', designation: 'Associate Professor', qualification: 'M.B.A., M.S.W., M.Phil., Ph.D.', specialization: 'Marketing & HR', email: 'rrmba@kiot.ac.in', experience: 'Teaching: 9.6 Years, Industry: 3.1 Years', publications: 'IJ: 14, NJ: 5, NC: 12', image: mbaRameshImg, rating: 4.8 },
-      { name: 'Prof. Padmanaban G', designation: 'Assistant Professor', qualification: 'BE, MBA, UGC-NET, (PhD)', specialization: 'Human Resource Management', email: 'Padybangalore@gmail.com', experience: 'Teaching: 15 Years, Industry: 10 Years', image: mbaPadmanabanImg, rating: 4.7 },
-      { name: 'Prof. Revathi P', designation: 'Assistant Professor', qualification: 'B.Com(CA), MBA, M.Com(Banking), (PhD)', specialization: 'Finance & Marketing', email: 'prmba@kiot.ac.in', experience: 'Teaching: 12.11 Years', publications: 'IC: 03, NC: 04, IJ: 01, NJ: 01', image: mbaRevathiImg, rating: 4.6 },
-      { name: 'Prof. Vimala S', designation: 'Assistant Professor', qualification: 'B.Com, MBA, M.Phil., (Ph.D)', specialization: 'Finance & HR', email: 'svmba@kiot.ac.in', experience: 'Teaching: 16.7 Years', publications: 'IC: 03, NC: 04, IJ: 02', rating: 4.6, image: mbaVimalaImg },
-      { name: 'Prof. Suganya T', designation: 'Assistant Professor', qualification: 'MBA', specialization: 'Marketing and Finance', email: 'tsmba@kiot.ac.in', experience: 'Teaching: 4.11 Years, Industry: 3.3 Years', publications: 'NC: 01', image: mbaSuganyaImg, rating: 4.5 },
-      { name: 'Prof. Senchulakshmi D', designation: 'Assistant Professor', qualification: 'B.Sc. (CS) & MBA', specialization: 'HR & Marketing', email: 'dsmba@kiot.ac.in', experience: 'Teaching: 4.6 Years, Industry: 0.5 Months', image: mbaSenchulakshmiImg, rating: 4.5 },
-      { name: 'Prof. Musthaffa A', designation: 'Assistant Professor', qualification: 'MBA., M.Phil.', specialization: 'Finance & Marketing', email: 'ammba@kiot.ac.in', experience: 'Teaching: 20.2 Years', publications: 'IC: 6, NC: 4, IJ: 1, NJ: 1', image: mbaMusthaffaImg, rating: 4.7 },
-      { name: 'Prof. Manikandan P', designation: 'Assistant Professor', qualification: 'BBA., MBA.', specialization: 'Human Resource & Marketing', email: 'pmmba@kiot.ac.in', experience: 'Teaching: 4.9 Years, Industry: 2 Years', publications: 'IC: 02', image: mbaManikandanImg, rating: 4.5 },
+      { name: 'Dr. S. Suganya', designation: 'Assistant Professor', qualification: 'B.E (IT)., MBA., M.E (CSE)., Ph.D.', specialization: 'Finance & Marketing', email: 'suganyasellamuthu@gmail.com', experience: 'Teaching: 12 Years, Industry: 2 Years', publications: 'IC: 04, NC: 04, IJ: 02', image: mbaDrSuganyaImg, rating: 4.8 },
+      { name: 'Mr. G. Padmanaban', designation: 'Assistant Professor', qualification: 'BE, MBA, UGC-NET, (PhD)', specialization: 'Human Resource Management', email: 'Padybangalore@gmail.com', experience: 'Teaching: 15 Years, Industry: 10 Years', image: mbaPadmanabanImg, rating: 4.7 },
+      { name: 'Mrs. P. Revathi', designation: 'Assistant Professor', qualification: 'B.Com(CA), MBA, M.Com(Banking), (PhD)', specialization: 'Finance & Marketing', email: 'prmba@kiot.ac.in', experience: 'Teaching: 12.11 Years', publications: 'IC: 03, NC: 04, IJ: 01, NJ: 01', image: mbaRevathiImg, rating: 4.6 },
+      { name: 'Mrs. S. Vimala', designation: 'Assistant Professor', qualification: 'B.Com, MBA, M.Phil., (Ph.D)', specialization: 'Finance & HR', email: 'svmba@kiot.ac.in', experience: 'Teaching: 16.7 Years', publications: 'IC: 03, NC: 04, IJ: 02', rating: 4.6, image: mbaVimalaImg },
+      { name: 'Mrs. T. Suganya', designation: 'Assistant Professor', qualification: 'MBA', specialization: 'Marketing and Finance', email: 'tsmba@kiot.ac.in', experience: 'Teaching: 4.11 Years, Industry: 3.3 Years', publications: 'NC: 01', image: mbaSuganyaImg, rating: 4.5 },
+      { name: 'Mrs. D. Senchulakshmi', designation: 'Assistant Professor', qualification: 'B.Sc. (CS) & MBA', specialization: 'HR & Marketing', email: 'dsmba@kiot.ac.in', experience: 'Teaching: 4.6 Years, Industry: 0.5 Months', image: mbaSenchulakshmiImg, rating: 4.5 },
+      { name: 'Mr. A. Musthaffa', designation: 'Assistant Professor', qualification: 'MBA., M.Phil.', specialization: 'Finance & Marketing', email: 'ammba@kiot.ac.in', experience: 'Teaching: 20.2 Years', publications: 'IC: 6, NC: 4, IJ: 1, NJ: 1', image: mbaMusthaffaImg, rating: 4.7 },
+      { name: 'Mr. P. Manikandan', designation: 'Assistant Professor', qualification: 'BBA., MBA.', specialization: 'Human Resource & Marketing', email: 'pmmba@kiot.ac.in', experience: 'Teaching: 4.9 Years, Industry: 2 Years', publications: 'IC: 02', image: mbaManikandanImg, rating: 4.5 },
       { name: 'Dr. Ambaliga Bharathi Kavithai R', designation: 'Assistant Professor', qualification: 'B.Com, MBA, Ph.D.', specialization: 'Human Resource Management and Organizational Behaviour', email: 'ramba@kiot.ac.in', experience: 'Teaching: 2 Years, Research: 4 Years', publications: 'IC:12, NC:09, IJ:04, NJ:08', image: mbaAmbaligaImg, rating: 4.6 },
-      { name: 'Prof. Arivazhagan Veerapandiyan', designation: 'Assistant Professor', qualification: 'MBA., PGDCM., PGDHRM, (Ph.D)', specialization: 'Human Resource & Finance', email: 'vamba@kiot.ac.in', experience: 'Teaching: 5.2 Years, Industry: 6 Years', publications: 'IC:01, IJ:04, NJ:01', image: mbaArivazhaganImg, rating: 4.6 },
-      { name: 'Prof. Bharani Eswari M', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', image: mbaBharaniEswariImg, rating: 4.7 }
+      { name: 'Mr. V. Arivazhagan', designation: 'Assistant Professor', qualification: 'MBA., PGDCM., PGDHRM, (Ph.D)', specialization: 'Human Resource & Finance', email: 'vamba@kiot.ac.in', experience: 'Teaching: 5.2 Years, Industry: 6 Years', publications: 'IC:01, IJ:04, NJ:01', image: mbaArivazhaganImg, rating: 4.6 },
+      { name: 'Mrs. M. Bharani Eswari', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', image: mbaBharaniEswariImg, rating: 4.7 }
     ],
     labs: [
       {

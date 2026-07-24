@@ -6,7 +6,7 @@ import {
   MapPin, Clock, Calendar, Award, CheckCircle2, ChevronRight,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
   Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase,
-  Microscope, Star, Globe, ShieldCheck, ArrowRight, Quote
+  Search, Microscope, Star, Globe, ShieldCheck, ArrowRight, Quote
 } from 'lucide-react';
 import facultyBg from '../../assets/Faculity/background faculty.webp';
 import stephenImg from '../../assets/dir and hod/MBA Director.png';
@@ -44,6 +44,7 @@ import mbaPadmanabanImgNew from '../../assets/Faculity/mba/Prof.G.Padmanaban.png
 import mbaRevathiImgNew from '../../assets/Faculity/mba/Prof.P.Revathi.png'
 import mbaVimalaImgNew from "../../assets/Faculity/mba/Prof.S.Vimala.png"
 import mbaSuganyaImgNew from '../../assets/Faculity/mba/Prof.T.Suganya.png'
+import mbaDrSuganyaImgNew from '../../assets/Faculity/mba/Dr.S.SUGANYA.png'
 import mbaSenchulakshmiImgNew from '../../assets/Faculity/mba/Prof.D.Senchulakshmi.png'
 import mbaMusthaffaImgNew from '../../assets/Faculity/mba/Prof.A.Musthaffa.png'
 import mbaManikandanImgNew from '../../assets/Faculity/mba/Prof.P.Manikandan.png'
@@ -440,15 +441,27 @@ const mbaFacultyImages = {
   'Dr. A. Stephen': mbaDirectorImgNew,
   'Dr. T. Venkatesan': mbaVenkatesanImgNew,
   'Dr. R. Ramesh': mbaRameshImgNew,
+  'Dr. S. Suganya': mbaDrSuganyaImgNew,
+  'Dr. Suganya S': mbaDrSuganyaImgNew,
+  'Mr. G. Padmanaban': mbaPadmanabanImgNew,
   'Prof. G. Padmanaban': mbaPadmanabanImgNew,
+  'Mrs. P. Revathi': mbaRevathiImgNew,
   'Prof. P. Revathi': mbaRevathiImgNew,
+  'Mrs. S. Vimala': mbaVimalaImgNew,
   'Prof. S. Vimala': mbaVimalaImgNew,
+  'Mrs. T. Suganya': mbaSuganyaImgNew,
   'Prof. T. Suganya': mbaSuganyaImgNew,
+  'Mrs. D. Senchulakshmi': mbaSenchulakshmiImgNew,
   'Prof. D. Senchulakshmi': mbaSenchulakshmiImgNew,
+  'Mr. A. Musthaffa': mbaMusthaffaImgNew,
   'Prof. A. Musthaffa': mbaMusthaffaImgNew,
+  'Mr. P. Manikandan': mbaManikandanImgNew,
   'Prof. P. Manikandan': mbaManikandanImgNew,
   'Dr. R. Ambaliga Bharathi Kavithai': mbaAmbaligaImgNew,
-  'Prof. Arivazhagan Veerapandiyan': mbaArivazhaganImgNew
+  'Mr. V. Arivazhagan': mbaArivazhaganImgNew,
+  'Prof. Arivazhagan Veerapandiyan': mbaArivazhaganImgNew,
+  'Mrs. M. Bharani Eswari': ievBharaniImg,
+  'Prof. M. Bharani Eswari': ievBharaniImg
 };
 
 const mbaIevFacultyImages = {
@@ -497,6 +510,7 @@ export default function CourseDetailPage({ overrides }) {
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('Overview')
   const [outcomeTab, setOutcomeTab] = useState(null)
+  const [facultySearchQuery, setFacultySearchQuery] = useState('')
   const [selectedFaculty, setSelectedFaculty] = useState(null)
   const selectedFacultyImage = selectedFaculty
     ? (courseId === 'mba-general'
@@ -2103,95 +2117,174 @@ export default function CourseDetailPage({ overrides }) {
                 ) : (
                   // ── Other departments: original flat layout ──
                   <div>
-                    <div className="mb-6">
-                      <h2 className="text-2xl font-extrabold font-graphik text-[#224292] mb-1">Our Faculty</h2>
-                      <p className="text-[#64779F]">Industry-experienced academics committed to your success</p>
-                    </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-                      {course.faculty.filter(f => f.category !== 'S&H').map((f, i) => (
-                        <motion.div
-                          key={f.name}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: i * 0.05 }}
-                          onClick={() => setSelectedFaculty(f)}
-                          className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
-                        >
-                          <div
-                            className="w-full aspect-[4/5] bg-slate-100 overflow-hidden relative"
-                            style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                          >
-                            {f.image ? (
-                              <img src={f.image} alt={f.name} className="w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105" />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center text-slate-300">
-                                <GraduationCap size={44} />
+                    {(() => {
+                      const deptFacultyList = course.faculty?.filter(f => f.category !== 'S&H') || [];
+                      const shFacultyList = course.faculty?.filter(f => f.category === 'S&H') || [];
+
+                      const filterList = (list) => {
+                        if (!facultySearchQuery.trim()) return list;
+                        const q = facultySearchQuery.toLowerCase().trim();
+                        return list.filter(f =>
+                          f.name?.toLowerCase().includes(q) ||
+                          f.designation?.toLowerCase().includes(q) ||
+                          f.specialization?.toLowerCase().includes(q) ||
+                          f.qualification?.toLowerCase().includes(q)
+                        );
+                      };
+
+                      const filteredDeptFaculty = filterList(deptFacultyList);
+                      const filteredShFaculty = filterList(shFacultyList);
+
+                      return (
+                        <>
+                          {/* Department Faculty Header & Search Bar */}
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E5EDF8]">
+                            <div>
+                              <div className="flex items-center gap-3 flex-wrap">
+                                <h2 className="text-2xl font-extrabold font-graphik text-[#224292]">Our Faculty</h2>
+                                <span className="px-3 py-1 bg-[#224292]/10 text-[#224292] font-bold font-graphik text-xs rounded-full border border-[#224292]/20">
+                                  {deptFacultyList.length} Faculty Members
+                                </span>
                               </div>
-                            )}
-                          </div>
-                          <div className="p-[13px] flex flex-col flex-1">
-                            <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
-                              {f.name}
-                            </h3>
-                            <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
-                              {f.designation}
-                            </p>
-                            <div className="mt-auto">
-                              <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
-                                View Bio
-                              </span>
+                              <p className="text-[#64779F] text-sm mt-0.5">Industry-experienced academics committed to your success</p>
+                            </div>
+                            <div className="relative w-full sm:w-72">
+                              <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                              <input
+                                type="text"
+                                placeholder="Search faculty by name, designation..."
+                                value={facultySearchQuery}
+                                onChange={(e) => setFacultySearchQuery(e.target.value)}
+                                className="w-full pl-9 pr-9 py-2 bg-white border-2 border-[#E5EDF8] rounded-xl text-xs sm:text-sm font-medium font-graphik text-[#224292] placeholder-slate-400 focus:outline-none focus:border-[#224292] transition-colors shadow-sm"
+                              />
+                              {facultySearchQuery && (
+                                <button
+                                  onClick={() => setFacultySearchQuery('')}
+                                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
+                                >
+                                  <X size={14} />
+                                </button>
+                              )}
                             </div>
                           </div>
-                        </motion.div>
-                      ))}
-                    </div>
 
-                    {course.faculty.some(f => f.category === 'S&H') && (
-                      <>
-                        <div className="mb-6 mt-12 pt-6 border-t border-[#E5EDF8]">
-                          <h2 className="text-2xl font-extrabold font-graphik text-[#224292] mb-1">Science & Humanities Faculty</h2>
-                          <p className="text-[#64779F]">Specialized educators supporting foundational sciences and communication skills</p>
-                        </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-                          {course.faculty.filter(f => f.category === 'S&H').map((f, i) => (
-                            <motion.div
-                              key={f.name}
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: i * 0.05 }}
-                              onClick={() => setSelectedFaculty(f)}
-                              className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
-                            >
-                              <div
-                                className="w-full aspect-[4/5] bg-slate-100 overflow-hidden relative"
-                                style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                          {/* Department Faculty Cards Grid */}
+                          {filteredDeptFaculty.length === 0 ? (
+                            <div className="py-12 text-center bg-white rounded-2xl border-2 border-dashed border-slate-200 my-4">
+                              <Users className="mx-auto text-slate-300 mb-2" size={40} />
+                              <p className="text-slate-600 font-bold font-graphik text-sm">No faculty members found matching "{facultySearchQuery}"</p>
+                              <button
+                                onClick={() => setFacultySearchQuery('')}
+                                className="mt-3 text-xs font-bold font-graphik text-[#224292] underline hover:text-[#ffc107]"
                               >
-                                {f.image ? (
-                                  <img src={f.image} alt={f.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                ) : (
-                                  <div className="w-full h-full flex items-center justify-center text-slate-300">
-                                    <GraduationCap size={44} />
+                                Clear Search
+                              </button>
+                            </div>
+                          ) : (
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                              {filteredDeptFaculty.map((f, i) => (
+                                <motion.div
+                                  key={f.name + i}
+                                  initial={{ opacity: 0, y: 20 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: i * 0.04 }}
+                                  onClick={() => setSelectedFaculty(f)}
+                                  className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
+                                >
+                                  <div
+                                    className="w-full aspect-[4/5] bg-slate-100 overflow-hidden relative"
+                                    style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                                  >
+                                    {f.image ? (
+                                      <img src={f.image} alt={f.name} className={`w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105 ${f.imageClass || ''}`} style={f.imageStyle || {}} />
+                                    ) : (
+                                      <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                        <GraduationCap size={44} />
+                                      </div>
+                                    )}
                                   </div>
-                                )}
-                              </div>
-                              <div className="p-[13px] flex flex-col flex-1">
-                                <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
-                                  {f.name}
-                                </h3>
-                                <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
-                                  {f.designation}
-                                </p>
-                                <div className="mt-auto">
-                                  <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
-                                    View Bio
-                                  </span>
+                                  <div className="p-[13px] flex flex-col flex-1">
+                                    <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
+                                      {f.name}
+                                    </h3>
+                                    <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
+                                      {f.designation}
+                                    </p>
+                                    <div className="mt-auto">
+                                      <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
+                                        View Bio
+                                      </span>
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              ))}
+                            </div>
+                          )}
+
+                          {/* Science & Humanities Section */}
+                          {shFacultyList.length > 0 && (
+                            <>
+                              <div className="mb-6 mt-12 pt-6 border-t border-[#E5EDF8] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                <div>
+                                  <div className="flex items-center gap-3 flex-wrap">
+                                    <h2 className="text-2xl font-extrabold font-graphik text-[#224292]">Science & Humanities Faculty</h2>
+                                    <span className="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold font-graphik text-xs rounded-full border border-emerald-200">
+                                      {shFacultyList.length} Faculty Members
+                                    </span>
+                                  </div>
+                                  <p className="text-[#64779F] text-sm mt-0.5">Specialized educators supporting foundational sciences and communication skills</p>
                                 </div>
                               </div>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </>
-                    )}
+
+                              {filteredShFaculty.length === 0 && facultySearchQuery ? (
+                                <div className="py-8 text-center bg-white rounded-2xl border border-slate-200 text-slate-500 text-sm font-graphik">
+                                  No Science & Humanities faculty found matching "{facultySearchQuery}"
+                                </div>
+                              ) : (
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                                  {filteredShFaculty.map((f, i) => (
+                                    <motion.div
+                                      key={f.name + i}
+                                      initial={{ opacity: 0, y: 20 }}
+                                      animate={{ opacity: 1, y: 0 }}
+                                      transition={{ delay: i * 0.04 }}
+                                      onClick={() => setSelectedFaculty(f)}
+                                      className="bg-white group cursor-pointer border-2 border-[#E5EDF8] shadow-lg shadow-black/[0.08] hover:shadow-2xl hover:shadow-black/20 transition-all flex flex-col h-full overflow-hidden rounded-[14px] font-graphik"
+                                    >
+                                      <div
+                                        className="w-full aspect-[4/5] bg-slate-100 overflow-hidden relative"
+                                        style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                                      >
+                                        {f.image ? (
+                                          <img src={f.image} alt={f.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                        ) : (
+                                          <div className="w-full h-full flex items-center justify-center text-slate-300">
+                                            <GraduationCap size={44} />
+                                          </div>
+                                        )}
+                                      </div>
+                                      <div className="p-[13px] flex flex-col flex-1">
+                                        <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
+                                          {f.name}
+                                        </h3>
+                                        <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
+                                          {f.designation}
+                                        </p>
+                                        <div className="mt-auto">
+                                          <span className="inline-block text-[8.5px] font-medium font-graphik uppercase tracking-[0.1em] text-[#224292] group-hover:text-[#ffc107] transition-all bg-[#224292]/5 px-2 py-0.5 rounded">
+                                            View Bio
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </motion.div>
+                                  ))}
+                                </div>
+                              )}
+                            </>
+                          )}
+                        </>
+                      );
+                    })()}
                   </div>
                 )}
               </div>

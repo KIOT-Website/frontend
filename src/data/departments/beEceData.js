@@ -4,6 +4,7 @@ import eceThangavelImage from '../../assets/Faculity/ECE/Dr. M. Thangavel.webp'
 import eceSaravananImage from '../../assets/Faculity/ECE/Dr. V. Saravanan.webp'
 import eceKumarganeshImage from '../../assets/Faculity/ECE/Dr. S. Kumarganesh.webp'
 import eceShanmugaSundaramImage from '../../assets/Faculity/ECE/Dr. P. Shanmuga Sundaram.webp'
+import eceRanjiniImage from '../../assets/Faculity/ECE/Ranjini.png'
 import eceManoharanImage from '../../assets/Faculity/ECE/Mr. S. Manoharan.webp'
 import eceRShanmugaSundaramImage from '../../assets/Faculity/ECE/Mr. R. Shanmuga Sundaram.webp'
 import ecePremkumarImage from '../../assets/Faculity/ECE/Mr. S. Premkumar.webp'
@@ -144,6 +145,19 @@ export const beEceData = {
         publications: 'IJ: 8 NJ: 1 IC: 8 NC 18',
         rating: 4.8,
         image: eceShanmugaSundaramImage
+      },
+      {
+        name: 'Mrs. S. Ranjini',
+        designation: 'Assistant Professor',
+        joiningDate: '01.06.2023',
+        qualification: 'B.E., M.E., (Ph.D)',
+        association: 'Regular',
+        experience: 'Teaching: 5.5 Yrs',
+        specialization: 'Embedded Systems & Wireless Communication',
+        email: 'ranjinis@kiot.ac.in',
+        publications: 'IJ: 03 IC: 02',
+        rating: 4.7,
+        image: eceRanjiniImage
       },
       {
         name: 'Mr. Manoharan S',
