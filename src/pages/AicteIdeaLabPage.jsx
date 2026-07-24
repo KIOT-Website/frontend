@@ -47,7 +47,11 @@ import run2 from '../assets/idea lap/aicte.webp'
 import bal00440 from '../assets/idea lap/BAL00440.JPG'
 import bal00496 from '../assets/idea lap/BAL00496.JPG'
 
-const activitiesData = [
+// Import all images from the gallery folder
+const galleryModules = import.meta.glob('../assets/idea lap/gallery/*.{png,jpg,jpeg,webp}', { eager: true })
+const galleryImages = Object.values(galleryModules).map(mod => mod.default)
+
+export const activitiesData = [
   {
     sNo: 1,
     title: 'Open Day for School Students ”Exploring the facilities at KIOT IDEA Lab”',
@@ -1113,162 +1117,62 @@ const IdeaLabPage = () => {
                         <div className="h-[2px] w-16 bg-[#ffc107] rounded-full" />
                     </div>
 
-                    {/* Search and Filters */}
-                    <div className="mb-6 flex flex-col md:flex-row gap-4 items-center justify-between">
-                        <div className="relative w-full md:w-96">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                            <input
-                                type="text"
-                                placeholder="Search by title, resource person, remarks..."
-                                value={searchTerm}
-                                onChange={(e) => {
-                                    setSearchTerm(e.target.value)
-                                    setCurrentPage(1)
-                                }}
-                                className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#224292] font-semibold text-sm text-black"
-                            />
-                        </div>
-                        <div className="text-slate-500 font-semibold text-sm">
-                            Showing {filteredActivities.length > 0 ? (currentPage - 1) * itemsPerPage + 1 : 0} - {Math.min(currentPage * itemsPerPage, filteredActivities.length)} of {filteredActivities.length} programs
-                        </div>
-                    </div>
 
-                    {/* Responsive Layout */}
-                    <div className="hidden md:block overflow-x-auto bg-white rounded-3xl border border-slate-100 shadow-sm">
-                        <table className="w-full text-left border-collapse text-black">
+
+                    <div className="max-w-4xl mx-auto overflow-x-auto bg-white rounded-2xl border border-slate-200 shadow-sm">
+                        <table className="w-full text-center border-collapse text-black">
                             <thead>
-                                <tr className="bg-[#224292] text-white border-b border-slate-100">
-                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center" rowSpan={2}>S. No.</th>
-                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider" rowSpan={2}>Title of the Program</th>
-                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center" rowSpan={2}>Online/ Offline</th>
-                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider" rowSpan={2}>Resource Person Details</th>
-                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center" rowSpan={2}>Dates (From-To)</th>
-                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center border-b border-white/20" colSpan={2}>No. of Faculty Benefited</th>
-                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider text-center border-b border-white/20" colSpan={2}>No. of Students Participated</th>
-                                    <th className="py-3 px-4 font-bold text-xs uppercase tracking-wider" rowSpan={2}>Remarks</th>
-                                </tr>
-                                <tr className="bg-[#224292]/95 text-white border-b border-slate-100">
-                                    <th className="py-2 px-2 font-bold text-[10px] uppercase tracking-wider text-center border-r border-slate-100/10">Internal</th>
-                                    <th className="py-2 px-2 font-bold text-[10px] uppercase tracking-wider text-center">External</th>
-                                    <th className="py-2 px-2 font-bold text-[10px] uppercase tracking-wider text-center border-r border-slate-100/10">Internal</th>
-                                    <th className="py-2 px-2 font-bold text-[10px] uppercase tracking-wider text-center">External</th>
+                                <tr className="bg-[#224292] text-white">
+                                    <th className="py-4 px-4 font-bold text-sm tracking-wider uppercase border-r border-white/20">Academic Year</th>
+                                    <th className="py-4 px-4 font-bold text-sm tracking-wider uppercase border-r border-white/20">No of Activities</th>
+                                    <th className="py-4 px-4 font-bold text-sm tracking-wider uppercase">Details</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
-                                {paginatedActivities.map((act) => (
-                                    <tr key={act.sNo} className="hover:bg-slate-50/50 transition-colors">
-                                        <td className="py-2 px-4 text-center font-normal text-xs text-slate-500">{act.sNo}</td>
-                                        <td className="py-2 px-4 font-normal text-xs leading-snug">{act.title}</td>
-                                        <td className="py-2 px-4 text-center font-normal text-xs">
-                                            <span className={`inline-block px-2.5 py-1 rounded-full font-normal text-xs ${act.mode === 'Online' ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}`}>
-                                                {act.mode}
-                                            </span>
-                                        </td>
-                                        <td className="py-2 px-4 text-xs font-normal leading-relaxed">
-                                            <ul className="list-disc pl-4 space-y-1">
-                                                {act.resourcePerson.map((person, index) => (
-                                                    <li key={index}>{person}</li>
-                                                ))}
-                                            </ul>
-                                        </td>
-                                        <td className="py-2 px-4 text-center font-normal text-xs text-slate-600 whitespace-nowrap">{act.dates}</td>
-                                        <td className="py-2 px-4 text-center text-xs font-normal border-r border-slate-100">{act.facultyBenefited.internal}</td>
-                                        <td className="py-2 px-4 text-center text-xs font-normal">{act.facultyBenefited.external}</td>
-                                        <td className="py-2 px-4 text-center text-xs font-normal border-r border-slate-100">{act.studentsParticipated.internal}</td>
-                                        <td className="py-2 px-4 text-center text-xs font-normal">{act.studentsParticipated.external}</td>
-                                        <td className="py-2 px-4 text-xs font-normal text-slate-600">{act.remarks}</td>
-                                    </tr>
-                                ))}
+                                <tr className="hover:bg-slate-50 transition-colors">
+                                    <td className="py-3.5 px-4 text-sm font-medium text-slate-700">2025-2026</td>
+                                    <td className="py-3.5 px-4 text-sm font-semibold text-[#224292]">27</td>
+                                    <td className="py-3.5 px-4 text-sm font-bold text-[#ffc107] cursor-pointer hover:text-[#e0a800] transition-colors underline underline-offset-2" onClick={() => navigate('/research-innovation/aicte-idea-lab/activities-2025')}>Click Here</td>
+                                </tr>
+                                <tr className="hover:bg-slate-50 transition-colors">
+                                    <td className="py-3.5 px-4 text-sm font-medium text-slate-700">2024-2025</td>
+                                    <td className="py-3.5 px-4 text-sm font-semibold text-[#224292]">43</td>
+                                    <td className="py-3.5 px-4 text-sm font-bold text-[#ffc107] cursor-pointer hover:text-[#e0a800] transition-colors underline underline-offset-2" onClick={() => navigate('/research-innovation/aicte-idea-lab/activities-2024')}>Click Here</td>
+                                </tr>
+                                <tr className="hover:bg-slate-50 transition-colors">
+                                    <td className="py-3.5 px-4 text-sm font-medium text-slate-700">2023-2024</td>
+                                    <td className="py-3.5 px-4 text-sm font-semibold text-[#224292]">16</td>
+                                    <td className="py-3.5 px-4 text-sm font-bold text-[#ffc107] cursor-pointer hover:text-[#e0a800] transition-colors underline underline-offset-2" onClick={() => navigate('/research-innovation/aicte-idea-lab/activities-2023')}>Click Here</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </section>
 
-                    {/* Mobile Card Layout */}
-                    <div className="md:hidden space-y-4">
-                        {paginatedActivities.map((act) => (
-                            <div key={act.sNo} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col gap-3 text-black">
-                                <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                                    <span className="font-bold text-xs text-slate-500">S. No. {act.sNo}</span>
-                                    <span className={`inline-block px-2.5 py-1 rounded-full text-xs font-normal ${act.mode === 'Online' ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}`}>
-                                        {act.mode}
-                                    </span>
-                                </div>
-                                <div>
-                                    <h4 className="font-normal text-xs leading-snug">{act.title}</h4>
-                                </div>
-                                <div className="grid grid-cols-2 gap-2 text-xs">
-                                    <div>
-                                        <span className="text-slate-400 block font-bold">Dates:</span>
-                                        <span className="font-normal text-slate-700">{act.dates}</span>
-                                    </div>
-                                    <div>
-                                        <span className="text-slate-400 block font-bold">Remarks:</span>
-                                        <span className="font-normal text-slate-700">{act.remarks}</span>
-                                    </div>
-                                </div>
-                                <div className="bg-slate-50/50 p-3 rounded-xl border border-slate-100 flex flex-col gap-2">
-                                    <div>
-                                        <span className="text-slate-400 text-[10px] font-bold block mb-1">Resource Persons:</span>
-                                        <ul className="list-disc pl-4 text-xs font-normal text-slate-700 space-y-1">
-                                            {act.resourcePerson.map((person, index) => (
-                                                <li key={index}>{person}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="grid grid-cols-2 gap-3 text-xs border-t border-slate-100 pt-3">
-                                    <div>
-                                        <span className="text-slate-400 block font-bold mb-0.5">Faculty Benefited:</span>
-                                        <span className="font-normal text-slate-700">Int: {act.facultyBenefited.internal} | Ext: {act.facultyBenefited.external}</span>
-                                    </div>
-                                    <div>
-                                        <span className="text-slate-400 block font-bold mb-0.5">Students Participated:</span>
-                                        <span className="font-normal text-slate-700">Int: {act.studentsParticipated.internal} | Ext: {act.studentsParticipated.external}</span>
-                                    </div>
-                                </div>
+            {/* GALLERY SECTION */}
+            <section className="pb-16 pt-8 font-graphik relative px-4 md:px-0 z-10 bg-white">
+                <div className="max-w-6xl mx-auto flex flex-col items-center">
+                    {/* Minimal Title */}
+                    <div className="flex items-center justify-center gap-4 mb-10 w-full">
+                        <div className="h-[2px] w-12 bg-[#ffc107]"></div>
+                        <h2 className="text-3xl md:text-4xl font-black text-[#224292] tracking-tight uppercase">Gallery</h2>
+                        <div className="h-[2px] w-12 bg-[#ffc107]"></div>
+                    </div>
+
+                    {/* Image Grid */}
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {galleryImages.map((imgSrc, index) => (
+                            <div key={index} className="overflow-hidden rounded-xl aspect-video shadow-md border border-slate-100 group bg-slate-100">
+                                <img 
+                                    src={imgSrc} 
+                                    alt={`Gallery image ${index + 1}`} 
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy"
+                                />
                             </div>
                         ))}
                     </div>
-
-                    {/* Pagination controls */}
-                    {totalPages > 1 && (
-                        <div className="mt-8 flex items-center justify-center gap-2">
-                            <button
-                                onClick={() => {
-                                    setCurrentPage(prev => Math.max(prev - 1, 1));
-                                    document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                }}
-                                disabled={currentPage === 1}
-                                className="px-3.5 py-1.5 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:pointer-events-none transition-colors"
-                            >
-                                Prev
-                            </button>
-                            <div className="flex gap-1">
-                                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                                    <button
-                                        key={page}
-                                        onClick={() => {
-                                            setCurrentPage(page);
-                                            document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                        }}
-                                        className={`w-9 h-9 rounded-lg border text-sm font-semibold transition-colors ${currentPage === page ? 'bg-[#224292] border-[#224292] text-white' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}`}
-                                    >
-                                        {page}
-                                    </button>
-                                ))}
-                            </div>
-                            <button
-                                onClick={() => {
-                                    setCurrentPage(prev => Math.min(prev + 1, totalPages));
-                                    document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                }}
-                                disabled={currentPage === totalPages}
-                                className="px-3.5 py-1.5 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:pointer-events-none transition-colors"
-                            >
-                                Next
-                            </button>
-                        </div>
-                    )}
                 </div>
             </section>
 

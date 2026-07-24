@@ -22,6 +22,8 @@ import placementBalachandranImg from '../../assets/placements/placement team/Bal
 import { courseData } from '../../data/courseData'
 import cseImage from '../../assets/main/CSE .webp'
 import mbaHomeImg from '../../assets/main/mba home.png'
+import ip1 from '../../assets/be-ecx/ip1.png'
+import ip2 from '../../assets/be-ecx/ip2.png'
 import mbaPicture1 from '../../assets/Mba/Picture1.png'
 import mbaPicture2 from '../../assets/Mba/Picture2.png'
 import mbaPicture3 from '../../assets/Mba/Picture3.png'
@@ -525,7 +527,7 @@ export default function CourseDetailPage({ overrides }) {
     { id: 'PEO', icon: Target, title: 'Program Educational Objectives', content: course.peo, color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' },
     { id: 'PO', icon: Layers, title: 'Program Outcomes', content: course.po, color: 'text-[#ffc107]', bg: 'bg-[#ffc107]/5', activeBg: 'bg-[#ffc107]', iconColor: 'text-[#224292]' },
     { id: 'PSO', icon: Star, title: 'Program Specific Outcomes', content: course.pso, color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' }
-  ]
+  ].filter(obj => obj.content)
 
   // Force window to scroll to absolute top on initial page load and course change
   useLayoutEffect(() => {
@@ -1556,10 +1558,10 @@ export default function CourseDetailPage({ overrides }) {
                     </a>
                   ) : (
                     <button
-                      onClick={() => navigate('/admissions')}
+                      onClick={() => courseId !== 'mca' && navigate('/admissions')}
                       className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#224292] !text-white font-bold font-graphik text-[15px] hover:bg-[#ffc107] hover:!text-[#224292] transition-all duration-500 shadow-xl shadow-blue-900/10 group/btn"
                     >
-                      Enroll Now <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />
+                      Enroll Now {courseId !== 'mca' && <ArrowRight size={20} className="group-hover/btn:translate-x-2 transition-transform" />}
                     </button>
                   )}
                 </div>
@@ -2832,11 +2834,11 @@ export default function CourseDetailPage({ overrides }) {
             )}
 
 
-            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee' || courseId === 'btech-aids' || courseId === 'be-ece' || courseId === 'mba-general' || courseId === 'mba-iev' || courseId === 'btech-it') && (
+            {activeTab === 'Achievements' && (courseId === 'be-cse' || courseId === 'be-eee' || courseId === 'btech-aids' || courseId === 'be-ece' || courseId === 'mba-general' || courseId === 'mba-iev' || courseId === 'btech-it' || courseId === 'be-ecm') && (
               <AchievementSection courseId={courseId} courseName={course.name} />
             )}
 
-            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil' || courseId === 'btech-aids' || courseId === 'mba-general' || courseId === 'mba-iev' || courseId === 'btech-it') && (
+            {activeTab === 'Awards' && (courseId === 'be-cse' || courseId === 'btech-csbs' || courseId === 'be-civil' || courseId === 'btech-aids' || courseId === 'mba-general' || courseId === 'mba-iev' || courseId === 'btech-it' || courseId === 'be-ecm') && (
               <AwardsSection courseId={courseId} courseName={course.name} />
             )}
 
@@ -3607,7 +3609,12 @@ function ClubsSection() {
 
 
 // ─── Innovative Practices Section Component ──────────────────────────────────
-function InnovativePracticesSection() {
+function InnovativePracticesSection({ courseId }) {
+  const imagesMap = {
+    'be-ecm': [ip1, ip2],
+  };
+  const images = imagesMap[courseId] || [];
+
   return (
     <div className="space-y-12">
       <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-8 pb-8 border-b border-[#D5E2F4]/50">
@@ -3623,6 +3630,16 @@ function InnovativePracticesSection() {
           </div>
         </div>
       </div>
+
+      {images.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {images.map((img, idx) => (
+            <div key={idx} className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+              <img src={img} alt={`Innovative Practice ${idx + 1}`} className="w-full h-auto object-cover" />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -83,6 +83,9 @@ const EnergyPage = lazy(() => import('./pages/EnergyPage'))
 const InternetPage = lazy(() => import('./pages/InternetPage'))
 const StudentLifePage = lazy(() => import('./pages/StudentLifePage'))
 const AicteIdeaLabPage = lazy(() => import('./pages/AicteIdeaLabPage'))
+const AicteIdeaLabActivities2025Page = lazy(() => import('./pages/AicteIdeaLabActivities2025Page'))
+const AicteIdeaLabActivities2024Page = lazy(() => import('./pages/AicteIdeaLabActivities2024Page'))
+const AicteIdeaLabActivities2023Page = lazy(() => import('./pages/AicteIdeaLabActivities2023Page'))
 const IStartPage = lazy(() => import('./pages/IStartPage'))
 const BlogsPage = lazy(() => import('./pages/BlogsPage'))
 const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
@@ -432,6 +435,18 @@ function App() {
       "/research-innovation/aicte-idea-lab": {
         title: "AICTE IDEA Lab | Innovation Center",
         desc: "Explore the state-of-the-art AICTE IDEA Lab at KIOT for hands-on prototyping, design thinking, and product development."
+      },
+      "/research-innovation/aicte-idea-lab/activities-2025": {
+        title: "Activities 2025-26 - AICTE IDEA Lab | KIOT",
+        desc: "Details of activities carried out during the Academic Year 2025-2026 at the AICTE IDEA Lab, KIOT."
+      },
+      "/research-innovation/aicte-idea-lab/activities-2024": {
+        title: "Activities 2024-25 - AICTE IDEA Lab | KIOT",
+        desc: "Details of activities carried out during the Academic Year 2024-2025 at the AICTE IDEA Lab, KIOT."
+      },
+      "/research-innovation/aicte-idea-lab/activities-2023": {
+        title: "Activities 2023-24 - AICTE IDEA Lab | KIOT",
+        desc: "Details of activities carried out during the Academic Year 2023-2024 at the AICTE IDEA Lab, KIOT."
       },
       "/aicte-idea-lab": {
         title: "AICTE IDEA Lab | Innovation Center",
@@ -911,6 +926,9 @@ function App() {
                    <Route path="/research-innovation/research" element={<ResearchPage />} />
                    <Route path="/research" element={<ResearchPage />} />
                    <Route path="/research-innovation/aicte-idea-lab" element={<AicteIdeaLabPage />} />
+                   <Route path="/research-innovation/aicte-idea-lab/activities-2025" element={<AicteIdeaLabActivities2025Page />} />
+                   <Route path="/research-innovation/aicte-idea-lab/activities-2024" element={<AicteIdeaLabActivities2024Page />} />
+                   <Route path="/research-innovation/aicte-idea-lab/activities-2023" element={<AicteIdeaLabActivities2023Page />} />
                    <Route path="/aicte-idea-lab" element={<AicteIdeaLabPage />} />
                    <Route path="/research-innovation/corporate-contest" element={<IICPage />} />
                    <Route path="/research-innovation/istart" element={<IStartPage />} />
