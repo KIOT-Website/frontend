@@ -65,29 +65,117 @@
     <loc>https://kiot.ac.in/placements/outcomes</loc>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://kiot.ac.in/recruitment</loc>
+    <priority>0.85</priority>
+  </url>
 
-  <!-- Academics -->
+  <!-- Academics & Department Courses -->
   <url>
     <loc>https://kiot.ac.in/academics/undergraduate</loc>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://kiot.ac.in/academics/postgraduate</loc>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://kiot.ac.in/academics/autonomous</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/be-cse</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/be-ece</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/be-mechanical</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/be-eee</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/be-civil</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/btech-it</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/btech-aids</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/btech-csbs</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/be-ecm</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/mba-general</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/mba-iev</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/mca</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/phd</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/me-ise</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/me-ae</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/me-ped</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/course/me-se</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/academics/science-humanities</loc>
     <priority>0.80</priority>
   </url>
 
   <!-- Research & Innovation -->
   <url>
     <loc>https://kiot.ac.in/research-innovation/research</loc>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://kiot.ac.in/research-innovation/aicte-idea-lab</loc>
     <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/research-innovation/aicte-idea-lab/activities-2025</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/research-innovation/aicte-idea-lab/activities-2024</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/research-innovation/aicte-idea-lab/activities-2023</loc>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://kiot.ac.in/research-innovation/istart</loc>
@@ -107,6 +195,26 @@
   </url>
   <url>
     <loc>https://kiot.ac.in/research-innovation/mx-incubator</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/research/cse</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/research/ece</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/research/mech</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/research/eee</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/research/civil</loc>
     <priority>0.75</priority>
   </url>
 
@@ -132,7 +240,7 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- Campus Life & Resources -->
+  <!-- Campus Life & Infrastructure -->
   <url>
     <loc>https://kiot.ac.in/campus-life</loc>
     <priority>0.80</priority>
@@ -142,8 +250,32 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://kiot.ac.in/campus-life/library/access</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/campus-life/library/collections</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/campus-life/library/journals</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/campus-life/library/achievements</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://kiot.ac.in/campus-life/sports</loc>
     <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/campus-life/sports/faculty</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/campus-life/sports/facilities</loc>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://kiot.ac.in/campus-life/classroom</loc>
@@ -156,6 +288,10 @@
   <url>
     <loc>https://kiot.ac.in/campus-life/transport</loc>
     <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/bus-routes</loc>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://kiot.ac.in/campus-life/amenities</loc>
@@ -178,43 +314,103 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://kiot.ac.in/bus-routes</loc>
-    <priority>0.70</priority>
+    <loc>https://kiot.ac.in/resources/iqac</loc>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Student Life & Clubs -->
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life</loc>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://kiot.ac.in/student-life</loc>
+    <loc>https://kiot.ac.in/resources/student-life/department-associations</loc>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://kiot.ac.in/student-life/flame</loc>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://kiot.ac.in/student-life/intec</loc>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://kiot.ac.in/student-life/vibes</loc>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://kiot.ac.in/student-life/pace</loc>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://kiot.ac.in/student-life/amberz</loc>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://kiot.ac.in/alumni</loc>
+    <loc>https://kiot.ac.in/resources/student-life/common-centers</loc>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://kiot.ac.in/blogs</loc>
+    <loc>https://kiot.ac.in/resources/student-life/professional-societies</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/technical-clubs</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/extra-curricular</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/flame</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/intec</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/vibes</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/pace</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/amberz</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/scintel</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/bdbi</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/codeware</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/cisco-academy</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/oracle-academy</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/ieee</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/ieee-pes</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/sae</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/student-life/ictact</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Community, Events & News -->
+  <url>
+    <loc>https://kiot.ac.in/resources/alumni</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://kiot.ac.in/resources/blogs</loc>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://kiot.ac.in/events</loc>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
 </urlset>
