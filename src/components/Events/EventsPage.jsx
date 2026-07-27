@@ -18,6 +18,11 @@ function getMediaUrl(url) {
   if (!url || typeof url !== 'string' || !url.trim()) return DEFAULT_EVENT_IMAGE;
   let cleanUrl = url.trim();
 
+  // If a Cloudinary raw pdf URL was mistakenly created for an image file
+  if (cleanUrl.includes('res.cloudinary.com') && cleanUrl.includes('/raw/upload/') && /\.(jpe?g|png|webp|gif)_.*\.pdf$/i.test(cleanUrl)) {
+    cleanUrl = cleanUrl.replace('/raw/upload/', '/image/upload/').replace(/\.pdf$/i, '');
+  }
+
   if (cleanUrl.startsWith('http://')) {
     cleanUrl = cleanUrl.replace(/^http:\/\//i, 'https://');
   }
@@ -128,31 +133,20 @@ function StatusBadge({ status }) {
 // ─── EventCard ────────────────────────────────────────────────────────────────
 
 function EventCard({ event, onOpen }) {
-  const isPast = event.status === "completed";
-
   return (
     <motion.article
       layout
       initial={{ opacity: 0, scale: 0.97 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
-      whileHover={!isPast ? { y: -5 } : {}}
+      whileHover={{ y: -5 }}
       transition={{ duration: 0.25 }}
       onClick={onOpen}
-      className={`group relative bg-white border border-[#ffc107]/30 hover:border-[#ffc107]/60 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${!isPast ? 'hover:shadow-xl' : ''}`}
+      className="group relative bg-white border border-[#ffc107]/30 hover:border-[#ffc107]/60 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl flex flex-col h-full"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && onOpen()}
     >
-      {/* Black fade overlay for past events */}
-      {isPast && (
-        <div className="absolute inset-0 bg-black/50 z-20 pointer-events-none flex items-center justify-center transition-all duration-300 group-hover:bg-black/45">
-          <span className="bg-black/60 text-white border border-white/20 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
-            Completed
-          </span>
-        </div>
-      )}
-
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-slate-100">
         <img
@@ -175,16 +169,14 @@ function EventCard({ event, onOpen }) {
           </div>
         </div>
 
-        {/* Status Badge - only displayed if NOT past */}
-        {!isPast && (
-          <div className="absolute top-3 right-3 z-10">
-            <StatusBadge status={event.status} />
-          </div>
-        )}
+        {/* Status Badge */}
+        <div className="absolute top-3 right-3 z-10">
+          <StatusBadge status={event.status} />
+        </div>
       </div>
 
       {/* Body */}
-      <div className="p-5 flex flex-col min-h-[150px]">
+      <div className="p-5 flex flex-col flex-1">
         <h3
           className="text-[#224292] font-semibold text-[15px] leading-snug mb-4 group-hover:text-[#ffc107] transition-colors line-clamp-2"
         >
@@ -207,6 +199,84 @@ function EventCard({ event, onOpen }) {
         </div>
       </div>
     </motion.article>
+  );
+}
+
+// ─── CompletedEventCard (For Marquee) ────────────────────────────────────────
+
+function CompletedEventCard({ event, onOpen }) {
+  return (
+    <div
+      onClick={onOpen}
+      className="group/c flex-shrink-0 w-[290px] sm:w-[340px] bg-white border border-slate-200/80 hover:border-[#ffc107] rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 mx-3 select-none"
+    >
+      <div className="relative h-44 overflow-hidden bg-slate-100">
+        <img
+          src={getMediaUrl(event.image)}
+          alt={event.title}
+          className="w-full h-full object-cover group-hover/c:scale-105 transition-transform duration-500"
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = DEFAULT_EVENT_IMAGE;
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute top-3 left-3">
+          <span className="bg-black/60 backdrop-blur-md text-white border border-white/20 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider">
+            Completed
+          </span>
+        </div>
+        <div className="absolute bottom-3 left-3 right-3 text-white">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300 block mb-0.5">
+            {formatEventDateRangeShort(event.date, event.endDate)}
+          </span>
+          <h4 className="font-bold text-sm leading-tight text-white line-clamp-1 group-hover/c:text-[#ffc107] transition-colors">
+            {event.title}
+          </h4>
+        </div>
+      </div>
+      <div className="p-3.5 bg-slate-50/50 flex items-center justify-between">
+        <div className="flex items-center gap-1.5 text-slate-500 text-xs font-semibold truncate max-w-[180px]">
+          <MapPin size={12} className="text-[#224292] flex-shrink-0" />
+          <span className="truncate">{event.venue || 'Main Campus'}</span>
+        </div>
+        <span className="text-[10px] font-black text-[#224292] uppercase tracking-widest group-hover/c:text-[#ffc107] flex items-center gap-1">
+          Details <ArrowLeft size={10} className="rotate-180" />
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function CompletedEventsMarquee({ completedEvents, onOpen, hasUpcoming }) {
+  if (!completedEvents || completedEvents.length === 0) return null;
+
+  let marqueeItems = [...completedEvents];
+  while (marqueeItems.length < 6) {
+    marqueeItems = [...marqueeItems, ...completedEvents];
+  }
+  const duplicatedList = [...marqueeItems, ...marqueeItems];
+
+  return (
+    <div className={hasUpcoming ? "mt-16 pt-12 border-t border-slate-200/80" : "mt-4"}>
+      <div className="flex flex-col items-center mb-8 text-center px-4">
+        <h2 className="text-2xl md:text-3xl font-black text-[#224292] tracking-tight">
+          Events <span className="text-[#ffc107]">Highlights</span>
+        </h2>
+      </div>
+
+      <div className="relative w-full overflow-hidden py-4 select-none">
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#FCFDFD] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#FCFDFD] to-transparent z-10 pointer-events-none" />
+
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {duplicatedList.map((event, idx) => (
+            <CompletedEventCard key={`${event.id}-${idx}`} event={event} onOpen={() => onOpen(event)} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -301,7 +371,8 @@ function EventModal({ event, onClose }) {
 // ─── Main Component ────────────────────────────────────────────────────────────
 
 const EventsPage = () => {
-  const [dbEvents, setDbEvents] = useState([])
+  const [upcomingEvents, setUpcomingEvents] = useState([])
+  const [completedEvents, setCompletedEvents] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedEvent, setSelectedEvent] = useState(null)
 
@@ -346,11 +417,11 @@ const EventsPage = () => {
           }
         })
         
-        // Sort: upcoming & ongoing first (ascending), then completed (descending)
         const upcoming = mapped.filter(e => e.status !== "completed").sort((a, b) => new Date(a.date) - new Date(b.date));
         const completed = mapped.filter(e => e.status === "completed").sort((a, b) => new Date(b.date) - new Date(a.date));
         
-        setDbEvents([...upcoming, ...completed])
+        setUpcomingEvents(upcoming)
+        setCompletedEvents(completed)
       } catch (err) {
         console.error("Failed to fetch events:", err)
       } finally {
@@ -378,26 +449,48 @@ const EventsPage = () => {
         </div>
       </div>
 
-      {/* Dynamic Event Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px] mt-16 max-w-7xl mx-auto px-6 lg:px-10 items-start">
-         {loading ? (
-            <div className="col-span-full flex flex-col items-center justify-center py-20 opacity-30">
-              <Loader2 size={48} className="animate-spin text-[#224292] mb-4" />
-              <p className="text-xs font-black uppercase tracking-widest text-[#224292]">Fetching Events...</p>
-            </div>
-         ) : dbEvents.length === 0 ? (
-             <div className="col-span-full py-20 text-center">
-                <Calendar size={48} className="mx-auto text-slate-200 mb-6" />
-                <h3 className="text-xl font-bold text-[#224292] mb-2">No Events Found</h3>
-                <p className="text-slate-400 text-sm">Stay tuned for upcoming updates and news.</p>
-             </div>
-         ) : (
-            <AnimatePresence mode="popLayout">
-              {dbEvents.map((event) => (
-                <EventCard key={event.id} event={event} onOpen={() => setSelectedEvent(event)} />
-              ))}
-            </AnimatePresence>
-         )}
+      {/* Main Container */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-12">
+
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-20 opacity-30">
+            <Loader2 size={48} className="animate-spin text-[#224292] mb-4" />
+            <p className="text-xs font-black uppercase tracking-widest text-[#224292]">Fetching Events...</p>
+          </div>
+        ) : upcomingEvents.length === 0 && completedEvents.length === 0 ? (
+          <div className="py-20 text-center">
+            <Calendar size={48} className="mx-auto text-slate-200 mb-6" />
+            <h3 className="text-xl font-bold text-[#224292] mb-2">No Events Found</h3>
+            <p className="text-slate-400 text-sm">Stay tuned for upcoming updates and news.</p>
+          </div>
+        ) : (
+          <>
+            {/* Active / Upcoming Events Section */}
+            {upcomingEvents.length > 0 && (
+              <div>
+                <div className="mb-8">
+                  <h2 className="text-2xl font-black text-[#224292] tracking-tight">
+                    Upcoming & Live <span className="text-[#ffc107]">Events</span>
+                  </h2>
+                  <p className="text-xs text-slate-500 mt-1">Discover what's currently happening and scheduled next on campus</p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                  <AnimatePresence mode="popLayout">
+                    {upcomingEvents.map((event) => (
+                      <EventCard key={event.id} event={event} onOpen={() => setSelectedEvent(event)} />
+                    ))}
+                  </AnimatePresence>
+                </div>
+              </div>
+            )}
+
+            {/* Completed Events Marquee (Right-to-Left Running Ticker) */}
+            {completedEvents.length > 0 && (
+              <CompletedEventsMarquee completedEvents={completedEvents} onOpen={(ev) => setSelectedEvent(ev)} hasUpcoming={upcomingEvents.length > 0} />
+            )}
+          </>
+        )}
+
       </div>
 
       {/* Pop-up Modal */}

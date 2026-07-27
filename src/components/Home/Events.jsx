@@ -20,6 +20,11 @@ function getMediaUrl(url) {
   if (!url || typeof url !== 'string' || !url.trim()) return DEFAULT_EVENT_IMAGE;
   let cleanUrl = url.trim();
 
+  // If a Cloudinary raw pdf URL was mistakenly created for an image file
+  if (cleanUrl.includes('res.cloudinary.com') && cleanUrl.includes('/raw/upload/') && /\.(jpe?g|png|webp|gif)_.*\.pdf$/i.test(cleanUrl)) {
+    cleanUrl = cleanUrl.replace('/raw/upload/', '/image/upload/').replace(/\.pdf$/i, '');
+  }
+
   if (cleanUrl.startsWith('http://')) {
     cleanUrl = cleanUrl.replace(/^http:\/\//i, 'https://');
   }
@@ -138,23 +143,14 @@ function EventCard({ event, onOpen }) {
       initial={{ opacity: 0, scale: 0.97 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
-      whileHover={!isPast ? { y: -5 } : {}}
+      whileHover={{ y: -5 }}
       transition={{ duration: 0.25 }}
       onClick={onOpen}
-      className={`group relative bg-white border border-[#ffc107]/30 hover:border-[#ffc107]/60 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 ${!isPast ? 'hover:shadow-xl' : ''}`}
+      className="group relative bg-white border border-[#ffc107]/30 hover:border-[#ffc107]/60 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl flex flex-col h-full"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && onOpen()}
     >
-      {/* Black fade overlay for past events */}
-      {isPast && (
-        <div className="absolute inset-0 bg-black/50 z-20 pointer-events-none flex items-center justify-center transition-all duration-300 group-hover:bg-black/45">
-          <span className="bg-black/60 text-white border border-white/20 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
-            Completed
-          </span>
-        </div>
-      )}
-
       {/* Image */}
       <div className="relative h-48 overflow-hidden bg-slate-100">
         <img
@@ -177,16 +173,14 @@ function EventCard({ event, onOpen }) {
           </div>
         </div>
 
-        {/* Status Badge - only displayed if NOT past */}
-        {!isPast && (
-          <div className="absolute top-3 right-3 z-10">
-            <StatusBadge status={event.status} />
-          </div>
-        )}
+        {/* Status Badge */}
+        <div className="absolute top-3 right-3 z-10">
+          <StatusBadge status={event.status} />
+        </div>
       </div>
 
       {/* Body */}
-      <div className="p-5 flex flex-col min-h-[150px]">
+      <div className="p-5 flex flex-col flex-1">
         <h3
           className="text-[#224292] font-semibold text-[15px] leading-snug mb-4 group-hover:text-[#ffc107] transition-colors line-clamp-2"
         >
@@ -209,6 +203,84 @@ function EventCard({ event, onOpen }) {
         </div>
       </div>
     </motion.article>
+  );
+}
+
+// ─── CompletedEventCard (For Marquee) ────────────────────────────────────────
+
+function CompletedEventCard({ event, onOpen }) {
+  return (
+    <div
+      onClick={onOpen}
+      className="group/c flex-shrink-0 w-[290px] sm:w-[330px] bg-white border border-slate-200/80 hover:border-[#ffc107] rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 mx-3 select-none"
+    >
+      <div className="relative h-40 overflow-hidden bg-slate-100">
+        <img
+          src={getMediaUrl(event.image)}
+          alt={event.title}
+          className="w-full h-full object-cover group-hover/c:scale-105 transition-transform duration-500"
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = DEFAULT_EVENT_IMAGE;
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute top-3 left-3">
+          <span className="bg-black/60 backdrop-blur-md text-white border border-white/20 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider">
+            Completed
+          </span>
+        </div>
+        <div className="absolute bottom-3 left-3 right-3 text-white">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300 block mb-0.5">
+            {formatEventDateRangeShort(event.date, event.endDate)}
+          </span>
+          <h4 className="font-bold text-sm leading-tight text-white line-clamp-1 group-hover/c:text-[#ffc107] transition-colors">
+            {event.title}
+          </h4>
+        </div>
+      </div>
+      <div className="p-3.5 bg-slate-50/50 flex items-center justify-between">
+        <div className="flex items-center gap-1.5 text-slate-500 text-xs font-semibold truncate max-w-[180px]">
+          <MapPin size={12} className="text-[#224292] flex-shrink-0" />
+          <span className="truncate">{event.venue || 'Main Campus'}</span>
+        </div>
+        <span className="text-[10px] font-black text-[#224292] uppercase tracking-widest group-hover/c:text-[#ffc107] flex items-center gap-1">
+          Details <ArrowRight size={10} />
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function CompletedEventsMarquee({ completedEvents, onOpen, hasUpcoming }) {
+  if (!completedEvents || completedEvents.length === 0) return null;
+
+  let marqueeItems = [...completedEvents];
+  while (marqueeItems.length < 6) {
+    marqueeItems = [...marqueeItems, ...completedEvents];
+  }
+  const duplicatedList = [...marqueeItems, ...marqueeItems];
+
+  return (
+    <div className={hasUpcoming ? "mt-12 pt-8 border-t border-slate-200/60" : "mt-2"}>
+      <div className="flex flex-col items-center mb-6 text-center px-4">
+        <h3 className="text-xl md:text-2xl font-bold text-[#224292]">
+          Events <span className="text-[#ffc107]">Highlights</span>
+        </h3>
+      </div>
+
+      <div className="relative w-full overflow-hidden py-4 select-none">
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#FCFDFD] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#FCFDFD] to-transparent z-10 pointer-events-none" />
+
+        <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+          {duplicatedList.map((event, idx) => (
+            <CompletedEventCard key={`${event.id}-${idx}`} event={event} onOpen={() => onOpen(event)} />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -247,7 +319,15 @@ function EventModal({ event, onClose }) {
       >
         {/* Hero image */}
         <div className="relative h-56 overflow-hidden rounded-t-2xl bg-slate-100">
-          <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+          <img
+            src={getMediaUrl(event.image)}
+            alt={event.title}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = DEFAULT_EVENT_IMAGE;
+            }}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           <div className="absolute top-4 left-4 flex flex-wrap gap-2">
             <StatusBadge status={event.status} />
@@ -295,7 +375,8 @@ function EventModal({ event, onClose }) {
 // ─── Main Component ────────────────────────────────────────────────────────────
 
 const Events = () => {
-  const [dbEvents, setDbEvents] = useState([])
+  const [upcomingEvents, setUpcomingEvents] = useState([])
+  const [completedEvents, setCompletedEvents] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedEvent, setSelectedEvent] = useState(null)
 
@@ -339,12 +420,11 @@ const Events = () => {
           }
         })
 
-        // Sort: upcoming & ongoing first (ascending by date), then completed (descending by date)
         const upcoming = mapped.filter(e => e.status !== "completed").sort((a, b) => new Date(a.date) - new Date(b.date));
         const completed = mapped.filter(e => e.status === "completed").sort((a, b) => new Date(b.date) - new Date(a.date));
-        
-        const sorted = [...upcoming, ...completed];
-        setDbEvents(sorted.slice(0, 3)); // Display top 3 events on homepage
+
+        setUpcomingEvents(upcoming);
+        setCompletedEvents(completed);
       } catch (err) {
         console.error("Failed to fetch events:", err)
       } finally {
@@ -354,19 +434,13 @@ const Events = () => {
     fetchEvents()
   }, [])
 
-  // Check if there are any active (upcoming/ongoing) events at all
-  const activeEventsCount = useMemo(() => {
-    return dbEvents.filter(e => e.status === "upcoming" || e.status === "ongoing").length;
-  }, [dbEvents]);
-
-  // Hide the section completely from the homepage if no upcoming/ongoing events exist
-  if (!loading && activeEventsCount === 0) return null;
+  if (!loading && upcomingEvents.length === 0 && completedEvents.length === 0) return null;
 
   return (
     <section id="events" className="relative pt-6 pb-2 bg-[#FCFDFD] overflow-hidden font-sans">
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         
-        {/* Centered Header */}
+        {/* Header */}
         <div className="text-center mb-8 lg:mb-10 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -381,7 +455,7 @@ const Events = () => {
           </motion.div>
         </div>
 
-        {/* Events Grid */}
+        {/* Active Events Grid */}
         <div className="max-w-7xl mx-auto">
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20 opacity-30">
@@ -390,30 +464,39 @@ const Events = () => {
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <AnimatePresence mode="popLayout">
-                  {dbEvents.map((event) => (
-                    <EventCard key={event.id} event={event} onOpen={() => setSelectedEvent(event)} />
-                  ))}
-                </AnimatePresence>
-              </div>
+              {upcomingEvents.length > 0 && (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <AnimatePresence mode="popLayout">
+                      {upcomingEvents.slice(0, 3).map((event) => (
+                        <EventCard key={event.id} event={event} onOpen={() => setSelectedEvent(event)} />
+                      ))}
+                    </AnimatePresence>
+                  </div>
 
-              {/* View All Button */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="text-center mt-10"
-              >
-                <Link 
-                  to="/events"
-                  className="group relative inline-flex items-center gap-3 px-6 py-3 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
-                >
-                  <span className="text-white">View All Events</span>
-                  <ArrowRight size={14} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
-                </Link>
-              </motion.div>
+                  {/* View All Button */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="text-center mt-10"
+                  >
+                    <Link 
+                      to="/events"
+                      className="group relative inline-flex items-center gap-3 px-6 py-3 bg-[#224292] text-white border border-[#224292] rounded-none font-black text-[12px] uppercase tracking-[0.25em] shadow-[0_10px_30px_rgba(34,66,146,0.1)] hover:shadow-[0_20px_60px_rgba(255,193,7,0.2)] hover:bg-[#ffc107] hover:text-white hover:border-[#ffc107] transition-all duration-500 active:scale-95"
+                    >
+                      <span className="text-white">View All Events</span>
+                      <ArrowRight size={14} className="text-white transition-transform duration-500 group-hover:translate-x-2" />
+                    </Link>
+                  </motion.div>
+                </>
+              )}
+
+              {/* Completed Events Marquee (Running Right to Left) */}
+              {completedEvents.length > 0 && (
+                <CompletedEventsMarquee completedEvents={completedEvents} onOpen={(ev) => setSelectedEvent(ev)} hasUpcoming={upcomingEvents.length > 0} />
+              )}
             </>
           )}
         </div>
