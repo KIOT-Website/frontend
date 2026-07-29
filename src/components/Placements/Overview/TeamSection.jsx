@@ -24,33 +24,29 @@ import imgPadmanaban from '../../../assets/placements/placement team/Prof.G.Padm
 import imgSumathi from '../../../assets/placements/placement team/Mrs. P.Sumathi B.A.,.webp'
 import imgRuthrakumar from '../../../assets/placements/placement team/Mr. S. RUTHRAKUMAR B.E.,.webp'
 import imgMonisha from '../../../assets/placements/placement team/Ms. D.Monisha, M.Sc.,.webp'
-import imgSenchulakshmi from '../../../assets/Faculity/mba/Prof.D.Senchulakshmi.png'
-import imgAmbaliga from '../../../assets/Faculity/mba/Dr.R.Ambaliga Bharathi Kavithai.png'
 
 const teamMembers = [
-  { name: "Dr. P. Rajendran M.E., Ph.D.", desig: "Professor / CSE", resp: "Director – Placement & III", email: "pat@kiot.ac.in", phone: "+91 99941 33333", image: imgRajendran },
-  { name: "Mr. N.C. Balachandran B.Sc., M.A.", desig: "Director - External Industry Relations (Core Industry)", resp: "Director", email: "scpat@kiot.ac.in", phone: "", image: imgBalachandran },
-  { name: "Mr. I. Rajesh M.E., Ph.D.", desig: "Associate Professor / CSE", resp: "Industry Relation Manager", email: "po.cse@kiot.ac.in", phone: "98947 90284", image: imgRajesh },
+  { name: "Dr. P. Rajendran M.E., Ph.D.", desig: "Professor / CSE", resp: "Director – Placement & IR", email: "pat@kiot.ac.in", phone: "+91 99941 33333", image: imgRajendran },
+  { name: "Mr. N.C. Balachandran B.Sc., M.A.", desig: "Director - External Industry Relations (Core Industry)", resp: "Director - External Industry Relations", email: "scpat@kiot.ac.in", phone: "", image: imgBalachandran },
+  { name: "Dr. I. Rajesh M.E., Ph.D.", desig: "Associate Professor / CSE", resp: "Deputy Director - Placement & IR", email: "ddpat@kiot.ac.in", phone: "96003 39332", image: imgRajesh },
   { name: "Ms. Avila Edward M.A., M.Phil.", desig: "Industry Relationship Manager", resp: "Industry Relationship Manager", email: "industryrelations@kiot.ac.in", phone: "90039 10009", image: imgAvila },
-  { name: "Mrs. Andril Alagusabai M.E., Ph.D.", desig: "Assistant Professor / EEE", resp: "Manager - Corporate Relations", email: "crmpat@kiot.ac.in", phone: "97900 61616", image: imgAndril },
-  { name: "Mrs. S.J. Kaalijoothi M.A., M.Phil.", desig: "Assistant Professor / ENGLISH", resp: "Manager - Corporate Relations", email: "placementcell@kiot.ac.in", phone: "97900 61616", image: imgKaalijoothi },
-  { name: "Dr. S. Suresh Balaji B.E., M.E., Ph.D.", desig: "Assistant Professor / MECH", resp: "Placement Manager / MECH", email: "po.mech@kiot.ac.in", phone: "98427 75097", image: imgSuresh },
-  { name: "Mr. S. Premkumar B.E., M.E., Ph.D.", desig: "Assistant Professor / ECE", resp: "Placement Coordinator / ECE", email: "po.ece@kiot.ac.in", phone: "99940 09788", image: imgPremkumar },
-  { name: "Mr. B. Dhinesh B.E., M.E., Ph.D.", desig: "Assistant Professor / EEE", resp: "Placement Manager / EEE", email: "po.eee@kiot.ac.in", phone: "82372 17971", image: imgDhinesh },
-  { name: "Mr. R. Elavarasan B.E., M.E.", desig: "Assistant Professor / CIVIL", resp: "Placement Coordinator / CIVIL", email: "po.civil@kiot.ac.in", phone: "97870 77997", image: imgElavarasan },
+  { name: "Mrs. Andril Alagusabai M.E., (Ph.D)", desig: "Assistant Professor / EEE", resp: "Manager - Corporate Relations", email: "crmpat@kiot.ac.in", phone: "97900 61616", image: imgAndril },
+  { name: "Mr. B. Dhinesh B.E., M.E., (Ph.D)", desig: "Assistant Professor / EEE", resp: "Industry Relation Manager", email: "irpat@kiot.ac.in", phone: "82372 17971", image: imgDhinesh },
+  { name: "Mrs. S.J. Kaalijoothi M.A., M.Phil.", desig: "Assistant Professor / ENGLISH", resp: "Overall Placement Manager", email: "placementcell@kiot.ac.in", phone: "93429 75269", image: imgKaalijoothi },
+  { name: "Dr. S. Suresh Balaji M.E., Ph.D.", desig: "Assistant Professor / MECH", resp: "Placement Manager / MECH", email: "po.mech@kiot.ac.in", phone: "98427 75097", image: imgSuresh },
+  { name: "Mr. R. Elavarasan B.E., M.E.", desig: "Assistant Professor / CIVIL", resp: "Placement Manager / CIVIL", email: "po.civil@kiot.ac.in", phone: "98949 73393", image: imgElavarasan },
   { name: "Mr. R. Venkatraman B.E., M.E.", desig: "Assistant Professor / MECH", resp: "Placement Manager / MECH", email: "po.mech@kiot.ac.in", phone: "99949 54277", image: imgVenkatraman },
-  { name: "Mr. M. Ranjith Kumar B.E., M.E.", desig: "Assistant Professor / CSBS", resp: "Placement Manager / CSBS", email: "po.csbs@kiot.ac.in", phone: "99526 05627", image: imgRanjith },
+  { name: "Mr. S. Premkumar B.E., M.E.", desig: "Assistant Professor / ECE", resp: "Placement Manager / ECE", email: "po.ece@kiot.ac.in", phone: "99940 09788", image: imgPremkumar },
+  { name: "Mr. M. Ranjith Kumar B.E., M.E.", desig: "Assistant Professor / CSBS", resp: "Placement Manager/ CSBS", email: "po.csbs@kiot.ac.in", phone: "99526 05627", image: imgRanjith },
+  { name: "Mr. T. Bhuvaneswaran B.E., M.E.", desig: "Assistant Professor / IT", resp: "Placement Manager / IT", email: "po.it@kiot.ac.in", phone: "99650 26270", image: imgBhuvaneswaran },
   { name: "Mr. S. Jayaprakash B.E., M.E.", desig: "Assistant Professor / AI&DS", resp: "Placement Manager / AI&DS", email: "po.ai&ds@kiot.ac.in", phone: "99440 30114", image: imgJayaprakash },
   { name: "Mr. P. Nareshkumar B.E., M.E.", desig: "Assistant Professor / CSE", resp: "Placement Manager / CSE", email: "po.cse@kiot.ac.in", phone: "80725 38366", image: imgNaresh },
-  { name: "Mr. T. Bhuvaneswaran B.E., M.E.", desig: "Assistant Professor / IT", resp: "Placement Manager / IT", email: "po.it@kiot.ac.in", phone: "99650 26270", image: imgBhuvaneswaran },
-  { name: "Mr. A. Musthaffa M.B.A., M.Phil.", desig: "Assistant Professor / MBA", resp: "Placement Manager / MBA", email: "po.kbss@kiot.ac.in", phone: "81108 90181", image: imgMusthaffa },
-  { name: "Dr. D. Immanuel M.B.A., Ph.D.", desig: "Professor / MBA", resp: "Senior Manager - Placement & IR", email: "kbssplacement@kiot.ac.in", phone: "76392 45777", image: imgImmanuel },
-  { name: "Prof. G. Padmanaban M.B.A., Ph.D.", desig: "Assistant Professor / MBA", resp: "Manager - Placement & IR", email: "kbssplacement@kiot.ac.in", phone: "88256 21808", image: imgPadmanaban },
-  { name: "Mrs. P. Sumathi B.A.", desig: "Junior Assistant", resp: "Administration", email: "patoa@kiot.ac.in", phone: "", image: imgSumathi },
-  { name: "Mr. S. Ruthrakumar B.E.", desig: "Placement Executive", resp: "Executive", email: "campus1@kiot.ac.in", phone: "", image: imgRuthrakumar },
-  { name: "Ms. D. Monisha M.Sc.", desig: "Junior Assistant", resp: "Administration", email: "patoa@kiot.ac.in", phone: "", image: imgMonisha },
-  { name: "Prof. D. Senchulakshmi", desig: "Assistant Professor / MBA", resp: "Training Coordinator / MBA", email: "dsmba@kiot.ac.in", phone: "", image: imgSenchulakshmi },
-  { name: "Dr. R. Ambaliga Bharathi Kavithai", desig: "Assistant Professor / MBA", resp: "Training Coordinator / MBA-IEV", email: "ramba@kiot.ac.in", phone: "", image: imgAmbaliga }
+  { name: "Mr. A. Musthaffa, MBA., M.Phil.", desig: "Assistant Professor / MBA", resp: "Placement Manager / MBA", email: "po.kbss@kiot.ac.in", phone: "81108 90181", image: imgMusthaffa },
+  { name: "Dr. D. Immanuel, MBA., Ph.D.", desig: "Professor / MBA", resp: "Senior Manager - Placement & IR", email: "kbssplacement@kiot.ac.in", phone: "76392 45777", image: imgImmanuel },
+  { name: "Prof. G. Padmanaban, MBA., (PhD)", desig: "Assistant Professor / MBA", resp: "Manager - Placement & IR", email: "kbssplacement@kiot.ac.in", phone: "88256 21808", image: imgPadmanaban },
+  { name: "Mr. S. Ruthrakumar B.E.", desig: "Placement Executive", resp: "Placement Executive", email: "campus@kiot.ac.in", phone: "", image: imgRuthrakumar },
+  { name: "Ms. D. Monisha, M.Sc.", desig: "Junior Assistant", resp: "Junior Assistant", email: "patoa@kiot.ac.in", phone: "", image: imgMonisha },
+  { name: "Mrs. P. Sumathi B.A.", desig: "Office Assistant", resp: "Office Assistant", email: "patoa@kiot.ac.in", phone: "", image: imgSumathi }
 ];
 
 const TeamSection = () => {

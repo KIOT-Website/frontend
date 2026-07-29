@@ -5,16 +5,32 @@ import brochurePdf from '../../assets/KIOT Brochure 2026 copy.pdf'
 import prospectsPdf from '../../assets/KIOT Prospects MAY 2026 .pdf'
 
 // Recruiter Logos
-import techMahindraLogo from '../../assets/main/tech mahendra.webp'
-import expleoLogo from '../../assets/main/ecpleo.webp'
-import codingmartLogo from '../../assets/main/codingmart.webp'
-import haritaLogo from '../../assets/main/harita.webp'
-import hexawareLogo from '../../assets/main/hexaware.webp'
-import itcLogo from '../../assets/main/itc.webp'
-import neyesLogo from '../../assets/main/neyes.webp'
-import raplLogo from '../../assets/main/rapl.webp'
-import tefologicLogo from '../../assets/main/tefologic.webp'
-import tessolveLogo from '../../assets/main/tessolve.webp'
+import infineonLogo from '../../assets/placements/our_recuiters/infineon.png'
+import hcltechLogo from '../../assets/placements/our_recuiters/hcltech.png'
+import nuvoaiLogo from '../../assets/placements/our_recuiters/nuvoai.png'
+import tcsLogo from '../../assets/placements/our_recuiters/tcs.png'
+import businessGatewayLogo from '../../assets/placements/our_recuiters/business_gateway.jpg'
+import zohoLogo from '../../assets/placements/our_recuiters/zoho.png'
+import kaarLogo from '../../assets/placements/our_recuiters/kaar.png'
+import cyientLogo from '../../assets/placements/our_recuiters/cyient.png'
+import avasoftLogo from '../../assets/placements/our_recuiters/avasoft.png'
+import threephaseLogo from '../../assets/placements/our_recuiters/3phase.png'
+import ctrlsLogo from '../../assets/placements/our_recuiters/ctrls.png'
+import indiumLogo from '../../assets/placements/our_recuiters/indium.png'
+import autolivLogo from '../../assets/placements/our_recuiters/autoliv.png'
+import cognizantLogo from '../../assets/placements/our_recuiters/cognizant.png'
+import itcInfotechLogo from '../../assets/placements/our_recuiters/itc_infotech.png'
+import tessolveLogo from '../../assets/placements/our_recuiters/tessolve.png'
+import hexawareLogo from '../../assets/placements/our_recuiters/hexaware.png'
+import thinkInnovLogo from '../../assets/placements/our_recuiters/think_innov.png'
+import vvdnLogo from '../../assets/placements/our_recuiters/vvdn.png'
+import vinsinfoLogo from '../../assets/placements/our_recuiters/vinsinfo.png'
+import expleoLogo from '../../assets/placements/our_recuiters/expleo.png'
+import codingmartLogo from '../../assets/placements/our_recuiters/codingmart.png'
+import archeLogo from '../../assets/placements/our_recuiters/arche.png'
+import simpsonLogo from '../../assets/placements/our_recuiters/simpson.png'
+import haritaLogo from '../../assets/placements/our_recuiters/harita.jpg'
+import exoticLogo from '../../assets/placements/our_recuiters/exotic.png'
 
 const stats = [
   {
@@ -40,16 +56,33 @@ const stats = [
 ]
 
 const recruiterData = [
-  { name: "Tefologic", lpa: "12.50 LPA", count: 9, logo: tefologicLogo },
-  { name: "Neyes Infotech", lpa: "8.00 LPA", count: 2, logo: neyesLogo },
-  { name: "Rapid RL", lpa: "5.67 LPA", count: 2, logo: raplLogo },
-  { name: "Tech Mahindra", lpa: "5.50 LPA", count: 37, logo: techMahindraLogo },
-  { name: "ITC Infotech", lpa: "4.25 LPA", count: 36, logo: itcLogo },
-  { name: "Codingmart", lpa: "4.20 LPA", count: 3, logo: codingmartLogo },
-  { name: "Expleo", lpa: "4.00 LPA", count: 24, logo: expleoLogo },
-  { name: "Hexaware", lpa: "4.00 LPA", count: 4, logo: hexawareLogo },
-  { name: "Tessolve", lpa: "4.00 LPA", count: 20, logo: tessolveLogo },
-  { name: "Harita Techserv", lpa: "3.00 LPA", count: 19, logo: haritaLogo }
+  { name: "Infineon Technologies", lpa: "13.00 LPA", count: 1, logo: infineonLogo },
+  { name: "HCL Tech", lpa: "4.50 LPA", count: 35, logo: hcltechLogo },
+  { name: "Nuvo AI Pvt. Ltd.", lpa: "8.00-10.00 LPA", count: 1, logo: nuvoaiLogo },
+  { name: "TCS (Prime)", lpa: "9.09 LPA", count: 11, logo: tcsLogo },
+  { name: "Business Gateways International", lpa: "7.45 LPA", count: 1, logo: businessGatewayLogo },
+  { name: "Zoho Corporation", lpa: "7.00 LPA", count: 1, logo: zohoLogo },
+  { name: "Kaar Technologies", lpa: "6.50 LPA", count: 8, logo: kaarLogo },
+  { name: "Cyient", lpa: "6.00 LPA", count: 1, logo: cyientLogo },
+  { name: "AVA SOFTWARE Pvt. Ltd.", lpa: "6.00 LPA", count: 1, logo: avasoftLogo },
+  { name: "3Phase Engineering Solutions Pvt.Ltd.", lpa: "5.10 LPA", count: 8, logo: threephaseLogo },
+  { name: "CTRLS", lpa: "5.00 LPA", count: 2, logo: ctrlsLogo },
+  { name: "Indium Software (India) Limited", lpa: "5.00 LPA", count: 2, logo: indiumLogo },
+  { name: "Autoliv", lpa: "5.00 LPA", count: 1, logo: autolivLogo },
+  { name: "Cognizant (Japanese Hiring)", lpa: "4.76 LPA", count: 3, logo: cognizantLogo },
+  { name: "ITC Infotech", lpa: "4.25 LPA", count: 35, logo: itcInfotechLogo },
+  { name: "Tessolve Semiconductor Pvt. Ltd.", lpa: "4.13 LPA", count: 3, logo: tessolveLogo },
+  { name: "Hexaware Technologies", lpa: "4.00 LPA", count: 34, logo: hexawareLogo },
+  { name: "Think Innov Solutions", lpa: "4.00 LPA", count: 10, logo: thinkInnovLogo },
+  { name: "VVDN Technologies", lpa: "4.00 LPA", count: 10, logo: vvdnLogo },
+  { name: "Think Innov Solutions", lpa: "4.00 LPA", count: 4, logo: thinkInnovLogo },
+  { name: "Vinsinfo", lpa: "4.00 LPA", count: 9, logo: vinsinfoLogo },
+  { name: "Expleo", lpa: "4.00 LPA", count: 30, logo: expleoLogo },
+  { name: "Codingmart Technologies", lpa: "4.00 LPA", count: 4, logo: codingmartLogo },
+  { name: "Arche Global", lpa: "4.00 LPA", count: 16, logo: archeLogo },
+  { name: "Simpson & Co. Ltd.", lpa: "3.50 LPA", count: 14, logo: simpsonLogo },
+  { name: "Harita TechServ", lpa: "3.50 LPA", count: 17, logo: haritaLogo },
+  { name: "Exotic Innovation", lpa: "3.50 LPA", count: 9, logo: exoticLogo }
 ]
 
 const Placements = () => {

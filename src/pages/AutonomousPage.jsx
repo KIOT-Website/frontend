@@ -46,7 +46,7 @@ import mbaIevReg from '../assets/Academic Regulations/MBA_IEV_R2024_V3.pdf'
 // Import Curriculum & Syllabus PDFs
 import mechPgSyllabus from '../assets/Curriculum Syllabus/1. MECH/PG - M.E.-ISE I-IV SEM (New).pdf'
 import mechUgSyllabus from '../assets/Curriculum Syllabus/1. MECH/UG - MECH R23 - I - VI SEM - Syllabus.pdf'
-import ecxSyllabus from '../assets/Curriculum Syllabus/10. ECX/ECX - I- II SEM SYLLABUS.pdf'
+import ecxSyllabus from '../assets/Curriculum Syllabus/10. ECX/B.E ELECTRONICS AND COMPUTER ENGINEERING SYALLABUS(I-IV).pdf'
 import mbaGenSyllabus from '../assets/Curriculum Syllabus/11. MBA(General)/MBA (General ) - I - IV SEM SYLLABUS.pdf'
 import mcaSyllabus from '../assets/Curriculum Syllabus/12. M.C.A/MCA - I - II SEM SYLLABUS.pdf'
 import ecePgSyllabus from '../assets/Curriculum Syllabus/2. ECE/PG - AE SYLLABUS (I - IV SEM).pdf'
@@ -745,7 +745,7 @@ const AutonomousPage = () => {
                                         code: 'ECX',
                                         deptLink: '/academics/undergraduate/be-ece',
                                         syllabus: [
-                                            { title: 'UG Syllabus (I - II Sem)', file: ecxSyllabus }
+                                            { title: 'UG Syllabus (I - IV Sem)', file: ecxSyllabus }
                                         ]
                                     },
                                     {

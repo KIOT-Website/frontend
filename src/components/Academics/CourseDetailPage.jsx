@@ -24,6 +24,9 @@ import cseImage from '../../assets/main/CSE .webp'
 import mbaHomeImg from '../../assets/main/mba home.png'
 import ip1 from '../../assets/be-ecx/ip1.png'
 import ip2 from '../../assets/be-ecx/ip2.png'
+import meAeQuiz from '../../assets/innovative_practices/ma_ae/Quiz.png'
+import meAeExperiential from '../../assets/innovative_practices/ma_ae/Experiential Learning.png'
+import meAePbl from '../../assets/innovative_practices/ma_ae/Project Based Learning.png'
 import mbaPicture1 from '../../assets/Mba/Picture1.png'
 import mbaPicture2 from '../../assets/Mba/Picture2.png'
 import mbaPicture3 from '../../assets/Mba/Picture3.png'
@@ -202,7 +205,7 @@ import itUgPdf from '../../assets/Curriculum Syllabus/6. IT/IT - I - VI SEM SYLL
 import csbsUgPdf from '../../assets/Curriculum Syllabus/7. CSBS/CSBS - I - VI SEM SYLLABUS.pdf'
 import aidsUgPdf from '../../assets/Curriculum Syllabus/8. AI&DS/AI&DS I - VI SEM SYLLABUS.pdf'
 import mbaIevPdf from '../../assets/Curriculum Syllabus/9. MBA (IEV)/MBA (IEV) - I - IV SEM SYLLABUS.pdf'
-import ecxPdf from '../../assets/Curriculum Syllabus/10. ECX/ECX - I- II SEM SYLLABUS.pdf'
+import ecxPdf from '../../assets/Curriculum Syllabus/10. ECX/B.E ELECTRONICS AND COMPUTER ENGINEERING SYALLABUS(I-IV).pdf'
 import mbaGenPdf from '../../assets/Curriculum Syllabus/11. MBA(General)/MBA (General ) - I - IV SEM SYLLABUS.pdf'
 import mcaPdf from '../../assets/Curriculum Syllabus/12. M.C.A/MCA - I - II SEM SYLLABUS.pdf'
 
@@ -247,7 +250,7 @@ const SYLLABUS_PDF_MAP = {
     { title: 'MBA Innovation, Entrepreneurship and Venture Development (IEV) (I - IV SEM) Syllabus', file: mbaIevPdf, year: 'Regulation 2023', sem: 'I - IV' }
   ],
   'be-ecm': [
-    { title: 'B.E. Electronics and Computer Engineering (I - II SEM) Syllabus', file: ecxPdf, year: 'Regulation 2025', sem: 'I - II' }
+    { title: 'B.E. Electronics and Computer Engineering (I - IV SEM) Syllabus', file: ecxPdf, year: 'Regulation 2025', sem: 'I - IV' }
   ],
   'mba-general': [
     { title: 'MBA General (I - IV SEM) Syllabus', file: mbaGenPdf, year: 'Regulation 2023', sem: 'I - IV' }
@@ -3706,7 +3709,40 @@ function InnovativePracticesSection({ courseId }) {
   const imagesMap = {
     'be-ecm': [ip1, ip2],
   };
+  const meAeDetails = [
+    {
+      sno: 1,
+      name: 'Mr. A. Arun',
+      subject: 'Electric Vehicles and Architecture',
+      method: 'Quiz',
+      description: "A Quiz is an interactive assessment method used to evaluate students' understanding of a topic through short questions.",
+      image: meAeQuiz
+    },
+    {
+      sno: 2,
+      name: 'Mr. K. Rajesh',
+      subject: 'Automotive Sensors and Systems',
+      method: 'Experiential Learning',
+      description: "Students learn by actively engaging in experiments, industrial visits, internships, field activities, and real-life engineering applications, enabling them to connect classroom learning with practical experiences.",
+      image: meAeExperiential
+    },
+    {
+      sno: 3,
+      name: 'Mrs. T. Devika',
+      subject: 'Automotive Embedded Hardware Design',
+      method: 'Project Based Learning',
+      description: "Students undertake individual and team-based projects to design, develop, test, and implement engineering solutions. This method promotes creativity, innovation, research aptitude, and practical application of theoretical knowledge.",
+      image: meAePbl
+    }
+  ];
+
+  const detailsMap = {
+    'me-ae': meAeDetails,
+    'be-ece': meAeDetails
+  };
+
   const images = imagesMap[courseId] || [];
+  const details = detailsMap[courseId] || [];
 
   return (
     <div className="space-y-12">
@@ -3729,6 +3765,32 @@ function InnovativePracticesSection({ courseId }) {
           {images.map((img, idx) => (
             <div key={idx} className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
               <img src={img} alt={`Innovative Practice ${idx + 1}`} className="w-full h-auto object-cover" />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {details.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {details.map((detail, idx) => (
+            <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-lg shadow-blue-900/5 hover:shadow-xl hover:border-[#ffc107] transition-all flex flex-col h-full group">
+              <div className="rounded-xl overflow-hidden mb-6 bg-slate-50 border border-slate-100 flex items-center justify-center aspect-[4/3] relative">
+                <img src={detail.image} alt={detail.method} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="flex flex-col flex-grow">
+                <div className="inline-flex px-3 py-1 bg-blue-50 text-[#224292] text-xs font-bold font-graphik rounded-md mb-4 self-start border border-blue-100">
+                  {detail.method}
+                </div>
+                <h4 className="text-[17px] font-bold font-graphik text-[#224292] leading-tight mb-2 group-hover:text-[#ffc107] transition-colors">{detail.subject}</h4>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                  <p className="text-[13px] font-semibold text-slate-500 uppercase tracking-wide">By {detail.name}</p>
+                </div>
+                <p className="text-[13.5px] font-medium text-slate-600 leading-relaxed font-graphik text-justify mt-auto">
+                  {detail.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

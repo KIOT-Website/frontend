@@ -67,6 +67,8 @@ const PlacementRecordsStudentsOptedSection = () => {
       item.it_core.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    const formatValue = (val) => (val === 0 || val === '0' ? '*' : (val || '-'));
+
     return (
       <div className="w-full">
         <table className="w-full border-collapse text-left text-xs">
@@ -115,16 +117,16 @@ const PlacementRecordsStudentsOptedSection = () => {
                     </span>
                   </td>
                   <td className="p-2.5 border border-slate-200 text-center font-bold text-slate-700">{item.lpa}</td>
-                  <td className="p-2.5 border border-slate-200 text-center">{item.cse || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center">{item.it || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center">{item.csbs || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center">{item.aids || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center font-semibold text-indigo-600">{item.ece || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center">{item.eee || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center">{item.mech || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center">{item.civil || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center font-bold text-[#224292] bg-[#f8fafc]/50">{item.single || '-'}</td>
-                  <td className="p-2.5 border border-slate-200 text-center font-bold text-emerald-700 bg-emerald-50/20">{item.total || '-'}</td>
+                  <td className="p-2.5 border border-slate-200 text-center">{formatValue(item.cse)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center">{formatValue(item.it)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center">{formatValue(item.csbs)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center">{formatValue(item.aids)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center font-semibold text-indigo-600">{formatValue(item.ece)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center">{formatValue(item.eee)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center">{formatValue(item.mech)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center">{formatValue(item.civil)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center font-bold text-[#224292] bg-[#f8fafc]/50">{formatValue(item.single)}</td>
+                  <td className="p-2.5 border border-slate-200 text-center font-bold text-emerald-700 bg-emerald-50/20">{formatValue(item.total)}</td>
                 </tr>
               ))
             )}

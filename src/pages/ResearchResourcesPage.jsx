@@ -307,7 +307,7 @@ const aidsResearchAreas = [
 const aidsFacilities = [
     {
         name: "Advanced AI Research Laboratory",
-        description: "A specialized laboratory facility equipped with advanced computing systems and frameworks to conduct research and projects in Artificial Intelligence, Deep Learning, and Machine Learning.",
+        description: "A specialized laboratory facility equipped with advanced computing systems and frameworks to conduct research and projects in Artificial Intelligence, Deep Learning, and Machine Learning.\n\nOur Wings:\nDr.B.Sasikumar (Experience : 22 Years)\nDr.A.Gomathi (Experience : 21 Years)",
         infrastructure: "High-Speed Computing Workstations, AI/ML software frameworks"
     }
 ];
@@ -317,7 +317,8 @@ const aidsFacultyPursuing = [
     { name: "Mrs. P. J. Esther Rani", topic: "Wireless Sensor Network", supervisor: "Dr. P. Rajendran (Professor / CSE, Knowledge Institute of Technology)", university: "Anna University", registration: "24254697160", status: "Pursuing" },
     { name: "Mrs. B. Bhuvaneswari", topic: "Deep Learning", supervisor: "Dr. R. Kumar (Professor / CSE, Knowledge Institute of Technology, Salem)", university: "Anna University", registration: "24244697246", status: "Pursuing" },
     { name: "Mrs. S. Sudha", topic: "Natural Language Processing", supervisor: "Dr. R. Kumar (Professor / CSE, Knowledge Institute of Technology, Salem)", university: "Anna University", registration: "25244691194", status: "Pursuing" },
-    { name: "Mrs. M. Deepa", topic: "Machine Learning", supervisor: "Dr. E. Sathishkumar (Associate Professor, Department of ECE, Gnanamani College of Technology, Namakkal)", university: "Anna University", registration: "24234691207", status: "Pursuing" }
+    { name: "Mrs. M. Deepa", topic: "Machine Learning", supervisor: "Dr. E. Sathishkumar (Associate Professor, Department of ECE, Gnanamani College of Technology, Namakkal)", university: "Anna University", registration: "24234691207", status: "Pursuing" },
+    { name: "Mrs. N. Savitha", topic: "Artificial Intelligence", supervisor: "Dr. M. Jayaprakash, Saveetha School of Engineering, Saveetha Deemed to be University, Thandalam, Chennai.", university: "Saveetha Deemed to be University, Chennai.", registration: "162419204", status: "Pursuing" }
 ];
 const aidsGuidedScholars = [];
 
@@ -816,9 +817,9 @@ const ResearchSummaryDashboard = ({ deptName }) => {
     const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev';
 
     const periodText = '01.06.2023 to 31.05.2026';
-    const totalPubs = isCivil ? 56 : (isAIDS ? 51 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : (isECE ? 134 : (isIT ? 13 : (isMBA ? '-' : 221))))))))));
-    const totalPatentsText = isCivil ? '08' : (isAIDS ? '04' : (isCSBS ? '05' : (isCSE ? '11' : (isEEE ? '15' : (isMCA ? '00' : (isMech ? '10' : (isSH ? '03' : (isECE ? '08' : (isIT ? '-' : (isMBA ? '-' : '08'))))))))));
-    const totalGrantsText = isCivil ? '11' : (isAIDS ? '03' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '-' : '12'))))))))));
+    const totalPubs = isCivil ? 56 : (isAIDS ? 113 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : (isECE ? 134 : (isIT ? 13 : (isMBA ? '-' : 221))))))))));
+    const totalPatentsText = isCivil ? '08' : (isAIDS ? '07' : (isCSBS ? '05' : (isCSE ? '11' : (isEEE ? '15' : (isMCA ? '00' : (isMech ? '10' : (isSH ? '03' : (isECE ? '08' : (isIT ? '-' : (isMBA ? '-' : '08'))))))))));
+    const totalGrantsText = isCivil ? '11' : (isAIDS ? '02' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '-' : '12'))))))))));
     const totalGrantsLabel = 'Projects / Consultancy Completed';
 
     const pubLegend = isCivil ? [
@@ -857,12 +858,12 @@ const ResearchSummaryDashboard = ({ deptName }) => {
         { color: '#ea580c', name: 'Book / Book Chapters',         count: '-' },
         { color: '#8b5cf6', name: 'Student Publications',         count: '-' },
     ] : (isAIDS ? [
-        { color: '#1e3a8a', name: 'Journal Publications',        count: 9 },
-        { color: '#3b82f6', name: 'Other Journal Publications',   count: 13 },
-        { color: '#15803d', name: 'Conference Proceedings',       count: 14 },
-        { color: '#7c3aed', name: 'Patents Published / Granted',  count: 3 },
-        { color: '#ea580c', name: 'Book / Book Chapters',         count: 4 },
-        { color: '#8b5cf6', name: 'Student Publications',         count: 8 },
+        { color: '#1e3a8a', name: 'Journal Publications',        count: 19 },
+        { color: '#3b82f6', name: 'Other Journal Publications',   count: 27 },
+        { color: '#15803d', name: 'Conference Proceedings',       count: 33 },
+        { color: '#7c3aed', name: 'Patents Published / Granted',  count: 7 },
+        { color: '#ea580c', name: 'Book / Book Chapters',         count: 8 },
+        { color: '#8b5cf6', name: 'Student Publications',         count: 19 },
     ] : (isCSBS ? [
         { color: '#1e3a8a', name: 'Journal Publications',        count: 5 },
         { color: '#3b82f6', name: 'Other Journal Publications',   count: 10 },
@@ -922,7 +923,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
         { color: '#ea580c', name: 'Patents Granted',   count: '-' },
     ] : (isAIDS ? [
         { color: '#15803d', name: 'Patents Filed',     count: '01' },
-        { color: '#3b82f6', name: 'Patents Published', count: '03' },
+        { color: '#3b82f6', name: 'Patents Published', count: '06' },
         { color: '#ea580c', name: 'Patents Granted',   count: '-' },
     ] : (isCSBS ? [
         { color: '#15803d', name: 'Patents Filed',     count: '08' },
@@ -1027,7 +1028,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                         Patents
                     </div>
                     <div style={{ display:'flex', flexDirection:'column', padding: '16px 20px', flex: 1, justifyContent: 'center' }}>
-                        <MiniBarGraph items={patentLegend} total={isAIDS ? 4 : (isCSBS ? 13 : (isCSE ? 22 : (isEEE ? 38 : (isSH ? 3 : 8))))} />
+                        <MiniBarGraph items={patentLegend} total={isAIDS ? 7 : (isCSBS ? 13 : (isCSE ? 22 : (isEEE ? 38 : (isSH ? 3 : 8))))} />
                     </div>
                     <div style={{ background:'#dcfce7', borderTop:'1px solid #15803d', padding:'6px 14px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                         <span style={{ color:'#15803d', fontWeight:700, fontSize:'11px' }}>Total Patents:</span>
@@ -1384,11 +1385,11 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                 <tbody>
                                     <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
                                         <td style={{ padding:'3px 0', color:'#475569', fontWeight:700 }}>Consultancy</td>
-                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "11" : (isAIDS ? "-" : (isCSBS ? "01" : (isEEE ? "₹5,43,045" : (isMCA ? "-" : (isMech ? "₹9,00,000" : (isSH ? "-" : (isECE ? "1.5 Lakhs (2)" : (isIT || isMBA ? "-" : "1.5 Lakhs (2)"))))))))}</td>
+                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "11" : (isAIDS ? "2" : (isCSBS ? "01" : (isEEE ? "₹5,43,045" : (isMCA ? "-" : (isMech ? "₹9,00,000" : (isSH ? "-" : (isECE ? "1.5 Lakhs (2)" : (isIT || isMBA ? "-" : "1.5 Lakhs (2)"))))))))}</td>
                                     </tr>
                                     <tr>
                                         <td style={{ padding:'3px 0', color:'#475569', fontWeight:700 }}>Sponsored Research</td>
-                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "-" : (isAIDS ? "2" : (isCSBS ? "-" : (isEEE ? "₹1,00,000" : (isMCA ? "-" : (isMech ? "-" : (isSH ? "-" : (isECE ? "6.5 Lakhs (1)" : (isIT || isMBA ? "-" : "6.5 Lakhs (1)"))))))))}</td>
+                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "-" : (isAIDS ? "3" : (isCSBS ? "-" : (isEEE ? "₹1,00,000" : (isMCA ? "-" : (isMech ? "-" : (isSH ? "-" : (isECE ? "6.5 Lakhs (1)" : (isIT || isMBA ? "-" : "6.5 Lakhs (1)"))))))))}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1398,7 +1399,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
 
                     <div style={{ background:'#ede9fe', borderTop:'1px solid #4c1d95', padding:'6px 14px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                         <span style={{ color:'#4c1d95', fontWeight:700, fontSize:'10px' }}>Total Projects / Consultancy Completed:</span>
-                        <span style={{ color:'#4c1d95', fontWeight:900, fontSize:'16px' }}>{isCivil ? "11" : (isAIDS ? "Nil" : (isCSBS ? "01" : (isEEE ? "08" : (isMCA ? "Nil" : (isMech ? "02" : (isSH ? "Nil" : (isECE ? "2" : (isIT || isMBA ? "-" : "2"))))))))}</span>
+                        <span style={{ color:'#4c1d95', fontWeight:900, fontSize:'16px' }}>{isCivil ? "11" : (isAIDS ? "02" : (isCSBS ? "01" : (isEEE ? "08" : (isMCA ? "Nil" : (isMech ? "02" : (isSH ? "Nil" : (isECE ? "2" : (isIT || isMBA ? "-" : "2"))))))))}</span>
                     </div>
 
                 </div>
