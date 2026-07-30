@@ -323,7 +323,7 @@ const defaultCourse = (id) => ({
   eligibility: ['10+2 with PCM / relevant subjects', 'Minimum 50% aggregate', 'TNEA rank required'],
 })
 
-const TABS = ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
+const TABS = ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Research', 'Achievements', 'Awards', 'Innovative Practices']
 
 const eventsList = [
   { name: "CMLR", url: "https://kbss.kiot.ac.in/case-method-of-learning-reflection/", course: "Both" },
@@ -663,11 +663,11 @@ export default function CourseDetailPage({ overrides }) {
   const Icon = course.icon
 
   const courseTabs = courseId === 'be-eee'
-    ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices']
+    ? ['Overview', 'Vision & Mission', 'Knowledge and Attitude Profile', 'Syllabus', 'Faculty', 'Labs', 'Research', 'Achievements', 'Awards', 'Innovative Practices']
     : (courseId === 'be-mechanical'
-      ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Achievements', 'Awards', 'Innovative Practices', 'Teaching Method']
+      ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Research', 'Achievements', 'Awards', 'Innovative Practices', 'Teaching Method']
       : (courseId === 'btech-csbs'
-        ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Patents', 'Awards', 'Innovative Practices']
+        ? ['Overview', 'Vision & Mission', 'Syllabus', 'Faculty', 'Labs', 'Research', 'Awards', 'Innovative Practices']
         : TABS));
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
@@ -2856,13 +2856,13 @@ export default function CourseDetailPage({ overrides }) {
               </div>
             )}
 
-            {/* --- PATENTS --- */}
-            {activeTab === 'Patents' && (
+            {/* --- RESEARCH & PATENTS --- */}
+            {activeTab === 'Research' && (
               <div className="space-y-10">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
                   <div>
                     <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
-                      Department <span className="text-[#ffc107]">Patents</span>
+                      Department <span className="text-[#ffc107]">Research & Patents</span>
                     </h2>
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-[#224292] text-[10px] font-bold font-graphik uppercase tracking-widest">

@@ -158,36 +158,36 @@ const CollegeRulesPage = () => {
     <div className="min-h-screen bg-[#F8FAFC] font-graphik text-slate-800 pb-24 selection:bg-[#ffc107]/20">
       
       {/* Hero Header Section */}
-      <div className="relative bg-[#224292] text-white pt-10 pb-16 px-6 md:px-12 rounded-b-[2.5rem] overflow-hidden shadow-lg">
+      <div className="relative bg-[#224292] text-white pt-6 pb-9 px-6 md:px-12 rounded-b-3xl overflow-hidden shadow-lg">
         {/* Background Overlay Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-2xl pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
              style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
-        <div className="relative z-10 max-w-6xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#ffc107] text-xs font-bold tracking-widest uppercase backdrop-blur-sm">
-            <BookOpen size={14} /> Academic Regulations
+        <div className="relative z-10 max-w-6xl mx-auto text-center space-y-2.5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-[#ffc107] text-[11px] font-bold tracking-widest uppercase backdrop-blur-sm">
+            <BookOpen size={13} /> Academic Regulations
           </div>
           
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight leading-tight">
             College <span className="text-[#ffc107]">Rules & Regulations</span>
           </h1>
 
-          <p className="text-blue-100/90 text-sm md:text-base max-w-3xl mx-auto font-normal leading-relaxed">
+          <p className="text-blue-100/90 text-xs md:text-sm max-w-3xl mx-auto font-normal leading-relaxed">
             General Academic and Conduct Regulations for Students at Knowledge Institute of Technology. Ensuring academic excellence, personal safety, mutual respect, and campus discipline.
           </p>
 
           {/* Quick Search Bar */}
-          <div className="pt-4 max-w-2xl mx-auto">
+          <div className="pt-1.5 max-w-2xl mx-auto">
             <div className="relative flex items-center">
-              <Search className="absolute left-4 text-slate-400" size={18} />
+              <Search className="absolute left-4 text-slate-400" size={16} />
               <input
                 type="text"
                 placeholder="Search rules, attendance, dress code, anti-ragging policies..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-white text-slate-900 rounded-2xl shadow-xl focus:outline-none focus:ring-2 focus:ring-[#ffc107] text-sm font-medium transition-all"
+                className="w-full pl-11 pr-4 py-2.5 bg-white text-slate-900 rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-[#ffc107] text-xs md:text-sm font-medium transition-all"
               />
             </div>
           </div>
@@ -195,7 +195,7 @@ const CollegeRulesPage = () => {
       </div>
 
       {/* Main Content Sections */}
-      <div className="max-w-6xl mx-auto px-6 mt-10 space-y-10">
+      <div className="max-w-6xl mx-auto px-6 mt-6 space-y-10">
         {filteredSections.length === 0 ? (
           <div className="bg-white rounded-2xl p-12 text-center border border-slate-200 shadow-sm max-w-lg mx-auto">
             <AlertCircle size={40} className="text-amber-500 mx-auto mb-3" />
