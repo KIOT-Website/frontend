@@ -542,6 +542,103 @@ export function formatFacultyName(rawName) {
   return `${prefix} ${rest}`.replace(/\s+/g, ' ');
 }
 
+export function getDynamicWorkExperience(faculty) {
+  if (!faculty) return null;
+
+  const dojStr = faculty.joiningDate || faculty.doj || faculty.dateOfJoining;
+  const expStr = faculty.experience;
+
+  const now = new Date();
+
+  // Helper to parse date string (DD.MM.YYYY, DD/MM/YYYY, YYYY-MM-DD)
+  const parseDate = (str) => {
+    if (!str || typeof str !== 'string') return null;
+    const cleanStr = str.trim();
+    
+    // Match DD.MM.YYYY or DD/MM/YYYY
+    const dmyMatch = cleanStr.match(/^(\d{1,2})[./-](\d{1,2})[./-](\d{4})$/);
+    if (dmyMatch) {
+      const day = parseInt(dmyMatch[1], 10);
+      const month = parseInt(dmyMatch[2], 10) - 1;
+      const year = parseInt(dmyMatch[3], 10);
+      return new Date(year, month, day);
+    }
+
+    // Match YYYY-MM-DD
+    const ymdMatch = cleanStr.match(/^(\d{4})[./-](\d{1,2})[./-](\d{1,2})$/);
+    if (ymdMatch) {
+      const year = parseInt(ymdMatch[1], 10);
+      const month = parseInt(ymdMatch[2], 10) - 1;
+      const day = parseInt(ymdMatch[3], 10);
+      return new Date(year, month, day);
+    }
+
+    const parsed = new Date(cleanStr);
+    return isNaN(parsed.getTime()) ? null : parsed;
+  };
+
+  const calculateElapsedMonths = (startDate, endDate) => {
+    let years = endDate.getFullYear() - startDate.getFullYear();
+    let months = endDate.getMonth() - startDate.getMonth();
+    if (endDate.getDate() < startDate.getDate()) {
+      months--;
+    }
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    return Math.max(0, years * 12 + months);
+  };
+
+  const formatYearsMonths = (totalMonths) => {
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    let parts = [];
+    if (years > 0) {
+      parts.push(`${years} Year${years > 1 ? 's' : ''}`);
+    }
+    if (months > 0 || years === 0) {
+      parts.push(`${months} Month${months > 1 ? 's' : ''}`);
+    }
+    return parts.join(' ');
+  };
+
+  let baseMonths = 0;
+  let hasBaseExp = false;
+
+  if (expStr && typeof expStr === 'string') {
+    const matchYM = expStr.match(/(\d+)\s*Year[s]?\s*(\d+)?\s*Month[s]?/i);
+    if (matchYM) {
+      const yrs = parseInt(matchYM[1], 10);
+      const mths = matchYM[2] ? parseInt(matchYM[2], 10) : 0;
+      baseMonths = yrs * 12 + mths;
+      hasBaseExp = true;
+    } else {
+      const matchDecimal = expStr.match(/(\d+(\.\d+)?)\s*Year[s]?/i);
+      if (matchDecimal) {
+        const numYears = parseFloat(matchDecimal[1]);
+        baseMonths = Math.round(numYears * 12);
+        hasBaseExp = true;
+      }
+    }
+  }
+
+  const startDate = parseDate(dojStr);
+  if (startDate) {
+    const elapsedMonths = calculateElapsedMonths(startDate, now);
+    const totalMonths = baseMonths + elapsedMonths;
+    return formatYearsMonths(totalMonths);
+  }
+
+  if (hasBaseExp) {
+    return formatYearsMonths(baseMonths);
+  }
+
+  if (expStr) return expStr;
+  return null;
+}
+
 export default function CourseDetailPage({ overrides }) {
   const { courseId: paramCourseId } = useParams()
   const courseId = overrides?.courseId || paramCourseId
@@ -3234,19 +3331,13 @@ export default function CourseDetailPage({ overrides }) {
                           <p className="text-black font-medium font-graphik text-[12.5px]">{selectedFaculty.specialization}</p>
                         </div>
                       )}
-                      {selectedFaculty.experience && (
+                      {getDynamicWorkExperience(selectedFaculty) && (
                         <div>
                           <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Work Experience</p>
                           <div className="flex items-center gap-2 text-black">
                             <Clock size={14} className="text-black/80" />
-                            <span className="font-medium font-graphik text-[12.5px]">{selectedFaculty.experience}</span>
+                            <span className="font-medium font-graphik text-[12.5px]">{getDynamicWorkExperience(selectedFaculty)}</span>
                           </div>
-                        </div>
-                      )}
-                      {(selectedFaculty.joiningDate || selectedFaculty.doj) && (
-                        <div>
-                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Date of Joining</p>
-                          <p className="text-black font-medium font-graphik text-[12.5px]">{selectedFaculty.joiningDate || selectedFaculty.doj}</p>
                         </div>
                       )}
                     </div>
@@ -3261,6 +3352,22 @@ export default function CourseDetailPage({ overrides }) {
                           </a>
                         </div>
                       )}
+                      {selectedFaculty.association && (
+                        <div>
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Nature of Association</p>
+                          <span className="inline-block px-3 py-1 rounded-md bg-slate-100 text-black text-[11px] font-semibold font-graphik tracking-wide">
+                            {selectedFaculty.association}
+                          </span>
+                        </div>
+                      )}
+                      {(selectedFaculty.joiningDate || selectedFaculty.doj || selectedFaculty.dateOfJoining) && (
+                        <div>
+                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Date of Joining</p>
+                          <p className="text-black font-medium font-graphik text-[12.5px]">
+                            {selectedFaculty.joiningDate || selectedFaculty.doj || selectedFaculty.dateOfJoining}
+                          </p>
+                        </div>
+                      )}
                       {selectedFaculty.phone && (
                         <div>
                           <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Contact Number</p>
@@ -3268,14 +3375,6 @@ export default function CourseDetailPage({ overrides }) {
                             <MapPin size={14} className="text-black/80" />
                             {selectedFaculty.phone}
                           </a>
-                        </div>
-                      )}
-                      {selectedFaculty.association && (
-                        <div>
-                          <p className="text-[13.5px] font-semibold font-graphik text-[#224292] mb-1">Nature of Association</p>
-                          <span className="inline-block px-3 py-1 rounded-md bg-slate-100 text-black text-[11px] font-semibold font-graphik tracking-wide">
-                            {selectedFaculty.association}
-                          </span>
                         </div>
                       )}
                     </div>
