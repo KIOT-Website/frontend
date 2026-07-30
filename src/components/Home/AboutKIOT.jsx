@@ -67,7 +67,7 @@ const AboutKIOT = () => {
             </div>
 
             <div className="pt-2">
-              <div className="flex flex-wrap items-center gap-3.5">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3.5">
                 <a
                   href={brochurePdf}
                   target="_blank"

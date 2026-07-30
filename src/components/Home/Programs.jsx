@@ -45,8 +45,7 @@ const programsData = {
       { id: 'me-ise', name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
       { id: 'me-ae', name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
       { id: 'me-ped', name: "Power Electronics and Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
-      { id: 'me-se', name: "Software Engineering", icon: FileCode2, code: "SE", duration: "2 Years", phd: true },
-      { id: 'phd', name: "Ph.D. All Departments", icon: Microscope, code: "", duration: "Part-Time / Full Time", phd: true }
+      { id: 'me-se', name: "Software Engineering", icon: FileCode2, code: "SE", duration: "2 Years", phd: true }
     ]
   },
   PHD: {
@@ -56,10 +55,18 @@ const programsData = {
     description: 'Recognized Research Centers for advanced doctoral studies and innovation across all disciplines.',
     accent: '#ffc107',
     courses: [
-      { id: 'phd', name: "Engineering & Technology", icon: Settings, code: "", duration: "Full Time / Part Time", phd: true },
-      { id: 'phd', name: "Management Studies", icon: Landmark, code: "", duration: "Full Time / Part Time", phd: true },
-      { id: 'phd', name: "Science & Humanities", icon: Beaker, code: "", duration: "Full Time / Part Time", phd: true },
-      { id: 'phd', name: "Mathematics", icon: TrendingUp, code: "", duration: "Full Time / Part Time", phd: true }
+      { id: 'be-cse', name: "Computer Science and Engineering", icon: Monitor, code: "CSE" },
+      { id: 'btech-it', name: "Information Technology", icon: Globe, code: "IT" },
+      { id: 'btech-aids', name: "Artificial Intelligence and Data Science", icon: Brain, code: "AI&DS" },
+      { id: 'btech-csbs', name: "Computer Science and Business Systems", icon: Briefcase, code: "CSBS" },
+      { id: 'be-ece', name: "Electronics and Communication Engineering", icon: Radio, code: "ECE" },
+      { id: 'be-eee', name: "Electrical and Electronics Engineering", icon: Zap, code: "EEE" },
+      { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX" },
+      { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH" },
+      { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL" },
+      { id: 'mba-general', name: "MBA - Master of Business Administration (General)", icon: TrendingUp, code: "MBA-General" },
+      { id: 'mba-iev', name: "MBA - Master of Business Administration (Innovation, Entrepreneurship and Venture Development)", icon: Rocket, code: "MBA-IEV" },
+      { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA" }
     ]
   }
 }
@@ -117,8 +124,9 @@ const CourseGrid = ({ activeTab, navigate }) => (
                delay: idx * 0.05,
                layout: { duration: 0.3 }
              }}
-             whileHover={{ y: -5 }}
+             whileHover={activeTab !== 'PHD' ? { y: -5 } : {}}
              onClick={() => {
+                if (activeTab === 'PHD') return;
                 if (course.externalUrl) {
                   window.open(course.externalUrl, '_blank', 'noopener,noreferrer')
                 } else {
@@ -126,7 +134,9 @@ const CourseGrid = ({ activeTab, navigate }) => (
                   navigate(`/academics/${base}/${course.id}`)
                 }
              }}
-             className="group bg-white p-3.5 rounded-xl border border-slate-200/60 transition-all cursor-pointer relative overflow-hidden shadow-xl shadow-black/[0.12] hover:shadow-2xl hover:shadow-black/[0.18]"
+             className={`group bg-white p-3.5 rounded-xl border border-slate-200/60 transition-all relative overflow-hidden shadow-xl shadow-black/[0.12] ${
+               activeTab === 'PHD' ? 'cursor-default' : 'cursor-pointer hover:shadow-2xl hover:shadow-black/[0.18]'
+             }`}
            >
               <div className="absolute inset-0 bg-gradient-to-br-white via-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
@@ -150,15 +160,19 @@ const CourseGrid = ({ activeTab, navigate }) => (
                     </p>
                  )}
                  
-                  <div className="flex items-center gap-2 mt-2">
-                    <div className="h-1 w-1 rounded-full bg-[#ffc107]" />
-                    <span className="text-[8px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
-                  </div>
+                 {activeTab !== 'PHD' && course.duration && (
+                   <div className="flex items-center gap-2 mt-2">
+                     <div className="h-1 w-1 rounded-full bg-[#ffc107]" />
+                     <span className="text-[8px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
+                   </div>
+                 )}
 
-                  {/* Bottom Right Arrow Link Indicator */}
-                  <div className="absolute bottom-3 right-3 w-6 h-6 rounded-full bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300">
-                    <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
-                  </div>
+                 {/* Bottom Right Arrow Link Indicator */}
+                 {activeTab !== 'PHD' && (
+                   <div className="absolute bottom-3 right-3 w-6 h-6 rounded-full bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300">
+                     <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+                   </div>
+                 )}
                </div>
            </motion.div>
         ))}
