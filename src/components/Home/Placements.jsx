@@ -214,28 +214,6 @@ const Placements = () => {
                 <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#224292] to-transparent z-10" />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#224292] to-transparent z-10" />
              </div>
-
-              {/* Brochure & Prospects Buttons */}
-              <div className="grid sm:grid-cols-2 gap-4 mt-6">
-                  <a 
-                      href={brochurePdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="h-14 bg-[#ffc107] text-[#224292] hover:bg-white rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-2xl transition-all flex items-center justify-center gap-3 w-full"
-                      style={{ color: '#224292' }}
-                  >
-                      <Download size={16} /> Brochure
-                  </a>
-                  <a 
-                      href={prospectsPdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="h-14 bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] shadow-2xl transition-all flex items-center justify-center gap-3 w-full"
-                      style={{ color: 'white' }}
-                  >
-                      <Download size={16} /> Prospects
-                  </a>
-              </div>
           </div>
 
         </div>
