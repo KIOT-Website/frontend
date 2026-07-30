@@ -6,7 +6,7 @@ import {
   MapPin, Clock, Calendar, Award, CheckCircle2, ChevronRight,
   BarChart3, FileText, Mail, X, Target, TrendingUp, Loader2, Trophy, Plus,
   Wrench, Layers, FlaskConical, Cpu, ChevronDown, Download, ArrowLeft, Briefcase,
-  Search, Microscope, Star, Globe, ShieldCheck, ArrowRight, Quote
+  Search, Microscope, Star, Globe, ShieldCheck, ArrowRight, Quote, Coins
 } from 'lucide-react';
 import facultyBg from '../../assets/Faculity/background faculty.webp';
 import stephenImg from '../../assets/dir and hod/MBA Director.png';
@@ -554,7 +554,7 @@ export function getDynamicWorkExperience(faculty) {
   const parseDate = (str) => {
     if (!str || typeof str !== 'string') return null;
     const cleanStr = str.trim();
-    
+
     // Match DD.MM.YYYY or DD/MM/YYYY
     const dmyMatch = cleanStr.match(/^(\d{1,2})[./-](\d{1,2})[./-](\d{4})$/);
     if (dmyMatch) {
@@ -671,6 +671,7 @@ export default function CourseDetailPage({ overrides }) {
         : TABS));
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
+  const [activeResearchSubTab, setActiveResearchSubTab] = useState('Patents')
 
   const objectiveData = [
     { id: 'PEO', icon: Target, title: 'Program Educational Objectives', content: course.peo, color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' },
@@ -2142,8 +2143,8 @@ export default function CourseDetailPage({ overrides }) {
                                   src={customImage}
                                   alt={f.name}
                                   className={`w-full h-full object-cover transition-transform duration-500 ${f.name === 'Prof. S. Vimala'
-                                      ? 'scale-[1.05] group-hover:scale-[1.1]'
-                                      : 'group-hover:scale-105'
+                                    ? 'scale-[1.05] group-hover:scale-[1.1]'
+                                    : 'group-hover:scale-105'
                                     }`}
                                 />
                               ) : (
@@ -2811,38 +2812,19 @@ export default function CourseDetailPage({ overrides }) {
                               exit={{ height: 0, opacity: 0 }}
                               className="bg-white border-2 border-t-0 border-[#224292] rounded-b-2xl overflow-hidden"
                             >
-                              <div className="p-6 space-y-8">
-                                {/* Mobile Content Display */}
-                                <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
+                              <div className="p-6 space-y-6">
+                                <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
                                   <Building2 size={14} className="text-[#ffc107]" />
-                                  <p className="text-[#64779F] text-[14px] font-bold font-graphik tracking-widest">{course.name}</p>
+                                  <p className="text-[#64779F] text-[13px] font-bold font-graphik tracking-wide">{course.name}</p>
                                 </div>
-
-                                <div>
-                                  <div className="flex items-center gap-2 mb-4">
-                                    <div className="w-1 h-4 bg-[#ffc107] rounded-full" />
-                                    <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-wider">Inventory & Tools</h4>
-                                  </div>
+                                {lab.equipments && lab.equipments.length > 0 && (
                                   <div className="grid gap-2">
-                                    {lab.equipments?.map((item, idx) => (
-                                      <div key={idx} className="flex gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
+                                    {lab.equipments.map((item, idx) => (
+                                      <div key={idx} className="flex gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                                        <span className="text-[14px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
+                                        <span className="text-[13px] font-medium font-graphik text-slate-700 leading-tight">{item}</span>
                                       </div>
                                     ))}
-                                  </div>
-                                </div>
-
-                                {courseId !== 'be-cse' && (
-                                  <div className="grid gap-3 pt-4 border-t border-slate-100">
-                                    <div className="bg-[#224292]/5 p-4 rounded-xl border border-[#224292]/10">
-                                      <p className="text-[14px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">In-Charge</p>
-                                      <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.incharge}</p>
-                                    </div>
-                                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                                      <p className="text-[14px] font-bold font-graphik uppercase tracking-widest text-[#64779F] mb-1">Technician</p>
-                                      <p className="text-[#224292] font-bold font-graphik text-[14px]">{lab.technician}</p>
-                                    </div>
                                   </div>
                                 )}
                               </div>
@@ -2858,118 +2840,264 @@ export default function CourseDetailPage({ overrides }) {
 
             {/* --- RESEARCH & PATENTS --- */}
             {activeTab === 'Research' && (
-              <div className="space-y-10">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
+              <div className="space-y-8">
+                {/* Research Section Header & Sub-Tabs */}
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
                   <div>
                     <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
-                      Department <span className="text-[#ffc107]">Research & Patents</span>
+                      Department <span className="text-[#ffc107]">Research & Innovations</span>
                     </h2>
+                    <p className="text-[#64779F] text-xs md:text-sm font-medium font-graphik">
+                      Funded Research Projects, Student Innovations & Registered Intellectual Property (Patents)
+                    </p>
                   </div>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-[#224292] text-[10px] font-bold font-graphik uppercase tracking-widest">
-                    <ShieldCheck size={14} /> Registered Assets
+
+                  {/* Research 3 Sub-Tabs Header */}
+                  <div className="flex flex-wrap items-center gap-2 bg-[#224292]/5 p-1.5 rounded-2xl border border-[#224292]/10">
+                    {[
+                      { id: 'Funded Projects', label: 'Funded Projects', icon: Coins },
+                      { id: 'Student Projects', label: 'Student Projects', icon: Award },
+                      { id: 'Patents', label: 'Patents', icon: ShieldCheck }
+                    ].map((sub) => {
+                      const SubIcon = sub.icon
+                      const isActive = activeResearchSubTab === sub.id
+                      return (
+                        <button
+                          key={sub.id}
+                          onClick={() => setActiveResearchSubTab(sub.id)}
+                          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold font-graphik transition-all ${
+                            isActive
+                              ? 'bg-[#224292] text-white shadow-md shadow-[#224292]/20 scale-105'
+                              : 'text-[#224292] hover:bg-[#224292]/10'
+                          }`}
+                        >
+                          <SubIcon size={15} className={isActive ? 'text-[#ffc107]' : 'text-[#224292]'} />
+                          {sub.label}
+                        </button>
+                      )
+                    })}
                   </div>
                 </div>
 
-                {course.patents && course.patents.length > 0 ? (
-                  <div className="space-y-12">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden"
-                    >
+                {/* SUB-TAB 1: FUNDED PROJECTS */}
+                {activeResearchSubTab === 'Funded Projects' && (
+                  <div className="space-y-6">
+                    <div className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden">
                       <div className="bg-[#224292] px-8 py-5 flex items-center justify-between">
-                        <h3 className="text-white font-bold font-graphik text-lg tracking-tight">Official Department Patents</h3>
+                        <h3 className="text-white font-bold font-graphik text-lg tracking-tight">Funded & Sponsored Research Projects</h3>
+                        <span className="text-[11px] font-bold text-[#ffc107] bg-white/10 px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest font-graphik">Research Grants</span>
                       </div>
 
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-left border-collapse">
-                          <thead>
-                            <tr className="bg-slate-50 border-b border-slate-100">
-                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Applicant & Inventor</th>
-                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Patent Title</th>
-                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Type</th>
-                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Application/Design No</th>
-                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Date</th>
-                              <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest">Status</th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y divide-slate-100">
-                            {course.patents.map((yearGroup) => (
-                              yearGroup.data.map((patent, pIdx) => (
-                                <tr key={`${yearGroup.year}-${pIdx}`} className="hover:bg-blue-50/30 transition-colors group">
+                      {course.fundedProjects && course.fundedProjects.length > 0 ? (
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-left border-collapse">
+                            <thead>
+                              <tr className="bg-slate-50 border-b border-slate-100">
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Principal Investigator / Faculty</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Project Title</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Funding Agency</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Sanctioned Amount</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Period / Year</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                              {course.fundedProjects.map((proj, pIdx) => (
+                                <tr key={pIdx} className="hover:bg-blue-50/30 transition-colors">
                                   <td className="px-6 py-5">
-                                    <p className="text-[13px] font-bold text-black leading-tight mb-1">{patent.inventors}</p>
+                                    <p className="text-[13px] font-bold text-black font-graphik leading-tight">{proj.faculty || proj.investigator || 'Department Faculty'}</p>
                                   </td>
                                   <td className="px-6 py-5">
-                                    <p className="text-[13px] font-medium text-black leading-snug max-w-md">{patent.title}</p>
+                                    <p className="text-[13px] font-medium text-black font-graphik leading-snug max-w-md">{proj.title}</p>
                                   </td>
                                   <td className="px-6 py-5">
-                                    <span className="text-[11px] font-bold text-[#64779F]">{patent.type}</span>
+                                    <span className="text-[11px] font-bold font-graphik text-[#224292] bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">{proj.agency || proj.sponsor}</span>
                                   </td>
                                   <td className="px-6 py-5">
-                                    <code className="text-[12px] font-bold text-[#224292] bg-slate-100 px-2 py-1 rounded">{patent.appNo}</code>
+                                    <span className="text-[12px] font-bold text-emerald-700 font-mono">₹ {proj.amount || proj.grant || 'Sanctioned'}</span>
                                   </td>
-                                  <td className="px-6 py-5 text-sm font-medium text-slate-600 whitespace-nowrap">{patent.date}</td>
-                                  <td className="px-6 py-5">
-                                    <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${patent.status === 'Granted' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700'
-                                      }`}>
-                                      {patent.status}
-                                    </span>
-                                  </td>
+                                  <td className="px-6 py-5 text-xs font-medium text-slate-600 font-graphik whitespace-nowrap">{proj.period || proj.year || '2024-25'}</td>
                                 </tr>
-                              ))
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    </motion.div>
-                  </div>
-                ) : courseId === 'be-civil' ? null : (
-                  <div className="grid lg:grid-cols-2 gap-8">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      whileHover={{ y: -10, scale: 1.01 }}
-                      viewport={{ once: true }}
-                      className="group relative bg-white p-7 rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center transition-all duration-500"
-                    >
-                      <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#224292]/20 rounded-tl-2xl" />
-                      <div className="w-16 h-16 rounded-2xl bg-[#224292]/5 border border-[#224292]/10 flex items-center justify-center mb-6 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
-                        <FileText size={32} className="text-[#224292] group-hover:text-white transition-colors" />
-                      </div>
-                      <h3 className="text-lg font-bold font-graphik text-[#224292] mb-3">Official Patents</h3>
-                      <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
-                        Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
-                      </p>
-                      <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase tracking-[0.2em]">
-                        Academic Year 2024-25
-                      </div>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      whileHover={{ y: -10, scale: 1.01 }}
-                      transition={{ delay: 0.1 }}
-                      viewport={{ once: true }}
-                      className="group bg-gradient-to-br from-[#224292] to-[#224292] rounded-2xl p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
-                    >
-                      <div className="absolute -bottom-1 -right-1 w-12 h-12 border-b-4 border-r-4 border-dashed border-[#ffc107]/30 rounded-br-2xl" />
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
-                      <div className="relative z-10">
-                        <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
-                          <Award size={28} className="text-[#ffc107]" />
+                              ))}
+                            </tbody>
+                          </table>
                         </div>
-                        <h3 className="text-lg font-bold font-graphik mb-3 tracking-tight">Research Excellence</h3>
-                        <p className="text-white/70 text-sm font-medium font-graphik leading-relaxed mb-6">
-                          We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
-                        </p>
-                        <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-bold font-graphik uppercase tracking-widest transition-all">
-                          Contact R&D <ArrowRight size={14} />
-                        </button>
+                      ) : (
+                        <div className="p-10 text-center bg-slate-50/50">
+                          <div className="w-14 h-14 rounded-2xl bg-blue-100 text-[#224292] flex items-center justify-center mx-auto mb-4 shadow-sm">
+                            <Coins size={28} />
+                          </div>
+                          <h4 className="text-lg font-bold text-[#224292] font-graphik mb-2">Department Research Grants & Funded Projects</h4>
+                          <p className="text-xs md:text-sm text-slate-600 font-medium font-graphik max-w-xl mx-auto leading-relaxed">
+                            Faculty members actively secure sponsored research grants from government funding bodies including DST, AICTE, MSME, TNSCST, MHRD, and CSIR.
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* SUB-TAB 2: STUDENT PROJECTS */}
+                {activeResearchSubTab === 'Student Projects' && (
+                  <div className="space-y-6">
+                    <div className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden">
+                      <div className="bg-[#224292] px-8 py-5 flex items-center justify-between">
+                        <h3 className="text-white font-bold font-graphik text-lg tracking-tight">Student Research & Innovation Projects</h3>
+                        <span className="text-[11px] font-bold text-[#ffc107] bg-white/10 px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest font-graphik">Student Innovations</span>
                       </div>
-                    </motion.div>
+
+                      {course.studentProjects && course.studentProjects.length > 0 ? (
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-left border-collapse">
+                            <thead>
+                              <tr className="bg-slate-50 border-b border-slate-100">
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Project Title</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Student Innovators / Mentor</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Scheme / Agency</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Grant / Amount</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Academic Year</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100">
+                              {course.studentProjects.map((sproj, sIdx) => (
+                                <tr key={sIdx} className="hover:bg-blue-50/30 transition-colors">
+                                  <td className="px-6 py-5">
+                                    <p className="text-[13px] font-bold text-black font-graphik leading-snug max-w-md">{sproj.title}</p>
+                                  </td>
+                                  <td className="px-6 py-5">
+                                    <p className="text-[13px] font-medium text-slate-800 font-graphik leading-tight">{sproj.mentor || sproj.students || 'Student Team'}</p>
+                                  </td>
+                                  <td className="px-6 py-5">
+                                    <span className="text-[11px] font-bold font-graphik text-[#224292] bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">{sproj.agency || 'TNSCST / Hackathon'}</span>
+                                  </td>
+                                  <td className="px-6 py-5">
+                                    <span className="text-[12px] font-bold text-emerald-700 font-mono">₹ {sproj.grant || sproj.amount || 'Funded'}</span>
+                                  </td>
+                                  <td className="px-6 py-5 text-xs font-medium text-slate-600 font-graphik whitespace-nowrap">{sproj.year || '2024-25'}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : (
+                        <div className="p-10 text-center bg-slate-50/50">
+                          <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-4 shadow-sm">
+                            <Award size={28} />
+                          </div>
+                          <h4 className="text-lg font-bold text-[#224292] font-graphik mb-2">Student Innovative Projects & TNSCST Grants</h4>
+                          <p className="text-xs md:text-sm text-slate-600 font-medium font-graphik max-w-xl mx-auto leading-relaxed">
+                            Students execute innovative hardware and software capstone projects, receiving funding from TNSCST Student Project Scheme and winning national hackathons.
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* SUB-TAB 3: PATENTS (SHOWS ALL DETAILS) */}
+                {activeResearchSubTab === 'Patents' && (
+                  <div className="space-y-6">
+                    {course.patents && course.patents.length > 0 ? (
+                      <div className="space-y-12">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden"
+                        >
+                          <div className="bg-[#224292] px-8 py-5 flex items-center justify-between">
+                            <h3 className="text-white font-bold font-graphik text-lg tracking-tight">Official Department Patents</h3>
+                          </div>
+
+                          <div className="overflow-x-auto">
+                            <table className="w-full text-left border-collapse">
+                              <thead>
+                                <tr className="bg-slate-50 border-b border-slate-100">
+                                  <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Applicant & Inventor</th>
+                                  <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Patent Title</th>
+                                  <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Type</th>
+                                  <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Application/Design No</th>
+                                  <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Date</th>
+                                  <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Status</th>
+                                </tr>
+                              </thead>
+                              <tbody className="divide-y divide-slate-100">
+                                {course.patents.map((yearGroup) => (
+                                  yearGroup.data.map((patent, pIdx) => (
+                                    <tr key={`${yearGroup.year}-${pIdx}`} className="hover:bg-blue-50/30 transition-colors group">
+                                      <td className="px-6 py-5">
+                                        <p className="text-[13px] font-bold text-black font-graphik leading-tight mb-1">{patent.inventors}</p>
+                                      </td>
+                                      <td className="px-6 py-5">
+                                        <p className="text-[13px] font-medium text-black font-graphik leading-snug max-w-md">{patent.title}</p>
+                                      </td>
+                                      <td className="px-6 py-5">
+                                        <span className="text-[11px] font-bold font-graphik text-[#64779F]">{patent.type}</span>
+                                      </td>
+                                      <td className="px-6 py-5">
+                                        <code className="text-[12px] font-bold text-[#224292] bg-slate-100 px-2 py-1 rounded font-mono">{patent.appNo}</code>
+                                      </td>
+                                      <td className="px-6 py-5 text-sm font-medium text-slate-600 font-graphik whitespace-nowrap">{patent.date}</td>
+                                      <td className="px-6 py-5">
+                                        <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest font-graphik ${patent.status === 'Granted' ? 'bg-emerald-100 text-emerald-700' : 'bg-blue-100 text-blue-700'
+                                          }`}>
+                                          {patent.status}
+                                        </span>
+                                      </td>
+                                    </tr>
+                                  ))
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </motion.div>
+                      </div>
+                    ) : courseId === 'be-civil' ? null : (
+                      <div className="grid lg:grid-cols-2 gap-8">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          whileHover={{ y: -10, scale: 1.01 }}
+                          viewport={{ once: true }}
+                          className="group relative bg-white p-7 rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 flex flex-col items-center text-center transition-all duration-500"
+                        >
+                          <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-dashed border-[#224292]/20 rounded-tl-2xl" />
+                          <div className="w-16 h-16 rounded-2xl bg-[#224292]/5 border border-[#224292]/10 flex items-center justify-center mb-6 group-hover:bg-[#224292] group-hover:text-white transition-all duration-500">
+                            <FileText size={32} className="text-[#224292] group-hover:text-white transition-colors" />
+                          </div>
+                          <h3 className="text-lg font-bold font-graphik text-[#224292] mb-3">Official Patents</h3>
+                          <p className="text-[#64779F] text-sm font-medium font-graphik leading-relaxed">
+                            Our faculty and students are actively involved in research leading to patents. Detailed patent registrations for this department are currently being updated.
+                          </p>
+                          <div className="mt-6 pt-5 border-t border-slate-50 w-full text-[9px] font-bold font-graphik text-[#A9B1C3] uppercase tracking-[0.2em]">
+                            Academic Year 2024-25
+                          </div>
+                        </motion.div>
+
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          whileHover={{ y: -10, scale: 1.01 }}
+                          transition={{ delay: 0.1 }}
+                          viewport={{ once: true }}
+                          className="group bg-gradient-to-br from-[#224292] to-[#224292] rounded-2xl p-7 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden transition-all duration-500"
+                        >
+                          <div className="absolute -bottom-1 -right-1 w-12 h-12 border-b-4 border-r-4 border-dashed border-[#ffc107]/30 rounded-br-2xl" />
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 blur-2xl" />
+                          <div className="relative z-10">
+                            <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center mb-6 border border-white/20 group-hover:border-[#ffc107] transition-all">
+                              <Award size={28} className="text-[#ffc107]" />
+                            </div>
+                            <h3 className="text-lg font-bold font-graphik mb-3 tracking-tight">Research Excellence</h3>
+                            <p className="text-white/70 text-sm font-medium font-graphik leading-relaxed mb-6">
+                              We foster innovation. All patent applications and IPR are managed through the Institutional Research & Development Cell.
+                            </p>
+                            <button className="flex items-center gap-3 px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-[9px] font-bold font-graphik uppercase tracking-widest transition-all">
+                              Contact R&D <ArrowRight size={14} />
+                            </button>
+                          </div>
+                        </motion.div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
