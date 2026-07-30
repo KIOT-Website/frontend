@@ -206,19 +206,19 @@ const GoverningCouncil = () => {
               {councilMembers.map((member, idx) => (
                 <div 
                    key={`mobile-${idx}`}
-                   className="bg-white rounded-xl p-4 border border-[#D5E2F4]/50 flex flex-col space-y-2 font-graphik"
+                   className="bg-white rounded-xl p-4 border border-[#D5E2F4]/70 shadow-sm flex flex-col space-y-2 font-graphik"
                 >
                    <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
-                     <span className="text-[10px] font-bold text-slate-400 uppercase">S.No. {member.sno}</span>
+                     <span className="text-[10px] font-bold text-slate-500 uppercase">S.No. {member.sno}</span>
                    </div>
                    <div className="space-y-1 font-graphik">
-                      <div className="text-[15px] font-graphik font-semibold text-[#224292] leading-tight">{member.name}</div>
+                      <div className="text-[15px] font-graphik font-bold text-black leading-tight">{member.name}</div>
                       {member.desc && (
-                        <div className="text-[#64779F] text-xs font-normal leading-relaxed tracking-wide font-graphik">{member.desc}</div>
+                        <div className="text-slate-700 text-xs font-medium leading-relaxed tracking-wide font-graphik">{member.desc}</div>
                       )}
                    </div>
                    <div className="pt-1 font-graphik">
-                      <span className="inline-block px-3 py-1 rounded-full bg-[#224292]/5 text-[#224292] text-[10px] font-graphik font-normal border border-[#ffc107]/20 shadow-sm">
+                      <span className="inline-block px-3 py-1 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] text-[10.5px] font-graphik font-bold border border-[#1e3a8a]/20 shadow-xs">
                          {member.role}
                       </span>
                    </div>
@@ -226,38 +226,40 @@ const GoverningCouncil = () => {
               ))}
            </div>
 
-           {/* Desktop View: Compact Table */}
+           {/* Desktop View: Compact Table with Permanent Alternating Row Shading */}
            <div 
-             className="hidden md:block bg-white rounded-xl overflow-hidden border border-[#D5E2F4]/50 font-graphik shadow-md"
+             className="hidden md:block bg-white rounded-xl overflow-hidden border border-[#D5E2F4] font-graphik shadow-md"
            >
               <div className="overflow-x-auto font-graphik">
                 <table className="w-full text-left border-collapse font-graphik">
                    <thead>
                      <tr className="bg-[#224292] text-white font-graphik">
-                       <th className="px-4 py-3 text-xs font-graphik font-semibold tracking-wider w-16 text-center">S.No</th>
-                       <th className="px-4 py-3 text-xs font-graphik font-semibold tracking-wider">Name of the Member & Affiliation</th>
-                       <th className="px-4 py-3 text-xs font-graphik font-semibold tracking-wider w-56">Position</th>
+                       <th className="px-4 py-3.5 text-xs font-graphik font-bold tracking-wider w-16 text-center">S.No</th>
+                       <th className="px-4 py-3.5 text-xs font-graphik font-bold tracking-wider">Name of the Member & Affiliation</th>
+                       <th className="px-4 py-3.5 text-xs font-graphik font-bold tracking-wider w-56">Position</th>
                      </tr>
                    </thead>
-                   <tbody className="divide-y divide-[#D5E2F4]/50 font-graphik">
+                   <tbody className="divide-y divide-slate-200/80 font-graphik">
                      {councilMembers.map((member, idx) => (
                        <tr 
                          key={`desktop-${idx}`}
-                         className="group transition-colors hover:bg-slate-50/50 font-graphik"
+                         className={`group transition-colors font-graphik ${
+                           idx % 2 === 1 ? 'bg-slate-100/70' : 'bg-white'
+                         } hover:bg-[#224292]/[0.06]`}
                        >
-                         <td className="px-4 py-2.5 font-graphik text-center text-xs font-normal text-slate-500">
+                         <td className="px-4 py-3 font-graphik text-center text-xs font-bold text-slate-600">
                            {member.sno}
                          </td>
-                         <td className="px-4 py-2.5 font-graphik">
+                         <td className="px-4 py-3 font-graphik">
                            <div className="space-y-0.5 font-graphik">
-                              <div className="text-[14.5px] font-graphik font-semibold text-[#224292] transition-colors">{member.name}</div>
+                              <div className="text-[15px] font-graphik font-bold text-black leading-snug">{member.name}</div>
                               {member.desc && (
-                                <div className="text-[#64779F] text-[11.5px] font-normal leading-relaxed tracking-wide max-w-2xl font-graphik">{member.desc}</div>
+                                <div className="text-slate-700 text-[12px] font-medium leading-relaxed tracking-wide max-w-2xl font-graphik">{member.desc}</div>
                               )}
                            </div>
                          </td>
-                         <td className="px-4 py-2.5 font-graphik">
-                           <span className="inline-block px-3 py-1 rounded-full bg-[#224292]/5 text-[#224292] text-[10.5px] font-graphik font-normal border border-[#ffc107]/20 transition-all duration-300">
+                         <td className="px-4 py-3 font-graphik">
+                           <span className="inline-block px-3.5 py-1 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] text-[11px] font-graphik font-bold border border-[#1e3a8a]/20 shadow-xs">
                              {member.role}
                            </span>
                          </td>
