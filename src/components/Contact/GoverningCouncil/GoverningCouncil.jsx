@@ -66,76 +66,69 @@ const GoverningCouncil = () => {
     },
     {
       sno: 7,
-      name: "Yet to Nominate from DOTE",
-      desc: "",
-      role: "Member (DOTE Nominee)",
-      contact: "-"
-    },
-    {
-      sno: 8,
       name: "Dr. Sanjib Kumar Patnaik M.E., Ph.D.",
       desc: "Professor, Dept. of Electrical and Electronics Engg., College of Engineering Guindy, Anna University, Chennai – 25.",
       role: "Member (Academic)",
       contact: "94442 17627"
     },
     {
-      sno: 9,
+      sno: 8,
       name: "Dr.K.Ravi Kumar Ph.D.",
       desc: "Associate Professor, Department of Energy Science and Engineering, IIT - Delhi",
       role: "Member (Academic)",
       contact: "99010 44450"
     },
     {
-      sno: 10,
+      sno: 9,
       name: "Dr. V.Sankaran Ph.D.",
       desc: "Senior Consultant, IIT Madras Pravartak Technologies, IIT Madras Research Park, Chennai.",
       role: "Member (Industry)",
       contact: "99401 40571"
     },
     {
-      sno: 11,
+      sno: 10,
       name: "Dr.S.Jayakumar M.Tech., Ph.D.",
       desc: "Digital Signal Processing Engineer, Mistral Solutions Pvt. Ltd., Bangalore.",
       role: "Member (Industry)",
       contact: "98452 90024"
     },
     {
-      sno: 12,
+      sno: 11,
       name: "Mr.D.Sakthivel M.E.",
       desc: "Director – Administration, KIOT Trust",
       role: "Member (Administration)",
       contact: "97900 18181"
     },
     {
-      sno: 13,
+      sno: 12,
       name: "Dr.P.Navaneethakrishnan M.E., Ph.D.",
       desc: "Director – Student Affairs, KIOT Trust",
       role: "Member (Faculty)",
       contact: "98429 50323"
     },
     {
-      sno: 14,
+      sno: 13,
       name: "Dr.M.Thangavel M.E., Ph.D.",
       desc: "Director – CDT, KIOT Trust",
       role: "Member (Faculty)",
       contact: "97900 71717"
     },
     {
-      sno: 15,
-      name: "Dr.B.Sasikumar M.E., (Ph.D.)",
+      sno: 14,
+      name: "Dr.B.Sasikumar M.E., Ph.D.",
       desc: "HOD / AI&DS",
       role: "Member (Faculty)",
       contact: "98948 24645"
     },
     {
-      sno: 16,
+      sno: 15,
       name: "Dr.M.Sathyanathan M.E., Ph.D",
       desc: "Director - IQAC",
       role: "Member (Faculty)",
       contact: "99940 91421"
     },
     {
-      sno: 17,
+      sno: 16,
       name: "Dr.K.Visagavel M.E., Ph.D.",
       desc: "Principal, KIOT Trust",
       role: "Member (Secretary)",
@@ -209,16 +202,16 @@ const GoverningCouncil = () => {
                    className="bg-white rounded-xl p-4 border border-[#D5E2F4]/70 shadow-sm flex flex-col space-y-2 font-graphik"
                 >
                    <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
-                     <span className="text-[10px] font-bold text-slate-500 uppercase">S.No. {member.sno}</span>
+                     <span className="text-[10px] font-semibold text-slate-500 uppercase">S.No. {member.sno}</span>
                    </div>
                    <div className="space-y-1 font-graphik">
-                      <div className="text-[15px] font-graphik font-bold text-black leading-tight">{member.name}</div>
+                      <div className="text-[14.5px] font-graphik font-semibold text-slate-900 leading-tight">{member.name}</div>
                       {member.desc && (
-                        <div className="text-slate-700 text-xs font-medium leading-relaxed tracking-wide font-graphik">{member.desc}</div>
+                        <div className="text-slate-600 text-xs font-normal leading-relaxed tracking-wide font-graphik">{member.desc}</div>
                       )}
                    </div>
                    <div className="pt-1 font-graphik">
-                      <span className="inline-block px-3 py-1 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] text-[10.5px] font-graphik font-bold border border-[#1e3a8a]/20 shadow-xs">
+                      <span className="inline-block px-3 py-1 rounded-full bg-[#1e3a8a]/5 text-[#1e3a8a] text-[10.5px] font-graphik font-medium border border-[#1e3a8a]/15 shadow-xs">
                          {member.role}
                       </span>
                    </div>
@@ -234,9 +227,9 @@ const GoverningCouncil = () => {
                 <table className="w-full text-left border-collapse font-graphik">
                    <thead>
                      <tr className="bg-[#224292] text-white font-graphik">
-                       <th className="px-4 py-3.5 text-xs font-graphik font-bold tracking-wider w-16 text-center">S.No</th>
-                       <th className="px-4 py-3.5 text-xs font-graphik font-bold tracking-wider">Name of the Member & Affiliation</th>
-                       <th className="px-4 py-3.5 text-xs font-graphik font-bold tracking-wider w-56">Position</th>
+                       <th className="px-4 py-3.5 text-xs font-graphik font-semibold tracking-wider w-16 text-center">S.No</th>
+                       <th className="px-4 py-3.5 text-xs font-graphik font-semibold tracking-wider">Name of the Member & Affiliation</th>
+                       <th className="px-4 py-3.5 text-xs font-graphik font-semibold tracking-wider w-56">Position</th>
                      </tr>
                    </thead>
                    <tbody className="divide-y divide-slate-200/80 font-graphik">
@@ -247,19 +240,19 @@ const GoverningCouncil = () => {
                            idx % 2 === 1 ? 'bg-slate-100/70' : 'bg-white'
                          } hover:bg-[#224292]/[0.06]`}
                        >
-                         <td className="px-4 py-3 font-graphik text-center text-xs font-bold text-slate-600">
+                         <td className="px-4 py-3 font-graphik text-center text-xs font-medium text-slate-500">
                            {member.sno}
                          </td>
                          <td className="px-4 py-3 font-graphik">
                            <div className="space-y-0.5 font-graphik">
-                              <div className="text-[15px] font-graphik font-bold text-black leading-snug">{member.name}</div>
+                              <div className="text-[14.5px] font-graphik font-semibold text-slate-900 leading-snug">{member.name}</div>
                               {member.desc && (
-                                <div className="text-slate-700 text-[12px] font-medium leading-relaxed tracking-wide max-w-2xl font-graphik">{member.desc}</div>
+                                <div className="text-slate-600 text-[11.5px] font-normal leading-relaxed tracking-wide max-w-2xl font-graphik">{member.desc}</div>
                               )}
                            </div>
                          </td>
                          <td className="px-4 py-3 font-graphik">
-                           <span className="inline-block px-3.5 py-1 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] text-[11px] font-graphik font-bold border border-[#1e3a8a]/20 shadow-xs">
+                           <span className="inline-block px-3.5 py-1 rounded-full bg-[#1e3a8a]/5 text-[#1e3a8a] text-[10.5px] font-graphik font-medium border border-[#1e3a8a]/15 shadow-xs">
                              {member.role}
                            </span>
                          </td>

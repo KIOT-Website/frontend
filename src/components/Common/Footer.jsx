@@ -38,6 +38,7 @@ const Footer = () => {
         { name: 'Accreditation', href: '/about/accreditation-ranking' },
         { name: 'Governing Council', href: '/about/governing-council' },
         { name: 'Institutional Policies', href: '/about/institutional-policies' },
+        { name: 'College Rules', href: '/about/college-rules' },
         { name: 'Programs Offered', href: '/academics/undergraduate' },
       ]
     },

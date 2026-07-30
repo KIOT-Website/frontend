@@ -59,7 +59,8 @@ const navLinks = [
       { name: "Leadership", href: 'about/leadership', icon: Users },
       { name: 'Governing Council', href: 'about/governing-council', icon: ShieldCheck },
       { name: 'Institutional Policies', href: 'about/institutional-policies', icon: FileText },
-      { name: 'Accreditation & Ranking', href: 'about/accreditation-ranking', icon: FileText }
+      { name: 'Accreditation & Ranking', href: 'about/accreditation-ranking', icon: FileText },
+      { name: 'College Rules', href: 'about/college-rules', icon: BookOpen }
     ]
   },
   {

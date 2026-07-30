@@ -18,8 +18,8 @@ import OurValuesPage from './pages/OurValuesPage'
 import LeadershipPage from './pages/LeadershipPage'
 import HeadOfDepartmentPage from './pages/HeadOfDepartmentPage'
 import AccreditationPage from './pages/AccreditationPage'
-import GoverningCouncilPage from './pages/GoverningCouncilPage'
 import GuidelinesPage from './pages/GuidelinesPage'
+const CollegeRulesPage = lazy(() => import('./pages/CollegeRulesPage'))
 import IQACPage from './pages/IQACPage'
 import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 import PlacementOverviewPage from './pages/PlacementOverviewPage'
@@ -1029,6 +1029,7 @@ function App() {
                   <Route path="/about/institutional-policies" element={<GuidelinesPage />} />
                   <Route path="/about/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/about/governing-council" element={<GoverningCouncilPage />} />
+                  <Route path="/about/college-rules" element={<CollegeRulesPage />} />
                   <Route path="/about-us" element={<AboutUsPage />} />
                   <Route path="/our-values" element={<OurValuesPage />} />
                   <Route path="/promoters" element={<LeadershipPage />} />
@@ -1036,6 +1037,7 @@ function App() {
                   <Route path="/institutional-policies" element={<GuidelinesPage />} />
                   <Route path="/accreditation-ranking" element={<AccreditationPage />} />
                   <Route path="/governing-council" element={<GoverningCouncilPage />} />
+                  <Route path="/college-rules" element={<CollegeRulesPage />} />
                   
                   {/* Placement Pages */}
                   <Route path="/placements" element={<UnderConstruction />} />
