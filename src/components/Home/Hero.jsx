@@ -66,17 +66,18 @@ const slides = [
 const Hero = () => {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
-  const [activeSlides, setActiveSlides] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [activeSlides, setActiveSlides] = useState(slides)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const apiBaseUrl = import.meta.env.VITE_API_URL || 'https://api.kiot.ac.in'
-        const response = await fetch(`${apiBaseUrl}/banners/`)
-        if (response.ok) {
-          const data = await response.json()
-          if (data && data.length > 0) {
+        const apiBaseUrl = import.meta.env.VITE_API_URL
+        if (!apiBaseUrl) return
+        const response = await fetch(`${apiBaseUrl}/banners/`).catch(() => null)
+        if (response && response.ok) {
+          const data = await response.json().catch(() => null)
+          if (data && Array.isArray(data) && data.length > 0) {
             const formatted = data.map(banner => ({
               image: banner.media_url,
               title: banner.banner_name || "Banner",
@@ -87,9 +88,7 @@ const Hero = () => {
           }
         }
       } catch (err) {
-        console.error("Failed to fetch homepage banners:", err)
-      } finally {
-        setIsLoading(false)
+        // Fallback silently to static slides
       }
     }
     fetchBanners()

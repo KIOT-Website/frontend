@@ -54,33 +54,35 @@ const RecruitmentDrives = () => {
     useEffect(() => {
         const fetchDrives = async () => {
             try {
-                // Fetching from Posters endpoint
-                const res = await axios.get(`${API_BASE_URL}/posters/`)
-                const items = Array.isArray(res.data) ? res.data : []
-                const mapped = items.map(p => ({
-                    id: p.id,
-                    company_name: p.poster_name,
-                    drive_date: p.poster_date,
-                    media_url: p.media_url,
-                    media_type: p.media_type || 'image',
-                    serial_number: p.serial_number || 999
-                }))
-                
-                const sorted = mapped.sort((a, b) => b.id - a.id)
-                
-                const today = new Date()
-                today.setHours(0, 0, 0, 0)
-                
-                const activeDrives = sorted.filter(drive => {
-                    if (!drive.drive_date) return true
-                    const driveDate = new Date(drive.drive_date)
-                    driveDate.setHours(0, 0, 0, 0)
-                    return driveDate >= today
-                })
-                
-                setDrives(activeDrives.slice(0, 3)) // Limit to 3 posters as requested
+                const res = await axios.get(`${API_BASE_URL}/posters/`).catch(() => null)
+                if (res && res.data) {
+                  const items = Array.isArray(res.data) ? res.data : []
+                  const mapped = items.map(p => ({
+                      id: p.id,
+                      company_name: p.poster_name,
+                      drive_date: p.poster_date,
+                      media_url: p.media_url,
+                      media_type: p.media_type || 'image',
+                      serial_number: p.serial_number || 999
+                  }))
+                  
+                  const sorted = mapped.sort((a, b) => b.id - a.id)
+                  
+                  const today = new Date()
+                  today.setHours(0, 0, 0, 0)
+                  
+                  const activeDrives = sorted.filter(drive => {
+                      if (!drive.drive_date) return true
+                      const driveDate = new Date(drive.drive_date)
+                      driveDate.setHours(0, 0, 0, 0)
+                      return driveDate >= today
+                  })
+                  
+                  setDrives(activeDrives.slice(0, 3))
+                } else {
+                  setDrives([])
+                }
             } catch (err) {
-                console.error("Failed to fetch recruitment drives from posters:", err)
                 setDrives([]) 
             } finally {
                 setLoading(false)

@@ -402,31 +402,33 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/events/`)
-        const items = Array.isArray(res.data) ? res.data : []
-        const mapped = items.map(e => {
-          const status = getEventStatus(e.event_date, e.end_date);
-          return {
-            id: e.id,
-            title: e.event_name,
-            subtitle: e.short_description || "",
-            date: e.event_date,
-            endDate: e.end_date || undefined,
-            time: e.event_time || "09:00 AM",
-            venue: e.venue || "Main Campus",
-            status: status,
-            image: e.media_url || "",
-            description: e.short_description || "",
-          }
-        })
+        const res = await axios.get(`${API_BASE_URL}/events/`).catch(() => null)
+        if (res && res.data) {
+          const items = Array.isArray(res.data) ? res.data : []
+          const mapped = items.map(e => {
+            const status = getEventStatus(e.event_date, e.end_date);
+            return {
+              id: e.id,
+              title: e.event_name,
+              subtitle: e.short_description || "",
+              date: e.event_date,
+              endDate: e.end_date || undefined,
+              time: e.event_time || "09:00 AM",
+              venue: e.venue || "Main Campus",
+              status: status,
+              image: e.media_url || "",
+              description: e.short_description || "",
+            }
+          })
 
-        const upcoming = mapped.filter(e => e.status !== "completed").sort((a, b) => new Date(a.date) - new Date(b.date));
-        const completed = mapped.filter(e => e.status === "completed").sort((a, b) => new Date(b.date) - new Date(a.date));
+          const upcoming = mapped.filter(e => e.status !== "completed").sort((a, b) => new Date(a.date) - new Date(b.date));
+          const completed = mapped.filter(e => e.status === "completed").sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        setUpcomingEvents(upcoming);
-        setCompletedEvents(completed);
+          setUpcomingEvents(upcoming);
+          setCompletedEvents(completed);
+        }
       } catch (err) {
-        console.error("Failed to fetch events:", err)
+        // Silently handle backend offline state
       } finally {
         setLoading(false)
       }
