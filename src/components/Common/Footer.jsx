@@ -125,23 +125,23 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 relative z-10">
         {/* Left Column: Logo & Contact Info */}
-        <div className="lg:col-span-3 flex flex-col items-center text-center lg:items-start lg:text-left">
+        <div className="lg:col-span-3 flex flex-col items-start text-left">
           <img 
             src={logoBlue} 
             alt="KIOT Logo" 
-            className="h-16 w-auto object-contain mb-6 mx-auto lg:mx-0 rounded-xl"
+            className="h-16 w-auto object-contain mb-6 rounded-xl"
           />
-          <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-sm mx-auto lg:mx-0">
+          <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-sm">
             Empowering young minds with quality education, innovation and values to build a better tomorrow.
           </p>
 
           <div className="space-y-4 w-full">
             {/* Address */}
-            <div className="flex flex-col items-center lg:flex-row lg:items-start gap-4">
-              <div className="w-9 h-9 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 flex items-center justify-center text-[#ffc107] shrink-0 shadow-md">
-                <MapPin size={16} />
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 flex items-center justify-center text-[#ffc107] shrink-0 shadow-md mt-0.5">
+                <MapPin size={15} />
               </div>
               <p className="text-gray-300 text-[13px] leading-relaxed">
                 KIOT Campus, NH544, Kakapalayam, Salem, Tamil Nadu – 637504 India.
@@ -149,9 +149,9 @@ const Footer = () => {
             </div>
 
             {/* Phone */}
-            <div className="flex flex-col items-center lg:flex-row lg:items-start gap-4">
-              <div className="w-9 h-9 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 flex items-center justify-center text-[#ffc107] shrink-0 shadow-md">
-                <Phone size={16} />
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 flex items-center justify-center text-[#ffc107] shrink-0 shadow-md">
+                <Phone size={15} />
               </div>
               <a href="tel:+919600541414" className="text-gray-300 hover:text-[#ffc107] text-[13px] font-normal transition-colors">
                 +91 96005 41414
@@ -159,9 +159,9 @@ const Footer = () => {
             </div>
 
             {/* Email */}
-            <div className="flex flex-col items-center lg:flex-row lg:items-start gap-4">
-              <div className="w-9 h-9 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 flex items-center justify-center text-[#ffc107] shrink-0 shadow-md">
-                <Mail size={16} />
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 flex items-center justify-center text-[#ffc107] shrink-0 shadow-md">
+                <Mail size={15} />
               </div>
               <a href="mailto:info@kiot.ac.in" className="text-gray-300 hover:text-[#ffc107] text-[13px] font-normal transition-colors">
                 info@kiot.ac.in
@@ -172,15 +172,15 @@ const Footer = () => {
           {/* Apply Now Button */}
           <Link 
             to="/admissions" 
-            className="inline-flex items-center justify-between bg-[#ffc107] text-[#07163c] font-black text-sm uppercase px-6 py-3.5 rounded-lg hover:bg-white hover:text-[#224292] transition-all duration-300 group shadow-md hover:shadow-lg w-[240px] tracking-wider mt-8"
+            className="inline-flex items-center justify-between bg-[#ffc107] text-[#07163c] font-black text-xs uppercase px-5 py-3 rounded-lg hover:bg-white hover:text-[#224292] transition-all duration-300 group shadow-md hover:shadow-lg w-[220px] tracking-wider mt-7"
           >
             <span className="text-[#07163c] group-hover:text-[#224292] transition-colors duration-300">APPLY NOW 2026-27</span>
-            <ArrowUpRight size={18} className="text-[#07163c] group-hover:text-[#224292] transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight size={16} className="text-[#07163c] group-hover:text-[#224292] transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
 
         {/* Right Columns: Menu items (2 columns on mobile, 3 on tablet, 6 on desktop) */}
-        <div className="lg:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-6 lg:gap-5">
           {Object.entries(menuSections).map(([sectionName, sectionData]) => {
             const Icon = sectionData.icon;
             return (
