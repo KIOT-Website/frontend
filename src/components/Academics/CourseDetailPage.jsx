@@ -779,13 +779,21 @@ export default function CourseDetailPage({ overrides }) {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-5 flex-wrap">
                 <span className="px-3.5 py-1.5 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/40 text-[#ffc107] text-xs font-bold font-graphik">
-                  {course.affiliation}
+                  {course.affiliation || 'Anna University Affiliated'}
                 </span>
-                {course.accreditation && (
-                  <span className="px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold font-graphik">
-                    {course.accreditation}
-                  </span>
-                )}
+                {(() => {
+                  const nbaDepts = ['be-cse', 'be-ece', 'be-eee', 'be-mechanical'];
+                  const isNba = nbaDepts.includes(courseId);
+                  const isPg = courseId?.startsWith('mba') || courseId === 'mca' || courseId?.startsWith('me-');
+                  const badgeText = isNba 
+                    ? 'NBA Accredited' 
+                    : (isPg ? 'Postgraduate Program' : 'Undergraduate Program');
+                  return (
+                    <span className="px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold font-graphik">
+                      {badgeText}
+                    </span>
+                  )
+                })()}
               </div>
               <h1 className={`font-bold font-graphik text-white leading-[1.15] ${courseId === 'mba-general' || courseId === 'mba-iev'
                 ? 'text-xl md:text-xl lg:text-[1.75rem] mb-4 mt-6'
