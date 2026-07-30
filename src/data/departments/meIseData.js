@@ -1,4 +1,5 @@
 import { ShieldCheck } from 'lucide-react'
+import srinivasanImage from '../../assets/dir and hod/Dr. PSS. Srinivasan.jpg'
 
 export const meIseData = {
   name: 'M.E Industrial Safety Engineering',
@@ -28,6 +29,7 @@ export const meIseData = {
       association: 'Regular',
       experience: 'Teaching: 35 Years, Research : 24 Years',
       specialization: 'Thermal Engineering',
+      image: srinivasanImage,
       email: 'chairman@kiot.ac.in',
       publications: 'IJ: 63, NJ: 52, IC: 65, NC: 134, Books: 03',
       researchSupervision: 'Ph.D. (Supervised): 16; Ph.D. (Supervising): 01',

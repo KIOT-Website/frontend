@@ -52,10 +52,10 @@ const LibraryPage = () => {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-6xl px-6 hidden md:block">
                 <div className="bg-[#224292] border border-slate-700/50 rounded-t-2xl backdrop-blur-md p-6 flex items-center justify-between gap-6 shadow-[0_-10px_40px_rgba(0,0,0,0.2)]">
                     {[
-                        { count: "50,000+", label: "Books", icon: BookOpen },
-                        { count: "10,000+", label: "E-Journals", icon: FileText },
-                        { count: "24/7", label: "Digital Access", icon: Clock },
-                        { count: "500+", label: "Research Papers", icon: GraduationCap }
+                        { count: "39,553+", label: "Volumes", icon: BookOpen },
+                        { count: "8,569+", label: "Book Titles", icon: FileText },
+                        { count: "1,526+", label: "E-Journals", icon: Clock },
+                        { count: "30+", label: "Digital PCs", icon: GraduationCap }
                     ].map((stat, idx) => (
                         <div key={idx} className="flex items-center gap-4 flex-1 justify-center lg:border-r border-slate-700/50 last:border-0">
                             <div className="text-[#ffc107]"><stat.icon size={28} strokeWidth={1.5} /></div>
@@ -69,78 +69,136 @@ const LibraryPage = () => {
             </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-12 relative z-20 space-y-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 sm:py-12 relative z-20 space-y-8 sm:space-y-16">
             
-
-
-            {/* Vision & Mission section */}
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
-                <div className="lg:col-span-8 space-y-8">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#224292] tracking-tight">Vision & <span className="text-[#ffc107]">Mission</span></h2>
-                    
-                    <div className="grid sm:grid-cols-3 gap-6">
-                        {/* Vision Card */}
-                        <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
-                            <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2">
-                                <Eye size={20} />
-                            </div>
-                            <h3 className="text-[#224292] font-semibold text-lg">Our Vision</h3>
-                            <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
-                                To nurture research scholars and promote knowledge enrichment through world-class learning resources and services.
-                            </p>
-                            <div className="w-8 h-1 bg-[#224292] rounded-full mt-2" />
-                        </div>
-
-                        {/* Mission Card */}
-                        <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
-                            <div className="w-12 h-12 rounded-full bg-[#ffc107] text-[#224292] flex items-center justify-center mb-2">
-                                <Target size={20} />
-                            </div>
-                            <h3 className="text-[#224292] font-semibold text-lg">Our Mission</h3>
-                            <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
-                                To provide world-class knowledge resources and innovative services for holistic academic growth and lifelong learning.
-                            </p>
-                            <div className="w-8 h-1 bg-[#ffc107] rounded-full mt-2" />
-                        </div>
-
-                        {/* Web OPAC Access Card */}
-                        <a 
-                            href="http://115.244.103.83/webopac" 
-                            target="_blank" 
-                            rel="noreferrer" 
-                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
-                        >
-                            <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-colors">
-                                <BookOpen size={20} className="text-white group-hover:text-[#224292] transition-colors" />
-                            </div>
-                            <h3 className="text-[#224292] font-semibold text-lg flex items-center gap-1.5">
-                                Web OPAC <ExternalLink size={14} className="text-[#ffc107] shrink-0" />
-                            </h3>
-                            <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
-                                Search books, view availability, and manage your library account online from anywhere.
-                            </p>
-                            <div className="w-8 h-1 bg-[#224292] rounded-full mt-2 group-hover:bg-[#ffc107] transition-colors" />
-                        </a>
+            {/* Central Library Overview Section */}
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-12 border border-slate-100 shadow-xl shadow-slate-200/40 space-y-6 sm:space-y-8">
+                <div className="flex items-center gap-3">
+                    <span className="w-1.5 h-8 bg-[#ffc107] rounded-full inline-block shrink-0" />
+                    <div>
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#224292] tracking-tight">Central <span className="text-[#ffc107]">Library</span></h2>
+                        <p className="text-[11px] sm:text-xs md:text-sm font-bold text-[#64779F] uppercase tracking-wider mt-0.5">Air-Conditioned Digital Library & Academic Resource Hub</p>
                     </div>
                 </div>
 
-                {/* Right Image */}
-                <div className="lg:col-span-4 relative rounded-2xl overflow-hidden h-[400px] shadow-2xl">
-                    <img 
-                        src={libraryImg} 
-                        className="w-full h-full object-cover" 
-                        alt="Library Interior" 
-                    />
+                <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+                    {/* 4 Content Cards */}
+                    <div className="lg:col-span-8 grid md:grid-cols-2 gap-4 sm:gap-6 text-[#333333] font-graphik text-sm md:text-[14.5px] leading-relaxed text-justify">
+                        <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100 space-y-3 hover:border-[#224292]/30 transition-all flex flex-col justify-between">
+                            <div>
+                                <h3 className="font-bold text-[#224292] text-base flex items-center gap-2 mb-2">
+                                    <span className="w-2 h-2 rounded-full bg-[#ffc107] shrink-0" />
+                                    Vast Collection & Titles
+                                </h3>
+                                <p className="text-justify">
+                                    The Air-Conditioned Digital Library at Knowledge Institute of Technology offers an extensive collection of books, journals, and academic resources across Engineering and Technology, Management, and Science & Humanities. The library houses more than 8,569 titles with over 39,553 volumes, supporting the academic and research needs of students and faculty members.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100 space-y-3 hover:border-[#224292]/30 transition-all flex flex-col justify-between">
+                            <div>
+                                <h3 className="font-bold text-[#224292] text-base flex items-center gap-2 mb-2">
+                                    <span className="w-2 h-2 rounded-full bg-[#ffc107] shrink-0" />
+                                    Journals & OPAC System
+                                </h3>
+                                <p className="text-justify">
+                                    The library provides access to 1,526 e-journals and 96 print journals, along with magazines and other reference materials. An Online Public Access Catalogue (OPAC) facility enables users to easily search and access books and other learning resources. The computerized library management system further streamlines the borrowing and returning process.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100 space-y-3 hover:border-[#224292]/30 transition-all flex flex-col justify-between">
+                            <div>
+                                <h3 className="font-bold text-[#224292] text-base flex items-center gap-2 mb-2">
+                                    <span className="w-2 h-2 rounded-full bg-[#ffc107] shrink-0" />
+                                    Digital Section & NDLI/DELNET
+                                </h3>
+                                <p className="text-justify">
+                                    The digital section of the library is equipped with more than 30 computers with headset facilities, ensuring convenient access to a wide range of online academic resources. The institution is also an active member of NDLI and DELNET, enabling users to explore a broader collection of digital learning materials and research databases.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100 space-y-3 hover:border-[#224292]/30 transition-all flex flex-col justify-between">
+                            <div>
+                                <h3 className="font-bold text-[#224292] text-base flex items-center gap-2 mb-2">
+                                    <span className="w-2 h-2 rounded-full bg-[#ffc107] shrink-0" />
+                                    Plagiarism & Reprography
+                                </h3>
+                                <p className="text-justify">
+                                    In addition, the library offers Turnitin plagiarism checking facilities to support academic integrity and quality research practices among students and faculty members. A reprographic facility is also available for reproducing documents, research papers, articles, and book chapters, which is highly beneficial for academic and research purposes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Girl Library Image (Permanent Vibrant Effect) */}
+                    <div className="lg:col-span-4 relative rounded-2xl sm:rounded-3xl overflow-hidden min-h-[300px] sm:min-h-[350px] lg:min-h-full shadow-2xl shadow-blue-900/15 border-2 border-[#224292]/15 group">
+                        <img 
+                            src={libraryImg} 
+                            className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-700" 
+                            alt="Library Interior" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/30 via-transparent to-transparent pointer-events-none" />
+                    </div>
+                </div>
+            </div>
+
+            {/* Vision & Mission section */}
+            <div className="space-y-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#224292] tracking-tight">Vision & <span className="text-[#ffc107]">Mission</span></h2>
+                
+                <div className="grid sm:grid-cols-3 gap-6">
+                    {/* Vision Card */}
+                    <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
+                        <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2">
+                            <Eye size={20} />
+                        </div>
+                        <h3 className="text-[#224292] font-semibold text-lg">Our Vision</h3>
+                        <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
+                            To nurture research scholars and promote knowledge enrichment through world-class learning resources and services.
+                        </p>
+                        <div className="w-8 h-1 bg-[#224292] rounded-full mt-2" />
+                    </div>
+
+                    {/* Mission Card */}
+                    <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300">
+                        <div className="w-12 h-12 rounded-full bg-[#ffc107] text-[#224292] flex items-center justify-center mb-2">
+                            <Target size={20} />
+                        </div>
+                        <h3 className="text-[#224292] font-semibold text-lg">Our Mission</h3>
+                        <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
+                            To provide world-class knowledge resources and innovative services for holistic academic growth and lifelong learning.
+                        </p>
+                        <div className="w-8 h-1 bg-[#ffc107] rounded-full mt-2" />
+                    </div>
+
+                    {/* Web OPAC Access Card */}
+                    <a 
+                        href="http://115.244.103.83/webopac" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg sm:shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-slate-100/80 flex flex-col items-start gap-4 hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+                    >
+                        <div className="w-12 h-12 rounded-full bg-[#224292] text-white flex items-center justify-center mb-2 group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-colors">
+                            <BookOpen size={20} className="text-white group-hover:text-[#224292] transition-colors" />
+                        </div>
+                        <h3 className="text-[#224292] font-semibold text-lg flex items-center gap-1.5">
+                            Web OPAC <ExternalLink size={14} className="text-[#ffc107] shrink-0" />
+                        </h3>
+                        <p className="text-black text-sm leading-relaxed flex-1 text-justify sm:text-left">
+                            Search books, view availability, and manage your library account online from anywhere.
+                        </p>
+                        <div className="w-8 h-1 bg-[#224292] rounded-full mt-2 group-hover:bg-[#ffc107] transition-colors" />
+                    </a>
                 </div>
             </div>
 
             {/* Library Services */}
             <div className="space-y-8 pt-6">
-                <div className="flex items-center justify-between">
+                <div>
                     <h2 className="text-2xl md:text-3xl font-bold text-[#224292] tracking-tight">Library <span className="text-[#ffc107]">Services</span></h2>
-                    <button className="hidden sm:flex border border-slate-200 bg-white px-6 py-2.5 rounded-full text-sm font-bold text-[#224292] hover:border-[#224292] transition-colors items-center gap-2">
-                        View All Services <ArrowRight size={16} />
-                    </button>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-6">

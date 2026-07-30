@@ -110,12 +110,6 @@ const TeamSection = () => {
                                 {member.email}
                              </a>
                            )}
-                           {member.phone && (
-                             <a href={`tel:${member.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-black font-semibold text-[12px] transition-colors">
-                                <Phone size={13} className="text-[#ffc107]" />
-                                {member.phone}
-                             </a>
-                           )}
                         </div>
                      </td>
                   </tr>
@@ -159,12 +153,6 @@ const TeamSection = () => {
                      <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-[#64779F] text-[13px] font-semibold hover:text-[#ffc107] transition-colors">
                         <Mail size={16} className="text-[#224292]" />
                         {member.email}
-                     </a>
-                   )}
-                   {member.phone && (
-                     <a href={`tel:${member.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 text-[#224292] text-[13px] font-semibold hover:text-[#ffc107] transition-colors">
-                        <Phone size={16} className="text-[#ffc107]" />
-                        {member.phone}
                      </a>
                    )}
                 </div>

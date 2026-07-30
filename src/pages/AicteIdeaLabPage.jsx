@@ -924,7 +924,7 @@ const IdeaLabPage = () => {
                                 { n: "Mr. S. Rajeshkumar", d: "Assistant Professor / CIVIL" },
                                 { n: "Mr. R. Ayyappan", d: "Assistant Professor / IT" },
                                 { n: "Mr. R. Sivaguru", d: "Assistant Professor / CSE" },
-                                { n: "Mr. M. Gopikumaran", d: "Assistant Professor / CSBS" },
+                                { n: "Mr. M. Gopikumaran", d: "Associate Professor / CSBS" },
                                 { n: "Mr. R. Ramesh", d: "Assistant Professor / AI&DS" },
                                 { n: "Mr. M. Karthi", d: "Teaching Assistant" }
                             ].map((guru, i) => (

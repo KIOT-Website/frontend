@@ -55,6 +55,10 @@ import panneerselvamMechImg from '../assets/Faculity/MECH/Dr.N.Panneer Selvam.we
 // Import S&H Faculty/Supervisor Images
 import venkateshShImg from '../assets/Faculity/aids/venkatesh.webp'
 
+// Import ECE Faculty/Supervisor Images
+import santhiyakumariEceImg from '../assets/Faculity/ECE/Dr. N. Santhiyakumari.webp'
+import kumarganeshEceImg from '../assets/Faculity/ECE/Dr. S. Kumarganesh.webp'
+
 // CSE-Specific Unified Datasets
 const cseSupervisors = [
     {
@@ -704,8 +708,8 @@ const shGuidedScholars = [];
 
 // ─── ECE (Electronics & Communication Engineering) Data ───
 const eceSupervisors = [
-    { id: 1, name: "Dr. N.Santhiyakumari", role: "Professor & Director - R&D", university: "Anna University", department: "ECE", researchArea: "Biomedical Image Processing", supervisorId: "2340297", email: "dirrd@kiot.ac.in", guided: "6", guiding: "6", irins: "https://kiot.irins.org", publications: [] },
-    { id: 2, name: "Dr. Kumarganesh S", role: "Professor / ECE", university: "Anna University", department: "ECE", researchArea: "Signal Processing and Communication", supervisorId: "3340060", email: "skgece@kiot.ac.in", guided: "-", guiding: "6", irins: "https://kiot.irins.org", publications: [] }
+    { id: 1, name: "Dr. N.Santhiyakumari", role: "Professor & Director - R&D", university: "Anna University", department: "ECE", researchArea: "Biomedical Image Processing", supervisorId: "2340297", email: "dirrd@kiot.ac.in", guided: "6", guiding: "6", irins: "https://kiot.irins.org", image: santhiyakumariEceImg, publications: [] },
+    { id: 2, name: "Dr. Kumarganesh S", role: "Professor / ECE", university: "Anna University", department: "ECE", researchArea: "Signal Processing and Communication", supervisorId: "3340060", email: "skgece@kiot.ac.in", guided: "-", guiding: "6", irins: "https://kiot.irins.org", image: kumarganeshEceImg, publications: [] }
 ];
 const ecePhdHolders = [
     { id: 1, name: "Dr. N.Santhiyakumari", topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Carotid Artery Images using Intima media thickness measurement", year: "2008", university: "Anna University, Chennai", publications: { ij: 48, ic: 52, nj: "-", nc: 49 }, guided: "6", beingGuided: "6" },
@@ -1639,8 +1643,21 @@ const ResearchResourcesPage = () => {
 
                                                     <div className="flex flex-col sm:flex-row gap-6 relative z-10">
                                                         {/* Supervisor Image */}
-                                                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shrink-0 border-2 border-slate-100 group-hover:border-[#ffc107] shadow-md transition-all">
-                                                            <img src={superv.image} alt={superv.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shrink-0 border-2 border-slate-100 group-hover:border-[#ffc107] shadow-md transition-all bg-gradient-to-br from-[#224292] to-[#18357a] flex items-center justify-center">
+                                                            {superv.image ? (
+                                                                <img
+                                                                    src={superv.image}
+                                                                    alt={superv.name}
+                                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                                    onError={(e) => {
+                                                                        e.target.style.display = 'none';
+                                                                        if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+                                                                    }}
+                                                                />
+                                                            ) : null}
+                                                            <div className={`w-full h-full flex flex-col items-center justify-center text-white font-bold ${superv.image ? 'hidden' : ''}`}>
+                                                                <Users size={32} className="text-[#ffc107] mb-1" />
+                                                            </div>
                                                         </div>
 
                                                         <div className="flex-1 space-y-4">

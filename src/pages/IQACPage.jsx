@@ -371,9 +371,6 @@ export default function IQACPage() {
                      <div className="flex-1 min-w-0">
                         <h4 className="text-[14px] font-bold text-[#224292] truncate">{member.name}</h4>
                         <p className="text-[11px] text-[#64779F] truncate font-medium">{member.desc}</p>
-                        {member.contact && member.contact !== '-' && (
-                          <p className="text-[10px] text-slate-400 font-normal mt-0.5">{member.contact}</p>
-                        )}
                      </div>
                      <div className="text-right shrink-0">
                         <span className="inline-block px-3 py-1 bg-[#ffc107]/10 text-black text-[11px] font-medium rounded-full">

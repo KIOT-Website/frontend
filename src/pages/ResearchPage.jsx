@@ -18,7 +18,9 @@ import {
     LineChart,
     Mail,
     Phone,
-    Link as LinkIcon
+    Link as LinkIcon,
+    ShieldCheck,
+    Car
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import openImage from '../assets/iStart/open.JPG'
@@ -27,6 +29,7 @@ const ResearchPage = () => {
     const navigate = useNavigate()
 
     const departments = [
+        // --- Undergraduate (UG) Departments (9) ---
         {
             name: "Computer Science & Engineering",
             focus: ["AI/ML", "Blockchain", "Cloud Computing"],
@@ -81,6 +84,7 @@ const ResearchPage = () => {
             icon: Building2,
             color: "bg-orange-50 text-orange-600"
         },
+        // --- Postgraduate (PG) Departments (3) ---
         {
             name: "MBA - Master of Business Administration (General)",
             focus: ["Operations Research", "Finance Analytics", "Strategic Management"],
@@ -203,19 +207,19 @@ const ResearchPage = () => {
 
                 <div className="relative z-10 w-full max-w-[1500px] mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                        {/* Left Column: Heading and Description */}
+                        {/* Centered Heading and Description */}
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            animate={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="md:col-span-12 text-left flex flex-col items-start"
+                            className="md:col-span-12 text-center flex flex-col items-center mx-auto"
                         >
-                            <h1 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-3 tracking-tight text-left">
+                            <h1 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-3 tracking-tight text-center">
                                 Research & <span className="text-[#ffc107]">Innovations</span>
                             </h1>
-                            <div className="h-1 w-16 bg-[#ffc107] mb-6" />
+                            <div className="h-1 w-16 bg-[#ffc107] mb-6 mx-auto" />
                             
-                            <p className="text-white/90 text-xs md:text-sm font-medium leading-relaxed max-w-2xl text-justify font-graphik">
+                            <p className="text-white/90 text-xs md:text-sm font-medium leading-relaxed max-w-2xl text-center font-graphik">
                                 At Knowledge Institute of Technology, we foster a rich ecosystem of inquiry and discovery. Our departments drive cutting-edge research, secure government grants, and support innovative projects to build future-ready solutions for industry and society.
                             </p>
                         </motion.div>
@@ -249,12 +253,9 @@ const ResearchPage = () => {
                 {/* Main content: cards grid + sticky image panel */}
                 <div className="flex flex-col lg:flex-row gap-10 items-start">
 
-                    {/* LEFT: masonry-style 2-column department cards */}
-                    <div className="flex-1 columns-1 sm:columns-2 gap-5 space-y-0">
+                    {/* LEFT: 2-column grid for row-by-row (left-to-right) department cards */}
+                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-5">
                         {departments.map((dept, idx) => {
-                            // Extract the colour classes for border accent
-                            const borderColor = dept.color.replace('bg-', 'border-').replace(/\s+text-\S+/, '')
-                            const tall = idx % 3 === 1   // every 3rd card is taller for masonry feel
                             return (
                                 <motion.div
                                     key={idx}
@@ -263,9 +264,9 @@ const ResearchPage = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.45, delay: idx * 0.05 }}
                                     onClick={() => navigate(`/research/${dept.name.split(' (')[0].replace(/ /g, '-').toLowerCase()}`)}
-                                    className={`break-inside-avoid mb-5 group cursor-pointer bg-white rounded-2xl border-l-4 border-[#ffc107] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden`}
+                                    className="group cursor-pointer bg-white rounded-2xl border-l-4 border-[#ffc107] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between"
                                 >
-                                    <div className={`px-5 ${tall ? 'py-7' : 'py-5'}`}>
+                                    <div className="px-5 py-5">
                                         {/* Icon + name row */}
                                         <div className="flex items-start gap-4 mb-3">
                                             <div className={`w-10 h-10 rounded-xl ${dept.color} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-sm`}>

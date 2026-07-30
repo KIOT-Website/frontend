@@ -20,8 +20,8 @@ import aidsRanithaImage from '../../assets/Faculity/aids/ranitha.webp'
 import prakashImage from '../../assets/Faculity/MECH/Mr. J. Prakash.webp'
 
 export const btechAidsData = {
-  name: 'B.Tech Artificial Intelligence & Data Science',
-    short: 'AI & DS',
+  name: 'B.Tech Artificial Intelligence and Data Science',
+  short: 'AI and DS',
     bannerImage: '/banners/aids_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 120,
