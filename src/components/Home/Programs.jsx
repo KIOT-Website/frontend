@@ -124,9 +124,12 @@ const CourseGrid = ({ activeTab, navigate }) => (
                delay: idx * 0.05,
                layout: { duration: 0.3 }
              }}
-             whileHover={activeTab !== 'PHD' ? { y: -5 } : {}}
+             whileHover={{ y: -5 }}
              onClick={() => {
-                if (activeTab === 'PHD') return;
+                if (activeTab === 'PHD') {
+                  navigate('/research-innovation/research')
+                  return;
+                }
                 if (course.externalUrl) {
                   window.open(course.externalUrl, '_blank', 'noopener,noreferrer')
                 } else {
@@ -134,9 +137,7 @@ const CourseGrid = ({ activeTab, navigate }) => (
                   navigate(`/academics/${base}/${course.id}`)
                 }
              }}
-             className={`group bg-white p-3.5 rounded-xl border border-slate-200/60 transition-all relative overflow-hidden shadow-xl shadow-black/[0.12] ${
-               activeTab === 'PHD' ? 'cursor-default' : 'cursor-pointer hover:shadow-2xl hover:shadow-black/[0.18]'
-             }`}
+             className="group bg-white p-3.5 rounded-xl border border-slate-200/60 transition-all cursor-pointer relative overflow-hidden shadow-xl shadow-black/[0.12] hover:shadow-2xl hover:shadow-black/[0.18] min-h-[145px] sm:min-h-[155px] flex flex-col justify-between"
            >
               <div className="absolute inset-0 bg-gradient-to-br-white via-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
@@ -144,35 +145,37 @@ const CourseGrid = ({ activeTab, navigate }) => (
               <div className="absolute top-0 right-0 w-10 h-10 bg-[#224292] clip-triangle" />
               <div className="absolute top-0 right-0 w-6 h-6 bg-[#ffc107] clip-triangle" />
 
-              <div className="relative z-10">
-                 <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-300 transform group-hover:rotate-6">
-                       <course.icon size={18} />
-                    </div>
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                 <div>
+                   <div className="flex items-center justify-between mb-2">
+                      <div className="w-9 h-9 rounded-lg bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-all duration-300 transform group-hover:rotate-6">
+                         <course.icon size={17} />
+                      </div>
+                   </div>
+
+                   <h4 className="text-[13px] lg:text-[14px] font-bold text-black font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
+                      {course.name}
+                   </h4>
+                   {course.code && (
+                      <p className="text-[9px] font-black text-[#224292] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-1">
+                         {course.code}
+                      </p>
+                   )}
                  </div>
 
-                 <h4 className="text-[13px] lg:text-[14px] font-bold text-black font-graphik mb-0.5 leading-tight group-hover:translate-x-1 transition-transform duration-300">
-                    {course.name}
-                 </h4>
-                 {course.code && (
-                    <p className="text-[9px] font-black text-[#224292] tracking-wider group-hover:translate-x-1 transition-transform duration-300 mb-1.5">
-                       {course.code}
-                    </p>
-                 )}
-                 
-                 {activeTab !== 'PHD' && course.duration && (
-                   <div className="flex items-center gap-2 mt-2">
-                     <div className="h-1 w-1 rounded-full bg-[#ffc107]" />
-                     <span className="text-[8px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
-                   </div>
-                 )}
+                 <div className="mt-2 flex items-center justify-between">
+                   {activeTab !== 'PHD' && course.duration ? (
+                     <div className="flex items-center gap-2">
+                       <div className="h-1 w-1 rounded-full bg-[#ffc107]" />
+                       <span className="text-[8px] font-black text-black uppercase tracking-widest">{course.duration} Program</span>
+                     </div>
+                   ) : <div />}
 
-                 {/* Bottom Right Arrow Link Indicator */}
-                 {activeTab !== 'PHD' && (
-                   <div className="absolute bottom-3 right-3 w-6 h-6 rounded-full bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300">
+                   {/* Bottom Right Arrow Link Indicator */}
+                   <div className="w-6 h-6 rounded-full bg-[#224292]/5 flex items-center justify-center text-[#224292] group-hover:bg-[#ffc107] group-hover:text-[#224292] transition-all duration-300">
                      <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                    </div>
-                 )}
+                 </div>
                </div>
            </motion.div>
         ))}

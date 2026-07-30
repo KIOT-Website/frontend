@@ -28,34 +28,10 @@ const ResearchPage = () => {
 
     const departments = [
         {
-            name: "Mechanical Engineering",
-            focus: ["Advanced Manufacturing", "Thermal Engineering", "CFD"],
-            icon: Factory,
-            color: "bg-blue-50 text-blue-600"
-        },
-        {
-            name: "Electronics & Communication Engineering",
-            focus: ["VLSI Design", "Embedded Systems", "Signal Processing"],
-            icon: Cpu,
-            color: "bg-indigo-50 text-indigo-600"
-        },
-        {
-            name: "Electrical & Electronics Engineering",
-            focus: ["Power Systems", "Renewable Energy", "Smart Grids"],
-            icon: Zap,
-            color: "bg-yellow-50 text-yellow-600"
-        },
-        {
             name: "Computer Science & Engineering",
             focus: ["AI/ML", "Blockchain", "Cloud Computing"],
             icon: Computer,
             color: "bg-emerald-50 text-emerald-600"
-        },
-        {
-            name: "Civil Engineering",
-            focus: ["Structural Health", "Geotechnical Engg", "Smart Materials"],
-            icon: Building2,
-            color: "bg-orange-50 text-orange-600"
         },
         {
             name: "Information Technology",
@@ -76,16 +52,46 @@ const ResearchPage = () => {
             color: "bg-rose-50 text-rose-600"
         },
         {
-            name: "Science & Humanities",
-            focus: ["Nanomaterials", "Applied Mathematics", "Sensor Development"],
-            icon: FlaskConical,
-            color: "bg-violet-50 text-violet-600"
+            name: "Electronics & Communication Engineering",
+            focus: ["VLSI Design", "Embedded Systems", "Signal Processing"],
+            icon: Cpu,
+            color: "bg-indigo-50 text-indigo-600"
         },
         {
-            name: "Management Sciences",
-            focus: ["Operations Research", "Finance Analytics", "HR Tech"],
+            name: "Electrical & Electronics Engineering",
+            focus: ["Power Systems", "Renewable Energy", "Smart Grids"],
+            icon: Zap,
+            color: "bg-yellow-50 text-yellow-600"
+        },
+        {
+            name: "Electronics & Computer Engineering",
+            focus: ["Embedded Systems", "Hardware Security", "IoT Devices"],
+            icon: Cpu,
+            color: "bg-sky-50 text-sky-600"
+        },
+        {
+            name: "Mechanical Engineering",
+            focus: ["Advanced Manufacturing", "Thermal Engineering", "CFD"],
+            icon: Factory,
+            color: "bg-blue-50 text-blue-600"
+        },
+        {
+            name: "Civil Engineering",
+            focus: ["Structural Health", "Geotechnical Engg", "Smart Materials"],
+            icon: Building2,
+            color: "bg-orange-50 text-orange-600"
+        },
+        {
+            name: "MBA - Master of Business Administration (General)",
+            focus: ["Operations Research", "Finance Analytics", "Strategic Management"],
             icon: LineChart,
-            color: "bg-slate-50 text-slate-600"
+            color: "bg-amber-50 text-amber-600"
+        },
+        {
+            name: "MBA - Master of Business Administration (IEV)",
+            focus: ["Startup Ecosystem", "Venture Capital", "Product Innovation"],
+            icon: LineChart,
+            color: "bg-rose-50 text-rose-600"
         },
         {
             name: "Master of Computer Applications",
