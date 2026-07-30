@@ -68,32 +68,32 @@ const AboutKIOT = () => {
                 Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
 
-              <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex flex-wrap items-center gap-3">
                 <a
                   href={handbookPdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#224292] text-white hover:bg-[#193270] font-bold text-[11px] uppercase tracking-wider transition-all shadow-sm hover:shadow-md"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#224292] text-white hover:bg-[#ffc107] hover:text-[#07163c] font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md border border-[#224292] group shrink-0"
                 >
-                  <Download size={13} className="text-[#ffc107]" />
-                  <span>Handbook</span>
+                  <Download size={14} className="text-[#ffc107] group-hover:text-[#07163c] transition-colors" />
+                  <span>KIOT Handbook</span>
                 </a>
                 <a
                   href={brochurePdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-[11px] uppercase tracking-wider transition-all shadow-sm hover:shadow-md"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#224292] text-white hover:bg-[#ffc107] hover:text-[#07163c] font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md border border-[#224292] group shrink-0"
                 >
-                  <Download size={13} />
+                  <Download size={14} className="text-[#ffc107] group-hover:text-[#07163c] transition-colors" />
                   <span>KIOT Brochure</span>
                 </a>
                 <a
                   href={prospectsPdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-200 text-[#224292] hover:bg-slate-200 font-bold text-[11px] uppercase tracking-wider transition-all shadow-sm"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#224292] text-white hover:bg-[#ffc107] hover:text-[#07163c] font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md border border-[#224292] group shrink-0"
                 >
-                  <Download size={13} className="text-[#224292]" />
+                  <Download size={14} className="text-[#ffc107] group-hover:text-[#07163c] transition-colors" />
                   <span>KIOT Prospects</span>
                 </a>
               </div>
