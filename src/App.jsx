@@ -18,6 +18,7 @@ import OurValuesPage from './pages/OurValuesPage'
 import LeadershipPage from './pages/LeadershipPage'
 import HeadOfDepartmentPage from './pages/HeadOfDepartmentPage'
 import AccreditationPage from './pages/AccreditationPage'
+import GoverningCouncilPage from './pages/GoverningCouncilPage'
 import GuidelinesPage from './pages/GuidelinesPage'
 const CollegeRulesPage = lazy(() => import('./pages/CollegeRulesPage'))
 import IQACPage from './pages/IQACPage'
@@ -899,15 +900,15 @@ function App() {
         const parts = path.split('/');
         const id = parts[parts.length - 1];
         const courseMap = {
-          'be-cse': 'B.E. Computer Science & Engineering',
-          'be-ece': 'B.E. Electronics & Communication',
-          'be-eee': 'B.E. Electrical & Electronics',
+          'be-cse': 'B.E. Computer Science and Engineering',
+          'be-ece': 'B.E. Electronics and Communication',
+          'be-eee': 'B.E. Electrical and Electronics',
           'be-mech': 'B.E. Mechanical Engineering',
           'be-civil': 'B.E. Civil Engineering',
           'btech-it': 'B.Tech Information Technology',
-          'btech-aids': 'B.Tech AI & Data Science',
-          'btech-csbs': 'B.Tech CS & Business Systems',
-          'science-humanities': 'Science & Humanities',
+          'btech-aids': 'B.Tech AI and Data Science',
+          'btech-csbs': 'B.Tech CS and Business Systems',
+          'science-humanities': 'Science and Humanities',
           'mba-general': 'MBA (General)',
           'mba-iev': 'MBA (IEV)',
           'mca': 'MCA'
@@ -921,14 +922,14 @@ function App() {
         const parts = path.split('/');
         const id = parts[parts.length - 1].toLowerCase();
         const deptNames = {
-          'cse': 'Computer Science & Engineering',
-          'ece': 'Electronics & Communication',
-          'eee': 'Electrical & Electronics',
+          'cse': 'Computer Science and Engineering',
+          'ece': 'Electronics and Communication',
+          'eee': 'Electrical and Electronics',
           'mech': 'Mechanical Engineering',
           'civil': 'Civil Engineering',
           'it': 'Information Technology',
-          'aids': 'Artificial Intelligence & Data Science',
-          'csbs': 'Computer Science & Business Systems'
+          'aids': 'Artificial Intelligence and Data Science',
+          'csbs': 'Computer Science and Business Systems'
         };
         const dept = deptNames[id] || id.toUpperCase();
         matched = {

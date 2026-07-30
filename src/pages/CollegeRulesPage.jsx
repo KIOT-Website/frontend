@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { 
   ShieldCheck, 
   AlertTriangle, 
@@ -8,20 +8,16 @@ import {
   CalendarCheck, 
   Search, 
   BookOpen, 
-  CheckCircle2, 
   AlertCircle,
-  Award,
-  ChevronRight,
-  Clock,
-  Sparkles,
-  PhoneCall,
-  Lock,
-  HeartHandshake
+  Award
 } from 'lucide-react'
 
 const CollegeRulesPage = () => {
   const [searchTerm, setSearchTerm] = useState('')
-  const [activeTab, setActiveTab] = useState('all')
+
+  useEffect(() => {
+    document.title = 'College Rules & Regulations | Knowledge Institute of Technology (KIOT)'
+  }, [])
 
   const sections = [
     {
@@ -62,7 +58,7 @@ const CollegeRulesPage = () => {
         "Day scholars using two-wheelers must have a valid driving license, wear helmets and park their vehicles only in the designated parking areas within the campus.",
         "Two wheelers without a silencer or muffler are not allowed inside the campus. It is not advisable and safe to ride three on a single bike.",
         "Day scholars using transport services must board the college bus assigned to them. They are required to wear their ID card while boarding the bus and keep it on until they disembark in the evening. Boarding any bus other than the assigned one is prohibited.",
-        "\"Ragging\" is strictly prohibited and any form of ragging is banned within the college campus, hostels, and buses. Ragging means, any conduct by words spoken or written or by an act, which has the effect of teasing, treating with rudeness or any undisciplined activities that cause physical or psychological harm to others. Students found guilty of this offense will be expelled from the college and handed over to the police for further action, in accordance with government regulations."
+        "Ragging is strictly prohibited and any form of ragging is banned within the college campus, hostels, and buses. Ragging means, any conduct by words spoken or written or by an act, which has the effect of teasing, treating with rudeness or any undisciplined activities that cause physical or psychological harm to others. Students found guilty of this offense will be expelled from the college and handed over to the police for further action, in accordance with government regulations."
       ]
     },
     {
@@ -130,11 +126,26 @@ const CollegeRulesPage = () => {
         "Students are not allowed to miss classes without prior approval from the concerned class advisor. Leave should be requested in advance from the Class Advisor or Head of the Department.",
         "In cases of illness or unexpected absence, parents need to inform the class advisor about their ward's absence."
       ]
+    },
+    {
+      id: 'tests',
+      title: 'Tests & Internal Evaluations',
+      shortTitle: 'Tests & Evaluation',
+      icon: Award,
+      color: 'from-purple-600 to-indigo-700',
+      badgeColor: 'bg-purple-50 text-purple-800 border-purple-200',
+      description: 'Internal assessment attendance, Regulation 2023 non-test assessments (NTA), and academic integrity standards.',
+      rules: [
+        "Students are expected to attend all internal assessments and maintain satisfactory academic progress. Regular attendance at all internal assessments is required and students must demonstrate good academic progress.",
+        "Under Regulation 2023, the assessment strategy has expanded beyond conventional examinations to include non-test assessments (NTA) for comprehensive evaluations.",
+        "Eligibility to appear for the End Semester Examinations in each semester necessitates consistent participation in internal assessments and a satisfactory level of academic achievement.",
+        "Any instance of academic dishonesty during internal assessments or the End Semester Examinations will be monitored strictly and taken immediate action.",
+        "The Head of the Institution presides over the parent-teacher meetings periodically to communicate the institution's advancements. During these meetings, class advisors will inform the parents about the academic standing of their wards."
+      ]
     }
   ]
 
   const filteredSections = sections.map(sec => {
-    if (activeTab !== 'all' && sec.id !== activeTab) return null
     if (!searchTerm.trim()) return sec
     const matchingRules = sec.rules.filter(rule => 
       rule.toLowerCase().includes(searchTerm.toLowerCase())
@@ -167,7 +178,7 @@ const CollegeRulesPage = () => {
             General Academic and Conduct Regulations for Students at Knowledge Institute of Technology. Ensuring academic excellence, personal safety, mutual respect, and campus discipline.
           </p>
 
-          {/* Quick Search & Filter Bar */}
+          {/* Quick Search Bar */}
           <div className="pt-4 max-w-2xl mx-auto">
             <div className="relative flex items-center">
               <Search className="absolute left-4 text-slate-400" size={18} />
@@ -183,48 +194,18 @@ const CollegeRulesPage = () => {
         </div>
       </div>
 
-      {/* Category Tab Filter */}
-      <div className="max-w-6xl mx-auto px-6 mt-8">
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-          <button
-            onClick={() => setActiveTab('all')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
-              activeTab === 'all' 
-                ? 'bg-[#224292] text-white shadow-md' 
-                : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-            }`}
-          >
-            All Regulations ({sections.reduce((acc, s) => acc + s.rules.length, 0)})
-          </button>
-          {sections.map(sec => (
-            <button
-              key={sec.id}
-              onClick={() => setActiveTab(sec.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex items-center gap-2 ${
-                activeTab === sec.id 
-                  ? 'bg-[#224292] text-white shadow-md' 
-                  : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-              }`}
-            >
-              <sec.icon size={14} />
-              {sec.shortTitle} ({sec.rules.length})
-            </button>
-          ))}
-        </div>
-      </div>
-
       {/* Main Content Sections */}
-      <div className="max-w-6xl mx-auto px-6 mt-8 space-y-10">
+      <div className="max-w-6xl mx-auto px-6 mt-10 space-y-10">
         {filteredSections.length === 0 ? (
           <div className="bg-white rounded-2xl p-12 text-center border border-slate-200 shadow-sm max-w-lg mx-auto">
             <AlertCircle size={40} className="text-amber-500 mx-auto mb-3" />
             <h3 className="text-lg font-bold text-slate-800">No matching regulations found</h3>
-            <p className="text-sm text-slate-500 mt-1">Try searching with a different keyword or select "All Regulations".</p>
+            <p className="text-sm text-slate-500 mt-1">Try searching with a different keyword.</p>
             <button 
-              onClick={() => { setSearchTerm(''); setActiveTab('all') }}
+              onClick={() => setSearchTerm('')}
               className="mt-4 px-4 py-2 bg-[#224292] text-white rounded-xl text-xs font-bold hover:bg-[#1a3478]"
             >
-              Reset Filters
+              Reset Search
             </button>
           </div>
         ) : (
@@ -249,9 +230,6 @@ const CollegeRulesPage = () => {
                       <p className="text-xs md:text-sm text-white/80 font-normal mt-0.5">{sec.description}</p>
                     </div>
                   </div>
-                  <span className="self-start md:self-auto px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold border border-white/20 whitespace-nowrap">
-                    {sec.rules.length} Items
-                  </span>
                 </div>
 
                 {/* Section Rules List */}
@@ -262,7 +240,7 @@ const CollegeRulesPage = () => {
                                       rule.toLowerCase().includes('serious consequences') ||
                                       rule.toLowerCase().includes('banned')
 
-                    const isHighlight = rule.startsWith('"Ragging"') || 
+                    const isHighlight = rule.includes('Ragging') || 
                                         rule.startsWith('As per Act No. 7') || 
                                         rule.includes('Immediate expulsion')
 
@@ -297,27 +275,17 @@ const CollegeRulesPage = () => {
         )}
       </div>
 
-      {/* Emergency & Support Contact Strip */}
-      <div className="max-w-6xl mx-auto px-6 mt-12">
-        <div className="bg-gradient-to-br from-[#224292] to-[#162d66] rounded-2xl p-6 md:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#ffc107] text-[#224292] flex items-center justify-center shrink-0 shadow-lg">
-              <PhoneCall size={28} />
-            </div>
-            <div>
-              <h4 className="text-lg md:text-xl font-bold">Need Help or Report an Incident?</h4>
-              <p className="text-xs md:text-sm text-blue-100/80 mt-1">
-                Contact the Discipline Committee or Anti-Ragging Cell immediately. Confidentiality guaranteed.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <a 
-              href="tel:9600541414"
-              className="px-5 py-2.5 bg-[#ffc107] text-[#224292] font-bold rounded-xl text-xs hover:bg-yellow-400 transition-all shadow-md"
-            >
-              Call Helpline
-            </a>
+      {/* Important Autonomous Regulations Note Banner */}
+      <div className="max-w-6xl mx-auto px-6 mt-8">
+        <div className="bg-amber-50 border-l-4 border-amber-500 rounded-2xl p-5 md:p-6 shadow-sm border border-amber-200/80 flex items-start gap-4">
+          <AlertCircle className="text-amber-600 shrink-0 mt-0.5" size={24} />
+          <div>
+            <h4 className="text-xs font-bold text-amber-900 uppercase tracking-widest mb-1 font-graphik">
+              Important Note
+            </h4>
+            <p className="text-xs md:text-sm text-amber-950 font-medium leading-relaxed font-graphik">
+              For the latest guidelines, students are required to refer to the applicable Autonomous Regulations (B.E./B.Tech., M.E./M.Tech., MBA & MCA) of the institution.
+            </p>
           </div>
         </div>
       </div>

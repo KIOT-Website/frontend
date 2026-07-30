@@ -5,7 +5,7 @@ import ecxMadhumathiImage from '../../assets/Faculity/ecx/Dr. T. Madhumathi.png'
 import ecxValarmathiImage from '../../assets/Faculity/ecx/Mrs. G. Valarmathi.png'
 
 export const beEcmData = {
-  name: 'B.E Electronics & Computer Engineering',
+  name: 'B.E Electronics and Computer Engineering',
     short: 'ECM',
     bannerImage: '/banners/ecx_banner.png',
     duration: '4 Years (8 Semesters)',

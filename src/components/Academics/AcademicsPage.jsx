@@ -13,7 +13,7 @@ import academicHero from '../../assets/Admissions/academic.webp'
 const ugPrograms = [
   {
     id: 'be-cse',
-    name: 'B.E. Computer Science & Engineering',
+    name: 'B.E. Computer Science and Engineering',
     short: 'CSE',
     duration: '4 Years',
     intake: 240,
@@ -65,7 +65,7 @@ const ugPrograms = [
   },
   {
     id: 'be-ece',
-    name: 'B.E. Electronics & Communication Engineering',
+    name: 'B.E. Electronics and Communication Engineering',
     short: 'ECE',
     duration: '4 Years',
     intake: 180,
@@ -78,7 +78,7 @@ const ugPrograms = [
   },
   {
     id: 'be-eee',
-    name: 'B.E. Electrical & Electronics Engineering',
+    name: 'B.E. Electrical and Electronics Engineering',
     short: 'EEE',
     duration: '4 Years',
     intake: 120,
@@ -91,7 +91,7 @@ const ugPrograms = [
   },
   {
     id: 'be-ecm',
-    name: 'B.E. Electronics & Computer Engineering',
+    name: 'B.E. Electronics and Computer Engineering',
     short: 'ECX',
     duration: '4 Years',
     intake: 60,

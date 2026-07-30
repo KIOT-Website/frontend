@@ -16,8 +16,8 @@ import sambathkumarImage from '../../assets/Faculity/csbs/sambathkumar.webp'
 import sabariImage from '../../assets/Faculity/csbs/M.Sabari.png'
 
 export const btechCsbsData = {
-  name: 'B.Tech Computer Science & Business Systems',
-    short: 'CS & Business Systems',
+  name: 'B.Tech Computer Science and Business Systems',
+    short: 'CS and Business Systems',
     bannerImage: '/banners/csbs_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 60,

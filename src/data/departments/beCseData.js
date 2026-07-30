@@ -48,8 +48,8 @@ import cseSuveethaImage from '../../assets/Faculity/cse/Ms S.SUVEETHA.png'
 import cseRajendranImage from '../../assets/Faculity/cse/Dr._P._Rajendran-removebg-preview.png'
 
 export const beCseData = {
-  name: 'B.E Computer Science & Engineering',
-    short: 'Computer Science & Engineering',
+  name: 'B.E Computer Science and Engineering',
+    short: 'Computer Science and Engineering',
     bannerImage: '/banners/cse_banner.png',
     duration: '4 Years (8 Semesters)',
     intake: 240,
