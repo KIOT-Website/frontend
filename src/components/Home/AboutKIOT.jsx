@@ -55,29 +55,19 @@ const AboutKIOT = () => {
                 20 of them are professors in engineering education and 21 of them are budding entrepreneurs.
                 The Founder and President of the Trust, <span className="font-bold text-[#224292]">Dr. PSS. Srinivasan</span>, is an IITian with 30+ years of 
                 rich academic, administrative and research experience and a recipient of Best Engineering College Principal Award from ISTE New Delhi and CSI Mumbai Chapter. 
-                He has visited 30+ Foreign Universities and 100+ Indian Institutions and has Global Exposure in Higher Education.
+                He has visited 30+ Foreign Universities and 100+ Indian Institutions and has Global Exposure in Higher Education.{' '}
+                <motion.button
+                  whileHover={{ x: 3 }}
+                  onClick={() => navigate('/about/about-us')}
+                  className="inline-flex items-center gap-1 text-[#224292] font-bold text-xs uppercase tracking-widest hover:text-[#ffc107] transition-colors ml-1 align-baseline"
+                >
+                  Read More <ArrowRight size={14} className="transition-transform" />
+                </motion.button>
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 border-t border-slate-100">
-              <motion.button
-                whileHover={{ x: 5 }}
-                onClick={() => navigate('/about/about-us')}
-                className="group flex items-center gap-2 text-[#224292] font-bold text-xs uppercase tracking-widest shrink-0"
-              >
-                Read More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-
+            <div className="pt-2">
               <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href={handbookPdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] shrink-0"
-                >
-                  <Download size={14} className="text-[#224292]" />
-                  <span>KIOT Handbook</span>
-                </a>
                 <a
                   href={brochurePdf}
                   target="_blank"
@@ -95,6 +85,15 @@ const AboutKIOT = () => {
                 >
                   <Download size={14} className="text-[#224292]" />
                   <span>KIOT Prospects</span>
+                </a>
+                <a
+                  href={handbookPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] shrink-0"
+                >
+                  <Download size={14} className="text-[#224292]" />
+                  <span>KIOT Handbook</span>
                 </a>
               </div>
             </div>
