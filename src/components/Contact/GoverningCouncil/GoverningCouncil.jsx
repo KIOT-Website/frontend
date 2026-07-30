@@ -32,7 +32,7 @@ const GoverningCouncil = () => {
     {
       sno: 2,
       name: "Dr.PSS.Srinivasan M.Tech., Ph.D.",
-      desc: "Founder & President, KIOT Trust, Salem",
+      desc: "Executive Chairman, KIOT Trust, Salem",
       role: "Member (Trust)",
       contact: "97900 41414"
     },

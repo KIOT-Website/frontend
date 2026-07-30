@@ -157,9 +157,9 @@ const Leadership = () => {
                    { label: "Professionals", value: "07", icon: Briefcase, desc: "Industry professionals contributing expertise and practical insights.", color: "#ffc107" },
                    { label: "Entrepreneurs", value: "15", icon: Microscope, desc: "Visionary entrepreneurs inspiring innovation and leadership.", color: "#224292" }
                  ].map((stat, i) => (
-                   <div key={i} className="bg-white rounded-[2rem] p-8 pt-12 shadow-xl shadow-black/[0.12] border border-slate-100/80 flex flex-col items-center text-center relative group hover:-translate-y-2 transition-all duration-500">
+                   <div key={i} className="bg-white rounded-xl p-8 pt-12 shadow-xl shadow-black/[0.12] border border-slate-100/80 flex flex-col items-center text-center relative group hover:-translate-y-2 transition-all duration-500">
                       {/* Top Icon Box - Always Blue in the image */}
-                      <div className="absolute top-0 -translate-y-1/2 w-16 h-16 bg-[#1e3a8a] text-white rounded-2xl flex items-center justify-center shadow-[0_10px_30px_rgba(30,58,138,0.3)] z-20">
+                      <div className="absolute top-0 -translate-y-1/2 w-16 h-16 bg-[#1e3a8a] text-white rounded-xl flex items-center justify-center shadow-[0_10px_30px_rgba(30,58,138,0.3)] z-20">
                          <stat.icon size={28} />
                       </div>
                       
@@ -172,12 +172,12 @@ const Leadership = () => {
                            <span className="text-[#ffc107] text-3xl font-bold">+</span>
                         </div>
                         <h4 className="text-[13px] font-bold text-[#1e3a8a] uppercase tracking-[0.2em] mb-4">{stat.label}</h4>
-                        <p className="text-[12px] text-black font-medium leading-relaxed px-4">{stat.desc}</p>
+                        <p className="text-[12px] text-black font-semibold leading-relaxed px-4">{stat.desc}</p>
                       </div>
 
                       {/* Thick Curved Bottom Accent */}
                       <div 
-                        className="absolute bottom-0 left-0 right-0 h-8 rounded-b-[2rem] opacity-90" 
+                        className="absolute bottom-0 left-0 right-0 h-8 rounded-b-xl opacity-90" 
                         style={{ 
                           backgroundColor: stat.color === '#224292' ? '#1e3a8a' : '#ffc107',
                           clipPath: 'ellipse(100% 100% at 50% 100%)' 
@@ -196,7 +196,7 @@ const Leadership = () => {
           {/* Subtle Background Tint for Section Contrast */}
           <div className="absolute inset-x-[-100vw] top-[-20px] bottom-[-20px] bg-[#224292]/[0.02] pointer-events-none" />
           
-          <div className="bg-transparent md:bg-white rounded-none md:rounded-[3rem] p-0 md:p-16 border-none md:border border-[#D5E2F4]/60 relative overflow-hidden">
+          <div className="bg-transparent md:bg-white rounded-none md:rounded-2xl p-0 md:p-16 border-none md:border border-[#D5E2F4]/60 relative overflow-hidden">
              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 rounded-full -mr-32 -mt-32 blur-3xl" />
              
              <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-start">
@@ -333,7 +333,7 @@ const Leadership = () => {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
                     whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                    className="bg-white p-5 rounded-2xl border border-slate-100/80 shadow-md hover:shadow-xl flex items-center gap-4 transition-all duration-300 group hover:border-[#224292]/20 relative overflow-hidden"
+                    className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-md hover:shadow-xl flex items-center gap-4 transition-all duration-300 group hover:border-[#224292]/30 relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-slate-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
@@ -347,16 +347,16 @@ const Leadership = () => {
 
                     <div className="flex-1 min-w-0 z-10">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-[14px] font-bold text-slate-800 leading-[1.3] font-graphik group-hover:text-[#224292] transition-colors truncate">
+                        <span className="text-[14.5px] font-extrabold text-[#0f172a] leading-[1.3] font-graphik group-hover:text-[#224292] transition-colors truncate">
                           {member.name}
                         </span>
                       </div>
                       {member.degrees ? (
-                        <p className="text-[11px] text-slate-500 font-medium tracking-tight mt-1 line-clamp-2 leading-relaxed font-graphik">
+                        <p className="text-[11.5px] text-slate-700 font-semibold tracking-tight mt-1 line-clamp-2 leading-relaxed font-graphik">
                           {member.degrees}
                         </p>
                       ) : (
-                        <p className="text-[11px] text-slate-400 font-medium tracking-tight mt-1 italic font-graphik">
+                        <p className="text-[11.5px] text-slate-500 font-semibold tracking-tight mt-1 italic font-graphik">
                           Trust Board Member
                         </p>
                       )}
