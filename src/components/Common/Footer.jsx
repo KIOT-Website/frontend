@@ -11,7 +11,8 @@ import {
   Compass, 
   BookOpen, 
   GraduationCap,
-  Trophy
+  Trophy,
+  Users
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import logoBlue from '../../assets/main/main-logo.webp'
@@ -55,6 +56,16 @@ const Footer = () => {
         { name: 'UG Registration', href: '/admissions/ug-registration' },
         { name: 'PG Registration', href: '/admissions/pg-registration' },
         { name: 'Contact', href: '/contact' },
+      ]
+    },
+    'CLUBS': {
+      icon: Users,
+      links: [
+        { name: 'Department Associations', href: '/resources/student-life/department-associations' },
+        { name: 'Common Centers & Forums', href: '/resources/student-life/common-centers' },
+        { name: 'Professional Society Clubs', href: '/resources/student-life/professional-societies' },
+        { name: 'Extra-Curricular & Social Clubs', href: '/resources/student-life/extra-curricular' },
+        { name: 'Technical & Co-Curricular Clubs', href: '/resources/student-life/technical-clubs' },
       ]
     },
     'QUICK LINKS': {
@@ -168,8 +179,8 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Right Columns: Menu items (2 columns on mobile, 5 on desktop) */}
-        <div className="lg:col-span-9 grid grid-cols-2 md:grid-cols-5 gap-8">
+        {/* Right Columns: Menu items (2 columns on mobile, 3 on tablet, 6 on desktop) */}
+        <div className="lg:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {Object.entries(menuSections).map(([sectionName, sectionData]) => {
             const Icon = sectionData.icon;
             return (

@@ -1099,7 +1099,8 @@ function App() {
                    <Route path="/research/:deptName/consultancy" element={<ConsultancyPage />} />
                    <Route path="/resources/iqac" element={<IQACPage />} />
                    <Route path="/resources/campus-life" element={<CampusLifePage />} />
-                    <Route path="/resources/student-life" element={<StudentLifePage />} />
+                     <Route path="/resources/student-life" element={<StudentLifePage />} />
+                     <Route path="/resources/student-life/:category" element={<StudentLifePage />} />
                     <Route path="/resources/alumni" element={<AlumniPage />} />
                     <Route path="/resources/blogs" element={<BlogsPage />} />
                     <Route path="/resources" element={<UnderConstruction />} />

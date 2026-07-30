@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import "./studentLife.css";
 import { ArrowUpRight, X, Users, GraduationCap, Sparkles, Heart } from 'lucide-react';
 
@@ -19,8 +19,30 @@ import asset26 from '../assets/student life/Asset 26.webp';
 
 export default function StudentLifePage() {
   const navigate = useNavigate();
+  const { category } = useParams();
   const [activeTab, setActiveTab] = useState("Extra-Curricular and Social Clubs");
   const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    if (category) {
+      const categoryMap = {
+        'department-associations': 'Department Associations',
+        'common-centers': 'College Level / Common Centers & Forums',
+        'professional-societies': 'Professional Society Linked Clubs',
+        'extra-curricular': 'Extra-Curricular and Social Clubs',
+        'technical-clubs': 'Technical Clubs / Co-Curricular Clubs'
+      };
+      if (categoryMap[category]) {
+        setActiveTab(categoryMap[category]);
+        setTimeout(() => {
+          const element = document.getElementById("slc-results-section");
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 200);
+      }
+    }
+  }, [category]);
 
   const handleTabSelect = (tab) => {
     setActiveTab(tab);
