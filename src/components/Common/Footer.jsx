@@ -182,19 +182,13 @@ const Footer = () => {
         {/* Right Columns: Menu items (2 columns on mobile, 3 on tablet, 6 on desktop) */}
         <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-6 lg:gap-5">
           {Object.entries(menuSections).map(([sectionName, sectionData]) => {
-            const Icon = sectionData.icon;
             return (
               <div key={sectionName} className="flex flex-col items-start text-left">
-                <div className="flex items-center gap-3 mb-6 relative">
-                  <div className="w-10 h-10 rounded-full bg-[#ffc107]/10 border border-[#ffc107]/20 flex items-center justify-center text-[#ffc107] shrink-0 shadow-lg shadow-black/20">
-                    <Icon size={18} />
-                  </div>
-                  <div className="relative">
-                    <h4 className="text-white font-bold text-sm tracking-wider uppercase">
-                      {sectionName}
-                    </h4>
-                    <div className="w-12 h-[2px] bg-[#ffc107] mt-1" />
-                  </div>
+                <div className="mb-5 relative">
+                  <h4 className="text-white font-bold text-xs sm:text-sm tracking-wider uppercase">
+                    {sectionName}
+                  </h4>
+                  <div className="w-10 h-[2px] bg-[#ffc107] mt-1.5" />
                 </div>
 
                 <ul className="space-y-3.5 w-full">
