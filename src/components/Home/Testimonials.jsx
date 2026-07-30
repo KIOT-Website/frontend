@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
+import ReactDOM from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Quote, X, ChevronRight } from 'lucide-react'
 
 // Assets
 import studentImg from '../../assets/main/testi_student.webp'
@@ -388,78 +390,149 @@ const testimonialData = {
   ]
 }
 
-const TestimonialCard = ({ testi, isTextOnly }) => {
+export const TestimonialCard = ({ testi, isTextOnly }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const isLongQuote = testi.quote && testi.quote.length > 95;
+
   return (
-    <div className="relative w-full max-w-[280px] mx-auto bg-white rounded-[1.2rem] shadow-[0_20px_50px_rgba(34,66,146,0.1)] border border-slate-200 overflow-hidden flex flex-col h-full transition-all duration-500 hover:scale-[1.02]">
-      
-      {/* Top Header */}
-      {isTextOnly ? (
-        <div className="relative h-2 bg-[#224292] overflow-hidden shrink-0">
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
-            <div className="absolute top-0 right-0 w-8 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-4" />
+    <>
+      <div 
+        className="relative w-[270px] sm:w-[285px] h-[340px] bg-white rounded-[1.25rem] shadow-[0_15px_35px_rgba(34,66,146,0.08)] border border-slate-200/80 overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] group shrink-0"
+      >
+        {/* Top Header Banner */}
+        <div className="relative h-14 bg-[#224292] overflow-hidden shrink-0">
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-12 opacity-90" />
         </div>
-      ) : (
-        <div className="relative h-24 bg-[#224292] overflow-hidden shrink-0">
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent)]" />
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-[#ffc107] skew-x-[-30deg] translate-x-24" />
-        </div>
-      )}
 
-      {/* Profile Image */}
-      {isTextOnly ? (
-        <div className="h-6 shrink-0" />
-      ) : (
-        <div className="flex justify-center -mt-16 relative z-10 shrink-0">
-            <div className="w-24 h-24 rounded-full p-1 bg-white shadow-2xl">
-              <div className="w-full h-full rounded-full overflow-hidden bg-white border-4 border-white shadow-inner flex items-center justify-center bg-slate-100">
-                  {testi.image ? (
-                    <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <span className="text-4xl font-black font-graphik text-[#224292]">
-                      {testi.name.charAt(0).toUpperCase()}
-                    </span>
-                  )}
-              </div>
+        {/* Profile Avatar */}
+        <div className="flex justify-center -mt-9 relative z-10 shrink-0">
+          <div className="w-16 h-16 rounded-full p-0.5 bg-white shadow-md">
+            <div className="w-full h-full rounded-full overflow-hidden bg-slate-100 border-2 border-white shadow-inner flex items-center justify-center">
+              {testi.image ? (
+                <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-xl font-black font-graphik text-[#224292]">
+                  {testi.name ? testi.name.charAt(0).toUpperCase() : 'K'}
+                </span>
+              )}
             </div>
+          </div>
         </div>
-      )}
 
-      {/* Name & Designation */}
-      <div className={`text-center px-4 shrink-0 ${isTextOnly ? 'mt-2' : 'mt-4'}`}>
-          {isTextOnly ? (
-            <h4 className="text-[13px] lg:text-[14px] font-black font-graphik text-[#224292] leading-tight mb-2">
-              {testi.name}
-            </h4>
-          ) : (
-            <h4 className="text-lg lg:text-xl font-semibold font-graphik text-[#224292] leading-tight">
-              {testi.name.split(' ').length > 1 
-                ? <>{testi.name.split(' ').slice(0, -1).join(' ')} <span className="text-[#ffc107]">{testi.name.split(' ').slice(-1)}</span></>
-                : testi.name
-              }
-            </h4>
-          )}
+        {/* Name Section */}
+        <div className="text-center px-3 mt-1 shrink-0 h-[38px] flex items-center justify-center">
+          <h4 className="text-[13.5px] font-black font-graphik text-[#224292] leading-tight line-clamp-2">
+            {testi.name}
+          </h4>
+        </div>
+
+        {/* Designation / Department Section */}
+        <div className="text-center px-3 shrink-0 h-[34px] flex items-center justify-center">
           {testi.dept ? (
-            <p className="text-[10px] lg:text-[11px] font-bold text-[#224292] uppercase tracking-[0.05em] mt-1 mb-4">
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.02em] leading-tight line-clamp-2">
               {testi.dept}
             </p>
           ) : (
-            <div className="h-4 mb-4" />
+            <span className="text-[10px] font-bold text-[#ffc107] uppercase tracking-wider">KIOT Alumnus</span>
           )}
-      </div>
+        </div>
 
-      <div className="flex-1 flex flex-col px-4 mb-4">
-          <div className="p-3 bg-[#224292]/5 rounded-xl border border-[#224292]/10 text-center h-full flex items-center justify-center relative">
-            <p className="text-[12px] font-black text-black italic leading-relaxed">
-                "{testi.quote}"
+        {/* Quote Container (Fixed height & flex structure) */}
+        <div className="flex-1 flex flex-col px-3.5 mb-3 mt-1">
+          <div className="p-2.5 bg-[#224292]/[0.03] rounded-xl border border-[#224292]/10 h-full flex flex-col justify-between relative group-hover:bg-[#224292]/[0.06] transition-colors">
+            <p className="text-[11.5px] font-semibold text-slate-700 italic leading-snug line-clamp-3 text-center">
+              "{testi.quote}"
             </p>
+
+            {isLongQuote ? (
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="mt-1 text-[10.5px] font-black text-[#224292] hover:text-[#d4a017] flex items-center justify-center gap-1 transition-colors self-center bg-white/90 px-3 py-0.5 rounded-full border border-[#224292]/15 shadow-sm hover:border-[#ffc107]"
+              >
+                <span>Read More</span>
+                <ChevronRight size={11} />
+              </button>
+            ) : (
+              <div className="h-4" />
+            )}
           </div>
+        </div>
+
+        {/* Bottom Accent Decor */}
+        <div className="absolute bottom-0 right-0 w-10 h-10 bg-[#224292] skew-x-[-45deg] translate-x-5 translate-y-5 z-0 shrink-0 opacity-80" />
       </div>
 
-      {/* Bottom Triangle Decor */}
-      {!isTextOnly && (
-        <div className="absolute bottom-0 right-0 w-16 h-16 bg-[#224292] skew-x-[-45deg] translate-x-10 translate-y-10 z-0 shrink-0" />
+      {/* READ MORE POPUP MODAL (Portal to document.body to break out of CSS transform/marquee container) */}
+      {typeof document !== 'undefined' && ReactDOM.createPortal(
+        <AnimatePresence>
+          {isModalOpen && (
+            <div 
+              className="fixed inset-0 z-[99999] bg-black/60 backdrop-blur-md flex items-center justify-center p-4"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white max-w-lg w-full rounded-3xl shadow-2xl overflow-hidden relative border border-slate-100 flex flex-col"
+              >
+                {/* Modal Top Header */}
+                <div className="bg-[#224292] p-6 text-white relative overflow-hidden">
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-colors"
+                    aria-label="Close modal"
+                  >
+                    <X size={18} />
+                  </button>
+
+                  <div className="flex items-center gap-4 relative z-10 pr-8">
+                    <div className="w-16 h-16 rounded-full p-0.5 bg-white shadow-md shrink-0">
+                      <div className="w-full h-full rounded-full overflow-hidden bg-slate-100 flex items-center justify-center">
+                        {testi.image ? (
+                          <img src={testi.image} alt={testi.name} className="w-full h-full object-cover" />
+                        ) : (
+                          <span className="text-xl font-black text-[#224292]">
+                            {testi.name ? testi.name.charAt(0).toUpperCase() : 'K'}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-black text-white leading-snug">
+                        {testi.name}
+                      </h3>
+                      {testi.dept && (
+                        <p className="text-xs text-slate-200 font-semibold mt-1 leading-normal">
+                          {testi.dept}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Modal Content Body */}
+                <div className="p-6 sm:p-8 space-y-4 max-h-[60vh] overflow-y-auto">
+                  <div className="flex items-center gap-2 text-[#224292]">
+                    <Quote size={24} className="text-[#ffc107] rotate-180 shrink-0" />
+                    <span className="text-xs font-black uppercase tracking-widest text-[#224292]">Success Story & Experience</span>
+                  </div>
+
+                  <p className="text-slate-800 text-sm sm:text-[15px] font-medium leading-relaxed text-justify whitespace-pre-line italic">
+                    "{testi.quote}"
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>,
+        document.body
       )}
-    </div>
+    </>
   );
 };
 
@@ -553,7 +626,7 @@ const Testimonials = () => {
         <div className="relative w-full overflow-hidden py-4">
           {isMobile ? (
             <div className="flex flex-col items-center gap-4">
-              <div className="relative w-full max-w-[280px] mx-auto min-h-[340px] flex items-center justify-center">
+              <div className="relative w-full max-w-[285px] mx-auto min-h-[340px] flex items-center justify-center">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`${activeTab}-${activeCardIndex}`}
@@ -566,22 +639,6 @@ const Testimonials = () => {
                     <TestimonialCard testi={testimonialData[activeTab][activeCardIndex]} isTextOnly={activeTab === 'Recruiters'} />
                   </motion.div>
                 </AnimatePresence>
-              </div>
-              
-              {/* Pagination Dots */}
-              <div className="flex items-center gap-2 mt-2">
-                {testimonialData[activeTab].map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveCardIndex(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      activeCardIndex === idx 
-                        ? 'w-6 bg-[#224292]' 
-                        : 'w-2 bg-[#224292]/20 hover:bg-[#224292]/40'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
               </div>
             </div>
           ) : (
@@ -603,7 +660,7 @@ const Testimonials = () => {
                     {testimonialData[activeTab].map((testi) => (
                       <div
                         key={`set1-${testi.id}`}
-                        className="w-[280px] md:w-[320px] shrink-0"
+                        className="shrink-0 py-2 flex justify-center"
                       >
                          <TestimonialCard testi={testi} isTextOnly={activeTab === 'Recruiters'} />
                       </div>
@@ -612,7 +669,7 @@ const Testimonials = () => {
                     {testimonialData[activeTab].map((testi) => (
                       <div
                         key={`set2-${testi.id}`}
-                        className="w-[280px] md:w-[320px] shrink-0"
+                        className="shrink-0 py-2 flex justify-center"
                       >
                          <TestimonialCard testi={testi} isTextOnly={activeTab === 'Recruiters'} />
                       </div>
@@ -629,4 +686,4 @@ const Testimonials = () => {
 }
 
 export default Testimonials
-export { testimonialData, TestimonialCard }
+export { testimonialData }

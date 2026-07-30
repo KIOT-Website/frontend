@@ -507,6 +507,41 @@ function AccordionItem({ title, children, defaultOpen = false }) {
 }
 
 // â”€â”€â”€ Main Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+export function formatFacultyName(rawName) {
+  if (!rawName) return '';
+  let name = rawName.trim();
+
+  name = name.replace(/^Mrs\.?\s+/i, 'Ms. ');
+
+  const prefixMatch = name.match(/^(Dr\.|Mr\.|Ms\.|Prof\.)\s*(.*)$/i);
+  let prefix = '';
+  let rest = name;
+
+  if (prefixMatch) {
+    prefix = prefixMatch[1];
+    const pLower = prefix.toLowerCase();
+    if (pLower.startsWith('ms')) prefix = 'Ms.';
+    else if (pLower.startsWith('mr')) prefix = 'Mr.';
+    else if (pLower.startsWith('dr')) prefix = 'Dr.';
+    else if (pLower.startsWith('prof')) prefix = 'Prof.';
+
+    rest = prefixMatch[2];
+  } else {
+    const femaleKeywords = ['sowndharya', 'anitha', 'prabha', 'manju', 'sudha', 'shanmugavalli', 'geetha', 'divya', 'saranya', 'deepa', 'ramya', 'sathiyapriya', 'gowthami', 'pushpalatha', 'kiruthika', 'eswari', 'vikneshwary', 'sowndarya', 'suveetha', 'pavithra', 'indumathi', 'preethi', 'priya', 'santhi', 'kaalijoothi', 'dheepika', 'manjula', 'rajeswari', 'ranjani', 'saritha', 'gomathi', 'sathiyapriyanka', 'madhumathi', 'swega', 'harini', 'madhumitha', 'sabana', 'revathi', 'malarmeena', 'thenmugi'];
+    const isFemale = femaleKeywords.some(fn => rest.toLowerCase().includes(fn));
+    prefix = isFemale ? 'Ms.' : 'Mr.';
+  }
+
+  const leadingInitialsMatch = rest.match(/^([A-Z]\.(?:\s*[A-Z]\.)*)\s+(.+)$/);
+  if (leadingInitialsMatch) {
+    const initials = leadingInitialsMatch[1].replace(/\.\s*/g, '').split('').join(' ');
+    const mainName = leadingInitialsMatch[2];
+    rest = `${mainName} ${initials}`;
+  }
+
+  return `${prefix} ${rest}`.replace(/\s+/g, ' ');
+}
+
 export default function CourseDetailPage({ overrides }) {
   const { courseId: paramCourseId } = useParams()
   const courseId = overrides?.courseId || paramCourseId
@@ -2099,7 +2134,7 @@ export default function CourseDetailPage({ overrides }) {
                                 </div>
                                 <div className="p-[13px] flex flex-col flex-1">
                                   <h3 className="font-bold font-graphik text-[#224292] text-[13px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
-                                    {f.name}
+                                    {formatFacultyName(f.name)}
                                   </h3>
                                   <p className="text-slate-500 text-[11.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
                                     {f.designation}
@@ -2208,7 +2243,7 @@ export default function CourseDetailPage({ overrides }) {
                                   </div>
                                   <div className="p-[13px] flex flex-col flex-1">
                                     <h3 className="font-bold font-graphik text-[#224292] text-[14px] mb-0.5 leading-tight group-hover:text-[#ffc107] transition-colors">
-                                      {f.name}
+                                      {formatFacultyName(f.name)}
                                     </h3>
                                     <p className="text-slate-500 text-[12.5px] font-semibold font-graphik leading-tight mb-2.5 line-clamp-2">
                                       {f.designation}
@@ -3177,7 +3212,7 @@ export default function CourseDetailPage({ overrides }) {
                     </div>
                     <div className="text-center md:text-left">
                       <h2 className="text-lg md:text-xl font-bold font-graphik text-white mb-1 leading-tight tracking-tight">
-                        {selectedFaculty.name}
+                        {formatFacultyName(selectedFaculty.name)}
                       </h2>
                       <p className="text-[#ffc107] font-bold font-graphik text-xs md:text-sm">{selectedFaculty.designation}</p>
                     </div>

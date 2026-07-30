@@ -49,7 +49,7 @@ const AlumniVoices = () => {
             {doubleTestimonials.map((item, idx) => (
               <div
                 key={idx}
-                className="w-[280px] md:w-[320px] shrink-0 pt-16"
+                className="shrink-0 py-4 flex justify-center"
               >
                  <TestimonialCard testi={item} isTextOnly={false} />
               </div>

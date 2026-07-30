@@ -221,7 +221,7 @@ export default function ProfessionalSocietyPage() {
       color: "bg-gradient-to-r from-orange-700 to-amber-800",
       tagColor: "bg-orange-100 text-orange-950 border-orange-200",
       desc: "Promotes management education, leadership summits, executive interactions, and business administration skills.",
-      route: null
+      route: "/resources/student-life/mma-salem"
     }
   ];
 

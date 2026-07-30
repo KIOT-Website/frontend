@@ -444,7 +444,7 @@ export default function TechnicalClubsPage() {
       color: "bg-gradient-to-r from-emerald-700 to-teal-800",
       tagColor: "bg-emerald-100 text-emerald-950 border-emerald-200",
       desc: "Improves understanding of global market trends, case studies analysis, and corporate business strategy development.",
-      route: null
+      route: "/resources/student-life/business-insights-club"
     },
     {
       name: "Marketing Club",
@@ -474,7 +474,7 @@ export default function TechnicalClubsPage() {
       color: "bg-gradient-to-r from-purple-700 to-indigo-800",
       tagColor: "bg-purple-100 text-purple-950 border-purple-200",
       desc: "Develops talent acquisition, employee engagement, organizational behavior, and modern HR management practices.",
-      route: null
+      route: "/resources/student-life/hr-management-club"
     },
     {
       name: "Smart Operations and Logistics Club",
@@ -484,7 +484,7 @@ export default function TechnicalClubsPage() {
       color: "bg-gradient-to-r from-sky-700 to-blue-900",
       tagColor: "bg-sky-100 text-sky-950 border-sky-200",
       desc: "Focuses on supply chain optimization, smart inventory management, logistics planning, and operational efficiency.",
-      route: null
+      route: "/resources/student-life/smart-operations-logistics-club"
     }
   ];
 

@@ -113,6 +113,11 @@ const AcmPage = lazy(() => import('./pages/AcmPage'))
 const ScintelPage = lazy(() => import('./pages/ScintelPage'))
 const HigherEducationAbroadPage = lazy(() => import('./pages/HigherEducationAbroadPage'))
 const ContinuousMonitoringPage = lazy(() => import('./pages/ContinuousMonitoringPage'))
+const BusinessInsightsClubPage = lazy(() => import('./pages/BusinessInsightsClubPage'))
+const HumanResourceManagementClubPage = lazy(() => import('./pages/HumanResourceManagementClubPage'))
+const SmartOperationsLogisticsClubPage = lazy(() => import('./pages/SmartOperationsLogisticsClubPage'))
+const EdcCellPage = lazy(() => import('./pages/EdcCellPage'))
+const MmaPage = lazy(() => import('./pages/MmaPage'))
 const DepartmentAssociationsPage = lazy(() => import('./pages/DepartmentAssociationsPage'))
 const CommonCentersPage = lazy(() => import('./pages/CommonCentersPage'))
 const ProfessionalSocietyPage = lazy(() => import('./pages/ProfessionalSocietyPage'))
@@ -823,6 +828,46 @@ function App() {
         title: "AMBERZ Science & Innovation Club | KIOT",
         desc: "Fostering scientific temper with science fairs, innovative projects, and tech quizzes by AMBERZ club at KIOT."
       },
+      "/student-life/business-insights-club": {
+        title: "Business Insights Club | MBA | KIOT",
+        desc: "Explore Business Insights Club activities, International Talk Series, experiential learning, and MBA student initiatives at KIOT."
+      },
+      "/resources/student-life/business-insights-club": {
+        title: "Business Insights Club | MBA | KIOT",
+        desc: "Explore Business Insights Club activities, International Talk Series, experiential learning, and MBA student initiatives at KIOT."
+      },
+      "/student-life/hr-management-club": {
+        title: "Human Resource Management Club | MBA | KIOT",
+        desc: "Explore Human Resource Management Club activities, expert talks, workshops, and HR student initiatives at KIOT."
+      },
+      "/resources/student-life/hr-management-club": {
+        title: "Human Resource Management Club | MBA | KIOT",
+        desc: "Explore Human Resource Management Club activities, expert talks, workshops, and HR student initiatives at KIOT."
+      },
+      "/student-life/smart-operations-logistics-club": {
+        title: "Smart Operations and Logistics Club | MBA | KIOT",
+        desc: "Explore Smart Operations and Logistics Club activities, supply chain workshops, guest lectures, and MBA student initiatives at KIOT."
+      },
+      "/resources/student-life/smart-operations-logistics-club": {
+        title: "Smart Operations and Logistics Club | MBA | KIOT",
+        desc: "Explore Smart Operations and Logistics Club activities, supply chain workshops, guest lectures, and MBA student initiatives at KIOT."
+      },
+      "/student-life/edc-cell": {
+        title: "Entrepreneurship Development Cell (EDC-SEED) | KIOT",
+        desc: "Explore EDC Cell activities, startup workshops, MSME seminars, and student entrepreneurship initiatives at KIOT."
+      },
+      "/resources/student-life/edc-cell": {
+        title: "Entrepreneurship Development Cell (EDC-SEED) | KIOT",
+        desc: "Explore EDC Cell activities, startup workshops, MSME seminars, and student entrepreneurship initiatives at KIOT."
+      },
+      "/student-life/mma-salem": {
+        title: "Madras Management Association (MMA) – Salem | KIOT",
+        desc: "Explore Madras Management Association (MMA) Salem Student Chapter activities, convention competitions, and business leadership events at KIOT."
+      },
+      "/resources/student-life/mma-salem": {
+        title: "Madras Management Association (MMA) – Salem | KIOT",
+        desc: "Explore Madras Management Association (MMA) Salem Student Chapter activities, convention competitions, and business leadership events at KIOT."
+      },
       "/resources/alumni": {
         title: "Alumni Network & Portal | KIOT Salem",
         desc: "Connect with global KIOT alumni. Join alumni chapters, mentorship programs, and annual meets."
@@ -1136,6 +1181,16 @@ function App() {
                   <Route path="/resources/student-life/elderly-childcare" element={<ElderlyChildcarePage />} />
                   <Route path="/student-life/continuous-monitoring" element={<ContinuousMonitoringPage />} />
                   <Route path="/resources/student-life/continuous-monitoring" element={<ContinuousMonitoringPage />} />
+                  <Route path="/student-life/business-insights-club" element={<BusinessInsightsClubPage />} />
+                  <Route path="/resources/student-life/business-insights-club" element={<BusinessInsightsClubPage />} />
+                  <Route path="/student-life/hr-management-club" element={<HumanResourceManagementClubPage />} />
+                  <Route path="/resources/student-life/hr-management-club" element={<HumanResourceManagementClubPage />} />
+                  <Route path="/student-life/smart-operations-logistics-club" element={<SmartOperationsLogisticsClubPage />} />
+                  <Route path="/resources/student-life/smart-operations-logistics-club" element={<SmartOperationsLogisticsClubPage />} />
+                  <Route path="/student-life/edc-cell" element={<EdcCellPage />} />
+                  <Route path="/resources/student-life/edc-cell" element={<EdcCellPage />} />
+                  <Route path="/student-life/mma-salem" element={<MmaPage />} />
+                  <Route path="/resources/student-life/mma-salem" element={<MmaPage />} />
                   <Route path="/student-life/acm" element={<AcmPage />} />
                   <Route path="/resources/student-life/acm" element={<AcmPage />} />
                   <Route path="/student-life/scintel" element={<ScintelPage />} />

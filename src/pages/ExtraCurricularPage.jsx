@@ -148,7 +148,7 @@ export default function ExtraCurricularPage() {
       color: "bg-gradient-to-r from-amber-700 to-orange-800",
       tagColor: "bg-amber-100 text-amber-950 border-amber-200",
       desc: "Nurtures startup ideas, business incubation, pitch competitions, funding guidance, and entrepreneurial mindset.",
-      route: null
+      route: "/resources/student-life/edc-cell"
     },
     {
       name: "Yoga and Meditation Club",
