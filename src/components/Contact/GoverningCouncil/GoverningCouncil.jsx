@@ -196,32 +196,29 @@ const GoverningCouncil = () => {
         </div>
 
         {/* Council Members Section */}
-        <div className="max-w-7xl mx-auto font-graphik">
-           <h3 className="text-xl font-graphik font-semibold text-[#224292] mb-10 flex items-center justify-center md:justify-start gap-4 tracking-tight">
+        <div className="max-w-5xl mx-auto font-graphik">
+           <h3 className="text-xl font-graphik font-semibold text-[#224292] mb-6 flex items-center justify-center md:justify-start gap-4 tracking-tight">
               <Users className="text-[#224292]" />
               Members of Governing Council
            </h3>
            
-           <div className="md:hidden space-y-6 font-graphik">
+           <div className="md:hidden space-y-4 font-graphik">
               {councilMembers.map((member, idx) => (
                 <div 
                    key={`mobile-${idx}`}
-                   className="bg-white rounded-xl p-6 border border-[#D5E2F4]/50 flex flex-col space-y-3 font-graphik"
+                   className="bg-white rounded-xl p-4 border border-[#D5E2F4]/50 flex flex-col space-y-2 font-graphik"
                 >
-                   <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                     <span className="text-[10px] font-black text-slate-400 uppercase">S.No. {member.sno}</span>
-                     {member.contact && member.contact !== '-' && (
-                       <span className="text-xs font-normal text-slate-500">{member.contact}</span>
-                     )}
+                   <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
+                     <span className="text-[10px] font-bold text-slate-400 uppercase">S.No. {member.sno}</span>
                    </div>
-                   <div className="space-y-1.5 font-graphik">
-                      <div className="text-[16px] font-graphik font-bold text-[#224292] leading-tight">{member.name}</div>
+                   <div className="space-y-1 font-graphik">
+                      <div className="text-[15px] font-graphik font-semibold text-[#224292] leading-tight">{member.name}</div>
                       {member.desc && (
                         <div className="text-[#64779F] text-xs font-normal leading-relaxed tracking-wide font-graphik">{member.desc}</div>
                       )}
                    </div>
                    <div className="pt-1 font-graphik">
-                      <span className="inline-block px-4 py-1.5 rounded-full bg-[#224292]/5 text-[#224292] text-[10px] font-graphik font-normal border border-[#ffc107]/20 shadow-sm">
+                      <span className="inline-block px-3 py-1 rounded-full bg-[#224292]/5 text-[#224292] text-[10px] font-graphik font-normal border border-[#ffc107]/20 shadow-sm">
                          {member.role}
                       </span>
                    </div>
@@ -229,7 +226,7 @@ const GoverningCouncil = () => {
               ))}
            </div>
 
-           {/* Desktop View: Premium Table */}
+           {/* Desktop View: Compact Table */}
            <div 
              className="hidden md:block bg-white rounded-xl overflow-hidden border border-[#D5E2F4]/50 font-graphik shadow-md"
            >
@@ -237,10 +234,9 @@ const GoverningCouncil = () => {
                 <table className="w-full text-left border-collapse font-graphik">
                    <thead>
                      <tr className="bg-[#224292] text-white font-graphik">
-                       <th className="px-5 py-5 text-sm font-graphik font-bold tracking-wider w-16 text-center">S.No</th>
-                       <th className="px-5 py-5 text-sm font-graphik font-bold tracking-wider">Name of the Member & Affiliation</th>
-                       <th className="px-5 py-5 text-sm font-graphik font-bold tracking-wider min-w-[200px]">Position</th>
-                       <th className="px-5 py-5 text-sm font-graphik font-bold tracking-wider min-w-[150px]">Contact Details</th>
+                       <th className="px-4 py-3 text-xs font-graphik font-semibold tracking-wider w-16 text-center">S.No</th>
+                       <th className="px-4 py-3 text-xs font-graphik font-semibold tracking-wider">Name of the Member & Affiliation</th>
+                       <th className="px-4 py-3 text-xs font-graphik font-semibold tracking-wider w-56">Position</th>
                      </tr>
                    </thead>
                    <tbody className="divide-y divide-[#D5E2F4]/50 font-graphik">
@@ -249,24 +245,21 @@ const GoverningCouncil = () => {
                          key={`desktop-${idx}`}
                          className="group transition-colors hover:bg-slate-50/50 font-graphik"
                        >
-                         <td className="px-5 py-5 font-graphik text-center text-sm font-normal text-slate-500">
+                         <td className="px-4 py-2.5 font-graphik text-center text-xs font-normal text-slate-500">
                            {member.sno}
                          </td>
-                         <td className="px-5 py-5 font-graphik">
-                           <div className="space-y-1 font-graphik">
-                              <div className="text-[16px] font-graphik font-bold text-[#224292] transition-colors font-graphik">{member.name}</div>
+                         <td className="px-4 py-2.5 font-graphik">
+                           <div className="space-y-0.5 font-graphik">
+                              <div className="text-[14.5px] font-graphik font-semibold text-[#224292] transition-colors">{member.name}</div>
                               {member.desc && (
-                                <div className="text-[#64779F] text-xs font-normal leading-relaxed tracking-wide max-w-2xl font-graphik">{member.desc}</div>
+                                <div className="text-[#64779F] text-[11.5px] font-normal leading-relaxed tracking-wide max-w-2xl font-graphik">{member.desc}</div>
                               )}
                            </div>
                          </td>
-                         <td className="px-5 py-5 font-graphik">
-                           <span className="inline-block px-4 py-1.5 rounded-full bg-[#224292]/5 text-[#224292] text-[11px] font-graphik font-normal border border-[#ffc107]/5 transition-all duration-300 font-graphik">
+                         <td className="px-4 py-2.5 font-graphik">
+                           <span className="inline-block px-3 py-1 rounded-full bg-[#224292]/5 text-[#224292] text-[10.5px] font-graphik font-normal border border-[#ffc107]/20 transition-all duration-300">
                              {member.role}
                            </span>
-                         </td>
-                         <td className="px-5 py-5 font-graphik text-sm font-normal text-slate-600">
-                           {member.contact}
                          </td>
                        </tr>
                      ))}
