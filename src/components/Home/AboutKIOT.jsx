@@ -67,32 +67,32 @@ const AboutKIOT = () => {
             </div>
 
             <div className="pt-2">
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3.5">
                 <a
                   href={brochurePdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] shrink-0 min-w-[160px]"
                 >
-                  <Download size={14} className="text-[#224292]" />
+                  <Download size={15} className="text-[#224292]" />
                   <span>KIOT Brochure</span>
                 </a>
                 <a
                   href={prospectsPdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] shrink-0 min-w-[160px]"
                 >
-                  <Download size={14} className="text-[#224292]" />
+                  <Download size={15} className="text-[#224292]" />
                   <span>KIOT Prospects</span>
                 </a>
                 <a
                   href={handbookPdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] shrink-0 min-w-[160px]"
                 >
-                  <Download size={14} className="text-[#224292]" />
+                  <Download size={15} className="text-[#224292]" />
                   <span>KIOT Handbook</span>
                 </a>
               </div>
