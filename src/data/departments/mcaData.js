@@ -1,4 +1,4 @@
-import { Cpu, BookOpen } from 'lucide-react'
+import { Cpu, BookOpen, Building2 } from 'lucide-react'
 import mcaMohanapriyaImage from '../../assets/Faculity/mca/Dr. S. Mohanapriya.webp';
 import mcaNethajiImage from '../../assets/Faculity/mca/Dr.V.Nethaji.webp';
 import mcaKarimullaImage from '../../assets/Faculity/mca/Mr.K.Karimulla Sheriff.webp';
@@ -79,6 +79,29 @@ export const mcaData = {
       }
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Agile Testing & Automation - Expleo Solutions',
+          'Agile Methodology with DevOps Program - L&T EduTech',
+          'Cyber Security - K7 Computing',
+          'Data Driven AI Solutions - PUNCHBIZ',
+          'Front End Development - UI/UX Technologies - Tech Mahindra',
+          'Full Stack Development & Automation - HCL Technologies',
+          'Low-Code Application Development-Mendix Platform - MxTechies',
+          'Networking and Cloud - Arche Global',
+          'ServiceNow and Salesforce - SmartBridge',
+          'SQL and JAVA Certification: Oracle Academy - Oracle',
+          'Programming & Tech Skill Acceleration - GUVI – An HCL Initiative',
+          'Programming with Core Java - SmartCliff',
+          'SEGUE Program - Hexaware Technologies',
+          'Software Technology – Java & Dot Net - Aspire Systems',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
       { name: 'Advanced Software Development Lab', equipment: 'High-performance workstations with modern development frameworks and servers', icon: Cpu }
     ],
     placementStats: { placed: '90%', avg: '4.5 LPA', top: '12 LPA', companies: '30+' }

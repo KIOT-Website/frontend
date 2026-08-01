@@ -1,4 +1,4 @@
-import { Cpu } from 'lucide-react'
+import { Cpu, Building2 } from 'lucide-react'
 
 export const meSeData = {
   name: 'M.E Software Engineering',
@@ -24,6 +24,29 @@ export const meSeData = {
     whyChoose: ['Advanced software architecture', 'DevOps & Cloud focus', 'Industry-aligned projects'],
     curriculum: [{ year: 'Year 1', semesters: ['Software Architecture', 'Agile Methodologies', 'Advanced Databases'] }],
     faculty: [{ name: 'Dr. Sakthivel M', designation: 'Associate Professor', experience: '20.1 Years', specialization: 'Software Engineering', rating: 4.8 }],
-    labs: [{ name: 'Advanced Software Lab', equipment: 'Enterprise Servers, Cloud Platforms', icon: Cpu }],
+    labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Agile Testing & Automation - Expleo Solutions',
+          'Agile Methodology with DevOps Program - L&T EduTech',
+          'Cyber Security - K7 Computing',
+          'Data Driven AI Solutions - PUNCHBIZ',
+          'Front End Development - UI/UX Technologies - Tech Mahindra',
+          'Full Stack Development & Automation - HCL Technologies',
+          'Low-Code Application Development-Mendix Platform - MxTechies',
+          'Networking and Cloud - Arche Global',
+          'ServiceNow and Salesforce - SmartBridge',
+          'SQL and JAVA Certification: Oracle Academy - Oracle',
+          'Programming & Tech Skill Acceleration - GUVI – An HCL Initiative',
+          'Programming with Core Java - SmartCliff',
+          'SEGUE Program - Hexaware Technologies',
+          'Software Technology – Java & Dot Net - Aspire Systems',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+{ name: 'Advanced Software Lab', equipment: 'Enterprise Servers, Cloud Platforms', icon: Cpu }],
     placementStats: { placed: '93%', avg: '5.8 LPA', top: '18 LPA', companies: '40+' },
 };

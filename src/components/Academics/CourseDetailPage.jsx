@@ -27,6 +27,23 @@ import ip2 from '../../assets/be-ecx/ip2.png'
 import meAeQuiz from '../../assets/innovative_practices/ma_ae/Quiz.png'
 import meAeExperiential from '../../assets/innovative_practices/ma_ae/Experiential Learning.png'
 import meAePbl from '../../assets/innovative_practices/ma_ae/Project Based Learning.png'
+import eceIp1 from '../../assets/innovative_practices/ece/Hands-on Experience Session.png'
+import eceIp2 from '../../assets/innovative_practices/ece/Quiz.png'
+import eceIp3 from '../../assets/innovative_practices/ece/Experiential Learning.png'
+import eceIp4 from '../../assets/innovative_practices/ece/Roleplay.png'
+import eceIp5 from '../../assets/innovative_practices/ece/Seminar.png'
+import eceIp6 from '../../assets/innovative_practices/ece/Mindmap.png'
+import eceIp7 from '../../assets/innovative_practices/ece/Mindmap2.jpg'
+import eceIp8 from '../../assets/innovative_practices/ece/Collaborative Learning.png'
+import eceIp9 from '../../assets/innovative_practices/ece/Peer Learning.jpg'
+import eceIp10 from '../../assets/innovative_practices/ece/Participative Learning & Presentation.jpg'
+import eceIp11 from '../../assets/innovative_practices/ece/Simulation Based Learning.png'
+import eceIp12 from '../../assets/innovative_practices/ece/Workshop-Based Learning.png'
+import eceIp13 from '../../assets/innovative_practices/ece/Project Based Learning.jpg'
+import eceIp14 from '../../assets/innovative_practices/ece/Workshop Mode.png'
+import eceIp15 from '../../assets/innovative_practices/ece/Peer Review.jpg'
+import eceIp16 from '../../assets/innovative_practices/ece/Collaborative Learning2.png'
+import eceIp17 from '../../assets/innovative_practices/ece/Seminar2.png'
 import mbaPicture1 from '../../assets/Mba/Picture1.png'
 import mbaPicture2 from '../../assets/Mba/Picture2.png'
 import mbaPicture3 from '../../assets/Mba/Picture3.png'
@@ -681,7 +698,7 @@ export default function CourseDetailPage({ overrides }) {
 
   const objectiveData = [
     { id: 'PEO', icon: Target, title: 'Program Educational Objectives', content: course.peo, color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' },
-    { id: 'PO', icon: Layers, title: 'Program Outcomes', content: course.po, color: 'text-[#ffc107]', bg: 'bg-[#ffc107]/5', activeBg: 'bg-[#ffc107]', iconColor: 'text-[#224292]' },
+    { id: 'PO', icon: Layers, title: 'Program Outcomes', content: course.po, color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' },
     { id: 'PSO', icon: Star, title: 'Program Specific Outcomes', content: course.pso, color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' },
     ...(courseId !== 'mba-general' && courseId !== 'mba-iev' && courseId !== 'mca' && !courseId?.startsWith('me-') ? [
       { id: 'KAP', icon: Award, title: 'Knowledge and Attitude Profile', content: 'KAP', color: 'text-[#224292]', bg: 'bg-[#224292]/5', activeBg: 'bg-[#224292]', iconColor: 'text-[#ffc107]' }
@@ -2335,16 +2352,18 @@ export default function CourseDetailPage({ overrides }) {
                               </div>
 
                               {/* Personnel / Staff */}
-                              <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
-                                <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
-                                  <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
-                                  <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.incharge || 'Department HOD'}</p>
+                              {activeLab.name !== 'Industrial Linked Laboratories / COEs' && (
+                                <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
+                                  <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
+                                    <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
+                                    <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.incharge || 'Department HOD'}</p>
+                                  </div>
+                                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                                    <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
+                                    <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.technician || 'Engineering Technician'}</p>
+                                  </div>
                                 </div>
-                                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                  <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
-                                  <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.technician || 'Engineering Technician'}</p>
-                                </div>
-                              </div>
+                              )}
                             </div>
                           </motion.div>
                         );
@@ -3531,9 +3550,148 @@ function InnovativePracticesSection({ courseId }) {
     }
   ];
 
+  const beEceDetails = [
+    {
+      sno: 1,
+      name: 'Mr.K.Rajesh',
+      subject: 'Electronic Devices',
+      method: 'Hands-on Experience Session',
+      description: "Students gain practical knowledge by performing laboratory experiments, hardware interfacing, circuit design, and simulation activities. This approach bridges the gap between theoretical concepts and real-world engineering applications.",
+      image: eceIp1
+    },
+    {
+      sno: 2,
+      name: 'Mr.K.Rajesh',
+      subject: 'Electronic Devices',
+      method: 'Quiz',
+      description: "Regular quizzes are conducted using digital and classroom-based platforms to assess students' conceptual understanding, encourage active participation, and provide immediate feedback for continuous improvement.",
+      image: eceIp2
+    },
+    {
+      sno: 3,
+      name: 'Mr.K.Rajesh',
+      subject: 'Low-Power VLSI Design',
+      method: 'Experiential Learning',
+      description: "Students learn by actively engaging in experiments, industrial visits, internships, field activities, and real-life engineering applications, enabling them to connect classroom learning with practical experiences.",
+      image: eceIp3
+    },
+    {
+      sno: 4,
+      name: 'Mr.K.Rajesh',
+      subject: 'Electronic Devices',
+      method: 'Roleplay',
+      description: "Students enact real-world engineering scenarios such as technical interviews, customer interactions, project presentations, and industrial problem-solving situations to improve communication, teamwork, and decision-making skills.",
+      image: eceIp4
+    },
+    {
+      sno: 5,
+      name: 'Mr.S.Manoharan',
+      subject: 'Communication Systems',
+      method: 'Seminar',
+      description: "Seminar is an interactive learning activity where students research a technical topic, prepare a presentation, and share their knowledge with peers.",
+      image: eceIp5
+    },
+    {
+      sno: 6,
+      name: 'Mrs.M.Vasanthi',
+      subject: 'VLSI Design',
+      method: 'Mindmap',
+      description: "A Mind Map is a visual learning technique that organizes concepts and ideas around a central topic using branches and keywords.",
+      image: eceIp6
+    },
+    {
+      sno: 7,
+      name: 'Mrs.S.Elarmathi',
+      subject: 'Embedded Systems and IOT',
+      method: 'Mindmap',
+      description: "Mind mapping techniques help students organize complex engineering concepts visually, enabling better understanding, retention, and interconnection of topics through diagrams and concept maps.",
+      image: eceIp7
+    },
+    {
+      sno: 8,
+      name: 'Mr.R.Shanmugasundara',
+      subject: 'Digital Signal Processing',
+      method: 'Collaborative Learning',
+      description: "Students work together in teams to solve engineering problems, complete assignments, conduct experiments, and develop projects, fostering teamwork, leadership, and interpersonal skills.",
+      image: eceIp8
+    },
+    {
+      sno: 9,
+      name: 'Mr.S.Elarmathi',
+      subject: 'Embedded Systems and IOT',
+      method: 'Peer Learning',
+      description: "Students learn from one another through knowledge sharing, group discussions, mentoring, and collaborative problem-solving, which strengthens conceptual understanding and builds confidence.",
+      image: eceIp9
+    },
+    {
+      sno: 10,
+      name: 'Mrs.V.Vadivu',
+      subject: 'Communication Systems',
+      method: 'Participative Learning & Presentation',
+      description: "Students actively participate in group discussions, technical presentations, demonstrations, and classroom interactions, enhancing communication skills, subject knowledge, and self-confidence.",
+      image: eceIp10
+    },
+    {
+      sno: 11,
+      name: 'Mr.V.Vimalraj',
+      subject: 'Automotive ESU',
+      method: 'Simulation Based Learning',
+      description: "Students are presented with real-world engineering problems and encouraged to analyze, research, and develop innovative solutions using scientific and engineering principles, thereby enhancing critical thinking and analytical skills.",
+      image: eceIp11
+    },
+    {
+      sno: 12,
+      name: 'Mrs.V.Vadivu',
+      subject: 'Analog and Digital Communication',
+      method: 'Workshop-Based Learning',
+      description: "Classroom sessions are conducted in the form of workshops where students engage in guided practical activities, demonstrations, tool-based learning, and interactive exercises to gain hands-on experience with emerging technologies.",
+      image: eceIp12
+    },
+    {
+      sno: 13,
+      name: 'Mrs.T.Devika',
+      subject: 'Embedded System Interfacing',
+      method: 'Project Based Learning',
+      description: "Students undertake individual and team-based projects to design, develop, test, and implement engineering solutions. This method promotes creativity, innovation, research aptitude, and practical application of theoretical knowledge.",
+      image: eceIp13
+    },
+    {
+      sno: 14,
+      name: 'Mr.T.Praveenkumar',
+      subject: 'Electro Magnetic Fields',
+      method: 'Workshop Mode',
+      description: "To foster active and collaborative learning, students were divided into groups and provided with specific reference materials. Each team analyzed the assigned content, engaged in technical discussions, and presented their insights to the class. This student-centered approach not only strengthened conceptual understanding but also enhanced communication, presentation, critical thinking, and teamwork skills.",
+      image: eceIp14
+    },
+    {
+      sno: 15,
+      name: 'Mrs.S.Sasidevi',
+      subject: 'Digital Electronics',
+      method: 'Peer Review',
+      description: "Students evaluate and provide constructive feedback on their peers' assignments, presentations, project reports, and technical work using predefined rubrics. This process promotes critical evaluation, collaborative improvement, and reflective learning.",
+      image: eceIp15
+    },
+    {
+      sno: 16,
+      name: 'Ms.C.Sri kiruthika',
+      subject: 'Digital Principles and Computer Organization',
+      method: 'Collaborative Learning',
+      description: "Students work together in teams to solve engineering problems, complete assignments, conduct experiments, and develop projects, fostering teamwork, leadership, and interpersonal skills.",
+      image: eceIp16
+    },
+    {
+      sno: 17,
+      name: 'Mr.S.Sabarinathan',
+      subject: 'Digital Principles and Computer Organization',
+      method: 'Seminar',
+      description: "Seminar is an interactive learning activity where students research a technical topic, prepare a presentation, and share their knowledge with peers.",
+      image: eceIp17
+    }
+  ];
+
   const detailsMap = {
     'me-ae': meAeDetails,
-    'be-ece': meAeDetails
+    'be-ece': beEceDetails
   };
 
   const images = imagesMap[courseId] || [];

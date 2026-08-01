@@ -1,4 +1,4 @@
-import { Cpu, Wrench, FlaskConical, Zap, Award, Settings, CircuitBoard, Wind, Terminal } from 'lucide-react'
+import { Cpu, Wrench, FlaskConical, Zap, Award, Settings, CircuitBoard, Wind, Terminal, Building2 } from 'lucide-react'
 import eeeBalajiImage from '../../assets/Faculity/eee/balaji.webp'
 import eeeDineshImage from '../../assets/Faculity/eee/dinesh.webp'
 import eeeDivyaImage from '../../assets/Faculity/eee/divya.webp'
@@ -72,6 +72,31 @@ export const beEeeData = {
       { name: 'Dr. Chithralekha N', designation: 'Professor / Physics', qualification: 'M.Sc, M.Phil, Ph.D. (Physics), M.Ed, M.Phil. (Education), SET (Physical Science)', experience: 'Teaching: 16.5 Yrs.', specialization: 'Ultrasonic and Spectroscopy', email: 'ncphy@kiot.ac.in', rating: 4.9, association: 'Regular', joiningDate: '01.08.2018', publications: 'IJ: 07, NJ: 01, IC: 05, NC: 02', category: 'S&H' },
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Advanced Construction Management - L&T EduTech',
+          'Automotive Technology - Ashok Leyland',
+          'AI-driven Engineering Solutions - Creative Synergies Group',
+          'CAD & Digital Manufacturing - Harita TechServ',
+          'Energy Audit Centre - Sinetec Automation',
+          'Embedded Technology - Firmware - American Megatrends International-AMI',
+          'e-Yantra Robotics Lab - IIT – Bombay',
+          'Software Defined Systems / ADAS with AUTOSAR - ANCIT / Harita Techserv',
+          'Piping and Plant Design - Image Grafix',
+          'Quality Engineering- Mech. - Nathan & Nathan Global Inc.',
+          'Texas Instruments (TI) Innovation Lab - STEPS',
+          'VLSI Testing & Post-Silicon Validation (PSV) - Tessolve Semiconductor',
+          'Intelligent Elevator Systems and Industry 4.0 - KONE Elevators',
+          'Industrial Automation: PLC & SCADA - GENN Automation',
+          'Industry 4.0 - Delphi TVS',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
       {
         name: 'Engineering Practices Laboratory',
         incharge: 'Mrs. N. Divya, AP / EEE',

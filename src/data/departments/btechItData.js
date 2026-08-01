@@ -1,4 +1,4 @@
-import { BookOpen, Layers } from 'lucide-react'
+import { BookOpen, Layers, Building2 } from 'lucide-react'
 import itSachidhanandamImage from '../../assets/Faculity/IT/Dr.P.Sachidhanandam, IT.png'
 import itKarthickImage from '../../assets/Faculity/IT/Mr. K.Karthick.png'
 import itAyyappanImage from '../../assets/Faculity/IT/Mr.R.Ayyappan.png'
@@ -38,6 +38,7 @@ export const btechItData = {
   vision: "To equip students with cutting-edge information technologies and nurture them into socially responsible and globally recognized Professionals.",
   mission: "To deliver reliable education with innovative techniques, software updates and programming languages to the students.\nTo cultivate innovation and entrepreneurial spirit among students, enabling them to cater to multidisciplinary sectors.\nTo impart skills to meet the growing demands in academics and industry.\nTo shape the students as sustainable professionals with resilient ethics and society consciousness.",
   peo: "Graduates will be able to\n\nPEO-1: Have a successful career as an IT professional with analytical and critical thinking to meet the diversified requirements of industry, academia and research.\n\nPEO-2: Acquire leadership qualities with technical skills and entrepreneurship skills to solve complex engineering and social problems with ethics and environmental responsibility\n\nPEO-3: Pursue lifelong learning, and involve in applied research to design optimal solutions",
+  po: " ",
   pso: "To ensure graduates\n\nPSO-1: Have proficiency in programming skills to design, develop and apply appropriate techniques, to solve complex engineering problems.\n\nPSO-2: Have knowledge to provide technological solutions for automation.\n\nPSO-3: Have the skill to secure and manage large volume of data.",
   whyChoose: ['Strong coding culture', 'Software focused', 'Industry tie-ups'],
   curriculum: [{ year: 'Year 1', semesters: ['Python', 'Discrete Maths', 'Digital Logic'] }],
@@ -347,7 +348,31 @@ export const btechItData = {
       image: itVasanthaKumarImage
     }
   ],
-  labs: [{ name: 'Networks Lab', equipment: 'Configurable Routers', icon: Layers }],
+  labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Agile Testing & Automation - Expleo Solutions',
+          'Agile Methodology with DevOps Program - L&T EduTech',
+          'Cyber Security - K7 Computing',
+          'Data Driven AI Solutions - PUNCHBIZ',
+          'Front End Development - UI/UX Technologies - Tech Mahindra',
+          'Full Stack Development & Automation - HCL Technologies',
+          'Low-Code Application Development-Mendix Platform - MxTechies',
+          'Networking and Cloud - Arche Global',
+          'ServiceNow and Salesforce - SmartBridge',
+          'SQL and JAVA Certification: Oracle Academy - Oracle',
+          'Programming & Tech Skill Acceleration - GUVI – An HCL Initiative',
+          'Programming with Core Java - SmartCliff',
+          'SEGUE Program - Hexaware Technologies',
+          'Software Technology – Java & Dot Net - Aspire Systems',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      { name: 'Networks Lab', equipment: 'Configurable Routers', icon: Layers }],
   companies: ['Zoho', 'Freshworks', 'Amazon'],
   placementStats: { placed: '94%', avg: '5.2 LPA', top: '20 LPA', companies: '80+' },
   projects: ['Cloud-based ERP'],

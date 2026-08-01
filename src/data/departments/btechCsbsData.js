@@ -1,4 +1,4 @@
-import { BarChart3, Terminal } from 'lucide-react'
+import { BarChart3, Terminal, Building2 } from 'lucide-react'
 import ramkumarImage from '../../assets/Faculity/csbs/ramkumar.webp'
 import vanithaImage from '../../assets/Faculity/csbs/vanitha.webp'
 import karthickImage from '../../assets/Faculity/csbs/karthick.webp'
@@ -60,6 +60,30 @@ export const btechCsbsData = {
       { name: 'Dr. Sambathkumar C', designation: 'Assistant Professor', joiningDate: '16.04.2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Research: 6 Years', specialization: 'Nanomaterials for Energy Storage Application', email: 'sambath7593@gmail.com', publications: 'IJ: 15, IC: 02, NJ: 02', rating: 4.8, image: sambathkumarImage }
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Agile Testing & Automation - Expleo Solutions',
+          'Agile Methodology with DevOps Program - L&T EduTech',
+          'Cyber Security - K7 Computing',
+          'Data Driven AI Solutions - PUNCHBIZ',
+          'Front End Development - UI/UX Technologies - Tech Mahindra',
+          'Full Stack Development & Automation - HCL Technologies',
+          'Low-Code Application Development-Mendix Platform - MxTechies',
+          'Networking and Cloud - Arche Global',
+          'ServiceNow and Salesforce - SmartBridge',
+          'SQL and JAVA Certification: Oracle Academy - Oracle',
+          'Programming & Tech Skill Acceleration - GUVI – An HCL Initiative',
+          'Programming with Core Java - SmartCliff',
+          'SEGUE Program - Hexaware Technologies',
+          'Software Technology – Java & Dot Net - Aspire Systems',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
       {
         name: 'DBMS Laboratory',
         equipments: [

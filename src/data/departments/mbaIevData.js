@@ -1,4 +1,4 @@
-import { Cpu, Monitor, Rocket } from 'lucide-react'
+import { Cpu, Monitor, Rocket, Building2 } from 'lucide-react'
 import mbaIevImmanuelImg from '../../assets/Faculity/mba iev/Dr D Immanuel (1).png'
 import ievVijayakumarImg from '../../assets/Faculity/mba iev/Dr.S.Vijaya Kumar.png'
 import ievSaravananImg from '../../assets/Faculity/mba iev/Prof.S.Saravanan.png'
@@ -65,6 +65,17 @@ export const mbaIevData = {
       { name: 'Prof. Gowrishankar M', designation: 'Assistant Professor', qualification: 'B.Tech(IT)., MBA.', specialization: 'HRM, Entrepreneurship Development', email: 'mgmba@kiot.ac.in', experience: 'Teaching: 5 Years, Research: 4 Years', publications: 'IJ:12, NJ:08, NC:04, IC:14', rating: 4.6, image: ievGowrishankarImg }
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
+
       { name: 'IEV Innovation & Prototyping Space', equipment: '3D printers, design software, and brainstorming pods', icon: Rocket },
       {
         name: "Data Analysis and Business Modeling Lab",

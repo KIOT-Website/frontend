@@ -1,4 +1,4 @@
-import { Cpu, Globe, Wrench, Zap, Layers, Car, Settings, MonitorDot, CircuitBoard, Terminal, Monitor, Code, Radio } from 'lucide-react'
+import { Cpu, Globe, Wrench, Zap, Layers, Car, Settings, MonitorDot, CircuitBoard, Terminal, Monitor, Code, Radio, Building2 } from 'lucide-react'
 import eceSanthiyakumariImage from '../../assets/Faculity/ECE/Dr. N. Santhiyakumari.webp'
 import eceThangavelImage from '../../assets/Faculity/ECE/Dr. M. Thangavel.webp'
 import eceSaravananImage from '../../assets/Faculity/ECE/Dr. V. Saravanan.webp'
@@ -645,6 +645,31 @@ export const beEceData = {
       }
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Advanced Construction Management - L&T EduTech',
+          'Automotive Technology - Ashok Leyland',
+          'AI-driven Engineering Solutions - Creative Synergies Group',
+          'CAD & Digital Manufacturing - Harita TechServ',
+          'Energy Audit Centre - Sinetec Automation',
+          'Embedded Technology - Firmware - American Megatrends International-AMI',
+          'e-Yantra Robotics Lab - IIT – Bombay',
+          'Software Defined Systems / ADAS with AUTOSAR - ANCIT / Harita Techserv',
+          'Piping and Plant Design - Image Grafix',
+          'Quality Engineering- Mech. - Nathan & Nathan Global Inc.',
+          'Texas Instruments (TI) Innovation Lab - STEPS',
+          'VLSI Testing & Post-Silicon Validation (PSV) - Tessolve Semiconductor',
+          'Intelligent Elevator Systems and Industry 4.0 - KONE Elevators',
+          'Industrial Automation: PLC & SCADA - GENN Automation',
+          'Industry 4.0 - Delphi TVS',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
       {
         name: 'BE23GE305 & Engineering Practices Laboratory',
         equipments: [

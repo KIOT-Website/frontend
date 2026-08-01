@@ -1,4 +1,4 @@
-import { ShieldCheck } from 'lucide-react'
+import { ShieldCheck, Building2 } from 'lucide-react'
 import srinivasanImage from '../../assets/dir and hod/Dr. PSS. Srinivasan.jpg'
 
 export const meIseData = {
@@ -60,6 +60,30 @@ export const meIseData = {
       rating: 4.5
     }
   ],
-  labs: [{ name: 'Safety Engineering Lab', equipment: 'Fire Safety Setup, PPE Inventory', icon: ShieldCheck }],
+  labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Advanced Construction Management - L&T EduTech',
+          'Automotive Technology - Ashok Leyland',
+          'AI-driven Engineering Solutions - Creative Synergies Group',
+          'CAD & Digital Manufacturing - Harita TechServ',
+          'Energy Audit Centre - Sinetec Automation',
+          'Embedded Technology - Firmware - American Megatrends International-AMI',
+          'e-Yantra Robotics Lab - IIT – Bombay',
+          'Software Defined Systems / ADAS with AUTOSAR - ANCIT / Harita Techserv',
+          'Piping and Plant Design - Image Grafix',
+          'Quality Engineering- Mech. - Nathan & Nathan Global Inc.',
+          'Texas Instruments (TI) Innovation Lab - STEPS',
+          'VLSI Testing & Post-Silicon Validation (PSV) - Tessolve Semiconductor',
+          'Intelligent Elevator Systems and Industry 4.0 - KONE Elevators',
+          'Industrial Automation: PLC & SCADA - GENN Automation',
+          'Industry 4.0 - Delphi TVS',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+{ name: 'Safety Engineering Lab', equipment: 'Fire Safety Setup, PPE Inventory', icon: ShieldCheck }],
   placementStats: { placed: '95%', avg: '5.2 LPA', top: '12 LPA', companies: '30+' },
 }

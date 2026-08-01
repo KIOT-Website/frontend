@@ -1,4 +1,4 @@
-import { Cpu, Award, Monitor } from 'lucide-react'
+import { Cpu, Award, Monitor, Building2 } from 'lucide-react'
 import mbaDirectorImg from '../../assets/Faculity/mba/Dr.A.Stephen.png'
 import mbaVenkatesanImg from '../../assets/Faculity/mba/Dr.T.Venkatesan.png'
 import mbaRameshImg from '../../assets/Faculity/mba/Dr.R.Ramesh.png'
@@ -67,6 +67,17 @@ export const mbaGeneralData = {
       { name: 'Ms. Bharani Eswari M', designation: 'Assistant Professor', qualification: 'B.Com, MBA., (Ph.D)', specialization: 'Finance & Marketing', email: 'bharanieswarimba@gmail.com', experience: 'Teaching: 9 Years, Industry: 4 Years', publications: 'IC:01, NC:02, IJ:04, NJ:03', image: mbaBharaniEswariImg, rating: 4.7 }
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
+
       {
         name: "Data Analysis and Business Modeling Lab",
         icon: Cpu,

@@ -1,4 +1,4 @@
-import { FlaskConical, Microscope } from 'lucide-react'
+import { FlaskConical, Microscope, Building2 } from 'lucide-react'
 
 export const phdData = {
   name: 'Doctor of Philosophy',
@@ -17,5 +17,16 @@ export const phdData = {
     whyChoose: ['Expert research supervisors', 'Modern research labs', 'Funding assistance for publications'],
     curriculum: [{ year: 'Course Work', semesters: ['Research Methodology', 'Advanced Domain Elective'] }],
     faculty: [{ name: 'Research Committee', designation: 'Coordinators', experience: '20+ Years', specialization: 'Multidisciplinary', rating: 5.0 }],
-    labs: [{ name: 'Research Center', equipment: 'Experimental Setup', icon: FlaskConical }],
+    labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
+{ name: 'Research Center', equipment: 'Experimental Setup', icon: FlaskConical }],
 };

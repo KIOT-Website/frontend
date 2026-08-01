@@ -1,4 +1,4 @@
-import { Cpu, Activity, FlaskConical, Terminal } from 'lucide-react'
+import { Cpu, Activity, FlaskConical, Terminal, Building2 } from 'lucide-react'
 import krishnanImage from '../../assets/Faculity/civil/L.KRISHNAN.webp'
 import aidsGomathiImage from '../../assets/Faculity/aids/dr_gomathi.webp'
 import aidsSasikumarHodImage from '../../assets/Faculity/aids/sasikumar_hod.webp'
@@ -155,7 +155,7 @@ export const btechAidsData = {
       }
     ],
     faculty: [
-      { name: 'Dr. Sasikumar B', designation: 'Associate Professor & Head', doj: '01.07.2009', qualification: 'B.E., M.E(CSE)., (Ph.D.).', association: 'Regular', experience: '20 Years 11 Month', specialization: 'Digital Image Processing, AI, Data Science, ML', email: 'hod.aids@kiot.ac.in', publications: 'IJ:05, NJ:03, IC:05, NC:02', rating: 5.0, image: aidsSasikumarHodImage },
+      { name: 'Dr. Sasikumar B', designation: 'Associate Professor & Head', doj: '01.07.2009', qualification: 'B.E., M.E(CSE)., Ph.D.', association: 'Regular', experience: '20 Years 11 Month', specialization: 'Digital Image Processing, AI, Data Science, ML', email: 'hod.aids@kiot.ac.in', publications: 'IJ:05, NJ:03, IC:05, NC:02', rating: 5.0, image: aidsSasikumarHodImage },
       { name: 'Dr. Gomathi A', designation: 'Associate Professor', doj: '04.07.2022', qualification: 'B.E., M.E., Ph.D.', association: 'Regular', experience: '21 Years 3 Month', specialization: 'Information Retrieval', email: 'agit@kiot.ac.in', publications: 'IJ:06, NJ:01, IC:6', rating: 4.9, image: aidsGomathiImage },
       { name: 'Mr. Gopalakrishnan A', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '19 years 2 Month', specialization: 'Operating System, Cloud Computing', email: 'agaids@kiot.ac.in', publications: 'IJ:03,IC:05,NC:03', rating: 4.8, image: aidsGopalakrishnanImage },
       { name: 'Ms. Brindha V', designation: 'Assistant Professor', doj: '04.07.2022', qualification: 'B.E., M.E(CSE)', association: 'Regular', experience: '4 Years 6 Month', specialization: 'AI & Data Science', email: 'vbaids@kiot.ac.in', rating: 4.6 },
@@ -182,6 +182,30 @@ export const btechAidsData = {
       { name: 'Mr. Venkatachalam T', designation: 'Assistant Professor', doj: '16.07.2021', qualification: 'M.A., M.Phil., B.Ed.', association: 'Regular', experience: '13 Years 7 Month', specialization: 'Language and Linguistics', email: 'venkatachalamteng@kiot.ac.in', publications: 'IC:01', rating: 4.7, image: aidsVenkatachalamImage, category: 'S&H' }
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Agile Testing & Automation - Expleo Solutions',
+          'Agile Methodology with DevOps Program - L&T EduTech',
+          'Cyber Security - K7 Computing',
+          'Data Driven AI Solutions - PUNCHBIZ',
+          'Front End Development - UI/UX Technologies - Tech Mahindra',
+          'Full Stack Development & Automation - HCL Technologies',
+          'Low-Code Application Development-Mendix Platform - MxTechies',
+          'Networking and Cloud - Arche Global',
+          'ServiceNow and Salesforce - SmartBridge',
+          'SQL and JAVA Certification: Oracle Academy - Oracle',
+          'Programming & Tech Skill Acceleration - GUVI – An HCL Initiative',
+          'Programming with Core Java - SmartCliff',
+          'SEGUE Program - Hexaware Technologies',
+          'Software Technology – Java & Dot Net - Aspire Systems',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
       {
         name: 'AI LAB (D BLOCK)',
         equipments: [

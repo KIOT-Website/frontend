@@ -1,4 +1,4 @@
-import { Cpu, Globe, BookOpen, Zap, Layers, ShieldCheck, Microscope, Terminal, Monitor, Code } from 'lucide-react'
+import { Cpu, Globe, BookOpen, Zap, Layers, ShieldCheck, Microscope, Terminal, Monitor, Code, Building2 } from 'lucide-react'
 import cseVKumarImage from '../../assets/Faculity/cse/Dr.V.KUMAR.webp'
 import cseTKarthikeyanImage from '../../assets/Faculity/cse/Mr.T.KARTHIKEYAN.webp'
 import cseRKumarImage from '../../assets/Faculity/cse/Dr.R.KUMAR.webp'
@@ -337,6 +337,30 @@ export const beCseData = {
       { name: 'Dr. Manikandan R', designation: 'Assistant Professor (Chemistry)', doj: '18.08.2025', qualification: 'B.Sc., M.Sc., M.Phil., Ph.D', association: 'Regular', experience: 'Teaching: 11, Research: 4', specialization: 'Organometallic complexes - Nanocomposites', email: 'rmchem@kiot.ac.in', publications: 'IJ:26, NJ:1', rating: 4.7, category: 'S&H', subject: 'Chemistry' }
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Agile Testing & Automation - Expleo Solutions',
+          'Agile Methodology with DevOps Program - L&T EduTech',
+          'Cyber Security - K7 Computing',
+          'Data Driven AI Solutions - PUNCHBIZ',
+          'Front End Development - UI/UX Technologies - Tech Mahindra',
+          'Full Stack Development & Automation - HCL Technologies',
+          'Low-Code Application Development-Mendix Platform - MxTechies',
+          'Networking and Cloud - Arche Global',
+          'ServiceNow and Salesforce - SmartBridge',
+          'SQL and JAVA Certification: Oracle Academy - Oracle',
+          'Programming & Tech Skill Acceleration - GUVI – An HCL Initiative',
+          'Programming with Core Java - SmartCliff',
+          'SEGUE Program - Hexaware Technologies',
+          'Software Technology – Java & Dot Net - Aspire Systems',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
       {
         name: 'Networks Laboratory',
         equipments: ['Area: 74.76 Sq.m', 'Workstations: 40 Systems', 'Cisco Packet Tracer', 'Wireshark', 'NS2 Network Simulator'],

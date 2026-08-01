@@ -1,4 +1,4 @@
-import { Cpu } from 'lucide-react'
+import { Cpu, Building2 } from 'lucide-react'
 import ecxPriyaMolImage from '../../assets/Faculity/ecx/Dr. K. Priya Mol.png'
 import ecxMaragatharajImage from '../../assets/Faculity/ecx/Dr. S. Maragatharaj.png'
 import ecxMadhumathiImage from '../../assets/Faculity/ecx/Dr. T. Madhumathi.png'
@@ -40,6 +40,31 @@ export const beEcmData = {
       { name: 'Dr. S. Masilamani', designation: 'Assistant Professor', joiningDate: '01.07.2026', qualification: 'B.Sc., M.Sc., Ph.D.', association: 'Regular', experience: '25 Years', specialization: 'Physics (Crystallography)', email: 'smphy@kiot.ac.in', publications: 'IJ: 11, IC: 8', rating: 4.8, category: 'S&H' }
     ],
     labs: [
+      {
+        name: 'Industrial Linked Laboratories / COEs',
+        equipments: [
+          'Advanced Construction Management - L&T EduTech',
+          'Automotive Technology - Ashok Leyland',
+          'AI-driven Engineering Solutions - Creative Synergies Group',
+          'CAD & Digital Manufacturing - Harita TechServ',
+          'Energy Audit Centre - Sinetec Automation',
+          'Embedded Technology - Firmware - American Megatrends International-AMI',
+          'e-Yantra Robotics Lab - IIT – Bombay',
+          'Software Defined Systems / ADAS with AUTOSAR - ANCIT / Harita Techserv',
+          'Piping and Plant Design - Image Grafix',
+          'Quality Engineering- Mech. - Nathan & Nathan Global Inc.',
+          'Texas Instruments (TI) Innovation Lab - STEPS',
+          'VLSI Testing & Post-Silicon Validation (PSV) - Tessolve Semiconductor',
+          'Intelligent Elevator Systems and Industry 4.0 - KONE Elevators',
+          'Industrial Automation: PLC & SCADA - GENN Automation',
+          'Industry 4.0 - Delphi TVS',
+          'CRM and HRM - ZOHO',
+          'Japanese Language Centre - iTokyo'
+        ],
+        icon: Building2
+      },
+
+      
       {
         name: 'Analog and Digital Electronics Laboratory',
         equipments: [
