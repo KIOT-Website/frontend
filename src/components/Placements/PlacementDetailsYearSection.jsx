@@ -59,21 +59,20 @@ const PlacementDetailsYearSection = () => {
             <p>Annual placement reports are currently being updated.</p>
           </div>
         ) : (
-          <div className="space-y-2.5">
-            {/* Header */}
-            <div className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-3 bg-[#224292] rounded-xl shadow-sm">
-              <span className="text-[10px] font-semibold text-white/70 uppercase tracking-widest">Batch Year</span>
-              <span className="text-[10px] font-semibold text-white/70 uppercase tracking-widest">Report</span>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
 
             {data.map((record, idx) => (
-              <motion.div
+              <motion.a
+                href={record.pdf_url}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={record.id}
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-3.5 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-md hover:border-[#224292]/10 transition-all group"
+                className="grid grid-cols-[1fr_auto] gap-4 items-center px-8 py-3.5 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-md hover:border-[#224292]/10 transition-all group cursor-pointer"
               >
                 {/* Info */}
                 <div>
@@ -85,17 +84,14 @@ const PlacementDetailsYearSection = () => {
 
                 {/* Actions */}
                 <div className="flex items-center">
-                  <a
-                    href={record.pdf_url?.replace('/upload/', '/upload/fl_attachment/')}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl bg-[#ffc107]/20 text-[#224292] hover:bg-[#ffc107] hover:shadow-lg transition-all transform active:scale-95 shadow-sm"
-                    title="Download Report"
+                  <div
+                    className="px-4 py-2 rounded-xl bg-[#ffc107]/20 text-[#224292] group-hover:bg-[#ffc107] group-hover:shadow-lg transition-all transform group-active:scale-95 shadow-sm"
+                    title="View Report"
                   >
-                    <Download size={16} />
-                  </a>
+                    <span className="text-xs font-bold uppercase tracking-wider">View</span>
+                  </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         )}

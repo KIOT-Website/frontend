@@ -644,7 +644,7 @@ const mechResearchAreas = [
 const mechFacilities = [];
 
 const mechFacultyPursuing = [
-    { name: "Mr. S. Naveen Kumar", topic: "Indoor Air Quality", supervisor: "Dr. K. Visagavel (Professor & Principal)", university: "Knowledge Institute of Technology & Anna University", registration: "23142697213", status: "Pursuing" },
+    { name: "Mr. S. Naveen Kumar", topic: "Indoor Air Quality", supervisor: "Dr. K. Visagavel (Professor & Principal)", university: "Knowledge Institute of Technology & Anna University", registration: "23142697213", status: "Pursuing" , doj: "16.07.2021", vidwanId: "320743" },
     { name: "Mr. P. Karthikeyan", topic: "Surface Engineering", supervisor: "Dr. K. Visagavel (Professor & Principal)", university: "Knowledge Institute of Technology & Anna University", registration: "23142697217", status: "Pursuing" },
     { name: "Mr. M. Vinoth", topic: "EV Battery – Thermal Management", supervisor: "Dr. K. Visagavel (Professor & Principal)", university: "Knowledge Institute of Technology & Anna University", registration: "23122697215", status: "Pursuing" },
     { name: "Mr. S. RajeshKnna", topic: "Composite Materials", supervisor: "Dr. M. Ilangkumaran (Professor & COE)", university: "Knowledge Institute of Technology & Anna University", registration: "24132697200", status: "Pursuing" },
@@ -695,30 +695,48 @@ const shFacultyPursuing = [
     { name: "Mr. K. Anand Kumar", topic: "English Language Teaching (S&H - English - Mech)", supervisor: "Dr. R. Vennila Nancy Christina (ASP/English, Sree Saraswathi Thiagraja College)", university: "Bharathiyar University", registration: "B1/ENG25PJULY0462/2025", status: "Pursuing" },
     { name: "Mr. M. Sivaperumal", topic: "Nanomaterials (S&H - Chemistry - IT)", supervisor: "Dr. G. Raja (Professor/Chemistry, Paavai Engineering College)", university: "Anna University", registration: "23147691151", status: "Pursuing" },
     { name: "Mr. M. Prasath", topic: "Inventory Control Theory (S&H - Maths - EEE)", supervisor: "Dr. R. Vijaykrishnaraj (AP/Maths, Bharath Institute of Higher Education and Research)", university: "Bharath Institute of Higher Education and Research", registration: "D25SH027", status: "Pursuing" },
-    { name: "Mrs. A. Preethi", topic: "Nano Particles (S&H - Chemistry - ECE)", supervisor: "Dr. K. Balachandran (ASP/Chemistry, Vivekanandha College of Engineering for Women)", university: "Anna University", registration: "21237697164", status: "Pursuing" },
-    { name: "Mr. T. Raja", topic: "Decision Making using Fuzzy Logic (S&H - Maths - ECE)", supervisor: "Dr. S. Thilagavathi (AP/Maths, Erode Arts and Science College)", university: "Bharathiar University", registration: "B1/MAT24PJuly0919/2024", status: "Pursuing" },
+    { name: "Mrs. A. Preethi", topic: "Nano Particles (S&H - Chemistry - ECE)", supervisor: "Dr. K. Balachandran (ASP/Chemistry, Vivekanandha College of Engineering for Women)", university: "Anna University", registration: "21237697164", status: "Pursuing" , doj: "23.06.2025", vidwanId: "703524" },
+    { name: "Mr. T. Raja", topic: "Decision Making using Fuzzy Logic (S&H - Maths - ECE)", supervisor: "Dr. S. Thilagavathi (AP/Maths, Erode Arts and Science College)", university: "Bharathiar University", registration: "B1/MAT24PJuly0919/2024", status: "Pursuing" , doj: "02.06.2015", vidwanId: "321631" },
     { name: "Mr. S. Sasi Kumar", topic: "Thin Film Technology (S&H - Physics - Civil)", supervisor: "Dr. K. S. Mohan (ASP/Physics, Nandha Engineering College)", university: "Anna University", registration: "25147691163", status: "Pursuing" },
     { name: "Mrs. S. Geetha", topic: "Graph Theory (S&H - Maths - CSE)", supervisor: "Dr. S. Manimekalai (AP/Maths, Dr. N.G.P. Arts & Science College)", university: "Bharathiar University", registration: "B1/MAT24PJULY1102/2024", status: "Pursuing" },
-    { name: "Mrs. S. Saranya", topic: "Fuzzy graphs (S&H - Maths - ECE)", supervisor: "Dr. B. Ramesh kumar (ASP/Maths, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology)", university: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology", registration: "VTDWS2025625", status: "Pursuing" },
+    { name: "Mrs. S. Saranya", topic: "Fuzzy graphs (S&H - Maths - ECE)", supervisor: "Dr. B. Ramesh kumar (ASP/Maths, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology)", university: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology", registration: "VTDWS2025625", status: "Pursuing" , doj: "25.11.2021", vidwanId: "321588" },
     { name: "Dhineshkumar P", topic: "Molecular Spectroscopy", supervisor: "Dr. G. Thilagavathi (AP/Physics, Nehru Memorial College)", university: "Bharathidasan University", registration: "40008/Ph.D K3/Physics /Part-time /05.02.2026", status: "Pursuing" },
     { name: "Priya P", topic: "Topology", supervisor: "Dr. V. Ramesh (AP/Maths, Kandasamy Kandar's College, P.velur)", university: "Periyar University", registration: "PUAD250271413", status: "Pursuing" }
 ];
 
 const shGuidedScholars = [];
 
+
+// ─── ECX (Electronics & Computer Engineering) Data ───
+const ecxSupervisors = [];
+const ecxPhdHolders = [
+    { id: 1, name: "Dr. S.Maragatharaj", topic: "-", year: "-", university: "-", publications: { ij: "-", ic: "-", nj: "-", nc: "-" }, guided: "-", beingGuided: "-", vidwanId: "321065", doj: "15.07.2022" },
+    { id: 2, name: "Dr. S.Masilamani", topic: "-", year: "-", university: "-", publications: { ij: "-", ic: "-", nj: "-", nc: "-" }, guided: "-", beingGuided: "-", vidwanId: "725746", doj: "01.07.2026" },
+    { id: 3, name: "Dr. K.Priya Mol", topic: "-", year: "-", university: "-", publications: { ij: "-", ic: "-", nj: "-", nc: "-" }, guided: "-", beingGuided: "-", vidwanId: "720361", doj: "09.06.2025" },
+    { id: 4, name: "Dr. T.Madhumathi", topic: "-", year: "-", university: "-", publications: { ij: "-", ic: "-", nj: "-", nc: "-" }, guided: "-", beingGuided: "-", vidwanId: "720670", doj: "04.06.2025" }
+];
+const ecxResearchAreas = [];
+const ecxFacilities = [];
+const ecxFacultyPursuing = [
+    { name: "Mrs. G.Valarmathi", topic: "-", supervisor: "-", university: "-", registration: "-", status: "Pursuing", vidwanId: "720364", doj: "16.03.2026" },
+    { name: "Mrs. M.Iswarya", topic: "-", supervisor: "-", university: "-", registration: "-", status: "Pursuing", vidwanId: "719975", doj: "19.06.2026" },
+    { name: "Ms. O.Vivedhini", topic: "-", supervisor: "-", university: "-", registration: "-", status: "Pursuing", vidwanId: "720371", doj: "01.06.2026" }
+];
+const ecxGuidedScholars = [];
+
 // ─── ECE (Electronics & Communication Engineering) Data ───
 const eceSupervisors = [
-    { id: 1, name: "Dr. N.Santhiyakumari", role: "Professor & Director - R&D", university: "Anna University", department: "ECE", researchArea: "Biomedical Image Processing", supervisorId: "2340297", email: "dirrd@kiot.ac.in", guided: "6", guiding: "6", irins: "https://kiot.irins.org", image: santhiyakumariEceImg, publications: [] },
-    { id: 2, name: "Dr. Kumarganesh S", role: "Professor / ECE", university: "Anna University", department: "ECE", researchArea: "Signal Processing and Communication", supervisorId: "3340060", email: "skgece@kiot.ac.in", guided: "-", guiding: "6", irins: "https://kiot.irins.org", image: kumarganeshEceImg, publications: [] }
+    { id: 1, name: "Dr. N.Santhiyakumari", role: "Professor & Director - R&D", university: "Anna University", department: "ECE", researchArea: "Biomedical Image Processing", supervisorId: "2340297", email: "dirrd@kiot.ac.in", guided: "6", guiding: "6", irins: "https://kiot.irins.org", image: santhiyakumariEceImg, publications: [] , doj: "03.05.2010", vidwanId: "313132" },
+    { id: 2, name: "Dr. Kumarganesh S", role: "Professor / ECE", university: "Anna University", department: "ECE", researchArea: "Signal Processing and Communication", supervisorId: "3340060", email: "skgece@kiot.ac.in", guided: "-", guiding: "6", irins: "https://kiot.irins.org", image: kumarganeshEceImg, publications: [] , doj: "04.08.2021", vidwanId: "321603" }
 ];
 const ecePhdHolders = [
-    { id: 1, name: "Dr. N.Santhiyakumari", topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Carotid Artery Images using Intima media thickness measurement", year: "2008", university: "Anna University, Chennai", publications: { ij: 48, ic: 52, nj: "-", nc: 49 }, guided: "6", beingGuided: "6" },
-    { id: 2, name: "Dr. M.Thangavel", topic: "Investigation on Carotid Wall Motion and Texture Classification of Plaques Using Multi-resolution Features", year: "2016", university: "Anna University, Chennai", publications: { ij: 8, ic: 3, nj: "-", nc: 15 }, guided: "-", beingGuided: "-" },
+    { id: 1, name: "Dr. N.Santhiyakumari", topic: "Implementation of Medical Decision Making System by classification of Ultrasound common Carotid Carotid Artery Images using Intima media thickness measurement", year: "2008", university: "Anna University, Chennai", publications: { ij: 48, ic: 52, nj: "-", nc: 49 , doj: "03.05.2010", vidwanId: "313132" }, guided: "6", beingGuided: "6" },
+    { id: 2, name: "Dr. M.Thangavel", topic: "Investigation on Carotid Wall Motion and Texture Classification of Plaques Using Multi-resolution Features", year: "2016", university: "Anna University, Chennai", publications: { ij: 8, ic: 3, nj: "-", nc: 15 , doj: "02.05.2011", vidwanId: "322240" }, guided: "-", beingGuided: "-" },
     { id: 3, name: "Dr. Vijayaraghavan R", topic: "Temporal Analysis of Remote Sensing Data for Identification of Some Tree and Shrub Species in Semiarid Region", year: "2008", university: "Jai Narain Vyas University Jodhpur", publications: { ij: 1, ic: "-", nj: "-", nc: 6 }, guided: "-", beingGuided: "-" },
-    { id: 4, name: "Dr. Kumarganesh S", topic: "Certain Investigations on Segmentation and Compression of Brain Tumor Image", year: "2018", university: "Anna University, Chennai", publications: { ij: 41, ic: 19, nj: "-", nc: 5 }, guided: "-", beingGuided: "6" },
+    { id: 4, name: "Dr. Kumarganesh S", topic: "Certain Investigations on Segmentation and Compression of Brain Tumor Image", year: "2018", university: "Anna University, Chennai", publications: { ij: 41, ic: 19, nj: "-", nc: 5 , doj: "04.08.2021", vidwanId: "321603" }, guided: "-", beingGuided: "6" },
     { id: 5, name: "Dr. Shanmugasundaram P", topic: "Certain Investigations on Computer Aided Colon Cancer Detection in Wireless Capsule Endoscopy Images", year: "2021", university: "Anna University, Chennai", publications: { ij: 9, ic: 8, nj: 1, nc: 19 }, guided: "-", beingGuided: "-" },
-    { id: 6, name: "Dr. V.Saravanan", topic: "Certain investigations on active noise control systems for domestic applications by developing the step size of the FxLMS algorithm", year: "2022", university: "Anna University, Chennai", publications: { ij: 8, ic: 6, nj: "-", nc: 11 }, guided: "-", beingGuided: "-" },
-    { id: 7, name: "Dr. G.Rajamanickam", topic: "Wireless Communication", year: "2024", university: "Anna University, Chennai", publications: { ij: 4, ic: 2, nj: 1, nc: 2 }, guided: "-", beingGuided: "-" },
+    { id: 6, name: "Dr. V.Saravanan", topic: "Certain investigations on active noise control systems for domestic applications by developing the step size of the FxLMS algorithm", year: "2022", university: "Anna University, Chennai", publications: { ij: 8, ic: 6, nj: "-", nc: 11 , doj: "18.05.2011", vidwanId: "305065" }, guided: "-", beingGuided: "-" },
+    { id: 7, name: "Dr. G.Rajamanickam", topic: "Wireless Communication", year: "2024", university: "Anna University, Chennai", publications: { ij: 4, ic: 2, nj: 1, nc: 2 , doj: "26.11.2019", vidwanId: "320491" }, guided: "-", beingGuided: "-" },
     { id: 8, name: "Dr. S.Maragatharaj", topic: "Low Power VLSI", year: "2024", university: "Anna University, Chennai", publications: { ij: 11, ic: "-", nj: "-", nc: 9 }, guided: "-", beingGuided: "-" },
     { id: 9, name: "Dr. Santhi T K", topic: "Womanism in the Select Works of Alice Walker", year: "2014", university: "Mother Teresa Women's University, Kodaikanal", publications: { ij: 2, ic: 4, nj: "-", nc: 6 }, guided: "-", beingGuided: "-" },
     { id: 10, name: "Dr. Priya Mol K", topic: "The Brutality of Civilization and the Struggle for Survival: A Study of Jack London’s Select Novels.", year: "2022", university: "Manonmaniam Sundaranar University", publications: { ij: 2, ic: 3, nj: 1, nc: 2 }, guided: "-", beingGuided: "-" }
@@ -730,15 +748,15 @@ const eceFacilities = [
     { name: "Embedded Systems & VLSI Design Lab", description: "Xilinx Vivado, Cadence Tools, Microcontroller Development Boards (ARM, AVR, PIC)", infrastructure: "Vivado software, Cadence licenses, MCU development boards" }
 ];
 const eceFacultyPursuing = [
-    { name: "Mr. S.Premkumar", topic: "Medical Image Processing", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
-    { name: "Mr. M.Dineshkumar", topic: "Data Security", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
+    { name: "Mr. S.Premkumar", topic: "Medical Image Processing", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" , doj: "13.06.2019", vidwanId: "320492" },
+    { name: "Mr. M.Dineshkumar", topic: "Data Security", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" , doj: "14.12.2020", vidwanId: "320606" },
     { name: "Ms. T.Devika", topic: "Internet of Things", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
-    { name: "Mr. S.Veerakumar", topic: "Internet of Things", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
-    { name: "Mr. M.Chandraman", topic: "Medical Image Processing", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" },
-    { name: "Mr. A.Arun", topic: "Image Retrieval Algorithms", supervisor: "Dr. Nirmala Devi P", university: "Anna University", registration: "Jan & 2018", status: "Pursuing" },
-    { name: "Mr. T.Raja", topic: "Intuitionistic Fuzzy Sets", supervisor: "Dr. S.Thilagavathy", university: "Bharathiar University", registration: "Jan & 2024", status: "Pursuing" },
-    { name: "Mr. A.Tamilselvan", topic: "Configuration of SOC in IoT Industry", supervisor: "Dr. J.Samson Immanuel", university: "Karunya University", registration: "Jan & 2024", status: "Pursuing" },
-    { name: "Mr. K.Rajesh", topic: "Low Power VLSI Design", supervisor: "Dr. H.Victor Du John", university: "Karunya University", registration: "Jan & 2024", status: "Pursuing" },
+    { name: "Mr. S.Veerakumar", topic: "Internet of Things", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" , doj: "04.06.2012", vidwanId: "322089" },
+    { name: "Mr. M.Chandraman", topic: "Medical Image Processing", supervisor: "Dr. N.Santhiyakumari", university: "Anna University", registration: "Jul & 2023", status: "Pursuing" , doj: "09.06.2011", vidwanId: "321069" },
+    { name: "Mr. A.Arun", topic: "Image Retrieval Algorithms", supervisor: "Dr. Nirmala Devi P", university: "Anna University", registration: "Jan & 2018", status: "Pursuing" , doj: "11.06.2018", vidwanId: "321079" },
+    { name: "Mr. T.Raja", topic: "Intuitionistic Fuzzy Sets", supervisor: "Dr. S.Thilagavathy", university: "Bharathiar University", registration: "Jan & 2024", status: "Pursuing" , doj: "02.06.2015", vidwanId: "321631" },
+    { name: "Mr. A.Tamilselvan", topic: "Configuration of SOC in IoT Industry", supervisor: "Dr. J.Samson Immanuel", university: "Karunya University", registration: "Jan & 2024", status: "Pursuing" , doj: "09.07.2021", vidwanId: "320615" },
+    { name: "Mr. K.Rajesh", topic: "Low Power VLSI Design", supervisor: "Dr. H.Victor Du John", university: "Karunya University", registration: "Jan & 2024", status: "Pursuing" , doj: "01.06.2023", vidwanId: "570736" },
     { name: "Mr. S.Elarmathi", topic: "Image Processing", supervisor: "Dr. S.Kumarganesh", university: "Anna University", registration: "Jan & 2025", status: "Pursuing" },
     { name: "Ms. Preethi A", topic: "Nanoparticles -Supercapacitor application", supervisor: "Dr. K.Balachandran", university: "Anna University", registration: "Jan & 2021", status: "Pursuing" }
 ];
@@ -818,7 +836,8 @@ const ResearchSummaryDashboard = ({ deptName }) => {
     const isSH = deptName?.toLowerCase() === 'science-&-humanities' || deptName?.toLowerCase() === 'science-and-humanities';
     const isECE = deptName?.toLowerCase() === 'electronics-&-communication-engineering' || deptName?.toLowerCase() === 'electronics-and-communication-engineering';
     const isIT = deptName?.toLowerCase() === 'information-technology';
-    const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev';
+    const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev'
+    const isECX = deptName?.toLowerCase() === 'electronics-&-computer-engineering' || deptName?.toLowerCase() === 'electronics-and-computer-engineering' || deptName?.toLowerCase() === 'ecx' || deptName?.toLowerCase() === 'ecm';
 
     const periodText = '01.06.2023 to 31.05.2026';
     const totalPubs = isCivil ? 56 : (isAIDS ? 113 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : (isECE ? 134 : (isIT ? 13 : (isMBA ? '-' : 221))))))))));
@@ -1441,17 +1460,18 @@ const ResearchResourcesPage = () => {
     const isECE = deptName?.toLowerCase() === 'electronics-&-communication-engineering' || deptName?.toLowerCase() === 'electronics-and-communication-engineering'
     const isIT = deptName?.toLowerCase() === 'information-technology'
     const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev'
+    const isECX = deptName?.toLowerCase() === 'electronics-&-computer-engineering' || deptName?.toLowerCase() === 'electronics-and-computer-engineering' || deptName?.toLowerCase() === 'ecx' || deptName?.toLowerCase() === 'ecm'
     const isSinglePageDashboard = true
 
-    const supervisors = isCivil ? civilSupervisors : (isAIDS ? aidsSupervisors : (isCSBS ? csbsSupervisors : (isEEE ? eeeSupervisors : (isMCA ? mcaSupervisors : (isMech ? mechSupervisors : (isSH ? shSupervisors : (isECE ? eceSupervisors : (isIT ? itSupervisors : (isMBA ? mbaSupervisors : cseSupervisors)))))))))
-    const phdHolders = isCivil ? civilPhdHolders : (isAIDS ? aidsPhdHolders : (isCSBS ? csbsPhdHolders : (isEEE ? eeePhdHolders : (isMCA ? mcaPhdHolders : (isMech ? mechPhdHolders : (isSH ? shPhdHolders : (isECE ? ecePhdHolders : (isIT ? itPhdHolders : (isMBA ? mbaPhdHolders : csePhdHolders)))))))))
-    const researchAreas = isCivil ? civilResearchAreas : (isAIDS ? aidsResearchAreas : (isCSBS ? csbsResearchAreas : (isEEE ? eeeResearchAreas : (isMCA ? mcaResearchAreas : (isMech ? mechResearchAreas : (isSH ? shResearchAreas : (isECE ? eceResearchAreas : (isIT ? itResearchAreas : (isMBA ? mbaResearchAreas : cseResearchAreas)))))))))
-    const facilities = isCivil ? civilFacilities : (isAIDS ? aidsFacilities : (isCSBS ? csbsFacilities : (isEEE ? eeeFacilities : (isMCA ? mcaFacilities : (isMech ? mechFacilities : (isSH ? shFacilities : (isECE ? eceFacilities : (isIT ? itFacilities : (isMBA ? mbaFacilities : cseFacilities)))))))))
-    const facultyPursuing = isCivil ? civilFacultyPursuing : (isAIDS ? aidsFacultyPursuing : (isCSBS ? csbsFacultyPursuing : (isEEE ? eeeFacultyPursuing : (isMCA ? mcaFacultyPursuing : (isMech ? mechFacultyPursuing : (isSH ? shFacultyPursuing : (isECE ? eceFacultyPursuing : (isIT ? itFacultyPursuing : (isMBA ? mbaFacultyPursuing : cseFacultyPursuing)))))))))
-    const guidedScholars = isCivil ? civilGuidedScholars : (isAIDS ? aidsGuidedScholars : (isCSBS ? csbsGuidedScholars : (isEEE ? eeeGuidedScholars : (isMCA ? mcaGuidedScholars : (isMech ? mechGuidedScholars : (isSH ? shGuidedScholars : (isECE ? eceGuidedScholars : (isIT ? itGuidedScholars : (isMBA ? mbaGuidedScholars : cseGuidedScholars)))))))))
+    const supervisors = isCivil ? civilSupervisors : (isAIDS ? aidsSupervisors : (isCSBS ? csbsSupervisors : (isEEE ? eeeSupervisors : (isMCA ? mcaSupervisors : (isMech ? mechSupervisors : (isSH ? shSupervisors : (isECE ? eceSupervisors : (isIT ? itSupervisors : (isMBA ? mbaSupervisors : (isECX ? ecxSupervisors : cseSupervisors))))))))))
+    const phdHolders = isCivil ? civilPhdHolders : (isAIDS ? aidsPhdHolders : (isCSBS ? csbsPhdHolders : (isEEE ? eeePhdHolders : (isMCA ? mcaPhdHolders : (isMech ? mechPhdHolders : (isSH ? shPhdHolders : (isECE ? ecePhdHolders : (isIT ? itPhdHolders : (isMBA ? mbaPhdHolders : (isECX ? ecxPhdHolders : csePhdHolders))))))))))
+    const researchAreas = isCivil ? civilResearchAreas : (isAIDS ? aidsResearchAreas : (isCSBS ? csbsResearchAreas : (isEEE ? eeeResearchAreas : (isMCA ? mcaResearchAreas : (isMech ? mechResearchAreas : (isSH ? shResearchAreas : (isECE ? eceResearchAreas : (isIT ? itResearchAreas : (isMBA ? mbaResearchAreas : (isECX ? ecxResearchAreas : cseResearchAreas))))))))))
+    const facilities = isCivil ? civilFacilities : (isAIDS ? aidsFacilities : (isCSBS ? csbsFacilities : (isEEE ? eeeFacilities : (isMCA ? mcaFacilities : (isMech ? mechFacilities : (isSH ? shFacilities : (isECE ? eceFacilities : (isIT ? itFacilities : (isMBA ? mbaFacilities : (isECX ? ecxFacilities : cseFacilities))))))))))
+    const facultyPursuing = isCivil ? civilFacultyPursuing : (isAIDS ? aidsFacultyPursuing : (isCSBS ? csbsFacultyPursuing : (isEEE ? eeeFacultyPursuing : (isMCA ? mcaFacultyPursuing : (isMech ? mechFacultyPursuing : (isSH ? shFacultyPursuing : (isECE ? eceFacultyPursuing : (isIT ? itFacultyPursuing : (isMBA ? mbaFacultyPursuing : (isECX ? ecxFacultyPursuing : cseFacultyPursuing))))))))))
+    const guidedScholars = isCivil ? civilGuidedScholars : (isAIDS ? aidsGuidedScholars : (isCSBS ? csbsGuidedScholars : (isEEE ? eeeGuidedScholars : (isMCA ? mcaGuidedScholars : (isMech ? mechGuidedScholars : (isSH ? shGuidedScholars : (isECE ? eceGuidedScholars : (isIT ? itGuidedScholars : (isMBA ? mbaGuidedScholars : (isECX ? ecxGuidedScholars : cseGuidedScholars))))))))))
 
     // Interactive States for CSE Single Page view
-    const [activeTab, setActiveTab] = useState(isAIDS || isCivil || isCSBS || isMCA || isIT || isMBA ? 'areasFacilities' : 'supervisors')
+    const [activeTab, setActiveTab] = useState(isAIDS || isCivil || isCSBS || isMCA || isIT || isMBA ? 'scholars' : 'supervisors')
     const [selectedSuper, setSelectedSuper] = useState(null)
 
     const formatDeptName = (name) => {
@@ -1596,10 +1616,9 @@ const ResearchResourcesPage = () => {
                         {/* Interactive Navigation Tabs */}
                         <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-200 pb-5">
                             {[
-                                { id: 'supervisors', label: 'Ph.D Supervisors', icon: Users, show: supervisors.length > 0 },
-                                { id: 'phdCompleted', label: 'Our Wings', icon: Award, show: phdHolders.length > 0 },
-                                { id: 'areasFacilities', label: 'Infrastructure & Areas', icon: Microscope, show: researchAreas.length > 0 || facilities.length > 0 },
-                                { id: 'scholars', label: isAIDS || isCivil || isCSBS || isMCA || isSH ? 'Faculty Pursuing Ph.D' : 'Scholars & Pursuing', icon: GraduationCap, show: facultyPursuing.length > 0 || guidedScholars.length > 0 }
+                                { id: 'supervisors', label: 'Ph.D Supervisors', icon: Users, show: supervisors.length > 0 || isECX },
+                                { id: 'areasFacilities', label: 'Infrastructure & Areas', icon: Microscope, show: researchAreas.length > 0 || facilities.length > 0 || isECX },
+                                { id: 'scholars', label: isAIDS || isCivil || isCSBS || isMCA || isSH ? 'Faculty Pursuing Ph.D' : 'Scholars & Pursuing', icon: GraduationCap, show: facultyPursuing.length > 0 || guidedScholars.length > 0 || isECX }
                             ]
                             .filter(tab => tab.show)
                             .map((tab) => (
@@ -1678,6 +1697,16 @@ const ResearchResourcesPage = () => {
                                                                     <Fingerprint size={13} className="text-[#ffc107]" />
                                                                     <span>ID: {superv.supervisorId}</span>
                                                                 </div>
+                                                                {superv.doj && (
+                                                                    <div className="flex items-center gap-2 text-xs font-bold text-[#4a627a]">
+                                                                        <span>DOJ: {superv.doj}</span>
+                                                                    </div>
+                                                                )}
+                                                                {superv.vidwanId && (
+                                                                    <div className="flex items-center gap-2 text-xs font-bold text-[#4a627a]">
+                                                                        <span>Vidwan ID: {superv.vidwanId}</span>
+                                                                    </div>
+                                                                )}
                                                                 <div className="flex items-center gap-2 text-xs font-bold text-[#4a627a]">
                                                                     <Mail size={13} className="text-[#ffc107]" />
                                                                     <span className="truncate max-w-[180px]">{superv.email}</span>
@@ -1716,81 +1745,6 @@ const ResearchResourcesPage = () => {
                                         </div>
                                     ) : (
                                         <EmptyState message="There are currently no registered Ph.D. supervisors in this department." icon={Users} />
-                                    )
-                                )}
-
-                                {/* ─── TAB 2: Ph.D Completed Directory ─── */}
-                                {activeTab === 'phdCompleted' && (
-                                    phdHolders.length > 0 ? (
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                            {phdHolders.map((holder) => (
-                                                <div
-                                                    key={holder.id}
-                                                    className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xl hover:border-[#ffc107] hover:shadow-2xl transition-all duration-300 relative group overflow-hidden"
-                                                >
-                                                    <div className="absolute -right-2 -top-6 text-[110px] font-black text-slate-50 opacity-40 select-none">
-                                                        {holder.id < 10 ? '0' + holder.id : holder.id}
-                                                    </div>
-
-                                                    <div className="flex flex-col sm:flex-row gap-6 relative z-10">
-                                                        {/* Doctorate Holder Photo */}
-                                                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shrink-0 border-2 border-slate-100 group-hover:border-[#ffc107] shadow-md transition-all flex items-center justify-center bg-slate-50">
-                                                            {holder.image ? (
-                                                                <img src={holder.image} alt={holder.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                                            ) : (
-                                                                <Users size={32} className="text-slate-300" />
-                                                            )}
-                                                        </div>
-
-                                                        <div className="flex-1 space-y-4">
-                                                            <div>
-                                                                <button
-                                                                    onClick={() => window.open(holder.irins, '_blank')}
-                                                                    className="text-lg font-black text-[#224292] hover:text-[#ffc107] transition-colors text-left flex items-center gap-1.5 leading-tight focus:outline-none"
-                                                                >
-                                                                    {holder.name}
-                                                                    <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                                                                </button>
-                                                                {(holder.year || holder.university) && (
-                                                                    <p className="text-[11px] font-bold text-slate-400 mt-1">
-                                                                        {holder.year}{holder.year && holder.university ? ' | ' : ''}{holder.university}
-                                                                    </p>
-                                                                )}
-                                                            </div>
-
-                                                            {/* Research Topic */}
-                                                            {holder.topic && (
-                                                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-100/60 text-xs font-semibold text-[#4a627a] leading-relaxed italic">
-                                                                    {holder.topic}
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    </div>
-
-                                                    {/* Metrics */}
-                                                    <div className="mt-5 pt-4 border-t border-slate-100 grid grid-cols-4 gap-2 text-center relative z-10">
-                                                        <div>
-                                                            <div className="text-sm font-black text-[#224292]">{holder.publications.ij}</div>
-                                                            <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Int. Journal</div>
-                                                        </div>
-                                                        <div className="border-l border-slate-100">
-                                                            <div className="text-sm font-black text-[#224292]">{holder.publications.ic}</div>
-                                                            <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Int. Conf.</div>
-                                                        </div>
-                                                        <div className="border-l border-slate-100">
-                                                            <div className="text-sm font-black text-[#224292]">{holder.publications.nj}</div>
-                                                            <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Nat. Journal</div>
-                                                        </div>
-                                                        <div className="border-l border-slate-100">
-                                                            <div className="text-sm font-black text-[#224292]">{holder.publications.nc}</div>
-                                                            <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Nat. Conf.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <EmptyState message="There are currently no faculty members with completed Ph.D. degrees in this department." icon={Award} />
                                     )
                                 )}
 
@@ -1882,6 +1836,18 @@ const ResearchResourcesPage = () => {
                                                                     <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Registration / Affiliation</span>
                                                                     {fac.registration} ({fac.university})
                                                                 </div>
+                                                                {fac.doj && (
+                                                                    <div>
+                                                                        <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">DOJ</span>
+                                                                        {fac.doj}
+                                                                    </div>
+                                                                )}
+                                                                {fac.vidwanId && (
+                                                                    <div>
+                                                                        <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Vidwan ID</span>
+                                                                        {fac.vidwanId}
+                                                                    </div>
+                                                                )}
                                                             </div>
                                                         </div>
                                                     ))}

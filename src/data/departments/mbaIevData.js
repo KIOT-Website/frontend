@@ -7,7 +7,7 @@ import ievRubiniImg from '../../assets/Faculity/mba iev/Prof.M.Rubini.png'
 import ievGowrishankarImg from '../../assets/Faculity/mba iev/Prof.M.Gowrishankar.png'
 
 export const mbaIevData = {
-  name: 'MBA in Innovation, Entrepreneurship & Venture Development (MBA-IEV)',
+  name: 'MBA in Innovation, Entrepreneurship and Venture Development (MBA-IEV)',
     short: 'MBA - IEV',
     duration: '2 Years (4 Semesters)',
     intake: 60,
