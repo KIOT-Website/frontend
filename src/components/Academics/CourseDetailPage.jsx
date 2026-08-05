@@ -800,8 +800,7 @@ export default function CourseDetailPage({ overrides }) {
             </button>
           )}
 
-          <div className={`flex flex-col lg:flex-row gap-8 lg:gap-12 ${(courseId === 'mba-general' || courseId === 'mba-iev') ? 'lg:items-end' : 'lg:items-center'
-            }`}>
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-center">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-5 flex-wrap">
                 <span className="px-3.5 py-1.5 rounded-full bg-[#ffc107]/20 border border-[#ffc107]/40 text-[#ffc107] text-xs font-bold font-graphik">
@@ -821,10 +820,7 @@ export default function CourseDetailPage({ overrides }) {
                   )
                 })()}
               </div>
-              <h1 className={`font-bold font-graphik text-white leading-[1.15] ${courseId === 'mba-general' || courseId === 'mba-iev'
-                ? 'text-xl md:text-xl lg:text-[1.75rem] mb-4 mt-6'
-                : 'text-2xl md:text-3xl lg:text-[2.6rem] mb-3'
-                }`}>
+              <h1 className="font-bold font-graphik text-white leading-[1.15] text-2xl md:text-3xl lg:text-[2.6rem] mb-3">
                 {course.name}
               </h1>
               {!(courseId === 'mba-general' || courseId === 'mba-iev') && (

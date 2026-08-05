@@ -216,7 +216,13 @@ const Programs = () => {
                 {Object.entries(programsData).map(([key, data]) => (
                    <button
                      key={key}
-                     onClick={() => setActiveTab(key)}
+                     onClick={() => {
+                        if (key === 'PHD') {
+                           navigate('/research')
+                        } else {
+                           setActiveTab(key)
+                        }
+                     }}
                      className={`relative flex-1 lg:flex-none px-8 py-4 lg:py-3.5 rounded-2xl text-[11px] font-black tracking-widest transition-all duration-300 ${
                        activeTab === key 
                        ? 'text-white' 

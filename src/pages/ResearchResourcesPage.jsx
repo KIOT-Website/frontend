@@ -23,7 +23,8 @@ import {
     Database,
     Mail,
     Fingerprint,
-    Info
+    Info,
+    CalendarDays
 } from 'lucide-react'
 
 // Import CSE Faculty/Supervisor Images
@@ -316,13 +317,13 @@ const aidsFacilities = [
     }
 ];
 const aidsFacultyPursuing = [
-    { name: "Mr. A. Gopalakrishnan", topic: "Medical Image Processing", supervisor: "Dr. S. Kumarganesh (Professor / ECE, Knowledge Institute of Technology)", university: "Anna University", registration: "23144697372", status: "Pursuing" },
-    { name: "Mrs. V. Brindha", topic: "Machine Learning", supervisor: "Dr. P. Rajendran (Professor & Director PAT(III) / CSE, Knowledge Institute of Technology, Salem)", university: "Anna University", registration: "24234691121", status: "Pursuing" },
-    { name: "Mrs. P. J. Esther Rani", topic: "Wireless Sensor Network", supervisor: "Dr. P. Rajendran (Professor / CSE, Knowledge Institute of Technology)", university: "Anna University", registration: "24254697160", status: "Pursuing" },
-    { name: "Mrs. B. Bhuvaneswari", topic: "Deep Learning", supervisor: "Dr. R. Kumar (Professor / CSE, Knowledge Institute of Technology, Salem)", university: "Anna University", registration: "24244697246", status: "Pursuing" },
-    { name: "Mrs. S. Sudha", topic: "Natural Language Processing", supervisor: "Dr. R. Kumar (Professor / CSE, Knowledge Institute of Technology, Salem)", university: "Anna University", registration: "25244691194", status: "Pursuing" },
-    { name: "Mrs. M. Deepa", topic: "Machine Learning", supervisor: "Dr. E. Sathishkumar (Associate Professor, Department of ECE, Gnanamani College of Technology, Namakkal)", university: "Anna University", registration: "24234691207", status: "Pursuing" },
-    { name: "Mrs. N. Savitha", topic: "Artificial Intelligence", supervisor: "Dr. M. Jayaprakash, Saveetha School of Engineering, Saveetha Deemed to be University, Thandalam, Chennai.", university: "Saveetha Deemed to be University, Chennai.", registration: "162419204", status: "Pursuing" }
+    { name: "Mr. A. Gopalakrishnan", topic: "Medical Image Processing", supervisor: "Dr. S. Kumarganesh (Professor / ECE, Knowledge Institute of Technology)", university: "Anna University", registration: "23144697372", status: "Pursuing", vidwanId: "242566" },
+    { name: "Mrs. V. Brindha", topic: "Machine Learning", supervisor: "Dr. P. Rajendran (Professor & Director PAT(III) / CSE, Knowledge Institute of Technology, Salem)", university: "Anna University", registration: "24234691121", status: "Pursuing", vidwanId: "321342" },
+    { name: "Mrs. P. J. Esther Rani", topic: "Wireless Sensor Network", supervisor: "Dr. P. Rajendran (Professor / CSE, Knowledge Institute of Technology)", university: "Anna University", registration: "24254697160", status: "Pursuing", vidwanId: "617862" },
+    { name: "Mrs. B. Bhuvaneswari", topic: "Deep Learning", supervisor: "Dr. R. Kumar (Professor / CSE, Knowledge Institute of Technology, Salem)", university: "Anna University", registration: "24244697246", status: "Pursuing", vidwanId: "613759" },
+    { name: "Mrs. S. Sudha", topic: "Natural Language Processing", supervisor: "Dr. R. Kumar (Professor / CSE, Knowledge Institute of Technology, Salem)", university: "Anna University", registration: "25244691194", status: "Pursuing", vidwanId: "613678" },
+    { name: "Mrs. M. Deepa", topic: "Machine Learning", supervisor: "Dr. E. Sathishkumar (Associate Professor, Department of ECE, Gnanamani College of Technology, Namakkal)", university: "Anna University", registration: "24234691207", status: "Pursuing", vidwanId: "613672" },
+    { name: "Mrs. N. Savitha", topic: "Artificial Intelligence", supervisor: "Dr. M. Jayaprakash, Saveetha School of Engineering, Saveetha Deemed to be University, Thandalam, Chennai.", university: "Saveetha Deemed to be University, Chennai.", registration: "162419204", status: "Pursuing", vidwanId: "378402" }
 ];
 const aidsGuidedScholars = [];
 
@@ -1699,12 +1700,8 @@ const ResearchResourcesPage = () => {
                                                                 </div>
                                                                 {superv.doj && (
                                                                     <div className="flex items-center gap-2 text-xs font-bold text-[#4a627a]">
+                                                                        <CalendarDays size={13} className="text-[#ffc107]" />
                                                                         <span>DOJ: {superv.doj}</span>
-                                                                    </div>
-                                                                )}
-                                                                {superv.vidwanId && (
-                                                                    <div className="flex items-center gap-2 text-xs font-bold text-[#4a627a]">
-                                                                        <span>Vidwan ID: {superv.vidwanId}</span>
                                                                     </div>
                                                                 )}
                                                                 <div className="flex items-center gap-2 text-xs font-bold text-[#4a627a]">
@@ -1730,6 +1727,12 @@ const ResearchResourcesPage = () => {
                                                                 <div className="text-lg font-black text-[#ffc107] leading-none">{superv.guiding}</div>
                                                                 <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Guiding</p>
                                                             </div>
+                                                            {superv.vidwanId && (
+                                                                <div className="text-center border-l border-slate-200 pl-6">
+                                                                    <div className="text-sm font-black text-[#224292] leading-none mt-1">{superv.vidwanId}</div>
+                                                                    <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Vidwan ID</p>
+                                                                </div>
+                                                            )}
                                                         </div>
 
                                                         <button
@@ -1824,30 +1827,34 @@ const ResearchResourcesPage = () => {
                                                                 <span className="px-3 py-1 bg-amber-50 border border-amber-100 text-amber-700 text-[9px] font-black uppercase tracking-wider rounded-full">{fac.status}</span>
                                                             </div>
                                                             <div className="grid grid-cols-2 gap-3 pt-2 text-[11px] font-semibold text-[#4a627a] border-t border-slate-50">
-                                                                <div>
-                                                                    <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Research Domain</span>
-                                                                    {fac.topic}
-                                                                </div>
-                                                                <div>
-                                                                    <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Supervisor</span>
-                                                                    {fac.supervisor}
-                                                                </div>
-                                                                <div className="col-span-2">
-                                                                    <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Registration / Affiliation</span>
-                                                                    {fac.registration} ({fac.university})
-                                                                </div>
-                                                                {fac.doj && (
+                                                                <div className="flex flex-col gap-3">
                                                                     <div>
-                                                                        <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">DOJ</span>
-                                                                        {fac.doj}
+                                                                        <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Research Domain</span>
+                                                                        {fac.topic}
                                                                     </div>
-                                                                )}
-                                                                {fac.vidwanId && (
                                                                     <div>
-                                                                        <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Vidwan ID</span>
-                                                                        {fac.vidwanId}
+                                                                        <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Registration / Affiliation</span>
+                                                                        {fac.registration} ({fac.university})
                                                                     </div>
-                                                                )}
+                                                                    {fac.doj && (
+                                                                        <div>
+                                                                            <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">DOJ</span>
+                                                                            {fac.doj}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                                <div className="flex flex-col gap-3">
+                                                                    <div>
+                                                                        <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Supervisor</span>
+                                                                        {fac.supervisor}
+                                                                    </div>
+                                                                    {fac.vidwanId && (
+                                                                        <div>
+                                                                            <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Vidwan ID</span>
+                                                                            {fac.vidwanId}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     ))}
