@@ -17,6 +17,11 @@ import aidsEstherRaniImage from '../../assets/Faculity/aids/esther_rani.webp'
 import aidsSudhaImage from '../../assets/Faculity/aids/sudha.webp'
 import aidsSelviImage from '../../assets/Faculity/aids/selvi.webp'
 import aidsRanithaImage from '../../assets/Faculity/aids/ranitha.webp'
+import aidsBrindhaImage from '../../assets/Faculity/aids/brindha.webp'
+import aidsRupadeviImage from '../../assets/Faculity/aids/rupadevi.webp'
+import aidsMugambigaiImage from '../../assets/Faculity/aids/mugambigai.webp'
+import aidsSavithaImage from '../../assets/Faculity/aids/savitha.webp'
+import aidsGaneshKumarImage from '../../assets/Faculity/aids/ganeshkumar.webp'
 import prakashImage from '../../assets/Faculity/MECH/Mr. J. Prakash.webp'
 
 export const btechAidsData = {
@@ -155,31 +160,299 @@ export const btechAidsData = {
       }
     ],
     faculty: [
-      { name: 'Dr. Sasikumar B', designation: 'Associate Professor & Head', doj: '01.07.2009', qualification: 'B.E., M.E(CSE)., Ph.D.', association: 'Regular', experience: '20 Years 11 Month', specialization: 'Digital Image Processing, AI, Data Science, ML', email: 'hod.aids@kiot.ac.in', publications: 'IJ:05, NJ:03, IC:05, NC:02', rating: 5.0, image: aidsSasikumarHodImage },
-      { name: 'Dr. Gomathi A', designation: 'Associate Professor', doj: '04.07.2022', qualification: 'B.E., M.E., Ph.D.', association: 'Regular', experience: '21 Years 3 Month', specialization: 'Information Retrieval', email: 'agit@kiot.ac.in', publications: 'IJ:06, NJ:01, IC:6', rating: 4.9, image: aidsGomathiImage },
-      { name: 'Mr. Gopalakrishnan A', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '19 years 2 Month', specialization: 'Operating System, Cloud Computing', email: 'agaids@kiot.ac.in', publications: 'IJ:03,IC:05,NC:03', rating: 4.8, image: aidsGopalakrishnanImage },
-      { name: 'Ms. Brindha V', designation: 'Assistant Professor', doj: '04.07.2022', qualification: 'B.E., M.E(CSE)', association: 'Regular', experience: '4 Years 6 Month', specialization: 'AI & Data Science', email: 'vbaids@kiot.ac.in', rating: 4.6 },
-      { name: 'Mr. Jayaprakash S', designation: 'Assistant professor', doj: '01.06.2023', qualification: 'B.E., M.E(CSE)', association: 'Regular', experience: '9 Years 5 Month', specialization: 'Computer Networks, Python Programming', email: 'sjaids@kiot.ac.in', publications: 'IJ:2, NJ:2', rating: 4.6, image: aidsJayaprakashImage },
-      { name: 'Ms. Esther Rani P J', designation: 'Assistant professor', doj: '07.06.2023', qualification: 'B.E., M.TECH(IT)', association: 'Regular', experience: '7 Years 3 Month', specialization: 'Mobile Adhoc network', email: 'pjeraids@kiot.ac.in', publications: 'IJ:2, NJ:1', rating: 4.7, image: aidsEstherRaniImage },
-      { name: 'Ms. Bhuvaneswari B', designation: 'Assistant professor', doj: '13.07.2023', qualification: 'B.TECH(IT).,M.TECH(IT)', association: 'Regular', experience: '10 Years 11 Month', specialization: 'DSA, Datawarehousing and Data Mining', email: 'bbaids@kiot.ac.in', publications: 'IJ:04 IC:05 NC:05', rating: 4.8, image: aidsBhuvaneswariImage },
-      { name: 'Ms. Selvi M', designation: 'Assistant professor', doj: '06.03.2024', qualification: 'M.E.', association: 'Regular', experience: '7 Years 9 Month', specialization: 'Machine learning', email: 'msaids@gmail.com', publications: 'NC:1', rating: 4.5, image: aidsSelviImage },
-      { name: 'Ms. Sudha S', designation: 'Assistant professor', doj: '01.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '5 Years 6 Month', specialization: 'Computer Architecture, Big Data Analytics', email: 'ssaids@kiot.ac.in', publications: 'NJ:3', rating: 4.5, image: aidsSudhaImage },
-      { name: 'Mr. Gunasekar B', designation: 'Assistant professor', doj: '01.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '5 Years 5 Month', specialization: 'Cryptography', email: 'bgaids@kiot.ac.in', publications: 'NJ:2', rating: 4.5, image: aidsGunasekarImage },
-      { name: 'Mr. Rameshkumar R', designation: 'Assistant professor', doj: '08.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '8 Years 10 Month', specialization: 'Data Structure', email: 'rraids@kiot.ac.in', rating: 4.6, image: aidsRameshkumarImage },
-      { name: 'Ms. Deepa M', designation: 'Assistant professor', doj: '04.09.2024', qualification: 'M.E(Ph.D)', association: 'Regular', experience: '9 Years 9 Month', specialization: 'Computer Networks', email: 'deepapec693@gmail.com', publications: 'NJ:2', rating: 4.6, image: aidsDeepaImage },
-      { name: 'Ms. Ranitha N.M', designation: 'Assistant professor', doj: '30.04.2025', qualification: 'B.E(CSE), M.E(CSE)', association: 'Regular', experience: '1 Years 1 Month', specialization: 'Machine Learning', email: 'nmraids@kiot.ac.in', rating: 4.5, image: aidsRanithaImage },
-      { name: 'Ms. Rupa Devi M', designation: 'Assistant Professor', doj: '04.05.2026', qualification: 'M.E.(CSE)', association: 'Regular', experience: '7 Month', specialization: 'Machine Learning', email: 'mraids@kiot.ac.in', publications: 'SIJ: 2', rating: 4.6 },
-      { name: 'Ms. Mugambigai S', designation: 'Assistant Professor', doj: '13.05.2026', qualification: 'M.E.(CSE)', association: 'Regular', experience: '1 Month', specialization: 'Image Processing', email: 'smaids@kiot.ac.in', publications: 'SIJ: 1', rating: 4.5 },
-      { name: 'Ms. Savitha N', designation: 'Assistant Professor', doj: '19.05.2026', qualification: 'MCA., ME', association: 'Regular', experience: '10 Years', specialization: 'AI with IOT', email: 'nsaids@kiot.ac.in', publications: 'SIJ: 2', rating: 4.7 },
-      { name: 'Mr. Iyyappan S', designation: 'Associate POP', doj: '05.07.2024', qualification: 'B.E.', experience: '18.10 Years', rating: 4.8 },
-      { name: 'Mr. Dhanaraj V', designation: 'Associate POP', doj: '15.07.2024', qualification: 'B.E. ECE', experience: '20.10 Years', rating: 4.9 },
-      { name: 'Mr. Vigneswaran S', designation: 'Associate POP', doj: '15.07.2024', qualification: 'B.E.', experience: '14.10 Years', rating: 4.7 },
-      { name: 'Mr. Ganeshkumar B', designation: 'Assistant Professor', doj: '-', qualification: 'M.Sc., M.Phil.', association: 'Regular', experience: '5 Years 8 Month', specialization: 'Mathematics', email: '-', rating: 4.5, category: 'S&H' },
-      { name: 'Ms. Gomathi V', designation: 'Assistant Professor', doj: '26.08.2021', qualification: 'M.Sc., M.Phil.', association: 'Regular', experience: '9 Years 7 Month', specialization: 'Differential Equations', email: 'gomathivvs@gmail.com', rating: 4.6, image: aidsGomathiShImage, category: 'S&H' },
-      { name: 'Dr. Sathya Priyanka G', designation: 'Assistant Professor / Maths', doj: '09-05-2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: '1 Years', specialization: 'Stochastic Processes, Reliability', email: 'gspmat@kiot.ac.in', publications: 'IJ:3, NJ:6', rating: 4.7, image: aidsSathyaPriyankaImage, category: 'S&H' },
-      { name: 'Dr. Manivel S', designation: 'Assistant professor', doj: '20.06.2024', qualification: 'M.sc., Ph.D.', association: 'Regular', experience: '13 Years 11 Month', specialization: 'vibrational spectroscopy', email: 'smvphy@kiot.ac.in', publications: 'IJ:6, NJ:6', rating: 4.7, image: aidsManivelImage, category: 'S&H' },
-      { name: 'Dr. Venkatesh G', designation: 'Professor/Chemistry', doj: '20.09.2023', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: '11 Years 7 Month', specialization: 'Supramolecular Nano materials', email: 'gvchem@kiot.ac.in', publications: 'IJ: 24, NJ: 04, IC: 05, NC: 14', rating: 5.0, image: aidsVenkateshImage, category: 'S&H' },
-      { name: 'Mr. Venkatachalam T', designation: 'Assistant Professor', doj: '16.07.2021', qualification: 'M.A., M.Phil., B.Ed.', association: 'Regular', experience: '13 Years 7 Month', specialization: 'Language and Linguistics', email: 'venkatachalamteng@kiot.ac.in', publications: 'IC:01', rating: 4.7, image: aidsVenkatachalamImage, category: 'S&H' }
+      {
+        name: 'Dr. B. Sasikumar',
+        designation: 'Associate Professor & Head',
+        doj: '01.07.2009',
+        qualification: 'B.E., M.E., Ph.D.',
+        association: 'Regular',
+        experience: '19 Yrs 10 Months',
+        specialization: 'Digital Image Processing, Artificial Intelligence, Data Science, Machine Learning',
+        email: 'hod.aids@kiot.ac.in',
+        publications: 'IJ:05, NJ:03, IC:05, NC:02',
+        rating: 5.0,
+        image: aidsSasikumarHodImage
+      },
+      {
+        name: 'Dr. A. Gomathi',
+        designation: 'Associate Professor',
+        doj: '04.07.2022',
+        qualification: 'B.E., M.E., Ph.D.',
+        association: 'Regular',
+        experience: 'Teaching: 14 Years (Engg) , 4yrs (polytechnic)',
+        specialization: 'Information Retrieval',
+        email: 'agit@kiot.ac.in',
+        publications: 'IJ:06, NJ:01, IC:6',
+        rating: 4.9,
+        image: aidsGomathiImage
+      },
+      {
+        name: 'Mr. A. Gopalakrishnan',
+        designation: 'Assistant Professor',
+        doj: '05.07.2021',
+        qualification: 'B.E., M.E., (Ph.D.)',
+        association: 'Regular',
+        experience: '13 Yrs 9 Months',
+        specialization: 'Operating System, Cloud Computing',
+        email: 'agaids@kiot.ac.in',
+        publications: 'IJ:03,IC:05,NC:03',
+        rating: 4.8,
+        image: aidsGopalakrishnanImage
+      },
+      {
+        name: 'Mrs. V. Brindha',
+        designation: 'Assistant Professor',
+        doj: '04.07.2022',
+        qualification: 'B.E., M.E., (Ph.D.)',
+        association: 'Regular',
+        experience: '4 Yrs 7 Months',
+        specialization: 'Artificial Intelligence & Data Science',
+        email: 'vbaids@kiot.ac.in',
+        rating: 4.6,
+        image: aidsBrindhaImage
+      },
+      {
+        name: 'Mr. S. Jayaprakash',
+        designation: 'Assistant Professor',
+        doj: '01.06.2023',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: '4 Yrs 7 Months',
+        specialization: 'Computer Networks, Python Programming',
+        email: 'sjaids@kiot.ac.in',
+        publications: 'IJ:2, NJ:2',
+        rating: 4.6,
+        image: aidsJayaprakashImage
+      },
+      {
+        name: 'Mrs. P.J. Esther Rani',
+        designation: 'Assistant Professor',
+        doj: '07.06.2023',
+        qualification: 'B.E., M.Tech., (Ph.D.)',
+        association: 'Regular',
+        experience: '6 Yrs 10 Months',
+        specialization: 'Mobile Adhoc network',
+        email: 'pjeraids@kiot.ac.in',
+        publications: 'IJ:2, NJ:1',
+        rating: 4.7,
+        image: aidsEstherRaniImage
+      },
+      {
+        name: 'Mrs. B. Bhuvaneswari',
+        designation: 'Assistant Professor',
+        doj: '13.07.2023',
+        qualification: 'B.Tech., M.Tech., (Ph.D.)',
+        association: 'Regular',
+        experience: '9 Yrs 11 Months',
+        specialization: 'Data Structures and Algorithms, Datawarehousing and Data Mining',
+        email: 'bbaids@kiot.ac.in',
+        publications: 'IJ:04 IC:05 NC:05',
+        rating: 4.8,
+        image: aidsBhuvaneswariImage
+      },
+      {
+        name: 'Ms. M. Selvi',
+        designation: 'Assistant Professor',
+        doj: '06.03.2024',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: '6 Yrs 6 Months',
+        specialization: 'Machine learning',
+        email: 'msaids@gmail.com',
+        publications: 'NC:1',
+        rating: 4.5,
+        image: aidsSelviImage
+      },
+      {
+        name: 'Mr. B. Gunasekar',
+        designation: 'Assistant Professor',
+        doj: '01.07.2024',
+        qualification: 'B.Tech., M.E.',
+        association: 'Regular',
+        experience: '2 Industry and 2.5 Teaching',
+        specialization: 'Cryptography',
+        email: 'bgaids@kiot.ac.in',
+        publications: 'NJ:2',
+        rating: 4.5,
+        image: aidsGunasekarImage
+      },
+      {
+        name: 'Mrs. S. Sudha',
+        designation: 'Assistant Professor',
+        doj: '01.07.2024',
+        qualification: 'B.E., M.E., (Ph.D.)',
+        association: 'Regular',
+        experience: '4 Yrs 4 Months',
+        specialization: 'Computer Architecture, Big Data Analytics',
+        email: 'ssaids@kiot.ac.in',
+        publications: 'NJ:3',
+        rating: 4.5,
+        image: aidsSudhaImage
+      },
+      {
+        name: 'Mr. R. Rameshkumar',
+        designation: 'Assistant Professor',
+        doj: '08.07.2024',
+        qualification: 'B.Sc., M.E., MCA.',
+        association: 'Regular',
+        experience: '7 Yrs 7 Months',
+        specialization: 'Data Structure',
+        email: 'rraids@kiot.ac.in',
+        rating: 4.6,
+        image: aidsRameshkumarImage
+      },
+      {
+        name: 'Mrs. M. Deepa',
+        designation: 'Assistant Professor',
+        doj: '04.09.2024',
+        qualification: 'B.E., M.E., (Ph.D.)',
+        association: 'Regular',
+        experience: '8 Yrs 9 Months',
+        specialization: 'Computer Networks',
+        email: 'deepapec693@gmail.com',
+        publications: 'NJ:2',
+        rating: 4.6,
+        image: aidsDeepaImage
+      },
+      {
+        name: 'Ms. N.M. Ranitha',
+        designation: 'Assistant Professor',
+        doj: '30.04.2025',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: '3 Months',
+        specialization: 'Machine Learning',
+        email: 'nmraids@kiot.ac.in',
+        publications: '-',
+        rating: 4.5,
+        image: aidsRanithaImage
+      },
+      {
+        name: 'Mrs. M. Rupadevi',
+        designation: 'Assistant Professor',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        rating: 4.6,
+        image: aidsRupadeviImage
+      },
+      {
+        name: 'Mrs. S. Mugambigai',
+        designation: 'Assistant Professor',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        rating: 4.6,
+        image: aidsMugambigaiImage
+      },
+      {
+        name: 'Mrs. N. Savitha',
+        designation: 'Assistant Professor',
+        qualification: 'B.Sc., MCA., M.E., (Ph.D.)',
+        association: 'Regular',
+        rating: 4.6,
+        image: aidsSavithaImage
+      },
+      {
+        name: 'Mr. S. Iyyappan',
+        designation: 'Associate Professor of Practice',
+        qualification: 'B.E.',
+        category: 'POP',
+        experience: '18.10 Years',
+        rating: 4.8
+      },
+      {
+        name: 'Mr. Dhanaraj Velu',
+        designation: 'Associate Professor of Practice',
+        qualification: 'B.E.',
+        category: 'POP',
+        experience: '20.10 Years',
+        rating: 4.9
+      },
+      {
+        name: 'Mr. S. Vigneshwaran',
+        designation: 'Associate Professor of Practice',
+        qualification: 'B.E.',
+        category: 'POP',
+        experience: '14.10 Years',
+        rating: 4.7
+      },
+      {
+        name: 'Mrs. V. Gomathi',
+        designation: 'Assistant Professor / Mathematics',
+        doj: '26.08.2021',
+        qualification: 'B.Sc., M.Sc., M.Phil.',
+        association: 'Regular',
+        experience: '8 Yrs 4 Months',
+        specialization: 'Differential Equations',
+        email: 'gomathivvs@gmail.com',
+        rating: 4.6,
+        category: 'S&H',
+        image: aidsGomathiShImage
+      },
+      {
+        name: 'Dr. G. Sathya Priyanka',
+        designation: 'Assistant Professor / Mathematics',
+        doj: '09.05.2025',
+        qualification: 'B.Sc., M.Sc., M.Phil., Ph.D.',
+        association: 'Regular',
+        experience: 'Research: 6 Yrs Teaching : 3 Months',
+        specialization: 'Stochastic Processes, Reliability Theory',
+        email: 'gspmat@kiot.ac.in',
+        publications: 'IJ:3, NJ:6',
+        rating: 4.7,
+        category: 'S&H',
+        image: aidsSathyaPriyankaImage
+      },
+      {
+        name: 'Mr. B. GaneshKumar',
+        designation: 'Assistant Professor / Mathematics',
+        qualification: 'B.Sc., M.Sc., M.Phil. SET.',
+        association: 'Regular',
+        rating: 4.7,
+        category: 'S&H',
+        image: aidsGaneshKumarImage
+      },
+      {
+        name: 'Dr. S. Manivel',
+        designation: 'Associate Professor / Physics',
+        doj: '20.06.2024',
+        qualification: 'B.Sc., M.Sc., M.Phil., Ph.D.',
+        association: 'Regular',
+        experience: '9 Yrs 10 Months',
+        specialization: 'vibrational spectroscopy',
+        email: 'smvphy@kiot.ac.in',
+        publications: 'IJ:6, NJ:6',
+        rating: 4.7,
+        category: 'S&H',
+        image: aidsManivelImage
+      },
+      {
+        name: 'Dr. G. Venkatesh',
+        designation: 'Associate Professor / Chemistry',
+        doj: '20.09.2023',
+        qualification: 'B.Sc., M.Sc., M.Phil., Ph.D.',
+        association: 'Regular',
+        experience: '10.6 years, Research: 14.8 years',
+        specialization: 'Supramolecular Nano materials',
+        email: 'gvchem@kiot.ac.in',
+        publications: 'IJ: 24, NJ: 04, IC: 05, NC: 14',
+        rating: 5.0,
+        category: 'S&H',
+        image: aidsVenkateshImage
+      },
+      {
+        name: 'Mr. T. Venkatachalam',
+        designation: 'Assistant Professor / English',
+        doj: '16.07.2021',
+        qualification: 'B.A., M.A., M.Phil., B.Ed.',
+        association: 'Regular',
+        experience: '12 Yrs 6 Months',
+        specialization: 'Language and Linguistics',
+        email: 'venkatachalamteng@kiot.ac.in',
+        publications: 'IC:01',
+        rating: 4.7,
+        category: 'S&H',
+        image: aidsVenkatachalamImage
+      }
     ],
     labs: [
       {

@@ -35,17 +35,18 @@ import cseRKrishnakumarImage from '../../assets/Faculity/cse/Krishnakumar R.webp
 import cseCAravindanImage from '../../assets/Faculity/cse/Aravindan C.webp'
 import csePNareshkumarImage from '../../assets/Faculity/cse/Nareshkumar P.webp'
 import cseSowndharyaImage from '../../assets/Faculity/cse/Sowndharya T.webp'
-import cseGowthamiImage from '../../assets/Faculity/cse/Mrs.K.GOWDHAMI.png'
-import csePushpalathaImage from '../../assets/Faculity/cse/Mrs. R. PUSHPALATHA.png'
-import cseMSaranyaImage from '../../assets/Faculity/cse/Mrs.M.SARANYA.png'
-import cseKiruthikaImage from '../../assets/Faculity/cse/Mrs.E KIRUTHIKA.png'
-import cseEswariImage from '../../assets/Faculity/cse/Mrs.G.ESWARI @ PETCHIAMMAL.png'
-import cseVikneshwaryImage from '../../assets/Faculity/cse/Ms.P.VIKNESHWARY.png'
-import cseWalterVetrivelImage from '../../assets/Faculity/cse/Mr.S.WALTER VETRIVEL.png'
-import cseSivaImage from '../../assets/Faculity/cse/Mr.C.SIVA.png'
-import cseSSowndaryaImage from '../../assets/Faculity/cse/Mrs.S.SOWNDARYA.png'
-import cseSuveethaImage from '../../assets/Faculity/cse/Ms S.SUVEETHA.png'
-import cseRajendranImage from '../../assets/Faculity/cse/Dr._P._Rajendran-removebg-preview.png'
+import cseGowthamiImage from '../../assets/Faculity/cse/Mrs.K.GOWDHAMI.webp'
+import csePushpalathaImage from '../../assets/Faculity/cse/Mrs. R. PUSHPALATHA.webp'
+import cseMSaranyaImage from '../../assets/Faculity/cse/Mrs.M.SARANYA.webp'
+import cseKiruthikaImage from '../../assets/Faculity/cse/Mrs.E KIRUTHIKA.webp'
+import cseEswariImage from '../../assets/Faculity/cse/Mrs.G.ESWARI @ PETCHIAMMAL.webp'
+import cseVikneshwaryImage from '../../assets/Faculity/cse/Ms.P.VIKNESHWARY.webp'
+import cseWalterVetrivelImage from '../../assets/Faculity/cse/Mr.S.WALTER VETRIVEL.webp'
+import cseSivaImage from '../../assets/Faculity/cse/Mr.C.SIVA.webp'
+import cseSSowndaryaImage from '../../assets/Faculity/cse/Mrs.S.SOWNDARYA.webp'
+import cseSuveethaImage from '../../assets/Faculity/cse/Ms S.SUVEETHA.webp'
+import cseRajendranImage from '../../assets/Faculity/cse/Dr._P._Rajendran-removebg-preview.webp'
+
 
 export const beCseData = {
   name: 'B.E Computer Science and Engineering',
@@ -144,18 +145,7 @@ export const beCseData = {
         rating: 4.9,
         image: cseRKumarImage
       },
-      {
-        name: 'Dr. Sakthivel M',
-        designation: 'Associate Professor',
-        doj: '02.08.2021',
-        qualification: 'B.E., M.E., Ph.D.',
-        association: 'Regular',
-        experience: 'Teaching: 20.1, Research: 14',
-        specialization: 'Software Engineering',
-        email: 'mskcse@kiot.ac.in',
-        publications: 'IJ:7, IC:6, NC:6, P:2',
-        rating: 4.8
-      },
+
       {
         name: 'Dr. Sakthivel S',
         designation: 'Associate Professor',

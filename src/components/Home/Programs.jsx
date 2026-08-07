@@ -26,7 +26,7 @@ const programsData = {
       { id: 'btech-csbs', name: "Computer Science and Business Systems", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
       { id: 'be-ece', name: "Electronics and Communication Engineering", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
       { id: 'be-eee', name: "Electrical and Electronics Engineering", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
-      { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX", duration: "4 Years", phd: true },
+      { id: 'be-ecx', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX", duration: "4 Years", phd: true },
       { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
       { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
       { id: 'science-humanities', name: "Science & Humanities", icon: Beaker, code: "S&H", duration: "1 Year", phd: true }
@@ -61,7 +61,7 @@ const programsData = {
       { id: 'btech-csbs', name: "Computer Science and Business Systems", icon: Briefcase, code: "CSBS" },
       { id: 'be-ece', name: "Electronics and Communication Engineering", icon: Radio, code: "ECE" },
       { id: 'be-eee', name: "Electrical and Electronics Engineering", icon: Zap, code: "EEE" },
-      { id: 'be-ecm', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX" },
+      { id: 'be-ecx', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX" },
       { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH" },
       { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL" },
       { id: 'mba-general', name: "MBA - Master of Business Administration (General)", icon: TrendingUp, code: "MBA-General" },

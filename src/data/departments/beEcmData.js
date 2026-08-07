@@ -1,8 +1,10 @@
 import { Cpu, Building2 } from 'lucide-react'
-import ecxPriyaMolImage from '../../assets/Faculity/ecx/Dr. K. Priya Mol.png'
-import ecxMaragatharajImage from '../../assets/Faculity/ecx/Dr. S. Maragatharaj.png'
-import ecxMadhumathiImage from '../../assets/Faculity/ecx/Dr. T. Madhumathi.png'
-import ecxValarmathiImage from '../../assets/Faculity/ecx/Mrs. G. Valarmathi.png'
+import ecxPriyaMolImage from '../../assets/Faculity/ecx/Dr. K. Priya Mol.webp'
+import ecxMaragatharajImage from '../../assets/Faculity/ecx/Dr. S. Maragatharaj.webp'
+import ecxMadhumathiImage from '../../assets/Faculity/ecx/Dr. T. Madhumathi.webp'
+import ecxValarmathiImage from '../../assets/Faculity/ecx/Mrs. G. Valarmathi.webp'
+import ecxIswaryaImage from '../../assets/Faculity/ecx/Mrs.M.Iswarya.webp'
+import ecxVivedhiniImage from '../../assets/Faculity/ecx/Ms.O.Vivedhini.webp'
 
 export const beEcmData = {
   name: 'B.E Electronics and Computer Engineering',
@@ -34,8 +36,8 @@ export const beEcmData = {
       { name: 'Ms. Valarmathi G', designation: 'Assistant Professor', joiningDate: '16.03.2026', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 8 Years', specialization: 'Wireless Technologies', email: 'gvalarmathime@gmail.com', publications: 'IC:02', rating: 4.7, image: ecxValarmathiImage },
       { name: 'Dr. Madhumathi T', designation: 'Assistant Professor', joiningDate: '04.06.2025', qualification: 'M.Sc., M.Phil., Ph.D.', association: 'Regular', experience: 'Teaching: 1.7 Years', specialization: 'Topology', email: 'tmmat@kiot.ac.in', publications: 'IJ: 9 NJ: - IC: 5 NC:1', rating: 4.8, image: ecxMadhumathiImage, category: 'S&H' },
       { name: 'Dr. Priya Mol K', designation: 'Assistant Professor', joiningDate: '09.06.2025', qualification: 'M.A., B.Ed., M.Phil., Ph.D.', association: 'Regular', experience: 'Teaching: 1 Year', specialization: 'American Literature', email: 'priyamolalvin@gmail.com', publications: 'IJ:2, IC:3, NJ:1, NC:2', rating: 4.6, image: ecxPriyaMolImage, category: 'S&H' },
-      { name: 'Mrs. M. Iswarya', designation: 'Assistant Professor', joiningDate: '19.06.2026', qualification: 'B.E., M.E., Pursuing Ph.D.', association: 'Regular', experience: '3.5 Years', specialization: 'VLSI Design', email: 'miecx@kiot.ac.in', publications: 'IJ: 3, IC:4, NC: 3', rating: 4.8 },
-      { name: 'Ms. O. Vivedhini', designation: 'Assistant Professor', joiningDate: '01.06.2026', qualification: 'B.E., M.E.', association: 'Regular', experience: '1.5 Years', specialization: 'VLSI Design', email: 'ovecx@kiot.ac.in', publications: 'IJ: - nil, IC:- nil, NC: -nil', rating: 4.7 },
+      { name: 'Mrs. M. Iswarya', designation: 'Assistant Professor', joiningDate: '19.06.2026', qualification: 'B.E., M.E., Pursuing Ph.D.', association: 'Regular', experience: '3.5 Years', specialization: 'VLSI Design', email: 'miecx@kiot.ac.in', publications: 'IJ: 3, IC:4, NC: 3', rating: 4.8, image: ecxIswaryaImage },
+      { name: 'Ms. O. Vivedhini', designation: 'Assistant Professor', joiningDate: '01.06.2026', qualification: 'B.E., M.E.', association: 'Regular', experience: '1.5 Years', specialization: 'VLSI Design', email: 'ovecx@kiot.ac.in', publications: 'IJ: - nil, IC:- nil, NC: -nil', rating: 4.7, image: ecxVivedhiniImage },
       // Science & Humanities Faculty
       { name: 'Dr. S. Masilamani', designation: 'Assistant Professor', joiningDate: '01.07.2026', qualification: 'B.Sc., M.Sc., Ph.D.', association: 'Regular', experience: '25 Years', specialization: 'Physics (Crystallography)', email: 'smphy@kiot.ac.in', publications: 'IJ: 11, IC: 8', rating: 4.8, category: 'S&H' }
     ],

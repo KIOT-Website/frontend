@@ -133,6 +133,7 @@ const studentAwardsMap = {
   'be-mechanical': mechanicalStudentAwards,
   'be-ece': eceStudentAwards,
   'btech-it': itStudentAwards,
+  'be-ecx': ecmStudentAwards,
   'be-ecm': ecmStudentAwards,
   'mba-general': mbaGeneralStudentAwards,
   'mba-iev': mbaIevStudentAwards,
@@ -154,6 +155,7 @@ const facultyAwardsMap = {
   'be-mechanical': mechanicalFacultyAwards,
   'be-ece': eceFacultyAwards,
   'btech-it': itFacultyAwards,
+  'be-ecx': ecmFacultyAwards,
   'be-ecm': ecmFacultyAwards,
   'mba-general': mbaGeneralFacultyAwards,
   'mba-iev': mbaIevFacultyAwards,
@@ -173,6 +175,7 @@ const studentAchievementsMap = {
   'be-mechanical': mechanicalStudentAchievements,
   'be-ece': eceStudentAchievements,
   'btech-it': itStudentAchievements,
+  'be-ecx': ecmStudentAchievements,
   'be-ecm': ecmStudentAchievements,
   'btech-csbs': [],
   'be-civil': civilStudentAchievements,
@@ -194,6 +197,7 @@ const facultyAchievementsMap = {
   'be-mechanical': mechanicalFacultyAchievements,
   'be-ece': eceFacultyAchievements,
   'btech-it': itFacultyAchievements,
+  'be-ecx': ecmFacultyAchievements,
   'be-ecm': ecmFacultyAchievements,
   'btech-csbs': [],
   'be-civil': civilFacultyAchievements,
@@ -265,6 +269,9 @@ const SYLLABUS_PDF_MAP = {
   ],
   'mba-iev': [
     { title: 'MBA Innovation, Entrepreneurship and Venture Development (IEV) (I - IV SEM) Syllabus', file: mbaIevPdf, year: 'Regulation 2023', sem: 'I - IV' }
+  ],
+  'be-ecx': [
+    { title: 'B.E. Electronics and Computer Engineering (I - IV SEM) Syllabus', file: ecxPdf, year: 'Regulation 2025', sem: 'I - IV' }
   ],
   'be-ecm': [
     { title: 'B.E. Electronics and Computer Engineering (I - IV SEM) Syllabus', file: ecxPdf, year: 'Regulation 2025', sem: 'I - IV' }
@@ -561,6 +568,7 @@ export function formatFacultyName(rawName) {
 
 export function getDynamicWorkExperience(faculty) {
   if (!faculty) return null;
+  if (faculty.experience) return faculty.experience;
 
   const dojStr = faculty.joiningDate || faculty.doj || faculty.dateOfJoining;
   const expStr = faculty.experience;
@@ -1870,7 +1878,7 @@ export default function CourseDetailPage({ overrides }) {
                                     style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                                   >
                                     {f.image ? (
-                                      <img src={f.image} alt={f.name} className={`w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105 ${f.imageClass || ''}`} style={f.imageStyle || {}} />
+                                      <img src={f.image} alt={f.name} className={`w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 ${f.imageClass || ''}`} style={f.imageStyle || {}} />
                                     ) : (
                                       <div className="w-full h-full flex items-center justify-center text-slate-300">
                                         <GraduationCap size={44} />
@@ -1930,7 +1938,7 @@ export default function CourseDetailPage({ overrides }) {
                                         style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                                       >
                                         {f.image ? (
-                                          <img src={f.image} alt={f.name} className={`w-full h-full object-contain object-bottom transition-transform duration-500 group-hover:scale-105 ${f.imageClass || ''}`} style={f.imageStyle || {}} />
+                                          <img src={f.image} alt={f.name} className={`w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 ${f.imageClass || ''}`} style={f.imageStyle || {}} />
                                         ) : (
                                           <div className="w-full h-full flex items-center justify-center text-slate-300">
                                             <GraduationCap size={44} />
@@ -1992,7 +2000,7 @@ export default function CourseDetailPage({ overrides }) {
                                         style={{ backgroundImage: `url(${facultyBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                                       >
                                         {f.image ? (
-                                          <img src={f.image} alt={f.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                          <img src={f.image} alt={f.name} className={`w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 ${f.imageClass || ''}`} style={f.imageStyle || {}} />
                                         ) : (
                                           <div className="w-full h-full flex items-center justify-center text-slate-300">
                                             <GraduationCap size={44} />
@@ -3517,6 +3525,7 @@ function ClubsSection() {
 // ─── Innovative Practices Section Component ──────────────────────────────────
 function InnovativePracticesSection({ courseId }) {
   const imagesMap = {
+    'be-ecx': [ip1, ip2],
     'be-ecm': [ip1, ip2],
   };
   const meAeDetails = [

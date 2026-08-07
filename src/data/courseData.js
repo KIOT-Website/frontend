@@ -24,6 +24,7 @@ export const courseData = {
   'be-ece': beEceData,
   'btech-it': btechItData,
   'btech-csbs': btechCsbsData,
+  'be-ecx': beEcmData,
   'be-ecm': beEcmData,
   'be-civil': beCivilData,
   'btech-aids': btechAidsData,

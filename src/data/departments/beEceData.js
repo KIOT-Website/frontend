@@ -4,7 +4,12 @@ import eceThangavelImage from '../../assets/Faculity/ECE/Dr. M. Thangavel.webp'
 import eceSaravananImage from '../../assets/Faculity/ECE/Dr. V. Saravanan.webp'
 import eceKumarganeshImage from '../../assets/Faculity/ECE/Dr. S. Kumarganesh.webp'
 import eceShanmugaSundaramImage from '../../assets/Faculity/ECE/Dr. P. Shanmuga Sundaram.webp'
-import eceRanjiniImage from '../../assets/Faculity/ECE/Ranjini.png'
+import eceRanjiniImage from '../../assets/Faculity/ECE/ranjini.webp'
+import eceVijayaraghavanImage from '../../assets/Faculity/ECE/vijayaraghavan.webp'
+import eceVijayalakshmiImage from '../../assets/Faculity/ECE/vijayalakshmi.webp'
+import eceNarmathaImage from '../../assets/Faculity/ECE/narmatha.webp'
+import eceMaheswariImage from '../../assets/Faculity/ECE/maheswari.webp'
+import ecePushparaniImage from '../../assets/Faculity/ECE/pushparani.webp'
 import eceManoharanImage from '../../assets/Faculity/ECE/Mr. S. Manoharan.webp'
 import eceRShanmugaSundaramImage from '../../assets/Faculity/ECE/Mr. R. Shanmuga Sundaram.webp'
 import ecePremkumarImage from '../../assets/Faculity/ECE/Mr. S. Premkumar.webp'
@@ -104,7 +109,9 @@ export const beEceData = {
         specialization: 'Remote Sensing',
         email: 'r.vijayaraghavan.j@gmail.com',
         publications: 'IJ: 01 NC:06 NJ:04',
-        rating: 4.8
+        rating: 4.8,
+        image: eceVijayaraghavanImage,
+        imageStyle: { objectFit: 'cover', objectPosition: 'top' }
       },
       {
         name: 'Dr. Saravanan V',
@@ -146,19 +153,7 @@ export const beEceData = {
         rating: 4.8,
         image: eceShanmugaSundaramImage
       },
-      {
-        name: 'Mrs. S. Ranjini',
-        designation: 'Assistant Professor',
-        joiningDate: '01.06.2023',
-        qualification: 'B.E., M.E., (Ph.D)',
-        association: 'Regular',
-        experience: 'Teaching: 5.5 Yrs',
-        specialization: 'Embedded Systems & Wireless Communication',
-        email: 'ranjinis@kiot.ac.in',
-        publications: 'IJ: 03 IC: 02',
-        rating: 4.7,
-        image: eceRanjiniImage
-      },
+
       {
         name: 'Mr. Manoharan S',
         designation: 'Assistant Professor',
@@ -467,7 +462,9 @@ export const beEceData = {
         experience: '9 Years 28 Months',
         specialization: 'Communication System',
         email: 'avece@kiot.ac.in',
-        publications: 'IJ: 3 IC: 4 NC: 0'
+        publications: 'IJ: 3 IC: 4 NC: 0',
+        image: eceVijayalakshmiImage,
+        imageStyle: { objectFit: 'cover', objectPosition: 'top' }
       },
       {
         name: 'Ms. S. Narmatha',
@@ -478,7 +475,9 @@ export const beEceData = {
         experience: 'Fresher',
         specialization: 'Applied Electronics',
         email: 'snece@kiot.ac.in',
-        publications: 'IJ: 2 IC: 1'
+        publications: 'IJ: 2 IC: 1',
+        image: eceNarmathaImage,
+        imageStyle: { objectFit: 'cover', objectPosition: 'top' }
       },
       {
         name: 'Dr. P.S.Maheswari',
@@ -489,18 +488,9 @@ export const beEceData = {
         experience: '8.5 Years',
         specialization: 'Power Electronics and Drives',
         email: 'psmece@kiot.ac.in',
-        publications: 'IJ: 5 IC: 3 NC: 2'
-      },
-      {
-        name: 'Mrs. T. Ranjini',
-        designation: 'Assistant Professor',
-        joiningDate: '04.06.2014',
-        qualification: 'B.Sc., M.Sc., M.Phil., (Ph.D)',
-        association: 'Regular',
-        experience: '15 Years',
-        specialization: 'Graph Theory',
-        email: 'trmat@kiot.ac.in',
-        category: 'S&H'
+        publications: 'IJ: 5 IC: 3 NC: 2',
+        image: eceMaheswariImage,
+        imageStyle: { objectFit: 'cover', objectPosition: 'top' }
       },
       {
         name: 'Mrs. P. Pushparani',
@@ -511,7 +501,9 @@ export const beEceData = {
         experience: '12 Years',
         specialization: 'VLSI Design',
         email: 'ppece@kiot.ac.in',
-        publications: 'IJ: 16 IC: 3 NC: 4'
+        publications: 'IJ: 16 IC: 3 NC: 4',
+        image: ecePushparaniImage,
+        imageStyle: { objectFit: 'cover', objectPosition: 'top' }
       },
       {
         name: 'Mr. Chinnadurai P',
@@ -558,6 +550,18 @@ export const beEceData = {
         rating: 5.0,
         category: 'S&H',
         image: eceSanthiImage
+      },
+      {
+        name: 'Mrs. T. Ranjini',
+        designation: 'Assistant Professor',
+        joiningDate: '04.06.2014',
+        qualification: 'B.Sc., M.Sc., M.Phil., (Ph.D)',
+        association: 'Regular',
+        experience: '15 Years',
+        specialization: 'Graph Theory',
+        email: 'trmat@kiot.ac.in',
+        category: 'S&H',
+        image: eceRanjiniImage
       },
       {
         name: 'Mr. Raja T',

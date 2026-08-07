@@ -1,4 +1,4 @@
-import { Wrench, Layers, Building2 } from 'lucide-react'
+import { Wrench, Layers, Building2, Compass, Droplets, FlaskConical, Monitor } from 'lucide-react'
 import sathishKumarImage from '../../assets/Faculity/civil/B.SATHISH KUMAR.webp'
 import prasathImage from '../../assets/Faculity/civil/Dr.P.PRASATH.webp'
 import krishnanImage from '../../assets/Faculity/civil/L.KRISHNAN.webp'
@@ -77,13 +77,11 @@ export const beCivilData = {
         ],
         icon: Building2
       },
-
-      
-      { name: 'Strength of Materials Lab', equipment: 'UTM Testing', icon: Wrench },
       {
         name: 'CONCRETE AND HIGHWAY ENGINEERING LABORATORY',
-        incharge: 'Mr. R.Elavarasan, AP/ Civil',
+        incharge: 'Mr. R.Elavarasan ,AP/ Civil',
         technician: 'Mr.C.Pradeep Kumar, LT/Civil',
+        area: '66 Sq.M.',
         equipments: [
           'Laboratory Area (Sq.M.): 66',
           'Los Angeles abrasion testing machine',
@@ -108,10 +106,160 @@ export const beCivilData = {
           'CBR apparatus',
           'Marshall stability test apparatus',
           'Centrifuge extractor capacity 1500g',
+          'Air permeability Apparatus',
           'Automatic compactor bitumen mixer',
           'Los angles abrasion testing machine senser(spares)'
         ],
         icon: Building2
+      },
+      {
+        name: 'SURVEYING LABORATORY',
+        incharge: 'Mr. S.Arulkesavan ,AP/ Civil',
+        technician: 'Mr.S.Selvaraj, LT/Civil',
+        area: '66 Sq.M.',
+        equipments: [
+          'Laboratory Area (Sq.M.): 66',
+          'Dumpy Level',
+          'Measuring Chain (30 Mtrs) with arrows',
+          'Measuring Chain (20 Mtrs) with arrows',
+          'Plane Table With Accessories',
+          'Prismatic Compass',
+          'Pocket Stereoscope',
+          'Pentase Total Station with all Standard accessories',
+          'Standard Vernier Theodolite',
+          'Gramin GPS Entern 30 Model',
+          'Surveyor Compass'
+        ],
+        icon: Compass
+      },
+      {
+        name: 'FLUID MECHANICS AND HYDRAULIC MACHINERY LABORATORY',
+        incharge: 'Mr. B.Sathish Kumar ,AP/ Civil',
+        technician: 'Mr.S.Selvaraj, LT/Civil',
+        area: '66 Sq.M.',
+        equipments: [
+          'Laboratory Area (Sq.M.): 66',
+          'Venturimeter Apparatus',
+          'Orificemeter Apparatus',
+          'Pipe Friction Apparatus',
+          'Rotometer Apparatus',
+          'Multispeed Reciprocating Pump',
+          'Multispeed Centrifugal Pump',
+          'Pelton Wheel Turbine- Test Rig',
+          'Francis Turbine- Test Rig',
+          'Kaplan Turbine',
+          'Gear Oil Pump',
+          "Bernoulli's Theorem Apparatus",
+          'Notch Tank Apparatus',
+          'Minor Loss Apparatus',
+          'Pitot Tube Apparatus',
+          'Submersible Pump',
+          'Flow Through Orifice Apparatus',
+          'Metacentric Height',
+          'Jet Pump Test Rig (Closed Circuit)',
+          'Multistage Centrifugal Pump Test Rig - Constant Speed Apparatus',
+          'Impact of Jet on Vanes',
+          'Hydraulic Flume'
+        ],
+        icon: Droplets
+      },
+      {
+        name: 'STRENGTH OF MATERIALS LABORATORY',
+        incharge: 'Mr. L.M. Nirmal ,AP/ Civil',
+        technician: 'Mr.C.Pradeep Kumar, LT/Civil',
+        area: '66 Sq.M.',
+        equipments: [
+          'Laboratory Area (Sq.M.): 66',
+          'Universal Testing machine (60T)',
+          'Impact Testing Machine',
+          'Brinnel Hardness Testing Machine',
+          'Rockwell Hardness Testing Machine',
+          'Mechanical Spring Testing Machine',
+          'Metallurgical Microscope',
+          'Muffle Furnace',
+          'Torsion Testing Machine(100N.M)',
+          'Beam Deflection Test Apparatus',
+          "Vicat's Apparatus",
+          'Mortor Cube Moulds',
+          'Mechanical Extensometer',
+          "Le Chatlier's Apparatus"
+        ],
+        icon: Wrench
+      },
+      {
+        name: 'ENVIRONMENTAL ENGINEERING LABORATORY',
+        incharge: 'Mr. S.Rajeshkumar ,AP/ Civil',
+        technician: 'Mrs.M.Yasodha, LT/Civil',
+        area: '100 Sq.M.',
+        equipments: [
+          'Laboratory Area (Sq.M.): 100',
+          'Digital PH meter (Elico make model 120 with electrode)',
+          'Electrode for Digital PH meter',
+          'Digital Nephelo Turbidity meter',
+          'Digital Conductivity meter',
+          'B.O.D Incubator',
+          'Muffle Furnace',
+          'Hot Air oven',
+          'C.O.D Apparatus',
+          'Electronic Top Loading Balance',
+          'Dissolved Oxygen Analyser',
+          'Visible Spectrophotometer',
+          'Digital Flame Photometer',
+          'B.O.D Analyser',
+          'C.O.D Analyser',
+          'Atomic Absorption Spectrophotometer'
+        ],
+        icon: FlaskConical
+      },
+      {
+        name: 'SOIL MECHANICS LABORATORY',
+        incharge: 'Mr. P.Selvakumar, AP/ Civil',
+        technician: 'Mr.C.Pradeep Kumar, LT/Civil',
+        area: '66 Sq.M.',
+        equipments: [
+          'Laboratory Area (Sq.M.): 66',
+          'Sieve Shaker Motorised',
+          'Liquid Limit Device',
+          'Plastic Limit Apparatus',
+          'Shrinkage Limit Apparatus',
+          'Proctor Compaction Apparatus',
+          'Core Cutter Method',
+          'Sand Pouring Cylinder',
+          'Triaxial Shear Test Apparatus',
+          'Pore Pressure Apparatus',
+          'Relative Density Apparatus',
+          'Pycnometer',
+          'Permeability Test Apparatus',
+          'Hot Air Oren',
+          'Sieve Brass Frame',
+          'Soil Hydrometer',
+          'Three Gang Consolidation',
+          'Unconfined Compression Tester',
+          'Direct Shear test Apparatus',
+          'Vane shear Apparatus'
+        ],
+        icon: Layers
+      },
+      {
+        name: 'COMPUTER AIDED BUILDING DRAWING LABORATORY',
+        incharge: 'Mr.S.Senthilkumar ,AP/ Civil',
+        technician: 'Mr.R.Ganesh Kumar Bharath, LT/Civil',
+        area: '66 Sq.M.',
+        equipments: [
+          'Laboratory Area (Sq.M.): 66',
+          'Softwares: AutoCAD, STAADPRO, ArcGIS',
+          'Hardwares:',
+          'CPU i7 14th GEN 16 GB RAM -512 GB -19.5 inch FHD monitor',
+          'CPU i3 14th GEN 4 GB RAM -500 GB -15.5 inch LED monitor',
+          'CPU Intel Dual Core 92020 Processor 4 GB RAM -500 GB -15.5 inch LED monitor',
+          'Speaker Creative Inspire T3130',
+          'Civil Engineering Models',
+          'Printer-Canon 2900',
+          'Canon LIDE 400 Scanner',
+          'PA Wireless Amplifier WP200',
+          'Laptop DELL LATI 3420 i3 -1115 G4-8 GB-512 -14 HD'
+        ],
+        icon: Monitor
       }
     ],
     placementStats: { placed: '88%', avg: '3.8 LPA', top: '10 LPA', companies: '30+' },

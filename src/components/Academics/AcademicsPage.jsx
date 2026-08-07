@@ -90,7 +90,7 @@ const ugPrograms = [
     description: 'Power systems, electrical machines, control systems and power electronics.'
   },
   {
-    id: 'be-ecm',
+    id: 'be-ecx',
     name: 'B.E. Electronics and Computer Engineering',
     short: 'ECX',
     duration: '4 Years',

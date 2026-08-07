@@ -502,7 +502,7 @@ const AdmissionsPage = () => {
                                  { name: 'B.Tech. Computer Science and Business Systems', id: 'btech-csbs' },
                                  { name: 'B.E. Electronics and Communication Engineering', id: 'be-ece' },
                                  { name: 'B.E. Electrical and Electronics Engineering', id: 'be-eee' },
-                                 { name: 'B.E. Electronics and Computer Engineering', id: 'be-ecm' },
+                                 { name: 'B.E. Electronics and Computer Engineering', id: 'be-ecx' },
                                  { name: 'B.E. Mechanical Engineering', id: 'be-mechanical' },
                                  { name: 'B.E. Civil Engineering', id: 'be-civil' }
                               ].map((item, i) => (
