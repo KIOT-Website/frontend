@@ -160,24 +160,28 @@ const Contact = () => {
                   <p className="text-xs text-slate-600 font-medium leading-relaxed mb-6">{c.desc}</p>
                 </div>
 
-                {/* Two Equal Width Action Buttons (Side by Side) */}
+                {/* Two Equal Width Action Buttons (Side by Side) with Crisp White Hover Text */}
                 <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mt-auto">
                   <a 
                     href={`tel:${c.phone.replace(/\s/g, '')}`} 
-                    className="flex items-center justify-center gap-2 p-3 rounded-xl border border-slate-200/90 bg-slate-50 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 font-bold text-xs shadow-xs group/btn truncate"
+                    className="flex items-center justify-center gap-2 p-3 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-[#18357a] transition-all duration-300 shadow-xs group/btn cursor-pointer overflow-hidden"
                     title={`Call ${c.phone}`}
                   >
-                    <Phone size={14} className="text-[#ffc107] group-hover/btn:text-white shrink-0 transition-colors" />
-                    <span className="truncate">{c.phone}</span>
+                    <Phone size={14} className="text-[#18357a] group-hover/btn:text-white shrink-0 transition-colors duration-300" />
+                    <span className="truncate text-xs font-bold text-[#18357a] group-hover/btn:text-white transition-colors duration-300">
+                      {c.phone}
+                    </span>
                   </a>
                   
                   <a 
                     href={`mailto:${c.email}`} 
-                    className="flex items-center justify-center gap-2 p-3 rounded-xl border border-slate-200/90 bg-slate-50 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 font-bold text-xs shadow-xs group/btn truncate"
+                    className="flex items-center justify-center gap-2 p-3 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-[#18357a] transition-all duration-300 shadow-xs group/btn cursor-pointer overflow-hidden"
                     title={`Email ${c.email}`}
                   >
-                    <Mail size={14} className="text-[#ffc107] group-hover/btn:text-white shrink-0 transition-colors" />
-                    <span className="truncate">Email Us</span>
+                    <Mail size={14} className="text-[#18357a] group-hover/btn:text-white shrink-0 transition-colors duration-300" />
+                    <span className="truncate text-xs font-bold text-[#18357a] group-hover/btn:text-white transition-colors duration-300">
+                      Email Us
+                    </span>
                   </a>
                 </div>
               </div>
@@ -303,8 +307,8 @@ const Contact = () => {
                       <span>Sending Inquiry...</span>
                     ) : (
                       <>
-                        <span>Submit Inquiry</span>
-                        <Send size={14} className="group-hover:translate-x-1 transition-transform" />
+                        <span className="text-white group-hover:text-[#18357a] transition-colors">Submit Inquiry</span>
+                        <Send size={14} className="text-white group-hover:text-[#18357a] group-hover:translate-x-1 transition-all" />
                       </>
                     )}
                   </button>
@@ -360,10 +364,12 @@ const Contact = () => {
                   href="https://www.google.com/maps/dir/?api=1&destination=Knowledge+Institute+of+Technology+(KIOT),+Salem" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center gap-2.5 p-3.5 bg-[#ffc107] hover:bg-[#18357a] text-[#18357a] hover:text-white text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 shadow-md shadow-[#ffc107]/20 w-full cursor-pointer"
+                  className="group flex items-center justify-center gap-2.5 p-3.5 bg-[#ffc107] hover:bg-[#18357a] transition-all duration-300 shadow-md shadow-[#ffc107]/20 w-full cursor-pointer rounded-xl"
                 >
-                  <Navigation size={16} className="text-[#18357a] group-hover:text-white transition-colors duration-300" />
-                  <span className="text-[#18357a] group-hover:text-white transition-colors duration-300">Get Directions on Google Maps</span>
+                  <Navigation size={16} className="text-[#18357a] group-hover:text-white transition-colors duration-300 shrink-0" />
+                  <span className="text-xs font-black uppercase tracking-widest text-[#18357a] group-hover:text-white transition-colors duration-300">
+                    Get Directions on Google Maps
+                  </span>
                 </a>
               </div>
             </div>
