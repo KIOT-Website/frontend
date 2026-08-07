@@ -283,6 +283,7 @@ export const btechItData = {
       email: "mschem@kiot.ac.in",
       publications: "IJ:02",
       rating: 4.6
+      ,category: 'S&H'
     },
     {
       name: "Ms. Shyamala Devi",
@@ -296,6 +297,7 @@ export const btechItData = {
       publications: "Nil",
       rating: 4.6,
       image: itShyamalaDeviImage
+      ,category: 'S&H'
     },
     {
       name: "Ms. J.Saritha",
@@ -309,6 +311,7 @@ export const btechItData = {
       publications: "Nil",
       rating: 4.6,
       image: itSarithaImage
+      ,category: 'S&H'
     },
     {
       name: "Mr. J.Saravanan",
@@ -321,6 +324,7 @@ export const btechItData = {
       email: "jsamat@kiot.ac.in",
       publications: "Nil",
       rating: 4.5
+      ,category: 'S&H'
     },
     {
       name: "Mr. K.Karthick",
@@ -334,6 +338,7 @@ export const btechItData = {
       publications: "IJ:1, IC:3, NC:1",
       rating: 4.5,
       image: itKarthickImage
+      ,category: 'S&H'
     },
     {
       name: "Mr. K.Vasantha kumar",
@@ -346,7 +351,13 @@ export const btechItData = {
       publications: "-",
       rating: 4.6,
       image: itVasanthaKumarImage
+      ,category: 'S&H'
     }
+    ,{ name: 'Mrs. S. Lavanya', designation: 'AP', qualification: 'B.E., M.E.' }
+    ,{ name: 'Ms. S. Valarmathi', designation: 'AP', qualification: 'B.E., M.E.' }
+    ,{ name: 'Mr. J. Vinothkumar', designation: 'AP', qualification: 'B.E., M.E.' }
+    ,{ name: 'Mr. A. Manikandan', designation: 'AP', qualification: 'B.E., M.E.' }
+    ,{ name: 'Mr. K. Manikandan', designation: 'AP/ MAT', qualification: 'B.Sc., M.Sc., M.Phil.', category: 'S&H' }
   ],
   labs: [
       {

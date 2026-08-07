@@ -76,7 +76,11 @@ export const mcaData = {
         experience: '6 Years', 
         rating: 4.6,
         image: mcaSowndaryaImage
-      }
+      },
+      { name: 'Mr. P. Balaji', designation: 'AP', qualification: 'B.Sc., MCA., M.Phil.' },
+      { name: 'Mr. K. Dhamodharan', designation: 'AP', qualification: 'BCA., MCA., M.E.' },
+      { name: 'Mrs. M. Maheswari', designation: 'AP', qualification: 'B.Sc., MCA.' },
+      { name: 'Mrs. R. Hemarani', designation: 'AP', qualification: 'B.Sc., MCA., M.Phil.' }
     ],
     labs: [
       {

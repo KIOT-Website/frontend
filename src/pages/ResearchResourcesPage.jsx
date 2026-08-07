@@ -340,10 +340,10 @@ const civilFacilities = [
     }
 ];
 const civilFacultyPursuing = [
-    { name: "Mr. L. Krishnan", topic: "Concrete structures", supervisor: "Dr. MNA. GulshanTaj (Professor, Department of Civil Engineering, Sona College of Technology, Salem)", university: "Anna University", registration: "20131691103", status: "Pursuing" },
-    { name: "Mr. R. Elavarasan", topic: "Concrete structures", supervisor: "Dr. T. Magesh Kumar (Associate Professor, Civil Engineering, KSR College of Technology, Namakkal)", university: "Anna University", registration: "20131691103", status: "Pursuing" },
-    { name: "Mr. S. Arulkesavan", topic: "Concrete structures", supervisor: "Dr. S. Ramesh (Professor, Civil Engineering, KSR College of Technology, Namakkal)", university: "Anna University", registration: "20131691103", status: "Pursuing" },
-    { name: "Mr. L. M. Nirmal", topic: "Concrete structures", supervisor: "Dr. T. Magesh Kumar (Associate Professor, Civil Engineering, KSR College of Technology, Namakkal)", university: "Anna University", registration: "20131691103", status: "Pursuing" }
+    { name: "Mr. L. Krishnan", topic: "Concrete structures", supervisor: "Dr. MNA. GulshanTaj (Professor, Department of Civil Engineering, Sona College of Technology, Salem)", university: "Anna University", registration: "20131691103", status: "Pursuing", vidwanId: "322113" },
+    { name: "Mr. R. Elavarasan", topic: "Concrete structures", supervisor: "Dr. T. Magesh Kumar (Associate Professor, Civil Engineering, KSR College of Technology, Namakkal)", university: "Anna University", registration: "20131691103", status: "Pursuing", vidwanId: "322107" },
+    { name: "Mr. S. Arulkesavan", topic: "Concrete structures", supervisor: "Dr. S. Ramesh (Professor, Civil Engineering, KSR College of Technology, Namakkal)", university: "Anna University", registration: "20131691103", status: "Pursuing", vidwanId: "322070" },
+    { name: "Mr. L. M. Nirmal", topic: "Concrete structures", supervisor: "Dr. T. Magesh Kumar (Associate Professor, Civil Engineering, KSR College of Technology, Namakkal)", university: "Anna University", registration: "20131691103", status: "Pursuing", vidwanId: "322109" }
 ];
 const civilGuidedScholars = [];
 

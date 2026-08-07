@@ -70,6 +70,8 @@ export const beEeeData = {
       { name: 'Mr. Prasath M', designation: 'Assistant Professor / Maths', qualification: 'M.Sc., M.Phil.', experience: 'Teaching: 17.6 Yrs.', specialization: 'Operation Research', email: 'mpmat@kiot.ac.in', rating: 4.8, association: 'Regular', joiningDate: '20.06.2013', publications: 'NC: 01', image: eeePrasathMImage, category: 'S&H' },
       { name: 'Ms. Rajeswari B', designation: 'Assistant Professor / Maths', qualification: 'M.Sc., M.Phil.', experience: 'Teaching: 16.4 Yrs.', specialization: 'Boolean Algebra', email: 'brmat@kiot.ac.in', rating: 4.8, association: 'Regular', joiningDate: '06.06.2012', publications: 'NC: 0', image: eeeRajeswariImage, category: 'S&H' },
       { name: 'Dr. Chithralekha N', designation: 'Professor / Physics', qualification: 'M.Sc, M.Phil, Ph.D. (Physics), M.Ed, M.Phil. (Education), SET (Physical Science)', experience: 'Teaching: 16.5 Yrs.', specialization: 'Ultrasonic and Spectroscopy', email: 'ncphy@kiot.ac.in', rating: 4.9, association: 'Regular', joiningDate: '01.08.2018', publications: 'IJ: 07, NJ: 01, IC: 05, NC: 02', category: 'S&H' },
+      { name: 'Mrs. Hemalatha Madhu', designation: 'AP/ ENG', qualification: 'B.A., M.A., M.Phil., NET.', category: 'S&H' },
+      { name: 'Dr. S. Sugan', designation: 'ASP/PHY', qualification: 'B.Sc., M.Sc., Ph.D.', category: 'S&H' },
     ],
     labs: [
       {
