@@ -152,10 +152,10 @@ const Contact = () => {
       </section>
 
       {/* BODY CONTENT CONTAINER */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10 -mt-8 pb-20">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 -mt-8 pb-20">
         
         {/* COMPACT PRIORITY CARDS GRID WITH WHITE HEADING INSIDE BLUE HEADER BAR */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12">
           {priorityContacts.map((c, i) => (
             <motion.div
               key={c.id}
@@ -166,19 +166,19 @@ const Contact = () => {
               className="bg-white rounded-2xl border border-slate-300/80 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:border-[#ffc107] transition-all duration-300 overflow-hidden flex flex-col justify-between group relative"
             >
               {/* Card Blue Header Bar with White Heading */}
-              <div className="bg-[#18357a] px-5 py-4 flex items-center gap-3 border-b border-white/10">
-                <div className="h-9 w-9 rounded-xl bg-white/10 flex items-center justify-center text-[#ffc107] shrink-0 shadow-inner">
-                  <c.icon size={19} />
+              <div className="bg-[#18357a] px-4 sm:px-5 py-3.5 sm:py-4 flex items-center gap-3 border-b border-white/10">
+                <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-xl bg-white/10 flex items-center justify-center text-[#ffc107] shrink-0 shadow-inner">
+                  <c.icon size={18} />
                 </div>
-                <h3 className="text-base font-bold text-white tracking-tight">{c.title}</h3>
+                <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">{c.title}</h3>
               </div>
 
               {/* Compact Card Body */}
-              <div className="p-5 flex flex-col flex-1 justify-between">
+              <div className="p-4 sm:p-5 flex flex-col flex-1 justify-between">
                 <p className="text-xs text-slate-600 font-medium leading-relaxed mb-4">{c.desc}</p>
 
                 {/* Two Equal Width Action Buttons (Side by Side) */}
-                <div className="grid grid-cols-2 gap-2.5 pt-3 border-t border-slate-100 mt-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 pt-3 border-t border-slate-100 mt-auto">
                   <a 
                     href={`tel:${c.phone.replace(/\s/g, '')}`} 
                     className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-[#18357a] transition-all duration-300 shadow-xs group/btn cursor-pointer overflow-hidden"
@@ -212,22 +212,22 @@ const Contact = () => {
           {/* LEFT: Quick Inquiry Form Card */}
           <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-300/80 shadow-xl shadow-slate-900/5 overflow-hidden">
             {/* Header Strip */}
-            <div className="bg-gradient-to-r from-[#18357a] to-[#224292] px-7 py-5 text-white flex items-center justify-between">
+            <div className="bg-gradient-to-r from-[#18357a] to-[#224292] px-5 sm:px-7 py-4 sm:py-5 text-white flex items-center justify-between">
               <div>
                 <span className="text-[10px] font-black uppercase tracking-widest text-amber-300 block mb-0.5">Quick Assistance</span>
-                <h2 className="text-xl lg:text-2xl font-bold">Send Us an Inquiry</h2>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">Send Us an Inquiry</h2>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#ffc107]">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#ffc107]">
                 <Send size={18} />
               </div>
             </div>
 
-            <div className="p-7 lg:p-9">
+            <div className="p-5 sm:p-7 lg:p-9">
               {formSubmitted ? (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="p-8 rounded-xl bg-emerald-50 border border-emerald-200 text-center space-y-3 my-4"
+                  className="p-6 sm:p-8 rounded-xl bg-emerald-50 border border-emerald-200 text-center space-y-3 my-4"
                 >
                   <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                     <CheckCircle2 size={24} />
@@ -340,17 +340,17 @@ const Contact = () => {
             
             <div className="bg-white rounded-2xl border border-slate-300/80 shadow-xl shadow-slate-900/5 overflow-hidden">
               {/* Header */}
-              <div className="bg-[#18357a] px-6 py-4 text-white flex items-center justify-between border-b border-white/10">
+              <div className="bg-[#18357a] px-5 sm:px-6 py-4 text-white flex items-center justify-between border-b border-white/10">
                 <div className="flex items-center gap-2.5">
                   <MapPin size={20} className="text-[#ffc107]" />
-                  <h3 className="text-lg font-bold">Campus Location</h3>
+                  <h3 className="text-base sm:text-lg font-bold">Campus Location</h3>
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-white/10 px-2.5 py-1 rounded-full text-slate-200">
                   Salem, TN
                 </span>
               </div>
 
-              <div className="p-6 space-y-5">
+              <div className="p-5 sm:p-6 space-y-5">
                 <div className="space-y-2 text-sm">
                   <h4 className="font-bold text-[#18357a] text-base leading-snug">
                     Knowledge Institute of Technology (KIOT)
@@ -398,10 +398,10 @@ const Contact = () => {
 
         {/* SEARCHABLE DEPARTMENT & OFFICE DIRECTORY */}
         <div className="bg-white rounded-2xl border border-slate-300/80 shadow-xl shadow-slate-900/5 overflow-hidden">
-          <div className="bg-[#18357a] px-7 py-5 text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="bg-[#18357a] px-5 sm:px-7 py-4 sm:py-5 text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <span className="text-[10px] font-black uppercase tracking-widest text-amber-300 block mb-0.5">Directory Search</span>
-              <h2 className="text-xl lg:text-2xl font-bold">Department & Office Directory</h2>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">Department & Office Directory</h2>
             </div>
 
             {/* Instant Filter Search Input */}
@@ -417,7 +417,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="p-6 lg:p-8 space-y-4 bg-slate-50/50">
+          <div className="p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4 bg-slate-50/50">
             {categories.map((cat, idx) => {
               const filteredItems = cat.items.filter(item => 
                 item.name.toLowerCase().includes(search) || 
@@ -434,10 +434,10 @@ const Contact = () => {
                 >
                   <button 
                     onClick={() => setOpenAccordion(openAccordion === idx ? null : idx)}
-                    className="w-full flex items-center justify-between p-5 text-left bg-slate-100/70 hover:bg-[#18357a]/5 transition-colors border-b border-slate-200/60"
+                    className="w-full flex items-center justify-between p-4 sm:p-5 text-left bg-slate-100/70 hover:bg-[#18357a]/5 transition-colors border-b border-slate-200/60"
                   >
-                    <span className="text-sm font-bold text-[#18357a]">{cat.title} ({filteredItems.length})</span>
-                    <ChevronDown size={18} className={`text-[#18357a] transition-transform duration-300 ${openAccordion === idx || search ? 'rotate-180' : ''}`} />
+                    <span className="text-xs sm:text-sm font-bold text-[#18357a]">{cat.title} ({filteredItems.length})</span>
+                    <ChevronDown size={18} className={`text-[#18357a] transition-transform duration-300 shrink-0 ${openAccordion === idx || search ? 'rotate-180' : ''}`} />
                   </button>
 
                   <AnimatePresence>
@@ -449,33 +449,33 @@ const Contact = () => {
                         className="overflow-hidden"
                       >
                         {cat.isTransport ? (
-                          <div className="p-5 bg-white grid grid-cols-2 gap-4">
+                          <div className="p-3.5 sm:p-5 bg-white grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                             {filteredItems.map((item, i) => (
                               <div 
                                 key={i} 
-                                className={`p-5 rounded-2xl flex items-center gap-4 shadow-lg transition-transform hover:-translate-y-1 ${
+                                className={`p-4 sm:p-5 rounded-2xl flex items-center gap-3 sm:gap-4 shadow-md transition-transform hover:-translate-y-0.5 overflow-hidden ${
                                   item.bg === 'blue' 
                                     ? 'bg-[#18357a] text-white shadow-[#18357a]/20' 
                                     : 'bg-[#ffc107] text-[#18357a] shadow-[#ffc107]/20'
                                 }`}
                               >
-                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-md ${
+                                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 shadow-md ${
                                   item.bg === 'blue'
                                     ? 'bg-[#ffc107] text-[#18357a]'
                                     : 'bg-[#18357a] text-white'
                                 }`}>
-                                  <Phone size={20} />
+                                  <Phone size={18} className="sm:w-5 sm:h-5" />
                                 </div>
-                                <div className="space-y-0.5 min-w-0 flex-1">
-                                  <span className={`text-[10px] font-black uppercase tracking-wider block ${
+                                <div className="space-y-0.5 min-w-0 flex-1 overflow-hidden">
+                                  <span className={`text-[9px] sm:text-[10px] font-black uppercase tracking-wider block leading-tight ${
                                     item.bg === 'blue' ? 'text-amber-300' : 'text-[#18357a]/80'
                                   }`}>
                                     {item.designation}
                                   </span>
-                                  <h4 className="text-base font-bold leading-tight truncate">{item.name}</h4>
+                                  <h4 className="text-xs sm:text-base font-bold leading-snug truncate">{item.name}</h4>
                                   <a 
                                     href={`tel:${item.phone}`} 
-                                    className={`text-sm font-bold tracking-wide hover:underline flex items-center gap-1.5 pt-1 ${
+                                    className={`text-xs sm:text-sm font-bold tracking-wide hover:underline flex items-center gap-1 pt-0.5 truncate ${
                                       item.bg === 'blue' ? 'text-white' : 'text-[#18357a]'
                                     }`}
                                   >
@@ -486,14 +486,14 @@ const Contact = () => {
                             ))}
                           </div>
                         ) : (
-                          <div className="p-4 bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                          <div className="p-3 sm:p-4 bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                             {filteredItems.map((item, i) => (
-                              <div key={i} className="p-4 bg-slate-50/80 rounded-xl border border-slate-200 hover:border-[#18357a]/40 hover:bg-white transition-all shadow-xs">
-                                <p className="text-xs font-bold text-[#18357a] mb-3">{item.name}</p>
-                                <div className="space-y-2 text-[11px] font-semibold">
-                                  <a href={`tel:${item.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-slate-700 hover:text-[#18357a] transition-colors">
+                              <div key={i} className="p-3.5 sm:p-4 bg-slate-50/80 rounded-xl border border-slate-200 hover:border-[#18357a]/40 hover:bg-white transition-all shadow-xs overflow-hidden">
+                                <p className="text-xs font-bold text-[#18357a] mb-2 sm:mb-3 truncate">{item.name}</p>
+                                <div className="space-y-1.5 sm:space-y-2 text-[11px] font-semibold">
+                                  <a href={`tel:${item.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-slate-700 hover:text-[#18357a] transition-colors truncate">
                                     <Phone size={13} className="text-[#ffc107] shrink-0" />
-                                    <span>{item.phone}</span>
+                                    <span className="truncate">{item.phone}</span>
                                   </a>
                                   <a href={`mailto:${item.email}`} className="flex items-center gap-2 text-slate-700 hover:text-[#18357a] transition-colors truncate">
                                     <Mail size={13} className="text-[#18357a] shrink-0" />
