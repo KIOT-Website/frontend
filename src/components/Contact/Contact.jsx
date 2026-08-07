@@ -10,8 +10,7 @@ const priorityContacts = [
     email: "admissions@kiot.ac.in",
     whatsapp: "https://wa.me/919894701234",
     icon: GraduationCap,
-    desc: "Reach our dedicated counselors for UG & PG admission help.",
-    badge: "Fast Response"
+    desc: "Reach our dedicated counselors for UG & PG admission help."
   },
   {
     id: 'pat',
@@ -20,8 +19,7 @@ const priorityContacts = [
     email: "pat@kiot.ac.in",
     whatsapp: "https://wa.me/914272433917",
     icon: TrendingUp,
-    desc: "Career opportunities, campus drives, and industry tie-ups.",
-    badge: "Recruiters"
+    desc: "Career opportunities, campus drives, and industry tie-ups."
   },
   {
     id: 'pri',
@@ -30,8 +28,7 @@ const priorityContacts = [
     email: "principal@kiot.ac.in",
     whatsapp: "https://wa.me/919500941414",
     icon: User,
-    desc: "Institutional administration and academic leadership.",
-    badge: "Administration"
+    desc: "Institutional administration and academic leadership."
   }
 ]
 
@@ -136,7 +133,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* BODY CONTENT CONTAINER WITH DEEP CONTRAST BACKGROUND */}
+      {/* BODY CONTENT CONTAINER */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10 -mt-8 pb-20">
         
         {/* PRIORITY CARDS GRID */}
@@ -155,33 +152,32 @@ const Contact = () => {
                 <div className="h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center text-[#ffc107] shadow-inner">
                   <c.icon size={22} />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-widest bg-[#ffc107] text-[#18357a] px-3 py-1 rounded-full font-bold">
-                  {c.badge}
-                </span>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#18357a] mb-2">{c.title}</h3>
-                <p className="text-xs text-slate-600 font-medium leading-relaxed mb-6">{c.desc}</p>
+              <div className="p-6 flex flex-col flex-1 justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-[#18357a] mb-2">{c.title}</h3>
+                  <p className="text-xs text-slate-600 font-medium leading-relaxed mb-6">{c.desc}</p>
+                </div>
 
-                <div className="space-y-3 pt-4 border-t border-slate-100">
+                {/* Two Equal Width Action Buttons (Side by Side) */}
+                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mt-auto">
                   <a 
                     href={`tel:${c.phone.replace(/\s/g, '')}`} 
-                    className="flex items-center justify-between p-3 rounded-xl bg-[#18357a] text-white hover:bg-[#ffc107] hover:text-[#18357a] transition-all duration-300 font-bold text-sm shadow-md group/call"
+                    className="flex items-center justify-center gap-2 p-3 rounded-xl border border-slate-200/90 bg-slate-50 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 font-bold text-xs shadow-xs group/btn truncate"
+                    title={`Call ${c.phone}`}
                   >
-                    <span className="flex items-center gap-2.5">
-                      <Phone size={15} className="text-[#ffc107] group-hover/call:text-[#18357a]" />
-                      {c.phone}
-                    </span>
-                    <span className="text-[10px] font-black uppercase tracking-widest opacity-90">Call Now</span>
+                    <Phone size={14} className="text-[#ffc107] group-hover/btn:text-white shrink-0 transition-colors" />
+                    <span className="truncate">{c.phone}</span>
                   </a>
                   
                   <a 
                     href={`mailto:${c.email}`} 
-                    className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#18357a] transition-colors truncate"
+                    className="flex items-center justify-center gap-2 p-3 rounded-xl border border-slate-200/90 bg-slate-50 text-[#18357a] hover:bg-[#18357a] hover:text-white transition-all duration-300 font-bold text-xs shadow-xs group/btn truncate"
+                    title={`Email ${c.email}`}
                   >
-                    <Mail size={14} className="text-[#18357a] shrink-0" />
-                    <span className="truncate">{c.email}</span>
+                    <Mail size={14} className="text-[#ffc107] group-hover/btn:text-white shrink-0 transition-colors" />
+                    <span className="truncate">Email Us</span>
                   </a>
                 </div>
               </div>
@@ -301,7 +297,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 bg-[#18357a] hover:bg-[#ffc107] text-white hover:text-[#18357a] font-black text-xs uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-[#18357a]/20 transition-all duration-300 flex items-center justify-center gap-2 group active:scale-[0.99]"
+                    className="w-full py-4 bg-[#18357a] hover:bg-[#ffc107] text-white hover:text-[#18357a] font-black text-xs uppercase tracking-[0.2em] rounded-xl shadow-lg shadow-[#18357a]/20 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer active:scale-[0.99]"
                   >
                     {submitting ? (
                       <span>Sending Inquiry...</span>
@@ -364,10 +360,10 @@ const Contact = () => {
                   href="https://www.google.com/maps/dir/?api=1&destination=Knowledge+Institute+of+Technology+(KIOT),+Salem" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center gap-2.5 p-3.5 bg-[#ffc107] hover:bg-[#18357a] text-[#18357a] hover:text-white text-xs font-black uppercase tracking-widest rounded-xl transition-all shadow-md shadow-[#ffc107]/20 w-full"
+                  className="group flex items-center justify-center gap-2.5 p-3.5 bg-[#ffc107] hover:bg-[#18357a] text-[#18357a] hover:text-white text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 shadow-md shadow-[#ffc107]/20 w-full cursor-pointer"
                 >
-                  <Navigation size={16} />
-                  <span>Get Directions on Google Maps</span>
+                  <Navigation size={16} className="text-[#18357a] group-hover:text-white transition-colors duration-300" />
+                  <span className="text-[#18357a] group-hover:text-white transition-colors duration-300">Get Directions on Google Maps</span>
                 </a>
               </div>
             </div>
