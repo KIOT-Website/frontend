@@ -152,11 +152,11 @@ function EventCard({ event, onOpen }) {
       onKeyDown={(e) => e.key === "Enter" && onOpen()}
     >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden bg-slate-100">
+      <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-slate-100">
         <img
           src={getMediaUrl(event.image)}
           alt={event.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
           loading="lazy"
           onError={(e) => {
             e.currentTarget.onerror = null;
@@ -212,9 +212,9 @@ function CompletedEventCard({ event, onOpen }) {
   return (
     <div
       onClick={onOpen}
-      className="group/c flex-shrink-0 w-[290px] sm:w-[330px] bg-white border border-slate-200/80 hover:border-[#ffc107] rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 mx-3 select-none"
+      className="group/c flex-shrink-0 w-[320px] sm:w-[370px] bg-white border border-slate-200/80 hover:border-[#ffc107] rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 mx-3 select-none"
     >
-      <div className="relative h-40 overflow-hidden bg-slate-100">
+      <div className="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
         <img
           src={getMediaUrl(event.image)}
           alt={event.title}
@@ -312,17 +312,17 @@ function EventModal({ event, onClose }) {
         exit={{ opacity: 0, scale: 0.94, y: 16 }}
         transition={{ duration: 0.3 }}
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-white border border-slate-100 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl"
+        className="relative bg-white border border-slate-100 rounded-2xl w-full max-w-3xl max-h-[92vh] overflow-y-auto shadow-2xl"
         role="dialog"
         aria-modal="true"
         style={{ scrollbarWidth: "none" }}
       >
         {/* Hero image */}
-        <div className="relative h-56 overflow-hidden rounded-t-2xl bg-slate-100">
+        <div className="relative h-72 sm:h-96 lg:h-[460px] overflow-hidden rounded-t-2xl bg-slate-950">
           <img
             src={getMediaUrl(event.image)}
             alt={event.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             onError={(e) => {
               e.currentTarget.onerror = null;
               e.currentTarget.src = DEFAULT_EVENT_IMAGE;
@@ -468,7 +468,13 @@ const Events = () => {
             <>
               {upcomingEvents.length > 0 && (
                 <>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                  <div className={`grid gap-6 lg:gap-8 ${
+                    upcomingEvents.length === 1 
+                      ? 'grid-cols-1 max-w-2xl mx-auto' 
+                      : upcomingEvents.length === 2 
+                        ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto' 
+                        : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+                  }`}>
                     <AnimatePresence mode="popLayout">
                       {upcomingEvents.slice(0, 3).map((event) => (
                         <EventCard key={event.id} event={event} onOpen={() => setSelectedEvent(event)} />
