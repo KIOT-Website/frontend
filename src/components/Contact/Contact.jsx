@@ -136,7 +136,7 @@ const Contact = () => {
       {/* BODY CONTENT CONTAINER */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-10 -mt-8 pb-20">
         
-        {/* PRIORITY CARDS GRID */}
+        {/* COMPACT PRIORITY CARDS GRID WITH WHITE HEADING INSIDE BLUE HEADER BAR */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {priorityContacts.map((c, i) => (
             <motion.div
@@ -147,27 +147,26 @@ const Contact = () => {
               whileHover={{ y: -6 }}
               className="bg-white rounded-2xl border border-slate-300/80 shadow-xl shadow-slate-900/5 hover:shadow-2xl hover:border-[#ffc107] transition-all duration-300 overflow-hidden flex flex-col justify-between group relative"
             >
-              {/* Card Header Bar */}
-              <div className="bg-[#18357a] px-6 py-4 flex items-center justify-between border-b border-white/10">
-                <div className="h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center text-[#ffc107] shadow-inner">
-                  <c.icon size={22} />
+              {/* Card Blue Header Bar with White Heading */}
+              <div className="bg-[#18357a] px-5 py-4 flex items-center gap-3 border-b border-white/10">
+                <div className="h-9 w-9 rounded-xl bg-white/10 flex items-center justify-center text-[#ffc107] shrink-0 shadow-inner">
+                  <c.icon size={19} />
                 </div>
+                <h3 className="text-base font-bold text-white tracking-tight">{c.title}</h3>
               </div>
 
-              <div className="p-6 flex flex-col flex-1 justify-between">
-                <div>
-                  <h3 className="text-xl font-bold text-[#18357a] mb-2">{c.title}</h3>
-                  <p className="text-xs text-slate-600 font-medium leading-relaxed mb-6">{c.desc}</p>
-                </div>
+              {/* Compact Card Body */}
+              <div className="p-5 flex flex-col flex-1 justify-between">
+                <p className="text-xs text-slate-600 font-medium leading-relaxed mb-4">{c.desc}</p>
 
-                {/* Two Equal Width Action Buttons (Side by Side) with Crisp White Hover Text */}
-                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100 mt-auto">
+                {/* Two Equal Width Action Buttons (Side by Side) */}
+                <div className="grid grid-cols-2 gap-2.5 pt-3 border-t border-slate-100 mt-auto">
                   <a 
                     href={`tel:${c.phone.replace(/\s/g, '')}`} 
-                    className="flex items-center justify-center gap-2 p-3 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-[#18357a] transition-all duration-300 shadow-xs group/btn cursor-pointer overflow-hidden"
+                    className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-[#18357a] transition-all duration-300 shadow-xs group/btn cursor-pointer overflow-hidden"
                     title={`Call ${c.phone}`}
                   >
-                    <Phone size={14} className="text-[#18357a] group-hover/btn:text-white shrink-0 transition-colors duration-300" />
+                    <Phone size={13} className="text-[#18357a] group-hover/btn:text-white shrink-0 transition-colors duration-300" />
                     <span className="truncate text-xs font-bold text-[#18357a] group-hover/btn:text-white transition-colors duration-300">
                       {c.phone}
                     </span>
@@ -175,10 +174,10 @@ const Contact = () => {
                   
                   <a 
                     href={`mailto:${c.email}`} 
-                    className="flex items-center justify-center gap-2 p-3 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-[#18357a] transition-all duration-300 shadow-xs group/btn cursor-pointer overflow-hidden"
+                    className="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-[#18357a] transition-all duration-300 shadow-xs group/btn cursor-pointer overflow-hidden"
                     title={`Email ${c.email}`}
                   >
-                    <Mail size={14} className="text-[#18357a] group-hover/btn:text-white shrink-0 transition-colors duration-300" />
+                    <Mail size={13} className="text-[#18357a] group-hover/btn:text-white shrink-0 transition-colors duration-300" />
                     <span className="truncate text-xs font-bold text-[#18357a] group-hover/btn:text-white transition-colors duration-300">
                       Email Us
                     </span>
