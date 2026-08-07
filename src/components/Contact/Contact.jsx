@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, Mail, MessageCircle, Search, ChevronDown, MapPin, Navigation, Send, User, AtSign, PhoneIncoming, GraduationCap, Building2, TrendingUp, Clock, CheckCircle2, Sparkles, HelpCircle, ShieldCheck } from 'lucide-react'
+import { Phone, Mail, MessageCircle, Search, ChevronDown, MapPin, Navigation, Send, User, AtSign, PhoneIncoming, GraduationCap, Building2, TrendingUp, Clock, CheckCircle2, Sparkles, HelpCircle, ShieldCheck, Bus } from 'lucide-react'
 
 const priorityContacts = [
   {
@@ -64,6 +64,24 @@ const categories = [
     items: [
       { name: "Gents Hostel Office", phone: "0427 2433984", email: "gh@kiot.ac.in" },
       { name: "Ladies Hostel Office", phone: "0427 2433990", email: "lh@kiot.ac.in" }
+    ]
+  },
+  {
+    title: "Campus Transport Details",
+    isTransport: true,
+    items: [
+      {
+        name: "Sekar S",
+        designation: "TRANSPORT MANAGER",
+        phone: "9790019191",
+        bg: "blue"
+      },
+      {
+        name: "Shankarkumar N",
+        designation: "ASST. TRANSPORT MANAGER",
+        phone: "9750917595",
+        bg: "gold"
+      }
     ]
   }
 ]
@@ -280,6 +298,7 @@ const Contact = () => {
                         <option value="Placement">Placement & Industry Drive</option>
                         <option value="Academic">Academic Department Query</option>
                         <option value="Hostel">Hostel & Accommodation</option>
+                        <option value="Transport">Campus Transport Enquiry</option>
                         <option value="General">General Campus Enquiry</option>
                       </select>
                     </div>
@@ -390,7 +409,7 @@ const Contact = () => {
               <Search size={16} className="absolute left-3.5 top-3.5 text-slate-400" />
               <input 
                 type="text" 
-                placeholder="Search department, HOD, hostel..."
+                placeholder="Search department, HOD, hostel, transport..."
                 className="w-full pl-10 pr-4 py-2.5 bg-white/10 border border-white/20 rounded-xl text-xs font-semibold text-white placeholder:text-slate-300 focus:outline-none focus:bg-white focus:text-[#18357a] focus:placeholder:text-slate-400 transition-all shadow-inner"
                 value={search}
                 onChange={(e) => setSearch(e.target.value.toLowerCase())}
@@ -402,6 +421,7 @@ const Contact = () => {
             {categories.map((cat, idx) => {
               const filteredItems = cat.items.filter(item => 
                 item.name.toLowerCase().includes(search) || 
+                (item.designation && item.designation.toLowerCase().includes(search)) ||
                 cat.title.toLowerCase().includes(search)
               )
 
@@ -428,23 +448,62 @@ const Contact = () => {
                         exit={{ height: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-4 bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                          {filteredItems.map((item, i) => (
-                            <div key={i} className="p-4 bg-slate-50/80 rounded-xl border border-slate-200 hover:border-[#18357a]/40 hover:bg-white transition-all shadow-xs">
-                              <p className="text-xs font-bold text-[#18357a] mb-3">{item.name}</p>
-                              <div className="space-y-2 text-[11px] font-semibold">
-                                <a href={`tel:${item.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-slate-700 hover:text-[#18357a] transition-colors">
-                                  <Phone size={13} className="text-[#ffc107] shrink-0" />
-                                  <span>{item.phone}</span>
-                                </a>
-                                <a href={`mailto:${item.email}`} className="flex items-center gap-2 text-slate-700 hover:text-[#18357a] transition-colors truncate">
-                                  <Mail size={13} className="text-[#18357a] shrink-0" />
-                                  <span className="truncate">{item.email}</span>
-                                </a>
+                        {cat.isTransport ? (
+                          <div className="p-5 bg-white grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {filteredItems.map((item, i) => (
+                              <div 
+                                key={i} 
+                                className={`p-5 rounded-2xl flex items-center gap-4 shadow-lg transition-transform hover:-translate-y-1 ${
+                                  item.bg === 'blue' 
+                                    ? 'bg-[#18357a] text-white shadow-[#18357a]/20' 
+                                    : 'bg-[#ffc107] text-[#18357a] shadow-[#ffc107]/20'
+                                }`}
+                              >
+                                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 shadow-md ${
+                                  item.bg === 'blue'
+                                    ? 'bg-[#ffc107] text-[#18357a]'
+                                    : 'bg-[#18357a] text-white'
+                                }`}>
+                                  <Phone size={20} />
+                                </div>
+                                <div className="space-y-0.5">
+                                  <span className={`text-[10px] font-black uppercase tracking-wider block ${
+                                    item.bg === 'blue' ? 'text-amber-300' : 'text-[#18357a]/80'
+                                  }`}>
+                                    {item.designation}
+                                  </span>
+                                  <h4 className="text-base font-bold leading-tight">{item.name}</h4>
+                                  <a 
+                                    href={`tel:${item.phone}`} 
+                                    className={`text-sm font-bold tracking-wide hover:underline flex items-center gap-1.5 pt-1 ${
+                                      item.bg === 'blue' ? 'text-white' : 'text-[#18357a]'
+                                    }`}
+                                  >
+                                    {item.phone}
+                                  </a>
+                                </div>
                               </div>
-                            </div>
-                          ))}
-                        </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="p-4 bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                            {filteredItems.map((item, i) => (
+                              <div key={i} className="p-4 bg-slate-50/80 rounded-xl border border-slate-200 hover:border-[#18357a]/40 hover:bg-white transition-all shadow-xs">
+                                <p className="text-xs font-bold text-[#18357a] mb-3">{item.name}</p>
+                                <div className="space-y-2 text-[11px] font-semibold">
+                                  <a href={`tel:${item.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-slate-700 hover:text-[#18357a] transition-colors">
+                                    <Phone size={13} className="text-[#ffc107] shrink-0" />
+                                    <span>{item.phone}</span>
+                                  </a>
+                                  <a href={`mailto:${item.email}`} className="flex items-center gap-2 text-slate-700 hover:text-[#18357a] transition-colors truncate">
+                                    <Mail size={13} className="text-[#18357a] shrink-0" />
+                                    <span className="truncate">{item.email}</span>
+                                  </a>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
