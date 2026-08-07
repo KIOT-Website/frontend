@@ -449,7 +449,7 @@ const Contact = () => {
                         className="overflow-hidden"
                       >
                         {cat.isTransport ? (
-                          <div className="p-5 bg-white grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="p-5 bg-white grid grid-cols-2 gap-4">
                             {filteredItems.map((item, i) => (
                               <div 
                                 key={i} 
@@ -466,13 +466,13 @@ const Contact = () => {
                                 }`}>
                                   <Phone size={20} />
                                 </div>
-                                <div className="space-y-0.5">
+                                <div className="space-y-0.5 min-w-0 flex-1">
                                   <span className={`text-[10px] font-black uppercase tracking-wider block ${
                                     item.bg === 'blue' ? 'text-amber-300' : 'text-[#18357a]/80'
                                   }`}>
                                     {item.designation}
                                   </span>
-                                  <h4 className="text-base font-bold leading-tight">{item.name}</h4>
+                                  <h4 className="text-base font-bold leading-tight truncate">{item.name}</h4>
                                   <a 
                                     href={`tel:${item.phone}`} 
                                     className={`text-sm font-bold tracking-wide hover:underline flex items-center gap-1.5 pt-1 ${
