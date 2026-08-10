@@ -145,4 +145,9 @@ export const eceFacultyAchievements = [
   { sno: 91, year: "2025-2026", name: "Mrs. T. Devika, AP/ECE", event: "Smart India Hackathon 2025 (Hardware Edition Grand Finale)", level: "National", award: "Mentor – Smart India Hackathon Grand Finale 2025", title: "A Hardware that Can Detect and Prevent Unauthorized Use of Electric Fence" }
 ];
 export const eceStudentAwards = [];
-export const eceFacultyAwards = [];
+export const eceFacultyAwards = [
+  { sno: 1, name: 'Dr. S. Kumarganesh, Professor/ECE', event: 'CSI Mumbai Chapter, Dr. D. Y. Patil University, Navi Mumbai', level: 'National', award: 'Best Faculty Award', title: 'Best Faculty Award' },
+  { sno: 2, name: 'Mrs. M. Vasanthi, AP / ECE', event: 'CSI Mumbai Chapter, Dr. D. Y. Patil University, Navi Mumbai', level: 'National', award: 'Best Faculty Award', title: 'Best Faculty Award' },
+  { sno: 3, name: 'Mrs. S. Sasidevi, AP / ECE', event: 'CSI Mumbai Chapter, Dr. D. Y. Patil University, Navi Mumbai', level: 'National', award: 'Best Faculty Award', title: 'Best Faculty Award' },
+  { sno: 4, name: 'Mrs. V. Vadivu', event: 'National Foundation for Innovative Scientific Research and Technology', level: 'National', award: 'International Women\'s Day award for Best Women Faculty.', title: 'International Women\'s Day award for Best Women Faculty.' }
+];
