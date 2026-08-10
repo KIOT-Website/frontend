@@ -14,6 +14,7 @@ import madheswaranImage from '../../assets/Faculity/csbs/madheswaran.webp'
 import noorulAmeenImage from '../../assets/Faculity/csbs/noorul_ameen.webp'
 import sambathkumarImage from '../../assets/Faculity/csbs/sambathkumar.webp'
 import sabariImage from '../../assets/Faculity/csbs/M.Sabari.png'
+import arunkumarImage from '../../assets/Faculity/csbs/Arunkumar.webp'
 
 export const btechCsbsData = {
   name: 'B.Tech Computer Science and Business Systems',
@@ -52,7 +53,7 @@ export const btechCsbsData = {
       { name: 'Ms. Yudhayapriya R', designation: 'Assistant Professor', joiningDate: '24.07.2024', qualification: 'B.E., M.E.', association: 'Regular', experience: '1 Month', specialization: 'Data Structures, Computer Networks', email: 'rycsbs@kiot.ac.in', publications: 'IJ: 01', rating: 4.3, image: yudhayapriyaImage },
       { name: 'Ms. Preethi K', designation: 'Assistant Professor', joiningDate: '20.01.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Industry: 5.5 Years', specialization: 'DBMS, Computer Networks', email: 'pkcsbs@kiot.ac.in', publications: 'IC: 01, NJ: 01', rating: 4.6, image: preethiImage },
       { name: 'Mr. Sabari M S', designation: 'Assistant Professor', joiningDate: '17.06.2026', qualification: 'M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 10.1 Years', specialization: 'Wireless Adhoc Networks', email: 'msscsbs@kiot.ac.in', publications: 'IJ: 14, IC: 8, NC: 2', rating: 4.8, image: sabariImage },
-      { name: 'Mr. Arunkumar M', designation: 'POP', qualification: 'B.E., M.E.' },
+      { name: 'Mr. Arunkumar M', designation: 'Professor of Practice', joiningDate: '15.12.2025', qualification: 'B.E. (Mech), M.E. (Engineering Design - Mechanical)', association: 'Regular', experience: 'Teaching: 7 Months, Industry: 28 Years', specialization: 'IT Techno Functional (AI - (Generative AI, AI Agent, Agentic AI, Predictive AI), Oracle EBS, SAP S/4Hana, Informatica DWH, IBM Mainframe)', email: 'macse@kiot.ac.in', rating: 4.8, image: arunkumarImage, imageStyle: { transform: 'translateX(15px)' } },
       { name: 'Mr. Saravana Manikandan S', designation: 'Associate POP', joiningDate: '19.07.2024', qualification: 'B.E.', experience: '19.10 Years', association: 'Regular', rating: 4.7 },
       { name: 'Mr. Vijay Chander S', designation: 'Associate POP', joiningDate: '19.07.2024', qualification: 'B.E.', experience: '30.10 Years', association: 'Regular', rating: 4.8 },
       { name: 'Ms. Dheepika A', designation: 'Assistant Professor', joiningDate: '03.06.2013', qualification: 'B.A., M.A., M.Phil., B.Ed.', association: 'Regular', experience: '11 Years', specialization: 'English Language Teaching', email: 'adeng@kiot.ac.in', rating: 4.7, image: dheepikaImage, category: 'S&H' },

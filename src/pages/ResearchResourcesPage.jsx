@@ -74,6 +74,7 @@ const cseSupervisors = [
         guided: "9",
         guiding: "8",
         irins: "https://kiot.irins.org/profile/304511",
+        vidwanId: "304511",
         image: rajendranImg,
         publications: [
             {
@@ -108,6 +109,7 @@ const cseSupervisors = [
         guided: "-",
         guiding: "5",
         irins: "https://kiot.irins.org/profile/320595",
+        vidwanId: "320595",
         image: vijayalakshmiImg,
         publications: [
             {
@@ -142,6 +144,7 @@ const cseSupervisors = [
         guided: "-",
         guiding: "3",
         irins: "https://kiot.irins.org",
+        vidwanId: "193184",
         image: kumarImg,
         publications: [
             {
@@ -174,6 +177,7 @@ const csePhdHolders = [
         year: "2011",
         university: "Anna University, Coimbatore",
         irins: "https://kiot.irins.org/profile/242498",
+        vidwanId: "242498",
         image: vKumarImg,
         publications: { ij: 0, ic: 0, nj: 0, nc: 0 }
     },
@@ -184,6 +188,7 @@ const csePhdHolders = [
         year: "2011",
         university: "Anna University, Coimbatore",
         irins: "https://kiot.irins.org/profile/304511",
+        vidwanId: "304511",
         image: rajendranImg,
         publications: { ij: 48, ic: 52, nj: 0, nc: 49 }
     },
@@ -194,6 +199,7 @@ const csePhdHolders = [
         year: "2014",
         university: "Anna University, Chennai",
         irins: "https://kiot.irins.org",
+        vidwanId: "193184",
         image: kumarImg,
         publications: { ij: 4, ic: 4, nj: 0, nc: 0 }
     },
@@ -204,6 +210,7 @@ const csePhdHolders = [
         year: "2018",
         university: "Anna University, Chennai",
         irins: "https://kiot.irins.org",
+        vidwanId: "613500",
         image: null,
         publications: { ij: 5, ic: 5, nj: 0, nc: 0 }
     },
@@ -214,6 +221,7 @@ const csePhdHolders = [
         year: "2018",
         university: "Anna University, Chennai",
         irins: "https://kiot.irins.org/profile/320595",
+        vidwanId: "320595",
         image: vijayalakshmiImg,
         publications: { ij: 34, ic: 28, nj: 8, nc: 18 }
     },
@@ -224,6 +232,7 @@ const csePhdHolders = [
         year: "2020",
         university: "Anna University, Chennai",
         irins: "https://kiot.irins.org",
+        vidwanId: "728506",
         image: sakthivelImg,
         publications: { ij: 0, ic: 0, nj: 0, nc: 0 }
     },
@@ -234,6 +243,7 @@ const csePhdHolders = [
         year: "2025",
         university: "Anna University",
         irins: "https://kiot.irins.org/profile/304521",
+        vidwanId: "304521",
         image: rajeshImg,
         publications: { ij: 0, ic: 0, nj: 0, nc: 0 }
     },
@@ -244,6 +254,7 @@ const csePhdHolders = [
         year: "2025",
         university: "Anna University",
         irins: "https://kiot.irins.org/profile/320616",
+        vidwanId: "320616",
         image: malarvizhiImg,
         publications: { ij: 0, ic: 0, nj: 0, nc: 0 }
     },
@@ -254,6 +265,7 @@ const csePhdHolders = [
         year: "",
         university: "Deemed to be university.",
         irins: "https://kiot.irins.org",
+        vidwanId: "320722",
         image: null,
         publications: { ij: 0, ic: 0, nj: 0, nc: 0 }
     }
@@ -280,23 +292,23 @@ const cseFacilities = [
 ];
 
 const cseFacultyPursuing = [
-    { name: "Prof. T. Karthikeyan", topic: "Data Minining", supervisor: "Dr. T. Sitamahalakshmi", university: "GITAM University", registration: "-", status: "Pursuing" },
-    { name: "Mrs. V. Sathiyapriya", topic: "Artificial Intelligence and Machine Learning", supervisor: "Dr. P. Rajendran", university: "Knowledge Institute of Technology, Salem & Anna University", registration: "23244697170", status: "Pursuing" },
-    { name: "Mr. Sivaguru", topic: "Artificial Intelligence", supervisor: "Dr. R. Thangarajan (Kongu Engineering College)", university: "Anna University", registration: "21144697479", status: "Pursuing" },
-    { name: "Mrs. N. Subha", topic: "Imaging and Machine Learning.", supervisor: "Dr. P. Rajendran", university: "Knowledge Institute of Technology, Salem", registration: "24244691328", status: "Pursuing" },
-    { name: "Mrs. R. Pushpalatha", topic: "Deep Learning", supervisor: "Dr. P. Rajendran", university: "Knowledge Institute of Technology, Salem", registration: "24234691437", status: "Pursuing" },
-    { name: "Mr. A. Sekar", topic: "Artificial Intelligence and Deep Learning.", supervisor: "Dr. P. Vijayalakshmi", university: "Knowledge Institute of Technology, Salem", registration: "24144691403", status: "Pursuing" },
-    { name: "Mrs. D. Ramya", topic: "Security", supervisor: "Dr. P. Vijayalakshmi", university: "Knowledge Institute of Technology, Salem", registration: "24244697415", status: "Pursuing" },
-    { name: "Mrs. G. Eswari @ Petchiammal", topic: "Social Network Analysis", supervisor: "Dr. P. Pabitha (MIT, Chennai)", university: "Anna University", registration: "23244397295", status: "Pursuing" },
-    { name: "Mr. P. Nareshkumar", topic: "Machine Learning", supervisor: "Dr. M. Kumaresan (Associate Professor/CSE, JAIN University)", university: "JAIN University, Bangalore", registration: "JU2025RPHD10492", status: "Pursuing" },
-    { name: "Mrs. E. Kiruthika", topic: "Machine Learning.", supervisor: "Dr. P. Rajendran", university: "Knowledge Institute of Technology, Salem", registration: "26234691281", status: "Pursuing" }
+    { name: "Prof. T. Karthikeyan", topic: "Data Minining", supervisor: "Dr. T. Sitamahalakshmi", university: "GITAM University", registration: "-", status: "Pursuing", vidwanId: "320727" },
+    { name: "Mrs. V. Sathiyapriya", topic: "Artificial Intelligence and Machine Learning", supervisor: "Dr. P. Rajendran", university: "Knowledge Institute of Technology, Salem & Anna University", registration: "23244697170", status: "Pursuing", vidwanId: "320624" },
+    { name: "Mr. Sivaguru", topic: "Artificial Intelligence", supervisor: "Dr. R. Thangarajan (Kongu Engineering College)", university: "Anna University", registration: "21144697479", status: "Pursuing", vidwanId: "322087" },
+    { name: "Mrs. N. Subha", topic: "Imaging and Machine Learning.", supervisor: "Dr. P. Rajendran", university: "Knowledge Institute of Technology, Salem", registration: "24244691328", status: "Pursuing", vidwanId: "618098" },
+    { name: "Mrs. R. Pushpalatha", topic: "Deep Learning", supervisor: "Dr. P. Rajendran", university: "Knowledge Institute of Technology, Salem", registration: "24234691437", status: "Pursuing", vidwanId: "613626" },
+    { name: "Mr. A. Sekar", topic: "Artificial Intelligence and Deep Learning.", supervisor: "Dr. P. Vijayalakshmi", university: "Knowledge Institute of Technology, Salem", registration: "24144691403", status: "Pursuing", vidwanId: "320611" },
+    { name: "Mrs. D. Ramya", topic: "Security", supervisor: "Dr. P. Vijayalakshmi", university: "Knowledge Institute of Technology, Salem", registration: "24244697415", status: "Pursuing", vidwanId: "320725" },
+    { name: "Mrs. G. Eswari @ Petchiammal", topic: "Social Network Analysis", supervisor: "Dr. P. Pabitha (MIT, Chennai)", university: "Anna University", registration: "23244397295", status: "Pursuing", vidwanId: "472358" },
+    { name: "Mr. P. Nareshkumar", topic: "Machine Learning", supervisor: "Dr. M. Kumaresan (Associate Professor/CSE, JAIN University)", university: "JAIN University, Bangalore", registration: "JU2025RPHD10492", status: "Pursuing", vidwanId: "613470" },
+    { name: "Mrs. E. Kiruthika", topic: "Machine Learning.", supervisor: "Dr. P. Rajendran", university: "Knowledge Institute of Technology, Salem", registration: "26234691281", status: "Pursuing", vidwanId: "613508" }
 ];
 
 const cseGuidedScholars = [
     { scholar: "Dr. S. Kalpana Devi", topic: "Design of High-Gain Multi-input Single-Output switched Quast-Z source converter for the integration of multiple renewable energy sources.", supervisor: "Dr. P. Rajendran", university: "Anna University", status: "Guided" },
-    { scholar: "Dr. P. Malarvizhi", topic: "Energy Efficient Routing for Lifetime Maximization in mobile wireless sensor Network based on Optimization Algorithm", supervisor: "Dr. Kavitha G", university: "Anna University", status: "Guided" },
-    { scholar: "Dr. I. Rajesh", topic: "Certain Investigations on Poultry Meat Quality Assesment using Grabcut and image mining techniques", supervisor: "Dr. P. Rajendran", university: "Anna University", status: "Guided" },
-    { scholar: "Dr. M. Lakshagajothi", topic: "Investigation on enabling intelligence using deep Learning on IoT systems in classroom environment.", supervisor: "Dr. R. Shanmuga Sundram", university: "Deemed to be university.", status: "Guided" },
+    { scholar: "Dr. P. Malarvizhi", topic: "Energy Efficient Routing for Lifetime Maximization in mobile wireless sensor Network based on Optimization Algorithm", supervisor: "Dr. Kavitha G", university: "Anna University", status: "Guided", vidwanId: "320616" },
+    { scholar: "Dr. I. Rajesh", topic: "Certain Investigations on Poultry Meat Quality Assesment using Grabcut and image mining techniques", supervisor: "Dr. P. Rajendran", university: "Anna University", status: "Guided", vidwanId: "304521" },
+    { scholar: "Dr. M. Lakshagajothi", topic: "Investigation on enabling intelligence using deep Learning on IoT systems in classroom environment.", supervisor: "Dr. R. Shanmuga Sundram", university: "Deemed to be university.", status: "Guided", vidwanId: "320722" },
     { scholar: "Dr. B. Sasikumar", topic: "Certain Investigations on Fault detection in induction motor using infra-red thermography with machine learning and time frequency and signal analysis.", supervisor: "Dr. P. Rajendran", university: "Anna University", status: "Guided" }
 ];
 
@@ -355,8 +367,8 @@ const csbsResearchAreas = [
 ];
 const csbsFacilities = [];
 const csbsFacultyPursuing = [
-    { name: "Mr. R. Karthick", topic: "Internet of Things", supervisor: "Dr. P. Vijayalakshmi (ASP/CSE, Knowledge Institute of Technology)", university: "Anna University, Chennai", registration: "24144691347", status: "Pursuing" },
-    { name: "Mrs. C. Nithya", topic: "Data Security", supervisor: "Dr. S. Kumarganesh (Professor / ECE, Knowledge Institute of Technology)", university: "Anna University, Chennai", registration: "25244691265", status: "Pursuing" }
+    { name: "Mr. R. Karthick", topic: "Internet of Things", supervisor: "Dr. P. Vijayalakshmi (ASP/CSE, Knowledge Institute of Technology)", university: "Anna University, Chennai", registration: "24144691347", status: "Pursuing", vidwanId: "3217875" },
+    { name: "Mrs. C. Nithya", topic: "Data Security", supervisor: "Dr. S. Kumarganesh (Professor / ECE, Knowledge Institute of Technology)", university: "Anna University, Chennai", registration: "25244691265", status: "Pursuing", vidwanId: "3206197" }
 ];
 const csbsGuidedScholars = [];
 
@@ -1887,9 +1899,17 @@ const ResearchResourcesPage = () => {
                                                                     <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Guide / Supervisor</span>
                                                                     {sch.supervisor}
                                                                 </div>
-                                                                <div className="col-span-2">
-                                                                    <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Affiliation</span>
-                                                                    {sch.university}
+                                                                <div className="col-span-2 flex justify-between gap-3">
+                                                                    <div>
+                                                                        <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Affiliation</span>
+                                                                        {sch.university}
+                                                                    </div>
+                                                                    {sch.vidwanId && (
+                                                                        <div>
+                                                                            <span className="block text-[9px] text-slate-400 uppercase tracking-widest font-bold">Vidwan ID</span>
+                                                                            {sch.vidwanId}
+                                                                        </div>
+                                                                    )}
                                                                 </div>
                                                             </div>
                                                         </div>

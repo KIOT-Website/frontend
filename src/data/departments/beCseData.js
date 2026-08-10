@@ -91,7 +91,7 @@ export const beCseData = {
     ],
     faculty: [
       {
-        name: 'Dr. Rajendran P',
+        name: 'Dr. Rajendran P', vidwanId: '304511',
         designation: 'Professor & HOD',
         doj: '03.05.2010',
         qualification: 'M.E., Ph.D., MISTE.',
@@ -106,7 +106,7 @@ export const beCseData = {
         imageStyle: { transform: 'scale(1.18) translateY(-10px)', transformOrigin: 'bottom center' }
       },
       {
-        name: 'Dr. Kumar V',
+        name: 'Dr. Kumar V', vidwanId: '242498',
         designation: 'Professor & Director IM',
         doj: '04.06.2010',
         qualification: 'B.E., M.E., Ph.D., MISTE., MIEEE.',
@@ -119,7 +119,7 @@ export const beCseData = {
         image: cseVKumarImage
       },
       {
-        name: 'Mr. Karthikeyan T',
+        name: 'Mr. Karthikeyan T', vidwanId: '320727',
         designation: 'Assistant Professor',
         doj: '01.06.2012',
         qualification: 'B.Tech., M.S(IT)., (Ph.D)',
@@ -132,7 +132,7 @@ export const beCseData = {
         image: cseTKarthikeyanImage
       },
       {
-        name: 'Dr. Kumar R',
+        name: 'Dr. Kumar R', vidwanId: '193184',
         designation: 'Professor',
         doj: '13.03.2023',
         qualification: 'M.Tech, Ph.D.',
@@ -147,7 +147,7 @@ export const beCseData = {
       },
 
       {
-        name: 'Dr. Sakthivel S',
+        name: 'Dr. Sakthivel S', vidwanId: '728506',
         designation: 'Associate Professor',
         doj: '30.04.2025',
         qualification: 'B.E., M.E., Ph.D.',
@@ -160,7 +160,7 @@ export const beCseData = {
         image: cseSSakthivelImage
       },
       {
-        name: 'Mr. Ravikumar K',
+        name: 'Mr. Ravikumar K', vidwanId: '320587',
         designation: 'Assistant Professor',
         doj: '20.05.2011',
         qualification: 'B.E., M.E., MISTE.',
@@ -173,7 +173,7 @@ export const beCseData = {
         image: cseKRavikumarImage
       },
       {
-        name: 'Dr. Rajesh I',
+        name: 'Dr. Rajesh I', vidwanId: '304521',
         designation: 'Assistant Professor',
         doj: '02.06.2010',
         qualification: 'B.E., M.E., Ph.D., MISTE.',
@@ -185,7 +185,7 @@ export const beCseData = {
         rating: 4.7
       },
       {
-        name: 'Dr. Vijayalakshmi P',
+        name: 'Dr. Vijayalakshmi P', vidwanId: '320595',
         designation: 'Associate Professor',
         doj: '22.10.2021',
         qualification: 'B.E., M.E., Ph.D.',
@@ -199,7 +199,7 @@ export const beCseData = {
         image: csePVijayalakshmiImage
       },
       {
-        name: 'Mr. Senthilkumar M',
+        name: 'Mr. Senthilkumar M', vidwanId: '320715',
         designation: 'Assistant Professor',
         doj: '14.06.2012',
         qualification: 'B.E., M.E.',
@@ -211,7 +211,7 @@ export const beCseData = {
         rating: 4.7
       },
       {
-        name: 'Mr. Sekar A',
+        name: 'Mr. Sekar A', vidwanId: '320611',
         designation: 'Assistant Professor',
         doj: '11.07.2016',
         qualification: 'B.E., M.E.',
@@ -224,7 +224,7 @@ export const beCseData = {
         image: cseASekarImage
       },
       {
-        name: 'Ms. Saranya K',
+        name: 'Ms. Saranya K', vidwanId: '613440',
         designation: 'Assistant Professor',
         doj: '01.06.2012',
         qualification: 'B.E., M.E.',
@@ -237,7 +237,7 @@ export const beCseData = {
         image: cseKSaranyaImage
       },
       {
-        name: 'Dr. Malarvizhi P',
+        name: 'Dr. Malarvizhi P', vidwanId: '320616',
         designation: 'Assistant Professor',
         doj: '01.06.2012',
         qualification: 'B.E., M.E. Ph.D.',
@@ -250,7 +250,7 @@ export const beCseData = {
         image: csePMalarvizhiImage
       },
       {
-        name: 'Ms. Saranya R',
+        name: 'Ms. Saranya R', vidwanId: '320618',
         designation: 'Assistant Professor',
         doj: '01.06.2016',
         qualification: 'B.E., M.E.',
@@ -263,7 +263,7 @@ export const beCseData = {
         image: cseRSaranyaImage
       },
       {
-        name: 'Mr. Nareshkumar P',
+        name: 'Mr. Nareshkumar P', vidwanId: '613470',
         designation: 'Assistant Professor',
         doj: '03.08.2020',
         qualification: 'B.Tech., M.E., (Ph.D)',
@@ -275,39 +275,39 @@ export const beCseData = {
         rating: 4.7,
         image: csePNareshkumarImage
       },
-      { name: 'Mr. Sasikumar P', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '13.1 Years', specialization: 'Image Mining', email: 'psacse@kiot.ac.in', publications: 'IJ:2, IC:5, NC:5', rating: 4.6, image: csePSasikumarImage },
-      { name: 'Mr. Boopathi K', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '12.8 Years', specialization: 'Networks, Data Structures', email: 'kbcse@kiot.ac.in', publications: 'IJ:1, IC:7, NC:1', rating: 4.6, image: cseKBoopathiImage },
-      { name: 'Mr. Babu G', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: '9.10 Years', specialization: 'Data Structures', email: 'gbcse@kiot.ac.in', publications: 'IJ:8, NJ:3, IC:7, NC:2', rating: 4.7, image: cseGBabuImage },
-      { name: 'Ms. Subha N', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E, (Ph.D)', association: 'Regular', experience: '8.11 Years', specialization: 'Data Science', email: 'nscse@kiot.ac.in', publications: 'IJ:5, IC:5, NC:1', rating: 4.6, image: cseNSubhaImage },
-      { name: 'Mr. Sivaguru R', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '8.11 Years, Research: 04', specialization: 'Computer Networks, IoT', email: 'rsgcse@kiot.ac.in', publications: 'IJ:15, IC:17, NC:4', rating: 4.7, image: cseRSivaguruImage },
-      { name: 'Mr. Praveen K', designation: 'Assistant Professor', doj: '29.03.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '4.3 Years', specialization: 'Object Oriented Programming', email: 'kpcse@kiot.ac.in', publications: 'NJ:3, NC:4', rating: 4.5, image: cseKPraveenImage },
-      { name: 'Ms. Ramya D', designation: 'Assistant Professor', doj: '27.06.2022', qualification: 'B.Tech., M.E., (Ph.D)', association: 'Regular', experience: '6.10 Years', specialization: 'Networks', email: 'drcse@kiot.ac.in', publications: 'IJ:4, IC:2, NC:4', rating: 4.6, image: cseDRamyaImage },
-      { name: 'Mr. Ganeshen P', designation: 'Assistant Professor', doj: '15.07.2022', qualification: 'B.Tech, M.E', association: 'Regular', experience: '14.10 Years', specialization: 'Networking & Cloud computing', email: 'pgncse@kiot.ac.in', publications: 'IJ:6, NJ:6, IC:4, NC:8', rating: 4.7, image: csePGaneshenImage },
-      { name: 'Ms. Deepa S', designation: 'Assistant Professor', doj: '04.08.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: '2.11 Years', specialization: 'Python, Networks', email: 'sdcse@kiot.ac.in', publications: 'IJ:1, IC:5, NC:1', rating: 4.5, image: cseSDeepaImage },
-      { name: 'Dr. Lakshaga Jyothi M', designation: 'Assistant Professor', doj: '22.08.2022', qualification: 'B.E., M.E., Ph.D', association: 'Regular', experience: '2.10 Years, Research: 5', specialization: 'IoT, Deep Learning', email: 'mljcse@kiot.ac.in', publications: 'IJ:3, NJ:1, IC:5, NC:2', rating: 4.7 },
-      { name: 'Ms. Sathiyapriya V', designation: 'Assistant Professor', doj: '29.08.2022', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '7.6 Years', specialization: 'OOPS & Data Structures', email: 'vspcse@kiot.ac.in', publications: 'IJ:6, IC:5, NC:2', rating: 4.6, image: cseVSathiyapriyaImage },
-      { name: 'Ms. Ashwini B', designation: 'Assistant Professor', doj: '24.04.2023', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: 'Teaching: 2, Industry: 5', specialization: 'Computer Networks', email: 'bacse@kiot.ac.in', publications: 'IC: 02', rating: 4.6 },
-      { name: 'Mr. Sampath M K', designation: 'Assistant Professor', doj: '08.06.2023', qualification: 'B.E., M.E', association: 'Regular', experience: '10.2 Years', specialization: 'Human Computer Interaction', email: 'mkscse@kiot.ac.in', publications: 'IJ:3, IC:1, NC:2', rating: 4.6, image: cseMKSampathImage },
-      { name: 'Ms. Gowthami K', designation: 'Assistant Professor', doj: '01.06.2023', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 2.2', specialization: 'Computer Networks, Internet Programming', email: 'kgcse@kiot.ac.in', publications: 'IJ: 2, IC: 3, NC: 2', rating: 4.6, image: cseGowthamiImage },
-      { name: 'Ms. Pushpalatha R', designation: 'Assistant Professor', doj: '05.06.2023', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 14, Research: 2', specialization: 'Image Processing', email: 'rplcse@kiot.ac.in', publications: 'IJ: 2, IC: 2, NC: 1', rating: 4.7, image: csePushpalathaImage },
-      { name: 'Ms. Saranya M', designation: 'Assistant Professor', doj: '26.06.2023', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 8', specialization: 'Data Science', email: 'msarcse@kiot.ac.in', publications: 'IJ: 3, IC: 3, NC: 4', rating: 4.6, image: cseMSaranyaImage },
-      { name: 'Mr. Palani Raja T', designation: 'Assistant Professor', doj: '21.06.2023', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: 'Teaching: 13.10', specialization: 'Networking', email: 'tprcse@kiot.ac.in', publications: 'IC: 5, NC: 6', rating: 4.7 },
-      { name: 'Ms. Kiruthika E', designation: 'Assistant Professor', doj: '09.06.2023', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 3', specialization: 'Data Science', email: 'ekcse@kiot.ac.in', publications: 'IJ: 5, IC: 5, NC: 1', rating: 4.6, image: cseKiruthikaImage },
-      { name: 'Ms. Eswari @ Petchiammal G', designation: 'Assistant Professor', doj: '01.07.2024', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 6, Research: 2', specialization: 'Machine Learning', email: 'gecse@kiot.ac.in', publications: 'IJ: 2, IC: 7', rating: 4.6, image: cseEswariImage },
-      { name: 'Mr. Balaji Saravana U K', designation: 'Assistant Professor', doj: '09.11.2024', qualification: 'B.E, M.E', association: 'Regular', experience: '16.8 Years', specialization: 'Data Science, Data Mining', email: 'ukbscse@kiot.ac.in', publications: 'IJ:2, IC:6', rating: 4.7, image: cseUKBalajiSaravanaImage },
-      { name: 'Ms. Vikneshwary P', designation: 'Assistant Professor', doj: '01.07.2024', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: 'Teaching: 2', specialization: 'Big Data', email: 'pvwcse@kiot.ac.in', publications: 'IJ: 3, IC: 3, NC: 1', rating: 4.6, image: cseVikneshwaryImage },
-      { name: 'Mr. Walter Vetrivel S', designation: 'Assistant Professor', doj: '14.05.2025', qualification: 'Master of Information Technology and Systems', association: 'Regular', experience: 'Teaching: 3', specialization: 'Web Technologies', email: 'swvcse@kiot.ac.in', publications: 'IC: 0, IJ: 0', rating: 4.5, image: cseWalterVetrivelImage },
-      { name: 'Mr. Siva C', designation: 'Assistant Professor', doj: '23.05.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 1', specialization: 'Internet of Things', email: 'cscse@kiot.ac.in', publications: 'IC: 1', rating: 4.5, image: cseSivaImage },
-      { name: 'Ms. Sowndarya S', designation: 'Assistant Professor', doj: '02.06.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 1', specialization: 'Data Structures, Data Analytics', email: 'ssocse@kiot.ac.in', publications: 'IJ: 1, IC: 2', rating: 4.5, image: cseSSowndaryaImage },
+      { name: 'Mr. Sasikumar P', vidwanId: '320648', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '13.1 Years', specialization: 'Image Mining', email: 'psacse@kiot.ac.in', publications: 'IJ:2, IC:5, NC:5', rating: 4.6, image: csePSasikumarImage },
+      { name: 'Mr. Boopathi K', vidwanId: '340864', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '12.8 Years', specialization: 'Networks, Data Structures', email: 'kbcse@kiot.ac.in', publications: 'IJ:1, IC:7, NC:1', rating: 4.6, image: cseKBoopathiImage },
+      { name: 'Mr. Babu G', vidwanId: '320188', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: '9.10 Years', specialization: 'Data Structures', email: 'gbcse@kiot.ac.in', publications: 'IJ:8, NJ:3, IC:7, NC:2', rating: 4.7, image: cseGBabuImage },
+      { name: 'Ms. Subha N', vidwanId: '618098', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E, (Ph.D)', association: 'Regular', experience: '8.11 Years', specialization: 'Data Science', email: 'nscse@kiot.ac.in', publications: 'IJ:5, IC:5, NC:1', rating: 4.6, image: cseNSubhaImage },
+      { name: 'Mr. Sivaguru R', vidwanId: '322087', designation: 'Assistant Professor', doj: '05.07.2021', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '8.11 Years, Research: 04', specialization: 'Computer Networks, IoT', email: 'rsgcse@kiot.ac.in', publications: 'IJ:15, IC:17, NC:4', rating: 4.7, image: cseRSivaguruImage },
+      { name: 'Mr. Praveen K', vidwanId: '341139', designation: 'Assistant Professor', doj: '29.03.2021', qualification: 'B.E., M.E.', association: 'Regular', experience: '4.3 Years', specialization: 'Object Oriented Programming', email: 'kpcse@kiot.ac.in', publications: 'NJ:3, NC:4', rating: 4.5, image: cseKPraveenImage },
+      { name: 'Ms. Ramya D', vidwanId: '320725', designation: 'Assistant Professor', doj: '27.06.2022', qualification: 'B.Tech., M.E., (Ph.D)', association: 'Regular', experience: '6.10 Years', specialization: 'Networks', email: 'drcse@kiot.ac.in', publications: 'IJ:4, IC:2, NC:4', rating: 4.6, image: cseDRamyaImage },
+      { name: 'Mr. Ganeshen P', vidwanId: '320625', designation: 'Assistant Professor', doj: '15.07.2022', qualification: 'B.Tech, M.E', association: 'Regular', experience: '14.10 Years', specialization: 'Networking & Cloud computing', email: 'pgncse@kiot.ac.in', publications: 'IJ:6, NJ:6, IC:4, NC:8', rating: 4.7, image: csePGaneshenImage },
+      { name: 'Ms. Deepa S', vidwanId: '320617', designation: 'Assistant Professor', doj: '04.08.2022', qualification: 'B.E., M.E.', association: 'Regular', experience: '2.11 Years', specialization: 'Python, Networks', email: 'sdcse@kiot.ac.in', publications: 'IJ:1, IC:5, NC:1', rating: 4.5, image: cseSDeepaImage },
+      { name: 'Dr. Lakshaga Jyothi M', vidwanId: '320722', designation: 'Assistant Professor', doj: '22.08.2022', qualification: 'B.E., M.E., Ph.D', association: 'Regular', experience: '2.10 Years, Research: 5', specialization: 'IoT, Deep Learning', email: 'mljcse@kiot.ac.in', publications: 'IJ:3, NJ:1, IC:5, NC:2', rating: 4.7 },
+      { name: 'Ms. Sathiyapriya V', vidwanId: '320624', designation: 'Assistant Professor', doj: '29.08.2022', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: '7.6 Years', specialization: 'OOPS & Data Structures', email: 'vspcse@kiot.ac.in', publications: 'IJ:6, IC:5, NC:2', rating: 4.6, image: cseVSathiyapriyaImage },
+      { name: 'Ms. Ashwini B', vidwanId: '613510', designation: 'Assistant Professor', doj: '24.04.2023', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: 'Teaching: 2, Industry: 5', specialization: 'Computer Networks', email: 'bacse@kiot.ac.in', publications: 'IC: 02', rating: 4.6 },
+      { name: 'Mr. Sampath M K', vidwanId: '613503', designation: 'Assistant Professor', doj: '08.06.2023', qualification: 'B.E., M.E', association: 'Regular', experience: '10.2 Years', specialization: 'Human Computer Interaction', email: 'mkscse@kiot.ac.in', publications: 'IJ:3, IC:1, NC:2', rating: 4.6, image: cseMKSampathImage },
+      { name: 'Ms. Gowthami K', vidwanId: '613488', designation: 'Assistant Professor', doj: '01.06.2023', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 2.2', specialization: 'Computer Networks, Internet Programming', email: 'kgcse@kiot.ac.in', publications: 'IJ: 2, IC: 3, NC: 2', rating: 4.6, image: cseGowthamiImage },
+      { name: 'Ms. Pushpalatha R', vidwanId: '613626', designation: 'Assistant Professor', doj: '05.06.2023', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 14, Research: 2', specialization: 'Image Processing', email: 'rplcse@kiot.ac.in', publications: 'IJ: 2, IC: 2, NC: 1', rating: 4.7, image: csePushpalathaImage },
+      { name: 'Ms. Saranya M', vidwanId: '401253', designation: 'Assistant Professor', doj: '26.06.2023', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 8', specialization: 'Data Science', email: 'msarcse@kiot.ac.in', publications: 'IJ: 3, IC: 3, NC: 4', rating: 4.6, image: cseMSaranyaImage },
+      { name: 'Mr. Palani Raja T', vidwanId: '613619', designation: 'Assistant Professor', doj: '21.06.2023', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: 'Teaching: 13.10', specialization: 'Networking', email: 'tprcse@kiot.ac.in', publications: 'IC: 5, NC: 6', rating: 4.7 },
+      { name: 'Ms. Kiruthika E', vidwanId: '613508', designation: 'Assistant Professor', doj: '09.06.2023', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 3', specialization: 'Data Science', email: 'ekcse@kiot.ac.in', publications: 'IJ: 5, IC: 5, NC: 1', rating: 4.6, image: cseKiruthikaImage },
+      { name: 'Ms. Eswari @ Petchiammal G', vidwanId: '472358', designation: 'Assistant Professor', doj: '01.07.2024', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching: 6, Research: 2', specialization: 'Machine Learning', email: 'gecse@kiot.ac.in', publications: 'IJ: 2, IC: 7', rating: 4.6, image: cseEswariImage },
+      { name: 'Mr. Balaji Saravana U K', vidwanId: '613486', designation: 'Assistant Professor', doj: '09.11.2024', qualification: 'B.E, M.E', association: 'Regular', experience: '16.8 Years', specialization: 'Data Science, Data Mining', email: 'ukbscse@kiot.ac.in', publications: 'IJ:2, IC:6', rating: 4.7, image: cseUKBalajiSaravanaImage },
+      { name: 'Ms. Vikneshwary P', vidwanId: '613484', designation: 'Assistant Professor', doj: '01.07.2024', qualification: 'B.Tech., M.Tech.', association: 'Regular', experience: 'Teaching: 2', specialization: 'Big Data', email: 'pvwcse@kiot.ac.in', publications: 'IJ: 3, IC: 3, NC: 1', rating: 4.6, image: cseVikneshwaryImage },
+      { name: 'Mr. Walter Vetrivel S', vidwanId: '703323', designation: 'Assistant Professor', doj: '14.05.2025', qualification: 'Master of Information Technology and Systems', association: 'Regular', experience: 'Teaching: 3', specialization: 'Web Technologies', email: 'swvcse@kiot.ac.in', publications: 'IC: 0, IJ: 0', rating: 4.5, image: cseWalterVetrivelImage },
+      { name: 'Mr. Siva C', vidwanId: '703583', designation: 'Assistant Professor', doj: '23.05.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 1', specialization: 'Internet of Things', email: 'cscse@kiot.ac.in', publications: 'IC: 1', rating: 4.5, image: cseSivaImage },
+      { name: 'Ms. Sowndarya S', vidwanId: '703321', designation: 'Assistant Professor', doj: '02.06.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 1', specialization: 'Data Structures, Data Analytics', email: 'ssocse@kiot.ac.in', publications: 'IJ: 1, IC: 2', rating: 4.5, image: cseSSowndaryaImage },
       { name: 'Ms. Kasthuri A', designation: 'Assistant Professor', doj: '02.06.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 4 Years 5 Months', specialization: 'Image Processing, Deep Learning', email: 'akcse@kiot.ac.in', publications: 'IJ: 02, IC: 03, NC: 03', rating: 4.6 },
       { name: 'Ms. Suveetha S', designation: 'Assistant Professor', doj: '07.07.2025', qualification: 'B.E., M.E.', association: 'Regular', experience: 'Teaching: 18.6 (Polytechnic)', specialization: 'Image Processing, Programming', email: 'ssucse@kiot.ac.in', rating: 4.6, image: cseSuveethaImage },
-      { name: 'Ms. Pavithra G', designation: 'Assistant Professor', doj: '02.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: '11 Years', specialization: 'Networks, OOPS', email: 'gpcse@kiot.ac.in', publications: 'IJ:2, IC:1, NC:3', rating: 4.6, image: csePavithraGImage },
-      { name: 'Ms. Manju S', designation: 'Assistant Professor', doj: '6.04.2026', qualification: 'B.E., M.E.,', association: 'Regular', experience: 'Teaching - 3', specialization: 'Cloud Computing, AI', email: 'smcse@kiot.ac.in', publications: 'IC:1, NC:3', rating: 4.5 },
-      { name: 'Ms. Anitha V', designation: 'Assistant Professor', doj: '11.06.2026', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching - 8.5, Research - 2', specialization: 'Artificial Intelligence, Machine Learning and Deep Learning', email: 'vacse@kiot.ac.in', publications: 'IJ:4, IC:4, P:3, BC:1', rating: 4.6, image: cseVAnithaImage },
-      { name: 'Ms. Prabha A', designation: 'Assistant Professor', doj: '25.06.2026', qualification: 'B.E., M.E.,', association: 'Regular', experience: 'Teaching - 6.7 (Polytechnic-5.7 yrs & Engineering -10 months), Industry - 10', specialization: 'Machine Learning', email: 'aprcse@kiot.ac.in', publications: 'NJ:1, IC:1, Book/BC - 1/1', rating: 4.7, image: cseAPrabhaImage },
-      { name: 'Mr. Krishnakumar R', designation: 'Assistant Professor', doj: '11.06.2026', qualification: 'B.E., M.E., (Ph.D).,', association: 'Regular', experience: 'Teaching - 11.4, Research - 3', specialization: 'Wireless Sensor Networks', email: 'rkkcse@kiot.ac.in', publications: 'IJ:14, NJ:4, IC:23, NC:2', rating: 4.7, image: cseRKrishnakumarImage },
-      { name: 'Mr. Aravindan C', designation: 'Assistant Professor', doj: '01.07.2026', qualification: 'B.E., M.E.,', association: 'Regular', experience: 'Teaching - 10 months, Industry – 5.6', specialization: 'C Programming, Data Structures', email: 'cacse@kiot.ac.in', publications: 'Nil', rating: 4.5, image: cseCAravindanImage },
-      { name: 'Ms. Sowndharya T', designation: 'Assistant Professor', image: cseSowndharyaImage },
+      { name: 'Ms. Pavithra G', vidwanId: '726002', designation: 'Assistant Professor', doj: '02.06.2014', qualification: 'B.E., M.E.', association: 'Regular', experience: '11 Years', specialization: 'Networks, OOPS', email: 'gpcse@kiot.ac.in', publications: 'IJ:2, IC:1, NC:3', rating: 4.6, image: csePavithraGImage },
+      { name: 'Ms. Manju S', vidwanId: '703307', designation: 'Assistant Professor', doj: '6.04.2026', qualification: 'B.E., M.E.,', association: 'Regular', experience: 'Teaching - 3', specialization: 'Cloud Computing, AI', email: 'smcse@kiot.ac.in', publications: 'IC:1, NC:3', rating: 4.5 },
+      { name: 'Ms. Anitha V', vidwanId: '469396', designation: 'Assistant Professor', doj: '11.06.2026', qualification: 'B.E., M.E., (Ph.D)', association: 'Regular', experience: 'Teaching - 8.5, Research - 2', specialization: 'Artificial Intelligence, Machine Learning and Deep Learning', email: 'vacse@kiot.ac.in', publications: 'IJ:4, IC:4, P:3, BC:1', rating: 4.6, image: cseVAnithaImage },
+      { name: 'Ms. Prabha A', vidwanId: '721442', designation: 'Assistant Professor', doj: '25.06.2026', qualification: 'B.E., M.E.,', association: 'Regular', experience: 'Teaching - 6.7 (Polytechnic-5.7 yrs & Engineering -10 months), Industry - 10', specialization: 'Machine Learning', email: 'aprcse@kiot.ac.in', publications: 'NJ:1, IC:1, Book/BC - 1/1', rating: 4.7, image: cseAPrabhaImage },
+      { name: 'Mr. Krishnakumar R', vidwanId: '634960', designation: 'Assistant Professor', doj: '11.06.2026', qualification: 'B.E., M.E., (Ph.D).,', association: 'Regular', experience: 'Teaching - 11.4, Research - 3', specialization: 'Wireless Sensor Networks', email: 'rkkcse@kiot.ac.in', publications: 'IJ:14, NJ:4, IC:23, NC:2', rating: 4.7, image: cseRKrishnakumarImage },
+      { name: 'Mr. Aravindan C', vidwanId: '728496', designation: 'Assistant Professor', doj: '01.07.2026', qualification: 'B.E., M.E.,', association: 'Regular', experience: 'Teaching - 10 months, Industry – 5.6', specialization: 'C Programming, Data Structures', email: 'cacse@kiot.ac.in', publications: 'Nil', rating: 4.5, image: cseCAravindanImage },
+      { name: 'Ms. Sowndharya T', vidwanId: '728529', designation: 'Assistant Professor', image: cseSowndharyaImage },
       // Professors of Practice
       { name: 'Mr. Ezhilavan B', designation: 'Associate POP', doj: '12.07.2024', qualification: 'B.E. CSE', experience: '14.10 Years', rating: 4.8 },
       { name: 'Ms. Gayathri Devi M', designation: 'Associate POP', doj: '10.07.2024', qualification: 'B.Tech. M.E. CSE', experience: '11.10 Years', rating: 4.8 },
