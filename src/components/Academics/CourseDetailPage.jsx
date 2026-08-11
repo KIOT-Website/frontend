@@ -110,7 +110,7 @@ import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards } f
 import { csbsStudentAwards, csbsFacultyAwards, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities } from './departments/csbs/csbsData.jsx'
 import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements } from './departments/civil/civilData.jsx'
 import { mechanicalStudentAchievements, mechanicalFacultyAchievements, mechanicalStudentAwards, mechanicalFacultyAwards } from './departments/mechanical/mechanicalData.jsx'
-import { eceStudentAchievements, eceFacultyAchievements, eceStudentAwards, eceFacultyAwards } from './departments/ece/eceData.jsx'
+import { eceStudentAchievements, eceFacultyAchievements, eceStudentAwards, eceFacultyAwards, eceFacultyNptel, eceStudentNptel } from './departments/ece/eceData.jsx'
 import { itStudentAchievements, itFacultyAchievements, itStudentAwards, itFacultyAwards } from './departments/it/itData.jsx'
 import { ecmStudentAchievements, ecmFacultyAchievements, ecmStudentAwards, ecmFacultyAwards } from './departments/ecm/ecmData.jsx'
 import { mbaGeneralStudentAchievements, mbaGeneralFacultyAchievements, mbaGeneralStudentAwards, mbaGeneralFacultyAwards } from './departments/mba-general/mbaGeneralData.jsx'
@@ -210,6 +210,14 @@ const facultyAchievementsMap = {
   'me-ped': mePedFacultyAchievements,
   'me-se': meSeFacultyAchievements,
   'science-humanities': scienceHumanitiesFacultyAchievements
+};
+
+const facultyNptelMap = {
+  'be-ece': eceFacultyNptel
+};
+
+const studentNptelMap = {
+  'be-ece': eceStudentNptel
 };
 
 // Syllabus PDF Imports
@@ -3268,11 +3276,12 @@ function AchievementSection({ courseId, courseName }) {
       ) : activeAudience === 'FACULTY_AWARDS' ? (
         <AwardsSection key="FACULTY_AWARDS" courseId={courseId} courseName={courseName} initialAudience="FACULTY" />
       ) : activeAudience === 'STUDENT' && visibleData.length > 0 ? (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
-        >
+        <div className="flex flex-col gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
+          >
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-[#224292] text-white">
@@ -3317,8 +3326,48 @@ function AchievementSection({ courseId, courseName }) {
             </tbody>
           </table>
         </motion.div>
+        {studentNptelMap[courseId] && studentNptelMap[courseId].length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200"
+          >
+            <h3 className="px-6 py-4 text-lg font-bold font-graphik text-[#224292] border-b border-slate-200 bg-slate-50">NPTEL Certifications</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-[#224292] text-white">
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Student</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Course Name</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Certification Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {studentNptelMap[courseId].map((item, idx) => (
+                  <tr key={idx} className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}>
+                    <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                    <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">
+                      {item.name.includes(' (') ? (
+                        <>
+                          {item.name.split(' (')[0]} <br className="hidden md:block" /><span className="font-normal text-slate-500 text-xs">({item.name.split(' (')[1]}</span>
+                        </>
+                      ) : (
+                        item.name
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.course}</td>
+                    <td className="px-4 py-3 text-sm text-slate-600">{item.certificate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        )}
+        </div>
       ) : activeAudience === 'FACULTY' && visibleData.length > 0 ? (
-        <motion.div
+        <div className="flex flex-col gap-8">
+          <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200"
@@ -3395,6 +3444,39 @@ function AchievementSection({ courseId, courseName }) {
             </tbody>
           </table>
         </motion.div>
+        {facultyNptelMap[courseId] && facultyNptelMap[courseId].length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-8 bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200"
+          >
+            <h3 className="px-6 py-4 text-lg font-bold font-graphik text-[#224292] border-b border-slate-200 bg-slate-50">NPTEL Certifications</h3>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-[#224292] text-white">
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Faculty</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Designation</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Course Name</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Certificate Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {facultyNptelMap[courseId].map((item, idx) => (
+                  <tr key={idx} className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}>
+                    <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{item.sno}</td>
+                    <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
+                    <td className="px-4 py-3 text-sm text-slate-600">{item.designation}</td>
+                    <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.course}</td>
+                    <td className="px-4 py-3 text-sm text-slate-600">{item.certificate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        )}
+        </div>
       ) : activeAudience === 'FACULTY' ? (
         <motion.div
           initial={{ opacity: 0, y: 30 }}

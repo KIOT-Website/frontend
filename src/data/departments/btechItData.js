@@ -16,6 +16,10 @@ import itLalithambikaiImage from '../../assets/Faculity/IT/Mrs.S.Lalithambikai.p
 import itRajapriyaImage from '../../assets/Faculity/IT/Mrs.V.Rajapriya.png'
 import itManjubashiniImage from '../../assets/Faculity/IT/Ms.B.Manjubashini.png'
 import itVasanthaKumarImage from '../../assets/Faculity/IT/Mr.K.Vasantha kumar.png'
+import itValarmathiImage from '../../assets/Faculity/IT/Ms.S.Valarmathi.png'
+import itVinothKumarImage from '../../assets/Faculity/IT/Mr.S.Vinoth kumar.png'
+import itManikandanImage from '../../assets/Faculity/IT/Mr.Manikandan.png'
+import itKManikandanImage from '../../assets/Faculity/IT/Mr.K.Manikandan S&H.png'
 
 export const btechItData = {
   name: 'B.Tech Information Technology',
@@ -354,10 +358,10 @@ export const btechItData = {
       ,category: 'S&H'
     }
     ,{ name: 'Mrs. S. Lavanya', designation: 'AP', qualification: 'B.E., M.E.' }
-    ,{ name: 'Ms. S. Valarmathi', designation: 'AP', qualification: 'B.E., M.E.' }
-    ,{ name: 'Mr. J. Vinothkumar', designation: 'AP', qualification: 'B.E., M.E.' }
-    ,{ name: 'Mr. A. Manikandan', designation: 'AP', qualification: 'B.E., M.E.' }
-    ,{ name: 'Mr. K. Manikandan', designation: 'AP/ MAT', qualification: 'B.Sc., M.Sc., M.Phil.', category: 'S&H' }
+    ,{ name: 'Ms. S. Valarmathi', designation: 'AP', qualification: 'B.E., M.E.', image: itValarmathiImage }
+    ,{ name: 'Mr. J. Vinothkumar', designation: 'AP', qualification: 'B.E., M.E.', image: itVinothKumarImage }
+    ,{ name: 'Mr. A. Manikandan', designation: 'AP', qualification: 'B.E., M.E.', image: itManikandanImage }
+    ,{ name: 'Mr. K. Manikandan', designation: 'AP/ MAT', qualification: 'B.Sc., M.Sc., M.Phil.', category: 'S&H', image: itKManikandanImage, imageStyle: { scale: '0.85', translate: '0 10%' } }
   ],
   labs: [
       {
