@@ -128,7 +128,7 @@ export default function ExtraCurricularPage() {
       color: "bg-gradient-to-r from-purple-700 to-indigo-800",
       tagColor: "bg-purple-100 text-purple-950 border-purple-200",
       desc: "Fosters gender equality, safety awareness, female student leadership, health seminars, and career mentorship.",
-      route: null
+      route: "/resources/student-life/wec-cell"
     },
     {
       name: "Universal Human Values (UHV) Cell",

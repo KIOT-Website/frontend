@@ -118,6 +118,7 @@ const BusinessInsightsClubPage = lazy(() => import('./pages/BusinessInsightsClub
 const HumanResourceManagementClubPage = lazy(() => import('./pages/HumanResourceManagementClubPage'))
 const SmartOperationsLogisticsClubPage = lazy(() => import('./pages/SmartOperationsLogisticsClubPage'))
 const EdcCellPage = lazy(() => import('./pages/EdcCellPage'))
+const WecCellPage = lazy(() => import('./pages/WecCellPage'))
 const MmaPage = lazy(() => import('./pages/MmaPage'))
 const DepartmentAssociationsPage = lazy(() => import('./pages/DepartmentAssociationsPage'))
 const CommonCentersPage = lazy(() => import('./pages/CommonCentersPage'))
@@ -1193,6 +1194,8 @@ function App() {
                   <Route path="/resources/student-life/smart-operations-logistics-club" element={<SmartOperationsLogisticsClubPage />} />
                   <Route path="/student-life/edc-cell" element={<EdcCellPage />} />
                   <Route path="/resources/student-life/edc-cell" element={<EdcCellPage />} />
+                  <Route path="/student-life/wec-cell" element={<WecCellPage />} />
+                  <Route path="/resources/student-life/wec-cell" element={<WecCellPage />} />
                   <Route path="/student-life/mma-salem" element={<MmaPage />} />
                   <Route path="/resources/student-life/mma-salem" element={<MmaPage />} />
                   <Route path="/student-life/acm" element={<AcmPage />} />

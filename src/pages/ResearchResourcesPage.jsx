@@ -386,6 +386,7 @@ const eeeSupervisors = [
         guided: "05",
         guiding: "06",
         irins: "https://kiot.irins.org",
+        vidwanId: "317222",
         image: munirajImg,
         publications: []
     },
@@ -401,6 +402,7 @@ const eeeSupervisors = [
         guided: "04",
         guiding: "03",
         irins: "https://kiot.irins.org",
+        vidwanId: "728531",
         image: kamatchiKannanImg,
         publications: []
     },
@@ -416,6 +418,7 @@ const eeeSupervisors = [
         guided: "-",
         guiding: "-",
         irins: "https://kiot.irins.org",
+        vidwanId: "283498",
         image: gowriSankarImg,
         publications: []
     }
@@ -429,6 +432,7 @@ const eeePhdHolders = [
         year: "-",
         university: "Anna University",
         irins: "https://kiot.irins.org",
+        vidwanId: "317222",
         image: munirajImg,
         publications: { ij: 0, ic: 0, nj: 0, nc: 0 }
     },
@@ -439,6 +443,7 @@ const eeePhdHolders = [
         year: "-",
         university: "Anna University",
         irins: "https://kiot.irins.org",
+        vidwanId: "728531",
         image: kamatchiKannanImg,
         publications: { ij: 0, ic: 0, nj: 0, nc: 0 }
     },
@@ -449,6 +454,7 @@ const eeePhdHolders = [
         year: "-",
         university: "Anna University",
         irins: "https://kiot.irins.org",
+        vidwanId: "283498",
         image: gowriSankarImg,
         publications: { ij: 0, ic: 0, nj: 0, nc: 0 }
     }
@@ -475,22 +481,22 @@ const eeeFacilities = [
 ];
 
 const eeeFacultyPursuing = [
-    { name: "Mrs. K. Manjula", topic: "Renewable Energy Sources", supervisor: "Dr. V. Kamatchi Kannan (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
-    { name: "Mrs. R. Rajeswari", topic: "Power Quality", supervisor: "Dr. V. Kamatchi Kannan (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
-    { name: "Mrs. P. Rekha", topic: "Intelligent Techniques", supervisor: "Dr. P. A. Gowrisankar (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
-    { name: "Mr. M. Sugan", topic: "Control Systems", supervisor: "Dr. P. A. Gowrisankar (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
+    { name: "Mrs. K. Manjula", topic: "Renewable Energy Sources", supervisor: "Dr. V. Kamatchi Kannan (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing", vidwanId: "321865" },
+    { name: "Mrs. R. Rajeswari", topic: "Power Quality", supervisor: "Dr. V. Kamatchi Kannan (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing", vidwanId: "616533" },
+    { name: "Mrs. P. Rekha", topic: "Intelligent Techniques", supervisor: "Dr. P. A. Gowrisankar (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing", vidwanId: "320488" },
+    { name: "Mr. M. Sugan", topic: "Control Systems", supervisor: "Dr. P. A. Gowrisankar (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing", vidwanId: "703527" },
     { name: "Mr. T. Karthikeyan", topic: "High Voltage Engineering", supervisor: "Dr. C. Muniraj (Director Academics / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
-    { name: "Mr. G. Karthikeyan", topic: "Power Electronics", supervisor: "Dr. A. Jagadeeshwaran, Associate Professor / EEE, Sona College of Technology, Salem", university: "Anna University", registration: "202012123", status: "Pursuing" },
-    { name: "Mr. R. Kathiresan", topic: "Electric Vehicle", supervisor: "Dr. C. Govindaraju, Associate Professor / EEE, Government College of Engineering, Salem", university: "Anna University", registration: "2214707145", status: "Pursuing" },
-    { name: "Mr. B. Dhinesh", topic: "Electric Vehicle", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "22143697123", status: "Pursuing" },
-    { name: "Mr. S. E. Murthy", topic: "Electric Vehicle", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "2317511425", status: "Pursuing" },
-    { name: "Mr. M. Jagadeeshraja", topic: "Embedded Systems", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "23133697118", status: "Pursuing" },
-    { name: "Mr. M. Rajkumar", topic: "Power Systems", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "23133697123", status: "Pursuing" },
-    { name: "Mr. P. Balaji", topic: "Power Electronics", supervisor: "Dr. P. Rajalakshmy, Associate Professor, Robotics Engineering, Karunya University, Coimbatore", university: "Karunya University", registration: "236000168", status: "Pursuing" },
-    { name: "Mr. R. Madhanraj", topic: "Control & Instrumentation", supervisor: "Dr. P. Anantha Christu Raj, Research Supervisor, Assistant Professor (SG), Robotics Engineering, Karunya University, Coimbatore", university: "Karunya University", registration: "236000087", status: "Pursuing" },
-    { name: "Mrs. N. Divya", topic: "Power Electronics", supervisor: "Dr. V. Kamatchi Kannan, Professor / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "24233691184", status: "Pursuing" },
-    { name: "Mrs. P. Rekha", topic: "Embedded Systems", supervisor: "Dr. V. Kamatchi Kannan, Professor / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "24239691279", status: "Pursuing" },
-    { name: "Mr. Andril Alagusabai", topic: "Power Systems", supervisor: "Dr. J. Senthil Kumar, Bannari Amman Institute of Technology, Salem", university: "Anna University", registration: "20233691153", status: "Pursuing" }
+    { name: "Mr. G. Karthikeyan", topic: "Power Electronics", supervisor: "Dr. A. Jagadeeshwaran, Associate Professor / EEE, Sona College of Technology, Salem", university: "Anna University", registration: "202012123", status: "Pursuing", vidwanId: "320605" },
+    { name: "Mr. R. Kathiresan", topic: "Electric Vehicle", supervisor: "Dr. C. Govindaraju, Associate Professor / EEE, Government College of Engineering, Salem", university: "Anna University", registration: "2214707145", status: "Pursuing", vidwanId: "103138" },
+    { name: "Mr. B. Dhinesh", topic: "Electric Vehicle", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "22143697123", status: "Pursuing", vidwanId: "340578" },
+    { name: "Mr. S. E. Murthy", topic: "Electric Vehicle", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "2317511425", status: "Pursuing", vidwanId: "320498" },
+    { name: "Mr. M. Jagadeeshraja", topic: "Embedded Systems", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "23133697118", status: "Pursuing", vidwanId: "242497" },
+    { name: "Mr. M. Rajkumar", topic: "Power Systems", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "23133697123", status: "Pursuing", vidwanId: "320471" },
+    { name: "Mr. P. Balaji", topic: "Power Electronics", supervisor: "Dr. P. Rajalakshmy, Associate Professor, Robotics Engineering, Karunya University, Coimbatore", university: "Karunya University", registration: "236000168", status: "Pursuing", vidwanId: "728453" },
+    { name: "Mr. R. Madhanraj", topic: "Control & Instrumentation", supervisor: "Dr. P. Anantha Christu Raj, Research Supervisor, Assistant Professor (SG), Robotics Engineering, Karunya University, Coimbatore", university: "Karunya University", registration: "236000087", status: "Pursuing", vidwanId: "320507" },
+    { name: "Mrs. N. Divya", topic: "Power Electronics", supervisor: "Dr. V. Kamatchi Kannan, Professor / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "24233691184", status: "Pursuing", vidwanId: "320741" },
+    { name: "Mrs. P. Rekha", topic: "Embedded Systems", supervisor: "Dr. V. Kamatchi Kannan, Professor / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "24239691279", status: "Pursuing", vidwanId: "320488" },
+    { name: "Mr. Andril Alagusabai", topic: "Power Systems", supervisor: "Dr. J. Senthil Kumar, Bannari Amman Institute of Technology, Salem", university: "Anna University", registration: "20233691153", status: "Pursuing", vidwanId: "729811" }
 ];
 
 const eeeGuidedScholars = [
@@ -707,7 +713,7 @@ const shFacilities = [];
 const shFacultyPursuing = [
     { name: "Mr. K. Anand Kumar", topic: "English Language Teaching (S&H - English - Mech)", supervisor: "Dr. R. Vennila Nancy Christina (ASP/English, Sree Saraswathi Thiagraja College)", university: "Bharathiyar University", registration: "B1/ENG25PJULY0462/2025", status: "Pursuing" },
     { name: "Mr. M. Sivaperumal", topic: "Nanomaterials (S&H - Chemistry - IT)", supervisor: "Dr. G. Raja (Professor/Chemistry, Paavai Engineering College)", university: "Anna University", registration: "23147691151", status: "Pursuing" },
-    { name: "Mr. M. Prasath", topic: "Inventory Control Theory (S&H - Maths - EEE)", supervisor: "Dr. R. Vijaykrishnaraj (AP/Maths, Bharath Institute of Higher Education and Research)", university: "Bharath Institute of Higher Education and Research", registration: "D25SH027", status: "Pursuing" },
+    { name: "Mr. M. Prasath", topic: "Inventory Control Theory (S&H - Maths - EEE)", supervisor: "Dr. R. Vijaykrishnaraj (AP/Maths, Bharath Institute of Higher Education and Research)", university: "Bharath Institute of Higher Education and Research", registration: "D25SH027", status: "Pursuing", vidwanId: "613703" },
     { name: "Mrs. A. Preethi", topic: "Nano Particles (S&H - Chemistry - ECE)", supervisor: "Dr. K. Balachandran (ASP/Chemistry, Vivekanandha College of Engineering for Women)", university: "Anna University", registration: "21237697164", status: "Pursuing" , doj: "23.06.2025", vidwanId: "703524" },
     { name: "Mr. T. Raja", topic: "Decision Making using Fuzzy Logic (S&H - Maths - ECE)", supervisor: "Dr. S. Thilagavathi (AP/Maths, Erode Arts and Science College)", university: "Bharathiar University", registration: "B1/MAT24PJuly0919/2024", status: "Pursuing" , doj: "02.06.2015", vidwanId: "321631" },
     { name: "Mr. S. Sasi Kumar", topic: "Thin Film Technology (S&H - Physics - Civil)", supervisor: "Dr. K. S. Mohan (ASP/Physics, Nandha Engineering College)", university: "Anna University", registration: "25147691163", status: "Pursuing" },
