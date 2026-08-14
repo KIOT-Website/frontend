@@ -13,7 +13,10 @@ export const mePedData = {
     icon: Zap,
     color: '#18357a',
     tagline: 'Efficient Energy Conversion for the Future.',
-    overview: 'M.E. Power Electronics and Drives focuses on advanced power conversion techniques, motor control, and renewable energy integration.',
+    overview: [
+      'The Master of Engineering (M.E.) in Power Electronics and Drives at Knowledge Institute of Technology (KIOT) is a specialized postgraduate program designed to meet the growing global demand for advanced energy conversion, electric mobility, and smart power management technologies. Offered by the NBA-accredited Department of Electrical and Electronics Engineering (EEE)—a recognized Anna University Research Centre—the program bridges deep theoretical knowledge with  industrial applications.',
+      'Engineered to prepare students for high-impact roles in research, design, and development, the curriculum focuses heavily on high-efficiency power converters, smart grid architectures, and motor drive controls. Driven by Outcome-Based Education (OBE) and project-led learning, students gain hands-on expertise to solve real-world engineering challenges.'
+    ],
     whyChoose: ['Renewable energy focus', 'Electric Drives specialization', 'Modern power labs'],
     curriculum: [{ year: 'Year 1', semesters: ['Analysis of Electrical Machines', 'Power Converters', 'Solid State Drives'] }],
     faculty: [{ name: 'Dr. Faculty PED', designation: 'Professor', experience: '18 Years', specialization: 'Power Electronics', rating: 4.7 }],

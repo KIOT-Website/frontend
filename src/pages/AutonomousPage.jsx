@@ -12,16 +12,27 @@ import { Link } from 'react-router-dom'
 // Import PDF Resources
 import ugcFile from '../assets/resources/UGC-CONFIRMENT.pdf'
 import auFile from '../assets/resources/ANNA-UNIVERSITY.pdf'
-import mechBos from '../assets/resources/1.-MECH-BOS-Committee-Members.pdf'
-import eceBos from '../assets/resources/2.-ECE-BOS-Composition.pdf'
-import eeeBos from '../assets/resources/3.-EEE-BOS-Members.pdf'
-import cseBos from '../assets/resources/4.-CSE-BOS-Compositions.pdf'
-import civilBos from '../assets/resources/5.-Civil-BOS-Committee-Members-list.pdf'
-import shBos from '../assets/resources/6.-SH-BOS-Members-list.pdf'
-import mbaBos from '../assets/resources/7.-MBA-BOS-Members-list.pdf'
+import mechBos from '../assets/academics/BOS committe mambers/1.-MECH-BOS-Committee-Members.pdf'
+import eceBos from '../assets/academics/BOS committe mambers/2.-ECE-BOS-Composition.pdf'
+import eeeBos from '../assets/academics/BOS committe mambers/3.-EEE-BOS-Members.pdf'
+import cseBos from '../assets/academics/BOS committe mambers/4.-CSE-BOS-Compositions.pdf'
+import civilBos from '../assets/academics/BOS committe mambers/5.-Civil-BOS-Committee-Members-list.pdf'
+import shBos from '../assets/academics/BOS committe mambers/6.-SH-BOS-Members-list.pdf'
+import mbaBos from '../assets/academics/BOS committe mambers/7.-MBA-BOS-Members-list.pdf'
+
+// Import Academic Council Minutes
+import acm01 from '../assets/academics/Academic Council/ACM-01-MOM.pdf'
+import acm02 from '../assets/academics/Academic Council/ACM-02-MOM.pdf'
+import acm03 from '../assets/academics/Academic Council/ACM-03-MOM.pdf'
+import acm04 from '../assets/academics/Academic Council/ACM-04-MOM.pdf'
+import acm05 from '../assets/academics/Academic Council/ACM-05-MOM.pdf'
+import acm06 from '../assets/academics/Academic Council/ACM-6-MOM.pdf'
+import acm07 from '../assets/academics/Academic Council/ACM-7-MOM.pdf'
+import acm08 from '../assets/academics/Academic Council/ACM-8-MOM.pdf'
 import campusImg from '../assets/main/indian_campus_hero.webp'
-import sixLegImg from '../assets/Academic Regulations/kiot.png'
+import sixLegImg from '../assets/academics/6 LEG Model.jpg'
 import autonoms5 from '../assets/Admissions/autonoms5.png'
+import sixLegPdf from '../assets/academics/6 LEG Model-Details.pdf'
 
 // Import AICTE Approvals PDFs
 import aicte25_26 from '../assets/idea lap/approvels/AICTE-2025-26.pdf'
@@ -109,7 +120,7 @@ const AutonomousPage = () => {
         { name: 'Regulations', id: 'regulations', icon: FileText },
         { name: 'Curriculum', id: 'curriculum', icon: BookOpen },
         { name: 'Academic Schedule', id: 'schedule', icon: Calendar },
-        { name: 'Credits Equivalence Committee', id: 'cec', icon: UserCheck },
+        { name: 'Credit Equivalence Committee', id: 'cec', icon: UserCheck },
         { name: 'Honours/Minor Degree', id: 'honours', icon: Trophy },
     ]
 
@@ -333,22 +344,32 @@ const AutonomousPage = () => {
                                     </div>
 
                                     <div className="mt-24 text-left">
-                                        <h4 className="text-[10px] font-black uppercase tracking-widest text-[#224292] mb-12 text-center">Curriculum Structure & Credit Distribution</h4>
+                                        <h4 className="text-[26px] leading-[34px] font-black uppercase tracking-wide text-[#224292] mb-6 text-center">Curriculum Structure & Credit Distribution</h4>
+                                        <div className="flex justify-center mb-12">
+                                            <a href={sixLegPdf} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-2 pr-6 hover:shadow-md transition-all group">
+                                                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-red-500 group-hover:scale-105 transition-transform">
+                                                    <FileText size={24} />
+                                                </div>
+                                                <span className="font-bold text-[#224292] text-[15px]">6 LEG Model-Details</span>
+                                                <Download size={20} className="text-slate-300 ml-2 group-hover:text-[#224292] transition-colors" />
+                                            </a>
+                                        </div>
                                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                             {[
-                                                { title: 'BSEC', subtitle: 'Basic Science & Engineering Courses', points: ['Builds strong engineering fundamentals', 'Covers common core subjects'], credits: '25 Cr' },
-                                                { title: 'PCC', subtitle: 'Professional Core Courses', points: ['Focuses on deep core domain learning', 'Strengthens professional technical knowledge'], credits: '50–60 Cr' },
-                                                { title: 'IRT (DIV)', subtitle: 'Industry Ready Track', points: ['Department Industry Vertical based learning', 'Makes students industry-ready in one domain'], credits: '18 Cr' },
-                                                { title: 'IDT (EmTV)', subtitle: 'Interdisciplinary Track', points: ['Emerging Technology Vertical based learning', 'Encourages interdisciplinary technology exposure'], credits: '09 Cr' },
-                                                { title: 'DAIT', subtitle: 'Digital & AI Track', points: ['Develops digital and AI competencies', 'Enhances future-ready technical skills'], credits: '26 Cr' },
-                                                { title: 'ICT', subtitle: 'Innovation & Creativity Track', points: ['Encourages innovation and product development', 'Supports startup and creative thinking skills'], credits: '15 Cr' },
-                                                { title: 'EE & LST', subtitle: 'Employability & Life Skills', points: ['Improves employability and professional skills', 'Focuses on communication and life skills'], credits: '13 Cr' },
-                                                { title: 'TLP (HOTS)', subtitle: 'Teaching Learning Practices', points: ['Develops higher-order thinking skills', 'Enhances analytical and problem-solving abilities'], credits: 'Integrated' },
-                                                { title: 'Honours / Minor', subtitle: 'Degree Options', points: ['Additional specialization opportunities', 'Supports advanced academic pathways'], credits: 'Optional' }
+                                                { title: 'BSEC', subtitle: 'Basic Science and Engineering Courses', points: ['To prepare the necessary basic concepts.'], credits: '25 Cr' },
+                                                { title: 'PCC', subtitle: 'Professional Core Courses', points: ['To learn core domain concepts deeply'], credits: '50–60 Cr' },
+                                                { title: 'IDT(EmTV)', subtitle: 'Inter Disciplinary Track / Emerging Technology Vertical', points: ['To learn interdisciplinary emerging technologies'], credits: '09 Cr' },
+                                                { title: 'IRT (DIV)', subtitle: 'Industry Ready Track (Department Industry Vertical)', points: ['To become industry-ready in one domain'], credits: '18 Cr' },
+                                                { title: 'DAIT', subtitle: 'Digital & Artificial Intelligence Track', points: ['To develop digital and AI competencies'], credits: '26 Cr' },
+                                                { title: 'ICT', subtitle: 'Innovation and Creativity Track', points: ['To innovate, design, develop products and built Startups'], credits: '15 Cr' },
+                                                { title: 'EE & LST', subtitle: 'Employability Enhancement & Life Skills Track', points: ['To enhance employability, professional and life skills'], credits: '13 Cr' },
+                                                { title: 'TLP (HOTS)', subtitle: 'Teaching - Learning Practices with Higher Order Thinking Skills', points: ['To develop higher-order thinking skills'], credits: 'Integrated' },
+                                                { title: 'Honours / Minor', subtitle: 'Degree options', points: ['Additional specialization opportunities', 'Supports advanced academic pathways'], credits: 'Optional' }
                                             ].map((track, i) => (
                                                 <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:translate-y-[-4px] transition-all group">
-                                                    <div className="flex justify-between items-start mb-6">
+                                                    <div className="flex flex-col mb-4 gap-1">
                                                         <h5 className="text-lg font-bold text-[#224292]">{track.title}</h5>
+                                                        <p className="text-[13px] font-semibold text-slate-500 leading-tight">{track.subtitle}</p>
                                                     </div>
                                                     <ul className="space-y-4">
                                                         {track.points.map((p, j) => (
@@ -530,6 +551,79 @@ const AutonomousPage = () => {
                                                     </div>
                                                 ))}
                                             </div>
+                                            {c.name === 'Board of Studies (BoS)' && (
+                                                <div className="mt-12 overflow-hidden rounded-xl border border-blue-100 bg-white shadow-sm">
+                                                    <div className="overflow-x-auto">
+                                                        <table className="w-full text-left border-collapse">
+                                                            <thead>
+                                                                <tr className="bg-[#224292] text-white">
+                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center w-20">S.No.</th>
+                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20">Board of Studies (BoS)</th>
+                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20">Committee - Members</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {[
+                                                                    { id: 1, name: 'Faculty of Mechanical Engineering (MECH)', link: mechBos },
+                                                                    { id: 2, name: 'Faculty of Electronics and Communication Engineering (ECE)', link: eceBos },
+                                                                    { id: 3, name: 'Faculty of Electrical Engineering (EEE)', link: eeeBos },
+                                                                    { id: 4, name: 'Faculty of Computer Science and Engineering (CSE+)', link: cseBos },
+                                                                    { id: 5, name: 'Faculty of Civil Engineering', link: civilBos },
+                                                                    { id: 6, name: 'Faculty of Science and Humanities', link: shBos },
+                                                                    { id: 7, name: 'Faculty of Management Sciences', link: mbaBos },
+                                                                ].map((row, index) => (
+                                                                    <tr key={index} className="border-b border-blue-50 hover:bg-blue-50/30 transition-colors">
+                                                                        <td className="py-4 px-6 text-[14px] text-slate-600 text-center border-r border-blue-50">{row.id}</td>
+                                                                        <td className="py-4 px-6 text-[14px] text-slate-600 border-r border-blue-50">{row.name}</td>
+                                                                        <td className="py-4 px-6 text-[14px] text-center">
+                                                                            <a href={row.link} target="_blank" rel="noopener noreferrer" className="text-black font-bold hover:text-[#224292] hover:underline">
+                                                                                Click here
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                ))}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {c.name === 'Academic Council' && (
+                                                <div className="mt-12 overflow-hidden rounded-xl border border-blue-100 bg-white shadow-sm">
+                                                    <div className="overflow-x-auto">
+                                                        <table className="w-full text-left border-collapse">
+                                                            <thead>
+                                                                <tr className="bg-[#224292] text-white">
+                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20 w-1/3">Meeting No.</th>
+                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20 w-1/3">Date</th>
+                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20 w-1/3">Minutes of Meeting</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {[
+                                                                    { no: 'ACM-01', date: '08.07.2023', link: acm01 },
+                                                                    { no: 'ACM-02', date: '09.09.2023', link: acm02 },
+                                                                    { no: 'ACM-03', date: '23.01.2024', link: acm03 },
+                                                                    { no: 'ACM-04', date: '06.07.2024', link: acm04 },
+                                                                    { no: 'ACM-05', date: '11.01.2025', link: acm05 },
+                                                                    { no: 'ACM-06', date: '23.06.2025', link: acm06 },
+                                                                    { no: 'ACM-07', date: '11.10.2025', link: acm07 },
+                                                                    { no: 'ACM-08', date: '15.12.2025', link: acm08 },
+                                                                ].map((row, index) => (
+                                                                    <tr key={index} className="border-b border-blue-50 hover:bg-blue-50/30 transition-colors">
+                                                                        <td className="py-4 px-6 text-[14px] text-slate-600 border-r border-blue-50">{row.no}</td>
+                                                                        <td className="py-4 px-6 text-[14px] text-slate-600 border-r border-blue-50">{row.date}</td>
+                                                                        <td className="py-4 px-6 text-[14px] text-center">
+                                                                            <a href={row.link} target="_blank" rel="noopener noreferrer" className="text-black font-bold hover:text-[#224292] hover:underline">
+                                                                                Click here
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                ))}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 ))}
@@ -870,7 +964,7 @@ const AutonomousPage = () => {
                                             <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-md">
                                                 <UserCheck size={32} className="text-[#ffc107]" />
                                             </div>
-                                            <h3 className="text-4xl font-black tracking-tighter mb-6 leading-tight">Credits Equivalence Committee (CEC)</h3>
+                                            <h3 className="text-4xl font-black tracking-tighter mb-6 leading-tight">Credit Equivalence Committee (CEC)</h3>
                                             <p className="text-white/60 text-lg font-medium leading-relaxed mb-12">
                                                 Institute-level committee constituted to evaluate and approve credit equivalence requests for external, online, and special academic courses.
                                             </p>
@@ -958,7 +1052,7 @@ const AutonomousPage = () => {
                                             </div>
                                             <div>
                                                 <h3 className="text-3xl font-black text-[#224292]">Honours Degree</h3>
-                                                <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-1">Intra-Departmental Vertical</p>
+                                                <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-1">No history of arrears</p>
                                             </div>
                                         </div>
                                         <p className="text-[14px] font-bold text-black leading-relaxed mb-10">
@@ -967,13 +1061,13 @@ const AutonomousPage = () => {
                                         <div className="space-y-4 mb-6">
                                             {[
                                                 'Earn 18 additional credits from same programme verticals.',
-                                                'Max 6 online credits (NPTEL) above regular limit.',
-                                                'Min CGPA of 7.50 at end of 3rd sem with no arrears.',
+                                                'Maximum 6 online credits (NPTEL) above regular limit.',
+                                                'Minimum CGPA of 7.50 at end of 3rd sem with no arrears.',
                                                 'Must pass all courses in the first attempt.',
                                                 'Option to convert to Professional Electives if incomplete.',
                                                 'Higher grades considered for CGPA if credits exceed 18.'
                                             ].map((item, i) => (
-                                                <div key={i} className="flex items-start gap-4 text-[14px] font-bold text-black">
+                                                <div key={i} className="flex items-start gap-4 text-[14px] text-black">
                                                     <div className="w-2 h-2 bg-amber-400 rounded-full mt-2 shrink-0" />
                                                     <span className="leading-relaxed">{item}</span>
                                                 </div>
@@ -1005,12 +1099,12 @@ const AutonomousPage = () => {
                                         <div className="space-y-4 mb-6">
                                             {[
                                                 'Earn 18 additional credits from OTHER programmes.',
-                                                'Max 6 online credits (NPTEL) above regular limit.',
-                                                'Min CGPA of 7.50 at end of 3rd sem with no arrears.',
+                                                'Maximum 6 online credits (NPTEL) above regular limit.',
+                                                'Minimum CGPA of 7.50 at end of 3rd sem with no arrears.',
                                                 'Option to convert to Open Electives if incomplete.',
                                                 'Excess credits treated as Audit Courses.'
                                             ].map((item, i) => (
-                                                <div key={i} className="flex items-start gap-4 text-[14px] font-bold text-black">
+                                                <div key={i} className="flex items-start gap-4 text-[14px] text-black">
                                                     <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 shrink-0" />
                                                     <span className="leading-relaxed">{item}</span>
                                                 </div>

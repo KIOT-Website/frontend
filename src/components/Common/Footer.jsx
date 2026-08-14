@@ -91,6 +91,7 @@ const Footer = () => {
         { name: 'AICTE-Students Development schemes', href: 'https://www.aicte.gov.in/schemes/students-development-schemes' },
         { name: 'KIOT ERP', href: 'https://kiot.sriss.co.in/CAMPS/CommonJSP/signin.jsp' },
         { name: 'KIOT Library', href: 'http://115.244.103.83/webopac' },
+        { name: 'KIOT LMS', href: 'https://kiotlms.com/' },
       ]
     }
   }
