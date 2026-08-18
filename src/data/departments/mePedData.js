@@ -1,7 +1,9 @@
 import { Zap, Building2 } from 'lucide-react'
+import eeeKamatchiKannanImage from '../../assets/Faculity/eee/kamatchi_kannan.webp'
+import eeeMurthyImage from '../../assets/Faculity/eee/murthy.webp'
 
 export const mePedData = {
-  name: 'M.E Power Electronics and Drives',
+    name: 'M.E Power Electronics and Drives',
     short: 'M.E PED',
     duration: '2 Years (4 Semesters)',
     intake: 18,
@@ -19,7 +21,10 @@ export const mePedData = {
     ],
     whyChoose: ['Renewable energy focus', 'Electric Drives specialization', 'Modern power labs'],
     curriculum: [{ year: 'Year 1', semesters: ['Analysis of Electrical Machines', 'Power Converters', 'Solid State Drives'] }],
-    faculty: [{ name: 'Dr. Faculty PED', designation: 'Professor', experience: '18 Years', specialization: 'Power Electronics', rating: 4.7 }],
+    faculty: [
+      { name: 'Dr. Kamatchi Kannan V', designation: 'Professor & HOD', qualification: 'B.E. (EEE)., M.E., (PED)., PhD. (EE)', specialization: 'Power Electronics and Drives', phone: '9944374946', email: 'hod.eee@kiot.ac.in', association: 'Regular', image: eeeKamatchiKannanImage },
+      { name: 'Mr. Murthy S E', designation: 'Assistant Professor', qualification: 'B.E. (EEE)., M.E. (PED)', specialization: 'Power Electronics & Drives', phone: '9790556454', email: 'semeee@kiot.ac.in', association: 'Regular', image: eeeMurthyImage, imageStyle: { transform: 'translateY(15px)' } }
+    ],
     labs: [
       {
         name: 'Industrial Linked Laboratories / COEs',

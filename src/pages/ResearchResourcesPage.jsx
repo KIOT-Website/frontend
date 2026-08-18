@@ -802,11 +802,24 @@ const itFacultyPursuing = [
 const itGuidedScholars = [];
 
 // ─── MBA (Management Sciences) Data ───
-const mbaSupervisors = [];
+const mbaSupervisors = [
+    { id: 1, name: "Dr.A.Stephen", role: "Ph.D. Supervisor", supervisorId: "2880045", doj: "", email: "directorkbs@kiot.ac.in", researchArea: "HRM, Marketing, General Management", guided: "0", guiding: "06", vidwanId: "", irins: "#", publications: [], image: "" },
+    { id: 2, name: "Dr.R.Ramesh", role: "Ph.D. Supervisor", supervisorId: "2880037", doj: "", email: "rrmba@kiot.ac.in", researchArea: "Marketing, General Management, Entrepreneurship", guided: "0", guiding: "02", vidwanId: "", irins: "#", publications: [], image: "" }
+];
 const mbaPhdHolders = [];
-const mbaResearchAreas = [ "Operations Research", "Finance Analytics", "HR Tech" ];
-const mbaFacilities = [];
-const mbaFacultyPursuing = [];
+const mbaResearchAreas = [ "General Management", "Finance", "HRM", "Marketing", "Entrepreneurship" ];
+const mbaFacilities = [
+    { name: "Advanced Research Tools", description: "SPSS\nPower BI", infrastructure: "SPSS, Power BI" }
+];
+const mbaFacultyPursuing = [
+    { name: "Ms.P.Revathi", topic: "Behavioral Finance", supervisor: "Dr.P.Sundharesalingam", university: "Anna University", registration: "18248697103", status: "Pursuing" },
+    { name: "Ms.S.Vimala", topic: "Finance", supervisor: "Dr.Karthikeyan", university: "Anna University", registration: "-", status: "Pursuing" },
+    { name: "Mr.A.Musthaffa", topic: "Finance", supervisor: "Dr.Karthikeyan", university: "Anna University", registration: "23148691105", status: "Pursuing" },
+    { name: "Mr.Arivazhgan .V", topic: "HRM", supervisor: "Dr.Kalamani", university: "Bharathiar University", registration: "B1/MGT25PJULY0246/2025", status: "Pursuing" },
+    { name: "Ms.Bharani Eawari.M", topic: "Marketing", supervisor: "Dr.Kumarasamy.P", university: "Bharathiar University", registration: "B1/MGT23PDEC0352", status: "Pursuing" },
+    { name: "Mr.Sugavanesgh Sivaraj", topic: "Finance", supervisor: "Dr.P.Sundharesalingam", university: "Anna University", registration: "18148691122", status: "Pursuing" },
+    { name: "Mr.Padmanathan.G", topic: "HRM", supervisor: "Dr.P.K.Anjani", university: "Anna University", registration: "-", status: "Pursuing" }
+];
 const mbaGuidedScholars = [];
 
 
@@ -855,13 +868,13 @@ const ResearchSummaryDashboard = ({ deptName }) => {
     const isSH = deptName?.toLowerCase() === 'science-&-humanities' || deptName?.toLowerCase() === 'science-and-humanities';
     const isECE = deptName?.toLowerCase() === 'electronics-&-communication-engineering' || deptName?.toLowerCase() === 'electronics-and-communication-engineering';
     const isIT = deptName?.toLowerCase() === 'information-technology';
-    const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev'
+    const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev' || deptName?.toLowerCase() === 'mba---master-of-business-administration' || deptName?.toLowerCase() === 'mba---master-of-business-administration-(general)' || deptName?.toLowerCase() === 'mba---master-of-business-administration-(iev)';
     const isECX = deptName?.toLowerCase() === 'electronics-&-computer-engineering' || deptName?.toLowerCase() === 'electronics-and-computer-engineering' || deptName?.toLowerCase() === 'ecx' || deptName?.toLowerCase() === 'ecm';
 
     const periodText = '01.06.2023 to 31.05.2026';
-    const totalPubs = isCivil ? 56 : (isAIDS ? 113 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : (isECE ? 134 : (isIT ? 13 : (isMBA ? '-' : 221))))))))));
-    const totalPatentsText = isCivil ? '08' : (isAIDS ? '07' : (isCSBS ? '05' : (isCSE ? '11' : (isEEE ? '15' : (isMCA ? '00' : (isMech ? '10' : (isSH ? '03' : (isECE ? '08' : (isIT ? '-' : (isMBA ? '-' : '08'))))))))));
-    const totalGrantsText = isCivil ? '11' : (isAIDS ? '02' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '-' : '12'))))))))));
+    const totalPubs = isCivil ? 56 : (isAIDS ? 113 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : (isECE ? 134 : (isIT ? 13 : (isMBA ? 99 : 221))))))))));
+    const totalPatentsText = isCivil ? '08' : (isAIDS ? '07' : (isCSBS ? '05' : (isCSE ? '11' : (isEEE ? '15' : (isMCA ? '00' : (isMech ? '10' : (isSH ? '03' : (isECE ? '08' : (isIT ? '-' : (isMBA ? '11' : '08'))))))))));
+    const totalGrantsText = isCivil ? '11' : (isAIDS ? '02' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '04' : '12'))))))))));
     const totalGrantsLabel = 'Projects / Consultancy Completed';
 
     const pubLegend = isCivil ? [
@@ -893,12 +906,12 @@ const ResearchSummaryDashboard = ({ deptName }) => {
         { color: '#ea580c', name: 'Book / Book Chapters',         count: '-' },
         { color: '#8b5cf6', name: 'Student Publications',         count: '-' },
     ] : (isMBA ? [
-        { color: '#1e3a8a', name: 'Journal Publications',        count: '-' },
-        { color: '#3b82f6', name: 'Other Journal Publications',   count: '-' },
-        { color: '#15803d', name: 'Conference Proceedings',       count: '-' },
-        { color: '#7c3aed', name: 'Patents Published / Granted',  count: '-' },
-        { color: '#ea580c', name: 'Book / Book Chapters',         count: '-' },
-        { color: '#8b5cf6', name: 'Student Publications',         count: '-' },
+        { color: '#1e3a8a', name: 'Journal Publications',        count: 11 },
+        { color: '#3b82f6', name: 'Other Journal Publications',   count: 47 },
+        { color: '#15803d', name: 'Conference Proceedings',       count: 8 },
+        { color: '#7c3aed', name: 'Patents Published / Granted',  count: 11 },
+        { color: '#ea580c', name: 'Book / Book Chapters',         count: 12 },
+        { color: '#8b5cf6', name: 'Student Publications',         count: 10 },
     ] : (isAIDS ? [
         { color: '#1e3a8a', name: 'Journal Publications',        count: 19 },
         { color: '#3b82f6', name: 'Other Journal Publications',   count: 27 },
@@ -960,9 +973,9 @@ const ResearchSummaryDashboard = ({ deptName }) => {
         { color: '#3b82f6', name: 'Patents Published', count: '-' },
         { color: '#ea580c', name: 'Patents Granted',   count: '-' },
     ] : (isMBA ? [
-        { color: '#15803d', name: 'Patents Filed',     count: '-' },
-        { color: '#3b82f6', name: 'Patents Published', count: '-' },
-        { color: '#ea580c', name: 'Patents Granted',   count: '-' },
+        { color: '#15803d', name: 'Patents Filed',     count: '11' },
+        { color: '#3b82f6', name: 'Patents Published', count: '11' },
+        { color: '#ea580c', name: 'Patents Granted',   count: '03' },
     ] : (isAIDS ? [
         { color: '#15803d', name: 'Patents Filed',     count: '01' },
         { color: '#3b82f6', name: 'Patents Published', count: '06' },
@@ -1227,7 +1240,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                                     <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                             </>
-                                        ) : (isIT || isMBA) ? (
+                                        ) : isIT ? (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
                                                     <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '75%' }}>AICTE</td>
@@ -1244,6 +1257,25 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                                 <tr>
                                                     <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>Institutional Grants</td>
                                                     <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                </tr>
+                                            </>
+                                        ) : isMBA ? (
+                                            <>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '75%' }}>AICTE</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>NIL</td>
+                                                </tr>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>SERB</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>NIL</td>
+                                                </tr>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>National Mission</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>NIL</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>Institutional Grants</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>NIL</td>
                                                 </tr>
                                             </>
                                         ) : (
@@ -1382,7 +1414,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                                     <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                             </>
-                                        ) : (isIT || isMBA) ? (
+                                        ) : isIT ? (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
                                                     <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '75%', lineHeight: 1.1 }}>Sponsored Projects</td>
@@ -1395,6 +1427,21 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                                 <tr>
                                                     <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Collaborative</td>
                                                     <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                </tr>
+                                            </>
+                                        ) : isMBA ? (
+                                            <>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '75%', lineHeight: 1.1 }}>Sponsored Projects</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>NIL</td>
+                                                </tr>
+                                                <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Consultancy</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>05</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Collaborative</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>NIL</td>
                                                 </tr>
                                             </>
                                         ) : (
@@ -1478,7 +1525,7 @@ const ResearchResourcesPage = () => {
     const isSH = deptName?.toLowerCase() === 'science-&-humanities' || deptName?.toLowerCase() === 'science-and-humanities'
     const isECE = deptName?.toLowerCase() === 'electronics-&-communication-engineering' || deptName?.toLowerCase() === 'electronics-and-communication-engineering'
     const isIT = deptName?.toLowerCase() === 'information-technology'
-    const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev'
+    const isMBA = deptName?.toLowerCase() === 'management-sciences' || deptName?.toLowerCase() === 'mba' || deptName?.toLowerCase() === 'mba-general' || deptName?.toLowerCase() === 'mba-iev' || deptName?.toLowerCase() === 'mba---master-of-business-administration' || deptName?.toLowerCase() === 'mba---master-of-business-administration-(general)' || deptName?.toLowerCase() === 'mba---master-of-business-administration-(iev)'
     const isECX = deptName?.toLowerCase() === 'electronics-&-computer-engineering' || deptName?.toLowerCase() === 'electronics-and-computer-engineering' || deptName?.toLowerCase() === 'ecx' || deptName?.toLowerCase() === 'ecm'
     const isSinglePageDashboard = true
 
