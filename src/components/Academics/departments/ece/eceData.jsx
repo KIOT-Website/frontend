@@ -144,7 +144,20 @@ export const eceFacultyAchievements = [
   { sno: 90, year: "2025-2026", name: "Mr. M. Dineshkumar, AP/ECE", event: "AICTE IDEA Lab Tech Fest, New Delhi", level: "National", award: "Shortlisted for Final Round", title: "AICTE-IDEA Lab Tech Fest Event" },
   { sno: 91, year: "2025-2026", name: "Mrs. T. Devika, AP/ECE", event: "Smart India Hackathon 2025 (Hardware Edition Grand Finale)", level: "National", award: "Mentor – Smart India Hackathon Grand Finale 2025", title: "A Hardware that Can Detect and Prevent Unauthorized Use of Electric Fence" }
 ];
-export const eceStudentAwards = [];
+export const eceStudentAwards = [
+  { sno: 1, award: 'Best Outgoing Student', name: 'Govarthanahari N', batch: '2022-2026' },
+  { sno: 2, award: 'Best Students in Co-Curricular Activities', name: 'Dharanish V', batch: '2024-2028' },
+  { sno: 3, award: 'Best Students in Co-Curricular Activities', name: 'Prathosh S L', batch: '2023-2027' },
+  { sno: 4, award: 'Best Students in Co-Curricular Activities', name: 'Giridhar Y', batch: '2022-2026' },
+  { sno: 5, award: 'Best Students in Extra Curricular Activities', name: 'Rohith S', batch: '2024-2028' },
+  { sno: 6, award: 'Best Students in Extra Curricular Activities', name: 'Manigandan V', batch: '2023-2027' },
+  { sno: 7, award: 'Best Students in Extra Curricular Activities', name: 'Aadhithya R Y', batch: '2022-2026' },
+  { sno: 8, award: 'Premier Paper Presentation', name: 'Gokulapriyan V (ECE)', batch: '2025-2029' },
+  { sno: 9, award: 'Premier Paper Presentation', name: 'Santhoshini S (ECX)', batch: '2025-2029' },
+  { sno: 10, award: 'Overall Academic Topper', name: 'Gopika K', batch: '2022-2026' },
+  { sno: 11, award: 'Most Books Borrower Award', name: 'Janani S (ECE)', batch: '2023-2027' },
+  { sno: 12, award: 'Most Books Borrower Award', name: 'Girija N (ECX)', batch: '2025-2029' }
+];
 export const eceFacultyAwards = [
   { sno: 1, name: 'Dr. S. Kumarganesh, Professor/ECE', event: 'CSI Mumbai Chapter, Dr. D. Y. Patil University, Navi Mumbai', level: 'National', award: 'Best Faculty Award', title: 'Best Faculty Award' },
   { sno: 2, name: 'Mrs. M. Vasanthi, AP / ECE', event: 'CSI Mumbai Chapter, Dr. D. Y. Patil University, Navi Mumbai', level: 'National', award: 'Best Faculty Award', title: 'Best Faculty Award' },

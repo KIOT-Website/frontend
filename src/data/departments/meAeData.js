@@ -16,7 +16,7 @@ export const meAeData = {
     color: '#18357a',
     tagline: 'Driving Innovation in Vehicle Intelligence.',
     overview: [
-      'The M.E. Automotive Engineering program is a two-year postgraduate course designed to equip students with advanced knowledge and practical skills in modern automotive technologies. The curriculum emphasizes the design, analysis, development, and optimization of automotive systems, integrating mechanical engineering principles with emerging technologies such as electric mobility, intelligent transportation systems, autonomous driving, connected vehicles, and automotive electronics.',
+      'The M.E. Automotive Electronics program is a two-year postgraduate course designed to equip students with advanced knowledge and practical skills in modern automotive technologies. The curriculum emphasizes the design, analysis, development, and optimization of automotive systems, integrating mechanical engineering principles with emerging technologies such as electric mobility, intelligent transportation systems, autonomous driving, connected vehicles, and automotive electronics.',
       'Students gain expertise in vehicle dynamics, powertrain systems, electric and hybrid vehicles, automotive safety, manufacturing technologies, embedded control systems, and computer-aided engineering (CAE). The program also provides hands-on experience through laboratory work, simulation tools, industry-oriented projects, internships, and research activities, preparing graduates to address the evolving challenges of the automotive sector.',
       'Graduates are well-prepared for careers in automotive design, research and development, vehicle testing, manufacturing, quality assurance, and mobility innovation, as well as for higher research and doctoral studies.'
     ],
@@ -27,7 +27,6 @@ export const meAeData = {
     ],
     curriculum: [{ year: 'Year 1', semesters: ['Automotive Embedded Systems', 'Vehicle Dynamics', 'Sensor Technology'] }],
     faculty: [
-      { name: 'Dr. Faculty AE', designation: 'Professor', experience: '15 Years', specialization: 'Automotive Electronics', rating: 4.8 },
       {
         name: 'Dr. P. Shanmuga Sundaram',
         designation: 'Associate Professor & Director - Outreach and Admissions (OA)',

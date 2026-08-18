@@ -249,7 +249,7 @@ const SYLLABUS_PDF_MAP = {
     { title: 'B.E. Electronics and Communication Engineering (I - VI SEM) Syllabus', file: eceUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
   ],
   'me-ae': [
-    { title: 'M.E. Automotive Engineering (I - IV SEM) Syllabus', file: ecePgPdf, year: 'Regulation 2023', sem: 'I - IV' }
+    { title: 'M.E. Automotive Electronics (I - IV SEM) Syllabus', file: ecePgPdf, year: 'Regulation 2023', sem: 'I - IV' }
   ],
   'be-eee': [
     { title: 'B.E. Electrical and Electronics Engineering (I - VI SEM) Syllabus', file: eeeUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
@@ -3143,15 +3143,20 @@ function AwardsSection({ courseId, courseName, initialAudience }) {
               <tr className="bg-[#ffc107]">
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">S.No</th>
                 <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">{activeAudience === 'STUDENT' ? 'Name of the Student' : 'Name of the Faculty'}</th>
-                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Event</th>
                 )}
-                {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && (
+                {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">Level</th>
                 )}
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Distinction / Award</th>
-                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">
+                  {activeAudience === 'STUDENT' && courseId === 'be-ece' ? 'Name of the Award' : 'Distinction / Award'}
+                </th>
+                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Title</th>
+                )}
+                {activeAudience === 'STUDENT' && courseId === 'be-ece' && (
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Batch</th>
                 )}
               </tr>
             </thead>
@@ -3172,10 +3177,10 @@ function AwardsSection({ courseId, courseName, initialAudience }) {
                     >
                       <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{activeAudience === 'FACULTY' ? (idx + 1) : (item.sno || (idx + 1))}</td>
                       <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
-                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
                         <td className="px-4 py-3 text-sm text-slate-700">{item.event}</td>
                       )}
-                      {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && (
+                      {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
                         <td className="px-4 py-3 text-center">
                           <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
                             {item.level}
@@ -3183,8 +3188,11 @@ function AwardsSection({ courseId, courseName, initialAudience }) {
                         </td>
                       )}
                       <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
-                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && (
+                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
                         <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
+                      )}
+                      {activeAudience === 'STUDENT' && courseId === 'be-ece' && (
+                        <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.batch}</td>
                       )}
                     </tr>
                   </Fragment>
