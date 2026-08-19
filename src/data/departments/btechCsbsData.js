@@ -84,20 +84,97 @@ export const btechCsbsData = {
         ],
         icon: Building2
       },
-
-      
       {
-        name: 'DBMS Laboratory',
+        name: 'Programming lab (CC5)',
+        incharge: 'Mr.Siva, AP /CSE',
+        technician: 'R.Mohan, LT/CSE',
         equipments: [
-          'Area: 74.76 Sq.m',
+          'Area: 93.59 Sq.m',
           'Workstations: 40 Systems',
-          'Oracle 11g Database (Perpetual License)',
-          'IBM Rational Rose Software (Perpetual License)',
-          'Modeling and Analytics Tools'
+          'Problem Solving using C Programming',
+          'Operating Systems',
+          'Data Structures and Algorithm',
+          'Computer Networks',
+          'Python'
         ],
-        icon: Terminal,
-        incharge: 'Faculty In-Charge / CSBS',
-        technician: 'System Administrator'
+        icon: Terminal
+      },
+      {
+        name: 'Data Structures Design Lab (CC6)',
+        incharge: 'Mr.M.S. Sabari, AP/CSBS',
+        technician: 'M.Mohamed Raffik LA/CSBS',
+        equipments: [
+          'Area: 93.59 Sq.m',
+          'Workstations: 40 Systems',
+          'Database Management Systems',
+          'Problem Solving using C Programming',
+          'C# and .Net',
+          'Data Structures and Algorithm'
+        ],
+        icon: Terminal
+      },
+      {
+        name: 'Object oriented Programming Lab (CC7)',
+        incharge: 'Mrs.Pavithra, AP/CSE',
+        technician: 'N.Nathiya , LT/CSE',
+        equipments: [
+          'Area: 95.43 Sq.m',
+          'Workstations: 40 Systems',
+          'Object Oriented Software Engineering',
+          'Code Blocks',
+          'MySQL'
+        ],
+        icon: Terminal
+      },
+      {
+        name: 'Database Management Systems Lab (CC8)',
+        incharge: 'Mr.K.Boopathi, AP/CSE',
+        technician: 'P.Prasanth, LT/CSE',
+        equipments: [
+          'Area: 75.49 Sq.m',
+          'Workstations: 40 Systems',
+          'Database Management Systems',
+          'Oracle 11G',
+          'Andrio Studio',
+          'R Studio'
+        ],
+        icon: Terminal
+      },
+      {
+        name: 'Machine Learning Lab (CC11)',
+        incharge: 'Mr.G.Babu, AP/CSE',
+        technician: 'K.Sathyaraj, LT/CSE',
+        equipments: [
+          'Area: 65.91 Sq.m',
+          'Workstations: 40 Systems',
+          'Object Oriented Software Engineering',
+          'Java, NS2',
+          'Virtual Box'
+        ],
+        icon: Terminal
+      },
+      {
+        name: 'Business Analytic Lab (CC12)',
+        incharge: 'Mr.PalaniRaja, Ap/CSE',
+        technician: 'R.Vanitha, LT/CSBS',
+        equipments: [
+          'Area: 65.91 Sq.m',
+          'Workstations: 40 Systems',
+          'Business Analytic Lab',
+          'Anaconda, Apache Tomcat Server, MySQL'
+        ],
+        icon: Terminal
+      },
+      {
+        name: 'Project Work / Internship (Cyber Security Lab)',
+        incharge: 'Mrs.R. Yudhayapriya',
+        technician: 'Mr.C.Surya',
+        equipments: [
+          'Area:',
+          'Workstations: 15 Systems',
+          'Business Analytic Lab'
+        ],
+        icon: Terminal
       }
     ],
     placementStats: { placed: '93%', avg: '5.5 LPA', top: '22 LPA', companies: '40+' },

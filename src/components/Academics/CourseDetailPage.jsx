@@ -107,7 +107,7 @@ const mechanicalTeachingMethods = [
 import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFacultyAwards } from './departments/cse/cseData.jsx'
 import { eeeStudentAchievements, eeeFacultyAchievements } from './departments/eee/eeeData.jsx'
 import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards } from './departments/aids/aidsData.jsx'
-import { csbsStudentAwards, csbsFacultyAwards, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities } from './departments/csbs/csbsData.jsx'
+import { csbsStudentAchievements, csbsStudentAwards, csbsFacultyAwards, csbsFacultyAchievements, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities } from './departments/csbs/csbsData.jsx'
 import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements } from './departments/civil/civilData.jsx'
 import { mechanicalStudentAchievements, mechanicalFacultyAchievements, mechanicalStudentAwards, mechanicalFacultyAwards } from './departments/mechanical/mechanicalData.jsx'
 import { eceStudentAchievements, eceFacultyAchievements, eceStudentAwards, eceFacultyAwards, eceFacultyNptel, eceStudentNptel } from './departments/ece/eceData.jsx'
@@ -177,7 +177,7 @@ const studentAchievementsMap = {
   'btech-it': itStudentAchievements,
   'be-ecx': ecmStudentAchievements,
   'be-ecm': ecmStudentAchievements,
-  'btech-csbs': [],
+  'btech-csbs': csbsStudentAchievements,
   'be-civil': civilStudentAchievements,
   'mba-general': mbaGeneralStudentAchievements,
   'mba-iev': mbaIevStudentAchievements,
@@ -199,7 +199,7 @@ const facultyAchievementsMap = {
   'btech-it': itFacultyAchievements,
   'be-ecx': ecmFacultyAchievements,
   'be-ecm': ecmFacultyAchievements,
-  'btech-csbs': [],
+  'btech-csbs': csbsFacultyAchievements,
   'be-civil': civilFacultyAchievements,
   'mba-general': mbaGeneralFacultyAchievements,
   'mba-iev': mbaIevFacultyAchievements,

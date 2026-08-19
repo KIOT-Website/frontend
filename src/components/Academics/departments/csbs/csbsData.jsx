@@ -1,5 +1,23 @@
 import { Calendar, Target, Wrench } from 'lucide-react'
 
+export const csbsStudentAchievements = [
+  { sno: 1, name: 'Aarthi S\nIV/CSBS', event: 'Certification', level: 'International', award: 'ServiceNow Certified Application Developer', title: 'ServiceNow' },
+  { sno: 2, name: 'Preethi K\nIII/CSBS', event: 'Certification', level: 'International', award: 'ServiceNow Certified System Administrator', title: 'ServiceNow' },
+  { sno: 3, name: 'Kanika S\nIII/CSBS', event: 'Certification', level: 'International', award: 'ServiceNow Certified System Administrator', title: 'ServiceNow' },
+  { sno: 4, name: 'Tirisigha R\nII/CSBS', event: 'iStart', level: 'State Level', award: 'Best Out of the Box Solutions', title: 'iStart, KIOT' },
+  { sno: 5, name: 'Dharshini T\nSuhasini K V\nII/CSBS', event: 'iStart', level: 'State Level', award: 'Best Software Solutions', title: 'iStart, KIOT' },
+  { sno: 6, name: 'Anusya P B\nVII/CSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Cloud Computing' },
+  { sno: 7, name: 'Dhinakar S\nVII/CSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Cloud Computing' },
+  { sno: 8, name: 'Dhivisha S\nVII/CSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Cloud Computing' },
+  { sno: 9, name: 'Elankavi M\nVII/CSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Cloud Computing' },
+  { sno: 10, name: 'T Janani\nVII/CSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Cloud Computing' },
+  { sno: 11, name: 'Kiruthika V\nVII/CSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Cloud Computing' },
+  { sno: 12, name: 'Madhumitha R\nVII/CSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Cloud Computing' },
+  { sno: 13, name: 'Rahava Prasanana S A\nVII/CSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Cloud Computing' },
+  { sno: 14, name: 'Akilesh D\nCSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Organizational Behaviour' },
+  { sno: 15, name: 'Rohith Kumar L\nCSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Organizational Behaviour' },
+  { sno: 16, name: 'Vaigundhan S L\nCSBS', event: 'NPTEL Course', level: 'National', award: 'Elite + Silver', title: 'Organizational Behaviour' },
+];
 export const csbsStudentAwards = [
   { sno: 1,  name: 'Bavishri M\nB.Tech-II year CSBS',         event: 'Hackathon',                  level: 'National',    award: 'Selected for Final Round', title: 'TechSpirint Hackathon by Google' },
   { sno: 2,  name: 'Tirisigha R\nB.Tech-II year CSBS',        event: 'ICT ACADEMY YouthTalk 2025', level: 'State Level', award: 'Selected for Final Round', title: 'Youth Talk 2025' },
@@ -31,6 +49,12 @@ export const csbsFacultyAwards = [
   { sno: 3,  name: 'Mrs.C.Vanitha,\nAP/CSBS',       event: 'Design Patent',     level: 'National',      award: 'Patent Published Patent Filled', title: 'Artificial Intelligence Based USB Device For Managing Multiple Smart Devices' },
   { sno: 4,  name: 'Mrs.R.Yudhayapriya\nAP/CSBS',   event: 'Design Patent',     level: 'National',      award: 'Patent Granted', title: 'Industrial Image Processing Camera For Defect Identification' },
   { sno: 5,  name: 'Mrs.P.Raga Keerthana\nAP/CSBS', event: 'Design Patent',     level: 'National',      award: 'Patent Granted', title: 'Industrial Image Processing Camera For Defect Identification' },
+];
+
+export const csbsFacultyAchievements = [
+  { sno: 1,  name: 'Dr.M.Ramkumar,\nCSBS',          event: 'NPTEL Certification Course', level: 'National', award: 'Mentor For NPTEL Online Certification Course', title: 'Issued by NPTEL' },
+  { sno: 2,  name: 'Dr.M.Ramkumar,\nCSBS',          event: 'Guest Speaker',              level: 'National', award: 'Guest Speaker', title: 'Guest Speaker on Sustainability and Eco-Friendly Manufacturing in Electric Vehicles (Issued by Muthayammal Polytehnic Institution)' },
+  { sno: 3,  name: 'Mrs.P.Raga Keerthana,\nCSBS',   event: 'NPTEL Certification Course', level: 'National', award: 'Mentor For NPTEL Online Certification Course', title: 'Issued by NPTEL' },
 ];
 
 export const csbsClubsMembers = [
