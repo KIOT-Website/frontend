@@ -998,6 +998,98 @@ export const beEceData = {
     companies: ['Intel', 'Qualcomm', 'Samsung'],
     placementStats: { placed: '90%', avg: '4.8 LPA', top: '18 LPA', companies: '50+' },
     projects: ['IoT Based Smart Home'],
+    fundedProjects: [
+      {
+        title: 'IoT Harvest HUB-Transforming Agriculture Market',
+        agency: 'Tamil Nadu Govt (Niral Tiruvizha )',
+        amount: '10,000',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'Login to windows computer using RFID tag and arduino',
+        agency: 'TNSCST, Tamil Nadu',
+        amount: '7,500',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'Capacity Building & Personality Development Program',
+        agency: 'National Commission for Women',
+        amount: '1,00,000',
+        period: 'CAYm2 (2022 - 2023)'
+      },
+      {
+        title: 'Augmented Reality Based Gesture Controlled Virtual Board',
+        agency: 'IEEE Madras Section Student Project Fund',
+        amount: '5,000',
+        period: 'CAYm3 (2021 - 2022)'
+      },
+      {
+        title: 'Next-Gen SoC Architectures: Pioneering AI Integration in Signal Processing',
+        agency: 'Science and Engineering Research Board (SERB)',
+        amount: 'Submitted (0.50 Lakhs)',
+        period: 'CAYm1 (2024 - 2025)'
+      },
+      {
+        title: 'Harnessing Digital Healthcare Technologies: Biomarkers, IoT, Date Analytics and AI in Precision Medicine',
+        agency: 'AICTE Training and Learning (ATAL) Advanced FDP',
+        amount: 'Submitted (6 Lakhs)',
+        period: 'CAYm1 (2024 - 2025)'
+      },
+      {
+        title: 'AICTE – IBIP',
+        agency: 'AICTE – Inter Institutional Biomedical Innovation Programme',
+        amount: 'Submitted (10 Lakhs)',
+        period: 'CAYm1 (2024 - 2025)'
+      },
+      {
+        title: 'AI based Medical Decision Making System for Cardio-vascular and Cerebrovascular Disease',
+        agency: 'State University Research Excellence (SERB-SURE)',
+        amount: 'Submitted (12.94 Lakhs)',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'Socio-Psychological Analysis of Entrepreneurship Among Educated Women in Salem District: Exploring Opportunities and Challenges in Rural and Urban Contexts',
+        agency: 'Indian Council of Social Science Research',
+        amount: 'Submitted (10 Lakhs)',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'Industry 4.0/5.0: Advances and Applications in Automotive Electronics (IDEA Lab)',
+        agency: 'AICTE Training and Learning (ATAL) Academy',
+        amount: 'Submitted (6 Lakhs)',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'Implementation of Artificial Intelligence based Noise Suppression System in Domestic Appliances, Ventilation ducts and Snore suppression',
+        agency: 'Scientific and Useful Profound Research Advancement (SERB-SUPRA)',
+        amount: 'Submitted (51.46 Lakhs)',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'Issues and Challenges in E-Waste Management',
+        agency: 'Council of Scientific and Industrial Research (CSIR)',
+        amount: 'Submitted (0.57 Lakhs)',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'Exploring Horizons: Research Avenues in Acoustic and LIDAR Techniques for Marine Resource Mapping in Indian Seas',
+        agency: 'Council of Scientific and Industrial Research (CSIR)',
+        amount: 'Submitted (0.60 Lakhs)',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'AI-Powered Plant Health: A Comprehensive Nutrient Deficiency Diagnosis and Recommendation System',
+        agency: 'Promoting Opportunities for Women in Exploratory Research (SERB-POWER)',
+        amount: 'Submitted (27.18 Lakhs)',
+        period: 'CAYm1 (2023 - 2024)'
+      },
+      {
+        title: 'Grant in aid for Seminar',
+        agency: 'Defence Research and Development Organisation',
+        amount: 'Submitted (1 Lakh)',
+        period: 'CAYm2 (2022 - 2023)'
+      }
+    ],
     eligibility: ['10+2 with PCM'],
     patents: [
       {

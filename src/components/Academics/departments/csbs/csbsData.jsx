@@ -1,4 +1,18 @@
 import { Calendar, Target, Wrench } from 'lucide-react'
+import csbsIp1 from '../../../../assets/innovative_practices/csbs/Animated video.png'
+import csbsIp2 from '../../../../assets/innovative_practices/csbs/Computer Organization and Architecture.jpg'
+import csbsIp3 from '../../../../assets/innovative_practices/csbs/Data Structures and Algorithms.jpg'
+import csbsIp4 from '../../../../assets/innovative_practices/csbs/Connection Game.png'
+import csbsIp5 from '../../../../assets/innovative_practices/csbs/Business Communication and Value Science-I.jpg'
+import csbsIp6 from '../../../../assets/innovative_practices/csbs/Business Communication and Value Science-II.jpg'
+import csbsIp7 from '../../../../assets/innovative_practices/csbs/Operating Systems.jpg'
+import csbsIp8 from '../../../../assets/innovative_practices/csbs/Design Thinking.jpg'
+import csbsIp9 from '../../../../assets/innovative_practices/csbs/Fundamentals of Data Science and Analytics.png'
+import csbsIp10 from '../../../../assets/innovative_practices/csbs/Object Oriented Programming.jpg'
+import csbsIp11 from '../../../../assets/innovative_practices/csbs/Design and Analysis of Algorithms.jpg'
+import csbsIp12 from '../../../../assets/innovative_practices/csbs/Software Architecture.jpg'
+import csbsIp13 from '../../../../assets/innovative_practices/csbs/Operations Research.png'
+import csbsIp14 from '../../../../assets/innovative_practices/csbs/Problem Solving and C Programming.jpg'
 
 export const csbsStudentAchievements = [
   { sno: 1, name: 'Aarthi S\nIV/CSBS', event: 'Certification', level: 'International', award: 'ServiceNow Certified Application Developer', title: 'ServiceNow' },
@@ -97,5 +111,120 @@ export const csbsClubsResponsibilities = [
       "Encourage innovative monitoring solutions.",
       "Promote practical learning in cold chain technology."
     ]
+  }
+];
+
+export const csbsInnovativePractices = [
+  {
+    sno: 1,
+    name: 'Mr.R.Karthick,',
+    subject: 'Problem Solving using C Programming',
+    method: 'Animated Video',
+    description: 'Students learned Working principle of Bit wise AND Operator',
+    image: csbsIp1
+  },
+  {
+    sno: 2,
+    name: 'Mrs.P.Raga Keerthana',
+    subject: 'Computer Organization and Architecture',
+    method: 'Demonstration',
+    description: 'Helps to understand and interpret the internal working of computer components such as CPU, memory, buses etc.,',
+    image: csbsIp2
+  },
+  {
+    sno: 3,
+    name: 'R.Yudhaya Priya',
+    subject: 'Data Structures and Algorithms',
+    method: 'Role play',
+    description: 'Students learned teamwork and improved communication.',
+    image: csbsIp3
+  },
+  {
+    sno: 5,
+    name: 'Mr.M.Gopikumaran',
+    subject: 'Database Management System',
+    method: 'Connection Game',
+    description: 'Helps to correlate and Connect concepts and enhance analytical skills',
+    image: csbsIp4
+  },
+  {
+    sno: 6,
+    name: 'Mrs.A.Dheepika',
+    subject: 'Business Communication and Value Science-I',
+    method: 'Activity based Learning',
+    description: 'Students learned to apply communication principles, teamwork skills and value based decision making',
+    image: csbsIp5
+  },
+  {
+    sno: 7,
+    name: 'Mrs.A.Dheepika',
+    subject: 'Business Communication and Value Science-II',
+    method: 'Activity based Learning',
+    description: 'Students learned Personality traits and Team work',
+    image: csbsIp6
+  },
+  {
+    sno: 8,
+    name: 'Mrs.C.Nithya,',
+    subject: 'Operating Systems',
+    method: 'Role Play',
+    description: 'Students learned collaboratively and improved communication skills.',
+    image: csbsIp7
+  },
+  {
+    sno: 9,
+    name: 'Dr.M.Ramkumar',
+    subject: 'Design Thinking',
+    method: 'Demonstration',
+    description: 'Helps to understand and interpret the internal working of computer components such as CPU, memory, buses etc.,',
+    image: csbsIp8
+  },
+  {
+    sno: 10,
+    name: 'R.Karthick,',
+    subject: 'Fundamentals of Data Science and Analytics',
+    method: "Quiz – Learner's to revise the previous topics",
+    description: 'Students learned Data Science basics and improved problem-solving ability',
+    image: csbsIp9
+  },
+  {
+    sno: 11,
+    name: 'C.Vanitha',
+    subject: 'Object Oriented Programming',
+    method: 'Demonstration',
+    description: 'Students learned working of oops concepts',
+    image: csbsIp10
+  },
+  {
+    sno: 12,
+    name: 'C.Nithya,',
+    subject: 'Design and Analysis of Algorithms',
+    method: 'Role Play',
+    description: 'Students learned collaboratively about 4-Queens problems',
+    image: csbsIp11
+  },
+  {
+    sno: 13,
+    name: 'M.Ranjithkumar,',
+    subject: 'Software Architecture',
+    method: 'E-Learning NPTEL Lecture Videos',
+    description: 'Students learned architecture style and patterns',
+    image: csbsIp12
+  },
+  {
+    sno: 14,
+    name: 'P.Madeshwaran',
+    subject: 'Operations Research',
+    method: 'Demonstration',
+    description: 'Students gained hands-on experience on working of R-Tool',
+    image: csbsIp13
+  },
+  {
+    sno: 15,
+    name: 'K.Preethi',
+    subject: 'Problem Solving and C Programming',
+    method: 'Role Play',
+    description: 'Role-play is used to make programming concepts easy and practical through real-life situations and student participation',
+    image: csbsIp14
   }
 ];

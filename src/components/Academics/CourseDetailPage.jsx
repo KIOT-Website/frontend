@@ -107,7 +107,7 @@ const mechanicalTeachingMethods = [
 import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFacultyAwards } from './departments/cse/cseData.jsx'
 import { eeeStudentAchievements, eeeFacultyAchievements } from './departments/eee/eeeData.jsx'
 import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards } from './departments/aids/aidsData.jsx'
-import { csbsStudentAchievements, csbsStudentAwards, csbsFacultyAwards, csbsFacultyAchievements, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities } from './departments/csbs/csbsData.jsx'
+import { csbsStudentAchievements, csbsStudentAwards, csbsFacultyAwards, csbsFacultyAchievements, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities, csbsInnovativePractices } from './departments/csbs/csbsData.jsx'
 import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements } from './departments/civil/civilData.jsx'
 import { mechanicalStudentAchievements, mechanicalFacultyAchievements, mechanicalStudentAwards, mechanicalFacultyAwards } from './departments/mechanical/mechanicalData.jsx'
 import { eceStudentAchievements, eceFacultyAchievements, eceStudentAwards, eceFacultyAwards, eceFacultyNptel, eceStudentNptel } from './departments/ece/eceData.jsx'
@@ -3786,7 +3786,8 @@ function InnovativePracticesSection({ courseId }) {
 
   const detailsMap = {
     'me-ae': meAeDetails,
-    'be-ece': beEceDetails
+    'be-ece': beEceDetails,
+    'btech-csbs': csbsInnovativePractices
   };
 
   const images = imagesMap[courseId] || [];
