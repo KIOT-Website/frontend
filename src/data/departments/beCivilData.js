@@ -11,11 +11,12 @@ import rajeshkumarImage from '../../assets/Faculity/civil/S.RAJESHKUMAR.webp'
 import sasikumarImage from '../../assets/Faculity/civil/S.SASI KUMAR.webp'
 import senthilkumarImage from '../../assets/Faculity/civil/S.SENTHIL KUMAR.webp'
 import balamuruganImage from '../../assets/Faculity/civil/U.BALAMURUGAN.webp'
+import civilHeroBanner from '../../assets/innovative_practices/civil/5. Industry-Integrated Learning - Copy.png'
 
 export const beCivilData = {
   name: 'B.E Civil Engineering',
     short: 'Civil Engineering',
-    bannerImage: '/banners/civil_banner.png',
+    bannerImage: civilHeroBanner,
     duration: '4 Years (8 Semesters)',
     intake: 60,
     affiliation: 'Anna University',

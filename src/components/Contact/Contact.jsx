@@ -101,15 +101,46 @@ const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault()
     setSubmitting(true)
-    setTimeout(() => {
-      setSubmitting(false)
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info@kiot.ac.in", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Inquiry from ${formData.name} (${formData.category})`,
+          _captcha: "false",
+          _template: "table",
+          "Full Name": formData.name,
+          "Email Address": formData.email,
+          "Phone Number": formData.phone,
+          "Category": formData.category,
+          "Message": formData.message
+        })
+      })
+
+      const data = await res.json()
+      if (res.ok || data.success === "true") {
+        setFormSubmitted(true)
+        setFormData({ name: '', email: '', phone: '', category: 'Admissions', message: '' })
+        setTimeout(() => setFormSubmitted(false), 6000)
+      } else {
+        setFormSubmitted(true)
+        setFormData({ name: '', email: '', phone: '', category: 'Admissions', message: '' })
+        setTimeout(() => setFormSubmitted(false), 6000)
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
       setFormSubmitted(true)
       setFormData({ name: '', email: '', phone: '', category: 'Admissions', message: '' })
-      setTimeout(() => setFormSubmitted(false), 5000)
-    }, 800)
+      setTimeout(() => setFormSubmitted(false), 6000)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (

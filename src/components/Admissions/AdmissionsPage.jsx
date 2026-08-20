@@ -719,9 +719,9 @@ const AdmissionsPage = () => {
                      whileInView={{ opacity: 1, scale: 1 }}
                      viewport={{ once: true }}
                      transition={{ delay: i * 0.05 }}
-                     className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#ffc107] hover:shadow-xl transition-all group"
+                     className="flex items-center gap-4 p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-[#ffc107] hover:shadow-lg transition-all group"
                    >
-                      <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#ffc107] shadow-sm group-hover:bg-[#224292] transition-all">
+                      <div className="w-10 h-10 rounded-xl bg-[#224292] flex items-center justify-center text-[#ffc107] shadow-md shrink-0 transition-transform group-hover:scale-105">
                          <FileText size={20} />
                       </div>
                       <span className="text-[11px] font-black text-[#224292] uppercase tracking-wider">{doc}</span>

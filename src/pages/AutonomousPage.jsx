@@ -207,36 +207,30 @@ const AutonomousPage = () => {
 
     return (
         <div className="min-h-screen bg-[#F8FAFC] font-graphik text-[#1a1a1a]">
-            {/* ─── HERO SECTION ─── */}
-            <div className="bg-[#224292] pt-16 pb-24 relative overflow-hidden">
-                {/* Background Image with Natural Colors & Slim Blue Tint */}
-                <div className="absolute inset-0 z-0">
-                    <img 
-                        src={autonoms5} 
-                        className="w-full h-full object-cover object-center opacity-90" 
-                        alt="KIOT Campus Background" 
-                    />
-                    {/* Neutral dark overlay to reduce blue tint while maintaining text contrast */}
-                    <div className="absolute inset-0 bg-black/45" />
-                </div>
-                
-                <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px] opacity-10 z-0" />
-                <div className="max-w-[1400px] mx-auto px-6 relative z-10 text-center pt-8">
-                    
-                    <motion.h1 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4 uppercase"
-                    >
-                        Academic <span className="text-[#ffc107]">Autonomy</span>
-                    </motion.h1>
-                    
-                </div>
+            {/* ─── HERO BANNER SECTION (DESKTOP: TITLE LEFT + IMAGE RIGHT TOUCHING END) ─── */}
+            <div className="w-full bg-[#18357a] relative overflow-hidden border-b border-[#18357a]">
+                <div className="w-full px-0 lg:pl-12 xl:pl-16 lg:pr-0">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-0 lg:gap-8">
+                        {/* Desktop Only Left Heading */}
+                        <div className="hidden lg:flex flex-col justify-center text-left py-6 xl:py-10 max-w-xl">
+                            <h1 className="text-3xl xl:text-5xl font-extrabold text-white tracking-tight leading-tight uppercase">
+                                Academic <span className="text-[#ffc107]">Autonomy</span>
+                            </h1>
+                            <p className="text-slate-200 text-xs xl:text-sm font-normal leading-relaxed mt-3">
+                                Progressive, industry-focused academic structure with Choice Based Credit System (CBCS), Outcome-Based Education, and continuous curriculum enhancements.
+                            </p>
+                        </div>
 
-                {/* Decorative Elements */}
-                <div className="absolute top-1/2 left-0 w-64 h-64 bg-[#ffc107]/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-                <div className="absolute top-1/2 right-0 w-64 h-64 bg-blue-400/10 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
+                        {/* Image: Right on Desktop (touches the right end), Full-width Edge-to-Edge on Mobile */}
+                        <div className="w-full lg:w-auto flex items-center justify-center lg:justify-end shrink-0 p-0">
+                            <img 
+                                src={autonoms5} 
+                                className="w-full lg:w-auto h-auto max-h-[300px] sm:max-h-[340px] lg:max-h-[320px] object-cover sm:object-contain lg:object-right block ml-auto" 
+                                alt="KIOT Academic Autonomy Banner" 
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* Mobile Tab Navigation - EXACTLY AS IT WAS BEFORE, ONLY SHOWN ON MOBILE */}
@@ -265,25 +259,27 @@ const AutonomousPage = () => {
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
                     
                     {/* Desktop Sidebar Tabs - Left Side (Visible only on lg and up) */}
-                    <div className="hidden lg:block w-[300px] shrink-0 sticky top-[120px] self-start bg-white rounded-2xl border border-slate-100 p-4 shadow-sm z-20">
-                        <div className="mb-4 pb-3 border-b border-slate-100">
-                            <h1 className="text-xl font-black text-[#224292] uppercase tracking-tight">Autonomous</h1>
-                            <p className="text-[10px] font-bold text-[#ffc107] italic mt-0.5">Academic Autonomy</p>
+                    <div className="hidden lg:block w-[300px] shrink-0 sticky top-[120px] self-start bg-white rounded-2xl border border-slate-200/80 shadow-lg shadow-slate-900/5 overflow-hidden z-20">
+                        {/* Blue Header Bar */}
+                        <div className="bg-[#18357a] px-5 py-4 text-white border-b border-[#18357a]">
+                            <h1 className="text-lg font-bold text-white uppercase tracking-wider">Autonomous</h1>
+                            <p className="text-[10px] font-semibold text-[#ffc107] uppercase tracking-widest mt-0.5">Academic Autonomy</p>
                         </div>
-                        <div className="flex flex-col gap-1.5">
+                        
+                        <div className="p-3 flex flex-col gap-1.5">
                             {tabs.map((tab) => {
                                 const IconComponent = tab.icon;
                                 return (
                                     <button
                                         key={tab.id}
                                         onClick={() => handleTabChange(tab.id)}
-                                        className={`flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl border transition-all text-left group ${
+                                        className={`flex items-center gap-2.5 w-full px-3.5 py-2.5 rounded-xl border transition-all text-left group cursor-pointer ${
                                             activeTab === tab.id 
-                                            ? 'bg-[#224292] text-white border-[#224292] shadow-md shadow-[#224292]/10' 
-                                            : 'bg-slate-50/50 hover:bg-white text-[#4a5568] hover:text-[#224292] border-slate-100 hover:border-[#224292]/20'
+                                            ? 'bg-[#18357a] text-white border-[#18357a] shadow-md shadow-[#18357a]/20' 
+                                            : 'bg-slate-50/60 hover:bg-slate-100/80 text-slate-700 hover:text-[#18357a] border-slate-100 hover:border-[#18357a]/20'
                                         }`}
                                     >
-                                        <IconComponent size={16} className={activeTab === tab.id ? 'text-[#ffc107]' : 'text-slate-400 group-hover:text-[#224292]'} />
+                                        <IconComponent size={16} className={activeTab === tab.id ? 'text-[#ffc107]' : 'text-slate-400 group-hover:text-[#18357a]'} />
                                         <span className="text-[11px] font-bold uppercase tracking-wider leading-tight">{tab.name}</span>
                                     </button>
                                 );
@@ -305,11 +301,11 @@ const AutonomousPage = () => {
                             className="scroll-mt-32"
                         >
                             <div className="max-w-4xl mx-auto mb-10 text-center">
-                                <div className="mb-8">
-                                    <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Academic Overview</h2>
+                                <div className="mb-6">
+                                    <h2 className="text-3xl sm:text-4xl font-bold text-[#18357a] tracking-tight">Academic Overview</h2>
                                 </div>
                                 
-                                <div className="space-y-8 text-black text-[13px] font-bold leading-relaxed text-justify mb-24">
+                                <div className="space-y-6 text-slate-700 text-sm sm:text-base font-normal leading-relaxed text-justify mb-16">
                                     <p>
                                         Knowledge Institute of Technology (KIOT), functioning with autonomous status, is dedicated to providing quality technical education through a progressive, industry-focused, and student-centered academic system. The autonomous framework enables the institution to design and continuously update its curriculum in accordance with the latest technological advancements, industry expectations, and global academic standards while adhering to the guidelines of UGC and AICTE.
                                     </p>
@@ -324,37 +320,37 @@ const AutonomousPage = () => {
                                     </p>
                                 </div>
 
-                                <div className="pt-24 border-t border-slate-100">
+                                <div className="pt-16 border-t border-slate-200">
                                 <div className="w-full text-center">
-                                    <h3 className="text-3xl font-black mb-6 leading-tight max-w-4xl mx-auto">
-                                        <span className="text-[#224292]">Curriculum</span>{' '}
+                                    <h3 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight max-w-4xl mx-auto">
+                                        <span className="text-[#18357a]">Curriculum</span>{' '}
                                         <span className="text-[#ffc107]">Excellence</span>
                                     </h3>
-                                    <div className="space-y-6 max-w-4xl mx-auto mb-16">
-                                        <p className="text-[13px] font-bold text-black leading-relaxed text-justify">
+                                    <div className="space-y-4 max-w-4xl mx-auto mb-12">
+                                        <p className="text-sm sm:text-base font-normal text-slate-700 leading-relaxed text-justify">
                                             The KIOT offers a Unique and Structured Six-LEG Model Curriculum aligned with industry requirements integrating engineering fundamentals, domain expertise, emerging technologies, employability skills, innovation, and higher-order thinking among graduates.
                                         </p>
-                                        <p className="text-[13px] font-bold text-[#224292] leading-relaxed text-justify bg-blue-50/50 p-5 rounded-xl border-l-4 border-[#224292]">
-                                            The Curriculum nurtures Technically Strong, Digitally Empowered, Industry-Ready Professionals with Higher-Order Thinking Skills (HOTS) and Multi-Disciplinary exposure
+                                        <p className="text-sm font-medium text-[#18357a] leading-relaxed text-justify bg-blue-50/70 p-4 sm:p-5 rounded-xl border-l-4 border-[#18357a]">
+                                            The Curriculum nurtures Technically Strong, Digitally Empowered, Industry-Ready Professionals with Higher-Order Thinking Skills (HOTS) and Multi-Disciplinary exposure.
                                         </p>
                                     </div>
 
-                                    <div className="mt-16 flex justify-center">
-                                        <img src={sixLegImg} alt="Six-Leg Model" className="max-w-5xl w-full rounded-3xl shadow-2xl" />
+                                    <div className="mt-12 flex justify-center">
+                                        <img src={sixLegImg} alt="Six-Leg Model" className="max-w-5xl w-full rounded-2xl shadow-xl border border-slate-200/80" />
                                     </div>
 
-                                    <div className="mt-24 text-left">
-                                        <h4 className="text-[26px] leading-[34px] font-black uppercase tracking-wide text-[#224292] mb-6 text-center">Curriculum Structure & Credit Distribution</h4>
-                                        <div className="flex justify-center mb-12">
-                                            <a href={sixLegPdf} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-2 pr-6 hover:shadow-md transition-all group">
-                                                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-red-500 group-hover:scale-105 transition-transform">
-                                                    <FileText size={24} />
+                                    <div className="mt-16 text-left">
+                                        <h4 className="text-xl sm:text-2xl font-bold text-[#18357a] mb-6 text-center">Curriculum Structure & Credit Distribution</h4>
+                                        <div className="flex justify-center mb-8">
+                                            <a href={sixLegPdf} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-white border border-slate-200 rounded-xl p-2.5 pr-5 hover:border-[#18357a]/40 shadow-xs hover:shadow-md transition-all group">
+                                                <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-red-500 group-hover:scale-105 transition-transform">
+                                                    <FileText size={20} />
                                                 </div>
-                                                <span className="font-bold text-[#224292] text-[15px]">6 LEG Model-Details</span>
-                                                <Download size={20} className="text-slate-300 ml-2 group-hover:text-[#224292] transition-colors" />
+                                                <span className="font-semibold text-[#18357a] text-sm">6 LEG Model - Details</span>
+                                                <Download size={16} className="text-slate-400 ml-1 group-hover:text-[#18357a] transition-colors" />
                                             </a>
                                         </div>
-                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                                             {[
                                                 { title: 'BSEC', subtitle: 'Basic Science and Engineering Courses', points: ['To prepare the necessary basic concepts.'], credits: '25 Cr' },
                                                 { title: 'PCC', subtitle: 'Professional Core Courses', points: ['To learn core domain concepts deeply'], credits: '50–60 Cr' },
@@ -366,31 +362,36 @@ const AutonomousPage = () => {
                                                 { title: 'TLP (HOTS)', subtitle: 'Teaching - Learning Practices with Higher Order Thinking Skills', points: ['To develop higher-order thinking skills'], credits: 'Integrated' },
                                                 { title: 'Honours / Minor', subtitle: 'Degree options', points: ['Additional specialization opportunities', 'Supports advanced academic pathways'], credits: 'Optional' }
                                             ].map((track, i) => (
-                                                <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:translate-y-[-4px] transition-all group">
-                                                    <div className="flex flex-col mb-4 gap-1">
-                                                        <h5 className="text-lg font-bold text-[#224292]">{track.title}</h5>
-                                                        <p className="text-[13px] font-semibold text-slate-500 leading-tight">{track.subtitle}</p>
+                                                <div key={i} className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs hover:shadow-md hover:border-[#18357a]/30 transition-all group flex flex-col justify-between">
+                                                    <div>
+                                                        <div className="flex flex-col mb-3 gap-0.5">
+                                                            <div className="flex items-center justify-between">
+                                                                <h5 className="text-base font-bold text-[#18357a]">{track.title}</h5>
+                                                                <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-blue-50 text-[#18357a] border border-blue-100">{track.credits}</span>
+                                                            </div>
+                                                            <p className="text-xs font-normal text-slate-500 leading-snug">{track.subtitle}</p>
+                                                        </div>
+                                                        <ul className="space-y-2 pt-2 border-t border-slate-100">
+                                                            {track.points.map((p, j) => (
+                                                                <li key={j} className="flex items-start gap-2 text-xs font-normal text-slate-700 leading-relaxed">
+                                                                    <div className="w-3.5 h-3.5 bg-blue-50 rounded-full flex items-center justify-center text-[#18357a] shrink-0 mt-0.5">
+                                                                        <CheckCircle2 size={10} />
+                                                                    </div>
+                                                                    {p}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
                                                     </div>
-                                                    <ul className="space-y-4">
-                                                        {track.points.map((p, j) => (
-                                                            <li key={j} className="flex items-start gap-3 text-[13px] font-semibold text-black leading-tight">
-                                                                <div className="w-4 h-4 bg-blue-50 rounded-full flex items-center justify-center text-[#224292] shrink-0 mt-0.5">
-                                                                    <CheckCircle2 size={10} />
-                                                                </div>
-                                                                {p}
-                                                            </li>
-                                                        ))}
-                                                    </ul>
                                                 </div>
                                             ))}
                                         </div>
 
-                                        <div className="mt-12 p-8 bg-[#224292] rounded-[2rem] text-white flex flex-col md:flex-row justify-between items-center gap-8">
-                                            <div>
-                                                <h5 className="text-2xl font-black mb-2">Total Credit Requirement</h5>
-                                                <p className="text-white/60 font-bold">Overall Academic Completion Milestone</p>
+                                        <div className="mt-10 p-6 sm:p-8 bg-[#18357a] rounded-2xl text-white flex flex-col sm:flex-row justify-between items-center gap-6 shadow-lg shadow-[#18357a]/15">
+                                            <div className="text-center sm:text-left">
+                                                <h5 className="text-xl sm:text-2xl font-bold mb-1">Total Credit Requirement</h5>
+                                                <p className="text-xs sm:text-sm text-slate-200 font-normal">Overall Academic Completion Milestone</p>
                                             </div>
-                                            <div className="text-4xl font-black text-[#ffc107]">
+                                            <div className="text-2xl sm:text-3xl font-bold text-[#ffc107]">
                                                 160–170 Credits
                                             </div>
                                         </div>
@@ -411,55 +412,55 @@ const AutonomousPage = () => {
                                 id="approvals" 
                                 className="scroll-mt-32"
                             >
-                                <div className="text-center mb-12">
-                                    <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Formal Approvals</h2>
+                                <div className="text-center mb-8">
+                                    <h2 className="text-3xl sm:text-4xl font-bold text-[#18357a] tracking-tight">Formal Approvals</h2>
                                 </div>
 
-                            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
                                 {[
                                     { name: 'UGC', full: 'University Grants Commission', file: ugcFile },
                                     { name: 'Anna University', full: 'Affiliated University', file: auFile }
                                 ].map((app, i) => (
-                                    <div key={i} className="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-lg transition-all group flex flex-col items-center text-center">
-                                        <div className="w-16 h-16 bg-red-50 rounded-xl flex items-center justify-center mb-4 text-red-600 transition-all">
-                                            <FileText size={32} />
+                                    <div key={i} className="p-6 bg-white border border-slate-200 rounded-2xl shadow-xs hover:shadow-md hover:border-[#18357a]/40 transition-all group flex flex-col items-center text-center">
+                                        <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-3 text-red-600 transition-all">
+                                            <FileText size={28} />
                                         </div>
-                                        <h3 className="text-xl font-black text-[#224292] mb-1">{app.name}</h3>
-                                        <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-6 leading-tight">{app.full}</p>
+                                        <h3 className="text-lg font-bold text-[#18357a] mb-0.5">{app.name}</h3>
+                                        <p className="text-xs font-normal text-slate-500 mb-5 leading-tight">{app.full}</p>
                                         
                                         <button 
                                             onClick={() => app.file && window.open(app.file, '_blank')}
                                             disabled={!app.file}
-                                            className={`mt-auto w-full py-2.5 rounded-lg font-black text-[9px] uppercase tracking-widest transition-all flex items-center justify-center gap-2 ${
+                                            className={`mt-auto w-full py-2.5 rounded-xl font-semibold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer ${
                                                 app.file 
-                                                ? 'bg-[#224292] text-white hover:bg-red-600 shadow-md' 
-                                                : 'bg-slate-50 text-slate-300 cursor-not-allowed border border-slate-100'
+                                                ? 'bg-[#18357a] text-white hover:bg-[#ffc107] hover:text-[#18357a] shadow-xs' 
+                                                : 'bg-slate-50 text-slate-400 cursor-not-allowed border border-slate-200'
                                             }`}
                                         >
-                                            {app.file ? 'View' : 'Not Available'}
-                                            {app.file && <ChevronRight size={12} />}
+                                            {app.file ? 'View Document' : 'Not Available'}
+                                            {app.file && <ChevronRight size={14} />}
                                         </button>
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="mt-16 max-w-3xl mx-auto">
-                                <div className="flex items-center justify-center gap-4 mb-8">
-                                    <div className="h-[2px] w-12 bg-[#ffc107] rounded-full" />
-                                    <h3 className="text-2xl font-black text-[#224292] tracking-tight">AICTE Approvals</h3>
-                                    <div className="h-[2px] w-12 bg-[#ffc107] rounded-full" />
+                            <div className="mt-12 max-w-3xl mx-auto">
+                                <div className="flex items-center justify-center gap-3 mb-6">
+                                    <div className="h-0.5 w-8 bg-[#ffc107] rounded-full" />
+                                    <h3 className="text-xl sm:text-2xl font-bold text-[#18357a] tracking-tight">AICTE Approvals</h3>
+                                    <div className="h-0.5 w-8 bg-[#ffc107] rounded-full" />
                                 </div>
                                 
-                                <div className="bg-white border border-slate-100 rounded-2xl shadow-xl shadow-black/5 overflow-hidden">
-                                    <table className="w-full text-left border-collapse">
+                                <div className="bg-white border border-slate-200 rounded-xl shadow-lg shadow-slate-900/5 overflow-hidden">
+                                    <table className="w-full text-left border-collapse font-graphik">
                                         <thead>
-                                            <tr className="bg-[#224292] text-white">
-                                                <th className="py-4 px-6 text-[10px] font-black uppercase text-white tracking-wider">Academic Year</th>
-                                                <th className="py-4 px-6 text-[10px] font-black uppercase text-white tracking-wider">Approval Status</th>
-                                                <th className="py-4 px-6 text-[10px] font-black uppercase text-white tracking-wider text-right">Action</th>
+                                            <tr className="bg-[#18357a] text-white">
+                                                <th className="py-3.5 px-6 text-xs font-semibold uppercase tracking-wider">Academic Year</th>
+                                                <th className="py-3.5 px-6 text-xs font-semibold uppercase tracking-wider">Approval Status</th>
+                                                <th className="py-3.5 px-6 text-xs font-semibold uppercase tracking-wider text-right">Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody className="divide-y divide-slate-100">
+                                        <tbody className="divide-y divide-slate-100 text-sm">
                                             {[
                                                 { year: '2025-26', status: 'Extension of Approval (EoA)', file: aicte25_26 },
                                                 { year: '2024-25', status: 'Extension of Approval (EoA)', file: aicte24_25 },
@@ -473,13 +474,13 @@ const AutonomousPage = () => {
                                                 { year: '2012-13', status: 'Extension of Approval (EoA)', file: aicte12_13 },
                                                 { year: '2011-12', status: 'Extension of Approval (EoA)', file: aicte11_12 }
                                             ].map((row, idx) => (
-                                                <tr key={idx} className="hover:bg-slate-50/50 transition-colors group">
-                                                    <td className="py-4 px-6 text-[13px] font-bold text-black">{row.year}</td>
-                                                    <td className="py-4 px-6 text-[12px] font-bold text-slate-500">{row.status}</td>
-                                                    <td className="py-4 px-6 text-right">
+                                                <tr key={idx} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                    <td className="py-3.5 px-6 font-semibold text-[#18357a]">{row.year}</td>
+                                                    <td className="py-3.5 px-6 font-normal text-slate-700">{row.status}</td>
+                                                    <td className="py-3.5 px-6 text-right">
                                                         <button
                                                             onClick={() => window.open(row.file, '_blank')}
-                                                            className="inline-flex items-center gap-2 bg-[#224292]/5 text-[#224292] border border-[#224292]/10 px-4 py-2 rounded-xl text-[9px] font-black uppercase hover:bg-[#ffc107] hover:text-[#224292] hover:border-[#ffc107] transition-all group-hover:shadow-md"
+                                                            className="inline-flex items-center gap-1.5 bg-[#18357a]/10 text-[#18357a] hover:bg-[#18357a] hover:text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer"
                                                         >
                                                             View PDF <ExternalLink size={12} />
                                                         </button>
@@ -503,63 +504,43 @@ const AutonomousPage = () => {
                             id="committees" 
                             className="scroll-mt-32"
                         >
-                            <div className="text-center mb-12">
-                                <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Statutory Committees</h2>
+                            <div className="text-center mb-10">
+                                <h2 className="text-3xl sm:text-4xl font-bold text-[#18357a] tracking-tight">Statutory Committees</h2>
                             </div>
                             
-                            <div className="space-y-24">
+                            <div className="space-y-16">
                                 {committees.map((c, i) => (
-                                    <div key={i} className="mb-24 last:mb-0">
-                                        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-16">
-                                            <div className="max-w-3xl">
-                                            <h3 className="text-3xl font-black mb-6 leading-tight">
-                                                {c.name === 'Academic Council' && (
-                                                    <>
-                                                        <span className="text-[#224292]">Academic</span>{' '}
-                                                        <span className="text-[#ffc107]">Council</span>
-                                                    </>
-                                                )}
-                                                {c.name === 'Board of Studies (BoS)' && (
-                                                    <>
-                                                        <span className="text-[#224292]">Board of</span>{' '}
-                                                        <span className="text-[#ffc107]">Studies (BoS)</span>
-                                                    </>
-                                                )}
-                                                {c.name === 'Finance Committee' && (
-                                                    <>
-                                                        <span className="text-[#224292]">Finance</span>{' '}
-                                                        <span className="text-[#ffc107]">Committee</span>
-                                                    </>
-                                                )}
+                                    <div key={i} className="space-y-6">
+                                        <div className="max-w-3xl">
+                                            <h3 className="text-2xl font-bold text-[#18357a] mb-2 leading-tight">
+                                                {c.name}
                                             </h3>
-                                                <p className="text-[13px] font-bold text-black leading-relaxed">{c.desc}</p>
-                                            </div>
-                                            
+                                            <p className="text-sm font-normal text-slate-700 leading-relaxed">{c.desc}</p>
                                         </div>
 
                                         <div>
-                                            <h4 className="text-[10px] font-black uppercase tracking-widest text-[#224292] mb-8">
+                                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#18357a] mb-4">
                                                 Primary Functions & Responsibilities
                                             </h4>
-                                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-6">
+                                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
                                                 {c.functions.map((f, j) => (
-                                                    <div key={j} className="flex items-start gap-3 py-1">
-                                                        <div className="w-4 h-4 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
-                                                            <CheckCircle2 size={10} />
+                                                    <div key={j} className="flex items-start gap-2.5 py-1">
+                                                        <div className="w-4 h-4 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+                                                            <CheckCircle2 size={11} />
                                                         </div>
-                                                        <p className="text-[13px] font-bold text-black leading-relaxed">{f}</p>
+                                                        <p className="text-xs sm:text-sm font-normal text-slate-700 leading-relaxed">{f}</p>
                                                     </div>
                                                 ))}
                                             </div>
                                             {c.name === 'Board of Studies (BoS)' && (
-                                                <div className="mt-12 overflow-hidden rounded-xl border border-blue-100 bg-white shadow-sm">
+                                                <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                                                     <div className="overflow-x-auto">
-                                                        <table className="w-full text-left border-collapse">
+                                                        <table className="w-full text-left border-collapse font-graphik text-sm">
                                                             <thead>
-                                                                <tr className="bg-[#224292] text-white">
-                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center w-20">S.No.</th>
-                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20">Board of Studies (BoS)</th>
-                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20">Committee - Members</th>
+                                                                <tr className="bg-[#18357a] text-white">
+                                                                    <th className="py-3 px-6 font-semibold text-xs uppercase tracking-wider text-center w-20">S.No.</th>
+                                                                    <th className="py-3 px-6 font-semibold text-xs uppercase tracking-wider">Board of Studies (BoS)</th>
+                                                                    <th className="py-3 px-6 font-semibold text-xs uppercase tracking-wider text-center w-36">Committee</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -572,11 +553,11 @@ const AutonomousPage = () => {
                                                                     { id: 6, name: 'Faculty of Science and Humanities', link: shBos },
                                                                     { id: 7, name: 'Faculty of Management Sciences', link: mbaBos },
                                                                 ].map((row, index) => (
-                                                                    <tr key={index} className="border-b border-blue-50 hover:bg-blue-50/30 transition-colors">
-                                                                        <td className="py-4 px-6 text-[14px] text-slate-600 text-center border-r border-blue-50">{row.id}</td>
-                                                                        <td className="py-4 px-6 text-[14px] text-slate-600 border-r border-blue-50">{row.name}</td>
-                                                                        <td className="py-4 px-6 text-[14px] text-center">
-                                                                            <a href={row.link} target="_blank" rel="noopener noreferrer" className="text-black font-bold hover:text-[#224292] hover:underline">
+                                                                    <tr key={index} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                                        <td className="py-3 px-6 text-slate-700 text-center font-medium">{row.id}</td>
+                                                                        <td className="py-3 px-6 text-slate-800 font-normal">{row.name}</td>
+                                                                        <td className="py-3 px-6 text-center">
+                                                                            <a href={row.link} target="_blank" rel="noopener noreferrer" className="text-[#18357a] font-semibold hover:text-[#ffc107] hover:underline text-xs">
                                                                                 Click here
                                                                             </a>
                                                                         </td>
@@ -588,14 +569,14 @@ const AutonomousPage = () => {
                                                 </div>
                                             )}
                                             {c.name === 'Academic Council' && (
-                                                <div className="mt-12 overflow-hidden rounded-xl border border-blue-100 bg-white shadow-sm">
+                                                <div className="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                                                     <div className="overflow-x-auto">
-                                                        <table className="w-full text-left border-collapse">
+                                                        <table className="w-full text-left border-collapse font-graphik text-sm">
                                                             <thead>
-                                                                <tr className="bg-[#224292] text-white">
-                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20 w-1/3">Meeting No.</th>
-                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20 w-1/3">Date</th>
-                                                                    <th className="py-4 px-6 font-bold text-[15px] text-center border-l border-white/20 w-1/3">Minutes of Meeting</th>
+                                                                <tr className="bg-[#18357a] text-white">
+                                                                    <th className="py-3 px-6 font-semibold text-xs uppercase tracking-wider text-center w-1/3">Meeting No.</th>
+                                                                    <th className="py-3 px-6 font-semibold text-xs uppercase tracking-wider text-center w-1/3">Date</th>
+                                                                    <th className="py-3 px-6 font-semibold text-xs uppercase tracking-wider text-center w-1/3">Minutes of Meeting</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -609,11 +590,11 @@ const AutonomousPage = () => {
                                                                     { no: 'ACM-07', date: '11.10.2025', link: acm07 },
                                                                     { no: 'ACM-08', date: '15.12.2025', link: acm08 },
                                                                 ].map((row, index) => (
-                                                                    <tr key={index} className="border-b border-blue-50 hover:bg-blue-50/30 transition-colors">
-                                                                        <td className="py-4 px-6 text-[14px] text-slate-600 border-r border-blue-50">{row.no}</td>
-                                                                        <td className="py-4 px-6 text-[14px] text-slate-600 border-r border-blue-50">{row.date}</td>
-                                                                        <td className="py-4 px-6 text-[14px] text-center">
-                                                                            <a href={row.link} target="_blank" rel="noopener noreferrer" className="text-black font-bold hover:text-[#224292] hover:underline">
+                                                                    <tr key={index} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                                        <td className="py-3 px-6 text-slate-700 text-center font-medium">{row.no}</td>
+                                                                        <td className="py-3 px-6 text-slate-700 text-center font-normal">{row.date}</td>
+                                                                        <td className="py-3 px-6 text-center">
+                                                                            <a href={row.link} target="_blank" rel="noopener noreferrer" className="text-[#18357a] font-semibold hover:text-[#ffc107] hover:underline text-xs">
                                                                                 Click here
                                                                             </a>
                                                                         </td>
@@ -641,36 +622,33 @@ const AutonomousPage = () => {
                             id="cdda" 
                             className="scroll-mt-32"
                         >
-                            <div className="mb-24 last:mb-0">
-                                <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-16">
+                            <div className="space-y-8">
+                                <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
                                     <div className="max-w-3xl">
-                                        <h3 className="text-3xl font-black mb-6 leading-tight">
-                                            <span className="text-[#224292]">Centre for Curriculum</span>{' '}
-                                            <span className="text-[#ffc107]">Design Delivery and Assessment</span>
+                                        <h3 className="text-2xl sm:text-3xl font-bold text-[#18357a] mb-3 leading-tight">
+                                            Centre for Curriculum Design Delivery and Assessment (CDDA)
                                         </h3>
-                                        <p className="text-[13px] font-bold text-black leading-relaxed text-justify">
+                                        <p className="text-sm font-normal text-slate-700 leading-relaxed text-justify">
                                             The Centre for Curriculum Design, Delivery and Assessment (CDDA) coordinates and strengthens the academic processes of the Institute. It ensures quality curriculum planning, effective teaching-learning, and transparent assessment practices in alignment with institutional objectives and regulatory standards.
                                         </p>
                                     </div>
                                     
-                                    <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full lg:w-auto">
-                                        <div className="flex items-center gap-4 px-6 py-4 bg-white border border-blue-100 rounded-2xl shadow-lg transition-all group/btn">
-                                            <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-[#224292] transition-all">
-                                                <Building2 size={20} />
-                                            </div>
-                                            <div>
-                                                <p className="text-[8px] font-black uppercase tracking-widest text-[#ffc107] mb-0.5">Director – CDDA</p>
-                                                <span className="text-[10px] font-black uppercase tracking-widest text-[#224292]">Dr. S. Kalpana Devi</span>
-                                            </div>
+                                    <div className="flex items-center gap-4 px-5 py-3.5 bg-white border border-slate-200 rounded-xl shadow-xs shrink-0">
+                                        <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-[#18357a]">
+                                            <Building2 size={20} />
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] font-bold uppercase tracking-wider text-[#ffc107] mb-0.5">Director – CDDA</p>
+                                            <span className="text-xs font-bold text-[#18357a]">Dr. S. Kalpana Devi</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#224292] mb-8">
+                                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#18357a] mb-4">
                                         Primary Functions & Responsibilities
                                     </h4>
-                                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
                                         {[
                                             'Formation of Regulations',
                                             'Design and revise curriculum for UG and PG programmes.',
@@ -683,17 +661,15 @@ const AutonomousPage = () => {
                                             'Maintain academic records and compliance documents.',
                                             'Support continuous quality improvement in academics.'
                                         ].map((f, j) => (
-                                            <div key={j} className="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-lg hover:shadow-blue-900/5 transition-all group">
-                                                <div className="w-5 h-5 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-500 shrink-0 mt-0.5">
-                                                    <CheckCircle2 size={12} />
+                                            <div key={j} className="flex items-start gap-2.5 p-3.5 bg-white rounded-xl border border-slate-200/80 shadow-xs hover:border-[#18357a]/30 transition-all">
+                                                <div className="w-4 h-4 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+                                                    <CheckCircle2 size={11} />
                                                 </div>
-                                                <p className="text-[13px] font-bold text-black leading-tight">{f}</p>
+                                                <p className="text-xs sm:text-sm font-normal text-slate-700 leading-snug">{f}</p>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
-
-
                             </div>
                         </motion.section>
                     )}
@@ -708,17 +684,17 @@ const AutonomousPage = () => {
                             id="regulations" 
                             className="scroll-mt-32"
                         >
-                            <div className="mb-12">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-14 h-14 bg-amber-50 rounded-[1.5rem] flex items-center justify-center text-amber-600">
-                                        <FileText size={28} />
+                            <div className="mb-8">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
+                                        <FileText size={22} />
                                     </div>
-                                    <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Academic Regulations</h2>
+                                    <h2 className="text-2xl sm:text-3xl font-bold text-[#18357a]">Academic Regulations</h2>
                                 </div>
-                                <p className="text-black text-[13px] font-bold">Guidelines and policies governing the academic journey of every KIOT graduate.</p>
+                                <p className="text-sm font-normal text-slate-600">Guidelines and policies governing the academic journey of every KIOT graduate.</p>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
                                 {[
                                     { title: 'B.E. / B.Tech', file: beBtechReg },
                                     { title: 'M.E. / M.Tech / M.C.A', file: meMtechMcaReg },
@@ -728,15 +704,15 @@ const AutonomousPage = () => {
                                     <button 
                                         key={i} 
                                         onClick={() => window.open(reg.file, '_blank')}
-                                        className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-left"
+                                        className="flex items-center gap-3.5 p-4 bg-white border border-slate-200/80 rounded-xl shadow-xs hover:border-[#18357a]/40 hover:bg-slate-50 transition-all group w-full text-left cursor-pointer"
                                     >
-                                        <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-red-500 shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all">
-                                            <FileText size={20} />
+                                        <div className="w-9 h-9 bg-red-50 rounded-lg flex items-center justify-center text-red-500 shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all">
+                                            <FileText size={18} />
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                            <p className="text-[14px] font-black text-[#224292] leading-tight">{reg.title}</p>
+                                            <p className="text-xs sm:text-sm font-semibold text-[#18357a] leading-tight">{reg.title}</p>
                                         </div>
-                                        <ExternalLink size={14} className="text-slate-300 group-hover:text-[#224292] transition-colors shrink-0" />
+                                        <ExternalLink size={14} className="text-slate-400 group-hover:text-[#18357a] transition-colors shrink-0" />
                                     </button>
                                 ))}
                             </div>
@@ -754,22 +730,21 @@ const AutonomousPage = () => {
                             id="curriculum" 
                             className="scroll-mt-32"
                         >
-                            <div className="mb-12">
-                                <div className="flex items-center gap-3 sm:gap-4 mb-4">
-                                    <div className="w-10 h-10 sm:w-14 sm:h-14 bg-blue-50 rounded-xl sm:rounded-[1.5rem] flex items-center justify-center text-blue-600 shrink-0">
-                                        <BookOpen size={20} className="sm:w-7 sm:h-7" />
+                            <div className="mb-8">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                                        <BookOpen size={22} />
                                     </div>
-                                    <h2 className="text-2xl sm:text-4xl font-black text-[#224292] tracking-tighter whitespace-nowrap">Curriculum & Syllabi</h2>
+                                    <h2 className="text-2xl sm:text-3xl font-bold text-[#18357a]">Curriculum & Syllabi</h2>
                                 </div>
-                                <p className="text-black text-[13px] font-bold">Department-wise curriculum design and syllabus structure for all autonomous degree programmes.</p>
+                                <p className="text-sm font-normal text-slate-600">Department-wise curriculum design and syllabus structure for all autonomous degree programmes.</p>
                             </div>
 
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mt-6">
                                 {[
                                     {
                                         name: 'Computer Science and Engineering',
                                         code: 'CSE',
-                                        deptLink: '/academics/undergraduate/be-cse',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - VI Sem)', file: cseUgSyllabus },
                                             { title: 'PG Syllabus (I - IV Sem)', file: csePgSyllabus }
@@ -778,7 +753,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Electronics and Communication Engineering',
                                         code: 'ECE',
-                                        deptLink: '/academics/undergraduate/be-ece',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - VI Sem)', file: eceUgSyllabus },
                                             { title: 'PG Syllabus (I - IV Sem)', file: ecePgSyllabus }
@@ -787,7 +761,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Electrical and Electronics Engineering',
                                         code: 'EEE',
-                                        deptLink: '/academics/undergraduate/be-eee',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - VI Sem)', file: eeeUgSyllabus },
                                             { title: 'PG Syllabus (I - IV Sem)', file: eeePgSyllabus }
@@ -796,7 +769,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Mechanical Engineering',
                                         code: 'MECH',
-                                        deptLink: '/academics/undergraduate/be-mechanical',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - VI Sem)', file: mechUgSyllabus },
                                             { title: 'PG Syllabus (I - IV Sem)', file: mechPgSyllabus }
@@ -805,7 +777,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Information Technology',
                                         code: 'IT',
-                                        deptLink: '/academics/undergraduate/btech-it',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - VI Sem)', file: itSyllabus }
                                         ]
@@ -813,7 +784,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Civil Engineering',
                                         code: 'CIVIL',
-                                        deptLink: '/academics/undergraduate/be-civil',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - VI Sem)', file: civilSyllabus }
                                         ]
@@ -821,7 +791,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Artificial Intelligence & Data Science',
                                         code: 'AI&DS',
-                                        deptLink: '/academics/undergraduate/btech-aids',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - VI Sem)', file: aidsSyllabus }
                                         ]
@@ -829,7 +798,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Computer Science & Business Systems',
                                         code: 'CSBS',
-                                        deptLink: '/academics/undergraduate/btech-csbs',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - VI Sem)', file: csbsSyllabus }
                                         ]
@@ -837,7 +805,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Electronics and Computer Engineering',
                                         code: 'ECX',
-                                        deptLink: '/academics/undergraduate/be-ece',
                                         syllabus: [
                                             { title: 'UG Syllabus (I - IV Sem)', file: ecxSyllabus }
                                         ]
@@ -845,7 +812,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Master of Business Administration (General)',
                                         code: 'MBA',
-                                        deptLink: '/academics/postgraduate/mba-general',
                                         syllabus: [
                                             { title: 'PG Syllabus (I - IV Sem)', file: mbaGenSyllabus }
                                         ]
@@ -853,7 +819,6 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Master of Business Administration (IEV)',
                                         code: 'MBA (IEV)',
-                                        deptLink: '/academics/postgraduate/mba-iev',
                                         syllabus: [
                                             { title: 'PG Syllabus (I - IV Sem)', file: mbaIevSyllabus }
                                         ]
@@ -861,26 +826,25 @@ const AutonomousPage = () => {
                                     {
                                         name: 'Master of Computer Applications',
                                         code: 'MCA',
-                                        deptLink: '/academics/postgraduate/mca-general',
                                         syllabus: [
                                             { title: 'PG Syllabus (I - II Sem)', file: mcaSyllabus }
                                         ]
                                     }
                                 ].map((dept, i) => (
-                                    <div key={i} className="bg-white border border-slate-100/80 rounded-2xl p-6 shadow-xl shadow-black/[0.12] hover:translate-y-[-2px] transition-all flex flex-col justify-between font-graphik h-full">
+                                    <div key={i} className="bg-white border border-slate-200/80 rounded-xl p-5 shadow-xs hover:border-[#18357a]/30 transition-all flex flex-col justify-between font-graphik h-full">
                                         <div>
-                                            <div className="flex items-start justify-between gap-4 mb-5 border-b border-slate-100 pb-4">
-                                                <h3 className="text-[15px] font-extrabold text-[#224292] leading-snug whitespace-nowrap overflow-hidden text-ellipsis" title={dept.name}>{dept.name}</h3>
+                                            <div className="flex items-start justify-between gap-4 mb-4 border-b border-slate-100 pb-3">
+                                                <h3 className="text-sm sm:text-base font-bold text-[#18357a] leading-snug" title={dept.name}>{dept.name}</h3>
                                             </div>
-                                            <div className="space-y-2.5">
+                                            <div className="space-y-2">
                                                 {dept.syllabus.map((syl, idx) => (
                                                     <button 
                                                         key={idx} 
                                                         onClick={() => window.open(syl.file, '_blank')}
-                                                        className="flex items-center gap-3.5 w-full p-3 bg-slate-50/70 hover:bg-red-50/50 hover:text-red-600 rounded-xl text-slate-600 text-xs font-medium transition-all group border border-slate-100/50 hover:border-red-100/60"
+                                                        className="flex items-center gap-3 w-full p-2.5 bg-slate-50 hover:bg-red-50/60 hover:text-red-600 rounded-lg text-slate-700 text-xs font-medium transition-all group border border-slate-100 hover:border-red-100 cursor-pointer"
                                                     >
-                                                        <FileText size={18} className="text-red-500 shrink-0 group-hover:scale-105 transition-transform" />
-                                                        <span className="flex-1 text-left whitespace-normal leading-relaxed">{syl.title}</span>
+                                                        <FileText size={16} className="text-red-500 shrink-0 group-hover:scale-105 transition-transform" />
+                                                        <span className="flex-1 text-left leading-relaxed">{syl.title}</span>
                                                     </button>
                                                 ))}
                                             </div>
@@ -891,7 +855,7 @@ const AutonomousPage = () => {
                         </motion.section>
                     )}
 
-{activeTab === 'schedule' && (
+                    {activeTab === 'schedule' && (
                         <motion.section 
                             key="schedule"
                             initial={{ opacity: 0 }}
@@ -902,18 +866,18 @@ const AutonomousPage = () => {
                             className="scroll-mt-32"
                         >
                             <div className="max-w-[1400px] mx-auto">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-14 h-14 bg-amber-50 rounded-[1.5rem] flex items-center justify-center text-amber-600">
-                                        <Calendar size={28} />
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
+                                        <Calendar size={22} />
                                     </div>
-                                    <h2 className="text-4xl font-black text-[#224292] tracking-tighter">Academic Schedule</h2>
+                                    <h2 className="text-2xl sm:text-3xl font-bold text-[#18357a]">Academic Schedule</h2>
                                 </div>
-                                <p className="text-black text-[13px] font-bold max-w-xl mb-12">Institutional academic calendar and semester schedules for all degree programmes.</p>
+                                <p className="text-sm font-normal text-slate-600 max-w-xl mb-8">Institutional academic calendar and semester schedules for all degree programmes.</p>
 
                                 {loadingSchedules ? (
-                                    <div className="flex flex-col items-center py-20 bg-white border border-slate-100 rounded-3xl shadow-sm">
-                                        <div className="w-10 h-10 border-4 border-[#ffc107] border-t-transparent rounded-full animate-spin mb-4" />
-                                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Loading Records...</span>
+                                    <div className="flex flex-col items-center py-16 bg-white border border-slate-200 rounded-2xl shadow-xs">
+                                        <div className="w-8 h-8 border-3 border-[#ffc107] border-t-transparent rounded-full animate-spin mb-3" />
+                                        <span className="text-xs font-medium text-slate-500">Loading Records...</span>
                                     </div>
                                 ) : (
                                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -921,21 +885,21 @@ const AutonomousPage = () => {
                                             <button 
                                                 key={i} 
                                                 onClick={() => window.open(row.pdf_url, '_blank')}
-                                                className="flex items-center gap-4 p-4 bg-white border border-slate-100 rounded-xl shadow-sm hover:shadow-xl hover:translate-y-[-2px] transition-all group w-full text-left"
+                                                className="flex items-center gap-3.5 p-4 bg-white border border-slate-200/80 rounded-xl shadow-xs hover:border-[#18357a]/40 hover:bg-slate-50 transition-all group w-full text-left cursor-pointer"
                                             >
-                                                <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center text-red-500 shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all">
-                                                    <FileText size={20} />
+                                                <div className="w-9 h-9 bg-red-50 rounded-lg flex items-center justify-center text-red-500 shrink-0 group-hover:bg-red-500 group-hover:text-white transition-all">
+                                                    <FileText size={18} />
                                                 </div>
                                                 <div className="flex-1 min-w-0">
-                                                    <p className="text-[14px] font-bold text-[#224292] truncate leading-tight">{row.year_or_version}</p>
-                                                    <p className="text-[11px] font-medium text-slate-400 mt-0.5">{row.semester}</p>
+                                                    <p className="text-xs sm:text-sm font-semibold text-[#18357a] truncate leading-tight">{row.year_or_version}</p>
+                                                    <p className="text-[11px] font-normal text-slate-500 mt-0.5">{row.semester}</p>
                                                 </div>
-                                                <Download size={14} className="text-slate-300 group-hover:text-[#224292] transition-colors shrink-0" />
+                                                <Download size={14} className="text-slate-400 group-hover:text-[#18357a] transition-colors shrink-0" />
                                             </button>
                                         ))}
                                         {schedules.length === 0 && (
-                                            <div className="col-span-full py-12 text-center bg-slate-50/50 rounded-xl border border-dashed border-slate-200">
-                                                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">No schedules available.</span>
+                                            <div className="col-span-full py-12 text-center bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                                                <span className="text-xs font-medium text-slate-500">No schedules available.</span>
                                             </div>
                                         )}
                                     </div>
@@ -954,35 +918,32 @@ const AutonomousPage = () => {
                             id="cec" 
                             className="scroll-mt-32"
                         >
-                            <div className="grid lg:grid-cols-12 gap-12 items-start">
+                            <div className="grid lg:grid-cols-12 gap-8 items-start">
                                 <div className="lg:col-span-5">
-                                    <div className="bg-[#224292] p-10 rounded-3xl text-white relative overflow-hidden shadow-2xl h-full flex flex-col justify-between">
-                                        <div className="absolute -bottom-20 -right-20 opacity-10">
-                                            <UserCheck size={400} />
-                                        </div>
-                                        <div className="relative z-10">
-                                            <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-md">
-                                                <UserCheck size={32} className="text-[#ffc107]" />
+                                    <div className="bg-[#18357a] p-6 sm:p-8 rounded-2xl text-white shadow-xl h-full flex flex-col justify-between">
+                                        <div>
+                                            <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+                                                <UserCheck size={24} className="text-[#ffc107]" />
                                             </div>
-                                            <h3 className="text-4xl font-black tracking-tighter mb-6 leading-tight">Credit Equivalence Committee (CEC)</h3>
-                                            <p className="text-white/60 text-lg font-medium leading-relaxed mb-12">
+                                            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3 leading-tight">Credit Equivalence Committee (CEC)</h3>
+                                            <p className="text-slate-200 text-xs sm:text-sm font-normal leading-relaxed mb-8">
                                                 Institute-level committee constituted to evaluate and approve credit equivalence requests for external, online, and special academic courses.
                                             </p>
                                         </div>
-                                        <div className="relative z-10 space-y-3">
-                                            <p className="text-[10px] font-black text-[#ffc107] uppercase tracking-[0.3em] mb-4">Committee Composition</p>
+                                        <div className="space-y-2.5 pt-6 border-t border-white/15">
+                                            <p className="text-xs font-bold text-[#ffc107] uppercase tracking-wider mb-2">Committee Composition</p>
                                             {[
                                                 { role: 'Chairman', name: 'Senior Professor nominated by the Principal' },
                                                 { role: 'Convenor', name: 'Director, CDDA' },
                                                 { role: 'Member', name: 'Concerned Head of the Department' }
                                             ].map((m, i) => (
-                                                <div key={i} className="flex items-center gap-5 p-4 bg-white/5 rounded-2xl border border-white/5">
-                                                    <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-                                                        <UserCheck size={18} className="text-[#ffc107]" />
+                                                <div key={i} className="flex items-center gap-3 p-3 bg-white/10 rounded-xl border border-white/10">
+                                                    <div className="w-7 h-7 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                                        <UserCheck size={14} className="text-[#ffc107]" />
                                                     </div>
                                                     <div>
-                                                        <p className="text-[9px] font-black uppercase text-white/40 mb-1">{m.role}</p>
-                                                        <p className="text-sm font-black">{m.name}</p>
+                                                        <p className="text-[10px] font-semibold uppercase text-slate-300">{m.role}</p>
+                                                        <p className="text-xs font-medium text-white">{m.name}</p>
                                                     </div>
                                                 </div>
                                             ))}
@@ -990,9 +951,9 @@ const AutonomousPage = () => {
                                     </div>
                                 </div>
                                 <div className="lg:col-span-7">
-                                    <div className="bg-white border border-slate-100 rounded-3xl p-10 shadow-sm h-full">
-                                        <h4 className="text-3xl font-black text-[#224292] mb-10 tracking-tight">Functions of CEC</h4>
-                                        <div className="grid grid-cols-1 gap-6">
+                                    <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs h-full">
+                                        <h4 className="text-xl sm:text-2xl font-bold text-[#18357a] mb-6">Functions of CEC</h4>
+                                        <div className="grid grid-cols-1 gap-3">
                                             {[
                                                 'Approve credit transfer for online, off-campus, hybrid, and external courses.',
                                                 'Decide if external courses can replace KIOT curriculum courses.',
@@ -1005,11 +966,11 @@ const AutonomousPage = () => {
                                                 'Recommend approved credits to CDDA / COE for student records.',
                                                 'Update guidelines based on university and regulatory changes.'
                                             ].map((func, i) => (
-                                                <div key={i} className="flex items-start gap-5 p-5 rounded-2xl hover:bg-slate-50 border border-slate-50 hover:border-slate-100 transition-all group w-full">
-                                                    <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-500 shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-inner">
-                                                        <CheckCircle2 size={16} />
+                                                <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50/70 border border-slate-100 hover:bg-blue-50/30 transition-all">
+                                                    <div className="w-5 h-5 rounded-md bg-emerald-50 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5">
+                                                        <CheckCircle2 size={12} />
                                                     </div>
-                                                    <p className="text-[15px] font-bold text-slate-600 leading-relaxed">{func}</p>
+                                                    <p className="text-xs sm:text-sm font-normal text-slate-700 leading-relaxed">{func}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -1029,36 +990,34 @@ const AutonomousPage = () => {
                             id="honours" 
                             className="scroll-mt-32"
                         >
-                            <div className="text-center max-w-3xl mx-auto mb-12">
-                                <div className="inline-flex items-center gap-3 px-4 py-2 bg-amber-50 rounded-full mb-6">
-                                    <Trophy size={16} className="text-amber-600" />
-                                    <span className="text-[10px] font-black text-amber-600 uppercase tracking-widest">Optional Excellence Pathway</span>
+                            <div className="text-center max-w-3xl mx-auto mb-10">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 rounded-full mb-3 border border-amber-200/60">
+                                    <Trophy size={14} className="text-amber-600" />
+                                    <span className="text-[11px] font-semibold text-amber-700 uppercase tracking-wider">Optional Excellence Pathway</span>
                                 </div>
-                                <h2 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter mb-6 leading-tight">Advanced Degree Specializations</h2>
-                                <p className="text-slate-500 font-medium leading-relaxed">
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#18357a] tracking-tight mb-2">Advanced Degree Specializations</h2>
+                                <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
                                     Elevate your professional profile with additional credits in core verticals or multidisciplinary domains.
                                 </p>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-12 mb-12">
-                                <div className="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm relative overflow-hidden group hover:shadow-2xl transition-all">
-                                    <div className="absolute top-0 right-0 p-12 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity">
-                                        <Trophy size={250} />
-                                    </div>
+                            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-10">
+                                {/* Honours Degree Card */}
+                                <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-xs relative overflow-hidden group hover:shadow-md hover:border-[#18357a]/40 transition-all">
                                     <div className="relative z-10">
-                                        <div className="flex items-center gap-6 mb-10">
-                                            <div className="w-16 h-16 bg-amber-50 rounded-3xl flex items-center justify-center text-amber-600 shadow-inner">
-                                                <Trophy size={32} />
+                                        <div className="flex items-center gap-4 mb-6">
+                                            <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shrink-0">
+                                                <Trophy size={24} />
                                             </div>
                                             <div>
-                                                <h3 className="text-3xl font-black text-[#224292]">Honours Degree</h3>
-                                                <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-1">No history of arrears</p>
+                                                <h3 className="text-xl font-bold text-[#18357a]">Honours Degree</h3>
+                                                <p className="text-xs font-medium text-slate-500">No history of arrears</p>
                                             </div>
                                         </div>
-                                        <p className="text-[14px] font-bold text-black leading-relaxed mb-10">
-                                            Earn an additional 18 credits within the <span className="text-[#224292]">SAME Faculty</span> to gain deep specialized expertise in your primary discipline.
+                                        <p className="text-xs sm:text-sm font-normal text-slate-700 leading-relaxed mb-6">
+                                            Earn an additional 18 credits within the <span className="font-semibold text-[#18357a]">SAME Faculty</span> to gain deep specialized expertise in your primary discipline.
                                         </p>
-                                        <div className="space-y-4 mb-6">
+                                        <div className="space-y-3 mb-6">
                                             {[
                                                 'Earn 18 additional credits from same programme verticals.',
                                                 'Maximum 6 online credits (NPTEL) above regular limit.',
@@ -1067,36 +1026,35 @@ const AutonomousPage = () => {
                                                 'Option to convert to Professional Electives if incomplete.',
                                                 'Higher grades considered for CGPA if credits exceed 18.'
                                             ].map((item, i) => (
-                                                <div key={i} className="flex items-start gap-4 text-[14px] text-black">
-                                                    <div className="w-2 h-2 bg-amber-400 rounded-full mt-2 shrink-0" />
-                                                    <span className="leading-relaxed">{item}</span>
+                                                <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                                                    <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-1.5 shrink-0" />
+                                                    <span className="font-normal leading-relaxed">{item}</span>
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className="p-6 bg-slate-50 rounded-2xl flex items-center justify-between">
-                                            <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Requirement</span>
-                                            <span className="text-lg font-black text-[#224292]">18 Credits</span>
+                                        <div className="p-4 bg-slate-50 rounded-xl flex items-center justify-between border border-slate-100">
+                                            <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Requirement</span>
+                                            <span className="text-sm sm:text-base font-bold text-[#18357a]">18 Credits</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm relative overflow-hidden group hover:shadow-2xl transition-all">
-                                    <div className="absolute top-0 right-0 p-12 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity">
-                                        <Award size={250} />
-                                    </div>
+
+                                {/* Minor Degree Card */}
+                                <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 shadow-xs relative overflow-hidden group hover:shadow-md hover:border-[#18357a]/40 transition-all">
                                     <div className="relative z-10">
-                                        <div className="flex items-center gap-6 mb-10">
-                                            <div className="w-16 h-16 bg-emerald-50 rounded-3xl flex items-center justify-center text-emerald-600 shadow-inner">
-                                                <Award size={32} />
+                                        <div className="flex items-center gap-4 mb-6">
+                                            <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                                                <Award size={24} />
                                             </div>
                                             <div>
-                                                <h3 className="text-3xl font-black text-[#224292]">Minor Degree</h3>
-                                                <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-1">Cross-Disciplinary Pathway</p>
+                                                <h3 className="text-xl font-bold text-[#18357a]">Minor Degree</h3>
+                                                <p className="text-xs font-medium text-slate-500">Cross-Disciplinary Pathway</p>
                                             </div>
                                         </div>
-                                        <p className="text-[14px] font-bold text-black leading-relaxed mb-10">
-                                            Broaden your horizons by earning 18 additional credits from a <span className="text-[#224292]">DIFFERENT Faculty</span> or Discipline.
+                                        <p className="text-xs sm:text-sm font-normal text-slate-700 leading-relaxed mb-6">
+                                            Broaden your horizons by earning 18 additional credits from a <span className="font-semibold text-[#18357a]">DIFFERENT Faculty</span> or Discipline.
                                         </p>
-                                        <div className="space-y-4 mb-6">
+                                        <div className="space-y-3 mb-6">
                                             {[
                                                 'Earn 18 additional credits from OTHER programmes.',
                                                 'Maximum 6 online credits (NPTEL) above regular limit.',
@@ -1104,56 +1062,57 @@ const AutonomousPage = () => {
                                                 'Option to convert to Open Electives if incomplete.',
                                                 'Excess credits treated as Audit Courses.'
                                             ].map((item, i) => (
-                                                <div key={i} className="flex items-start gap-4 text-[14px] text-black">
-                                                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 shrink-0" />
-                                                    <span className="leading-relaxed">{item}</span>
+                                                <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                                                    <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-1.5 shrink-0" />
+                                                    <span className="font-normal leading-relaxed">{item}</span>
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className="p-6 bg-slate-50 rounded-2xl flex items-center justify-between">
-                                            <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Requirement</span>
-                                            <span className="text-lg font-black text-[#224292]">18 Credits</span>
+                                        <div className="p-4 bg-slate-50 rounded-xl flex items-center justify-between border border-slate-100">
+                                            <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Requirement</span>
+                                            <span className="text-sm sm:text-base font-bold text-[#18357a]">18 Credits</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                            {/* Minor Specialization Domains Table */}
                             <div className="max-w-4xl mx-auto">
-                                <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-2xl">
-                                    <div className="bg-[#224292] p-8 text-white flex items-center justify-between">
+                                <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-lg shadow-slate-900/5">
+                                    <div className="bg-[#18357a] p-5 sm:p-6 text-white flex items-center justify-between">
                                         <div>
-                                            <h4 className="text-3xl font-black tracking-tight">Minor Specialization Domains</h4>
-                                            <p className="text-white/50 text-[11px] font-black uppercase tracking-[0.3em] mt-2">Available for Other Departments</p>
+                                            <h4 className="text-lg sm:text-xl font-bold tracking-tight text-white">Minor Specialization Domains</h4>
+                                            <p className="text-slate-200 text-xs font-medium uppercase tracking-wider mt-1">Available for Other Departments</p>
                                         </div>
-                                        <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center">
-                                            <Settings size={28} className="text-[#ffc107] animate-spin-slow" />
+                                        <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
+                                            <Settings size={20} className="text-[#ffc107]" />
                                         </div>
                                     </div>
-                                    <div className="p-4">
-                                        <table className="w-full text-left">
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-left font-graphik border-collapse">
                                             <thead>
-                                                <tr className="border-b border-slate-100">
-                                                    <th className="px-8 py-4 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Offering Department</th>
-                                                    <th className="px-8 py-4 text-[10px] font-black text-[#224292] uppercase tracking-[0.3em]">Domain Specialization</th>
+                                                <tr className="bg-slate-100/80 border-b border-slate-200">
+                                                    <th className="px-6 py-3.5 text-xs font-semibold text-[#18357a] uppercase tracking-wider w-1/3">Offering Department</th>
+                                                    <th className="px-6 py-3.5 text-xs font-semibold text-[#18357a] uppercase tracking-wider">Domain Specialization</th>
                                                 </tr>
                                             </thead>
-                                            <tbody className="divide-y divide-slate-50">
+                                            <tbody className="text-sm">
                                                 {minorDegrees.length > 0 ? (
                                                     minorDegrees.map((m, i) => (
-                                                        <tr key={i} className="hover:bg-slate-50/50 transition-all group">
-                                                            <td className="px-8 py-5 text-sm font-black text-[#224292]">{m.dept}</td>
-                                                            <td className="px-8 py-5">
-                                                                <div className="flex items-center gap-4">
-                                                                    <div className="w-3 h-3 bg-[#ffc107] rounded-full group-hover:scale-150 transition-transform" />
-                                                                    <span className="text-[15px] font-bold text-slate-600">{m.spec}</span>
+                                                        <tr key={i} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                            <td className="px-6 py-3.5 font-semibold text-[#18357a]">{m.dept}</td>
+                                                            <td className="px-6 py-3.5">
+                                                                <div className="flex items-center gap-2.5">
+                                                                    <div className="w-2 h-2 bg-[#ffc107] rounded-full shrink-0" />
+                                                                    <span className="font-normal text-slate-800">{m.spec}</span>
                                                                 </div>
                                                             </td>
                                                         </tr>
                                                     ))
                                                 ) : (
                                                     <tr>
-                                                        <td colSpan="2" className="px-8 py-16 text-center">
-                                                            <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">No domains listed.</span>
+                                                        <td colSpan="2" className="px-6 py-8 text-center text-slate-500 font-medium text-xs">
+                                                            No domains listed.
                                                         </td>
                                                     </tr>
                                                 )}

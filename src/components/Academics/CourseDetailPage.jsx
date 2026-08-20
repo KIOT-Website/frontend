@@ -108,7 +108,7 @@ import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFa
 import { eeeStudentAchievements, eeeFacultyAchievements } from './departments/eee/eeeData.jsx'
 import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards } from './departments/aids/aidsData.jsx'
 import { csbsStudentAchievements, csbsStudentAwards, csbsFacultyAwards, csbsFacultyAchievements, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities, csbsInnovativePractices } from './departments/csbs/csbsData.jsx'
-import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements } from './departments/civil/civilData.jsx'
+import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements, civilInnovativePractices } from './departments/civil/civilData.jsx'
 import { mechanicalStudentAchievements, mechanicalFacultyAchievements, mechanicalStudentAwards, mechanicalFacultyAwards } from './departments/mechanical/mechanicalData.jsx'
 import { eceStudentAchievements, eceFacultyAchievements, eceStudentAwards, eceFacultyAwards, eceFacultyNptel, eceStudentNptel } from './departments/ece/eceData.jsx'
 import { itStudentAchievements, itFacultyAchievements, itStudentAwards, itFacultyAwards } from './departments/it/itData.jsx'
@@ -3310,7 +3310,7 @@ function AchievementSection({ courseId, courseName }) {
                     {showYearHeader && (
                       <tr className="bg-slate-100">
                         <td colSpan="6" className="px-4 py-3 text-center text-sm font-bold text-slate-800 border-y border-slate-200">
-                          STUDENTS AWARDS {item.year}
+                          STUDENT ACHIEVEMENTS {item.year}
                         </td>
                       </tr>
                     )}
@@ -3398,7 +3398,7 @@ function AchievementSection({ courseId, courseName }) {
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Achiever Name and Designation</th>
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event / Achievement</th>
-                  {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece') && (
+                  {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece' || courseId === 'be-civil') && (
                     <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
                   )}
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
@@ -3435,7 +3435,7 @@ function AchievementSection({ courseId, courseName }) {
                         <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{displayIndex}</td>
                         <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
                         <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
-                        {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece') && (
+                        {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece' || courseId === 'be-civil') && (
                           <td className="px-4 py-3 text-center">
                             <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
                               {item.level}
@@ -3808,6 +3808,77 @@ function InnovativePracticesSection({ courseId }) {
           </div>
         </div>
       </div>
+
+      {courseId === 'be-civil' && (
+        <div className="space-y-6 sm:space-y-8">
+          {/* 6 Methodologies Section */}
+          <div className="bg-white rounded-2xl sm:rounded-[2rem] border border-[#DEE7F4] p-3.5 sm:p-6 md:p-10 shadow-xl shadow-blue-900/5 space-y-8 md:space-y-12">
+            <div>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-graphik text-[#224292] mb-6 sm:mb-8 flex items-center gap-2.5 sm:gap-3">
+                <span className="w-1.5 h-5 sm:h-6 bg-[#ffc107] rounded-full inline-block" />
+                Teaching Methodologies & Practical Learning
+              </h3>
+
+              <div className="space-y-8 sm:space-y-12">
+                {civilInnovativePractices.practices.map((practice, idx) => {
+                  const isImageLeft = idx % 2 === 0;
+                  return (
+                    <Fragment key={idx}>
+                      {idx > 0 && <div className="h-px bg-slate-100 w-full my-6 sm:my-8" />}
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-stretch">
+                        {/* Picture Column */}
+                        <div className={`lg:col-span-6 flex flex-col ${isImageLeft ? 'order-1' : 'order-1 lg:order-2'}`}>
+                          <div className="relative group w-full h-full flex flex-col">
+                            <div className="absolute -inset-2 bg-gradient-to-r from-[#224292] to-[#ffc107] rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition duration-500" />
+                            <div className="relative bg-white p-1 sm:p-2 rounded-xl sm:rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col">
+                              <img
+                                src={practice.image}
+                                alt={practice.name}
+                                className="w-full h-auto max-h-[260px] sm:max-h-[360px] rounded-lg sm:rounded-xl object-cover shadow-sm flex-1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content Column */}
+                        <div className={`lg:col-span-6 flex flex-col ${isImageLeft ? 'order-2' : 'order-2 lg:order-1'}`}>
+                          <div className="relative bg-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-slate-100 shadow-md flex-1 flex flex-col justify-center">
+                            <div className="space-y-3 sm:space-y-4">
+                              <h4 className="text-base sm:text-lg md:text-xl font-bold font-graphik text-[#224292] flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-[#ffc107]" />
+                                {practice.title}
+                              </h4>
+                              <p className="text-[#333333] leading-relaxed text-[13.5px] sm:text-[14px] md:text-[15px] font-normal font-graphik text-justify whitespace-pre-line">
+                                {practice.description}
+                              </p>
+                            </div>
+
+                            {practice.highlights && practice.highlights.length > 0 && (
+                              <div className="pt-3 sm:pt-4 border-t border-slate-100 mt-3 sm:mt-4">
+                                <p className="font-bold text-[#224292] text-[13px] sm:text-[14px] mb-2 sm:mb-3">Key Highlights:</p>
+                                <ul className="space-y-2">
+                                  {practice.highlights.map((h, hIdx) => (
+                                    <li key={hIdx} className="flex items-start gap-2.5">
+                                      <CheckCircle2 size={16} className="text-[#224292] shrink-0 mt-0.5" />
+                                      <p className="text-[#444444] text-[13px] sm:text-[13.5px] leading-relaxed font-graphik">
+                                        {h}
+                                      </p>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </Fragment>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {(courseId === 'mba-general' || courseId === 'mba-iev') && (
         <div className="space-y-8">
