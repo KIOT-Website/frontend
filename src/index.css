@@ -6,7 +6,11 @@
 
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/* Sonner toast notifications */
+@import "sonner/dist/styles.css";
+
+/* next-themes: dark mode via [data-theme="dark"] or .dark class */
+@custom-variant dark (&:is(.dark *), &:is([data-theme="dark"] *));
 
 @font-face {
   font-family: 'Graphik';

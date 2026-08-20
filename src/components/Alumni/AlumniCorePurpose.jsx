@@ -1,87 +1,89 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Handshake, Briefcase, Mic2, Globe } from 'lucide-react'
+import { Handshake, Briefcase, Mic2, Globe, Sparkles } from 'lucide-react'
 
 const purposes = [
   {
     icon: Handshake,
     title: "Strong Connections",
-    description: "Bridging alumni and institution"
+    description: "Bridging alumni and alma mater through active networking, reunions, and enduring bonds.",
+    badge: "Community"
   },
   {
     icon: Briefcase,
-    title: "Career Support",
-    description: "Internships, placements, referrals"
+    title: "Career & Placement",
+    description: "Unlocking internships, campus hiring pathways, and direct core industry job referrals.",
+    badge: "Opportunities"
   },
   {
     icon: Mic2,
-    title: "Mentorship",
-    description: "Workshops, talks, guidance"
+    title: "Student Mentorship",
+    description: "Empowering current batches through guest talks, technical workshops, and mock interviews.",
+    badge: "Guidance"
   },
   {
     icon: Globe,
-    title: "Representation",
-    description: "Expanding KIOT presence globally"
+    title: "Global Representation",
+    description: "Expanding KIOT's global footprint and reputation across international industry chapters.",
+    badge: "Outreach"
   }
 ]
 
 const AlumniCorePurpose = () => {
   return (
-    <section className="py-8 md:py-10 bg-[#FCFDFD]">
+    <section className="py-12 md:py-16 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Heading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-14 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-sm font-black text-[#ffc107] uppercase tracking-[0.4em] mb-4">Our Mission</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-[#224292] tracking-tighter leading-none">
-              Core Purpose of <br />
-              Alumni Association
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ffc107]/15 border border-[#ffc107]/30 text-[#18357a] text-xs font-black uppercase tracking-widest mb-3">
+              <Sparkles size={13} className="text-[#18357a]" />
+              <span>Core Mission</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#18357a] font-graphik tracking-tight">
+              Core Purpose of <span className="text-[#ffc107]">Alumni Association</span>
             </h3>
           </div>
-          <p className="text-slate-500 font-medium max-w-sm">
-            Fostering a lifelong bond between the institution and its global community of achievers.
+          <p className="text-slate-600 font-medium text-sm md:text-[15px] max-w-sm leading-relaxed">
+            Fostering a lifelong bond between the institution and its vibrant global community of achievers.
           </p>
         </div>
 
-        {/* Purpose Cards Grid - Business Card Style */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Purpose Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {purposes.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="relative aspect-[1.6/1] md:aspect-[1.4/1] rounded-2xl md:rounded-3xl overflow-hidden group shadow-[0_10px_30px_rgba(24,53,122,0.1)] hover:shadow-[0_20px_50px_rgba(24,53,122,0.2)] transition-all duration-500"
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              whileHover={{ y: -6 }}
+              className="bg-[#FCFDFD] p-7 rounded-3xl border border-slate-200/80 shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:border-[#18357a]/30 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
             >
-              {/* Background Split - Deep Blue and Yellow */}
-              <div className="absolute inset-0 bg-[#224292]" />
-              
-              {/* The Angled Yellow Accent - only in the top-right corner */}
-              <div 
-                className="absolute top-0 right-0 w-24 h-24 bg-[#ffc107] transition-transform duration-700 group-hover:scale-110 origin-top-right" 
-                style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}
-              />
+              {/* Top Corner Decorative Gradient */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#18357a]/5 to-transparent rounded-bl-full pointer-events-none group-hover:from-[#ffc107]/20 transition-all duration-500" />
 
-              {/* Card Content */}
-              <div className="relative h-full p-6 md:p-8 flex flex-col justify-between z-10">
-                <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-4 group-hover:bg-[#ffc107] group-hover:border-[#224292]/20 group-hover:text-[#224292] transition-all duration-500">
-                  <item.icon size={24} />
+              <div>
+                {/* Header with Icon and Badge */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-13 h-13 rounded-2xl bg-[#18357a] text-[#ffc107] flex items-center justify-center shadow-md shadow-[#18357a]/20 group-hover:scale-105 transition-transform duration-300">
+                    <item.icon size={24} />
+                  </div>
+                  <span className="text-[10.5px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full group-hover:bg-[#18357a]/10 group-hover:text-[#18357a] transition-colors">
+                    {item.badge}
+                  </span>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-black text-white tracking-tight mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs md:text-[13px] font-semibold text-white/90 leading-tight">
-                    {item.description}
-                  </p>
-                </div>
+                {/* Title & Description */}
+                <h4 className="text-lg font-bold text-[#18357a] font-graphik tracking-tight mb-2.5 group-hover:text-[#18357a]">
+                  {item.title}
+                </h4>
+                <p className="text-xs sm:text-[13px] text-slate-600 font-medium leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-
-              {/* Subtle Overlay on Hover */}
-              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-500 pointer-events-none" />
             </motion.div>
           ))}
         </div>

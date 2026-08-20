@@ -1,4 +1,6 @@
 import { Cpu, Building2 } from 'lucide-react'
+import meSeVKumarImage from '../../assets/Faculity/cse/Dr.V.KUMAR.webp'
+import meSeASekarImage from '../../assets/Faculity/cse/Mr.A.SEKAR.webp'
 
 export const meSeData = {
   name: 'M.E Software Engineering',
@@ -23,7 +25,43 @@ export const meSeData = {
     ],
     whyChoose: ['Advanced software architecture', 'DevOps & Cloud focus', 'Industry-aligned projects'],
     curriculum: [{ year: 'Year 1', semesters: ['Software Architecture', 'Agile Methodologies', 'Advanced Databases'] }],
-    faculty: [{ name: 'Dr. Sakthivel M', designation: 'Associate Professor', experience: '20.1 Years', specialization: 'Software Engineering', rating: 4.8 }],
+    faculty: [
+      {
+        name: 'Dr. Sakthivel M',
+        designation: 'Associate Professor & Head',
+        experience: 'Teaching: 20.1 Years',
+        specialization: 'Software Engineering',
+        rating: 4.8
+      },
+      {
+        name: 'Dr. Kumar V',
+        vidwanId: '242498',
+        designation: 'Professor & Director IM',
+        doj: '04.06.2010',
+        qualification: 'B.E., M.E., Ph.D., MISTE., MIEEE.',
+        association: 'Regular',
+        experience: 'Teaching: 22.9, Research: 19',
+        specialization: 'Computer Networks',
+        email: 'directorim@kiot.ac.in',
+        publications: 'IJ:14, IC:07, NC:03',
+        rating: 4.9,
+        image: meSeVKumarImage
+      },
+      {
+        name: 'Mr. Sekar A',
+        vidwanId: '320611',
+        designation: 'Assistant Professor',
+        doj: '11.07.2016',
+        qualification: 'B.E., M.E.',
+        association: 'Regular',
+        experience: 'Teaching: 13, Industry: 1.8, Research: 2',
+        specialization: 'Mobile Computing, WSN',
+        email: 'ascse@kiot.ac.in',
+        publications: 'IJ:1, IC:2, NC:1',
+        rating: 4.7,
+        image: meSeASekarImage
+      }
+    ],
     labs: [
       {
         name: 'Industrial Linked Laboratories / COEs',

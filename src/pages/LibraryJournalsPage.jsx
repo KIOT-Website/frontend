@@ -147,24 +147,19 @@ const LibraryJournalsPage = () => {
 
     return (
         <div className="min-h-screen bg-[#FCFDFD] pb-24 font-graphik">
-            {/* Minimal Header (Removed Hero) */}
-            <div className="relative pt-6 pb-2 px-6 bg-gradient-to-b from-[#224292]/5 to-transparent overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffc107]/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-                    <motion.h1 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-4xl font-bold text-[#224292] tracking-normal leading-none mb-2"
-                    >
-                        Journals & <span className="text-[#ffc107]">E-Digital</span>
-                    </motion.h1>
-                </div>
-            </div>
+            {/* Header */}
+            <div className="py-10 md:py-12 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#18357a] text-white shadow-md">
+                <div className="w-full max-w-7xl mx-auto flex flex-col items-center md:items-start md:flex-row md:justify-between gap-6 text-center md:text-left">
+                    <div className="space-y-1.5 flex flex-col items-center md:items-start">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-none text-white">
+                            Journals & <span className="text-[#ffc107]">Digital</span>
+                        </h1>
+                        <p className="text-xs sm:text-sm font-medium text-slate-200 uppercase tracking-wider">
+                            National & International Journal Subscriptions & Digital Resources
+                        </p>
+                    </div>
 
-            <div className="max-w-7xl mx-auto px-4 md:px-6 py-2">
-                <div className="flex flex-col md:flex-row md:items-center justify-center gap-4 pt-4 border-t border-slate-100">
-                    <div className="flex flex-col md:flex-row bg-slate-100 p-1.5 rounded-xl gap-1.5 md:gap-1 shadow-inner w-full md:w-auto">
+                    <div className="flex bg-white/10 p-1.5 rounded-xl border border-white/15 self-center md:self-auto backdrop-blur-xs">
                         {[
                             { id: 'stats', label: 'Journal Stats', icon: FileText },
                             { id: 'directory', label: 'Journal Hub', icon: Bookmark },
@@ -173,13 +168,13 @@ const LibraryJournalsPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-xs font-bold tracking-widest transition-all w-full md:w-auto shrink-0 ${
+                                className={`flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold tracking-normal transition-all cursor-pointer ${
                                     activeTab === tab.id 
-                                    ? 'bg-[#224292] text-white shadow-xl shadow-[#224292]/30' 
-                                    : 'text-slate-700 hover:text-[#224292] hover:bg-white'
+                                    ? 'bg-[#ffc107] text-[#18357a] font-bold shadow-md shadow-black/10' 
+                                    : 'text-white/80 hover:text-white hover:bg-white/10'
                                 }`}
                             >
-                                <tab.icon size={16} />
+                                <tab.icon size={15} />
                                 <span>{tab.label}</span>
                             </button>
                         ))}
@@ -187,7 +182,7 @@ const LibraryJournalsPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-3 md:px-6 py-6 md:py-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-12">
                 <AnimatePresence mode="wait">
                     {activeTab === 'stats' && (
                         <motion.div
@@ -195,56 +190,61 @@ const LibraryJournalsPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="bg-white rounded-2xl border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden"
+                            className="space-y-6 max-w-6xl mx-auto"
                         >
-                            <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-2xl relative overflow-hidden group">
-                                <div className="absolute top-0 left-0 w-64 h-64 bg-[#224292]/5 blur-[80px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-                                
-                                <div className="flex items-center gap-6 relative z-10">
-                                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#224292] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
-                                        <FileText size={28} />
+                            {/* Heading & Summary Stats */}
+                            <div className="flex flex-col items-center sm:items-start sm:flex-row sm:justify-between gap-4 text-center sm:text-left">
+                                <div className="space-y-1 flex flex-col items-center sm:items-start">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3">
+                                        <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block shrink-0" />
+                                        <h2 className="text-xl md:text-2xl font-bold text-[#18357a] tracking-tight leading-tight">Journal Statistics</h2>
                                     </div>
+                                    <p className="text-xs font-medium text-[#64779F] uppercase tracking-wider sm:pl-4">Department-wise National & International Publications (As of 13.07.2026)</p>
+                                </div>
+
+                                <div className="bg-[#18357a] rounded-xl px-5 py-2 text-center sm:text-right shadow-md shadow-[#18357a]/20 self-center sm:self-auto flex items-center gap-6">
                                     <div>
-                                        <h2 className="text-lg font-bold text-[#224292] tracking-tight leading-none mb-2">Accession Distribution</h2>
-                                        <div className="flex items-center gap-2">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                            <p className="text-xs font-bold text-slate-500 tracking-normal">Verified Network Growth (As of 13.07.2026)</p>
-                                        </div>
+                                        <p className="text-[10px] font-bold text-[#ffc107] uppercase tracking-wider">National</p>
+                                        <p className="text-lg font-bold text-white leading-tight">96</p>
+                                    </div>
+                                    <div className="w-px h-8 bg-white/20" />
+                                    <div>
+                                        <p className="text-[10px] font-bold text-[#ffc107] uppercase tracking-wider">International</p>
+                                        <p className="text-lg font-bold text-white leading-tight">324</p>
                                     </div>
                                 </div>
-                                <div className="text-left md:text-right relative z-10">
-                                    <p className="text-xs font-bold text-slate-500 tracking-normal leading-none mb-2">Active Records</p>
-                                    <p className="text-3xl font-bold text-[#224292]">420</p>
-                                </div>
-                             </div>
+                            </div>
                             
-                             <div className="overflow-x-auto">
-                                <table className="w-full min-w-[700px] md:min-w-full text-left">
-                                     <thead>
-                                        <tr className="bg-slate-100 border-b border-slate-200">
-                                            <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal">Degree</th>
-                                            <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal">Department / Specialization</th>
-                                            <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal text-center">National</th>
-                                            <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal text-center">International</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100 transition-all">
-                                        {JOURNAL_STATS.map((row, i) => (
-                                            <tr key={i} className="hover:bg-[#224292]/5 transition-colors group even:bg-slate-50/50">
-                                                <td className="px-4 md:px-8 py-4 md:py-5 font-normal text-[#224292] text-xs">{row.deg}</td>
-                                                <td className="px-4 md:px-8 py-4 md:py-5 font-normal text-slate-800 text-base group-hover:text-[#224292] transition-colors">{row.c}</td>
-                                                <td className="px-4 md:px-8 py-4 md:py-5 text-center font-normal text-slate-600 text-base">{row.nj}</td>
-                                                <td className="px-4 md:px-8 py-4 md:py-5 text-center font-normal text-[#224292] text-base">{row.ij}</td>
+                            {/* Table Card */}
+                            <div className="bg-white rounded-xl border border-slate-200 shadow-lg shadow-slate-900/5 overflow-hidden">
+                                <div className="overflow-x-auto">
+                                    <table className="w-full min-w-[650px] text-left font-graphik border-collapse">
+                                        <thead>
+                                            <tr className="bg-[#18357a] text-white">
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider w-28">Degree</th>
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider">Department / Specialization</th>
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider text-center w-28">National</th>
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider text-center w-36">International</th>
                                             </tr>
-                                        ))}
-                                        <tr className="bg-[#224292]/5">
-                                            <td colSpan="2" className="px-4 md:px-8 py-5 md:py-6 font-bold text-[#224292] text-xl tracking-tighter">Aggregated Network Volume</td>
-                                            <td className="px-4 md:px-8 py-5 md:py-6 text-center font-bold text-[#ffc107] text-2xl">96</td>
-                                            <td className="px-4 md:px-8 py-5 md:py-6 text-center font-bold text-[#224292] text-2xl">324</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                             </div>
+                                        </thead>
+                                        <tbody className="text-sm">
+                                            {JOURNAL_STATS.map((row, i) => (
+                                                <tr key={i} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                    <td className="px-6 py-3.5 font-semibold text-[#18357a] whitespace-nowrap">{row.deg}</td>
+                                                    <td className="px-6 py-3.5 font-medium text-slate-800">{row.c}</td>
+                                                    <td className="px-6 py-3.5 text-center font-normal text-slate-700 whitespace-nowrap">{row.nj}</td>
+                                                    <td className="px-6 py-3.5 text-center font-medium text-slate-900 whitespace-nowrap">{row.ij}</td>
+                                                </tr>
+                                            ))}
+                                            <tr className="bg-[#e9eef7] border-t-2 border-slate-300">
+                                                <td colSpan="2" className="px-6 py-4 font-bold text-[#18357a] text-base">Aggregated Network Volume</td>
+                                                <td className="px-6 py-4 text-center font-bold text-slate-900 text-base">96</td>
+                                                <td className="px-6 py-4 text-center font-bold text-[#18357a] text-lg">324</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </motion.div>
                     )}
 
@@ -254,46 +254,57 @@ const LibraryJournalsPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="bg-white rounded-2xl border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden"
+                            className="space-y-6 max-w-6xl mx-auto"
                         >
-                            <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-2xl relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffc107]/5 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-                                
-                                <div className="flex items-center gap-6 relative z-10">
-                                    <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#ffc107] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
-                                        <Bookmark size={28} />
+                            {/* Heading & Search */}
+                            <div className="flex flex-col items-center sm:items-start sm:flex-row sm:justify-between gap-4 text-center sm:text-left">
+                                <div className="space-y-1 flex flex-col items-center sm:items-start">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3">
+                                        <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block shrink-0" />
+                                        <h2 className="text-xl md:text-2xl font-bold text-[#18357a] tracking-tight leading-tight">Journal Hub</h2>
                                     </div>
-                                    <div>
-                                        <h2 className="text-lg font-bold text-[#224292] tracking-tight leading-none mb-2">Active Publications</h2>
-                                        <div className="flex items-center gap-2">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                            <p className="text-xs font-bold text-slate-500 tracking-normal">Serial Resource Hub</p>
-                                        </div>
-                                    </div>
+                                    <p className="text-xs font-medium text-[#64779F] uppercase tracking-wider sm:pl-4">List of Subscribed Print & Electronic Journals (Total: 96)</p>
                                 </div>
-                                <div className="relative flex-1 max-w-lg z-10">
-                                    <Search size={18} className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-500" />
+
+                                <div className="relative flex-1 max-w-md w-full self-center sm:self-auto">
+                                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
                                     <input 
-                                        type="text" 
-                                        placeholder="Search journal directory..."
+                                        type="text"
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
-                                        className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-xl text-xs font-bold tracking-normal focus:outline-none focus:ring-4 focus:ring-[#224292]/5 focus:border-[#224292] transition-all shadow-sm"
+                                        placeholder="Search by journal title..."
+                                        className="w-full pl-11 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#18357a]/20 focus:border-[#18357a] transition-all shadow-sm"
                                     />
                                 </div>
                             </div>
                             
-                            <div className="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[700px] overflow-y-auto custom-scrollbar">
-                                {JOURNAL_LIST.filter(j => j.toLowerCase().includes(searchQuery.toLowerCase())).map((journal, i) => (
-                                    <div key={i} className="group flex items-start gap-5 p-5 bg-white hover:bg-[#224292] rounded-xl border border-slate-100 shadow-sm transition-all duration-500 hover:-translate-y-1">
-                                        <div className="w-8 h-8 rounded-lg bg-slate-50 group-hover:bg-[#ffc107] flex items-center justify-center shadow-sm shrink-0 transition-all">
-                                            <span className="text-xs font-bold text-[#224292]">{i+1}</span>
-                                        </div>
-                                        <p className="text-[13px] font-bold text-slate-800 group-hover:text-white leading-relaxed tracking-tight transition-colors">
-                                            {journal}
-                                        </p>
-                                    </div>
-                                ))}
+                            {/* Table Card */}
+                            <div className="bg-white rounded-xl border border-slate-200 shadow-lg shadow-slate-900/5 overflow-hidden">
+                                <div className="overflow-x-auto">
+                                    <table className="w-full min-w-[500px] text-left font-graphik border-collapse">
+                                        <thead>
+                                            <tr className="bg-[#18357a] text-white">
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider w-24 text-center">S. No.</th>
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider text-left">Title of the Journal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="text-sm">
+                                            {JOURNAL_LIST.filter(j => j.toLowerCase().includes(searchQuery.toLowerCase())).map((journal, i) => (
+                                                <tr key={i} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                    <td className="px-6 py-3.5 text-center font-semibold text-[#18357a] whitespace-nowrap">{i + 1}</td>
+                                                    <td className="px-6 py-3.5 text-left font-medium text-slate-800 leading-relaxed">{journal}</td>
+                                                </tr>
+                                            ))}
+                                            {JOURNAL_LIST.filter(j => j.toLowerCase().includes(searchQuery.toLowerCase())).length === 0 && (
+                                                <tr>
+                                                    <td colSpan="2" className="px-6 py-8 text-center text-slate-500 font-medium">
+                                                        No journals found matching "{searchQuery}"
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -304,82 +315,74 @@ const LibraryJournalsPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="space-y-8"
+                            className="space-y-8 max-w-6xl mx-auto"
                         >
                             {/* Infrastructure Overview */}
-                            <div className="grid lg:grid-cols-3 gap-8">
-                                <div className="lg:col-span-1 p-6 md:p-10 bg-[#224292] rounded-2xl text-white shadow-2xl relative overflow-hidden flex flex-col justify-between group">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[100%] transition-transform duration-700 group-hover:scale-110" />
-                                    <div className="relative z-10 space-y-8">
-                                        <div className="w-16 h-16 bg-[#ffc107] rounded-xl flex items-center justify-center shadow-xl shadow-[#ffc107]/20">
-                                            <Monitor size={32} className="text-[#224292]" />
+                            <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+                                {/* Left Column: Digital Library Lab Card */}
+                                <div className="lg:col-span-4 p-6 sm:p-8 bg-[#18357a] rounded-2xl text-white shadow-xl relative overflow-hidden flex flex-col justify-between border border-[#18357a]">
+                                    <div>
+                                        <div className="w-12 h-12 bg-[#ffc107] rounded-xl flex items-center justify-center text-[#18357a] shadow-md shadow-black/10 shrink-0 mb-6">
+                                            <Monitor size={24} />
                                         </div>
-                                        <div>
-                                            <h3 className="text-xl font-bold tracking-normal mb-4">Digital Library Lab</h3>
-                                            <p className="text-white font-bold text-base leading-relaxed">
-                                                Our state-of-the-art digital hub features 30 high-speed computing nodes designed for seamless academic research and global citation access.
-                                            </p>
-                                        </div>
+                                        <h3 className="text-xl font-bold tracking-tight text-white mb-2.5">Digital Library Lab</h3>
+                                        <p className="text-xs sm:text-sm font-normal text-slate-200 leading-relaxed">
+                                            Our state-of-the-art digital hub features 30 high-speed computing nodes designed for seamless academic research and global citation access.
+                                        </p>
                                     </div>
-                                    <div className="relative z-10 pt-12 space-y-4">
-                                        <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
-                                            <Headphones size={20} className="text-[#ffc107]" />
-                                            <p className="text-xs font-bold tracking-normal text-[#ffc107]">Audio Learning Nodes (10 Available)</p>
+
+                                    <div className="pt-8 space-y-3">
+                                        <div className="flex items-center gap-3 p-3.5 bg-white/10 rounded-xl border border-white/15">
+                                            <Headphones size={18} className="text-[#ffc107] shrink-0" />
+                                            <p className="text-xs font-medium text-white">Audio Learning Nodes (10 Available)</p>
                                         </div>
-                                        <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
-                                            <Globe size={20} className="text-[#ffc107]" />
-                                            <p className="text-xs font-bold tracking-normal text-[#ffc107]">High Speed Fiber Ready</p>
+                                        <div className="flex items-center gap-3 p-3.5 bg-white/10 rounded-xl border border-white/15">
+                                            <Globe size={18} className="text-[#ffc107] shrink-0" />
+                                            <p className="text-xs font-medium text-white">High Speed Fiber Network</p>
                                         </div>
                                     </div>
                                 </div>
  
-                                <div className="lg:col-span-2 space-y-8">
+                                {/* Right Column: Access Hours & E-Resources */}
+                                <div className="lg:col-span-8 space-y-6 flex flex-col justify-between">
                                     {/* Operational Hours */}
-                                    <div className="p-6 md:p-10 bg-white rounded-2xl border border-slate-100 shadow-xl shadow-[#224292]/5 flex flex-col md:flex-row md:items-center justify-between gap-10">
-                                        <div className="flex items-center gap-6">
-                                            <div className="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center text-[#224292] border border-slate-100 shadow-sm">
-                                                <Clock size={28} />
+                                    <div className="p-6 md:p-7 bg-white rounded-2xl border border-slate-200/90 shadow-lg shadow-slate-900/5 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-11 h-11 bg-slate-100 rounded-xl flex items-center justify-center text-[#18357a] shrink-0">
+                                                <Clock size={22} />
                                             </div>
                                             <div>
-                                                <h4 className="text-lg font-bold text-[#224292] tracking-normal">Laboratory Access Hours</h4>
-                                                <p className="text-xs font-bold text-slate-500 tracking-normal mt-1 italic">Real-time facility availability</p>
+                                                <h4 className="text-base font-bold text-[#18357a]">Laboratory Access Hours</h4>
+                                                <p className="text-xs font-normal text-slate-500 mt-0.5">Facility availability schedule</p>
                                             </div>
                                         </div>
-                                        <div className="grid grid-cols-2 gap-8 border-l border-slate-100 pl-10">
+                                        <div className="grid grid-cols-2 gap-6 sm:border-l sm:border-slate-200 sm:pl-6">
                                             <div>
-                                                <p className="text-xs font-bold text-slate-500 tracking-normal mb-1">Working Days</p>
-                                                <p className="font-bold text-[#224292]">09:30 AM - 06:30 PM</p>
+                                                <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-0.5">Working Days</p>
+                                                <p className="font-semibold text-[#18357a] text-sm">09:30 AM - 06:30 PM</p>
                                             </div>
                                             <div>
-                                                <p className="text-xs font-bold text-slate-500 tracking-normal mb-1">Public Holidays</p>
-                                                <p className="font-bold text-[#ffc107]">09:30 AM - 03:30 PM</p>
+                                                <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-0.5">Public Holidays</p>
+                                                <p className="font-semibold text-slate-800 text-sm">09:30 AM - 03:30 PM</p>
                                             </div>
                                         </div>
                                     </div>
  
                                     {/* Link Portal */}
-                                    <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="grid sm:grid-cols-2 gap-3.5">
                                         {E_RESOURCES.map((link, i) => (
                                             <a 
                                                 key={i} 
                                                 href={link.u} 
                                                 target="_blank" 
                                                 rel="noreferrer" 
-                                                className="group p-6 md:p-8 bg-white border border-slate-100 hover:border-[#224292] hover:bg-[#224292] rounded-2xl shadow-lg shadow-black/5 flex flex-col justify-between gap-8 transition-all duration-500 hover:-translate-y-2 overflow-hidden relative"
+                                                className="group p-4 sm:p-5 bg-white border border-slate-200/80 hover:border-[#18357a]/40 hover:bg-slate-50 rounded-xl shadow-xs flex items-center justify-between transition-all"
                                             >
-                                                <div className="absolute top-0 right-0 w-24 h-24 bg-slate-50 group-hover:bg-white/5 rounded-bl-[100%] transition-colors" />
-                                                <div className="relative z-10 flex items-center justify-between">
-                                                    <div className="text-left">
-                                                        <p className="text-xs font-bold text-[#224292] group-hover:text-[#ffc107] tracking-normal leading-none mb-1">{link.n}</p>
-                                                        <p className="text-xs font-bold text-slate-500 group-hover:text-white/70 tracking-tight mt-1">{link.d}</p>
-                                                    </div>
-                                                    <div className="flex flex-col items-center gap-2">
-                                                        <div className="p-3 bg-slate-50 group-hover:bg-[#ffc107] rounded-xl transition-colors shrink-0">
-                                                            <ExternalLink size={18} className="text-[#224292] group-hover:text-[#224292]" />
-                                                        </div>
-                                                        <span className="text-xs font-bold text-[#ffc107] group-hover:text-white transition-colors">View</span>
-                                                    </div>
+                                                <div className="pr-2">
+                                                    <p className="text-xs sm:text-sm font-semibold text-[#18357a] transition-colors">{link.n}</p>
+                                                    <p className="text-[11px] font-normal text-slate-500 mt-0.5">{link.d}</p>
                                                 </div>
+                                                <ExternalLink size={15} className="text-[#ffc107] group-hover:text-[#18357a] shrink-0 transition-colors" />
                                             </a>
                                         ))}
                                     </div>

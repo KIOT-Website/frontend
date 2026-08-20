@@ -28,15 +28,16 @@ const AlumniVoices = () => {
   const doubleTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <section className="py-8 md:py-10 bg-white overflow-hidden">
+    <section className="pt-2 pb-10 md:pt-4 md:pb-12 bg-white overflow-hidden">
       <style>{marqueeStyle}</style>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-sm font-black text-[#ffc107] tracking-[0.4em] mb-4">Community Feedback</h2>
-          <h3 className="text-4xl lg:text-5xl font-black text-[#224292] tracking-tighter">Alumni Voices</h3>
-          <div className="mt-4 w-12 h-1.5 bg-[#ffc107] mx-auto rounded-full" />
+        <div className="text-center mb-6 md:mb-8">
+          <h3 className="text-3xl lg:text-5xl font-bold text-[#224292] font-graphik tracking-tight">
+            Alumni <span className="text-[#ffc107]">Voices</span>
+          </h3>
+          <div className="mt-3 w-14 h-1 bg-[#ffc107] mx-auto rounded-full" />
         </div>
 
         {/* Marquee Wrapper */}

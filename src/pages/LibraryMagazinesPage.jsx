@@ -8,20 +8,55 @@ import {
   Calendar,
   Grid,
   Search,
-  Award
+  Award,
+  Medal
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 const MAGAZINES = [
-    "Corporate Citizen", "Down to Earth", "Sportstar", "Frontline", "Thannambikkai", "Civil Services Chronicle", 
-    "Digit", "Data Quest", "PC Quest", "Voice & Data", "Electronics For You", "Open Source For You", 
-    "Stuff India", "Auto Car India", "Industrial Automation", "Industrial Safety Review", 
-    "Industrial Safety Chronicle", "Nanayam Vikatan (Tamil)", "Industrial Product Finder", "Motor India", 
-    "Builders Voice", "Builders Line", "Forbes India", "Overdrive", "Business Manager", 
-    "India Today", "Business Today", "Reader’s Digest", "The Week", "Entrepreneur", 
-    "The Franchising World", "Employment Service (Tamil Weekly)", "Electrical India", "Electronics World", "Shaastra", 
-    "Tamil Computer", "CSIR News", "Science Reporter", "Kalanjium", "Competition Success Review", 
-    "General Knowledge Today", "Engineering Success Review", "Employment News"
+    "Corporate Citizen",
+    "Down to Earth",
+    "Sportstar",
+    "Frontline",
+    "Thannambikkai",
+    "Civil Services Chronicle",
+    "Digit",
+    "Data Quest",
+    "PC Quest",
+    "Voice & Data",
+    "Electronics For You",
+    "Open Source For You",
+    "Stuff India",
+    "Auto Car India",
+    "Industrial Automation",
+    "Industrial Safety Review",
+    "Industrial Safety Chronicle",
+    "Nanayam Vikatan (Tamil)",
+    "Industrial Product Finder",
+    "Motor India",
+    "Builders Voice",
+    "Builders Line",
+    "Forbes India",
+    "Overdrive",
+    "Business Manager",
+    "India Today",
+    "Business Today",
+    "Reader’s Digest",
+    "The Week",
+    "Entrepreneur",
+    "The Franchising World",
+    "Employment Service (Tamil Weekly)",
+    "Electrical India",
+    "Electronics World",
+    "Shaastra",
+    "Tamil Computer",
+    "CSIR News",
+    "Science Reporter",
+    "Kalanjium",
+    "Competition Success Review",
+    "General Knowledge Today",
+    "Engineering Success Review",
+    "Employment News"
 ]
 
 const AWARDS = {
@@ -91,74 +126,96 @@ const LibraryMagazinesPage = () => {
     const [searchQuery, setSearchQuery] = useState('')
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] font-graphik">
-            {/* Header */}
-            <div className="pt-6 pb-6 px-6 bg-white border-b border-slate-100">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-                    <div className="space-y-2 w-full md:w-auto">
-                        <h1 className="text-3xl font-bold text-[#224292] tracking-normal leading-none">
+        <div className="min-h-screen bg-[#FCFDFD] pb-24 font-graphik">
+            {/* Hero Header */}
+            <div className="py-10 md:py-12 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#18357a] text-white shadow-md">
+                <div className="w-full max-w-7xl mx-auto flex flex-col items-center md:items-start md:flex-row md:justify-between gap-6 text-center md:text-left">
+                    <div className="space-y-1.5 flex flex-col items-center md:items-start">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-none text-white">
                             Magazines & <span className="text-[#ffc107]">Honors</span>
                         </h1>
+                        <p className="text-xs sm:text-sm font-medium text-slate-200 uppercase tracking-wider">
+                            Periodical Subscriptions & Outstanding Library Borrower Awards
+                        </p>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1.5 rounded-xl mx-auto md:mx-0">
+                    <div className="flex bg-white/10 p-1.5 rounded-xl border border-white/15 self-center md:self-auto backdrop-blur-xs">
                         {[
-                            { id: 'magazines', label: 'Magazines', icon: Grid },
+                            { id: 'magazines', label: 'Magazines', icon: BookOpen },
                             { id: 'awards', label: 'Borrower Awards', icon: Trophy }
                         ].map(tab => (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-bold tracking-normal transition-all ${
+                                className={`flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold tracking-normal transition-all cursor-pointer ${
                                     activeTab === tab.id 
-                                    ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20' 
-                                    : 'text-slate-700 hover:bg-[#ffc107] hover:text-[#224292]'
+                                    ? 'bg-[#ffc107] text-[#18357a] font-bold shadow-md shadow-black/10' 
+                                    : 'text-white/80 hover:text-white hover:bg-white/10'
                                 }`}
                             >
-                                <tab.icon size={14} />
-                                {tab.label}
+                                <tab.icon size={15} />
+                                <span>{tab.label}</span>
                             </button>
                         ))}
                     </div>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-3 md:px-6 py-6 md:py-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-12">
                 <AnimatePresence mode="wait">
                     {activeTab === 'magazines' ? (
                         <motion.div
                             key="magazines"
-                            initial={{ opacity: 0, scale: 0.98 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.98 }}
-                            className="space-y-8"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            className="space-y-6 max-w-6xl mx-auto"
                         >
-                            <div className="bg-white rounded-2xl border border-slate-100 shadow-2xl shadow-black/5 overflow-hidden">
-                                <div className="p-4 md:p-8 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-                                    <h2 className="text-base font-bold text-[#224292] tracking-tight">Periodical Repository</h2>
-                                    <div className="relative w-full md:w-auto md:flex-1 max-w-sm mx-auto md:mx-0">
-                                        <Search size={16} className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500" />
-                                        <input 
-                                            type="text" 
-                                            placeholder="Search magazines..."
-                                            value={searchQuery}
-                                            onChange={(e) => setSearchQuery(e.target.value)}
-                                            className="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-xl text-xs font-normal tracking-normal focus:ring-4 focus:ring-[#224292]/5 transition-all"
-                                        />
+                            {/* Heading & Search */}
+                            <div className="flex flex-col items-center sm:items-start sm:flex-row sm:justify-between gap-4 text-center sm:text-left">
+                                <div className="space-y-1 flex flex-col items-center sm:items-start">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3">
+                                        <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block shrink-0" />
+                                        <h2 className="text-xl md:text-2xl font-bold text-[#18357a] tracking-tight leading-tight">Magazines</h2>
                                     </div>
+                                    <p className="text-xs font-medium text-[#64779F] uppercase tracking-wider sm:pl-4">Indexed Periodicals & Technical Publications (Total: {MAGAZINES.length})</p>
                                 </div>
-                                
-                                <div className="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                    {MAGAZINES.filter(m => m.toLowerCase().includes(searchQuery.toLowerCase())).map((name, i) => (
-                                        <div key={i} className="group p-5 bg-white border border-slate-50 hover:border-[#224292] rounded-xl transition-all flex items-center justify-between shadow-sm hover:shadow-xl hover:shadow-black/5">
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-2 h-2 rounded-full bg-[#ffc107] group-hover:scale-150 transition-all" />
-                                                <span className="text-[13px] font-normal text-[#224292] leading-none tracking-normal">{name}</span>
+
+                                <div className="relative flex-1 max-w-md w-full self-center sm:self-auto">
+                                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
+                                    <input 
+                                        type="text" 
+                                        placeholder="Search by magazine title..."
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        className="w-full pl-11 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#18357a]/20 focus:border-[#18357a] transition-all shadow-sm"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Magazine Small Cards Grid */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
+                                {MAGAZINES.filter(m => m.toLowerCase().includes(searchQuery.toLowerCase())).map((name, i) => (
+                                    <div 
+                                        key={i} 
+                                        className="group p-3 sm:p-3.5 bg-white border border-slate-200/80 hover:border-[#18357a]/40 hover:bg-slate-50/80 rounded-xl transition-all shadow-xs flex items-center justify-between gap-2.5"
+                                    >
+                                        <div className="flex items-center gap-2.5 min-w-0">
+                                            <div className="w-6 h-6 rounded-md bg-[#18357a]/10 group-hover:bg-[#18357a] group-hover:text-white flex items-center justify-center text-[#18357a] font-bold text-[11px] shrink-0 transition-colors">
+                                                {i + 1}
                                             </div>
-                                            <BookOpen size={14} className="text-slate-300 group-hover:text-[#224292] transition-colors" />
+                                            <span className="text-xs sm:text-[13px] font-medium text-slate-800 group-hover:text-[#18357a] transition-colors truncate">
+                                                {name}
+                                            </span>
                                         </div>
-                                    ))}
-                                </div>
+                                        <BookOpen size={14} className="text-slate-300 group-hover:text-[#ffc107] shrink-0 transition-colors" />
+                                    </div>
+                                ))}
+                                {MAGAZINES.filter(m => m.toLowerCase().includes(searchQuery.toLowerCase())).length === 0 && (
+                                    <div className="col-span-full p-8 text-center bg-white rounded-xl border border-slate-200 text-slate-500 font-medium text-xs">
+                                        No magazines found matching "{searchQuery}"
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     ) : (
@@ -167,74 +224,67 @@ const LibraryMagazinesPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="space-y-12"
+                            className="space-y-8 max-w-6xl mx-auto"
                         >
-                            {/* Award Selection Controls */}
-                            <div className="flex flex-wrap justify-center gap-4">
-                                {Object.keys(AWARDS).map(year => (
-                                    <button
-                                        key={year}
-                                        onClick={() => setActiveYear(year)}
-                                        className={`px-8 py-4 rounded-xl text-xs font-bold tracking-normal transition-all ${
-                                            activeYear === year 
-                                            ? 'bg-[#ffc107] text-[#224292] shadow-[0_15px_40px_rgba(255,193,7,0.3)]' 
-                                            : 'bg-white border border-slate-100 text-slate-700 hover:text-[#224292]'
-                                        }`}
-                                    >
-                                        Most Books Borrower {year}
-                                    </button>
-                                ))}
-                            </div>
-
-                            {/* Hall of Fame Visuals */}
-                            <div className="bg-[#224292] rounded-2xl p-5 md:p-10 text-white shadow-2xl relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-[0.03] rounded-bl-full pointer-events-none" />
-                                
-                                <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-12 mb-16">
-                                    <div className="space-y-6">
-                                        <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/10 rounded-full border border-white/10">
-                                            <Award size={14} className="text-[#ffc107]" />
-                                            <span className="text-xs font-bold tracking-normal">Institutional Honor</span>
-                                        </div>
-                                        <h2 className="text-2xl md:text-3xl font-bold tracking-normal leading-none">
-                                            Borrower's <br /><span className="text-[#ffc107]">Hall of Fame</span>
-                                        </h2>
+                            {/* Heading & Cycle Filter */}
+                            <div className="flex flex-col items-center sm:items-start sm:flex-row sm:justify-between gap-4 text-center sm:text-left">
+                                <div className="space-y-1 flex flex-col items-center sm:items-start">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3">
+                                        <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block shrink-0" />
+                                        <h2 className="text-xl md:text-2xl font-bold text-[#18357a] tracking-tight leading-tight">Borrower Awards</h2>
                                     </div>
-                                    <div className="p-4 md:p-8 bg-white/5 rounded-xl border border-white/10 text-right backdrop-blur-md">
-                                        <Calendar size={32} className="text-[#ffc107] mb-4 ml-auto" />
-                                        <p className="text-xs font-bold text-white tracking-normal">Academic Cycle</p>
-                                        <p className="text-xl font-bold text-white">{activeYear}</p>
-                                    </div>
+                                    <p className="text-xs font-medium text-[#64779F] uppercase tracking-wider sm:pl-4">Recognizing Most Active Student Readers ({activeYear})</p>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-6 relative z-10">
-                                    {AWARDS[activeYear].map((student, i) => (
-                                        <motion.div 
-                                            key={i} 
-                                            layout
-                                            initial={{ opacity: 0, x: -10 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: i * 0.05 }}
-                                            className="group flex items-center p-3 md:p-4 bg-white/5 hover:bg-white rounded-xl border border-white/5 transition-all duration-500"
+                                <div className="flex flex-wrap items-center justify-center gap-2 self-center sm:self-auto">
+                                    {Object.keys(AWARDS).map(year => (
+                                        <button
+                                            key={year}
+                                            onClick={() => setActiveYear(year)}
+                                            className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-normal transition-all cursor-pointer ${
+                                                activeYear === year 
+                                                ? 'bg-[#18357a] text-white shadow-md shadow-[#18357a]/20 font-bold' 
+                                                : 'bg-white border border-slate-200 text-slate-700 hover:border-[#18357a]/40 hover:text-[#18357a]'
+                                            }`}
                                         >
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-[#ffc107] flex items-center justify-center text-white group-hover:text-[#224292] transition-all duration-500 shadow-sm shrink-0">
-                                                    <User size={16} />
-                                                </div>
-                                                <div>
-                                                    <p className="text-xs md:text-sm font-normal text-white group-hover:text-[#224292] transition-colors">{student.n}</p>
-                                                    <div className="flex items-center gap-1.5 mt-0.5">
-                                                        <GraduationCap size={10} className="text-[#ffc107]" />
-                                                        <p className="text-[10px] font-semibold text-white/80 group-hover:text-[#224292]/80 tracking-normal">{student.c}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </motion.div>
+                                            {year}
+                                        </button>
                                     ))}
                                 </div>
+                            </div>
 
-                                <div className="mt-16 pt-8 border-t border-white/10 text-center relative z-10">
-                                    <p className="text-xs font-bold text-white tracking-normal">Recognizing Academic Excellence & Library Engagement</p>
+                            {/* Table Card */}
+                            <div className="bg-white rounded-xl border border-slate-200 shadow-lg shadow-slate-900/5 overflow-hidden">
+                                <div className="overflow-x-auto">
+                                    <table className="w-full min-w-[550px] text-left font-graphik border-collapse">
+                                        <thead>
+                                            <tr className="bg-[#18357a] text-white">
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider w-24 text-center">S. No.</th>
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider text-left">Student Name</th>
+                                                <th className="px-6 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider text-left">Class & Branch / Department</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="text-sm">
+                                            {AWARDS[activeYear]?.map((student, i) => (
+                                                <tr key={i} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                    <td className="px-6 py-3.5 text-center font-semibold text-[#18357a] whitespace-nowrap">{i + 1}</td>
+                                                    <td className="px-6 py-3.5 text-left font-semibold text-slate-900">
+                                                        <div className="flex items-center gap-3">
+                                                            <div className="w-7 h-7 rounded-full bg-[#18357a]/10 flex items-center justify-center text-[#18357a] text-xs font-bold shrink-0">
+                                                                {student.n.charAt(0)}
+                                                            </div>
+                                                            <span>{student.n}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td className="px-6 py-3.5 text-left font-medium text-slate-700">
+                                                        <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-800 border border-slate-200/60">
+                                                            {student.c}
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </motion.div>

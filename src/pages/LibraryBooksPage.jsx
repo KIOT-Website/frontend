@@ -11,26 +11,23 @@ import {
 import { useNavigate } from 'react-router-dom'
 
 const DEPT_STATS = [
-    { c: 'B.E Mech', t: 581, v: 3606 },
-    { c: 'B.E Civil', t: 554, v: 2826 },
-    { c: 'B.E CSE', t: 598, v: 2835 },
-    { c: 'B.E ECE', t: 679, v: 2973 },
-    { c: 'B.E EEE', t: 631, v: 2913 },
-    { c: 'B.E E & CE', t: 141, v: 510 },
-    { c: 'B.Tech. IT', t: 360, v: 1758 },
-    { c: 'B.Tech. CSBS', t: 370, v: 1768 },
-    { c: 'B.Tech. AI & DS', t: 305, v: 1511 },
-    { c: 'M.E CSE', t: 284, v: 1106 },
-    { c: 'M.E ISE', t: 285, v: 1188 },
-    { c: 'M.E EST', t: 279, v: 1109 },
-    { c: 'M.E VLSI', t: 280, v: 1112 },
-    { c: 'MBA', t: 1095, v: 7309 },
-    { c: 'MBA-IEV', t: 294, v: 1399 },
-    { c: 'M.E AE', t: 54, v: 205 },
-    { c: 'M.E PED', t: 52, v: 221 },
-    { c: 'M.E SE', t: 57, v: 210 },
-    { c: 'MCA', t: 185, v: 691 },
-    { c: 'Science and Humanities', t: 360, v: 1350 }
+    { c: 'B.E. Mechanical Engineering', t: 581, v: 3698 },
+    { c: 'B.E. Civil Engineering', t: 589, v: 3113 },
+    { c: 'B.E. Computer Science & Engineering', t: 866, v: 3469 },
+    { c: 'B.E. Electronics & Communication Engineering', t: 671, v: 3914 },
+    { c: 'B.E. Electrical & Electronics Engineering', t: 675, v: 3520 },
+    { c: 'B.E. Electronics & Computer Engineering', t: 259, v: 1256 },
+    { c: 'B.Tech. Information Technology', t: 581, v: 2310 },
+    { c: 'B.Tech. Computer Science & Business Systems', t: 587, v: 2321 },
+    { c: 'B.Tech. Artificial Intelligence & Data Science', t: 434, v: 2097 },
+    { c: 'M.E. Industrial Safety Engineering', t: 340, v: 1188 },
+    { c: 'M.E. Applied Electronics', t: 135, v: 564 },
+    { c: 'M.E. Power Electronics & Drives', t: 149, v: 488 },
+    { c: 'M.E. Structural Engineering', t: 108, v: 481 },
+    { c: 'Master of Business Administration (MBA)', t: 1414, v: 7351 },
+    { c: 'MBA - Innovation, Entrepreneurship & Venture Development', t: 329, v: 1504 },
+    { c: 'Master of Computer Applications (MCA)', t: 231, v: 879 },
+    { c: 'Science & Humanities', t: 634, v: 1400 }
 ]
 
 const RARE_BOOKS = [
@@ -280,17 +277,20 @@ const LibraryBooksPage = () => {
     )
 
     return (
-        <div className="min-h-screen bg-[#FCFDFD] font-graphik">
+        <div className="min-h-screen bg-[#FCFDFD] font-graphik pb-20">
             {/* Header */}
-            <div className="pt-6 pb-6 px-6 bg-white border-b border-slate-100">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <div className="space-y-2">
-                        <h1 className="text-3xl font-bold text-[#224292] tracking-normal leading-none">
+            <div className="py-10 md:py-12 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#18357a] text-white shadow-md">
+                <div className="w-full max-w-7xl mx-auto flex flex-col items-center md:items-start md:flex-row md:justify-between gap-6 text-center md:text-left">
+                    <div className="space-y-1.5 flex flex-col items-center md:items-start">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-none text-white">
                             Books & <span className="text-[#ffc107]">Collections</span>
                         </h1>
+                        <p className="text-xs sm:text-sm font-medium text-slate-200 uppercase tracking-wider">
+                            Departmental Accession Statistics & Rare Repository
+                        </p>
                     </div>
 
-                    <div className="flex bg-slate-100 p-1.5 rounded-xl">
+                    <div className="flex bg-white/10 p-1.5 rounded-xl border border-white/15 self-center md:self-auto backdrop-blur-xs">
                         {[
                             { id: 'stats', label: 'Department Stats', icon: Bookmark },
                             { id: 'rare', label: 'Rare Repository', icon: History }
@@ -298,13 +298,13 @@ const LibraryBooksPage = () => {
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-3 px-6 py-3 rounded-xl text-xs font-bold tracking-normal transition-all ${
+                                className={`flex items-center gap-2.5 px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold tracking-normal transition-all cursor-pointer ${
                                     activeTab === tab.id 
-                                    ? 'bg-[#224292] text-white shadow-lg shadow-[#224292]/20' 
-                                    : 'text-slate-505 hover:bg-[#ffc107] hover:text-[#224292]'
+                                    ? 'bg-[#ffc107] text-[#18357a] font-bold shadow-md shadow-black/10' 
+                                    : 'text-white/80 hover:text-white hover:bg-white/10'
                                 }`}
                             >
-                                <tab.icon size={14} />
+                                <tab.icon size={15} />
                                 {tab.label}
                             </button>
                         ))}
@@ -312,7 +312,7 @@ const LibraryBooksPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-3 md:px-6 py-6 md:py-12">
+            <div className={`mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-12 transition-all duration-300 ${activeTab === 'rare' ? 'max-w-7xl' : 'max-w-5xl'}`}>
                 <AnimatePresence mode="wait">
                     {activeTab === 'stats' ? (
                         <motion.div
@@ -320,51 +320,47 @@ const LibraryBooksPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="space-y-8"
+                            className="space-y-6"
                         >
-                             <div className="bg-white rounded-2xl border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
-                                <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-2xl relative overflow-hidden group">
-                                     <div className="absolute top-0 left-0 w-64 h-64 bg-[#224292]/5 blur-[80px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-                                     
-                                     <div className="flex items-center gap-6 relative z-10">
-                                         <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#224292] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
-                                             <ShieldCheck size={28} />
-                                         </div>
-                                         <div>
-                                             <h2 className="text-lg font-bold text-[#224292] tracking-tight leading-none mb-2">Accession Statistics</h2>
-                                             <div className="flex items-center gap-2">
-                                                 <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                                 <p className="text-xs font-bold text-slate-400 tracking-normal">Verified Library Network</p>
-                                             </div>
-                                         </div>
-                                     </div>
-                                     <div className="text-left md:text-right relative z-10">
-                                         <p className="text-xs font-bold text-[#ffc107] tracking-normal leading-none mb-2">Total Volumes</p>
-                                         <p className="text-3xl font-bold text-[#224292]">36,600</p>
-                                     </div>
+                            {/* Heading & Summary Stats (Outside Table) */}
+                            <div className="flex flex-col items-center sm:items-start sm:flex-row sm:justify-between gap-4 text-center sm:text-left">
+                                <div className="space-y-1 flex flex-col items-center sm:items-start">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3">
+                                        <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block shrink-0" />
+                                        <h2 className="text-xl md:text-2xl font-bold text-[#18357a] font-graphik tracking-tight leading-tight">Accession Statistics</h2>
+                                    </div>
+                                    <p className="text-xs font-medium text-[#64779F] font-graphik uppercase tracking-wider sm:pl-4">Department-wise Titles & Volumes</p>
                                 </div>
 
+                                <div className="bg-[#18357a] rounded-xl px-5 py-2 text-center sm:text-right shadow-md shadow-[#18357a]/20 self-center sm:self-auto">
+                                    <p className="text-[10px] font-bold text-[#ffc107] uppercase tracking-wider">Total Volumes</p>
+                                    <p className="text-xl font-bold text-white leading-tight">39,553</p>
+                                </div>
+                            </div>
+
+                            {/* Table Card */}
+                            <div className="bg-white rounded-xl border border-slate-200 shadow-lg shadow-slate-900/5 overflow-hidden">
                                 <div className="overflow-x-auto">
-                                    <table className="w-full min-w-[600px] md:min-w-full text-left">
+                                    <table className="w-full min-w-[550px] text-left font-graphik border-collapse">
                                         <thead>
-                                            <tr className="bg-slate-100 border-b border-slate-200">
-                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal">Course / Department</th>
-                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal text-center">Titles</th>
-                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal text-center">Volumes</th>
+                                            <tr className="bg-[#18357a] text-white">
+                                                <th className="px-6 md:px-8 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider">Course / Department</th>
+                                                <th className="px-6 md:px-8 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider text-center">Titles</th>
+                                                <th className="px-6 md:px-8 py-3.5 text-xs md:text-sm font-semibold uppercase tracking-wider text-center">Volumes</th>
                                             </tr>
                                         </thead>
-                                        <tbody className="divide-y divide-slate-50">
+                                        <tbody className="text-sm">
                                             {DEPT_STATS.map((row, i) => (
-                                                <tr key={i} className="hover:bg-[#224292]/5 transition-colors group even:bg-slate-50/50">
-                                                    <td className="px-4 md:px-8 py-4 font-normal text-[#224292] text-sm group-hover:text-[#ffc107] transition-colors">{row.c}</td>
-                                                    <td className="px-4 md:px-8 py-4 text-center font-normal text-slate-500 text-sm whitespace-nowrap">{row.t.toLocaleString()}</td>
-                                                    <td className="px-4 md:px-8 py-4 text-center font-normal text-[#224292] text-sm whitespace-nowrap">{row.v.toLocaleString()}</td>
+                                                <tr key={i} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                    <td className="px-6 md:px-8 py-3.5 font-medium text-slate-800">{row.c}</td>
+                                                    <td className="px-6 md:px-8 py-3.5 text-center font-normal text-slate-700 whitespace-nowrap">{row.t.toLocaleString()}</td>
+                                                    <td className="px-6 md:px-8 py-3.5 text-center font-medium text-slate-900 whitespace-nowrap">{row.v.toLocaleString()}</td>
                                                 </tr>
                                             ))}
-                                            <tr className="bg-[#224292]/5">
-                                                <td className="px-4 md:px-8 py-5 md:py-6 font-bold text-[#224292] text-lg">Grand Total</td>
-                                                <td className="px-4 md:px-8 py-5 md:py-6 text-center font-bold text-[#ffc107] text-xl">7,444</td>
-                                                <td className="px-4 md:px-8 py-5 md:py-6 text-center font-bold text-[#224292] text-xl">36,600</td>
+                                            <tr className="bg-[#e9eef7] border-t-2 border-slate-300">
+                                                <td className="px-6 md:px-8 py-4 font-bold text-[#18357a] text-base">Grand Total</td>
+                                                <td className="px-6 md:px-8 py-4 text-center font-bold text-slate-800 text-base">8,583</td>
+                                                <td className="px-6 md:px-8 py-4 text-center font-bold text-[#18357a] text-lg">39,553</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -377,71 +373,66 @@ const LibraryBooksPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            className="space-y-8"
+                            className="space-y-6"
                         >
-                            {/* Rare Repository Section */}
-                             <div className="bg-white rounded-2xl border border-slate-100 shadow-2xl shadow-[#224292]/5 overflow-hidden">
-                                <div className="p-4 md:p-10 bg-slate-100/80 border-b border-slate-200/50 flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8 rounded-t-2xl relative overflow-hidden group">
-                                     {/* Background Decor */}
-                                     <div className="absolute top-0 right-0 w-64 h-64 bg-[#224292]/5 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:bg-[#ffc107]/10 transition-all duration-1000" />
-                                     
-                                     <div className="flex items-center gap-6 relative z-10">
-                                         <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-[#ffc107] shadow-xl shadow-black/5 border border-slate-100 group-hover:scale-110 transition-all duration-500">
-                                             <History size={28} />
-                                         </div>
-                                         <div>
-                                             <h2 className="text-lg font-bold text-[#224292] tracking-tight leading-none mb-2">Rare Book List</h2>
-                                             <div className="flex items-center gap-2">
-                                                 <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107]" />
-                                                 <p className="text-xs font-bold text-slate-400 tracking-normal">Historical Archives</p>
-                                             </div>
-                                         </div>
-                                     </div>
-
-                                     <div className="relative flex-1 max-w-lg z-10">
-                                         <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                                         <input 
-                                             type="text"
-                                             value={searchQuery}
-                                             onChange={(e) => setSearchQuery(e.target.value)}
-                                             placeholder="Search by title, author or publisher..."
-                                             className="w-full pl-14 pr-8 py-5 bg-white border border-slate-200 rounded-xl text-xs font-bold tracking-normal focus:outline-none focus:ring-4 focus:ring-[#224292]/5 focus:border-[#224292] transition-all shadow-sm"
-                                         />
-                                     </div>
+                            {/* Heading & Search Bar (Outside Table) */}
+                            <div className="flex flex-col items-center sm:items-start sm:flex-row sm:justify-between gap-4 text-center sm:text-left">
+                                <div className="space-y-1 flex flex-col items-center sm:items-start">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3">
+                                        <span className="w-1.5 h-6 bg-[#ffc107] rounded-full inline-block shrink-0" />
+                                        <h2 className="text-xl md:text-2xl font-bold text-[#18357a] tracking-tight leading-tight">Rare Book List</h2>
+                                    </div>
+                                    <p className="text-xs font-medium text-[#64779F] uppercase tracking-wider sm:pl-4">Historical Archives</p>
                                 </div>
 
-                                <div className="overflow-x-auto max-h-[600px]">
-                                    <table className="w-full min-w-[800px] md:min-w-full text-left">
+                                <div className="relative flex-1 max-w-md w-full self-center sm:self-auto">
+                                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
+                                    <input 
+                                        type="text"
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        placeholder="Search by title, author or publisher..."
+                                        className="w-full pl-11 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#18357a]/20 focus:border-[#18357a] transition-all shadow-sm"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Rare Books Table Card */}
+                            <div className="bg-white rounded-xl border border-slate-200 shadow-lg shadow-slate-900/5 overflow-hidden">
+
+                                 <div className="overflow-x-auto max-h-[600px]">
+                                    <table className="w-full min-w-[800px] md:min-w-full text-left font-graphik border-collapse">
                                         <thead className="sticky top-0 z-10">
-                                            <tr className="bg-slate-100 border-b border-slate-200">
-                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal w-20">S.No</th>
-                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal">Book Specification</th>
-                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal">Institutional Publication</th>
-                                                <th className="px-4 md:px-8 py-3 text-xs font-bold text-[#224292] tracking-normal text-center">Year</th>
+                                            <tr className="bg-[#18357a] text-white border-b border-[#18357a]">
+                                                <th className="px-6 py-4 text-xs md:text-sm font-semibold uppercase tracking-wider w-20">S.No</th>
+                                                <th className="px-6 py-4 text-xs md:text-sm font-semibold uppercase tracking-wider">Book Specification</th>
+                                                <th className="px-6 py-4 text-xs md:text-sm font-semibold uppercase tracking-wider">Institutional Publication</th>
+                                                <th className="px-6 py-4 text-xs md:text-sm font-semibold uppercase tracking-wider text-center">Year</th>
                                             </tr>
                                         </thead>
-                                        <tbody className="divide-y divide-slate-50">
+                                        <tbody className="text-sm">
                                             {filteredRareBooks.map((book, idx) => (
-                                                <tr key={idx} className="hover:bg-[#224292]/5 transition-colors group even:bg-slate-50/50">
-                                                    <td className="px-4 md:px-8 py-4 md:py-5 text-xs font-normal text-[#224292] opacity-40">{book.s}</td>
-                                                    <td className="px-4 md:px-8 py-4 md:py-5">
+                                                <tr key={idx} className="odd:bg-white even:bg-[#f4f6fa] border-b border-slate-200/70 hover:bg-slate-100/80 transition-colors">
+                                                    <td className="px-6 py-4 text-xs font-semibold text-slate-800">{book.s}</td>
+                                                    <td className="px-6 py-4">
                                                         <div className="space-y-1">
-                                                            <p className="font-normal text-[#224292] text-sm group-hover:text-[#ffc107] transition-colors">{book.t}</p>
-                                                            <p className="text-xs font-normal text-slate-500 tracking-normal italic flex items-center gap-2">
-                                                                <FileText size={10} className="text-[#ffc107]" /> {book.a}
+                                                            <p className="font-semibold text-slate-900 text-sm">{book.t}</p>
+                                                            <p className="text-xs font-normal text-slate-700 flex items-center gap-1.5">
+                                                                <FileText size={12} className="text-[#ffc107] shrink-0" />
+                                                                <span>{book.a}</span>
                                                             </p>
                                                         </div>
                                                     </td>
-                                                    <td className="px-4 md:px-8 py-4 md:py-5">
+                                                    <td className="px-6 py-4">
                                                         <div className="flex items-center gap-3">
-                                                            <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-[#224292]/5 group-hover:text-[#224292] transition-all">
+                                                            <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-[#18357a] shrink-0">
                                                                 <BookOpen size={14} />
                                                             </div>
-                                                            <p className="text-xs font-normal text-slate-500 leading-relaxed max-w-xs">{book.p}</p>
+                                                            <p className="text-xs font-normal text-slate-800 leading-relaxed max-w-sm">{book.p}</p>
                                                         </div>
                                                     </td>
-                                                    <td className="px-4 md:px-8 py-4 md:py-5 text-center">
-                                                        <span className="px-4 py-1.5 bg-[#224292]/5 text-[#224292] rounded-full text-xs font-normal tracking-normal">{book.y}</span>
+                                                    <td className="px-6 py-4 text-center">
+                                                        <span className="px-3.5 py-1 bg-white border border-slate-200/90 text-slate-800 font-semibold rounded-full text-xs shadow-xs">{book.y}</span>
                                                     </td>
                                                 </tr>
                                             ))}
