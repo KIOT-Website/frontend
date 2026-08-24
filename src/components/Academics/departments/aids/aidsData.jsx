@@ -1,90 +1,83 @@
+import aidsIp1 from '../../../../assets/innovative_practices/aids/Discussion and hands-on session.jpg';
+import aidsIp2 from '../../../../assets/innovative_practices/aids/industry Vertical hands-on session.jpg';
+import aidsIp3 from '../../../../assets/innovative_practices/aids/Game-based Learning.jpg';
+import aidsIp4 from '../../../../assets/innovative_practices/aids/Workshop model with chart presentation.jpg';
+import aidsIp5 from '../../../../assets/innovative_practices/aids/Docker creation using ML.jpg';
+import aidsIp6 from '../../../../assets/innovative_practices/aids/participative Learning & Presentation.jpg';
+import aidsIp7 from '../../../../assets/innovative_practices/aids/Interactive Demonstration-Cum-Practic.jpg';
+import aidsIp8 from '../../../../assets/innovative_practices/aids/Peer learning.jpg';
+import aidsIp9 from '../../../../assets/innovative_practices/aids/AI-Augmented Collaborative Learning.jpg';
+import aidsIp10 from '../../../../assets/innovative_practices/aids/AI-Facilitated Group Problem Solving.jpg';
+import aidsIp11 from '../../../../assets/innovative_practices/aids/Experiential Learning.jpg';
+import aidsIp12 from '../../../../assets/innovative_practices/aids/Project-Based Learning.jpg';
+import aidsIp13 from '../../../../assets/innovative_practices/aids/Collaborative project.jpg';
+import aidsIp14 from '../../../../assets/innovative_practices/aids/Collaborative project.1.jpg';
+
 export const aidsStudentAchievements = [
-  { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'National Level Hackathon', level: 'National', award: 'Received the Appreciation Prize of Rs. 10000 Cash award', title: 'AI-Assisted Smart Electric Fence System' },
-  { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'Nxtwave openAI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot' },
-  { name: 'Kirutheen Kumar. R\nB. Tech-II year - A\nAI&DS', event: 'Zonal-level basketball Tournament', level: 'Zonal', award: 'Winner', title: 'Zonal-level basketball' },
-  { name: 'Kannadhasan. V\nB. Tech-II year - A\nAI&DS', event: 'Electric Bike Design Challenge', level: 'National', award: 'Won the overall champions award', title: 'National-level Electric Bike Design Challenge' },
-  { name: 'Balaji V\nB. Tech-II year - A\nAI&DS', event: 'Paper presentation , Project Expo', level: 'National', award: '3rd Prize', title: 'Threads 25 Sona College of Engineering, Vyugam 26 AVS college of Engineering' },
-  { name: 'Karthik V\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
-  { name: 'Mohammed Armaan M S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
-  { name: 'Jitheeshwaran S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon - Call Of Query', level: 'National', award: '1st Prize', title: "TEKHORA'26 MIT Campus, Anna University" },
-  { name: 'Deva Dharshini S\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'Programming, Data Structures and Algorithms Using Python' },
-  { name: 'Laksshitha Sri T E\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'Programming in Java' },
-  { name: 'Devasena K\nB. Tech-II Year\nAI & DS - A', event: 'NPTEL', level: 'National', award: 'Elite', title: 'E-Business' },
-  { name: 'Kavinaya R\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
-  { name: 'Harshini K\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
-  { name: 'Aarthi S\nB. Tech-II Year\nAI & DS - A', event: 'Hackathon', level: 'National', award: 'Special category Winners-Best IOT project', title: "Innovate India'2047" },
-  { name: 'Hariram K V\nB. Tech-II year\nAI & DS', event: 'Paper Presentation', level: 'National', award: '2nd prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
-  { name: 'Bharath A\nB. Tech-II year\nAI & DS', event: 'Paper Presentation', level: 'National', award: '2nd prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
-  { name: 'Geetha M\nB. Tech-II year\nAI & DS', event: 'NPTEL', level: 'National', award: 'Elite', title: 'E-Business' },
-  { name: 'Bharathi V\nB.Tech-II Year\nAI & DS - A', event: 'paper presentation', level: 'National', award: '2nd Prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
-  { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'National Hackathon on wildlife coexistence', level: 'National', award: 'Top 12 finalists across India with an Appreciation prize and a cash prize', title: 'Smart Automated electric fence system for wildlife and human safety (Wildlife Institute of India, Dehradun)' },
-  { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'Next Wave Open AI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot' },
-  { name: 'Shobika R\nB. Tech-II year - B\nAI&DS', event: 'Hackathon', level: 'National', award: 'Top 25 finalist for the 24-hour hackathon', title: 'Smart Automated electric fence system for wildlife and human safety (K. Ramakrishnan College of Technology, Trichy)' },
-  { name: 'Tharshini A\nB. Tech-II year - B\nAI&DS', event: 'Hackathon', level: 'National', award: 'Top 25 finalists for the 24-hour hackathon', title: 'Smart Automated electric fence system for wildlife and human safety (K. Ramakrishnan College of Technology, Trichy)' },
-  { name: 'Yukesh Kumar T\nB. Tech-II year - B\nAI&DS', event: 'THREADS’25 Symposium', level: 'National', award: '1st Place in Paper Presentation with cash prize', title: 'Gas Leakage detection at IOT (Sona College of Technology)' },
-  { name: 'Suseel P S\nB. Tech-II year - B\nAI&DS', event: 'THREADS’25 Symposium', level: 'National', award: '1st Place in Paper Presentation with cash prize', title: 'Gas Leakage detection at IOT (Sona College of Technology)' },
-  { name: 'Suseel P S\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
-  { name: 'Yashvanth Suriya M\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
-  { name: 'Sri Sanchive Kumar\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
-  { name: 'Poomiha M\nB. Tech-II year - B\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Elite', title: 'Business to Business B2B' },
-  { name: 'Jayashree N\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with case prize', title: 'Rising Child Anemia in rural blocks' },
-  { name: 'Jayashree N\nB. Tech - III year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Finalist', title: 'Multi-Tenant Task Tracker' },
-  { name: 'Madhu Shree. M\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with case prize', title: 'Rising Child Anemia in rural blocks' },
-  { name: 'Madhu Shree. M\nB. Tech - III year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Finalist', title: 'Multi-Tenant Task Tracker' },
-  { name: 'Rajamurugan MA\nB.Tech – III year\nAI&DS', event: 'Football Tournament', level: 'Zonal', award: 'Second Prize', title: 'Anna University Zonal Football Tournament held at Adhiyamaan College of Engineering, Hosur' },
-  { name: 'Karthickraja G\nB.Tech – III year\nAI & DS', event: 'Hockey Tournament', level: 'Zonal', award: 'Third Prize', title: 'Anna University zonal level tournament at Adiyamaan College of Engineering, Hosur' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Handball', level: 'Zonal', award: 'Third Prize', title: 'Anna University Zonal Handball Tournament held at Adhiyamaan College of Engineering, Hosur' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Hockey', level: 'Zonal', award: 'Third Prize', title: 'Anna University Zonal Hockey Tournament held at Adhiyamaan College of Engineering, Hosur' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Tennis', level: 'Zonal', award: 'Fourth prize', title: 'Anna University Zonal Tennis Tournament held at Adhiyamaan College of Engineering, Hosur' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Symposium', level: 'National', award: 'First Prize', title: 'IPL Auction' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Discuss Throw', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Cricket', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Kabadi', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Sports', level: 'Inter College', award: 'best vice caption of the college', title: 'Sports Day' },
-  { name: 'Barathkumar SM\nB.Tech – III year\nAI & DS', event: 'Football', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
-  { name: 'V.Ramya\nB. Tech - III year\nAI&DS', event: 'CCL 12-hrs Coding Challenge', level: 'National', award: '2nd Place with case prize', title: 'Campus Coders League' },
-  { name: 'Deepak PS\nB. Tech - III year\nAI&DS', event: 'Innovative idea contest', level: 'Zonal', award: 'First prize with Award', title: 'Maximizing productivity in MSMEs (Salem Zonal)' },
-  { name: 'Deepak PS\nB. Tech - III year\nAI&DS', event: '12 hrs Coding Challenge', level: 'Internal College', award: 'Special prize for achieving highest individual score percentage', title: 'CAMPUS CODERS LEAGUE (12 HRS)' },
-  { name: 'Kaviya. A\nB. Tech - III year\nAI&DS', event: 'CCL 12-hrs Coding Challenge', level: 'National', award: '2nd Place with case prize', title: 'Campus Coders League' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'UI/UX Designathon', level: 'National', award: 'Special Prize with case prize', title: 'Government police website recreation' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Odoo X SNS Hackathon', level: 'National', award: 'Finalist', title: 'E-Learning Platform' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: 'Finalist', title: 'BananaMart' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'Zonal', award: 'First Prize', title: 'Anna University Zonal Table Tennis Tournament held at Govt. College of Bargur' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'State', award: 'Third Prize', title: 'SKJ Table Tennis Academy State Level Match' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Hand Ball', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Throw Ball', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table Tennis', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Tennis', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Shotput', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Badminton', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Kho Kho', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table Tennis', level: 'District', award: 'Third Prize', title: 'District level at Coimbatore Institute of Technology' },
-  { name: 'Soundharya. V\nB. Tech - III year\nAI&DS', event: 'Table tennis', level: 'Zonal', award: 'First Prize', title: 'Anna University Zonal Table Tennis Tournament held at Govt. College of Bargur' },
-  { name: 'Umamaheswari. A\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with cash prize', title: 'Wireless Power Charging for EV vehicles' },
-  { name: 'Padma Sree R\nB. Tech - III year\nAI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: '3rd Place with cash prize', title: 'Wireless Power Charging for EV vehicles' },
-  { name: 'Padma Sree R\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'National', award: 'Best event organizer certification', title: 'NextGen Talks Paper Presentation' },
-  { name: 'Midhun Haridharan\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'District', award: 'First Prize', title: 'BUILD EXPO 2025-2026' },
-  { name: 'Arun Prakash A\nB. Tech - III year\nAI&DS', event: 'Symposium', level: 'District', award: 'First Prize', title: 'BUILD EXPO 2025-2026' },
-  { name: 'Vishveswar M\nB. Tech - III year\nAI&DS', event: 'International Conference', level: 'International', award: 'Best Paper Award', title: 'RAG-Based AI for Accurate, Explainable, and Safe Legal Judgement Prediction in the Indian Constitution' },
-  { name: 'K. Haris Kumar\nB. Tech - IV year\nAI&DS', event: 'L&T Ideation Challenge 2025', level: 'International', award: 'Secured a stipend internship', title: 'AI-Enabled Data Interpretation & Validation System for SLD Creation.' },
-  { name: 'Varsini. S\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
-  { name: 'Sudarsan. K\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
-  { name: 'Prasanna. B\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
-  { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'SindhanAI\'25 Hackathon', level: 'National', award: '1st Runner-up with cash prize', title: 'AI-Assisted Travel Planning System.' },
-  { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Winner', title: 'Multi-Tenant Task Tracker' },
-  { name: 'Haris. K. N\nB. Tech - IV year\nAI&DS', event: 'Code-zap hackathon 2025', level: 'National', award: 'Finalist', title: 'AI-Assisted Travel Planning System.' },
-  { name: 'Maharaj. P. S\nB. Tech - IV year\nAI&DS', event: 'Code-zap hackathon 2025', level: 'National', award: 'Won an educational trip to Singapore', title: 'AI-Based Resume Screener' },
-  { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'DigiTechCon25', level: 'National', award: 'Best Paper Award', title: 'Smart Traffic Management System using AI and IOT' },
-  { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'Engineers Build Expo 2025-2026', level: 'National', award: 'Won first place with a cash prize of Rs:15,000', title: 'Disaster Management System using AI' },
-  { name: 'Suberna. R. S\nB. Tech - IV year\nAI&DS', event: 'Hack-Xelerator', level: 'National', award: 'Special prize with a cash prize of Rs. 2000', title: 'Building Collapse and Disaster Prediction System Using AI and IoT' },
-  { name: 'Guna Sree R\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'State', award: 'Winner with cash prize Rs. 25000', title: 'Multi-Tenant Task Tracker' },
-  { name: 'Methun. M\nB. Tech - IV year\nAI&DS', event: 'Gen Brainiacs\'25 hackathon', level: 'National', award: '2nd price', title: 'Gamified Tutor' },
-  { name: 'Krishna. J\nB. Tech - IV year\nAI&DS', event: 'IIT Kharagpur Summer Internship', level: 'National', award: 'Completed Summer Internship 25', title: 'Summer Internship at IIT Kharagpur' },
-  { name: 'Divyadharshini. Y\nB. Tech - IV year\nAI&DS', event: 'Japanese Exam', level: 'National', award: 'Completed Japanese JLPT N5', title: 'Japanese JLPT N5 / N4' },
-  { name: 'Murali Prasath. K\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'NPTEL Believer award and NPTEL Discipline Star award', title: 'NPTEL' },
-  { name: 'Vasudevan. M\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'NPTEL Discipline Star Award', title: 'NPTEL' },
-  { name: 'Vijay Vignesh K U\nB. Tech - IV year\nAI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Winner with a cash prize of 25000 rupees', title: 'Multi-Tenant Task Tracker' },
-  { name: 'Ranjith Kumar. A\nB. Tech - IV year\nAI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Achieved Top 5% (Silver category)', title: 'Programming in Java' }
+  { name: 'Kirutheen Kumar R\nB.Tech - II Year (A) • AI&DS', event: 'Nxtwave OpenAI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot.' },
+  { name: 'Kirutheen Kumar R\nB.Tech - II Year (A) • AI&DS', event: 'Zonal-level basketball', level: 'Zonal', award: 'Winner', title: 'Tournament' },
+  { name: 'Balaji V\nB.Tech - II Year (A) • AI&DS', event: 'Paper presentation, Project Expo', level: 'National', award: '3rd Prize', title: 'Threads 25 Sona College of Engineering, Vyugam 26 AVS College of Engineering' },
+  { name: 'Deva Dharshini S\nB.Tech - II Year (A) • AI&DS', event: 'NPTEL', level: 'National', award: 'Elite', title: 'Programming, Data Structures and Algorithms Using Python' },
+  { name: 'Laksshitha Sri T E\nB.Tech - II Year (A) • AI&DS', event: 'NPTEL', level: 'National', award: 'Elite', title: 'Programming in Java' },
+  { name: 'Devasena K\nB.Tech - II Year (A) • AI&DS', event: 'NPTEL', level: 'National', award: 'Elite', title: 'E-Business' },
+  { name: 'Hariram K V\nB.Tech - II Year • AI&DS', event: 'Paper Presentation', level: 'National', award: '2nd prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
+  { name: 'Bharath A\nB.Tech - II Year (A) • AI&DS', event: 'Paper Presentation', level: 'National', award: '2nd prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
+  { name: 'Geetha M\nB.Tech - II Year (A) • AI&DS', event: 'NPTEL', level: 'National', award: 'Elite', title: 'E-Business' },
+  { name: 'Bharathi V\nB.Tech - II Year (A) • AI&DS', event: 'paper presentation', level: 'National', award: '2nd Prize', title: 'Aventuro 2k24, ISTE student chapter Kongu Engineering College, Perundurai' },
+  { name: 'Shobika R\nB.Tech - II Year (B) • AI&DS', event: 'National Hackathon on wildlife coexistence by Wildlife Institute of India, Dehradun', level: 'National', award: 'Top 12 finalists across India with an Appreciation prize and a cash prize', title: 'Smart Automated electric fence system for wildlife and human safety.' },
+  { name: 'Shobika R\nB.Tech - II Year (B) • AI&DS', event: 'Next Wave Open AI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot.' },
+  { name: 'Shobika R\nB.Tech - II Year (B) • AI&DS', event: 'Hackathon conducted by K. Ramakrishnan College of Technology, Trichy', level: 'National', award: 'Top 25 finalist for the 24-hour hackathon', title: 'Smart Automated electric fence system for wildlife and human safety' },
+  { name: 'Tharshini A\nB.Tech - II Year (B) • AI&DS', event: 'Hackathon conducted by K. Ramakrishnan College of Technology, Trichy', level: 'National', award: 'Top 25 finalists for the 24-hour hackathon', title: 'Smart Automated electric fence system for wildlife and human safety' },
+  { name: 'Yukesh Kumar T\nB.Tech - II Year (B) • AI&DS', event: 'THREADS’25 Symposium in Sona College of Technology', level: 'National', award: '1st Place in Paper Presentation with cash prize.', title: 'Gas Leakage detection at IOT' },
+  { name: 'Suseel P S\nB.Tech - II Year (B) • AI&DS', event: 'THREADS’25 Symposium in Sona College of Technology', level: 'National', award: '1st Place in Paper Presentation with cash prize.', title: 'Gas Leakage detection at IOT' },
+  { name: 'Suseel P S\nB.Tech - II Year (B) • AI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Secured score of 60% (Elite category)', title: 'Business to Business B2B' },
+  { name: 'Yashvanth Suriya M\nB.Tech - II Year (B) • AI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Secured score of 66% (Elite category)', title: 'Business to Business B2B' },
+  { name: 'Sri Sanchive Kumar\nB.Tech - II Year (B) • AI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Secured score of 60% (Elite category)', title: 'Business to Business B2B' },
+  { name: 'Poomiha M\nB.Tech - II Year (B) • AI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Secured score of 65% (Elite category)', title: 'Business to Business B2B' },
+  { name: 'Jayashree N\nB.Tech - III Year • AI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Finalist', title: 'Multi-Tenant Task Tracker' },
+  { name: 'Madhu Shree M\nB.Tech - III Year • AI&DS', event: 'GCC × SHIFT Hackathon', level: 'National', award: 'Finalist', title: 'Multi-Tenant Task Tracker' },
+  { name: 'Rajamurugan MA\nB.Tech - III Year • AI&DS', event: 'Football Tournament', level: 'Zonal', award: 'Second Prize', title: 'Anna University Zonal Football Tournament held at Adhiyamaan College of Engineering, Hosur' },
+  { name: 'Karthickraja G\nB.Tech - III Year • AI&DS', event: 'Hockey Tournament', level: 'Zonal', award: 'Third Prize', title: 'Anna University zonal level tournament at Adiyamaan College of Engineering, Hosur' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Handball', level: 'Zonal', award: 'Third Prize', title: 'Anna University Zonal Handball Tournament held at Adhiyamaan College of Engineering, Hosur' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Hockey', level: 'Zonal', award: 'Third Prize', title: 'Anna University Zonal Hockey Tournament held at Adhiyamaan College of Engineering, Hosur' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Tennis', level: 'Zonal', award: 'Fourth prize', title: 'Anna University Zonal Tennis Tournament held at Adhiyamaan College of Engineering, Hosur' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Symposium', level: 'National', award: 'First Prize', title: 'IPL Auction' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Discuss Throw', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Cricket', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Kabadi', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Sports', level: 'Inter College', award: 'Best vice captain of the college', title: 'Sports Day' },
+  { name: 'Barathkumar SM\nB.Tech - III Year • AI&DS', event: 'Football', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
+  { name: 'V. Ramya\nB.Tech - III Year • AI&DS', event: 'CCL 12-hrs Coding Challenge', level: 'National', award: '2nd Place with case prize', title: 'Campus Coders League' },
+  { name: 'Deepak PS\nB.Tech - III Year • AI&DS', event: 'Innovative idea contest', level: 'Zonal', award: 'First prize with Award', title: 'Maximizing productivity in MSMEs (Salem Zonal)' },
+  { name: 'Deepak PS\nB.Tech - III Year • AI&DS', event: 'Campus Coders League', level: 'Internal College', award: 'Special prize for achieving the highest individual score percentage in the coding challenge', title: '12 HRS Coding Challenge' },
+  { name: 'Kaviya A\nB.Tech - III Year • AI&DS', event: 'CCL 12-hrs Coding Challenge', level: 'National', award: '2nd Place with case prize', title: 'Campus Coders League' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'UI/UX Designathon', level: 'National', award: 'Special Prize with case prize', title: 'Government police website recreation' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Odoo X SNS Hackathon', level: 'National', award: 'Finalist', title: 'E-Learning Platform' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: '24-hrs Non-Stop Women Hackathon', level: 'National', award: 'Finalist', title: 'BananaMart' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Table tennis', level: 'Zonal', award: 'First Prize', title: 'Anna University Zonal Tournament held at Govt. College of Bargur' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Table tennis', level: 'State', award: 'Third Prize', title: 'SKJ Table Tennis Academy State Level Match' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Hand Ball', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Throw Ball', level: 'Inter College', award: 'First Prize', title: 'Sports Day' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Table Tennis', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Tennis', level: 'Inter College', award: 'Second Prize', title: 'Sports Day' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Shotput', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Badminton', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Kho Kho', level: 'Inter College', award: 'Third Prize', title: 'Sports Day' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Table Tennis', level: 'District', award: 'Third Prize', title: 'District level at Coimbatore Institute of Technology' },
+  { name: 'Soundharya V\nB.Tech - III Year • AI&DS', event: 'Table tennis', level: 'Zonal', award: 'First Prize', title: 'Anna University Zonal Tournament held at Govt. College of Bargur' },
+  { name: 'Padma Sree R\nB.Tech - III Year • AI&DS', event: 'Symposium', level: 'National', award: 'Best event organizer certification', title: 'NextGen Talks Paper Presentation' },
+  { name: 'Midhun Haridharan\nB.Tech - III Year • AI&DS', event: 'Symposium', level: 'District', award: 'First Prize', title: 'BUILD EXPO 2025-2026' },
+  { name: 'Arun Prakash A\nB.Tech - III Year • AI&DS', event: 'Symposium', level: 'District', award: 'First Prize', title: 'BUILD EXPO 2025-2026' },
+  { name: 'Vishveswar M\nB.Tech - III Year • AI&DS', event: 'International Conference', level: 'International', award: 'Best Paper Award', title: 'RAG-Based AI for Accurate, Explainable, and Safe Legal Judgement Prediction in the Indian Constitution' },
+  { name: 'K. Haris Kumar\nB.Tech - IV Year • AI&DS', event: 'L&T Ideation Challenge 2025', level: 'International', award: 'Secured a stipend internship', title: 'AI-Enabled Data Interpretation & Validation System for SLD Creation.' },
+  { name: 'Haris K N\nB.Tech - IV Year • AI&DS', event: 'Code-zap hackathon 2025', level: 'National', award: 'Finalist', title: 'AI-Assisted Travel Planning System.' },
+  { name: 'Suberna R S\nB.Tech - IV Year • AI&DS', event: 'DigiTechCon25', level: 'National', award: 'Best Paper Award', title: 'Smart Traffic Management System using AI and IOT' },
+  { name: 'Suberna R S\nB.Tech - IV Year • AI&DS', event: 'Engineers Build Expo 2025-2026', level: 'National', award: 'Won first place with a cash prize of Rs:15,000', title: 'Disaster Management System using AI' },
+  { name: 'Krishna J\nB.Tech - IV Year • AI&DS', event: 'Internship at IIT Kharagpur', level: 'National', award: 'Completed National-level Summer Internship 25', title: 'National Programme on Technology-enhanced Learning' },
+  { name: 'Divyadharshini Y\nB.Tech - IV Year • AI&DS', event: 'Japanese JLPT N4 Exam', level: 'National', award: 'Completed', title: 'Japanese JLPT N5' },
+  { name: 'Murali Prasath K\nB.Tech - IV Year • AI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'NPTEL Believer award and NPTEL Discipline Star award', title: 'NPTEL Online Certification' },
+  { name: 'Vasudevan M\nB.Tech - IV Year • AI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'NPTEL Discipline Star Award', title: 'NPTEL Online Certification' },
+  { name: 'Ranjith Kumar A\nB.Tech - IV Year • AI&DS', event: 'NPTEL Online Certification', level: 'National', award: 'Achieved Top 5% (Silver category)', title: 'Programming in Java' }
 ];
 
 export const aidsFacultyAchievements = [
@@ -573,11 +566,11 @@ export const aidsFacultyAchievements = [
 export const aidsFacultyAwards = [
   {
     sno: 1,
-    name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
-    event: 'International Journal (SCIE)',
-    level: 'International',
-    award: 'Best Faculty',
-    title: 'Deep sight: Transformer‐based prediction of diabetic retinopathy using Py-Torch'
+    name: 'Dr. B. Sasikumar\nAssociate Professor & Head',
+    event: 'National Award Ceremony',
+    level: 'National',
+    award: 'Best Research Grant Award',
+    title: 'National Technology Day Higher Education Award 2026'
   },
   {
     sno: 2,
@@ -585,14 +578,216 @@ export const aidsFacultyAwards = [
     event: 'NPTEL',
     level: 'National',
     award: 'Star Award',
-    title: 'NPTL DISCIPLINE STAR'
+    title: 'NPTEL DISCIPLINE STAR'
   },
   {
     sno: 3,
-    name: 'Dr. B. Sasikumar\nAssociate Professor & Head',
-    event: 'National Award Ceremony',
-    level: 'National',
-    award: 'Best Research Grant Award',
-    title: 'National Technology Day Higher Education Award 2026'
+    name: 'Mrs. B. Bhuvaneswari\nAssistant Professor',
+    event: 'International Journal (SCIE)',
+    level: 'International',
+    award: 'Best Faculty',
+    title: 'Deep Sight: Transformer‐based prediction of diabetic retinopathy using PyTorch'
+  }
+];
+
+export const aidsStudentAwards = [
+  // IV – YEAR AWARD 2025 - 2026
+  {
+    sno: 1,
+    year: 'IV – YEAR AWARD 2025 - 2026',
+    name: 'Obu Subiksha O\nIV - AI&DS',
+    award: 'Best Outgoing Student',
+    batch: '2022 - 2026'
+  },
+  {
+    sno: 2,
+    year: 'IV – YEAR AWARD 2025 - 2026',
+    name: 'Vasudevan M\nIV - AI&DS',
+    award: 'Best Students In Co-Curricular Activities',
+    batch: '2022 - 2026'
+  },
+  {
+    sno: 3,
+    year: 'IV – YEAR AWARD 2025 - 2026',
+    name: 'Kaviyashree G\nIV - AI&DS',
+    award: 'Best Students in Extracurricular Activities',
+    batch: '2022 - 2026'
+  },
+  {
+    sno: 4,
+    year: 'IV – YEAR AWARD 2025 - 2026',
+    name: 'Krithiga V\nIV - AI&DS',
+    award: 'Overall Academic Topper',
+    batch: '2022 - 2026'
+  },
+
+  // III – YEAR AWARD 2025 - 2026
+  {
+    sno: 1,
+    year: 'III – YEAR AWARD 2025 - 2026',
+    name: 'Jaya Shree N\nIII - AI&DS',
+    award: 'Best Students In Co-Curricular Activities',
+    batch: '2023 - 2027'
+  },
+  {
+    sno: 2,
+    year: 'III – YEAR AWARD 2025 - 2026',
+    name: 'Koushikan S R\nIII - AI&DS',
+    award: 'Best Students in Extra-Curricular Activities',
+    batch: '2023 - 2027'
+  },
+
+  // II – YEAR AWARD 2025 - 2026
+  {
+    sno: 1,
+    year: 'II – YEAR AWARD 2025 - 2026',
+    name: 'Kirutheen Kumar R\nII - AI&DS',
+    award: 'Best Student in Co-Curricular Activities',
+    batch: '2024 - 2028'
+  },
+  {
+    sno: 2,
+    year: 'II – YEAR AWARD 2025 - 2026',
+    name: 'Vasunthararaji R\nII - AI&DS',
+    award: 'Best Student in Extra-Curricular Activities',
+    batch: '2024 - 2028'
+  },
+  {
+    sno: 3,
+    year: 'II – YEAR AWARD 2025 - 2026',
+    name: 'Mohammed Riyaz A\nII - AI&DS',
+    award: 'Most Book Borrower',
+    batch: '2024 - 2028'
+  }
+];
+
+export const aidsInnovativePractices = [
+  {
+    sno: 1,
+    name: 'Mr. A. Gopalakrishnan',
+    subject: 'Java Programming',
+    method: 'Discussion and hands-on session',
+    description: 'A hands-on programming session was conducted to provide students with practical exposure to fundamental programming concepts, including program structure and syntax, Object-Oriented Programming, classes and objects, methods and constructors, arrays and strings, exception handling, and file handling. The session encouraged students to actively code, experiment with programs, and strengthen their problem-solving skills through practical implementation and application-oriented learning.',
+    image: aidsIp1
+  },
+  {
+    sno: 2,
+    name: 'Mr. A. Gopalakrishnan',
+    subject: 'Recommender system',
+    method: 'Industry Vertical hands-on session',
+    description: 'Students gained practical insights into recommendation systems through interactive activities and real-world datasets. They explored user preferences, recommendation techniques, similarity measures, and result visualization. The session helped strengthen their analytical thinking, technical skills, and understanding of data-driven applications. Industry insights from Mr. Rajalakshmanan and Mahil Tech, Coimbatore further enriched the students’ learning experience.',
+    image: aidsIp2
+  },
+  {
+    sno: 3,
+    name: 'Mrs. V. Brindha',
+    subject: 'Machine learning',
+    method: 'Game-based Learning',
+    description: 'An engaging learning session on Machine Learning was conducted, introducing students to its fundamental concepts, supervised and unsupervised learning techniques, and real-world applications. The session encouraged active participation and curiosity while helping students connect theoretical concepts with practical scenarios. Through interactive discussions and examples, students strengthened their understanding of Machine Learning and gained valuable insights into its role in developing innovative solutions for future industry challenges.',
+    image: aidsIp3
+  },
+  {
+    sno: 4,
+    name: 'Mrs. P. J. Esther Rani',
+    subject: 'Dashboard Creation using Power BI',
+    method: 'Workshop model with chart presentation',
+    description: 'Students participated in an engaging Power BI session focused on creating interactive dashboards and transforming complex datasets into meaningful visual insights. They explored charts, KPIs, reports, and analytical features to identify trends and patterns effectively. The session encouraged students to design dashboards and apply data-driven thinking to real-world scenarios creatively. Their enthusiasm and active involvement in preparing and presenting dashboard visualizations made the learning experience highly interactive and productive.',
+    image: aidsIp4
+  },
+  {
+    sno: 5,
+    name: 'Mrs. P. J. Esther Rani',
+    subject: 'Docker creation using ML',
+    method: 'Hands-on Docker: Building and Managing Docker Images',
+    description: 'The hands-on session provided practical exposure to Docker, containerization, image creation, Dockerfiles, and container execution. The activity demonstrated how Docker enhances the portability, consistency, and scalability of Machine Learning applications. The session strengthened technical skills and provided valuable insights into MLOps and modern deployment practices.',
+    image: aidsIp5
+  },
+  {
+    sno: 6,
+    name: 'Mrs. B. Bhuvaneswari',
+    subject: 'Database Management Systems & Java Programming',
+    method: 'Participative Learning & Presentation',
+    description: 'Implemented the workshop model Teaching -Learning Method (TLM) for the course Database Management System, focusing on experiential and concept-oriented learning. The approach integrated short concept sessions with the seminar. Students presented their understanding of database connectivity and RAID concepts.',
+    image: aidsIp6
+  },
+  {
+    sno: 7,
+    name: 'Ms. M. Selvi',
+    subject: 'Programming in Python',
+    method: 'Interactive Demonstration-Cum-Practice',
+    description: 'An interactive hands-on session provided practical exposure to Python file handling through live coding and guided practice. Participants explored file creation, reading, writing, appending, and pointer operations using tell() and seek(). The activity encouraged active experimentation, debugging, and problem-solving, helping build confidence in applying Python concepts through experiential learning.',
+    image: aidsIp7
+  },
+  {
+    sno: 8,
+    name: 'Ms. M. Selvi',
+    subject: 'Data Engineering Tools and Techniques',
+    method: 'Peer learning',
+    description: 'A peer-learning session provided an engaging platform to explore workflow orchestration and cloud data engineering concepts. Participants discussed Apache Airflow, DAGs, data pipeline scheduling, monitoring, and cloud storage services such as AWS S3, Azure Blob Storage, and Google Cloud Storage. The activity strengthened technical understanding, communication, collaboration, and confidence through research, presentation, and knowledge sharing.',
+    image: aidsIp8
+  },
+  {
+    sno: 9,
+    name: 'Mrs. S. Sudha',
+    subject: 'Natural Language Processing',
+    method: 'AI-Augmented Collaborative Learning',
+    description: 'An interactive session introduced Parts-of-Speech Tagging as a fundamental concept in Natural Language Processing, covering linguistic categories, tagging approaches, ambiguity, and practical applications. Through collaborative activities and AI-assisted verification, participants manually tagged sentences, compared results, and discussed variations in AI predictions. The session fostered critical thinking, peer learning, and a deeper understanding of how language structure supports intelligent AI applications.',
+    image: aidsIp9
+  },
+  {
+    sno: 10,
+    name: 'Mrs. S. Sudha',
+    subject: 'Natural Language Processing and LLMs',
+    method: 'AI-Facilitated Group Problem Solving',
+    description: 'An engaging session explored prompt optimization techniques for NLP and Large Language Models, covering zero-shot, few-shot, role-based, context-driven, and structured prompting approaches. Practical discussions highlighted iterative refinement and automated optimization methods using modern frameworks. The session enhanced understanding of effective LLM interaction and encouraged innovative applications in AI-based projects and intelligent systems.',
+    image: aidsIp10
+  },
+  {
+    sno: 11,
+    name: 'Mr. R. Rameshkumar',
+    subject: 'Data Engineering Tools and Techniques',
+    method: 'Peer learning',
+    description: 'Interactive collaborative activity focused on ETL/ELT pipelines and Apache Airflow, encouraging participants to analyse data-flow scenarios and explore suitable pipeline architectures. Teams discussed and presented batch and real-time pipeline approaches while connecting theoretical concepts with practical implementation. The activity strengthened analytical thinking, problem-solving, knowledge sharing, and communication skills.',
+    image: aidsIp8
+  },
+  {
+    sno: 12,
+    name: 'Mrs. M. Deepa',
+    subject: 'Foundations of Data Engineering',
+    method: 'Experiential Learning',
+    description: 'Experiential learning focused on data cleaning, transformation, and pre-processing using real-world messy datasets. Participants identified duplicates, missing values, inconsistent formats, and outliers before designing, testing, and refining their own cleaning workflows. Peer review and practical experimentation strengthened data quality awareness, analytical thinking, problem-solving, and pipeline-building skills.',
+    image: aidsIp11
+  },
+  {
+    sno: 13,
+    name: 'Mrs. M. Deepa',
+    subject: 'Constructor and Destructor in Inheritance',
+    method: 'Collaborative Learning',
+    description: 'Experiential learning brought data cleaning and pre-processing concepts to life using real-world datasets containing missing values, duplicates, inconsistencies, and outliers. Participants identified data quality issues, developed cleaning workflows, tested different solutions, and refined their approaches through peer feedback. The activity strengthened practical understanding, analytical thinking, problem-solving, and data engineering skills.',
+    image: aidsIp11
+  },
+  {
+    sno: 14,
+    name: 'Ms. N. M. Ranitha',
+    subject: 'Advanced Machine Learning',
+    method: 'Project-Based Learning',
+    description: 'Project-Based Learning provided practical exposure to advanced Machine Learning through real-world datasets and application-oriented projects. Participants developed solutions involving regression, classification, clustering, dimensionality reduction, ensemble methods, and time-series forecasting. The approach strengthened programming, analytical thinking, research, teamwork, and problem-solving skills while encouraging innovation through hands-on implementation.',
+    image: aidsIp12
+  },
+  {
+    sno: 15,
+    name: 'Ms. N. M. Ranitha',
+    subject: 'Deep Learning Techniques',
+    method: 'Collaborative project',
+    description: 'The activity explored Generative Adversarial Networks through group-based analysis of generator and discriminator structures, adversarial training, and practical AI applications. Teams examined GAN models, exchanged ideas on real-world use cases, and shared their interpretations through presentations. The session enhanced technical awareness, analytical reasoning, collaboration, communication, and practical understanding of Deep Learning concepts.',
+    image: aidsIp13
+  },
+  {
+    sno: 16,
+    name: 'Mr. B. Gunasekar',
+    subject: 'Visualization Techniques',
+    method: 'Discuss and Present Classroom Activity',
+    description: 'The Discuss and Present Classroom Activity provided an interactive platform to explore data visualization techniques using Tableau and Power BI. Teams discussed visualization concepts, analysed datasets, selected suitable charts, and presented their design choices and insights. The activity promoted critical thinking, creativity, teamwork, effective communication, and practical understanding of data-driven visualization.',
+    image: aidsIp14
   }
 ];

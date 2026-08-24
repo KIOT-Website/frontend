@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   Sparkles,
@@ -8,11 +8,15 @@ import {
   UserCheck,
   Lightbulb,
   BookOpen,
-  Briefcase
+  Briefcase,
+  Calendar,
+  Award,
+  Users
 } from 'lucide-react'
 import "./studentLife.css"
 
 export default function WecCellPage() {
+  const [selectedYear, setSelectedYear] = useState('2026 - 2027')
 
   useEffect(() => {
     document.title = 'Women Empowerment Cell (WEC) - KIOT'
@@ -262,64 +266,209 @@ export default function WecCellPage() {
     { sno: 15, name: "Mr. B. Nithish", affiliation: "B.Tech. II year IT", position: "Member (Student)", contact: "2k25it067@kiot.ac.in" }
   ]
 
-  const activities = [
-    {
-      sno: 1,
-      nature: "Celebration",
-      name: "Women's Equality Day Celebration 2023\nCompetition Themes:\n1. Poster Presentation (My Exemplary Woman Leader / Women's Rights are Human Rights)\n2. Nail Art (Any creative, appealing and original artwork)\n3. Speech Competition (English or Tamil: Embrace Equity / Women in Leadership)",
-      date: "26.08.2023",
-      resourcePerson: "1. Dr. N. Santhiyakumari (Professor/Head, Department of ECE & Chairperson - ICC)\n2. Dr. T. K. Santhi (ASP/English)\n3. Mrs. P. Malarvizhi (AP/CSE)\n4. Mrs. S. Saranya (AP/Maths)"
-    },
-    {
-      sno: 2,
-      nature: "Motivational Lecture",
-      name: "Celebration of International Day of the Girl Child 2023",
-      date: "11.10.2023",
-      resourcePerson: "Mrs. Roja Ramani (Clinical Psychologist, AP Medical)"
-    },
-    {
-      sno: 3,
-      nature: "Awareness Program",
-      name: "POSH/ ICC Awareness & Grievances Redressal Meeting",
-      date: "04.11.2023",
-      resourcePerson: "Dr. N. Santhiyakumari (Chairperson - POSH/ICC)"
-    },
-    {
-      sno: 4,
-      nature: "Motivational Speech",
-      name: "Motivational Speech on Empower HER",
-      date: "14.12.2023",
-      resourcePerson: "Ms. Bhuvana Nakul (IT Corporate mid-career)"
-    },
-    {
-      sno: 5,
-      nature: "Competition",
-      name: "Competition in Mehandi and Rangoli",
-      date: "27.12.2023",
-      resourcePerson: "Internal Jury members"
-    },
-    {
-      sno: 6,
-      nature: "Competition",
-      name: "Competition on We Empower One Another",
-      date: "10.01.2024",
-      resourcePerson: "Internal Jury members"
-    },
-    {
-      sno: 7,
-      nature: "Awareness Program",
-      name: "Awareness Program on Ritu Vidhya Women's Health & Hygiene",
-      date: "21.02.2024",
-      resourcePerson: "Dr. Gayathri Devi Kannan (K.G. Siddha, Kaviraj)"
-    },
-    {
-      sno: 8,
-      nature: "Motivational Program",
-      name: "Motivational Program on Inspire Inclusion",
-      date: "08.03.2024",
-      resourcePerson: "Mrs. N. Anicham Kanimozhi (Entrepreneur & Social Activist)"
-    }
-  ]
+  const activitiesByYear = {
+    '2026 - 2027': [
+      {
+        sno: 1,
+        nature: "Awareness Program",
+        name: "Awareness Program on POSH Act for Faculty and Staff",
+        date: "03.07.2026",
+        resourcePerson: "Dr. N. Santhiyakumari, Director - WEC, HE & CE &\nDr. T. K. Santhi, Presiding Officer - IC,\nDr. S. Rekha, Coordinator"
+      },
+      {
+        sno: 2,
+        nature: "Awareness Program",
+        name: "POSH Act",
+        date: "09.07.2026",
+        resourcePerson: "Mrs. S. Brinda Rao, Life Skill and Relationship Coach, Erode."
+      },
+      {
+        sno: 3,
+        nature: "Guest Talk",
+        name: 'Guest talk on "Navigating Challenging Choices"',
+        date: "10.08.2026",
+        resourcePerson: "Ms. Srividya Venkataramanan, Head - HR Financial Software System, Chennai."
+      }
+    ],
+    '2025 - 2026': [
+      {
+        sno: 1,
+        nature: "Awareness Program",
+        name: "POSH Visakha Guidelines",
+        date: "11.07.2025",
+        resourcePerson: "Mrs. Brinda Rao, Life Skill and Relationship Coach, Erode"
+      },
+      {
+        sno: 2,
+        nature: "Guest Talk",
+        name: "Power within YOU",
+        date: "08.11.2025",
+        resourcePerson: "Dr. Roja Ramani, Consultant Clinical Psychologist, Manasa Clinic, Salem"
+      },
+      {
+        sno: 3,
+        nature: "Awareness Program",
+        name: "Awareness Program on POSH Act for Faculty and Staff",
+        date: "17.12.2025",
+        resourcePerson: "Dr. N. Santhiyakumari, Mentor - IC &\nDr. T. K. Santhi, Presiding Officer - IC"
+      },
+      {
+        sno: 4,
+        nature: "Competition",
+        name: "Cooking Competition - Healthy and Nutritious Food",
+        date: "21.01.2026",
+        resourcePerson: "Dr. P. Nazni, Professor & Head, Department of Clinical Nutrition and Dietetics, Periyar University, Salem"
+      },
+      {
+        sno: 5,
+        nature: "Competition",
+        name: "Mehandi Competition - Empowering Girl for a Better Tomorrow",
+        date: "24.01.2026",
+        resourcePerson: "Internal Jury members"
+      }
+    ],
+    '2024 - 2025': [
+      {
+        sno: 1,
+        nature: "Awareness Program",
+        name: "Awareness Program on Self-Transformation",
+        date: "14.08.2024",
+        resourcePerson: "Mr. E. Thirumavalavan (Retd. General Manager/Health, Safety & Environment, JSW Steels Ltd, Salem)"
+      },
+      {
+        sno: 2,
+        nature: "Awareness Program",
+        name: "Women Empowerment Cell / Anti-Sexual Harassment Cell",
+        date: "05.09.2024",
+        resourcePerson: "Dr. N. Santhiyakumari (Dir-R&D, The Chairperson-WEC, KIOT)"
+      },
+      {
+        sno: 3,
+        nature: "Guest Talk",
+        name: "Your Health, Your Responsibility",
+        date: "12.09.2024",
+        resourcePerson: "Mrs. Annei Sushil (Entrepreneur, Health And Wellness Coach, Salem)"
+      },
+      {
+        sno: 4,
+        nature: "Awareness Program",
+        name: "Nutrition Awareness",
+        date: "08.10.2024",
+        resourcePerson: "Mrs. A. Kavitha (Child Development Project Officer, Magudanchavadi)"
+      },
+      {
+        sno: 5,
+        nature: "POSH Awareness",
+        name: "POSH Awareness and Creating a Safe Environment for Women",
+        date: "25.10.2024",
+        resourcePerson: "Mrs. G. Vanisree (HR Strategic Consultant, Facilitator & POSH Enabler, Coimbatore)"
+      },
+      {
+        sno: 6,
+        nature: "Awareness Lecture",
+        name: 'Awareness Lecture on "Women\'s Health and Hygiene"',
+        date: "11.12.2024",
+        resourcePerson: "D. Vijiya (District Resource Person, Magudanchavadi Block)"
+      },
+      {
+        sno: 7,
+        nature: "Guest Talk",
+        name: "Guest talk on Unnatham",
+        date: "03.02.2025",
+        resourcePerson: "Mrs. S. Brinda Rao (Life Skills And Relationship Coach, Erode)"
+      },
+      {
+        sno: 8,
+        nature: "Celebration",
+        name: "Women's Day Celebration",
+        date: "24.03.2025",
+        resourcePerson: "Mr. S. Murugesan (Silabam Master, Salem)"
+      },
+      {
+        sno: 9,
+        nature: "Celebration",
+        name: "50th International Women's Day Celebration",
+        date: "24.03.2025",
+        resourcePerson: "Mrs. S. Sathya (Beautician, Sai Beauty Lounge, Salem)"
+      },
+      {
+        sno: 10,
+        nature: "Guest Talk",
+        name: "Empowering women in Engineering",
+        date: "03.04.2025",
+        resourcePerson: "Mrs. Mahalakshmi Saravanan (Founder, Women Entrepreneurs India, Chennai)"
+      }
+    ],
+    '2023 - 2024': [
+      {
+        sno: 1,
+        nature: "Celebration",
+        name: "Women's Equality Day Celebration 2023\nCompetition Themes:\n1. Poster Presentation (My Exemplary Woman Leader / Women's Rights are Human Rights)\n2. Nail Art (Any creative, appealing and original artwork)\n3. Speech Competition (English or Tamil: Embrace Equity / Women in Leadership)",
+        date: "26.08.2023",
+        resourcePerson: "1. Dr. N. Santhiyakumari (Professor/Head, Department of ECE & Chairperson - ICC)\n2. Dr. T. K. Santhi (ASP/English)\n3. Mrs. P. Malarvizhi (AP/CSE)\n4. Mrs. S. Saranya (AP/Maths)"
+      },
+      {
+        sno: 2,
+        nature: "Motivational Lecture",
+        name: "Celebration of International Day of the Girl Child 2023",
+        date: "11.10.2023",
+        resourcePerson: "Mrs. Roja Ramani (Clinical Psychologist, AP Medical)"
+      },
+      {
+        sno: 3,
+        nature: "Awareness Program",
+        name: "POSH/ ICC Awareness & Grievances Redressal Meeting",
+        date: "04.11.2023",
+        resourcePerson: "Dr. N. Santhiyakumari (Chairperson - POSH/ICC)"
+      },
+      {
+        sno: 4,
+        nature: "Motivational Speech",
+        name: "Motivational Speech on Empower HER",
+        date: "14.12.2023",
+        resourcePerson: "Ms. Bhuvana Nakul (IT Corporate mid-career)"
+      },
+      {
+        sno: 5,
+        nature: "Competition",
+        name: "Competition in Mehandi and Rangoli on any unique theme",
+        date: "27.12.2023",
+        resourcePerson: "Internal Jury members"
+      },
+      {
+        sno: 6,
+        nature: "Competition",
+        name: "Competition on We Empower One Another",
+        date: "10.01.2024",
+        resourcePerson: "Internal Jury members"
+      },
+      {
+        sno: 7,
+        nature: "Awareness Program",
+        name: "Awareness Program on Ritu Vidhya Women's Health & Hygiene",
+        date: "21.02.2024",
+        resourcePerson: "Dr. Gayathri Devi Kannan (K.G. Siddha, Kaviraj)"
+      },
+      {
+        sno: 8,
+        nature: "Motivational Program",
+        name: "Motivational Program on Inspire Inclusion",
+        date: "08.03.2024",
+        resourcePerson: "Mrs. N. Anicham Kanimozhi (Entrepreneur & Social Activist)"
+      }
+    ]
+  }
+
+  const getNatureBadge = (nature) => {
+    if (!nature) return 'bg-slate-100 text-slate-700 border-slate-200'
+    const n = nature.toLowerCase()
+    if (n.includes('celebration')) return 'bg-purple-50 text-purple-700 border-purple-200'
+    if (n.includes('guest talk') || n.includes('motivational speech') || n.includes('motivational lecture') || n.includes('motivational program')) return 'bg-amber-50 text-amber-700 border-amber-200'
+    if (n.includes('competition')) return 'bg-emerald-50 text-emerald-700 border-emerald-200'
+    if (n.includes('posh')) return 'bg-rose-50 text-rose-700 border-rose-200'
+    if (n.includes('awareness')) return 'bg-blue-50 text-blue-700 border-blue-200'
+    return 'bg-slate-100 text-slate-700 border-slate-200'
+  }
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] pb-24 selection:bg-[#ffc107]/20">
@@ -598,15 +747,35 @@ export default function WecCellPage() {
           <h2 className="font-black tracking-tight text-[#224292]" style={{ fontSize: 'clamp(1.4rem, 3vw, 2.1rem)' }}>
             Women Empowerment Cell Activities
           </h2>
-          <p className="font-bold text-slate-600 mt-2">2023 - 2024</p>
-          <div className="w-20 h-1.5 rounded-full mx-auto mt-4" style={{ backgroundColor: '#ffc107' }} />
+          <div className="w-20 h-1.5 rounded-full mx-auto mt-4 mb-6" style={{ backgroundColor: '#ffc107' }} />
+
+          {/* Academic Year Filter Tabs */}
+          <div className="bg-[#224292]/5 p-1.5 rounded-2xl inline-flex flex-wrap items-center justify-center gap-2 border border-[#224292]/10 mx-auto">
+            {Object.keys(activitiesByYear).map(year => {
+              const isActive = selectedYear === year
+              return (
+                <button
+                  key={year}
+                  onClick={() => setSelectedYear(year)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold font-graphik transition-all duration-300 ${
+                    isActive
+                      ? 'bg-[#224292] text-white shadow-md shadow-[#224292]/20 scale-105'
+                      : 'text-[#224292] hover:bg-[#224292]/10'
+                  }`}
+                >
+                  <Calendar size={14} className={isActive ? 'text-[#ffc107]' : 'text-[#224292]'} />
+                  {year}
+                </button>
+              )
+            })}
+          </div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          key={selectedYear}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
           className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50 max-w-7xl mx-auto"
         >
           <div className="overflow-x-auto">
@@ -616,27 +785,32 @@ export default function WecCellPage() {
                   <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-center w-20 border-r border-white/10 whitespace-nowrap">S.No.</th>
                   <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider border-r border-white/10 whitespace-nowrap">Nature of the Program</th>
                   <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider border-r border-white/10 min-w-[300px]">Name of the Program</th>
-                  <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider border-r border-white/10 whitespace-nowrap">Date</th>
-                  <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider min-w-[250px]">Resource Person</th>
+                  <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider border-r border-white/10 whitespace-nowrap text-center">Date</th>
+                  <th className="px-6 py-4 text-[11px] font-bold uppercase tracking-wider min-w-[280px]">Resource Person</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {activities.map((activity, idx) => (
+                {(activitiesByYear[selectedYear] || []).map((activity, idx) => (
                   <tr
                     key={idx}
                     className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.01]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
                   >
                     <td className="px-6 py-4 text-center text-sm font-bold text-[#224292] border-r border-slate-100 align-top">{activity.sno}</td>
-                    <td className="px-6 py-4 text-sm font-bold text-slate-800 border-r border-slate-100 align-top">
-                      {activity.nature}
+                    <td className="px-6 py-4 border-r border-slate-100 align-top">
+                      <span className={`inline-block px-3 py-1 rounded-lg text-xs font-bold border whitespace-nowrap ${getNatureBadge(activity.nature)}`}>
+                        {activity.nature}
+                      </span>
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-600 font-medium whitespace-pre-line border-r border-slate-100 align-top">
+                    <td className="px-6 py-4 text-sm font-semibold text-slate-800 whitespace-pre-line border-r border-slate-100 align-top leading-relaxed">
                       {activity.name}
                     </td>
-                    <td className="px-6 py-4 text-sm font-bold text-[#224292] border-r border-slate-100 align-top whitespace-nowrap">
-                      {activity.date}
+                    <td className="px-6 py-4 text-sm font-bold text-[#224292] border-r border-slate-100 align-top whitespace-nowrap text-center">
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50/70 border border-blue-100 text-[#224292] font-semibold text-xs">
+                        <Calendar size={12} className="text-[#224292]" />
+                        {activity.date}
+                      </div>
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-600 font-medium whitespace-pre-line align-top">
+                    <td className="px-6 py-4 text-sm text-slate-700 font-medium whitespace-pre-line align-top leading-relaxed">
                       {activity.resourcePerson}
                     </td>
                   </tr>

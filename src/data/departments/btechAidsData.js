@@ -1,4 +1,4 @@
-import { Cpu, Activity, FlaskConical, Terminal, Building2 } from 'lucide-react'
+import { Cpu, Activity, FlaskConical, Terminal, Building2, Code2, Database, Network, BrainCircuit } from 'lucide-react'
 import krishnanImage from '../../assets/Faculity/civil/L.KRISHNAN.webp'
 import aidsGomathiImage from '../../assets/Faculity/aids/dr_gomathi.webp'
 import aidsSasikumarHodImage from '../../assets/Faculity/aids/sasikumar_hod.webp'
@@ -477,10 +477,8 @@ export const btechAidsData = {
         ],
         icon: Building2
       },
-
-      
       {
-        name: 'AI LAB (D BLOCK)',
+        name: 'Artificial Intelligence Laboratory',
         equipments: [
           'Area: 748 Sq. ft',
           'Systems: 30 Systems',
@@ -489,31 +487,67 @@ export const btechAidsData = {
         ],
         incharge: 'Mrs. P. J. Esther Rani',
         technician: 'Mrs. P. Menaka',
-        icon: Cpu
+        icon: BrainCircuit
       },
       {
-        name: 'Data Science and Analytics Laboratory',
+        name: 'Data Analytics Laboratory',
         equipments: [
           'Area: 103.05 Sq. m',
           'Systems: 40 Systems',
           'License: Open-Source Software',
-          'Software: Turbo c, C++, JDK1.9, Python, PostgreSQL, Visual Studio'
+          'Software: Turbo C, C++, JDK 1.9, Python, PostgreSQL, Visual Studio'
         ],
         incharge: 'Mr. A. Gopalakrishnan',
         technician: 'Mr. K. Bharathiyar',
         icon: Terminal
       },
       {
-        name: 'COE (Punch BIZ) LAB',
+        name: 'Database & Deep Learning Laboratory (COE - Punch BIZ)',
         equipments: [
-          'Area: 546 Sq. ft',
+          'Area: 546 Sq. m',
           'Systems: 20 Systems',
           'License: Open-Source Software',
-          'Software: Python, OpenCV, Tensor flow, Py torch, flask, MySQL, JDE, Turbo C++'
+          'Software: Python, OpenCV, TensorFlow, PyTorch, Flask, MySQL, JDE, Turbo C++'
         ],
         incharge: 'Mrs. V. Brindha',
         technician: 'Mr. K. Bharathiyar',
         icon: Activity
+      },
+      {
+        name: 'Programming Laboratory',
+        equipments: [
+          'Area: 134 Sq. m',
+          'Systems: 30 Systems',
+          'License: Open-Source Software',
+          'Software: Python, Visual Studio Code (VS Code), PyCharm Community Edition, Jupyter Notebook'
+        ],
+        incharge: 'Mr. S. Jayaprakash',
+        technician: 'Mr. K. Bharathiyar',
+        icon: Code2
+      },
+      {
+        name: 'Database Laboratory (AIML)',
+        equipments: [
+          'Area: 64.44 Sq. m',
+          'Systems: 30 Systems',
+          'License: Open-Source Software',
+          'Software: Python, Turbo C++, PostgreSQL, Jupyter Notebook, SQLite, MySQL Community Server'
+        ],
+        incharge: 'Mrs. B. Bhuvaneswari',
+        technician: 'Mrs. P. Menaka',
+        icon: Database
+      },
+      {
+        name: 'Network Laboratory',
+        equipments: [
+          'Area: 134 Sq. m',
+          'Systems: 30 Systems',
+          'License: Open-Source Software',
+          'Software: Wireshark, Cisco Packet Tracer, Nmap, Python, Jupyter Notebook, Scapy, Mininet, IPERF3'
+        ],
+        incharge: 'Mrs. P. J. Esther Rani',
+        technician: 'Mr. K. Bharathiyar',
+        icon: Network
       }
     ],
     placementStats: { placed: '95%', avg: '5.5 LPA', top: '22 LPA', companies: '70+' },

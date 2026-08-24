@@ -2,9 +2,11 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { ArrowRight, Download } from 'lucide-react'
 import campusImage from '../../assets/main/home 1.webp'
-import handbookPdf from '../../assets/HANDBOOK.pdf'
-import brochurePdf from '../../assets/KIOT Brochure 2026 copy.pdf'
-import prospectsPdf from '../../assets/KIOT Prospects MAY 2026 .pdf'
+
+// PDFs served from public/ folder — NOT imported as JS modules to avoid bundle size issues
+const handbookPdf = '/assets/HANDBOOK.pdf'
+const brochurePdf = '/assets/KIOT-Brochure-2026.pdf'
+const prospectsPdf = '/assets/KIOT-Prospects-2026.pdf'
 
 const AboutKIOT = () => {
   const navigate = useNavigate()

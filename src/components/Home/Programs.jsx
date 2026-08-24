@@ -10,7 +10,9 @@ import {
 } from 'lucide-react'
 
 import courseBg from '../../assets/main/home course.webp'
-import successVideo from '../../assets/main/susccess story.mp4'
+
+// Video served from public/ folder — NOT imported as a JS module to avoid bundle size issues
+const successVideo = '/assets/success-story.mp4'
 
 const programsData = {
   UG: {

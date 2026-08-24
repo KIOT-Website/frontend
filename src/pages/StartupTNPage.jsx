@@ -7,7 +7,7 @@ import {
 import { useNavigate } from 'react-router-dom'
 
 import ist2Logo from '../assets/iStart/ist2.webp'
-import sanctionOrderPdf from '../assets/iStart/Sanction order.pdf'
+const sanctionOrderPdf = '/assets/iStart/Sanction order.pdf'
 import tnstart1 from '../assets/iStart/tnstart1.webp'
 import tnstart2 from '../assets/iStart/tnstart2.webp'
 import icon1 from '../assets/iStart/icon1.webp'

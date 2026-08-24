@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { Download, FileText, Search, ArrowLeft, Calendar } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-// Import COE PDFs
-import duplicateGSCGSPdf from '../assets/COE/SR_02_Application_for_Duplicate_GS_CGS.pdf'
-import eseCourseWithdrawalPdf from '../assets/COE/SR_03_ESE_Course_Withdrawal.pdf'
-import cgpaToPercentagePdf from '../assets/COE/CGPA_to_Percentage.pdf'
+// COE PDFs served from public/ — NOT bundled as JS imports
+const duplicateGSCGSPdf = '/assets/COE/SR_02_Application_for_Duplicate_GS_CGS.pdf'
+const eseCourseWithdrawalPdf = '/assets/COE/SR_03_ESE_Course_Withdrawal.pdf'
+const cgpaToPercentagePdf = '/assets/COE/CGPA_to_Percentage.pdf'
 
 const COEDownloadsPage = () => {
     const navigate = useNavigate();

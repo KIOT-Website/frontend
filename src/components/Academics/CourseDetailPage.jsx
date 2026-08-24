@@ -106,7 +106,7 @@ const mechanicalTeachingMethods = [
 // Department Data Imports
 import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFacultyAwards } from './departments/cse/cseData.jsx'
 import { eeeStudentAchievements, eeeFacultyAchievements } from './departments/eee/eeeData.jsx'
-import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards } from './departments/aids/aidsData.jsx'
+import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards, aidsStudentAwards, aidsInnovativePractices } from './departments/aids/aidsData.jsx'
 import { csbsStudentAchievements, csbsStudentAwards, csbsFacultyAwards, csbsFacultyAchievements, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities, csbsInnovativePractices } from './departments/csbs/csbsData.jsx'
 import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements, civilInnovativePractices } from './departments/civil/civilData.jsx'
 import { mechanicalStudentAchievements, mechanicalFacultyAchievements, mechanicalStudentAwards, mechanicalFacultyAwards } from './departments/mechanical/mechanicalData.jsx'
@@ -128,7 +128,7 @@ const studentAwardsMap = {
   'be-cse': cseStudentAwards,
   'btech-csbs': csbsStudentAwards,
   'be-civil': civilStudentAwards,
-  'btech-aids': [],
+  'btech-aids': aidsStudentAwards,
   'be-eee': [],
   'be-mechanical': mechanicalStudentAwards,
   'be-ece': eceStudentAwards,
@@ -2349,15 +2349,42 @@ export default function CourseDetailPage({ overrides }) {
                               <div>
                                 <div className="flex items-center gap-3 mb-6">
                                   <div className="w-1.5 h-6 bg-[#ffc107] rounded-full" />
-                                  <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-[0.1em]">Technical Inventory & Tools</h4>
+                                  <h4 className="text-[14px] font-bold font-graphik text-[#64779F] tracking-[0.1em] uppercase">
+                                    {activeLab.name === 'Industrial Linked Laboratories / COEs' ? 'Industrial Collaborations & Programs' : 'Technical Inventory & Specifications'}
+                                  </h4>
                                 </div>
-                                <div className="grid sm:grid-cols-2 gap-3">
-                                  {activeLab.equipments?.map((item, idx) => (
-                                    <div key={idx} className="flex gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100 items-start group hover:bg-white hover:border-[#ffc107]/20 transition-all">
-                                      <div className="w-2 h-2 rounded-full bg-[#ffc107] mt-1.5 shrink-0 group-hover:scale-125 transition-all" />
-                                      <span className="text-[14px] font-medium font-graphik text-slate-600 leading-tight tracking-tight">{item}</span>
-                                    </div>
-                                  )) || (
+                                <div className="grid sm:grid-cols-2 gap-3.5">
+                                  {activeLab.equipments?.map((item, idx) => {
+                                    const hasColon = typeof item === 'string' && item.includes(':');
+                                    const [label, ...valParts] = hasColon ? item.split(':') : [null, item];
+                                    const value = valParts.join(':').trim();
+                                    const isSoftware = label && label.toLowerCase().includes('software');
+
+                                    return (
+                                      <div
+                                        key={idx}
+                                        className={`flex gap-3.5 p-4 rounded-2xl bg-[#F8FAFC] border border-[#E5EDF8] items-start group hover:bg-white hover:border-[#ffc107]/40 hover:shadow-lg hover:shadow-blue-900/5 transition-all ${isSoftware ? 'sm:col-span-2' : ''}`}
+                                      >
+                                        <div className="w-2 h-2 rounded-full bg-[#ffc107] mt-1.5 shrink-0 group-hover:scale-125 transition-all" />
+                                        <div className="flex-1 font-graphik">
+                                          {hasColon && label ? (
+                                            <div>
+                                              <span className="text-[11px] font-bold text-[#224292] uppercase tracking-wider block mb-1">
+                                                {label}
+                                              </span>
+                                              <span className="text-[14px] font-medium text-slate-700 leading-relaxed block">
+                                                {value}
+                                              </span>
+                                            </div>
+                                          ) : (
+                                            <span className="text-[14px] font-medium text-slate-700 leading-snug">
+                                              {item}
+                                            </span>
+                                          )}
+                                        </div>
+                                      </div>
+                                    );
+                                  }) || (
                                       <p className="text-[#64779F] italic text-sm">Main specialized equipment list is being updated.</p>
                                     )}
                                 </div>
@@ -2365,14 +2392,14 @@ export default function CourseDetailPage({ overrides }) {
 
                               {/* Personnel / Staff */}
                               {activeLab.name !== 'Industrial Linked Laboratories / COEs' && (
-                                <div className="pt-10 border-t border-slate-100 grid md:grid-cols-2 gap-8">
-                                  <div className="bg-[#224292]/5 p-6 rounded-2xl border border-[#224292]/10">
-                                    <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Facility In-Charge</p>
-                                    <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.incharge || 'Department HOD'}</p>
+                                <div className="pt-8 border-t border-slate-100 grid md:grid-cols-2 gap-6">
+                                  <div className="bg-[#224292]/5 p-5 rounded-2xl border border-[#224292]/10">
+                                    <p className="text-[12px] font-bold font-graphik tracking-wider uppercase text-[#64779F] mb-1.5">Facility In-Charge</p>
+                                    <p className="text-[#224292] font-bold font-graphik text-[15px]">{activeLab.incharge || 'Department HOD'}</p>
                                   </div>
-                                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                                    <p className="text-[14px] font-bold font-graphik tracking-widest text-[#64779F] mb-3">Technical Staff</p>
-                                    <p className="text-[#224292] font-bold font-graphik text-[14px]">{activeLab.technician || 'Engineering Technician'}</p>
+                                  <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                                    <p className="text-[12px] font-bold font-graphik tracking-wider uppercase text-[#64779F] mb-1.5">Technical Staff</p>
+                                    <p className="text-[#224292] font-bold font-graphik text-[15px]">{activeLab.technician || 'Engineering Technician'}</p>
                                   </div>
                                 </div>
                               )}
@@ -2436,13 +2463,44 @@ export default function CourseDetailPage({ overrides }) {
                                   <p className="text-[#64779F] text-[13px] font-bold font-graphik tracking-wide">{course.name}</p>
                                 </div>
                                 {lab.equipments && lab.equipments.length > 0 && (
-                                  <div className="grid gap-2">
-                                    {lab.equipments.map((item, idx) => (
-                                      <div key={idx} className="flex gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100 items-start">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
-                                        <span className="text-[13px] font-medium font-graphik text-slate-700 leading-tight">{item}</span>
+                                  <div className="grid gap-2.5">
+                                    {lab.equipments.map((item, idx) => {
+                                      const hasColon = typeof item === 'string' && item.includes(':');
+                                      const [label, ...valParts] = hasColon ? item.split(':') : [null, item];
+                                      const value = valParts.join(':').trim();
+
+                                      return (
+                                        <div key={idx} className="flex gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border border-[#E5EDF8] items-start">
+                                          <div className="w-1.5 h-1.5 rounded-full bg-[#ffc107] mt-1.5 shrink-0" />
+                                          <div className="flex-1 font-graphik">
+                                            {hasColon && label ? (
+                                              <div>
+                                                <span className="text-[10px] font-bold text-[#224292] uppercase tracking-wider block mb-0.5">{label}</span>
+                                                <span className="text-[13px] font-medium text-slate-700 leading-snug">{value}</span>
+                                              </div>
+                                            ) : (
+                                              <span className="text-[13px] font-medium text-slate-700 leading-snug">{item}</span>
+                                            )}
+                                          </div>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                )}
+                                {lab.name !== 'Industrial Linked Laboratories / COEs' && (lab.incharge || lab.technician) && (
+                                  <div className="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {lab.incharge && (
+                                      <div className="bg-[#224292]/5 p-4 rounded-xl border border-[#224292]/10">
+                                        <p className="text-[11px] font-bold font-graphik tracking-wider uppercase text-[#64779F] mb-1">Facility In-Charge</p>
+                                        <p className="text-[#224292] font-bold font-graphik text-[13px]">{lab.incharge}</p>
                                       </div>
-                                    ))}
+                                    )}
+                                    {lab.technician && (
+                                      <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                        <p className="text-[11px] font-bold font-graphik tracking-wider uppercase text-[#64779F] mb-1">Technical Staff</p>
+                                        <p className="text-[#224292] font-bold font-graphik text-[13px]">{lab.technician}</p>
+                                      </div>
+                                    )}
                                   </div>
                                 )}
                               </div>
@@ -3105,7 +3163,7 @@ export default function CourseDetailPage({ overrides }) {
 
 // ─── Awards Section Component ───────────────────────────────────────────────
 function AwardsSection({ courseId, courseName, initialAudience }) {
-  const [activeAudience, setActiveAudience] = useState(initialAudience || (courseId === 'btech-aids' ? 'FACULTY' : 'STUDENT'))
+  const [activeAudience, setActiveAudience] = useState(initialAudience || 'STUDENT')
 
   useEffect(() => {
     if (initialAudience) {
@@ -3116,8 +3174,8 @@ function AwardsSection({ courseId, courseName, initialAudience }) {
   const studentAwards = studentAwardsMap[courseId] || []
   const facultyAwards = facultyAwardsMap[courseId] || []
 
-
   const visibleData = activeAudience === 'STUDENT' ? studentAwards : facultyAwards
+  const isSimplifiedStudentAwards = activeAudience === 'STUDENT' && (courseId === 'be-ece' || courseId === 'btech-aids')
 
   const levelColor = (level) => {
     if (!level) return 'bg-slate-100 text-slate-600'
@@ -3136,27 +3194,27 @@ function AwardsSection({ courseId, courseName, initialAudience }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
+          className="bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200"
         >
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-[#ffc107]">
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">S.No</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">{activeAudience === 'STUDENT' ? 'Name of the Student' : 'Name of the Faculty'}</th>
-                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Name of the Event</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center whitespace-nowrap">S.No</th>
+                <th className="px-5 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] whitespace-nowrap">{activeAudience === 'STUDENT' ? 'Name of the Student' : 'Name of the Faculty'}</th>
+                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !isSimplifiedStudentAwards && (
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] whitespace-nowrap">Name of the Event</th>
                 )}
-                {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center">Level</th>
+                {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && !isSimplifiedStudentAwards && (
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] text-center whitespace-nowrap">Level</th>
                 )}
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">
-                  {activeAudience === 'STUDENT' && courseId === 'be-ece' ? 'Name of the Award' : 'Distinction / Award'}
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] whitespace-nowrap">
+                  {isSimplifiedStudentAwards ? 'Name of the Award' : 'Distinction / Award'}
                 </th>
-                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Title</th>
+                {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !isSimplifiedStudentAwards && (
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] whitespace-nowrap">Title</th>
                 )}
-                {activeAudience === 'STUDENT' && courseId === 'be-ece' && (
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292]">Batch</th>
+                {isSimplifiedStudentAwards && (
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-[#224292] whitespace-nowrap">Batch</th>
                 )}
               </tr>
             </thead>
@@ -3167,32 +3225,53 @@ function AwardsSection({ courseId, courseName, initialAudience }) {
                   <Fragment key={idx}>
                     {showYearHeader && (
                       <tr className="bg-slate-100">
-                        <td colSpan="6" className="px-4 py-3 text-center text-sm font-bold text-slate-800 border-y border-slate-200">
-                          STUDENTS AWARDS {item.year}
+                        <td colSpan={isSimplifiedStudentAwards ? "4" : "6"} className="px-4 py-3 text-center text-sm font-bold text-slate-800 border-y border-slate-200">
+                          {item.year.toUpperCase().includes('AWARD') ? item.year.toUpperCase() : `STUDENTS AWARDS ${item.year}`}
                         </td>
                       </tr>
                     )}
                     <tr
                       className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
                     >
-                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{activeAudience === 'FACULTY' ? (idx + 1) : (item.sno || (idx + 1))}</td>
-                      <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
-                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
-                        <td className="px-4 py-3 text-sm text-slate-700">{item.event}</td>
+                      <td className="px-4 py-3.5 text-center text-sm font-bold text-[#224292]">{activeAudience === 'FACULTY' ? (idx + 1) : (item.sno || (idx + 1))}</td>
+                      <td className="px-5 py-3.5">
+                        {(() => {
+                          const lines = typeof item.name === 'string' ? item.name.split('\n').filter(Boolean) : [item.name];
+                          const achieverName = lines[0];
+                          const achieverMeta = lines.slice(1).join(' • ');
+
+                          return (
+                            <div className="font-graphik min-w-[180px]">
+                              <div className="text-[13.5px] font-bold text-[#224292] whitespace-nowrap leading-snug tracking-tight">
+                                {achieverName}
+                              </div>
+                              {achieverMeta && (
+                                <div className="text-[11.5px] font-medium text-[#64779F] leading-tight mt-1 flex items-center gap-1.5 flex-wrap">
+                                  <span className="inline-block px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium text-[11px] whitespace-nowrap">
+                                    {achieverMeta}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })()}
+                      </td>
+                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !isSimplifiedStudentAwards && (
+                        <td className="px-4 py-3.5 text-sm text-slate-700">{item.event}</td>
                       )}
-                      {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
-                        <td className="px-4 py-3 text-center">
-                          <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                      {!(activeAudience === 'FACULTY' && (courseId === 'be-cse' || courseId === 'be-civil')) && !isSimplifiedStudentAwards && (
+                        <td className="px-4 py-3.5 text-center">
+                          <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide whitespace-nowrap ${levelColor(item.level)}`}>
                             {item.level}
                           </span>
                         </td>
                       )}
-                      <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
-                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !(activeAudience === 'STUDENT' && courseId === 'be-ece') && (
-                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
+                      <td className="px-4 py-3.5 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
+                      {!(activeAudience === 'FACULTY' && courseId === 'be-cse') && !isSimplifiedStudentAwards && (
+                        <td className="px-4 py-3.5 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
                       )}
-                      {activeAudience === 'STUDENT' && courseId === 'be-ece' && (
-                        <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.batch}</td>
+                      {isSimplifiedStudentAwards && (
+                        <td className="px-4 py-3.5 text-sm font-semibold text-slate-700 whitespace-nowrap">{item.batch}</td>
                       )}
                     </tr>
                   </Fragment>
@@ -3288,17 +3367,17 @@ function AchievementSection({ courseId, courseName }) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-black/[0.04] border border-slate-200"
+            className="bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200"
           >
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-[#224292] text-white">
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Student</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
-                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Title</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center whitespace-nowrap">S.No</th>
+                <th className="px-5 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Name of the Student</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Name of the Event</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center whitespace-nowrap">Level</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Distinction / Award</th>
+                <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Title</th>
               </tr>
             </thead>
             <tbody>
@@ -3317,16 +3396,37 @@ function AchievementSection({ courseId, courseName }) {
                     <tr
                       className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}
                     >
-                      <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{displayIndex}</td>
-                      <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
-                      <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
-                      <td className="px-4 py-3 text-center">
-                        <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                      <td className="px-4 py-3.5 text-center text-sm font-bold text-[#224292]">{displayIndex}</td>
+                      <td className="px-5 py-3.5">
+                        {(() => {
+                          const lines = typeof item.name === 'string' ? item.name.split('\n').filter(Boolean) : [item.name];
+                          const studentName = lines[0];
+                          const studentMeta = lines.slice(1).join(' • ');
+
+                          return (
+                            <div className="font-graphik min-w-[200px]">
+                              <div className="text-[13.5px] font-bold text-[#224292] whitespace-nowrap leading-snug tracking-tight">
+                                {studentName}
+                              </div>
+                              {studentMeta && (
+                                <div className="text-[11.5px] font-medium text-[#64779F] leading-tight mt-1 flex items-center gap-1.5 flex-wrap">
+                                  <span className="inline-block px-2.5 py-0.5 rounded-md bg-[#224292]/5 border border-[#224292]/10 text-[#224292] font-semibold text-[11px] whitespace-nowrap">
+                                    {studentMeta}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })()}
+                      </td>
+                      <td className="px-4 py-3.5 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
+                      <td className="px-4 py-3.5 text-center">
+                        <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide whitespace-nowrap ${levelColor(item.level)}`}>
                           {item.level}
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
-                      <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
+                      <td className="px-4 py-3.5 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
+                      <td className="px-4 py-3.5 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
                     </tr>
                   </Fragment>
                 );
@@ -3345,10 +3445,10 @@ function AchievementSection({ courseId, courseName }) {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-[#224292] text-white">
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Student</th>
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Course Name</th>
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Certification Type</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center whitespace-nowrap">S.No</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Name of the Student</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Course Name</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Certification Type</th>
                 </tr>
               </thead>
               <tbody>
@@ -3395,14 +3495,14 @@ function AchievementSection({ courseId, courseName }) {
                 </tr>
               ) : (
                 <tr className="bg-[#224292] text-white">
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">S.No</th>
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Achiever Name and Designation</th>
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Name of the Event / Achievement</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center whitespace-nowrap">S.No</th>
+                  <th className="px-5 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Achiever Name and Designation</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Name of the Event / Achievement</th>
                   {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece' || courseId === 'be-civil') && (
-                    <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center">Level</th>
+                    <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center whitespace-nowrap">Level</th>
                   )}
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Distinction / Award</th>
-                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest">Title</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Distinction / Award</th>
+                  <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Title</th>
                 </tr>
               )}
             </thead>
@@ -3432,18 +3532,39 @@ function AchievementSection({ courseId, courseName }) {
                       </tr>
                     ) : (
                       <tr className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5 border-t border-slate-100`}>
-                        <td className="px-4 py-3 text-center text-sm font-bold text-[#224292]">{displayIndex}</td>
-                        <td className="px-4 py-3 text-sm font-semibold text-slate-800 whitespace-pre-line">{item.name}</td>
-                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
+                        <td className="px-4 py-3.5 text-center text-sm font-bold text-[#224292]">{displayIndex}</td>
+                        <td className="px-5 py-3.5">
+                          {(() => {
+                            const lines = typeof item.name === 'string' ? item.name.split('\n').filter(Boolean) : [item.name];
+                            const facultyName = lines[0];
+                            const designation = lines.slice(1).join(' • ');
+
+                            return (
+                              <div className="font-graphik min-w-[200px]">
+                                <div className="text-[13.5px] font-bold text-[#224292] whitespace-nowrap leading-snug tracking-tight">
+                                  {facultyName}
+                                </div>
+                                {designation && (
+                                  <div className="text-[11.5px] font-medium text-[#64779F] leading-tight mt-1 flex items-center gap-1.5 flex-wrap">
+                                    <span className="inline-block px-2.5 py-0.5 rounded-md bg-blue-50 border border-blue-100 text-[#224292] font-semibold text-[11px] whitespace-nowrap">
+                                      {designation}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })()}
+                        </td>
+                        <td className="px-4 py-3.5 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
                         {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece' || courseId === 'be-civil') && (
-                          <td className="px-4 py-3 text-center">
-                            <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide ${levelColor(item.level)}`}>
+                          <td className="px-4 py-3.5 text-center">
+                            <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide whitespace-nowrap ${levelColor(item.level)}`}>
                               {item.level}
                             </span>
                           </td>
                         )}
-                        <td className="px-4 py-3 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
-                        <td className="px-4 py-3 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
+                        <td className="px-4 py-3.5 text-sm text-slate-700 whitespace-pre-line">{item.award}</td>
+                        <td className="px-4 py-3.5 text-sm text-slate-600 whitespace-pre-line">{item.title}</td>
                       </tr>
                     )}
                   </Fragment>
@@ -3787,7 +3908,8 @@ function InnovativePracticesSection({ courseId }) {
   const detailsMap = {
     'me-ae': meAeDetails,
     'be-ece': beEceDetails,
-    'btech-csbs': csbsInnovativePractices
+    'btech-csbs': csbsInnovativePractices,
+    'btech-aids': aidsInnovativePractices
   };
 
   const images = imagesMap[courseId] || [];
