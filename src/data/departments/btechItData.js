@@ -1,4 +1,4 @@
-import { BookOpen, Layers, Building2 } from 'lucide-react'
+import { BookOpen, Layers, Building2, Code, Database, Cpu, Network, Terminal, FileCode } from 'lucide-react'
 import itSachidhanandamImage from '../../assets/Faculity/IT/Dr.P.Sachidhanandam, IT.png'
 import itKarthickImage from '../../assets/Faculity/IT/Mr. K.Karthick.png'
 import itAyyappanImage from '../../assets/Faculity/IT/Mr.R.Ayyappan.png'
@@ -20,6 +20,9 @@ import itValarmathiImage from '../../assets/Faculity/IT/Ms.S.Valarmathi.png'
 import itVinothKumarImage from '../../assets/Faculity/IT/Mr.S.Vinoth kumar.png'
 import itManikandanImage from '../../assets/Faculity/IT/Mr.Manikandan.png'
 import itKManikandanImage from '../../assets/Faculity/IT/Mr.K.Manikandan S&H.png'
+import itLavanyaImage from '../../assets/Faculity/IT/S.Lavanya.png'
+import itUshaImage from '../../assets/Faculity/IT/Mrs.G.USHA.png'
+import itAnandhiImage from '../../assets/Faculity/IT/ANANDHI.png'
 
 export const btechItData = {
   name: 'B.Tech Information Technology',
@@ -42,9 +45,21 @@ export const btechItData = {
   vision: "To equip students with cutting-edge information technologies and nurture them into socially responsible and globally recognized Professionals.",
   mission: "To deliver reliable education with innovative techniques, software updates and programming languages to the students.\nTo cultivate innovation and entrepreneurial spirit among students, enabling them to cater to multidisciplinary sectors.\nTo impart skills to meet the growing demands in academics and industry.\nTo shape the students as sustainable professionals with resilient ethics and society consciousness.",
   peo: "Graduates will be able to\n\nPEO-1: Have a successful career as an IT professional with analytical and critical thinking to meet the diversified requirements of industry, academia and research.\n\nPEO-2: Acquire leadership qualities with technical skills and entrepreneurship skills to solve complex engineering and social problems with ethics and environmental responsibility\n\nPEO-3: Pursue lifelong learning, and involve in applied research to design optimal solutions",
-  po: " ",
+  po: "The graduates of Information Technology will be able to:\n\nPO-1: Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\n\nPO-2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\n\nPO-3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\n\nPO-4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\n\nPO-5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\n\nPO-6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\n\nPO-7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\n\nPO-8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\n\nPO-9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\n\nPO-10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\n\nPO-11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one's own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\n\nPO-12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and lifelong learning in the broadest context of technological change.",
   pso: "To ensure graduates\n\nPSO-1: Have proficiency in programming skills to design, develop and apply appropriate techniques, to solve complex engineering problems.\n\nPSO-2: Have knowledge to provide technological solutions for automation.\n\nPSO-3: Have the skill to secure and manage large volume of data.",
-  whyChoose: ['Strong coding culture', 'Software focused', 'Industry tie-ups'],
+  whyChoose: [
+    'Coding Arena',
+    'Cybersecurity DIV',
+    'Technical Clubs',
+    'Hackathons & Competitions',
+    'Emerging Technologies',
+    'Industry Internships & Training',
+    'Project-Based Learning',
+    'Innovation & Entrepreneurship',
+    'NPTEL & Professional Certifications',
+    'Placement & Career Development',
+    'Research & Development'
+  ],
   curriculum: [{ year: 'Year 1', semesters: ['Python', 'Discrete Maths', 'Digital Logic'] }],
   faculty: [
     {
@@ -53,36 +68,36 @@ export const btechItData = {
       joiningDate: "01.06.2016",
       qualification: "B.E.,M.E., Ph.D, MISTE.,",
       association: "Regular",
-      experience: "Teaching: 17.8 Years",
+      experience: "Teaching: 20 Years",
       specialization: "Computer Networks",
       email: "hod.it@kiot.ac.in",
-      publications: "IJ:03, NJ:01, IC:02, NC:04",
+      publications: "IJ: 5, NJ: 2, IC: 4, NC: 2",
       rating: 5.0,
       image: itSachidhanandamImage
     },
     {
-      name: "Ms. R.V.Sudha",
+      name: "Mrs. R.V.Sudha",
       designation: "Assistant Professor",
       joiningDate: "05.06.2023",
-      qualification: "B.E.,M.E.,(Ph.D)",
+      qualification: "M.E, Ph.D(pursuing)",
       association: "Regular",
-      experience: "Teaching: 14 Years",
-      specialization: "Wireless Sensor Network",
+      experience: "16 Years",
+      specialization: "Wireless sensor network",
       email: "rvscsbs@kiot.ac.in",
-      publications: "IJ:02 NJ:07, IC:3",
+      publications: "IJ: 02, NJ: 12, IC: 7, NC: 13",
       rating: 4.6,
       image: itSudhaImage
     },
     {
-      name: "Ms. S.Lalithambikai",
+      name: "Mrs. S.Lalithambikai",
       designation: "Assistant Professor",
       joiningDate: "01.06.2023",
       qualification: "B.Tech(IT),ME(Network Engineering)",
       association: "Regular",
-      experience: "Teaching: 6 years",
+      experience: "9 Years",
       specialization: "Networks",
       email: "slit@kiot.ac.in",
-      publications: "IC:1, IJ:1",
+      publications: "IJ: 2, NJ: 0, IC: 5, NC: 1",
       rating: 4.5,
       image: itLalithambikaiImage
     },
@@ -92,10 +107,10 @@ export const btechItData = {
       joiningDate: "10-12-2022",
       qualification: "B.Tech., M.E.,",
       association: "Regular",
-      experience: "Teaching: 01 Yrs, Industry: 8 Yrs",
+      experience: "3.7 Years",
       specialization: "Computer Networks, Data Structure",
       email: "rait@kiot.ac.in",
-      publications: "IJ:00 IC: 01 NC: 00",
+      publications: "IJ: 2, NJ: 0, IC: 5, NC: 0",
       rating: 4.4,
       image: itAyyappanImage
     },
@@ -105,36 +120,36 @@ export const btechItData = {
       joiningDate: "25.06.2024",
       qualification: "M.E (Computer Science and Engineering)",
       association: "Regular",
-      experience: "6 Years",
+      experience: "8 Years",
       specialization: "Networks and Cyber Security",
       email: "sdit@kiot.ac.in",
-      publications: "NC-1, IJ-2",
+      publications: "IJ: 2, NJ: 0, IC: 5, NC: 0",
       rating: 4.5,
       image: itDhamodaranImage
     },
     {
-      name: "B.Manjubashini",
+      name: "Mrs. B.Manjubashini",
       designation: "Assistant Professor",
       joiningDate: "12.06.2023",
-      qualification: "B.E(CSE), M.E(CSE)",
+      qualification: "M.E.",
       association: "Regular",
-      experience: "Teaching: 5.2 Years",
+      experience: "7 Years 1 Month",
       specialization: "Networks",
       email: "bmit@kiot.ac.in",
-      publications: "IJ:08 IC: 05 NC: 04",
+      publications: "IJ: 9, NJ: 2, IC: 18, NC: 7",
       rating: 4.6,
       image: itManjubashiniImage
     },
     {
-      name: "Ms. S.Kalaiselvi",
+      name: "Mrs. S.Kalaiselvi",
       designation: "Assistant Professor",
-      joiningDate: "26.03.2021",
-      qualification: "B.E.,M.E.,",
+      joiningDate: "29.03.2021",
+      qualification: "M.E",
       association: "Regular",
-      experience: "Teaching: 4 Year",
-      specialization: "Computer Networks",
+      experience: "5 Years 2 Months",
+      specialization: "AI and ML",
       email: "skit@kiot.ac.in",
-      publications: "IJ:02, NC:02",
+      publications: "IJ: 2, NJ: 0, IC: 4, NC: 0",
       rating: 4.5,
       image: itKalaiselviImage
     },
@@ -147,73 +162,182 @@ export const btechItData = {
       experience: "Teaching: 1.2 Year",
       specialization: "Machine Learning",
       email: "mpit@kiot.ac.in",
-      publications: "IJ: 2 ,IC: 1,NC: 3,NJ:3",
+      publications: "IJ: 2, IC: 1, NC: 3, NJ: 3",
       rating: 4.5
     },
     {
-      name: "Mr. Bhuvaneshwaran T",
+      name: "Mr. T. Bhuvaneshwaran",
       designation: "Assistant Professor",
       joiningDate: "27.09.2023",
       qualification: "B.Tech.,M.E.,",
       association: "Regular",
-      experience: "Teaching: 1 Year",
+      experience: "2 years 11 Months & 11 Years company experience",
       specialization: "Wireless Networks",
       email: "tbit@kiot.ac.in",
-      publications: "IC: 1",
+      publications: "IJ: 0, NJ: 0, IC: 0, NC: 0",
       rating: 4.3,
       image: itBhuvaneshwaranImage
     },
     {
-      name: "Ms. M.Rubigha",
+      name: "Mrs. M.Rubigha",
       designation: "Assistant Professor",
-      joiningDate: "04.03-2024",
-      qualification: "B.E., M.E.,",
+      joiningDate: "04-03-2024",
+      qualification: "B.E(CSE), M.E(CSE)",
       association: "Regular",
-      experience: "Teaching: 02 months",
-      specialization: "DBMS, ML",
+      experience: "2 years 4 Months",
+      specialization: "Networks",
       email: "mrit@kiot.ac.in",
-      publications: "Nil",
+      publications: "IJ: 2, NJ: 3, IC: 3, NC: 0",
       rating: 4.2,
       image: itRubighaImage
     },
     {
-      name: "Ms. Rajapriya V",
+      name: "Mrs. V.Rajapriya",
       designation: "Assistant Professor",
       joiningDate: "27.01.2025",
-      qualification: "B.Tech., M.E.,",
+      qualification: "M.E",
       association: "Regular",
-      experience: "Teaching: 02 months",
+      experience: "1 year 4 Months",
       specialization: "Networking",
       email: "rvit@kiot.ac.in",
-      publications: "Priya",
+      publications: "IJ: 2, NJ: 0, IC: 2, NC: 1",
       rating: 4.2,
       image: itRajapriyaImage
     },
     {
-      name: "Ms. P.Priya",
+      name: "Mrs. P.Priya",
       designation: "Assistant Professor",
       joiningDate: "11.06.2025",
-      qualification: "B.Tech., M.E.,",
+      qualification: "ME CSE",
       association: "Regular",
-      experience: "Teaching: 01 Year 01 Month",
-      specialization: "AI",
+      experience: "2 Years",
+      specialization: "Networks",
       email: "ppit@kiot.ac.in",
-      publications: "IC: 01 NC: Nil",
+      publications: "IJ: 1, NJ: 0, IC: 3, NC: 1",
       rating: 4.3,
       image: itPriyaImage
     },
     {
-      name: "Ms. J.Arthipriyadharshini",
+      name: "Mrs. J.Arthipriyadharshini",
       designation: "Assistant Professor",
       joiningDate: "01.07.2025",
-      qualification: "B.E.,M.E.,",
+      qualification: "M.E.",
       association: "Regular",
-      experience: "Teaching: 01 Month Industry: 05 Years",
+      experience: "11 months company exp 5 years",
       specialization: "Software Engineering",
       email: "japit@kiot.ac.in",
-      publications: "Nil",
+      publications: "IJ: 1, NJ: 0, IC: 3, NC: 0",
       rating: 4.2,
       image: itArthipriyadharshiniImage
+    },
+    {
+      name: "Mrs. G.Usha",
+      designation: "Assistant Professor",
+      joiningDate: "15.07.2026",
+      qualification: "M.E.",
+      association: "Regular",
+      experience: "3 years 1 month",
+      specialization: "Networks",
+      email: "guit@kiot.ac.in",
+      publications: "IJ: 2, NJ: 0, IC: 2, NC: 0",
+      rating: 4.5,
+      image: itUshaImage
+    },
+    {
+      name: "Mrs. A.Anandhi",
+      designation: "Assistant Professor",
+      joiningDate: "10.08.2026",
+      qualification: "M.Tech",
+      association: "Regular",
+      experience: "4 Years",
+      specialization: "Artificial Intelligence",
+      email: "aait@kiot.ac.in",
+      publications: "IJ: 0, NJ: 0, IC: 0, NC: 0",
+      rating: 4.5,
+      image: itAnandhiImage
+    },
+    {
+      name: "Mr. A.Manikandan",
+      designation: "Assistant Professor",
+      joiningDate: "17.06.2026",
+      qualification: "M.E.CSE",
+      association: "Regular",
+      experience: "1 Year 1 Month",
+      specialization: "Deep Learning",
+      email: "amit@kiot.ac.in",
+      publications: "IJ: 0, NJ: 0, IC: 2, NC: 0",
+      rating: 4.5,
+      image: itManikandanImage,
+      imageStyle: { translate: '0 15%' }
+    },
+    {
+      name: "Ms. S.Valarmathi",
+      designation: "Assistant Professor",
+      joiningDate: "13.05.2026",
+      qualification: "B.Tech., M.E.",
+      association: "Regular",
+      experience: "-",
+      specialization: "Data structures",
+      email: "striveforprogress2002@gmail.com",
+      publications: "IJ: 2, NJ: 0, IC: 0, NC: 0",
+      rating: 4.5,
+      image: itValarmathiImage,
+      imageStyle: { translate: '0 15%' }
+    },
+    {
+      name: "Mr. J.Vinothkumar",
+      designation: "Assistant Professor",
+      joiningDate: "01.06.2026",
+      qualification: "B.E., M.E.",
+      association: "Regular",
+      experience: "18+ industry experience",
+      specialization: "Infrastructure Monitoring",
+      email: "vin.jahanathan@gmail.com",
+      publications: "IJ: 2, NJ: 0, IC: 0, NC: 0",
+      rating: 4.5,
+      image: itVinothKumarImage,
+      imageStyle: { translate: '0 15%' }
+    },
+    {
+      name: "Mr. M.Sivaperumal",
+      designation: "Assistant Professor",
+      joiningDate: "06.06.2014",
+      qualification: "M.Sc.,B. Ed., M.Phil., MISTE.,",
+      association: "Regular",
+      experience: "14 years 6 Months",
+      specialization: "Organic Chemistry, Nanochemistry",
+      email: "mschem@kiot.ac.in",
+      publications: "IJ: 2, NJ: 0, IC: 3, NC: 0",
+      rating: 4.6,
+      category: 'S&H'
+    },
+    {
+      name: "Ms. P.Shyamala Devi",
+      designation: "Assistant Professor",
+      joiningDate: "01.06.2012",
+      qualification: "M.Sc., M.Phil.",
+      association: "Regular",
+      experience: "16 Years",
+      specialization: "Spectroscopy",
+      email: "psphy@kiot.ac.in",
+      publications: "IJ: 0, NJ: 0, IC: 2, NC: 0",
+      rating: 4.6,
+      image: itShyamalaDeviImage,
+      category: 'S&H'
+    },
+    {
+      name: "Mrs. J.Saritha",
+      designation: "Assistant Professor",
+      joiningDate: "15.06.2012",
+      qualification: "M.sc., M.Phil., (Maths)",
+      association: "Regular",
+      experience: "16 Years",
+      specialization: "Algebra",
+      email: "jsmat@kiot.ac.in",
+      publications: "IJ: 1, NJ: 0, IC: 1, NC: 0",
+      rating: 4.6,
+      image: itSarithaImage,
+      category: 'S&H'
     },
     {
       name: "Mr. T.Nandhakumar",
@@ -277,119 +401,172 @@ export const btechItData = {
       rating: 4.7
     },
     {
-      name: "Mr. M.Sivaperumal",
-      designation: "Assistant Professor",
-      joiningDate: "06.06.2014",
-      qualification: "M.Sc.,B. Ed., M.Phil., MISTE.,",
-      association: "Regular",
-      experience: "Teaching :10.8 Years",
-      specialization: "Organic Chemistry, Nanochemistry",
-      email: "mschem@kiot.ac.in",
-      publications: "IJ:02",
-      rating: 4.6
-      ,category: 'S&H'
-    },
-    {
-      name: "Ms. Shyamala Devi",
-      designation: "Assistant Professor",
-      joiningDate: "01.06.2012",
-      qualification: "M.sc., M.Phil., (Physics)",
-      association: "Regular",
-      experience: "Teaching: 14.3 Yrs",
-      specialization: "Spectroscopy, Ultrasonics",
-      email: "psphy@kiot.ac.in",
-      publications: "Nil",
-      rating: 4.6,
-      image: itShyamalaDeviImage
-      ,category: 'S&H'
-    },
-    {
-      name: "Ms. J.Saritha",
-      designation: "Assistant Professor",
-      joiningDate: "15.06.2012",
-      qualification: "M.sc., M.Phil., (Maths)",
-      association: "Regular",
-      experience: "Teaching: 14 Yrs",
-      specialization: "Algebra",
-      email: "jsmat@kiot.ac.in",
-      publications: "Nil",
-      rating: 4.6,
-      image: itSarithaImage
-      ,category: 'S&H'
-    },
-    {
       name: "Mr. J.Saravanan",
       designation: "Assistant Professor",
       joiningDate: "19.07.2021",
       qualification: "M.sc., M.Phil., (Maths)",
       association: "Regular",
-      experience: "Teaching: 9 Yrs",
+      experience: "10 years 11 Months",
       specialization: "Linear Algebra",
       email: "jsamat@kiot.ac.in",
-      publications: "Nil",
-      rating: 4.5
-      ,category: 'S&H'
+      publications: "IJ: 1, NJ: 0, IC: 0, NC: 0",
+      rating: 4.5,
+      category: 'S&H'
     },
     {
       name: "Mr. K.Karthick",
       designation: "Assistant Professor",
-      joiningDate: "21.06.2024",
-      qualification: "M.A., B.Ed., M.Phil.(English)",
+      joiningDate: "01.07.2024",
+      qualification: "M.A., B.Ed., M.Phill.,",
       association: "Regular",
-      experience: "Teaching: 9 Yrs",
+      experience: "12 years 5 months",
       specialization: "English Literature",
       email: "kkit@kiot.ac.in",
-      publications: "IJ:1, IC:3, NC:1",
+      publications: "IJ: 1, NJ: 0, IC: 1, NC: 5",
       rating: 4.5,
-      image: itKarthickImage
-      ,category: 'S&H'
+      image: itKarthickImage,
+      category: 'S&H'
     },
     {
-      name: "Mr. K.Vasantha kumar",
+      name: "Mr. K.VasanthaKumar",
       designation: "Assistant Professor",
-      qualification: "M.A., M.Phil.",
+      joiningDate: "02.06.2025",
+      qualification: "M.A.,B.ED.,M.PHIL.,(PHD).,NET,SET",
       association: "Regular",
-      experience: "Teaching \u2013 5 Years",
-      specialization: "Tamil Literature",
-      email: "N/A",
-      publications: "-",
+      experience: "6 Years",
+      specialization: "Sanga ilakkiyam",
+      email: "kvtam@kiot.ac.in",
+      publications: "IJ: 1, NJ: 1, IC: 2, NC: 2",
       rating: 4.6,
-      image: itVasanthaKumarImage
-      ,category: 'S&H'
-    }
-    ,{ name: 'Mrs. S. Lavanya', designation: 'AP', qualification: 'B.E., M.E.' }
-    ,{ name: 'Ms. S. Valarmathi', designation: 'AP', qualification: 'B.E., M.E.', image: itValarmathiImage }
-    ,{ name: 'Mr. J. Vinothkumar', designation: 'AP', qualification: 'B.E., M.E.', image: itVinothKumarImage }
-    ,{ name: 'Mr. A. Manikandan', designation: 'AP', qualification: 'B.E., M.E.', image: itManikandanImage }
-    ,{ name: 'Mr. K. Manikandan', designation: 'AP/ MAT', qualification: 'B.Sc., M.Sc., M.Phil.', category: 'S&H', image: itKManikandanImage, imageStyle: { scale: '0.85', translate: '0 10%' } }
+      image: itVasanthaKumarImage,
+      category: 'S&H'
+    },
+    { name: 'Mrs. S. Lavanya', designation: 'AP', qualification: 'B.E., M.E.', image: itLavanyaImage },
+    { name: 'Mr. K. Manikandan', designation: 'AP/ MAT', qualification: 'B.Sc., M.Sc., M.Phil.', category: 'S&H', image: itKManikandanImage, imageStyle: { scale: '0.85', translate: '0 10%' } }
   ],
   labs: [
-      {
-        name: 'Industrial Linked Laboratories / COEs',
-        equipments: [
-          'Agile Testing & Automation - Expleo Solutions',
-          'Agile Methodology with DevOps Program - L&T EduTech',
-          'Cyber Security - K7 Computing',
-          'Data Driven AI Solutions - PUNCHBIZ',
-          'Front End Development - UI/UX Technologies - Tech Mahindra',
-          'Full Stack Development & Automation - HCL Technologies',
-          'Low-Code Application Development-Mendix Platform - MxTechies',
-          'Networking and Cloud - Arche Global',
-          'ServiceNow and Salesforce - SmartBridge',
-          'SQL and JAVA Certification: Oracle Academy - Oracle',
-          'Programming & Tech Skill Acceleration - GUVI – An HCL Initiative',
-          'Programming with Core Java - SmartCliff',
-          'SEGUE Program - Hexaware Technologies',
-          'Software Technology – Java & Dot Net - Aspire Systems',
-          'CRM and HRM - ZOHO',
-          'Japanese Language Centre - iTokyo'
-        ],
-        icon: Building2
-      },
-
-      { name: 'Networks Lab', equipment: 'Configurable Routers', icon: Layers }],
+    {
+      name: 'Industrial Linked Laboratories / COEs',
+      equipments: [
+        'Agile Testing & Automation - Expleo Solutions',
+        'Agile Methodology with DevOps Program - L&T EduTech',
+        'Cyber Security - K7 Computing',
+        'Data Driven AI Solutions - PUNCHBIZ',
+        'Front End Development - UI/UX Technologies - Tech Mahindra',
+        'Full Stack Development & Automation - HCL Technologies',
+        'Low-Code Application Development-Mendix Platform - MxTechies',
+        'Networking and Cloud - Arche Global',
+        'ServiceNow and Salesforce - SmartBridge',
+        'SQL and JAVA Certification: Oracle Academy - Oracle',
+        'Programming & Tech Skill Acceleration - GUVI – An HCL Initiative',
+        'Programming with Core Java - SmartCliff',
+        'SEGUE Program - Hexaware Technologies',
+        'Software Technology – Java & Dot Net - Aspire Systems',
+        'CRM and HRM - ZOHO',
+        'Japanese Language Centre - iTokyo'
+      ],
+      icon: Building2
+    },
+    {
+      name: 'Software Engineering Laboratory',
+      incharge: 'Mr. S. Dhamodaran',
+      technician: 'Mr. R. Prakash',
+      equipments: [
+        'Tools: MySQL, Argo UML, Visual Studio',
+        'Area: 24.3 ft * 8.5 ft meters',
+        'Workstations: 30 Systems'
+      ],
+      icon: Code
+    },
+    {
+      name: 'Database Management System Laboratory',
+      incharge: 'Ms. B. Manjubashini',
+      technician: 'Mr. R. Prakash',
+      equipments: [
+        'Tools: MySQL, Python IDE, VS Code, XAMPP, Oracle 11g DBMS',
+        'Area: 17.3 ft * 09 ft square meters',
+        'Workstations: 30 Systems'
+      ],
+      icon: Database
+    },
+    {
+      name: 'Operating Systems Laboratory',
+      incharge: 'Mr. R. Ayyappan',
+      technician: 'Mr. V. Suresh',
+      equipments: [
+        'Tools: VirtualBox, Python, Jupyter Notebook, NumPy, Pandas, Nmap, OpenSSL',
+        'Area: 36.5 ft * 19.3 ft',
+        'Workstations: 30 Systems'
+      ],
+      icon: Cpu
+    },
+    {
+      name: 'Computer Networks Laboratory',
+      incharge: 'Mrs. R. V. Sudha',
+      technician: 'Mr. V. Suresh',
+      equipments: [
+        'Tools: Python IDE, Jupyter Notebook, NumPy, Pandas, Matplotlib, Scikit-learn',
+        'Area: 36.5 ft * 19.3 ft',
+        'Workstations: 30 Systems'
+      ],
+      icon: Network
+    },
+    {
+      name: 'Programming Laboratory',
+      incharge: 'Mrs. S. Lalithambigai',
+      technician: 'Mr. V. Suresh',
+      equipments: [
+        'Tools: JDK, VS Code, VirtualBox / Vmware, Kali Linux',
+        'Area: 36.5 ft * 19.3 ft',
+        'Workstations: 30 Systems'
+      ],
+      icon: Terminal
+    },
+    {
+      name: 'Data Structures Laboratory',
+      incharge: 'Mrs. V. Rajapriya',
+      technician: 'Mr. V. Suresh',
+      equipments: [
+        'Tools: OpenJDK, Python, VS Code, Code Blocks',
+        'Area: 36.5 ft * 19.3 ft',
+        'Workstations: 30 Systems'
+      ],
+      icon: FileCode
+    }
+  ],
   companies: ['Zoho', 'Freshworks', 'Amazon'],
   placementStats: { placed: '94%', avg: '5.2 LPA', top: '20 LPA', companies: '80+' },
   projects: ['Cloud-based ERP'],
   eligibility: ['10+2 with PCM'],
+  patents: [
+    {
+      year: '2024',
+      data: [
+        {
+          inventors: 'Dr.P.Sachidhanandam',
+          title: 'Machine learning & wireless sensor networks for intelligent irrigation management in rural agriculture',
+          type: 'Design Patent',
+          appNo: '202411068435A',
+          date: '27.09.2024',
+          status: 'Granted'
+        },
+        {
+          inventors: 'Mrs.G.Usha',
+          title: 'Wireless Sensor Devices of Environmental Monitoring',
+          type: 'Design Patent',
+          appNo: '6392291',
+          date: '27.09.2024',
+          status: 'Published'
+        },
+        {
+          inventors: 'Mrs.G.Usha',
+          title: 'AI based cloud security detective device',
+          type: 'Design Patent',
+          appNo: '6383995',
+          date: '19.08.2024',
+          status: 'Granted'
+        }
+      ]
+    }
+  ]
 };

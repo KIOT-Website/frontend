@@ -230,7 +230,12 @@ import eeePgPdf from '../../assets/Curriculum Syllabus/3. EEE/PG - PED - I - IV 
 import cseUgPdf from '../../assets/Curriculum Syllabus/4. CSE/UG - CSE - I - VI SEM Syllabus.pdf'
 import sePgPdf from '../../assets/Curriculum Syllabus/4. CSE/PG- SE - I - IV SEM SYLLABUS.pdf'
 import civilUgPdf from '../../assets/Curriculum Syllabus/5. CIVIL/CIVIL - I - VI SEM SYLLABUS.pdf'
-import itUgPdf from '../../assets/Curriculum Syllabus/6. IT/IT - I - VI SEM SYLLABUS.pdf'
+import itSem1_2Pdf from '../../assets/academics/it_syllabus/syllabus 1&2.PDF'
+import itSem3Pdf from '../../assets/academics/it_syllabus/syllabus 3.pdf'
+import itSem4Pdf from '../../assets/academics/it_syllabus/syllabus 4.pdf'
+import itSem5Pdf from '../../assets/academics/it_syllabus/syllabus 5.pdf'
+import itSem6Pdf from '../../assets/academics/it_syllabus/syllabus 6.pdf'
+import itSem7_8Pdf from '../../assets/academics/it_syllabus/syllabus 7 & 8.pdf'
 import csbsUgPdf from '../../assets/Curriculum Syllabus/7. CSBS/CSBS - I - VI SEM SYLLABUS.pdf'
 import aidsUgPdf from '../../assets/Curriculum Syllabus/8. AI&DS/AI&DS I - VI SEM SYLLABUS.pdf'
 import mbaIevPdf from '../../assets/Curriculum Syllabus/9. MBA (IEV)/MBA (IEV) - I - IV SEM SYLLABUS.pdf'
@@ -267,7 +272,12 @@ const SYLLABUS_PDF_MAP = {
     { title: 'B.E. Civil Engineering (I - VI SEM) Syllabus', file: civilUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
   ],
   'btech-it': [
-    { title: 'B.Tech Information Technology (I - VI SEM) Syllabus', file: itUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
+    { title: 'B.Tech Information Technology (I & II SEM) Syllabus', file: itSem1_2Pdf, year: 'Regulation 2023', sem: 'I - II' },
+    { title: 'B.Tech Information Technology (III SEM) Syllabus', file: itSem3Pdf, year: 'Regulation 2023', sem: 'III' },
+    { title: 'B.Tech Information Technology (IV SEM) Syllabus', file: itSem4Pdf, year: 'Regulation 2023', sem: 'IV' },
+    { title: 'B.Tech Information Technology (V SEM) Syllabus', file: itSem5Pdf, year: 'Regulation 2023', sem: 'V' },
+    { title: 'B.Tech Information Technology (VI SEM) Syllabus', file: itSem6Pdf, year: 'Regulation 2023', sem: 'VI' },
+    { title: 'B.Tech Information Technology (VII & VIII SEM) Syllabus', file: itSem7_8Pdf, year: 'Regulation 2023', sem: 'VII - VIII' }
   ],
   'btech-csbs': [
     { title: 'B.Tech Computer Science and Business Systems (I - VI SEM) Syllabus', file: csbsUgPdf, year: 'Regulation 2023', sem: 'I - VI' }
