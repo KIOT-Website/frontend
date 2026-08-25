@@ -871,6 +871,22 @@ function App() {
         title: "Madras Management Association (MMA) – Salem | KIOT",
         desc: "Explore Madras Management Association (MMA) Salem Student Chapter activities, convention competitions, and business leadership events at KIOT."
       },
+      "/student-life/professional-societies": {
+        title: "Professional Society Linked Clubs | KIOT Salem",
+        desc: "Explore 20 Professional Society Linked Clubs at KIOT including IEEE, SAE, ISTE, IEI, ISHRAE, CII, SPC, and ICT Academy."
+      },
+      "/resources/student-life/professional-societies": {
+        title: "Professional Society Linked Clubs | KIOT Salem",
+        desc: "Explore 20 Professional Society Linked Clubs at KIOT including IEEE, SAE, ISTE, IEI, ISHRAE, CII, SPC, and ICT Academy."
+      },
+      "/student-life/iei-aids": {
+        title: "IEI Students Chapter (AI&DS) | KIOT Salem",
+        desc: "The Institution of Engineers (India) IEI Students' Chapter for the Department of Artificial Intelligence and Data Science at KIOT."
+      },
+      "/resources/student-life/iei-aids": {
+        title: "IEI Students Chapter (AI&DS) | KIOT Salem",
+        desc: "The Institution of Engineers (India) IEI Students' Chapter for the Department of Artificial Intelligence and Data Science at KIOT."
+      },
       "/resources/alumni": {
         title: "Alumni Network & Portal | KIOT Salem",
         desc: "Connect with global KIOT alumni. Join alumni chapters, mentorship programs, and annual meets."

@@ -32,6 +32,7 @@ export default function ProfessionalSocietyPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
+    document.title = "Professional Society Linked Clubs | KIOT Salem";
   }, []);
 
   const containerVariants = {

@@ -29,6 +29,7 @@ export default function IeiAidsPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
+    document.title = "IEI Students' Chapter (AI&DS) | KIOT Salem";
   }, []);
 
   const containerVariants = {
