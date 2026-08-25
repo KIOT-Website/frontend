@@ -4,7 +4,6 @@ import itKarthickImage from '../../assets/Faculity/IT/Mr. K.Karthick.png'
 import itAyyappanImage from '../../assets/Faculity/IT/Mr.R.Ayyappan.png'
 import itDhamodaranImage from '../../assets/Faculity/IT/Mr.S.Dhamodaran.png'
 import itBhuvaneshwaranImage from '../../assets/Faculity/IT/Mr.T.Bhuvaneshwaran.png'
-import itNandhakumarImage from '../../assets/Faculity/IT/Mr.T.Nandhakumar.png'
 import itKalaiselviImage from '../../assets/Faculity/IT/Mrs. S Kalaiselvi.png'
 import itArthipriyadharshiniImage from '../../assets/Faculity/IT/Mrs.J. Arthipriyadharshini.png'
 import itSarithaImage from '../../assets/Faculity/IT/Mrs.J.Saritha.png'
@@ -29,7 +28,7 @@ export const btechItData = {
   short: 'Information Technology',
   bannerImage: '/banners/it_banner.png',
   duration: '4 Years (8 Semesters)',
-  intake: 120,
+  intake: 60,
   affiliation: 'Anna University',
   accreditation: 'NBA Accredited',
   placement: '94%',
@@ -152,18 +151,6 @@ export const btechItData = {
       publications: "IJ: 2, NJ: 0, IC: 4, NC: 0",
       rating: 4.5,
       image: itKalaiselviImage
-    },
-    {
-      name: "Ms. M.Priya",
-      designation: "Assistant Professor",
-      joiningDate: "01.06.2023",
-      qualification: "B.E(CSE), M.E(CSE)",
-      association: "Regular",
-      experience: "Teaching: 1.2 Year",
-      specialization: "Machine Learning",
-      email: "mpit@kiot.ac.in",
-      publications: "IJ: 2, IC: 1, NC: 3, NJ: 3",
-      rating: 4.5
     },
     {
       name: "Mr. T. Bhuvaneshwaran",
@@ -338,19 +325,6 @@ export const btechItData = {
       rating: 4.6,
       image: itSarithaImage,
       category: 'S&H'
-    },
-    {
-      name: "Mr. T.Nandhakumar",
-      designation: "Assistant Professor",
-      joiningDate: "11.06.2025",
-      qualification: "B.E., M.E., (Ph.D.),",
-      association: "Regular",
-      experience: "Teaching: 7 Years 01 Month",
-      specialization: "IOT, Deep Learning",
-      email: "tnit@kiot.ac.in",
-      publications: "IJ:04, NJ:00, IC:06, NC:01",
-      rating: 4.8,
-      image: itNandhakumarImage
     },
     {
       name: "Ms. S.Shobana",
@@ -538,6 +512,86 @@ export const btechItData = {
   placementStats: { placed: '94%', avg: '5.2 LPA', top: '20 LPA', companies: '80+' },
   projects: ['Cloud-based ERP'],
   eligibility: ['10+2 with PCM'],
+  fundedProjects: [
+    {
+      sno: 1,
+      name: 'Mrs. Lalithambikai S',
+      faculty: 'Mrs. Lalithambikai S',
+      event: 'International Conference',
+      agency: 'International Conference',
+      level: 'IEEE Scopus indexed',
+      distinction: 'Accepted',
+      status: 'Accepted',
+      award: 'Accepted',
+      title: 'A Federated Privatized Generative System for Smarter Image Integrity and Context-Tuned Tamper',
+      amount: '-'
+    },
+    {
+      sno: 2,
+      name: 'Mrs. Lalithambikai S',
+      faculty: 'Mrs. Lalithambikai S',
+      event: 'International Conference',
+      agency: 'International Conference',
+      level: 'IEEE Scopus indexed',
+      distinction: 'Accepted',
+      status: 'Accepted',
+      award: 'Accepted',
+      title: 'Self-learning cognitive digital twin network of autonomous risk intelligence and predictive fraud protection in next gen banking',
+      amount: '-'
+    },
+    {
+      sno: 3,
+      name: 'Mrs. Kalaiselvi S',
+      faculty: 'Mrs. Kalaiselvi S',
+      event: 'International Conference',
+      agency: 'International Conference',
+      level: 'IEEE Scopus indexed',
+      distinction: 'Published',
+      status: 'Published',
+      award: 'Published',
+      title: 'Blockchain-Enabled AI for Pest Prediction',
+      amount: '-'
+    },
+    {
+      sno: 4,
+      name: 'Mrs. Kalaiselvi S',
+      faculty: 'Mrs. Kalaiselvi S',
+      event: 'International Conference',
+      agency: 'International Conference',
+      level: 'IEEE Scopus indexed',
+      distinction: 'Accepted',
+      status: 'Accepted',
+      award: 'Accepted',
+      title: 'A Federated Privatized Generative System for Smarter Image Integrity and Context-Tuned Tamper',
+      amount: '-'
+    },
+    {
+      sno: 5,
+      name: 'Mrs. Rubigha M AP/IT',
+      faculty: 'Mrs. Rubigha M AP/IT',
+      event: 'International Conference',
+      agency: 'International Conference',
+      level: 'IEEE Scopus indexed',
+      distinction: 'Published',
+      status: 'Published',
+      award: 'Published',
+      title: 'Blockchain-Enabled AI for Pest Prediction in Bamboo Rice Farming',
+      amount: '-'
+    },
+    {
+      sno: 6,
+      name: 'Mrs. Rubigha M AP/IT',
+      faculty: 'Mrs. Rubigha M AP/IT',
+      event: 'International Conference',
+      agency: 'International Conference',
+      level: 'IEEE Scopus indexed',
+      distinction: 'Accepted',
+      status: 'Accepted',
+      award: 'Accepted',
+      title: 'A Federated Privatized Generative System for Smarter Image Integrity and Context-Tuned Tamper',
+      amount: '-'
+    }
+  ],
   patents: [
     {
       year: '2024',

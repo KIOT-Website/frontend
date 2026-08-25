@@ -325,10 +325,6 @@ export const beCseData = {
       { name: 'Ms. Shanmugavalli R', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., B.Ed.', experience: '11.8 Years', specialization: 'Differential Equations', email: 'sangeesweety26@gmail.com', rating: 4.6, category: 'S&H', image: cseRShanmugavalliImage },
       { name: 'Ms. Geetha S', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: '13.02 Years', specialization: 'Differential Equations', email: 'sgeetha.maths@gmail.com', rating: 4.7, category: 'S&H', image: cseSGeethaImage },
       { name: 'Mr. Srinivasaraja T', designation: 'Assistant Professor', qualification: 'M.A., B.Ed., M.Phil', experience: '9.3 Years', specialization: 'British Literature', email: 'tseng@kiot.ac.in', publications: 'IJ:02, IC:03, NC:03', rating: 4.6, category: 'S&H', image: cseTSrinivasarajaImage },
-      { name: 'Ms. Divya G', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil', experience: '7.2 Years', specialization: 'Physics (Spectroscopy)', email: 'gdphy@kiot.ac.in', rating: 4.6, category: 'S&H', image: cseGDivyaImage },
-      { name: 'Dr. Aruna Christy T', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil., Ph.D', experience: '13 Months', specialization: 'Thin Film Technology', email: 'tacphy@kiot.ac.in', publications: 'IJ:3, IC:1', rating: 4.7, category: 'S&H', image: cseTArunaChristryImage },
-      { name: 'Mr. Dhineshkumar S', designation: 'Assistant Professor (English)', doj: '02.05.2025', qualification: 'M.A., B.Ed., UGC-NET.', experience: '2 Months', specialization: 'English Literature', email: 'sdkeng@kiot.ac.in', rating: 4.5, category: 'S&H', image: cseDhineshkumarSImage },
-      { name: 'Mr. Karthik P R', designation: 'Assistant Professor (Mathematics)', doj: '26.11.2021', qualification: 'M.Sc., M.Phil.', experience: '8.10 Years', specialization: 'Partial Differential Equations', email: 'prkmat@kiot.ac.in', rating: 4.6, category: 'S&H', image: cseKarthikPRImage },
       { name: 'Dr. Manikandan R', designation: 'Assistant Professor (Chemistry)', doj: '18.08.2025', qualification: 'B.Sc., M.Sc., M.Phil., Ph.D', association: 'Regular', experience: 'Teaching: 11, Research: 4', specialization: 'Organometallic complexes - Nanocomposites', email: 'rmchem@kiot.ac.in', publications: 'IJ:26, NJ:1', rating: 4.7, category: 'S&H', subject: 'Chemistry', image: cseRManikandanImage }
     ],
     labs: [
@@ -354,91 +350,104 @@ export const beCseData = {
         ],
         icon: Building2
       },
-
-      
       {
-        name: 'Networks Laboratory',
-        equipments: ['Area: 74.76 Sq.m', 'Workstations: 40 Systems', 'Cisco Packet Tracer', 'Wireshark', 'NS2 Network Simulator'],
-        icon: Globe,
-        incharge: 'Mr. C. Siva',
-        technician: 'Mr. R. Mohanraj'
-      },
-      {
-        name: 'Database Management System Laboratory',
-        equipments: ['Area: 93.59 Sq.m', 'Workstations: 40 Systems', 'Oracle 11g DBMS', 'MySQL', 'MongoDB'],
-        icon: Layers,
-        incharge: 'Faculty In-Charge',
-        technician: 'Technical Support Staff'
-      },
-      {
-        name: 'Mobile Application Development Laboratory',
-        equipments: ['Area: 95.43 Sq.m', 'Workstations: 40 Systems', 'Android Studio', 'Flutter SDK', 'React Native'],
-        icon: Zap,
-        incharge: 'Mrs. G. Pavithra',
-        technician: 'Mrs. N. Nathiya'
-      },
-      {
-        name: 'Software Development Laboratory',
-        equipments: ['Area: 75.49 Sq.m', 'Workstations: 40 Systems', 'IBM Rational Rose', 'Visual Studio', 'Netbeans IDE'],
-        icon: Code,
-        incharge: 'Mr. K. Boopathi',
-        technician: 'Mr. P. Prasanth'
-      },
-      {
-        name: 'Computer Practices Laboratory',
-        equipments: ['Area: 65.91 Sq.m', 'Workstations: 40 Systems', 'Turbo C', 'Code Blocks', 'MS Office Suite'],
-        icon: Monitor,
-        incharge: 'Mr. G. Babu',
-        technician: 'Mr. K. Sathyaraj'
-      },
-      {
-        name: 'Data Structures Laboratory',
-        equipments: ['Area: 65.91 Sq.m', 'Workstations: 40 Systems', 'C/C++ Libraries', 'Jupyter Notebook', 'Python IDLE'],
-        icon: Cpu,
-        incharge: 'Mr. T. Palaniraja',
-        technician: 'Mr. K. Sathyaraj'
-      },
-      {
-        name: 'PG - CSE Laboratory',
-        equipments: ['Area: 42.20 Sq.m', 'Workstations: 24 Systems', 'Advanced Research Tools', 'High-Performance Computing Nodes'],
-        icon: Microscope,
-        incharge: 'Mr. K. Praveen',
-        technician: 'Mr. M. Balakrishnan'
-      },
-      {
-        name: 'IOT Laboratory',
-        equipments: ['Area: 76.58 Sq.m', 'Workstations: 30 Systems', 'Arduino / Raspberry Pi Kits', 'Sensor Modules', 'Blynk IoT / Thingspeak'],
-        icon: Cpu,
-        incharge: 'Mr. R. Sivaguru',
-        technician: 'Mr. M. Balakrishnan'
-      },
-      {
-        name: 'Python Laboratory',
-        equipments: ['Area: 107.34 Sq.m', 'Workstations: 72 Systems', 'Anaconda Distribution', 'R Studio', 'TensorFlow / PyTorch'],
+        name: 'Python Programming & Java Lab (CC 1)',
+        equipments: [
+          'System Configuration: i7 Processor, 16 GB RAM, 512 GB SSD - 70 PC\'s',
+          'No. of Systems Available: 72',
+          'Software Used: Code::Blocks, Visual Studio Code, Figma, node.js'
+        ],
         icon: Terminal,
         incharge: 'Mr. M K Sampath',
         technician: 'Mr. R. Sabarish'
       },
       {
-        name: 'Language Laboratory (CC2)',
-        equipments: [],
+        name: 'Networking Lab (CC 5)',
+        equipments: [
+          'System Configuration: i7 Processor, 8 GB RAM, 512 GB SSD - 24 PC\'s / DC Processor, 8 GB RAM, 500 GB HDD - 16 PC\'s',
+          'No. of Systems Available: 40',
+          'Software Used: Oracle DB 12, MYSQL, SQL Server, Eclipse, Java 8, Apache Jmeter, MySQL Workbench, Dbeaver, Maven'
+        ],
+        icon: Globe,
+        incharge: 'Mr. C. Siva',
+        technician: 'Mr. R. Mohanraj'
+      },
+      {
+        name: 'Mobile Application Development Lab (CC 7)',
+        equipments: [
+          'System Configuration: i7 Processor, 8 GB RAM, 512 GB SSD - 40 PC\'s',
+          'No. of Systems Available: 40',
+          'Software Used: Eclipse, Jira, Java 8, Maven, Jenkins'
+        ],
+        icon: Zap,
+        incharge: 'Mrs. G. Pavithra',
+        technician: 'Mrs. N. Nathiya'
+      },
+      {
+        name: 'Software Development Lab (CC 8)',
+        equipments: [
+          'System Configuration: i7 Processor, 16 GB RAM, 512 GB SSD - 40 PC\'s',
+          'No. of Systems Available: 40',
+          'Software Used: Visual Studio Code, JDK 8, Maven'
+        ],
+        icon: Code,
+        incharge: 'Mr. K. Boopathi',
+        technician: 'Mr. P. Prasanth'
+      },
+      {
+        name: 'Computer Practices Lab (CC 11)',
+        equipments: [
+          'System Configuration: i7 Processor, 16 GB RAM, 512 GB SSD - 40 PC\'s',
+          'No. of Systems Available: 40',
+          'Software Used: Microsoft Visual Studio (.NET Framework, .NET Core, .NET 5+)'
+        ],
+        icon: Monitor,
+        incharge: 'Mr. G. Babu',
+        technician: 'Mr. K. Sathyaraj'
+      },
+      {
+        name: 'Data Structures Lab (CC 12)',
+        equipments: [
+          'System Configuration: 500 GB HDD - 20 PC\'s, DC Processor, 4 GB RAM',
+          'No. of Systems Available: 40',
+          'Software Used: Rational Rose, ArgoUML, Visual Studio Code, Code::Blocks'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. T. Palaniraja',
+        technician: 'Mr. K. Sathyaraj'
+      },
+      {
+        name: 'Intel Intelligent System Lab (IoT)',
+        equipments: [
+          'System Configuration: i5 Processor, 8 GB RAM, 500 GB HDD - 30 PC\'s',
+          'No. of Systems Available: 30',
+          'Software Used: Visual Studio Code, Maven, Jenkins, Docker, Kubernetes'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. R. Sivaguru',
+        technician: 'Mr. M. Balakrishnan'
+      },
+      {
+        name: 'Data Analytics Lab (PG Lab)',
+        equipments: [
+          'System Configuration: DC Processor, 8 GB RAM, 512 GB SSD - 25 PC\'s',
+          'No. of Systems Available: 24',
+          'Software Used: Microsoft Visual Studio, IBM Rational suite, GitLab, Visual Studio Code, Maven, Jenkins, Docker, Kubernetes, Eclipse, Java 8, Maven, Allure, Jenkins, AutoIt, SciTE'
+        ],
+        icon: Microscope,
+        incharge: 'Mr. R. Sivaguru',
+        technician: 'Mr. M. Balakrishnan'
+      },
+      {
+        name: 'Language Laboratory (CC 2)',
+        equipments: [
+          'System Configuration: i7 Processor, 16 GB RAM, 512 GB SSD - 70 PC\'s',
+          'No. of Systems Available: 72',
+          'Software Used: English Globarena'
+        ],
         icon: BookOpen,
         incharge: 'Mr. Anandakumar',
         technician: 'Mr. R. Udhayaprakash'
-      },
-      {
-        name: 'Software Infrastructure & Licenses',
-        equipments: [
-          'Oracle 11g Database (Perpetual)',
-          'IBM Rational Rose (Perpetual)',
-          'Microsoft Campus License (Annual)',
-          'Open Source: Python, MySQL, Hadoop',
-          'IDE: Netbeans, Android Studio, Visual Studio',
-          'Tools: Wireshark, Virtual Box, Jupyter'
-        ],
-        icon: ShieldCheck,
-        incharge: 'System Administrator',
-        technician: 'Lab Technician'
       }
     ],
     companies: ['TCS', 'Infosys', 'Wipro', 'HCLTech', 'Cognizant', 'Zoho', 'Capgemini', 'Accenture', 'IBM', 'Amazon'],
@@ -662,3 +671,88 @@ export const beCseData = {
       }
     ],
 };
+
+export const cseLabTableData = [
+  {
+    sno: 1,
+    name: 'Python Programming & Java Lab (CC 1)',
+    config: "i 7 Processor, 16 GB RAM, 512 GB SSD - 70 PC's",
+    systems: 72,
+    software: 'Code::Blocks, Visual Studio Code, Figma, node.js',
+    incharge: 'Mr. M K Sampath',
+    technician: 'Mr.R. Sabarish'
+  },
+  {
+    sno: 2,
+    name: 'Networking Lab (CC 5)',
+    config: "i 7 Processor, 8 GB RAM, 512 GB SSD - 24 PC's\nDC Processor, 8 GB RAM, 500 GB HDD - 16 PC's",
+    systems: 40,
+    software: 'Oracle DB 12, MYSQL, SQL Server, Eclipse, Java 8, Apache Jmeter, MySQL Workbench, Dbeaver, Maven',
+    incharge: 'Mr. C. Siva',
+    technician: 'Mr. R. Mohanraj'
+  },
+  {
+    sno: 3,
+    name: 'Mobile Application Development Lab (CC 7)',
+    config: "i 7 Processor, 8 GB RAM, 512 GB SSD - 40 PC's",
+    systems: 40,
+    software: 'Eclipse, Jira, Eclipse, Java 8, Maven, Jira, Jenkins',
+    incharge: 'Mrs. G. Pavithra',
+    technician: 'Mrs. N. Nathiya'
+  },
+  {
+    sno: 4,
+    name: 'Software Development Lab (CC 8)',
+    config: "i 7 Processor, 16 GB RAM, 512 GB SSD - 40 PC's",
+    systems: 40,
+    software: 'Visual Studio Code, JDK 8, Maven',
+    incharge: 'Mr. K. Boopathi',
+    technician: 'Mr. P. Prasanth'
+  },
+  {
+    sno: 5,
+    name: 'Computer Practices Lab (CC 11)',
+    config: "i 7 Processor, 16 GB RAM, 512 GB SSD - 40 PC's",
+    systems: 40,
+    software: 'Microsoft Visual Studio (.NET Framework, .NET Core, .NET 5+)',
+    incharge: 'Mr. G. Babu',
+    technician: 'Mr. K. Sathyaraj'
+  },
+  {
+    sno: 6,
+    name: 'Data Structures Lab (CC 12)',
+    config: "500 GB HDD - 20 PC's, DC Processor, 4 GB RAM",
+    systems: 40,
+    software: 'Rational Rose, ArgoUML, Visual Studio Code, Code::Blocks',
+    incharge: 'Mr. T. Palaniraja',
+    technician: 'Mr. K. Sathyaraj'
+  },
+  {
+    sno: 7,
+    name: 'Intel Intelligent System Lab (IoT)',
+    config: "i 5 Processor, 8 GB RAM, 500 GB HDD - 30 PC's",
+    systems: 30,
+    software: 'Visual Studio Code, Maven, Jenkins, Docker, Kubernetes',
+    incharge: 'Mr. R. Sivaguru',
+    technician: 'Mr. M. Balakrishnan'
+  },
+  {
+    sno: 8,
+    name: 'Data Analytics Lab (PG Lab)',
+    config: "DC Processor, 8 GB RAM, 512 GB SSD - 25 PC's",
+    systems: 24,
+    software: 'Microsoft Visual Studio, IBM Rational suite, GitLab, Visual Studio Code, Maven, Jenkins, Docker, Kubernetes, Eclipse, Java 8, Maven, Allure, Jenkins, AutoIt, SciTE',
+    incharge: 'Mr. R. Sivaguru',
+    technician: 'Mr. M. Balakrishnan'
+  },
+  {
+    sno: 9,
+    name: 'Language Laboratory (CC 2)',
+    config: "i 7 Processor, 16 GB RAM, 512 GB SSD - 70 PC's",
+    systems: 72,
+    software: 'English Globarena',
+    incharge: 'Mr. Anandakumar',
+    technician: 'Mr. R. Udhayaprakash'
+  }
+];
+

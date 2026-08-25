@@ -104,14 +104,14 @@ const mechanicalTeachingMethods = [
 ]
 
 // Department Data Imports
-import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFacultyAwards } from './departments/cse/cseData.jsx'
+import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFacultyAwards, cseInnovativePractices } from './departments/cse/cseData.jsx'
 import { eeeStudentAchievements, eeeFacultyAchievements } from './departments/eee/eeeData.jsx'
 import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards, aidsStudentAwards, aidsInnovativePractices } from './departments/aids/aidsData.jsx'
 import { csbsStudentAchievements, csbsStudentAwards, csbsFacultyAwards, csbsFacultyAchievements, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities, csbsInnovativePractices } from './departments/csbs/csbsData.jsx'
 import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements, civilInnovativePractices } from './departments/civil/civilData.jsx'
 import { mechanicalStudentAchievements, mechanicalFacultyAchievements, mechanicalStudentAwards, mechanicalFacultyAwards } from './departments/mechanical/mechanicalData.jsx'
 import { eceStudentAchievements, eceFacultyAchievements, eceStudentAwards, eceFacultyAwards, eceFacultyNptel, eceStudentNptel } from './departments/ece/eceData.jsx'
-import { itStudentAchievements, itFacultyAchievements, itStudentAwards, itFacultyAwards } from './departments/it/itData.jsx'
+import { itStudentAchievements, itFacultyAchievements, itStudentAwards, itFacultyAwards, itInnovativePractices, itContestAchievements, itStudentSpecialAwards } from './departments/it/itData.jsx'
 import { ecmStudentAchievements, ecmFacultyAchievements, ecmStudentAwards, ecmFacultyAwards } from './departments/ecm/ecmData.jsx'
 import { mbaGeneralStudentAchievements, mbaGeneralFacultyAchievements, mbaGeneralStudentAwards, mbaGeneralFacultyAwards } from './departments/mba-general/mbaGeneralData.jsx'
 import { mbaIevStudentAchievements, mbaIevFacultyAchievements, mbaIevStudentAwards, mbaIevFacultyAwards } from './departments/mba-iev/mbaIevData.jsx'
@@ -122,6 +122,7 @@ import { meAeStudentAchievements, meAeFacultyAchievements, meAeStudentAwards, me
 import { mePedStudentAchievements, mePedFacultyAchievements, mePedStudentAwards, mePedFacultyAwards } from './departments/me-ped/mePedData.jsx'
 import { meSeStudentAchievements, meSeFacultyAchievements, meSeStudentAwards, meSeFacultyAwards } from './departments/me-se/meSeData.jsx'
 import { scienceHumanitiesStudentAchievements, scienceHumanitiesFacultyAchievements, scienceHumanitiesStudentAwards, scienceHumanitiesFacultyAwards } from './departments/science-humanities/scienceHumanitiesData.jsx'
+import { cseLabTableData } from '../../data/departments/beCseData.js'
 
 // Department Data Mapping Collections
 const studentAwardsMap = {
@@ -2291,6 +2292,7 @@ export default function CourseDetailPage({ overrides }) {
             {/* --- LABS --- */}
             {activeTab === 'Labs' && (
               <div className="w-full">
+
                 {/* DESKTOP VIEW: Sidebar + Detail Panel (Visible only on lg and above) */}
                 <div className="hidden lg:flex flex-row gap-8">
                   {/* Left Sidebar: Lab List */}
@@ -2579,29 +2581,39 @@ export default function CourseDetailPage({ overrides }) {
                           <table className="w-full text-left border-collapse">
                             <thead>
                               <tr className="bg-slate-50 border-b border-slate-100">
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Principal Investigator / Faculty</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Project Title</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Funding Agency</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Sanctioned Amount</th>
-                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Period / Year</th>
+                                <th className="px-5 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">S.No</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Name</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Name of the Event / Achievement</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Level</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Distinction / Award</th>
+                                <th className="px-6 py-4 text-[11px] font-black text-[#224292] uppercase tracking-widest font-graphik">Title</th>
                               </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-100">
                               {course.fundedProjects.map((proj, pIdx) => (
                                 <tr key={pIdx} className="hover:bg-blue-50/30 transition-colors">
+                                  <td className="px-5 py-5 text-xs font-bold text-[#224292] font-graphik">{proj.sno || pIdx + 1}</td>
                                   <td className="px-6 py-5">
-                                    <p className="text-[13px] font-bold text-black font-graphik leading-tight">{proj.faculty || proj.investigator || 'Department Faculty'}</p>
+                                    <p className="text-[13px] font-bold text-black font-graphik leading-tight">{proj.name || proj.faculty || proj.investigator || 'Department Faculty'}</p>
+                                  </td>
+                                  <td className="px-6 py-5">
+                                    <span className="text-[11px] font-bold font-graphik text-[#224292] bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">{proj.event || proj.agency || proj.sponsor || 'Research Project'}</span>
+                                  </td>
+                                  <td className="px-6 py-5 text-xs font-semibold text-slate-700 font-graphik whitespace-nowrap">{proj.level || proj.period || proj.year || '-'}</td>
+                                  <td className="px-6 py-5">
+                                    <span className={`text-[11px] font-bold font-graphik px-2.5 py-1 rounded-md border ${
+                                      (proj.distinction || proj.status || proj.award) === 'Published'
+                                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                        : (proj.distinction || proj.status || proj.award) === 'Accepted'
+                                        ? 'bg-amber-50 text-amber-700 border-amber-200'
+                                        : 'bg-blue-50 text-[#224292] border-blue-200'
+                                    }`}>
+                                      {proj.distinction || proj.status || proj.award || (proj.amount ? (proj.amount.startsWith('₹') ? proj.amount : `₹ ${proj.amount}`) : 'Sanctioned')}
+                                    </span>
                                   </td>
                                   <td className="px-6 py-5">
                                     <p className="text-[13px] font-medium text-black font-graphik leading-snug max-w-md">{proj.title}</p>
                                   </td>
-                                  <td className="px-6 py-5">
-                                    <span className="text-[11px] font-bold font-graphik text-[#224292] bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">{proj.agency || proj.sponsor}</span>
-                                  </td>
-                                  <td className="px-6 py-5">
-                                    <span className="text-[12px] font-bold text-emerald-700 font-mono">₹ {proj.amount || proj.grant || 'Sanctioned'}</span>
-                                  </td>
-                                  <td className="px-6 py-5 text-xs font-medium text-slate-600 font-graphik whitespace-nowrap">{proj.period || proj.year || '2024-25'}</td>
                                 </tr>
                               ))}
                             </tbody>
@@ -3200,6 +3212,41 @@ function AwardsSection({ courseId, courseName, initialAudience }) {
 
   return (
     <div className="space-y-6">
+      {courseId === 'btech-it' && activeAudience === 'STUDENT' && itStudentSpecialAwards && itStudentSpecialAwards.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200"
+        >
+          <div className="bg-[#ffc107] px-6 py-4 flex items-center justify-between">
+            <h3 className="text-[#224292] font-black font-graphik text-base tracking-tight">Special Student Awards & Recognitions</h3>
+            <span className="text-[11px] font-black text-[#224292] bg-black/10 px-3 py-1 rounded-full border border-black/15 uppercase tracking-widest font-graphik">
+              Department Honors
+            </span>
+          </div>
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-100 border-b border-slate-200">
+                <th className="px-4 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] text-center whitespace-nowrap">S.No.</th>
+                <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] whitespace-nowrap">Name of the award</th>
+                <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] whitespace-nowrap">Name of the Student</th>
+                <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] text-center whitespace-nowrap">Year/Sem/Sec</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {itStudentSpecialAwards.map((item, idx) => (
+                <tr key={idx} className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}>
+                  <td className="px-4 py-3.5 text-center text-sm font-bold text-[#224292] font-graphik">{item.sno}.</td>
+                  <td className="px-5 py-3.5 text-sm font-bold text-[#224292] font-graphik whitespace-nowrap">{item.award}</td>
+                  <td className="px-5 py-3.5 text-sm font-semibold text-slate-800 font-graphik whitespace-nowrap">{item.student}</td>
+                  <td className="px-5 py-3.5 text-center text-xs font-bold text-slate-600 font-graphik whitespace-nowrap">{item.year}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </motion.div>
+      )}
+
       {visibleData.length > 0 ? (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -3444,6 +3491,43 @@ function AchievementSection({ courseId, courseName }) {
             </tbody>
           </table>
         </motion.div>
+
+        {courseId === 'btech-it' && itContestAchievements && itContestAchievements.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200"
+          >
+            <div className="bg-[#224292] px-6 py-4 flex items-center justify-between">
+              <h3 className="text-white font-bold font-graphik text-base tracking-tight">Major Contest & Hackathon Achievements</h3>
+              <span className="text-[11px] font-bold text-[#ffc107] bg-white/10 px-3 py-1 rounded-full border border-white/20 uppercase tracking-widest font-graphik">
+                Contest Winners
+              </span>
+            </div>
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-slate-100 border-b border-slate-200">
+                  <th className="px-4 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] text-center whitespace-nowrap">S.No</th>
+                  <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] whitespace-nowrap">NAME OF THE CONTEST</th>
+                  <th className="px-4 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] text-center whitespace-nowrap">YEAR</th>
+                  <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] whitespace-nowrap">NAME OF THE STUDENTS</th>
+                  <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] whitespace-nowrap">MAJOR OUTCOME</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {itContestAchievements.map((item, idx) => (
+                  <tr key={idx} className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}>
+                    <td className="px-4 py-3.5 text-center text-sm font-bold text-[#224292] font-graphik">{item.sno}</td>
+                    <td className="px-5 py-3.5 text-sm font-medium text-slate-800 font-graphik whitespace-pre-line max-w-xs">{item.contest}</td>
+                    <td className="px-4 py-3.5 text-center text-xs font-bold text-slate-600 font-graphik whitespace-nowrap">{item.year}</td>
+                    <td className="px-5 py-3.5 text-sm font-bold text-[#224292] font-graphik whitespace-pre-line leading-relaxed">{item.students}</td>
+                    <td className="px-5 py-3.5 text-sm font-semibold text-slate-800 font-graphik whitespace-pre-line">{item.outcome}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        )}
         {studentNptelMap[courseId] && studentNptelMap[courseId].length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -3918,8 +4002,10 @@ function InnovativePracticesSection({ courseId }) {
   const detailsMap = {
     'me-ae': meAeDetails,
     'be-ece': beEceDetails,
+    'be-cse': cseInnovativePractices,
     'btech-csbs': csbsInnovativePractices,
-    'btech-aids': aidsInnovativePractices
+    'btech-aids': aidsInnovativePractices,
+    'btech-it': itInnovativePractices
   };
 
   const images = imagesMap[courseId] || [];
@@ -4562,8 +4648,15 @@ function InnovativePracticesSection({ courseId }) {
           {details.map((detail, idx) => (
             <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-lg shadow-blue-900/5 hover:shadow-xl hover:border-[#ffc107] transition-all flex flex-col h-full group">
               <div className="rounded-xl overflow-hidden mb-6 bg-slate-50 border border-slate-100 flex items-center justify-center aspect-[4/3] relative">
-                <img src={detail.image} alt={detail.method} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {detail.image ? (
+                  <img src={detail.image} alt={detail.method} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200/80 flex flex-col items-center justify-center text-slate-400 p-4 text-center group-hover:bg-slate-200/60 transition-colors">
+                    <Star size={36} className="mb-2 text-[#224292]/30 group-hover:scale-110 transition-transform" />
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Photo Placeholder</span>
+                  </div>
+                )}
+                {detail.image && <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />}
               </div>
               <div className="flex flex-col flex-grow">
                 <div className="inline-flex px-3 py-1 bg-blue-50 text-[#224292] text-xs font-bold font-graphik rounded-md mb-4 self-start border border-blue-100">

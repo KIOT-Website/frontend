@@ -249,3 +249,62 @@ export const cseFacultyAwards = [
   { sno: 2,  name: 'Mrs. K. Saranya', event: '-', level: '-', award: 'Best Faculty', title: '-' },
   { sno: 3,  name: 'Mrs. D. Ramya',   event: '-', level: '-', award: 'Best Faculty', title: '-' },
 ];
+
+import handsOnImg from '../../../../assets/innovative_practices/cse/Hands-on.jpg'
+import peerToPeerImg from '../../../../assets/innovative_practices/cse/Peer to Peer.jpg'
+import roleplayImg from '../../../../assets/innovative_practices/cse/Roleplay.jpeg'
+import workshopModel1Img from '../../../../assets/innovative_practices/cse/Workshop Model-1.jpg'
+import workshopModel2Img from '../../../../assets/innovative_practices/cse/Workshop Model-2.jpg'
+import workshopModelImg from '../../../../assets/innovative_practices/cse/Workshop Model.jpg'
+
+export const cseInnovativePractices = [
+  {
+    sno: 1,
+    name: 'Department Faculty',
+    subject: 'Hands-on Programming & Development',
+    method: 'Hands-on Session',
+    description: 'Students actively participate in practical coding exercises, software development tasks, and real-time system implementation to bridge theoretical knowledge with industry-level engineering practice.',
+    image: handsOnImg
+  },
+  {
+    sno: 2,
+    name: 'Department Faculty',
+    subject: 'Peer Learning & Technical Collaborations',
+    method: 'Peer to Peer Learning',
+    description: 'Collaborative peer learning sessions where students work in pairs and small groups to analyze algorithms, debug complex codebases, and share technical knowledge to enhance mutual comprehension.',
+    image: peerToPeerImg
+  },
+  {
+    sno: 3,
+    name: 'Department Faculty',
+    subject: 'Software Engineering Concepts',
+    method: 'Role Play Method',
+    description: 'An interactive role-play learning methodology where students enact professional software team roles such as Scrum Master, Product Owner, Developer, and Tester to experience Agile lifecycle management.',
+    image: roleplayImg
+  },
+  {
+    sno: 4,
+    name: 'Department Faculty',
+    subject: 'Advanced Computing Workshops - Session 1',
+    method: 'Workshop Model',
+    description: 'Interactive workshop model focusing on practical skill acquisition, hands-on tool usage, and real-world project demonstration guided by faculty and technical mentors.',
+    image: workshopModel1Img
+  },
+  {
+    sno: 5,
+    name: 'Department Faculty',
+    subject: 'Advanced Computing Workshops - Session 2',
+    method: 'Workshop Model',
+    description: 'Applied workshop learning model providing direct exposure to modern software frameworks, deployment pipelines, and industry best practices.',
+    image: workshopModel2Img
+  },
+  {
+    sno: 6,
+    name: 'Department Faculty',
+    subject: 'Technology & System Design Workshop',
+    method: 'Workshop Model',
+    description: 'Comprehensive technical workshop session enabling students to construct, test, and present functional computing solutions and prototypes.',
+    image: workshopModelImg
+  }
+];
+

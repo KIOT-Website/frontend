@@ -27,13 +27,6 @@ export const meSeData = {
     curriculum: [{ year: 'Year 1', semesters: ['Software Architecture', 'Agile Methodologies', 'Advanced Databases'] }],
     faculty: [
       {
-        name: 'Dr. Sakthivel M',
-        designation: 'Associate Professor & Head',
-        experience: 'Teaching: 20.1 Years',
-        specialization: 'Software Engineering',
-        rating: 4.8
-      },
-      {
         name: 'Dr. Kumar V',
         vidwanId: '242498',
         designation: 'Professor & Director IM',
@@ -85,6 +78,105 @@ export const meSeData = {
         ],
         icon: Building2
       },
-{ name: 'Advanced Software Lab', equipment: 'Enterprise Servers, Cloud Platforms', icon: Cpu }],
+      {
+        name: 'Python Programming & Java Lab (CC 1)',
+        equipments: [
+          'System Configuration: i7 Processor, 16 GB RAM, 512 GB SSD - 70 PC\'s',
+          'No. of Systems Available: 72',
+          'Software Used: Code::Blocks, Visual Studio Code, Figma, node.js'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. M K Sampath',
+        technician: 'Mr. R. Sabarish'
+      },
+      {
+        name: 'Networking Lab (CC 5)',
+        equipments: [
+          'System Configuration: i7 Processor, 8 GB RAM, 512 GB SSD - 24 PC\'s / DC Processor, 8 GB RAM, 500 GB HDD - 16 PC\'s',
+          'No. of Systems Available: 40',
+          'Software Used: Oracle DB 12, MYSQL, SQL Server, Eclipse, Java 8, Apache Jmeter, MySQL Workbench, Dbeaver, Maven'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. C. Siva',
+        technician: 'Mr. R. Mohanraj'
+      },
+      {
+        name: 'Mobile Application Development Lab (CC 7)',
+        equipments: [
+          'System Configuration: i7 Processor, 8 GB RAM, 512 GB SSD - 40 PC\'s',
+          'No. of Systems Available: 40',
+          'Software Used: Eclipse, Jira, Java 8, Maven, Jenkins'
+        ],
+        icon: Cpu,
+        incharge: 'Mrs. G. Pavithra',
+        technician: 'Mrs. N. Nathiya'
+      },
+      {
+        name: 'Software Development Lab (CC 8)',
+        equipments: [
+          'System Configuration: i7 Processor, 16 GB RAM, 512 GB SSD - 40 PC\'s',
+          'No. of Systems Available: 40',
+          'Software Used: Visual Studio Code, JDK 8, Maven'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. K. Boopathi',
+        technician: 'Mr. P. Prasanth'
+      },
+      {
+        name: 'Computer Practices Lab (CC 11)',
+        equipments: [
+          'System Configuration: i7 Processor, 16 GB RAM, 512 GB SSD - 40 PC\'s',
+          'No. of Systems Available: 40',
+          'Software Used: Microsoft Visual Studio (.NET Framework, .NET Core, .NET 5+)'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. G. Babu',
+        technician: 'Mr. K. Sathyaraj'
+      },
+      {
+        name: 'Data Structures Lab (CC 12)',
+        equipments: [
+          'System Configuration: 500 GB HDD - 20 PC\'s, DC Processor, 4 GB RAM',
+          'No. of Systems Available: 40',
+          'Software Used: Rational Rose, ArgoUML, Visual Studio Code, Code::Blocks'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. T. Palaniraja',
+        technician: 'Mr. K. Sathyaraj'
+      },
+      {
+        name: 'Intel Intelligent System Lab (IoT)',
+        equipments: [
+          'System Configuration: i5 Processor, 8 GB RAM, 500 GB HDD - 30 PC\'s',
+          'No. of Systems Available: 30',
+          'Software Used: Visual Studio Code, Maven, Jenkins, Docker, Kubernetes'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. R. Sivaguru',
+        technician: 'Mr. M. Balakrishnan'
+      },
+      {
+        name: 'Data Analytics Lab (PG Lab)',
+        equipments: [
+          'System Configuration: DC Processor, 8 GB RAM, 512 GB SSD - 25 PC\'s',
+          'No. of Systems Available: 24',
+          'Software Used: Microsoft Visual Studio, IBM Rational suite, GitLab, Visual Studio Code, Maven, Jenkins, Docker, Kubernetes, Eclipse, Java 8, Maven, Allure, Jenkins, AutoIt, SciTE'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. R. Sivaguru',
+        technician: 'Mr. M. Balakrishnan'
+      },
+      {
+        name: 'Language Laboratory (CC 2)',
+        equipments: [
+          'System Configuration: i7 Processor, 16 GB RAM, 512 GB SSD - 70 PC\'s',
+          'No. of Systems Available: 72',
+          'Software Used: English Globarena'
+        ],
+        icon: Cpu,
+        incharge: 'Mr. Anandakumar',
+        technician: 'Mr. R. Udhayaprakash'
+      }
+    ],
     placementStats: { placed: '93%', avg: '5.8 LPA', top: '18 LPA', companies: '40+' },
 };

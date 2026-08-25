@@ -137,7 +137,14 @@ export const itStudentAchievements = [
   { sno: 136, name: "Priyadharshini D", event: "Tnwise-25", level: "National", award: "Appreciation Final Round", title: "Tnwise-25" },
   { sno: 137, name: "Priyadharshini D", event: "Nexus'25 Web Work", level: "National", award: "Participate", title: "Nexus'25 Web Work" }
 ];
-export const itFacultyAchievements = [];
+export const itFacultyAchievements = [
+  { sno: 1, name: 'Mrs. Lalithambikai S', event: 'International Conference', level: 'IEEE Scopus indexed', award: 'Accepted', title: 'A Federated Privatized Generative System for Smarter Image Integrity and Context-Tuned Tamper' },
+  { sno: 2, name: 'Mrs. Lalithambikai S', event: 'International Conference', level: 'IEEE Scopus indexed', award: 'Accepted', title: 'Self-learning cognitive digital twin network of autonomous risk intelligence and predictive fraud protection in next gen banking' },
+  { sno: 3, name: 'Mrs. Kalaiselvi S', event: 'International Conference', level: 'IEEE Scopus indexed', award: 'Published', title: 'Blockchain-Enabled AI for Pest Prediction' },
+  { sno: 4, name: 'Mrs. Kalaiselvi S', event: 'International Conference', level: 'IEEE Scopus indexed', award: 'Accepted', title: 'A Federated Privatized Generative System for Smarter Image Integrity and Context-Tuned Tamper' },
+  { sno: 5, name: 'Mrs. Rubigha M AP/IT', event: 'International Conference', level: 'IEEE Scopus indexed', award: 'Published', title: 'Blockchain-Enabled AI for Pest Prediction in Bamboo Rice Farming' },
+  { sno: 6, name: 'Mrs. Rubigha M AP/IT', event: 'International Conference', level: 'IEEE Scopus indexed', award: 'Accepted', title: 'A Federated Privatized Generative System for Smarter Image Integrity and Context-Tuned Tamper' }
+];
 export const itStudentAwards = [
   { sno: 1, name: "Sahul Hameed Dhameem M\n(III Year B.Tech IT)", event: "Gravito Hacks", level: "National", award: "Winner – Cash Award ₹15,000", title: "Hackathon" },
   { sno: 2, name: "Lalithsanjaai S\n(III Year B.Tech IT)", event: "Gravito Hacks", level: "National", award: "Winner – Cash Award ₹15,000", title: "Hackathon" },
@@ -156,3 +163,110 @@ export const itStudentAwards = [
   { sno: 15, name: "Mohanvel V\n(III Year B.Tech IT)", event: "SUSEGAD SPRINT 2026 S01", level: "National", award: "First Prize – $500 Cash Prize & Trip to Goa", title: "Online Hackathon" }
 ];
 export const itFacultyAwards = [];
+
+export const itInnovativePractices = [
+  {
+    sno: 1,
+    name: 'Mrs.G.Usha',
+    subject: 'Problem Solving using C Programming',
+    method: 'Hands-on Experience Session',
+    description: 'Students gain practical knowledge through software development, coding exercises, system design simulation, and real-world project activities. This approach bridges the gap between theoretical concepts and practical software engineering applications.',
+    image: null
+  },
+  {
+    sno: 2,
+    name: 'Ms.B.Manjubashini',
+    subject: 'Web Essentials',
+    method: 'Peer Learning',
+    description: 'Students work collaboratively to explore web development concepts, share ideas, solve coding problems, and support each other through discussions and practical activities, enhancing their technical skills and understanding.',
+    image: null
+  }
+];
+
+export const itContestAchievements = [
+  {
+    sno: 1,
+    contest: 'Gravito Hacks\n(GravitoHacks, hosted by Google Developer Group on Campus - SIMATS, powered by Hack2skill.)',
+    year: 'III',
+    students: 'Sahul Hameed Dhameem M\nLalithsanjaai S\nKamaraj D\nMathan Kumar N\nBalaji S',
+    outcome: 'Won Second Prize'
+  },
+  {
+    sno: 2,
+    contest: 'Build Expo 2026 - Civil Association',
+    year: 'III',
+    students: 'Pranesh S & Team',
+    outcome: 'Won First Prize in Project Expo with Cash Prize ₹15,000'
+  },
+  {
+    sno: 3,
+    contest: 'Campus Coders League – 12 Hours Coding Challenge-KIOT',
+    year: 'III',
+    students: 'Dharshini V',
+    outcome: 'Won First Prize with cash awards in Coding Contest'
+  },
+  {
+    sno: 4,
+    contest: 'Campus Coders League – 12 Hours Coding Challenge-KIOT',
+    year: 'II',
+    students: 'Akshaya RS\nGeethi Priyanka',
+    outcome: 'Won Second Prize with cash awards in Coding Contest'
+  },
+  {
+    sno: 5,
+    contest: 'Women hackathon (Knowledge Institute of Technology) - KIOT',
+    year: 'III',
+    students: 'Akshaya V\nDharshini V',
+    outcome: 'Won Second Prize with cash award'
+  },
+  {
+    sno: 6,
+    contest: 'Ablaze 2k25 -KSR college of Engineering',
+    year: 'II',
+    students: 'Gopika V & Geetha Arun Priya S B',
+    outcome: 'Won Second Prize in Idea Pitch'
+  },
+  {
+    sno: 7,
+    contest: "CREANNOVA'25 - Project Expo in salem college of engineering",
+    year: 'II',
+    students: 'Saravana T & Team',
+    outcome: 'Won Second Prize in Project Presentation'
+  },
+  {
+    sno: 8,
+    contest: 'Smart India Hackathon 2026',
+    year: 'IV',
+    students: 'S.Manjusri & her team',
+    outcome: 'Reached the SIH Grand Finale'
+  },
+  {
+    sno: 9,
+    contest: "Vibathon 24hrs National Level Hackathon - Hackxtreme'26 At K Ramakrishna Clg of Engineering)",
+    year: 'III',
+    students: 'M Sahul Hameed Dhameem\nA S Somasundharan\nS Balaji\nV Mohanavel',
+    outcome: 'Won 2nd Prize with cash award ₹15,000 and an internship from Greensoft Solutions.'
+  },
+  {
+    sno: 10,
+    contest: "Susegad Sprint 2026 India's Elite Hybrid Hackathon - organized by Devfolio",
+    year: 'III',
+    students: 'Sahul Hameed Dhameem M\nMathankumar N\nBalaji S\nNandha Kishore J\nMohanvel V',
+    outcome: 'Won First Prize in the Project Expo, receiving a cash prize of $500 along with a trip to Goa'
+  }
+];
+
+export const itStudentSpecialAwards = [
+  { sno: 1, award: 'Best Outgoing Student', student: 'SHARMATHAA S', year: 'IV Year' },
+  { sno: 2, award: 'Best Students In Co-Curricular Activities', student: 'GEETHI PRIYANKA R K', year: 'II Year' },
+  { sno: 2, award: 'Best Students In Co-Curricular Activities', student: 'PRIYADHARSHINI D', year: 'III Year' },
+  { sno: 2, award: 'Best Students In Co-Curricular Activities', student: 'SANJU P', year: 'IV Year' },
+  { sno: 3, award: 'Best Students In Extra Curricular Activities', student: 'KARTHIGA SREE SURESH', year: 'II Year' },
+  { sno: 3, award: 'Best Students In Extra Curricular Activities', student: 'HEMALATHA S', year: 'III Year' },
+  { sno: 3, award: 'Best Students In Extra Curricular Activities', student: 'KAVINKUMAR R', year: 'IV Year' },
+  { sno: 4, award: 'Overall Academic Topper', student: 'SHARMATHAA S', year: 'IV Year' },
+  { sno: 5, award: 'Most Books Borrowed from Library', student: 'PAVITHRA U', year: 'IV Year' }
+];
+
+
+
