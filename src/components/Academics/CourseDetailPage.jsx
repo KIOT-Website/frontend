@@ -4665,7 +4665,7 @@ function InnovativePracticesSection({ courseId }) {
                 <h4 className="text-[17px] font-bold font-graphik text-[#224292] leading-tight mb-2 group-hover:text-[#ffc107] transition-colors">{detail.subject}</h4>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 rounded-full bg-[#ffc107]" />
-                  <p className="text-[13px] font-semibold text-slate-500 uppercase tracking-wide">By {detail.name}</p>
+                  <p className="text-[13.5px] font-semibold text-slate-600 font-graphik">By {detail.name}</p>
                 </div>
                 <p className="text-[13.5px] font-medium text-slate-600 leading-relaxed font-graphik text-justify mt-auto">
                   {detail.description}
