@@ -1,5 +1,5 @@
 import aidsIp1 from '../../../../assets/innovative_practices/aids/Discussion and hands-on session.jpg';
-import aidsIp2 from '../../../../assets/innovative_practices/aids/Industry Vertical hands-on session.jpg';
+import aidsIp2 from '../../../../assets/innovative_practices/aids/industry Vertical hands-on session.jpg';
 import aidsIp3 from '../../../../assets/innovative_practices/aids/Game-based Learning.jpg';
 import aidsIp4 from '../../../../assets/innovative_practices/aids/Workshop model with chart presentation.jpg';
 import aidsIp5 from '../../../../assets/innovative_practices/aids/Hands-on Docker Building.jpg';
