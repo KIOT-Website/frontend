@@ -1,17 +1,19 @@
 import aidsIp1 from '../../../../assets/innovative_practices/aids/Discussion and hands-on session.jpg';
-import aidsIp2 from '../../../../assets/innovative_practices/aids/industry Vertical hands-on session.jpg';
+import aidsIp2 from '../../../../assets/innovative_practices/aids/Industry Vertical hands-on session.jpg';
 import aidsIp3 from '../../../../assets/innovative_practices/aids/Game-based Learning.jpg';
 import aidsIp4 from '../../../../assets/innovative_practices/aids/Workshop model with chart presentation.jpg';
-import aidsIp5 from '../../../../assets/innovative_practices/aids/Docker creation using ML.jpg';
-import aidsIp6 from '../../../../assets/innovative_practices/aids/participative Learning & Presentation.jpg';
-import aidsIp7 from '../../../../assets/innovative_practices/aids/Interactive Demonstration-Cum-Practic.jpg';
+import aidsIp5 from '../../../../assets/innovative_practices/aids/Hands-on Docker Building.jpg';
+import aidsIp6 from '../../../../assets/innovative_practices/aids/Participative Learning.jpg';
+import aidsIp7 from '../../../../assets/innovative_practices/aids/Interactive Demonstration-Cum-Practice.jpg';
 import aidsIp8 from '../../../../assets/innovative_practices/aids/Peer learning.jpg';
 import aidsIp9 from '../../../../assets/innovative_practices/aids/AI-Augmented Collaborative Learning.jpg';
 import aidsIp10 from '../../../../assets/innovative_practices/aids/AI-Facilitated Group Problem Solving.jpg';
-import aidsIp11 from '../../../../assets/innovative_practices/aids/Experiential Learning.jpg';
-import aidsIp12 from '../../../../assets/innovative_practices/aids/Project-Based Learning.jpg';
-import aidsIp13 from '../../../../assets/innovative_practices/aids/Collaborative project.jpg';
-import aidsIp14 from '../../../../assets/innovative_practices/aids/Collaborative project.1.jpg';
+import aidsIp11 from '../../../../assets/innovative_practices/aids/Data Engineering Tools and Techniques.jpg';
+import aidsIp12 from '../../../../assets/innovative_practices/aids/Experiential Learning.jpg';
+import aidsIp13 from '../../../../assets/innovative_practices/aids/Collaborative Learning.jpg';
+import aidsIp14 from '../../../../assets/innovative_practices/aids/Project-Based Learning.jpg';
+import aidsIp15 from '../../../../assets/innovative_practices/aids/Collaborative project.jpg';
+import aidsIp16 from '../../../../assets/innovative_practices/aids/Discuss and Present Classroom Activity.jpg';
 
 export const aidsStudentAchievements = [
   { name: 'Kirutheen Kumar R\nB.Tech - II Year (A) • AI&DS', event: 'Nxtwave OpenAI hackathon', level: 'State', award: 'Shortlisted at the state level Buildathon', title: 'AI-assisted medic bot.' },
@@ -748,7 +750,7 @@ export const aidsInnovativePractices = [
     subject: 'Data Engineering Tools and Techniques',
     method: 'Peer learning',
     description: 'Interactive collaborative activity focused on ETL/ELT pipelines and Apache Airflow, encouraging participants to analyse data-flow scenarios and explore suitable pipeline architectures. Teams discussed and presented batch and real-time pipeline approaches while connecting theoretical concepts with practical implementation. The activity strengthened analytical thinking, problem-solving, knowledge sharing, and communication skills.',
-    image: aidsIp8
+    image: aidsIp11
   },
   {
     sno: 12,
@@ -756,7 +758,7 @@ export const aidsInnovativePractices = [
     subject: 'Foundations of Data Engineering',
     method: 'Experiential Learning',
     description: 'Experiential learning focused on data cleaning, transformation, and pre-processing using real-world messy datasets. Participants identified duplicates, missing values, inconsistent formats, and outliers before designing, testing, and refining their own cleaning workflows. Peer review and practical experimentation strengthened data quality awareness, analytical thinking, problem-solving, and pipeline-building skills.',
-    image: aidsIp11
+    image: aidsIp12
   },
   {
     sno: 13,
@@ -764,7 +766,7 @@ export const aidsInnovativePractices = [
     subject: 'Constructor and Destructor in Inheritance',
     method: 'Collaborative Learning',
     description: 'Experiential learning brought data cleaning and pre-processing concepts to life using real-world datasets containing missing values, duplicates, inconsistencies, and outliers. Participants identified data quality issues, developed cleaning workflows, tested different solutions, and refined their approaches through peer feedback. The activity strengthened practical understanding, analytical thinking, problem-solving, and data engineering skills.',
-    image: aidsIp11
+    image: aidsIp13
   },
   {
     sno: 14,
@@ -772,7 +774,7 @@ export const aidsInnovativePractices = [
     subject: 'Advanced Machine Learning',
     method: 'Project-Based Learning',
     description: 'Project-Based Learning provided practical exposure to advanced Machine Learning through real-world datasets and application-oriented projects. Participants developed solutions involving regression, classification, clustering, dimensionality reduction, ensemble methods, and time-series forecasting. The approach strengthened programming, analytical thinking, research, teamwork, and problem-solving skills while encouraging innovation through hands-on implementation.',
-    image: aidsIp12
+    image: aidsIp14
   },
   {
     sno: 15,
@@ -780,7 +782,7 @@ export const aidsInnovativePractices = [
     subject: 'Deep Learning Techniques',
     method: 'Collaborative project',
     description: 'The activity explored Generative Adversarial Networks through group-based analysis of generator and discriminator structures, adversarial training, and practical AI applications. Teams examined GAN models, exchanged ideas on real-world use cases, and shared their interpretations through presentations. The session enhanced technical awareness, analytical reasoning, collaboration, communication, and practical understanding of Deep Learning concepts.',
-    image: aidsIp13
+    image: aidsIp15
   },
   {
     sno: 16,
@@ -788,6 +790,6 @@ export const aidsInnovativePractices = [
     subject: 'Visualization Techniques',
     method: 'Discuss and Present Classroom Activity',
     description: 'The Discuss and Present Classroom Activity provided an interactive platform to explore data visualization techniques using Tableau and Power BI. Teams discussed visualization concepts, analysed datasets, selected suitable charts, and presented their design choices and insights. The activity promoted critical thinking, creativity, teamwork, effective communication, and practical understanding of data-driven visualization.',
-    image: aidsIp14
+    image: aidsIp16
   }
 ];

@@ -17,7 +17,13 @@ import {
   FileCheck,
   Activity,
   Flame,
-  Users
+  Users,
+  Leaf,
+  BrainCircuit,
+  Binary,
+  Code2,
+  CircuitBoard,
+  UserCheck
 } from 'lucide-react';
 import "./studentLife.css";
 
@@ -74,8 +80,10 @@ export default function ProfessionalSocietyPage() {
 
   const societies = [
     {
+      id: 1,
       name: "Confederation of Indian Industry (CII) - Salem",
       dept: "MECH",
+      facultyIC: "Mr. R. Vinothkumar",
       tag: "CII",
       icon: Building,
       color: "bg-gradient-to-r from-blue-700 to-indigo-800",
@@ -84,8 +92,10 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
+      id: 2,
       name: "Salem Productivity Council (SPC) - Salem",
       dept: "MECH",
+      facultyIC: "Mr. R. Vinothkumar",
       tag: "SPC",
       icon: Compass,
       color: "bg-gradient-to-r from-violet-700 to-purple-800",
@@ -94,8 +104,10 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
+      id: 3,
       name: "The Indian Chamber of Commerce & Industry (ICCI) - Salem",
       dept: "MECH",
+      facultyIC: "Mr. R. Vinothkumar",
       tag: "ICCI",
       icon: Briefcase,
       color: "bg-gradient-to-r from-sky-700 to-blue-900",
@@ -104,8 +116,10 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
+      id: 4,
       name: "Society of Automotive Engineers INDIA (SAE)",
       dept: "MECH",
+      facultyIC: "Mr. S. Naveenkumar",
       tag: "SAE",
       icon: Layers,
       color: "bg-gradient-to-r from-emerald-700 to-teal-800",
@@ -114,8 +128,10 @@ export default function ProfessionalSocietyPage() {
       route: "/resources/student-life/sae"
     },
     {
+      id: 5,
       name: "Indian Society for Technical Education (ISTE) – Faculty Chapter",
       dept: "MECH / HRD",
+      facultyIC: "Mr. S. Santhosh",
       tag: "ISTE FACULTY",
       icon: Award,
       color: "bg-gradient-to-r from-rose-700 to-pink-800",
@@ -124,8 +140,10 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
+      id: 6,
       name: "Standards Club",
       dept: "MECH",
+      facultyIC: "Mr. A. Kamalakkannan",
       tag: "BIS",
       icon: FileCheck,
       color: "bg-gradient-to-r from-teal-700 to-emerald-800",
@@ -134,8 +152,10 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
+      id: 7,
       name: "The Indian Society of Heating, Refrigerating and Air Conditioning Engineers (ISHRAE)",
       dept: "MECH",
+      facultyIC: "Dr. V. Sivakumar",
       tag: "ISHRAE",
       icon: Flame,
       color: "bg-gradient-to-r from-blue-600 to-cyan-700",
@@ -144,8 +164,10 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
+      id: 8,
       name: "Quality Circle Forum of India (QCFI)",
       dept: "MECH",
+      facultyIC: "Mr. A. Kamalakkannan",
       tag: "QCFI",
       icon: CheckCircle2,
       color: "bg-gradient-to-r from-amber-600 to-yellow-700",
@@ -154,8 +176,10 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
+      id: 9,
       name: "National Safety Council (NSC)",
       dept: "MECH",
+      facultyIC: "Mr. G. Sureshkrishna",
       tag: "NSC",
       icon: ShieldCheck,
       color: "bg-gradient-to-r from-indigo-700 to-blue-800",
@@ -164,18 +188,46 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
-      name: "The Institution of Engineers (India)",
+      id: 10,
+      name: "Indian Green Building Council (IGBC)",
       dept: "CIVIL",
-      tag: "IEI",
-      icon: CheckCircle2,
-      color: "bg-gradient-to-r from-purple-700 to-indigo-800",
-      tagColor: "bg-purple-100 text-purple-950 border-purple-200",
-      desc: "Enhances professional engineering competency, technical lectures, paper presentations, and multidisciplinary engineering activities.",
+      facultyIC: "Mr. L. M. Nirmal",
+      tag: "IGBC",
+      icon: Leaf,
+      color: "bg-gradient-to-r from-emerald-600 to-green-800",
+      tagColor: "bg-emerald-100 text-emerald-950 border-emerald-200",
+      desc: "Fosters green building practices, sustainable architecture, energy-efficient designs, and environmental certifications.",
       route: null
     },
     {
+      id: 11,
+      name: "The Institution of Engineers (India)",
+      dept: "CIVIL",
+      facultyIC: "Mr. S. Arulkesavan",
+      tag: "IEI CIVIL",
+      icon: CheckCircle2,
+      color: "bg-gradient-to-r from-purple-700 to-indigo-800",
+      tagColor: "bg-purple-100 text-purple-950 border-purple-200",
+      desc: "Enhances professional engineering competency, technical lectures, paper presentations, and multidisciplinary civil engineering activities.",
+      route: null
+    },
+    {
+      id: 12,
+      name: "IEI Student Chapter",
+      dept: "AI&DS",
+      facultyIC: "Ms. M. Selvi",
+      tag: "IEI AI&DS",
+      icon: BrainCircuit,
+      color: "bg-gradient-to-r from-blue-700 to-sky-800",
+      tagColor: "bg-blue-100 text-blue-950 border-blue-200",
+      desc: "Promotes artificial intelligence, data engineering, technical symposia, and computing events under the Institution of Engineers (India).",
+      route: "/resources/student-life/iei-aids"
+    },
+    {
+      id: 13,
       name: "Indian Society for Technical Education (ISTE) – Student Chapter",
       dept: "CSE",
+      facultyIC: "Mrs. G. Pavithra",
       tag: "ISTE STUDENT",
       icon: Users,
       color: "bg-gradient-to-r from-cyan-700 to-blue-800",
@@ -184,8 +236,10 @@ export default function ProfessionalSocietyPage() {
       route: null
     },
     {
+      id: 14,
       name: "IEEE Student Branch",
       dept: "ECE",
+      facultyIC: "Mrs. R. Hemalatha",
       tag: "IEEE",
       icon: Zap,
       color: "bg-gradient-to-r from-indigo-700 to-purple-800",
@@ -194,8 +248,10 @@ export default function ProfessionalSocietyPage() {
       route: "/resources/student-life/ieee"
     },
     {
+      id: 15,
       name: "IEEE - PES Student Branch",
       dept: "EEE",
+      facultyIC: "Mrs. P. Rekha",
       tag: "IEEE-PES",
       icon: Zap,
       color: "bg-gradient-to-r from-amber-600 to-yellow-700",
@@ -204,8 +260,46 @@ export default function ProfessionalSocietyPage() {
       route: "/resources/student-life/ieee-pes"
     },
     {
+      id: 16,
+      name: "IEEE - Computer Society Student Branch Chapter",
+      dept: "CSE",
+      facultyIC: "Mrs. E. Krithika",
+      tag: "IEEE-CS",
+      icon: Code2,
+      color: "bg-gradient-to-r from-blue-600 to-indigo-800",
+      tagColor: "bg-blue-100 text-blue-950 border-blue-200",
+      desc: "Specializes in computer engineering, algorithmic thinking, software engineering research, cloud technologies, and computing workshops.",
+      route: null
+    },
+    {
+      id: 17,
+      name: "IEEE – Computational Intelligence Society (CIS)",
+      dept: "IT",
+      facultyIC: "Mrs. R. V. Sudha",
+      tag: "IEEE-CIS",
+      icon: Binary,
+      color: "bg-gradient-to-r from-teal-700 to-blue-900",
+      tagColor: "bg-teal-100 text-teal-950 border-teal-200",
+      desc: "Focuses on neural networks, evolutionary computation, fuzzy systems, and emerging machine intelligence technologies.",
+      route: null
+    },
+    {
+      id: 18,
+      name: "IEEE – Circuits and System Society (CSS)",
+      dept: "ECE",
+      facultyIC: "Mrs. R. Hemalatha",
+      tag: "IEEE-CSS",
+      icon: CircuitBoard,
+      color: "bg-gradient-to-r from-violet-700 to-indigo-900",
+      tagColor: "bg-violet-100 text-violet-950 border-violet-200",
+      desc: "Advances circuit theory, VLSI design, signal processing hardware, and integrated electronic systems.",
+      route: null
+    },
+    {
+      id: 19,
       name: "ICT Academy (ICTACT)",
       dept: "CSE",
+      facultyIC: "Mr. T. Palaniraja",
       tag: "ICTACT",
       icon: Cpu,
       color: "bg-gradient-to-r from-blue-700 to-cyan-800",
@@ -214,8 +308,10 @@ export default function ProfessionalSocietyPage() {
       route: "/resources/student-life/ictact"
     },
     {
+      id: 20,
       name: "Madras Management Association (MMA) – Salem",
       dept: "MBA",
+      facultyIC: "Dr. M. Sathyapriya",
       tag: "MMA",
       icon: Briefcase,
       color: "bg-gradient-to-r from-orange-700 to-amber-800",

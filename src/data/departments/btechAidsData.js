@@ -61,99 +61,83 @@ export const btechAidsData = {
         year: '2026',
         data: [
           {
-            inventors: 'Dr. B. Sasikumar',
+            inventors: 'Dr. B. Sasikumar, Gopalakrishnan A, Brindha V, Esther Rani P. J, Bhuvaneswari B',
             title: 'Artificial Intelligence-Based Cash Dispensing System for Automatic Teller Machines',
-            type: 'Design Patent',
+            filingDate: '11/28/2024',
+            pubDate: '06/12/2024',
+            journalNo: '49/2024',
             appNo: '202441093027 A',
-            date: '11/28/2024',
+            type: 'Design Patent',
             status: 'Published'
           },
           {
             inventors: 'Dr. B. Sasikumar',
             title: 'Differential Privacy Gradient Compression Algorithm for Distributed Machine Learning Optimization',
-            type: 'Utility Patent',
+            filingDate: '03/04/2026',
+            pubDate: '10/04/2026',
+            journalNo: '15/2026',
             appNo: '202641043056 A',
-            date: '03/04/2026',
+            type: 'Utility Patent',
             status: 'Published'
           },
           {
             inventors: 'Dr. A. Gomathi',
             title: 'Eye Tracking System Using Internet of Things (IoT)',
-            type: 'Utility Patent',
+            filingDate: '26/02/2020',
+            pubDate: '08/05/2020',
+            journalNo: '18541/2020',
             appNo: '202041008052',
-            date: '26/02/2020',
+            type: 'Utility Patent',
             status: 'Granted'
           },
           {
             inventors: 'Dr. A. Gomathi',
             title: 'Differential Privacy Gradient Compression Algorithm for Distributed Machine Learning Optimization',
-            type: 'Utility Patent',
+            filingDate: '03/04/2026',
+            pubDate: '10/04/2026',
+            journalNo: '15/2026',
             appNo: '202641043056 A',
-            date: '03/04/2026',
+            type: 'Utility Patent',
             status: 'Published'
           },
           {
-            inventors: 'Mr. A. Gopalakrishnan',
-            title: 'Artificial Intelligence-Based Cash Dispensing System for Automatic Teller Machines',
-            type: 'Design Patent',
-            appNo: '202441093027 A',
-            date: '11/28/2024',
-            status: 'Published'
-          },
-          {
-            inventors: 'Mr. A. Gopalakrishnan',
+            inventors: 'Mr. Gopalakrishnan A',
             title: 'Preventing Attacks on Cyber Automation Systems Based on Artificial Intelligence',
-            type: 'Design Patent',
+            filingDate: '26/07/2022',
+            pubDate: '15/08/2022',
+            journalNo: '36/2022',
             appNo: '202241042636 A',
-            date: '26/07/2022',
+            type: 'Design Patent',
             status: 'Published'
           },
           {
-            inventors: 'Mr. A. Gopalakrishnan',
+            inventors: 'Mr. Gopalakrishnan A',
             title: 'A System and Method for an Optimization Technique for the Detection of Blind Spots in an Eye Using Deep Learning',
-            type: 'Design Patent',
+            filingDate: '08/06/2022',
+            pubDate: '17/06/2022',
+            journalNo: '24/2022',
             appNo: '202241032642 A',
-            date: '08/06/2022',
+            type: 'Design Patent',
             status: 'Published'
           },
           {
-            inventors: 'Mrs. V. Brindha',
-            title: 'Artificial Intelligence-Based Cash Dispensing System for Automatic Teller Machines',
-            type: 'Design Patent',
-            appNo: '202441093027 A',
-            date: '11/28/2024',
-            status: 'Published'
-          },
-          {
-            inventors: 'Mrs. P.J. Esther Rani',
-            title: 'Artificial Intelligence-Based Cash Dispensing System for Automatic Teller Machines',
-            type: 'Design Patent',
-            appNo: '202441093027 A',
-            date: '11/28/2024',
-            status: 'Published'
-          },
-          {
-            inventors: 'Mrs. B. Bhuvaneswari',
-            title: 'Artificial Intelligence (Ai) Based Cloud Security Detecting Device',
-            type: 'Design Patent',
-            appNo: '6418470',
-            date: '21/1/2025',
-            status: 'Granted'
-          },
-          {
-            inventors: 'Mrs. B. Bhuvaneswari',
+            inventors: 'Mrs. Bhuvaneswari. B',
             title: 'An IoT-Driven Cloud-Based Ai System for Early Breast Cancer Detection With Automated Image Analysis and Performance Enhancement',
-            type: 'Design Patent',
+            filingDate: '02/03/2026',
+            pubDate: '13/03/2026',
+            journalNo: '11/2026',
             appNo: '202641024464 A',
-            date: '02/03/2026',
+            type: 'Design Patent',
             status: 'Published'
           },
           {
             inventors: 'Dr. G. Venkatesh',
             title: 'Patented Techniques for Improving the Performance of Nanostructured CdS Thin Films in Optoelectronic Applications',
-            type: 'Utility Patent',
+            filingDate: '19.06.2024',
+            pubDate: '20.09.2024',
+            journalNo: '38/2024',
             appNo: '202441070049 A',
-            date: '19.06.2024',
+            type: 'Utility Patent',
             status: 'Published'
           }
         ]
@@ -548,6 +532,166 @@ export const btechAidsData = {
         incharge: 'Mrs. P. J. Esther Rani',
         technician: 'Mr. K. Bharathiyar',
         icon: Network
+      }
+    ],
+    fundedProjects: [
+      {
+        faculty: 'Dr. B. SASIKUMAR',
+        investigator: 'Dr. B. SASIKUMAR',
+        agency: 'TIDCO',
+        fundingLevel: 'Govt. Fund',
+        title: 'Automated Tyre Wear and Damage Detection System',
+        status: 'Granted',
+        amount: '24,00,000/-',
+        grant: '24,00,000/-',
+        period: '2025 - 2026',
+        year: '2025 - 2026'
+      },
+      {
+        faculty: 'Dr. B. SASIKUMAR, Dr. A. GOMATHI',
+        investigator: 'Dr. B. SASIKUMAR, Dr. A. GOMATHI',
+        agency: 'AICTE – RPS',
+        fundingLevel: 'Govt. Fund',
+        title: 'Early Fall Risk Prediction System for Elderly People using AI and ML Tools',
+        status: 'Granted',
+        amount: '44,00,000/-',
+        grant: '44,00,000/-',
+        period: '2025 - 2026',
+        year: '2025 - 2026'
+      },
+      {
+        faculty: 'Dr. A. GOMATHI',
+        investigator: 'Dr. A. GOMATHI',
+        agency: 'AICTE-AQIS-GOC',
+        fundingLevel: 'AICTE Fund',
+        title: 'International Conference on Computing Business Intelligence and Engineering Technologies',
+        status: 'Granted',
+        amount: '3,00,000/-',
+        grant: '3,00,000/-',
+        period: '2025 - 2026',
+        year: '2025 - 2026'
+      }
+    ],
+    studentProjects: [
+      {
+        students: 'Kirutheen Kumar. R (B.Tech - II Year AI&DS A)',
+        event: 'National Level Hackathon',
+        agency: 'National Level Hackathon',
+        level: 'National level',
+        award: 'Appreciation Prize of Rs. 10,000 Cash Award',
+        grant: '10,000/-',
+        title: 'AI-Assisted Smart Electric Fence System',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Kannadhasan. V (B.Tech - II Year AI&DS A)',
+        event: 'Electric Bike Design Challenge',
+        agency: 'Electric Bike Design Challenge',
+        level: 'National level',
+        award: 'Won Overall Champions Award',
+        grant: 'Overall Champion',
+        title: 'National-level Electric Bike Design Challenge',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Karthik V, Mohammed Armaan M S, Jitheeshwaran S (B.Tech - II Year AI&DS A)',
+        event: "TEKHORA'26 Hackathon - Call Of Query (MIT Campus, Anna University)",
+        agency: "TEKHORA'26 MIT Campus, Anna University",
+        level: 'National level',
+        award: '1st Prize Winners',
+        grant: '1st Prize',
+        title: 'Hackathon - Call Of Query',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Kavinaya R, Harshini K, Aarthi S (B.Tech - II Year AI&DS A)',
+        event: "Innovate India'2047 Hackathon",
+        agency: "Innovate India'2047",
+        level: 'National level',
+        award: 'Special Category Winners - Best IoT Project',
+        grant: 'Best IoT Project',
+        title: "Innovate India'2047 Smart IoT System",
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Jayashree N, Madhu Shree. M (B.Tech - III Year AI&DS)',
+        event: '24-hrs Non-Stop Women Hackathon',
+        agency: '24-hrs Non-Stop Women Hackathon',
+        level: 'National level',
+        award: '3rd Place with Cash Prize',
+        grant: 'Cash Prize',
+        title: 'Rising Child Anemia in Rural Blocks Diagnostic Tool',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Umamaheswari. A, Padma Sree R (B.Tech - III Year AI&DS)',
+        event: '24-hrs Non-Stop Women Hackathon',
+        agency: '24-hrs Non-Stop Women Hackathon',
+        level: 'National level',
+        award: '3rd Place with Cash Prize',
+        grant: 'Cash Prize',
+        title: 'Wireless Power Charging for EV Vehicles',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Varsini. S, Sudarsan. K, Prasanna. B, Haris. K. N (B.Tech - IV Year AI&DS)',
+        event: "SindhanAI'25 National Level 24-hrs Hackathon",
+        agency: "SindhanAI'25",
+        level: 'National level',
+        award: '1st Runner-up with Cash Prize',
+        grant: 'Cash Prize',
+        title: 'AI-Assisted Travel Planning System',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Haris. K. N, Guna Sree R, Vijay Vignesh K U (B.Tech - IV Year AI&DS)',
+        event: 'GCC × SHIFT Hackathon',
+        agency: 'GCC × SHIFT Hackathon',
+        level: 'National level',
+        award: 'Winner',
+        grant: 'Winner Award',
+        title: 'Multi-Tenant Task Tracker',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Maharaj. P. S (B.Tech - IV Year AI&DS)',
+        event: 'Code-zap Hackathon 2025',
+        agency: 'Code-zap Hackathon 2025',
+        level: 'National level',
+        award: 'Won Educational Trip to Singapore',
+        grant: 'Singapore Educational Trip',
+        title: 'AI-Based Resume Screener',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Suberna. R. S (B.Tech - IV Year AI&DS)',
+        event: 'Engineers Build Expo 2025-2026',
+        agency: 'Engineers Build Expo',
+        level: 'National level',
+        award: 'First Place with Cash Prize of Rs. 15,000',
+        grant: '15,000/-',
+        title: 'Disaster Management System using AI',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Suberna. R. S (B.Tech - IV Year AI&DS)',
+        event: 'Hack-Xelerator',
+        agency: 'Hack-Xelerator',
+        level: 'National level',
+        award: 'Special Prize with Cash Prize of Rs. 2,000',
+        grant: '2,000/-',
+        title: 'Building Collapse and Disaster Prediction System Using AI and IoT',
+        year: '2025 - 2026'
+      },
+      {
+        students: 'Methun. M (B.Tech - IV Year AI&DS)',
+        event: "Gen Brainiacs'25 Hackathon",
+        agency: "Gen Brainiacs'25",
+        level: 'National level',
+        award: '2nd Prize',
+        grant: '2nd Prize',
+        title: 'Gamified Tutor',
+        year: '2025 - 2026'
       }
     ],
     placementStats: { placed: '95%', avg: '5.5 LPA', top: '22 LPA', companies: '70+' },

@@ -874,7 +874,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
     const periodText = '01.06.2023 to 31.05.2026';
     const totalPubs = isCivil ? 56 : (isAIDS ? 113 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : (isECE ? 134 : (isIT ? 13 : (isMBA ? 99 : 221))))))))));
     const totalPatentsText = isCivil ? '08' : (isAIDS ? '07' : (isCSBS ? '05' : (isCSE ? '11' : (isEEE ? '15' : (isMCA ? '00' : (isMech ? '10' : (isSH ? '03' : (isECE ? '08' : (isIT ? '-' : (isMBA ? '11' : '08'))))))))));
-    const totalGrantsText = isCivil ? '11' : (isAIDS ? '02' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '04' : '12'))))))))));
+    const totalGrantsText = isCivil ? '11' : (isAIDS ? '03' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '04' : '12'))))))))));
     const totalGrantsLabel = 'Projects / Consultancy Completed';
 
     const pubLegend = isCivil ? [
@@ -977,9 +977,9 @@ const ResearchSummaryDashboard = ({ deptName }) => {
         { color: '#3b82f6', name: 'Patents Published', count: '11' },
         { color: '#ea580c', name: 'Patents Granted',   count: '03' },
     ] : (isAIDS ? [
-        { color: '#15803d', name: 'Patents Filed',     count: '01' },
+        { color: '#15803d', name: 'Patents Filed',     count: '07' },
         { color: '#3b82f6', name: 'Patents Published', count: '06' },
-        { color: '#ea580c', name: 'Patents Granted',   count: '-' },
+        { color: '#ea580c', name: 'Patents Granted',   count: '01' },
     ] : (isCSBS ? [
         { color: '#15803d', name: 'Patents Filed',     count: '08' },
         { color: '#3b82f6', name: 'Patents Published', count: '05' },
@@ -1148,20 +1148,20 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                         ) : isAIDS ? (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '75%' }}>AICTE</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '75%' }}>AICTE (RPS & GOC)</td>
                                                     <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>2</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>SERB</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>TIDCO (Govt. of TN)</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>1</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>National Mission</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>National Mission / SERB</td>
                                                     <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                                 <tr>
                                                     <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>Institutional Grants</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>1</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                             </>
                                         ) : isCSBS ? (
@@ -1342,11 +1342,11 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                         ) : isAIDS ? (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '75%', lineHeight: 1.1 }}>GOC & RPS (AICTE)</td>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '75%', lineHeight: 1.1 }}>AICTE - RPS & GOC</td>
                                                     <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>2</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>URP (Institutional)</td>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>TIDCO Sponsored Project</td>
                                                     <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>1</td>
                                                 </tr>
                                                 <tr>

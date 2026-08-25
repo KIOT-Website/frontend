@@ -131,6 +131,7 @@ const CorporateContestCellPage = lazy(() => import('./pages/CorporateContestCell
 const SdvClubPage = lazy(() => import('./pages/SdvClubPage'))
 const CodewarePage = lazy(() => import('./pages/CodewarePage'))
 const CiscoAcademyPage = lazy(() => import('./pages/CiscoAcademyPage'))
+const IeiAidsPage = lazy(() => import('./pages/IeiAidsPage'))
 
 
 
@@ -1146,8 +1147,10 @@ function App() {
                   <Route path="/resources/student-life/technical-clubs" element={<TechnicalClubsPage />} />
                   <Route path="/student-life/extra-curricular" element={<ExtraCurricularPage />} />
                   <Route path="/resources/student-life/extra-curricular" element={<ExtraCurricularPage />} />
-                  <Route path="/student-life/ictact" element={<IctactPage />} />
+                   <Route path="/student-life/ictact" element={<IctactPage />} />
                   <Route path="/resources/student-life/ictact" element={<IctactPage />} />
+                  <Route path="/student-life/iei-aids" element={<IeiAidsPage />} />
+                  <Route path="/resources/student-life/iei-aids" element={<IeiAidsPage />} />
                   <Route path="/student-life/higher-education-india" element={<HigherEducationIndiaPage />} />
                   <Route path="/resources/student-life/higher-education-india" element={<HigherEducationIndiaPage />} />
                   <Route path="/student-life/corporate-contest-cell" element={<CorporateContestCellPage />} />
