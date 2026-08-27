@@ -30,45 +30,6 @@ const Footer = () => {
   ]
 
   const menuSections = {
-    'EXPLORE': {
-      icon: Compass,
-      links: [
-        { name: 'About Us', href: '/about/about-us' },
-        { name: 'Promoters & Council', href: '/about/promoters' },
-        { name: 'Accreditation', href: '/about/accreditation-ranking' },
-        { name: 'Governing Council', href: '/about/governing-council' },
-        { name: 'Institutional Policies', href: '/about/institutional-policies' },
-        { name: 'College Rules', href: '/about/college-rules' },
-        { name: 'Programs Offered', href: '/academics/undergraduate' },
-      ]
-    },
-    'PLACEMENTS': {
-      icon: Trophy,
-      links: [
-        { name: 'Placement Overview', href: '/placements/placement' },
-        { name: 'Training & Skills', href: '/placements/training' },
-        { name: 'Placement Outcomes', href: '/placements/outcomes' },
-      ]
-    },
-    'ADMISSIONS': {
-      icon: GraduationCap,
-      links: [
-        { name: 'Admission Overview', href: '/admissions' },
-        { name: 'UG Registration', href: '/admissions/ug-registration' },
-        { name: 'PG Registration', href: '/admissions/pg-registration' },
-        { name: 'Contact', href: '/contact' },
-      ]
-    },
-    'CLUBS': {
-      icon: Users,
-      links: [
-        { name: 'Department Associations', href: '/resources/student-life/department-associations' },
-        { name: 'Common Centers & Forums', href: '/resources/student-life/common-centers' },
-        { name: 'Professional Society Clubs', href: '/resources/student-life/professional-societies' },
-        { name: 'Extra-Curricular & Social Clubs', href: '/resources/student-life/extra-curricular' },
-        { name: 'Technical & Co-Curricular Clubs', href: '/resources/student-life/technical-clubs' },
-      ]
-    },
     'QUICK LINKS': {
       icon: Phone,
       links: [
@@ -78,7 +39,9 @@ const Footer = () => {
         { name: 'Exams', href: '/coe' },
         { name: 'Research & Innovations', href: '/research-innovation/research' },
         { name: 'Campus Essentials', href: '/resources/campus-life' },
-        { name: 'Clubs', href: '/resources/student-life' },
+        { name: 'Grievance', href: '/grievance' },
+        { name: 'AICTE Feedback', href: 'https://www.aicte.gov.in/feedback/' },
+        { name: 'AU – Grievance Portal Link', href: 'https://www.auegov.ac.in/GrievancePortal/' },
       ]
     },
     'RESOURCES': {
@@ -92,6 +55,45 @@ const Footer = () => {
         { name: 'KIOT ERP', href: 'https://kiot.sriss.co.in/CAMPS/CommonJSP/signin.jsp' },
         { name: 'KIOT Library', href: 'http://115.244.103.83/webopac' },
         { name: 'KIOT LMS', href: 'https://kiotlms.com/' },
+      ]
+    },
+    'CLUBS': {
+      icon: Users,
+      links: [
+        { name: 'Department Associations', href: '/resources/student-life/department-associations' },
+        { name: 'Common Centers & Forums', href: '/resources/student-life/common-centers' },
+        { name: 'Professional Society Clubs', href: '/resources/student-life/professional-societies' },
+        { name: 'Extra-Curricular & Social Clubs', href: '/resources/student-life/extra-curricular' },
+        { name: 'Technical & Co-Curricular Clubs', href: '/resources/student-life/technical-clubs' },
+      ]
+    },
+    'EXPLORE': {
+      icon: Compass,
+      links: [
+        { name: 'About Us', href: '/about/about-us' },
+        { name: 'Promoters & Council', href: '/about/promoters' },
+        { name: 'Accreditation', href: '/about/accreditation-ranking' },
+        { name: 'Governing Council', href: '/about/governing-council' },
+        { name: 'Institutional Policies', href: '/about/institutional-policies' },
+        { name: 'College Rules', href: '/about/college-rules' },
+        { name: 'Programs Offered', href: '/academics/undergraduate' },
+      ]
+    },
+    'ADMISSIONS': {
+      icon: GraduationCap,
+      links: [
+        { name: 'Admission Overview', href: '/admissions' },
+        { name: 'UG Registration', href: '/admissions/ug-registration' },
+        { name: 'PG Registration', href: '/admissions/pg-registration' },
+        { name: 'Contact', href: '/contact' },
+      ]
+    },
+    'PLACEMENTS': {
+      icon: Trophy,
+      links: [
+        { name: 'Placement Overview', href: '/placements/placement' },
+        { name: 'Training & Skills', href: '/placements/training' },
+        { name: 'Placement Outcomes', href: '/placements/outcomes' },
       ]
     }
   }

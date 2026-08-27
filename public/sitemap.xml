@@ -51,6 +51,10 @@
     <loc>https://kiot.ac.in/about/governing-council</loc>
     <priority>0.70</priority>
   </url>
+  <url>
+    <loc>https://kiot.ac.in/grievance</loc>
+    <priority>0.75</priority>
+  </url>
 
   <!-- Placements -->
   <url>

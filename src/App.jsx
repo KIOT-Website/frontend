@@ -132,6 +132,7 @@ const SdvClubPage = lazy(() => import('./pages/SdvClubPage'))
 const CodewarePage = lazy(() => import('./pages/CodewarePage'))
 const CiscoAcademyPage = lazy(() => import('./pages/CiscoAcademyPage'))
 const IeiAidsPage = lazy(() => import('./pages/IeiAidsPage'))
+const GrievancePage = lazy(() => import('./pages/GrievancePage'))
 
 
 
@@ -358,6 +359,18 @@ function App() {
       "/resources/iqac": {
         title: "IQAC Cell | Internal Quality Assurance",
         desc: "Internal Quality Assurance Cell (IQAC) at KIOT ensures continuous improvement in academic and administrative performance."
+      },
+      "/grievance": {
+        title: "Grievance Redressal Cell | KIOT",
+        desc: "Submit academic, administrative, anti-ragging, and campus grievances online through the KIOT Grievance Redressal Portal."
+      },
+      "/grievance-redressal": {
+        title: "Grievance Redressal Cell | KIOT",
+        desc: "Submit academic, administrative, anti-ragging, and campus grievances online through the KIOT Grievance Redressal Portal."
+      },
+      "/about/grievance": {
+        title: "Grievance Redressal Cell | KIOT",
+        desc: "Submit academic, administrative, anti-ragging, and campus grievances online through the KIOT Grievance Redressal Portal."
       },
       "/placements": {
         title: "Placement Cell & Overview | KIOT",
@@ -1224,6 +1237,9 @@ function App() {
                   <Route path="/student-life/higher-education-abroad" element={<HigherEducationAbroadPage />} />
                   <Route path="/resources/student-life/higher-education-abroad" element={<HigherEducationAbroadPage />} />
                   <Route path="/alumni" element={<AlumniPage />} />
+                  <Route path="/grievance" element={<GrievancePage />} />
+                  <Route path="/grievance-redressal" element={<GrievancePage />} />
+                  <Route path="/about/grievance" element={<GrievancePage />} />
                   <Route path="/blogs" element={<BlogsPage />} />
                   <Route path="/blog/:slug" element={<BlogDetailPage />} />
 
