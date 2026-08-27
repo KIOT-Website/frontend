@@ -706,7 +706,10 @@ export default function CourseDetailPage({ overrides }) {
   const course = courseData[courseId] || defaultCourse(courseId)
   const Icon = course.icon
 
-  const courseTabs = TABS;
+  const isMePgDepartment = ['me-ise', 'me-ae', 'me-ped', 'me-se'].includes(courseId) || courseId?.startsWith('me-');
+  const courseTabs = isMePgDepartment 
+    ? TABS.filter(tab => tab !== 'Achievements')
+    : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
   const [activeResearchSubTab, setActiveResearchSubTab] = useState('Patents')
