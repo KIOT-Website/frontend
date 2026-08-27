@@ -739,6 +739,9 @@ export default function CourseDetailPage({ overrides }) {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
     setActiveTab('Overview'); // Reset to first tab for new departments
+    if (objectiveData && objectiveData.length > 0) {
+      setActiveObjectiveTab(objectiveData[0].id);
+    }
 
     // Safety delay to override any browser-native scroll restoration
     const timer = setTimeout(() => {
@@ -747,7 +750,7 @@ export default function CourseDetailPage({ overrides }) {
     return () => clearTimeout(timer);
   }, [courseId]);
 
-  const activeObj = objectiveData.find(o => o.id === activeObjectiveTab)
+  const activeObj = objectiveData.find(o => o.id === activeObjectiveTab) || objectiveData[0] || null;
 
   // Ensure tab content always scrolls to top when switching
   const isFirstMount = useRef(true);
@@ -1340,129 +1343,131 @@ export default function CourseDetailPage({ overrides }) {
                   </div>
                 </div>
 
-                <div className="px-2 py-8 sm:px-10 md:p-14 overflow-hidden mt-8">
-                  <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
-                    <div>
-                      <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] tracking-tighter">Academic Objectives</h2>
+                {objectiveData.length > 0 && activeObj && (
+                  <div className="px-2 py-8 sm:px-10 md:p-14 overflow-hidden mt-8">
+                    <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-10 mb-12 px-2">
+                      <div>
+                        <h2 className="text-2xl md:text-3xl font-bold font-graphik text-[#224292] tracking-tighter">Academic Objectives</h2>
+                      </div>
+
+                      <div className="grid grid-cols-3 md:flex md:items-center gap-2 md:gap-3 bg-slate-50/50 p-1.5 md:p-2 rounded-2xl md:rounded-[2rem] border border-slate-100">
+                        {objectiveData.map((obj) => (
+                          <button
+                            key={obj.id}
+                            onClick={() => setActiveObjectiveTab(obj.id)}
+                            className={`px-2 md:px-8 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] flex items-center justify-center md:justify-start gap-1.5 md:gap-3 text-[8px] md:text-[10px] font-bold font-graphik uppercase tracking-tight md:tracking-[0.2em] transition-all duration-500 shadow-sm ${activeObjectiveTab === obj.id
+                              ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
+                              : 'bg-white text-[#224292] hover:bg-white/80'
+                              }`}
+                          >
+                            <obj.icon size={14} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#224292]/60'} />
+                            {obj.id}
+                          </button>
+                        ))}
+                      </div>
                     </div>
 
-                    <div className="grid grid-cols-3 md:flex md:items-center gap-2 md:gap-3 bg-slate-50/50 p-1.5 md:p-2 rounded-2xl md:rounded-[2rem] border border-slate-100">
-                      {objectiveData.map((obj) => (
-                        <button
-                          key={obj.id}
-                          onClick={() => setActiveObjectiveTab(obj.id)}
-                          className={`px-2 md:px-8 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] flex items-center justify-center md:justify-start gap-1.5 md:gap-3 text-[8px] md:text-[10px] font-bold font-graphik uppercase tracking-tight md:tracking-[0.2em] transition-all duration-500 shadow-sm ${activeObjectiveTab === obj.id
-                            ? `${obj.activeBg} text-white shadow-xl shadow-blue-900/10 scale-[1.03] translate-y-[-2px]`
-                            : 'bg-white text-[#224292] hover:bg-white/80'
-                            }`}
+                    <div className="relative min-h-[300px]">
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={activeObjectiveTab}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -20 }}
+                          transition={{ duration: 0.4 }}
+                          className="py-4 group"
                         >
-                          <obj.icon size={14} className={activeObjectiveTab === obj.id ? obj.iconColor : 'text-[#224292]/60'} />
-                          {obj.id}
-                        </button>
-                      ))}
+                          <div className="space-y-4 font-graphik">
+                            {activeObj?.id === 'KAP' ? (
+                              <div className="space-y-6 pt-2">
+                                <div className="text-center max-w-2xl mx-auto mb-6">
+                                  <h4 className="text-2xl font-bold font-graphik text-[#224292]">
+                                    Knowledge and <span className="text-[#ffc107]">Attitude Profile (KAP)</span>
+                                  </h4>
+                                  <p className="text-[#64779F] text-xs font-medium font-graphik mt-1">Washington Accord & NBA Graduate Attributes Framework</p>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                  {kapItems.map((item, idx) => {
+                                    const ItemIcon = item.icon
+                                    return (
+                                      <motion.div
+                                        key={item.wk}
+                                        initial={{ opacity: 0, y: 15 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: idx * 0.04 }}
+                                        className="flex gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-100 transition-all group"
+                                      >
+                                        <div className="shrink-0">
+                                          <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-colors duration-300 shadow-sm">
+                                            <ItemIcon size={20} />
+                                          </div>
+                                        </div>
+                                        <div className="space-y-1">
+                                          <div className="flex items-center gap-2">
+                                            <span className="inline-block px-2 py-0.5 rounded-md bg-[#224292]/5 text-[#224292] text-[10px] font-black tracking-wider uppercase font-graphik">
+                                              {item.wk}
+                                            </span>
+                                            <h5 className="text-[14px] font-bold text-[#224292] font-graphik">{item.title}</h5>
+                                          </div>
+                                          <p className="text-[13px] text-slate-600 leading-relaxed text-justify font-normal font-graphik">{item.desc}</p>
+                                        </div>
+                                      </motion.div>
+                                    )
+                                  })}
+                                </div>
+                              </div>
+                            ) : (() => {
+                              const text = activeObj?.content || 'Data current being optimized for digital view.';
+                              const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+                              // Detect if first line is a preamble
+                              const hasPreamble = lines.length > 1 && (lines[0].endsWith(':') || lines[0].includes('will be able to') || lines[0].includes('completion of'));
+                              const preamble = hasPreamble ? lines[0] : null;
+                              const rawPoints = hasPreamble ? lines.slice(1) : lines;
+
+                              return (
+                                <div className="space-y-4">
+                                  {preamble && (
+                                    <p className="px-4 text-[#64779F] font-bold text-[13px] mb-6 italic leading-relaxed">{preamble}</p>
+                                  )}
+                                  {rawPoints.map((point, idx) => {
+                                    const match = point.match(/^((?:PEO|PO|PSO|M)\s*[-]?\s*(?:\d+|[IVXLC]+):?)\s*(.*)/i);
+                                    const label = match ? match[1] : '';
+                                    const description = match ? match[2] : point;
+
+                                    return (
+                                      <motion.div
+                                        key={idx}
+                                        whileHover={{ x: 10 }}
+                                        className="flex gap-3 md:gap-5 px-4 py-5 md:p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
+                                      >
+                                        <div className="flex-shrink-0 mt-1">
+                                          <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
+                                            <CheckCircle2 size={16} className="text-[#224292] group-hover/point:text-[#ffc107] transition-colors" />
+                                          </div>
+                                        </div>
+                                        <div className="space-y-1 flex-1">
+                                          {label && (
+                                            <span className="block text-[11px] font-black font-graphik text-[#224292] uppercase tracking-[0.2em]">
+                                              {label.replace(':', '')}
+                                            </span>
+                                          )}
+                                          <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[14px] sm:text-[16px] text-justify">
+                                            {description}
+                                          </p>
+                                        </div>
+                                      </motion.div>
+                                    );
+                                  })}
+                                </div>
+                              );
+                            })()}
+                          </div>
+                        </motion.div>
+                      </AnimatePresence>
                     </div>
                   </div>
-
-                  <div className="relative min-h-[300px]">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={activeObjectiveTab}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.4 }}
-                        className="py-4 group"
-                      >
-                        <div className="space-y-4 font-graphik">
-                          {activeObj.id === 'KAP' ? (
-                            <div className="space-y-6 pt-2">
-                              <div className="text-center max-w-2xl mx-auto mb-6">
-                                <h4 className="text-2xl font-bold font-graphik text-[#224292]">
-                                  Knowledge and <span className="text-[#ffc107]">Attitude Profile (KAP)</span>
-                                </h4>
-                                <p className="text-[#64779F] text-xs font-medium font-graphik mt-1">Washington Accord & NBA Graduate Attributes Framework</p>
-                              </div>
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {kapItems.map((item, idx) => {
-                                  const ItemIcon = item.icon
-                                  return (
-                                    <motion.div
-                                      key={item.wk}
-                                      initial={{ opacity: 0, y: 15 }}
-                                      animate={{ opacity: 1, y: 0 }}
-                                      transition={{ delay: idx * 0.04 }}
-                                      className="flex gap-4 p-5 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-100 transition-all group"
-                                    >
-                                      <div className="shrink-0">
-                                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-[#224292] group-hover:bg-[#224292] group-hover:text-white transition-colors duration-300 shadow-sm">
-                                          <ItemIcon size={20} />
-                                        </div>
-                                      </div>
-                                      <div className="space-y-1">
-                                        <div className="flex items-center gap-2">
-                                          <span className="inline-block px-2 py-0.5 rounded-md bg-[#224292]/5 text-[#224292] text-[10px] font-black tracking-wider uppercase font-graphik">
-                                            {item.wk}
-                                          </span>
-                                          <h5 className="text-[14px] font-bold text-[#224292] font-graphik">{item.title}</h5>
-                                        </div>
-                                        <p className="text-[13px] text-slate-600 leading-relaxed text-justify font-normal font-graphik">{item.desc}</p>
-                                      </div>
-                                    </motion.div>
-                                  )
-                                })}
-                              </div>
-                            </div>
-                          ) : (() => {
-                            const text = activeObj.content || 'Data current being optimized for digital view.';
-                            const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-
-                            // Detect if first line is a preamble
-                            const hasPreamble = lines.length > 1 && (lines[0].endsWith(':') || lines[0].includes('will be able to') || lines[0].includes('completion of'));
-                            const preamble = hasPreamble ? lines[0] : null;
-                            const rawPoints = hasPreamble ? lines.slice(1) : lines;
-
-                            return (
-                              <div className="space-y-4">
-                                {preamble && (
-                                  <p className="px-4 text-[#64779F] font-bold text-[13px] mb-6 italic leading-relaxed">{preamble}</p>
-                                )}
-                                {rawPoints.map((point, idx) => {
-                                  const match = point.match(/^((?:PEO|PO|PSO|M)\s*[-]?\s*(?:\d+|[IVXLC]+):?)\s*(.*)/i);
-                                  const label = match ? match[1] : '';
-                                  const description = match ? match[2] : point;
-
-                                  return (
-                                    <motion.div
-                                      key={idx}
-                                      whileHover={{ x: 10 }}
-                                      className="flex gap-3 md:gap-5 px-4 py-5 md:p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group/point"
-                                    >
-                                      <div className="flex-shrink-0 mt-1">
-                                        <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover/point:bg-[#ffc107]/10 transition-colors">
-                                          <CheckCircle2 size={16} className="text-[#224292] group-hover/point:text-[#ffc107] transition-colors" />
-                                        </div>
-                                      </div>
-                                      <div className="space-y-1 flex-1">
-                                        {label && (
-                                          <span className="block text-[11px] font-black font-graphik text-[#224292] uppercase tracking-[0.2em]">
-                                            {label.replace(':', '')}
-                                          </span>
-                                        )}
-                                        <p className="text-[#333333] font-medium font-graphik leading-relaxed text-[14px] sm:text-[16px] text-justify">
-                                          {description}
-                                        </p>
-                                      </div>
-                                    </motion.div>
-                                  );
-                                })}
-                              </div>
-                            );
-                          })()}
-                        </div>
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
-                </div>
+                )}
               </>
             )}
 
