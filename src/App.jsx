@@ -1,8 +1,9 @@
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion'
-import { useState, useEffect, lazy, Suspense } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { useState, useEffect, Suspense } from 'react'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import safeLazy from './utils/safeLazy'
 
 // Common Components
 import Header from './components/Common/Header'
@@ -10,9 +11,10 @@ import ScrollToTop from './components/Common/ScrollToTop'
 import Preloader from './components/Common/Preloader'
 import Footer from './components/Common/Footer'
 import ChatBot from './components/Common/ChatBot'
+import ErrorBoundary from './components/Common/ErrorBoundary'
 
 // Page Components
-const Home = lazy(() => import('./pages/Home'))
+const Home = safeLazy(() => import('./pages/Home'))
 import AboutUsPage from './pages/AboutUsPage'
 import OurValuesPage from './pages/OurValuesPage'
 import LeadershipPage from './pages/LeadershipPage'
@@ -20,119 +22,118 @@ import HeadOfDepartmentPage from './pages/HeadOfDepartmentPage'
 import AccreditationPage from './pages/AccreditationPage'
 import GoverningCouncilPage from './pages/GoverningCouncilPage'
 import GuidelinesPage from './pages/GuidelinesPage'
-const CollegeRulesPage = lazy(() => import('./pages/CollegeRulesPage'))
+const CollegeRulesPage = safeLazy(() => import('./pages/CollegeRulesPage'))
 import IQACPage from './pages/IQACPage'
 import UnderConstruction from './components/UnderConstruction/UnderConstruction'
 import PlacementOverviewPage from './pages/PlacementOverviewPage'
 import { GraduationCap, X } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
 import TrainingOverviewPage from './pages/TrainingOverviewPage'
 import RecruitmentProcessPage from './pages/RecruitmentProcessPage'
 import OutcomesOverviewPage from './pages/OutcomesOverviewPage'
 import AcademicsPageWrapper from './pages/AcademicsPage'
 import CourseDetailPageWrapper from './pages/CourseDetailPageWrapper'
 
-const RecruitmentPage = lazy(() => import('./pages/Recruitment'))
-const ContactPage = lazy(() => import('./pages/ContactPage'))
-const EventsPage = lazy(() => import('./pages/EventsPage'))
-const DepartmentPage = lazy(() => import('./pages/DepartmentPage'))
-const LabDetailPage = lazy(() => import('./pages/LabDetailPage'))
-const StudentsAdmittedDepartmentPage = lazy(() => import('./pages/StudentsAdmittedDepartmentPage'))
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
-const AdmissionsPageWrapper = lazy(() => import('./pages/AdmissionsPage'))
-const UGRegistrationPage = lazy(() => import('./pages/UGRegistrationPage'))
-const PGRegistrationPage = lazy(() => import('./pages/PGRegistrationPage'))
-const CampusLifePage = lazy(() => import('./pages/CampusLifePage'))
-const BusRoutesPage = lazy(() => import('./pages/BusRoutesPage'))
-const LibraryAccessPage = lazy(() => import('./pages/LibraryAccessPage'))
-const LibraryBooksPage = lazy(() => import('./pages/LibraryBooksPage'))
-const LibraryJournalsPage = lazy(() => import('./pages/LibraryJournalsPage'))
-const LibraryMagazinesPage = lazy(() => import('./pages/LibraryMagazinesPage'))
-const SportsFacultyPage = lazy(() => import('./pages/SportsFacultyPage'))
-const SportsFacilitiesPage = lazy(() => import('./pages/SportsFacilitiesPage'))
-const AutonomousPage = lazy(() => import('./pages/AutonomousPage'))
-const COEPage = lazy(() => import('./pages/COEPage'))
-const ExamSchedulesPage = lazy(() => import('./pages/ExamSchedulesPage'))
-const CircularsPage = lazy(() => import('./pages/CircularsPage'))
-const AboutCOEPage = lazy(() => import('./pages/AboutCOEPage'))
-const ResearchPage = lazy(() => import('./pages/ResearchPage'))
-const ResearchResourcesPage = lazy(() => import('./pages/ResearchResourcesPage'))
-const PhdSupervisorsPage = lazy(() => import('./pages/PhdSupervisorsPage'))
-const ResearchAreasPage = lazy(() => import('./pages/ResearchAreasPage'))
-const PhdHoldersPage = lazy(() => import('./pages/PhdHoldersPage'))
-const FacultyPursuingPhdPage = lazy(() => import('./pages/FacultyPursuingPhdPage'))
-const PhdGuidedPage = lazy(() => import('./pages/PhdGuidedPage'))
-const ResearchFacilitiesPage = lazy(() => import('./pages/ResearchFacilitiesPage'))
-const SponsoredProjectsPage = lazy(() => import('./pages/SponsoredProjectsPage'))
-const InternationalPublicationsPage = lazy(() => import('./pages/InternationalPublicationsPage'))
-const MedicalImagingPage = lazy(() => import('./pages/MedicalImagingPage'))
-const NonIndexedPublicationsPage = lazy(() => import('./pages/NonIndexedPublicationsPage'))
-const ConferencesPage = lazy(() => import('./pages/ConferencesPage'))
-const ResearchProposalsPage = lazy(() => import('./pages/ResearchProposalsPage'))
-const ConsultancyPage = lazy(() => import('./pages/ConsultancyPage'))
-const EventDetailPage = lazy(() => import('./pages/EventDetailPage'))
-const LibraryPage = lazy(() => import('./pages/LibraryPage'))
-const SportsPage = lazy(() => import('./pages/SportsPage'))
-const SportsDetailPage = lazy(() => import('./pages/SportsDetailPage'))
-const ClassroomPage = lazy(() => import('./pages/ClassroomPage'))
-const TourPage = lazy(() => import('./pages/TourPage'))
-const TransportPage = lazy(() => import('./pages/TransportPage'))
-const AmenitiesPage = lazy(() => import('./pages/AmenitiesPage'))
-const InsurancePage = lazy(() => import('./pages/InsurancePage'))
-const MediaCenterPage = lazy(() => import('./pages/MediaCenterPage'))
-const EnergyPage = lazy(() => import('./pages/EnergyPage'))
-const InternetPage = lazy(() => import('./pages/InternetPage'))
-const StudentLifePage = lazy(() => import('./pages/StudentLifePage'))
-const AicteIdeaLabPage = lazy(() => import('./pages/AicteIdeaLabPage'))
-const AicteIdeaLabActivities2025Page = lazy(() => import('./pages/AicteIdeaLabActivities2025Page'))
-const AicteIdeaLabActivities2024Page = lazy(() => import('./pages/AicteIdeaLabActivities2024Page'))
-const AicteIdeaLabActivities2023Page = lazy(() => import('./pages/AicteIdeaLabActivities2023Page'))
-const IStartPage = lazy(() => import('./pages/IStartPage'))
-const BlogsPage = lazy(() => import('./pages/BlogsPage'))
-const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'))
-const AlumniPage = lazy(() => import('./pages/AlumniPage'))
-const COEDownloadsPage = lazy(() => import('./pages/COEDownloadsPage'))
-const IICPage = lazy(() => import('./pages/IICPage'))
-const IICMembersPage = lazy(() => import('./pages/IICMembersPage'))
-const StartupTNPage = lazy(() => import('./pages/StartupTNPage'))
-const MSMEBIPage = lazy(() => import('./pages/MSMEBIPage'))
-const MXIncubatorPage = lazy(() => import('./pages/MXIncubatorPage'))
-const FlamePage = lazy(() => import('./pages/FlamePage'))
-const IntecPage = lazy(() => import('./pages/IntecPage'))
-const VibesPage = lazy(() => import('./pages/VibesPage'))
-const PacePage = lazy(() => import('./pages/PacePage'))
-const AmberzPage = lazy(() => import('./pages/AmberzPage'))
-const BdbiPage = lazy(() => import('./pages/BdbiPage'))
-const CegcPage = lazy(() => import('./pages/CegcPage'))
-const OracleAcademyPage = lazy(() => import('./pages/OracleAcademyPage'))
-const IeeePage = lazy(() => import('./pages/IeeePage'))
-const IeeePesPage = lazy(() => import('./pages/IeeePesPage'))
-const SaePage = lazy(() => import('./pages/SaePage'))
-const SocClubPage = lazy(() => import('./pages/SocClubPage'))
-const ElderlyChildcarePage = lazy(() => import('./pages/ElderlyChildcarePage'))
-const AcmPage = lazy(() => import('./pages/AcmPage'))
-const ScintelPage = lazy(() => import('./pages/ScintelPage'))
-const HigherEducationAbroadPage = lazy(() => import('./pages/HigherEducationAbroadPage'))
-const ContinuousMonitoringPage = lazy(() => import('./pages/ContinuousMonitoringPage'))
-const BusinessInsightsClubPage = lazy(() => import('./pages/BusinessInsightsClubPage'))
-const HumanResourceManagementClubPage = lazy(() => import('./pages/HumanResourceManagementClubPage'))
-const SmartOperationsLogisticsClubPage = lazy(() => import('./pages/SmartOperationsLogisticsClubPage'))
-const EdcCellPage = lazy(() => import('./pages/EdcCellPage'))
-const WecCellPage = lazy(() => import('./pages/WecCellPage'))
-const MmaPage = lazy(() => import('./pages/MmaPage'))
-const DepartmentAssociationsPage = lazy(() => import('./pages/DepartmentAssociationsPage'))
-const CommonCentersPage = lazy(() => import('./pages/CommonCentersPage'))
-const ProfessionalSocietyPage = lazy(() => import('./pages/ProfessionalSocietyPage'))
-const TechnicalClubsPage = lazy(() => import('./pages/TechnicalClubsPage'))
-const ExtraCurricularPage = lazy(() => import('./pages/ExtraCurricularPage'))
-const IctactPage = lazy(() => import('./pages/IctactPage'))
-const HigherEducationIndiaPage = lazy(() => import('./pages/HigherEducationIndiaPage'))
-const CorporateContestCellPage = lazy(() => import('./pages/CorporateContestCellPage'))
-const SdvClubPage = lazy(() => import('./pages/SdvClubPage'))
-const CodewarePage = lazy(() => import('./pages/CodewarePage'))
-const CiscoAcademyPage = lazy(() => import('./pages/CiscoAcademyPage'))
-const IeiAidsPage = lazy(() => import('./pages/IeiAidsPage'))
-const GrievancePage = lazy(() => import('./pages/GrievancePage'))
+const RecruitmentPage = safeLazy(() => import('./pages/Recruitment'))
+const ContactPage = safeLazy(() => import('./pages/ContactPage'))
+const EventsPage = safeLazy(() => import('./pages/EventsPage'))
+const DepartmentPage = safeLazy(() => import('./pages/DepartmentPage'))
+const LabDetailPage = safeLazy(() => import('./pages/LabDetailPage'))
+const StudentsAdmittedDepartmentPage = safeLazy(() => import('./pages/StudentsAdmittedDepartmentPage'))
+const NotFoundPage = safeLazy(() => import('./pages/NotFoundPage'))
+const AdmissionsPageWrapper = safeLazy(() => import('./pages/AdmissionsPage'))
+const UGRegistrationPage = safeLazy(() => import('./pages/UGRegistrationPage'))
+const PGRegistrationPage = safeLazy(() => import('./pages/PGRegistrationPage'))
+const CampusLifePage = safeLazy(() => import('./pages/CampusLifePage'))
+const BusRoutesPage = safeLazy(() => import('./pages/BusRoutesPage'))
+const LibraryAccessPage = safeLazy(() => import('./pages/LibraryAccessPage'))
+const LibraryBooksPage = safeLazy(() => import('./pages/LibraryBooksPage'))
+const LibraryJournalsPage = safeLazy(() => import('./pages/LibraryJournalsPage'))
+const LibraryMagazinesPage = safeLazy(() => import('./pages/LibraryMagazinesPage'))
+const SportsFacultyPage = safeLazy(() => import('./pages/SportsFacultyPage'))
+const SportsFacilitiesPage = safeLazy(() => import('./pages/SportsFacilitiesPage'))
+const AutonomousPage = safeLazy(() => import('./pages/AutonomousPage'))
+const COEPage = safeLazy(() => import('./pages/COEPage'))
+const ExamSchedulesPage = safeLazy(() => import('./pages/ExamSchedulesPage'))
+const CircularsPage = safeLazy(() => import('./pages/CircularsPage'))
+const AboutCOEPage = safeLazy(() => import('./pages/AboutCOEPage'))
+const ResearchPage = safeLazy(() => import('./pages/ResearchPage'))
+const ResearchResourcesPage = safeLazy(() => import('./pages/ResearchResourcesPage'))
+const PhdSupervisorsPage = safeLazy(() => import('./pages/PhdSupervisorsPage'))
+const ResearchAreasPage = safeLazy(() => import('./pages/ResearchAreasPage'))
+const PhdHoldersPage = safeLazy(() => import('./pages/PhdHoldersPage'))
+const FacultyPursuingPhdPage = safeLazy(() => import('./pages/FacultyPursuingPhdPage'))
+const PhdGuidedPage = safeLazy(() => import('./pages/PhdGuidedPage'))
+const ResearchFacilitiesPage = safeLazy(() => import('./pages/ResearchFacilitiesPage'))
+const SponsoredProjectsPage = safeLazy(() => import('./pages/SponsoredProjectsPage'))
+const InternationalPublicationsPage = safeLazy(() => import('./pages/InternationalPublicationsPage'))
+const MedicalImagingPage = safeLazy(() => import('./pages/MedicalImagingPage'))
+const NonIndexedPublicationsPage = safeLazy(() => import('./pages/NonIndexedPublicationsPage'))
+const ConferencesPage = safeLazy(() => import('./pages/ConferencesPage'))
+const ResearchProposalsPage = safeLazy(() => import('./pages/ResearchProposalsPage'))
+const ConsultancyPage = safeLazy(() => import('./pages/ConsultancyPage'))
+const EventDetailPage = safeLazy(() => import('./pages/EventDetailPage'))
+const LibraryPage = safeLazy(() => import('./pages/LibraryPage'))
+const SportsPage = safeLazy(() => import('./pages/SportsPage'))
+const SportsDetailPage = safeLazy(() => import('./pages/SportsDetailPage'))
+const ClassroomPage = safeLazy(() => import('./pages/ClassroomPage'))
+const TourPage = safeLazy(() => import('./pages/TourPage'))
+const TransportPage = safeLazy(() => import('./pages/TransportPage'))
+const AmenitiesPage = safeLazy(() => import('./pages/AmenitiesPage'))
+const InsurancePage = safeLazy(() => import('./pages/InsurancePage'))
+const MediaCenterPage = safeLazy(() => import('./pages/MediaCenterPage'))
+const EnergyPage = safeLazy(() => import('./pages/EnergyPage'))
+const InternetPage = safeLazy(() => import('./pages/InternetPage'))
+const StudentLifePage = safeLazy(() => import('./pages/StudentLifePage'))
+const AicteIdeaLabPage = safeLazy(() => import('./pages/AicteIdeaLabPage'))
+const AicteIdeaLabActivities2025Page = safeLazy(() => import('./pages/AicteIdeaLabActivities2025Page'))
+const AicteIdeaLabActivities2024Page = safeLazy(() => import('./pages/AicteIdeaLabActivities2024Page'))
+const AicteIdeaLabActivities2023Page = safeLazy(() => import('./pages/AicteIdeaLabActivities2023Page'))
+const IStartPage = safeLazy(() => import('./pages/IStartPage'))
+const BlogsPage = safeLazy(() => import('./pages/BlogsPage'))
+const BlogDetailPage = safeLazy(() => import('./pages/BlogDetailPage'))
+const AlumniPage = safeLazy(() => import('./pages/AlumniPage'))
+const COEDownloadsPage = safeLazy(() => import('./pages/COEDownloadsPage'))
+const IICPage = safeLazy(() => import('./pages/IICPage'))
+const IICMembersPage = safeLazy(() => import('./pages/IICMembersPage'))
+const StartupTNPage = safeLazy(() => import('./pages/StartupTNPage'))
+const MSMEBIPage = safeLazy(() => import('./pages/MSMEBIPage'))
+const MXIncubatorPage = safeLazy(() => import('./pages/MXIncubatorPage'))
+const FlamePage = safeLazy(() => import('./pages/FlamePage'))
+const IntecPage = safeLazy(() => import('./pages/IntecPage'))
+const VibesPage = safeLazy(() => import('./pages/VibesPage'))
+const PacePage = safeLazy(() => import('./pages/PacePage'))
+const AmberzPage = safeLazy(() => import('./pages/AmberzPage'))
+const BdbiPage = safeLazy(() => import('./pages/BdbiPage'))
+const CegcPage = safeLazy(() => import('./pages/CegcPage'))
+const OracleAcademyPage = safeLazy(() => import('./pages/OracleAcademyPage'))
+const IeeePage = safeLazy(() => import('./pages/IeeePage'))
+const IeeePesPage = safeLazy(() => import('./pages/IeeePesPage'))
+const SaePage = safeLazy(() => import('./pages/SaePage'))
+const SocClubPage = safeLazy(() => import('./pages/SocClubPage'))
+const ElderlyChildcarePage = safeLazy(() => import('./pages/ElderlyChildcarePage'))
+const AcmPage = safeLazy(() => import('./pages/AcmPage'))
+const ScintelPage = safeLazy(() => import('./pages/ScintelPage'))
+const HigherEducationAbroadPage = safeLazy(() => import('./pages/HigherEducationAbroadPage'))
+const ContinuousMonitoringPage = safeLazy(() => import('./pages/ContinuousMonitoringPage'))
+const BusinessInsightsClubPage = safeLazy(() => import('./pages/BusinessInsightsClubPage'))
+const HumanResourceManagementClubPage = safeLazy(() => import('./pages/HumanResourceManagementClubPage'))
+const SmartOperationsLogisticsClubPage = safeLazy(() => import('./pages/SmartOperationsLogisticsClubPage'))
+const EdcCellPage = safeLazy(() => import('./pages/EdcCellPage'))
+const WecCellPage = safeLazy(() => import('./pages/WecCellPage'))
+const MmaPage = safeLazy(() => import('./pages/MmaPage'))
+const DepartmentAssociationsPage = safeLazy(() => import('./pages/DepartmentAssociationsPage'))
+const CommonCentersPage = safeLazy(() => import('./pages/CommonCentersPage'))
+const ProfessionalSocietyPage = safeLazy(() => import('./pages/ProfessionalSocietyPage'))
+const TechnicalClubsPage = safeLazy(() => import('./pages/TechnicalClubsPage'))
+const ExtraCurricularPage = safeLazy(() => import('./pages/ExtraCurricularPage'))
+const IctactPage = safeLazy(() => import('./pages/IctactPage'))
+const HigherEducationIndiaPage = safeLazy(() => import('./pages/HigherEducationIndiaPage'))
+const CorporateContestCellPage = safeLazy(() => import('./pages/CorporateContestCellPage'))
+const SdvClubPage = safeLazy(() => import('./pages/SdvClubPage'))
+const CodewarePage = safeLazy(() => import('./pages/CodewarePage'))
+const CiscoAcademyPage = safeLazy(() => import('./pages/CiscoAcademyPage'))
+const IeiAidsPage = safeLazy(() => import('./pages/IeiAidsPage'))
+const GrievancePage = safeLazy(() => import('./pages/GrievancePage'))
 
 
 
@@ -1051,7 +1052,8 @@ function App() {
           <main className="pt-[108px] md:pt-[108px] lg:pt-[104px] min-h-screen" id="top">
             <AnimatePresence mode="wait">
               <Suspense fallback={<PageLoader />}>
-                <Routes location={location} key={location.pathname}>
+                <ErrorBoundary>
+                  <Routes location={location} key={location.pathname}>
                   <Route path="/" element={<Home />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/about/about-us" element={<AboutUsPage />} />
@@ -1247,8 +1249,9 @@ function App() {
                   <Route path="/events/:eventSlug" element={<EventDetailPage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
-              </Suspense>
-            </AnimatePresence>
+              </ErrorBoundary>
+            </Suspense>
+          </AnimatePresence>
           </main>
 
           <Footer />
