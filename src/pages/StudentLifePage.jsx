@@ -82,6 +82,7 @@ export default function StudentLifePage() {
     { category: "Department Associations", name: "PACE", dept: "CIVIL", desc: "Strengthens civil engineering knowledge through projects, seminars, and teamwork" },
     { category: "Department Associations", name: "TECHTASTIC", dept: "IT", desc: "Supports IT students in emerging technologies, coding, and technical learning" },
     { category: "Department Associations", name: "ACID", dept: "CSBS", desc: "Builds analytical thinking and innovation in computer science and business systems" },
+    { category: "Department Associations", name: "EPICS", dept: "ECX", desc: "Promotes technical excellence in integrated circuits, embedded systems, and software engineering" },
     { category: "Department Associations", name: "VIBES", dept: "AI&DS", desc: "Promotes AI and data science learning through practical and research activities" },
     { category: "Department Associations", name: "MBA", dept: "MBA", desc: "Develops leadership, management skills, and professional networking opportunities" },
 

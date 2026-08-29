@@ -151,6 +151,16 @@ export default function DepartmentAssociationsPage() {
       route: null
     },
     {
+      name: "EPICS",
+      fullName: "Enterprising Professionals in Integrated Circuits and Software",
+      dept: "ECX",
+      icon: Cpu,
+      color: "bg-gradient-to-r from-blue-700 to-cyan-800",
+      tagColor: "bg-blue-100 text-blue-950 border-blue-200",
+      desc: "Promotes technical excellence and innovation in integrated circuits, embedded systems, chip design, software engineering, and IoT.",
+      route: "/resources/student-life/epics"
+    },
+    {
       name: "MBA Association",
       fullName: "Management Studies Student Forum",
       dept: "MBA",

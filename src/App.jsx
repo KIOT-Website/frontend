@@ -1196,6 +1196,8 @@ function App() {
                   <Route path="/resources/student-life/flame" element={<FlamePage />} />
                   <Route path="/student-life/intec" element={<IntecPage />} />
                   <Route path="/resources/student-life/intec" element={<IntecPage />} />
+                  <Route path="/student-life/epics" element={<IntecPage />} />
+                  <Route path="/resources/student-life/epics" element={<IntecPage />} />
                   <Route path="/student-life/vibes" element={<VibesPage />} />
                   <Route path="/resources/student-life/vibes" element={<VibesPage />} />
                   <Route path="/student-life/pace" element={<PacePage />} />

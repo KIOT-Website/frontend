@@ -14,18 +14,8 @@ import {
 } from 'lucide-react'
 import "./studentLife.css"
 
-import asset4 from '../assets/student life/Asset 4.webp'
-import asset5 from '../assets/student life/Asset 5.webp'
-import asset12 from '../assets/student life/Asset 12.webp'
-import asset13 from '../assets/student life/Asset 13.webp'
-import asset14 from '../assets/student life/Asset 14.webp'
-import asset20 from '../assets/student life/Asset 20.webp'
-import asset21 from '../assets/student life/Asset 21 (2).webp'
-import asset22 from '../assets/student life/Asset 22 (2).webp'
-import asset23 from '../assets/student life/Asset 23 (3).webp'
-import asset24 from '../assets/student life/Asset 24.webp'
-import asset25 from '../assets/student life/Asset 25 (2).webp'
-import asset26 from '../assets/student life/Asset 26.webp'
+import ecxGallery1 from '../assets/be-ecx/unnamed (7).jpg'
+import ecxGallery2 from '../assets/be-ecx/unnamed (8).jpg'
 
 export default function IntecPage() {
 
@@ -125,16 +115,12 @@ export default function IntecPage() {
 
   const galleryImages = [
     {
-      src: asset4,
-      title: "Inaugural function of student's association of ECE by Mr. Wilson Anandaraj, Senior Vice President Infinite Computer Solutions (India) Limited, Chennai on 15.09.25"
+      src: ecxGallery1,
+      title: "EPICS Association Inauguration and Technical Activities at Knowledge Institute of Technology."
     },
     {
-      src: asset5,
-      title: "Guest lecture on embedded system design and debugging by Hareesh Jankiraman, Houston, USA, covering practical challenges, troubleshooting techniques, and industry insights for students and faculty."
-    },
-    {
-      src: asset12,
-      title: "The symposium hosted diverse technical and non-technical events, workshops, and training, engaging over 650 students from Tamil Nadu and other states; winners earned cash prizes and certificates."
+      src: ecxGallery2,
+      title: "Student Technical Workshop and Hands-on Domain Training organized by EPICS Association."
     }
   ]
 
@@ -208,14 +194,14 @@ export default function IntecPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl text-center mx-auto"
+            className="max-w-4xl text-center mx-auto"
           >
             <h1 className="font-black tracking-tight leading-none mb-6" style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', color: '#ffc107' }}>
-              INTEC
+              EPICS
             </h1>
 
             <p className="font-bold tracking-wide uppercase" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: '#ffffff', letterSpacing: '0.05em' }}>
-              INnovative Technocrats of Electronics and Communication Engineering
+              Enterprising Professionals in Integrated Circuits and Software
             </p>
           </motion.div>
         </div>
@@ -234,19 +220,19 @@ export default function IntecPage() {
 
             <div className="inline-flex items-center gap-1.5 uppercase font-black" style={{ fontSize: '0.7rem', letterSpacing: '0.15em', color: '#224292' }}>
               <Sparkles size={14} style={{ color: '#ffc107' }} />
-              About the Association
+              About EPICS Association
             </div>
 
             <h2 className="font-extrabold tracking-tight leading-tight" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)', color: '#224292' }}>
-              Fostering Innovation in Electronics & Communication
+              Enterprising Professionals in Integrated Circuits and Software
             </h2>
 
             <p className="text-[14px] font-normal text-slate-800 leading-[25.2px] text-justify">
-              The INnovative Technocrats of Electronics and Communication Engineering (INTEC) association at Knowledge Institute of Technology is a vibrant student-driven platform that promotes technical excellence, innovation, and professional growth. It regularly organizes workshops, seminars, hackathons, guest lectures, and project-based activities to provide hands-on experience in emerging technologies.
+              The Enterprising Professionals in Integrated Circuits and Software (EPICS) Association is a vibrant student-driven platform that promotes technical excellence, innovation and professional development in the fields of electronics and software. It provides students with opportunities to explore emerging technologies through workshops, seminars, hackathons, coding events, and expert interactions. These activities encourage them to transform ideas into practical solutions.
             </p>
 
             <p className="text-[14px] font-normal text-slate-800 leading-[25.2px] text-justify">
-              Beyond technical development, INTEC nurtures leadership, teamwork, and communication skills through active student involvement in organizing events. It also strengthens industry interaction by connecting students with experts, alumni, and real-world applications. Overall, the association plays a key role in bridging academic learning with industry expectations and preparing students for successful engineering careers.
+              Beyond technical learning, EPICS nurtures leadership, teamwork, creativity, problem-solving, and communication skills through active student participation in organizing and executing various activities. The association also encourages interdisciplinary learning by bringing together concepts from integrated circuits, embedded systems, software development, artificial intelligence, IoT, and other emerging domains. Overall, the association serves as a bridge between academic knowledge, technological innovation, and entrepreneurial thinking, empowering students to become enterprising professionals and future-ready engineers.
             </p>
           </div>
         </motion.div>
@@ -482,12 +468,12 @@ export default function IntecPage() {
             Gallery (Major activity: AY 2025-2026)
           </h2>
           <div className="w-20 h-1.5 rounded-full mx-auto mt-6" style={{ backgroundColor: '#ffc107' }} />
-          <p className="mt-6 text-slate-600 font-medium">Glimpses of activities, symposiums, and achievements of the INTEC Association.</p>
+          <p className="mt-6 text-slate-600 font-medium">Glimpses of activities, symposiums, and achievements of the EPICS Association.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {galleryImages.map((img, idx) => (
-            <div key={idx} className="gallery-item relative overflow-hidden cursor-pointer group" onClick={() => setSelectedImage(img)}>
+            <div key={idx} className="gallery-item relative overflow-hidden cursor-pointer group rounded-2xl shadow-md h-72" onClick={() => setSelectedImage(img)}>
               <img src={img.src} alt={img.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#224292]/95 via-[#224292]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4">
                 <p className="text-white font-bold text-xs leading-snug line-clamp-3">{img.title}</p>
@@ -528,7 +514,7 @@ export default function IntecPage() {
                 Major Activity: AY 2025-2026
               </div>
               <h3 className="font-extrabold text-xl sm:text-2xl text-[#224292] leading-tight mb-4">
-                INTEC Event Gallery
+                EPICS Event Gallery
               </h3>
               <p className="text-[14px] font-normal text-slate-800 leading-[25.2px] text-justify whitespace-pre-line">
                 {selectedImage.title}

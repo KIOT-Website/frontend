@@ -98,6 +98,32 @@ export const beEcmData = {
         icon: Cpu,
         incharge: 'Ms. O. Vivedhini',
         technician: 'Mr. E. Sridhar'
+      },
+      {
+        name: 'Embedded System Laboratory',
+        equipments: [
+          'STM 32 – NUCLEO 64 development board',
+          'ESP32 – Bluetooth/Wi-Fi module',
+          'Assorted Sensors',
+          'Ashling RISCFree IDE',
+          'Nios V Soft Embedded Processor Support'
+        ],
+        icon: Cpu,
+        incharge: 'Mrs. G. Valarmathi',
+        technician: 'Mr. E. Sridhar'
+      },
+      {
+        name: 'VLSI System Design Laboratory',
+        equipments: [
+          'Altera DE-23 Lite FPGA Development Board',
+          'Altera Quartus Prime Pro Edition',
+          'Questa – Altera FPGA Edition',
+          'Visual Designer Studio',
+          'Intel Simics Simulator'
+        ],
+        icon: Cpu,
+        incharge: 'Dr. S. Maragatharaj',
+        technician: 'Mr. E. Sridhar'
       }
     ],
     placementStats: { placed: '90%', avg: '4.5 LPA', top: '18 LPA', companies: '35+' },

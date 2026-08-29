@@ -3600,7 +3600,7 @@ function AchievementSection({ courseId, courseName }) {
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center whitespace-nowrap">S.No</th>
                   <th className="px-5 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Achiever Name and Designation</th>
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Name of the Event / Achievement</th>
-                  {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece' || courseId === 'be-civil') && (
+                  {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece' || courseId === 'be-civil' || courseId === 'be-ecx' || courseId === 'be-ecm') && (
                     <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest text-center whitespace-nowrap">Level</th>
                   )}
                   <th className="px-4 py-4 text-[11px] font-semibold uppercase tracking-widest whitespace-nowrap">Distinction / Award</th>
@@ -3658,7 +3658,7 @@ function AchievementSection({ courseId, courseName }) {
                           })()}
                         </td>
                         <td className="px-4 py-3.5 text-sm text-slate-600 whitespace-pre-line">{item.event}</td>
-                        {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece' || courseId === 'be-civil') && (
+                        {(courseId === 'btech-aids' || courseId === 'be-cse' || courseId === 'be-ece' || courseId === 'be-civil' || courseId === 'be-ecx' || courseId === 'be-ecm') && (
                           <td className="px-4 py-3.5 text-center">
                             <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-bold tracking-wide whitespace-nowrap ${levelColor(item.level)}`}>
                               {item.level}
