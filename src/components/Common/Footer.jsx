@@ -67,7 +67,7 @@ const Footer = () => {
       icon: Compass,
       links: [
         { name: 'About Us', href: '/about/about-us' },
-        { name: 'Promoters & Council', href: '/about/promoters' },
+        { name: 'Promoters', href: '/about/promoters' },
         { name: 'Accreditation', href: '/about/accreditation-ranking' },
         { name: 'Governing Council', href: '/about/governing-council' },
         { name: 'Institutional Policies', href: '/about/institutional-policies' },
@@ -78,7 +78,7 @@ const Footer = () => {
     'ADMISSIONS': {
       icon: GraduationCap,
       links: [
-        { name: 'Admission Overview', href: '/admissions' },
+        { name: 'Admission', href: '/admissions' },
         { name: 'UG Registration', href: '/admissions/ug-registration' },
         { name: 'PG Registration', href: '/admissions/pg-registration' },
         { name: 'Contact', href: '/contact' },
