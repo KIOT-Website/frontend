@@ -87,9 +87,9 @@ const Footer = () => {
     'PLACEMENTS': {
       icon: Trophy,
       links: [
-        { name: 'Placement Overview', href: '/placements/placement' },
-        { name: 'Training & Skills', href: '/placements/training' },
-        { name: 'Placement Outcomes', href: '/placements/outcomes' },
+        { name: 'Placement', href: '/placements/placement' },
+        { name: 'Training', href: '/placements/training' },
+        { name: 'Outcome', href: '/placements/outcomes' },
       ]
     }
   }
