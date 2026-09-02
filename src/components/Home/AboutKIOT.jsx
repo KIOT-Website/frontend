@@ -86,7 +86,7 @@ const AboutKIOT = () => {
                   className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#ffc107] text-[#224292] hover:bg-[#e5ad00] font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md border border-[#ffc107] w-full text-center"
                 >
                   <Download size={15} className="text-[#224292]" />
-                  <span>KIOT Prospects</span>
+                  <span>KIOT Prospectus</span>
                 </a>
                 <a
                   href={handbookPdf}

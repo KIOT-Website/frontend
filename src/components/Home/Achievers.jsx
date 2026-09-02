@@ -51,7 +51,7 @@ const Achievers = () => {
         {/* Header Section - Refined Kongu Style */}
         <div className="text-center mb-8">
            <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik tracking-tight leading-tight">
-             Achievements That <span className="text-[#ffc107]">Inspire</span>
+             Achievements that <span className="text-[#ffc107]">inspire</span>
            </h2>
         </div>
 

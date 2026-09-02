@@ -265,7 +265,7 @@ const AdmissionsPage = () => {
                     className="flex-1 px-4 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-black text-[10px] sm:text-xs uppercase tracking-widest hover:scale-102 transition-all flex items-center justify-center gap-2"
                     style={{ color: 'white' }}
                 >
-                    <Download size={14} /> Prospects
+                    <Download size={14} /> Prospectus
                 </a>
             </div>
 
@@ -326,7 +326,7 @@ const AdmissionsPage = () => {
                         className="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/25 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-all flex items-center justify-center gap-2 w-48"
                         style={{ color: 'white' }}
                     >
-                        <Download size={16} /> Prospects
+                        <Download size={16} /> Prospectus
                     </a>
                 </div>
             </div>

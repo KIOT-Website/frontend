@@ -12,7 +12,7 @@ const statData = [
   { value: "1200", label: "Hours of Career Development Training", icon: GraduationCap, color: "#224292" },
   { value: "17+", label: "Years of Academic Excellence", icon: Calendar, color: "#ffc107" },
   { value: "250+", label: "Expert Faculty Members", icon: Users, color: "#224292" },
-  { value: "8000+", label: "Global Alumni Network", icon: UserCheck, color: "#ffc107" },
+  { value: "9000+", label: "Global Alumni Network", icon: UserCheck, color: "#ffc107" },
   { value: "Top 10%", label: "Colleges in Tamil Nadu", icon: Landmark, color: "#224292" }
 ]
 
@@ -20,8 +20,8 @@ const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile, sectio
   const numericValue = parseInt(value.replace(/[^0-9]/g, '')) || 0;
   const [displayValue, setDisplayValue] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const suffix = value.replace(/[0-9]/g, '');
   const isPrefix = value.startsWith('Top');
+  const postSuffix = value.replace(/Top/g, '').replace(/[0-9]/g, '').trim();
 
   useEffect(() => {
     if (sectionViewed && !hasAnimated) {
@@ -76,7 +76,7 @@ const MiniStatCard = ({ value, label, icon: Icon, color, delay, isMobile, sectio
 
          <div className="space-y-2 relative z-10 w-full text-center">
             <div className="text-[28px] lg:text-[40px] font-black text-[#224292] font-graphik leading-none tracking-tighter group-hover:text-[#ffc107] transition-colors duration-300">
-               {isPrefix ? `Top ${displayValue}` : `${displayValue}${suffix}`}
+               {isPrefix ? `Top ${displayValue}${postSuffix}` : `${displayValue}${postSuffix}`}
             </div>
             <p className="text-[12px] lg:text-[14px] font-bold text-black font-graphik leading-tight transition-colors duration-300">
                {label}

@@ -12,7 +12,7 @@ const statsData = [
   { text: "Career Development Training", sub: "1200 Hours Skill-up", icon: GraduationCap, accent: "#ffc107", metric: "1.2", unit: "k", size: "medium" },
   { text: "Academic Excellence", sub: "Since 2009", icon: Calendar, accent: "#224292", metric: "17", unit: "+", size: "medium" },
   { text: "Dedicated Faculty", sub: "Ratio 1:15", icon: Users, accent: "#ffc107", metric: "250", unit: "+", size: "medium" },
-  { text: "Alumni across the globe", sub: "Global Network", icon: UserCheck, accent: "#224292", metric: "8000", unit: "+", size: "large" },
+  { text: "Alumni across the globe", sub: "Global Network", icon: UserCheck, accent: "#224292", metric: "9000", unit: "+", size: "large" },
   { text: "Top 10% Colleges in TN", sub: "Elite Standing", icon: Landmark, accent: "#ffc107", metric: "10", unit: "%", size: "small" }
 ];
 

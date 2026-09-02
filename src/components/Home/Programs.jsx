@@ -44,10 +44,10 @@ const programsData = {
       { id: 'mba-general', name: "MBA - Master of Business Administration (General)", icon: TrendingUp, code: "MBA-General", duration: "2 Years", phd: true },
       { id: 'mba-iev', name: "MBA - Master of Business Administration (Innovation, Entrepreneurship and Venture Development)", icon: Rocket, code: "MBA-IEV", duration: "2 Years", phd: true },
       { id: 'mca', name: "MCA - Master of Computer Applications", icon: AppWindow, code: "MCA", duration: "2 Years", phd: true },
-      { id: 'me-ise', name: "Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
-      { id: 'me-ae', name: "Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
-      { id: 'me-ped', name: "Power Electronics and Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
-      { id: 'me-se', name: "Software Engineering", icon: FileCode2, code: "SE", duration: "2 Years", phd: true }
+      { id: 'me-ise', name: "M.E. Industrial Safety Engineering", icon: ShieldCheck, code: "ISE", duration: "2 Years", phd: true },
+      { id: 'me-ae', name: "M.E. Automotive Electronics", icon: CarFront, code: "AE", duration: "2 Years", phd: true },
+      { id: 'me-ped', name: "M.E. Power Electronics and Drives", icon: Zap, code: "PED", duration: "2 Years", phd: true },
+      { id: 'me-se', name: "M.E. Software Engineering", icon: FileCode2, code: "SE", duration: "2 Years", phd: true }
     ]
   },
   PHD: {
@@ -204,7 +204,7 @@ const Programs = () => {
               
               <h2 className="text-3xl lg:text-5xl font-semibold text-[#224292] font-graphik mb-6 lg:mb-8 leading-[1.1] lg:leading-[1.05]">
                 Shape your future with <br className="hidden lg:block" />
-                AI embedded <span className="text-[#ffc107]">Engineering <br className="hidden xl:block" /> & Management courses.</span>
+                AI Embedded <span className="text-[#ffc107]">Engineering <br className="hidden xl:block" /> & Management courses.</span>
               </h2>
               
               <p className="text-sm lg:text-base font-medium text-black leading-relaxed max-w-xl">
