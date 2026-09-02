@@ -22,16 +22,15 @@ const programsData = {
     description: 'Foundation for technical brilliance and engineering innovation.',
     accent: '#ffc107',
     courses: [
-      { id: 'be-cse', name: "Computer Science and Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
-      { id: 'btech-it', name: "Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
-      { id: 'btech-aids', name: "Artificial Intelligence and Data Science", icon: Brain, code: "AI&DS", duration: "4 Years", phd: true },
-      { id: 'btech-csbs', name: "Computer Science and Business Systems", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
-      { id: 'be-ece', name: "Electronics and Communication Engineering", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
-      { id: 'be-eee', name: "Electrical and Electronics Engineering", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
-      { id: 'be-ecx', name: "Electronics and Computer Engineering", icon: Cpu, code: "ECX", duration: "4 Years", phd: true },
-      { id: 'be-mechanical', name: "Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
-      { id: 'be-civil', name: "Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true },
-      { id: 'science-humanities', name: "Science & Humanities", icon: Beaker, code: "S&H", duration: "1 Year", phd: true }
+      { id: 'be-cse', name: "B.E. Computer Science and Engineering", icon: Monitor, code: "CSE", duration: "4 Years", phd: true },
+      { id: 'btech-it', name: "B.Tech. Information Technology", icon: Globe, code: "IT", duration: "4 Years", phd: true },
+      { id: 'btech-aids', name: "B.Tech. Artificial Intelligence and Data Science", icon: Brain, code: "AI&DS", duration: "4 Years", phd: true },
+      { id: 'btech-csbs', name: "B.Tech. Computer Science and Business Systems", icon: Briefcase, code: "CSBS", duration: "4 Years", phd: true },
+      { id: 'be-ece', name: "B.E. Electronics and Communication Engineering", icon: Radio, code: "ECE", duration: "4 Years", phd: true },
+      { id: 'be-eee', name: "B.E. Electrical and Electronics Engineering", icon: Zap, code: "EEE", duration: "4 Years", phd: true },
+      { id: 'be-ecx', name: "B.E. Electronics and Computer Engineering", icon: Cpu, code: "ECX", duration: "4 Years", phd: true },
+      { id: 'be-mechanical', name: "B.E. Mechanical Engineering", icon: Settings, code: "MECH", duration: "4 Years", phd: true },
+      { id: 'be-civil', name: "B.E. Civil Engineering", icon: Building2, code: "CIVIL", duration: "4 Years", phd: true }
     ]
   },
   PG: {
