@@ -58,7 +58,7 @@ const AboutUs = () => {
             className="flex flex-col items-center"
           >
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-graphik font-semibold text-[#224292] mb-4 tracking-tighter leading-tight">
-              About the <span className="text-[#ffc107]">KIOT</span>
+              About <span className="text-[#ffc107]">KIOT</span>
             </h1>
           </motion.div>
         </div>

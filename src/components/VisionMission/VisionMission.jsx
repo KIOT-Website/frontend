@@ -26,16 +26,7 @@ const VisionMission = ({ hideHeader = false }) => {
       ]
     },
     {
-      title: "Our Promise",
-      icon: Sparkles,
-      type: "list",
-      content: [
-        "100% Placement",
-        "Ethics & Value Based Education"
-      ]
-    },
-    {
-      title: "Our Values",
+      title: "Prime Motors",
       icon: Heart,
       type: "list",
       content: [
@@ -45,28 +36,13 @@ const VisionMission = ({ hideHeader = false }) => {
         "Open to Innovation",
         "Ethics Driven"
       ]
-    },
-    {
-      title: "Our Commitment",
-      icon: ShieldCheck,
-      type: "list",
-      content: [
-        "World Class Education",
-        "Culture of Innovation & Creativity",
-        "Degree On Time",
-        "100% Placement",
-        "360° Personality Development",
-        "Ethics & Values Based Education"
-      ]
     }
   ]
 
   const cardSpans = [
     "md:col-span-1 lg:col-span-1", // Vision
-    "md:col-span-1 lg:col-span-2", // Mission
-    "md:col-span-1 lg:col-span-1", // Promise
-    "md:col-span-1 lg:col-span-1", // Values
-    "md:col-span-2 lg:col-span-1"  // Commitment
+    "md:col-span-1 lg:col-span-1", // Mission
+    "md:col-span-2 lg:col-span-1"  // Prime Motors
   ]
 
   return (
