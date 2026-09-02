@@ -48,7 +48,6 @@ const Footer = () => {
         { name: 'Kaaval Udhavi App', href: 'https://play.google.com/store/apps/details?id=com.amtexsystems.kaavaluthavi' },
         { name: 'Vidya Lakshmi Portal', href: 'https://pmvidyalaxmi.co.in/StudentLogin.aspx' },
         { name: 'AICTE - CSS', href: 'https://css.aicte.gov.in/login' },
-        { name: 'AICTE-Students Development schemes', href: 'https://www.aicte.gov.in/schemes/students-development-schemes' },
         { name: 'KIOT ERP', href: 'https://kiot.sriss.co.in/CAMPS/CommonJSP/signin.jsp' },
         { name: 'KIOT Library', href: 'http://115.244.103.83/webopac' },
         { name: 'KIOT LMS', href: 'https://kiotlms.com/' },
