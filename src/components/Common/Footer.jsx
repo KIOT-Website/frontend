@@ -17,7 +17,6 @@ import {
 import { Link } from 'react-router-dom'
 import logoBlue from '../../assets/main/main-logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
-import nirfLogo from '../../assets/main/nirf.webp'
 import nbaLogo from '../../assets/main/NBA1 (1).webp'
 import codeLogo from '../../assets/main/2653 code.webp'
 
@@ -40,7 +39,6 @@ const Footer = () => {
         { name: 'Research & Innovations', href: '/research-innovation/research' },
         { name: 'Campus Essentials', href: '/resources/campus-life' },
         { name: 'Grievance', href: '/grievance' },
-        { name: 'AICTE Feedback', href: 'https://www.aicte.gov.in/feedback/' },
         { name: 'AU – Grievance Portal Link', href: 'https://www.auegov.ac.in/GrievancePortal/' },
       ]
     },
@@ -50,7 +48,6 @@ const Footer = () => {
         { name: 'Kaaval Udhavi App', href: 'https://play.google.com/store/apps/details?id=com.amtexsystems.kaavaluthavi' },
         { name: 'Vidya Lakshmi Portal', href: 'https://pmvidyalaxmi.co.in/StudentLogin.aspx' },
         { name: 'AICTE - CSS', href: 'https://css.aicte.gov.in/login' },
-        { name: 'UGC feedback Portal', href: 'https://samadhaan.ugc.ac.in/Home/FeedBack' },
         { name: 'AICTE-Students Development schemes', href: 'https://www.aicte.gov.in/schemes/students-development-schemes' },
         { name: 'KIOT ERP', href: 'https://kiot.sriss.co.in/CAMPS/CommonJSP/signin.jsp' },
         { name: 'KIOT Library', href: 'http://115.244.103.83/webopac' },
@@ -429,18 +426,6 @@ const Footer = () => {
                 <div className="text-left">
                   <div className="text-xs font-black text-white tracking-wider">NAAC 'A' GRADE</div>
                   <div className="text-[10px] text-gray-400 font-medium uppercase">Accredited Institution</div>
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div className="hidden md:block h-8 w-[1px] bg-white/10" />
-
-              {/* NIRF */}
-              <div className="flex items-center gap-3 justify-start w-full max-w-[185px] mx-auto md:mx-0">
-                <img src={nirfLogo} alt="NIRF" className="h-10 w-auto object-contain bg-white rounded p-1" />
-                <div className="text-left">
-                  <div className="text-xs font-black text-white tracking-wider">NIRF 2025</div>
-                  <div className="text-[10px] text-gray-400 font-medium uppercase">Ranked Institute</div>
                 </div>
               </div>
 
