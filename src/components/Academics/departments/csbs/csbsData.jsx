@@ -6,7 +6,6 @@ import csbsIp4 from '../../../../assets/innovative_practices/csbs/Connection Gam
 import csbsIp5 from '../../../../assets/innovative_practices/csbs/Business Communication and Value Science-I.jpg'
 import csbsIp6 from '../../../../assets/innovative_practices/csbs/Business Communication and Value Science-II.jpg'
 import csbsIp7 from '../../../../assets/innovative_practices/csbs/Operating Systems.jpg'
-import csbsIp8 from '../../../../assets/innovative_practices/csbs/Design Thinking.jpg'
 import csbsIp9 from '../../../../assets/innovative_practices/csbs/Fundamentals of Data Science and Analytics.png'
 import csbsIp10 from '../../../../assets/innovative_practices/csbs/Object Oriented Programming.jpg'
 import csbsIp11 from '../../../../assets/innovative_practices/csbs/Design and Analysis of Algorithms.jpg'
@@ -140,7 +139,7 @@ export const csbsInnovativePractices = [
     image: csbsIp3
   },
   {
-    sno: 5,
+    sno: 4,
     name: 'Mr.M.Gopikumaran',
     subject: 'Database Management System',
     method: 'Connection Game',
@@ -148,7 +147,7 @@ export const csbsInnovativePractices = [
     image: csbsIp4
   },
   {
-    sno: 6,
+    sno: 5,
     name: 'Mrs.A.Dheepika',
     subject: 'Business Communication and Value Science-I',
     method: 'Activity based Learning',
@@ -156,7 +155,7 @@ export const csbsInnovativePractices = [
     image: csbsIp5
   },
   {
-    sno: 7,
+    sno: 6,
     name: 'Mrs.A.Dheepika',
     subject: 'Business Communication and Value Science-II',
     method: 'Activity based Learning',
@@ -164,7 +163,7 @@ export const csbsInnovativePractices = [
     image: csbsIp6
   },
   {
-    sno: 8,
+    sno: 7,
     name: 'Mrs.C.Nithya,',
     subject: 'Operating Systems',
     method: 'Role Play',
@@ -172,15 +171,7 @@ export const csbsInnovativePractices = [
     image: csbsIp7
   },
   {
-    sno: 9,
-    name: 'Dr.M.Ramkumar',
-    subject: 'Design Thinking',
-    method: 'Demonstration',
-    description: 'Helps to understand and interpret the internal working of computer components such as CPU, memory, buses etc.,',
-    image: csbsIp8
-  },
-  {
-    sno: 10,
+    sno: 8,
     name: 'R.Karthick,',
     subject: 'Fundamentals of Data Science and Analytics',
     method: "Quiz – Learner's to revise the previous topics",
@@ -188,7 +179,7 @@ export const csbsInnovativePractices = [
     image: csbsIp9
   },
   {
-    sno: 11,
+    sno: 9,
     name: 'C.Vanitha',
     subject: 'Object Oriented Programming',
     method: 'Demonstration',
@@ -196,7 +187,7 @@ export const csbsInnovativePractices = [
     image: csbsIp10
   },
   {
-    sno: 12,
+    sno: 10,
     name: 'C.Nithya,',
     subject: 'Design and Analysis of Algorithms',
     method: 'Role Play',
@@ -204,7 +195,7 @@ export const csbsInnovativePractices = [
     image: csbsIp11
   },
   {
-    sno: 13,
+    sno: 11,
     name: 'M.Ranjithkumar,',
     subject: 'Software Architecture',
     method: 'E-Learning NPTEL Lecture Videos',
@@ -212,7 +203,7 @@ export const csbsInnovativePractices = [
     image: csbsIp12
   },
   {
-    sno: 14,
+    sno: 12,
     name: 'P.Madeshwaran',
     subject: 'Operations Research',
     method: 'Demonstration',
@@ -220,7 +211,7 @@ export const csbsInnovativePractices = [
     image: csbsIp13
   },
   {
-    sno: 15,
+    sno: 13,
     name: 'K.Preethi',
     subject: 'Problem Solving and C Programming',
     method: 'Role Play',
