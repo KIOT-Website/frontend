@@ -52,7 +52,7 @@ import cseRManikandanImage from '../../assets/Faculity/cse/Dr.RMANIKANDAN.webp'
 import cseAshwiniBImage from '../../assets/Faculity/cse/ASHWINI-B.png'
 import cseMLakshagaJyothiImage from '../../assets/Faculity/cse/M Lakshaga Jyothi.png'
 import cseSenthilkumarMImage from '../../assets/Faculity/cse/Senthilkumar M.png'
-
+import cseRajeshImage from '../../assets/Faculity/cse/Dr. Rajesh.png'
 
 export const beCseData = {
   name: 'B.E Computer Science and Engineering',
@@ -188,7 +188,8 @@ export const beCseData = {
         specialization: 'Image Mining',
         email: 'ircse@kiot.ac.in',
         publications: 'IJ:1, NJ:2, IC:4, NC:5',
-        rating: 4.7
+        rating: 4.7,
+        image: cseRajeshImage
       },
       {
         name: 'Dr. Vijayalakshmi P', vidwanId: '320595',
@@ -670,6 +671,42 @@ export const beCseData = {
         ]
       }
     ],
+    fundedProjects: [
+      {
+        sno: 1,
+        name: 'Mr. K. Praveen, Mrs. E. Kirthika',
+        faculty: 'Mr. K. Praveen, Mrs. E. Kirthika',
+        investigator: 'Mr. K. Praveen, Mrs. E. Kirthika',
+        agency: 'Sakthi Auto, Coimbatore',
+        sponsor: 'Sakthi Auto, Coimbatore',
+        event: 'Sakthi Auto, Coimbatore',
+        place: 'Coimbatore',
+        level: 'Coimbatore',
+        nature: 'Problem Solving',
+        status: 'Ongoing',
+        distinction: 'Ongoing',
+        award: 'Ongoing',
+        title: 'Solve for Sakthi Web Portal (Problem Solving Consultancy)',
+        workDetail: 'Solve for Sakthi Web Portal'
+      },
+      {
+        sno: 2,
+        name: 'Mr. K. Praveen, Mr. S. Walter Vetrivel',
+        faculty: 'Mr. K. Praveen, Mr. S. Walter Vetrivel',
+        investigator: 'Mr. K. Praveen, Mr. S. Walter Vetrivel',
+        agency: 'Sakthi Auto, Coimbatore',
+        sponsor: 'Sakthi Auto, Coimbatore',
+        event: 'Sakthi Auto, Coimbatore',
+        place: 'Coimbatore',
+        level: 'Coimbatore',
+        nature: 'Problem Solving',
+        status: 'Ongoing',
+        distinction: 'Ongoing',
+        award: 'Ongoing',
+        title: 'OHC Web Portal (Problem Solving Consultancy)',
+        workDetail: 'OHC Web Portal'
+      }
+    ]
 };
 
 export const cseLabTableData = [

@@ -18,6 +18,8 @@ import { Link } from 'react-router-dom'
 import logoBlue from '../../assets/main/main-logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
 import nbaLogo from '../../assets/main/NBA1 (1).webp'
+import qsLogo from '../../assets/QS-I-GAUG/qs logo.png'
+import qsGaugePdf from '../../assets/QS-I-GAUG/QS-I-GAUGE-Certificateet.pdf'
 import codeLogo from '../../assets/main/2653 code.webp'
 
 const Footer = () => {
@@ -439,6 +441,24 @@ const Footer = () => {
                   <div className="text-[10px] text-gray-400 font-medium uppercase">CSE | ECE | EEE | MECH</div>
                 </div>
               </div>
+
+              {/* Divider */}
+              <div className="hidden md:block h-8 w-[1px] bg-white/10" />
+
+              {/* QS I-GAUGE */}
+              <a
+                href={qsGaugePdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 justify-start w-full max-w-[185px] mx-auto md:mx-0 group/qs"
+                title="QS I-GAUGE Rating Certificate"
+              >
+                <img src={qsLogo} alt="QS I-GAUGE" className="h-10 w-auto object-contain bg-white rounded p-0.5 group-hover/qs:scale-105 transition-transform" />
+                <div className="text-left">
+                  <div className="text-xs font-black text-white tracking-wider group-hover/qs:text-[#ffc107] transition-colors">QS I-GAUGE</div>
+                  <div className="text-[10px] text-gray-400 font-medium uppercase">Diamond Rating</div>
+                </div>
+              </a>
 
               {/* Divider */}
               <div className="hidden md:block h-8 w-[1px] bg-white/10" />

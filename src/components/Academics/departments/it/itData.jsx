@@ -1,3 +1,6 @@
+import itIp1 from '../../../../assets/innovative_practices/it dep/it 1.png'
+import itIp2 from '../../../../assets/innovative_practices/it dep/it 2.png'
+
 export const itStudentAchievements = [
   { sno: 1, name: "Geethaarun Priya SB", event: "Idea Quest", level: "National", award: "Second Prize", title: "Idea Quest" },
   { sno: 2, name: "Gopika V", event: "Idea Quest", level: "National", award: "Second Prize", title: "Idea Quest" },
@@ -162,7 +165,24 @@ export const itStudentAwards = [
   { sno: 14, name: "Nandha Kishore J\n(III Year B.Tech IT)", event: "SUSEGAD SPRINT 2026 S01", level: "National", award: "First Prize – $500 Cash Prize & Trip to Goa", title: "Online Hackathon" },
   { sno: 15, name: "Mohanvel V\n(III Year B.Tech IT)", event: "SUSEGAD SPRINT 2026 S01", level: "National", award: "First Prize – $500 Cash Prize & Trip to Goa", title: "Online Hackathon" }
 ];
-export const itFacultyAwards = [];
+export const itFacultyAwards = [
+  {
+    sno: 1,
+    name: 'Mr. R. Ayyappan\nFaculty',
+    event: 'Institutional Awards',
+    level: 'College',
+    award: 'Best Faculty',
+    title: 'Academic Year 2025-2026'
+  },
+  {
+    sno: 2,
+    name: 'Ms. N. Sowndharya\nStaff',
+    event: 'Staff Award',
+    level: 'College',
+    award: 'Best Supporting Staff',
+    title: 'Academic Year 2025-2026'
+  }
+];
 
 export const itInnovativePractices = [
   {
@@ -171,7 +191,7 @@ export const itInnovativePractices = [
     subject: 'Problem Solving using C Programming',
     method: 'Hands-on Experience Session',
     description: 'Students gain practical knowledge through software development, coding exercises, system design simulation, and real-world project activities. This approach bridges the gap between theoretical concepts and practical software engineering applications.',
-    image: null
+    image: itIp1
   },
   {
     sno: 2,
@@ -179,7 +199,7 @@ export const itInnovativePractices = [
     subject: 'Web Essentials',
     method: 'Peer Learning',
     description: 'Students work collaboratively to explore web development concepts, share ideas, solve coding problems, and support each other through discussions and practical activities, enhancing their technical skills and understanding.',
-    image: null
+    image: itIp2
   }
 ];
 

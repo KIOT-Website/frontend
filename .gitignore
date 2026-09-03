@@ -28,3 +28,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary and backup assets
+raw_backup/
+*raw_backup*

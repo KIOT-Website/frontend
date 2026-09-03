@@ -22,13 +22,15 @@ import itKManikandanImage from '../../assets/Faculity/IT/Mr.K.Manikandan S&H.png
 import itLavanyaImage from '../../assets/Faculity/IT/S.Lavanya.png'
 import itUshaImage from '../../assets/Faculity/IT/Mrs.G.USHA.png'
 import itAnandhiImage from '../../assets/Faculity/IT/ANANDHI.png'
+import itSivaperumalImage from '../../assets/Faculity/IT/sivaperumal chem.png'
+import itSaravananImage from '../../assets/Faculity/IT/saravanan mat.png'
 
 export const btechItData = {
   name: 'B.Tech Information Technology',
   short: 'Information Technology',
   bannerImage: '/banners/it_banner.png',
   duration: '4 Years (8 Semesters)',
-  intake: 60,
+  intake: 120,
   affiliation: 'Anna University',
   accreditation: 'NBA Accredited',
   placement: '94%',
@@ -38,14 +40,14 @@ export const btechItData = {
   color: '#18357a',
   tagline: 'Manage Information. Drive Innovation.',
   overview: [
-    "The Department of IT was established in the year 2020 and offers a B.Tech Degree Programme in Information Technology with a sanctioned intake of 60 students. It features state-of-the-art infrastructure and experienced faculty dedicated to bridging the link between theory and practical application. The faculty equips students with a fundamental understanding and practical skills in programming languages, hardware design, networks, graphics, databases, computer security, software design, and artificial intelligence, preparing them as future leaders of the computing profession with innovative approaches to problem solving.",
+    "The Department of IT was established in the year 2020 and offers a B.Tech Degree Programme in Information Technology with a sanctioned intake of 120 students. It features state-of-the-art infrastructure and experienced faculty dedicated to bridging the link between theory and practical application. The faculty equips students with a fundamental understanding and practical skills in programming languages, hardware design, networks, graphics, databases, computer security, software design, and artificial intelligence, preparing them as future leaders of the computing profession with innovative approaches to problem solving.",
     "The department’s primary goal is to provide a world-class learning and research environment while adopting industry practices through collaborations and moral values. Boasting a team of energetic faculty certified through WIPRO MISSION10X, the department ensures students receive the best exposure to the ever-growing horizon of IT. Graduates explore diverse careers in systems integration, multimedia, and software creation, with recruiters like Amazon, Zoho, TCS, and Infosys offering excellent placements. Students also thrive through active clubs like Think Crypto and Coding Arena, and participation in professional bodies like CSI, IEEE, and ISTE."
   ],
-  vision: "To equip students with cutting-edge information technologies and nurture them into socially responsible and globally recognized Professionals.",
-  mission: "To deliver reliable education with innovative techniques, software updates and programming languages to the students.\nTo cultivate innovation and entrepreneurial spirit among students, enabling them to cater to multidisciplinary sectors.\nTo impart skills to meet the growing demands in academics and industry.\nTo shape the students as sustainable professionals with resilient ethics and society consciousness.",
-  peo: "Graduates will be able to\n\nPEO-1: Have a successful career as an IT professional with analytical and critical thinking to meet the diversified requirements of industry, academia and research.\n\nPEO-2: Acquire leadership qualities with technical skills and entrepreneurship skills to solve complex engineering and social problems with ethics and environmental responsibility\n\nPEO-3: Pursue lifelong learning, and involve in applied research to design optimal solutions",
-  po: "The graduates of Information Technology will be able to:\n\nPO-1: Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\n\nPO-2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\n\nPO-3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\n\nPO-4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\n\nPO-5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\n\nPO-6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\n\nPO-7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\n\nPO-8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\n\nPO-9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\n\nPO-10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\n\nPO-11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one's own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\n\nPO-12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and lifelong learning in the broadest context of technological change.",
-  pso: "To ensure graduates\n\nPSO-1: Have proficiency in programming skills to design, develop and apply appropriate techniques, to solve complex engineering problems.\n\nPSO-2: Have knowledge to provide technological solutions for automation.\n\nPSO-3: Have the skill to secure and manage large volume of data.",
+  vision: "To equip students with cutting-edge information technologies and nurture them into socially responsible, globally recognized Professionals.",
+  mission: "To deliver reliable education with innovative techniques, software updates and programming languages to the students.\nTo cultivate innovation and an entrepreneurial spirit among students, enabling them to cater to multidisciplinary sectors.\nTo impart skills to meet the growing demands in academics and industry.\nTo shape the students as sustainable professionals with resilient ethics and society consciousness.",
+  peo: "Graduates will be able to\n\nPEO-1: Have a successful career as an IT professional with analytical and critical thinking to meet the diversified requirements of industry, academia.\n\nPEO-2: Acquire leadership qualities with technical skills and entrepreneurship skills to solve complex engineering and social problems with ethics and environmental responsibility.\n\nPEO-3: Pursue lifelong learning, and involve in applied research to design optimal solutions.",
+  po: "Graduates will be able to:\n\nPO-1: Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.\n\nPO-2: Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.\n\nPO-3: Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.\n\nPO-4: Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.\n\nPO-5: Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.\n\nPO-6: The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.\n\nPO-7: Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.\n\nPO-8: Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.\n\nPO-9: Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.\n\nPO-10: Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.\n\nPO-11: Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one's own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.\n\nPO-12: Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and lifelong learning in the broadest context of technological change.",
+  pso: "To ensure graduates\n\nPSO-1: Have proficiency in problem solving skills to design, develop and apply appropriate techniques, to solve complex engineering problems.\n\nPSO-2: Have knowledge to provide technological solutions for automation.\n\nPSO-3: Have the skill to secure and manage large volume of data.",
   whyChoose: [
     'Coding Arena',
     'Cybersecurity DIV',
@@ -254,8 +256,7 @@ export const btechItData = {
       email: "amit@kiot.ac.in",
       publications: "IJ: 0, NJ: 0, IC: 2, NC: 0",
       rating: 4.5,
-      image: itManikandanImage,
-      imageStyle: { translate: '0 15%' }
+      image: itManikandanImage
     },
     {
       name: "Ms. S.Valarmathi",
@@ -268,8 +269,7 @@ export const btechItData = {
       email: "striveforprogress2002@gmail.com",
       publications: "IJ: 2, NJ: 0, IC: 0, NC: 0",
       rating: 4.5,
-      image: itValarmathiImage,
-      imageStyle: { translate: '0 15%' }
+      image: itValarmathiImage
     },
     {
       name: "Mr. J.Vinothkumar",
@@ -282,8 +282,7 @@ export const btechItData = {
       email: "vin.jahanathan@gmail.com",
       publications: "IJ: 2, NJ: 0, IC: 0, NC: 0",
       rating: 4.5,
-      image: itVinothKumarImage,
-      imageStyle: { translate: '0 15%' }
+      image: itVinothKumarImage
     },
     {
       name: "Mr. M.Sivaperumal",
@@ -296,6 +295,7 @@ export const btechItData = {
       email: "mschem@kiot.ac.in",
       publications: "IJ: 2, NJ: 0, IC: 3, NC: 0",
       rating: 4.6,
+      image: itSivaperumalImage,
       category: 'S&H'
     },
     {
@@ -385,6 +385,7 @@ export const btechItData = {
       email: "jsamat@kiot.ac.in",
       publications: "IJ: 1, NJ: 0, IC: 0, NC: 0",
       rating: 4.5,
+      image: itSaravananImage,
       category: 'S&H'
     },
     {
@@ -415,8 +416,20 @@ export const btechItData = {
       image: itVasanthaKumarImage,
       category: 'S&H'
     },
-    { name: 'Mrs. S. Lavanya', designation: 'AP', qualification: 'B.E., M.E.', image: itLavanyaImage },
-    { name: 'Mr. K. Manikandan', designation: 'AP/ MAT', qualification: 'B.Sc., M.Sc., M.Phil.', category: 'S&H', image: itKManikandanImage, imageStyle: { scale: '0.85', translate: '0 10%' } }
+    {
+      name: "Mrs. S. Lavanya",
+      designation: "Assistant Professor",
+      joiningDate: "15.06.2023",
+      qualification: "B.E., M.E., (Ph.D)",
+      association: "Regular",
+      experience: "8 Years",
+      specialization: "Information Technology",
+      email: "slait@kiot.ac.in",
+      publications: "IJ: 1, NJ: 0, IC: 2, NC: 0",
+      rating: 4.6,
+      image: itLavanyaImage
+    },
+    { name: 'Mr. K. Manikandan', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil.', category: 'S&H', image: itKManikandanImage }
   ],
   labs: [
     {

@@ -40,7 +40,8 @@ import {
 } from 'lucide-react'
 import logo from '../../assets/main/main-logo.webp'
 import naacLogo from '../../assets/main/NAAC-Logo.webp'
-import nirfLogo from '../../assets/main/nirf.webp'
+import qsLogo from '../../assets/QS-I-GAUG/qs logo.png'
+import qsGaugePdf from '../../assets/QS-I-GAUG/QS-I-GAUGE-Certificateet.pdf'
 import codeLogo from '../../assets/main/2653 code.webp'
 
 const navLinks = [
@@ -415,24 +416,24 @@ const Header = () => {
                 style={{ animationDuration: '10s' }}
               >
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#ffc107]">CONTACT:</span>
+                  <span className="text-[#ffc107]">Contact:</span>
                   <span>9600541414</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#ffc107]">ADMISSION:</span>
+                  <span className="text-[#ffc107]">Admission:</span>
                   <span>98947 01234</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#ffc107]">PLACEMENT:</span>
+                  <span className="text-[#ffc107]">Placement:</span>
                   <span>98947 90284</span>
                 </div>
                 {/* Duplicate for loop */}
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#ffc107]">CONTACT:</span>
+                  <span className="text-[#ffc107]">Contact:</span>
                   <span>9600541414</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[#ffc107]">ADMISSION:</span>
+                  <span className="text-[#ffc107]">Admission:</span>
                   <span>98947 01234</span>
                 </div>
               </div>
@@ -448,15 +449,15 @@ const Header = () => {
                   {/* First Set */}
                   <div className="flex items-center gap-16">
                     <div className="flex items-center gap-1.5">
-                       <span className="font-bold text-[#ffc107]">CONTACT:</span>
+                       <span className="font-bold text-[#ffc107]">Contact:</span>
                        <span>9600541414</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                       <span className="font-bold text-[#ffc107]">ADMISSION:</span>
+                       <span className="font-bold text-[#ffc107]">Admission:</span>
                        <span>+91 98947 01234</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                       <span className="font-bold text-[#ffc107]">PLACEMENT:</span>
+                       <span className="font-bold text-[#ffc107]">Placement:</span>
                        <span>+91 98947 90284, 86084 85944</span>
                     </div>
                     <div className="flex items-center gap-1.5">
@@ -467,15 +468,15 @@ const Header = () => {
                   {/* Second Set (Duplicate for seamless loop) */}
                   <div className="flex items-center gap-16 pr-16">
                     <div className="flex items-center gap-1.5">
-                       <span className="font-bold text-[#ffc107]">CONTACT:</span>
+                       <span className="font-bold text-[#ffc107]">Contact:</span>
                        <span>9600541414</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                       <span className="font-bold text-[#ffc107]">ADMISSION:</span>
+                       <span className="font-bold text-[#ffc107]">Admission:</span>
                        <span>+91 98947 01234</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                       <span className="font-bold text-[#ffc107]">PLACEMENT:</span>
+                       <span className="font-bold text-[#ffc107]">Placement:</span>
                        <span>+91 98947 90284, 86084 85944</span>
                     </div>
                     <div className="flex items-center gap-1.5">
@@ -727,23 +728,39 @@ const Header = () => {
               </ul>
 
               <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 xl:gap-3 pr-4 lg:pr-0 translate-y-[1.5px]">
-                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:block shrink-0">
+                <a
+                  href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden md:flex shrink-0 items-center justify-center h-11 w-11 md:h-13 md:w-13 xl:h-16 xl:w-16 2xl:h-[70px] 2xl:w-[70px]"
+                  title="NAAC Accreditation"
+                >
                   <img
                     src={naacLogo}
                     alt="NAAC Logo"
-                    className="hidden md:block shrink-0 h-10 w-10 md:h-12 md:w-12 xl:h-14 xl:w-14 2xl:h-[72px] 2xl:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                    className="max-h-full max-w-full object-contain hover:scale-105 transition-transform drop-shadow-sm"
                   />
                 </a>
-                <img
-                  src={nirfLogo}
-                  alt="NIRF Logo"
-                  className="hidden md:block shrink-0 h-10 w-10 md:h-12 md:w-12 xl:h-14 xl:w-14 2xl:h-[72px] 2xl:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
-                />
-                <img
-                  src={codeLogo}
-                  alt="Code Logo"
-                  className="hidden md:block shrink-0 h-10 w-10 md:h-12 md:w-12 xl:h-14 xl:w-14 2xl:h-[72px] 2xl:w-[72px] object-contain hover:scale-105 transition-transform drop-shadow-sm"
-                />
+                <a
+                  href={qsGaugePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden md:flex shrink-0 items-center justify-center h-11 w-11 md:h-13 md:w-13 xl:h-16 xl:w-16 2xl:h-[70px] 2xl:w-[70px]"
+                  title="QS I-GAUGE Rating"
+                >
+                  <img
+                    src={qsLogo}
+                    alt="QS I-GAUGE"
+                    className="max-h-full max-w-full object-contain hover:scale-105 transition-transform drop-shadow-sm rounded-sm"
+                  />
+                </a>
+                <div className="hidden md:flex shrink-0 items-center justify-center h-11 w-11 md:h-13 md:w-13 xl:h-16 xl:w-16 2xl:h-[70px] 2xl:w-[70px]">
+                  <img
+                    src={codeLogo}
+                    alt="Code Logo"
+                    className="max-h-full max-w-full object-contain hover:scale-105 transition-transform drop-shadow-sm"
+                  />
+                </div>
                 
                 {/* Mobile Search Trigger */}
                 <button
@@ -925,9 +942,15 @@ const Header = () => {
 
               {/* Compliance/Accreditation Logos at the Bottom */}
               <div className="p-3 pt-6 pb-4 flex items-center justify-center gap-3 border-t border-[#D5E2F4]/50 bg-[#F8FAFC]/30 mt-auto">
-                <img src={naacLogo} alt="NAAC" className="h-12 w-12 object-contain shrink-0 drop-shadow-sm" />
-                <img src={nirfLogo} alt="NIRF" className="h-12 w-12 object-contain shrink-0 drop-shadow-sm" />
-                <img src={codeLogo} alt="Code" className="h-12 w-12 object-contain shrink-0 drop-shadow-sm" />
+                <a href="/pdfs/NAAC-A-GRADE-UPTO-2028.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-14 w-14 shrink-0">
+                  <img src={naacLogo} alt="NAAC" className="max-h-full max-w-full object-contain drop-shadow-sm" />
+                </a>
+                <a href={qsGaugePdf} target="_blank" rel="noopener noreferrer" title="QS I-GAUGE Rating" className="flex items-center justify-center h-14 w-14 shrink-0">
+                  <img src={qsLogo} alt="QS I-GAUGE" className="max-h-full max-w-full object-contain rounded-sm drop-shadow-sm" />
+                </a>
+                <div className="flex items-center justify-center h-14 w-14 shrink-0">
+                  <img src={codeLogo} alt="Code" className="max-h-full max-w-full object-contain drop-shadow-sm" />
+                </div>
               </div>
             </motion.div>
           </>
