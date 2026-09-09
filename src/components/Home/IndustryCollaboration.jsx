@@ -2,8 +2,8 @@ import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Building2, TrendingUp, Users, Award } from 'lucide-react'
 
-// Dynamically import all images from the companies folder
-const imageModules = import.meta.glob('../../assets/placements/companies/*.{png,jpg,jpeg,svg,webp}', { eager: true });
+// Dynamically import all images from the 'companies logo copy' folder
+const imageModules = import.meta.glob('../../assets/companies logo copy/*.{png,jpg,jpeg,jfif,avif,webp,PNG,JPG,JPEG,JFIF,AVIF,WEBP}', { eager: true });
 
 const allPartners = Object.entries(imageModules)
   .filter(([path]) => !path.includes('design.webp'))

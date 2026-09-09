@@ -46,9 +46,9 @@ const PhdSupervisorsPage = () => {
             { id: 2, name: "Dr. Kumarganesh S", university: "Anna University", department: "ECE", researchArea: "Signal Processing and Communication", supervisorId: "3340060", email: "skgece@kiot.ac.in", guided: "-", guiding: "6" }
         ],
         'electrical-&-electronics-engineering': [
-            { id: 1, name: "Dr. C.Muniraj", university: "Anna University", department: "EEE", researchArea: "AC Drives and High Voltage Engineering", supervisorId: "2230136", email: "hod.eee@kiot.ac.in", guided: "4", guiding: "7" },
-            { id: 2, name: "Dr. V.Kamatchi Kannan", university: "Anna University", department: "EEE", researchArea: "Power Converters, Power Quality", supervisorId: "2330080", email: "vkkeee@kiot.ac.in", guided: "3", guiding: "6" },
-            { id: 3, name: "Dr. P.A.Gowri Shankar", university: "Anna University", department: "EEE", researchArea: "Control, Nano Materials and Sensors", supervisorId: "2830026", email: "pagseee@kiot.ac.in", guided: "-", guiding: "6" }
+            { id: 1, name: "Dr. C.Muniraj", university: "Anna University", department: "EEE", researchArea: "AC Drives and High Voltage Engineering", supervisorId: "2230136", email: "directoracademics@kiot.ac.in", guided: "05", guiding: "06" },
+            { id: 2, name: "Dr. V.Kamatchi Kannan", university: "Anna University", department: "EEE", researchArea: "Power Quality, Renewable Energy Sources, DC-DC Converters and Intelligent Techniques", supervisorId: "2330080", email: "vkkeee@kiot.ac.in", guided: "04", guiding: "03" },
+            { id: 3, name: "Dr. P.A.Gowrisankar", university: "Anna University", department: "EEE", researchArea: "Control and Instrumentation, Nano Materials and Sensors", supervisorId: "2830026", email: "pagseee@kiot.ac.in", guided: "-", guiding: "06" }
         ],
         'computer-science-&-engineering': [
             { id: 1, name: "Dr. P.Rajendran", university: "Anna University", department: "CSE", researchArea: "Image Mining, Data Mining", supervisorId: "2340253", email: "peerajendran@gmail.com", guided: "8", guiding: "8" },

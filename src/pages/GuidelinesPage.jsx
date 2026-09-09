@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { FileText, ExternalLink } from 'lucide-react'
 
-import structureImg from '../assets/main/strcutre1.jpg'
+import structureImg from '../assets/main/Organizational_Structure_2025_Revised_1.jpg'
 import governanceImg from '../assets/main/governance_meeting.webp'
 
 // PDFs served from public/assets/policies/ — NOT imported as JS modules

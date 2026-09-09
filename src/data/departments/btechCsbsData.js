@@ -1,4 +1,5 @@
 import { BarChart3, Terminal, Building2 } from 'lucide-react'
+import csbsBanner from '../../assets/dpartments/csbs.jpg'
 import ramkumarImage from '../../assets/Faculity/csbs/ramkumar.webp'
 import vanithaImage from '../../assets/Faculity/csbs/vanitha.webp'
 import karthickImage from '../../assets/Faculity/csbs/karthick.webp'
@@ -19,7 +20,7 @@ import arunkumarImage from '../../assets/Faculity/csbs/Arunkumar.webp'
 export const btechCsbsData = {
   name: 'B.Tech Computer Science and Business Systems',
     short: 'CS and Business Systems',
-    bannerImage: '/banners/csbs_banner.png',
+    bannerImage: csbsBanner,
     duration: '4 Years (8 Semesters)',
     intake: 60,
     affiliation: 'Anna University',

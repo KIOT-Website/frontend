@@ -54,14 +54,15 @@ const PhdGuidedPage = () => {
             { id: 7, supervisor: "Dr. N.Santhiyakumari", scholar: "K.M.Majidha Fathima", topic: "Certain Investigations on Routing Optimization in Wireless Sensor Network by Improving the Quality of Service Parameters Using Modified Splay Tree Algorithm", university: "Anna University", status: "Completed" }
         ],
         'electrical-&-electronics-engineering': [
-            { id: 1, supervisor: "Dr. C.Muniraj", scholar: "Mr. P.Govindaraju", topic: "High Voltage Engineering", university: "Anna University", status: "Awarded (2024)" },
-            { id: 2, supervisor: "Dr. V.Kamatchi Kannan", scholar: "Mr. P.Selvabharathi", topic: "DC-DC Converter", university: "Anna University", status: "Thesis Submitted (2025)" },
-            { id: 3, supervisor: "Dr. C.Muniraj", scholar: "Ms. P.Gomathi", topic: "Medical Image Processing", university: "Anna University", status: "Awarded (2023)" },
-            { id: 4, supervisor: "Dr. V.Kamatchi Kannan", scholar: "Mr. S.Sathiskumar", topic: "DC-DC Converter", university: "Anna University", status: "Awarded (2024)" },
-            { id: 5, supervisor: "Dr. V.Kamatchi Kannan", scholar: "Mr. S.Selvakumar", topic: "Quasi Z-Source Inverter", university: "Anna University", status: "Awarded (2022)" },
-            { id: 6, supervisor: "Dr. V.Kamatchi Kannan", scholar: "Mr. F.Vijay Amirtha Raj", topic: "Permanent Magnet Synchronous Motor", university: "Anna University", status: "Awarded (2022)" },
-            { id: 7, supervisor: "Dr. C.Muniraj", scholar: "Ms. N.Selvarani", topic: "Power Electronics and Drives", university: "Anna University", status: "Awarded (2021)" },
-            { id: 8, supervisor: "Dr. C.Muniraj", scholar: "Ms. D.Gunapriya", topic: "Electrical Machines", university: "Anna University", status: "Awarded (2021)" }
+            { id: 1, supervisor: "Dr. C.Muniraj", scholar: "Mr. P.Govindaraju", topic: "High Voltage Engineering", university: "Anna University", status: "Awarded" },
+            { id: 2, supervisor: "Dr. C.Muniraj", scholar: "Ms. P.Gomathi", topic: "Image Processing", university: "Anna University", status: "Awarded" },
+            { id: 3, supervisor: "Dr. C.Muniraj", scholar: "Ms. N.Selvarani", topic: "Power Electronics and Drives", university: "Anna University", status: "Awarded" },
+            { id: 4, supervisor: "Dr. C.Muniraj", scholar: "Ms. D.Gunapriya", topic: "Electrical Machines", university: "Anna University", status: "Awarded" },
+            { id: 5, supervisor: "Dr. C.Muniraj", scholar: "Mrs. V.Jamuna", topic: "Electrical Machines", university: "Anna University", status: "Guided" },
+            { id: 6, supervisor: "Dr. V.Kamatchi Kannan", scholar: "Mr. S.Sathiskumar", topic: "DC-DC Converter", university: "Anna University", status: "Awarded" },
+            { id: 7, supervisor: "Dr. V.Kamatchi Kannan", scholar: "Mr. S.Selvakumar", topic: "Quasi Z-Source Inverter", university: "Anna University", status: "Awarded" },
+            { id: 8, supervisor: "Dr. V.Kamatchi Kannan", scholar: "Mr. F.Vijay Amirtha Raj", topic: "Permanent Magnet Synchronous Motor", university: "Anna University", status: "Awarded" },
+            { id: 9, supervisor: "Dr. V.Kamatchi Kannan", scholar: "Mr. P.Selvabharathi", topic: "DC – DC Converter", university: "Anna University", status: "Thesis Submitted" }
         ],
         'computer-science-&-engineering': [
             { id: 1, supervisor: "Dr. P.Rajendran", scholar: "Selvarani S", topic: "Computer Science", university: "Anna University", status: "Synopsis Submitted" },

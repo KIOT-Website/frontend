@@ -412,11 +412,11 @@ const eeeSupervisors = [
         role: "Professor / EEE",
         university: "Anna University",
         department: "EEE",
-        researchArea: "Control and Instrumentation",
+        researchArea: "Control and Instrumentation, Nano Materials and Sensors",
         supervisorId: "2830026",
         email: "pagseee@kiot.ac.in",
         guided: "-",
-        guiding: "-",
+        guiding: "06",
         irins: "https://kiot.irins.org",
         vidwanId: "283498",
         image: gowriSankarImg,
@@ -481,11 +481,6 @@ const eeeFacilities = [
 ];
 
 const eeeFacultyPursuing = [
-    { name: "Mrs. K. Manjula", topic: "Renewable Energy Sources", supervisor: "Dr. V. Kamatchi Kannan (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing", vidwanId: "321865" },
-    { name: "Mrs. R. Rajeswari", topic: "Power Quality", supervisor: "Dr. V. Kamatchi Kannan (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing", vidwanId: "616533" },
-    { name: "Mrs. P. Rekha", topic: "Intelligent Techniques", supervisor: "Dr. P. A. Gowrisankar (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing", vidwanId: "320488" },
-    { name: "Mr. M. Sugan", topic: "Control Systems", supervisor: "Dr. P. A. Gowrisankar (Professor / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing", vidwanId: "703527" },
-    { name: "Mr. T. Karthikeyan", topic: "High Voltage Engineering", supervisor: "Dr. C. Muniraj (Director Academics / EEE, Knowledge Institute of Technology)", university: "Anna University", registration: "-", status: "Pursuing" },
     { name: "Mr. G. Karthikeyan", topic: "Power Electronics", supervisor: "Dr. A. Jagadeeshwaran, Associate Professor / EEE, Sona College of Technology, Salem", university: "Anna University", registration: "202012123", status: "Pursuing", vidwanId: "320605" },
     { name: "Mr. R. Kathiresan", topic: "Electric Vehicle", supervisor: "Dr. C. Govindaraju, Associate Professor / EEE, Government College of Engineering, Salem", university: "Anna University", registration: "2214707145", status: "Pursuing", vidwanId: "103138" },
     { name: "Mr. B. Dhinesh", topic: "Electric Vehicle", supervisor: "Dr. C. Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", university: "Anna University", registration: "22143697123", status: "Pursuing", vidwanId: "340578" },
@@ -500,15 +495,15 @@ const eeeFacultyPursuing = [
 ];
 
 const eeeGuidedScholars = [
-    { scholar: "Mr. P. Govindaraju", topic: "High Voltage Engineering", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded (2024)" },
-    { scholar: "Ms. P. Gomathi", topic: "Image Processing", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded (2023)" },
-    { scholar: "Ms. N. Selvarani", topic: "Power Electronics and Drives", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded (2021)" },
-    { scholar: "Ms. D. Gunapriya", topic: "Electrical Machines", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded (2021)" },
+    { scholar: "Mr. P. Govindaraju", topic: "High Voltage Engineering", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded" },
+    { scholar: "Ms. P. Gomathi", topic: "Image Processing", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded" },
+    { scholar: "Ms. N. Selvarani", topic: "Power Electronics and Drives", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded" },
+    { scholar: "Ms. D. Gunapriya", topic: "Electrical Machines", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Awarded" },
     { scholar: "Mrs. V. Jamuna", topic: "Electrical Machines", supervisor: "Dr. C. Muniraj", university: "Anna University", status: "Guided" },
-    { scholar: "Mr. S. Sathiskumar", topic: "DC-DC Converter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded (2024)" },
-    { scholar: "Mr. S. Selvakumar", topic: "Quasi Z-Source Inverter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded (2022)" },
-    { scholar: "Mr. F. Vijay Amirtha Raj", topic: "Permanent Magnet Synchronous Motor", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded (2022)" },
-    { scholar: "Mr. P. Selvabharathi", topic: "DC - DC Converter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Thesis Submitted (2025)" }
+    { scholar: "Mr. S. Sathiskumar", topic: "DC-DC Converter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded" },
+    { scholar: "Mr. S. Selvakumar", topic: "Quasi Z-Source Inverter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded" },
+    { scholar: "Mr. F. Vijay Amirtha Raj", topic: "Permanent Magnet Synchronous Motor", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Awarded" },
+    { scholar: "Mr. P. Selvabharathi", topic: "DC – DC Converter", supervisor: "Dr. V. Kamatchi Kannan", university: "Anna University", status: "Thesis Submitted" }
 ];
 
 // ─── MCA (Master of Computer Applications) Data ───
@@ -862,7 +857,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
     const isCivil = deptName?.toLowerCase() === 'civil-engineering';
     const isCSBS = deptName?.toLowerCase() === 'computer-science-&-business-systems' || deptName?.toLowerCase() === 'computer-science-and-business-systems';
     const isCSE = deptName?.toLowerCase() === 'computer-science-&-engineering';
-    const isEEE = deptName?.toLowerCase() === 'electrical-&-electronics-engineering' || deptName?.toLowerCase() === 'electrical-electronics-engineering';
+    const isEEE = deptName?.toLowerCase() === 'electrical-&-electronics-engineering' || deptName?.toLowerCase() === 'electrical-electronics-engineering' || deptName?.toLowerCase() === 'electrical-and-electronics-engineering' || deptName?.toLowerCase() === 'eee';
     const isMCA = deptName?.toLowerCase() === 'master-of-computer-applications' || deptName?.toLowerCase() === 'mca';
     const isMech = deptName?.toLowerCase() === 'mechanical-engineering';
     const isSH = deptName?.toLowerCase() === 'science-&-humanities' || deptName?.toLowerCase() === 'science-and-humanities';
@@ -1519,7 +1514,7 @@ const ResearchResourcesPage = () => {
     const isAIDS = deptName?.toLowerCase() === 'artificial-intelligence-&-data-science' || deptName?.toLowerCase() === 'artificial-intelligence-and-data-science'
     const isCivil = deptName?.toLowerCase() === 'civil-engineering'
     const isCSBS = deptName?.toLowerCase() === 'computer-science-&-business-systems' || deptName?.toLowerCase() === 'computer-science-and-business-systems'
-    const isEEE = deptName?.toLowerCase() === 'electrical-&-electronics-engineering' || deptName?.toLowerCase() === 'electrical-electronics-engineering'
+    const isEEE = deptName?.toLowerCase() === 'electrical-&-electronics-engineering' || deptName?.toLowerCase() === 'electrical-electronics-engineering' || deptName?.toLowerCase() === 'electrical-and-electronics-engineering' || deptName?.toLowerCase() === 'eee'
     const isMCA = deptName?.toLowerCase() === 'master-of-computer-applications' || deptName?.toLowerCase() === 'mca'
     const isMech = deptName?.toLowerCase() === 'mechanical-engineering'
     const isSH = deptName?.toLowerCase() === 'science-&-humanities' || deptName?.toLowerCase() === 'science-and-humanities'
@@ -1595,7 +1590,7 @@ const ResearchResourcesPage = () => {
             ]
         }
 
-        if (lowerDept === 'electrical-&-electronics-engineering') {
+        if (lowerDept === 'electrical-&-electronics-engineering' || lowerDept === 'electrical-electronics-engineering' || lowerDept === 'electrical-and-electronics-engineering' || lowerDept === 'eee') {
             return [
                 { id: 1, title: 'List of Ph.D Supervisors', icon: Users, path: 'phd-supervisors' },
                 { id: 2, title: 'Major Research Areas', icon: Target, path: 'research-areas' },
@@ -1604,6 +1599,8 @@ const ResearchResourcesPage = () => {
                 { id: 5, title: 'List of Ph.D Scholars Guided by the Department Supervisors', icon: UserCheck, path: 'guided-scholars' },
                 { id: 6, title: 'Facilities for doing Research', icon: Microscope, path: 'facilities' },
                 { id: 7, title: 'List of Publications', icon: FileText, path: 'international-publications' },
+                { id: 8, title: 'Sponsored Research Projects', icon: Handshake, path: 'sponsored-projects' },
+                { id: 9, title: 'Consultancy', icon: Handshake, path: 'consultancy' },
             ]
         }
 

@@ -40,6 +40,9 @@ const ConsultancyPage = () => {
             { id: 6, year: "2021-2022", title: "Testing and Verification of Electronic Boards", industry: "Medpro Service, Salem", status: "Completed", domain: "Training Program", revenue: "25,000", pi: "Dr. P.Shanmuga Sundaram, T.Devika", icon: <Users size={20} /> },
             { id: 7, year: "2021-2022", title: "Fault Diagnosis in Electronics Circuits", industry: "SKS MEDI Tech, Erode", status: "Completed", domain: "Training Program", revenue: "25,000", pi: "R Shanmuga Sundaram, S. Premkumar", icon: <Users size={20} /> },
             { id: 8, year: "2021-2022", title: "Electronics Product Circuits Design and Verification", industry: "SKS MEDI Tech, Erode", status: "Completed", domain: "Training Program", revenue: "25,000", pi: "M.Chandraman, A. Arun", icon: <Users size={20} /> }
+        ],
+        'electrical-&-electronics-engineering': [
+            { id: 1, year: "2023-2026", title: "Industrial Consultancy & Technical Services (08 Projects Completed)", industry: "Industrial & Power Sector Partners", status: "Completed", domain: "Electrical & Power Systems", revenue: "5,43,045", pi: "Faculty of EEE", icon: <Building2 size={20} /> }
         ]
     }
 

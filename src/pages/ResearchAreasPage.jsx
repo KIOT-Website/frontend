@@ -51,12 +51,10 @@ const ResearchAreasPage = () => {
             'Artificial Intelligence'
         ],
         'electrical-&-electronics-engineering': [
-            'Power System Engineering',
+            'High Voltage Engineering',
+            'Image Processing',
             'Power Electronics and Drives',
-            'Control and Instrumentation',
-            'Renewable Energy',
-            'Embedded systems',
-            'High Voltage Engineering'
+            'Electrical Machines'
         ],
         'computer-science-&-engineering': [
             'Wireless Sensor Networks',

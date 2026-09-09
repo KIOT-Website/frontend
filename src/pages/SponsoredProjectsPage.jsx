@@ -111,6 +111,9 @@ const SponsoredProjectsPage = () => {
         ],
         'civil-engineering': [
             { id: 1, faculty: "Dr. P.M.Shanmugavadivu", title: "Application of Geo spatial technology on impact of Climate changes in water resources", agency: "Ministry of Earth sciences", amount: "1,00,000", period: "Feb-15" }
+        ],
+        'electrical-&-electronics-engineering': [
+            { id: 1, faculty: "Department of EEE", title: "IEEE - Power Electronics Sponsored Research", agency: "IEEE - Power Electronics", amount: "1,00,000", period: "01.06.2023 to 31.05.2026" }
         ]
     }
 

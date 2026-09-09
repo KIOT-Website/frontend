@@ -221,16 +221,17 @@ const FacultyPursuingPhdPage = () => {
             }
         ],
         'electrical-&-electronics-engineering': [
-            { id: 1, name: "Mr. B.Dhinesh", topic: "Electric Vehicle", supervisor: "Dr. C.Muniraj", registration: "2022", university: "Anna University" },
-            { id: 2, name: "Mr. S.E.Murthy", topic: "Electric Vehicle", supervisor: "Dr. C.Muniraj", registration: "2022", university: "Anna University" },
-            { id: 3, name: "Mr. M.Jagadeeshraja", topic: "Embedded Systems", supervisor: "Dr. C.Muniraj", registration: "2023", university: "Anna University" },
-            { id: 4, name: "Mr. M.Rajkumar", topic: "Power Systems", supervisor: "Dr. C.Muniraj", registration: "2023", university: "Anna University" },
-            { id: 5, name: "Mr. G.Karthikeyan", topic: "Power Electronics", supervisor: "Dr. A.Jagadeeshwaran", registration: "2019", university: "Anna University" },
-            { id: 6, name: "Mr. R.Kathiresan", topic: "Electric Vehicle", supervisor: "Dr. C.Govindaraju", registration: "2022", university: "Anna University" },
-            { id: 7, name: "Mr. P.Balaji", topic: "Power Electronics", supervisor: "Dr. P.Rajalakshmy", registration: "2023", university: "Karunya University" },
-            { id: 8, name: "Mr. R.Madhanraj", topic: "Control & Instrumentation", supervisor: "Dr. P.Anantha Christu Raj", registration: "2023", university: "Karunya University" },
-            { id: 9, name: "Ms. N.Divya", topic: "Power Electronics", supervisor: "Dr. V.Kamatchi Kannan", registration: "2024", university: "Anna University" },
-            { id: 10, name: "Ms. P.Rekha", topic: "Embedded Systems", supervisor: "Dr. V.Kamatchi Kannan", registration: "2024", university: "Anna University" }
+            { id: 1, name: "Mr. G.Karthikeyan", topic: "Power Electronics", supervisor: "Dr. A.Jagadeeshwaran, Associate Professor / EEE, Sona College of Technology, Salem", registration: "202012123", university: "Anna University" },
+            { id: 2, name: "Mr. R.Kathiresan", topic: "Electric Vehicle", supervisor: "Dr. C.Govindaraju, Associate Professor / EEE, Government College of Engineering, Salem", registration: "2214707145", university: "Anna University" },
+            { id: 3, name: "Mr. B.Dhinesh", topic: "Electric Vehicle", supervisor: "Dr. C.Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", registration: "22143697123", university: "Anna University" },
+            { id: 4, name: "Mr. S.E.Murthy", topic: "Electric Vehicle", supervisor: "Dr. C.Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", registration: "2317511425", university: "Anna University" },
+            { id: 5, name: "Mr. M.Jagadeeshraja", topic: "Embedded Systems", supervisor: "Dr. C.Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", registration: "23133697118", university: "Anna University" },
+            { id: 6, name: "Mr. M.Rajkumar", topic: "Power Systems", supervisor: "Dr. C.Muniraj, Professor & Head / EEE, Knowledge Institute of Technology, Salem", registration: "23133697123", university: "Anna University" },
+            { id: 7, name: "Mr. P.Balaji", topic: "Power Electronics", supervisor: "Dr. P.Rajalakshmy, Associate Professor, Robotics Engineering, Karunya University, Coimbatore", registration: "236000168", university: "Karunya University" },
+            { id: 8, name: "Mr. R.Madhanraj", topic: "Control & Instrumentation", supervisor: "Dr. P.Anantha Christu Raj, Research Supervisor, Assistant Professor (SG), Robotics Engineering, Karunya University, Coimbatore", registration: "236000087", university: "Karunya University" },
+            { id: 9, name: "Mrs. N.Divya", topic: "Power Electronics", supervisor: "Dr. V.Kamatchi Kannan, Professor / EEE, Knowledge Institute of Technology, Salem", registration: "24233691184", university: "Anna University" },
+            { id: 10, name: "Mrs. P.Rekha", topic: "Embedded Systems", supervisor: "Dr. V.Kamatchi Kannan, Professor / EEE, Knowledge Institute of Technology, Salem", registration: "24239691279", university: "Anna University" },
+            { id: 11, name: "Mr. Andril Alagusabai", topic: "Power Systems", supervisor: "Dr. J.Senthil Kumar, Bannari Amman Institute of Technology, Salem", registration: "20233691153", university: "Anna University" }
         ],
         'computer-science-&-engineering': [
             { id: 1, name: "Prof. T.Karthikeyan", topic: "Computer Science", supervisor: "Dr. T.Sitamahalakshmi", registration: "23244697170", university: "GITAM University", status: "Thesis Submitted" },

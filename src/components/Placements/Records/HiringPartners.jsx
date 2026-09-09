@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-// Dynamically import all images from the companies folder
-const imageModules = import.meta.glob('../../../assets/placements/companies/*.{png,jpg,jpeg,svg,webp}', { eager: true });
+// Dynamically import all images from the 'companies logo copy' folder
+const imageModules = import.meta.glob('../../../assets/companies logo copy/*.{png,jpg,jpeg,jfif,avif,webp,PNG,JPG,JPEG,JFIF,AVIF,WEBP}', { eager: true });
 import designBg from '../../../assets/placements/companies/design.webp'
 
 // Convert the object to an array of objects with name and logo

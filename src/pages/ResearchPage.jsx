@@ -17,13 +17,15 @@ import {
     FlaskConical,
     LineChart,
     Mail,
-    Phone,
     Link as LinkIcon,
     ShieldCheck,
-    Car
+    Car,
+    FileText,
+    Download
 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import openImage from '../assets/iStart/open.JPG'
+import kiotRirPdf from '../assets/KIOT_RIR.pdf'
 
 const ResearchPage = () => {
     const navigate = useNavigate()
@@ -230,24 +232,59 @@ const ResearchPage = () => {
             {/* ── Departmentwise Research Initiatives Section ── */}
             <div className="max-w-[1400px] mx-auto px-6 pb-20">
 
-                {/* Full-width header */}
+                {/* Header with Content on Left & KIOT_RIR.pdf on Right */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
+                    className="mb-12"
                 >
-                    <h2 className="text-3xl lg:text-4xl font-extrabold text-[#224292] leading-tight mb-4 tracking-tight font-graphik">
-                        Departmentwise{' '}
-                        <span className="text-[#ffc107]">Research Initiatives</span>
-                    </h2>
-                    <div className="mx-auto h-1 w-20 rounded-full bg-[#ffc107] mb-5" />
-                    <p className="max-w-3xl mx-auto text-gray-600 text-sm lg:text-base leading-relaxed text-center font-graphik">
-                        Each academic department at KIOT functions as a hub for innovation, encouraging students
-                        and faculty members to engage in industry-relevant investigations, publish research papers
-                        in indexed journals, and obtain intellectual property patents.
-                    </p>
+                    <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-slate-200/80">
+                        {/* Left Side: Title & Description */}
+                        <div className="max-w-3xl text-left">
+                            <h2 className="text-3xl lg:text-4xl font-extrabold text-[#224292] leading-tight mb-3 tracking-tight font-graphik">
+                                Departmentwise{' '}
+                                <span className="text-[#ffc107]">Research Initiatives</span>
+                            </h2>
+                            <div className="h-1 w-20 rounded-full bg-[#ffc107] mb-4" />
+                            <p className="text-gray-600 text-sm lg:text-base leading-relaxed font-graphik">
+                                Each academic department at KIOT functions as a hub for innovation, encouraging students
+                                and faculty members to engage in industry-relevant investigations, publish research papers
+                                in indexed journals, and obtain intellectual property patents.
+                            </p>
+                        </div>
+
+                        {/* Right Side: KIOT RIR PDF Card */}
+                        <div className="shrink-0 w-full sm:w-auto">
+                            <a
+                                href={kiotRirPdf}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center justify-between sm:justify-start gap-4 p-4 lg:px-6 lg:py-4.5 bg-gradient-to-br from-[#224292] to-[#183274] hover:from-[#1d377b] hover:to-[#12275b] text-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 border border-blue-900/20"
+                            >
+                                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#ffc107] group-hover:text-[#224292] text-[#ffc107] transition-colors shadow-inner">
+                                    <FileText size={24} />
+                                </div>
+                                <div className="text-left">
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#ffc107] text-[#224292]">
+                                            Anna University
+                                        </span>
+                                        <span className="text-[10px] text-white/70 font-bold uppercase tracking-wider">
+                                            Official Order
+                                        </span>
+                                    </div>
+                                    <p className="text-sm font-bold text-white group-hover:text-[#ffc107] transition-colors font-graphik leading-snug">
+                                        Research Institute Recognition (RIR)
+                                    </p>
+                                </div>
+                                <div className="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-white group-hover:text-[#224292] text-white flex items-center justify-center transition-all shrink-0 ml-2">
+                                    <Download size={16} />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </motion.div>
 
                 {/* Main content: cards grid + sticky image panel */}
