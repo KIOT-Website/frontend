@@ -105,7 +105,7 @@ const mechanicalTeachingMethods = [
 
 // Department Data Imports
 import { cseStudentAchievements, cseFacultyAchievements, cseStudentAwards, cseFacultyAwards, cseInnovativePractices } from './departments/cse/cseData.jsx'
-import { eeeStudentAchievements, eeeFacultyAchievements } from './departments/eee/eeeData.jsx'
+import { eeeStudentAchievements, eeeFacultyAchievements, eeeStudentAwards, eeeFacultyAwards, eeeFacultyNptelAwards } from './departments/eee/eeeData.jsx'
 import { aidsStudentAchievements, aidsFacultyAchievements, aidsFacultyAwards, aidsStudentAwards, aidsInnovativePractices } from './departments/aids/aidsData.jsx'
 import { csbsStudentAchievements, csbsStudentAwards, csbsFacultyAwards, csbsFacultyAchievements, csbsClubsMembers, csbsClubsObjectives, csbsClubsResponsibilities, csbsInnovativePractices } from './departments/csbs/csbsData.jsx'
 import { civilStudentAwards, civilFacultyAwards, civilStudentAchievements, civilFacultyAchievements, civilInnovativePractices } from './departments/civil/civilData.jsx'
@@ -130,7 +130,7 @@ const studentAwardsMap = {
   'btech-csbs': csbsStudentAwards,
   'be-civil': civilStudentAwards,
   'btech-aids': aidsStudentAwards,
-  'be-eee': [],
+  'be-eee': eeeStudentAwards,
   'be-mechanical': mechanicalStudentAwards,
   'be-ece': eceStudentAwards,
   'btech-it': itStudentAwards,
@@ -152,7 +152,7 @@ const facultyAwardsMap = {
   'btech-csbs': csbsFacultyAwards,
   'be-civil': civilFacultyAwards,
   'btech-aids': aidsFacultyAwards,
-  'be-eee': [],
+  'be-eee': eeeFacultyAwards,
   'be-mechanical': mechanicalFacultyAwards,
   'be-ece': eceFacultyAwards,
   'btech-it': itFacultyAwards,
@@ -167,6 +167,10 @@ const facultyAwardsMap = {
   'me-ped': mePedFacultyAwards,
   'me-se': meSeFacultyAwards,
   'science-humanities': scienceHumanitiesFacultyAwards
+};
+
+const facultyNptelAwardsMap = {
+  'be-eee': eeeFacultyNptelAwards,
 };
 
 const studentAchievementsMap = {
@@ -3356,6 +3360,67 @@ function AwardsSection({ courseId, courseName, initialAudience }) {
           </div>
           <h4 className="text-xl font-bold font-graphik text-[#224292] mb-3">No {activeAudience === 'STUDENT' ? 'Student' : 'Faculty'} Awards Yet</h4>
           <p className="text-[#64779F] font-bold font-graphik text-sm">Awards will be updated soon.</p>
+        </motion.div>
+      )}
+
+      {/* Faculty Award - NPTEL Separate Table */}
+      {activeAudience === 'FACULTY' && facultyNptelAwardsMap[courseId] && facultyNptelAwardsMap[courseId].length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="bg-white rounded-2xl overflow-x-auto shadow-xl shadow-black/[0.04] border border-slate-200 mt-8"
+        >
+          <div className="bg-[#ffc107] px-6 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Award size={20} className="text-[#224292]" />
+              <h3 className="text-[#224292] font-black font-graphik text-base tracking-tight">Faculty Award - NPTEL</h3>
+            </div>
+            <span className="text-[11px] font-black text-[#224292] bg-black/10 px-3 py-1 rounded-full border border-black/15 uppercase tracking-widest font-graphik">
+              NPTEL Honors
+            </span>
+          </div>
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-100 border-b border-slate-200">
+                <th className="px-4 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] text-center whitespace-nowrap">S. No.</th>
+                <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] whitespace-nowrap">Name of the Faculty</th>
+                <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] whitespace-nowrap">Name of the award</th>
+                <th className="px-5 py-3.5 text-[11px] font-bold font-graphik uppercase tracking-widest text-[#224292] whitespace-nowrap">Issued by</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {facultyNptelAwardsMap[courseId].map((item, idx) => (
+                <tr key={idx} className={`group transition-colors ${idx % 2 === 0 ? 'bg-black/[0.02]' : 'bg-transparent'} hover:bg-[#ffc107]/5`}>
+                  <td className="px-4 py-3.5 text-center text-sm font-bold text-[#224292] font-graphik">{item.sno || (idx + 1)}.</td>
+                  <td className="px-5 py-3.5">
+                    {(() => {
+                      const lines = typeof item.name === 'string' ? item.name.split('\n').filter(Boolean) : [item.name];
+                      const achieverName = lines[0];
+                      const achieverMeta = lines.slice(1).join(' • ');
+
+                      return (
+                        <div className="font-graphik min-w-[180px]">
+                          <div className="text-[13.5px] font-bold text-[#224292] whitespace-nowrap leading-snug tracking-tight">
+                            {achieverName}
+                          </div>
+                          {achieverMeta && (
+                            <div className="text-[11.5px] font-medium text-[#64779F] leading-tight mt-1 flex items-center gap-1.5 flex-wrap">
+                              <span className="inline-block px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium text-[11px] whitespace-nowrap">
+                                {achieverMeta}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })()}
+                  </td>
+                  <td className="px-5 py-3.5 text-sm font-medium text-slate-800 font-graphik whitespace-pre-line leading-relaxed">{item.award}</td>
+                  <td className="px-5 py-3.5 text-sm font-bold text-[#224292] font-graphik whitespace-nowrap">{item.issuedBy || 'NPTEL'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </motion.div>
       )}
     </div>

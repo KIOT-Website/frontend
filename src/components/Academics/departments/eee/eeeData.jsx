@@ -112,3 +112,400 @@ export const eeeFacultyAchievements = [
     title: '1. - Published Scopus indexed international Journal paper on Environmental investigation of operating parameters affecting biogas yield- a lab-scale study\n- Published Scopus indexed international Journal paper on Recent Advances of Artificial Intelligence Techniques for Wind Energy Operation and Control Problems\n2. Completed NPTEL Course Teaching and Learning in Engineering (TALE) with 75%'
   }
 ];
+
+export const eeeStudentAwards = [
+  {
+    sno: 1,
+    name: 'Guna P, Dharanieesh A, Mathankumar L, Arumugam M\nB.E. - EEE',
+    event: 'DST Ignition Grant for Startup "DroneTribes"',
+    level: 'National',
+    award: 'DST Ignition Grant (₹3,00,000 Grant)',
+    title: 'Department of Science and Technology (DST)'
+  },
+  {
+    sno: 2,
+    name: 'Guna P, Dharanieesh A, Mathankumar L, Arumugam M\nB.E. - EEE',
+    event: 'EDII Hackathon',
+    level: 'State',
+    award: 'EDII Hackathon Cash Reward (₹1,00,000)',
+    title: 'EDII–Tamil Nadu'
+  },
+  {
+    sno: 3,
+    name: 'Guna P, Dharanieesh A, Mathankumar L, Arumugam M\nB.E. - EEE',
+    event: 'Smart India Hackathon',
+    level: 'National',
+    award: 'Smart India Hackathon First Place (₹50,000)',
+    title: 'Ministry of Education, Govt of India'
+  },
+  {
+    sno: 4,
+    name: 'Ashwin Sivakumar\nB.E. - EEE',
+    event: 'Vector Hackathon - Circuit C Sprint',
+    level: 'National',
+    award: '2nd Place, ₹20,000',
+    title: 'Vector India'
+  },
+  {
+    sno: 5,
+    name: 'Nagakeerthiga R\nB.E. - EEE',
+    event: 'CMTI Design & Innovation Clinic',
+    level: 'National',
+    award: 'First Runner-Up, ₹20,000',
+    title: 'Central Manufacturing Technology Institute'
+  },
+  {
+    sno: 6,
+    name: 'Shivasurya K.A\nB.E. - EEE',
+    event: 'NPTEL: Intro to Industry 4.0',
+    level: 'National',
+    award: 'NPTEL Topper (Paid Winter Internship)',
+    title: 'NPTEL & IIT Bombay'
+  },
+  {
+    sno: 7,
+    name: 'Lenin John Paul A, Sangeetha H, Hariskumar\nB.E. - EEE',
+    event: 'L&T Ideation Challenge Season 2',
+    level: 'National',
+    award: 'Top 15 (₹25,000/month Stipend)',
+    title: 'Larsen & Toubro (L&T)'
+  },
+  {
+    sno: 8,
+    name: 'Heema Gouri T\nB.E. - EEE',
+    event: 'NCIIPC-AICTE Pentathon Cybersecurity',
+    level: 'National',
+    award: 'All India Rank 47 (6 Months Internship)',
+    title: 'NCIIPC & AICTE'
+  },
+  {
+    sno: 9,
+    name: 'Mahizha, Deepak J\nB.E. - EEE',
+    event: 'FOSSEE Open Source Hackathon',
+    level: 'National',
+    award: 'Top 10 National Contributions',
+    title: 'IIT Bombay'
+  },
+  {
+    sno: 10,
+    name: 'Naveenkumar R, Srinath K, Shivasurya K.A, Anuvarshan M, Nithish Kumar R, Manikandan M, Gowtham S S\nB.E. - EEE',
+    event: 'Electric Four Wheeler Design Challenge',
+    level: 'National',
+    award: '3rd Place, ₹25,000',
+    title: 'SAE INDIA'
+  },
+  {
+    sno: 11,
+    name: 'Diwakar P, Vikram S, Sureshraj M R, Megavarnan V K, Gokulraj G, Gopinath S, Adhithiyaa G J, Sachin S\nB.E. - EEE',
+    event: 'Indian E-Bike Championship',
+    level: 'National',
+    award: 'Best Cost & Business, ₹15,000',
+    title: 'Indian E-Bike Championship, Bhopal'
+  },
+  {
+    sno: 12,
+    name: 'Nirmal Kumar K, Mathavaa Krishna S\nB.E. - EEE',
+    event: 'National Hackathon: Animal Detection using ML',
+    level: 'National',
+    award: '1st Place, ₹5,000',
+    title: 'Department of EEE'
+  },
+  {
+    sno: 13,
+    name: 'Mahalakshmi D, Nisha S\nB.E. - EEE',
+    event: '24-hrs. Non-Stop Hackathon: Wireless EV Power Tx',
+    level: 'National',
+    award: '3rd Place, ₹5,000',
+    title: 'KIOT Institution Council & iStart'
+  },
+  {
+    sno: 14,
+    name: 'Nisha S, Varsha V\nB.E. - EEE',
+    event: '24-hrs. IEEE Hackathon: Wireless EV Power Tx',
+    level: 'National',
+    award: '2nd Place, ₹4,000',
+    title: 'IEEE-Information Theory Society'
+  }
+];
+
+export const eeeFacultyAwards = [
+  {
+    sno: 1,
+    name: 'Mrs. P. Rekha\nAsst. Prof. – EEE',
+    event: 'Vaakai Tamil Sangam\nDate: 30.03.2026',
+    date: '30.03.2026',
+    level: 'State',
+    award: 'Sri C.V.Raman',
+    title: 'Issued by: Vaakai Tamil Sangam'
+  },
+  {
+    sno: 2,
+    name: 'Mr. P. Balaji\nAsst. Prof. – EEE',
+    event: 'Greenvio Solutions (GVSN), Maharashtra\nDate: 08.05.2026',
+    date: '08.05.2026',
+    level: 'National',
+    award: 'Eco Journey Coordinator Award (2026)',
+    title: 'Issued by: Greenvio Solutions (GVSN), Maharashtra'
+  },
+  {
+    sno: 3,
+    name: 'Dr. S. Kalpana Devi\nAssoc. Prof. & Director - CDDA',
+    event: 'Bharat Education Excellence Awards\nDate: 08.11.2025',
+    date: '08.11.2025',
+    level: 'National',
+    award: 'Ananta Acharya',
+    title: 'Issued by: Bharat Education Excellence Awards'
+  },
+  {
+    sno: 4,
+    name: 'Mrs. P. Rekha\nAsst. Prof. – EEE',
+    event: 'IEI(I) Local Centre, Salem\nDate: 30.09.2025',
+    date: '30.09.2025',
+    level: 'Regional',
+    award: 'Best Woman Engineer',
+    title: 'Issued by: IEI(i), Salem'
+  },
+  {
+    sno: 5,
+    name: 'Mrs. N. Divya\nAsst. Prof. – EEE',
+    event: 'National Scientific Research Forum\nDate: 21.07.2025',
+    date: '21.07.2025',
+    level: 'National',
+    award: 'Best Faculty Award',
+    title: 'Issued by: National Scientific Research Forum'
+  },
+  {
+    sno: 6,
+    name: 'Mr. P. Balaji\nAsst. Prof. – EEE',
+    event: 'IEI(I) Local Centre, Salem\nDate: 30.09.2025',
+    date: '30.09.2025',
+    level: 'Regional',
+    award: 'Best Engineer Award',
+    title: 'Issued by: IEI(i), Salem'
+  },
+  {
+    sno: 7,
+    name: 'Dr. S. Kalpana Devi\nAssoc. Prof. & Director - CDDA',
+    event: 'IEI(I) Local Centre, Salem\nDate: 16.09.2024',
+    date: '16.09.2024',
+    level: 'Regional',
+    award: 'Best Woman Engineering Award',
+    title: 'Issued by: IEI(I) Local Centre, Salem'
+  },
+  {
+    sno: 8,
+    name: 'Dr. C. Muniraj\nProfessor & Director - Academics',
+    event: 'CSI – TechNext India\nDate: 31.08.2024',
+    date: '31.08.2024',
+    level: 'National',
+    award: 'Best HOD of the Year Award',
+    title: 'Issued by: CSI – TechNext India'
+  },
+  {
+    sno: 9,
+    name: 'Dr. V. Kamatchi Kannan\nProfessor & HOD',
+    event: 'CSI – TechNext India\nDate: 31.08.2024',
+    date: '31.08.2024',
+    level: 'National',
+    award: 'Best Faculty of the Year Award',
+    title: 'Issued by: CSI – TechNext India'
+  },
+  {
+    sno: 10,
+    name: 'Dr. S. Kalpana Devi\nAssoc. Prof. & Director - CDDA',
+    event: 'CSI – TechNext India\nDate: 31.08.2024',
+    date: '31.08.2024',
+    level: 'National',
+    award: 'Best Faculty of the Year Award',
+    title: 'Issued by: CSI – TechNext India'
+  },
+  {
+    sno: 11,
+    name: 'Dr. C. Muniraj\nProfessor & Director - Academics',
+    event: 'IEI(I) Local Centre, Salem\nDate: 22.09.2023',
+    date: '22.09.2023',
+    level: 'Regional',
+    award: 'Best Engineer Award',
+    title: 'Issued by: IEI(I) Local Centre, Salem'
+  },
+  {
+    sno: 12,
+    name: 'Mr. M. Jagadeeshraja\nAsst. Prof. – EEE',
+    event: 'IEI(I) Local Centre, Salem\nDate: 22.09.2023',
+    date: '22.09.2023',
+    level: 'Regional',
+    award: 'Best Young Engineer Award',
+    title: 'Issued by: IEI(I) Local Centre, Salem'
+  },
+  {
+    sno: 13,
+    name: 'Dr. P.A. Gowri Sankar\nAssociate Professor',
+    event: 'Novel Research Academy, Puducherry\nDate: 12.06.2023',
+    date: '12.06.2023',
+    level: 'National',
+    award: 'Best Young Faculty Award',
+    title: 'Issued by: Novel Research Academy, Puducherry, India'
+  }
+];
+
+export const eeeFacultyNptelAwards = [
+  {
+    sno: 1,
+    name: 'Ms. P. Srinithi\nAsst. Prof. – EEE',
+    award: '• NPTEL Believer\n• NPTEL Motivated Learner\n• NPTEL Discipline Star',
+    issuedBy: 'NPTEL'
+  },
+  {
+    sno: 2,
+    name: 'Mrs. P. Rekha\nAsst. Prof. – EEE',
+    award: '• NPTEL Star\n• NPTEL Domain Scholar',
+    issuedBy: 'NPTEL'
+  },
+  {
+    sno: 3,
+    name: 'Mr. P. Balaji\nAsst. Prof. – EEE',
+    award: '• NPTEL Domain Scholar\n• NPTEL Believer\n• NPTEL Motivated Learner',
+    issuedBy: 'NPTEL'
+  },
+  {
+    sno: 4,
+    name: 'Dr. S. Kalpana Devi\nAssoc. Prof. & Director - CDDA',
+    award: '• NPTEL Domain Scholar\n• NPTEL Believer\n• NPTEL Motivated Learner',
+    issuedBy: 'NPTEL'
+  }
+];
+
+export const eeeFundedProjects = [
+  {
+    sno: 1,
+    scheme: 'DST Ignition Grant Scheme',
+    agency: 'Department of Science and Technology (DST)',
+    title: 'Funding to facilitate technological innovation and prototype development for student startup "DroneTribes".',
+    amount: '₹3,00,000',
+    year: 'AY 2025-26',
+    category: 'Government R&D & Startup Grants'
+  },
+  {
+    sno: 2,
+    scheme: 'AICTE-MODROBS',
+    agency: 'All India Council for Technical Education (AICTE)',
+    title: 'Modernization of the Power Electronics and Drives Laboratory with emphasis on e-Mobility powertrain design and testing.',
+    amount: '₹12,90,000',
+    year: 'AY 2024-25',
+    category: 'Government R&D & Startup Grants'
+  },
+  {
+    sno: 3,
+    scheme: 'AICTE Institutional Sponsor',
+    agency: 'All India Council for Technical Education (AICTE)',
+    title: 'Financial support for organizing 02 National Conferences and 02 Faculty Development Programs (FDPs).',
+    amount: '₹3,50,000',
+    year: 'AY 2024-25',
+    category: 'Institutional Grants'
+  },
+  {
+    sno: 4,
+    scheme: 'IEI R&D Grant-in-Aid Scheme',
+    agency: 'The Institution of Engineers (India)',
+    title: 'UG R&D Project: "AI-Based Predictive Maintenance and Cotton Fiber Collection System Using Raspberry Pi for Spinning Mills".',
+    amount: '₹40,000',
+    year: 'AY 2026-27',
+    category: 'R&D Grant-in-Aid'
+  },
+  {
+    sno: 5,
+    scheme: 'TNSCST Student Project Scheme',
+    agency: 'Tamil Nadu State Council for Science and Technology (TNSCST)',
+    title: 'Student prototype design: "Defense Jacket - Soldier Health Monitoring and Position Tracking System".',
+    amount: '₹7,500',
+    year: 'AY 2022-23',
+    category: 'State Council Grants'
+  },
+  {
+    sno: 6,
+    scheme: 'TNSCST Student Project Scheme',
+    agency: 'Tamil Nadu State Council for Science and Technology (TNSCST)',
+    title: 'Research project: "Pure Spines".',
+    amount: '₹7,500',
+    year: 'AY 2021-22',
+    category: 'State Council Grants'
+  },
+  {
+    sno: 7,
+    scheme: 'IEEE PES USA MDI Fund',
+    agency: 'IEEE PES USA Headquarters',
+    title: 'Organizing a two-day workshop: "IEEE STEM Innovation Program: Renewable Energy and Smart Systems for Next-Gen Engineers".',
+    amount: '$1,240 USD',
+    year: 'AY 2025-26',
+    category: 'Professional Society Grants'
+  },
+  {
+    sno: 8,
+    scheme: 'IEEE PES Chapter Funding (HPSBCP)',
+    agency: 'IEEE PES',
+    title: 'Chapter Program Funding awarded to the student branch for regional performance rankings.',
+    amount: '$325 USD',
+    year: 'AY 2026-27',
+    category: 'Professional Society Grants'
+  }
+];
+
+export const eeeConsultancyProjects = [
+  {
+    sno: 1,
+    industry: 'KS Consultancy / Landrotics Solutions Pvt. Ltd.',
+    type: 'Industrial Consultancy',
+    title: 'BLDC Motor Testing and Performance Analysis.',
+    amount: '₹1,61,945',
+    year: 'AY 2023-24'
+  },
+  {
+    sno: 2,
+    industry: 'Spintec Enterprises Private Limited',
+    type: 'Industrial Consultancy',
+    title: 'CNC machine Mechanical Product Quality Analyzer & Workstation Illumination and Noise Survey.',
+    amount: '₹1,53,400',
+    year: 'AY 2023-24'
+  },
+  {
+    sno: 3,
+    industry: 'Landrotics Solutions',
+    type: 'Sponsored Research',
+    title: 'Designing a Drone Thrust Analyzer.',
+    amount: '₹54,498',
+    year: 'AY 2023-24'
+  },
+  {
+    sno: 4,
+    industry: 'Sri Ayyanarappan Traders',
+    type: 'Industrial Energy Audit',
+    title: 'Energy Audit in Handloom Machines.',
+    amount: '₹50,000',
+    year: 'AY 2023-24'
+  },
+  {
+    sno: 5,
+    industry: 'Silicon Systems',
+    type: 'Sponsored Research',
+    title: 'Performance Analysis and Design enhancement of BLDC motor.',
+    amount: '₹50,000',
+    year: 'AY 2021-22'
+  },
+  {
+    sno: 6,
+    industry: 'United Spinning Mills',
+    type: 'Prototype Development',
+    title: 'Design of Cotton Fiber Collector',
+    amount: '₹17,700',
+    year: 'AY 2023-24'
+  },
+  {
+    sno: 7,
+    industry: 'Tagros Chemical India',
+    type: 'Industrial Energy Audit',
+    title: 'Energy Audit consultancy.',
+    amount: '₹10,000',
+    year: 'AY 2023-24'
+  }
+];
+

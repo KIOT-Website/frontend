@@ -42,7 +42,31 @@ const ConsultancyPage = () => {
             { id: 8, year: "2021-2022", title: "Electronics Product Circuits Design and Verification", industry: "SKS MEDI Tech, Erode", status: "Completed", domain: "Training Program", revenue: "25,000", pi: "M.Chandraman, A. Arun", icon: <Users size={20} /> }
         ],
         'electrical-&-electronics-engineering': [
-            { id: 1, year: "2023-2026", title: "Industrial Consultancy & Technical Services (08 Projects Completed)", industry: "Industrial & Power Sector Partners", status: "Completed", domain: "Electrical & Power Systems", revenue: "5,43,045", pi: "Faculty of EEE", icon: <Building2 size={20} /> }
+            { id: 1, year: "2023-2024", title: "BLDC Motor Testing and Performance Analysis", industry: "KS Consultancy / Landrotics Solutions Pvt. Ltd.", status: "Completed", domain: "Industrial Consultancy", revenue: "1,61,945", pi: "Faculty of EEE", icon: <Cpu size={20} /> },
+            { id: 2, year: "2023-2024", title: "CNC machine Mechanical Product Quality Analyzer & Workstation Illumination and Noise Survey", industry: "Spintec Enterprises Private Limited", status: "Completed", domain: "Industrial Consultancy", revenue: "1,53,400", pi: "Faculty of EEE", icon: <Building2 size={20} /> },
+            { id: 3, year: "2023-2024", title: "Designing a Drone Thrust Analyzer", industry: "Landrotics Solutions", status: "Completed", domain: "Sponsored Research", revenue: "54,498", pi: "Faculty of EEE", icon: <Zap size={20} /> },
+            { id: 4, year: "2023-2024", title: "Energy Audit in Handloom Machines", industry: "Sri Ayyanarappan Traders", status: "Completed", domain: "Industrial Energy Audit", revenue: "50,000", pi: "Faculty of EEE", icon: <Zap size={20} /> },
+            { id: 5, year: "2021-2022", title: "Performance Analysis and Design enhancement of BLDC motor", industry: "Silicon Systems", status: "Completed", domain: "Sponsored Research", revenue: "50,000", pi: "Faculty of EEE", icon: <Cpu size={20} /> },
+            { id: 6, year: "2023-2024", title: "Design of Cotton Fiber Collector", industry: "United Spinning Mills", status: "Completed", domain: "Prototype Development", revenue: "17,700", pi: "Faculty of EEE", icon: <Building2 size={20} /> },
+            { id: 7, year: "2023-2024", title: "Energy Audit consultancy", industry: "Tagros Chemical India", status: "Completed", domain: "Industrial Energy Audit", revenue: "10,000", pi: "Faculty of EEE", icon: <Zap size={20} /> }
+        ],
+        'electrical-and-electronics-engineering': [
+            { id: 1, year: "2023-2024", title: "BLDC Motor Testing and Performance Analysis", industry: "KS Consultancy / Landrotics Solutions Pvt. Ltd.", status: "Completed", domain: "Industrial Consultancy", revenue: "1,61,945", pi: "Faculty of EEE", icon: <Cpu size={20} /> },
+            { id: 2, year: "2023-2024", title: "CNC machine Mechanical Product Quality Analyzer & Workstation Illumination and Noise Survey", industry: "Spintec Enterprises Private Limited", status: "Completed", domain: "Industrial Consultancy", revenue: "1,53,400", pi: "Faculty of EEE", icon: <Building2 size={20} /> },
+            { id: 3, year: "2023-2024", title: "Designing a Drone Thrust Analyzer", industry: "Landrotics Solutions", status: "Completed", domain: "Sponsored Research", revenue: "54,498", pi: "Faculty of EEE", icon: <Zap size={20} /> },
+            { id: 4, year: "2023-2024", title: "Energy Audit in Handloom Machines", industry: "Sri Ayyanarappan Traders", status: "Completed", domain: "Industrial Energy Audit", revenue: "50,000", pi: "Faculty of EEE", icon: <Zap size={20} /> },
+            { id: 5, year: "2021-2022", title: "Performance Analysis and Design enhancement of BLDC motor", industry: "Silicon Systems", status: "Completed", domain: "Sponsored Research", revenue: "50,000", pi: "Faculty of EEE", icon: <Cpu size={20} /> },
+            { id: 6, year: "2023-2024", title: "Design of Cotton Fiber Collector", industry: "United Spinning Mills", status: "Completed", domain: "Prototype Development", revenue: "17,700", pi: "Faculty of EEE", icon: <Building2 size={20} /> },
+            { id: 7, year: "2023-2024", title: "Energy Audit consultancy", industry: "Tagros Chemical India", status: "Completed", domain: "Industrial Energy Audit", revenue: "10,000", pi: "Faculty of EEE", icon: <Zap size={20} /> }
+        ],
+        'eee': [
+            { id: 1, year: "2023-2024", title: "BLDC Motor Testing and Performance Analysis", industry: "KS Consultancy / Landrotics Solutions Pvt. Ltd.", status: "Completed", domain: "Industrial Consultancy", revenue: "1,61,945", pi: "Faculty of EEE", icon: <Cpu size={20} /> },
+            { id: 2, year: "2023-2024", title: "CNC machine Mechanical Product Quality Analyzer & Workstation Illumination and Noise Survey", industry: "Spintec Enterprises Private Limited", status: "Completed", domain: "Industrial Consultancy", revenue: "1,53,400", pi: "Faculty of EEE", icon: <Building2 size={20} /> },
+            { id: 3, year: "2023-2024", title: "Designing a Drone Thrust Analyzer", industry: "Landrotics Solutions", status: "Completed", domain: "Sponsored Research", revenue: "54,498", pi: "Faculty of EEE", icon: <Zap size={20} /> },
+            { id: 4, year: "2023-2024", title: "Energy Audit in Handloom Machines", industry: "Sri Ayyanarappan Traders", status: "Completed", domain: "Industrial Energy Audit", revenue: "50,000", pi: "Faculty of EEE", icon: <Zap size={20} /> },
+            { id: 5, year: "2021-2022", title: "Performance Analysis and Design enhancement of BLDC motor", industry: "Silicon Systems", status: "Completed", domain: "Sponsored Research", revenue: "50,000", pi: "Faculty of EEE", icon: <Cpu size={20} /> },
+            { id: 6, year: "2023-2024", title: "Design of Cotton Fiber Collector", industry: "United Spinning Mills", status: "Completed", domain: "Prototype Development", revenue: "17,700", pi: "Faculty of EEE", icon: <Building2 size={20} /> },
+            { id: 7, year: "2023-2024", title: "Energy Audit consultancy", industry: "Tagros Chemical India", status: "Completed", domain: "Industrial Energy Audit", revenue: "10,000", pi: "Faculty of EEE", icon: <Zap size={20} /> }
         ]
     }
 

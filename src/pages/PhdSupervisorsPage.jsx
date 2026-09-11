@@ -58,14 +58,14 @@ const PhdSupervisorsPage = () => {
         'science-&-humanities': [
             {
                 id: 1,
-                name: "Dr. G.Venkatesh",
+                name: "Dr. G. Venkatesh",
                 university: "Anna University",
                 department: "Chemistry",
-                researchArea: "Supramolecular Nano materials",
+                researchArea: "Supramolecular Nanomaterials",
                 supervisorId: "2970011",
-                email: "drgvenkat@rediffmail.com",
-                guided: "-",
-                guiding: "-"
+                email: "gvchem@kiot.ac.in",
+                guided: "0",
+                guiding: "0"
             }
         ]
     }

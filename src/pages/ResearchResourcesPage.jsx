@@ -24,8 +24,13 @@ import {
     Mail,
     Fingerprint,
     Info,
-    CalendarDays
+    CalendarDays,
+    Clock
 } from 'lucide-react'
+
+// Import AI&DS Faculty Images
+import aidsSasikumarHodImage from '../assets/Faculity/aids/sasikumar_hod.webp'
+import aidsGomathiImage from '../assets/Faculity/aids/dr_gomathi.webp'
 
 // Import CSE Faculty/Supervisor Images
 import vijayalakshmiImg from '../assets/Faculity/cse/Dr.P.VIJAYALAKSHMI.webp'
@@ -314,7 +319,32 @@ const cseGuidedScholars = [
 
 
 const aidsSupervisors = [];
-const aidsPhdHolders = [];
+const aidsPhdHolders = [
+    {
+        id: 1,
+        name: "Dr. B. Sasikumar",
+        role: "Professor & Head / AI & DS",
+        experience: "22 Years",
+        department: "AI & DS",
+        university: "Anna University",
+        topic: "Fault detection in induction motor using infra-red thermography with machine learning and time frequency and signal analysis",
+        image: aidsSasikumarHodImage,
+        guided: "-",
+        beingGuided: "-"
+    },
+    {
+        id: 2,
+        name: "Dr. A. Gomathi",
+        role: "Associate Professor / AI & DS",
+        experience: "21 Years",
+        department: "AI & DS",
+        university: "Anna University",
+        topic: "Enhanced Information Extraction On Multiple Search Engines Using Hybrid Algorithms",
+        image: aidsGomathiImage,
+        guided: "-",
+        beingGuided: "-"
+    }
+];
 const aidsResearchAreas = [
     "Medical Image Processing",
     "Machine Learning",
@@ -324,7 +354,7 @@ const aidsResearchAreas = [
 const aidsFacilities = [
     {
         name: "Advanced AI Research Laboratory",
-        description: "A specialized laboratory facility equipped with advanced computing systems and frameworks to conduct research and projects in Artificial Intelligence, Deep Learning, and Machine Learning.\n\nOur Wings:\nDr.B.Sasikumar (Experience : 22 Years)\nDr.A.Gomathi (Experience : 21 Years)",
+        description: "A specialized laboratory facility equipped with advanced computing systems and frameworks to conduct research and projects in Artificial Intelligence, Deep Learning, and Machine Learning.",
         infrastructure: "High-Speed Computing Workstations, AI/ML software frameworks"
     }
 ];
@@ -698,24 +728,33 @@ const shSupervisors = [
 const shPhdHolders = [];
 
 const shResearchAreas = [
+    "Supramolecular Nanomaterials",
+    "Graph Theory",
+    "Topology",
     "Nanomaterials",
-    "Applied Mathematics",
-    "Sensor Development"
+    "Inventory Control Theory",
+    "Nano Particles",
+    "Thin Film Technology",
+    "Molecular Spectroscopy",
+    "Applied Probability and Stochastic Processes",
+    "Decision Making using Fuzzy Logic"
 ];
 
 const shFacilities = [];
 
 const shFacultyPursuing = [
-    { name: "Mr. K. Anand Kumar", topic: "English Language Teaching (S&H - English - Mech)", supervisor: "Dr. R. Vennila Nancy Christina (ASP/English, Sree Saraswathi Thiagraja College)", university: "Bharathiyar University", registration: "B1/ENG25PJULY0462/2025", status: "Pursuing" },
-    { name: "Mr. M. Sivaperumal", topic: "Nanomaterials (S&H - Chemistry - IT)", supervisor: "Dr. G. Raja (Professor/Chemistry, Paavai Engineering College)", university: "Anna University", registration: "23147691151", status: "Pursuing" },
-    { name: "Mr. M. Prasath", topic: "Inventory Control Theory (S&H - Maths - EEE)", supervisor: "Dr. R. Vijaykrishnaraj (AP/Maths, Bharath Institute of Higher Education and Research)", university: "Bharath Institute of Higher Education and Research", registration: "D25SH027", status: "Pursuing", vidwanId: "613703" },
-    { name: "Mrs. A. Preethi", topic: "Nano Particles (S&H - Chemistry - ECE)", supervisor: "Dr. K. Balachandran (ASP/Chemistry, Vivekanandha College of Engineering for Women)", university: "Anna University", registration: "21237697164", status: "Pursuing" , doj: "23.06.2025", vidwanId: "703524" },
-    { name: "Mr. T. Raja", topic: "Decision Making using Fuzzy Logic (S&H - Maths - ECE)", supervisor: "Dr. S. Thilagavathi (AP/Maths, Erode Arts and Science College)", university: "Bharathiar University", registration: "B1/MAT24PJuly0919/2024", status: "Pursuing" , doj: "02.06.2015", vidwanId: "321631" },
-    { name: "Mr. S. Sasi Kumar", topic: "Thin Film Technology (S&H - Physics - Civil)", supervisor: "Dr. K. S. Mohan (ASP/Physics, Nandha Engineering College)", university: "Anna University", registration: "25147691163", status: "Pursuing" },
-    { name: "Mrs. S. Geetha", topic: "Graph Theory (S&H - Maths - CSE)", supervisor: "Dr. S. Manimekalai (AP/Maths, Dr. N.G.P. Arts & Science College)", university: "Bharathiar University", registration: "B1/MAT24PJULY1102/2024", status: "Pursuing" },
-    { name: "Mrs. S. Saranya", topic: "Fuzzy graphs (S&H - Maths - ECE)", supervisor: "Dr. B. Ramesh kumar (ASP/Maths, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology)", university: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology", registration: "VTDWS2025625", status: "Pursuing" , doj: "25.11.2021", vidwanId: "321588" },
-    { name: "Dhineshkumar P", topic: "Molecular Spectroscopy", supervisor: "Dr. G. Thilagavathi (AP/Physics, Nehru Memorial College)", university: "Bharathidasan University", registration: "40008/Ph.D K3/Physics /Part-time /05.02.2026", status: "Pursuing" },
-    { name: "Priya P", topic: "Topology", supervisor: "Dr. V. Ramesh (AP/Maths, Kandasamy Kandar's College, P.velur)", university: "Periyar University", registration: "PUAD250271413", status: "Pursuing" }
+    { name: "Mr. K. Anand Kumar", topic: "English Language Teaching (S&H - English - Mech)", supervisor: "Dr. R. Vennila Nancy Christina (Associate Professor, Department of English, Sree Saraswathi Thiagraja College, Thippampatti)", university: "Bharathiar University", registration: "B1/ENG25PJULY0462/2025", status: "Pursuing" },
+    { name: "Mr. M. Sivaperumal", topic: "Nanomaterials (S&H - Chemistry - IT)", supervisor: "Dr. G. Raja (Professor/Chemistry, Paavai Engineering College (Autonomous), Namakkal)", university: "Anna University", registration: "23147691151", status: "Pursuing" },
+    { name: "Mr. M. Prasath", topic: "Inventory Control Theory (S&H - Maths - EEE)", supervisor: "Dr. R. Vijaykrishnaraj (Assistant Professor, Bharath Institute of Higher Education and Research, Chennai)", university: "Bharath Institute of Higher Education and Research", registration: "D25SH027", status: "Pursuing", vidwanId: "613703" },
+    { name: "Mrs. A. Preethi", topic: "Nano Particles (S&H - Chemistry - ECE)", supervisor: "Dr. K. Balachandran (Associate Professor, Department of Chemistry, Vivekanandha College of Engineering for Women, Thiruchengode)", university: "Anna University", registration: "21237697164", status: "Pursuing", doj: "23.06.2025", vidwanId: "703524" },
+    { name: "Mr. T. Raja", topic: "Decision Making using Fuzzy Logic (S&H - Maths - ECE)", supervisor: "Dr. S. Thilagavathi (Assistant Professor, Department of Mathematics, Erode Arts and Science College, Erode)", university: "Bharathiar University", registration: "B1/MAT24PJuly0919/2024", status: "Pursuing", doj: "02.06.2015", vidwanId: "321631" },
+    { name: "Mr. S. Sasi Kumar", topic: "Thin Film Technology (S&H - Physics - Civil)", supervisor: "Dr. K. S. Mohan (Associate Professor, Department of Physics, Nandha Engineering College, Erode)", university: "Anna University", registration: "25147691163", status: "Pursuing" },
+    { name: "Mrs. S. Geetha", topic: "Graph Theory (S&H - Maths - CSE)", supervisor: "Dr. S. Manimekalai (Assistant Professor, Department of Mathematics, Dr. N.G.P. Arts & Science College, Kalapatti, Coimbatore)", university: "Bharathiar University", registration: "B1/MAT24PJULY1102/2024", status: "Pursuing" },
+    { name: "Mrs. S. Saranya", topic: "Fuzzy graphs (S&H - Maths - ECE)", supervisor: "Dr. B. Ramesh kumar (Associate Professor, Department of Mathematics, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai)", university: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology", registration: "VTDWS2025625", status: "Pursuing", doj: "25.11.2021", vidwanId: "321588" },
+    { name: "Mr. P. Dhineshkumar", topic: "Molecular Spectroscopy (S&H - Physics - ECE)", supervisor: "Dr. G. Thilagavathi (Asst. Prof of Physics, Nehru Memorial College (A), Puthanampatti, Tiruchirapalli)", university: "Bharathidasan University", registration: "40008/Ph.D K3/Physics /Part-time /05.02.2026", status: "Pursuing" },
+    { name: "Mrs. P. Priya", topic: "Topology (S&H - Maths - ECE)", supervisor: "Dr. V. Ramesh (Assistant Professor, Kandasamy Kandar's College, P.velur)", university: "Periyar University", registration: "PUAD250271413", status: "Pursuing" },
+    { name: "Mrs. T. Ranjini", topic: "Graph Theory (S&H - Maths - ECE)", supervisor: "Dr. M. GnanaSekar (Head of the Department of Mathematics, Rathinam Global University (Deemed University), Coimbatore)", university: "Rathinam Global University (Deemed University)", registration: "RGU2026PHD055", status: "Pursuing" },
+    { name: "Mr. K. Manikandan", topic: "Applied Probability and Stochastic Processes (S&H - Maths - IT)", supervisor: "Dr. R. Sebasthi Priya (Assistant Professor, Department of Mathematics, University College of Engineering, Trichy)", university: "Anna University", registration: "24137597140", status: "Pursuing" }
 ];
 
 const shGuidedScholars = [];
@@ -869,7 +908,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
     const periodText = '01.06.2023 to 31.05.2026';
     const totalPubs = isCivil ? 56 : (isAIDS ? 113 : (isCSBS ? 64 : (isCSE ? 400 : (isEEE ? 110 : (isMCA ? 56 : (isMech ? 79 : (isSH ? 19 : (isECE ? 134 : (isIT ? 13 : (isMBA ? 99 : 221))))))))));
     const totalPatentsText = isCivil ? '08' : (isAIDS ? '07' : (isCSBS ? '05' : (isCSE ? '11' : (isEEE ? '15' : (isMCA ? '00' : (isMech ? '10' : (isSH ? '03' : (isECE ? '08' : (isIT ? '-' : (isMBA ? '11' : '08'))))))))));
-    const totalGrantsText = isCivil ? '11' : (isAIDS ? '03' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '04' : '12'))))))))));
+    const totalGrantsText = isCivil ? '11' : (isAIDS ? '02' : (isCSBS ? '01' : (isCSE ? '02' : (isEEE ? '08' : (isMCA ? '00' : (isMech ? '02' : (isSH ? '00' : (isECE ? '02' : (isIT ? '-' : (isMBA ? '04' : '12'))))))))));
     const totalGrantsLabel = 'Projects / Consultancy Completed';
 
     const pubLegend = isCivil ? [
@@ -1143,20 +1182,20 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                         ) : isAIDS ? (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '75%' }}>AICTE (RPS & GOC)</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>2</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '65%' }}>AICTE (GOC and RPS)</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '35%' }}>28 Lakh</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>TIDCO (Govt. of TN)</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>1</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>SERB</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>National Mission / SERB</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>National Mission</td>
                                                     <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                                 <tr>
                                                     <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>Institutional Grants</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>24 Lakh</td>
                                                 </tr>
                                             </>
                                         ) : isCSBS ? (
@@ -1181,20 +1220,20 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                         ) : isEEE ? (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '75%' }}>IEEE - Power Electronics</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>₹1,00,000</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, width: '65%', fontSize:'7.5px' }}>AICTE (MODROBS & Sponsor)</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '35%', fontSize:'7.5px' }}>₹16.40 L</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>AICTE</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1, fontSize:'7.5px' }}>DST (Ignition Grant)</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', fontSize:'7.5px' }}>₹3.00 L</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>SERB</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, fontSize:'7.5px' }}>IEI & TNSCST</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', fontSize:'7.5px' }}>₹55,000</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600 }}>Institutional Grants</td>
-                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
+                                                    <td style={{ padding:'3px 4px', color:'#475569', fontWeight:600, fontSize:'7.5px' }}>IEEE PES (USA)</td>
+                                                    <td style={{ padding:'3px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', fontSize:'7.5px' }}>$1,565 USD</td>
                                                 </tr>
                                             </>
                                         ) : isMCA ? (
@@ -1337,15 +1376,15 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                         ) : isAIDS ? (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '75%', lineHeight: 1.1 }}>AICTE - RPS & GOC</td>
-                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>2</td>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '60%', lineHeight: 1.1 }}>Sponsored Projects</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '40%' }}>1 Proj, 1 Conf</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>TIDCO Sponsored Project</td>
-                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>1</td>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Consultancy</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>Rs. 75,000/-</td>
                                                 </tr>
                                                 <tr>
-                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Consultancy</td>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Collaborative</td>
                                                     <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>-</td>
                                                 </tr>
                                             </>
@@ -1367,12 +1406,12 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                         ) : isEEE ? (
                                             <>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '75%', lineHeight: 1.1 }}>Consultancy</td>
-                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '25%' }}>₹5,43,045</td>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, width: '60%', lineHeight: 1.1 }}>Sponsored Projects</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center', width: '40%' }}>08 Projects</td>
                                                 </tr>
                                                 <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Sponsored Research</td>
-                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>IEEE ₹1,00,000</td>
+                                                    <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Consultancy</td>
+                                                    <td style={{ padding:'2px 4px', fontWeight:800, color:'#4c1d95', textAlign:'center' }}>07 Projects</td>
                                                 </tr>
                                                 <tr>
                                                     <td style={{ padding:'2px 4px', color:'#475569', fontWeight:600, lineHeight: 1.1 }}>Collaborative</td>
@@ -1469,11 +1508,11 @@ const ResearchSummaryDashboard = ({ deptName }) => {
                                 <tbody>
                                     <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
                                         <td style={{ padding:'3px 0', color:'#475569', fontWeight:700 }}>Consultancy</td>
-                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "11" : (isAIDS ? "2" : (isCSBS ? "01" : (isEEE ? "₹5,43,045" : (isMCA ? "-" : (isMech ? "₹9,00,000" : (isSH ? "-" : (isECE ? "1.5 Lakhs (2)" : (isIT || isMBA ? "-" : "1.5 Lakhs (2)"))))))))}</td>
+                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "11" : (isAIDS ? "Rs. 75,000/-" : (isCSBS ? "01" : (isEEE ? "₹4,97,543" : (isMCA ? "-" : (isMech ? "₹9,00,000" : (isSH ? "-" : (isECE ? "1.5 Lakhs (2)" : (isIT || isMBA ? "-" : "1.5 Lakhs (2)"))))))))}</td>
                                     </tr>
                                     <tr>
                                         <td style={{ padding:'3px 0', color:'#475569', fontWeight:700 }}>Sponsored Research</td>
-                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "-" : (isAIDS ? "3" : (isCSBS ? "-" : (isEEE ? "₹1,00,000" : (isMCA ? "-" : (isMech ? "-" : (isSH ? "-" : (isECE ? "6.5 Lakhs (1)" : (isIT || isMBA ? "-" : "6.5 Lakhs (1)"))))))))}</td>
+                                        <td style={{ padding:'3px 0', fontWeight:900, color:'#4c1d95', textAlign:'right', paddingRight: '4px' }}>{isCivil ? "-" : (isAIDS ? "28 Lakh" : (isCSBS ? "-" : (isEEE ? "₹19.95 L + $1,565" : (isMCA ? "-" : (isMech ? "-" : (isSH ? "-" : (isECE ? "6.5 Lakhs (1)" : (isIT || isMBA ? "-" : "6.5 Lakhs (1)"))))))))}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1483,7 +1522,7 @@ const ResearchSummaryDashboard = ({ deptName }) => {
 
                     <div style={{ background:'#ede9fe', borderTop:'1px solid #4c1d95', padding:'6px 14px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                         <span style={{ color:'#4c1d95', fontWeight:700, fontSize:'10px' }}>Total Projects / Consultancy Completed:</span>
-                        <span style={{ color:'#4c1d95', fontWeight:900, fontSize:'16px' }}>{isCivil ? "11" : (isAIDS ? "02" : (isCSBS ? "01" : (isEEE ? "08" : (isMCA ? "Nil" : (isMech ? "02" : (isSH ? "Nil" : (isECE ? "2" : (isIT || isMBA ? "-" : "2"))))))))}</span>
+                        <span style={{ color:'#4c1d95', fontWeight:900, fontSize:'16px' }}>{isCivil ? "11" : (isAIDS ? "02" : (isCSBS ? "01" : (isEEE ? "15" : (isMCA ? "Nil" : (isMech ? "02" : (isSH ? "Nil" : (isECE ? "2" : (isIT || isMBA ? "-" : "2"))))))))}</span>
                     </div>
 
                 </div>
@@ -1532,7 +1571,7 @@ const ResearchResourcesPage = () => {
     const guidedScholars = isCivil ? civilGuidedScholars : (isAIDS ? aidsGuidedScholars : (isCSBS ? csbsGuidedScholars : (isEEE ? eeeGuidedScholars : (isMCA ? mcaGuidedScholars : (isMech ? mechGuidedScholars : (isSH ? shGuidedScholars : (isECE ? eceGuidedScholars : (isIT ? itGuidedScholars : (isMBA ? mbaGuidedScholars : (isECX ? ecxGuidedScholars : cseGuidedScholars))))))))))
 
     // Interactive States for CSE Single Page view
-    const [activeTab, setActiveTab] = useState(isAIDS || isCivil || isCSBS || isMCA || isIT || isMBA ? 'scholars' : 'supervisors')
+    const [activeTab, setActiveTab] = useState(isAIDS ? 'phdHolders' : (isCivil || isCSBS || isMCA || isIT || isMBA ? 'scholars' : 'supervisors'))
     const [selectedSuper, setSelectedSuper] = useState(null)
 
     const formatDeptName = (name) => {
@@ -1680,6 +1719,7 @@ const ResearchResourcesPage = () => {
                         <div className="flex flex-wrap gap-2 mb-10 border-b border-slate-200 pb-5">
                             {[
                                 { id: 'supervisors', label: 'Ph.D Supervisors', icon: Users, show: supervisors.length > 0 || isECX },
+                                { id: 'phdHolders', label: 'Faculty with Ph.D', icon: Award, show: phdHolders.length > 0 },
                                 { id: 'areasFacilities', label: 'Infrastructure & Areas', icon: Microscope, show: researchAreas.length > 0 || facilities.length > 0 || isECX },
                                 { id: 'scholars', label: isAIDS || isCivil || isCSBS || isMCA || isSH ? 'Faculty Pursuing Ph.D' : 'Scholars & Pursuing', icon: GraduationCap, show: facultyPursuing.length > 0 || guidedScholars.length > 0 || isECX }
                             ]
@@ -1810,6 +1850,74 @@ const ResearchResourcesPage = () => {
                                         </div>
                                     ) : (
                                         <EmptyState message="There are currently no registered Ph.D. supervisors in this department." icon={Users} />
+                                    )
+                                )}
+
+                                {/* ─── TAB 2: Faculty with Ph.D ─── */}
+                                {activeTab === 'phdHolders' && (
+                                    phdHolders.length > 0 ? (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            {phdHolders.map((faculty, idx) => (
+                                                <div
+                                                    key={faculty.id || idx}
+                                                    className="bg-white rounded-3xl p-6 border border-slate-200 shadow-xl hover:border-[#ffc107] hover:shadow-2xl transition-all duration-300 relative group overflow-hidden"
+                                                >
+                                                    <div className="absolute -right-2 -top-6 text-[110px] font-black text-slate-50 opacity-40 select-none group-hover:scale-110 transition-transform duration-500">
+                                                        0{idx + 1}
+                                                    </div>
+                                                    <div className="flex flex-col sm:flex-row gap-6 relative z-10">
+                                                        <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shrink-0 border-2 border-slate-100 group-hover:border-[#ffc107] shadow-md transition-all bg-gradient-to-br from-[#224292] to-[#18357a] flex items-center justify-center">
+                                                            {faculty.image ? (
+                                                                <img
+                                                                    src={faculty.image}
+                                                                    alt={faculty.name}
+                                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                                    onError={(e) => {
+                                                                        e.target.style.display = 'none';
+                                                                        if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+                                                                    }}
+                                                                />
+                                                            ) : null}
+                                                            <div className={`w-full h-full flex flex-col items-center justify-center text-white font-bold ${faculty.image ? 'hidden' : ''}`}>
+                                                                <Award size={32} className="text-[#ffc107] mb-1" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="flex-1 space-y-3">
+                                                            <div>
+                                                                <h3 className="text-lg font-black text-[#224292] leading-tight">
+                                                                    {faculty.name}
+                                                                </h3>
+                                                                <p className="text-[11px] font-bold text-slate-400 mt-0.5">{faculty.role || "Faculty with Ph.D"}</p>
+                                                            </div>
+
+                                                            <div className="space-y-2 text-xs font-bold text-[#4a627a]">
+                                                                {faculty.experience && (
+                                                                    <div className="flex items-center gap-2">
+                                                                        <Clock size={13} className="text-[#ffc107]" />
+                                                                        <span>Experience: {faculty.experience}</span>
+                                                                    </div>
+                                                                )}
+                                                                {faculty.university && (
+                                                                    <div className="flex items-center gap-2">
+                                                                        <GraduationCap size={13} className="text-[#ffc107]" />
+                                                                        <span>{faculty.university}</span>
+                                                                    </div>
+                                                                )}
+                                                                {faculty.topic && (
+                                                                    <div className="flex items-start gap-2">
+                                                                        <Target size={13} className="text-[#ffc107] mt-0.5 shrink-0" />
+                                                                        <span className="text-[11px] font-medium leading-snug">{faculty.topic}</span>
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <EmptyState message="There are currently no listed faculty with Ph.D in this department." icon={Award} />
                                     )
                                 )}
 

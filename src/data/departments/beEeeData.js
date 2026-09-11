@@ -289,4 +289,178 @@ export const beEeeData = {
       }
     ],
     placementStats: { placed: '89%', avg: '4.2 LPA', top: '15 LPA', companies: '40+' },
+    fundedProjects: [
+      {
+        sno: 1,
+        title: 'Funding to facilitate technological innovation and prototype development for student startup "DroneTribes"',
+        agency: 'Department of Science and Technology (DST) - Ignition Grant Scheme',
+        amount: '3,00,000',
+        period: 'AY 2025-26',
+        distinction: 'Sanctioned',
+        level: 'National',
+        faculty: 'Department of EEE / DroneTribes'
+      },
+      {
+        sno: 2,
+        title: 'Modernization of the Power Electronics and Drives Laboratory with emphasis on e-Mobility powertrain design and testing',
+        agency: 'All India Council for Technical Education (AICTE) - MODROBS',
+        amount: '12,90,000',
+        period: 'AY 2024-25',
+        distinction: 'Sanctioned',
+        level: 'National',
+        faculty: 'Department of EEE'
+      },
+      {
+        sno: 3,
+        title: 'Financial support for organizing 02 National Conferences and 02 Faculty Development Programs (FDPs)',
+        agency: 'All India Council for Technical Education (AICTE) - Institutional Sponsor',
+        amount: '3,50,000',
+        period: 'AY 2024-25',
+        distinction: 'Sanctioned',
+        level: 'National',
+        faculty: 'Department of EEE'
+      },
+      {
+        sno: 4,
+        title: 'UG R&D Project: "AI-Based Predictive Maintenance and Cotton Fiber Collection System Using Raspberry Pi for Spinning Mills"',
+        agency: 'The Institution of Engineers (India) - IEI R&D Grant-in-Aid Scheme',
+        amount: '40,000',
+        period: 'AY 2026-27',
+        distinction: 'Sanctioned',
+        level: 'National',
+        faculty: 'Department of EEE'
+      },
+      {
+        sno: 5,
+        title: 'Student prototype design: "Defense Jacket - Soldier Health Monitoring and Position Tracking System"',
+        agency: 'Tamil Nadu State Council for Science and Technology (TNSCST) - Student Project Scheme',
+        amount: '7,500',
+        period: 'AY 2022-23',
+        distinction: 'Sanctioned',
+        level: 'State',
+        faculty: 'Department of EEE'
+      },
+      {
+        sno: 6,
+        title: 'Research project: "Pure Spines"',
+        agency: 'Tamil Nadu State Council for Science and Technology (TNSCST) - Student Project Scheme',
+        amount: '7,500',
+        period: 'AY 2021-22',
+        distinction: 'Sanctioned',
+        level: 'State',
+        faculty: 'Department of EEE'
+      },
+      {
+        sno: 7,
+        title: 'Organizing a two-day workshop: "IEEE STEM Innovation Program: Renewable Energy and Smart Systems for Next-Gen Engineers"',
+        agency: 'IEEE PES USA Headquarters - MDI Fund',
+        amount: '$1,240 USD',
+        period: 'AY 2025-26',
+        distinction: 'Sanctioned',
+        level: 'International',
+        faculty: 'Department of EEE / IEEE Student Branch'
+      },
+      {
+        sno: 8,
+        title: 'Chapter Program Funding awarded to the student branch for regional performance rankings',
+        agency: 'IEEE PES - Chapter Funding (HPSBCP)',
+        amount: '$325 USD',
+        period: 'AY 2026-27',
+        distinction: 'Sanctioned',
+        level: 'International',
+        faculty: 'Department of EEE / IEEE Student Branch'
+      }
+    ],
+    studentProjects: [
+      {
+        sno: 1,
+        title: 'Funding to facilitate technological innovation and prototype development for student startup "DroneTribes"',
+        mentor: 'Department of EEE / Student Innovators',
+        agency: 'DST Ignition Grant Scheme',
+        grant: '3,00,000',
+        year: 'AY 2025-26'
+      },
+      {
+        sno: 2,
+        title: 'UG R&D Project: "AI-Based Predictive Maintenance and Cotton Fiber Collection System Using Raspberry Pi for Spinning Mills"',
+        mentor: 'Department of EEE',
+        agency: 'IEI R&D Grant-in-Aid Scheme',
+        grant: '40,000',
+        year: 'AY 2026-27'
+      },
+      {
+        sno: 3,
+        title: 'Student prototype design: "Defense Jacket - Soldier Health Monitoring and Position Tracking System"',
+        mentor: 'Department of EEE',
+        agency: 'TNSCST Student Project Scheme',
+        grant: '7,500',
+        year: 'AY 2022-23'
+      },
+      {
+        sno: 4,
+        title: 'Research project: "Pure Spines"',
+        mentor: 'Department of EEE',
+        agency: 'TNSCST Student Project Scheme',
+        grant: '7,500',
+        year: 'AY 2021-22'
+      }
+    ],
+    consultancyProjects: [
+      {
+        sno: 1,
+        industry: 'KS Consultancy / Landrotics Solutions Pvt. Ltd.',
+        type: 'Industrial Consultancy',
+        title: 'BLDC Motor Testing and Performance Analysis.',
+        amount: '₹1,61,945',
+        period: 'AY 2023-24'
+      },
+      {
+        sno: 2,
+        industry: 'Spintec Enterprises Private Limited',
+        type: 'Industrial Consultancy',
+        title: 'CNC machine Mechanical Product Quality Analyzer & Workstation Illumination and Noise Survey.',
+        amount: '₹1,53,400',
+        period: 'AY 2023-24'
+      },
+      {
+        sno: 3,
+        industry: 'Landrotics Solutions',
+        type: 'Sponsored Research',
+        title: 'Designing a Drone Thrust Analyzer.',
+        amount: '₹54,498',
+        period: 'AY 2023-24'
+      },
+      {
+        sno: 4,
+        industry: 'Sri Ayyanarappan Traders',
+        type: 'Industrial Energy Audit',
+        title: 'Energy Audit in Handloom Machines.',
+        amount: '₹50,000',
+        period: 'AY 2023-24'
+      },
+      {
+        sno: 5,
+        industry: 'Silicon Systems',
+        type: 'Sponsored Research',
+        title: 'Performance Analysis and Design enhancement of BLDC motor.',
+        amount: '₹50,000',
+        period: 'AY 2021-22'
+      },
+      {
+        sno: 6,
+        industry: 'United Spinning Mills',
+        type: 'Prototype Development',
+        title: 'Design of Cotton Fiber Collector',
+        amount: '₹17,700',
+        period: 'AY 2023-24'
+      },
+      {
+        sno: 7,
+        industry: 'Tagros Chemical India',
+        type: 'Industrial Energy Audit',
+        title: 'Energy Audit consultancy.',
+        amount: '₹10,000',
+        period: 'AY 2023-24'
+      }
+    ]
 };

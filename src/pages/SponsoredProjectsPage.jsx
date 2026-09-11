@@ -113,7 +113,34 @@ const SponsoredProjectsPage = () => {
             { id: 1, faculty: "Dr. P.M.Shanmugavadivu", title: "Application of Geo spatial technology on impact of Climate changes in water resources", agency: "Ministry of Earth sciences", amount: "1,00,000", period: "Feb-15" }
         ],
         'electrical-&-electronics-engineering': [
-            { id: 1, faculty: "Department of EEE", title: "IEEE - Power Electronics Sponsored Research", agency: "IEEE - Power Electronics", amount: "1,00,000", period: "01.06.2023 to 31.05.2026" }
+            { id: 1, faculty: "Department of EEE / DroneTribes", title: 'Funding to facilitate technological innovation and prototype development for student startup "DroneTribes"', agency: "DST Ignition Grant Scheme", amount: "3,00,000", period: "AY 2025-26" },
+            { id: 2, faculty: "Department of EEE", title: "Modernization of the Power Electronics and Drives Laboratory with emphasis on e-Mobility powertrain design and testing.", agency: "AICTE-MODROBS", amount: "12,90,000", period: "AY 2024-25" },
+            { id: 3, faculty: "Department of EEE", title: "Financial support for organizing 02 National Conferences and 02 Faculty Development Programs (FDPs).", agency: "AICTE Institutional Sponsor", amount: "3,50,000", period: "AY 2024-25" },
+            { id: 4, faculty: "Department of EEE", title: 'UG R&D Project: "AI-Based Predictive Maintenance and Cotton Fiber Collection System Using Raspberry Pi for Spinning Mills".', agency: "IEI R&D Grant-in-Aid Scheme", amount: "40,000", period: "AY 2026-27" },
+            { id: 5, faculty: "Department of EEE", title: 'Student prototype design: "Defense Jacket - Soldier Health Monitoring and Position Tracking System".', agency: "TNSCST Student Project Scheme", amount: "7,500", period: "AY 2022-23" },
+            { id: 6, faculty: "Department of EEE", title: 'Research project: "Pure Spines".', agency: "TNSCST Student Project Scheme", amount: "7,500", period: "AY 2021-22" },
+            { id: 7, faculty: "Department of EEE / IEEE Student Branch", title: 'Organizing a two-day workshop: "IEEE STEM Innovation Program: Renewable Energy and Smart Systems for Next-Gen Engineers".', agency: "IEEE PES USA MDI Fund", amount: "$1,240 USD", period: "AY 2025-26" },
+            { id: 8, faculty: "Department of EEE / IEEE Student Branch", title: "Chapter Program Funding awarded to the student branch for regional performance rankings.", agency: "IEEE PES Chapter Funding (HPSBCP)", amount: "$325 USD", period: "AY 2026-27" }
+        ],
+        'electrical-and-electronics-engineering': [
+            { id: 1, faculty: "Department of EEE / DroneTribes", title: 'Funding to facilitate technological innovation and prototype development for student startup "DroneTribes"', agency: "DST Ignition Grant Scheme", amount: "3,00,000", period: "AY 2025-26" },
+            { id: 2, faculty: "Department of EEE", title: "Modernization of the Power Electronics and Drives Laboratory with emphasis on e-Mobility powertrain design and testing.", agency: "AICTE-MODROBS", amount: "12,90,000", period: "AY 2024-25" },
+            { id: 3, faculty: "Department of EEE", title: "Financial support for organizing 02 National Conferences and 02 Faculty Development Programs (FDPs).", agency: "AICTE Institutional Sponsor", amount: "3,50,000", period: "AY 2024-25" },
+            { id: 4, faculty: "Department of EEE", title: 'UG R&D Project: "AI-Based Predictive Maintenance and Cotton Fiber Collection System Using Raspberry Pi for Spinning Mills".', agency: "IEI R&D Grant-in-Aid Scheme", amount: "40,000", period: "AY 2026-27" },
+            { id: 5, faculty: "Department of EEE", title: 'Student prototype design: "Defense Jacket - Soldier Health Monitoring and Position Tracking System".', agency: "TNSCST Student Project Scheme", amount: "7,500", period: "AY 2022-23" },
+            { id: 6, faculty: "Department of EEE", title: 'Research project: "Pure Spines".', agency: "TNSCST Student Project Scheme", amount: "7,500", period: "AY 2021-22" },
+            { id: 7, faculty: "Department of EEE / IEEE Student Branch", title: 'Organizing a two-day workshop: "IEEE STEM Innovation Program: Renewable Energy and Smart Systems for Next-Gen Engineers".', agency: "IEEE PES USA MDI Fund", amount: "$1,240 USD", period: "AY 2025-26" },
+            { id: 8, faculty: "Department of EEE / IEEE Student Branch", title: "Chapter Program Funding awarded to the student branch for regional performance rankings.", agency: "IEEE PES Chapter Funding (HPSBCP)", amount: "$325 USD", period: "AY 2026-27" }
+        ],
+        'eee': [
+            { id: 1, faculty: "Department of EEE / DroneTribes", title: 'Funding to facilitate technological innovation and prototype development for student startup "DroneTribes"', agency: "DST Ignition Grant Scheme", amount: "3,00,000", period: "AY 2025-26" },
+            { id: 2, faculty: "Department of EEE", title: "Modernization of the Power Electronics and Drives Laboratory with emphasis on e-Mobility powertrain design and testing.", agency: "AICTE-MODROBS", amount: "12,90,000", period: "AY 2024-25" },
+            { id: 3, faculty: "Department of EEE", title: "Financial support for organizing 02 National Conferences and 02 Faculty Development Programs (FDPs).", agency: "AICTE Institutional Sponsor", amount: "3,50,000", period: "AY 2024-25" },
+            { id: 4, faculty: "Department of EEE", title: 'UG R&D Project: "AI-Based Predictive Maintenance and Cotton Fiber Collection System Using Raspberry Pi for Spinning Mills".', agency: "IEI R&D Grant-in-Aid Scheme", amount: "40,000", period: "AY 2026-27" },
+            { id: 5, faculty: "Department of EEE", title: 'Student prototype design: "Defense Jacket - Soldier Health Monitoring and Position Tracking System".', agency: "TNSCST Student Project Scheme", amount: "7,500", period: "AY 2022-23" },
+            { id: 6, faculty: "Department of EEE", title: 'Research project: "Pure Spines".', agency: "TNSCST Student Project Scheme", amount: "7,500", period: "AY 2021-22" },
+            { id: 7, faculty: "Department of EEE / IEEE Student Branch", title: 'Organizing a two-day workshop: "IEEE STEM Innovation Program: Renewable Energy and Smart Systems for Next-Gen Engineers".', agency: "IEEE PES USA MDI Fund", amount: "$1,240 USD", period: "AY 2025-26" },
+            { id: 8, faculty: "Department of EEE / IEEE Student Branch", title: "Chapter Program Funding awarded to the student branch for regional performance rankings.", agency: "IEEE PES Chapter Funding (HPSBCP)", amount: "$325 USD", period: "AY 2026-27" }
         ]
     }
 
@@ -142,6 +169,18 @@ const SponsoredProjectsPage = () => {
         ],
         'electronics-&-communication-engineering': [
             { id: 101, year: "2023-2024", title: "AI-driven emergency response systems for enhanced vehicle safety", mentor: "Dr.S. Kumarganesh", agency: "TNSCST", grant: "Ongoing", duration: "12 Months" }
+        ],
+        'electrical-&-electronics-engineering': [
+            { id: 1, year: "2022-2023", title: "Defense Jacket - Soldier Health Monitoring and Position Tracking System", mentor: "Faculty of EEE", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
+            { id: 2, year: "2021-2022", title: "Pure Spines", mentor: "Faculty of EEE", agency: "TNSCST", grant: "7,500", duration: "12 Months" }
+        ],
+        'electrical-and-electronics-engineering': [
+            { id: 1, year: "2022-2023", title: "Defense Jacket - Soldier Health Monitoring and Position Tracking System", mentor: "Faculty of EEE", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
+            { id: 2, year: "2021-2022", title: "Pure Spines", mentor: "Faculty of EEE", agency: "TNSCST", grant: "7,500", duration: "12 Months" }
+        ],
+        'eee': [
+            { id: 1, year: "2022-2023", title: "Defense Jacket - Soldier Health Monitoring and Position Tracking System", mentor: "Faculty of EEE", agency: "TNSCST", grant: "7,500", duration: "12 Months" },
+            { id: 2, year: "2021-2022", title: "Pure Spines", mentor: "Faculty of EEE", agency: "TNSCST", grant: "7,500", duration: "12 Months" }
         ]
     }
 
@@ -163,6 +202,33 @@ const SponsoredProjectsPage = () => {
             { id: 5, title: "Safety Audit", client: "Vijay Blue Metal, Salem", faculty: "Dr. K.S.Prabhakaran, Mr. G.Thangaraj", amount: "25,000", period: "Oct-22" },
             { id: 6, title: "Safety Audit", client: "Senthil Blue Metals, Salem", faculty: "Dr. N.Panneerselvam, Mr. G.Thangaraj", amount: "25,000", period: "Nov-22" },
             { id: 7, title: "Design and Fabrication of Pick and Place Robot Arm", client: "Kaapi Stop, Salem", faculty: "Mr. A.Selvakumar, Mr. J.Prakash", amount: "1,47,950", period: "Ongoing" }
+        ],
+        'electrical-&-electronics-engineering': [
+            { id: 1, title: "BLDC Motor Testing and Performance Analysis.", client: "KS Consultancy / Landrotics Solutions Pvt. Ltd.", faculty: "Department of EEE", amount: "1,61,945", period: "AY 2023-24" },
+            { id: 2, title: "CNC machine Mechanical Product Quality Analyzer & Workstation Illumination and Noise Survey.", client: "Spintec Enterprises Private Limited", faculty: "Department of EEE", amount: "1,53,400", period: "AY 2023-24" },
+            { id: 3, title: "Designing a Drone Thrust Analyzer.", client: "Landrotics Solutions", faculty: "Department of EEE", amount: "54,498", period: "AY 2023-24" },
+            { id: 4, title: "Energy Audit in Handloom Machines.", client: "Sri Ayyanarappan Traders", faculty: "Department of EEE", amount: "50,000", period: "AY 2023-24" },
+            { id: 5, title: "Performance Analysis and Design enhancement of BLDC motor.", client: "Silicon Systems", faculty: "Department of EEE", amount: "50,000", period: "AY 2021-22" },
+            { id: 6, title: "Design of Cotton Fiber Collector", client: "United Spinning Mills", faculty: "Department of EEE", amount: "17,700", period: "AY 2023-24" },
+            { id: 7, title: "Energy Audit consultancy.", client: "Tagros Chemical India", faculty: "Department of EEE", amount: "10,000", period: "AY 2023-24" }
+        ],
+        'electrical-and-electronics-engineering': [
+            { id: 1, title: "BLDC Motor Testing and Performance Analysis.", client: "KS Consultancy / Landrotics Solutions Pvt. Ltd.", faculty: "Department of EEE", amount: "1,61,945", period: "AY 2023-24" },
+            { id: 2, title: "CNC machine Mechanical Product Quality Analyzer & Workstation Illumination and Noise Survey.", client: "Spintec Enterprises Private Limited", faculty: "Department of EEE", amount: "1,53,400", period: "AY 2023-24" },
+            { id: 3, title: "Designing a Drone Thrust Analyzer.", client: "Landrotics Solutions", faculty: "Department of EEE", amount: "54,498", period: "AY 2023-24" },
+            { id: 4, title: "Energy Audit in Handloom Machines.", client: "Sri Ayyanarappan Traders", faculty: "Department of EEE", amount: "50,000", period: "AY 2023-24" },
+            { id: 5, title: "Performance Analysis and Design enhancement of BLDC motor.", client: "Silicon Systems", faculty: "Department of EEE", amount: "50,000", period: "AY 2021-22" },
+            { id: 6, title: "Design of Cotton Fiber Collector", client: "United Spinning Mills", faculty: "Department of EEE", amount: "17,700", period: "AY 2023-24" },
+            { id: 7, title: "Energy Audit consultancy.", client: "Tagros Chemical India", faculty: "Department of EEE", amount: "10,000", period: "AY 2023-24" }
+        ],
+        'eee': [
+            { id: 1, title: "BLDC Motor Testing and Performance Analysis.", client: "KS Consultancy / Landrotics Solutions Pvt. Ltd.", faculty: "Department of EEE", amount: "1,61,945", period: "AY 2023-24" },
+            { id: 2, title: "CNC machine Mechanical Product Quality Analyzer & Workstation Illumination and Noise Survey.", client: "Spintec Enterprises Private Limited", faculty: "Department of EEE", amount: "1,53,400", period: "AY 2023-24" },
+            { id: 3, title: "Designing a Drone Thrust Analyzer.", client: "Landrotics Solutions", faculty: "Department of EEE", amount: "54,498", period: "AY 2023-24" },
+            { id: 4, title: "Energy Audit in Handloom Machines.", client: "Sri Ayyanarappan Traders", faculty: "Department of EEE", amount: "50,000", period: "AY 2023-24" },
+            { id: 5, title: "Performance Analysis and Design enhancement of BLDC motor.", client: "Silicon Systems", faculty: "Department of EEE", amount: "50,000", period: "AY 2021-22" },
+            { id: 6, title: "Design of Cotton Fiber Collector", client: "United Spinning Mills", faculty: "Department of EEE", amount: "17,700", period: "AY 2023-24" },
+            { id: 7, title: "Energy Audit consultancy.", client: "Tagros Chemical India", faculty: "Department of EEE", amount: "10,000", period: "AY 2023-24" }
         ]
     }
 

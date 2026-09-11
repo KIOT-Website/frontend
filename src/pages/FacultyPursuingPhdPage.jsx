@@ -325,58 +325,98 @@ const FacultyPursuingPhdPage = () => {
         'science-&-humanities': [
             {
                 id: 1,
-                name: "S.Geetha",
-                topic: "Graph Theory",
-                supervisor: "Dr. S.Manimekalai",
-                registration: "June 2024",
+                name: "Mr. K. Anand Kumar",
+                topic: "English Language Teaching (S&H - English - Mech)",
+                supervisor: "Dr. R. Vennila Nancy Christina (Associate Professor, Department of English, Sree Saraswathi Thiagraja College, Thippampatti)",
+                registration: "B1/ENG25PJULY0462/2025",
                 university: "Bharathiar University"
             },
             {
                 id: 2,
-                name: "M.Sivaperumal",
-                topic: "Nanomaterials",
-                supervisor: "Dr. G.Raja",
-                registration: "Jan 2023",
+                name: "Mr. M. Sivaperumal",
+                topic: "Nanomaterials (S&H - Chemistry - IT)",
+                supervisor: "Dr. G. Raja (Professor/Chemistry, Paavai Engineering College (Autonomous), Namakkal)",
+                registration: "23147691151",
                 university: "Anna University"
             },
             {
                 id: 3,
-                name: "M.Prasath",
-                topic: "Inventory Control Theory",
-                supervisor: "Dr. R.Vijaykrishnaraj",
-                registration: "Jan 2025",
-                university: "Bharath University"
+                name: "Mr. M. Prasath",
+                topic: "Inventory Control Theory (S&H - Maths - EEE)",
+                supervisor: "Dr. R. Vijaykrishnaraj (Assistant Professor, Bharath Institute of Higher Education and Research, Chennai)",
+                registration: "D25SH027",
+                university: "Bharath Institute of Higher Education and Research"
             },
             {
                 id: 4,
-                name: "A.Preethi",
-                topic: "NanoParticles",
-                supervisor: "Dr. K.Balachandran",
-                registration: "Feb 2021",
+                name: "Mrs. A. Preethi",
+                topic: "Nano Particles (S&H - Chemistry - ECE)",
+                supervisor: "Dr. K. Balachandran (Associate Professor, Department of Chemistry, Vivekanandha College of Engineering for Women, Thiruchengode)",
+                registration: "21237697164",
                 university: "Anna University"
             },
             {
                 id: 5,
-                name: "K.Vasanthakumar",
-                topic: "Eduthuraippiyal Nokkil Natrinai",
-                supervisor: "Dr. V.Ramarajapandian",
-                registration: "Sep/2014",
-                university: "Periyar University"
-            },
-            {
-                id: 6,
-                name: "T.Raja",
-                topic: "Decision Making using Fuzzy Logic",
-                supervisor: "Dr. S.Thilagavathi",
-                registration: "June 2024",
+                name: "Mr. T. Raja",
+                topic: "Decision Making using Fuzzy Logic (S&H - Maths - ECE)",
+                supervisor: "Dr. S. Thilagavathi (Assistant Professor, Department of Mathematics, Erode Arts and Science College, Erode)",
+                registration: "B1/MAT24PJuly0919/2024",
                 university: "Bharathiar University"
             },
             {
+                id: 6,
+                name: "Mr. S. Sasi Kumar",
+                topic: "Thin Film Technology (S&H - Physics - Civil)",
+                supervisor: "Dr. K. S. Mohan (Associate Professor, Department of Physics, Nandha Engineering College, Erode)",
+                registration: "25147691163",
+                university: "Anna University"
+            },
+            {
                 id: 7,
-                name: "S.Sasi Kumar",
-                topic: "Thin Film Technology",
-                supervisor: "Dr. K.S.Mohan",
-                registration: "January 2025",
+                name: "Mrs. S. Geetha",
+                topic: "Graph Theory (S&H - Maths - CSE)",
+                supervisor: "Dr. S. Manimekalai (Assistant Professor, Department of Mathematics, Dr. N.G.P. Arts & Science College, Kalapatti, Coimbatore)",
+                registration: "B1/MAT24PJULY1102/2024",
+                university: "Bharathiar University"
+            },
+            {
+                id: 8,
+                name: "Mrs. S. Saranya",
+                topic: "Fuzzy graphs (S&H - Maths - ECE)",
+                supervisor: "Dr. B. Ramesh kumar (Associate Professor, Department of Mathematics, Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology, Chennai)",
+                registration: "VTDWS2025625",
+                university: "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology"
+            },
+            {
+                id: 9,
+                name: "Mr. P. Dhineshkumar",
+                topic: "Molecular Spectroscopy (S&H - Physics - ECE)",
+                supervisor: "Dr. G. Thilagavathi (Asst. Prof of Physics, Nehru Memorial College (A), Puthanampatti, Tiruchirapalli)",
+                registration: "40008/Ph.D K3/Physics /Part-time /05.02.2026",
+                university: "Bharathidasan University"
+            },
+            {
+                id: 10,
+                name: "Mrs. P. Priya",
+                topic: "Topology (S&H - Maths - ECE)",
+                supervisor: "Dr. V. Ramesh (Assistant Professor, Kandasamy Kandar's College, P.velur)",
+                registration: "PUAD250271413",
+                university: "Periyar University"
+            },
+            {
+                id: 11,
+                name: "Mrs. T. Ranjini",
+                topic: "Graph Theory (S&H - Maths - ECE)",
+                supervisor: "Dr. M. GnanaSekar (Head of the Department of Mathematics, Rathinam Global University (Deemed University), Coimbatore)",
+                registration: "RGU2026PHD055",
+                university: "Rathinam Global University (Deemed University)"
+            },
+            {
+                id: 12,
+                name: "Mr. K. Manikandan",
+                topic: "Applied Probability and Stochastic Processes (S&H - Maths - IT)",
+                supervisor: "Dr. R. Sebasthi Priya (Assistant Professor, Department of Mathematics, University College of Engineering, Trichy)",
+                registration: "24137597140",
                 university: "Anna University"
             }
         ]

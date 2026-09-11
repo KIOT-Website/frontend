@@ -104,6 +104,13 @@ const ResearchPage = () => {
             focus: ["Software Development", "Web Technologies", "AI & ML"],
             icon: Computer,
             color: "bg-teal-50 text-teal-600"
+        },
+        // --- Science & Humanities ---
+        {
+            name: "Science & Humanities",
+            focus: ["Nanomaterials", "Applied Mathematics", "Sensor Development"],
+            icon: FlaskConical,
+            color: "bg-violet-50 text-violet-600"
         }
     ]
 
@@ -352,7 +359,7 @@ const ResearchPage = () => {
                         {/* Stats strip */}
                         <div className="mt-4 grid grid-cols-3 gap-3">
                             {[
-                                { label: 'Departments', value: '11+' },
+                                { label: 'Departments', value: '13+' },
                                 { label: 'Publications', value: '500+' },
                                 { label: 'Patents Filed', value: '80+' },
                             ].map((s, i) => (
