@@ -100,6 +100,7 @@ const MSMEBIPage = safeLazy(() => import('./pages/MSMEBIPage'))
 const MXIncubatorPage = safeLazy(() => import('./pages/MXIncubatorPage'))
 const FlamePage = safeLazy(() => import('./pages/FlamePage'))
 const IntecPage = safeLazy(() => import('./pages/IntecPage'))
+const EpicsPage = safeLazy(() => import('./pages/EpicsPage'))
 const VibesPage = safeLazy(() => import('./pages/VibesPage'))
 const PacePage = safeLazy(() => import('./pages/PacePage'))
 const AmberzPage = safeLazy(() => import('./pages/AmberzPage'))
@@ -356,6 +357,14 @@ function App() {
       "/governing-council": {
         title: "Governing Council Members | KIOT",
         desc: "Meet the distinguished academic and industry leaders forming the Governing Council of Knowledge Institute of Technology."
+      },
+      "/about/college-rules": {
+        title: "Rules & Regulations | KIOT Salem",
+        desc: "Explore the code of conduct, campus discipline rules, academic guidelines, and college regulations of KIOT Salem."
+      },
+      "/college-rules": {
+        title: "Rules & Regulations | KIOT Salem",
+        desc: "Explore the code of conduct, campus discipline rules, academic guidelines, and college regulations of KIOT Salem."
       },
       "/resources/iqac": {
         title: "IQAC Cell | Internal Quality Assurance",
@@ -814,12 +823,20 @@ function App() {
         desc: "Find information on foreign university admissions, scholarships, IELTS/TOEFL/GRE prep, and counseling services at KIOT."
       },
       "/student-life/intec": {
-        title: "INTEC Information Technology Club | KIOT",
-        desc: "Join hackathons, coding contests, app development drives, and tech talks by INTEC club at KIOT."
+        title: "INTEC ECE Association | KIOT",
+        desc: "Association of Electronics & Communication Engineers (INTEC) promoting technical workshops, symposia, and VLSI design at KIOT."
       },
       "/resources/student-life/intec": {
-        title: "INTEC Information Technology Club | KIOT",
-        desc: "Join hackathons, coding contests, app development drives, and tech talks by INTEC club at KIOT."
+        title: "INTEC ECE Association | KIOT",
+        desc: "Association of Electronics & Communication Engineers (INTEC) promoting technical workshops, symposia, and VLSI design at KIOT."
+      },
+      "/student-life/epics": {
+        title: "EPICS Department Association | KIOT",
+        desc: "Enterprising Professionals in Integrated Circuits and Software association at Knowledge Institute of Technology."
+      },
+      "/resources/student-life/epics": {
+        title: "EPICS Department Association | KIOT",
+        desc: "Enterprising Professionals in Integrated Circuits and Software association at Knowledge Institute of Technology."
       },
       "/student-life/vibes": {
         title: "VIBES Cultural & Dance Club | KIOT",
@@ -838,12 +855,12 @@ function App() {
         desc: "Participate in leadership summits, business plans, and corporate skills training by PACE association at KIOT."
       },
       "/student-life/amberz": {
-        title: "AMBERZ Science & Innovation Club | KIOT",
-        desc: "Fostering scientific temper with science fairs, innovative projects, and tech quizzes by AMBERZ club at KIOT."
+        title: "AMBER'Z EEE Association | KIOT",
+        desc: "Association of Electrical & Electronics Engineers (AMBER'Z) promoting energy innovations, circuits, and technical projects at KIOT."
       },
       "/resources/student-life/amberz": {
-        title: "AMBERZ Science & Innovation Club | KIOT",
-        desc: "Fostering scientific temper with science fairs, innovative projects, and tech quizzes by AMBERZ club at KIOT."
+        title: "AMBER'Z EEE Association | KIOT",
+        desc: "Association of Electrical & Electronics Engineers (AMBER'Z) promoting energy innovations, circuits, and technical projects at KIOT."
       },
       "/student-life/business-insights-club": {
         title: "Business Insights Club | MBA | KIOT",
@@ -920,17 +937,49 @@ function App() {
       "/events": {
         title: "KIOT Events & Conferences Agenda",
         desc: "Stay updated with technical symposiums, workshops, guest lectures, and cultural events at KIOT Salem."
+      },
+      "/student-life/scintel": {
+        title: "SCINTEL CSE Association | KIOT",
+        desc: "Society of Computer Science & Engineering (SCINTEL) association promoting coding, hackathons, and software innovation at KIOT."
+      },
+      "/resources/student-life/scintel": {
+        title: "SCINTEL CSE Association | KIOT",
+        desc: "Society of Computer Science & Engineering (SCINTEL) association promoting coding, hackathons, and software innovation at KIOT."
+      },
+      "/student-life/wec-cell": {
+        title: "Women Empowerment Cell (WEC) | KIOT",
+        desc: "Explore activities, health awareness workshops, safety initiatives, and leadership development programs by WEC at KIOT."
+      },
+      "/resources/student-life/wec-cell": {
+        title: "Women Empowerment Cell (WEC) | KIOT",
+        desc: "Explore activities, health awareness workshops, safety initiatives, and leadership development programs by WEC at KIOT."
+      },
+      "/resources": {
+        title: "Student & Academic Resources | KIOT Salem",
+        desc: "Access student life resources, academic associations, digital library, IQAC, and campus portals at KIOT Salem."
       }
     };
 
-    let matched = staticMeta[location.pathname];
+    // Normalize path: strip query params, hash, and trailing slashes
+    const rawPath = (location.pathname || '/').split('?')[0].split('#')[0];
+    const path = (rawPath.length > 1 && rawPath.endsWith('/')) ? rawPath.slice(0, -1) : rawPath;
 
-    // Handle dynamic path matching
+    // 1. Direct static lookup (exact or case-insensitive)
+    let matched = staticMeta[path] || staticMeta[rawPath];
     if (!matched) {
-      const path = location.pathname;
+      const lowerPath = path.toLowerCase();
+      for (const [routeKey, meta] of Object.entries(staticMeta)) {
+        if (routeKey.toLowerCase() === lowerPath) {
+          matched = meta;
+          break;
+        }
+      }
+    }
+
+    // 2. Dynamic path matching
+    if (!matched) {
       if (path.startsWith('/academics/course/') || path.startsWith('/academics/undergraduate/') || path.startsWith('/academics/postgraduate/')) {
         const parts = path.split('/');
-        const id = parts[parts.length - 1];
         const courseMap = {
           'be-cse': 'B.E. Computer Science and Engineering',
           'be-ece': 'B.E. Electronics and Communication',
@@ -945,11 +994,22 @@ function App() {
           'mba-iev': 'MBA (IEV)',
           'mca': 'MCA'
         };
-        const courseName = courseMap[id] || id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-        matched = {
-          title: `${courseName} Course Info | KIOT`,
-          desc: `Find details about the ${courseName} course at KIOT, including curriculum, syllabus, eligibility, laboratory facilities, and placement stats.`
-        };
+
+        if (path.includes('/lab/')) {
+          const courseId = parts[3] || '';
+          const courseName = courseMap[courseId] || courseId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          matched = {
+            title: `${courseName} Laboratory Details | KIOT`,
+            desc: `Explore advanced laboratory facilities, experiment modules, and research equipment for ${courseName} at KIOT.`
+          };
+        } else {
+          const id = parts[parts.length - 1];
+          const courseName = courseMap[id] || id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          matched = {
+            title: `${courseName} Course Info | KIOT`,
+            desc: `Find details about the ${courseName} course at KIOT, including curriculum, syllabus, eligibility, laboratory facilities, and placement stats.`
+          };
+        }
       } else if (path.startsWith('/department/') || path.startsWith('/students-admitted-department/')) {
         const parts = path.split('/');
         const id = parts[parts.length - 1].toLowerCase();
@@ -961,7 +1021,10 @@ function App() {
           'civil': 'Civil Engineering',
           'it': 'Information Technology',
           'aids': 'Artificial Intelligence and Data Science',
-          'csbs': 'Computer Science and Business Systems'
+          'csbs': 'Computer Science and Business Systems',
+          'ecx': 'Computer Science and Design (ECX)',
+          'mca': 'MCA',
+          'mba': 'MBA'
         };
         const dept = deptNames[id] || id.toUpperCase();
         matched = {
@@ -970,7 +1033,6 @@ function App() {
         };
       } else if (path.startsWith('/research/')) {
         const parts = path.split('/');
-        const sub = parts[parts.length - 1];
         const subId = parts[2]?.toLowerCase() || '';
         const deptNames = {
           'cse': 'Computer Science & Engineering',
@@ -978,14 +1040,23 @@ function App() {
           'eee': 'Electrical & Electronics',
           'mech': 'Mechanical Engineering',
           'civil': 'Civil Engineering',
-          'it': 'Information Technology'
+          'it': 'Information Technology',
+          'ecx': 'Computer Science & Design (ECX)'
         };
         const dept = deptNames[subId] || subId.toUpperCase();
-        const type = sub.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-        matched = {
-          title: `${dept} ${type} | KIOT`,
-          desc: `Explore the ${type} and innovation projects within the ${dept} department at Knowledge Institute of Technology, Salem.`
-        };
+        if (parts.length <= 3) {
+          matched = {
+            title: `${dept} Research & Innovation | KIOT`,
+            desc: `Explore research facilities, ongoing sponsored projects, and publications within ${dept} at Knowledge Institute of Technology.`
+          };
+        } else {
+          const sub = parts[parts.length - 1];
+          const type = sub.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          matched = {
+            title: `${dept} ${type} | KIOT`,
+            desc: `Explore the ${type} and innovation projects within the ${dept} department at Knowledge Institute of Technology, Salem.`
+          };
+        }
       } else if (path.startsWith('/blog/')) {
         matched = {
           title: "KIOT Blog Post - Read Article",
@@ -997,18 +1068,39 @@ function App() {
           desc: "View details about upcoming and past academic, sports, and cultural events hosted at KIOT Salem."
         };
       } else if (path.startsWith('/campus-life/sports/achievements/')) {
+        const parts = path.split('/');
+        const sport = parts[parts.length - 1].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
         matched = {
-          title: "Sports Achievements | KIOT",
-          desc: "View dynamic sports awards, championship trophies, and athletic tournament achievements of KIOT students."
+          title: `${sport} Sports Achievements | KIOT`,
+          desc: `View dynamic sports awards, championship trophies, and athletic tournament achievements of ${sport} at KIOT students.`
+        };
+      } else if (path.startsWith('/resources/student-life/') || path.startsWith('/student-life/')) {
+        const parts = path.split('/');
+        const lastPart = parts[parts.length - 1];
+        const categoryName = lastPart.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        matched = {
+          title: `${categoryName} | Student Life | KIOT`,
+          desc: `Explore ${categoryName} activities, student clubs, associations, and campus events at Knowledge Institute of Technology, Salem.`
         };
       }
     }
 
+    // 3. Fallback: For any valid route not explicitly mapped, derive an SEO title from path segments
     if (!matched) {
-      matched = {
-        title: "Page Not Found | KIOT Salem",
-        desc: "The page you are looking for does not exist on the Knowledge Institute of Technology (KIOT) website. Go back or visit our homepage."
-      };
+      const segments = path.split('/').filter(Boolean);
+      if (segments.length > 0) {
+        const last = segments[segments.length - 1];
+        const formattedTitle = last.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        matched = {
+          title: `${formattedTitle} | KIOT Salem`,
+          desc: `Explore ${formattedTitle} and academic resources at Knowledge Institute of Technology (KIOT), Salem.`
+        };
+      } else {
+        matched = {
+          title: "KIOT | Knowledge Institute of Technology",
+          desc: "Knowledge Institute of Technology (KIOT) - An autonomous institution in Salem, Tamil Nadu committed to technical excellence."
+        };
+      }
     }
 
     // Apply limits: title < 60 characters, description < 160 characters
@@ -1196,8 +1288,8 @@ function App() {
                   <Route path="/resources/student-life/flame" element={<FlamePage />} />
                   <Route path="/student-life/intec" element={<IntecPage />} />
                   <Route path="/resources/student-life/intec" element={<IntecPage />} />
-                  <Route path="/student-life/epics" element={<IntecPage />} />
-                  <Route path="/resources/student-life/epics" element={<IntecPage />} />
+                  <Route path="/student-life/epics" element={<EpicsPage />} />
+                  <Route path="/resources/student-life/epics" element={<EpicsPage />} />
                   <Route path="/student-life/vibes" element={<VibesPage />} />
                   <Route path="/resources/student-life/vibes" element={<VibesPage />} />
                   <Route path="/student-life/pace" element={<PacePage />} />

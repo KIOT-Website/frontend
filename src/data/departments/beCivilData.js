@@ -11,6 +11,8 @@ import rajeshkumarImage from '../../assets/Faculity/civil/S.RAJESHKUMAR.webp'
 import sasikumarImage from '../../assets/Faculity/civil/S.SASI KUMAR.webp'
 import senthilkumarImage from '../../assets/Faculity/civil/S.SENTHIL KUMAR.webp'
 import balamuruganImage from '../../assets/Faculity/civil/U.BALAMURUGAN.webp'
+import sriDeviImage from '../../assets/Faculity/civil/P SRIDEVI_S&H.png'
+import umamaheswariImage from '../../assets/Faculity/civil/C UMAMAHESWARI_S&H.png'
 import civilHeroBanner from '../../assets/innovative_practices/civil/5. Industry-Integrated Learning - Copy.png'
 
 export const beCivilData = {
@@ -51,8 +53,8 @@ export const beCivilData = {
       { name: 'Mr. Sasi Kumar S', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching - 17 Years', specialization: 'Physics', email: 'ssphy@kiot.ac.in', publications: 'N/A', rating: 4.5, image: sasikumarImage, association: 'Regular', category: 'S&H' },
       { name: 'Mr. Senthil Kumar S', designation: 'Assistant Professor', qualification: 'M.E.', experience: 'Teaching - 6.8 Years, Industry - 3.6 Years', specialization: 'Structural Engineering', email: 'sskcivil@kiot.ac.in', publications: 'IC-1, NC-3', rating: 4.5, image: senthilkumarImage, association: 'Regular' },
       { name: 'Mr. Balamurugan U', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching - 11.2 Years', specialization: 'Mathematics', email: 'ubmat@kiot.ac.in', publications: 'N/A', rating: 4.5, image: balamuruganImage, association: 'Regular', category: 'S&H' },
-      { name: 'Mrs. P. Sri Devi', designation: 'AP/ MAT', qualification: 'B.Sc., M.Sc., M.Phil., SET.', category: 'S&H' },
-      { name: 'Dr. C. Umamaheswari', designation: 'AP/CHE', qualification: 'B.Sc., M.Sc., M.Phil., Ph.D.', category: 'S&H' }
+      { name: 'Mrs. Sri Devi P', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil., SET.', experience: 'Teaching - 10 Years', specialization: 'Mathematics', email: 'psdmat@kiot.ac.in', publications: 'N/A', rating: 4.6, image: sriDeviImage, association: 'Regular', category: 'S&H' },
+      { name: 'Dr. Umamaheswari C', designation: 'Assistant Professor', qualification: 'B.Sc., M.Sc., M.Phil., Ph.D.', experience: 'Teaching - 12 Years', specialization: 'Chemistry', email: 'cucengage@kiot.ac.in', publications: 'N/A', rating: 4.6, image: umamaheswariImage, association: 'Regular', category: 'S&H' }
     ],
     labs: [
       {

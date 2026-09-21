@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Home, ArrowLeft, Compass } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 const NotFoundPage = () => {
   const navigate = useNavigate()
+
+  useEffect(() => {
+    document.title = "Page Not Found | KIOT Salem";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "The page you are looking for does not exist on the Knowledge Institute of Technology (KIOT) website. Go back or visit our homepage.");
+    }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", "Page Not Found | KIOT Salem");
+  }, []);
 
   return (
     <div className="min-h-[75vh] bg-[#FCFDFD] flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden relative">
