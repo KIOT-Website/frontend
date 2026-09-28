@@ -18,6 +18,10 @@ import eeeRajeswariImage from '../../assets/Faculity/eee/rajeswari.webp'
 import eeeRajkumarImage from '../../assets/Faculity/eee/rajkumar.webp'
 import eeeRekhaPImage from '../../assets/Faculity/eee/rekha_p.webp'
 import eeeSrinithiImage from '../../assets/Faculity/eee/srinithi.webp'
+import eeeHemalathaImage from '../../assets/Faculity/eee/hemalatha.webp'
+import eeeSuganImage from '../../assets/Faculity/eee/sugan.webp'
+import ilangkumaranImage from '../../assets/Faculity/me-ise/ilangkumaran.webp'
+import sureshkrishnaImage from '../../assets/Faculity/me-ise/sureshkrishna.webp'
 import eeeBanner from '../../assets/academics/departments/eee_banner.png'
 
 export const beEeeData = {
@@ -65,14 +69,16 @@ export const beEeeData = {
       { name: 'Ms. Srinithi P', designation: 'Assistant Professor', qualification: 'B.E. (EEE)., M.E. (EST)', specialization: 'Embedded System Technologies', phone: '9865327459', email: 'pseee@kiot.ac.in', rating: 4.5, association: 'Regular', image: eeeSrinithiImage },
       { name: 'Mr. Rajkumar M', designation: 'Assistant Professor', qualification: 'B.E. (EEE)., M.E. (PSE)', specialization: 'Power System Engineering', phone: '9842398035', email: 'mrkeee@kiot.ac.in', rating: 4.6, association: 'Regular', image: eeeRajkumarImage },
       { name: 'Ms. Andril Alagusabai', designation: 'Assistant Professor', qualification: 'B.E. (EEE)., M.E. (EST)', specialization: 'Embedded System Technologies', phone: '9994522894', email: 'aaeee@kiot.ac.in', rating: 4.6, association: 'Regular' },
+      { name: 'Dr. Ilangkumaran M', designation: 'Professor & Director - COE', qualification: 'B.E., M.E., Ph.D.', specialization: 'Industrial Engineering', experience: 'Teaching: 22.6 Years, Research: 13 Years', email: 'mikmech@kiot.ac.in', rating: 4.9, association: 'Regular', joiningDate: '31.12.2021', publications: 'IJ: 65, NJ: 04, IC: 15, NC: 03', image: ilangkumaranImage },
+      { name: 'Mr. Sureshkrishna G', designation: 'Assistant Professor', qualification: 'B.E., M.E.', specialization: 'Industrial Safety Engineering', experience: 'Teaching: 7.4 Years', email: 'gskmech@kiot.ac.in', rating: 4.5, association: 'Regular', joiningDate: '21.03.2025', image: sureshkrishnaImage },
       { name: 'Mr. Sakthimani Rajendran', designation: 'Associate Professor of Practice', qualification: 'M.E., Ph.D.', experience: 'Teaching: 14.0 Yrs.', specialization: 'Electrical Engineering', email: 'sakthimanirajendran@kiot.ac.in', rating: 4.8, association: 'Regular', joiningDate: '25.07.2024' },
       { name: 'Dr. Rekha S', designation: 'Professor - Chemistry & HOD - S&H', qualification: 'M.Sc., M.Phil., Ph.D.', experience: 'Teaching: 14.10 Yrs.', specialization: 'Electro Chemistry', email: 'srchem@kiot.ac.in', rating: 5.0, association: 'Regular', joiningDate: '12.07.2010', publications: 'IJ: 06 & IC: 01 & NC: 01', image: eeeRekhaSImage, category: 'S&H' },
       { name: 'Ms. Manjula K V', designation: 'Assistant Professor - English', qualification: 'M.A., M.Phil.', experience: 'Teaching: 7.0 Yrs.', specialization: 'Feminine Literature', email: 'kvmeng@kiot.ac.in', rating: 4.7, association: 'Regular', joiningDate: '01.06.2018', publications: 'NC: 02', image: eeeManjulaImage, category: 'S&H' },
       { name: 'Mr. Prasath M', designation: 'Assistant Professor - Maths', qualification: 'M.Sc., M.Phil.', experience: 'Teaching: 17.6 Yrs.', specialization: 'Operation Research', email: 'mpmat@kiot.ac.in', rating: 4.8, association: 'Regular', joiningDate: '20.06.2013', publications: 'NC: 01', image: eeePrasathMImage, category: 'S&H' },
       { name: 'Ms. Rajeswari B', designation: 'Assistant Professor - Maths', qualification: 'M.Sc., M.Phil.', experience: 'Teaching: 16.4 Yrs.', specialization: 'Boolean Algebra', email: 'brmat@kiot.ac.in', rating: 4.8, association: 'Regular', joiningDate: '06.06.2012', publications: 'NC: 0', image: eeeRajeswariImage, category: 'S&H' },
       { name: 'Dr. Chitralekha N', designation: 'Professor - Physics', qualification: 'M.Sc, M.Phil, Ph.D. (Physics), M.Ed, M.Phil. (Education), SET (Physical Science)', experience: 'Teaching: 16.5 Yrs.', specialization: 'Ultrasonic and Spectroscopy', email: 'ncphy@kiot.ac.in', rating: 4.9, association: 'Regular', joiningDate: '01.08.2018', publications: 'IJ: 07, NJ: 01, IC: 05, NC: 02', category: 'S&H' },
-      { name: 'Mrs. Hemalatha Madhu', designation: 'Assistant Professor - English', qualification: 'B.A., M.A., M.Phil., NET.', category: 'S&H' },
-      { name: 'Dr. S. Sugan', designation: 'Associate Professor - Physics', qualification: 'B.Sc., M.Sc., Ph.D.', category: 'S&H' },
+      { name: 'Ms. Hemalatha Madhu', designation: 'Assistant Professor - English', qualification: 'B.A., M.A., M.Phil., NET.', specialization: 'English Literature', experience: 'Teaching: 5.0 Yrs.', email: 'mheng@kiot.ac.in', rating: 4.7, association: 'Regular', image: eeeHemalathaImage, category: 'S&H' },
+      { name: 'Dr. Sugan S', designation: 'Associate Professor - Physics', qualification: 'B.Sc., M.Sc., Ph.D.', specialization: 'Physics Science', experience: 'Teaching: 5.0 Yrs.', publications: 'IJ: 05, IC: 03', rating: 4.8, association: 'Regular', image: eeeSuganImage, category: 'S&H' },
     ],
     labs: [
       {

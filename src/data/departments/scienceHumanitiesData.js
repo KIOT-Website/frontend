@@ -14,6 +14,8 @@ import eeeRekhaSImage from '../../assets/Faculity/eee/rekha_s.webp'
 import eeeManjulaImage from '../../assets/Faculity/eee/manjula.webp'
 import eeePrasathMImage from '../../assets/Faculity/eee/prasath_m.webp'
 import eeeRajeswariImage from '../../assets/Faculity/eee/rajeswari.webp'
+import eeeHemalathaImage from '../../assets/Faculity/eee/hemalatha.webp'
+import eeeSuganImage from '../../assets/Faculity/eee/sugan.webp'
 import naveenkumarImage from '../../assets/Faculity/MECH/Mr. S. Naveenkumar.webp'
 import geethaImage from '../../assets/Faculity/MECH/Dr.K.Geetha.webp'
 import vinothkumarKTamilImage from '../../assets/Faculity/MECH/Dr.K.Vinothkumar.webp'
@@ -96,9 +98,9 @@ export const scienceHumanitiesData = {
       { name: 'Mr. K.Karthick', designation: 'Assistant Professor', qualification: 'M.A., B.Ed., M.Phil.(English)', experience: 'Teaching: 9 Yrs', specialization: 'English Literature', email: 'kkit@kiot.ac.in', publications: 'IJ:1, IC:3, NC:1', rating: 4.5, subject: 'English', category: 'S&H' },
       { name: 'Mr. S.Dineshkumar', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'English Literature', email: 'N/A', publications: '-', rating: 4.6, subject: 'English', category: 'S&H' },
       { name: 'Ms. S.J.Kaalijoothi', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching - 9 Years', specialization: 'English', email: 'sjkeng@kiot.ac.in', publications: 'N/A', rating: 4.6, image: kaalijoothiImage, subject: 'English', category: 'S&H' },
-      { name: 'Ms. Hemalatha Madhu', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'English Literature', email: 'N/A', publications: '-', rating: 4.6, subject: 'English', category: 'S&H' },
+      { name: 'Ms. Hemalatha Madhu', designation: 'Assistant Professor', qualification: 'M.A., M.Phil.', experience: 'Teaching – 5 Years', specialization: 'English Literature', email: 'mheng@kiot.ac.in', publications: '-', rating: 4.6, image: eeeHemalathaImage, subject: 'English', category: 'S&H' },
       // ── Physics ──
-      { name: 'Dr. S.Sugan', designation: 'Associate Professor', qualification: 'M.Sc., Ph.D.', experience: 'Teaching – 5 Years', specialization: 'Physics Science', email: 'N/A', publications: '-', rating: 4.6, subject: 'Physics', category: 'S&H' },
+      { name: 'Dr. S.Sugan', designation: 'Associate Professor', qualification: 'M.Sc., Ph.D.', experience: 'Teaching – 5 Years', specialization: 'Physics Science', email: 'N/A', publications: 'IJ: 05, IC: 03', rating: 4.6, image: eeeSuganImage, subject: 'Physics', category: 'S&H' },
       { name: 'Dr. C.Sambathkumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil., Ph.D.', experience: 'Research: 6 Years', specialization: 'Nanomaterials for Energy Storage Application', email: 'sambath7593@gmail.com', publications: 'IJ: 15, IC: 02, NJ: 02', rating: 4.8, image: sambathkumarImage, subject: 'Physics', category: 'S&H' },
       { name: 'Mr. S.Sasikumar', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching - 17 Years', specialization: 'Physics', email: 'ssphy@kiot.ac.in', publications: 'N/A', rating: 4.5, image: sasikumarImage, subject: 'Physics', category: 'S&H' },
       { name: 'Ms. B.Indumathi', designation: 'Assistant Professor', qualification: 'M.Sc., M.Phil.', experience: 'Teaching : 16.10 Years', specialization: 'LASER', email: 'biphy@kiot.ac.in', publications: '-', rating: 4.7, image: indumathiImage, subject: 'Physics', category: 'S&H' },

@@ -1,5 +1,7 @@
 import { ShieldCheck, Building2 } from 'lucide-react'
 import srinivasanImage from '../../assets/dir and hod/Dr. PSS. Srinivasan.jpg'
+import ilangkumaranImage from '../../assets/Faculity/me-ise/ilangkumaran.webp'
+import sureshkrishnaImage from '../../assets/Faculity/me-ise/sureshkrishna.webp'
 
 export const meIseData = {
   name: 'M.E Industrial Safety Engineering',
@@ -43,6 +45,7 @@ export const meIseData = {
       association: 'Regular',
       experience: 'Teaching: 20.1 Years, Research: 12 Years',
       specialization: 'Industrial Engineering',
+      image: ilangkumaranImage,
       email: 'mikmech@kiot.ac.in',
       publications: 'IJ: 65, NJ: 03, IC: 07, NC: 01',
       researchSupervision: 'Ph.D. (Supervised): 6; Ph.D. (Supervising): 5',
@@ -56,6 +59,7 @@ export const meIseData = {
       association: 'Regular',
       experience: 'Teaching : 7.4 Years',
       specialization: 'Industrial Safety Engineering',
+      image: sureshkrishnaImage,
       email: 'gskmech@kiot.ac.in',
       rating: 4.5
     }

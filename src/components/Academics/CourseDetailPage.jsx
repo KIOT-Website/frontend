@@ -716,7 +716,7 @@ export default function CourseDetailPage({ overrides }) {
     : TABS;
 
   const [activeObjectiveTab, setActiveObjectiveTab] = useState('PEO')
-  const [activeResearchSubTab, setActiveResearchSubTab] = useState('Patents')
+  const [activeResearchSubTab, setActiveResearchSubTab] = useState('Funded Projects')
 
   const kapItems = [
     { wk: "WK1", title: "Natural Sciences", desc: "A systematic, theory-based understanding of the natural sciences applicable to the discipline and awareness of relevant social sciences.", icon: Globe },
@@ -2539,48 +2539,57 @@ export default function CourseDetailPage({ overrides }) {
             )}
 
             {/* --- RESEARCH & PATENTS --- */}
-            {activeTab === 'Research' && (
-              <div className="space-y-8">
-                {/* Research Section Header & Sub-Tabs */}
-                <div className="flex flex-col items-center text-center justify-center gap-6 pb-6 border-b border-slate-100">
-                  <div>
-                    <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
-                      Department <span className="text-[#ffc107]">Research & Innovations</span>
-                    </h2>
-                    <p className="text-[#64779F] text-xs md:text-sm font-medium font-graphik max-w-2xl mx-auto">
-                      Funded Research Projects, Student Innovations & Registered Intellectual Property (Patents)
-                    </p>
+            {activeTab === 'Research' && (() => {
+              const hasFundedProjects = Boolean(course.fundedProjects && course.fundedProjects.length > 0);
+              const researchSubTabs = [
+                ...(hasFundedProjects ? [{ id: 'Funded Projects', label: 'Funded Projects', icon: Coins }] : []),
+                { id: 'Student Projects', label: 'Student Projects', icon: Award },
+                { id: 'Patents', label: 'Patents', icon: ShieldCheck }
+              ];
+              const effectiveResearchSubTab = (!hasFundedProjects && activeResearchSubTab === 'Funded Projects')
+                ? (course.studentProjects && course.studentProjects.length > 0 ? 'Student Projects' : 'Patents')
+                : activeResearchSubTab;
+
+              return (
+                <div className="space-y-8">
+                  {/* Research Section Header & Sub-Tabs */}
+                  <div className="flex flex-col items-center text-center justify-center gap-6 pb-6 border-b border-slate-100">
+                    <div>
+                      <h2 className="text-3xl md:text-5xl font-bold font-graphik text-[#224292] tracking-tight mb-2">
+                        Department <span className="text-[#ffc107]">Research & Innovations</span>
+                      </h2>
+                      <p className="text-[#64779F] text-xs md:text-sm font-medium font-graphik max-w-2xl mx-auto">
+                        {hasFundedProjects
+                          ? "Funded Research Projects, Student Innovations & Registered Intellectual Property (Patents)"
+                          : "Student Innovations & Registered Intellectual Property (Patents)"}
+                      </p>
+                    </div>
+
+                    {/* Research Sub-Tabs Header - Centered */}
+                    <div className="flex flex-wrap items-center justify-center gap-2 bg-[#224292]/5 p-1.5 rounded-2xl border border-[#224292]/10 mx-auto">
+                      {researchSubTabs.map((sub) => {
+                        const SubIcon = sub.icon
+                        const isActive = effectiveResearchSubTab === sub.id
+                        return (
+                          <button
+                            key={sub.id}
+                            onClick={() => setActiveResearchSubTab(sub.id)}
+                            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold font-graphik transition-all ${
+                              isActive
+                                ? 'bg-[#224292] text-white shadow-md shadow-[#224292]/20 scale-105'
+                                : 'text-[#224292] hover:bg-[#224292]/10'
+                            }`}
+                          >
+                            <SubIcon size={15} className={isActive ? 'text-[#ffc107]' : 'text-[#224292]'} />
+                            {sub.label}
+                          </button>
+                        )
+                      })}
+                    </div>
                   </div>
 
-                  {/* Research 3 Sub-Tabs Header - Centered */}
-                  <div className="flex flex-wrap items-center justify-center gap-2 bg-[#224292]/5 p-1.5 rounded-2xl border border-[#224292]/10 mx-auto">
-                    {[
-                      { id: 'Funded Projects', label: 'Funded Projects', icon: Coins },
-                      { id: 'Student Projects', label: 'Student Projects', icon: Award },
-                      { id: 'Patents', label: 'Patents', icon: ShieldCheck }
-                    ].map((sub) => {
-                      const SubIcon = sub.icon
-                      const isActive = activeResearchSubTab === sub.id
-                      return (
-                        <button
-                          key={sub.id}
-                          onClick={() => setActiveResearchSubTab(sub.id)}
-                          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold font-graphik transition-all ${
-                            isActive
-                              ? 'bg-[#224292] text-white shadow-md shadow-[#224292]/20 scale-105'
-                              : 'text-[#224292] hover:bg-[#224292]/10'
-                          }`}
-                        >
-                          <SubIcon size={15} className={isActive ? 'text-[#ffc107]' : 'text-[#224292]'} />
-                          {sub.label}
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-
-                {/* SUB-TAB 1: FUNDED PROJECTS */}
-                {activeResearchSubTab === 'Funded Projects' && (
+                  {/* SUB-TAB 1: FUNDED PROJECTS */}
+                  {effectiveResearchSubTab === 'Funded Projects' && hasFundedProjects && (
                   <div className="space-y-6">
                     <div className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden">
                       <div className="bg-[#224292] px-8 py-5 flex items-center justify-between">
@@ -2647,7 +2656,7 @@ export default function CourseDetailPage({ overrides }) {
                 )}
 
                 {/* SUB-TAB 2: STUDENT PROJECTS */}
-                {activeResearchSubTab === 'Student Projects' && (
+                {effectiveResearchSubTab === 'Student Projects' && (
                   <div className="space-y-6">
                     <div className="bg-white rounded-2xl border border-[#E5EDF8] shadow-2xl shadow-blue-900/5 overflow-hidden">
                       <div className="bg-[#224292] px-8 py-5 flex items-center justify-between">
@@ -2704,7 +2713,7 @@ export default function CourseDetailPage({ overrides }) {
                 )}
 
                 {/* SUB-TAB 3: PATENTS (SHOWS ALL DETAILS) */}
-                {activeResearchSubTab === 'Patents' && (
+                {effectiveResearchSubTab === 'Patents' && (
                   <div className="space-y-6">
                     {course.patents && course.patents.length > 0 ? (
                       <div className="space-y-12">
@@ -2810,8 +2819,9 @@ export default function CourseDetailPage({ overrides }) {
                     )}
                   </div>
                 )}
-              </div>
-            )}
+                </div>
+              );
+            })()}
 
             {/* --- INDUSTRY CONNECT (MBA & MBA-IEV ONLY) --- */}
             {activeTab === 'Industry' && (
