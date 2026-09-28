@@ -17,8 +17,31 @@ const ConferencesPage = () => {
     const [searchTerm, setSearchTerm] = useState('')
 
     const formatDeptName = (name) => {
-        if (!name) return "Departmentwise"
-        return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+        if (!name) return 'Departmentwise'
+        const decoded = decodeURIComponent(name).toLowerCase()
+        if (decoded === 'computer-science-&-business-systems' || decoded === 'computer-science-and-business-systems') {
+            return 'Computer Science & Business Systems'
+        }
+        if (decoded === 'master-of-computer-applications' || decoded === 'mca') {
+            return 'Master of Computer Applications'
+        }
+        if (decoded === 'science-&-humanities' || decoded === 'science-and-humanities') {
+            return 'Science & Humanities'
+        }
+        if (decoded === 'mba---master-of-business-administration' || decoded === 'mba-master-of-business-administration') {
+            return 'MBA Master Of Business Administration'
+        }
+        const acronyms = { mba: 'MBA', mca: 'MCA', cse: 'CSE', ece: 'ECE', eee: 'EEE', it: 'IT', csbs: 'CSBS', ecm: 'ECM', ecx: 'ECX', ise: 'ISE', ped: 'PED' }
+        return decodeURIComponent(name)
+            .split('-')
+            .filter(Boolean)
+            .map((word) => {
+                const lower = word.toLowerCase()
+                if (acronyms[lower]) return acronyms[lower]
+                if (word === '&') return '&'
+                return word.charAt(0).toUpperCase() + word.slice(1)
+            })
+            .join(' ')
     }
 
     const allConferences = {
